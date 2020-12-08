@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-07-06	Created.	Cascading Style Sheets.html	https://en.wikibooks.org/wiki/Cascading_Style_Sheets/Selectors
+-->
+	<head>
+		<title>Cascading Style Sheets</title>
+		<style>
+			div { margin:7px; padding:7px; background-color: gray; }
+			.important { font-weight:bold; color:red; }
+			#id { font-family:courier; }
+			* { color:green; } /* universal */
+			a:hover { color:blue; } /* pseudo-class */
+			p:first-letter { color:red } /* pseudo-element */
+			span label { font-weight:bold; } /* descendant */
+			h1, h2, h3 { text-align:center; } /* grouped */
+		</style>
+	</head>
+	<body>
+		<div>Selector type div { margin:7px; padding:7px; background-color: gray; }</div>
+		<span class="important">Selector class .important { font-weight:bold; color:red; }</span><br>
+		<button id="id">Selector id #id { font-family:courier; }</button><br>
+		<a href="https://en.wikibooks.org/wiki/Cascading_Style_Sheets/Selectors">
+			pseudo-class hover a:hover { color:blue; }
+		</a>
+		<p>pseudo-element p:first-letter { color:red }</p>
+		<span><label>span label { font-weight:bold; }</label></span>
+		<h1>Header 1 h1, h2, h3 { text-align:center; }</h1>
+		<h2>Header 2 h1, h2, h3 { text-align:center; }</h2>
+		<h3>Header 3 h1, h2, h3 { text-align:center; }</h3>
+	</body>	
+</html>

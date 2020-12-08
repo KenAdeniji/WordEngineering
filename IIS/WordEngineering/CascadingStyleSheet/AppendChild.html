@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-08-07	http://htmldog.com/guides/javascript/advanced/creatingelements/
+-->
+	<head>
+		<title>AppendChild</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	
+	<body>
+		<div align="center">
+			<table>
+				<tr><td>Element Type:</td><td><input id="elementType" autofocus placeholder="div or span"></td></tr>
+				<tr>
+					<td>Element Attribute:</td>
+					<td>
+						<input type="radio" name="attribute" value="innerHTML"> innerHTML<br>
+						<input type="radio" name="attribute" value="textContent" checked> textContent<br>
+						<input type="radio" name="attribute" value="value"> value<br>
+					</td>
+				</tr>
+				<tr><td>Content:</td><td><textarea id="content" rows="5" cols="50"></textarea></td></tr>
+				<tr><td>CSS:</td><td><textarea id="css" rows="5" cols="50" placeholder="background: gold;"></textarea></td></tr>
+				<tr>
+					<td align="center" colspan="2">
+						<input type="submit" id="submitQuery">
+						<button id="clearQuery">Clear</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="drawArea" align="center"></div>
+		<script>
+			var isPostBack = false;
+
+			function clearRequest()
+			{
+				document.getElementById("drawArea").innerHTML = "";
+			}
+
+			function querySubmit()
+			{
+				var child = document.createElement(document.getElementById("elementType").value);
+				var attribute = document.querySelector('input[name="attribute"]:checked').value;
+				child[attribute] = document.getElementById("content").value;
+				child.setAttribute('style', document.getElementById("css").value);
+				document.getElementById("drawArea").appendChild(child);
+			}
+			
+			document.getElementById("clearQuery").addEventListener("click", clearRequest, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

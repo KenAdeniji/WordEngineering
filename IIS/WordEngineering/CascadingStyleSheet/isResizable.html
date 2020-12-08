@@ -1,0 +1,32 @@
+<!--
+	2016-12-23	Created.	http://stackoverflow.com/questions/7573536/javascript-resize-with-mouse
+-->
+<style type="text/css">
+	.isResizable {
+        background: rgba(255, 0, 0, 0.2);
+        font-size: 2em;
+        border: 1px solid black;
+        overflow: hidden;
+        resize: both;
+        width: 160px;
+        height: 120px;
+        min-width: 120px;
+        min-height: 90px;
+        max-width: 400px;
+        max-height: 300px;
+    }
+</style>
+
+<div id="resizable" class="isResizable">The quick brown fox jumps over the lazy dog.</div>
+
+<script>
+	function resized()
+	{
+		resizable.innerHTML = 	"clientWidth: " + resizable.clientWidth + "<br>" +
+								" clientHeight: " + resizable.clientHeight;
+	}
+
+	var resizable = document.getElementById("resizable");
+	resizable.addEventListener("resize", resized, false);
+	window.addEventListener("resize", resized, false);
+</script>

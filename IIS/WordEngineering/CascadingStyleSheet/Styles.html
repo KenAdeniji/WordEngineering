@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-07-19	http://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+-->
+	<head>
+		<title>Styles</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center" id="stylesEntry"></div>	
+		<script>
+			var isPostBack = false;
+
+			function inputChange(event)
+			{
+				var columnValue = event.target.value;
+				var column = event.target.parentElement;
+				var row = column.parentElement;
+				var rowIndex = row.rowIndex - 1;
+				
+				document.getElementById("stylesEntry").style[styles[rowIndex][0]] = columnValue;
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var rowCount = styles.length;
+					var	tableContent = 	"<table><thead><caption>Cascading Style Sheets (CSS)</caption>" +
+										"<tr><th>Property</th><th>Value</th></tr>" +
+										"</thead><tbody>";
+					var	stylesEntry = document.getElementById("stylesEntry");
+					
+					for ( var rowIndex = 0; rowIndex < rowCount; ++rowIndex )
+					{
+						var inputTag = "<input type='text' size='50'";
+						if (styles[rowIndex][1])
+						{
+							inputTag += " placeholder='" + styles[rowIndex][1] + "'";
+						}
+						inputTag += ">";
+					
+						tableContent += "<tr><td>" + styles[rowIndex][0] + "</td>" +
+							"<td>" + inputTag + "</td></tr>"	
+					}
+					tableContent += "</tbody></table>";
+					stylesEntry.innerHTML = tableContent;
+					
+					var inputs = stylesEntry.getElementsByTagName("input");
+					var input;
+					for ( var rowIndex = 0; rowIndex < rowCount; ++rowIndex )
+					{
+						input = inputs[rowIndex];
+						input.addEventListener("change", inputChange, false);
+					}
+				}
+				isPostBack = true;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var styles = [
+				["backgroundColor"],
+				["border-style", "dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden"],
+				["color"],
+				["text-align", "left, right, center, justify"],
+				["text-decoration", "overline, line-through, underline"],
+				["text-transform", "uppercase, lowercase, capitalize"],
+				["letter-spacing"],
+				["line-height"],
+				["direction", "rtl"],
+				["word-spacing"],
+				["text-shadow", "3px 2px red"],
+				["font-style", "normal, italic, oblique"],
+				["font-variant", "small-caps"],
+				["font-weight", "bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900"],
+				["font-size", "medium, xx-small, x-small, small, large, x-large, xx-large, smaller, larger, 250%, 14px"],
+				["font-family", "times, courier, arial, serif, sans-serif, cursive, fantasy, monospace"],
+				["opacity", "0, .25, .75, 1"],
+			];
+		</script>
+	</body>
+</html>
