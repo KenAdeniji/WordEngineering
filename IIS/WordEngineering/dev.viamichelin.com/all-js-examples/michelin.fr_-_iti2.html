@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-09-26	Created.	http://dev.viamichelin.com/all-js-examples
+	-->
+	<head>
+		<title>ViaMichelin JavaScript API V2 - Calculate a distance matrix</title>
+		<style type="text/css">
+			table{border-collapse:collapse}
+			th{background-color:#9ff}
+		</style>
+	</head>
+	<body>
+		<h2>Distance Matrix with 'Recommanded by Michelin' itinerary type</h2>
+		<div id="results"></div>
+		<script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20070201173627379646361061$165321&lang=eng" type="text/javascript"></script>
+		<script type="text/javascript">
+			var addresses = new Array();
+			addresses.push({city:"Cannes", countryISOCode:"FRA"});
+			addresses.push({city:"Nice", countryISOCode:"FRA"});
+			addresses.push({city:"Toulon", countryISOCode:"FRA"});
+			addresses.push({city:"Geneva", countryISOCode:"ITA"});
+			addresses.push({city:"Milano", countryISOCode:"ITA"});
+			addresses.push({city:"Torino", countryISOCode:"ITA"});
+
+			function fLoadMatrix(){
+				var out = "<table border='1'><tr><td>&nbsp;</td>";
+				for(var i=0; i < addresses.length; ++i){
+					out += "<th>" + addresses[i].city + "</th>";
+				}
+				out += '</tr>';
+				for(i=0; i < addresses.length; ++i){
+					out += "<tr><th>" + addresses[i].city + "</th>";
+					for(var j=0; j < addresses.length; ++j) {
+						out += "<td id='"+ i + '_' + j +"'> </td>";
+					}
+					out += "</tr>";	
+				}
+				out += '</table>';
+				$_id("results").innerHTML = out;
+				//Geocode all addresses in one call
+				VMLaunch("ViaMichelin.Api.Geocoding", addresses,{
+															onSuccess : function (results) {
+																for(i=0; i < results.length; ++i){
+																	for(j=i+1; j < results.length; ++j) {
+																		fLaunchRoutePlanner(results[i][0].coords, results[j][0].coords, i, j);
+																	}
+																}
+															},
+															onError : function (error) {
+																alert('Whoops! ' + error);
+															}});
+		};
+			
+		function fLaunchRoutePlanner(coordsA, coordsB, i, j){
+			VMLaunch("ViaMichelin.Api.Itinerary", {
+						steps:[//Array of Geo coodinates
+							{coords: coordsA}, 
+							{coords: coordsB}
+						],
+						data: ViaMichelin.Api.Constants.Itinerary.DATA.HEADER
+					},{
+						onSuccess : function (result) {
+							$_id(i + '_' + j).innerHTML = $_id(j + '_' + i).innerHTML  = Math.round(result.header.summaries[0].totalDist/1000) + 'km<br/>' + Math.round(result.header.summaries[0].totalTime/60) + 'mn';
+						},
+						onError : function (error) {
+							alert('Whoops! ' + error);
+						}});					
+		};
+		
+		window.addEventListener("load", fLoadMatrix, false);
+		</script>
+	</body>
+</html>
+

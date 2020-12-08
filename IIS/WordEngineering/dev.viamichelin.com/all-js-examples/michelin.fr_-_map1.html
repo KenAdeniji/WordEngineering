@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ViaMichelin JavaScript API V2 - Create a map</title>
+		<style type="text/css">
+			html { height: 100% }
+			body { height: 100%; margin: 0px; padding: 0px}
+			#map_container{width: 800px; height: 600px; font-family:Arial }
+		</style>
+	</head>
+	<body>	
+	<div id="map_container"></div>
+	<div id="position"></div>
+	<script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20070201173627379646361061$165321&lang=eng" type="text/javascript"></script>
+	<script type="text/javascript">
+		var myMap = null;
+
+		function fGetBestConf(conf) {
+			var useragent = navigator.userAgent;
+			if(useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 || useragent.indexOf('iPad') != -1 ) {
+				conf.container.style.width = '100%';
+				conf.container.style.height = '100%';
+				conf.skin = ViaMichelin.Api.Constants.Map.SKIN.MOBILE.SMALL;
+				//Display geolocation control
+				conf.geolocationControl = true;
+				if(useragent.indexOf('iPad') != -1){
+					conf.skin = ViaMichelin.Api.Constants.Map.SKIN.MOBILE.LARGE;
+				}
+			}else{		
+				conf.skin = ViaMichelin.Api.Constants.Map.SKIN.DEFAULT;
+				//Display service POIs selector
+				conf.menuPoiControl = true;
+				//Display only Service station layer
+				conf.menuPoiControlOptions = {mode:ViaMichelin.Api.Constants.Map.POI.MODE.MORE, layer:['STS']};
+				//Display situation map
+				conf.situationMapControl =true;
+			}
+			return conf;
+		};
+		
+		function fLoadMap(){
+			var container = document.getElementById("map_container");
+			var position = document.getElementById("position");
+			
+			var commonConf = {//Service parameters
+				//Map container (DOM element)
+				container : container,
+				//Initial geographical coordinates of the map center
+				center : { coords : { lon: 8.53, lat: 47.38 } },
+				//You can also use an address
+				//center : {address:{city:"Paris", countryISOCode: "FRA"}},
+				//You can also use a locID (which implicitely includes the best zoom level)
+				//center : {locId:"31NDFhcWsxMGNOVEV1TlRBd01qUT1jTFRBdU1USTNNRFk9"},
+				//You can also use a (dbID, poiID) pair (which implicitely includes the best zoom level)
+				//center : {poi:{db:163978,id=ND1216}},
+				//You can also use current position (from a GPS sensor)
+				//center : ViaMichelin.Api.Constants.Map.FROM_GEOLOCATION,
+				//Initial zoom level. See onSuccess below if center is a locID or a poiID
+				zoom : 11,
+				//Display map type selector
+				mapTypeControl : true,
+				//Set map type
+				mapTypeControlOptions : {type: ViaMichelin.Api.Constants.Map.TYPE.HYBRID},
+				//Display geolocation selector
+				geolocationControl : true
+			};
+			VMLaunch("ViaMichelin.Api.Map", fGetBestConf(commonConf),{
+					onInit: function(serviceMap){
+						myMap = serviceMap;
+					},
+					onClick: function(event){
+						//Display current mouse coordinates
+						position.innerHTML = "Center geo-coordinates of the map are (" + event.lon.toFixed(5)  + ', ' + event.lat.toFixed(5) + ')';
+					},
+					onInitError: function(){
+						container.innerHTML = 'Whoops Map cannot be loaded!';
+					}/*,
+					//If center is a locID or a (dbID, poiID) pair, you must uncomment this section
+					//to set the zoom level defined in the zoom parameter
+					onSuccess: function(){
+						this.refresh();
+					}*/
+				});
+		};
+		
+		window.addEventListener("load", fLoadMap, false);
+	</script>
+	</body>
+</html>

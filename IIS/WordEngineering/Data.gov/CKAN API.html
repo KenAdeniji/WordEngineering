@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-08-26	Created. Data.gov
+		2017-08-27	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+		2017-08-27	davidwalsh.name/indent-json-javascript
+	-->
+	<head>
+		<title>Data.gov</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head> 
+	<body>
+		<div id="resultSet"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			function display(data) 
+			{
+				//document.getElementById("resultSet").innerHTML = (JSON.stringify(data, null, 2)).replace(new RegExp('\r?\n','g'), '<br />');				
+				var htmlTable = "<table><tr><td>" +
+					(JSON.stringify(data, null, 2)).replace(new RegExp('\r?\n','g'), '</td></tr><tr><td>');
+				htmlTable += "</td></tr></table>";	
+				document.getElementById("resultSet").innerHTML = htmlTable;
+				console.log(htmlTable);
+			}
+
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		
+			function querySubmit()
+			{
+				var request = {};
+				
+				var requestJson = JSON.stringify(request);
+				
+				var apiKey = "http://demo.ckan.org/api/3/action/package_list";
+				
+				var id = getParameterByName("id");
+				if (id)
+				{
+					var apiKey = "http://demo.ckan.org/api/3/action/package_show?id=" + id;
+				}
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: apiKey,
+					data: requestJson,
+					dataType: "jsonp",
+					success: function(data) 
+					{
+						if (!id)
+						{
+							render(data);
+						}
+						else
+						{
+							display(data);
+						}
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table>";
+				var record = null;
+				
+				for (var resultIndex = 0, resultCount = data.result.length; resultIndex < resultCount; ++resultIndex)
+				{
+					record = data.result[resultIndex];
+					info += "<tr><td>" + resultIndex + " " + 
+							"<a href=" + "?id=" + record + ">" + record + "</a>"
+							"</td></tr>";
+				}
+				
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+	</script>
+</body>
+</html>

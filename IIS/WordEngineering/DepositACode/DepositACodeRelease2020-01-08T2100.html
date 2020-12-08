@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-01-04	Created.
+		2020-01-06	http://www.sqlines.com/online	support@sqlines.com
+	-->
+	<head>
+		<title>Deposit a Code</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Deposit a Code" />
+		<meta name="keywords" content="Deposit, code" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td>
+						<label for="email">E-mail</label>
+					</td>
+					<td>
+						<input ID="email" type="email" autofocus/>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<label for="codeTitle">Code Title</label>
+					</td>
+					<td>
+						<input ID="codeTitle" type="text"/>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center">
+						<label for="codeProgram">Code Program</label><br/>
+						<textarea ID="codeProgram" style="width: 90vw;"></textarea>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<label for="codeType">Code Type, for example, there are different varieties of SQL, depending on the vendor and the version, we could give points to standard and recency time. Translation conversion?</label>
+					</td>
+					<td>
+						<input ID="codeType" type="text" list="codeTypes"/>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<label for="schemaData">Schema Restriction, SQL supports Data Definition Language (DDL) separation from Data Manipulation Language (DML); in C# we can code the data, in each class' static method, and depend on Design-by-Contract (DbC) for constraints.</label>
+					</td>
+					<td>
+						<select ID="schemaData">
+							<option value="Schema Only">Schema Only</option>
+							<option value="Schema and Data">Schema and Data</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<datalist id="codeTypes">
+		  <option>SQL:99</option>
+		  <option>SQL:1999</option>
+		  <option>SQL:2003</option>
+		  <option>PL/SQL</option>
+		  <option>Transact-SQL</option>		  
+		</datalist>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					insert();
+					isPostBack = true;
+				}
+				else
+				{
+					insert();	
+				}	
+			}
+			
+			function insert()
+			{
+				var request = {};
+				request["email"] = document.getElementById("email").value;
+				request["codeTitle"] = document.getElementById("codeTitle").value;
+				request["codeProgram"] = document.getElementById("codeProgram").value;
+				request["codeType"] = document.getElementById("codeType").value;
+				request["schemaData"] = document.getElementById("schemaData").value;
+				var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/DepositACode/DepositACode.asmx/Insert",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        JSON.parse(data.d);
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", insert, false);		
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					insert();
+				}
+			}
+		
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

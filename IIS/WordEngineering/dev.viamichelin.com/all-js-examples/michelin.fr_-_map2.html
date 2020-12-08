@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ViaMichelin JavaScript API V2 - Display traffic info</title>
+		<style type="text/css">
+			.map_container{ width: 450px; height: 450px; font-family:Arial }
+		</style>
+	</head>
+	<body>
+	<h2>Whole France</h2>
+	<p>Automatically refreshed every 3mn.</p>
+	<div class="map_container" id="map_container1"></div>
+	<h2>Paris area</h2>	
+	<p>with empty background and constrained viewport</p>
+	<div class="map_container" id="map_container2"></div>
+	<script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20070201173627379646361061$165321&lang=eng" type="text/javascript"></script>
+	<script type="text/javascript">
+		var franceMap = null;
+		var parisMap = null;
+
+		function fRefreshFranceMap(){
+			franceMap.refresh();
+		};
+		
+		function fLoadMaps(){
+			//France
+			mapContainer1 = document.getElementById("map_container1");
+			VMLaunch("ViaMichelin.Api.Map",{//Service parameters
+					//Map container (DOM element)
+					container : mapContainer1,
+					//Initial geographical coordinates of the map center
+					center : { coords : {lon: 2.21484, lat: 46.33403}},
+					//Initial zoom level
+					zoom : 6,
+					mapTypeControl : true,
+					mapTypeControlOptions : {type: ViaMichelin.Api.Constants.Map.TYPE.SATELLITE},
+					traffic:true
+				},{
+					onInit: function(serviceMap){
+						franceMap = serviceMap;
+					},		
+					onInitError: function(){
+						mapContainer1.innerHTML = 'Whoops! Map cannot be loaded!';
+					},
+					onSuccess: function(){
+						//Refresh traffic layer every 3mn
+						setInterval("fRefreshFranceMap()", 180000);
+					}
+				});
+			//Paris
+			var mapContainer2 = document.getElementById("map_container2");
+			VMLaunch("ViaMichelin.Api.Map",{//Service parameters
+					container : mapContainer2,
+					center : { coords : {lon: 2.34448, lat: 48.85729}},
+					zoom : 11,
+					mapTypeControl : true,
+					//Initial map type is empty
+					mapTypeControlOptions : {type: ViaMichelin.Api.Constants.Map.TYPE.EMPTY},
+					traffic:true,
+					//Constraint the visible geo area to Paris urban area.
+					geoConstraints : {bounds:{sw:{lon:1.80, lat:48.54}, ne:{lon:2.92, lat:49.18}}, zoom:{min:10,max:12}}
+				},{
+					onInit: function(serviceMap){
+						parisMap = serviceMap;
+					},
+					onInitError: function(){
+						mapContainer2.innerHTML = 'Whoops! Map cannot be loaded!';
+					}
+				});
+		};
+		
+		window.addEventListener("load", fLoadMaps, false);
+	</script>
+	</body>
+</html>
