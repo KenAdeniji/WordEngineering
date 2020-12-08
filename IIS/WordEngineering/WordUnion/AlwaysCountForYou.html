@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-20	AlwaysCountForYou.html
+		2016-10-20	www.w3schools.com/sql/func_datepart.asp
+		2016-11-03	http://stackoverflow.com/questions/20106871/get-week-day-name-from-a-given-date-in-sql-server	select datepart(dw,getdate()) --2
+		2016-11-03	https://msdn.microsoft.com/en-us/library/ms174420.aspx
+			datepart	Abbreviations
+			year	yy, yyyy
+			quarter	qq, q
+			month	mm, m
+			dayofyear	dy, y
+			day	dd, d
+			week	wk, ww
+			weekday	dw	
+		2016-11-03	Jorn Mortensen. Return Anonymous type. Microsoft interview question, dynamic.
+		2016-11-03	http://www.w3schools.com/cssref/pr_class_display.asp
+	-->
+	<head>
+		<title>Always count for you</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will query the HisWord table based on the datepart, for example, year, quarter, month, and day"/>
+		<meta name="keywords" content="Bible, word, from (terminus a quo), to (terminus ad quem), datepart, year, quarter, month, day"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Date</legend>
+				<table>
+					<tr>
+						<td><label for="interval">Interval</label></td>
+						<td>
+							<select id="interval">
+								<option>Year</option>
+								<option>Quarter</option>
+								<option>Month</option>
+								<option>DayOfYear</option>
+								<option>Day</option>
+								<option>Week</option>
+								<option>Weekday</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<span id="numberEntry">
+								<label for="singlePart">Single Part Value, for example, day between 1 ... 31, month between 1..12</label>
+								<input id="singlePart" type="Number" />
+							</span>	
+							<span id="optionEntry">
+								<select id="optionPart"></select>
+							</span>	
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function intervalChange()
+			{
+				var interval = document.getElementById("interval").value;
+				if (interval === "Weekday")
+				{
+					populateSelectOption("optionPart", weekDays);
+					document.getElementById("numberEntry").style.display = "none";
+					document.getElementById("optionEntry").style.display = "inline";
+				}
+				else
+				{
+					document.getElementById("numberEntry").style.display = "inline";
+					document.getElementById("optionEntry").style.display = "none";				
+				}
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						document.getElementById("numberEntry").style.display = "inline";
+						document.getElementById("optionEntry").style.display = "none";				
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var interval = document.getElementById("interval");
+				var entry = null;
+				
+				var request = {};
+				request["interval"] = interval.options[interval.selectedIndex].value;
+
+				var interval = document.getElementById("interval").value;
+				if (interval === "Weekday")
+				{
+					entry = document.getElementById("optionPart").value;
+				}
+				else
+				{
+					entry = document.getElementById("singlePart").value;
+				}
+				
+				entry = parseInt(entry);
+				
+				request["entry"] = entry;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AlwaysCountForYou.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			
+			function populateSelectOption(selectOption, dataSet)
+			{
+				var select = document.getElementById(selectOption);
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = dataSet.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = dataSet[rowIndex][0];
+					option.value = dataSet[rowIndex][1];;
+					select.appendChild(option);
+				}			
+			}
+			
+			function render(data) 
+			{
+				var info = "<table id='hisWordTable'><caption>" + "Occurrences: " + 
+					data["Table"].length + "</caption>";
+			
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						info += scriptLiteral9432.buildRow
+						(
+							dataRow["HisWordID"],
+							dataRow["Dated"],
+							dataRow["Word"],
+							dataRow["Commentary"],
+							dataRow["EnglishTranslation"]
+						);
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			document.getElementById("interval").addEventListener("change", intervalChange, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var weekDays = [
+				["Sunday", 1],
+				["Monday", 2],
+				["Tuesday", 3],
+				["Wednesday", 4],
+				["Thursday", 5],
+				["Friday", 6],
+				["Saturday", 7]
+			];
+		</script>		
+	</body>
+</html>

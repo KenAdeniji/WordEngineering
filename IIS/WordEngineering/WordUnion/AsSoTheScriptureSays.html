@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2013-11-01 JavaScript Step by Step (Step By Step (Microsoft)): Steve Suehring. Fremont Library.
+		2013-11-02 As so the scripture says. AsSoTheScriptureSays.html
+		2013-11-02 http://www.w3schools.com/Xml/xml_to_html.asp
+	-->
+	<head>
+		<title>As so the scripture says</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The As so the Scripture says.html will tabulate the various books that make-up the Bible; it sources its information set from BibleBook.xml, and it uses XMLHttpRequest."/>
+		<meta name="keywords" content="Bible, xml, XMLHttpRequest"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<pre id="bibleBookText"> </pre>
+		<div id="bibleBookXml"> </div>
+		<script>
+			if (window.XMLHttpRequest) {
+				var httpObj = new XMLHttpRequest();
+			}
+			else {
+				var httpObj = new ActiveXObject("Microsoft.xmlHttp");
+			}
+			httpObj.open("GET","BibleBook.xml",false);
+			httpObj.send();
+			var textDocument = httpObj.responseText;
+			var xmlDocument = httpObj.responseXML;
+			//document.getElementById("bibleBookText").innerHTML = textDocument;
+		
+			var x=xmlDocument.getElementsByTagName("BibleBook");
+			var htmlStub = "";
+			htmlStub = "<table border='1'>";
+			htmlStub += "<tr><th>No.</th><th>Title</th><th>Testament</th><th>Chapters</th></tr>";
+			for (i=0;i<x.length;i++)
+			{
+				htmlStub += "<tr><td>";
+				htmlStub += x[i].getElementsByTagName("bookId")[0].childNodes[0].nodeValue;
+				htmlStub += "</td><td>";
+				htmlStub += x[i].getElementsByTagName("bookTitle")[0].childNodes[0].nodeValue;
+				htmlStub += "</td><td>";
+				htmlStub += x[i].getElementsByTagName("testament")[0].childNodes[0].nodeValue;
+				htmlStub += "</td><td>";
+				htmlStub += x[i].getElementsByTagName("chapters")[0].childNodes[0].nodeValue;
+				htmlStub += "</td></tr>";
+			}
+			htmlStub += "</table>";
+			document.getElementById("bibleBookXml").innerHTML = htmlStub;
+		</script>
+	</body>
+</html>

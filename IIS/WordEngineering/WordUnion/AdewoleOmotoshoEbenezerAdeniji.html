@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-02-27	github.com/vakata/jstree Ivan Bozhanov
+	2016-03-12	Adewole Omotosho Ebenezer Adeniji
+	2015-12-31 ... 2016-03-12, 72 days (2 biblical months, 12 days) (2 months, 1 week, 3 days).
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Adewole Omotosho Ebenezer Adeniji Genealogy</title>
+	<meta name="description" content="Adewole Omotosho Ebenezer Adeniji Genealogy" />
+	<meta name="keywords" content="Adewole Omotosho Ebenezer Adeniji, genealogy, family tree" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Ken Adeniji" />
+  
+  <!-- 2 load the theme CSS file -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
+</head>
+<body>
+  <!-- 3 setup a container element -->
+  <div id="jstreeContainer"> </div>
+  <div id="response"> </div>	
+  
+  <!-- 4 include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- 5 include the minified jstree source -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+  
+	<script>
+	  $(function () {
+			var request = {};
+			//request[""] = document.getElementById("").value;
+			var requestJson = JSON.stringify(request);
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebService.asmx/FamilyTree",
+				data: requestJson,
+				dataType: "json",
+				success: function (data) {
+					var dataParsed = JSON.parse(data.d);
+					$('#jstreeContainer').jstree
+					({
+						'core' : 
+						{
+							'data' : dataParsed
+						}
+					});
+				},
+				error: function (xhr) {
+					$("#response").html
+					(
+						'Status: ' + xhr.status + " | " +
+						'StatusText: ' + xhr.statusText + " | " +
+						'ResponseText: ' + xhr.responseText
+					);
+				}
+			});
+		});
+  </script>
+</body>
+</html>

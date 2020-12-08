@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-07-30 	Created.
+			2015-09-17	Caption. Frequency of Occurrence.
+		-->
+		<title>A quest, on your behalf.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="question" type="text" size="50" autofocus/> <br/> 
+			<input type="submit" id="submitQuery">
+			<div id="response"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+		    var isPostBack = false;
+		    function querySubmit() {
+		        var request = {};
+		        request["question"] = document.getElementById("question").value;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/AQuestOnYourBehalf.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var characterCountSet = JSON.parse(data.d);
+				        render(characterCountSet);
+				    },
+				    error: function (xhr) {
+				        $("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+		    }
+
+		    function render(data) {
+		        var info = "<table border=1><caption>Frequency of Occurrence(s)</caption>";
+
+		        var dataRow = null;
+		        var dataTable = null;
+
+		        var character = null;
+		        var characterCount = null;
+		        var asciiCode = null;
+
+		        info += "<tr><th>Character</th><th>ASCII Code</th><th>Count</th></tr>";
+		        for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+		                character = dataRow["Character"];
+		                asciiCode = dataRow["AsciiCode"];
+		                characterCount = dataRow["CharacterCount"];
+
+		                info += "<tr><td>" + character + "</td><td>" + asciiCode + "</td><td>" +
+                                characterCount + "</td></tr>";
+		            }
+		        }
+		        info += "</table>"
+		        document.getElementById("response").innerHTML = info;
+		    }
+
+		    function pageLoad() { 
+		        if (!isPostBack) { 
+		            document.getElementById("question").value = "\"',.:;?";
+		            isPostBack = true;
+		            querySubmit();
+		        }
+		    }
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		    document.getElementById("question").addEventListener("change", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

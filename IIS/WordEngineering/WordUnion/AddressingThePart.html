@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-03-02	Created.	Daniel 2:32-33
+			2018-03-02	Daniel 2:32	This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,
+			2018-03-02	Daniel 2:33	His legs of iron, his feet part of iron and part of clay.
+			2018-03-02	http://www.kodyaz.com/html5/draw-stick-man-in-html5-canvas-using-javascript.aspx
+		-->
+		<title>Addressing the Part - Nebuchadnezzar's Image Dream (Daniel 2)</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is a canvas drawing of king Nebuchadnezzar's image dream and prophet Daniel's interpretation"/>
+		<meta name="keywords" content="Bible, Daniel 2, king Nebuchadnezzar image dream, prophet Daniel interpretation, HTML5 canvas"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var isPostBack = false;
+
+			function drawStickman()
+			{
+				var canvas = document.getElementById("canvas");
+				
+				if (!canvas.getContext("2d")) { 
+					return;
+				}
+			
+				context = canvas.getContext("2d"); // get Canvas Context object
+
+				context.beginPath();
+				context.fillStyle = "gold"; // #ffe4c4
+				context.arc(200, 50, 30, 0, Math.PI * 2, true); // draw circle for head
+				// (x,y) center, radius, start angle, end angle, anticlockwise
+				context.fill();
+				context.fillText("Head was of fine gold", 0, 20);
+
+				// body
+				context.beginPath();
+				context.moveTo(200, 80);
+				context.lineTo(200, 180);
+				context.strokeStyle = "silver";
+				context.stroke();
+
+				// arms
+				context.beginPath();
+				context.strokeStyle = "silver"; // blue
+				context.moveTo(200, 80);
+				context.lineTo(150, 130);
+				context.moveTo(200, 80);
+				context.lineTo(250, 130);
+				context.stroke();
+				context.fillText("His breast and his arms of silver", 0, 80);
+
+				// legs
+				context.beginPath();
+				context.strokeStyle = "yellow";
+				context.moveTo(200, 180);
+				context.lineTo(150, 280);
+				context.moveTo(200, 180);
+				context.lineTo(250, 280);
+				context.stroke();
+				context.fillText("His belly and his thighs of brass", 0, 130);
+				context.fillText("His legs of iron, his feet part of iron and part of clay.", 0, 150);
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;	
+				}
+			}
+
+			function querySubmit()
+			{
+				drawStickman()
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
