@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Banner Image</title>
+		<script type="javascript">
+			var bannerImg = new Array();
+			bannerImg[0] = "..\Images\2011-07-03ChicagoBeam.JPG";
+			bannerImg[1] = "..\Images\Akhenatenw.JPG";
+			
+			var newBanner = 0
+			var totalBan = bannerImg.length
+
+			function cycleBan() {
+				newBanner++
+				if (newBanner == totalBan) {
+					newBanner = 0
+				}
+				document.banner.src=bannerImg[newBanner]
+				setTimeout("cycleBan()", 1*1000)
+			}
+			window.onload=cycleBan;
+		</script>
+	</head>
+	<body>
+		<img src="..\Images\2011-07-03ChicagoBeam.JPG"; name="banner">
+	</body>
+</html>

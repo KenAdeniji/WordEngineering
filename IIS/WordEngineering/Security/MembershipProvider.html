@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Membership Provider</title>
+		<style>
+			body {background:blue; color:yellow;} 
+			br {clear:both;}
+			.entry {float:left; text-align: left; margin:10px;}
+			.prompt {float:left; display:inline-block; width:100px; text-align: right; margin:5px;}
+		</style>
+	<head>
+	<body>
+		<form id="membership" action="#" autocomplete="off">
+			<fieldset>
+				<legend>Log In</legend>
+
+				<label id="labelSecurityUsername" for="securityUsername" class="prompt">User Name:</label>
+				<input id="securityUsername" type="text" class="entry">
+				<br>	
+
+				<label id="labelSecurityPassword" for="securityPassword" class="prompt">Password:</label>	
+				<input id="securityPassword" type="password" class="entry">
+				<br>	
+				
+				<button id="logIn" style="float:left;">Log In</button>
+				
+				<div id="feedback" style="float:left;"></div>
+			</fieldset>
+		</form>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			function authenticate()
+			{
+				var request = {};
+				request["userName"] = document.getElementById("securityUsername").value; 
+				request["password"] = document.getElementById("securityPassword").value; 
+				var requestJson = JSON.stringify(request);
+
+				var feedback = document.getElementById("feedback");
+				var userId = null;
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Security/MembershipProvider.asmx/Login",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var resultSet = JSON.parse(data.d);
+	
+						if (resultSet != null)
+						{
+							var count = resultSet.Table.length;
+							var resultTable = "";
+						
+							userId = resultSet.Table[0].UserId;
+						}	
+					
+						parent.securityAuthenticate(userId);
+					},
+					error: function(xhr)
+					{ 
+						feedback.innerHTML =
+							'Status: ' + xhr.status + "<br>" + 
+							'StatusText: ' + xhr.statusText + "<br>" +
+							'ResponseText: ' + xhr.responseText
+					} 
+				});
+			}
+			
+			function initialize()
+			{
+				var logIn = document.getElementById("logIn");
+				logIn.addEventListener("click", authenticate, "false");
+			}
+			
+			window.addEventListener("load", initialize, "false");
+		</script>
+	</body>	
+<html>

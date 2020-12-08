@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Banner</title>
+		
+		<script type="text/javascript">
+		    var WordEngineering =
+			{
+				bannerImage : null,
+				bannerCount : 0,
+				bannerIndex : 0,
+				initialize: function() {
+					bannerImage = new Array();
+					bannerImage[0] = "..\Images\2011-07-03ChicagoBeam.JPG";
+					bannerImage[1] = "..\Images\Akhenatenw.JPG";
+				},
+				
+				refreshBanner: function () {
+					setTimeout("WordEngineering.refreshBanner()", 3*1000);
+					bannerCount = bannerImage.length;
+					++bannerIndex;
+					if (bannerIndex == bannerCount)
+					{
+						bannerIndex = 0;
+					}
+					document.banner.src = bannerImage[bannerIndex];
+					var banner = document.getElementById("banner");
+					banner.src = bannerImage[bannerIndex];
+				}
+			}
+			
+			window.onload=WordEngineering.refreshBanner;
+		</script>
+	</head>	
+	<body onload="WordEngineering.initialize()">
+		<img id="banner" src="..\Images\Akhenatenw.JPG" /> 
+	</body>
+<html>

@@ -1,0 +1,39 @@
+<html>
+	<head>
+        <title>Date of Birth</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		    var WordEngineering =
+			{
+			    dayOfTheWeek: null,
+
+			    findDay: function (dateOfBirth) {
+			        var birthDay = new Date(dateOfBirth);
+			        var day = birthDay.getDay();
+			        $('#dayOfBirth').text(this.dayOfTheWeek[day]);
+			    },
+
+			    initialize: function () {
+			        this.dayOfTheWeek = new Array();
+			        this.dayOfTheWeek[0] = "Sunday";
+			        this.dayOfTheWeek[1] = "Monday";
+			        this.dayOfTheWeek[2] = "Tuesday";
+			        this.dayOfTheWeek[3] = "Wednesday";
+			        this.dayOfTheWeek[4] = "Thursday";
+			        this.dayOfTheWeek[5] = "Friday";
+			        this.dayOfTheWeek[6] = "Saturday";
+			    },
+			}
+		</script>
+	</head>
+	<body onload="WordEngineering.initialize()">
+		<form id="form" method="get" action="#">
+			<label>Date of Birth (For example, January 1, 1970):</label>
+			<input type="date" name="dateOfBirth" />
+			<input type="button" value="Submit" onclick="WordEngineering.findDay(dateOfBirth.value);" /> 
+            <br />
+            <label>Day of Birth:</label>
+            <label id="dayOfBirth" />
+		</form>
+	</body>
+</html>

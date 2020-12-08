@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Browser Support</title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() { 
+				var node; node = document.getElementsByTagName('p');
+				for (var i = node.length-1; i>=0; i--) {
+				node[i].innerHTML = 'hello world';
+				}
+			})
+		</script>
+		<style>
+			p:nth-child(even) {background: #FFD700} p:nth-child(odd) {background: #F5F5DC}
+		</style>
+	</head>
+	<body>
+		<p></p>
+		<p></p>
+		<p></p>
+	</body>	
+</html>
