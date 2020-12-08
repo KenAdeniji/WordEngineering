@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-01	Created.
+	-->
+	<head>
+		<title>A Home, I Claim</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will accept a first and second scripture verse, and compute the difference."/>
+		<meta name="keywords" content="Scripture Reference difference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css"/>
+	</head>
+	<body>
+		<div align="center">
+				<fieldset>
+					<legend>Query</legend>
+					<div>
+						<table>
+							<form onsubmit="">
+								<tr>
+									<td><label for="firstVerse">First Verse</label></td>
+									<td><input type="text" ID="firstVerse" size="30"/>
+								</tr>
+								<tr>
+									<td><label for="secondVerse">Second Verse</label></td>
+									<td><input type="text" ID="secondVerse" size="30"/>
+								</tr>
+							</form>
+							<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
+						</table>
+					</div>
+				</fieldset>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						var firstVerse = scriptLiteral9432.getParameterByName("firstVerse");
+						if (firstVerse)
+						{
+							document.getElementById("firstVerse").value = firstVerse;
+						}	
+						var secondVerse = scriptLiteral9432.getParameterByName("secondVerse");
+						if (secondVerse)
+						{
+							document.getElementById("secondVerse").value = secondVerse;
+						}	
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+
+				request["firstVerse"] = document.getElementById("firstVerse").value;
+				request["secondVerse"] = document.getElementById("secondVerse").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AHomeIClaim.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				
+				var caption = "<caption>A home, I claim.</caption>";
+				var info = 	"<table>" + caption + "<thead><tr>" + 
+					"<th>Text</th>" +
+					"<th>Scripture Reference</th>" +
+					"<th>Chapter ID Sequence</th>" +	
+					"<th>Chapter ID Sequence (%)</th>" +
+					"<th>Verse ID Sequence</th>" +	
+					"<th>Verse ID Sequence (%)</th>" +
+					"</tr></thead><tbody>";
+
+				var dataRow = null;
+				var dataTable = null;
+				
+				var scriptureReferenceURI = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+
+						scriptureReferenceURI = scriptLiteral9432.buildHyperlink
+						(
+							"scriptureReference",
+							dataRow.ScriptureReference
+						);
+						
+						console.log(dataRow);
+						
+						info += "<tr>" +
+							"<td>" + dataRow.KingJamesVersion + "</td>" +
+							"<td>" + scriptureReferenceURI + "</td>" +
+							"<td>" + dataRow.ChapterIDSequence + "</td>" +
+							"<td>" + dataRow.ChapterIDSequencePercent + "</td>" +
+							"<td>" + dataRow.VerseIDSequence + "</td>" +
+							"<td>" + dataRow.VerseIDSequencePercent + "</td>" +
+							"</tr>";
+					}
+				}
+				
+				var dataRowFirst = data["Table"][0];
+				var dataRowSecond = data["Table"][1];
+
+				if ( dataRowSecond == undefined)
+				{
+					return;
+				}	
+				
+				info += "</tbody><tfoot><tr><td colspan='2'>" +
+					"<td>" + (parseInt(dataRowSecond.ChapterIDSequence) - parseInt(dataRowFirst.ChapterIDSequence)) + "</td>" +
+					"<td>" + (parseInt(dataRowSecond.ChapterIDSequencePercent) - parseInt(dataRowFirst.ChapterIDSequencePercent)) + "</td>" +
+					"<td>" + (parseInt(dataRowSecond.VerseIDSequence) - parseInt(dataRowFirst.VerseIDSequence)) + "</td>" +
+					"<td>" + (parseInt(dataRowSecond.VerseIDSequencePercent) - parseInt(dataRowFirst.VerseIDSequencePercent)) + "</td>" +
+					"</tr></tfoot>";
+				
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

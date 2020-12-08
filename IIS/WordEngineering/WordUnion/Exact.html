@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-02-19	Created.	Exact.html
+	-->
+	<head>
+		<title>Exact</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="bibleWord">Word</label>
+							</td>
+							<td>
+								<input type="text" id="bibleWord" autofocus/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="firstOccurrenceScriptureReference">First Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="firstOccurrenceScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="lastOccurrenceScriptureReference">Last Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="lastOccurrenceScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="frequencyOfOccurrenceFrom">Frequency of Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="frequencyOfOccurrenceFrom"/>
+								-
+								<input type="text" id="frequencyOfOccurrenceUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="exactIDFrom">Sequence Order ID</label>
+							</td>
+							<td>
+								<input type="text" id="exactIDFrom"/>
+								-
+								<input type="text" id="exactIDUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="alphabetSequenceIndexFrom">Alphabet Sequence Index</label>
+							</td>
+							<td>
+								<input type="text" id="alphabetSequenceIndexFrom"/>
+								-
+								<input type="text" id="alphabetSequenceIndexUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="response"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function querySubmit() {
+				var request = {};
+		        request["bibleWord"] = document.getElementById("bibleWord").value;
+				request["firstOccurrenceScriptureReference"] = document.getElementById("firstOccurrenceScriptureReference").value;
+				request["lastOccurrenceScriptureReference"] = document.getElementById("lastOccurrenceScriptureReference").value;
+				
+				var parameter = document.getElementById("frequencyOfOccurrenceFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["frequencyOfOccurrenceFrom"] = parameter;
+
+				var parameter = document.getElementById("frequencyOfOccurrenceUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["frequencyOfOccurrenceUntil"] = parameter;
+
+				var parameter = document.getElementById("exactIDFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDFrom"] = parameter;
+
+				var parameter = document.getElementById("exactIDUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDUntil"] = parameter;
+				
+				var parameter = document.getElementById("alphabetSequenceIndexFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexFrom"] = parameter;
+
+				var parameter = document.getElementById("alphabetSequenceIndexUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexUntil"] = parameter;
+				
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/Exact.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        render(informationSet);
+				    },
+				    error: function (xhr) {
+				        $("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+			
+		    function render(data) {
+				var occurrences = data["Table"].length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1>" + caption;
+				
+		        var dataRow = null;
+		        var dataTable = null;
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Bible Word",
+					"ExactID",					
+					"First Occurrence",
+					"Last Occurrence",
+					"Difference",
+					"Frequency of Occurrence",
+					"AlphabetSequenceIndex"
+				);
+				
+				for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+
+						info += scriptLiteral9432.buildRow
+						(
+							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["BibleWord"]),
+							dataRow["ExactID"],
+							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["FirstOccurrenceScriptureReference"]),
+							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["LastOccurrenceScriptureReference"]),
+							dataRow["Difference"],
+							dataRow["FrequencyOfOccurrence"],
+							dataRow["AlphabetSequenceIndex"]
+						);	
+		            }
+		        }
+		        info += "</table>"
+		        document.getElementById("response").innerHTML = info;
+		    }
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var bibleWord = scriptLiteral9432.getParameterByName("bibleWord");
+						if (bibleWord)
+						{
+							document.getElementById("bibleWord").value = bibleWord;
+							querySubmit();
+							isPostBack = true;
+						}	
+					});
+				}
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

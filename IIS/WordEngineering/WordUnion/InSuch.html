@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-05-18	In such; He has provided for man.
+		-->
+		<title>In Such</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is an attempt to find out, if AlphabetSequence applies to other groupings in the Bible"/>
+		<meta name="keywords" content="Bible, word, AlphabetSequence, Bible group"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="word" type="text" autofocus>
+
+			<select id="booksGroups" multiple size="2">
+				<option value="all" selected="selected">All</option>		
+				<option value="old testament">Old Testament</option>
+				<option value="new testament">New Testament</option>
+				<option value="pentateuch">Pentateuch</option>
+				<option value="major prophets">Major Prophets</option>
+				<option value="minor prophets">Minor Prophets</option>
+				<option value="gospel">Gospel</option>
+			</select>
+			<label id="booksCollection" style="display: none;"></label>
+			
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="alphabetSequence"></div>
+			<div id="groupsScriptureReferences"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					rowStub += "<td>" + arguments[columnIndex] + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+			
+			function clearView()
+			{
+				document.getElementById("alphabetSequence").innerHTML = "";
+			}
+
+			function determineBooksCollection() {
+				var selected = [];
+				var checkboxArray = document.getElementById('booksGroups');
+				for (var i = 0; i < checkboxArray.length; i++) {
+				  if (checkboxArray.options[i].selected == true) {
+					selected.push(checkboxArray[i].value);
+				  }
+				}
+				
+				var booksCollection = document.getElementById('booksCollection');
+				booksCollection.value = selected.join();
+				return booksCollection.value;
+			}
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var word = getParameterByName("word");
+					if (word !== "")
+					{
+						document.getElementById("word").value = word;
+						querySubmit();	
+						isPostBack = true;
+					}	
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				
+				var request = {};
+				request["word"] = document.getElementById('word').value;
+				request["booksCollection"] = determineBooksCollection();
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/InSuch",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var resultSet = JSON.parse(data.d);
+						document.getElementById("alphabetSequence").innerHTML = resultSet.ID;
+						renderGroupsScriptureReferences(resultSet.GroupsScriptureReferences);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function renderGroupsScriptureReferences(dataSet)
+			{
+				var info = "<table id='resultTable'>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var		sequenceOrderId,
+						booksGroup,
+						booksGroupScriptureReference,
+						booksGroupScriptureReferenceFormat;
+				
+				for (var table in dataSet) {
+					dataTable = dataSet[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+
+						sequenceOrderId = dataRow["sequenceOrderId"];
+						booksGroup =  dataRow["booksGroup"];
+						
+						booksGroupScriptureReference = 	dataRow["verseForward"] + ", " +
+														dataRow["chapterIDForward"] + ", " +
+														dataRow["chapterIDBackward"] + ", " +
+														dataRow["verseBackward"];
+						
+						booksGroupScriptureReferenceFormat = scriptureReferenceHyperlink
+						(
+							booksGroupScriptureReference	
+						);
+						
+						info += buildRow
+						(
+							booksGroup,
+							booksGroupScriptureReferenceFormat
+						);
+					}
+				}
+				
+				info += "</table>"
+				document.getElementById("groupsScriptureReferences").innerHTML = info;
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var word = document.getElementById("word");
+			word.addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var Books = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
+		</script>
+	</body>
+</html>

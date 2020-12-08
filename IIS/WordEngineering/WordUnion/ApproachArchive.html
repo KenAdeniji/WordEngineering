@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-25	With the exact table, write a query that accepts the scripture reference; and it identifies the words that have the first and the last reference for each verse.
+		2017-02-26	Created.
+		2017-02-26	http://stackoverflow.com/questions/11197818/how-do-i-make-a-json-object-with-multiple-arrays/11197949
+	-->
+	<head>
+		<title>Approach</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Builds on Exact.html, the enhancement is that if offers a scription reference restriction, and it is the first implementation of Language Integrated Query (Linq)."/>
+		<meta name="keywords" content="Bible, word, scripture reference, Linq"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="scriptureReference">Scripture Reference</label>
+							</td>
+							<td>
+								<input type="text" id="scriptureReference" autofocus/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="bibleWord">Word</label>
+							</td>
+							<td>
+								<input type="text" id="bibleWord"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="firstScriptureReference">First Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="firstScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="lastScriptureReference">Last Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="lastScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="occurrenceFrom">Frequency of Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="occurrenceFrom"/>
+								-
+								<input type="text" id="occurrenceUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="exactIDFrom">Exact ID</label>
+							</td>
+							<td>
+								<input type="text" id="exactIDFrom"/>
+								-
+								<input type="text" id="exactIDUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="alphabetSequenceIndexFrom">Alphabet Sequence Index</label>
+							</td>
+							<td>
+								<input type="text" id="alphabetSequenceIndexFrom"/>
+								-
+								<input type="text" id="alphabetSequenceIndexUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			function querySubmit() {
+				var request = {};
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+		        request["bibleWord"] = document.getElementById("bibleWord").value;
+				request["firstScriptureReference"] = document.getElementById("firstScriptureReference").value;
+				request["lastScriptureReference"] = document.getElementById("lastScriptureReference").value;
+				
+				var parameter = document.getElementById("occurrenceFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["fromOccurrence"] = parameter;
+
+				var parameter = document.getElementById("occurrenceUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["untilOccurrence"] = parameter;
+
+				var parameter = document.getElementById("exactIDFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDFrom"] = parameter;
+
+				var parameter = document.getElementById("exactIDUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDUntil"] = parameter;
+				
+				var parameter = document.getElementById("alphabetSequenceIndexFrom").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexFrom"] = parameter;
+
+				var parameter = document.getElementById("alphabetSequenceIndexUntil").value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexUntil"] = parameter;
+				
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Approach",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        //render(informationSet);
+						scriptLiteral9432.renderDataTable(informationSet, "resultSet");
+				    },
+				    error: function (xhr) {
+				        document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResultText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+		    function render(data) 
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var occurrences = data.length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1>" + caption;
+				
+		        var dataRow = null;
+		        var dataTable = null;
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Bible Word",
+					"Exact ID",					
+					"First Occurrence",
+					"Last Occurrence",
+					"Difference",
+					"Frequency of Occurrence",
+					"AlphabetSequenceIndex"
+				);
+	
+	            for (var rowIndex = 0, rowCount = data.length; rowIndex < rowCount; ++rowIndex) 
+				{
+					dataRow = data[rowIndex];
+
+					info += scriptLiteral9432.buildRow
+					(
+						scriptLiteral9432.buildHyperlink("bibleWord", dataRow["BibleWord"]),						
+						dataRow["ExactID"],
+						scriptLiteral9432.buildHyperlink("scriptureReference", dataRow["firstScriptureReference"]),
+						scriptLiteral9432.buildHyperlink("scriptureReference", dataRow["lastScriptureReference"]),
+						dataRow["Difference"],
+						dataRow["occurrence"],
+						dataRow["AlphabetSequenceIndex"]
+					);	
+		        }
+
+		        info += "</table>"
+		        document.getElementById("resultSet").innerHTML = info;
+		    }
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						var scriptureReference = scriptLiteral9432.getParameterByName("scriptureReference");
+						var bibleWord = scriptLiteral9432.getParameterByName("bibleWord");
+						
+						if (scriptureReference || bibleWord)
+						{
+							document.getElementById("scriptureReference").value = scriptureReference;
+							document.getElementById("bibleWord").value = bibleWord;
+						}	
+					});
+					isPostBack = true;
+				}
+				if (isPostBack === true)
+				{
+					querySubmit();
+				}
+ 			}
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>
