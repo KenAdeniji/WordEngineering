@@ -1,0 +1,1 @@
+cl /clr "cin with strings.cpp"
