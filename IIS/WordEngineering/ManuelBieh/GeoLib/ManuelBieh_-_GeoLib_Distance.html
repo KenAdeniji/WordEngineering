@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-11-10 	Created. 	https://github.com/manuelbieh/geolib
+	-->
+	<head>
+		<title>Manuel Bieh from Berlin Geolib Distance Between Co-ordinates</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Geo Distance" />
+		<meta name="keywords" content="Geo, distance, co-ordinate, latitude, longitude, Berlin" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="firstCoordinateLatitude">First Co-ordinate Latitude</label></td>
+					<td><input id="firstCoordinateLatitude" type="text" value="51.5103"/></td>
+				</tr>	
+				<tr>
+					<td><label for="firstCoordinateLongitude">First Co-ordinate Longitude</label></td>
+					<td><input id="firstCoordinateLongitude" type="text" value="7.49347"/></td>
+				</tr>	
+				<tr>
+					<td><label for="secondCoordinateLatitude">Second Co-ordinate Latitude</label></td>
+					<td><input id="secondCoordinateLatitude" type="text" value="51° 31' N"/></td>
+				</tr>	
+				<tr>
+					<td><label for="secondCoordinateLongitude">Second Co-ordinate Longitude</label></td>
+					<td><input id="secondCoordinateLongitude" type="text" value="7° 28' E"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table><br/><br/>
+			<div id="resultSet"></div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/geolib@2.0.24/dist/geolib.min.js"></script>	
+		<script>
+			var firstCoordinateLatitudeID = document.getElementById("firstCoordinateLatitude");
+			var firstCoordinateLongitudeID = document.getElementById("firstCoordinateLongitude");
+
+			var secondCoordinateLatitudeID = document.getElementById("secondCoordinateLatitude");
+			var secondCoordinateLongitudeID = document.getElementById("secondCoordinateLongitude");
+			
+			var resultSetID = document.getElementById("resultSet");
+			
+			function buildJSON(latitude, longitude)
+			{
+				var request = {};
+				request["latitude"] = latitude;
+				request["longitude"] = longitude;
+				return request;
+			}
+			
+			function querySubmit()
+			{
+				var distance = geolib.getDistance
+				(
+					buildJSON(firstCoordinateLatitudeID.value, firstCoordinateLongitude.value),
+					buildJSON(secondCoordinateLatitudeID.value, secondCoordinateLongitude.value),
+				);
+				
+				resultSetID.innerHTML = distance;
+			}
+		
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

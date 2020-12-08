@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-11-11 	Created. 	https://github.com/manuelbieh/geolib
+		2019-11-11	https://stackoverflow.com/questions/4375537/convert-json-string-to-array-of-json-objects-in-javascript/4375659
+	-->
+	<head>
+		<title>Manuel Bieh from Berlin Geolib Co-ordinates</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Geo Distance" />
+		<meta name="keywords" content="Geo, distance, co-ordinate, latitude, longitude, Berlin" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td>
+						<textarea id="coordinates">[{"latitude":52.516272,"longitude":13.377722},{"latitude":51.515,"longitude":7.453619},{"latitude":51.503333,"longitude":-0.119722}]</textarea>
+					<td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table><br/><br/>
+			<div id="resultSet"></div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/geolib@2.0.24/dist/geolib.min.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			var coordinatesID = document.getElementById("coordinates");
+			
+			var resultSetID = document.getElementById("resultSet");
+			
+			function querySubmit()
+			{
+				coords = JSON.parse(coordinatesID.value); 
+
+				var request = {};
+				request["Center"] = geolib.getCenter(coords);
+				request["CenterOfBounds"] = geolib.getCenterOfBounds(coords);
+				request["Bounds"] = geolib.getBounds(coords);
+				resultSetID.innerHTML = JSON.stringify(request);
+			}
+		
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

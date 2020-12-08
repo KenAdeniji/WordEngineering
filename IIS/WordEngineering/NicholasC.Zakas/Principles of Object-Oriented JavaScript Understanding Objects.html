@@ -1,0 +1,61 @@
+<script>
+//	2018-03-28	http://nostarch.com/download/samples/oojs_ch03.pdf
+var person1 = {
+    name: "Nicholas"
+};
+var person2 = new Object();
+person2.name = "Nicholas";
+
+person1.age = "Redacted";
+person2.age = "Redacted";
+
+person1.name = "Greg";
+person2.name = "Michael";
+
+console.log(person1.name);
+
+console.log("name" in person1);     // true
+console.log("age" in person1);      // true
+console.log("title" in person1);    // false
+
+console.log(person1.hasOwnProperty("name")); // true
+console.log(person1.hasOwnProperty("toString")); // false
+
+delete person1.name; // true - not output
+console.log("name" in person1);     // false
+console.log(person1.name);          // undefined
+
+for (var property in person2) {
+    console.log("Name: " + property);
+    console.log("Value: " + person2[property]);
+}
+
+var properties = Object.keys(person2);
+// if you want to mimic for-in behavior
+for (var i=0, len=properties.length; i < len; i++){
+    console.log("Name: " + properties[i]);
+    console.log("Value: " + person2[properties[i]]);
+}
+
+console.log("name" in person1);                          // true
+console.log(person1.propertyIsEnumerable("name"));       // true
+
+var properties = Object.keys(person1);
+console.log("length" in properties);                     // true
+console.log(properties.propertyIsEnumerable("length"));  // false
+
+var person1 = {
+     _name: "Nicholas",
+     get name() {
+        console.log("Reading name");
+        return this._name;
+    },
+    set name(value) {
+        console.log("Setting name to %s", value);
+        this._name = value;
+    }
+};
+console.log(person1.name);    // "Reading name" then "Nicholas"
+person1.name = "Greg";
+console.log(person1.name);    // "Setting name to Greg" then "Greg"	
+</script>

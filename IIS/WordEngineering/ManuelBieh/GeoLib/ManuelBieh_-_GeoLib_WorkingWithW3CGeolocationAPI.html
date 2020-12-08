@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-11-11 	Created. 	https://github.com/manuelbieh/geolib
+	-->
+	<head>
+		<title>Manuel Bieh from Berlin Geolib Distance Between Co-ordinates</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Geo Distance" />
+		<meta name="keywords" content="Geo, distance, co-ordinate, latitude, longitude, Berlin" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="currentPositionLatitude">Current Position Latitude</label></td>
+					<td><input id="currentPositionLatitude" type="text" value="51.5103"/></td>
+				</tr>	
+				<tr>
+					<td><label for="currentPositionLongitude">Current Position Longitude</label></td>
+					<td><input id="currentPositionLongitude" type="text" value="7.49347"/></td>
+				</tr>	
+				<tr>
+					<td><label for="otherPositionLatitude">Other Position Latitude</label></td>
+					<td><input id="otherPositionLatitude" type="text" value="51° 31' N"/></td>
+				</tr>	
+				<tr>
+					<td><label for="otherPositionLongitude">Other Position Longitude</label></td>
+					<td><input id="otherPositionLongitude" type="text" value="7° 28' E"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table><br/><br/>
+			<div id="resultSet"></div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/geolib@2.0.24/dist/geolib.min.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			var currentPositionLatitudeID = document.getElementById("currentPositionLatitude");
+			var currentPositionLongitudeID = document.getElementById("currentPositionLongitude");
+
+			var otherPositionLatitudeID = document.getElementById("otherPositionLatitude");
+			var otherPositionLongitudeID = document.getElementById("otherPositionLongitude");
+			
+			var resultSetID = document.getElementById("resultSet");
+			
+			function buildJSON(latitude, longitude)
+			{
+				var request = {};
+				request["latitude"] = latitude;
+				request["longitude"] = longitude;
+				return request;
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					navigator.geolocation.getCurrentPosition(
+						function(position) {
+							currentPositionLatitudeID.value = position.coords.latitude;
+							currentPositionLongitudeID.value = position.coords.longitude;
+							querySubmit();
+							isPostBack = true;
+						}
+					);
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var currentPosition = buildJSON
+				(
+					currentPositionLatitudeID.value,
+					currentPositionLongitudeID.value
+				);
+				var otherPosition = buildJSON
+				(
+					otherPositionLatitudeID.value,
+					otherPositionLongitudeID.value
+				);
+				var distance = geolib.getDistance
+				(
+					currentPosition,
+					otherPosition
+				);
+				resultSetID.innerHTML = distance;
+			}
+		
+			window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

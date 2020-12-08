@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-05-14	Created.	http://webstandardssherpa.com/reviews/auto-detecting-credit-card-type/
+		2017-05-14	http://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm
+	-->
+	<head>
+		<title>Credit Card Number</title>
+	</head>
+	<body>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+			th, td{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even){
+				background: #dae5f4;
+			}
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Credit Card:</legend>
+				<table>
+					<tr>
+						<td colspan="2" align="center">
+							<a href="http://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm">Test Credit Card Account Numbers</a>
+						</td>			
+					<tr>
+						<td><label for="cc-num">Number:</label></td>
+						<td><input id="cc-num" type="number" size="30" autofocus></td>
+					</tr>	
+					<tr>
+						<td><label for="cc-type">Type:</label></td>
+						<td><span id="cc-type"></span></td>
+					</tr>	
+					<tr>
+						<td><label for="cc-number-valid">Number Valid:</label></td>
+						<td><input id="cc-number-valid" type="checkbox" disabled></td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="feedback"></div>
+		</div>
+
+		<script>
+			function getCreditCardType(accountNumber)
+			{
+				//start without knowing the credit card type
+				var result = "unknown";
+
+				//first check for MasterCard
+				if (/^5[1-5]/.test(accountNumber))
+				{
+				result = "mastercard";
+				}
+
+				//then check for Visa
+				else if (/^4/.test(accountNumber))
+				{
+				result = "visa";
+				}
+
+				//then check for AmEx
+				else if (/^3[47]/.test(accountNumber))
+				{
+				result = "amex";
+				}
+
+				return result;
+			}
+
+			function handleEvent(event)
+			{
+				var value   = event.target.value,    
+					type    = getCreditCardType(value);
+
+				document.getElementById("cc-type").textContent = type;
+				
+				var identifier = value.replace(/[^0-9]/g, "");  //.replace(/[^\d]/g, "");
+				var isValid = isValidIdentifier(identifier);
+				document.getElementById("cc-number-valid").checked = isValid;
+			}
+
+			//Luhn algorithm identifier verification
+			//MIT Licensed
+			function isValidIdentifier(identifier) {
+
+				var sum     = 0,
+					alt     = false,
+					i       = identifier.length-1,
+					num;
+
+				if (identifier.length < 13 || identifier.length > 19){
+					return false;
+				}
+
+				while (i >= 0){
+
+					//get the next digit
+					num = parseInt(identifier.charAt(i), 10);
+
+					//if it's not a valid number, abort
+					if (isNaN(num)){
+						return false;
+					}
+
+					//if it's an alternate number...
+					if (alt) {
+						num *= 2;
+						if (num > 9){
+							num = (num % 10) + 1;
+						}
+					} 
+
+					//flip the alternate bit
+					alt = !alt;
+
+					//add to the rest of the sum
+					sum += num;
+
+					//go to next digit
+					i--;
+				}
+
+				//determine if it's valid
+				return (sum % 10 == 0);
+			}
+			
+			// or window.onload
+			document.addEventListener("DOMContentLoaded", function(){
+			  var textbox = document.getElementById("cc-num");
+			  textbox.addEventListener("keyup", handleEvent, false);
+			  textbox.addEventListener("blur", handleEvent, false);
+			}, false);
+		</script>
+	</body>
+</html>

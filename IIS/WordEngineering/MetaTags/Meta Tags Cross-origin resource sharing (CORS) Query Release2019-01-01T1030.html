@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-01-01	https://www.html5rocks.com/en/tutorials/cors	
+	-->
+	<head>
+		<title>Meta Tags Cross-origin resource sharing (CORS) Query</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input type="text" placeholder="Type URL here" value="http://www.html5rocks.com/en/tutorials/cors/" />
+			<input type="submit" id="submitQuery"><br/>
+
+			<table>
+				<tr><td>Description</td><td id="metaTagDescription"></td></tr>
+				<tr><td>Keyword</td><td id="metaTagKeyword"></td></tr>
+				<tr><td>Image</td><td id="imageSource"></td></tr>
+			</table>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			function querySubmit()
+			{
+				$.ajax
+				(
+					{
+						url: 'https://cors-anywhere.herokuapp.com/' + $('input').val()
+					}
+				).then
+				(
+					function(data) 
+					{
+						var html = $(data);
+		
+						$('#metaTagDescription').html(getMetaContent(html, 'description') || 'no keywords found');
+						$('#metaTagKeyword').html(getMetaContent(html, 'keywords') || 'no description found');
+						$('#imageSource').html(html.find('img').attr('src') || 'no image found');
+					}
+				);
+			}
+			
+			function getMetaContent(html, name) {
+			  return html.filter(
+			  (index, tag) => tag && tag.name && tag.name == name).attr('content');
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-12-24	Created.	newsapi.org
+			2018-12-24	http://developer.mozilla.org/en-US/docs/Web/API/Body/json
+		-->
+		<title>newsapi.org</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			function querySubmit()
+			{
+				var url = 'https://newsapi.org/v2/top-headlines?' +
+						  'country=us&' +
+						  'apiKey=dbf1a14b50294acea195ee16c1747840';
+				var req = new Request(url);
+				var articles = document.getElementById("resultSet")
+				fetch(req)
+					.then(function(response) { return response.json(); })
+					.then
+					(
+						function(data) 
+						{
+							for (var i = 0; i < data.totalResults; i++)
+							{
+								var article = document.createElement('table');
+								article.innerHTML = `<tr><td>Source: ${data.articles[i].source.name}</td></tr><tr><td>Author: ${data.articles[i].author}</td></tr><tr><td>Title: ${data.articles[i].title}</td></tr><tr><td>Description: ${data.articles[i].description}</td></tr><tr><td>url: <a href='${data.articles[i].url}'>${data.articles[i].url}</a></td></tr><tr><td>Published at: ${data.articles[i].publishedAt}</td></tr><tr><td>Content: ${data.articles[i].content}</td></tr>`
+								articles.appendChild(article);								
+							}
+						}
+					)
+			}
+
+			window.addEventListener("load", querySubmit, false);
+		</script>
+	</body>
+</html>

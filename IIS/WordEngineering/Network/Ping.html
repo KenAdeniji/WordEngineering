@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-01-12	Created.	https://docs.microsoft.com/en-us/dotnet/api/system.net.networkinformation.ping.send?view=netframework-4.7.2#System_Net_NetworkInformation_Ping_Send_System_String_
+	-->
+	<head>
+		<title>Ping</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="hostNameOrAddress">Host name or address:</label></td>
+					<td><input type="text" id="hostNameOrAddress" step="1"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>			
+			<table id="resultSet"></table>
+			<div id="feedback"></div>
+		</div>	
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var isPostBack = false;
+		
+			defaultHostNameOrAddress = "Google.com";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var hostNameOrAddress = scriptLiteral9432.getParameterByName("hostNameOrAddress");
+						if (!hostNameOrAddress)
+						{
+							hostNameOrAddress = defaultHostNameOrAddress;
+						}	
+						document.getElementById("hostNameOrAddress").value = hostNameOrAddress;	
+						isPostBack = true;
+						querySubmit();
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+		
+			function querySubmit()
+			{
+				document.getElementById("feedback").innerHTML = "";
+				var request = {};
+				request["hostNameOrAddress"] = document.getElementById("hostNameOrAddress").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Network/Ping.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}	
+			
+			function render(dataSet)
+			{
+				var tableInfo = '<tr><th>Key</th><th>Value</th>';
+				for (var key in dataSet) {
+					//if (dataSet.hasOwnProperty(key)) {
+						//console.log(key + " -> " + dataSet[key]);
+						tableInfo += `<tr><td>${key}</td><td>${dataSet[key]}</td></tr>`;	
+					//}
+				}
+				resultSet.innerHTML = tableInfo;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("hostNameOrAddress").addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>

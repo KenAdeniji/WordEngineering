@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-27	Created. Allen Talton. allen@riverrocknetwork.com
+		2018-11-27	https://cloudcar.com/wp-content/uploads/2018/06/HTG-scroll-icon.gif
+Allen Talton, allen@riverrocknetwork.com
+
+I thank you for our conversation on 2018-11-27.
+
+Between 2018-11-28T06:03:00 and 2018-11-28T07:25:00
+
+I put together a Javascript demo for cloudcar.com
+		2018-11-28	What will you do, with life?
+		2018-11-28	What we bring to people?
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>Rotate</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<input 
+			id="imageUri"
+			type="url"
+			value="https://cloudcar.com/wp-content/uploads/2018/06/HTG-scroll-icon.gif"
+		/>
+		<input type="submit" id="submitQuery"><br/>	
+		<div>
+			<input id="degreeRotate" type="number" min="1" step="1" value="0"/>
+			<button id="rotateDegree">Degree to Rotate</button>
+		</div>
+		<div>
+			<image id="the-image" style="border:1px solid black">
+		</div>
+		<script id="script">
+			function onrotateDegree() 
+			{
+				var degreeRotate = parseInt(document.getElementById("degreeRotate").value);
+				if (degreeRotate < 0 || degreeRotate > 360) 
+				{
+					return;
+				}
+				var degreeRotate = document.getElementById("degreeRotate").value;
+				var imageStyle = `transform: rotate(${degreeRotate}deg);`;
+				document.getElementById("the-image").style = imageStyle;
+			}
+			function pageLoad()
+			{
+				querySubmit();
+			}
+			function querySubmit()
+			{
+				document.getElementById("the-image").src = 
+					document.getElementById("imageUri").value;
+			}
+  			window.addEventListener("load", pageLoad, false);
+			document.getElementById("imageUri").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			document.getElementById("degreeRotate").addEventListener("change", onrotateDegree, false);
+			document.getElementById('rotateDegree').addEventListener('click', onrotateDegree);
+		</script>
+	</body>
+</html>
