@@ -1,0 +1,373 @@
+                               KOWE   MANUAL
+
+KOWE is a complete word processing package, and it is very simple and
+easy to use.  For person who has had previous background using the type
+writer or wordprocessor, the transition to KOWE should be free of any major
+hitches.  A computer literate, who may have done word processing on the
+computer does not require any training to use KOWE.  However, so our
+customers can extensively understand KOWE's operation and explore its
+numerous features, this fully documented manual has been provided.
+
+
+                           SYSTEM   REQUIREMENTS
+   
+
+               -    IBM  Personal Computer  or  Compatible
+
+               -    Graphics Monitor
+
+                                                                            
+
+                               INSTALLATION
+
+
+KOWE does not require detailed installation, the only procedure performed
+is to copy KOWE onto the backup diskette / hard disk.  As a precautionary
+measure, we suggest you do not use the original KOWE diskette for your
+wordprocessing, but rather you use your copied version.  User is permitted
+to make only one backup copy, and install KOWE on only one hard disk
+system.
+
+
+INSTALLATION  FOR  FLOPPY  USERS
+
+It is suggested, that two diskettes be used for wordprocessing.  The first
+floppy will contain the backup copy, and the other floppy will be used as
+document diskette.  The document diskette will be used for storage and
+retrieval of documents done in KOWE.  The floppy installation procedure
+is shown below:
+
+     1.   Make backup copy of original KOWE's diskette.
+
+          Syntax:
+
+               DISKCOPY   <Source Drive>  <Target Drive>                    
+              
+          Example:
+
+               DISKCOPY  A:   A:
+
+     2.   Prepare work diskette for filing documents.
+
+          Syntax:
+
+               FORMAT    <Drive>
+
+          Example:
+
+               FORMAT    A:
+                      INSTALLATION   ON   HARD   DISK
+
+It is best to install KOWE on hard disk, if one is available.  Hard disk
+accessing is much faster than floppy accessing, and can store more
+information,
+
+     1.   Make hard disk current drive.
+
+          Syntax:
+
+               <Drive>
+          
+          Example:
+          
+               C:
+
+     2.   Create directory to partition KOWE's software and      
+          document files from other hard disk contents.
+
+          Syntax:
+
+               MD  <Directory>
+
+          Example:
+
+               MD  \KOWE
+
+
+     3.   Change to directory created for word processing.
+
+          Syntax:
+
+               CD  <Directory>
+
+          Example:
+
+               CD  \KOWE
+
+
+     4.   Copy diskette files into hard disk.
+
+          Syntax:
+
+               COPY  <Source Drive>
+
+          Example:
+
+               COPY  A:*.*START    WORD    PROCESSING
+
+To begin wordprocessing, type KOWE at the system prompt.  At the prompt
+the source and target can also be specified.  The source file being the
+document to retrieve, and target file is the file to save document into.
+
+                        KOWE  <Source File>   <Target File>                 
+
+The manufacturer's logo is displayed when execution starts, and to continue
+user only needs to strike a key.  The next screen shows the single and
+double line characters, as well the Yoruba characters available, and how to
+access them.
+
+The function keys starting from F1 .. F7, are used for all the vowels.  F1
+.. F7 alone represents the lower case (Non Capital) - grave vowels, F1 ..
+F7 with the shift key represents the upper case (Capital) - grave vowels. 
+F1 .. F7 pressed with the control key is for lower case - Acute vowels, and
+upper case - Acute vowels are accessed by pressing F1 .. F7 in combination
+with the Alternate key.
+
+All the alphabeths and numeric keys work as in other computer applications,
+and the control keys continue to perform their normal roles.  The Caps Lock
+key is used to toggle between lower and upper case, and the Insert key is
+used to select either insert or overwrite mode.  The escape (Esc) key is
+used to terminate or end current operation.  The keys and their assignments
+are identified below:
+
+                                                            
+          KEYS                     TASK
+
+
+          Left                     To go left  one column.
+
+          Right                    To go right one column.
+
+          Up                       To go up    one row.
+
+          Down                     To go down  one column.                  
+                                                      
+          Home                     It is used to return to column 1, 
+                                                                            
+                                   if cursor is currently on starting
+                                   
+                                   column home will take operator to
+
+                                   top of screen.
+
+          End                      It is used to proceed to column 80.
+
+          Pg Up                    To go to previous screen.
+
+          Pg Dn                    To go to next screen.
+
+          Space                    To overwrite current location, and
+
+                                   proceed to next one.
+
+          Right Tab                To skip to next tab location.
+
+          Left Tab                 To return to previous tab location.
+          Back Space               To overwrite character to the left
+
+                                   of current column, and cursor goes 
+
+                                   back one column.
+
+          Delete                   To remove current character.
+                                        
+          Insert                   To toggle between Insert and Overwrite
+
+                                   mode.
+
+           Num Lock                To toggle between user numeric pad as
+
+                                   numbers or for movements.
+
+           Escape                  End / Terminate current task.
+
+                                                                            
+                           SCREEN   INFORMATION
+
+
+The top two lines of the screen, are used to display the following vital
+information:
+
+          Document Name            Name of current document file
+
+          Language                 Language currently in operation
+
+          Mode                     Text / Draw 
+
+          Insert                   On / Off
+ 
+                                   On - Insert Mode, Off - Overwrite mode   
+                           
+
+          Page                     Current page number
+
+          Row                      Current row number
+
+          Column                   Current column number
+
+
+                           HELP   -   ASSISTANCE
+
+
+          To get further instruction on how to use this word
+          processor, press Alt - H combination.  This activates
+          the help menu, showing operator how to operate the
+          software, and displays the various access keys.  It is
+          provided as a supplement to the manual.DELETE  /  REMOVE  TEXT
+
+Current  Character
+
+         To remove current character, press the delete key.
+
+Previous Character
+
+         To remove previous character, press the back space <-- key.
+
+Line
+
+          To remove an whole document line, cursor must be
+          resident on the line.  The Alternate key is next held
+          down, and the letter "D" striked.  "D" in this case
+          being the first letter in delete.
+
+
+                               ERASE   WORK
+
+
+          To erase current document, all that needs to be done is
+          to press the Alt-E combination.  It is advisable that
+          work be saved, before operator takes this action.  Once
+          an unsaved work is erased, it can no longer be
+          retrieved.  It is at times necessary to erase work, so
+          as to start work on a new document. 
+
+
+                              INSERT   TEXT 
+
+Insert  Text
+
+          Press Insert Key if Ins mode on the status line is
+          showing off, if not so, just enter text.
+
+Insert  Line
+
+          The Alt-I combination, holding the alternate key and
+          pressing "I" is used to insert a line at current
+          location.
+
+                                   DRAW
+
+
+          Both single and double line drawings are available.  To
+          do single line drawing press ALT - 1, and ALT - 2 for
+          double lines.  The mode will display DRAW, while user
+          is in the draw mode.  The cursor keys are used for
+          drawing, to draw left press left cursor key, and to
+          draw right press right cursor key.  Both cursor up and
+          down are used for vertical drawing.  To exit back to
+          the text mode, press the escape (ESC) key.  Also
+          pressing a printable character, will also end the
+          drawing session.   GO   TO   PAGE
+
+
+          This is a short-cut method for moving around the
+          document, which may be preferable to using the cursor
+          keys.  To use this function, just press Alt - G
+          combination.  If the page exist, then it is
+          instanteneously displayed on the screen.
+
+
+              FIND  YORUBA  MEANING TO ENGLIGH WORD / PHRASE
+
+
+          The English / Yoruba  dictionary and translator
+          provided in this package provides Yoruba meaning(s) to
+          English word and phrases.  Press Alt-F to inform
+          computer that you wish to use translator function, next
+          enter English word to find its meaning.  The computer
+          immediately searches through its memory, if it does not
+          find the English word it prints a "Word  Not  Found, 
+          Strike  A  Key  To  Continue" message.  If word is
+          found, the Yoruba meanings are displayed on the screen,
+          and user should strike any key to continue word
+          processing.
+
+               TRANSLATE   ENGLISH   DOCUMENT   INTO  YORUBA
+
+          The current document can be converted into its Yoruba's
+          meaning.  During translation numbers and symbols retain
+          their values, only words are translated.  When KOWE
+          identifies a word not in its dictionary, it stores the
+          word as it is.  To start translation, press Alt - T,
+          and enter document file translation should be stored
+          in.  KOWE efficiently and effectively translates the
+          document into its Yoruba translation.  However, to access
+          translated document, it must be retrieved.
+
+
+                            DOCUMENT   STORAGE
+
+                                                                            
+          To keep a permanent record of wordprocessing documents,
+          such work must be saved on diskette or hard disk.  To
+          begin saving, press Alt - S, and enter document name.  
+          Document name may contain drive and path
+          specifications.  Drive name is necessary to save        
+          on drive which is not the current one, and path is used
+          to specify directory to record information into.  Its
+          advisable that document name be of relevance to
+          information stored in it.  This will help for later
+          referencing, and ease of accessibility at a later
+          future.  Document storage will not be successful, if
+          target storage media is write protected, or document
+          itself is protected.   Storage will also not be
+          complete, if free space in storage is not enough.                                                    
+                           DOCUMENT   RETRIEVAL
+
+          To recall information stored previously, do the Alt - L 
+            combination.   "L" in this case, refers to loading
+          document from storage media into computer's memory.  
+          The full path specification should be entered, if
+          directory to load from is not the current one.   Before
+          retrieving document it is suggested, that current work
+          be saved if there is need for doing so.  KOWE erases
+          current document information, before retrieving from
+          disk.   If document is not found on disk, KOWE displays
+          an appropiate message, and allows user to continue
+          operation.
+
+                            OPERATING   SYSTEM
+
+
+          To temporarily exist into the operating system, and
+          perform system level commands, the "OS" option has been
+          provided.  This will transfer operator into the
+          operating system environment, and allow him/her do some
+          task.  This may be file operations, parameter settings,
+          and even execute another software.  After user has
+          completed system task, the "EXIT" command may be used
+          to return back to word processing.  It is suggested
+          that current work be saved, before using this highly
+          powerful function.                                      
+          
+
+                            DOCUMENT   PRINTING
+
+
+          To start printing user should press ALT - P
+          combination.  Computer will next prompt user on whether
+          to send output to printer or file.  This option was
+          placed so as to allow user who do not have access to a
+          printer, redirect output to a file and print at a later
+          time.  The default destination is printer, and this is
+          changed by pressing "F" for file.  If output is to be
+          sent to file, the computer next request for document
+          name to print into.  A printer with DOT MATRIX
+          capabilities is required for printing, since graphics
+          printing is done.
+
+
+                          END   WORD  PROCESSING
+
+          After work is completed, and if need be saved, pressing
+          Escape (ESC) while in the TEXT mode ends session.
