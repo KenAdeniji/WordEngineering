@@ -1,0 +1,42 @@
+<html>
+<!--
+	2018-08-20 	Created.	http://goalkicker.com/JavaScriptBook
+-->
+	<head>
+		<title>StackOverflow.com Question</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input type="file" id="upload">
+		</div>
+		<pre id="resultSet"></pre>
+		<div id="fileInfo"></div>
+		<script>
+			function querySubmit()
+			{
+				var files = this.files;
+				if (files.length === 0) 
+				{
+					document.getElementById("resultSet").innerHTML = 'No file is selected';
+					return;
+				}
+				var reader = new FileReader();
+				reader.onload = function(event) 
+				{ 
+					document.getElementById("resultSet").innerHTML = event.target.result;
+					
+					//var files = event.target.files;
+					var file = files[0];
+					
+					document.getElementById("fileInfo").innerHTML =
+						`File name: ${file.name} <br/> File size: ${file.size}`;
+					
+				};
+				reader.readAsText(files[0]);			
+			}
+		
+			document.getElementById('upload').addEventListener('change', querySubmit) 
+		</script>
+	</body>
+</html>

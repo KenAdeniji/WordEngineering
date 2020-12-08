@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--
+		2015-03-22 Created. Google Translate.
+	-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>The coming advent of time</title>
+	<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+</head>
+
+<body>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+	<div id="main">
+		<select name="src" id="src"></select>
+		>>
+		<select name="dst" id="dst"></select>
+
+		<input type="submit" id="submitQuery">
+	</div>
+
+	<div id="resultSet">
+	</div>
+
+	<script>
+		var isPostBack = false;
+		
+		function querySubmit()
+		{
+			var request = {};
+			request["src"] = document.getElementById("src").value;
+			request["dst"] = document.getElementById("dst").value;
+			
+			var requestJson = JSON.stringify(request);
+			
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/Google/TheComingAdventOfTime.asmx/TheComingAdventOfTimeSelect",
+				data: requestJson,
+				dataType: "json",
+				success: function(data) 
+				{
+					var dataSet = JSON.parse(data.d);
+					scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					
+				},
+				error: function(xhr)
+				{ 
+					resultSet.innerHTML =
+						'Status: ' + xhr.status + "<br>" + 
+						'StatusText: ' + xhr.statusText + "<br>" +
+						'ResponseText: ' + xhr.responseText
+				} 
+			});
+		}
+
+		function languages()
+		{
+			selectLanguage( "FromLanguage", document.getElementById("src") );
+			selectLanguage( "DestinationLanguage", document.getElementById("dst") );
+		}
+
+		function selectLanguage(column, select)
+		{
+			var request = {};
+			request["sourceOrDestination"] = column;
+			
+			var requestJson = JSON.stringify(request);
+		
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/Google/TheComingAdventOfTime.asmx/Language",
+				data: requestJson,
+				dataType: "json",
+				success: function(data) 
+				{
+					var resultSet = JSON.parse(data.d);
+					var count = resultSet.Table.length;
+					var resultHTML = "";
+					for (var index = 0; index < count; ++index)
+					{
+						var language = resultSet.Table[index].Language;
+						resultHTML += 	"<option value='" + language + "'>" + language + "</option>";
+					}
+					select.innerHTML = resultHTML;
+				},
+				error: function(xhr)
+				{ 
+					informationSet.innerHTML =
+						'Status: ' + xhr.status + "<br>" + 
+						'StatusText: ' + xhr.statusText + "<br>" +
+						'ResponseText: ' + xhr.responseText
+				} 
+			});
+		}
+		
+		function pageLoad()
+		{
+			if (isPostBack === false)
+			{
+				$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+					languages();
+					//querySubmit();
+					isPostBack = true;
+				});
+			}
+		}
+		
+		window.addEventListener("load", pageLoad, "false");
+		
+		document.getElementById("submitQuery").addEventListener("click", querySubmit, "false");
+	</script>
+
+</body>
+</html>

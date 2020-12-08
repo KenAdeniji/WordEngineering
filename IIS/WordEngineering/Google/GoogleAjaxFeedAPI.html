@@ -1,0 +1,44 @@
+﻿<html>
+  <head>
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAA0cMMc0nMeysGm9kYVt9DnRQO6iAkUif7SI4IE9oNKI7LqbBQXxR2V_CwfnB1bRB1lEWivgpUSxjtXw"></script>
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() 
+    {
+      var feed = new google.feeds.Feed("http://www.digg.com/rss/index.xml");
+      feed.load(function(result) 
+      {
+        if (!result.error) 
+        {
+            var container = document.getElementById("feed");
+            for (var i = 0; i < result.feed.entries.length; i++) 
+            {
+                var entry = result.feed.entries[i];
+                var attributes = ["title", "link", "publishedDate", "contentSnippet"];
+                var anchor = document.createElement("a");
+                anchor.setAttribute("href", entry[attributes[1]]);
+                anchor.setAttribute("target", "_blank");
+                var anchortext = document.createTextNode(entry[attributes[0]]);
+                anchor.appendChild(anchortext);
+                container.appendChild(anchor);
+                
+                for (var j = 2; j < attributes.length; j++)
+                {
+                    var div = document.createElement("div");
+                    div.appendChild(document.createTextNode(entry[attributes[j]]));
+                    container.appendChild(div);
+                }
+            }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="feed"></div>
+  </body>
+</html>
