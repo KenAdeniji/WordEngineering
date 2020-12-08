@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-03	Created.	apress.com/us/book/9781484213339
+	-->
+	<head>
+		<title>Process Viewer</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			function querySubmit(event)
+			{
+				document.getElementById("resultSet").inner = "";
+				var request = {};
+				//request["question"] = document.getElementById("question").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/ProcessViewer.asmx/Running",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) 
+					{
+						render(JSON.parse(data.d));
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					},
+					timeout: 36000
+				});
+			}
+
+			function render(dataSet)
+			{
+				var info = "<table><thead><tr><th>Process Name</th></tr></thead><tbody>";
+				for (var dataRecord in dataSet)
+				{
+					info += "<tr><td>" + dataSet[dataRecord] + "</td></tr>";
+				}
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>
