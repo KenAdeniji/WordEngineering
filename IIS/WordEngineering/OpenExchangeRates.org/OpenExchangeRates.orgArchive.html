@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-02-13	Created.	http://docs.openexchangerates.org
+		-->
+		<title>OpenExchangeRates.org</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet"></div>
+	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			function feedback(data)
+			{
+				var info = JSON.parse(data.d);
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			function querySubmit()
+			{
+				var resultSet = document.getElementById("resultSet");
+				resultSet.innerHTML = "";
+  var url = `https://openexchangerates.org/api/latest.json?app_id=4b546d53bc0f4e85b240326217f8fe99&base=GBP&callback=feedback`;
+  var url = `https://openexchangerates.org/api/latest.json?app_id=4b546d53bc0f4e85b240326217f8fe99&callback=feedback`;
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: url,
+					dataType: "json",
+					error: function(xhr)
+					{ 
+						resultSet.innerHTML =
+							'Status: ' + xhr.status + "<br>" + 
+							'StatusText: ' + xhr.statusText + "<br>" +
+							'ResponseText: ' + xhr.responseText
+					} 
+				});
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+		</script>
+	</body>
+</html>
