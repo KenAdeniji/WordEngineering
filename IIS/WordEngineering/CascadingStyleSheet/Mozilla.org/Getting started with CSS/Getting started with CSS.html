@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sample document</title>
+		<!--
+		<link rel="stylesheet" href="style1.css">
+		-->
+		<style>
+			strong {color: red;}
+			p {color: blue; text-decoration: underline;}
+			.key {
+				color: green;
+			}
+			#principal {
+				font-weight: bolder;
+			}
+			selector:pseudo-class {
+				property: value;
+			}
+			#data-table-1 td:first-child {font-weight: bolder;}
+			#data-table-1 td:first-child + td {font-family: monospace;}
+			
+			.ref:before {
+				font-weight: bold;
+				color: navy;
+				content: "Reference: ";
+			}
+		</style>		
+	</head>
+	<body>
+	<p>
+		<strong>C</strong>ascading
+		<strong>S</strong>tyle
+		<strong>S</strong>heets
+	</p>
+	<p class="key" id="principal">
+	
+	<table id="data-table-1">
+		<tr>
+			<td>Prefix</td>
+			<td>0001</td>
+			<td>default</td>
+		</tr>
+	</table>
+	<p class="ref">
+		https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Content?redirectlocale=en-US&redirectslug=CSS%2FGetting_Started%2FContent
+	</p>	
+	</body>
+</html>

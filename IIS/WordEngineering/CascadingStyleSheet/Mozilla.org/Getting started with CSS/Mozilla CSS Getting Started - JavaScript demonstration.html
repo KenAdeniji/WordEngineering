@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-01-17	https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/JavaScript
+-->
+<head>
+<title>Mozilla CSS Getting Started - JavaScript demonstration</title>
+<style>
+#square {
+      width: 120px;
+      height: 120px;
+      border: 2px inset gray;
+      margin-bottom: 1em;
+  }
+
+  button {
+      padding: .5em 2em;
+  }
+</style>
+</head>
+
+<body>
+<h1>JavaScript sample</h1>
+<div id="square"></div>
+<button>Click Me</button>
+
+<script>
+// JavaScript demonstration
+var changeBg = function (event) {
+    console.log("method called");
+    var me = event.target
+    ,   square = document.getElementById("square");
+    square.style.backgroundColor = "#ffaa44";
+    me.setAttribute("disabled", "disabled");
+    setTimeout(function () { clearDemo(me) }, 2000);
+}
+
+function clearDemo(button) {
+    var square = document.getElementById("square");
+    square.style.backgroundColor = "transparent";
+    button.removeAttribute("disabled");
+}
+
+var button = document.querySelector("button");
+button.addEventListener("click", changeBg);
+console.log(button);
+</script>
+
+</body>
+</html>
