@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app>
+	<!-- 2014-05-09 https://medium.com/on-coding/8c7dc63ca65f -->
+	<head>
+		<title>Evaluate expression</title>
+	</head>
+	<body>
+		<div ng-controller="calculateController">
+			<input ng-model="expression" autofocus>
+			<button ng-click="calculate();">Calculate</button>
+			<span ng-show="visible">
+				{{answer}}
+			</span>
+			<label for="visible">
+				<input type="checkbox" ng-model="visible" id="visible" checked="checked">Visible
+			</label>	
+		</div>	
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		<script>
+			function calculateController($scope)
+			{
+				$scope.calculate = function() 
+				{
+					var visibleId = document.getElementById("visible");
+					visibleId.checked = true;
+					
+					//$scope.answer = eval($scope.expression);
+					console.log($scope.answer);
+				}
+			}
+		</script>
+	</body>
+</html>
