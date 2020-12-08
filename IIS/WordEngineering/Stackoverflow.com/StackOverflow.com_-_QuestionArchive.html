@@ -1,0 +1,92 @@
+<html>
+<!--
+	2018-08-20 	Created.	http://goalkicker.com/JavaScriptBook
+	2018-08-20	http://stackapps.com/questions/2/api-hello-world-code
+	2018-08-20	http://api.stackexchange.com/sites
+-->
+	<head>
+		<title>StackOverflow.com Question</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table align="center">
+				<tr>
+					<td><label for="tagged">Tagged</label></td>
+					<td><input id="tagged" type="text" value="JavaScript" focus required/></td>
+				</tr>
+				<tr>
+					<td><label for="site">Site</label></td>
+					<td>
+						<select id="site">
+							<option>cooking</option>
+							<option>economics</option>
+							<option>gamedev</option>
+							<option>gaming</option>
+							<option value="gis">Geographic Information Systems</option>
+							<option>math</option>
+							<option>photo</option>
+							<option>serverfault</option>
+							<option selected="selected">stackoverflow</option>
+							<option>stats</option>
+							<option>superuser</option>
+							<option>webapps</option>
+							<option>webmasters</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="resultSet"></div>
+		<script>
+			function querySubmit()
+			{
+				const url =  
+				  `http://api.stackexchange.com/2.2/questions?site=${site.value}` +   
+				  `&tagged=${tagged.value}&key=gik4BOCMC7J9doavgYteRw((`;
+				 
+				var info = "";
+				
+				fetch(url).then(response => response.json()).then(data => 
+				{  
+					if (data.error_message) 
+					{ 
+						throw new Error(data.error_message);  
+					}
+
+					info = "<ol>";
+					var anchor;
+
+					for (const {title, link} of data.items) 
+					{  
+						anchor = `<a href=${link}>${title}</href>`;
+						info += `<li>${anchor}</li>`;
+					}
+					
+					info += "</ol>";
+					document.getElementById("resultSet").innerHTML = info;
+				}).then
+				(
+					null, error => 
+					{  
+						info = error;
+						document.getElementById("resultSet").innerHTML = info;
+					}
+				); 
+			}
+		
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

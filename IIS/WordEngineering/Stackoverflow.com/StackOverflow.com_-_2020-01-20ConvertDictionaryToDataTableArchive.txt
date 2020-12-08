@@ -1,0 +1,89 @@
+Using C#, how-to convert a dictionary to a datable? 
+There is an example, on how-to convert a list to a datatable at Convert generic List/Enumerable to DataTable?
+http://stackoverflow.com/questions/564366/convert-generic-list-enumerable-to-datatable
+
+I started working on this, since 2019-12-17.
+
+And, I have searched, Google, Stackoverflow, and Microsoft websites.
+
+Question asked on Stackoverflow.com between 2020-01-20T11:49:00 ... 2020-01-20T12:45:00
+
+```
+public static DataTable DictionaryToDataTable<T>
+(
+    this IDictionary<K, V> data
+)
+{
+    PropertyDescriptorCollection propertiesK = 
+       TypeDescriptor.GetProperties(typeof(K));
+	PropertyDescriptorCollection propertiesV = 
+       TypeDescriptor.GetProperties(typeof(V));
+			
+	DataTable table = new DataTable();
+	foreach (PropertyDescriptor prop in propertiesK)
+	   table.Columns.Add
+       (
+           prop.Name,
+           Nullable.GetUnderlyingType
+           (
+              prop.PropertyType
+           )
+           ?? 
+           prop.PropertyType
+    );
+	foreach 
+    (
+           PropertyDescriptor prop in propertiesV
+    )
+    table.Columns.Add
+    (
+       prop.Name,
+       Nullable.GetUnderlyingType
+       (
+          prop.PropertyType
+       )  
+       ?? 
+       prop.PropertyType
+    );
+				
+	foreach
+    (
+       KeyValuePair<K, V> item in data
+    )
+	{
+	   DataRow row = table.NewRow();
+	   foreach (PropertyDescriptor prop in propertiesK)
+	      row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+	   foreach (PropertyDescriptor prop in propertiesV)
+		  row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+	   table.Rows.Add(row);
+	}
+	return table;
+}
+
+```
+
+```
+Type ex = typeof(InformationInTransit.ProcessLogic.DataTableHelper);
+MethodInfo mi = ex.GetMethod("DictionaryToDataTable");
+MethodInfo miConstructed = 
+   mi.MakeGenericMethod
+   (
+      typeof
+      (
+          Dictionary
+          <
+              String,
+              InformationInTransit.ProcessLogic.Exact.Participation
+          >
+      )
+   );
+		
+   object[] args = {result};
+   DataTable dataTable = (DataTable) miConstructed.Invoke
+   (
+       null,
+       args
+   );
+
+```

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2018-08-20	Created.
+-->
+    <head>
+        <title>Table size</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+		<div id="resultSet"> </div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/SQLServer/Script/Microsoft/TableSize.asmx/Query",
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+
+</body>
+</html>

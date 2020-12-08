@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-13	Created.	https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/rtsql-using-r-functions-with-sql-server-data?view=sql-server-2017
+	-->
+	<head>
+		<title>Quick Starts R Language Random Number Generator</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>			
+					<tr>
+						<td><label for="countLength">Count:</label></td>
+						<td><input type="number" id="countLength" step="1" min="0" value="100"></td>
+					</tr>
+					<tr>
+						<td><label for="meanAverage">Mean Average:</label></td>
+						<td><input type="number" id="meanAverage" value="50"></td>
+					</tr>
+					<tr>
+						<td><label for="standardDeviation">Standard Deviation:</label></td>
+						<td><input type="number" id="standardDeviation" value="3"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			<div id="resultSet" align="center"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+		
+			function querySubmit() {
+				var request = {};
+				request["countLength"] = parseInt(document.getElementById("countLength").value);
+				request["meanAverage"] = parseFloat(document.getElementById("meanAverage").value);
+				request["standardDeviation"] = parseFloat(document.getElementById("standardDeviation").value);
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/SQLServer/RLanguage/QuickStartsRLanguage.asmx/RandomNumberGenerator",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+		</script>
+	</body>
+</html>
