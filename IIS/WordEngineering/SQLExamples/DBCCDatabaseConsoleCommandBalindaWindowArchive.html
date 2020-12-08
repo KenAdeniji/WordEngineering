@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-05-10	Created.
+	-->
+	<head>
+		<title>DBCC Database Console Command. Balinda Window</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSetQuery"> </div>
+			<div id="resultSetCommand"> </div>
+			<div id="resultSetInformation"> </div>
+			<div id="error"> </div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function executeQuery(command) 
+			{
+				var request = {};
+				request["command"] = command;
+				document.getElementById("resultSetCommand").innerHTML = command;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/SQLExamples/DBCCDatabaseConsoleCommandBalindaWindow.asmx/Command",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+						scriptLiteral9432.renderDataSet
+						(
+							JSON.parse(data.d), 
+							"resultSetInformation"
+						);
+				    },
+				    error: function (xhr) {
+				        $("#error").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						requestQueries();
+						var dbccCommand = scriptLiteral9432.getParameterByName("dbccCommand");
+						if (dbccCommand)
+						{
+							executeQuery(dbccCommand);
+							return;
+						}
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function requestQueries() 
+			{
+				var request = {};
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/SQLExamples/DBCCDatabaseConsoleCommandBalindaWindow.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        renderQuery(informationSet);
+				    },
+				    error: function (xhr) {
+				        $("#error").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+
+			function renderQuery(informationSet)
+			{
+				for 
+				(
+					var index = 0, count = informationSet.length, dumpSet = "";
+					index < count;
+					++index
+				)
+				{
+					dumpSet += `<a href='?dbccCommand=${informationSet[index]}'>${informationSet[index]}</a><br/>`;
+					console.log(dumpSet);
+				}
+				document.getElementById("resultSetQuery").innerHTML = dumpSet;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
