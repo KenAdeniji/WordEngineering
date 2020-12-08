@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-04-03 	http://babylondoc.azurewebsites.net/page.php?p=21911
+		2015-04-05	http://en.wikipedia.org/wiki/Sphere
+	-->
+	<head>
+		<title>Babylon.js - Basic scene</title>
+		<script src="http://www.babylonjs.com/hand.minified-1.2.js"></script>
+		<script src="http://www.babylonjs.com/cannon.js"></script>
+		<script src="http://www.babylonjs.com/oimo.js"></script>
+		<script src="http://www.babylonjs.com/babylon.js"></script>
+		
+		<style>
+			html, body {
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			#renderCanvas {
+				width: 100%;
+				height: 100%;
+				touch-action: none;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="renderCanvas"></canvas>
+		<script>
+			var canvas = document.getElementById("renderCanvas");
+			var engine = new BABYLON.Engine(canvas, true);
+			
+			// This begins the creation of a function that we will 'call' just after it's built
+			var createScene = function () {
+
+				// Now create a basic Babylon Scene object 
+				var scene = new BABYLON.Scene(engine);
+
+				// Change the scene background color to green.
+				scene.clearColor = new BABYLON.Color3(0, 1, 0);
+
+				// This creates and positions a free camera
+				var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+
+				// This targets the camera to scene origin
+				camera.setTarget(BABYLON.Vector3.Zero());
+
+				// This attaches the camera to the canvas
+				camera.attachControl(canvas, false);
+
+				// This creates a light, aiming 0,1,0 - to the sky.
+				var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+
+				// Dim the light a small amount
+				light.intensity = .5;
+
+				// Let's try our built-in 'sphere' shape. Params: name, subdivisions, size, scene.
+				// Parameter subdivisions: number of segments (highly detailed or not).
+				// Beware to adapt the number of segments to the size of your mesh.
+				var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+
+				// Move the sphere upward 1/2 its height
+				sphere.position.y = 1;
+
+				// Let's try our built-in 'ground' shape.  Params: name, width x, depth y, subdivisions, scene
+				var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+
+				// Leave this function
+				return scene;
+
+			};  // End of createScene function
+  
+			var scene =  createScene();
+
+			engine.runRenderLoop(function() {
+				scene.render();
+			});
+
+			//Resize
+			window.addEventListener("resize", function() {
+				engine.resize()
+			});
+		</script>
+	</body>
+</html>
+	

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-04-03 http://babylondoc.azurewebsites.net/page.php?p=22041
+	-->
+	<head>
+		<title>Babylon.js - Position, Rotation, Scaling</title>
+		<script src="http://www.babylonjs.com/hand.minified-1.2.js"></script>
+		<script src="http://www.babylonjs.com/cannon.js"></script>
+		<script src="http://www.babylonjs.com/oimo.js"></script>
+		<script src="http://www.babylonjs.com/babylon.js"></script>
+		
+		<style>
+			html, body {
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			#renderCanvas {
+				width: 100%;
+				height: 100%;
+				touch-action: none;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="renderCanvas"></canvas>
+		<script>
+			var canvas = document.getElementById("renderCanvas");
+			var engine = new BABYLON.Engine(canvas, true);
+			
+			function createScene() {
+				var scene = new BABYLON.Scene(engine);
+				var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
+				var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
+				
+				//Creation of 3 boxes
+				var box1 = BABYLON.Mesh.CreateBox("Box1", 6.0, scene);
+				var box2 = BABYLON.Mesh.CreateBox("Box2", 6.0, scene);
+				var box3 = BABYLON.Mesh.CreateBox("Box3", 6.0, scene);
+
+				//Positioning the boxes
+				box1.position = new BABYLON.Vector3(-20,0,0);
+				box2.position.x = -10; // or box2.position = new BABYLON.Vector3(-10,0,0);
+				box3.position.x = 0;
+
+				//Rotate the box around the x axis
+				box1.rotation.x = Math.PI/4; // or box1.rotation = new BABYLON.Vector3(Math.PI/4,0,0);
+
+				//Rotate the box around the y axis
+				box2.rotation.y = Math.PI/6;
+
+				//Scaling of 2x on the x axis
+				box3.scaling.x = 2; // or box3.scaling = new BABYLON.Vector3(2,1,1);
+
+				//Positioning box3 relative to box1
+				box3.parent = box1;
+				box3.position.z = -10;
+				
+				return scene;	
+			}
+			
+			var scene =  createScene();
+
+			engine.runRenderLoop(function() {
+				scene.render();
+			});
+
+			//Resize
+			window.addEventListener("resize", function() {
+				engine.resize()
+			});
+		</script>
+	</body>
+</html>
+	
