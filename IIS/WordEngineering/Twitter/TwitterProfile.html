@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Twitter Profile</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+
+<style>
+	body {background-color:#b0c4de; color: blue;} 
+</style>
+
+<body>
+    <div class="twitterHandle"></div>
+    <div class="twitterID"></div>
+    <div class="userName"></div>
+    <div class="location"></div>
+    <div class="websiteURL"></div>
+    <div class="favoritesCount"></div>
+    <div class="followersCount"></div>
+    <div class="statusCount"></div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+	var screen_name = getParameterByName("screen_name");
+	if (screen_name == "") { screen_name = 'Twitter'; }
+	var twitterApi = "https://api.twitter.com/1/users/show.json?callback=?&amp;screen_name=" + screen_name;
+	$.getJSON(twitterApi, function (data) {
+            $("div.twitterHandle").text("Twitter Handle : " + data.screen_name);
+            $("div.twitterID").text("Twitter ID : " + data.id);
+            $("div.userName").text("User Name : " + data.name);
+            $("div.location").text("Location : " + data.location);
+            $("div.websiteURL").text("Website URL : " + data.url);
+            $("div.favoritesCount").text("Favorites Count : " + data.favourites_count);
+            $("div.followersCount").text("Followers Count : " + data.followers_count);
+            $("div.statusCount").text("Status Count :" + data.statuses_count);
+        });
+    });
+	
+	function getParameterByName(name)
+	{
+	  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	  var regexS = "[\\?&]" + name + "=([^&#]*)";
+	  var regex = new RegExp(regexS);
+	  var results = regex.exec(window.location.href);
+	  if(results == null)
+		return "";
+	  else
+		return decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+</script>
+</html>

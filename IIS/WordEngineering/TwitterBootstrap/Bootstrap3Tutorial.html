@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	2015-04-28 Created	http://www.w3schools.com/bootstrap/default.asp
+-->
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Hello World!</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+  </div>
+  <div class="row">
+	<div class="col-sm-4">.col-sm-4</div>
+	<div class="col-sm-8">.col-sm-8</div>
+  </div>  
+</div>
+
+<div class="container">
+	<h1>h1 Bootstrap heading (36px)</h1>
+	<h2>h2 Bootstrap heading (30px)</h2>
+	<h3>h3 Bootstrap heading (24px)</h3>
+	<h4>h4 Bootstrap heading (18px)</h4>
+	<h5>h5 Bootstrap heading (14px)</h5>
+	<h6>h6 Bootstrap heading (12px)</h6>
+</div>
+
+<div class="container">
+  <h1>Lighter, Secondary Text</h1>
+  <p>The small element is used to create a lighter, secondary text in any heading:</p>       
+  <h1>h1 heading <small>secondary text</small></h1>
+  <h2>h2 heading <small>secondary text</small></h2>
+  <h3>h3 heading <small>secondary text</small></h3>
+  <h4>h4 heading <small>secondary text</small></h4>
+  <h5>h5 heading <small>secondary text</small></h5>
+  <h6>h6 heading <small>secondary text</small></h6>
+</div>
+
+<div class="container">
+  <h1>Highlight Text</h1>    
+  <p>Use the mark element to <mark>highlight</mark> text.</p>
+</div>
+
+<div class="container">
+  <h1>Abbreviations</h1>
+  <p>The abbr element is used to mark up an abbreviation or acronym:</p>
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+</div>
+
+<div class="container">
+  <h1>Blockquotes</h1>
+  <p>The blockquote element is used to present content from another source:</p>
+  <blockquote>
+    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <footer>From WWF's website</footer>
+  </blockquote>
+</div>
+
+<div class="container">
+  <h1>Description Lists</h1>    
+  <p>The dl element indicates a description list:</p>
+  <dl>
+    <dt>Coffee</dt>
+    <dd>- black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>- white cold drink</dd>
+  </dl>     
+</div>
+
+<div class="container">
+  <h1>Code Snippets</h1>
+  <p>Inline snippets of code should be embedded in the code element:</p>
+  <p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> defines a section in a document.</p>
+</div>
+
+<div class="container">
+  <h1>Keyboard Inputs</h1>
+  <p>To indicate input that is typically entered via the keyboard, use the kbd element:</p>
+  <p>Use <kbd>ctrl + p</kbd> to open the Print dialog box.</p>
+</div>
+
+<div class="container">
+<h1>Multiple Code Lines</h1>
+<p>For multiple lines of code, use the pre element:</p>
+<pre>
+Text in a pre element
+is displayed in a fixed-width
+font, and it preserves
+both      spaces and
+line breaks.
+</pre>
+</div>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+	<img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+</div>
+
+<div class="container">
+<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>
+</div>
+
+<div class="container">
+<p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>
+<p>Envelope icon as a link:
+  <a href="#"><span class="glyphicon glyphicon-envelope"></span></a>
+</p>
+<p>Search icon: <span class="glyphicon glyphicon-search"></span></p>
+<p>Search icon on a button:
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </button>
+</p>
+<p>Search icon on a styled button:
+  <button type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </button>
+</p>
+<p>Print icon: <span class="glyphicon glyphicon-print"></span></p>
+<p>Print icon on a styled link button:
+  <a href="#" class="btn btn-success btn-lg">
+    <span class="glyphicon glyphicon-print"></span> Print
+  </a>
+</p> 
+</div>
+
+<div class="container">
+  <h2>Badges</h2>
+  <a href="#">News <span class="badge">5</span></a><br>
+  <a href="#">Comments <span class="badge">10</span></a><br>
+  <a href="#">Updates <span class="badge">2</span></a>
+</div>
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul>
+
+<ul class="pager">
+  <li><a href="#">Previous</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+
+<ul class="list-inline">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Menu 1</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Menu 1</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
+
+</body>
+</html>

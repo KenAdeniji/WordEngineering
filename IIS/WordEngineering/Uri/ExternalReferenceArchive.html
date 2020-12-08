@@ -1,0 +1,29 @@
+<script>
+/*
+	http://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML
+*/
+	function pageLoad()
+	{
+		var url = "ExternalReference.html";
+		var url = "http://www.Google.com";
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function() {
+		  console.log(xhr.responseXML.documentElement.nodeName);
+		  var xmlDocument = xhr.responseXML;
+		  var anchors = xmlDocument.getElementsByTagName("a");
+		  console.log(anchors.length);
+		  for (var index = 0, length = anchors.length; index < length; ++index)
+		  {
+			console.log(anchors[index].href);
+		  }
+		}
+		xhr.onerror = function() {
+		  console.log("Error while getting XML.");
+		}
+		xhr.open("GET", url);
+		xhr.responseType = "document";
+		xhr.send();
+	}	
+	
+	window.addEventListener("load", pageLoad, false);
+</script>
