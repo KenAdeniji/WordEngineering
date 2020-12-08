@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<!--
+			2015-11-15	Created.	http://speakingjs.com/es5/ch01.html
+		-->
+		<title>Point</title>
+		<style>
+			body {background: blue; color: yellow;}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Input</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td><label for="pointX">X</label></td>
+							<td><input type="number" id="pointX" step=".000001"></td>
+							<td><label for="pointY">Y</label></td>
+							<td><input type="number" id="pointY" step=".000001"></td>
+						</tr>
+						<tr>
+							<td colspan="4" align="center"><button id="query">Query</button></td>
+						</tr>
+				</table>
+			</fieldset>
+		</div>
+		<fieldset>
+			<legend>Distance</legend>
+			<div id="response"></div>
+		</fieldset>
+		<script>
+			function querySubmit()
+			{
+				var pointX = document.getElementById("pointX").value;
+				var pointY = document.getElementById("pointY").value;
+				
+				var distance = Math.sqrt((pointX * pointX) + (pointY * pointY));
+				
+				document.getElementById("response").innerHTML = distance;
+			}
+			
+			document.getElementById("query").addEventListener("click", querySubmit, "false");
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

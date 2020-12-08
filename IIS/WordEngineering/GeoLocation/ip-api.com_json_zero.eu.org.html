@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-02-24	Created.
+			2019-02-24	ip-api.com
+		-->
+		<title>ip-api.com</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<table align="center">
+			<tr>
+				<td><label for="ipAddress">IP Address</label></td>
+				<td><span id="ipAddress"></span></td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function ipAddressCallback(x)
+			{ 
+				document.getElementById('ipAddress').textContent = x.query; 
+			}
+		</script>
+		<script src='http://ip-api.com/json/zero.eu.org?callback=ipAddressCallback'></script>		
+	</body>
+</html>

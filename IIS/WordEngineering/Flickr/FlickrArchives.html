@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Flickr Archive</title>
+		<script type="text/javascript">
+		//<![CDATA[
+
+		    function reloadFrames() {
+
+		        // get a handle to the iframes and the year and month in the form
+		        var dateForm = document.getElementById('date');
+		        var flickrFrame = document.getElementById('FlickrFrame');
+
+		        year = dateForm.year.value;
+		        month = dateForm.month.value;
+		        var year, month, dateForm;
+		        var flickrURL = "http://www.flickr.com/photos/KenAdeniji/archives/date-taken/" + year + "/" + month + "/calendar";
+
+		        //reset the URLs for the iframes
+		        flickrFrame.src = flickrURL;
+
+		        return false;
+
+		    }
+
+		//]]>
+		</script>
+	</head>
+	<body>
+	<form id="date" action="#" onsubmit="return reloadFrames();">
+		Year: <input type="text" size="4" name="year" value="2011" />
+		Month: <input type="text" size="4" name="month" value="07" />
+		<input type="submit" value="Reload Frames" />
+	</form>
+	<iframe id="FlickrFrame" src="http://www.flickr.com/photos/KenAdeniji/archives/date-taken/2011/07/calendar/" name="Flickr" style="width:600px; height:500px; border: 0px"></iframe>
+</body>
+</html>

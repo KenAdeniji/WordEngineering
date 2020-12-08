@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-07-24	Created.
+		2020-07-24	https://stackoverflow.com/questions/31274329/get-list-of-filenames-in-folder-with-javascript
+		2020-07-24	I use the following (stripped-down code) in Firefox 69.0 (on Ubuntu) to read a directory and show the image as part of a digital photo frame. The page is made in HTML, CSS, and JavaScript, and it is located on the same machine where I run the browser. The images are located on the same machine as well, so there is no viewing from "outside".
+		2020-07-24	This requires the policy security.fileuri.strict_origin_policy to be disabled. This means it might not be a solution you want to use. In my case I deemed it ok.
+		2020-07-24T21:57:00	url address browser file:///E:/WordEngineering/IIS/WordEngineering/File/BesideSoLittle.html
+		2020-07-25	https://archive.codeplex.com/?p=linqjs
+		2020-07-25	https://stackoverflow.com/questions/14221290/where-function-of-linq-js-on-json-data-not-working
+	-->
+	<head>
+		<title>Beside so little</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="directoryName">Start Folder:</label></td>
+					<td><input type="text" ID="directoryName" autofocus required value="file:///E:/WordEngineering/IIS/WordEngineering/File/"></td>
+				</tr>	
+				<tr>
+					<td><label for="filenameLike">Filename Like:</label></td>
+					<td><input type="text" ID="filenameLike"/></td>
+				</tr>
+				<tr>
+					<td><label for="searchTerm">Search Term:</label></td>
+					<td><input type="text" ID="searchTerm"/></td>
+				</tr>
+				<tr>
+					<td><label for="subdirectory">Subdirectory:</label></td>
+					<td><input type=checkbox id="subdirectory" checked/></td>
+				</tr>	
+				<tr>
+					<td><label for="fileLengthBytesFrom">File Length:</label></td>
+					<td>
+						<input type="number" id="fileLengthBytesFrom" min="0"/>
+						...
+						<input type="number" id="fileLengthBytesUntil" min="0"/>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="datedCreatedFrom">Date Created:</label></td>
+					<td>
+						<input type="datetime" id="datedCreatedFrom"/>
+						...
+						<input type="datetime" id="datedCreatedUntil"/>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="datedLastWriteFrom">Date Last Write:</label></td>
+					<td>
+						<input type="datetime" id="datedLastWriteFrom"/>
+						...
+						<input type="datetime" id="datedLastWriteUntil"/>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/3.2.2/linq.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"> </script>
+		<script src="http://localhost/WordEngineering/WordUnion/tsorter.min.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			var directoryNameElement = document.getElementById("directoryName");
+			var filenameLikeElement = document.getElementById("filenameLike");
+			var resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "http://localhost/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						var directoryNameValue = scriptLiteral9432.getParameterByName("directoryName");
+						if (directoryNameValue)
+						{
+							document.getElementById("directoryName").value = directoryNameValue;
+						}	
+						console.log(directoryNameValue);
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+ 			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				var files = [];
+				var directory = directoryNameElement.value;
+				var	directoryListing = "";
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open('GET', directory, false); // false for synchronous request
+				xmlHttp.send(null);
+				var ret = xmlHttp.responseText;
+				
+				var fileList = ret.split('\n');
+				for (i = 0; i < fileList.length; i++) {
+					var fileinfo = fileList[i].split(' ');
+					if (fileinfo[0] == '201:') {
+						//document.write(fileinfo[1] + "<br>");
+						//document.write('<img src=\"' + directory + fileinfo[1] + '\"/>');
+						directoryListing += fileinfo[1] + "<br>";
+						files.push
+						(
+							new File(fileinfo[1])
+						);
+					}
+				}
+				resultSetElement.innerHTML = directoryListing;
+
+				var regexp = new RegExp(filenameLikeElement.value, 'i');
+				var	queryResult = Enumerable.From(files)
+					.Where(function (x) { return regexp.test(x.filename) })
+					.OrderBy(function (x) { return x.filename })
+					.Select(function (x) { return x.filename  })
+					.ToArray();
+	
+				scriptLiteral9432.renderDataTable(queryResult, "resultSet");
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			class File
+			{
+				constructor(filename)
+				{
+					this.filename = filename;
+				}
+			}
+	</script>
+</body>
+</html>

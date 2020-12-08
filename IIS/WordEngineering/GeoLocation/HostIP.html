@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Host IP</title>
+    <script type="text/javascript">
+        function lookup()
+        {
+            var hostAddress = "http://api.hostip.info/";
+            var queryString = "?";
+            var ipAddress = document.getElementById("ipAddress").value;
+            if (ipAddress.length > 0)
+            {
+                queryString = queryString + "ip=" + ipAddress + "&";
+            }
+            var countryFlag = document.getElementById("countryFlag");
+            countryFlag.src = hostAddress + "flag.php" + queryString;
+            var latitudeLongitude = document.getElementById("latitudeLongitude").checked;
+            if (latitudeLongitude == true)
+            {
+                queryString = queryString + "position=true&"
+            }
+            var hostIp = document.getElementById("hostIp");
+            hostIp.src = hostAddress + "get_html.php" + queryString;
+        }
+    </script>
+</head>
+<body>
+<form action="HostIP.html" method="get">
+    <table>
+        <tbody>
+            <tr>
+                <td>IP Address:</td>
+                <td><input name="ipAddress" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Latitude/Longitude:</td>
+                <td><input name="latitudeLongitude" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input name="OK" type="button" onclick="lookup();" value="Submit" />
+                    <input name="cancel" type="reset" onclick="document.forms[0].reset();" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <iframe name="hostIp" src="http://api.hostip.info/get_html.php">
+    </iframe>
+    <img name="countryFlag" src="http://api.hostip.info/flag.php" alt="IP Address Lookup" />
+</form>
+</body>
+</html>

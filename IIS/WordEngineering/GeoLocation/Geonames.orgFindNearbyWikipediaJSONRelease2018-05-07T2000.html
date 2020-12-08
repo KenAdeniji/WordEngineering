@@ -1,0 +1,86 @@
+<html>
+	<!--
+		2015-06-14 	Created http://www.geonames.org/export/wikipedia-webservice.html
+		2015-06-14	http://stackoverflow.com/questions/4191165/wikipedia-api-for-geolocations
+		2015-06-15	http://api.geonames.org/findNearbyWikipediaJSON?formatted=true&lat=37.551&lng=-122.0778&username=WordEngineering&style=full&lang=en&wikipediaUrl&thumbnailImg
+	-->
+	<head>
+		<title>Geonames.org Find Nearby Wikipedia</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">		
+	</head>
+	<body>
+		<div>
+			<div align="center">
+				<label for="latitude">Latitude:&nbsp;&nbsp;&nbsp;<input id="latitude"></label>
+				<label for="longitude">Longitude:&nbsp;&nbsp;&nbsp;<input id="longitude"></label>
+				&nbsp;&nbsp;&nbsp;<button id="query">Query</button>
+			</div>
+			<div id="info"></div>
+		</div>
+
+		<div id="tweet"></div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function retrieveContent(latitude,longitude) {
+				jQuery(function($) {
+				$.getJSON
+				(
+					'http://api.geonames.org/findNearbyWikipediaJSON?formatted=true&lat='+ latitude +'&lng='+ longitude +'&username=WordEngineering&style=full&lang=en&wikipediaUrl&thumbnailImg', function(json)
+					{
+						renderInfo(json);
+					}); 
+				}); 
+			}
+
+			function querySubmit()
+			{
+				retrieveContent
+				(
+					document.getElementById("latitude").value,
+					document.getElementById("longitude").value
+				);
+			}
+
+			function renderInfo(json)
+			{
+				var resultSet = "";
+				for(var rowIndex = 0, rowLength = json.geonames.length; rowIndex < rowLength; rowIndex++) {
+					resultSet += "<div style='width:90%; margin:0 auto;'>";
+					var jsonData = json.geonames[rowIndex];
+					var keyInfo = Object.keys(jsonData);
+					for (var keyInfoIndex = 0, keyInfoLength = keyInfo.length; keyInfoIndex < keyInfoLength; keyInfoIndex++) {
+						var keyName = keyInfo[keyInfoIndex];
+						var keyNameValue = keyName + ": " + jsonData[keyName] + "<br>";
+						if (keyName.indexOf("Img") > 0)
+						{
+							resultSet += "<img src='" + jsonData[keyName] + "'/><br>";
+						}
+						else if (keyName.indexOf("Url") > 0)
+						{
+							resultSet += "<a href='http://" + jsonData[keyName] + "'>" + jsonData[keyName] + "</a><br>";
+						}
+						else
+						{
+							resultSet += keyNameValue;
+						}
+					}
+					resultSet += "<hr></div>";
+				}
+				document.getElementById("info").innerHTML = resultSet; 
+			}
+
+			function startUp()
+			{
+				var latitude = 37.551;
+				var longitude = -122.0778;
+				document.getElementById("latitude").value = latitude;
+				document.getElementById("longitude").value = longitude;
+				retrieveContent(latitude, longitude)
+			}
+			
+			window.addEventListener("load", startUp);
+			document.getElementById("query").addEventListener("click", querySubmit);
+		</script>
+	</body>
+<html>

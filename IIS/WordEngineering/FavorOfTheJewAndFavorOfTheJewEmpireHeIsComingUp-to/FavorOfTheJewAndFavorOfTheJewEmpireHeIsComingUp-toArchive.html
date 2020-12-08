@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-11-29	Created.
+	2019-11-29	https://stackoverflow.com/questions/32342753/calculate-holidays-in-javascript
+	2019-11-29	https://stackoverflow.com/questions/34913675/how-to-iterate-keys-values-in-javascript
+-->
+    <head>
+        <title>Favor of the Jew, and favor of the Jew empire. He is coming up-to ...</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Holiday Anniversary"/>
+		<meta name="keywords" content="Holiday Anniversary"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="holiday">Holiday</label></td>
+						<td><select id="holiday"></select></td>
+					</tr>	
+					<tr>
+						<td><label for="yearFrom">Year From</label></td>
+						<td><input id="yearFrom" type="number" value="2001"/></td>
+					</tr>
+					<tr>
+						<td><label for="yearUntil">Year Until</label></td>
+						<td><input id="yearUntil" type="number" value="2019"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>	
+					<tr>
+						<td><label for="datedFrom">Dated From</label></td>
+						<td><span id="datedFrom"></span></td>
+					</tr>
+					<tr>
+						<td><label for="datedUntil">Dated Until</label></td>
+						<td><span id="datedUntil"></span></td>
+					</tr>
+					<tr>
+						<td><label for="daysBetween">Days Between</label></td>
+						<td><span id="daysBetween"></span></td>
+					</tr>
+					<tr>
+						<td><label for="yearSpan">Year Span</label></td>
+						<td><span id="yearSpan"></span></td>
+					</tr>
+					<tr>
+						<td><label for="biblicalCalendarFromUntil">Biblical Calendar From Until</label></td>
+						<td><span id="biblicalCalendarFromUntil"></span></td>
+					</tr>
+					<tr>
+						<td><label for="commonEraFromUntil">Common Era From Until</label></td>
+						<td><span id="commonEraFromUntil"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			var datedFromID = document.getElementById("datedFrom");
+			var datedUntilID = document.getElementById("datedUntil");
+			
+			var holidayID = document.getElementById("holiday");
+			var yearFromID = document.getElementById("yearFrom");
+			var yearUntilID = document.getElementById("yearUntil");
+			
+			var daysBetweenID = document.getElementById("daysBetween");
+			var biblicalCalendarFromUntilID = document.getElementById("biblicalCalendarFromUntil");
+			var commonEraFromUntilID = document.getElementById("commonEraFromUntil");
+			var yearSpanID = document.getElementById("yearSpan");
+			
+			function buildHolidayOptions()
+			{
+				holidayID.options.length = 0;
+
+				for (var key in holidays) {
+					// check if the property/key is defined in the object itself, not in parent
+					if (holidays.hasOwnProperty(key)) {           
+						//console.log(key, holidays[key]);
+
+						var option = document.createElement("option");
+						option.text = holidays[key];
+						option.value = key;
+						holidayID.appendChild(option);
+					}
+				}	
+				holidayID.value = "10,3,4"; //"Thanksgiving Day";
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						buildHolidayOptions();
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{                             
+				var holidayMonthWeekDay = holidayID.value.split(",");
+								
+				var datedFromValue = getDate
+				(
+					parseInt(yearFromID.value),
+					parseInt(holidayMonthWeekDay[0]),
+					parseInt(holidayMonthWeekDay[1]),
+					parseInt(holidayMonthWeekDay[2])
+				);
+				datedFromID.textContent = datedFromValue;
+				
+				var datedUntilValue = getDate
+				(
+					parseInt(yearUntilID.value),
+					parseInt(holidayMonthWeekDay[0]),
+					parseInt(holidayMonthWeekDay[1]),
+					parseInt(holidayMonthWeekDay[2])
+				);
+				datedUntilID.textContent = datedUntilValue;
+				
+				daysBetweenValue = scriptLiteral9432.daysBetween
+				(
+					datedFromValue,
+					datedUntilValue
+				);
+				daysBetweenID.textContent = daysBetweenValue;
+				
+				yearSpanID.textContent = parseInt(yearUntilID.value) - parseInt(yearFromID.value);
+				
+				biblicalCalendarFromUntilID.textContent = scriptLiteral9432.daysDifferenceBiblicalCalendar
+				(
+					daysBetweenValue
+				);
+
+				commonEraFromUntilID.textContent = scriptLiteral9432.daysDifferenceCommonEra
+				(
+					datedFromValue,
+					datedUntilValue
+				);
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+var holidays = { // keys are formatted as month,week,day
+    "0,2,1": "Martin Luther King, Jr. Day",
+    "1,2,1": "President's Day",
+    "2,1,0": "Daylight Savings Time Begins",
+    "3,3,3": "Administrative Assistants Day",
+    "4,1,0": "Mother's Day",
+    "4,-1,1": "Memorial Day",
+    "5,2,0": "Father's Day",
+    "6,2,0": "Parents Day",
+    "8,0,1": "Labor Day",
+    "8,1,0": "Grandparents Day",
+    "8,-1,0": "Gold Star Mothers Day",
+    "9,1,1": "Columbus Day",
+    "10,0,0": "Daylight Savings Time Ends",
+    "10,3,4": "Thanksgiving Day"
+};
+function getDate(year, month, week, day) {
+    var firstDay = 1;
+    if (week < 0) {
+        month++;
+        firstDay--;
+    }
+    var date = new Date(year, month, (week * 7) + firstDay);
+    if (day < date.getDay()) {
+        day += 7;
+    }
+    date.setDate(date.getDate() - date.getDay() + day);
+    return date;
+}
+function getHoliday(month, week, day) {
+    return holidays[month + "," + week + "," + day];
+}
+function getDateString(year, month, week, day) {
+    var date = getDate(year, month, week, day);
+    var holiday = getHoliday(month, week, day);
+    var dateString = date.toLocaleDateString();
+    if (holiday) {
+        dateString += " \xa0\xa0\xa0" + holiday;
+    }
+    return dateString;
+}			
+		</script>
+
+</body>
+</html>

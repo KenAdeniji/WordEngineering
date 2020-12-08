@@ -1,0 +1,43 @@
+	<div id="geoinfo"></div>
+	<script>
+    if(navigator.geolocation){
+      var container = document.getElementById('geoinfo');
+      navigator.geolocation.getCurrentPosition(
+        function(position){
+          var out = '<ul>'+
+            '<li><span>Latitude:</span>' + 
+                 position.coords.latitude + '</li>' +
+            '<li><span>Longitude:</span>' + 
+                 position.coords.longitude + '</li>' +
+            '<li><span>Altitude:</span>' + 
+                 position.coords.altitude + '</li>' +
+            '<li><span>Accuracy:</span>' + 
+                 position.coords.accuracy + '</li>' +
+            '<li><span>Altitude Accuracy:</span>' +
+                 position.coords.altitudeAccuracy + '</li>' +
+            '<li><span>Heading:</span>' + 
+                 position.coords.heading + '</li>' +
+            '<li><span>Speed:</span>' + 
+                 position.coords.speed + '</li>' +
+          '</ul>';
+          container.innerHTML = out;
+        
+        },
+        function(error){
+          var errormessages = [
+            'Permission denied',
+            'Position not available',
+            'Time out'
+          ];
+          container.innerHTML = '<li>Error: ' + 
+                                errormessages[error.code-1] + 
+                                '</li>';
+        },
+        {
+          enableHighAccuracy: true,
+          maximumAge: 10000,
+          timeout:10000
+        }
+      );
+    }
+	</script>
