@@ -1,0 +1,53 @@
+﻿<html>
+<!-- 
+	2014-10-20 addEventListener.
+	2014-10-20 w3schools.com/tags/att_input_min.asp
+-->
+<head>
+<title>Fibonacci</title>
+<style type="text/css">
+	body { background: blue; color: yellow; }
+</style>
+</head>
+<body>
+<div align="center">
+	<label for="requestNumber">Number:</label>
+	<input id="requestNumber" cols="10" value="10" type="number" min="1">
+	<br>
+	<button id="query">Query</button>
+	<br>
+	<div id="response"></div>
+</div>	
+
+<script>
+	function do_callback(num) {
+		var response = document.getElementById('response');
+		var separator = "";
+		if (response.innerHTML !== "")
+		{
+			separator = ", ";
+		}
+		response.innerHTML = response.innerHTML + separator + num;
+	}
+	 
+	function fibonacci() {
+		document.getElementById('response').innerHTML = "";
+		var requestNumber = parseFloat(document.getElementById("requestNumber").value);
+		var i = 0, j = 1, n = 0;
+		while (n < requestNumber){
+			do_callback(i);
+			var t = i;
+			i = j;
+			j += t;
+			n++;
+		}
+	}
+	
+	window.addEventListener("load", fibonacci, false);
+
+	var query = document.getElementById("query");
+	query.addEventListener("click", fibonacci, false);
+</script>
+
+</body>
+</html>

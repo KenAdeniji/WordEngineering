@@ -1,0 +1,83 @@
+<html>
+<!--
+	2015-02-09 Created http://stackoverflow.com/questions/5746598/is-it-possible-with-javascript-to-find-files-last-modified-time
+	2015-02-10 Javascript: Get milliseconds of today at midnight http://tiku.io/questions/4881544/javascript-get-milliseconds-of-today-at-midnight
+-->
+<head>
+	<title>File's Last Modified Time</title>
+</head>
+<body>
+<script>
+var getMTime = function(url, callback) {
+  var xhr = XMLHttpRequest();
+  console.log("Good");
+  xhr.open('HEAD', url, true); // use HEAD - we only need the headers
+  xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+      var mtime = new Date(xhr.getResponseHeader('Last-Modified'));
+      if (mtime.toString() === 'Invalid Date') {
+        callback(); // dont want to return a bad date
+      } else {
+        callback(mtime);
+      }
+    }
+  }
+  xhr.send();
+};
+
+getMTime('Last-Modified.html', function(mtime) {
+	console.log("Good");
+	if (mtime) console.log('the mtime is:' + mtime.toISOString());
+});
+</script>
+
+<span id="LastModified"></span>
+
+<iframe id="myIframe" src="BinarySearch.html" style="display:none;" onload="getLastMod();">
+</iframe>
+
+<script type="text/javascript">
+function getLastMod(){
+var myFrm = document.getElementById('myIframe');
+var lastModif = new Date(myFrm.contentWindow.document.lastModified);
+document.getElementById('LastModified').innerHTML = "LastModified: " + lastModif.toLocaleString();
+}
+
+/*
+iFrame = document.getElementById('myIframe');
+iFrame.addEventListener("load", getLastMod, false);
+*/
+
+var midnight = new Date( Date.UTC(2015,1,10) );
+console.log(+midnight); //1423526400000
+
+var fortyFivePercent = new Date( Date.UTC(2004,6,11) );
+console.log(+fortyFivePercent); //1089504000000
+
+var d = new Date(1423526400000 - 1089504000000);
+console.log(d); //1980-08-02T00:00:00.000Z
+
+var d = new Date(1423526400000);
+console.log(d); //2015-02-10T00:00:00.000Z
+
+var d = new Date(1089504000000);
+console.log(d); //2004-07-11T00:00:00.000Z
+
+var d = new Date(1423679054014);
+console.log(d); 
+
+var fortyFivePercent = new Date('July 11, 2004');
+console.log(+fortyFivePercent);
+</script>
+
+<script>
+window.onload = downScripts;
+function downScripts() 
+{
+	var element = document.createElement("script");
+	element.src = "myScript.js";
+	document.body.appendChild(element);
+}
+</script>
+</body>
+</html>
