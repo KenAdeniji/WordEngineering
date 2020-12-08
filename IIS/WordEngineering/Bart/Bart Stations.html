@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<!--
+			2014-07-17 Bart.gov/Developers
+			2014-07-17 http://stackoverflow.com/questions/6903680/javascript-scope-issue-with-jquery-and-ajax Support for closure, and XML parsing.
+		-->
+		<title>Bart Stations</title>
+	</head>
+	<body style="background-color:blue; color:yellow;">
+		<div id="inform"></div>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"> </script>
+		<script>
+			function stations()
+			{
+				var uri = "http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V";
+				
+			    var returnString = "";
+
+				var name;
+				var abbreviation;
+				var latitude;
+				var longitude;
+				var address;
+				var city;
+				var county;
+				var state;
+				var zipcode;
+				
+				$.ajax({
+					type:"GET",
+					url:uri,
+					dataType:"xml",
+					success: function(xml){
+						$(xml).find("station").each(function(){
+							name = $(this).find("name").text();
+							abbreviation = $(this).find("abbr").text();
+							latitude = $(this).find("gtfs_latitude").text();
+							longitude = $(this).find("gtfs_longitude").text();
+							address = $(this).find("address").text();
+							city = $(this).find("city").text();
+							county = $(this).find("county").text();
+							state = $(this).find("state").text();
+							zipcode = $(this).find("zipcode").text();
+							
+							returnString += "Name: " + name + "<br>"
+								+ "Abbreviation: " + abbreviation + "<br>"
+								+ "Latitude: " + latitude + "<br>"
+								+ "Longitude: " + longitude + "<br>"
+								+ "Address: " + address + "<br>"
+								+ "City: " + city + "<br>"
+								+ "County: " + county + "<br>"
+								+ "State: " + state + "<br>"
+								+ "Zipcode: " + zipcode + "<br>"
+								+ "<hr>"
+						});
+						var inform = document.getElementById("inform");
+						inform.innerHTML = returnString;
+					}
+				}); 
+			}
+			
+			window.addEventListener("load", stations, false);
+		</script>
+	</body>
+</html>

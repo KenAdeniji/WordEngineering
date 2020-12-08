@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2020-09-07	https://stackoverflow.com/questions/2861539/jquery-getjson-returning-null
+			2020-09-07	https://bibliaapi.com/docs/	
+		-->
+		<title>Biblia.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Biblia.com"/>
+		<meta name="keywords" content="Biblia.com"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input id="scriptureReference" type="text" value="John 17" autofocus></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>				
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				</tr>				
+			</table>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			const API_Key = "c4aba4963acb277bf551988e234600bc";
+		
+			const bibleVersionElement = document.getElementById("bibleVersion");
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const scriptureReferenceElement = document.getElementById("scriptureReference");
+
+			function buildSelect(selectControl, selectChoices)
+			{
+				selectControl.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = selectChoices.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = selectChoices[rowIndex][0];
+					option.value = selectChoices[rowIndex][1];
+					selectControl.appendChild(option);
+				}
+				
+			}
+
+			function buildVersions()
+			{
+				var bibleVersions = [];
+			  
+				var json_url = 	"https://api.biblia.com/v1/bible/find?" +
+								"key=" + API_Key +
+								"&callback=?";
+				$.getJSON(json_url, function(json_response) { 
+					var jsonCollection = json_response.bibles;
+					for 
+					(
+						index = 0, length = jsonCollection.length;
+						index < length;
+						++index
+					)
+					{
+						bibleVersions.push
+						(
+							[
+							jsonCollection[index].title,
+							jsonCollection[index].bible
+							]
+						);
+					}
+					buildSelect(bibleVersionElement, bibleVersions);
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					buildVersions();
+					querySubmit();	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();	
+				}
+			}
+
+			function querySubmit()
+			{
+				var json_url = 	"http://api.biblia.com/v1/bible/content/LEB.txt.js?" + 
+								"passage=" + scriptureReferenceElement.value +
+								"&style=fullyFormatted" +
+								"&key=" + API_Key +
+								"&callback=?";
+				$.getJSON(json_url, function(json_response) { 
+					resultSetElement.innerHTML = JSON.stringify(json_response);
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

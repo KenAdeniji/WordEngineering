@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 
+			http://www.codebeerstartups.com/2012/12/introduction-to-backbone-js-and-setting-up-an-working-environment/
+		-->
+		<title>Backbone</title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+	</head>
+	<body>
+	<script type="text/javascript"> 
+	var Person = Backbone.Model.extend({
+		defaults: {
+			name: 'Guest User',
+			age: 23,
+			occupation: 'Worker'
+		},
+		
+		validate: function(attributes){
+			if ( attributes.age < 0 ){
+				return 'Age must be positive.';
+			}
+
+			if ( !attributes.name ){
+				return 'Every person must have a name.';
+			}
+		},
+
+		work: function(){
+			return this.get('name') + ' is working.';
+		}
+	});
+	
+	var person = new Person;
+	
+	person.on('error', function(model,error){
+		console.log(error); // printing the error message on console.
+	});
+
+	person.set({name:"Taroon Tyagi", age: -1, occupation: "Graphics Designer"});
+	
+	person = new Person({name:"Taroon Tyagi", age: 23, occupation: "Graphics Designer"});
+	
+	var personJSON = person.toJSON();
+	
+	console.log(person.get("name"));
+	
+	console.log(personJSON);
+	
+	var PeopleCollection = Backbone.Collection.extend({
+		model: Person
+	});
+
+	var peopleCollection = new PeopleCollection();
+	peopleCollection.add(person);
+	
+	var peopleCollectionJson = peopleCollection.toJSON();
+	console.log(peopleCollectionJson);
+	
+	var peopleCollection = new PeopleCollection([
+		{
+			name: 'John Doe',
+			age: 26
+		},
+		{
+			name: 'Jane Smith',
+			age: 25,
+			occupation: 'web designer'
+		},
+		{
+			name: 'Larry Raymond',
+			age: 26,
+			occupation: 'Java Developer'
+		}
+	]);
+
+	var peopleCollectionJson = peopleCollection.toJSON();
+	console.log(peopleCollectionJson);
+	
+	var PersonView = Backbone.View.extend({
+		tagName: 'li', //By default tagName is “div”. Here we specified it to use “li”.
+		className: 'person',
+        id: 'person-id', // although this is not a good way but I think got the idea.
+		
+		my_template: _.template(" () - "),
+
+		initialize: function(){
+			this.render();
+		},
+
+		render: function(){
+			//this.$el.html( this.model.get('name') + ' (' + this.model.get('age') + ') - ' + this.model.get('occupation'));
+			this.$el.html( this.my_template(this.model.toJSON()));			
+		}
+	});
+	
+	var personView = new PersonView();
+	console.log(personView.el) //will tell you the view for the object. Right now its a blank "li" tag.
+	console.log(personView.$el) // is jquery tied up view for this object.
+	
+	var personView = new PersonView({ model: person });
+	$(document.body).html(personView.el);  // this is not ideal but good enough for demo.
+	</script>
+	</body>
+</html>

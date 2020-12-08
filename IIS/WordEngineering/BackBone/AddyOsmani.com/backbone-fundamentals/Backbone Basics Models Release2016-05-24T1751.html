@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+	2016-05-23	Created.	https://addyosmani.com/backbone-fundamentals/
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>https://addyosmani.com/backbone-fundamentals/</title>
+</head>
+<body>
+
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+-->
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+
+<script>
+	function backboneModel()
+	{
+		var Todo = Backbone.Model.extend({
+		  // Default todo attribute values
+		  defaults: {
+			title: '',
+			completed: false
+		  },
+		  initialize: function(){
+			console.log('This model has been initialized.');
+			this.on('change', function(){
+				console.log('- Values for this model have changed.');
+			});
+			this.on('change:title', function(){
+				console.log('Title value for this model has changed.');
+			});			
+		  }
+		});
+		
+		// We can then create our own concrete instance of a (Todo) model
+		// with no values at all:
+		var todo1 = new Todo();
+		// Following logs: {}
+		console.log(JSON.stringify(todo1));
+
+		// or with some arbitrary data:
+		var todo2 = new Todo({
+		  title: 'Check the attributes of both model instances in the console.',
+		  completed: true
+		});
+
+		// Following logs: {"title":"Check the attributes of both model instances in the console.","completed":true}
+		console.log(JSON.stringify(todo2));
+		
+		console.log(todo2.get('title')); // Retrieved with model's get() method.
+		console.log(todo2.get('completed')); // true
+		
+		// Setting the value of attributes via instantiation
+		var myTodo = new Todo({
+		  title: "Set through instantiation."
+		});
+		myTodo.set({
+		  title: "Both attributes set through Model.set().",
+		  completed: true
+		});
+		console.log(JSON.stringify(myTodo));
+		
+		var Person = new Backbone.Model({name: 'Jeremy'});
+
+		// Validate the model name
+		Person.validate = function(attrs) {
+		  if (!attrs.name) {
+			return 'I need your name';
+		  }
+		};
+
+		// Change the name
+		Person.set({name: 'Samuel'});
+		console.log(Person.get('name'));
+		// 'Samuel'
+
+		// Remove the name attribute, force validation
+		Person.unset('name', {validate: true});
+		// false		
+	}
+
+	window.addEventListener("load", backboneModel, false);	
+</script>
+
+</body>
+</html>

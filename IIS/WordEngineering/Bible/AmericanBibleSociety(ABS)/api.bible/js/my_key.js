@@ -1,0 +1,1 @@
+const API_KEY = `83d387ea4b9ade103f621aaf0eaaab5a`; // Fill this in with your own API key from https://scripture.api.bible/

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2020-09-07	https://stackoverflow.com/questions/46696665/how-do-i-add-the-bible-org-widget-to-my-site
+			2020-09-07	https://stackoverflow.com/questions/15908311/untitled-json-response
+		-->
+		<title>Bible.org</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible.org"/>
+		<meta name="keywords" content="Bible.org"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="scriptureReference" type="text" value="John 1, Daniel 9:24-27; Genesis 22:1" autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const scriptureReferenceElement = document.getElementById("scriptureReference");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();	
+				}
+			}
+
+			function querySubmit()
+			{
+				var response = "";
+			  
+				var json_url = 	"http://labs.bible.org/api/?passage=" +
+								scriptureReferenceElement.value +
+								"&formatting=full&type=json&callback=?";
+				$.getJSON(json_url, function(json_response) { 
+					for(var i = 0; i < json_response.length; i++) {
+						response += json_response[i].text;
+					}
+					resultSetElement.innerHTML = response;
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

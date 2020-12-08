@@ -1,0 +1,32 @@
+<!--
+	2020-09-07	https://stackoverflow.com/questions/47330256/daily-bible-verse-from-ourmanna-com-api-is-not-always-displaying
+	2020-09-07	http://www.ourmanna.com/verses/api/
+-->
+<style>
+    #ourmanna-verse {
+        padding: 10px;
+        margin:10px;
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    #mannaverse {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    #mannaverse-reference:before {
+        content: "- ";
+    }
+    #mannaverse-reference {
+        text-align: right;
+        font-size: 12px;
+    }
+    #mannaverse-version {
+        color: #ddd;
+    }
+</style>	
+<div id="ourmanna-verse">Loading...</div>
+<script src="http://www.ourmanna.com/verses/api/js/?order=random" type="text/javascript"></script>
