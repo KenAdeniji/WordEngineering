@@ -1,0 +1,1 @@
+cl /GR /EHsc "P8Don't leak any resources.cpp"
