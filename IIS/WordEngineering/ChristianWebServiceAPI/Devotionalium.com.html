@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-05-18T10:40:00	Created. 	
+		2020-05-18T11:59:00	hi@devotionalium.com	Sample code for Javascript, CORS?
+	-->
+	<head>
+		<title>Devotionalium.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Sacred Text"/>
+		<meta name="keywords" content="Sacred Text"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					//querySubmit();	
+					query();
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				var apiUri = "devotionalium.com/api/v2";
+			
+				console.log(apiUri);
+			
+				$.getJSON
+				(
+					apiUri,
+					function(data) 
+					{ 
+						console.log("data");
+						var dataKeys = Object.keys(data.text);
+						
+						var	textualInformation = "";
+						
+						for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+						{
+							var	textName = dataKeys[dataIndex];
+							var	textContent = data.text[textName];
+							
+							var textID = 1 + dataIndex;
+							
+							textualInformation += textID + ": " + textContent + "<br>";
+						}
+
+						var	sefariaInformation	= 	textualInformation;
+						
+						console.log(textualInformation);
+						
+						document.getElementById("resultSet").innerHTML = sefariaInformation;
+					}
+				); 
+			}
+
+			function query()
+			{
+				var request = {};
+
+				//request["word"] = word;
+				
+				var requestJson = JSON.stringify(request);
+				
+				var apiUri = "https://devotionalium.com/api/v2";
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: apiUri,
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+ 						
+						var resultSet = JSON.parse(data.d);
+
+						console.log("resultSet");
+						
+						for (var index = 0; index < count; ++index)
+						{
+							var abroadId = resultSet.Table[index].AbroadId;
+							var commentary = resultSet.Table[index].Commentary;
+							var scriptureReference = resultSet.Table[index].ScriptureReference;
+							var word = resultSet.Table[index].Word;
+							var abroadUpdateLink = 	"<a target='_blank' href='AbroadUpdate.html?abroadId=" 
+													+ abroadId + "'>" + abroadId + "<a/>";
+							var resultRecord = 	abroadUpdateLink + "<br/>" +
+												word + "<br/>" +
+												commentary + "<br/>" +
+												scriptureReference + "<hr /><br/>";
+							resultTable = resultTable + resultRecord;
+						}	
+						$("#informationSet").html(resultTable);
+					},
+					error: function(xhr)
+					{ 
+						$("#feedBack").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+		
+			function cors()
+			{
+$.ajax({
+
+  // The 'type' property sets the HTTP method.
+  // A value of 'PUT' or 'DELETE' will trigger a preflight request.
+  type: 'GET',
+
+  // The URL to make the request to.
+  url: 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html',
+
+  // The 'contentType' property sets the 'Content-Type' header.
+  // The JQuery default for this property is
+  // 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger
+  // a preflight. If you set this value to anything other than
+  // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
+  // you will trigger a preflight request.
+  contentType: 'text/plain',
+
+  xhrFields: {
+    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+    // This can be used to set the 'withCredentials' property.
+    // Set the value to 'true' if you'd like to pass cookies to the server.
+    // If this is enabled, your server must respond with the header
+    // 'Access-Control-Allow-Credentials: true'.
+    withCredentials: false
+  },
+
+  headers: {
+    // Set any custom headers here.
+    // If you set any non-simple headers, your server must include these
+    // headers in the 'Access-Control-Allow-Headers' response header.
+  },
+
+  success: function() {
+    // Here's where you handle a successful response.
+  },
+
+  error: function() {
+    // Here's where you handle an error response.
+    // Note that if the error was due to a CORS issue,
+    // this function will still fire, but there won't be any additional
+    // information about the error.
+  }
+});
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
