@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-04-12	http://compromise.cool
+		2018-04-12	http://github.com/spencermountain/compromise
+	-->
+	<head>
+		<title>Spencer Mountain Compromise Natural-Language Processing</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Input:</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td><label for="conversionType">Conversion Type:</label></td>
+							<td>
+								<select id="conversionType" autofocus>
+									<option>Text-to-Number</option>
+									<option>Nouns-to-Plural</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="question">Question:</label></td>
+							<td colspan="2" align="center">
+								<input type="text" id="question" required/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="https://unpkg.com/compromise"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				var conversionType = document.getElementById("conversionType").value;
+				var question = document.getElementById("question").value;
+				
+				var doc = window.nlp(question);
+				
+				switch (conversionType)
+				{
+					case "Convert to Past-Tense":
+						doc.sentences().toPastTense();
+						break;
+					case "Text-to-Number":
+						doc.values().toNumber();
+						break;
+					case "Nouns-to-Plural":
+						doc.nouns().toPlural();
+						break;
+					
+				}
+				
+				document.getElementById("resultSet").innerHTML = doc.out('text');
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		  
+		</script>		
+	</body>
+</html>

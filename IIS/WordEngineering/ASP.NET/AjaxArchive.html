@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-12-15	Created.
+		-->
+		<title>Ajax</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td for="word">Word:</td>
+					<td><input id="word" type="text" autofocus></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;		
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				
+				//request[""] = null;
+				
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleWordWebService.asmx/GetAPage",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderBibleWord(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("bibleWord").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
