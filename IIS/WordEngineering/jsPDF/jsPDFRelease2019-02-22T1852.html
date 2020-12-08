@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-02-22	Created.
+		-->
+		<title>jsPDF</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+		<table>
+			<tr>
+				<td><label for="sourceUri">Source URI</label></td>
+				<td><input id="sourceUri" type="url" focus/></td>
+			</tr>
+			<tr>
+				<td><label for="targetUri">Target URI</label></td>
+				<td><input id="targetUri" type="url"/></td>
+			</tr>
+			<tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitLoad" value="Load"/>
+						<input type="submit" id="submitSave" value="Save"/>
+					</td>
+				</tr>
+			</tr>
+			<tr><td colspan="2" align="center"><iframe id="targetIframe"></iframe></td></tr>
+		</table>	
+		<script>
+			function loadSubmit()
+			{
+				document.getElementById("targetIframe").src = 
+					document.getElementById("sourceUri").value;
+			}
+
+			function saveSubmit()
+			{
+/*		
+				var doc = new jsPDF();
+				doc.fromHTML( document.getElementById("targetIframe") );
+				doc.save('Test.pdf');
+				
+*/
+				var doc = new jsPDF();
+doc.text(20, 20, 'Hello world!');
+doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
+doc.addPage();
+doc.text(20, 20, 'Do you like that?');
+//doc.save('Test.pdf');
+				
+				doc.output('datauri');
+			}
+			
+			document.getElementById("submitLoad").addEventListener("click", loadSubmit, false);
+			document.getElementById("submitSave").addEventListener("click", saveSubmit, false);
+		</script>
+	</body>
+</html>

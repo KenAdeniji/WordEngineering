@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-02-22	Created.
+			2019-02-24	https://stackoverflow.com/questions/44339273/create-pdf-file-from-iframe
+			2019-02-24
+Generating PDFs from Web Pages on the Fly with jsPDF — SitePoint
+https://www.sitepoint.com/generating-pdfs-from-web-pages-on-the-fly-with-jspdf/
+
+Feb 16, 2016 - Massimo Cassandro demonstrates how to make use of jsPDF, ... in an iframe, the PDF preview – which is loaded in an iframe too – has some ...
+			2019-02-24	If you think, it is good to you; measure my weight.
+			2019-02-24	Justin Harris. Saint James the Apostle Catholic Church. 
+						Braces. Light blue and white t-shirt.
+		-->
+		<title>jsPDF</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+		<table>
+			<tr>
+				<td><label for="sourceUri">Source URI</label></td>
+				<td><input id="sourceUri" type="url" focus/></td>
+			</tr>
+			<tr>
+				<td><label for="targetUri">Target URI</label></td>
+				<td><input id="targetUri" type="url"/></td>
+			</tr>
+			<tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitLoad" value="Load"/>
+						<input type="submit" id="submitSave" value="Save"/>
+					</td>
+				</tr>
+			</tr>
+			<tr><td colspan="2" align="center"><iframe id="targetIframe"></iframe></td></tr>
+		</table>	
+		<script>
+			function loadSubmit()
+			{
+				document.getElementById("targetIframe").src = 
+					document.getElementById("sourceUri").value;
+			}
+
+			function saveSubmit()
+			{
+				var doc = new jsPDF();
+				var targetFilename = (targetUri.value) ? encodeURI(targetUri.value) : 'Test.pdf';
+var doc = new jsPDF();
+//doc.text(20, 20, 'Hello world.');
+console.log(targetFilename);
+//doc.save(targetFilename);
+
+doc.fromHTML($('#targetIframe')[0],30,30, { 'width':1080 });
+    doc.output('dataurlnewwindow');
+	doc.save(targetFilename);
+			}
+
+function toPDF(){       
+        var pdf = new jsPDF();
+
+    // source can be HTML-formatted string, or a reference
+    // to an actual DOM element from which the text will be scraped.
+    //source = $('#frame')[0]
+	source = getFrameContents();
+	console.log(source);
+    // we support special element handlers. Register them with jQuery-style 
+    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+    // There is no support for any other type of selectors 
+    // (class, of compound) at this time.
+    specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        'div': function(element, renderer){
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    }
+
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+        source // HTML string or DOM elem ref.
+        , 0.5 // x coord
+        , 0.5 // y coord
+        , {
+            'width':7.5 // max width of content on PDF
+             ,'elementHandlers': specialElementHandlers
+        }
+    )
+
+    pdf.save('Test.pdf');
+}
+
+function getFrameContents() {
+    var iFrame = document.getElementById('targetIframe');
+    var iFrameBody;
+    if (iFrame.contentDocument) { // FF
+        iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
+    } else if (iFrame.contentWindow) { // IE
+        iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
+    }
+    return iFrameBody.innerHTML
+}			
+			document.getElementById("submitLoad").addEventListener("click", loadSubmit, false);
+			document.getElementById("submitSave").addEventListener("click", toPDF, false);
+		</script>
+	</body>
+</html>
