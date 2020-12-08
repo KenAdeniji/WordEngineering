@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2020-09-05	https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+		-->
+		<title>CSS Counter Styles</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="CSS Counter Styles"/>
+		<meta name="keywords" content="CSS Counter Styles, Web API"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			body {
+				counter-reset: pentateuch gospel 39
+			}
+			#pentateuch h3::before {
+			  counter-increment: pentateuch;
+			  content: "Book "  counter(pentateuch) ": ";
+			}
+			#gospel h3::before {
+			  counter-increment: gospel;
+			  content: "Book "  counter(gospel) ": ";
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pentateuch">
+			<h3>Genesis</h3>
+			<h3>Exodus</h3>
+			<h3>Leviticus</h3>
+			<h3>Numbers</h3>
+			<h3>Deuternomy</h3>
+		</div>		
+		<div id="gospel">
+			<h3>Matthew</h3>
+			<h3>Mark</h3>
+			<h3>Luke</h3>
+			<h3>John</h3>
+		</div>
+	</body>
+</html>

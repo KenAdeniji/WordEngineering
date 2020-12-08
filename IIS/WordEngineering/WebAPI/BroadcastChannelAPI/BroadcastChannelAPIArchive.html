@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2020-09-05	https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API
+			2020-09-05	https://stackoverflow.com/questions/2236828/javascript-communication-between-tabs-windows-with-same-origin
+		-->
+		<title>Broadcast Channel API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Broadcast Channel API"/>
+		<meta name="keywords" content="Broadcast Channel API, Web API"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="word" type="text" size="50" value="This is a broadcast message." autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+		</div>
+		<script>
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const wordElement = document.getElementById("word");
+
+			// Connection to a broadcast channel
+			const broadcastChannel = new BroadcastChannel("broadcastChannel");
+			
+			function querySubmit()
+			{
+				// Example of sending of a very simple message
+				broadcastChannel.postMessage(wordElement.value);
+			}
+		
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
