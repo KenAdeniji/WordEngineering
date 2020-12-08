@@ -1,0 +1,108 @@
+ <html>
+	<!--
+		2014-09-12 Created. http://weimenglee.blogspot.sg/2014/03/javascript-tutorial-using-json-services.html
+		2014-09-13 Css. AddEventListener. Layout.
+		2014-09-14 startWith(),
+	-->
+    <head>
+		<title>Yahoo Stock Price</title>
+	</head>
+    <body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request" >YHOO, MSFT, ORCL, GOOG, IBM</textarea>
+			<button id="query">Query</button>
+		</div>
+		<div id="stockInfo"> </div>
+
+		<script>
+			var presentationCss = [
+				"background-color:blanchedalmond; color:blue;",
+				"background-color:beige; color:black;"			
+			];
+
+			function createCss()
+			{
+				var cssCombined = "";
+				var style = document.createElement('style');
+				style.type = 'text/css';
+				
+				for 
+				(
+					var cssIndex = 0, presentationCssLength = presentationCss.length;
+					cssIndex < presentationCssLength;
+					++cssIndex
+				)
+				{
+					cssCombined += ".cssRule" + cssIndex + " { " + presentationCss[cssIndex] + " } ";
+				}
+
+				style.innerHTML = cssCombined;
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}		
+
+			function getStockPrice() {
+				var request = document.getElementById("request").value;
+				var requestArray = request.split(",");
+				var requestTree = "";
+				for (var requestIndex = 0, requestLength = requestArray.length; requestIndex < requestLength; ++requestIndex)
+				{
+					requestTree += "%22" + requestArray[requestIndex] + "%22";
+					if (requestIndex < (requestLength - 1))
+					{
+						requestTree += "%2C";
+					}
+				}
+
+				var requestTerm = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(" +
+						requestTree + ")%0A%09%09&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json"
+				
+				var req = new XMLHttpRequest();
+				req.open('GET', requestTerm, true);
+
+				req.onload = function(e) {
+					if (req.readyState == 4 && req.status == 200) {
+						if(req.status == 200) {
+							var response = JSON.parse(req.responseText);
+							var stockInfo = document.getElementById("stockInfo");
+							var dataCount = response.query.count;
+							var responseData = "";
+							var resultOverall = "";
+							for (var dataIndex = 0; dataIndex < dataCount; ++dataIndex)
+							{
+								var resultSet = response.query.results.quote[dataIndex];
+								
+								//var afterHoursChangeRealtime = resultSet.AfterHoursChangeRealtime;
+								var symbol = resultSet.symbol;
+								var bid = resultSet.Bid;
+								
+								var responseStock = "Symbol: " + symbol + "<br>";
+								//responseStock += "After Hours Change Realtime: " + afterHoursChangeRealtime + "<br>";
+								responseStock += "Bid: " + bid + "<br>";
+								responseStock += "<hr>";
+								
+								var recordCss = "cssRule" + (dataIndex % presentationCss.length);
+								var resultRecord = "<div class='" + recordCss + "'>" + responseStock + "</div>";
+								resultOverall += resultRecord;
+							}
+							stockInfo.innerHTML = resultOverall;	
+						} else {
+							console.log("Error");
+						}
+					}
+				}
+				req.send(null);
+			}
+
+			function startWith()
+			{
+				var query = document.getElementById("query");
+				query.addEventListener("click", getStockPrice, false);
+
+				createCss();
+				getStockPrice();
+			}
+
+			window.addEventListener("load", startWith, false);	
+		</script>
+	</body>
+</html>
