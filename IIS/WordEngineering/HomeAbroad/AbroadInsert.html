@@ -1,0 +1,125 @@
+<html>
+<!--
+	2013-06-25	Created.
+-->
+    <head>
+        <title>Abroad Insert</title>
+    </head>
+    <body>
+        <div align="center">
+            <table id="tableWordCommentary">
+                <caption>Insert</caption>
+                <tbody id="tbodyWordAndCommentary">
+					<tr>
+						<td>
+							<label for="commentary">Commentary:</label>
+						</td>	
+						<td>
+							<textArea id="commentary" rows="4" cols="50">
+							</textArea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="scriptureReference">Scripture Reference:</label>
+						</td>
+						<td>
+							<input id="scriptureReference" type="text" size="50" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="word">Word:</label>
+						</td>	
+						<td>
+							<textArea id="word" rows="4" cols="50">
+							</textArea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="abroadId">Abroad Id:</label>
+						</td>	
+						<td>
+							<label id="abroadId" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="dateCreated">Date Created:</label>
+						</td>	
+						<td>
+							<label id="dateCreated" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<button id="submitButton">Submit</button>
+						</td>	
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<div id="feedBack"> </div>
+						</td>	
+					</tr>
+				</tbody>
+            </table>
+            <br/>
+        </div>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		/*
+			w3resource.com/JSON/working-with-javascript.php
+		*/
+		$(document).ready(function() {
+			eventHandlerGeneral();
+		});
+
+		function eventHandlerGeneral()
+		{
+			$('#submitButton').click(HomeAbroad.abroadInsert);
+		}
+		
+		var HomeAbroad =
+		{
+			abroadInsert: function()
+			{
+				var commentary = $("#commentary").val().trim();
+				var scriptureReference = $("#scriptureReference").val().trim();
+				var word = $("#word").val().trim();
+				
+				var request = {};
+				request["commentary"] = commentary;
+				request["scriptureReference"] = scriptureReference;
+				request["word"] = word;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/HomeAbroad/HomeAbroadWebService.asmx/AbroadInsert",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var resultSet = JSON.parse(data.d);
+						$("#abroadId").text(resultSet.AbroadId);
+						$("#dateCreated").text(resultSet.DateCreated);
+					},
+					error: function(xhr)
+					{ 
+						$("#feedBack").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+		}
+    </script>
+</html>

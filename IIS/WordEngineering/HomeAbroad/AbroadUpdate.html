@@ -1,0 +1,198 @@
+<html>
+<!--
+	2013-06-25	Created.
+-->
+    <head>
+        <title>Abroad Update</title>
+    </head>
+    <body>
+        <div align="center">
+            <table id="tableWordCommentary">
+                <caption>Update</caption>
+                <tbody id="tbodyWordAndCommentary">
+					<tr>
+						<td>
+							<label for="abroadId">Abroad Id:</label>
+						</td>	
+						<td>
+							<label id="abroadId" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="dateCreated">Date Created:</label>
+						</td>	
+						<td>
+							<label id="dateCreated" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="dateUpdated">Date Updated:</label>
+						</td>	
+						<td>
+							<label id="dateUpdated" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="commentary">Commentary:</label>
+						</td>	
+						<td>
+							<textArea id="commentary" rows="4" cols="50">
+							</textArea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="scriptureReference">Scripture Reference:</label>
+						</td>
+						<td>
+							<input id="scriptureReference" type="text" size="50" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="word">Word:</label>
+						</td>	
+						<td>
+							<textArea id="word" rows="4" cols="50">
+							</textArea>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<button id="submitButton">Submit</button>
+						</td>	
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<div id="feedBack"> </div>
+						</td>	
+					</tr>
+				</tbody>
+            </table>
+            <br/>
+        </div>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			eventHandlerGeneral();
+		});
+
+		function eventHandlerGeneral()
+		{
+			HomeAbroad.pageLoad();
+			$('#submitButton').click(HomeAbroad.abroadUpdate);
+		}
+		
+		function getUrlVars()
+		{
+			//http://jquery-howto.blogspot.com/2009/09/get-url-parameters-values-with-jquery.html
+			/*
+				var queryString = getUrlVars();
+				var abroadId = queryString["abroadId"];
+			*/
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		
+		var HomeAbroad =
+		{
+			pageLoad: function()
+			{
+				var queryString = getUrlVars();
+				var abroadId = parseInt(queryString["abroadId"]);
+								
+				var request = {};
+				request["abroadId"] = abroadId;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/HomeAbroad/HomeAbroadWebService.asmx/AbroadRetrieve",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+ 						var resultSet = JSON.parse(data.d);
+						
+						var index = 0;
+						
+						var dateCreated = resultSet.Table[index].DateCreated;
+						var dateUpdated = resultSet.Table[index].DateUpdated;
+						var commentary = resultSet.Table[index].Commentary;
+						var scriptureReference = resultSet.Table[index].ScriptureReference;
+						var word = resultSet.Table[index].Word;
+
+						$("#abroadId").text(abroadId);
+						$("#dateCreated").text(dateCreated);
+						$("#dateUpdated").text(dateUpdated);
+						$("#commentary").val(commentary);
+						$("#scriptureReference").val(scriptureReference);
+						$("#word").val(word);
+					},
+					error: function(xhr)
+					{ 
+						$("#feedBack").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			},
+			
+			abroadUpdate: function()
+			{
+				var abroadId = parseInt($("#abroadId").text().trim());
+				var commentary = $("#commentary").val().trim();
+				var scriptureReference = $("#scriptureReference").val().trim();
+				var word = $("#word").val().trim();
+				
+				var request = {};
+				request["abroadId"] = abroadId;
+				request["commentary"] = commentary;
+				request["scriptureReference"] = scriptureReference;
+				request["word"] = word;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/HomeAbroad/HomeAbroadWebService.asmx/AbroadUpdate",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var resultSet = JSON.parse(data.d);
+						$("#dateUpdated").text(resultSet.DateUpdated);
+					},
+					error: function(xhr)
+					{ 
+						$("#feedBack").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+		}
+    </script>
+</html>
