@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-07-27	How will I; fill the day, with what is new?
+		2020-07-27	Se o let point to a document, and find the table record. Specify the filename of the document, this may be a HTML, XML, JSON document; databaseQualifier * or CSS; database qualifier server, database, table, or column restrictor?
+		2020-07-27T18:11:00	http://www.w3schools.com/xml/prop_element_textcontent.asp
+	-->
+	<head>
+		<title>Fill the day, with what is new?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Se o let point to a document, and find the table record. Specify the filename of the document, this may be a HTML, XML, JSON document; databaseQualifier * or CSS; database qualifier server, database, table, or column restrictor?"/>
+		<meta name="keywords" content="Document URI, HTML, XML, JSON, database qualifier server, database, table, column name"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="uri">URI:</label></td>
+					<td><input id="uri" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="databaseQualifier">Database Qualifier:</label></td>
+					<td><input id="databaseQualifier"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var uriElement = document.getElementById("uri");
+			var databaseQualifierElement = document.getElementById("databaseQualifier");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var uriParam = urlParams.get("uri");
+						if (!uriParam)
+						{
+							uriParam = URIDefault
+						}
+						uriElement.value = uriParam;
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				
+				fetch(uriElement.value).then(response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							scriptLiteral9432.renderDataSet(data, "resultSet");
+						});
+					} 
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							var parser = new DOMParser();
+							var xmlDoc = parser.parseFromString(text,"text/html");
+							var hash = uriElement.value.substring(uriElement.value.indexOf('#')+1);
+							resultSetElement.innerHTML = xmlDoc.getElementById(hash).textContent;
+						});
+					}
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var URIDefault = "http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html#Title";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-02-22	Created.
+	-->
+	<head>
+		<title>ExistsIn</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Search by Scripture Reference and Bible word"/>
+		<meta name="keywords" content="Bible, word, exists, in"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReferenceIncluded">Scripture Reference Included:</label></td>
+					<td><input type="text" ID="scriptureReferenceIncluded" autofocus required/></td>
+				</tr>	
+				<tr>
+					<td><label for="scriptureReferenceExcluded">Scripture Reference Excluded:</label></td>
+					<td><input type="text" ID="scriptureReferenceExcluded" required/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" ID="bibleWord" required/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="and">And</option>		
+							<option value="or">Or</option>
+							<option value="phrase">Phrase</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="wholeWords">Whole Words</label></td>
+					<td><input type=checkbox id="wholeWords" checked/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var bibleWordElement = document.getElementById("bibleWord");
+			var logicElement = document.getElementById("logic");
+			var scriptureReferenceIncludedElement = document.getElementById("scriptureReferenceIncluded");
+			var scriptureReferenceExcludedElement = document.getElementById("scriptureReferenceExcluded");
+			var wholeWordsElement = document.getElementById("wholeWords");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleWord = urlParams.get("bibleWord");
+						if (bibleWord)
+						{
+							bibleWordElement.value = bibleWord;
+						}
+
+						var bibleVersion = urlParams.get("bibleVersion");
+						if (bibleVersion)
+						{
+							bibleVersionElement.value = bibleVersion;
+						}
+
+						var logic = urlParams.get("logic");
+						if (logic)
+						{
+							logicElement.value = logic;
+						}
+
+						var scriptureReferenceIncluded = urlParams.get("scriptureReferenceIncluded");
+						if (scriptureReferenceIncluded)
+						{
+							scriptureReferenceIncludedElement.value = scriptureReferenceIncluded;
+						}
+
+						var scriptureReferenceExcluded = urlParams.get("scriptureReferenceExcluded");
+						if (scriptureReferenceExcluded)
+						{
+							scriptureReferenceExcludedElement.value = scriptureReferenceExcluded;
+						}
+
+						var wholeWords = urlParams.get("wholeWords");
+						if (wholeWords)
+						{
+							var wholeWordsLowerCase =  wholeWords.toLowerCase();
+							var wholeWordsChecked = (wholeWordsLowerCase === "true") ? true : false;
+							wholeWordsElement.checked = wholeWords;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bibleWord"] = bibleWordElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["logic"] = logicElement.options[logic.selectedIndex].value;
+				request["scriptureReferenceIncluded"] = scriptureReferenceIncludedElement.value;
+				request["scriptureReferenceExcluded"] = scriptureReferenceExcludedElement.value;
+				request["wholeWords"] = wholeWordsElement.checked;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/ExistsIn.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						if (Object.entries(dataSet).length === 0 && dataSet.constructor === Object)
+						{
+							resultSetElement.innerHTML = "There are no exclusions.";
+						}
+						else
+						{	
+							scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						}
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

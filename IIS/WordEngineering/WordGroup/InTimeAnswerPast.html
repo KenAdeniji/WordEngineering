@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-09-20 Created.
+		-->
+		<title>In Time Answer Past</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Questions and Answers with Scripture Reference"/>
+		<meta name="keywords" content="Questions and Answers, Scripture Reference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td for="question">Question:</td>
+					<td><input id="question" type="text"/></td>
+				</tr>	
+				<tr>
+					<td for="scriptureReference">Scripture Reference:</td>
+					<td><input id="scriptureReference" type="text"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["question"] = document.getElementById("question").value;
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/InTimeAnswerPast.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						
+					},
+					error: function(xhr)
+					{ 
+						resultSet.innerHTML =
+							'Status: ' + xhr.status + "<br>" + 
+							'StatusText: ' + xhr.statusText + "<br>" +
+							'ResponseText: ' + xhr.responseText
+					} 
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

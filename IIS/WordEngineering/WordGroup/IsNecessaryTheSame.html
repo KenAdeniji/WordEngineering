@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-02-04	Created.	November Julie. Hispanic female. A plus on my part; is necessary the same. Enter a numbe, find sequence words, letters?
+	-->
+	<head>
+		<title>Is Necessary the Same</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Enter a number, find sequence words, letters"/>
+		<meta name="keywords" content="AlphabetSequence"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="alphabetSequenceID">Alphabet Sequence ID:</label></td>
+					<td><input type="number" ID="alphabetSequenceID" autofocus min="1" max="1000" value="19"/></td>
+				</tr>	
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input type="text" ID="word" value="Is Necessary the Same."/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<div align="center">
+			<div id="resultSet"> </div>
+		</div>	
+		<script>
+			function querySubmit()
+			{
+				var word = document.getElementById("word").value.toLowerCase().replace(/[^a-z]/g, '');
+				var alphabetSequenceID = parseInt(document.getElementById("alphabetSequenceID").value);
+				var letter = String.fromCharCode(96 + alphabetSequenceID);
+		
+				var occurrences = (word.split(letter).length - 1)
+				var combination = letter.repeat(occurrences);
+				
+				//console.log(letter, occurrences, combination);
+				
+				word = word.replace(new RegExp(letter, "g"), "");
+				
+				var index = lettersIndex = 0;
+				do
+				{
+					if (index >= word.length - 1)
+					{
+						break;
+					}	
+					lettersIndex += word.charCodeAt(index) - 96;
+					//console.log(index, lettersIndex, word, combination);
+					if (lettersIndex == alphabetSequenceID)
+					{
+						combination += word.substring(0, index + 1);
+						word = word.substring(1);
+						index = lettersIndex = 0;
+						continue
+					}
+					else if (lettersIndex > alphabetSequenceID)
+					{
+						word = word.substring(1);
+						index = lettersIndex = 0;
+						continue
+					}
+					++index;
+				} while (word);
+				
+				document.getElementById("resultSet").innerHTML = combination;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", querySubmit, false);
+	</script>
+</body>
+</html>
