@@ -1,0 +1,71 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+
+using System.Diagnostics;
+using System.Drawing;
+
+/*
+	2018-08-12	https://goalkicker.com/CSharpBook/CSharpNotesForProfessionals.pdf
+*/
+namespace InformationInTransit.GoalKicker
+{
+	public static partial class ClassHelper
+	{
+		public static void Main(string[] argv)
+		{
+			System.Type typePoint = typeof(Point);        //System.Drawing.Point
+			System.Type typeIDisposable = typeof(IDisposable);  //System.IDisposable
+			System.Type typeColor = typeof(Color);       //System.Drawing.Color
+			System.Type typeList = typeof(List<>);       //System.Collections.Generic.List`1[T]
+			
+			System.Console.WriteLine
+			(
+				"System.Type typePoint = typeof(Point); typePoint: {0}",
+				typePoint
+			);
+			
+			var animal = new Dog();
+			
+/*
+			Assert.IsTrue(animal.GetType() == typeof(Animal)); // fail, animal is typeof(Dog) Assert.IsTrue(animal.GetType() == typeof(Dog));    // pass, animal is typeof(Dog)
+			Assert.IsTrue(animal is Animal);                   // pass, animal implements Animal
+*/			
+			if (animal.GetType() == typeof(Animal))
+			{
+				System.Console.WriteLine("(animal.GetType() == typeof(Animal))");
+			}		
+			
+			if (animal is Animal)
+			{
+				System.Console.WriteLine("(animal is Animal)");
+			}	
+			
+			Debug.Assert(animal.GetType() == typeof(Animal), "animal.GetType() == typeof(Animal)");
+			Debug.Assert(animal is Animal, "Assert.IsTrue(animal is Animal);");
+			
+			int counter = 10; 
+			String nameofVariable = nameof(counter); // Returns "counter" 
+			System.Console.WriteLine
+			(
+				"nameofVariable: {0} valueofVariable: {1}",
+				nameofVariable,
+				counter
+			);
+			
+			var letters = "letters".ToCharArray();
+			char letter = letters[1];
+			Console.WriteLine("Second Letter is {0}",letter);
+		}
+    }
+	
+	public class Animal {} 
+	public class Dog : Animal 
+	{
+		public Dog() { }
+	}
+}

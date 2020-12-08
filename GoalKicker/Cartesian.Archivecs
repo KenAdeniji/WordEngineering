@@ -1,0 +1,34 @@
+using System;
+
+namespace InformationInTransit.GoalKicker
+{
+	public class Cartesian
+	{
+		public int X { get; }
+		public int Y { get; } 
+	}  
+
+	//An overloadable operator is could e.g. be deﬁned for Polar coordinates
+	public static class Polar
+	{
+		public static bool operator is(Cartesian c, out double R, out double Theta)
+		{
+			R = Math.Sqrt(c.X*c.X + c.Y*c.Y);
+			Theta = Math.Atan2(c.Y, c.X);
+			return c.X != 0 || c.Y != 0;
+		}
+	}
+
+	public class CartesianStub
+	{
+		public static void Main(string argv)
+		{
+			var c = Cartesian(3, 4);
+			if (c is Polar(var R, *)) 
+			{    
+				Console.WriteLine(R);
+			}
+		}	
+	}
+}
+
