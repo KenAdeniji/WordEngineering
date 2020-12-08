@@ -1,0 +1,28 @@
+<html>
+	<!--
+		2014-07-07 Created. http://localhost/Bible/WorldsLastChance.com/kjv/-%20FireFighters/KJV/01_Gen/01Gen001.mp3
+	-->
+	<head>
+		<title>Play Audio</title>
+	</head>
+	<body>
+		Audio File: 
+		<input type="text" id="audioFile" onChange="playAudio();"><br/>
+		<audio 
+			id="audioControl"
+			controls="controls"
+		>
+		</audio>
+		
+		<script>
+			function playAudio()
+			{
+				var audioFile=document.getElementById("audioFile");
+				var audioControl=document.getElementById("audioControl");
+
+				audioControl.src = audioFile.value;
+				audioControl.play();
+			}
+		</script>
+	</body>	
+</html>

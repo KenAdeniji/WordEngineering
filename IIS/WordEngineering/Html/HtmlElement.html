@@ -1,0 +1,413 @@
+<html>
+	<head>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+			$(document).ready(function () {
+                domReady();
+            });
+			
+			function domReady()
+			{
+			}
+		</script>
+	</head>
+	<body>
+	<form oninput="outputResult.value=parseInt(inputNumber1.value)+parseInt(inputNumber2.value)">
+	<table>
+		<thead>
+			<tr>
+				<th>Element</th>
+				<th>Example</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>&lt;a&gt;</td>
+				<td><a href="http://www.microsoft.com" target="_blank">Microsoft</a></td>
+			</tr>
+			<tr>
+				<td>&lt;abbr&gt;</td>
+				<td>
+					The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.
+				</td>
+			</tr>
+			<tr>
+				<td>&lt;article&gt;</td>
+				<td>
+					<article>
+						The article tag contains a self-contained area.
+					</article>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;audio&gt;</td>
+				<td>
+					<audio controls="controls">
+						<source src="http://upload.wikimedia.org/wikipedia/commons/0/03/En-Creative-Commons.ogg" type="audio/ogg" />
+						Your browser does not support the audio tag.
+					</audio> 
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;base&gt;</td>
+				<td>
+					<head>
+						<base href="http://e-comfort.ephraimtech.com/WordEngineering/" target="_blank"/>
+					</head>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>&lt;blockquote&gt;</td>
+				<td>
+					<blockquote cite="http://e-comfort.ephraimtech.com/WordEngineering/">
+						Bringing the world, to life.
+					</blockquote>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>&lt;body&gt;</td>
+				<td/>
+			</tr>
+			
+			<tr>
+				<td>&lt;br&gt;</td>
+				<td>
+					<br/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;br&gt;</td>
+				<td>
+					<br/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;button&gt;</td>
+				<td>
+					<button type="submit">Submit</button> 
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;canvas&gt;</td>
+				<td>
+					<canvas name="rectangle"> </canvas>
+					<script type="text/javascript">
+						var canvas = document.getElementById("rectangle");
+						var context = canvas.getContext("2d");
+						var height = canvas.height, width = canvas.width;
+						var xOffset = 20, yOffset = 20;
+						context.fillStyle = "blue";
+						context.fillRect(xOffset, yOffset, width - (xOffset * 2), height - (yOffset * 2));
+						context.strokeRect(0, 0, width, height);
+					</script>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;caption&gt;</td>
+				<td>
+					<caption>Html Element</caption>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;cite&gt;</td>
+				<td>
+					<cite>WordEngineering</cite> by Ken Adeniji.
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;code&gt;</td>
+				<td>
+					<code><base href="http://e-comfort.ephraimtech.com/WordEngineering/" target="_blank"/></code>
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;datalist&gt;</td>
+				<td>
+					<input list="countries" />
+					<datalist id="countries">
+					  <option value="Nigeria">
+					  <option value="United States of America (USA)">
+					  <option value="Australia">
+					</datalist> 
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;details&gt;</td>
+				<td>
+					<details>
+						<summary>Nigeria's Location</summary>
+						<div>Nigeria is a country in Africa, right at the equator.</div>
+					</details> 
+				</td>
+			</tr>
+
+			<tr>
+				<td>&lt;div&gt;</td>
+				<td>
+					<div>There are line breaks before and after the div tag.</div>
+				</td>
+			</tr>
+
+			<!-- 2012-01-07T11:34:00 -->
+			<tr>
+				<td>&lt;dl&gt;</td>
+				<td>
+					<dl>
+						<dt>Spaniards</dt><dd>Spain</dd>
+						<dt>French</dt><dd>France</dd>
+						<dt>English</dt><dd>England</dd>
+					</dl>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T13:57:00 -->
+			<tr>
+				<td>&lt;embed&gt;</td>
+				<td>
+					<embed src="http://e-comfort.ephraimtech.com/WordEngineering/Adobe/flash_crystals.swf" />
+				</td>
+			</tr>
+			
+			<!-- 2012-01-08T14:07:00 -->
+			<tr>
+				<td>&lt;fieldset&gt;</td>
+				<td>
+					<fieldset>
+						<legend>Contact Details</legend>
+						Name: <input type="text" /><br />
+						Email: <input type="text" /><br />
+						Date of birth: <input type="text" />
+					</fieldset>
+
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T14:11:00 -->
+			<tr>
+				<td>&lt;figure&gt;</td>
+				<td>
+					<figure>
+						<img src="http://e-comfort.ephraimtech.com/WordEngineering/Images/Akhenatenw.JPG" alt="Akhenatenw"/>
+						<figcaption>Akhenatenw</figcaption>
+					</figure>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T14:20:00 -->
+			<tr>
+				<td>&lt;footer&gt;</td>
+				<td>
+					<footer>Copyright 2012.</footer>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T14:42:00 -->
+			<tr>
+				<td>&lt;h1 ... h6&gt;</td>
+				<td>
+					<h1>Header 1.</h1>
+				</td>
+			</tr>
+			
+			<!-- 2012-01-08T14:54:00 -->
+			<tr>
+				<td>&lt;header&gt;</td>
+				<td>
+					<header>Header</header>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T15:00:00 -->
+			<tr>
+				<td>&lt;hr&gt;</td>
+				<td>
+					<hr/>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T15:10:00 -->
+			<tr>
+				<td>&lt;iframe&gt;</td>
+				<td>
+					<iframe src="http://e-comfort.ephraimtech.com/WordEngineering/Resume/KenAdenijiResume.html"></iframe> 
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T15:16:00 -->
+			<tr>
+				<td>&lt;label&gt;</td>
+				<td>
+					<label for="Nigeria">Nigeria</label>
+					<input type="radio" name="country" id="Nigeria" />
+					<br />
+					<label for="UnitedStatesOfAmericaUSA">United States of America (USA)</label>
+					<input type="radio" name="country" id="UnitedStatesOfAmericaUSA" />
+					<br />
+					<label for="Australia">Australia</label>
+					<input type="radio" name="country" id="Australia" />
+					<br />
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T15:29:00 -->
+			<tr>
+				<td>&lt;link&gt;</td>
+				<td>
+					<link
+						rel="stylesheet"
+						type="text/css"
+						href="http://e-comfort.ephraimtech.com/WordEngineering/CascadingStyleSheet/CascadingStyleSheet3.css" 
+					/>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T16:23:00 -->
+			<tr>
+				<td>&lt;meter&gt;</td>
+				<td>
+					<meter min="0" max="10" low="3" high="7" optimum="9" value="1">
+						Kehinde Adewumi Adeniji
+					</meter><br />
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T16:40:00 -->
+			<tr>
+				<td>&lt;nav&gt;</td>
+				<td>
+					<nav>
+						<a href="/WordEngineering/Resume/">Resume</a> |
+						<a href="/WordEngineering/WordUnion/">WordUnion</a>
+					</nav> 
+				</td>
+			</tr>
+			
+			<object width="400" height="400" data="helloworld.swf"></object> 
+
+			<!-- 2012-01-08T17:05:00 -->
+			<tr>
+				<td>&lt;object&gt;</td>
+				<td>
+					<object 
+						width="400"
+						height="400"
+						data="http://e-comfort.ephraimtech.com/WordEngineering/Adobe/woman_maillol.swf"
+					/>
+				</td>
+			</tr>
+			
+			<!-- 2012-01-08T17:37:00 -->
+			<tr>
+				<td>&lt;output&gt;</td>
+				<td>
+					<input type="range" id="inputNumber1" min="0" max="100" step="1" value="50" />
+					<input type="range" id="inputNumber2" min="0" max="100" step="1" value="50" />
+					<output name="outputResult" for="outputNumber1 outputNumber2"></output>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T19:58:00 -->
+			<tr>
+				<td>&lt;pre&gt;</td>
+				<td>
+					<pre>
+						Hello,
+						How are you doing?
+						I hope that you are fine.
+					</pre>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T20:05:00 -->
+			<tr>
+				<td>&lt;progress&gt; Determinate</td>
+				<td>
+					<progress value="50" max="100" />
+				</td>
+			</tr>
+
+			<!-- 2014-05-07 -->
+			<tr>
+				<td>&lt;progress&gt; Indeterminate</td>
+				<td>
+					<progress/>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T20:10:00 -->
+			<tr>
+				<td>&lt;q&gt;</td>
+				<td>
+					<q cite="http://e-comfort.ephraimtech.com/WordEngineering">
+						The man you call, on both sides.
+					</q>	
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T20:20:00 -->
+			<tr>
+				<td>&lt;section&gt;</td>
+				<td>
+					<section>
+					  <h1>WordEngineering</h1>
+					  <p>Using the Word of God, to share the Bible.</p>
+					</section>
+				</td>
+			</tr>
+			
+			<!-- 2012-01-08T20:28:00 -->
+			<tr>
+				<td>&lt;select&gt;</td>
+				<td>
+					<select id="country">
+						<option value="Nigeria">Nigeria</option>
+						<option value="United States of America (USA)">United States of America (USA)</option>
+						<option value="Australia">Australia</option>
+					</select>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T20:45:00 -->
+			<tr>
+				<td>&lt;span&gt;</td>
+				<td>
+					<span id="inline">
+						It is certainly my opinion, that we have found the facts.
+					</span>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T21:00:00 -->
+			<tr>
+				<td>&lt;textarea&gt;</td>
+				<td>
+					<textarea id="multiLineInput" rows="4" cols="50">
+					</textarea>
+				</td>
+			</tr>
+
+			<!-- 2012-01-08T21:08:00 -->
+			<tr>
+				<td>&lt;title&gt;</td>
+				<td>
+					<title>Html Element</title>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	</form>
+	</body>
+</html>

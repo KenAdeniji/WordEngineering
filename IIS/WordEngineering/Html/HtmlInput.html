@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<form action="#">
+			<input type="text" id="firstName" autocomplete="off" required autofocus
+				placeholder="First name" /><br />
+			<input type="text" id="lastName" autocomplete="off" required
+				placeholder="Last name" /><br />
+			 <input type="text" id="website" pattern="https?://.+" autocomplete="off"
+				placeholder="Website" title="A URL such as http://www.intelliTect.com"><br />
+			<input type="text" id="characters" list="characterList" placeholder="Characters">
+				<datalist id="characterList">
+				  <option value="Inigo Montoya"/>
+				  <option value="Princess Buttercup"/>
+				  <option value="Prince Humperdink"/>
+				  <option value="Fezzik"/>
+				</datalist><br />
+			<label>Select images:</label> 
+			<input type="file" id="images" multiple /><br />
+			<input id="email" type="email" placeholder="E-mail" /><br />
+			<input id="url" type="url" placeholder="Url" /><br />
+			<input id="tel" type="tel" placeholder="Telephone" /><br />
+			<input id="date" type="date" placeholder="Anniversary" /><br />
+			<input id="colorPicker" type="color" placeholder="Color" /><br />
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
