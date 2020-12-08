@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	2016-03-21	Created.	jqwidgets.com
+-->
+<head>
+    <title id='Description'>jqxChart Line Series Census</title>
+    <link rel="stylesheet" href="/WordEngineering/jqwidgets-ver4.1.0/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="/WordEngineering/jqwidgets-ver4.1.0/scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/WordEngineering/jqwidgets-ver4.1.0/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="/WordEngineering/jqwidgets-ver4.1.0/jqwidgets/jqxdata.js"></script>     <script type="text/javascript" src="/WordEngineering/jqwidgets-ver4.1.0/jqwidgets/jqxdraw.js"></script>
+    <script type="text/javascript" src="/WordEngineering/jqwidgets-ver4.1.0/jqwidgets/jqxchart.core.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // prepare chart data as an array            
+            var source =
+            {
+                datatype: "json",
+                datafields: [
+                    { name: 'Tribe' },
+                    { name: 'FirstCensusPopulation' },
+                    { name: 'SecondCensusPopulation' },
+                    { name: 'CombinedCensusPopulation' },
+					{ name: 'CombinedCensusAccuracyOfHisPercentage' }
+                ],
+                url: '/WordEngineering/WordUnion/Census.json.txt'
+            };
+
+            var dataAdapter = new $.jqx.dataAdapter(source, { async: false, autoBind: true, loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); } });
+
+			// prepare jqxChart settings
+            var settings = {
+                title: "Census",
+                description: "First, Second",
+                showLegend: true,
+                enableAnimations: true,
+                padding: { left: 20, top: 5, right: 20, bottom: 5 },
+                titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+                source: dataAdapter,
+                xAxis:
+                {
+                    dataField: 'Tribe',
+					/*
+                    formatFunction: function (value) {
+                        return value.getDate() + '-' + months[value.getMonth()] + '-' + value.getFullYear();
+                    },
+                    type: 'date',
+                    baseUnit: 'month',
+					*/
+                    valuesOnTicks: true,
+					/*
+                    minValue: '01-01-2014',
+                    maxValue: '01-01-2015',
+					*/
+					tickMarks: {
+                        visible: true,
+                        interval: 1,
+                        color: '#BCBCBC'
+                    },
+                    unitInterval: 1,
+                    gridLines: {
+                        visible: true,
+                        interval: 3,
+                        color: '#BCBCBC'
+                    },
+                    labels: {
+                        angle: -45,
+                        rotationPoint: 'topright',
+                        offset: { x: 0, y: -25 }
+                    }
+                },
+                valueAxis:
+                {
+                    visible: true,
+                    title: { text: 'Population<br>' },
+                    tickMarks: { color: '#BCBCBC' }
+                },
+                colorScheme: 'scheme04',
+                seriesGroups:
+                    [
+                        {
+                            type: 'line',
+                            series: [
+                                    { dataField: 'FirstCensusPopulation', displayText: 'First Census Population' },
+                                    { dataField: 'SecondCensusPopulation', displayText: 'Second Census Population' }
+                                ]
+                        }
+                    ]
+            };
+
+            // setup the chart
+            $('#chartContainer').jqxChart(settings);
+        });
+    </script>
+</head>
+<body class='default'>
+	<div id='chartContainer' style="width:850px; height:1000px;">
+	</div>
+</body>
+</html>
