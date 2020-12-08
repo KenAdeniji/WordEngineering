@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning CSS Animations: Transform</title>
+		<style>
+			.box
+			{
+				width: 150px;
+				height: 150px;
+				background-color: rgb(211, 211, 211);
+				color: white;
+				margin: 100px;
+			}
+			.box h1
+			{
+				padding: 30px 0 0 30px;
+			}
+			#rotate
+			{
+				transform: rotate(15deg);
+				
+				/*
+					The default transform-origin is in the middle of the element,
+					at 50% of its width and height.
+					You can change to bottom left, 0% 100%
+				*/
+				transform-origin: 0% 100%; 
+				
+				transform: scale(2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="rotate">
+			<h1>Hello</h1>
+		</div>
+	</body>
+</html>
