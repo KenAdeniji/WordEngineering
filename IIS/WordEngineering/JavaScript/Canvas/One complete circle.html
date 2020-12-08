@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<!--
+		2014-11-14 Created.	http://www.html5canvastutorials.com/tutorials/html5-canvas-circles/
+		2014-11-14 http://www.w3schools.com/jsref/met_win_setinterval.asp
+	-->
+	<head>
+		<style>
+		  body {
+			margin: 0px;
+			padding: 0px;
+		  }
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+			var centerX = canvas.width / 2;
+			var centerY = canvas.height / 2;
+			var radius = centerX > centerY ? centerY : centerX;
+
+			var occurences = 10;
+			
+			var startPosition = 0;
+			var spreadPosition = 2 * Math.PI / occurences;
+
+			var times = 0;
+			
+			var timerID = setInterval(function(){myTimer()}, 1000);
+			
+			function myTimer() {
+				context.beginPath();
+				context.arc(centerX, centerY, radius, startPosition, startPosition + spreadPosition, false);
+				context.fillStyle = 'green';
+				context.fill();
+				context.lineWidth = 5;
+				context.strokeStyle = '#003300';
+				context.stroke();
+				startPosition += spreadPosition;
+				++times;
+				if (times >= occurences )
+				{
+					myStopFunction();
+				}
+			}
+
+			function myStopFunction() {
+				clearInterval(timerID);
+			}
+		</script>
+	</body>
+</html>

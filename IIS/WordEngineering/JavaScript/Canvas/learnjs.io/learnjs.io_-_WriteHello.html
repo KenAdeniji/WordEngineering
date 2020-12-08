@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<!--
+		2014-12-24 http://learnjs.io/canvassing/read/
+	-->
+	<head>
+		<title>Write Hello</title>
+	</head>
+	<body>
+		<canvas id="game"></canvas>
+		<script>
+			var canvas = document.getElementById('game');
+			var context = canvas.getContext('2d');
+
+			canvas.width = 800;
+			canvas.height = 400;
+
+			context.font = "italic 30px Georgia, serif";
+			context.fillStyle = "#ee8833"
+			context.fillText('hello', 100, 100);
+		</script>
+	</body>
+</html>

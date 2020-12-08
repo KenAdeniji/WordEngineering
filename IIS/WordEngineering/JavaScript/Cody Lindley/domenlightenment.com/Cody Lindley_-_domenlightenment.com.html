@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<a href="#">Hi</a> <!-- this is a HTMLAnchorElement which inherits from... -->
+
+<script>
+
+console.log('DOCUMENT_NODE (e.g. window.document) ', Node.DOCUMENT_NODE) //logs 9
+console.log('ELEMENT_NODE (e.g. <body>, <a>, <p>, <script>, <style>, <html>, <h1> etc...) ', Node.ELEMENT_NODE) //logs 1
+console.log('ATTRIBUTE_NODE (e.g. class="funEdges") ', Node.ATTRIBUTE_NODE) //logs 2
+console.log('TEXT_NODE (e.g. text characters in an html document including carriage returns and white space) ', Node.TEXT_NODE) //logs 3
+console.log('DOCUMENT_FRAGMENT_NODE (e.g. document.createDocumentFragment()) ', Node.DOCUMENT_FRAGMENT_NODE) //logs 11
+console.log('DOCUMENT_TYPE_NODE (e.g. <!DOCTYPE html>) ', Node.DOCUMENT_TYPE_NODE) //logs 10
+
+for(var key in Node){
+    console.log(key,' = '+Node[key]); 
+};
+
+//get reference to element node object
+var nodeAnchor = document.querySelector('a');
+
+//create props array to store property keys for element node object
+var props = [];
+
+//loop over element node object getting all properties & methods (inherited too)
+for(var key in nodeAnchor){
+    props.push(key);   
+}
+
+//log alphabetical list of properties & methods 
+console.log(props.sort());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-10-20	Created.	
+			https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Canvas	
+	-->	
+	<body>
+		<canvas id="canvas" style="border:2px solid black;" width="200" height="200">
+		</canvas>
+
+		<script>
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+
+		function draw() {
+		  var canvas = document.getElementById("canvas");
+		  if (canvas.getContext) {
+			var ctx = canvas.getContext("2d");
+
+			ctx.fillStyle = "rgb(200,0,0)";
+			ctx.fillRect (10, 10, 55, 50);
+
+			ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+			ctx.fillRect (30, 30, 55, 50);
+		  }
+		}
+	
+		function getpixelamount(canvas, r, g, b) {
+		  var cx = canvas.getContext('2d');
+		  var pixels = cx.getImageData(0, 0, c.width, c.height);
+		  var all = pixels.data.length;
+		  var amount = 0;
+		  for (i = 0; i < all; i += 4) {
+			if (pixels.data[i] === r &&
+				pixels.data[i + 1] === g &&
+				pixels.data[i + 2] === b) {
+			  amount++;
+			}
+		  }
+		  return amount;
+		};
+
+		function getpixelcolour(canvas, x, y) {
+		  var cx = canvas.getContext('2d');
+		  var pixel = cx.getImageData(x, y, 1, 1);
+		  return {
+			r: pixel.data[0],
+			g: pixel.data[1],
+			b: pixel.data[2],
+			a: pixel.data[3]
+		  };
+		}
+		
+		window.addEventListener("load", draw, false);
+		</script>
+	</body>
+</html>

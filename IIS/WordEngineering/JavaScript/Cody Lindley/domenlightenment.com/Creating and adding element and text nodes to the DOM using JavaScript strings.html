@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<div id="A"></div>
+<span id="B"></span>
+<div id="C"></div>
+<div id="D"></div>
+<div id="E"></div>
+
+<script>
+
+//create a strong element and text node and add it to the DOM
+document.getElementById('A').innerHTML = '<strong>Hi</strong>'; 
+
+//create a div element and text node to replace <span id="B"></div> (notice span#B is replaced)
+document.getElementById('B').outerHTML = '<div id="B" class="new">Whats Shaking</div>'
+
+//create a text node and update the div#C with the text node
+document.getElementById('C').textContent = 'dude';
+
+
+//NON standard extensions below i.e. innerText & outerText
+
+//create a text node and update the div#D with the text node
+document.getElementById('D').innerText = 'Keep it';
+
+//create a text node and replace the div#E with the text node (notice div#E is gone)
+document.getElementById('E').outerText = 'real!';
+
+console.log(document.body.innerHTML);
+/* logs
+<div id="A"><strong>Hi</strong></div>
+<div id="B" class="new">Whats Shaking</div>
+<span id="C">dude</span>
+<div id="D">Keep it</div>
+real!
+*/
+
+</script>
+</body>
+</html>

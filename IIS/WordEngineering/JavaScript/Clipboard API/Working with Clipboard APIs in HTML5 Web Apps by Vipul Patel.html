@@ -1,0 +1,24 @@
+<html>
+<!--
+	2014-08-06 http://www.htmlgoodies.com/html5/other/working-with-clipboard-apis-in-html5-web-apps.html#fbid=fCfyS0Prz5h
+-->
+<body>
+<script>
+	function copy()
+	{
+		var copyEvent = new ClipboardEvent('copy', { dataType: 'text/plain', data: 'Data to be copied' } );
+		document.dispatchEvent(copyEvent);
+	}
+
+	function paste()
+	{
+		var pasteEvent = new ClipboardEvent('paste', { dataType: 'text/plain', data: 'My string' } );
+		document.dispatchEvent(pasteEvent);	
+	}	
+
+	window.addEventListener('load', copy, false);
+	window.addEventListener('load', paste, false);
+	
+</script>
+</body>
+</html>

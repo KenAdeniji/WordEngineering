@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+	
+		var mouseCoordinates = {
+			canvas: null,
+			context: null,
+			initialize: function()
+			{
+				mouseCoordinates.canvas = document.getElementById('myCanvas');
+				mouseCoordinates.context = mouseCoordinates.canvas.getContext('2d');
+				mouseCoordinates.canvas.addEventListener('mousemove', mouseCoordinates.mouseMove, false);
+			},
+			mouseMove: function(evt)
+			{
+				var mousePosition = mouseCoordinates.retrieveMousePosition(evt);
+				var message = 'Mouse position: ' + mousePosition.x + ',' + mousePosition.y;
+				mouseCoordinates.writeMessage(message);
+			},
+			retrieveMousePosition: function(evt)
+			{
+				var rect = mouseCoordinates.canvas.getBoundingClientRect();
+				return {
+				  x: evt.clientX - rect.left,
+				  y: evt.clientY - rect.top
+				};
+			},
+			writeMessage: function(message)
+			{
+				mouseCoordinates.context.clearRect(0, 0, mouseCoordinates.canvas.width, mouseCoordinates.canvas.height);
+				mouseCoordinates.context.font = '18pt Calibri';
+				mouseCoordinates.context.fillStyle = 'black';
+				mouseCoordinates.context.fillText(message, 10, 25);
+			}
+		}
+		
+		function startUp()
+		{
+			mouseCoordinates.initialize();
+		}
+		
+		window.addEventListener("load", startUp, false);
+    </script>
+  </body>
+</html>

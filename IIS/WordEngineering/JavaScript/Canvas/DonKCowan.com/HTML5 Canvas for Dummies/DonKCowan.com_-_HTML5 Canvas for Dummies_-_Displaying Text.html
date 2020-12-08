@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+	<!--
+		2020-01-01	Created. http://marketimpacts.com/storage/9781118385357%20ls0101%20Displaying%20Text.htm
+		2020-01-01	https://stackoverflow.com/questions/29699311/how-to-clear-canvas-html5
+		2020-01-01	https://stackoverflow.com/questions/2936112/text-wrap-in-a-canvas-element
+		2020-01-01	Interactive, and do not hard-code.
+	-->
+<html> 
+	<head>
+		<title>DonKCowan.com_-_HTML5 Canvas for Dummies_-_Displaying Text</title>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			canvas{ //viewport
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>			
+	</head>
+	<body>
+		<div align="center">
+			<label for="canvasArea">Text:</label>
+			<input id="text" type="text" value="Don K. Cowan" autofocus/>
+			<input type="submit" id="submitQuery">
+			<br/>
+			<canvas 
+				id="canvasArea" 
+				style="border:2px solid black"
+			>
+				<!-- MESSAGE if browser doesn't support canvas -->
+				You're browser doesn't currently support HTML5 Canvas.
+				Please check http://caniuse.com/#feat=canvas for
+				information on browser support for canvas.
+			</canvas>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					canvas  = document.getElementById("canvasArea"); 
+					context = canvas.getContext("2d");
+					
+					context.font         = "90pt Comic Sans MS"; 
+					context.fillStyle    = "lime";
+					context.textAlign    = "center"; 
+					context.textBaseline = "middle";
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.fillText
+				(
+					textElement.value,
+					canvas.width / 2,
+					canvas.height / 2
+				);
+			}
+
+			var textElement = document.getElementById("text");
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body> 
+</html>

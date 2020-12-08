@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-06-17	Created.
+		2020-06-17	https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc
+		2020-06-18	https://joreteg.com/blog/betting-on-the-web
+	-->
+	<head>
+		<title>Where does He, retain His knowledge?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Where does He, retain His knowledge?"/>
+		<meta name="keywords" content="Clipboard, copy, cut, paste, book, uri, selector"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="uri">URI</label></td>
+					<td><input id="uri" type="url" focus required/></td>
+				</tr>
+				<tr>
+					<td><label for="selector">Selector</label></td>
+					<td><input id="selector" type="text" required/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			var isPostBack = false;
+
+			var uriElement = document.getElementById("uri");
+			var selectorElement = document.getElementById("selector");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var uriParam = urlParams.get("uri");
+					uriElement.value = uriParam ? uriParam : uriDefault;
+
+					var selectorParam = urlParams.get("selector");
+					selectorElement.value = selectorParam ? selectorParam : selectorDefault;
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var jsonKey = selector.value;
+				var jsonValue;
+				fetch(uriElement.value)
+					.then(response => response.json())
+					.then(content => {
+						jsonValue = content[jsonKey];
+						if (!jsonValue)
+						{
+							jsonValue = content.basics.website;
+						}	
+						resultSet.innerHTML = jsonValue;
+						var data = new DataTransfer();
+						navigator.clipboard.writeText(jsonValue);
+					});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			var uriDefault = "http://e-comfort.ephraimtech.com/WordEngineering/Resume/resume.json";
+			var selectorDefault = "basics.website";
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
