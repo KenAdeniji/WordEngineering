@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SilverlightApplicationResume.JobDescriptions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Margin="0, 8, 0, 0"><Bold>JOB DESCRIPTIONS</Bold></TextBlock>
+        <TextBlock Margin="0, 8"><Bold>Ephraim Technologies, Software Engineer (January 2000 to Present)</Bold></TextBlock>
+        <TextBlock Text="Convert FoxPro order management application into C# ASP.NET AJAX." Margin="24,0,0,0"/>
+        <TextBlock Text="Separate the user interface into the structure (HTML), behavior (JavaScript), and presentation (CSS)." Margin="24,0,0,0"/>
+        <TextBlock Text="Achieve re-use, efficient queries, and mitigate the risk of SQL injection by writing stored procedures and user defined functions." Margin="24,0,0,0"/>
+
+        <TextBlock Margin="0, 8"><Bold>Reel.com,  Database Administrator (January 1999 to December 1999)</Bold></TextBlock>
+        <TextBlock Text="Administer database for replication, software release, performance tuning and load balancing." Margin="24,0,0,0"/>
+        <TextBlock Text="Internet traffic analysis, load simulation, and optimization." Margin="24,0,0,0"/>
+
+        <TextBlock Margin="0, 8"><Bold>International Gaming Technology,  Database, Network, and System Administrator (December 1997 to January 1999)</Bold></TextBlock>
+        <TextBlock Text="Administration for up-to seventy local area network (LAN) sites that are connected together to form a wide area network (WAN)." Margin="24,0,0,0"/>
+
+    </StackPanel>
+</UserControl>
