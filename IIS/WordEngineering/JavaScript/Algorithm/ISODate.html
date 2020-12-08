@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-11-04	Created.
+		2017-11-04	http://stackoverflow.com/questions/3066586/get-string-in-yyyymmdd-format-from-js-date-object
+		2007-10-25T08:20:16 Microsoft. 2000 Midway Lane. Smyrna, Tennessee (TN), 37167.
+		2017-11-04	Wikipedia does not ISO format, so when I am writing SQL, I may have to type in the date, rather clipboard copy. When I am using grid, it accepts date, formatted.
+	-->
+	<head>
+		<title>ISODate</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input type="DateTime" ID="dated" size="50" autofocus required/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><button id="query">Query</button></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<br><br>
+		<div align="center" id="resultSet"></div>	
+		<script>
+			var isPostBack = false;
+		
+			function buildHead()
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var dated = getParameterByName("dated");
+					if (!dated)
+					{
+						dated = new Date().toISOString();
+					}	
+					document.getElementById("dated").value = dated;
+					render();	
+					isPostBack = true;
+				}
+			}
+			
+			function render() 
+			{
+				var info = "<table id='resultTable'>";
+
+				info += buildHead
+				(
+					"Format",
+					"Value"
+				);
+				
+				var dated = new Date(document.getElementById("dated").value);
+				var datedISO = dated.toISOString();
+				
+				info += buildRow("ISO", datedISO);
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("query").addEventListener("click", render, false);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					render();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- 
+	2018-10-27	Created.	http://www.lmpt.univ-tours.fr/~volkov/C++.pdf
+	2018-10-27	http://gist.github.com/faisalman/4213592
+	2018-10-27	Convert value to textContent, for spans.
+				E jo, se mo lewa, si bi se, leni.
+-->
+	<head>
+		<title>Base Convert</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<thead>
+					<tr>
+						<th>Base</th>
+						<th>Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<select id="inputBase">
+								<option value="2">Binary</option>
+								<option value="8">Octal</option>
+								<option value="10">Decimal</option>
+								<option value="16">Hex</option>
+							</select>
+						</td>
+						<td><input id="inputData" type="text" value="111000"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>
+					<tr>
+						<td><label for="base2">2</label></td>
+						<td><span id="base2"></span></td>
+					</tr>
+					<tr>
+						<td><label for="base8">8</label></td>
+						<td><span id="base8"></span></td>
+					</tr>
+					<tr>
+						<td><label for="base10">10</label></td>
+						<td><span id="base10"></span></td>
+					</tr>
+					<tr>
+						<td><label for="base16">16</label></td>
+						<td><span id="base16"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+
+		<script>
+			function querySubmit()
+			{
+				var inputBase = document.getElementById("inputBase").value;
+				var inputData = document.getElementById("inputData").value;
+				
+				var base2 = document.getElementById("base2");
+				var base8 = document.getElementById("base8");
+				var base10 = document.getElementById("base10");
+				var base16 = document.getElementById("base16");
+
+				base2.textContent = 
+				base8.textContent = 
+				base10.textContent = 
+				base16.textContent = "";
+				
+				switch (inputBase)
+				{
+					case '2':
+						base2.textContent = inputData;
+						base8.textContent = convert.bin2oct(inputData);
+						base10.textContent = convert.bin2dec(inputData);
+						base16.textContent = convert.bin2hex(inputData);
+						break;
+					case '8':
+						base2.textContent = convert.oct2bin(inputData);
+						base8.textContent = inputData;
+						base10.textContent = convert.oct2dec(inputData);
+						base16.textContent = convert.oct2hex(inputData);
+						break;
+					case '10':
+						base2.textContent = convert.dec2bin(inputData);
+						base8.textContent = convert.dec2oct(inputData);
+						base10.textContent = inputData;
+						base16.textContent = convert.dec2hex(inputData);
+						break;
+					case '16':
+						base2.textContent = convert.hex2bin(inputData);
+						base8.textContent = convert.hex2oct(inputData);
+						base10.textContent = convert.hex2dec(inputData);
+						base16.textContent = inputData;
+						break;
+				}
+			}
+
+			const convert = {
+			  bin2dec : s => parseInt(s, 2).toString(10),
+			  bin2oct : s => parseInt(s, 2).toString(8),
+			  bin2hex : s => parseInt(s, 2).toString(16),
+			  oct2bin : s => parseInt(s, 8).toString(2),
+			  oct2dec : s => parseInt(s, 8).toString(10),
+			  oct2hex : s => parseInt(s, 8).toString(16),
+			  dec2bin : s => parseInt(s, 10).toString(2),
+			  dec2oct : s => parseInt(s, 10).toString(8),
+			  dec2hex : s => parseInt(s, 10).toString(16),
+			  hex2bin : s => parseInt(s, 16).toString(2),
+			  hex2oct : s => parseInt(s, 16).toString(8),
+			  hex2dec : s => parseInt(s, 16).toString(10)
+			};
+			
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,289 @@
+﻿<html>
+<!--
+	2014-07-13 	No longer uses jQuery.
+	2014-07-16 	deepCopy. Michael McMillan. Data structures and Algorithms with JavaScript. oreil.ly/data-structures/algorithms-JS it-ebooks.info/book/3294
+	2014-11-07 	http://bost.ocks.org/mike/bar/
+	2015-05-30	http://www.purplemath.com/modules/meanmode.htm range = maximum - minimum.
+	2016-11-23	https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript Spread syntax.
+				function avg(...args) { //Spread syntax.
+				  var sum = 0;
+				  for (let value of args) {
+					sum += value;
+				  }
+				  return sum / args.length;
+				}
+
+				avg(2, 3, 4, 5); // 3.5
+				var average = StatisticsLibrary.avg.apply(null, [2, 3, 4, 5]); // 3.5
+	2020-06-25	https://github.com/davidflanagan/jstdg7/blob/master/ch08/stats1.js 
+				User Interface (UI) table.
+	2020-07-06	http://file.allitebooks.com/20200627/JavaScript%20The%20New%20Toys.pdf
+				return(Math.min(...array)) //spread
+-->
+	<head>
+		<title>Statistics</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style type="text/css">
+			#chart div{
+				font: 10px sans-serif;
+				background-color: steelblue;
+				text-align: right;
+				padding: 3px;
+				margin: 1px;
+				color: white;
+			}
+		</style>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31, 12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4, 28, 16, 24, 21, 28, 16, 16, 13, 6, 6, 4, 4, 5, 3, 6, 4, 3, 1, 13, 5, 5, 3, 5, 1, 1, 1, 22</textarea><br>
+			<br>
+			<button id="query">Query</button>
+			<div id="resultSet" align="left"></div>
+			<div id="chart" align="left"></div>	
+		</div>
+		<script>
+			
+			var StatisticsLibrary =
+			{
+				average: function (array) {
+					var count = array.length;
+					var sum = 0;
+					for (n = 0; n < count; ++n)
+					{
+						sum += array[n];
+					}
+					return sum / count;
+				},
+
+				avg: function (...args) {
+					var sum = 0;
+					for (let value of args) {
+						sum += value;
+					}
+					return sum / args.length;
+				},
+				
+				convertToFloat: function (array) {
+					var count = array.length;
+					for (n = 0; n < count; ++n)
+					{
+						array[n] = parseFloat(array[n]);
+					}
+				},
+
+				deepCopy: function( source ) {
+					var target = [];
+					for (var i = 0, j = source.length; i < j; ++i)
+					{
+						target[i] = source[i];
+					}
+					return target;	
+				},
+				
+				highest: function () {
+					return Math.max.apply( Math, arguments ); 
+				},
+
+				largest: function (array) {
+					//return Math.max.apply( Math, array ); 
+					return(Math.max(...array))
+				},
+
+				lowest: function () {
+					return Math.min.apply( Math, arguments ); 
+				},
+
+				smallest: function (array) {
+					//return Math.min.apply( Math, array ); 
+					return(Math.min(...array))
+				},
+				
+				mean: function(array) {
+					var count = array.length;
+					var sum = 0;
+					for (n = 0; n < count; ++n)
+					{
+						sum += array[n];
+					}
+					return sum / count;
+				},
+
+				median: function(array) {
+					var count = array.length;
+					var args = Array.prototype.slice.call(array, 0);
+					array.sort( function(a,b){return a-b;} );
+				
+					if (count % 2 === 1)
+					{
+						median = array[(count - 1) / 2];
+					}
+					else
+					{
+						median = 	(
+										array[(count / 2) - 1] + 
+										array[count / 2]
+									) 
+									/ 2;
+					}
+					
+					return median;
+				},
+
+				modeArray:function(array) {
+					if(array.length == 0)
+						return null;
+					var modeMap = {};
+					var maxCount = 1, modes = [array[0]];
+					for(var i = 0; i < array.length; i++)
+					{
+						var el = array[i];
+						if(modeMap[el] == null)
+							modeMap[el] = 1;
+						else
+							modeMap[el]++;  
+						if(modeMap[el] > maxCount)
+						{
+							modes = [el];
+							maxCount = modeMap[el];
+						}
+						else if(modeMap[el] === maxCount)
+						{
+							modes.push(el);
+							maxCount = modeMap[el];
+						}
+					}
+					return modes;
+				},
+				
+				modeString: function(array) {
+					if (array.length === 0)
+						return null;
+					var modeMap = {};
+					var maxEl = array[0],  maxCount = 1;
+					for(var i = 0; i < array.length; i++)
+					{
+						var el = array[i];
+						if(modeMap[el] == null)
+							modeMap[el] = 1;
+						else
+							modeMap[el]++;  
+						if(modeMap[el] > maxCount)
+						{
+							maxEl = el;
+							maxCount = modeMap[el];
+						}
+						else if(modeMap[el] === maxCount)
+						{
+							maxEl += '&' + el;
+							maxCount = modeMap[el];
+						}
+					}
+					return maxEl;
+				},
+				
+				populationStandardDeviation: function(array) { 
+					var v = this.populationVariance(array);
+					var stddev = Math.sqrt(v);
+					return stddev;
+				},
+				
+				sampleStandardDeviation: function(array) { 
+					let average = this.mean(array);
+					total = 0;
+					for(let i = 0; i < array.length; i++) {
+						let deviation = array[i] - average;
+						total += deviation * deviation;
+					}
+					let stddev = Math.sqrt(total/(array.length-1))
+					return stddev;
+				},
+				
+				sum: function(array) {
+					var count = array.length;
+					var total = 0;
+					for (n = 0; n < count; ++n)
+					{
+						total += array[n];
+					}
+					return total;
+				},
+				
+				populationVariance: function(array){
+					var averageTemp = this.average(array);
+					var count = array.length;
+					var i = count;
+					var v = 0;
+					while (i--) {
+						v += Math.pow(array[i] - averageTemp, 2);
+					}
+					v /= count;
+					return v;
+				}
+			}
+
+			function eStats()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+				StatisticsLibrary.convertToFloat(requestArray);
+				var workingCopy = StatisticsLibrary.deepCopy(requestArray);
+
+				var average = StatisticsLibrary.average(requestArray);
+				var largest = StatisticsLibrary.largest(requestArray);
+				var median = StatisticsLibrary.median(workingCopy);
+				var mode = StatisticsLibrary.modeString(requestArray);
+				var smallest = StatisticsLibrary.smallest(requestArray);
+				var range = largest - smallest;
+
+				var populationStandardDeviation = StatisticsLibrary.populationStandardDeviation(requestArray);
+				var populationVariance = StatisticsLibrary.populationVariance(requestArray);
+				var sampleStandardDeviation = StatisticsLibrary.sampleStandardDeviation(requestArray);
+				var sum = StatisticsLibrary.sum(requestArray);
+
+				var display = "<table border='1'>" +
+					"<caption>Statistics</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("Count", requestArray.length) +
+					tabular("Maximum", largest) +
+					tabular("Mean", average) +
+					tabular("Median", median) +
+					tabular("Minimum", smallest) +
+					tabular("Mode", mode) +
+					tabular("Population Standard Deviation", populationStandardDeviation) +
+					tabular("Population Variance", populationVariance) +
+					tabular("Range", range) +
+					tabular("Sample Standard Deviation", sampleStandardDeviation) +
+					"</tbody></table>"
+					;
+
+				document.getElementById("resultSet").innerHTML = display;		
+
+				var chart = document.getElementById("chart");
+				chart.innerHTML = "";
+				
+				d3.select("#chart")
+				.selectAll("div")
+					.data(requestArray)
+				.enter().append("div")
+					.style("width", function(d) { return 420 * d / largest + "px"; })
+					.text(function(d) { return d; });		
+			}
+	
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+			window.addEventListener("load", eStats, false);
+
+			document.getElementById("query").addEventListener("click", eStats, false);
+		</script>
+	</body>
+</html>

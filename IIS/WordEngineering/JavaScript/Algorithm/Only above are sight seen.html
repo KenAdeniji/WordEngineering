@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-03-14	Created.	Only above are sight seen.html	
+	-->
+	<script>
+		var myVar = -1;
+		
+		function displayText()
+		{
+			document.writeln("Only above are sight seen.<br>");
+			document.writeln("Only above are sight ...<br>");
+			document.writeln("Only above are ...<br>");
+			document.writeln("Only above ...<br>");
+			document.writeln("Only ...<br>");
+			window.clearTimeout(myVar);
+			//document.writeln(myVar);
+		}
+
+		myVar = window.setTimeout(displayText, 1000);
+	</script>	
+</html>

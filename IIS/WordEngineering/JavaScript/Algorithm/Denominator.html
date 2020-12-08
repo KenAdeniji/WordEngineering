@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-05-25	Created.	Denominator.html
+			2017-05-25	85. A young man is to begin his job at a restaurant; I chose to teach him programming to complement his work; I asked him, to write a program that will determine the change from a trade.
+		-->
+		<title>Denominator</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+			th, td{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even){
+				background: #dae5f4;
+			}
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<label for="word">word:</label>
+				<input id="word" type="number" size="10" step=".01" min="0" autofocus>
+				<button id="query">Query</button>
+			</fieldset>
+			<br/><br/>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			var wordDefault = 85;
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var word = getParameterByName("word");
+					if (word === "")
+					{
+						word = wordDefault;
+					}	
+					document.getElementById("word").value = word;
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var amount = parseFloat(document.getElementById("word").value);
+				var distributions = calculate(amount)
+				displayResponse(distributions);
+			}
+
+			function calculate(amount)
+			{
+				var remainder = 0;
+				var whole = 0;
+				for 
+				(
+					var index = 0, length = Denominators.length, distributions = [];
+					index < length;
+					index++
+				)
+				{
+					whole = amount / Denominators[index];
+					if (whole >= 1)
+					{
+						distributions[index] = whole;
+						amount %= Denominators[index];
+					}
+				}
+				return (distributions);
+			}
+			
+			function displayResponse(distributions)
+			{
+				var resultSet = "<table><thead><tr><th>Unit</th><th>Count</th></thead><tbody>"
+				for 
+				(
+					var index = 0, length = distributions.length;
+					index < length;
+					index++
+				)
+				{
+					if (distributions[index])
+					{
+						resultSet += "<tr><td>" + Denominators[index] + "</td><td>" +
+							Math.floor(distributions[index]) + "</td></tr>";
+					}	
+				}
+				resultSet += "</tbody></table>"
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var word = document.getElementById("word");
+			word.addEventListener("change", querySubmit, false);
+			
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var Denominators = [ 100, 50, 20, 10, 5, 1, .5, .2, .1, .05, .01 ];
+		</script>
+	</body>
+</html>

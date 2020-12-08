@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-06-27	Created.	http://chimera.labs.oreilly.com/books/1234000001654/ch01.html
+	-->
+	<head>
+		<style>
+			body {background-color: blue; color:yellow;}
+		</style>
+		<title>Guess the Letter</title>
+	</head>
+	<body>
+		<div style="text-align: center">
+			<label for="clockStart">Clock Start:
+				<label id="clockStart">
+			</label><br><br>
+
+			<label id="guidance"></label><br><br>
+
+			<label for="trials">Trials:
+				<label id="trials">
+			</label><br><br>
+
+			<label for="higherOrLower">Higher or Lower:
+				<label id="higherOrLower">
+			</label><br><br>
+			
+			<label for="guesses">Guesses:
+				<label id="guesses">
+			</label><br><br>
+		</div>
+		<script>
+			var isPostBack = false;
+			var possibilities = "abcdefghijklmnopqrstuvwxyz";
+			var guesses = "";
+			var letterIndex = Math.floor(Math.random() * possibilities.length);
+			var choiceLetter = possibilities[letterIndex];
+			function initialize()
+			{
+				if (!isPostBack)
+				{
+					document.getElementById("clockStart").innerHTML = new Date().toString();
+					document.getElementById("guidance").innerHTML = 
+						"Guess the letter, " + possibilities[0] + "..." +
+						possibilities[possibilities.length - 1] + ".";
+					isPostBack = true;
+				}
+			}
+			
+			function eventKeyPressed(e) {
+				var letterPressed = String.fromCharCode(e.keyCode);
+				letterPressed = letterPressed.toLowerCase();
+				guesses += letterPressed;
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("trials").innerHTML = guesses.length;
+				
+				var mark = "Correct";
+				if (choiceLetter < letterPressed)
+				{
+					mark = "Lower";
+				}
+				else if (choiceLetter > letterPressed)
+				{
+					mark = "Higher";
+				}
+				else
+				{
+					window.removeEventListener("keyup", eventKeyPressed, true);
+				}
+				document.getElementById("higherOrLower").innerHTML = mark;
+			}
+			
+			window.addEventListener("load", initialize, false);
+			window.addEventListener("keyup", eventKeyPressed, true);
+		</script>
+	</body>
+</html>

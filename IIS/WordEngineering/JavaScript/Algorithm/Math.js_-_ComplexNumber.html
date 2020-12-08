@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-08-11	https://goalkicker.com/CSharpBook/CSharpNotesForProfessionals.pdf
+		2018-08-11	http://mathjs.org/docs/datatypes/complex_numbers.html
+	-->
+	<head>
+		<title>Math.js Complex Number</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.js"></script>
+		<div align="center">
+			<!--
+			<fieldset>
+				<legend>Math.js Complex Number</legend>
+			-->	
+				<table>
+					<tr>
+						<td><label for="firstRealNumber">First Number Real:</label></td>
+						<td><input id="firstRealNumber" type="number"/></td>
+					</tr>	
+					<tr>
+						<td><label for="firstImaginaryNumber">First Number Imaginary:</label></td>
+						<td><input id="firstImaginaryNumber" type="number"/></td>
+					</tr>
+					<tr>
+						<td><label for="secondRealNumber">Second Number Real:</label></td>
+						<td><input id="secondRealNumber" type="number"/></td>
+					</tr>	
+					<tr>
+						<td><label for="secondImaginaryNumber">Second Number Imaginary:</label></td>
+						<td><input id="secondImaginaryNumber" type="number"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+					</tr>
+					<tr>
+						<td><label for="resultAdd">Add:</label></td>
+						<td ><span id="resultAdd"></span></td>
+					</tr>
+					<tr>
+						<td><label for="resultDivide">Divide:</label></td>
+						<td ><span id="resultDivide"></span></td>
+					</tr>
+					<tr>
+						<td><label for="resultMultiply">Multiply:</label></td>
+						<td ><span id="resultMultiply"></span></td>
+					</tr>
+					<tr>
+						<td><label for="resultSubtract">Subtract:</label></td>
+						<td ><span id="resultSubtract"></span></td>
+					</tr>
+				</table>
+			<!--	
+			</fieldset>
+			-->
+		</div>	
+		<script>
+			function querySubmit()
+			{
+				const firstNumber = math.complex
+				(
+					Number.parseFloat(firstRealNumber.value),
+					Number.parseFloat(firstImaginaryNumber.value)
+				);
+				const secondNumber = math.complex
+				(
+					Number.parseFloat(secondRealNumber.value),
+					Number.parseFloat(secondImaginaryNumber.value)
+				);
+				resultAdd.innerText	= math.conj(math.add(firstNumber, secondNumber));
+				resultDivide.innerText = math.conj(math.divide(firstNumber, secondNumber));
+				resultMultiply.innerText = math.conj(math.multiply(firstNumber, secondNumber));
+				resultSubtract.innerText = math.conj(math.subtract(firstNumber, secondNumber));
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

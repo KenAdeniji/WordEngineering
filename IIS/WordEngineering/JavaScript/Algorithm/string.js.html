@@ -1,0 +1,113 @@
+﻿<html>
+<!--
+	2016-08-14	string.js.html created.
+	2016-08-14	http://www.bootcdn.cn/string.js
+-->
+	<head>
+		<title>string.js</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+		<script src="http://cdn.bootcss.com/string.js/3.3.1/string.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<input type="text" id="request" cols="50"/><br/>
+			<button id="query">Query</button><br>
+			<table id="response" border="1"></table>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var request = getParameterByName("request");
+					if (!request)
+					{
+						request = "Saul of Tarsus";
+					}	
+				}
+				document.getElementById("request").value = request;
+				querySubmit();	
+				isPostBack = true;
+			}
+			
+			function querySubmit()
+			{
+				var entry = document.getElementById("request").value;
+				var resultSet = document.getElementById("response");
+
+				var filler = "";
+				filler += tableRow("camelize", S(entry).camelize());
+				filler += tableRow("capitalize", S(entry).capitalize());
+				filler += tableRow("humanize", S(entry).humanize());
+				filler += tableRow("isAlpha", S(entry).isAlpha());
+				filler += tableRow("isAlphaNumeric", S(entry).isAlphaNumeric());
+				filler += tableRow("isEmpty", S(entry).isEmpty());
+				filler += tableRow("isLower", S(entry).isLower());
+				filler += tableRow("isNumeric", S(entry).isNumeric());
+				filler += tableRow("isUpper", S(entry).isUpper());
+				filler += tableRow("latinise", S(entry).latinise());
+				filler += tableRow("length", S(entry).length);
+				filler += tableRow("lines", S(entry).lines());
+				filler += tableRow("parseCSV", S(entry).parseCSV());
+				filler += tableRow("toBoolean", S(entry).toBoolean());
+				filler += tableRow("trim", S(entry).trim());
+				filler += tableRow("underscore", S(entry).underscore());
+				resultSet.innerHTML = filler;
+			}//trim
+			
+			function tableRow(columnLabel, columnValue)
+			{
+				return "<tr><td>" + columnLabel + "</td><td>" + columnValue + "</td></tr>";
+			}
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			var query = document.getElementById("query");
+			query.addEventListener("click", querySubmit, false);
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

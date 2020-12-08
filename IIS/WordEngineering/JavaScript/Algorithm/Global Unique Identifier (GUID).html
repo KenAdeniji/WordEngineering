@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-01-20	Created.	http://guid.us/GUID/JavaScript
+	-->
+	<head>
+		<title>Global Unique Identifier (GUID)</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><label for="count">Count:</td><td><input id="count" type="number" value="10" step"1"></td></tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+			<table id="resultSet"></table>
+		</div>	
+
+		<script>
+			function S4() {
+				return (((1+Math.random())*0x10000)|0).toString(16).substring(1); 
+			}
+
+			function querySubmit()
+			{
+				var tableInfo = "";
+				var guid = "";
+				var count = parseInt(document.getElementById("count").value);
+				for (var index = 0; index < count; ++index)
+				{
+					guid = (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+					tableInfo += `<tr><td>${guid}</td></tr>`;
+				}
+				console.log(guid, tableInfo);
+				document.getElementById("resultSet").innerHTML = tableInfo;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+	</script>
+</body>
+</html>

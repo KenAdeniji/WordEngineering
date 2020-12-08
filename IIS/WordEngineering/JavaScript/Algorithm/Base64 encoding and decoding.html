@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2010-02-18	LoiT@skylinkdesign.com
+		2016-03-10	http://www.codeguru.com/columns/dotnet/base64-encoding-from-c.html
+		2016-03-10	https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding
+		2016-03-10	https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob
+	-->
+	<head>
+		<title>Base64 encoding and decoding</title>
+		<style type="text/css">
+			body { background: blue; color: yellow; } 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="encodingInput"></textarea>
+			<button id="encodingQuery">Encode</button>
+			<div label id="encodingOutput"></div>
+			<br>
+			<textarea rows="4" cols="50" id="decodingInput"></textarea>
+			<button id="decodingQuery">Decode</button>
+			<div label id="decodingOutput"></div>
+			<script>
+				document.getElementById("encodingQuery").addEventListener("click", encodingRoutine, false);
+				function encodingRoutine()
+				{
+					document.getElementById("encodingOutput").innerHTML = 
+						window.btoa(document.getElementById("encodingInput").value); // encode a string
+				}
+				
+				document.getElementById("decodingQuery").addEventListener("click", decodingRoutine, false);
+				function decodingRoutine()
+				{
+					document.getElementById("decodingOutput").innerHTML = 
+						window.atob(document.getElementById("decodingInput").value); // encode a string
+				}
+			</script>
+		</div>
+	</body>
+</html>

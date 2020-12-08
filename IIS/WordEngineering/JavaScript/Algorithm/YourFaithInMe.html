@@ -1,0 +1,286 @@
+﻿<html>
+<!--
+	2018-05-19 	Created.
+	2018-05-19	http://stackoverflow.com/questions/4631928/convert-utc-epoch-to-local-date?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+-->
+	<head>
+		<title>Your faith in Me</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://cdn.jsdelivr.net/jstat/1.1.1/jstat.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">01 Jan 2018 00:00:00 GMT, 04 Dec 2018 00:12:00 GMT, 1,2,3</textarea><br>
+			<button id="query">Query</button><br>
+			<div id="dateResponse"></div>
+			<div id="numberResponse"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+var StatisticsLibrary =
+{
+	mean: function (array) {
+		var count = array.length;
+		var sum = 0;
+		for (n = 0; n < count; ++n)
+		{
+			sum += array[n];
+		}
+		return sum / count;
+	},
+
+	avg: function (...args) {
+		var sum = 0;
+		for (let value of args) {
+			sum += value;
+		}
+		return sum / args.length;
+	},
+	
+	convertToFloat: function (array) {
+		var count = array.length;
+		for (n = 0; n < count; ++n)
+		{
+			array[n] = parseFloat(array[n]);
+		}
+	},
+
+	deepCopy: function( source ) {
+		var target = [];
+		for (var i = 0, j = source.length; i < j; ++i)
+		{
+			target[i] = source[i];
+		}
+		return target;	
+	},
+	
+	highest: function () {
+		/* 
+		Functions like this one that can accept any number of arguments are called
+		variadic functions, variable arity functions, or varargs functions.
+		*/
+		return Math.max.apply( Math, arguments ); 
+	},
+
+	maximum: function (array) {
+		return Math.max.apply( Math, array ); 
+	},
+
+	lowest: function () {
+		return Math.min.apply( Math, arguments ); 
+	},
+
+	minimum: function (array) {
+		return Math.min.apply( Math, array ); 
+	},
+	
+	mean: function () {
+		var count = arguments.length;
+		var sum = 0;
+		for (n = 0; n < count; ++n)
+		{
+			sum += arguments[n];
+		}
+		return sum / count;
+	},
+	
+	median: function(array) {
+		var count = array.length;
+		var args = Array.prototype.slice.call(array, 0);
+		array.sort( function(a,b){return a-b;} );
+	
+		if (count % 2 === 1)
+		{
+			median = array[(count - 1) / 2];
+		}
+		else
+		{
+			median = 	(
+							array[(count / 2) - 1] + 
+							array[count / 2]
+						) 
+						/ 2;
+		}
+		
+		return median;
+	},
+
+	modeArray:function(array) {
+		if(array.length == 0)
+			return null;
+		var modeMap = {};
+		var maxCount = 1, modes = [array[0]];
+		for(var i = 0; i < array.length; i++)
+		{
+			var el = array[i];
+			if(modeMap[el] == null)
+				modeMap[el] = 1;
+			else
+				modeMap[el]++;  
+			if(modeMap[el] > maxCount)
+			{
+				modes = [el];
+				maxCount = modeMap[el];
+			}
+			else if(modeMap[el] === maxCount)
+			{
+				modes.push(el);
+				maxCount = modeMap[el];
+			}
+		}
+		return modes;
+	},
+	
+	modeString: function(array) {
+		if (array.length === 0)
+			return null;
+		var modeMap = {};
+		var maxEl = array[0],  maxCount = 1;
+		for(var i = 0; i < array.length; i++)
+		{
+			var el = array[i];
+			if(modeMap[el] == null)
+				modeMap[el] = 1;
+			else
+				modeMap[el]++;  
+			if(modeMap[el] > maxCount)
+			{
+				maxEl = el;
+				maxCount = modeMap[el];
+			}
+			else if(modeMap[el] === maxCount)
+			{
+				maxEl += '&' + el;
+				maxCount = modeMap[el];
+			}
+		}
+		return maxEl;
+	},
+	
+	standardDeviation: function(array) { 
+		v = this.variance(array);
+		sD = Math.sqrt(v);
+		return sD;
+	},
+	
+	sum: function(array) {
+		var count = array.length;
+		var total = 0;
+		for (n = 0; n < count; ++n)
+		{
+			total += array[n];
+		}
+		return total;
+	},
+	
+	variance: function(array){
+		mean = this.mean(array);
+		var count = array.length;
+		var i = count;
+		var v = 0;
+		while (i--) {
+			v += Math.pow(array[i] - mean, 2);
+		}
+		v /= count;
+		return v;
+	}
+}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						parseData();
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function parseData()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+				var current;
+				var dateTime;
+				var numberSet = [];
+				var dateSet = [];
+				for 
+				(
+					index = 0, length = requestArray.length;
+					index < length;
+					++index
+				)
+				{
+					current = requestArray[index];
+					dateTime = Date.parse(current)
+					
+					if (isNaN(dateTime) === false)
+					{
+						dateSet.push(dateTime);
+					}
+					else if (isNaN(current) === false)
+					{
+						numberSet.push( parseFloat(current) );
+					}
+				}
+				
+				document.getElementById("dateResponse").innerHTML = "";
+				document.getElementById("numberResponse").innerHTML = "";
+				
+				if (dateSet.length > 0)
+				{
+					var informationSet = "<table><caption>Date Statistics</caption>";
+					informationSet += scriptLiteral9432.buildHead("Unit", "Value");
+				
+					var maximum = StatisticsLibrary.maximum(dateSet);
+					var minimum = StatisticsLibrary.minimum(dateSet);
+					
+					informationSet += scriptLiteral9432.buildRow("maximum:", new Date(maximum));
+					informationSet += scriptLiteral9432.buildRow("minimum:", new Date(minimum));
+					
+					informationSet += "</table>";
+					document.getElementById("dateResponse").innerHTML = informationSet;
+				}
+			
+				if (numberSet.length > 0)
+				{
+					var informationSet = "<table><caption>Number Statistics</caption>";
+					informationSet += scriptLiteral9432.buildHead("Unit", "Value");
+				
+					var hypot = Math.hypot.apply(Math, numberSet);
+					var	maximum = jStat.max(numberSet);
+					var mean = jStat.mean(numberSet);
+					var median = jStat.median(numberSet);
+					var minimum = jStat.min(numberSet);
+					var mode = jStat.mode(numberSet);
+					var populationStandardDeviation = jStat.stdev(numberSet, false);
+					var populationVariance = jStat.variance(numberSet, false);	
+					var range = jStat.range(numberSet);
+					var sampleVariance = jStat.variance(numberSet, true);
+					var sampleStandardDeviation = jStat.stdev(numberSet, true);
+					var sum = jStat.sum(numberSet);
+
+					informationSet += scriptLiteral9432.buildRow("count:", numberSet.length);
+					informationSet += scriptLiteral9432.buildRow("hypot", hypot);
+					informationSet += scriptLiteral9432.buildRow("maximum:", maximum);
+					informationSet += scriptLiteral9432.buildRow("mean:", mean);
+					informationSet += scriptLiteral9432.buildRow("median:", median);
+					informationSet += scriptLiteral9432.buildRow("minimum:", minimum);
+					informationSet += scriptLiteral9432.buildRow("mode:", mode);
+					informationSet += scriptLiteral9432.buildRow("range:", range);
+					informationSet += scriptLiteral9432.buildRow("sum:", sum);
+					
+					informationSet += "</table>";
+					document.getElementById("numberResponse").innerHTML = informationSet;
+				}
+			}	
+
+			window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("query").addEventListener("click", parseData, false);
+		</script>
+	</body>
+</html>

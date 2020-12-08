@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+/*
+body {background: blue; color: yellow;}
+*/
+</style>
+</head>
+<body>
+<script>
+//function render() {
+	document.body.style.backgroundColor = "#00539F"; 
+	document.body.style.color = "#b8d1f3"; 
+	for (var key in navigator) {
+		//if (navigator.hasOwnProperty(key)) 
+		{
+			document.write(key + ": " + navigator[key] + "<br/>");
+		}
+	}
+	var plugins = navigator.plugins;
+	document.write("navigator.plugins");
+	for (var i = 0; i < plugins.length; i++)
+	{
+		//console.log(i, plugins[i].name);
+		document.write(plugins[i].name);
+	}
+//}
+//window.addEventListener("load", render, false);
+</script>
+</body>
+</html>
