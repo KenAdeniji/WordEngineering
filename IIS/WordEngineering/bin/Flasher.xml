@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Flasher
+</name>
+</assembly>
+<members>
+<member name="M:ControlFreak.Flasher.RenderForAlt(System.Web.UI.HtmlTextWriter)">
+	<summary>
+ Renders flash object tag for browsers besides IE
+ </summary>
+	<param name="output"></param>
+	<remarks></remarks>
+</member><member name="M:ControlFreak.Flasher.RenderForIE(System.Web.UI.HtmlTextWriter)">
+	<summary>
+ Renders flash instantiation script for IE browsers
+ </summary>
+	<param name="output"></param>
+	<remarks></remarks>
+</member><member name="M:ControlFreak.Flasher.Color2Hex(System.Drawing.Color)">
+	<summary>
+ converts a color object into a hex color value
+ that can be used as an HTML color
+ </summary>
+	<param name="Clr">System.Drawing.Color</param>
+	<returns>a hex value</returns>
+	<remarks></remarks>
+</member><member name="P:ControlFreak.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ControlFreak.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ControlFreak.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
