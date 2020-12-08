@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-09-08 	Created.	https://www.youtube.com/watch?v=0Dj6C_2tqaY
+		2020-09-08	https://stackoverflow.com/questions/14818596/sql-comma-separated-string-total-count
+	-->
+	<head>
+		<title>List Count</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="List count"/>
+		<meta name="keywords" content="Generations, Matthew 1:17"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+		
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				
+				//request["bibleVersion"] = bibleVersionElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/ListCount.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
