@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-10-07	https://stackoverflow.com/questions/4720494/javascript-libraries-that-allow-for-sql-like-queries-on-json-data
+		2018-10-07	https://github.com/agershun/alasql
+		2018-10-07	http://alasql.org
+
+		2018-10-11	Created.	
+		2018-10-11	https://stackoverflow.com/questions/43348729/html-table-with-250-000-rows-a-better-way
+		2018-10-12	http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/alasql.org/AlaSQL.js_-_OnlyRefuseSubstainTheLine.html
+		2018-10-12	https://stackoverflow.com/questions/52787978/datatable-jquery-plug-in-dynamic-table-creation-and-data
+					I am using Ajax to retrieve the entire Bible from the database. 
+					I am using AlaSql.js to extract the sacred text for each scripture reference.
+					I will like to use DataTables.net to display the sacred text for each scripture reference.
+		2018-10-11	function dataParse() created; 2018-10-14 renamed to process().
+		2018-10-14	console.log
+					(
+						JSON.stringify(scriptureReferenceSubsets[index])
+					);
+		2018-10-14	https://stackoverflow.com/questions/24718349/how-do-i-make-array-indexof-case-insensitive
+					var array = ['I', 'hAve', 'theSe', 'ITEMs'],
+					query = 'these',
+					result = array.findIndex(item => query.toLowerCase() === item.toLowerCase());
+					console.log(result); // 2
+		2018-10-15	QA. Let's imagine Christ. Ability to do; is need to think.
+		2019-02-11	Speak Scripture Reference.
+		2019-05-21	In search of a further man? ScriptureReference sort. Book ID, chapter ID, verse ID.
+					2019-05-23 code. A ti bo si tona. Ni sin? We have gotten on the road, now.
+	-->
+	<head>
+		<title>AlaSQL.js Only refuse; substain the line.</title>
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference</td>
+					<td>
+						<input 
+							id="scriptureReference"
+							type="text"
+							focus
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="scriptureReferenceSorted">Scripture Reference Sorted</td>
+					<td>
+						<label id="scriptureReferenceSorted"></label>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="bibleVersion">Version</td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input id="submitQuery" type="submit">
+						<button id="speakScriptureReference">Speak Scripture Reference</button>
+					</td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+		<script src="//cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
+		
+<link href="https://unpkg.com/tabulator-tables@4.0.4/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.0.4/dist/js/tabulator.min.js"></script>		
+		<script>
+			var isPostBack = false;
+			var	dataSet = null;
+			
+			const Pre = 0;
+			const Post = 1;
+			
+			function buildSql(scriptureReferenceSubsets)
+			{
+				var sqlWhereClauses = [];
+				var verseIdSequenceFrom = -1;
+				var verseIdSequenceUntil = -1;
+
+				scriptureReferenceSubsets.forEach
+				(
+					function(scriptureReferenceSubset) 
+					{
+						var pre = scriptureReferenceSubset[Pre];
+						var post = null;
+						if (scriptureReferenceSubset[Post])
+						{
+							post = scriptureReferenceSubset[Post];
+						}
+						var	verseIdSequence	= -1;
+						var	sqlReferenceWhereClause = null;
+						var	subQueryWhereClause = null;
+						if (!post)
+						{
+							console.log("if (!post)", pre.bookTitle);
+							var bookID = pre.retrieveBookID();
+							if (bookID && !pre.chapterID && !pre.verseID)
+							{
+								sqlReferenceWhereClause = "bookId = "
+									+ bookID
+							}
+							else if (!pre.verseID)
+							{
+								sqlReferenceWhereClause =
+					`bookId=${bookID} AND chapterId=${pre.chapterID}`;
+							}
+							else
+							{
+								sqlReferenceWhereClause =
+`bookId=${bookID} AND chapterId=${pre.chapterID} AND verseId=${pre.verseID}`;
+							}
+						}
+						else
+						{
+							console.log
+							(
+								"if (post)",
+								pre.bookTitle,
+								pre.ChapterID,
+								pre.VerseID,
+								post.bookTitle,
+								post.ChapterID,
+								post.VerseID
+							);
+							if
+							(
+								post.retrieveBookID() >= pre.retrieveBookID()
+								&& !pre.chapterID && !pre.verseID
+								&& !post.chapterID && !post.verseID
+							)
+							{
+								sqlReferenceWhereClause =
+						`bookId BETWEEN ${pre.retrieveBookID()} AND ${post.retrieveBookID()}`;
+								console.log(sqlReferenceWhereClause);
+							}
+							else
+							{
+								subQueryWhereClauseFrom = 	
+								" bookId = " + pre.retrieveBookID() + 
+								" AND chapterId = " + pre.chapterID + 
+								" AND verseId = " + 
+								((pre.verseID == null) ? 1 : pre.verseID);
+						
+								verseIdSequenceFrom = 
+									selectVerseIdSequenceWhereClause
+									(
+										subQueryWhereClauseFrom
+									);
+								
+								if (!post.verseID)
+								{
+									verseIdSequenceUntil = 
+										selectVerseIdSequenceWhereBookIDChapterID
+										(post.BookId, post.Chapter);
+								}
+								else
+								{	
+									subQueryWhereClauseUntil = 	
+									" bookId = " + post.retrieveBookID() + 
+									" AND chapterId = " + post.chapterID + 
+									" AND verseId = " + post.verseID;
+									verseIdSequenceUntil = 
+									selectVerseIdSequenceWhereClause
+									(subQueryWhereClauseUntil);
+									console.log("subQueryWhereClauseUntil", subQueryWhereClauseUntil);
+								}
+								sqlReferenceWhereClause =
+			`verseIdSequence BETWEEN ${verseIdSequenceFrom} AND ${verseIdSequenceUntil}`;
+							}
+						}
+					sqlWhereClauses.push(sqlReferenceWhereClause);
+					}
+				);
+				return sqlWhereClauses;
+			}
+
+			function checkForBookTitle(currentReference, bookTitleChapterSeparatorPosition)
+			{
+				if 
+				(
+					currentReference.toLowerCase() ===
+					scriptLiteral9432.bibleBooks
+					[scriptLiteral9432.songOfSolomonBookID].toLowerCase() 
+				)
+				{
+					return true;
+				}	
+				var leftOfSeparator = currentReference.substring
+				(
+					0,
+					bookTitleChapterSeparatorPosition
+				).trim();
+				var isBookTitle = !isNaN(leftOfSeparator);
+				return isBookTitle;
+			}
+
+			function executeScalar(sql, column)
+			{
+				var alasResult = alasql(sql, [dataSet]);
+				var alasResult = JSON.stringify(alasResult);
+				var alasParse = JSON.parse(alasResult);
+				var result = alasParse[0][column];
+				return result;
+			}
+			
+			function process()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var scriptureReferenceSubsets = parse
+				(
+					document.getElementById("scriptureReference").value
+				);
+				for
+				(
+					var index = 0, length = scriptureReferenceSubsets.length;
+					index < length;
+					++index
+				)
+				{
+					console.log
+					(
+						JSON.stringify(scriptureReferenceSubsets[index])
+					);
+				}
+				var sqlWhereClauses = buildSql(scriptureReferenceSubsets);
+				var	sqlStatement = null;
+				var sqlStatements = [];
+				sqlWhereClauses.forEach
+				(
+					function(sqlWhereClause) 
+					{
+						sqlStatement = `SELECT * FROM ? WHERE ${sqlWhereClause}`,
+						console.log(sqlStatement);
+						sqlStatements.push
+						(
+							sqlStatement
+						);
+					}
+				);	
+/*
+				sqlStatements = 
+				[
+					`SELECT * FROM ? WHERE chapterIdSequence = 22`,
+					`SELECT * FROM ? WHERE bookId = 43 AND chapterId = 1`
+				];
+*/				
+				for
+				(
+					var sqlStatementId = 0, 
+						sqlStatementIdCount = sqlStatements.length;
+					sqlStatementId < sqlStatementIdCount;
+					++sqlStatementId
+				)
+				{
+					var alasResult = alasql
+					(
+						sqlStatements[sqlStatementId], [dataSet]
+					);
+					
+					console.log(alasResult.length);
+					
+					/*
+					var resultTable = document.createElement("table");
+					resultTable.id = "resultTable" + sqlStatementId;
+					let myTable = $('#' + resultTable.id).DataTable
+					( 
+						{
+							"data": alasResult,
+							"columns": [
+								{ "data": "verseIdSequence" },
+								{ "data": "scriptureReference" },
+								{ "data": "KingJamesVersion" }
+							],
+							destroy: true
+						}
+					);
+					//document.getElementById("resultSet").appendChild(myTable);
+					$("#resultSet").append(myTable);
+					//scriptLiteral9432.renderDataTable(alasResult, "resultSet");
+					*/
+					
+					var resultDiv = document.createElement("div");
+					resultDiv.id = "resultDiv" + sqlStatementId;
+					document.getElementById("resultSet").appendChild(resultDiv);
+var table = new Tabulator("#" + resultDiv.id, {
+ 	height:205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+ 	layout:"fitColumns", //fit columns to width of table (optional)
+ 	columns:[ //Define Table Columns
+	 	{title:"VerseIdSequence", field:"verseIdSequence", sorter:"number"},
+	 	{title:"Scripture Reference", field:"scriptureReference"},
+	 	{title:"KingJamesVersion", field:bibleVersion.value},
+ 	],
+ 	rowClick:function(e, row){ //trigger an alert message when the row is clicked
+ 		alert("Row " + row.getData().id + " Clicked!!!!");
+ 	},
+});
+
+table.setData(alasResult);
+				}
+
+				var scriptureReferenceHold = scriptureReferenceSubsets;
+			
+				scriptureReferenceHold.sort(compare);
+				scriptureReferenceSubsets.sort(compare);
+
+/*
+				for ( var index = 0, length = scriptureReferenceHold.length; index < length; ++index)
+				{
+					console.log
+					(
+						index, length,
+						scriptureReferenceHold[index][0].bookTitle,
+						scriptureReferenceSubsets[index][0].bookTitle
+					);
+				}
+*/
+				var scriptureReferenceJoin = scriptureReferenceHold
+					.map
+					(
+						o => Object.values
+						(
+							(
+								o[0].bookTitle + 
+								((o[0].chapterID) ? (" " + o[0].chapterID) : "") + 
+								((o[0].verseID) ? ((o[0].chapterID ? ":" : " ") + o[0].verseID) : "")
+							)
+						).join('')
+					)
+					.join(',')
+				document.getElementById("scriptureReferenceSorted").textContent =
+					scriptureReferenceJoin;
+			}
+	
+			function compare(a, b)
+			{
+				var first = a[0].retrieveBookID();
+				var second = b[0].retrieveBookID();
+
+				return first - second;
+			}	
+	
+			function querySubmit()
+			{
+				if (dataSet) { process(); return; }
+				var request = {};
+				//request["scriptureReference"] = scriptureReference;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: 
+						"/WordEngineering//AlaSQL.js/AlaSQL.js_-_OnlyRefuseSubstainTheLine.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						dataSet = JSON.parse(data.d);
+						process();
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript
+					( 
+						"/WordEngineering/WordUnion/9432.js", 
+						function( data, textStatus, jqxhr ) 
+					{
+						var scriptureReference = 
+							scriptLiteral9432.getParameterByName
+							(
+								"scriptureReference"
+							);
+						if (scriptureReference)
+						{
+							document.getElementById
+							(
+								"scriptureReference"
+							).value = scriptureReference;
+						}	
+						scriptLiteral9432.renderBibleVersionSelect();
+						var bibleVersion = 
+							scriptLiteral9432.getParameterByName
+							(
+								"bibleVersion"
+							);
+						if (bibleVersion)
+						{
+							document.getElementById
+							(
+								"bibleVersion"
+							).value = bibleVersion;
+						}	
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function parse(scriptureReferenceEntry)
+			{
+				var BookTitleChapterSeparator = " ";
+				var ChapterVerseSeparator = ':';
+				var PrePostSeparator = '-';
+				
+				var scriptureReferences = 
+					scriptureReferenceEntry.split(/[,;]/);
+				var previousReference = null;
+				var scriptureReferenceSubsets = [];
+				var	number = -1;
+				var tryParseFlag;
+										
+				console.log(scriptureReferenceEntry);
+				
+				scriptureReferences.forEach
+				(
+					function(element) 
+					{
+						console.log(element);
+						prePost = element.split(PrePostSeparator);
+						console.log(prePost.length);
+						if (prePost.length == 0)
+						{
+							console.log(prePost.length);
+							return scriptureReferenceSubsets;
+						}
+						var scriptureReferenceSubset = new Object();
+						for 
+						(
+							var prePostIndex = 0,
+								prePostLength = prePost.length;
+							prePostIndex < prePostLength;
+							++prePostIndex
+						)
+						{
+							console.log(prePostIndex);
+							var ScriptureReferenceSubset = null;
+							var scriptureReference = 
+								new ScriptureReference("", -1, -1);
+							console.log(scriptureReference);	
+							var currentReference = 
+								prePost[prePostIndex].trim();
+							console.log(currentReference);	
+							tryParseFlag = !isNaN
+							(
+								currentReference
+							);	
+							if(tryParseFlag)
+							{
+								number = parseInt(currentReference);
+								scriptureReference = previousReference;
+								console.log
+								(
+									`currentReference: ${currentReference} previousReference: ${previousReference}`
+								);
+								if (!previousReference.verseID)
+								{
+									scriptureReference.chapterID = number;
+								}
+								else
+								{
+									scriptureReference.verseID = number;
+								}
+							}
+							else
+							{
+								var chapterVerseSeparatorPosition = 
+									currentReference.lastIndexOf
+									(
+										ChapterVerseSeparator
+									);
+								console.log("chapterVerseSeparatorPosition", chapterVerseSeparatorPosition);	
+								if (chapterVerseSeparatorPosition > 0)
+								{
+									tryParseFlag = !isNaN
+									(
+										currentReference.substring
+										(
+											chapterVerseSeparatorPosition + 1
+										)
+									);	
+									console.log
+									(
+										"chapterVerseSeparatorPosition > 0 tryParseFlag: ",
+										tryParseFlag,
+										currentReference,
+										chapterVerseSeparatorPosition
+									);
+									if (tryParseFlag)
+									{
+										var verseID = parseInt
+										(
+											currentReference.substring
+											(
+												chapterVerseSeparatorPosition + 1
+											)
+										);
+										scriptureReference.verseID = verseID;
+										currentReference = 
+											currentReference.substring
+											(
+												0,
+												chapterVerseSeparatorPosition
+											);
+										console.log("scriptureReference.verseID: ", scriptureReference.verseID);
+									}	
+								}
+								else
+								{
+									scriptureReference.verseID = null;
+								}
+								var bookTitleChapterSeparatorPosition = 
+									currentReference.lastIndexOf
+									(
+										BookTitleChapterSeparator
+									);
+								if (bookTitleChapterSeparatorPosition > -1)
+								{
+									var isBookTitle = checkForBookTitle
+									(
+										currentReference,
+										bookTitleChapterSeparatorPosition
+									);
+									if (isBookTitle === true)
+									{
+										scriptureReference = 
+											new ScriptureReference
+											(
+												currentReference,
+												null,
+												null
+											);
+									}
+									else
+									{
+										tryParseFlag = !isNaN
+										(
+											currentReference.substring
+											(
+												bookTitleChapterSeparatorPosition + 1
+											)
+										);
+										if (!tryParseFlag)
+										{
+											return scriptureReferenceSubsets;
+										}
+										scriptureReference.chapterID = 
+											parseInt
+											(
+												currentReference.substring
+												(
+													bookTitleChapterSeparatorPosition + 1
+												)
+											);
+										scriptureReference.bookTitle = 
+											currentReference.substring
+											(
+												0,
+												bookTitleChapterSeparatorPosition
+											);	
+									}	
+								}
+								else
+								{
+									tryParseFlag = !isNaN(currentReference);
+									if (tryParseFlag)
+									{
+										scriptureReference.chapterID = 
+											parseInt(currentReference);  
+										scriptureReference.bookTitle = 
+											previousReference.bookTitle;
+									}
+									else
+									{
+										scriptureReference.bookTitle
+											= currentReference;
+										scriptureReference.chapterID 
+											= null;	
+										scriptureReference.verseID 
+											= null;	
+									}	
+								}
+							}
+							scriptureReferenceSubset[prePostIndex] = 
+								scriptureReference;
+							console.log("previousReference: ", previousReference);
+							previousReference = new ScriptureReference
+							(
+								scriptureReference.bookTitle,
+								scriptureReference.chapterID,
+								scriptureReference.verseID
+							);	
+						}
+						console.log("scriptureReferenceSubset:", scriptureReferenceSubset);
+						scriptureReferenceSubsets.push
+						(
+							scriptureReferenceSubset
+						);
+					}
+				);
+				return scriptureReferenceSubsets;
+			}
+
+			function scriptureReferenceSpeak()
+			{
+				var scriptureReference = document.getElementById("scriptureReference").value;
+				scriptureReference = scriptureReference.replace(/:/g, ' verse ');
+				scriptureReference = scriptureReference.replace(/-/g, ' to ');
+				speak(scriptureReference);
+			}
+			
+			function selectVerseIdSequenceWhereBookIDChapterID
+			(
+				bookID,
+				chapterID
+			)
+			{
+				var sql = 
+		`SELECT MAX(verseIdSequence) AS verseIdSequence FROM ? WHERE bookId=${bookID} AND chapterId=${chapterID}`
+				return executeScalar(sql, "verseIdSequence");
+			}
+
+			function selectVerseIdSequenceWhereClause(subQueryWhereClause)
+			{
+				var sql = 
+			`SELECT TOP 1 verseIdSequence FROM ? WHERE ${subQueryWhereClause}`
+				return executeScalar(sql, "verseIdSequence");
+			}
+ 			
+			class ScriptureReference 
+			{
+				constructor(bookTitle, chapterID, verseID) 
+				{
+					this.bookTitle = bookTitle;
+					this.chapterID = chapterID;
+					this.verseID = verseID;
+				}
+				
+				retrieveBookID()
+				{
+					var indexOf = scriptLiteral9432.bibleBooks.findIndex
+					(
+						item => this.bookTitle.toLowerCase() === item.toLowerCase()
+					);
+					return indexOf < 0 ? -1 : indexOf + 1;
+				}
+			}
+
+			function speak(text, callback) {
+				var u = new SpeechSynthesisUtterance();
+				u.text = text;
+				u.lang = 'en-US';
+			 
+				u.onend = function () {
+					if (callback) {
+						callback();
+					}
+				};
+			 
+				u.onerror = function (e) {
+					if (callback) {
+						callback(e);
+					}
+				};
+			 
+				speechSynthesis.speak(u);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById
+			(
+				"submitQuery"
+			).addEventListener
+			(
+				"click",
+				querySubmit,
+				false
+			);
+			
+			document.getElementById
+			(
+				"speakScriptureReference"
+			).addEventListener
+			(
+				"click",
+				scriptureReferenceSpeak,
+				false
+			);
+		</script>
+	</body>
+</html>
