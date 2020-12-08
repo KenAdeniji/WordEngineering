@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-01 	Created.	background-size property
+		2016-10-01	https://msdn.microsoft.com/en-us/library/ms531209%28v=vs.85%29.aspx
+		2016-10-01	https://msdn.microsoft.com/en-us/library/jj127316%28v=vs.85%29.aspx
+	-->
+	<head>
+		<title>background-size property</title>
+		<style>
+.circle {
+   width: 150px;
+   height: 150px;
+   background-color: #D3D3D3;
+   background-image:url(circle.png);
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   background-size: 100% 100%;
+}
+
+.square {
+   width: 150px;
+   height: 150px;
+   background-color: #D3D3D3;
+   background-image:url(square.png);
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   background-size: 50% auto;
+}
+
+.triangle {
+   width: 150px;
+   height: 150px;
+   background-color: #D3D3D3;
+   background-image:url(triangle.png);
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   background-size: 20px 20px;
+}
+		</style>	
+	</head>
+	<body>
+  <div class="circle"></div>
+  <div class="square"></div>
+  <div class="triangle"></div>
+	</body>
+</html>
+

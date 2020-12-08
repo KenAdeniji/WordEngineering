@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-01 	Created.	border-color property
+		2016-10-01	https://msdn.microsoft.com/en-us/library/ms531209%28v=vs.85%29.aspx
+		2016-10-01	https://msdn.microsoft.com/en-us/library/ms530729%28v=vs.85%29.aspx
+	-->
+	<head>
+		<title>border-color property</title>
+		<style>
+		div { border: .5em ridge; } /* You must specify a style when specifying a width or color; otherwise, the border does not render. */
+.green {
+   border-color: rgb(126, 187, 65);
+}
+.blue {
+   border-color: rgba(47, 160, 217, 0.5);
+}
+.red {
+   border-color: hsl(12, 86%, 55%);
+}
+.yellow {
+   border-color: hsla(42, 99%, 53%, 0.7);
+}
+.all {
+   border-color: #EF5027 #7EBB41 #2FA0D9 #FEB912;
+}
+		</style>	
+	</head>
+	<body>
+   <div class="green"></div>
+   <div class="blue"></div>
+   <div class="red"></div>
+   <div class="yellow"></div>
+   <div class="all"></div>
+	</body>
+</html>
+
