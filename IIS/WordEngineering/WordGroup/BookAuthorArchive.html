@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-02-26	Created.	Law Office of Jerome A Clay
+			I won't abandon; my future.
+	-->
+	<head>
+		<title>Book Author</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The writer of the Bible Books"/>
+		<meta name="keytableNames" content="Bible, book author"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center">> </div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				scriptLiteral9432.renderDataTable(bibleBooks, "resultSet");
+			}	
+
+			window.addEventListener("load", pageLoad, false);
+				
+			var bibleBooks =[
+				{
+				  "authorBibleWord": 'Moses',
+				  "category": "Pentateuch",
+				  "bookScriptureReference": "Genesis, Exodus, Leviticus, Numbers, Deuteronomy"
+				},
+				{
+				  "authorBibleWord": 'Paul',
+				  "category": "Pauline Epistles",
+				  "bookScriptureReference": "Romans, 1 Corinthians, 2 Corinthians, Philemon, Galatians, Philippians, 1 Thessalonians, 2 Thessalonians, Ephesians, Colossians, 1 Timothy, 2 Timothy and Titus"
+				}
+			];
+		</script>
+	</body>
+</html>

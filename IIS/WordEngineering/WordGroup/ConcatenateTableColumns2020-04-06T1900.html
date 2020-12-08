@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2020-04-06 	Created.
+		-->
+		<title>Concatenate Table Columns</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Concatenate Table Columns"/>
+		<meta name="keyword" content="Concatenate Table Columns"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="unionClause">Union Clause</label></td>
+					<td><input id="unionClause" type="checkbox" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="whereClause">Where Clause</label></td>
+					<td><input id="whereClause" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var	resultSetElement = document.getElementById("resultSet");
+			var unionClauseElement = document.getElementById("unionClause");
+			var whereClauseElement = document.getElementById("whereClause");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+		
+			function querySubmit()
+			{
+				var request = {};
+				request["unionClause"] = unionClauseElement.checked;
+				request["whereClause"] = whereClauseElement.value;
+				var requestJson = JSON.stringify(request);
+			
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/ConcatenateTableColumns.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var databaseInformation = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(databaseInformation, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

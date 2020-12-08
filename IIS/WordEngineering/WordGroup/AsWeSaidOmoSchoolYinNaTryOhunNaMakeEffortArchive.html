@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-02-26	Created.	https://stackoverflow.com/questions/2381572/how-can-i-trigger-a-javascript-event-click
+	-->
+	<head>
+		<title>As we said, omo school yin na try; ohun na make effort.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Generation"/>
+		<meta name="keywords" content="Generation, patriach, matriach, ancestors, descendants, parents, children, lineage, family tree"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<label for="word">Word:<label>
+			<input type="text" id="word" focus/>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet"></div>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>			
+			var isPostBack = false;
+
+			
+			function buildHyperlink(address, parameter) 
+			{
+				if (!parameter) { return ""; }
+				var prefix = "";
+				if (address.toLowerCase().indexOf("http") === -1)
+				{
+					prefix = "/WordEngineering/WordUnion/"; 
+				}
+				var uri = encodeURI(prefix + address + ".html?" + address + "=" + parameter);
+				var hyperlink = "<a href=" + uri + ">" + parameter + "</a><br/>";
+				return hyperlink;
+			}
+
+			function loopBack(name, data)
+			{
+				var link = 	name + ' <a href="#" onclick="javascript:querySubmit(\'' + 
+							data + "');\"> " + data + " </a><br/>";
+
+				return link;
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					querySubmit()
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				if (arguments.length === 0)
+				{
+					if ((!document.getElementById("word").value))
+					{
+						document.getElementById("word").value = "Adam";
+					} 	
+				}
+				else
+				{
+					if (typeof(arguments[0]) === "string")
+					{
+						document.getElementById("word").value = arguments[0];
+					}	
+				}
+				request["word"] = document.getElementById("word").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/AsWeSaidOmoSchoolYinNaTryOhunNaMakeEffort.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderDataSet(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function renderDataSet(dataSet)
+			{
+				var documentPassage = "";
+				
+				var	dataRow = "";
+				var	dataTable = "";
+				
+				var	asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID,
+					asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortIDCurrent = -1
+				var	fatherID, fatherIDCurrent = -1;
+				var	motherID, motherIDCurrent = -1
+				var	scriptureReference;
+	
+				for (var table in dataSet) 
+				{
+					dataTable = dataSet[table];
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID = 
+							dataRow["AsWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID"];
+						fatherID = dataRow["FatherID"];
+						motherID = dataRow["MotherID"];
+						scriptureReference = dataRow["ScriptureReference"];
+						if (fatherID && fatherID !== fatherIDCurrent)
+						{
+							documentPassage += loopBack("Father: ", dataRow["FullNameFather"]);
+							fatherIDCurrent = fatherID;
+						}
+						if (motherID && motherID !== motherIDCurrent)
+						{
+							documentPassage += loopBack("Mother: ", dataRow["FullNameMother"]);
+							motherIDCurrent = motherID;
+						}
+						if 
+						(
+							asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID && 
+							asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID !== 
+								asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortIDCurrent
+						)
+						{
+							documentPassage += loopBack("Children: ", dataRow["FullName"]);
+							asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortIDCurrent = 
+								asWeSaidOmoSchoolYinNaTryOhunNaMakeEffortID;
+						}
+						if (scriptureReference)
+						{
+							documentPassage += buildHyperlink
+							(
+								"scriptureReference",
+								scriptureReference
+							);
+						}	
+					}
+				}
+				document.getElementById("resultSet").innerHTML = documentPassage;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-01	Created.
+	-->
+	<head>
+		<title>BigInteger</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bigInteger">BigInteger:</label></td>
+					<td><input id="bigInteger" type="text" value="300"></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["question"] = document.getElementById("bigInteger").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/BigInteger.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) 
+					{
+						var dictionary = JSON.parse(data.d);
+						render(dictionary);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					},
+					timeout: 36000
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function render(dictionary)
+			{
+				var info = "<table><thead><tr><th>Key</th><th>Value</th></thead><tbody>";
+				for (var key in dictionary)
+				{
+					value = dictionary[key];
+					info += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
+				}
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("bigInteger").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>
