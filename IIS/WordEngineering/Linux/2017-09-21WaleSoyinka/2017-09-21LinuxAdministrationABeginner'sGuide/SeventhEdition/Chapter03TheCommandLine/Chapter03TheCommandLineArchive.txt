@@ -1,0 +1,44 @@
+printenv #To list all of your environment variables.
+printenv HOMEPATH #Display the value of a particular environment variable.
+foo=bar #Set the value of a particular environment variable.
+export foo #Pass to the other processes, the value of a particular environment variable.
+export foo=bar #Set and pass to the other processes, the value of a particular environment variable.
+export foo="Welcome to the bar of foo." #If there are spaces in the value; then use quotation marks.
+unset foo #Remove an environment variable.
+printenv | grep HOMEPATH #Pipe the output of the printenv command, as input to the grep, filter, command.
+ls > /tmp/directory_listing #Re-direct the output of the ls command to the specified file.
+echo "Directory Listing" >> /tmp/directory_listing #Append a string to a file.
+grep "root" < /etc/passwd #The grep command should accept the specified file as its input.
+ls -l; cat /etc/passwd #Execute multiple commands.
+ls does-not-exist.txt && date #If the preceding command pass, execute the next.
+kill `cat /var/run/named/named.pid` #Stop the Domain Name System (DNS) named; when named starts, it writes its process identification (PID) into the file, /var/run/named/named.pid.
+man ls #View the documentation manual for the ls command.
+info ls #View texinfo.
+cp source target #Copy file(s).
+mv from to #Move file(s).
+find #Find a file.
+mkdir -p target #Create a directory.
+rmdir -p target #Remove a directory.
+pwd #Print working directory.
+cat /etc/hosts #Display the file content.
+tac /etc/hosts #Display the file content, in reverse.
+more /etc/hosts #Display a file content, one screen at a time.
+ls /etc | more #Directory listing, one screen at a time.
+which rm #Find the directory which contains the rm command.
+whereis grep #Locate the directory, the source file, and the man page.
+finger username #More complete information, about the user.
+pg /etc/hosts #Displays a file, one screen at a time.
+less /etc/hosts #Displays a file, one screen at a time.
+head /etc/hosts #Displays the beginning of a file.
+tail /etc/hosts #Displays the last few lines of a file.
+sort
+proj="/home";ls -r $proj #Set the proj variable, and list directory
+whoami #Display the username.
+uname -a #Display the system name
+mount #Display the file systems that are mounted on your system.
+e:/mozilla.org/firefox/firefox #Start the firefox browser.
+df #Display disk space.
+du /etc #Display disk usage.
+ps -ef #Display running processes.
+date #Display the date and time.
+ls e:/cygwin64/bin

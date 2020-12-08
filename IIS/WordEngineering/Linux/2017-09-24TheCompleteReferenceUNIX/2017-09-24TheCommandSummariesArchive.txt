@@ -1,0 +1,43 @@
+bg %jobid #Resumes suspended job jobid in background.
+cal #Prints a calendar for the current month.
+cal 10 2017 #Prints a calendar for the specified month and year.
+cat file #Displays or combines files.
+cd directory #Changes the current directory (Default to the home directory).
+chown owner file #Changes the ownership of file to owner.
+cp file1 target #Copies file1 into the target file or directory.
+csh #Starts up the interactive C-shell command interpreter.
+date #Displays the current date and time.
+echo string #Prints the string to the standard output.
+env #Displays the current user environment
+env name=value #Assigns the environment value to value.
+exit #End user session
+export variable #Allows use of variable by programs in all user paths (ksh, sh).
+export variable=value #Reassigns name to value; to allow use of name by programs in all user paths (ksh, bash).
+fg %jobid #Resumes suspended job jobid in foreground.
+file arg #Determines file type of arg.
+find path #Finds files in path for expression.
+head file -n #Displays the beginning of file.
+history #Displays previous command line (csh, ksh).
+jobs #Displays all current running jobs.
+ksh #Starts up the Korn shell command interpreter.
+ls #Lists directory contents or file information.
+man #Displays manual pages for command.
+mkdir dirname #Makes the directory dirname.
+more filenames #Displays parts of files.
+mv file1 target #Moves file1 into file target or to directory target.
+ps #Shows current process status.
+pwd #Displays present working dirname.
+rm #Removes files.
+rmdir #Removes directory dirname.
+set #Shows values of all current shell variables.
+set name=value #Reassigns variable name to value.
+tail file #Displays end of file.
+tail file -number #Starts at number lines from the bottom of the file (default 10).
+tee file #Copies the standard input to the standard output, as well as to file.
+tee -a file #Appends the standard input to the standard output, as well as to file.
+touch files #Updates access and modification times for files.
+touch -a files #Updates only the access times for files.
+touch -m files #Updates only the modification times for files.
+touch -c files #Do not create new files.
+who #Lists information about the users on a system.
+who am I #Lists your own user ID information.

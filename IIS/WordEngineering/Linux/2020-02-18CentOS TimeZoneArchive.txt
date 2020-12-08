@@ -1,0 +1,10 @@
+Option 1
+sudo cp /usr/share/zoneinfo/US/Pacific /etc/localtime
+
+Option 2
+cd /etc
+rm localtime
+
+ls /usr/share/zoneinfo/US
+cd /etc
+ln -s /usr/share/zoneinfo/US/Pacific localtime

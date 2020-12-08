@@ -1,0 +1,9 @@
+vi myscript.sh
+cat myscript.sh
+
+    #!/bin/bash
+    # A sample Bash script, by Ryan
+    echo Hello World!
+
+chmod 755 myscript.sh
+./myscript.sh
