@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-10-27	Created.	
+		2020-10-27	https://stackoverflow.com/questions/680562/can-javascript-read-the-source-of-any-web-page
+		2020-10-27	https://stackoverflow.com/questions/30578673/is-it-possible-to-make-queryselectorall-live-like-getelementsbytagname
+		2020-10-27	http://jsfiddle.net/3KFYf/33/
+	-->
+	<head>
+		<title>URI Data Attribute</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="URI Data Attribute"/>
+		<meta name="keywords" content="URI, Data Attribute"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<p>
+				Please enter the URI of the document to parse, by extracting the data attribute.
+			</p>
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="uri">URI:</label></td>
+						<td><input id="uri" type="url" size="50" autofocus/></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>
+			<br/><br/>	
+		
+			<div id="withDataAttributes" display="none"></div>
+			<div id="resultSet"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var uriDefault = "http://e-comfort.ephraimtech.com/WordEngineering/Resume/2020-04-17Skill.html";
+			var isPostBack = false;
+
+			var resultSetElement = document.getElementById("resultSet");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var uriElement = document.getElementById("uri");
+			var withDataAttributesElement = document.getElementById("withDataAttributes");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var uriParam = urlParams.get("uri");
+						uriElement.value = uriParam ? uriParam : uriDefault;
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}	
+			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				var r = new XMLHttpRequest();
+					r.open('GET', uriElement.value, false);
+					r.send(null); 
+				if (r.status == 200) 
+				{ 
+					withDataAttributesElement.innerHTML = r.responseText; 
+					var withDataAttributesObjects = querySelectorAllLive
+					(
+						withDataAttributesElement,
+						"*"
+					);
+
+					withDataAttributesObjects.forEach
+					(
+						element => 
+						{
+							var dataAttributes = getDataAttributes(element);
+							var json = JSON.stringify(dataAttributes, null, 2);
+							if (json !== "{}")
+							{
+								resultSetElement.appendChild
+								(
+									document.createTextNode
+									(
+										element.innerHTML + " " + json
+									)
+								);
+								resultSetElement.appendChild(document.createElement("br"));
+							}	
+						}
+					);					
+				}
+			}
+			
+			function getDataAttributes(el) {
+				var data = {};
+				[].forEach.call(el.attributes, function(attr) {
+					if (/^data-/.test(attr.name)) {
+						var camelCaseName = attr.name.substr(5).replace(/-(.)/g, function ($0, $1) {
+							return $1.toUpperCase();
+						});
+						data[camelCaseName] = attr.value;
+					}
+				});
+				return data;
+			}
+						
+			function querySelectorAllLive(element, selector) {
+
+			  // Initialize results with current nodes.
+			  var result = Array.prototype.slice.call(element.querySelectorAll(selector));
+
+			  // Create observer instance.
+			  var observer = new MutationObserver(function(mutations) {
+				mutations.forEach(function(mutation) {
+				  [].forEach.call(mutation.addedNodes, function(node) {
+					if (node.nodeType === Node.ELEMENT_NODE && node.matches(selector)) {
+					  result.push(node);
+					}
+				  });
+				});
+			  });
+
+			  // Set up observer.
+			  observer.observe(element, { childList: true, subtree: true });
+
+			  return result;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

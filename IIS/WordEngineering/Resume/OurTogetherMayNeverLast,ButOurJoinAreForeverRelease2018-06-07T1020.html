@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-06-06	Created.
+		2015-07-15	http://www.jsonresume.org
+		2018-06-06
+			Work experience:
+				Career advancement options. 
+					Which organizations have openings in similar roles, or promotions?
+					Which recruiters specialize in filling these positions?
+			Education:
+				The institutions that offer advancement programme(s).
+			Skillsets:
+				Which today's skillsets supercede?
+					For example, if you have experience using Lotus 1-2-3, should you learn Microsoft Excel?
+					If you know Ashton-Tate dBASE III+, should you follow the trend to relational database?
+					If you have background in Microsoft Access, Microsoft SQL Server may be a future?
+		2018-06-06	http://validator.w3.org
+		2018-06-06	http://www.w3schools.com/howto/howto_js_tabs.asp
+		2018-06-07	http://www.w3schools.com/Jsref/jsref_substring.asp
+		2018-06-07	http://www.w3schools.com/jquery/ajax_getjson.asp
+		2018-06-07	http://devdays.com/2014/07/21/snippet-using-json-file-on-windows-iis-iis-express
+		2018-06-07	http://www.behindthename.com/api/
+		2018-06-07	http://stackoverflow.com/questions/36975619/how-to-call-a-rest-web-service-api-from-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+		2018-06-07	http://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa	
+		2018-06-07
+			Takes a standard format; and makes reason out of it?
+		2018-06-08
+			With the specified work experience,
+				predict the organizations that have openings in similar roles;
+         		which recruiters specialize in filling these positions?	
+			With the level of education,
+				which learning institutions offer advancement programme(s).
+			Where is the skill set useful, or obliterated?
+			Our initial work uses the 
+				<a href="http://www.behindthename.com/api">behindthename.com</a>
+				to find the name meaning and origin.
+		2018-10-29
+			Humances. Truck driver.
+	-->
+	<head>
+		<title>Our together may never last, but our join are forever.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/w3schools.com_-_tab.css">
+	</head>
+	<body>
+		<!-- Tab links -->
+		<div class="tab">
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageURI')">URI</button>
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageFileUpload')">File Upload</button>
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageDirectInput')">Direct Input</button>
+		</div>
+
+		<!-- Tab content -->
+		<div id="tabPageURI" class="tabcontent">
+		  <h3>URI</h3>
+		  <label for="address">
+			<input id="address" type="url"/>
+		  </label>
+		</div>
+		<div id="tabPageFileUpload" class="tabcontent">
+		  <h3>File Upload</h3>
+		  <label for="uploadFile">
+			<input id="uploadFile" type="file" multiple/>
+		  </label>
+		</div>
+		<div id="tabPageDirectInput" class="tabcontent">
+			<textarea id="directInput"></textarea>
+		</div>
+		<input type="submit" id="submitQuery"/>
+		<div id="resultSet" align="center">
+			<div id="resultSetNameMeaning" align="left"></div>
+			<div id="resultSetStub"></div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function processData(jsonContent)
+			{
+				requestNameMeaning(jsonContent.basics.name);
+			}
+			
+			function querySubmit() {
+				var request = {};
+				var tabPageID = w3SchoolsGetTabPageCurrent();
+				var tabPageSelected = tabPageID.substring(7);
+				switch(tabPageSelected)
+				{
+					case "URI":
+						var address = document.getElementById("address").value;
+						$.getJSON(address, function(result){
+							processData(result);
+						});						
+						break;
+					case "FileUpload":	
+						scriptLiteral9432.fileUploadJSON
+						(
+							"uploadFile",
+							processData
+						);	
+						break;
+					case "DirectInput":
+						var jsonEntry = document.getElementById("directInput").value;
+						var jsonParsed = JSON.parse(jsonEntry);
+						processData(jsonParsed);
+						break;
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						document.getElementById("tabPageURI").click();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+			function requestNameMeaning(name)
+			{
+				document.getElementById("resultSetNameMeaning").innerHTML = "";
+				var stringArray = name.split(/(\s+)/); 
+				for
+				(
+					var nameIndex = 0, nameCount = stringArray.length;
+					nameIndex < nameCount;
+					++nameIndex
+				)	
+				{
+					scriptLiteral9432.webServiceAPIRestRequest
+					(
+						`https://www.behindthename.com/api/lookup.json?key=ke077135872&name=${stringArray[nameIndex]}`,
+						responseNameMeaning
+					);
+				};	
+			}
+
+			function responseNameMeaning(response)
+			{
+				document.getElementById("resultSetNameMeaning").innerHTML += response;
+			}
+			
+			function w3SchoolsGetTabPageCurrent() 
+			{
+				// Declare all variables
+				var i, tabcontent;
+				var styleDisplay;
+				
+				// Get all elements with class="tabcontent"
+				tabcontents = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontents.length; i++) {
+					styleDisplay = tabcontents[i].style.display;
+					if (styleDisplay === "block")
+					{
+						return tabcontents[i].id;
+					}
+				}
+			}
+
+			function w3SchoolsTabPageOpen(evt, tabPageName) 
+			{
+				//console.log(tabPageName);
+				
+				// Declare all variables
+				var i, tabcontent, tablinks;
+
+				// Get all elements with class="tabcontent" and hide them
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+
+				// Get all elements with class="tablinks" and remove the class "active"
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+
+				// Show the current tab, and add an "active" class to the button that opened the tab
+				document.getElementById(tabPageName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>
