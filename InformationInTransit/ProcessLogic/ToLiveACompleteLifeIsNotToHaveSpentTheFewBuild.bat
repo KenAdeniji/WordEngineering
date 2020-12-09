@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.ToLiveACompleteLifeIsNotToHaveSpentTheFew ToLiveACompleteLifeIsNotToHaveSpentTheFew.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs StringHelper.cs ScriptureReferenceHelper.cs
