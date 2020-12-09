@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-03-30	Created.
+		2020-03-30	The neglectity of desire. Urine. When you are alone, what do you do? Query based on word length? Specify the scripture reference, and a set of word lengths?
+		2020-03-30	https://stackoverflow.com/questions/1297231/convert-string-to-int-in-one-line-of-code-using-linq
+		2020-03-31	Genesis 1:18	rule over
+		2020-03-31	Revelation 22:20	come Lord
+	-->
+	<head>
+		<title>The neglectity of desire.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The neglectity of desire. Urine. When you are alone, what do you do? Query based on word length? Specify the scripture reference, and a set of word lengths?"/>
+		<meta name="keywords" content="Bible version, word length, phrase"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input id="scriptureReference" value="Matthew 26:75" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="wordsLengthsText">Word Length(s):</label></td>
+					<td><input id="wordsLengthsText" value="4,4"/></td>
+				</tr>	
+				<tr>
+					<td><label for="phrase">Phrase:</label></td>
+					<td><input id="phrase"/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Verson:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var scriptureReferenceElement = document.getElementById("scriptureReference");
+			var wordsLengthsTextElement = document.getElementById("wordsLengthsText");
+			var phraseElement = document.getElementById("phrase");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleVersionParam = urlParams.get("bibleVersion");
+						if (bibleVersionParam)
+						{
+							bibleVersionElement.value = bibleVersionParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["wordsLengthsText"] = wordsLengthsTextElement.value;
+				request["phrase"] = phraseElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/TheNeglectityOfDesire.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

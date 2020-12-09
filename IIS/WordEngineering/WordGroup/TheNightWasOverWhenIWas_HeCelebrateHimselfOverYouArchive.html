@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-14	Created.
+	-->
+	<head>
+		<title>The night was over, when I was. He celebrate Himself, over you.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible unit"/>
+		<meta name="keywords" content="Bible unit"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleUnit">Unit:</label></td>
+					<td><select id="bibleUnit"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="beginStart">Begin:</label></td>
+					<td><input type="number" id="beginStart" required min="1"/></td>
+				</tr>	
+				<tr>
+					<td><label for="endFinish">End:</label></td>
+					<td><input type="number" id="endFinish" required min="1"/></td>
+				</tr>	
+				<tr>
+					<td><label for="stepInterval">Step:</label></td>
+					<td><input type="number" id="stepInterval" value="1" required min="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div>	
+				<div id="resultSet"> </div>
+			</div>	
+		</div>	
+		<div id="scriptureReferenceCollate" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						scriptLiteral9432.renderBibleUnitSelect();
+						isPostBack = true;
+					});
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				request["bibleUnit"] = document.getElementById("bibleUnit").value;
+				request["beginStart"] = parseInt(document.getElementById("beginStart").value);
+				request["endFinish"] = parseInt(document.getElementById("endFinish").value);
+				request["stepInterval"] = parseInt(document.getElementById("stepInterval").value);
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/TheNightWasOverWhenIWas.HeCelebrateHimselfOverYou.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet")
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
