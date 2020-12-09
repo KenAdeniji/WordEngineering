@@ -1,0 +1,38 @@
+<table border="1">
+	<caption>
+		<a href="http://tcpipguide.com/free/t_ICMPCommonMessageFormatandDataEncapsulation.htm">ICMP Common Message Format</a>
+	</caption>
+	<thead>
+		<tr>
+			<th>Type</th>
+			<th>Code</th>
+			<th>Checksum</th>
+			<th>Message Body/Data</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Type</td>
+			<td>1</td>
+			<td>For ICMPv6, values from 0 to 127 are error messages and values 128 to 255 are informational messages.</td>
+		</tr>
+		<tr>
+			<td>Code</td>
+			<td>1</td>
+			<td>Identifies the "subtype" of message within each ICMP message Type value. Thus, up to 256 "subtypes" can be defined for each message type.</td>
+		</tr>
+		<tr>
+			<td>Checksum</td>
+			<td>2</td>
+			<td>16-bit checksum field that is calculated in a manner similar to the IP header checksum in IPv4. It provides error detection coverage for the entire ICMP message. Note that in ICMPv6, a pseudo-header of IPv6 header fields is prepended for checksum calculation; this is similar to the way this is done in TCP.
+			</td>
+		</tr>
+		<tr>
+			<td>Message Body/Data</td>
+			<td>Variable</td>
+			<td>Contains the specific fields used to implement each message type.
+			</td>
+		</tr>
+
+	<tbody>	
+</table>

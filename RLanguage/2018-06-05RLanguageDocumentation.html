@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>R Language</title>
+	</head>
+	<body>
+		<a href="http://cran.r-project.org/doc/manuals/r-release/R-intro.html">R-Intro</a>
+		
+		The R Language is case-sensitive.
+		
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Question</td>
+					<td>Answer</td>
+					<td>Reference</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Start the R program</td>
+					<td>R</td>
+					<td>"E:\Program Files\R\R-3.5.0\bin\x64\Rgui.exe" --cd-to-userdocs</td>
+				</tr>
+				<tr>
+					<td>Quit the R program</td>
+					<td>q()</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Help</td>
+					<td>help(), or help(solve), or ?solve, or help.start() for the browser.</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Get working directory</td>
+					<td>getwd()</td>
+					<td><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/getwd.html">http://stat.ethz.ch/R-manual/R-patched/library/base/html/getwd.html</a></td>
+				</tr>
+				<tr>
+					<td>Set working directory</td>
+					<td>setwd("e:/WordEngineering/RLanguage")</td>
+					<td><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/getwd.html">http://stat.ethz.ch/R-manual/R-patched/library/base/html/getwd.html</a></td>
+				</tr>
+				<tr>
+					<td>Read the program code from a source file</td>
+					<td>source("E:/WordEngineering/IIS/WordEngineering/RLanguage/TidyTextMining.com/King James Version (KJV)/2018-12-16TidyTextMining.com_-_King James Version (KJV).r")</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Comments</td>
+					<td>Use the hashmark to precede comments.</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Recall and correction of previous commands</td>
+					<td>Use the up arrow key to go to previous command, and the down arrow key to go to the next command.</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Executing commands from or diverting output to a file</td>
+					<td>
+						source("filename.R") will execute the commands stored in this input file.
+						sink("record.lis") will re-direct the console's output to this external file.
+					</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Data permanency and removing objects</td>
+					<td>
+						The command objects() or ls() is for displaying the current workspace.
+						The rm(object name) is for removing objects.
+						Prior to exiting, you may save your objects in the .RData file,
+						and the commands issued in the .Rhistory file.
+					</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Vectors and assignment</td>
+					<td>
+						The command
+						<b>x <- c(10.4, 5.6, 3.1, 6.4, 21.7)</b>
+						is for creating a numeric vector.
+						<br/>
+						The function call
+						<b>assign("x", c(10.4, 5.6, 3.1, 6.4, 21.7))</b>
+						will do a similar step.
+						<br/>
+						Likewise, 
+						<b>c(10.4, 5.6, 3.1, 6.4, 21.7) -> x</b>
+						is the same command.
+						<br/>
+						To find the reciprocals,
+						<b>y <- 1/x</b>
+					</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>Print</td>
+					<td>print(y)</td>
+					<td><a href="http://en.wikipedia.org/wiki/R_(programming_language)#Basic_syntax">http://en.wikipedia.org/wiki/R_(programming_language)#Basic_syntax</a></td>
+				</tr>
+				<tr>
+					<td>Syntax</td>
+					<td>
+						<b>x <- c(1, 2, 3, 4, 5, 6) #Create ordered collection (vector)</b><br/>
+						<b>y <- x^2 # Square the elements of x</b><br/>
+						<b>print(y) # print (vector) y</b><br/>
+						<b>mean(y) # Calculate average (arithmetic mean) of (vector) y; result is scalar</b><br/>
+						<b>var(y) # Calculate sample variance</b><br/>
+					</td>
+					<td><a href="http://en.wikipedia.org/wiki/R_(programming_language)#Basic_syntax">http://en.wikipedia.org/wiki/R_(programming_language)#Basic_syntax</a></td>
+				</tr>
+				<tr>
+					<td>Example</td>
+					<td>
+<pre>
+data()
+summary(firstCensus)
+</pre>					
+					</td>	
+				</tr>
+				<tr>
+					<td>Mode</td>
+					<td>mode(firstCensus)</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Length</td>
+					<td>length(firstCensus)</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Sequence</td>
+					<td>
+<pre>					
+1:30
+seq(1, 5, 0.5)
+seq(length=9, from=1, to=5)
+c(1,1.5,2, 2.5,3, 3.5,4, 4.5,5)
+</pre>					
+					</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Get input from the keyboard</td>
+					<td>scan()</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Replicate a number, multiple times.</td>
+					<td>rep(1,30)</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>
+function gl(generate levels) is very useful because it generates regular series of factors.
+The usage of this function is gl(k,n) where k is the number of levels (or classes), and n is the
+number of replications in each level.
+Two options may be used: length to specify the number of data produced, and
+labels to specify the names of the levels of the factor.
+					</td>
+					<td>gl(3,5)</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Arithmetics and simple functions</td>
+					<td>
+<pre>						
+sum(firstCensus)
+mean(firstCensus)
+max(firstCensus)
+min(firstCensus)
+which.max(firstCensus)
+range(firstCensus)
+length(firstCensus)
+median(firstCensus)
+rev(firstCensus)
+rev(sort(firstCensus))
+head(firstCensus,12) #Display all the census records, the top 12.
+</pre>						
+					</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+				<tr>
+					<td>Graphical functions</td>
+					<td>
+<pre>						
+plot(firstCensus)
+pie(firstCensus)
+</pre>						
+					</td>
+					<td><a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">http://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

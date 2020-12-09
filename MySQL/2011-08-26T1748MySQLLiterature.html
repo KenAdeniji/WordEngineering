@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<title>MySQL Literature</title>
+	</head>
+	<body>
+		<a href='#Connecting to and Disconnecting from the Server'>Connecting to and Disconnecting from the Server</a>
+		<br/>
+		<a href='#Entering Queries'>Entering Queries</a>
+		<br/>
+		<a href='#Creating and Selecting a Database'>Creating and Selecting a Database</a>
+		<br/>
+		
+		<h3>
+			<a name='Connecting to and Disconnecting from the Server'>Connecting to and Disconnecting from the Server</a>
+		</h3>
+		MySQL -h localhost -u root -p
+		
+		<h3>
+			<a name='Entering Queries'>Entering Queries</a>
+		</h3>
+		SELECT VERSION(), CURRENT_DATE, CURDATE();
+		<br/>
+		SELECT USER();
+		<br/>
+		SHOW DATABASES;
+		<br/>
+		USE test;
+		<br/>
+		GRANT ALL ON menagerie.* TO 'your_mysql_name'@'your_client_host'; //Grant all privileges on the menagerie database to this user.
+		<br/>
+		
+		<h3>
+			<a name='Creating and Selecting a Database'>Creating and Selecting a Database</a>
+		</h3>
+
+		CREATE DATABASE menagerie;
+		<br/>
+		use menagerie;
+		<br/>
+		select database();  //Which database is currently selected.
+		<br/>
+		SHOW TABLES;
+		<br/>
+		CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
+		species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+		<br/>
+		describe pet;
+		<br/>
+		\N null, place marker.
+		<br/>
+		LOAD DATA LOCAL INFILE 'E:/WordEngineering/MySQL/pet.txt' INTO TABLE pet LINES TERMINATED BY '\r\n';
+		<br/>
+		INSERT INTO Pet <br/>
+		VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+		<br/>
+		SELECT * FROM pet;
+		<br/>
+		UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';
+		<br/>
+		SELECT * FROM pet WHERE name = 'Bowser';
+		<br/>
+		SELECT * FROM pet WHERE birth >= '1998-1-1';
+		<br/>
+		SELECT DISTINCT owner FROM pet;
+		<br/>
+		SELECT name, birth, CURDATE(),
+		YEAR(CURDATE())-YEAR(birth)) -
+		RIGHT(CURDATE(),5)<RIGHT(birth,5))
+		AS age
+		FROM pet ORDER BY age;
+		<br/
+		SELECT name, birth FROM pet WHERE MONTH(birth) = 5; //YEAR(), MONTH(), and DAYOFMONTH()
+		<br/
+		SELECT name, birth FROM pet WHERE MONTH(birth) = MONTH(DATE_ADD(CURDATE(),INTERVAL 1 MONTH));
+		<br/
+		SELECT name, birth FROM pet WHERE MONTH(birth) = MOD(MONTH(CURDATE()), 12) + 1;
+		<br/
+		CREATE TABLE event (name VARCHAR(20), date DATE,
+		type VARCHAR(15), remark VARCHAR(255));
+		<br/>
+		LOAD DATA LOCAL INFILE 'E:/WordEngineering/MySQL/event.txt' INTO TABLE event LINES TERMINATED BY '\r\n';
+		<br/>
+		SELECT pet.name,
+		(YEAR(date)-YEAR(birth)) - (RIGHT(date,5)<RIGHT(birth,5)) AS age,
+		remark
+		FROM pet INNER JOIN event
+		ON pet.name = event.name
+		WHERE event.type = 'litter';
+		<br/>
+		SELECT p1.name, p1.sex, p2.name, p2.sex, p1.species
+		FROM pet AS p1 INNER JOIN pet AS p2
+		ON p1.species = p2.species AND p1.sex = 'f' AND p2.sex = 'm';
+		<br/>
+		SHOW CREATE TABLE t\G //Generate data difinition language for table t.
+		<br/>
+		SHOW INDEX FROM pet; //Show the indexes that are on this table.
+		<br/>
+		SHOW MASTER STATUS; //This statement provides status information about the binary log files of the master.
+		<br/>
+		SHOW OPEN TABLES [{FROM | IN} db_name] LIKE 'pattern' | WHERE expr]
+		<br/>
+		SHOW PLUGINS\G
+		<br/>
+		SHOW PRIVILEGES\G
+		<br/>
+		SHOW PROCEDURE CODE proc_name;
+		<br/>
+		SHOW FUNCTION CODE proc_name;
+		<br/>
+		DELIMITER //
+		CREATE PROCEDURE p1 ()
+		BEGIN
+			DECLARE fanta INT DEFAULT 55;
+			DROP TABLE t2;
+			LOOP
+				INSERT INTO t3 VALUES (fanta);
+			END LOOP;
+		END//
+		<br/>
+		SHOW PROCEDURE STATUS LIKE 'sp1'\G
+		<br/>
+		SHOW [FULL] PROCESSLIST;
+		<br/>
+		SHOW PROFILE;
+		<br/>
+		SET profiling = 1;
+		<br/>
+		If you issue this statement using the mysql client, you can use a \G statement terminator rather than a semicolon to obtain a more readable vertical layout: 
+		<br/>
+		SHOW [GLOBAL | SESSION] STATUS
+		LIKE 'pattern' | WHERE expr];
+		<br/>
+		SHOW TABLE STATUS [{FROM | IN} db_name]
+		[LIKE 'pattern' | WHERE expr];
+		<br/>
+		SHOW TRIGGERS [{FROM | IN} db_name]
+		[LIKE 'pattern' | WHERE expr];
+		<br/>
+		SHOW [GLOBAL | SESSION] VARIABLES
+		[LIKE 'pattern' | WHERE expr]
+		<br/>
+	<body>
+</html>

@@ -1,0 +1,26 @@
+ping localhost
+ping 127.0.0.1
+ping google.com
+
+netstat -e -s
+
+arp
+arp -a
+
+nbtstat -a ComputerName
+
+hostname
+
+tracert ComputerName
+
+ipconfig
+
+nslookup
+
+route print
+
+pathping google.com
+
+netdiag
+
+net view \\comfort
