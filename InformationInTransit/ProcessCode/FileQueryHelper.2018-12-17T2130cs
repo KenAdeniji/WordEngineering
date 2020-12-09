@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using InformationInTransit.ProcessCode;
+using InformationInTransit.ProcessLogic;
+
+namespace InformationInTransit.ProcessCode
+{
+	/*
+		2018-12-17	Created.
+		2018-12-17	https://stackoverflow.com/questions/3204215/query-file-system-info-dynamically-using-linq
+	*/
+    public static partial class FileQueryHelper
+    {
+        public static void Main(string[] argv)
+        {
+        }
+
+		public static List<System.IO.FileInfo> Query
+		(
+			String 	startFolder,
+			String 	filenameLike,
+			String	searchTerm
+		)
+		{
+			// Take a snapshot of the file system.
+			System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(startFolder);
+
+			// This method assumes that the application has discovery permissions  
+			// for all folders under the specified path.  
+			IEnumerable<System.IO.FileInfo> fileList = dir.GetFiles("*.*", System.IO.SearchOption.AllDirectories);  
+  
+			var queryMatchingFiles =  
+				from file in fileList  
+				where file.Extension == ".asmx"
+				let fileText = GetFileText(file.FullName)  
+				where fileText.Contains(searchTerm)  
+				select file;  				
+				
+			return queryMatchingFiles.ToList();	
+ 		}	
+		
+		// Read the contents of the file.  
+		static string GetFileText(string name)  
+		{  
+			string fileContents = String.Empty;  
+	  
+			// If the file has been deleted since we took   
+			// the snapshot, ignore it and return the empty string.  
+			if (System.IO.File.Exists(name))  
+			{  
+				fileContents = System.IO.File.ReadAllText(name);  
+			}  
+			return fileContents;  
+		}  		
+    }
+}

@@ -1,0 +1,13 @@
+using  System.Diagnostics;
+
+namespace InformationInTransit.ProcessCode
+{
+	//https://docs.microsoft.com/en-us/visualstudio/debugger/assertions-in-managed-code?view=vs-2017
+	public static partial class AssertHelper
+	{
+		public static void Main(string[] argv)
+		{
+		}
+	}
+}
+	
