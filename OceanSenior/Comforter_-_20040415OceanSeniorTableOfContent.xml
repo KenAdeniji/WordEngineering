@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='Comforter_-_20040415TableOfContent.xslt'?>
+<addresses>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Ocean Senior</title>
+  <uri>Comforter_-_20040323OceanSeniorBook.xml</uri>
+  <page>I</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Abstract</title>
+  <uri>Comforter_-_20040414OceanSeniorAbstract.xml</uri>
+  <page>II</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Abbreviation</title>
+  <uri>Comforter_-_20040415OceanSeniorAbbreviation.xml</uri>
+  <page>III</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Glossary</title>
+  <uri>Comforter_-_20040415OceanSeniorGlossary.xml</uri>
+  <page>IIII</page>  
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Table of Content</title>
+  <uri>Comforter_-_20040415OceanSeniorTableOfContent.xml</uri>
+  <page>IV</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Introduction</title>
+  <uri>Comforter_-_20040415OceanSeniorIntroduction.xml</uri>
+  <page>1</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Aim</title>
+  <uri>Comforter_-_20040415OceanSeniorAim.xml</uri>
+  <page>2</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Material &amp; Method</title>
+  <uri>Comforter_-_20040415OceanSeniorMaterialMethod.xml</uri>
+  <page>3</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Result &amp; Discussion</title>
+  <uri>Comforter_-_20040415OceanSeniorResultDiscussion.xml</uri>
+  <page>4</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Conclusion</title>
+  <uri>Comforter_-_20040415OceanSeniorConclusion.xml</uri>
+  <page>5</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Acknowledgement</title>
+  <uri>Comforter_-_20040415OceanSeniorAcknowledgement.xml</uri>
+  <page>6</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Reference</title>
+  <uri>Comforter_-_20040415OceanSeniorReference.xml</uri>
+  <page>7</page>
+ </address>
+ <address>
+  <dated>2004-04-15T08:00:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Chapter: Human expressive language is repressive of heavenly realm</title>
+  <uri>Comforter_-_20040323OceanSeniorChapterHumanExpressiveLanguageIsRepressiveOfHeavenlyRealm.xml</uri>
+ </address>
+ <address>
+  <dated>2011-05-16T14:10:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Chapter: Guy Kawasaki. Asian angel of death</title>
+  <uri>Comforter_-_2011-05-16T1410OceanSeniorChapter2007-09-25T0149Guy Kawasaki. Asian angel of death.xml</uri>
+ </address>
+ <address>
+  <dated>2011-05-16T18:20:00.8000000-08:00</dated>
+  <keyword/>
+  <title>Chapter: The Italians have already ordered the donut</title>
+  <uri>Comforter_-_2011-05-16T1820 2003-01-01PostDatedThe Italians have already ordered the donut.xml</uri>
+ </address>
+</addresses>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater tdan
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less than      &lt;     &#60;
+>           Greater than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

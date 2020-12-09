@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='Comforter_-_20040415Reference.xslt'?>
+<addresses>
+
+ <address>
+  <dated>2004-04-14T08:00:00.8000000-08:00</dated>
+  <author>Zoran Popovic</author>
+  <keyword>cell separation, cortical magnification, detection, estimated receptive field, high pass filtered optotypes, nyquist limit, psychophysics, resolution, ganglion cells</keyword>
+  <title>Neural limits of visual resolution</title>
+  <uri>http://www.oftalmologi.gu.se/hp/research/thesis/Doctorate%20theses/Z%20Popovic.pdf</uri>
+  <source>Goteborgs Universitet, Department of Ophthalmology</source>
+  <year>1996</year>
+  <volume />
+  <pageFrom />
+  <pageUntil />
+ </address>
+
+ <address>
+  <dated>2004-04-18T08:00:00.8000000-08:00</dated>
+  <author>Ralph Allan Smith</author>
+  <keyword>Suzerainty Treaty</keyword>
+  <title>The Covenantal Kingdom</title>
+  <uri>http://www.berith.org/essays/esch/</uri>
+  <source>Covenant Worldview Institute in Tokyo, Japan</source>
+  <year>1996</year>
+  <volume />
+  <pageFrom />
+  <pageUntil />
+ </address>
+
+</addresses>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less than      &lt;     &#60;
+>           Greater than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->
