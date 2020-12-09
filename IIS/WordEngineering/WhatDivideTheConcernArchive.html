@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-08-12	Created.
+		2020-08-12T14:27:00	TypeError: informationSet[index][1].filter is not a function
+	-->
+	<head>
+		<title>What divide the concern?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What divide the concern?"/>
+		<meta name="keywords" content="Index, range, percentage, list, genealogy"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="indexRangeMinimum">Index Range:</label></td>
+					<td>
+						<input id="indexRangeMinimum" min="1" value="1" autofocus/>
+						-
+						<input id="indexRangeMaximum" min="100" value="100"/>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="percentageRangeMinimum">Percentage Range (%):</label></td>
+					<td>
+						<input id="percentageRangeMinimum" min="1" value="1"/>
+						-
+						<input id="percentageRangeMaximum" min="100" value="100"/>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script>
+			var isPostBack = false;
+
+			var indexRangeMinimumElement = document.getElementById("indexRangeMinimum");
+			var indexRangeMaximumElement = document.getElementById("indexRangeMaximum");
+
+			var percentageRangeMinimumElement = document.getElementById("percentageRangeMinimum");
+			var percentageRangeMaximumElement = document.getElementById("percentageRangeMaximum");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var finalList = []
+				for 
+				(
+					var informationSetIndex = 0, informationSetLength = informationSet.length;
+					informationSetIndex < informationSetLength;
+					++informationSetIndex
+				)
+				{
+					var currentSet = informationSet[informationSetIndex][1].split(",");
+					var currentList = [];
+					for 
+					(
+						var currentSetIndex = 0, currentSetLength = currentSet.length;
+						currentSetIndex < currentSetLength;
+						++currentSetIndex
+					)
+					{
+						if 
+						(
+							currentSetIndex >= indexRangeMinimumElement.value -1 &&
+							currentSetIndex <= indexRangeMaximumElement.value -1 &&
+							currentSetIndex * 100.0 / currentSet.length >= percentageRangeMinimumElement.value &&
+							currentSetIndex * 100.0 / currentSet.length <= percentageRangeMaximumElement.value
+						)
+						{
+							currentList.push(currentSet[currentSetIndex]);
+						}	
+					}
+					if (currentList.length > 0)
+					{
+						finalList.push(informationSet[informationSetIndex][0], currentList.join());
+					}
+				}
+				resultSetElement.innerHTML = finalList.join("<br/>")
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			var informationSet = [
+				["Jesus Christ Genealogy", "Abraham, Isaac, Jacob, Judah, Perez, Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz, Obed, Jesse, David, Solomon, Rehoboam, Abijah, Asa, Jehoshaphat, Joram, Uzziah, Jotham, Ahaz, Hezekiah, Manasseh, Amon, Josiah, Jeconiah, Shealtiel, Zerubbabel, Abiud, Eliakim, Azor, Zadok, Achim, Eliud, Eleazer, Matthan, Jacob, Joseph, Jesus Christ "],
+			];
+	</script>
+</body>
+</html>

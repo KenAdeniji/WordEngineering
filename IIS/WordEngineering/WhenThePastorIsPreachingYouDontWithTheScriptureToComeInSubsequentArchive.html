@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-10-05	Created.
+		2019-11-27	Knowing where you are? Where you are suppose to be?
+		2019-11-27	The reason behind AlphabetSequence is to understand His word;
+					Other files, this view of man.
+	-->
+	<head>
+		<title>When the pastor is preaching, you don't with the scripture to come in subsequent.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Query by meta"/>
+		<meta name="keywords" content="Meta query"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="uri">URI</label></td>
+						<td><input type="url" id="uri" focus/></td>
+					</tr>
+					<tr>
+						<td><label for="word">Word</label></td>
+						<td><input type="text" id="word"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			<div id="resultSet" align="left"></div>	
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			var resultSetID = document.getElementById("resultSet");
+			var uriID = document.getElementById("uri");
+			var wordID = document.getElementById("word");
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+			
+			function querySubmit()
+			{
+				resultSetID.innerHTML = "";
+				
+				var request = {};
+					
+				request["uri"] = uriID.value;
+				request["metaWord"] = wordID.value;
+					
+				var requestJson = JSON.stringify(request);
+					
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/WhenThePastorIsPreachingYouDontWithTheScriptureToComeInSubsequent.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataParse = JSON.parse(data.d);
+						renderData(dataParse, resultSetID);
+					},
+					error: function(xhr)
+					{ 
+						resultSetID.innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function renderData(dataParse, resultSetID)
+			{
+				html = "";
+				dataParse.forEach(function(element){
+					html += scriptLiteral9432.buildUri(element) + "<br/>";
+				});
+				resultSetID.innerHTML = html;
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+			var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>
