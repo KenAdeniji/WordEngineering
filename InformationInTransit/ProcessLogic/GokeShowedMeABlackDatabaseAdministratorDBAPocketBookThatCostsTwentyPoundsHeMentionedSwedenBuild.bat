@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.GokeShowedMeABlackDatabaseAdministratorDBAPocketBookThatCostsTwentyPoundsHeMentionedSweden ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs GokeShowedMeABlackDatabaseAdministratorDBAPocketBookThatCostsTwentyPoundsHeMentionedSweden.cs ScriptureReferenceHelper.cs
