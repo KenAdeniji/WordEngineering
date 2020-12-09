@@ -1,0 +1,144 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+using System.Collections.Generic;
+using System.Collections.Specialized;
+
+using System.Data.SqlClient;
+using System.Text;
+
+using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessLogic;
+
+namespace InformationInTransit.ProcessLogic
+{
+	/*
+		2015-11-15	GetAPage();
+		2015-11-17	BibleDictionaryHelper.cs Created.
+	*/
+	public static partial class BibleDictionaryHelper
+	{
+		public static void Main(string[] argv)
+		{
+			DataSet resultSet = null;
+			if (argv.Length > 0)
+			{
+				resultSet = GetAPage(argv[0]);
+			}		
+		}
+
+		public static DataSet GetAPage
+		(
+			String	question
+		)
+		{
+			DataSet dataSet = null;
+			
+			question = question.Replace("'", "''");
+			
+			string[] keywords = Split(question);
+			
+			var distinctWords = new List<string>(keywords.Distinct());
+			List<string> existWords = new List<string>();
+			
+			StringBuilder sqlStatement = new StringBuilder();
+			StringBuilder whereClause = new StringBuilder("WHERE BibleDictionaryWord IN (");
+
+			for(int wordIndex = 0; wordIndex < distinctWords.Count; ++wordIndex)
+			{
+				if (wordIndex > 0)
+				{
+					whereClause.Append(", ");
+				}
+				
+				whereClause.AppendFormat
+				(
+					"'{0}'",
+					distinctWords[wordIndex]
+				);
+			}	
+
+			whereClause.Append(")");
+			
+			sqlStatement.AppendFormat
+			(
+				BibleDictionaryQueryFormat,
+				whereClause
+			);
+			
+			dataSet = ProcessSqlStatement(sqlStatement);
+			
+			return dataSet;
+		}
+
+		public static StringCollection FindBibleWords
+		(
+			StringCollection	uniqueWords
+		)
+		{
+			DataTable dataTableBibleDictionary = (DataTable) DataCommand.DatabaseCommand
+			(
+				"SELECT * FROM BibleDictionary..BibleDictionary",
+				CommandType.Text,
+				DataCommand.ResultType.DataTable
+			);
+			
+			dataTableBibleDictionary.PrimaryKey = new DataColumn[]{dataTableBibleDictionary.Columns["BibleWord"]};
+
+/*
+			IEnumerable<DataRow> idrPrimary = dataTableCompare.AsEnumerable();
+			IEnumerable<DataRow> idrSecondary = dataTableBibleDictionary.AsEnumerable();
+			IEnumerable<DataRow> idrResult = idrPrimary.Except(idrSecondary, DataRowComparer.Default);
+*/
+
+			DataRow				foundRow;
+			StringCollection	bibleDictionaryWord = new StringCollection();
+
+			foreach(string uniqueWord in uniqueWords)
+			{
+				foundRow = dataTableBibleDictionary.Rows.Find(uniqueWord);
+				if (foundRow != null) 
+				{
+					bibleDictionaryWord.Add(uniqueWord);
+				}		
+			}
+
+			return bibleDictionaryWord;
+		}
+		
+		public static DataSet ProcessSqlStatement(StringBuilder sql)
+		{
+			DataSet dataSet = null;
+			dataSet = (DataSet)DataCommand.DatabaseCommand
+			(
+				sql.ToString(),
+				CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			return dataSet;
+		}
+
+		public static string[] Split
+        (
+			string sentence
+        )
+		{
+			string[] words = sentence.Split(SplitSeparator);
+			return words;
+		}
+		
+		public static readonly char[] SplitSeparator = new Char [] {' ', ',', '.', ':', ';', '(', ')', '?', '!'};
+		
+		public const string BibleDictionaryQueryFormat = "SELECT * FROM BibleDictionary..BibleDictionary_View {0} ORDER BY BibleDictionaryWord;";
+	}
+}

@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.BibleStatisticsMeansOfCommunicationHelper BibleStatisticsMeansOfCommunicationHelper.cs ..\DataAccess\DataCommand.cs
