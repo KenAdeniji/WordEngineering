@@ -1,0 +1,2 @@
+REM csc PhraseTwoOrMoreWordsThatReOccur.cs /reference:..\Bin\Debug\InformationInTransit.dll
+csc /main:InformationInTransit.ProcessLogic.PhraseTwoOrMoreWordsThatReOccur /reference:mscorlib.dll,System.Core.dll PhraseTwoOrMoreWordsThatReOccur.cs ..\DataAccess\DataCommand.cs 
