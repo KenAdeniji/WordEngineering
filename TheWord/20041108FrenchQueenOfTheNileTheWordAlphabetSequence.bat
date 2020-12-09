@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  20041108FrenchQueenOfTheNile.txt  20041108FrenchQueenOfTheNileTheWordAlphabetSequence.xml

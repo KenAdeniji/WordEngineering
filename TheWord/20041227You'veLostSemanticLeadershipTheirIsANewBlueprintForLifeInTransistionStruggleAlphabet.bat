@@ -1,0 +1,2 @@
+@Echo Off
+Call  TheWordAlphabetSequence  20041227You'veLostSemanticLeadershipTheirIsANewBlueprintForLifeInTransistionStruggle.txt  20041227You'veLostSemanticLeadershipTheirIsANewBlueprintForLifeInTransistionStruggleAlphabet.xml

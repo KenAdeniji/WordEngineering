@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence  20041226PrivateEverythingCreativityWorkNeedCareCircuitCityStefanStefanice.txt  20041226PrivateEverythingCreativityWorkNeedCareCircuitCityStefanStefaniceAlphabet.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  20041117CVDoYourRayCarTheExteriorBomb.txt   20041117CVDoYourRayCarTheExteriorBombTheWordAlphabetSequence.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  20041109PopeJohnPaulIIKarolJosefWojtyla_-_Don'tTurnAround.xml  20041109PopeJohnPaulIIKarolJosefWojtyla_-_Don'tTurnAroundTheWord.xml

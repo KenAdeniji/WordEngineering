@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  20041109PresidentGeorgeWBush_-_YearlyHeadNeckBodyLeg.txt  20041109PresidentGeorgeWBush_-_YearlyHeadNeckBodyLegTheWordAlphabetSequence.xml

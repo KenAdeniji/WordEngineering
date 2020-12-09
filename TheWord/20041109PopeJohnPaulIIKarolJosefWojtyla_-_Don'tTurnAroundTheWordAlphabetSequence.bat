@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  20041109PopeJohnPaulIIKarolJosefWojtyla_-_Don'tTurnAround.txt  20041109PopeJohnPaulIIKarolJosefWojtyla_-_Don'tTurnAroundTheWordAlphabetSequence.xml

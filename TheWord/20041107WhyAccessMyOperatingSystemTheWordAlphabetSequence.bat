@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  20041107WhyAccessMyOperatingSystem.txt  20041107WhyAccessMyOperatingSystemTheWordAlphabetSequence.xml

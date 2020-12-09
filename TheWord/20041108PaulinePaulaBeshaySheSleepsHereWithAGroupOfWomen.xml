@@ -1,0 +1,210 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>668</SequenceOrderId>
+ <Dated>2004-11-08T00:00:00.0000000-08:00</Dated>
+ <FromUntil>313</FromUntil>
+ <Keyword>Pauline Paula Beshay</Keyword>
+ <ContactId>467</ContactId>
+ <Commentary>Pauline Paula Beshay ContactId 467 AlphabetSequence 11764 AlphabetSequenceIndex 373.</Commentary>
+ <ScriptureReference>Exodus 22:27, Deuteronomy 24:13, Job 4:13, Job 33:15, Psalms 76:5, Isaiah 56:10, Jeremiah 51:57, Daniel 6:18, Luke 9:32</ScriptureReference>
+ <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+22%3A27%2C+Deuteronomy+24%3A13%2C+Job+4%3A13%2C+Job+33%3A15%2C+Psalms+76%3A5%2C+Isaiah+56%3A10%2C+Jeremiah+51%3A57%2C+Daniel+6%3A18%2C+Luke+9%3A32&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+ 
+  <!--
+  <Anointing>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Rhema></Rhema>
+   <Commentary></Commentary>
+   <Filename />
+  </Anointing>
+  -->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>57</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>134</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>684</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Filename />
+   <ContactId />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <Commentary></Commentary>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>91</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>606</SequenceOrderId>
+   <Word>Sleep men</Word>
+   <ScriptureReference>Exodus 22:27, Deuteronomy 24:13, Job 4:13, Job 33:15, Psalms 76:5, Isaiah 56:10, Jeremiah 51:57, Daniel 6:18, Luke 9:32</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+22%3A27%2C+Deuteronomy+24%3A13%2C+Job+4%3A13%2C+Job+33%3A15%2C+Psalms+76%3A5%2C+Isaiah+56%3A10%2C+Jeremiah+51%3A57%2C+Daniel+6%3A18%2C+Luke+9%3A32&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>
+
+  <!--
+  <NameIdentity>
+   <SequenceOrderId>6</SequenceOrderId>
+   <IssuedAlliance></IssuedAlliance>
+   <InclusiveLiteral />
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </NameIdentity>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>11764</SequenceOrderId>
+    <Word>She sleeps here with a group of women.</Word>
+    <AlphabetSequenceIndex>373</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:12, 2 Chronicles 6, Ezekiel 10, Revelation 2:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A12%2C+2+Chronicles+6%2C+Ezekiel+10%2C+Revelation+2%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>467</ContactId>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>2248</SequenceOrderId>
+   <Commentary>XCOPY ..\Comforter\20041108MarkWattlesReel.comEmeryvilleBusinessCenter125045thStreetEmeryvilleCA94608WithDateSettingWePerformPerfection*.* ..\Comforter\20041108PaulinePaulaBeshaySheSleepsHereWithAGroupOfWomen*.* /C /D /E /I /R /S /Y /Z</Commentary>
+   <ContactId>467</ContactId>   
+  </CaseBasedReasoning>
+
+  <Event>
+   <SequenceOrderId>95</SequenceOrderId>
+   <Commentary>Pauline Paula Beshay ContactId 467 AlphabetSequence 11764 AlphabetSequenceIndex 373. She sleeps here with a group of women.</Commentary>
+   <ContactId>467</ContactId>
+  </Event>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>458</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>1398</SequenceOrderId>
+   <Commentary>XCOPY ..\Comforter\20041108MarkWattlesReel.comEmeryvilleBusinessCenter125045thStreetEmeryvilleCA94608WithDateSettingWePerformPerfection*.* ..\Comforter\20041108PaulinePaulaBeshaySheSleepsHereWithAGroupOfWomen*.* /C /D /E /I /R /S /Y /Z error.</Commentary>
+   <ContactId>467</ContactId>   
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>1071</SequenceOrderId>
+   <Dated></Dated>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Contact>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>79</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>294</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <StreetAddress>
+   <SequenceOrderId>383</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <AddressLine1></AddressLine1>
+   <City></City>
+   <State></State>
+   <ZipCode></ZipCode>
+   <Country></Country>
+  </StreetAddress>
+  -->
+
+  <!--
+  <Telephone>
+   <SequenceOrderId>503</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <TelephoneNo></TelephoneNo>
+  </Telephone>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

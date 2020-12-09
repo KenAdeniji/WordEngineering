@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWord 20041227HallelujahYouCanTreasureYouAreATeamBoredRealThingWe'veBeenThroughThisDisease.xml
