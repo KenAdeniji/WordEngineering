@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Text;
+
+namespace InformationInTransit.ProcessLogic
+{
+	/// <summary>
+	/// 2015-11-16	Created.
+	/// 2017-07-05	Created. public static StringBuilder ConcatenateColumnID(this DataSet dataSet, string columnName)
+	/// </summary>
+	public static partial class DataSetHelper
+	{
+		public static void Main(string[] argv)
+		{
+			
+		}
+
+        /// <summary>
+        /// 2017-07-05	Created. public static StringBuilder ConcatenateColumnID(this DataSet dataSet, string columnName)
+        /// </summary>
+		public static StringBuilder ConcatenateColumnID(this DataSet dataSet, string columnName)
+		{
+			StringBuilder ids = new StringBuilder();
+			foreach(DataTable dataTable in dataSet.Tables)
+			{
+				foreach(DataRow dataRow in dataTable.Rows)
+				{
+					if (ids.Length > 0)
+					{
+						ids.Append(", ");
+					}
+					ids.Append(((int)dataRow[columnName]).ToString());
+				}	
+			}
+			return ids;
+		}
+		
+        /// <summary>
+        /// 2015-11-16	http://stackoverflow.com/questions/27393092/how-can-i-check-whether-a-dataset-is-empty-or-not-in-c-net
+        /// </summary>
+		public static bool IsEmpty(this DataSet dataSet)
+		{
+			if (dataSet == null)
+			{
+				return true;
+			}	
+			foreach(DataTable table in dataSet.Tables)
+			{
+				if (table.Rows.Count != 0) 
+				{
+					return false;
+				}	
+			}
+			return true;
+		}
+		
+        /// <summary>
+        /// 2017-11-29	https://social.msdn.microsoft.com/Forums/en-US/ea0276d6-ab45-49a0-b7d8-d75576576a61/merge-multiple-datatables-in-c?forum=netfx64bit
+        /// </summary>
+		public static DataTable CustomMerge(this DataSet ds)
+		{
+			DataTable mergedDataTable = new DataTable();
+			for (int i = 0; i < ds.Tables.Count; i++)
+			{
+				mergedDataTable.Merge(ds.Tables[i]);
+			}
+			return mergedDataTable;
+		}		
+
+		public static void RemoveColumn(this DataSet ds, string columnName)
+		{
+			for (int i = 0; i < ds.Tables.Count; i++)
+			{
+				ds.Tables[i].Columns.Remove(columnName);
+			}
+		}
+
+		public static void StringWordsRemove
+		(
+			ref DataSet dataSet,
+			string columnToClean,
+			string[] wordsToRemove
+		)
+		{
+			for 
+			(
+				int dataTableIndex = 0, dataTableCount = dataSet.Tables.Count;
+				dataTableIndex < dataTableCount;
+				dataTableIndex++
+			)
+			{
+				DataTable dataTable = dataSet.Tables[dataTableIndex];
+				for 
+				(
+					int dataRowIndex = 0, dataRowCount = dataTable.Rows.Count;
+					dataRowIndex < dataRowCount;
+					dataRowIndex++
+				)
+				{
+					var dataInfo = (String) dataTable.Rows[dataRowIndex][columnToClean];
+					dataTable.Rows[dataRowIndex][columnToClean] = StringHelper.StringWordsRemove
+					(
+						dataInfo,
+						wordsToRemove
+					);
+				}		
+			}
+		}	
+	}	
+}
