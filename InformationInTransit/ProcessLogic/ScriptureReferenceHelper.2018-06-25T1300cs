@@ -1,0 +1,1012 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+
+using System.Data.SqlClient;
+using System.Text;
+using System.Text.RegularExpressions;
+
+using System.Globalization;
+using System.Threading;
+
+using InformationInTransit.DataAccess;
+
+namespace InformationInTransit.ProcessLogic
+{
+	///<summary>
+	///	2015-07-17 Created.
+	///	2015-10-14
+	///		if (question == "")
+	///		{
+	///			sql.AppendFormat(BibleQueryFormat, "1 = 1");
+	///		}
+	///		else
+	///		{		
+	///			sql = BuildSql(scriptureReferenceSubsets);
+	///		}	
+	///		
+	///	2015-11-07	Support         public const string BibleCommentaryQueryFormat = "SELECT KingJamesVersion.bookId, KingJamesVersion.chapterId, KingJamesVersion.verseId, KingJamesVersion.verseText, BibleCommentary_View.* FROM Bible..Scripture JOIN BibleDictionary..BibleCommentary_View ON KingJamesVersion.BookID = BibleCommentary_View.BibleBookID AND KingJamesVersion.ChapterID = BibleCommentary_View.BibleChapterID AND KingJamesVersion.VerseID = BibleCommentary_View.BibleVerseID WHERE {0} ORDER BY bookId, chapterId, verseId;";
+	///	public static void Process
+	///	(
+	///		string question,
+	///		ref String[] scriptureReferenceSubset,
+	///		ref DataSet result,
+	///		string queryFormat
+	///	)
+	///	2015-11-10	http://stackoverflow.com/questions/2706500/how-do-i-generate-a-random-int-number-in-c
+	///	2015-11-10	qotd http://stackoverflow.com/questions/7599732/caching-in-a-console-application
+	///	2015-11-11	qotd Each day.
+	///	2016-04-24	Bible versions. King James Version (KingJamesVersion), American Standard Bible, Young's Literal Translation
+	///	2017-02-26	http://stackoverflow.com/questions/1412008/join-datatable-with-listsomeobject
+	///	2017-02-27	https://msdn.microsoft.com/en-us/library/bb396189(v=vs.110).aspx
+	///	2017-02-27	http://stackoverflow.com/questions/444798/case-insensitive-containsstring
+	///	2017-02-27	http://stackoverflow.com/questions/2017533/best-way-to-check-if-column-returns-a-null-value-from-database-to-net-applicat
+	///	2017-04-07	Replace Convert.ToInt32 with Int32.TryParse();	
+	///	2017-04-20	BibleDistinctQuery() Mo fe ma lole; mo niyawo le. MoFeMaLoleMoNiyawoLe.html
+	///				Danny, got out of Wienerschnitzel, exit westward.
+	///	2017-07-09	FullPosition().
+	///				https://stackoverflow.com/questions/2971055/left-of-a-character-in-a-string-in-c-sharp
+	///</summary>
+	public class ScriptureReferenceHelper
+	{
+		public static void Main(String[] argv)
+		{
+			String[] scriptureReferenceSubset = null;
+			DataSet result = new DataSet();
+			
+			string sacredText = PrintTable(argv[0], ref scriptureReferenceSubset, ref result);
+			System.Console.WriteLine(sacredText);
+			
+/*
+			StringBuilder fullPosition = new StringBuilder();
+			
+			FullPosition
+			(
+					argv[0],
+				ref scriptureReferenceSubset,
+				ref result,
+				ref fullPosition
+			);
+*/			
+		}
+		
+		public static DataTable Approach
+		(
+			string 			scriptureReference,
+			ref String[] 	scriptureReferenceSubset,
+			ref DataSet 	result,
+			string			bibleWord,
+			string			firstScriptureReference,
+			string			lastScriptureReference,
+			int				fromOccurrence,
+			int				untilOccurrence,
+			int				exactIDFrom,
+			int				exactIDUntil,
+			int				alphabetSequenceIndexFrom,
+			int				alphabetSequenceIndexUntil
+		)
+		{
+			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+		
+			Process
+            (
+                scriptureReference,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.BibleQueryFormat,
+                "KingJamesVersion"
+            );
+
+			var exactUniques = DataTableHelper.DataTableColumnSplitStringCollection
+			(
+				result.Tables[0],
+				"VerseText"
+			);
+
+			DataTable dataTableExact = (DataTable) DataCommand.DatabaseCommand
+			(
+				"SELECT * FROM Bible..Exact",
+				CommandType.Text,
+				DataCommand.ResultType.DataTable
+			);
+			
+			/*
+			DataTable dataResult = dataTableExact.AsEnumerable()
+				.Where
+				( 
+					dt => 	exactUniques.Contains((string)dt["BibleWord"]) &&
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["BibleWord"],
+								bibleWord,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["FirstScriptureReference"],
+								firstScriptureReference,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							cultureInfo.CompareInfo.IndexOf
+							(
+								DBNull.Value.Equals(dt["LastScriptureReference"]) ? (string)dt["FirstScriptureReference"] : (string)dt["LastScriptureReference"],
+								lastScriptureReference,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							(int)dt["Occurrence"] >= fromOccurrence &&
+							(int)dt["Occurrence"] <= untilOccurrence &&
+							(int)dt["exactID"] >= exactIDFrom &&
+							(int)dt["exactID"] <= exactIDUntil &&
+							(int)dt["AlphabetSequenceIndex"] >= alphabetSequenceIndexFrom &&
+							(int)dt["AlphabetSequenceIndex"] <= alphabetSequenceIndexUntil
+				)
+			  .CopyToDataTable();
+			  */
+					  
+			return dataTableExact;		  
+					  
+			//return dataResult;		  
+		}
+
+		public static void BibleDistinctQuery
+		(
+			string 			scriptureReference,
+			ref String[] 	scriptureReferenceSubset,
+			ref DataSet 	result
+		)
+		{
+			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+		
+			Process
+            (
+                scriptureReference,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.BibleDistinctQueryFormat,
+                "KingJamesVersion"
+            );
+		}
+
+		public static DataTable BillInDate
+		(
+			string 			scriptureReference,
+			ref String[] 	scriptureReferenceSubset,
+			ref DataSet 	result,
+			//string			commentary,
+			string			umlType,
+			string			umlSource,
+			string			umlTarget
+		)
+		{
+			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+		
+			Process
+            (
+                scriptureReference,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.BillInDateQueryFormat,
+                "KingJamesVersion"
+            );
+
+			DataTable dataTable = DataSetHelper.CustomMerge(result);
+			
+			var dataResult = dataTable.AsEnumerable()
+				.Where
+				( 
+					dt => 	/*
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["commentary"],
+								commentary,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							*/
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["umlType"],
+								umlType,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["umlSource"],
+								umlSource,
+								CompareOptions.IgnoreCase
+							) >= 0 &&
+							cultureInfo.CompareInfo.IndexOf
+							(
+								(string)dt["umlTarget"],
+								umlTarget,
+								CompareOptions.IgnoreCase
+							) >= 0
+				)
+			  .CopyToDataTable();
+					  
+			return dataResult;		  
+		}
+		
+		public static StringBuilder BuildResult
+		(
+			String[] scriptureReferenceSubset,
+			DataSet dataSet
+		)
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.Append("<table id=\"sacredText\">");
+			int subsetIndex = 0;
+			foreach(DataTable dataTable in dataSet.Tables)
+			{
+				System.Console.WriteLine
+				(
+					"{0}, {1}",
+					subsetIndex,
+					scriptureReferenceSubset[subsetIndex]
+				);
+				sb.Append
+				(
+					"<tr><th align=center colspan=2>" + 
+					scriptureReferenceSubset[subsetIndex++] +
+					"</th></tr>"
+				);
+				int existingBookId = -1;
+				int existingChapterId = -1;
+				foreach(DataRow dataRow in dataTable.Rows)
+				{
+					int bookId = (int) dataRow["bookId"];
+					string bookTitle = ScriptureReference.BookName(bookId);
+					int chapterId = (int) dataRow["chapterId"];
+					int verseId = (int) dataRow["verseId"];
+					string verseText = (string) dataRow["verseText"];
+					
+					if (bookId != existingBookId || chapterId != existingChapterId)
+					{
+						sb.Append
+						(
+							"<tr><th align=left colspan=2>" + 
+							bookTitle + " " + chapterId.ToString() +
+							"</th></tr>"
+						);
+						existingBookId = bookId;
+						existingChapterId = chapterId;
+					}
+					
+					sb.Append
+					(
+						"<tr><td>" + 
+						String.Format("{0}:{1}", chapterId, verseId) +
+						"</td><td>" + verseText + "</td></tr>"
+					);
+				}
+			}
+			sb.Append("</table>");
+			return sb;
+		}
+		
+		public static StringBuilder BuildSql
+		(
+			List<ScriptureReferenceSubset> scriptureReferenceSubsets,
+			String	queryFormat
+		)
+		{
+			StringBuilder sb = new StringBuilder();
+
+			foreach(ScriptureReferenceSubset scriptureReferenceSubset in scriptureReferenceSubsets)
+			{
+				ScriptureReference pre = scriptureReferenceSubset.Pre;
+				ScriptureReference post = scriptureReferenceSubset.Post;
+				
+				int 	verseIdSequence	= -1;
+				string	sqlReferenceWhereClause = null;
+				string	subQueryWhereClause = null;
+				
+				if (post == null)
+				{
+					if (pre.BookId > 0 && pre.Chapter == null && pre.Verse == null)
+					{
+						sqlReferenceWhereClause = "BookId = " + pre.BookId.ToString();
+					}
+					else if (pre.Verse == null)
+					{
+						sqlReferenceWhereClause = String.Format
+						(
+							"BookId = {0} AND ChapterId = {1}",
+							pre.BookId,
+							pre.Chapter
+						);
+					}
+					else if (pre.Verse != null)
+					{
+						sqlReferenceWhereClause = String.Format
+						(
+							"BookId = {0} AND ChapterId = {1} AND VerseId = {2}",
+							pre.BookId,
+							pre.Chapter,
+							pre.Verse
+						);
+					}
+				}	
+				else
+				{
+					if 
+					(
+						post.BookId >= pre.BookId && 
+						pre.Chapter == null && pre.Verse == null &&
+						post.Chapter == null && post.Verse == null
+					)
+					{
+						sqlReferenceWhereClause = String.Format
+						(
+							"BookId BETWEEN {0} AND {1}",
+							pre.BookId,
+							post.BookId
+						);
+					}
+					else
+					{
+						int verseIdSequenceFrom = -1;
+						int verseIdSequenceUntil = -1;
+						
+						string subQueryWhereClauseFrom = String.Format
+						(
+							"BookId = {0} AND ChapterId = {1}",
+							SubQueryWhereClauseFromFormat,
+							pre.BookId,
+							pre.Chapter,
+							(pre.Verse == null) ? 1 : pre.Verse
+						);
+						
+						subQueryWhereClauseFrom = 	" BookId = " + pre.BookId.ToString() + 
+													" AND ChapterId = " + pre.Chapter.ToString() + 
+													" AND VerseId = " + ((pre.Verse == null) ? "1" : pre.Verse.ToString());
+						
+						verseIdSequenceFrom = SelectVerseIdSequence(subQueryWhereClauseFrom);
+
+						string subQueryWhereClauseUntil = null;
+						
+						if (post.Verse == null)
+						{
+							verseIdSequenceUntil = SelectVerseIdSequence(post.BookId, post.Chapter);
+						}
+						else
+						{	
+							subQueryWhereClauseUntil = 	" BookId = " + post.BookId.ToString() + 
+														" AND ChapterId = " + post.Chapter.ToString() + 
+														" AND VerseId = " + ((post.Verse == null) ? "1" : post.Verse.ToString());
+							verseIdSequenceUntil = SelectVerseIdSequence(subQueryWhereClauseUntil);													
+						}
+
+						sqlReferenceWhereClause = String.Format
+						(
+							"verseIdSequence BETWEEN {0} AND {1}",
+							verseIdSequenceFrom,
+							verseIdSequenceUntil
+						);
+					}
+				}
+				sb.AppendFormat(queryFormat, sqlReferenceWhereClause);
+			}
+			return sb;
+		}
+
+		public static bool CheckForBookTitle(string currentReference, int bookTitleChapterSeparatorPosition)
+		{
+			int number = -1;
+			if 
+			(
+				currentReference.Equals
+				(
+					ScriptureReference.Books[ScriptureReference.SongOfSolomonBookId],
+					StringComparison.CurrentCultureIgnoreCase
+				)
+			)
+			{
+				return true;
+			}	
+			string leftOfSeparator = currentReference.Substring(0, bookTitleChapterSeparatorPosition).Trim();
+			bool isBookTitle = Int32.TryParse(leftOfSeparator, out number);
+			return isBookTitle;
+		}
+
+		public static StringBuilder Dump(List<ScriptureReferenceSubset> scriptureReferenceSubsets)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach(ScriptureReferenceSubset scriptureReferenceSubset in scriptureReferenceSubsets)
+			{
+				sb.Append(scriptureReferenceSubset);
+			}
+			return sb;
+		}
+		
+
+		public static void ExtractBookTitle(string currentReference, ref ScriptureReference scriptureReference)
+		{
+			scriptureReference.BookTitle = currentReference;
+			scriptureReference.Chapter = null;
+			scriptureReference.Verse = null;
+		}
+		
+		public static List<ScriptureReferenceSubset> Parse
+		(
+				string		question,
+			ref string[] 	scriptureReferenceSubset
+		)
+		{
+			List<ScriptureReferenceSubset> scriptureReferenceSubsets = new List<ScriptureReferenceSubset>();
+			
+			scriptureReferenceSubset = question.Split
+			(
+				SubsetSeparator,
+				StringSplitOptions.RemoveEmptyEntries 
+			);
+			
+			if (scriptureReferenceSubset.Length == 0)
+			{
+				return scriptureReferenceSubsets;
+			}
+			
+			scriptureReferenceSubsets = Parse
+			(
+				scriptureReferenceSubset	
+			);
+			
+			return scriptureReferenceSubsets;
+		}
+		
+		public static void FullPosition
+		(
+			string 				scriptureReference,
+			ref String[] 		scriptureReferenceSubset,
+			ref DataSet 		result,
+			ref StringBuilder	fullPosition
+		)
+		{
+			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+		
+			System.Console.WriteLine("Full position");
+		
+			Process
+            (
+                scriptureReference,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.FullPositionQueryFormat,
+                "KingJamesVersion"
+            );
+			
+			DataRow dataRowTop;
+
+			fullPosition = new StringBuilder();
+			
+			foreach(DataTable dataTable in result.Tables)
+			{
+				int verseIdNext = -1;
+				int verseIdPrecede = -1;
+				int verseIdSequence = -1;
+				
+				int chapterIdNext = -1;
+				int chapterIdPrecede = -1;
+				int chapterIdSequence = -1;
+				
+				String verseNext = null;
+				String versePrecede = null;
+				
+				String chapterNext = null;
+				String chapterPrecede = null;
+				
+				String chapterPrecedeChapterOnly = null;
+				String chapterNextChapterOnly = null;	
+				
+				if (dataTable.Rows.Count > 0)
+				{
+					dataRowTop = dataTable.Rows[0];
+					verseIdSequence = (int) dataRowTop["verseIdSequence"];
+					if (verseIdSequence > 1)
+					{
+						verseIdPrecede = verseIdSequence - 1;
+						versePrecede = FullPositionQuery("verseIdSequence", verseIdPrecede);
+						FullPositionAppend(ref fullPosition, versePrecede);
+					}
+					if (verseIdSequence < VerseCount)
+					{
+						verseIdNext = verseIdSequence + 1;
+						verseNext = FullPositionQuery("verseIdSequence", verseIdNext);
+						FullPositionAppend(ref fullPosition, verseNext);
+					}
+					chapterIdSequence = (int) dataRowTop["chapterIdSequence"];
+					if (chapterIdSequence > 1)
+					{
+						chapterIdPrecede = chapterIdSequence - 1;
+						chapterPrecede = FullPositionQuery("chapterIdSequence", chapterIdPrecede);
+						chapterPrecedeChapterOnly = chapterPrecede.Substring(0, chapterPrecede.IndexOf(":"));
+						FullPositionAppend(ref fullPosition, chapterPrecedeChapterOnly);
+					}
+					if (chapterIdSequence > 1)
+					{
+						chapterIdNext = chapterIdSequence + 1;
+						chapterNext = FullPositionQuery("chapterIdSequence", chapterIdNext);
+						chapterNextChapterOnly = chapterNext.Substring(0, chapterNext.IndexOf(":"));
+						FullPositionAppend(ref fullPosition, chapterNextChapterOnly);
+					}
+				}	
+			}
+			System.Console.WriteLine(fullPosition);
+		}
+
+		public static void FullPositionAppend
+		(
+			ref StringBuilder fullPosition,
+				String scriptureReference
+		)
+		{
+			if (fullPosition.Length > 0)
+			{
+				fullPosition.Append(", ");
+			}
+			fullPosition.Append(scriptureReference);
+		}
+		
+		public static string FullPositionQuery
+		(
+			string columnName,
+			int columnValue
+		)
+		{
+			return (string) DataCommand.DatabaseCommand
+			(
+				String.Format
+				(
+					FullPositionQueryFormatScriptureReferenceScalarSelect,
+					columnName,
+					columnValue
+				),
+				CommandType.Text,
+				DataCommand.ResultType.Scalar
+			);
+		}
+		
+		public static List<ScriptureReferenceSubset> Parse(string[] scriptureReferenceSubset)
+		{
+			bool tryParseFlag = false;
+			
+			int chapter = -1;
+			int	verse = -1;
+			
+			ScriptureReference previousReference = null;
+			
+			List<ScriptureReferenceSubset> scriptureReferenceSubsets = new List<ScriptureReferenceSubset>();
+			
+			try
+			{
+				for (int index = 0; index < scriptureReferenceSubset.Length; ++index)
+				{
+					String[] prePost = scriptureReferenceSubset[index].Split
+					(
+						PrePostSeparator//,
+						//StringSplitOptions.RemoveEmptyEntries
+					);
+					
+					if (prePost.Length == 0)
+					{
+						return scriptureReferenceSubsets;
+					}		
+					
+					ScriptureReferenceSubset ScriptureReferenceSubset = new ScriptureReferenceSubset();
+					
+					for(int counter = 0; counter < prePost.Length; ++counter)
+					{
+
+						ScriptureReference scriptureReference = new ScriptureReference();
+						string currentReference = prePost[counter].Trim();
+
+						int number = 0; 
+						bool numericFlag = int.TryParse(currentReference, out number);
+						
+						if (numericFlag)
+						{
+							scriptureReference = previousReference;
+							if (previousReference.Verse == null)
+							{
+								scriptureReference.Chapter = number;
+							}
+							else
+							{
+								scriptureReference.Verse = number;
+							}
+							goto ClearDown;
+						}
+		  
+						int chapterVerseSeparatorPosition = currentReference.LastIndexOf(ChapterVerseSeparator);
+						if (chapterVerseSeparatorPosition > 0) //There must be a chapter and verse reference
+						{
+							tryParseFlag = Int32.TryParse
+							(
+								currentReference.Substring(chapterVerseSeparatorPosition + 1),
+								out verse
+							);
+							if (tryParseFlag == false)
+							{
+								return scriptureReferenceSubsets;
+							}	
+							scriptureReference.Verse = verse;
+							currentReference = currentReference.Substring(0, chapterVerseSeparatorPosition);
+						}
+						else
+						{
+							scriptureReference.Verse = null;
+						}
+						
+						int bookTitleChapterSeparatorPosition = currentReference.LastIndexOf(BookTitleChapterSeparator);
+						
+						if (bookTitleChapterSeparatorPosition > -1)
+						{
+							bool isBookTitle = CheckForBookTitle(currentReference, bookTitleChapterSeparatorPosition);
+							if (isBookTitle == true)
+							{
+								ExtractBookTitle(currentReference, ref scriptureReference);
+								goto ClearDown;	
+							}
+
+							tryParseFlag = Int32.TryParse
+							(
+								currentReference.Substring(bookTitleChapterSeparatorPosition + 1),
+								out chapter
+							);
+							
+							if (tryParseFlag == false)
+							{
+								return scriptureReferenceSubsets;
+							}	
+							
+							scriptureReference.Chapter = chapter;
+							
+							scriptureReference.BookTitle = currentReference.Substring(0, bookTitleChapterSeparatorPosition);
+						}
+						else
+						{
+							numericFlag = int.TryParse(currentReference, out number);
+							if (numericFlag)
+							{
+								scriptureReference.Chapter = Convert.ToInt32(currentReference);  
+								scriptureReference.BookTitle = previousReference.BookTitle;
+							}
+							else
+							{
+								ExtractBookTitle(currentReference, ref scriptureReference);
+							}	
+						}
+						
+						ClearDown:
+						
+						if (counter == Pre)
+						{
+							ScriptureReferenceSubset.Pre = scriptureReference;
+						}
+						else
+						{
+							ScriptureReferenceSubset.Post = scriptureReference;
+						}
+						previousReference = new ScriptureReference(scriptureReference);
+					}
+					scriptureReferenceSubsets.Add(ScriptureReferenceSubset);
+				}
+			}
+			catch(Exception ex)
+			{
+				System.Console.WriteLine
+				(
+					"Exception: {0}",
+					ex.Message
+				);
+			}	
+			return scriptureReferenceSubsets;
+		}
+
+		public static int SelectVerseIdSequence(string subQueryWhereClause)
+		{
+			string sql = String.Format
+			(
+				"SELECT TOP 1 verseIdSequence FROM Bible..Scripture WHERE {0}",
+				subQueryWhereClause
+			);	
+
+			int reference = (int) DataCommand.DatabaseCommand
+							(
+								sql,
+								System.Data.CommandType.Text,
+								DataCommand.ResultType.Scalar
+							);
+			return reference;
+		}
+
+		public static int SelectVerseIdSequence(int? bookId, int? chapterId)
+		{
+			string sql = String.Format
+			(
+				"SELECT MAX(verseIdSequence) FROM Bible..Scripture WHERE bookId = {0} AND chapterId = {1}",
+				bookId,
+				chapterId
+			);	
+
+			int reference = (int) DataCommand.DatabaseCommand
+							(
+								sql,
+								System.Data.CommandType.Text,
+								DataCommand.ResultType.Scalar
+							);
+			return reference;
+		}
+
+		public static String PrintTable(string question, ref String[] scriptureReferenceSubset, ref DataSet result)
+		{
+			Process
+            (
+                question,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.BibleQueryFormat,
+                "KingJamesVersion"
+            );
+			StringBuilder table = BuildResult(scriptureReferenceSubset, result);
+			string sacredText = table.ToString();
+			return sacredText;
+		}
+
+/*
+		2018-03-20
+				queryFormat = StringHelper.ReplaceFirst
+				(
+					queryFormat,
+					"verseText",
+					" VerseText = " + bibleVersion
+				);
+
+		2018-03-20
+				queryFormat = Regex.Replace
+				(
+					queryFormat,
+					"verseText",
+					//2018-03-19 bibleVersion + " AS verseText ",
+					" VerseText = bibleVersion ",
+					RegexOptions.IgnoreCase
+				);
+*/
+		public static void Process
+		(
+			string question,
+			ref String[] scriptureReferenceSubset,
+			ref DataSet result,
+			string queryFormat,
+			string bibleVersion
+		)
+		{
+			queryFormat = Regex.Replace
+			(
+				queryFormat,
+				"verseText",
+				" verseText = " + bibleVersion + " ",
+				RegexOptions.IgnoreCase
+			);
+			scriptureReferenceSubset = question.Split(SubsetSeparator);
+			List<ScriptureReferenceSubset> scriptureReferenceSubsets = Parse(scriptureReferenceSubset);
+			Dump(scriptureReferenceSubsets);
+			StringBuilder sql = new StringBuilder();
+			question = question.ToLower();
+			if (question == "")
+			{
+				sql.AppendFormat(queryFormat, "1 = 1");
+			}
+			else if (question == QuoteOfTheDayQuestion)
+			{
+				DateTime dateTimeNow = DateTime.Now;
+				if (dateTimeNow.Date > QuoteOfTheDayQuestionDateTime.Date)
+				{	
+					QuoteOfTheDayVerseIDSequence = GetRandomNumber(1, VerseCount + 1);
+					QuoteOfTheDayQuestionDateTime = dateTimeNow;
+				}	
+				sql.AppendFormat(queryFormat, "verseIDSequence = " + QuoteOfTheDayVerseIDSequence.ToString());
+			}
+			else if (question == RandomQuestion)
+			{
+				int randomNumber = GetRandomNumber(1, VerseCount + 1);
+				sql.AppendFormat(queryFormat, "verseIDSequence = " + randomNumber.ToString());
+			}
+			else
+			{		
+				sql = BuildSql(scriptureReferenceSubsets, queryFormat);
+			}	
+			result = ProcessSql(sql);
+		}
+		
+		public static DataSet ProcessSql(StringBuilder sql)
+		{
+			DataSet dataSet = null;
+			dataSet = (DataSet)DataCommand.DatabaseCommand
+			(
+				sql.ToString(),
+				CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			System.Console.WriteLine(sql);
+			return dataSet;
+		}
+		
+		static ScriptureReferenceHelper()
+		{
+			QuoteOfTheDayVerseIDSequence = GetRandomNumber(1, VerseCount + 1);
+			
+			
+		}	
+		
+		public static readonly char BookTitleChapterSeparator = ' ';
+		public static readonly char ChapterVerseSeparator = ':';
+		public static readonly char PrePostSeparator = '-';
+		public static readonly char[] SubsetSeparator = {',', ';'};
+		
+		public const int Pre = 0;
+		public const int Post = 1;
+		
+		public const int ChapterCount = 1189;
+		public const int VerseCount = 31102;
+		public const int VerseCountOldTestament = 23145;
+
+		public const string BibleDistinctQueryFormat = 
+			@"
+			SELECT
+				COUNT(DISTINCT BookID) AS BookIDCount,
+				COUNT(DISTINCT ChapterIDSequence) AS ChapterIDSequenceCount,
+				COUNT(DISTINCT VerseIDSequence) AS VerseIDSequenceCount
+			FROM
+				Bible..Scripture
+			WHERE {0};	
+			";	
+
+		public const string BibleQueryFormat = "SELECT bookId, chapterId, verseId, verseText FROM Bible..Scripture WHERE {0} ORDER BY bookId, chapterId, verseId;";
+        public const string BibleCommentaryQueryFormat = "SELECT Scripture.bookId, Scripture.chapterId, Scripture.verseId, Scripture.verseText, BibleCommentary_View.* FROM Bible..Scripture JOIN BibleDictionary..BibleCommentary_View ON KingJamesVersion.BookID = BibleCommentary_View.BibleBookID AND KingJamesVersion.ChapterID = BibleCommentary_View.BibleChapterID AND KingJamesVersion.VerseID = BibleCommentary_View.BibleVerseID WHERE {0} ORDER BY bookId, chapterId, verseId;";
+		public const string BillInDateQueryFormat = "SELECT * FROM WordEngineering..BillInDate WHERE {0} ORDER BY bookId, chapterId, verseId, BillInDateId;";
+		public const string FullPositionQueryFormat = "SELECT bookId, chapterId, verseId, verseText, verseIdSequence, chapterIdSequence FROM Bible..Scripture WHERE {0} ORDER BY bookId, chapterId, verseId;";
+		public const string FullPositionQueryFormatScriptureReferenceScalarSelect = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture WHERE {0} = {1}";
+
+		public const string BibleVersionDefault = "KingJamesVersion";
+		
+		public const string	QuoteOfTheDayQuestion = "qotd";
+		public static DateTime QuoteOfTheDayQuestionDateTime = DateTime.MinValue;
+		public static int QuoteOfTheDayVerseIDSequence = -1;
+		
+		public const string RandomQuestion = "random";
+		
+		private static readonly Random getrandom = new Random();
+		private static readonly object syncLock = new object();
+		public static int GetRandomNumber(int min, int max)
+		{
+			lock(syncLock) { // synchronize
+				return getrandom.Next(min, max);
+			}
+		}
+		
+		public const string SubQueryWhereClauseFromFormat = "BookId = {0} AND ChapterId = {1} AND VerseId = {2}";
+	
+		public class ScriptureReference
+		{
+			public ScriptureReference()
+			{
+			}
+
+            public ScriptureReference(ScriptureReference scriptureReference)
+			{
+				this.BookTitle = scriptureReference.BookTitle;
+				this.Chapter = scriptureReference.Chapter;
+				this.Verse = scriptureReference.Verse;
+			}
+
+            public ScriptureReference
+			(
+				string	bookTitle,
+				int	chapterId,
+				int	verseId
+			)
+			{
+				this.BookTitle = bookTitle;
+				this.Chapter = chapterId;
+				this.Verse = verseId;
+			}
+			
+			public int?	 BookId
+			{
+				get
+				{
+					int? bookId = null;
+					if ( !String.IsNullOrEmpty(BookTitle) )
+					{
+						bookId = Array.FindIndex(Books, p => p.Equals(BookTitle, StringComparison.CurrentCultureIgnoreCase));
+						if (bookId > -1) {++bookId;} //Arrays are zero-based.
+					}	
+					return bookId;
+				}
+			}
+
+			public static string BookName(int bookId)
+			{
+				string bookName = null;
+				if ( bookId > 0 && bookId < MaxBookId )
+				{
+					bookName = Books[bookId - 1];
+				}	
+				return bookName;
+			}
+
+			public static string Syntax
+			(
+				int bookId,
+				int chapterId,
+				int verseId
+			)
+			{
+				string formatted = Books[bookId - 1] + " " + chapterId.ToString() + ":" + verseId.ToString();
+				return formatted;
+			}
+			
+			public string 	BookTitle { get; set; }
+			public int?		Chapter	{ get; set; }
+			public int?		Verse { get; set; }
+			
+			public override string ToString() 
+			{
+				return String.Format
+				(
+					"{0} {1}{2}{3}",
+					BookTitle,
+					Chapter,
+					Chapter != null && Verse != null ? ":" : "", 
+					Verse
+				);	
+			}
+			
+			public static readonly string[] Books = {"Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"};
+			public static readonly int MaxBookId = Books.Count() + 1;
+			public static readonly int SongOfSolomonBookId = 21;
+		}
+
+        public class ScriptureReferenceSubset
+		{
+			public ScriptureReference Pre { get; set; }
+			public ScriptureReference Post { get; set; }
+			
+			public String StringRepresentation 
+			{
+				get
+				{
+					return this.ToString();
+				}	
+			}
+			
+			public override string ToString() 
+			{
+				return String.Format
+				(
+					"{0}{1}{2} ",
+					Pre,
+					Post == null ? "" : "-", 
+					Post
+				).Trim();	
+			}
+		}
+	}
+}

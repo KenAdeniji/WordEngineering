@@ -1,0 +1,1 @@
+CSC SqlDataReaderHelper.cs ..\DataAccess\DataCommand.cs /main:WordEngineering.SqlDataReaderHelper
