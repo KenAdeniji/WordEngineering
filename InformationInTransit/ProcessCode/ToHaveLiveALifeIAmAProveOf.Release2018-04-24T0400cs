@@ -1,0 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+
+using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessLogic;
+
+/*
+	2018-04-23	Created.
+*/
+namespace InformationInTransit.ProcessCode
+{
+	public static partial class ToHaveLiveALifeIAmAProveOf
+	{
+		public static void Main(string[] argv)
+		{
+		}
+		
+		public static DataSet Query
+		(
+			string 	bibleWord,
+			string 	bibleVersion,
+			bool 	wholeWords
+		)
+		{
+			string sqlStatement = String.Format
+			(
+				wholeWords ? SelectFormatWholeWords : SelectFormatPartial,
+				bibleWord,
+				bibleVersion
+			);
+			DataSet result = (DataSet) DataCommand.DatabaseCommand
+			(
+				sqlStatement,
+				System.Data.CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			return result;
+		}
+		
+		public const string SelectFormatPartial = "SELECT ScriptureReference FROM Bible..Scripture WHERE {1} LIKE '%{0}%'";
+		public const string SelectFormatWholeWords = "SELECT ScriptureReference FROM Bible..Scripture WHERE {1} LIKE '%[^a-z]{0}[^a-z]%'";
+    }
+}

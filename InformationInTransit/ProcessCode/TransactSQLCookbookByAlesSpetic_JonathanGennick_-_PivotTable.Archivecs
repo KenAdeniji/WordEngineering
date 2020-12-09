@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.ComponentModel;
+
+using InformationInTransit.DataAccess;
+
+/*
+	2018-05-02	Created.
+*/
+namespace InformationInTransit.ProcessCode
+{
+	public static partial class TransactSQLCookbookByAlesSpetic_JonathanGennick_PivotTables
+	{
+		public static DataSet Query
+		(
+			int	digitsLength,
+			int	asciiFrom,
+			int	asciiUntil
+		)
+		{
+			StringBuilder sbFrom = new StringBuilder();
+			StringBuilder sbSelect = new StringBuilder();
+			
+			for 
+			(
+				int digitsIndex = 0;
+				digitsIndex < digitsLength;
+				++digitsIndex
+			)
+			{
+				if (digitsIndex > 0)
+				{
+					sbSelect.Append('+');
+					sbFrom.Append(',');
+				}	
+				sbSelect.AppendFormat
+				(
+					"pivotSupport{0}.i",
+					digitsIndex
+				);
+				sbFrom.AppendFormat
+				(
+					"@pivotSupport AS pivotSupport{0}",
+					digitsIndex					
+				);
+			}
+			
+			string sqlStatement = String.Format
+			(
+				SQLStatementFormat,
+				sbSelect.ToString(),
+				sbFrom.ToString(),
+				asciiFrom,
+				asciiUntil
+			);
+			
+			DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
+			(
+				sqlStatement,
+				System.Data.CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			
+			return resultSet;
+		}
+		
+		public const string SQLStatementFormat =
+		@"
+DECLARE @pivotSupport TABLE 
+( 
+	i	CHAR(1)
+)
+
+DECLARE @pivot TABLE 
+( 
+	i	INT,
+	PRIMARY KEY(i)
+)
+ 
+INSERT INTO @pivotSupport VALUES('0')
+INSERT INTO @pivotSupport VALUES('1')
+INSERT INTO @pivotSupport VALUES('2')
+INSERT INTO @pivotSupport VALUES('3')
+INSERT INTO @pivotSupport VALUES('4')
+INSERT INTO @pivotSupport VALUES('5')
+INSERT INTO @pivotSupport VALUES('6')
+INSERT INTO @pivotSupport VALUES('7')
+INSERT INTO @pivotSupport VALUES('8')
+INSERT INTO @pivotSupport VALUES('9')
+
+INSERT INTO @pivot
+	SELECT {0}
+		FROM {1}
+
+SELECT * FROM @pivot
+SELECT i Ascii_Code, char(i) Ascii_Char FROM @pivot WHERE i BETWEEN {2} AND {3}
+		";
+	}	
+}	
