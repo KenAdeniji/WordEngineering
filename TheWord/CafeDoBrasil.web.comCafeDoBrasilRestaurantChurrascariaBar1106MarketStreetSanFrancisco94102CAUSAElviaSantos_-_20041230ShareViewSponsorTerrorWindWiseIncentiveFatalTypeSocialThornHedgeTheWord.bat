@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWord  CafeDoBrasil.web.comCafeDoBrasilRestaurantChurrascariaBar1106MarketStreetSanFrancisco94102CAUSAElviaSantos_-_20041230ShareViewSponsorTerrorWindWiseIncentiveFatalTypeSocialThornHedge.xml

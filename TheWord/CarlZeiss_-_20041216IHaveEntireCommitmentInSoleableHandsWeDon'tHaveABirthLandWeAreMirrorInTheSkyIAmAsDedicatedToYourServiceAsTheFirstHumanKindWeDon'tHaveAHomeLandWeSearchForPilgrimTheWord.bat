@@ -1,0 +1,2 @@
+@Echo Off
+TheWord  CarlZeiss_-_20041216IHaveEntireCommitmentInSoleableHandsWeDon'tHaveABirthLandWeAreMirrorInTheSkyIAmAsDedicatedToYourServiceAsTheFirstHumanKindWeDon'tHaveAHomeLandWeSearchForPilgrim.xml

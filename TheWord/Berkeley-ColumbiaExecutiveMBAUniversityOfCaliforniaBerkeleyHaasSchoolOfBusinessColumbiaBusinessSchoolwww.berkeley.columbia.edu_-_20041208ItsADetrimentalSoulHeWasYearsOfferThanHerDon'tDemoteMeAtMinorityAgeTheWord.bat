@@ -1,0 +1,2 @@
+@Echo off
+TheWord  Berkeley-ColumbiaExecutiveMBAUniversityOfCaliforniaBerkeleyHaasSchoolOfBusinessColumbiaBusinessSchoolwww.berkeley.columbia.edu_-_20041208ItsADetrimentalSoulHeWasYearsOfferThanHerDon'tDemoteMeAtMinorityAge.xml

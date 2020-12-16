@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  Benzene100Polyester100PoliesterRN104914MadeInPhilippinesSizeXLStyleMPFB01HechoEnFilipinas400014510944_-_20041123SydmetryHorizonDistanceVolumetryDenySexuallyAmazing.xml
