@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  COmforter_-_20040112Todai_FreedomIsMineForgivenIsYoursSevenYearsOfSlaveryTwoYearsOfSolitude.txt    COmforter_-_20040112Todai_FreedomIsMineForgivenIsYoursSevenYearsOfSlaveryTwoYearsOfSolitude.xml
