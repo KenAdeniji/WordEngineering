@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040121TemploBetaniaAssemblyOfGod_WashingtonHospitalHealthcareSystem.txt   Comforter_-_20040121TemploBetaniaAssemblyOfGod_WashingtonHospitalHealthcareSystem.xml
