@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-02 	Created.	arrays of arrays.html	crockford.com
+	-->
+	<head>
+		<title>arrays of arrays</title>
+	</head>
+	<body>
+		<script>
+Array.dim = function (dimension, initial) {
+    var a = [], i;
+    for (i = 0; i < dimension; i += 1) {
+        a[i] = initial;
+    }
+    return a;
+};
+// Make an array containing 10 zeros.
+var myArray = Array.dim(10, 0);
+
+var matrix = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8]
+];
+matrix[2][1]    // 7		
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-10-21	Fremont Library. Steven Holzner. Sams Teach Yourself HTML5 in 10 Minutes.
+		Element		contenteditable="true"
+		A whole document editable	designmode on or off.
+-->
+	<head>
+		<title>DesignMode</title>
+	</head>
+	<body>
+		<iframe
+			id="content"
+			style="border:solid black; height:300px; width:400px;"
+			src="about:blank"
+		>	
+		</iframe>
+		<script>
+			var iframeNode;
+			
+			function pageLoad()
+			{
+				iframeNode = document.getElementById("content");
+				iframeNode.contentDocument.designMode = "on";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

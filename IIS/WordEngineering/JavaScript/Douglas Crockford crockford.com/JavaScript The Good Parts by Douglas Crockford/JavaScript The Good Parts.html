@@ -1,0 +1,32 @@
+<!--
+	2015-04-06	Created		https://www.acmi.net.au/media/12347/javascript_the_good_parts.pdf
+-->
+<script>
+	document.writeln('Hello, world!<br>');
+	document.writeln("'seven'.length " + 'seven'.length + '<br>');
+	document.writeln("'c' + 'a' + 't' === 'cat' " + ('c' + 'a' + 't' === 'cat') + '<br>');
+	document.writeln("'cat'.toUpperCase() === 'CAT' " + ('cat'.toUpperCase() === 'CAT') + '<br>');
+	var stooge = { }; var middle = stooge["middle-name"] || "(none)";
+	document.writeln('var stooge = { }; var middle = stooge["middle-name"] || "(none)"; ' + middle + '<br>');
+	
+	var is_array = function (value) {
+return value && //If the value is truthy.
+typeof value === 'object' && //This will be true for objects, arrays, and null.
+typeof value.length === 'number' && //If the value has a length property that is a number.
+typeof value.splice === 'function' && //If the value contains a splice method.
+!(value.propertyIsEnumerable('length')); //If the length property is enumerable (will length be produced by a for in loop?).
+};
+
+	document.writeln("is_array([1, 2, 3]) " + is_array([1, 2, 3]) + '<br>');
+	
+	var a = ['a', 'b', 'c'];
+	var b = ['x', 'y', 'z'];
+	var c = a.concat(b, true);
+	
+	document.writeln("var a = ['a', 'b', 'c']; var b = ['x', 'y', 'z']; var c = a.concat(b, true); " + c + '<br>');
+	
+	var a = ['a', 'b', 'c'];
+	a.push('d');
+	var c = a.join(''); // c is 'abcd';
+	
+</script>

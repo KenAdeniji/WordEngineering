@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Selectors API Level 1</title>
+	</head>
+	<body>
+		<table id="score">
+		  <thead>
+			<tr>
+			  <th>Test
+			  <th>Result
+		  <tfoot>
+			<tr>
+			  <th>Average
+			  <td>82%
+		  <tbody>
+			<tr>
+			  <td>A
+			  <td>87%
+			<tr>
+			  <td>B
+			  <td>78%
+			<tr>
+			  <td>C
+			  <td>81%
+		</table>
+		<button onclick="withoutSelector();">Without Selector</button>
+		<button onclick="withSelector();">With Selector</button>
+		<script>
+			function withoutSelector()
+			{
+				var table = document.getElementById("score");
+				var groups = table.tBodies;
+				var rows = null;
+				var cells = [];
+				var currentCell = null;
+				
+				for (var i = 0; i < groups.length; i++) {
+					rows = groups[i].rows;
+					for (var j = 0; j < rows.length; j++) {
+						currentCell = rows[j].cells[1];
+						cells.push(currentCell);
+						console.log(currentCell.innerHTML);
+					}
+				}
+			}
+			
+			function withSelector()
+			{
+				var cells = document.querySelectorAll("#score>tbody>tr>td:nth-of-type(2)");
+				for (var i = 0, length = cells.length; i < length; ++i) {
+					currentCell = cells[i];
+					console.log(currentCell.innerHTML);
+				}
+			}
+		</script>
+	</body>
+</html>	

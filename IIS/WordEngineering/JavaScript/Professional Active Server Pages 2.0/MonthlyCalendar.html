@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-03-27 	Created.
+	2015-03-27	http://forums.asp.net/t/1879439.aspx?Code+for+first+and+last+day+of+month
+	2015-03-27	http://stackoverflow.com/questions/4345045/javascript-loop-between-date-ranges
+	2015-03-28	Added table header, days of the week; and align days to the right.
+-->
+	<head>
+		<title>Professional Active Server Pages 2.0 Monthly Calendar</title>
+	</head>
+	<body>
+		<label for="year">Year:
+			<input id="year">
+		</label>	
+		<label for="month">Month:
+			<input id="month">
+		</label>
+		<button id="querySubmit">Query</button>
+		<br>
+		<div id="feedback"></div>
+		<script>
+			window.addEventListener("load", startUp, false);
+			var querySubmit = document.getElementById("querySubmit");
+			querySubmit.addEventListener("click", compute, false);
+
+			var daysName = [
+				"Sunday",
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday"
+			];	
+			
+			function compute()
+			{
+				var year = document.getElementById("year").value;
+				var month = document.getElementById("month").value;
+				var beginDate = new Date(year, month - 1, 1);
+				var endDate = new Date(year, month, 0);
+	
+				var buildTable = "<table><thead><tr>";
+				
+				var dayOfTheWeek = beginDate.getDay();
+				var firstSlot = "<td/>".repeat(dayOfTheWeek);
+				
+				var daysCombined = "";
+
+				for (var dayIndex = 0; dayIndex < daysName.length; ++dayIndex)
+				{
+					daysCombined += "<td>" + daysName[dayIndex] + "</td>";
+				}
+				
+				buildTable += daysCombined + "</tr></thead><tbody><tr align='right'>";
+				buildTable += firstSlot;
+				
+				while(beginDate <= endDate) {
+					if (dayOfTheWeek === 0 && buildTable.endsWith("<tr>") === false)
+					{
+						buildTable += "<tr align='right'>";
+					}	
+					var dayOfTheMonth = beginDate.getDate();
+					buildTable += "<td>" + dayOfTheMonth + "</td>"
+					++dayOfTheWeek;
+					if (dayOfTheWeek === 7)
+					{
+						buildTable += "</tr>";
+						dayOfTheWeek = 0;
+					}	
+					var newDate = beginDate.setDate(beginDate.getDate() + 1);
+					beginDate = new Date(newDate);
+				}
+				if (buildTable.endsWith("</tr>") === false)
+				{
+					buildTable += "</tr>";	
+				}
+				buildTable += "</tbody></table>";
+				document.getElementById("feedback").innerHTML = buildTable;
+			}
+			
+			function startUp()
+			{
+				var date = new Date();
+				document.getElementById("year").value = date.getFullYear();
+				document.getElementById("month").value = date.getMonth() + 1;
+				compute();
+			}
+		</script>
+	</body>	
+</html>

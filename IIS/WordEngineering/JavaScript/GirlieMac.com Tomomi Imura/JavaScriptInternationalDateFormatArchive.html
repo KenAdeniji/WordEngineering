@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-08-20	Created.	https://girliemac.com/blog/2019/04/02/javascript-i18n-reiwa-era	
+		-->
+		<title>JavaScript International Date Format</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated</label></td>
+					<td><input id="dated" type="date"/></td>
+				</tr>
+				<tr>
+					<td><label for="localeIdentifier">Locale Identifier</label></td>
+					<td><input id="localeIdentifier" type="text" value="ja-JP-u-ca-japanese"/></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><div id="resultSet"></div></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			var dated = document.getElementById("dated");
+			var localeIdentifier = document.getElementById("localeIdentifier");
+			var resultSet = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				var isPostBack = false;
+
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						dated.value = scriptLiteral9432.todayTimezoneOffset()
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				resultSet.innerHTML =
+						"<table>"
+					+	tableRow
+						(
+							"Default locale and timezone", 
+							new Intl.DateTimeFormat().format(dated.value)
+						)
+					+	tableRow
+						(
+							"Specified locale and timezone", 
+							new Intl.DateTimeFormat(localeIdentifier.value).format(dated.value)
+						)
+					+	"</table>"
+				;
+			}
+
+			function tableRow(columnLabel, columnValue)
+			{
+				var rowInfo = `<tr><td>${columnLabel}</td><td>${columnValue}</td></tr>`;	
+				return rowInfo;	
+			}
+
+			window.addEventListener("load", pageLoad, false);	
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

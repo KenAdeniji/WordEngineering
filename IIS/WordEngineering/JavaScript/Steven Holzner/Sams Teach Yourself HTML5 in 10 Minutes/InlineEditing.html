@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-10-21	Fremont Library. Steven Holzner. Sams Teach Yourself HTML5 in 10 Minutes.
+		Element		contenteditable="true"
+		A whole document editable	designmode on or off.
+-->
+	<head>
+		<title>Inline Editing</title>
+	</head>
+	<body>
+		<div id="editTriggers">
+			<input type="button" value="Bold" onclick="document.execCommand('bold', false, null);"/>
+			<input type="button" value="Italic" onclick="document.execCommand('italic', false, null);"/>
+			<input type="button" value="Underline" onclick="document.execCommand('underline', false, null);"/>
+			<input type="button" value="Create link" onclick="createLink();"/>
+			<input type="button" value="Show source" onclick="showSource();"/>
+		</div>
+		
+		<div 
+			id="inlineEditing" 
+			style="border: solid black;	height:300px; width: 400px;"
+			contenteditable="true"
+		>
+		</div>
+		
+		<script>
+			function createLink()
+			{
+				var url = prompt("Enter URL:", "http://");
+				if (url)
+				{
+					document.execCommand("createLink", false, url);
+				}
+			}
+			function showSource()
+			{
+				var content = document.getElementById("inlineEditing").innerHTML;
+				content.replace(/</g, '&lt;');
+				content.replace(/</g, '&gt;');
+				alert(content);
+			}
+		</script>
+	</body>
+</html>

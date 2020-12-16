@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript &amp; jQuery - Chapter 3: Functions, Methods &amp; Objects - Creating Objects Using Constructor Syntax</title>
+	<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css1"/>
+  </head>
+  <body>
+    <h1>Genesis 28</h1>
+    <div id="info">
+		God's role: (<span id="roleOfGod"></span>).<br/>
+		Israel's role: (<span id="roleOfIsrael"></span>).<br/>
+		tithes Ratio: <span id="tithesRatio"></span><br/>
+    </div>
+	<script>
+		function Place(roleOfGod, roleOfIsrael) {
+		  this.roleOfGod = roleOfGod;
+		  this.roleOfIsrael = roleOfIsrael;
+		  this.tithesRatio = function() {
+			return 10.0 / 100.0;
+		  };
+		}		
+		
+		var bethel = new Place
+		(
+			"<a href='/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Genesis 28:12-15'>Genesis 28:12-15</a>",
+			"<a href='/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Genesis 28:16-22'>Genesis 28:16-22</a>"	
+		);
+		
+		document.getElementById("roleOfGod").innerHTML = bethel.roleOfGod;
+		document.getElementById("roleOfIsrael").innerHTML = bethel.roleOfIsrael;
+		document.getElementById("tithesRatio").innerHTML = bethel.tithesRatio();
+	</script>	
+  </body>
+</html>

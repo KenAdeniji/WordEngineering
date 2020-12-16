@@ -1,0 +1,27 @@
+<!--
+	2015-05-13	Created	https://hacks.mozilla.org/2015/05/es6-in-depth-generators/
+-->
+<script>
+function* generatorFunction(name) {
+  yield "hello " + name + "!";
+  yield "i hope you are enjoying the blog posts";
+  if (name.startsWith("X")) {
+    yield "it's cool how your name starts with X, " + name;
+  }
+  yield "see you later!";
+}
+
+var iter = generatorFunction("jorendorff");
+
+var generator = iter.next()
+console.log(generator.value, generator.done);
+
+var generator = iter.next()
+console.log(generator.value, generator.done);
+
+var generator = iter.next()
+console.log(generator.value, generator.done);
+
+var generator = iter.next()
+console.log(generator.value, generator.done);
+</script>

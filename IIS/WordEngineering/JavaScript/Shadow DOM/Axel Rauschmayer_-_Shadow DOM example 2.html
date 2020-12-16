@@ -1,0 +1,16 @@
+<!--
+2014-07-30 https://speakerdeck.com/rauschma/six-technologies-that-will-change-the-web-platform
+Six technologies that will change the web platform
+by Axel Rauschmayer
+-->
+<script>
+	function shadowDOM() {
+		var host = document.querySelector('button');
+		var root = host.createShadowRoot();
+		root.innerHTML = '== <content></content> ==';
+	}
+	
+	window.addEventListener('load', shadowDOM, false);
+</script>
+
+<button>Hi!</button>
