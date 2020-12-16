@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040126InclinedWorshipping.txt   Comforter_-_20040126InclinedWorshipping.xml

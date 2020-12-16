@@ -1,0 +1,4 @@
+@ECHO OFF
+TheWord Comforter_-_20040131UniquelyAbleCommunicationLineIWillCallInYouWhenINeedYouAndYouWillCallOnMeWhenYouNeedMe.xml   Comforter_-_20040131TheWordUniquelyAbleCommunicationLineIWillCallInYouWhenINeedYouAndYouWillCallOnMeWhenYouNeedMe.xml
+TheWord Comforter_-_20040201DelicatePleasureSpringWealth.xml                                                             Comforter_-_20040201TheWordDelicatePleasureSpringWealth.xml
+TheWord Comforter_-_20040202HometownBuffet_TheLeavesAreForYouAndIAmForYou.xml                                            Comforter_-_20040202TheWordHometownBuffet_TheLeavesAreForYouAndIAmForYou.xml

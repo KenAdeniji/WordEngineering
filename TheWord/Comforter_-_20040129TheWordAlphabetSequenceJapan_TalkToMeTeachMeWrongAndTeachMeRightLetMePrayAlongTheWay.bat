@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040129Japan_TalkToMeTeachMeWrongAndTeachMeRightLetMePrayAlongTheWay.txt  Comforter_-_20040129TheWordAlphabetSequenceJapan_TalkToMeTeachMeWrongAndTeachMeRightLetMePrayAlongTheWay.xml

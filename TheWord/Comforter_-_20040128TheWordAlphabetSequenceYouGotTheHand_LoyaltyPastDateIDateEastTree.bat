@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040128YouGotTheHand_LoyaltyPastDateIDateEastTree.txt  Comforter_-_20040128YouGotTheHand_LoyaltyPastDateIDateEastTree.xml

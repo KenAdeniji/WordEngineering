@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040201DelicatePleasureSpringWealth.txt  Comforter_-_20040201TheWordAlphabetSequenceDelicatePleasureSpringWealth.xml
