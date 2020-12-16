@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040207ClayToClayExclusiveExterior.txt   Comforter_-_20040207TheWordClayToClayExclusiveExterior.xml
