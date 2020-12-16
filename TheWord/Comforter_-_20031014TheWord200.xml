@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>200</SequenceOrderId>
+  <Dated>2003-10-14T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference></ScriptureReference>
+  <ScriptureReferenceURI></ScriptureReferenceURI>
+  <Title></Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>11</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>6</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>99</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>440</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>  
+   <Filename></Filename>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>79</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>35</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>382</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <!--
+  <AlphabetSequence>
+   <SequenceOrderId>786</SequenceOrderId>
+   <Word></Word>
+   <AlphabetSequenceIndex></AlphabetSequenceIndex>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </AlphabetSequence>
+  -->
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1240</SequenceOrderId>
+   <Dated>2003-10-13T00:00:00.0000000-08:00</Dated>
+   <Commentary>Left fingers twitches. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Half filling.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1241</SequenceOrderId>
+   <Dated>2003-10-14T00:00:00.0000000-08:00</Dated>
+   <Commentary>Abu Bakr Siddiq Mosque. Afghan Refugee Islamic Community. 29414 Mission Blvd. Hayward CA 95444. Tel: (510) 582-2730. Fax: (510) 582-2791. Hayward Public Library 835C Street Hayward CA 94541 (510) 293-8685. Pablito's 22800 Mission Boulevard Hayward CA 94541 510-886-6732. China AA Buffet 24100 Mission Blvd Hayward CA 94544 Tel (510) 690-0888 Fax (510) 690-1368: Last item including chicken wings, fault, faeces running stomach, wet round spot on the left of pants. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Half filling.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1242</SequenceOrderId>
+   <Dated>2003-10-15T00:00:00.0000000-08:00</Dated>
+   <Commentary>Wake-up Orientation: Knees upright. Wake-up Orientation: Knees bowed, hands inside knees with right the right hand ahead of the left hand. Wake-up Orientation: Knees bowed with the right feet ahead of the left feet. Turn on the computer: Left fingers twitches. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>274</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->  
+
+  <ClassAssociates>
+   <SequenceOrderId>440</SequenceOrderId>
+   <Dated>2003-10-13T00:00:00.0000000-08:00</Dated>
+   <Commentary>
+Shutdown the left computer, Comfort ... Comfort computer noise.
+Garage noise.
+Spam mail: 2.
+Dell.com: Mouse ...
+TheWordPage.aspx.cs: FindWhat TemplateColumn ReplaceWith BoundColumn ... Keyboard error.
+WordEngineeringRelease20031013.config: Comment SELECT TheWordId, SequenceOrderId, Dated, Commentary, ScriptureReference FROM Address WHERE TheWordId = '{0}' ORDER BY SequenceOrderId ... Smell.
+TheWordPage.aspx.cs: public Guid TheWordUniqueId ... Smell ... Keyboard error.
+   </Commentary> 
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>441</SequenceOrderId>
+   <Dated>2003-10-14T00:00:00.0000000-08:00</Dated>
+   <Commentary>
+Logoff ...
+Shutdown ...
+Explorer memory error.
+Turn on the com([)puter: Garage noise ...
+Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Fridge (b)noise ... Smell ...
+   </Commentary> 
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>442</SequenceOrderId>
+   <Dated>2003-10-15T00:00:00.0000000-08:00</Dated>
+   <Commentary>Sleep: Knock on the front door. Sleep: Smell ... Turn on the computer: Left fi(m)nge(t)r twitches ... Keyboard error.(y). Keyboard error ... Left fingers twitches. CaseBasedReasoning 1241: Pablito's ... Smell(,). Comforter_-_20031014TheWord200.xml ... Keyboard error.</Commentary> 
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>
