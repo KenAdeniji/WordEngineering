@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040216Todai_HereWeAreAgainBetterThanTheLastTime.txt   Comforter_-_20040216TheWordAlphabetSequenceTodai_HereWeAreAgainBetterThanTheLastTime.xml

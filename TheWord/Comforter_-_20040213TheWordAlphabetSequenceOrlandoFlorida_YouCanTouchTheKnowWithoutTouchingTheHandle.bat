@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040213OrlandoFlorida_YouCanTouchTheKnowWithoutTouchingTheHandle.txt    Comforter_-_20040213TheWordAlphabetSequenceOrlandoFlorida_YouCanTouchTheKnowWithoutTouchingTheHandle.xml

@@ -1,0 +1,8 @@
+@ECHO OFF
+TheWord Comforter_-_20040211OrlandoFloridaWantInquisitionWillUncertain.xml                                                  Comforter_-_20040211TheWordOrlandoFloridaWantInquisitionWillUncertain.xml
+TheWord Comforter_-_20040212OrlandoFloridaLoopHoleSustainsCalvary.xml                                                       Comforter_-_20040212TheWordOrlandoFloridaLoopHoleSustainsCalvary.xml
+TheWord Comforter_-_20040213OrlandoFlorida_YouCanTouchTheKnowWithoutTouchingTheHandle.xml                                   Comforter_-_20040213TheWordOrlandoFlorida_YouCanTouchTheKnowWithoutTouchingTheHandle.xml
+TheWord Comforter_-_20040214OrlandoFlorida_WhatDoYouDoForAnEncoreYouCallTheNamesThatServedYouWhenYouWereInNeed.xml          Comforter_-_20040214TheWordOrlandoFlorida_WhatDoYouDoForAnEncoreYouCallTheNamesThatServedYouWhenYouWereInNeed.xml
+TheWord Comforter_-_20040215KoreanFirstBaptistChurch_YouCanFollowTheEggChainToNoWhereOrYouCanFollowGodToEveryWhere.xml      Comforter_-_20040215TheWordKoreanFirstBaptistChurch_YouCanFollowTheEggChainToNoWhereOrYouCanFollowGodToEveryWhere.xml
+TheWord Comforter_-_20040216Todai_HereWeAreAgainBetterThanTheLastTime.xml                                                   Comforter_-_20040216TheWordTodai_HereWeAreAgainBetterThanTheLastTime.xml
+TheWord Comforter_-_20040217SaintEdward'sCatholicChurch_TemploBetaniaAssemblyOfGod_IleOfa.xml                               Comforter_-_20040217TheWordSaintEdward'sCatholicChurch_TemploBetaniaAssemblyOfGod_IleOfa.xml

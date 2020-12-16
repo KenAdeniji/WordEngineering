@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040208CollectOurThoughts_ManageMyAccount.txt   Comforter_-_20040208TheWordAlphabetSequenceCollectOurThoughts_ManageMyAccount.xml
