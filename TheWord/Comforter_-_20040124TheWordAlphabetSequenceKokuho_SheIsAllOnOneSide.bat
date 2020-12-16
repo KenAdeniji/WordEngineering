@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040124Kokuho_SheIsAllOnOneSide.txt  Comforter_-_20040124Kokuho_SheIsAllOnOneSide.xml
