@@ -1,0 +1,2 @@
+@Echo Off
+TheWord  AscensionCathedral.orgGreekOrthodoxChurchOfTheAscension4700LincolnAvenueOakland94602CAUSA_Todai_-_20041213CelebrateCasualtyOptionsSpiritGuideTotalityTruthRevealLackingIngredients.xml

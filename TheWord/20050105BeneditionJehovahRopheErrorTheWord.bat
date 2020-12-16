@@ -1,0 +1,2 @@
+@Echo Off
+TheWord 20050105BeneditionJehovahRopheError.xml

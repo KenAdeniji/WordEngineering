@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWord 20050101OneManEssentialEquallyHeAssociatesWhatHeDesiresInMeWhyActThePlayWithTheWrittenScriptRelativeToThePastIServeThePresent.xml
