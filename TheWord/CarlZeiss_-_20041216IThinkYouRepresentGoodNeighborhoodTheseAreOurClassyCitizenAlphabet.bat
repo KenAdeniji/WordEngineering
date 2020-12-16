@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence  CarlZeiss_-_20041216IThinkYouRepresentGoodNeighborhoodTheseAreOurClassyCitizen.txt  CarlZeiss_-_20041216IThinkYouRepresentGoodNeighborhoodTheseAreOurClassyCitizenAlphabet.xml

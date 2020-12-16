@@ -1,0 +1,67 @@
+<table border="1">
+	<caption>
+		<a href="http://tcpipguide.com/free/t_ICMPVersion4ICMPv4InformationalMessageTypesandForm.htm">ICMP Version 4 (ICMPv4) Informational Message Types and Formats</a>
+	</caption>
+	<thead>
+		<tr>
+			<th>Message Type and Format</th>
+			<th>Commentary</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4EchoRequestandEchoReplyMessages.htm">
+					ICMPv4 Echo (Request) and Echo Reply Messages
+				</a>
+			</td>
+			<td>
+ICMPv4 includes a pair of messages specifically for connection testing. Suppose Device A wants to see if it can reach Device B. Device A begins the test process by sending an ICMPv4 Echo message to B. Device B, when it receives the Echo, responds back to Device A with an Echo Reply message. When Device A receives this message, it knows that it is able to communicate (both send and receive) successfully with Device B.
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4TimestampRequestandTimestampReplyMessages.htm">
+					ICMPv4 Timestamp (Request) and Timestamp Reply Messages
+				</a>
+			</td>
+			<td>
+The creators of TCP/IP recognized that certain applications might not work properly if there was too much differential between the system clocks of a pair of devices. To support this requirement, they created a pair of ICMP messages that allow devices to exchange system time information. The initiating device creates a Timestamp message and sends it to the device with which it wishes to synchronize. That device responds with a Timestamp Reply message. Timestamp fields in these messages are used to mark the times that these messages are sent and received to allow the devices' clocks to be synchronized.
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4RouterAdvertisementandRouterSolicitationMess.htm">
+					ICMPv4 Router Advertisement and Router Solicitation Messages
+				</a>
+			</td>
+			<td>
+It would be better if there were some method whereby a host could automatically discover the identity of local routers, and learn important information about them. In IP, this process is called router discovery, and was first defined in RFC 1256, ICMP Router Discovery Messages. The messages referenced in the RFC title are the ICMP Router Advertisement message and the Router Solicitation message, and were added to the ICMP message types defined in earlier standards such as RFC 792.
+
+Routers are responsible for sending Router Advertisement messages. These messages tell listening devices that the router exists, and provide important information about the router such as its address (or addresses, if it has more than one) and how long the host should retain information about the router. Routine Router Advertisement messages are sent on a regular basis, with the time between messages administrator-configurable (usually between 7 and 10 minutes). Hosts listen for these messages; when an advertisement is received, the host processes it and adds the information about the router to its routing table.
+
+A host that has no manually-configured routing information will have no knowledge of routers when it first powers on. Having it sit for many minutes looking for a routine Router Advertisement message is inefficient. Instead of waiting, the host may send a Router Solicitation message on its local network(s). This will prompt any router that hears it to immediately send out an extra Router Advertisement message directly to that host.			
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4AddressMaskRequestandReplyMessages.htm">
+					ICMPv4 Address Mask Request and Reply Messages
+				</a>
+			</td>
+			<td>
+A host sends an Address Mask Request message on the local network, usually to get a response from a router. If it knows the address of a local router it may send the request directly (unicast), but otherwise will broadcast it to any listening router. A local router (or other device) will hopefully receive this message and respond back with an Address Mask Reply containing the subnet mask for the local network. This process is somewhat similar to the mechanism used by a host to solicit a router to respond with a Router Advertisement, except that routers do not routinely send subnet mask information; it must be requested.			
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4TracerouteMessages.htm">
+					ICMPv4 Traceroute Messages
+				</a>
+			</td>
+			<td>
+RFC 1393, Traceroute Using an IP Option. As the title suggests, this method of doing a traceroute works by having the source device send a single datagram to the destination, containing a special Traceroute IP option. Each router that sees that option as the test message is conducted along the route, responds back to the original source with an ICMP Traceroute message, also defined in RFC 1393.			
+			</td>
+		</tr>
+	<tbody>	
+</table>

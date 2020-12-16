@@ -1,0 +1,41 @@
+<html>
+	<!--
+		http://www.javascripter.net/faq/creatingarrays.htm
+	-->
+	<head>
+		<script type="text/javascript">
+			var myArray1 = [1,3,5,7,9]      // an array with 5 elements
+			var myArray2 = [5]              // an array with 1 element
+			var myArray3 = [true,'Hi',[7]]  // element types need not be the same!
+			
+			var myArray4 = new Array(1,3,5,7,9)  // an array with 5 elements
+			var myArray5 = new Array(100)        // an empty array of length 100
+			var myArray6 = new Array()           // an empty array of length 0
+			
+			//Multi-dimensional array
+			var iMax = 20;
+			var jMax = 10;
+			var f = new Array();
+
+			for (i=0;i<iMax;i++) {
+				f[i]=new Array();
+				for (j=0;j<jMax;j++) {
+					f[i][j]=0;
+				}
+			}
+			
+			//Two different ways to delete an element myArray[n] from myArray are:
+			/*
+			delete myArray[n];		//(faster, but leaves a gap at index n)
+			myArray.splice(n,1);  	//(slower, but does not leave a gap in the array) 
+			*/
+			
+			/*
+			For example, to delete the myArray[5] element from myArray (leaving a gap), use the delete statement: 
+			delete myArray[5]. You can use myArray.hasOwnProperty(n) to check if the element myArray[n] is present 
+			in myArray. Note that setting the array element to null or to undefined is not equivalent to deleting 
+			the element.
+			*/
+		</script>
+	</head>	
+<html>

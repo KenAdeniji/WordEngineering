@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script>
+			<!--
+				oreilly.com/javascript/excerpts/javascript-tdg/core-javascript-reference.html
+			-->	
+			// Array pop and push
+			pop( ) deletes the last element of array, decrements the array length, and returns the value of the element that it deleted. If the array is already empty, pop( ) does not change the array and returns the undefined value.
+			Example
+
+			pop( ), and its companion method push( ), provide the functionality of a first-in, last-out stack. For example:
+
+			var stack = [];       // stack: []
+			stack.push(1, 2);     // stack: [1,2]     Returns 2
+			stack.pop( );            // stack: [1]       Returns 2
+			stack.push([4,5]);      // stack: [1,[4,5]] Returns 2
+			stack.pop( )             // stack: [1]       Returns [4,5]
+			stack.pop( );            // stack: []        Returns 1
+		</script>	
+	</head>
+</html>

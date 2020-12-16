@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>83</SequenceOrderId>
+  <Dated>2003-09-02T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Thessalonians 2:7, Genesis 25:23, Genesis 27:42, Genesis 29:16, Ezekiel 16:46, Ezekiel 16:61, Romans 9:12, 1 Timothy 5:1, 1 Timothy 5:2</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Thessalonians+2%3A7%2C+Genesis+25%3A23%2C+Genesis+27%3A42%2C+Genesis+29%3A16%2C+Ezekiel+16%3A46%2C+Ezekiel+16%3A61%2C+Romans+9%3A12%2C+1+Timothy+5%3A1%2C+1+Timothy+5%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Te egbon, ta aburo.</Title>
+
+  <Prophet>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>For the mystery of iniquity does already work: only He who now lets will let, until He be taken out of the way (2 Thessalonians 2:7).</Commentary>
+   <ScriptureReference>2 Thessalonians 2:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Thessalonians+2%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Prophet>
+
+  <!--
+  <Remember>
+   <SequenceOrderId>365</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>263</SequenceOrderId>
+   <Commentary />
+   <Word>Elder ... Younger</Word>
+   <ScriptureReference>Genesis 25:23, Genesis 27:42, Genesis 29:16, Ezekiel 16:46, Ezekiel 16:61, Romans 9:12, 1 Timothy 5:1, 1 Timothy 5:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A23%2C+Genesis+27%3A42%2C+Genesis+29%3A16%2C+Ezekiel+16%3A46%2C+Ezekiel+16%3A61%2C+Romans+9%3A12%2C+1+Timothy+5%3A1%2C+1+Timothy+5%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>578</SequenceOrderId>
+   <Word>Te egbon, ta aburo.</Word>
+   <AlphabetSequenceIndex>146</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:8, Numbers 29, Acts 26, Revelation 16:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A8%2C+Numbers+29%2C+Acts+26%2C+Revelation+16%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1122</SequenceOrderId>
+   <Commentary>The intersection of Fremont Blvd and Stevenson Blvd: Smile, fly, flys right. Lake Elizabeth 40000 Paseo Padre Parkway: Stuff. Caller (510) 791-9936 (Record: White specimen on the 2nd right finger hair). 1st leg 1st round of 3 rounds: Orange butterfly, flys, right. Fremont Main Library 2400 Stevenson Blvd. Fremont CA 94538-2325. General Information: (510) 745-1400. http://www.aclibrary.org. The Yale University School of Medicine Patient's Guide to Medical Tests. Pathophysical of Disease: An Introduction to Clinical Medicine chapters 1..4. The intersection of Stevenson Blvd 3600 and Leslie Street 39800: White specimen, face. Comment the sign node, fly, flys right (record flys flys left). Floppy disk drive noise? Fry's. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Cook, noise. Naked. Wake-up Orientation: right knee upright. Floppy disk drive noise? Fry's.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <ClassAssociates>
+   <SequenceOrderId>329</SequenceOrderId>
+   <Commentary>Floppy disk drive noise? Fry's. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Cook, noise. Floppy disk drive noise? Fry's.</Commentary>
+  </ClassAssociates>
+  
+  </TheWord>
+</wordOfGod>

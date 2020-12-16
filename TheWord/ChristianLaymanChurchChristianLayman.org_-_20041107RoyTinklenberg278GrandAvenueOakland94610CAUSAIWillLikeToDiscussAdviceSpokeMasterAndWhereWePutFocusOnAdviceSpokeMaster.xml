@@ -1,0 +1,214 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>664</SequenceOrderId>
+ <Dated>2004-11-07T00:00:00.0000000-08:00</Dated>
+ <FromUntil>312</FromUntil>
+ <ContactId>44</ContactId>
+ <Keyword>Spoke master</Keyword>
+ <ScriptureReference>Genesis 24:51, Acts 27:11</ScriptureReference>
+ <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A51%2C+Acts+27%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+ 
+  <!--
+  <Anointing>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Rhema></Rhema>
+   <Commentary></Commentary>
+   <Filename />
+  </Anointing>
+  -->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>57</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>134</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>684</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Filename />
+   <ContactId />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <Commentary></Commentary>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>91</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>605</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </BibleWord>
+  -->
+
+  <!--
+  <NameIdentity>
+   <SequenceOrderId>4</SequenceOrderId>
+   <IssuedAlliance></IssuedAlliance>
+   <InclusiveLiteral></InclusiveLiteral>
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </NameIdentity>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>11734</SequenceOrderId>
+    <Word>I will like to discuss advice spoke master, and where we put focus on advice spoke master.</Word>
+    <AlphabetSequenceIndex>859</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 30:28, Daniel 9, 2 Kings 13, Hebrews 13:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+30%3A28%2C+Daniel+9%2C+2+Kings+13%2C+Hebrews+13%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+     
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>2242</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Event>
+   <SequenceOrderId>95</SequenceOrderId>
+   <Commentary></Commentary>
+  </Event>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>458</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>1395</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </ClassAssociates>
+  -->
+
+  <!--
+  <Contact>
+   <SequenceOrderId>1061</SequenceOrderId>
+   <Dated></Dated>
+   <Company />
+   <FirstName></FirstName>
+   <LastName></LastName>
+   <OtherName />
+   <Title />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Contact>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>79</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>288</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <StreetAddress>
+   <SequenceOrderId>376</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <AddressLine1></AddressLine1>
+   <City></City>
+   <State></State>
+   <ZipCode></ZipCode>
+   <Country></Country>
+  </StreetAddress>
+  -->
+
+  <!--
+  <Telephone>
+   <SequenceOrderId>497</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <TelephoneNo></TelephoneNo>
+  </Telephone>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

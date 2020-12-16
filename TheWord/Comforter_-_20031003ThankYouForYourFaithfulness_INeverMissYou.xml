@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>178</SequenceOrderId>
+  <Dated>2003-10-03T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>1 Samuel 26:23, Psalms 5:9, Psalms 36:5, Psalms 40:10, Psalms 88:11, Psalms 89:1, Psalms 89:2, Psalms 89:5, Psalms 89:8, Psalms 89:24, Psalms 89:33, Psalms 92:2, Psalms 119:75, Psalms 119:90, Psalms 143:1, Isaiah 11:5, Isaiah 25:1, Lamentations 3:23, Hosea 2:20</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+26%3A23%2C+Psalms+5%3A9%2C+Psalms+36%3A5%2C+Psalms+40%3A10%2C+Psalms+88%3A11%2C+Psalms+89%3A1%2C+Psalms+89%3A2%2C+Psalms+89%3A5%2C+Psalms+89%3A8%2C+Psalms+89%3A24%2C+Psalms+89%3A33%2C+Psalms+92%3A2%2C+Psalms+119%3A75%2C+Psalms+119%3A90%2C+Psalms+143%3A1%2C+Isaiah+11%3A5%2C+Isaiah+25%3A1%2C+Lamentations+3%3A23%2C+Hosea+2%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Thank You for Your faithfulness. I never miss You.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>6</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <Prophet>
+   <SequenceOrderId>77</SequenceOrderId>
+   <Commentary>I will even betroth You unto me in faithfulness: and You shall know the LORD (Hosea 2:20).</Commentary>
+   <ScriptureReference>Hosea 2:20</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Hosea+2%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Prophet>
+
+  <!--
+  <Remember>
+   <SequenceOrderId>422</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+  
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>76</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>357</SequenceOrderId>
+   <Word>Faithfulness</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>748</SequenceOrderId>
+   <Word>Thank You for Your faithfulness.</Word>
+   <AlphabetSequenceIndex>373</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 15:12, 2 Chronicles 6, Ezekiel 15, Revelation 2:12</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A12%2C+2+Chronicles+6%2C+Ezekiel+15%2C+Revelation+2%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>749</SequenceOrderId>
+   <Word>I never miss You.</Word>
+   <AlphabetSequenceIndex>194</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 8:10, Joshua 7, Luke 23, Revelation 12:17</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A10%2C+Joshua+7%2C+Luke+23%2C+Revelation+12%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1212</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>266</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>413</SequenceOrderId>
+   <Commentary>Smell ... Prophet 77: Smell. AlphabetSequence 748: Smell. AlphabetSequence 749:I (nve).</Commentary>  
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>318</SequenceOrderId>
+    <Dated>2003-12-07T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Isaiah 42, Genesis 13:2, 2 Kings 8, Hosea 7, Revelation 5:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+42%2C+Genesis+13%3A2%2C+2+Kings+8%2C+Hosea+7%2C+Revelation+5%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Yago meji? Oti yago meji. Oti ya iwe.</Title>
+    <FromUntil>341</FromUntil>
+    <ContactId>7</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>12</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>539</SequenceOrderId>
+   <DatedFrom>2003-10-26T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-07T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>42</FromUntil>
+   <Commentary>Ramadan 2003-10-26T00:00:00.0000000-08:00 ... 2003-11-24T00:00:00.0000000-08:00. Helping You, and me.</Commentary>
+   <Filename>Comforter_-_20031026HelpingYouAndMe.xml</Filename>
+   <ScriptureReference>2 Corinthians 8:23</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Corinthians+8%3A23&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>478</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>2222</SequenceOrderId>
+    <Word>Yago meji? Oti yago meji. Oti ya iwe.</Word>
+    <AlphabetSequenceIndex>321</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:2, 2 Kings 8, Hosea 7, Revelation 5:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A2%2C+2+Kings+8%2C+Hosea+7%2C+Revelation+5%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>7</ContactId>
+    <Commentary>Forehead bows forward. Hands bowed towards the front. Each hand touches each feet.</Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1335</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>311</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>572</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+</wordOfGod>

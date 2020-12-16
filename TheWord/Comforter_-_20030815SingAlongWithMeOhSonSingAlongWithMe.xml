@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>44</SequenceOrderId>
+  <Dated>2003-08-15T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Exodus 12:4, 1 Kings 9:10, Genesis 17:25, Nehemiah 10, Jeremiah 22, Jude 1:7</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+12%3A4%2C+1+Kings+9%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Sing along with Me, oh Son, sing along with Me.</Title>
+  <Commentary>If the household be too little for the lamb, let him and his neighbor next unto his house take it according to the number of the souls; every man according to his eating shall make your count for the lamb (Exodus 12:4).</Commentary>
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>342</SequenceOrderId>
+   <DatedFrom>2003-06-18T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-15T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>58</SignIndex>
+   <Commentary>Common Hall</Commentary>
+   <Filename>Comforter_-_200306181800KoSaSeBeKoSaSeBe_TheCenterOfGravityIsOneThatIsOneWayToFindTheCenterOfGravity_InTheMonthOfAbib_Parrot_KiOluhunJoSoMi.xml</Filename>
+   <ScriptureReference>1 Samuel 21:4, Jeremiah 31:5, Matthew 27:27</ScriptureReference>   
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+21%3A4%2C+Jeremiah+31%3A5%2C+Matthew+27%3A27&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>   
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>65</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>221</SequenceOrderId>
+   <Word>Two House</Word>
+   <Commentary>It came to pass at the end of twenty years, when Solomon had built the two houses, the house of the LORD, and the king's house (1 Kings 9:10).</Commentary>
+   <ScriptureReference>1 Kings 9:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Kings+9%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>507</SequenceOrderId>
+   <Word>Sing along with Me, oh Son, sing along with Me.</Word>
+   <AlphabetSequenceIndex>423</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 17:25, Nehemiah 10, Jeremiah 22, Jude 1:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A25%2C+Nehemiah+10%2C+Jeremiah+22%2C+Jude+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1081</SequenceOrderId>
+   <Commentary>Helen, camping, 8, between Friday and Monday. At the beginning of the intersection of Lake Blvd and Channel Dr: Bird will fly to the top of the street light. At the end of the intersection of Lake Blvd and Channel Dr: Bird will fly to the top of the street light. Islamic Society of East Bay (ISEB) 33330 Peace Terrace Fremont,CA-94555 Phone:(510) 429-4732 Email:iseb_info@yahoo.com http://www.iseb.org. The bridge on Alvarado Blvd between Deep Creek Road 4000 Block and Lowry Road: Birds 1st 11, 2nd 1, 3rd 17, 7th 29.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>248</SequenceOrderId>
+   <Commentary>Comforter_-_20030815Christ.xml Comforter_-_20030815WordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>295</SequenceOrderId>
+   <Commentary>Comforter_-_20030815.xml: FileSave network erro(t)r. Comforter_-_20030815Archive.xml: FileSave network error. Remember: 342 Explorer memory error. Comforter_-_20030815_-_SingAlongWithMeOhSonSingAlongWithMe.xml: FileSave network error. Comforter_-_20030815_-_SingAlongWithMeOhSonSingAlongWithMeArchive.xml: FileSave network error. Comforter_-_20030815_-_SingAlongWithMeOhSonSingAlongWithMe*.xml: FileCopy Explorer memory error. TheWord Comforter_-_20030815_-_SingAlongWithMeOhSonSingAlongWithMe.xml: Explorer memory error.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

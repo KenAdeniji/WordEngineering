@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-02	Created.
+		2017-02-02	Could we see, as we are view? Fri Sep 27 -0065 00:00:00 GMT-0700 (Pacific Daylight Time) ... 1967-10-15, 718353 days (1995 biblical years, 5 biblical months, 3 days) (1966 years, 9 months, 2 weeks).
+		2017-02-02	WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
+	-->
+	<head>
+		<title>When my age is forever?</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="dated">Dated</label>
+						</td>
+						<td>
+							<input id="dated" type="date" disabled="true"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				if (!scriptureReference)
+				{
+					return "";
+				}
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+
+			function buildHead()
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var dated = getParameterByName("dated");
+					if (!dated)
+					{
+						dated = new Date("0032-04-06T12:00:00-08:00");
+					}
+					document.getElementById("dated").value = dated;
+					
+					render();		
+					isPostBack = true;
+				}
+ 			}
+
+			function render() 
+			{
+				var info = "<table>";
+
+				info += buildHead
+				(
+					"Year",
+					"Day",
+					"Date",
+					"Commentary",
+					"Scripture Reference"
+				 );
+					
+				var dataRow = null;
+				var dataTable = null;
+				
+				var scriptureReference = null;
+				var scriptureReferenceHyperlink = null;
+				
+				var year, day, dateInfo = 0, birthday;
+				
+				for (var rowIndex = 0, rowCount = age.length; rowIndex < rowCount; ++rowIndex)
+				{
+					scriptureReferenceHyperlink = buildHyperlinkScriptureReference(age[rowIndex][2]);
+					
+					year = age[rowIndex][0];
+					
+					dateInfo = 	360 * (year - 33);
+								
+					birthday = new Date(document.getElementById("dated").value);
+					
+					birthday = new Date("0032-04-06T12:00:00-08:00");
+					
+					birthday = new Date(birthday.setDate(birthday.getDate() + dateInfo));
+					
+					info += buildRow
+					(
+						year,
+						dateInfo,
+						birthday,
+						age[rowIndex][1],
+						scriptureReferenceHyperlink						
+					);
+				}
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", render, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var age = [
+				[0, "Birth"],
+				[2, "Out of Egypt", 'Matthew 2:16'],
+				[12, "Temple at Jerusalem", 'Luke 2:42'],
+				[30, "Priesthood", 'Luke 3:23'],
+				[33, "Passover Lamb", 'Luke 13:7']
+			];	
+		</script>		
+	</body>
+</html>

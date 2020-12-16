@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>154</SequenceOrderId>
+  <Dated>2003-09-26T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Chronicles 30:9, Nehemiah 9:17, Nehemiah 9:31, Psalms 116:5, Joel 2:13, Jonah 4:2</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Chronicles+30%3A9%2C+Nehemiah+9%3A17%2C+Nehemiah+9%3A31%2C+Psalms+116%3A5%2C+Joel+2%3A13%2C+Jonah+4%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>God thankyou, God be gracious to Me, God be merciful to Me.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>3</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>60</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>404</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>74</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>335</SequenceOrderId>
+   <Word>Gracious ... Merciful</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>694</SequenceOrderId>
+   <Word>God thankyou, God be gracious to Me, God be merciful to Me.</Word>
+   <AlphabetSequenceIndex>493</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 19:35, Psalms 15, Isaiah 18, 1 John 4:6</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A35%2C+Psalms+15%2C+Isaiah+18%2C+1+John+4%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1190</SequenceOrderId>
+   <Commentary>Scripture reference reading 2 Chronicles 30:9, Nehemiah 9:17, Nehemiah 9:31, Psalms 116:5, Joel 2:13, Jonah 4:2 (sneeze).</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>264</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>390</SequenceOrderId>
+   <Commentary>User Interface (UI). Smell ...</Commentary>  
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

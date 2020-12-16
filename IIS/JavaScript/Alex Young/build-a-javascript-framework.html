@@ -1,0 +1,20 @@
+<html>
+	<script>
+		function Vector ( x , y ) {
+			this.x = x ;
+			this.y = y ;
+		}
+		
+		Vector.prototype.toString = function () {
+			return 'x: ' + this . x + ', y: ' + this . y ;
+		}
+		v = new Vector(1, 2);
+		console.log(v);
+		
+		Vector.prototype.add = function (vector) {
+			this.x += vector.x;
+			this.y += vector.y;
+			return this;
+		}	
+	</script>
+</html>

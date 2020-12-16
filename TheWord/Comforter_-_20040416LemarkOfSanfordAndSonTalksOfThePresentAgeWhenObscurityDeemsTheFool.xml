@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>468</SequenceOrderId>
+   <Dated>2004-04-16T00:00:00.0000000-08:00</Dated>
+   <FromUntil>107</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>44</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1693</SequenceOrderId>
+   <Commentary></Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6045</SequenceOrderId>
+    <Word>Lemark of Stanford &amp; son talks of the present age when obscurity deems the fool.</Word>
+    <AlphabetSequenceIndex>762</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 27:34, Jeremiah 17, Esther 2, James 4:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+27%3A34%2C+Jeremiah+17%2C+Esther+2%2C+James+4%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>352</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>719</SequenceOrderId>
+   <Commentary>Feet ... hip ... nose ... private part ... faeces ... keyboard error ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>385</SequenceOrderId>
+   <Company></Company>
+   <FirstName></FirstName>
+   <LastName></LastName>
+   <OtherName></OtherName>
+   <Title></Title>
+   <Commentary>
+   </Commentary>
+  </Contact>
+  -->
+   
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

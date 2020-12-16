@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>57</SequenceOrderId>
+  <Dated>2003-08-22T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Isaiah 49:1, Genesis 4:24,Leviticus 14,2 Corinthians 8,Revelation 18:5</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+49%3A1%2C+Genesis+4%3A24%2C+Leviticus+14%2C+2+Corinthians+8%2C+Revelation+18%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>A friend of God.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>353</SequenceOrderId>
+   <DatedFrom>2003-04-28T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-18T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>112</FromUntil>
+   <Commentary>
+   2003: 118th yday. Song of Moses.
+   The timespan between 2002-08-31T00:00:00.0000000-08:00 and 2003-04-28T00:00:00.0000000-08:00 is 240 days, 8 biblical months, 0.66666666666666666666666666666667 biblical years.
+   Comforter_-_20020831EMaGbaIkanKanLoWe.html: Gaius, A Christian, Fukuoka City Choir.
+   Between 20030428 and 20030818 are 3 biblical months and 22 days.
+   </Commentary>
+   <Filename>Comforter_-_200304281235IwoLoMaGbaWonLe.xml</Filename>
+   <ScriptureReference>Exodus 15:1-21, Revelation 15:3-4, 3 John</ScriptureReference>   
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+15%3A1-21%2C+Revelation+15%3A3-4%2C+3+John&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>67</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure></Measure>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <ScriptureReference</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>235</SequenceOrderId>
+   <Word>Listen</Word>
+   <Commentary>Listen, O isles, unto me; and hearken, you people, from far; The LORD has called me from the womb; from the bowels of my mother has He made mention of my name (Isaiah 49:1).</Commentary>
+   <ScriptureReference>Isaiah 49:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+49%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>521</SequenceOrderId>
+   <Word>A friend of God.</Word>
+   <AlphabetSequenceIndex>104</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 4:24, Leviticus 14, 2 Corinthians 8, Revelation 18:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A24%2C+Leviticus+14%2C+2+Corinthians+8%2C+Revelation+18%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1097</SequenceOrderId>
+   <Commentary>
+    Faeces: Black bug on the left wall. 
+    Shower Butterfly (10): 
+     Behind on the top right ceiling; 
+     behind on the left most of three lights; 
+     right wall vertically aligned with bar of soap; 
+     right wall vertically aligned with the top of the shower door; 
+     top right ceiling; 
+     left shower door vertically aligned with the shower door; 
+     left shower door 25%;
+     2 outside the left ceiling door; 
+     below the window towards the right.
+    John DeBrine: jdebrine@songtime.com Listen?
+    Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes.    
+   </Commentary>  
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>253</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>311</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+  
+  </TheWord>
+</wordOfGod>

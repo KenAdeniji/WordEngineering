@@ -1,0 +1,28 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+
+using System.Text;
+
+/*
+	2018-08-15	https://goalkicker.com/CSharpBook/CSharpNotesForProfessionals.pdf
+*/
+namespace InformationInTransit.GoalKicker
+{
+   public static partial class ArrayGoalKicker
+   {
+		public static void Main(String[] argv)
+		{
+			bool[] booleanArray = Enumerable.Repeat(true, 10).ToArray();
+			
+			int[] arr1 = { 3, 5, 7 };
+			int[] arr2 = { 3, 5, 7 };
+			bool result = arr1.SequenceEqual(arr2);
+			Console.WriteLine("Arrays equal? {0}", result);
+		}	
+	}
+}

@@ -1,0 +1,14 @@
+Name						Framework Behavior					Producing Method
+ContentResult				Returns a string literal			Content
+EmptyResult					No response
+FileContentResult/			Returns the contents of a file		File
+FilePathResult/
+FileStreamResult
+HttpUnauthorizedResult		Returns an HTTP 403 status
+JavaScriptResult			Returns a script to execute			JavaScript
+JsonResult					Returns data in JSON format			Json
+RedirectResult				Redirects the client to a new URL	Redirect
+RedirectToRouteResult		Redirects to another action, or		RedirectToRoute /
+							another controller's action			RedirectToAction
+ViewResult					Response is the responsibility		View / Partial View
+PartialViewResult			of a view engine

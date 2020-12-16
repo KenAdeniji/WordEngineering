@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>72</SequenceOrderId>
+  <Dated>2003-08-30T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Mark 3:9, Mark 15:43, Luke 1:21, Luke 2:25, Luke 8:40, Luke 11:54, Luke 12:36, Luke 23:51, John 5:3</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Mark+3%3A9%2C+Mark+15%3A43%2C+Luke+1%3A21%2C+Luke+2%3A25%2C+Luke+8%3A40%2C+Luke+11%3A54%2C+Luke+12%3A36%2C+Luke+23%3A51%2C+John+5%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>The world will wait for You to make a false move ...</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>361</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure></Measure>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <ScriptureReference</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>251</SequenceOrderId>
+   <Word>Wait (Gospel)</Word>
+   <Commentary>In these lay a great multitude of impotent folk, of blind, halt, withered, waiting for the moving of the water (John 5:3).</Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>559</SequenceOrderId>
+   <Word>The world will wait for You to make a false move ...</Word>
+   <AlphabetSequenceIndex>478</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 19:20, Job 42, Isaiah 33, 1 John 4:21</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A20%2C+Job+42%2C+Isaiah+33%2C+1+John+4%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1113</SequenceOrderId>
+   <Commentary>Boston Market, Fremont Blvd.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>322</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+  
+  </TheWord>
+</wordOfGod>

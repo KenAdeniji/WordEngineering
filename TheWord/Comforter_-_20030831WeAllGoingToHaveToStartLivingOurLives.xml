@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>76</SequenceOrderId>
+  <Dated>2003-08-31T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>John 6:51</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=John+6%3A51&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>We all going to have to start living our lives.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>362</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>  
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>255</SequenceOrderId>
+   <Word>Living ... Life</Word>
+   <Commentary>I AM the living bread which came down from heaven: if any man eat of this bread, He shall live for ever: and the bread that I will give is My flesh, which I will give for the life of the world (John 6:51).</Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>563</SequenceOrderId>
+   <Word>We all going to have to start living our lives.</Word>
+   <AlphabetSequenceIndex>483</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 19:25, Psalms 5, Isaiah 28, 1 John 4:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A25%2C+Psalms+5%2C+Isaiah+28%2C+1+John+4%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1116</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <ClassAssociates>
+   <SequenceOrderId>323</SequenceOrderId>
+   <Commentary>Wake-up in the middle of sleep, computer on, user interface (UI) ... SQL Query error ??? Living Life SequenceOrderId 255 error. Internet Explorer (IE) FileOpen User Interface (UI).</Commentary>
+  </ClassAssociates>
+  
+  </TheWord>
+</wordOfGod>

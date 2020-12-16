@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>337</SequenceOrderId>
+    <Dated>2003-12-14T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Genesis 3:15, Ezra 2:4, Ezra 2:65, Nehemiah 7:9, Nehemiah 7:67, Daniel 9:25</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A15%2C+Ezra+2%3A4%2C+Ezra+2%3A65%2C+Nehemiah+7%3A9%2C+Nehemiah+7%3A67%2C+Daniel+9%3A25&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>
+     You rest our tent. 
+     Three seven two, three seven two.
+     Think of Me when you think of life, and I will think of you when I think of you.
+    </Title>
+    <FromUntil>348</FromUntil>
+    <ContactId>205</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>14</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>562</SequenceOrderId>
+   <DatedFrom>2003-01-02T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-14T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>346</FromUntil>
+   <Commentary>First Lady of Taiwan. Sinorama, http//www.sinorama.com.tw. 346 days: 14 outstanding days towards the completion of a biblical year.</Commentary>
+   <Filename>Comforter_-_20030103Dove.xml</Filename>
+   <ScriptureReference>Psalm 55:6, Psalm 68:13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Psalms+55%3A6%2C+Psalms+68%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>205</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>493</SequenceOrderId>
+   <Word>Three ... Seven ... Two</Word>
+   <ScriptureReference>Ezra 2:4, Ezra 2:65, Nehemiah 7:9, Nehemiah 7:67, Daniel 9:25</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Ezra+2%3A4%2C+Ezra+2%3A65%2C+Nehemiah+7%3A9%2C+Nehemiah+7%3A67%2C+Daniel+9%3A25&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2258</SequenceOrderId>
+    <Word>You rest our tent.</Word>
+    <AlphabetSequenceIndex>236</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:1, Ruth 4, Matthew 25, Revelation 10:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A1%2C+Ruth+4%2C+Matthew+25%2C+Revelation+10%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2259</SequenceOrderId>
+    <Word>Three seven two, three seven two.</Word>
+    <AlphabetSequenceIndex>358</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:21, 1 Chronicles 20, Ezekiel 30, Revelation 2:27</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A21%2C+1+Chronicles+20%2C+Ezekiel+30%2C+Revelation+2%3A27&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2260</SequenceOrderId>
+    <Word>Think of Me when you think of life, and I will think of you when I think of you.</Word>
+    <AlphabetSequenceIndex>758</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 27:30, Jeremiah 13, Esther 6, James 4:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+27%3A30%2C+Jeremiah+13%2C+Esther+6%2C+James+4%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1348</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. Campus Crusade for Christ at California State University Hayward (CSUH). Cyanna Salvador. Christmas Chorus. San Francisco. Civic Center. Andrew.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>318</SequenceOrderId>
+   <Commentary>Comforter_-_20030102URIWordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>588</SequenceOrderId>
+   <Commentary>Smell. Neck. Software (319) 318. Wake-up ... Turn on the computer ... User Interface ... Keyboard Error ... (UI) ... Think of Me when you think of life, and I will think of you when I think of ... Keyboard Error ... (M) ... Nose. First Lady of Taiwan. Sinorama, http//www.sinorama.com.tw. 346 days: 14 outstanding days towards the completion of a biblical year ... Nose.</Commentary>
+  </ClassAssociates>
+  
+</wordOfGod>

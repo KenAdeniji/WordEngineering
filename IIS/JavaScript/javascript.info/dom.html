@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+	<!--
+	http://javascript.info/tutorial/traversing-dom
+	-->
+	<div>Allowed readers:</div>
+    <ul>
+      <li>Bob</li>
+      <li>Alice</li>
+    </ul>
+
+    <!-- a comment node -->
+
+    <script>
+		var body = document.body;
+		
+      function bodyChildNodes() {
+        var childNodes = body.childNodes
+
+		for(var i=0; i<childNodes.length; i++) {
+            console.log(childNodes[i])
+        }
+      }
+	  
+      function bodyChildren() {
+        var children = body.children
+
+		for(var i=0; i<children.length; i++) {
+            console.log(children[i])
+        }
+      }
+	  
+	  function firstChildLastChild() {
+		var comparison = body.firstChild === body.childNodes[0];
+		console.log("body.firstChild === body.childNodes[0]: ", comparison);
+		
+		var comparison = body.lastChild === body.childNodes[body.childNodes.length - 1];
+		console.log("body.lastChild === body.childNodes[body.childNodes.length - 1]: ", comparison);
+	  }
+	</script>
+
+    <button onclick="bodyChildNodes()" style="width:100px">body.ChildNodes</button>
+	<button onclick="bodyChildren()" style="width:100px">body.Children</button>
+	<button onclick="firstChildLastChild()">firstChildLastChild</button>
+	
+  </body>
+</html>

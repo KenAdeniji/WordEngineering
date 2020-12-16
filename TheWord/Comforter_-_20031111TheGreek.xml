@@ -1,0 +1,125 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>257</SequenceOrderId>
+  <Dated>2003-11-11T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Acts 14:1, Acts 18:4, Acts 18:17, Acts 20:21, Romans 1:14, Romans 1:16, Romans 10:12, 1 Corinthians 1:22, 1 Corinthians 1:23, Revelation 9:11</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Acts+14%3A1%2C+Acts+18%3A4%2C+Acts+18%3A17%2C+Acts+20%3A21%2C+Romans+1%3A14%2C+Romans+1%3A16%2C+Romans+10%3A12%2C+1+Corinthians+1%3A22%2C+1+Corinthians+1%3A23%2C+Revelation+9%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>The Greek.</Title>
+  <FromUntil>315</FromUntil>  
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>111</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>489</SequenceOrderId>
+   <DatedFrom>2003-10-26T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-11T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>16</FromUntil>
+   <Commentary>Helping You, and me.</Commentary>
+   <Filename>Comforter_-_20031026HelpingYouAndMe.xml</Filename>
+   <ScriptureReference>2 Corinthians 8:23</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Corinthians+8%3A23&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <Remember>
+   <SequenceOrderId>490</SequenceOrderId>
+   <DatedFrom>2003-05-04T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-11T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>191</FromUntil>
+   <Commentary>Cinco De Mayo</Commentary>
+   <Filename>Comforter_-_20030504WeDidNotBringAnythingIntoTheWordNorWeWillTakeAnythingAwayFromIt.xml</Filename>
+   <ScriptureReference>John 1:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=John+1%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>82</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Commentary></Commentary>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>433</SequenceOrderId>
+   <Word>The Greek</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1417</SequenceOrderId>
+    <Word>The Greek.</Word>
+    <AlphabetSequenceIndex>79</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:23, Exodus 29, Colossians 4, Revelation 19:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A23%2C+Exodus+29%2C+Colossians+4%2C+Revelation+19%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>
+     Wake-up Orientation: Aligned with vertical couch, feets 0%, waist 33.33%, head 66.67%.
+     Wake-up Orientation: Knees upright.
+     Wake-up Orientation: Knees upright.
+     Wake-up Orientation: Aligned with vertical couch, feets 0%, waist 33.33%, head 66.67%.
+    </Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1294</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>289</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>517</SequenceOrderId>
+   <Commentary>(E:)D:. Comforter_-_20031026HelpingYouAndMe.xml: Helping You, and me(.).</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

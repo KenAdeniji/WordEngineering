@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>OOP in JavaScript by Nicholas C. Zakas</title>
+		<script>
+			console.log(typeof "Nicholas"); // "string"
+			console.log(typeof 10); // "number"
+			console.log(typeof 5.1); // "number"
+			console.log(typeof true); // "boolean";
+			console.log(typeof undefined); // "undefined"
+			console.log(typeof null); // "object"
+			
+			if (null === null)
+			{
+				console.log("Test for null, is valid.");
+			}
+			
+			var name = "Nicholas";
+			console.log(name.toLowerCase()); // convert to lowercase
+			console.log(name.charAt(0)); // get first character
+			console.log(name.substring(2, 5)); // get characters 2-4
+			
+			var object1 = new Object();
+			
+			object1.myCustomProperty = "Awesome!";
+			console.log(object1.myCustomProperty); 
+			
+			var book = {
+				"name": "Principles of Object-Oriented Programming in JavaScript",
+				"date found": new Date("January 2, 2013")
+			};
+			
+			object1 = null; //dereference. Garbage collection.
+			book = null;
+			
+			var colors = [ "red", "blue", "green" ];
+			console.log(colors[0]); // "red"
+			
+			//This code is equivalent to the following:
+			var colors = new Array("red", "blue", "green");
+			console.log(colors[0]); // "red"
+			
+			//Property Access
+			var array = [];
+			array.push(12345);
+			
+			console.log(array);
+			
+			var array = [];
+			var method = "push";
+			array[method](12345);
+			
+			var items = [];
+			var object = {};
+			function reflect(value) {
+				return value;
+			}
+			console.log(items instanceof Array); // true
+			console.log(object instanceof Object); // true
+			console.log(object instanceof Array); // false
+			console.log(reflect instanceof Function); // true
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

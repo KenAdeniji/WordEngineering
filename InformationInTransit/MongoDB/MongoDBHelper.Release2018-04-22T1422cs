@@ -1,0 +1,55 @@
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text;
+
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessLogic;
+
+namespace InformationInTransit.MongoDB
+{
+	///<summary>
+	/// 2018-04-22 	Created.
+	///	2018-04-22	http://stackoverflow.com/questions/37940065/insert-datatable-in-mongo-db-using-c-sharp?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+	///</summary>
+	public partial class MongoDBHelper
+	{
+		public async Task SaveDataTableToCollection
+		(
+			String		connectionString,
+			String		databaseName,
+			String		tableName,
+			DataTable 	dataTable
+		)
+		{
+		  var client = new MongoClient(connectionString);
+		  var database = client.GetDatabase(databaseName);
+
+		  var collection = database.GetCollection<BsonDocument>("MyCollection");
+
+		  List<BsonDocument> batch = new List<BsonDocument>();
+		  foreach (DataRow dr in dt.Rows)
+		  {
+			  var dictionary = dr.Table.Columns.Cast<DataColumn>().ToDictionary(col => col.ColumnName, col => dr[col.ColumnName]);
+			  batch.Add(new BsonDocument(dictionary));
+		  }
+
+		  await collection.InsertManyAsync(batch.AsEnumerable());
+		}
+	}
+}

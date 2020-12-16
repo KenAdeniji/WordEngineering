@@ -1,0 +1,152 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>528</SequenceOrderId>
+ <Dated>2004-06-19T00:00:00.0000000-08:00</Dated>
+ <FromUntil>171</FromUntil>
+ <ContactId>498</ContactId>
+ <Keyword>Ian Gibbs, Bread and wine, Genevieve Tarzer, Fiji</Keyword>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>48</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <Dream>
+   <SequenceOrderId>39</SequenceOrderId>
+   <Commentary>Genevieve Tarzer offers rice, self wash in the shower, she visits Fiji at age 23 and buys shoes.</Commentary>
+   <ContactId>499</ContactId>
+  </Dream>
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>7076</SequenceOrderId>
+    <Word>Je ka wo ki ni omi yen, won pe won ni bread and wine.</Word>
+    <AlphabetSequenceIndex>437</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:12, Job 1, Jeremiah 8, 3 John 1:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A12%2C+Job+1%2C+Jeremiah+8%2C+3+John+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Ian Gibbs</Commentary>
+    <ContactId>498</ContactId>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>7077</SequenceOrderId>
+    <Word>Stop now and listen to me. If you get down in the discipline world.</Word>
+    <AlphabetSequenceIndex>665</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 25:6, Ecclesiastes 6, Psalms 47, 1 Peter 3:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A6%2C+Ecclesiastes+6%2C+Psalms+47%2C+1+Peter+3%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>St Edward's catholic church on Thornton Avenue, Ethopian/Erithrea males standing outside the church, Asian females sleeping at the church, the building at the intersection of Cedar Blvd and Musick African descent male studying, XML magazine distributor, 10 cents donation.</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1791</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>Wash toilet and shower. Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>379</SequenceOrderId>
+   <Commentary>
+    UtilitySNMPRelease20040619.cs
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>781</SequenceOrderId>
+   <Commentary>Face ... urine ... noise ... keyboard error ... faeces ... private part ... feet ... mouth blood error ... mouse ... hotmail account error ... UtilitySNMPRelease20040619.cs ConvertIntToTime() calculator error ... (hundredth second): hundredth error ... 3com.com uri error ... ObjectIdentifier (OID): Explorer memory error error, Internet Explorer (IE) error ... logoff ...</Commentary>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>498</SequenceOrderId>
+   <Company />
+   <FirstName>Ian</FirstName>
+   <LastName>Gibbs</LastName>
+   <OtherName />
+   <Title />
+   <Commentary />
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>499</SequenceOrderId>
+   <Company />
+   <FirstName>Genevieve</FirstName>
+   <LastName>Tarzer</LastName>
+   <OtherName />
+   <Title />
+   <Commentary />
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

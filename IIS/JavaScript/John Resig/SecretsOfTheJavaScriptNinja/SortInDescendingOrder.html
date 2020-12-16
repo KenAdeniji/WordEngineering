@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		function sortInDescendingOrder(){ 
+			return argumentIntoArray(arguments).sort(function(a,b){ 
+				return b - a; 
+			}); 
+		} 
+		 
+		function argumentIntoArray(array){ 
+			return Array().slice.call( array ); 
+		}
+		
+		document.write(sortInDescendingOrder(1, 1, 2, 3)[0]);
+		</script>
+	</head>	
+<html>

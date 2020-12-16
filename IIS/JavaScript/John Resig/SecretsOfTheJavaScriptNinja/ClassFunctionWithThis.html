@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			//JavaScript class
+			function Ninja(){ 
+				this.swung = false; 
+			   
+				//Should return true 
+				this.swingSword = function(){ 
+					this.swung = !this.swung; 
+					return this.swung; 
+				}; 
+			} 
+			 
+			var ninja = new Ninja(); 
+			//assert( ninja.swingSword(), "Calling the instance method." ); 
+			ninja.swingSword();
+			
+			//assert( ninja.swung, "The ninja has swung the sword." ); 
+			document.write("Has ninja swung the sword: ", ninja.swung);
+			 
+			var ninjaB = new Ninja(); 
+			//assert( !ninjaB.swung, "Make sure that the ninja has not swung his sword." );
+			document.write("Has ninjaB swung the sword: ", ninjaB.swung);
+		</script>
+	</head>	
+<html>

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script>
+			var chevCar = new Array("Nova","Impala","Corvette");
+			var fordCar = new Array("Escort","Pinto","Taurus");
+			var volksCar = new Array("Beetle","Jetta","Quantum");
+			var combCar = chevCar.concat(fordCar,volksCar);
+			document.write("The variable combCar contains " + combCar + "<br/>");
+			
+			var chevCar = new Array("Nova","Impala","Corvette");
+			var chevCar2 = chevCar.join(" and ");
+			document.write("The array chevCar contains " + chevCar2 + "<br/>");
+			
+			var rmCar = chevCar.pop(); //Remove the last item, from the array.
+			chevCar.push(rmCar); //Put this item back, in the array.
+			document.write("The variable chevCar contains " + chevCar + "<br/>");
+			
+			var ages = new Array(12,57,32,6,21,19);
+			var adults = new Array();
+			var minors = new Array();
+			while (ages.length) {
+			  var tempAge = ages.pop();
+			  if (tempAge < 21) minors.push(tempAge);
+			  else adults.push(tempAge);
+			}
+
+			var msg  = "There are " + adults.length + " adults ";
+			  msg += "with the ages " + adults.join(", ") + " ";
+
+			msg += "There are " + minors.length + " minors ";
+			msg += "with the ages " + minors.join(", ");
+			document.write("" + msg + "");
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

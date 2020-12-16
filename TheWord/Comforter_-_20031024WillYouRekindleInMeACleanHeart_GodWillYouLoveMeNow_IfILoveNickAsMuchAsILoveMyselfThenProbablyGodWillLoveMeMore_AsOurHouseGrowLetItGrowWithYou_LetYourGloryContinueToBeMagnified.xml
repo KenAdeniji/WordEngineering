@@ -1,0 +1,355 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>225</SequenceOrderId>
+  <Dated>2003-10-24T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>1 Corinthians 6:20, 2 Corinthians 9:13</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Corinthians+6%3A20%2C+2+Corinthians+9%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>
+   This is good food.
+   I don't have meat, normally.
+   The coming leader.
+   Do things as a Christ should.
+   Will You rekindle in Me a clean heart.
+   I can feel its hurting You, but not to worry I can find a way.
+   Time in.
+   God, will You love Me, now.
+   Because Christ is forever.
+   In LORD, I AM white.
+   If I love Nick as much as I love Myself, then probably God will love Me, more.
+   That's the only mistake I made.
+   Falling down.
+   The man that said ...
+   As our house grow let it grow with You.
+   That I may know You. That I may glorify You.
+   Let Your glory continue to be magnified.
+   Let My hope be with You.
+   LORD God I have sinned.
+   Simon Templer.
+   That's a miracle.
+  </Title>
+
+<!--
+Comforter_-_20031024
+ThisIsGoodFood_
+IDon'tHaveMeatNormally_
+TheComingLeader_
+DoThingsAsAChristShould_
+WillYouRekindleInMeACleanHeart_
+ICanFeelItsHurtingYouButNotToWorryICanFindAWay_
+TimeIn_
+GodWillYouLoveMeNow_
+BecauseChristIsForever_
+InLORDIAMWhite_
+IfILoveNickAsMuchAsILoveMyselfThenProbablyGodWillLoveMeMore_
+That'sTheOnlyMistakeIMade_
+FallingDown_
+TheManThatSaid_
+AsOurHouseGrowLetItGrowWithYou_
+ThatIMayKnowYouThatIMayGlorifyYou_
+LetYourGloryContinueToBeMagnified_
+LetMyHopeBeWithYou_
+LORDGodIHaveSinned_
+SimonTempler_
+That'sAMiracle
+.xml
+-->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>6</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>104</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>457</SequenceOrderId>
+   <DatedFrom>2003-10-10T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-10-24T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>14</FromUntil>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <Filename />
+  </Remember>
+
+  <Remember>
+   <SequenceOrderId>458</SequenceOrderId>
+   <DatedFrom>2003-10-11T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-10-24T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>13</FromUntil>
+   <Commentary>Tokyo Station.</Commentary>
+   <ScriptureReference>Isaiah 22:24, Jeremiah 35:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+22%3A24%2C+Jeremiah+35%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Filename>Comforter_-_20031011Casket.xml</Filename>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>80</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>407</SequenceOrderId>
+   <Word>I ... Glorify ... You</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>836</SequenceOrderId>
+   <Word>This is good food.</Word>
+   <AlphabetSequenceIndex>165</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 7:5, Deuteronomy 12, Acts 7, Revelation 14:11</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A5%2C+Deuteronomy+12%2C+Acts+7%2C+Revelation+14%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Tokyo Station: Combo plate with 2 choices of Brocolli beef, green bean chicken.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>837</SequenceOrderId>
+   <Word>I don't have meat, normally.</Word>
+   <AlphabetSequenceIndex>247</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:12, 1 Samuel 11, Matthew 14, Revelation 9:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A12%2C+1+Samuel+11%2C+Matthew+14%2C+Revelation+9%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>The rice seed will fall on the South left side of the zipper for the trouser.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>838</SequenceOrderId>
+   <Word>The coming leader.</Word>
+   <AlphabetSequenceIndex>139</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:1, Numbers 22, Romans 5, Revelation 16:9</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A1%2C+Numbers+22%2C+Romans+5%2C+Revelation+16%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Restroom Sign: Male | Female.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>839</SequenceOrderId>
+   <Word>Do things as a Christ should.</Word>
+   <AlphabetSequenceIndex>273</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 11:6, 2 Samuel 6, Zechariah 6, Revelation 8:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A6%2C+2+Samuel+6%2C+Zechariah+6%2C+Revelation+8%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Walk around Newpark Mall: 3/4.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>840</SequenceOrderId>
+   <Word>Will You rekindle in Me a clean heart.</Word>
+   <AlphabetSequenceIndex>324</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 13:5, 2 Kings 11, Hosea 4, Revelation 4:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A5%2C+2+Kings+11%2C+Hosea+4%2C+Revelation+4%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>BART between South Hayward and Hayward.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>841</SequenceOrderId>
+   <Word>The eat rice.</Word>
+   <AlphabetSequenceIndex>94</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 4:14, Leviticus 4, Galatians 5, Revelation 18:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A14%2C+Leviticus+4%2C+Galatians+5%2C+Revelation+18%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>The intersection of Mission Blvd and Foothill Blvd.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>842</SequenceOrderId>
+   <Word>I can feel its hurting You, but not to worry I can find a way.</Word>
+   <AlphabetSequenceIndex>597</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 24:5, Psalms 119, Psalms 115, 2 Peter 2:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A5%2C+Psalms+119%2C+Psalms+115%2C+2+Peter+2%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Walk across the street towards the left as I approach the intersection of Mission Blvd and Fletcher Lane.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>843</SequenceOrderId>
+   <Word>Time in.</Word>
+   <AlphabetSequenceIndex>70</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 3:14, Exodus 20, 1 Timothy 1, Revelation 19:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A14%2C+Exodus+20%2C+1+Timothy+1%2C+Revelation+19%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>The intersection of Mission Blvd and Carlos Bee Blvd.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>844</SequenceOrderId>
+   <Word>God, will You love Me, now.</Word>
+   <AlphabetSequenceIndex>267</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:32, 1 Samuel 31, Zechariah 12, Revelation 8:8</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A32%2C+1+Samuel+31%2C+Zechariah+12%2C+Revelation+8%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>369 thru 372 towards Oxford street.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>845</SequenceOrderId>
+   <Word>Because Christ is forever.</Word>
+   <AlphabetSequenceIndex>250</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:15, 1 Samuel 14, Matthew 11, Revelation 9:12</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A15%2C+1+Samuel+14%2C+Matthew+11%2C+Revelation+9%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>The grass withers and the flowers fade but the Word of God stands forever (Isaiah 40:8). Urine.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>846</SequenceOrderId>
+   <Word>In LORD, I AM white.</Word>
+   <AlphabetSequenceIndex>160</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:22, Deuteronomy 7, Acts 12, Revelation 14:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A22%2C+Deuteronomy+7%2C+Acts+12%2C+Revelation+14%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Bla(c)k specimen inside the white but multicolored cup. Urine.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>847</SequenceOrderId>
+   <Word>If I love Nick as much as I love Myself, then probably God will love Me, more.</Word>
+   <AlphabetSequenceIndex>686</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 25:27, Isaiah 7, Psalms 26, 1 Peter 2:17</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A27%2C+Isaiah+7%2C+Psalms+26%2C+1+Peter+2%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Conversation with Nick (excluding James).</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>848</SequenceOrderId>
+   <Word>That's the only mistake I made.</Word>
+   <AlphabetSequenceIndex>277</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 11:10, 2 Samuel 10, Zechariah 2, Revelation 7:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A10%2C+2+Samuel+10%2C+Zechariah+2%2C+Revelation+7%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Did not remember to invite the Holy Spirit. Freddie, father; Derby, daugther.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>849</SequenceOrderId>
+   <Word>Falling down.</Word>
+   <AlphabetSequenceIndex>117</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:11, Leviticus 27, 1 Corinthians 11, Revelation 17:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A11%2C+Leviticus+27%2C+1+Corinthians+11%2C+Revelation+17%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>... Music.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>850</SequenceOrderId>
+   <Word>The man that said ...</Word>
+   <AlphabetSequenceIndex>143</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:5, Numbers 26, Romans 1, Revelation 16:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A5%2C+Numbers+26%2C+Romans+1%2C+Revelation+16%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Prayer ... Music.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>851</SequenceOrderId>
+   <Word>As our house grow let it grow with You.</Word>
+   <AlphabetSequenceIndex>455</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 18:30, Job 19, Isaiah 56, 2 John 1:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A30%2C+Job+19%2C+Isaiah+56%2C+2+John+1%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Right eye tears ... green grass towards the left.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>852</SequenceOrderId>
+   <Word>That I may know You. That I may glorify You.</Word>
+   <AlphabetSequenceIndex>471</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 19:13, Job 35, Isaiah 40, 1 John 5:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A13%2C+Job+35%2C+Isaiah+40%2C+1+John+5%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Triangle sign towards the right.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>853</SequenceOrderId>
+   <Word>Let Your glory continue to be magnified.</Word>
+   <AlphabetSequenceIndex>404</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 17:6, Ezra 1, Jeremiah 41, Revelation 1:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A6%2C+Ezra+1%2C+Jeremiah+41%2C+Revelation+1%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Nick and James exit ... White paper sign towards the NorthEast.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>854</SequenceOrderId>
+   <Word>Let My hope be with You.</Word>
+   <AlphabetSequenceIndex>247</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:12, 1 Samuel 11, Matthew 14, Revelation 9:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A12%2C+1+Samuel+11%2C+Matthew+14%2C+Revelation+9%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Triangle sign, upwards.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>855</SequenceOrderId>
+   <Word>LORD God I have sinned.</Word>
+   <AlphabetSequenceIndex>185</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 8:1, Deuteronomy 32, John 8, Revelation 13:9</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A1%2C+Deuteronomy+32%2C+John+8%2C+Revelation+13%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>856</SequenceOrderId>
+   <Word>Simon Templer</Word>
+   <AlphabetSequenceIndex>159</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:21, Deuteronomy 6, Acts 13, Revelation 14:17</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A21%2C+Deuteronomy+6%2C+Acts+13%2C+Revelation+14%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>857</SequenceOrderId>
+   <Word>That's a miracle.</Word>
+   <AlphabetSequenceIndex>130</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:24, Numbers 13, Romans 14, Revelation 16:18</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A24%2C+Numbers+13%2C+Romans+14%2C+Revelation+16%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Britanny Avenue: English family towards the right and an American flag.</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1270</SequenceOrderId>
+   <Commentary>
+    Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Mrs. Alison's Marias Galletas Great taste since 1933 Net Wt 8.47oz (240g) manufactured for Parmalat Bakery Group North America Bolingbrook IL 60440 USA 1-800-272-2537 Product of the Netherlands 0 72413 000 544 6 040419 12 5 BG.
+    Tokyo Station: Combo plate with 2 choices of Brocolli beef, green bean chicken.
+    Campus Crusade for Christ at California State University Hayward (CSUH): Fellowship Night.
+    Female: Derby, Cyanna, Christy, Katie, Melody, Charlene, Christine.
+    Male: Nathan, Andrew, Bert, Freddie, Mike, Randy, Nick, James.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>281</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>479</SequenceOrderId>
+   <Commentary>Remember 457: Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg ... Keyboard error. Tokyo Station Co(m)bo. .(c)xml. Because Christ is for(e)ver. As our house grow let it(bw) grow with You ... smell. AlphabetSequence 852: garage noise. (Tokyo Station: Combo plate with 2 choices of Brocolli beef, green bean chicken.) ... Monitor error ... Left finger twitches ... Sneeze.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

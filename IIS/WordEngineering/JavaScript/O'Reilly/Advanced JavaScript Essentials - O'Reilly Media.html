@@ -1,0 +1,48 @@
+<html>
+	<!--
+		2013-04-24 	killdream.github.io/blog/2011/10/understanding-javascript-oop
+		2018-08-03 	File created.
+		2018-08-03	http://archive.oreilly.com/oreillyschool/courses/advancedjavascript/Advanced%20JavaScript%20Essentials%20v1.pdf
+	-->
+	<head>
+		<title>Bible Book Object Oriented</title>
+	</head>
+	<body>
+		<script>
+			var bibleBooks = new Array();
+			
+			function BibleBook(id, title) {
+				this.id = id;
+				this.title = title
+				this.testament = this.id <= 40 ? 'Old' : 'New';
+				
+				bibleBooks.push(this);
+				
+				function toString() {
+					return "id: " + this.id + ", title: " + this.title;    
+				} 
+
+				//this.display = function() { console.log(this); }; 				
+			}
+			  
+			BibleBook.prototype.oldOrNew = function()
+			{
+				return this.id <= 40 ? 'Old' : 'New';
+			}
+			
+			function pageLoad()
+			{
+				var genesis = new BibleBook(1, 'Genesis');
+				var exodus = new BibleBook(2, 'Exodus');
+				//console.log(bibleBooks);
+				//bibleBooks.forEach(console.log)
+				
+				console.log(genesis);
+				//genesis.display();
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function yell(n){ 
+			  return n > 0 ? yell(n-1) + "a" : "hiy"; 
+			} 
+			//assert( yell(4) == "hiyaaaa", "Calling the function by itself comes naturally." );
+			var resultSet = yell(4);
+			if (resultSet == "hiyaaaa")
+			{
+				document.write("Calling the function by itself comes naturally.");
+			}
+		</script>
+	</head>	
+<html>

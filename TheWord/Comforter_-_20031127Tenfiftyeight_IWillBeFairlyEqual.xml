@@ -1,0 +1,112 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>291</SequenceOrderId>
+  <Dated>2003-11-27T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>1 Kings 7:16, 1 Kings 7:23, 1 Chronicles 29:7, 2 Chronicles 4:2</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Kings+7%3A16%2C+1+Kings+7%3A23%2C+1+Chronicles+29%3A7%2C+2+Chronicles+4%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Ten fiftyeight. I will be fairly equal.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>9</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>518</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>462</SequenceOrderId>
+   <Word>Ten ... Five ... Eight</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1595</SequenceOrderId>
+    <Word>Ten fiftyeight.</Word>
+    <AlphabetSequenceIndex>154</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:16, Deuteronomy 1, Acts 18, Revelation 15:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A16%2C+Deuteronomy+1%2C+Acts+18%2C+Revelation+15%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1596</SequenceOrderId>
+    <Word>I will be fairly equal.</Word>
+    <AlphabetSequenceIndex>199</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:15, Joshua 12, Luke 18, Revelation 12:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A15%2C+Joshua+12%2C+Luke+18%2C+Revelation+12%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1319</SequenceOrderId>
+   <Commentary>Cut hair. Shave face, armpits. Shower.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>305</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>555</SequenceOrderId>
+   <Commentary>Key ... Smell.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

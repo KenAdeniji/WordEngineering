@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-12-14	Date created.	https://javascript.info/fetch
+-->
+    <head>
+        <title>JavaScript.info_-_FetchAPIGitHub.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="JavaScript.info, fetch API, GitHub.com"/>
+		<meta name="keywords" content="JavaScript.info, fetch API, GitHub.com"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+	<body>
+		<div align="center">
+			<input id="URI" type="url" autofocus/> <br/> 
+			<input id="infoRequest" type="text"/> <br/> 
+			<input type="submit" id="submitQuery">
+			<div id="resultSet"></div>
+		</div>
+		<script>
+		    var isPostBack = false;
+
+			
+			var URIID = document.getElementById("URI");
+			var infoRequestID = document.getElementById("infoRequest");
+			var resultSetID = document.getElementById("resultSet");
+
+		    function querySubmit() {
+				let newObjectKey = infoRequestID.value;
+				console.log(newObjectKey);
+				fetch(URIID.value)
+					.then(response => response.json())
+					.then
+					(
+						//commits => resultSetID.innerHTML = commits[0].author.login
+						//commits => resultSetID.innerHTML = commits
+						//commits => responseData({[commits]:newObjectKey})
+						//{[key]:"John"};
+						commits => responseData(commits[0].author)
+					);
+		    }
+
+		    function pageLoad() { 
+		        if (!isPostBack) { 
+					URIID.value = "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits";
+					infoRequestID.value = "commits[0].author";
+					infoRequestID.value = "[0].author";
+					querySubmit();
+					isPostBack = true;
+		        }
+				else
+				{
+					querySubmit();
+				}
+		    }
+			
+			function responseData(data)
+			{
+				console.log(data);
+				var resultSetValue = "<table>";
+				Object.keys(data).forEach(function(key,index) {
+					// key: the name of the object key
+					// index: the ordinal position of the key within the object 
+					// myFuncs[funcToRun]();
+					var keyValue = data[key];
+					resultSetValue += "<tr><td>" + key + "</td><td>" + keyValue + "</td></tr>";
+				});
+				resultSetID.innerHTML = resultSetValue
+			}
+			
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+<head>
+    <script type="text/javascript">
+	function sum() {
+		var retval = 0;
+		for (var i = 0, len = arguments.length; i < len; ++i) {
+			retval += arguments[i];
+		}
+		var argArray = Array.prototype.slice.call(arguments); //Converting arguments into an array.
+		return retval;
+	}
+
+	console.log( sum(1, 2, 3) );// returns 6
+	
+	//Passing function as a parameter
+	var passFunAndApply = function (fn,x,y,z) { return fn(x,y,z); };
+
+	var sum = function(x,y,z) {
+	  return x+y+z;
+	};
+
+	console.log( passFunAndApply(sum,3,4,5) ); // 12
+	
+	var positive = [1, 2, -1].filter(function(element, index, array) { return element > 0 });
+	console.log(positive);
+	
+	var x = 1;
+	var y = 3;
+	var list = {0:0, 1:0, 2:0}; //Object literal
+	x in list; //true
+	y in list; //false
+	1 in list; //true
+	y in {3:0, 4:0, 5:0}; //true
+	
+	function Person(firstName, lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+
+		// A private method only visible from within this constructor
+		function calcFullName() {
+		   return firstName + " " + lastName;    
+		}
+
+		// A public method available to everyone
+		this.sayHello = function () {
+			console.log(calcFullName());
+		}
+	}
+
+	//Usage:
+	var person1 = new Person("Bob", "Loblaw");
+	person1.sayHello();
+
+	// This fails since the method is not visible from this scope
+	//alert(person1.calcFullName());
+	
+	fn = function(x) {
+	   // ...
+	}
+
+	fn.foo = 1;
+
+	fn.next = function(y) {
+	  //
+	}
+	
+	console.log(fn.foo);
+	
+	//self-executing functions.
+	(function() {
+	  var myvar = 2;
+	  console.log(myvar);
+	})();
+	
+	//Know how many parameters are expected by a function
+	function add_nums(num1, num2, num3 ){
+		return num1 + num2 + num3;
+	}
+	add_nums.length // 3 is the number of parameters expected.
+	
+	//Know how many parameters are received by the function
+	function add_many_nums(){
+		return arguments.length;
+	}    
+	add_many_nums(2,1,122,12,21,89); //returns 6
+	
+	Array.prototype.contains = function(value) {  
+		for (var i = 0; i < this.length; i++) {  
+			if (this[i] == value) return true;  
+		}  
+		return false;  
+	}
+	
+	var stringArray = ["foo", "bar", "foobar"];
+	stringArray.contains("foobar");
+
+	//To properly remove a property from an object, you should delete the property instead of just setting it to undefined:
+	var obj = { prop1: 42, prop2: 43 };
+
+	obj.prop2 = undefined;
+
+	for (var key in obj) {	
+	}
+    </script>
+</head>
+<body>
+</body>
+</html>

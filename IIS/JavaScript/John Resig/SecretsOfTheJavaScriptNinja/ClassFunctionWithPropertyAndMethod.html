@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		//Class with property and method.
+		function Ninja(name){ 
+			this.changeName = function(name){ 
+				this.name = name; 
+			}; 
+ 
+			this.changeName( name ); 
+		}
+		
+		var ninja = new Ninja("John"); 
+		//assert( ninja.name == "John", "The name has been set on initialization" ); 
+		document.write("ninja.name:", ninja.name);
+ 
+		ninja.changeName("Bob"); 
+		//assert( ninja.name == "Bob", "The name was successfully changed." );
+		document.write("ninja.name:", ninja.name);
+		</script>
+	</head>	
+<html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>90</SequenceOrderId>
+  <Dated>2003-09-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Isaiah 4:5, Isaiah 10:3, Isaiah 17:4, Isaiah 28:5, Isaiah 60:19, Ezekiel 1:28, Ezekiel 20:6, Ezekiel 24:25</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+4%3A5%2C+Isaiah+10%3A3%2C+Isaiah+17%3A4%2C+Isaiah+28%3A5%2C+Isaiah+60%3A19%2C+Ezekiel+1%3A28%2C+Ezekiel+20%3A6%2C+Ezekiel+24%3A25&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>The very day He presented His glory.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>366</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure>y</Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>269</SequenceOrderId>
+   <Word>Day ... Glory</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>584</SequenceOrderId>
+   <Word>The very day He presented His glory.</Word>
+   <AlphabetSequenceIndex>365</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 15:4, 1 Chronicles 27, Ezekiel 23, Revelation 2:20</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A4%2C+1+Chronicles+27%2C+Ezekiel+23%2C+Revelation+2%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1129</SequenceOrderId>
+   <Commentary>The intersection of Fremont Blvd and Mowry: The very day He presented His glory. Heterosexuality: William H. Masters, Virginia E. Johnson, Robert C. Kolodny ISBN 0-06-019041-9. Urine: Left nose running. The intersection of Fremont Blvd 38000 and Mattos Drive 4000: White specimen, left. Stop the database on both computers, and transfer the database files from the right computer, HolySpirit, to the left computer, Comfort, restart the database on both computers.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>257</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>333</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+ 
+  </TheWord>
+</wordOfGod>

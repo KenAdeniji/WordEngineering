@@ -1,0 +1,189 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+
+/*
+using Microsoft.VisualStudio.Tools.Applications.Runtime;
+using Excel = Microsoft.Office.Interop.Excel;
+using Office = Microsoft.Office.Core;
+*/
+
+/*
+	2018-09-11	Created.	http://it.guldstadsgymnasiet.se/c%23/C%23%20in%20Depth,%203d%20Edition.pdf
+	2018-09-12
+SELECT
+	--BookID,
+	--TRIM(BookTitle) AS BookTitle,
+	--MAX(ChapterID) AS Chapters,
+	--COUNT(VerseID) AS Verses
+	'new BibleBook{ ' +
+	'ID = ' + CONVERT(VARCHAR, BookID) + 
+	', Title = "' + TRIM(BookTitle) + '"' +
+	', Chapters = ' + CONVERT(VARCHAR, MAX(ChapterID)) + '' +
+	', Verses = ' + CONVERT(VARCHAR, COUNT(VerseID)) + '' +
+	' },'
+FROM
+	Bible..Scripture AS Entire
+GROUP BY
+	BookID,
+	BookTitle
+ORDER BY
+	BookID
+	2018-09-12 https://stackoverflow.com/questions/28582598/operator-cannot-be-applied-to-operands-of-type-string-and-string
+*/
+namespace InformationInTransit.JonSkeet
+{
+	public partial class BibleBook
+	{
+		public static void Main(string[] argv)
+		{
+		}
+		
+		public static void SavingDataToExcelUsingCOM()
+		{
+			/*
+			var app = new Application
+			{
+				Visible = false
+			};
+			Workbook workbook = app.Workbooks.Add();
+			Worksheet worksheet = app.ActiveSheet;
+			int row = 1;
+			foreach 
+			(
+				var book in BibleBooks
+							.Where(book => book.ID >= 40 && book.ID <= 43)
+			)
+			{
+				worksheet.Cells[row, 1].Value = book.ID;
+				worksheet.Cells[row, 2].Value = book.Title;
+				row++;
+			}
+			workbook.SaveAs
+			(
+				Filename:"demo.xls",
+				FileFormat:	XlFileFormat.xlWorkbookNormal
+			);
+			app.Application.Quit();
+			*/
+		}
+		
+		public static void Series()
+		{
+			var series = from books in BibleBooks
+			where Char.IsDigit(books.Title[0])
+			orderby books.ID
+			select new { Title = books.Title };	
+
+			ObjectDumper.Write(series);
+		}
+
+		public static void SortFilter()
+		{
+			ObjectDumper.Write(BibleBooks);
+			BibleBooks.Sort(new BibleBookTitleComparer());
+			ObjectDumper.Write(BibleBooks);
+			BibleBooks.Sort((x, y) => x.Verses.CompareTo(y.Verses));
+			ObjectDumper.Write(BibleBooks);
+			
+			foreach (BibleBook bibleBook in BibleBooks.Where(p => p.ID >= 40))
+			{
+				Console.WriteLine(bibleBook);
+			}
+		}
+		
+		public int ID { get; private set; }
+		public string Title { get; private set; }
+		public int Chapters { get; private set; }
+		public int Verses { get; private set; }
+		
+		public override string ToString()
+		{
+			return "BibleBook: " + ID + " " + Title;
+		}		
+		
+        public static readonly List<BibleBook> BibleBooks = new List<BibleBook>
+        {
+			new BibleBook{ ID = 1, Title = "Genesis", Chapters = 50, Verses = 1533 },
+			new BibleBook{ ID = 2, Title = "Exodus", Chapters = 40, Verses = 1213 },
+			new BibleBook{ ID = 3, Title = "Leviticus", Chapters = 27, Verses = 859 },
+			new BibleBook{ ID = 4, Title = "Numbers", Chapters = 36, Verses = 1288 },
+			new BibleBook{ ID = 5, Title = "Deuteronomy", Chapters = 34, Verses = 959 },
+			new BibleBook{ ID = 6, Title = "Joshua", Chapters = 24, Verses = 658 },
+			new BibleBook{ ID = 7, Title = "Judges", Chapters = 21, Verses = 618 },
+			new BibleBook{ ID = 8, Title = "Ruth", Chapters = 4, Verses = 85 },
+			new BibleBook{ ID = 9, Title = "1 Samuel", Chapters = 31, Verses = 810 },
+			new BibleBook{ ID = 10, Title = "2 Samuel", Chapters = 24, Verses = 695 },
+			new BibleBook{ ID = 11, Title = "1 Kings", Chapters = 22, Verses = 816 },
+			new BibleBook{ ID = 12, Title = "2 Kings", Chapters = 25, Verses = 719 },
+			new BibleBook{ ID = 13, Title = "1 Chronicles", Chapters = 29, Verses = 942 },
+			new BibleBook{ ID = 14, Title = "2 Chronicles", Chapters = 36, Verses = 822 },
+			new BibleBook{ ID = 15, Title = "Ezra", Chapters = 10, Verses = 280 },
+			new BibleBook{ ID = 16, Title = "Nehemiah", Chapters = 13, Verses = 406 },
+			new BibleBook{ ID = 17, Title = "Esther", Chapters = 10, Verses = 167 },
+			new BibleBook{ ID = 18, Title = "Job", Chapters = 42, Verses = 1070 },
+			new BibleBook{ ID = 19, Title = "Psalms", Chapters = 150, Verses = 2461 },
+			new BibleBook{ ID = 20, Title = "Proverbs", Chapters = 31, Verses = 915 },
+			new BibleBook{ ID = 21, Title = "Ecclesiastes", Chapters = 12, Verses = 222 },
+			new BibleBook{ ID = 22, Title = "Song of Solomon", Chapters = 8, Verses = 117 },
+			new BibleBook{ ID = 23, Title = "Isaiah", Chapters = 66, Verses = 1292 },
+			new BibleBook{ ID = 24, Title = "Jeremiah", Chapters = 52, Verses = 1364 },
+			new BibleBook{ ID = 25, Title = "Lamentations", Chapters = 5, Verses = 154 },
+			new BibleBook{ ID = 26, Title = "Ezekiel", Chapters = 48, Verses = 1273 },
+			new BibleBook{ ID = 27, Title = "Daniel", Chapters = 12, Verses = 357 },
+			new BibleBook{ ID = 28, Title = "Hosea", Chapters = 14, Verses = 197 },
+			new BibleBook{ ID = 29, Title = "Joel", Chapters = 3, Verses = 73 },
+			new BibleBook{ ID = 30, Title = "Amos", Chapters = 9, Verses = 146 },
+			new BibleBook{ ID = 31, Title = "Obadiah", Chapters = 1, Verses = 21 },
+			new BibleBook{ ID = 32, Title = "Jonah", Chapters = 4, Verses = 48 },
+			new BibleBook{ ID = 33, Title = "Micah", Chapters = 7, Verses = 105 },
+			new BibleBook{ ID = 34, Title = "Nahum", Chapters = 3, Verses = 47 },
+			new BibleBook{ ID = 35, Title = "Habakkuk", Chapters = 3, Verses = 56 },
+			new BibleBook{ ID = 36, Title = "Zephaniah", Chapters = 3, Verses = 53 },
+			new BibleBook{ ID = 37, Title = "Haggai", Chapters = 2, Verses = 38 },
+			new BibleBook{ ID = 38, Title = "Zechariah", Chapters = 14, Verses = 211 },
+			new BibleBook{ ID = 39, Title = "Malachi", Chapters = 4, Verses = 55 },
+			new BibleBook{ ID = 40, Title = "Matthew", Chapters = 28, Verses = 1071 },
+			new BibleBook{ ID = 41, Title = "Mark", Chapters = 16, Verses = 678 },
+			new BibleBook{ ID = 42, Title = "Luke", Chapters = 24, Verses = 1151 },
+			new BibleBook{ ID = 43, Title = "John", Chapters = 21, Verses = 879 },
+			new BibleBook{ ID = 44, Title = "Acts", Chapters = 28, Verses = 1007 },
+			new BibleBook{ ID = 45, Title = "Romans", Chapters = 16, Verses = 433 },
+			new BibleBook{ ID = 46, Title = "1 Corinthians", Chapters = 16, Verses = 437 },
+			new BibleBook{ ID = 47, Title = "2 Corinthians", Chapters = 13, Verses = 257 },
+			new BibleBook{ ID = 48, Title = "Galatians", Chapters = 6, Verses = 149 },
+			new BibleBook{ ID = 49, Title = "Ephesians", Chapters = 6, Verses = 155 },
+			new BibleBook{ ID = 50, Title = "Philippians", Chapters = 4, Verses = 104 },
+			new BibleBook{ ID = 51, Title = "Colossians", Chapters = 4, Verses = 95 },
+			new BibleBook{ ID = 52, Title = "1 Thessalonians", Chapters = 5, Verses = 89 },
+			new BibleBook{ ID = 53, Title = "2 Thessalonians", Chapters = 3, Verses = 47 },
+			new BibleBook{ ID = 54, Title = "1 Timothy", Chapters = 6, Verses = 113 },
+			new BibleBook{ ID = 55, Title = "2 Timothy", Chapters = 4, Verses = 83 },
+			new BibleBook{ ID = 56, Title = "Titus", Chapters = 3, Verses = 46 },
+			new BibleBook{ ID = 57, Title = "Philemon", Chapters = 1, Verses = 25 },
+			new BibleBook{ ID = 58, Title = "Hebrews", Chapters = 13, Verses = 303 },
+			new BibleBook{ ID = 59, Title = "James", Chapters = 5, Verses = 108 },
+			new BibleBook{ ID = 60, Title = "1 Peter", Chapters = 5, Verses = 105 },
+			new BibleBook{ ID = 61, Title = "2 Peter", Chapters = 3, Verses = 61 },
+			new BibleBook{ ID = 62, Title = "1 John", Chapters = 5, Verses = 105 },
+			new BibleBook{ ID = 63, Title = "2 John", Chapters = 1, Verses = 13 },
+			new BibleBook{ ID = 64, Title = "3 John", Chapters = 1, Verses = 14 },
+			new BibleBook{ ID = 65, Title = "Jude", Chapters = 1, Verses = 25 },
+			new BibleBook{ ID = 66, Title = "Revelation", Chapters = 22, Verses = 404 }
+        };
+		
+		partial class BibleBookTitleComparer : IComparer<BibleBook>
+		{
+			public int Compare(BibleBook first, BibleBook second)
+			{
+				return first.Title.CompareTo(second.Title);		
+			}	
+		}	
+	}	
+}
+

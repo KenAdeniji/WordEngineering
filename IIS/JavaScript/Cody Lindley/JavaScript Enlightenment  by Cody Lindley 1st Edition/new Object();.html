@@ -1,0 +1,27 @@
+<script>
+// create the cody object...
+var cody = new Object();
+
+// then fill the cody object with properties (using dot notation)
+cody.living = true;
+cody.age = 33;
+cody.gender = 'male';
+
+console.log(cody); // logs Object {living = true, age = 33, gender = 'male'}
+
+cody.getGender = function(){return cody.gender;}
+console.log(cody.getGender());// logs 'male
+
+// define Person constructor function in order to create custom Person() objects later
+var Person = function(living, age, gender) {
+    this.living = living;
+    this.age = age;
+    this.gender = gender;
+    this.getGender = function() {return this.gender;};
+};
+
+// instantiate a Person object and store it in the cody variable
+var cody = new Person(true, 33, 'male');
+
+console.log(cody);
+</script>

@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>348</SequenceOrderId>
+    <Dated>2003-12-18T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>2 Chronicles 23:18, Nehemiah 12:44</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Chronicles+23%3A18%2C+Nehemiah+12%3A44&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Law, Congregation, Past.</Title>
+    <FromUntil>352</FromUntil>
+    <ContactId>216</ContactId>
+    <Keyword>Ejo</Keyword>
+    <Commentary>Peugeot 504.</Commentary>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>15</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>570</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <ContactId></ContactId>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>504</SequenceOrderId>
+   <Word>Ejo Law</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2309</SequenceOrderId>
+    <Word>Law, Congregation, Past.</Word>
+    <AlphabetSequenceIndex>220</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:14, Judges 9, Mark 13, Revelation 11:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A14%2C+Judges+9%2C+Mark+13%2C+Revelation+11%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1358</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>320</SequenceOrderId>
+   <Commentary>
+    BcpBatchRelease20031218.bat
+    Comforter_-_20031218AbominationOfDesolation.bat
+    Comforter_-_20031218AbominationOfDesolation.xml
+    Comforter_-_20031218AbominationOfDesolation.xslt
+    Comforter_-_20031218AbominationOfDesolationRelease20031218.xslt
+    Comforter_-_WordEngineeringIndexRelease20031218.xml
+   </Commentary>
+   <ContactId>206</ContactId>
+   <ScriptureReference>Daniel 9:27, Jeremiah 44:22, Matthew 24:15, Mark 13:14</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+9%3A27%2C+Jeremiah+44%3A22%2C+Matthew+24%3A15%2C+Mark+13%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Software>
+
+  <ClassAssociates>
+   <ContactId>216</ContactId>
+   <SequenceOrderId>599</SequenceOrderId>
+   <Commentary>
+    Abomination of Desolation ... Smell ... Nose ...
+    Comforter_-_20031218AbominationOfDesolation.xslt Search Concat ... User Interface (UI) Cast Error ... Belial ... ( ).
+    Don't Cross the line ...
+   </Commentary>
+  </ClassAssociates>
+  
+</wordOfGod>

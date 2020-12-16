@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence WantToLookPsychiatricOnADentalTreatment.txt WantToLookPsychiatricOnADentalTreatmentAlphabet.xml

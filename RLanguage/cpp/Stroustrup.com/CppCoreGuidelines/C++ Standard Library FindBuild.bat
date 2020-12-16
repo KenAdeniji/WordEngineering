@@ -1,0 +1,1 @@
+cl /GR /EHsc "C++ Standard Library Find.cpp"

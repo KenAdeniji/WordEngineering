@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Microsoft Windows Network Infrastructure</title>
+</head>
+<body>
+    <h1>Domain Name System (DNS)</h1>
+    A computer on the Internet has both an IP (Internet Protocol) address, and a fully qualified
+    domain name.
+    A client, resolver, may request connection to another computer using its host name. The DNS server
+    providing the translation, is known as the name server.
+
+    The three main levels that make-up the DNS hierarchy, are:
+    
+    <ul>
+    <li>Root-level domain (represented by a single period)</li>
+    <li>Top-level domain (represented by various suffixes, for example, .com, .org)</li>
+    <li>Second-level domain (represented by the organization's name, for example, Microsoft)</li>
+    </ul>
+    
+    DNS groups host computer names by domain (or subdomain) into zones.
+	
+	Prior to installing DNS, ensure that TCP/IP is running, and that the host has a static IP address.
+
+    <h1>DNS Manager</h1>
+    The DNS Manager is a graphical tool for managing DNS entries.
+    When you start the DNS manager and there is no connected DNS server, it may prompt the user to
+    connect to a DNS server.
+
+    <h1>NsLookup.exe</h1>
+    The NsLookup.exe is a console application that prints information about the host/domain name.
+    If you do not specify a DNS server, the default DNS server is used.
+
+    <h1>DnsCmd.exe</h1>
+	A console application for updating the DNS servers.
+	
+	<ul>
+	<li>
+	dnscmd [&lt;ServerName&gt;] /enumzones
+		(Will lists the zones that exist on the specified DNS server.)
+	</li>
+	<li>
+	dnscmd [&lt;ServerName&gt;] /info [&lt;Setting&gt;]
+		(Will lists registry settings at the DNS server level.)
+	</li>
+	</ul>
+
+    <h1>IPConfig</h1>
+	IPConfig /flushdns
+	IPConfig /renew
+    
+	<h1>NetStat</h1>
+	NetStat -anb
+    
+	<h1>Task Manager</h1>
+	Performance Tab.
+	Resource Monitor.
+	
+	<h1>Putty</h1>
+	
+    <h1>References</h1>
+    MCSE Microsoft Windows 2000 Server Network Infrastructure Readiness Review; Exam 70-216 0-7356-0950-0.
+
+</body>
+</html>

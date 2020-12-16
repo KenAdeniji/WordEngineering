@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+  <SequenceOrderId>14</SequenceOrderId>
+  <Dated>2003-08-01T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Psalms 148:14</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Psalms+148%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>I AM A people.</Title>
+  <Commentary />
+  <Keyword />
+  
+  <Remember>
+   <SequenceOrderId>319</SequenceOrderId>
+   <DatedFrom>2003-05-26T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-01T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>27</SignIndex>
+   <Commentary>There are 67 days, 2 biblical months and 7 days, between 20030526 and 20030801.</Commentary>
+   <Filename>Comforter_-_20030526HeIsAllThingsToAllPeopleThatByAnyMeansHeMayWinSomeToChrist.xml</Filename>
+   <ScriptureReference>
+    Genesis 49:3-4, Genesis 49:19, Numbers 32, Deuteronomy 3:12-20, Deuteronomy 33:6, Deuteronomy 33:20-21, 1 Corinthians 9:19-23
+   </ScriptureReference>   
+   <ScriptureReferenceURI>
+    http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+49%3A3-4%2C+Genesis+49%3A19%2C+Numbers+32%2C+Deuteronomy+3%3A12-20%2C+Deuteronomy+33%3A6%2C+Deuteronomy+33%3A20-21%2C+1+Corinthians+9%3A19-23&amp;section=0&amp;version=nkj&amp;language=en
+   </ScriptureReferenceURI>   
+  </Remember>
+
+  <Remember>
+   <SequenceOrderId>320</SequenceOrderId>
+   <DatedFrom>2003-07-10T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-01T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>22</SignIndex>
+   <Commentary>There are 22 days, between 20030710 and 20030801.</Commentary>
+   <Filename>Comforter_-_20030710TheseAreAStrongPeople.xml</Filename>
+   <ScriptureReference>
+    Exodus 20:12, Exodus 27:9, Numbers 9:18, Numbers 9:19, 2 Chronicles 1:11, 2 Chronicles 26:5, Psalms 72:17, Psalms 91:16, Psalms 104:33, Psalms 116:2, Proverbs 3:2, Proverbs 25:15, John 9:5, Philippians 1:8, James 5:7, 2 Peter 1:13, 2 Peter 2:3
+   </ScriptureReference>   
+   <ScriptureReferenceURI>
+    http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+20%3A12%2C+Exodus+27%3A9%2C+Numbers+9%3A18%2C+Numbers+9%3A19%2C+2+Chronicles+1%3A11%2C+2+Chronicles+26%3A5%2C+Psalms+72%3A17%2C+Psalms+91%3A16%2C+Psalms+104%3A33%2C+Psalms+116%3A2%2C+Proverbs+3%3A2%2C+Proverbs+25%3A15%2C+John+9%3A5%2C+Philippians+1%3A8%2C+James+5%3A7%2C+2+Peter+1%3A13%2C+2+Peter+2%3A3&amp;section=0&amp;version=nkj&amp;language=en
+   </ScriptureReferenceURI>   
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>63</SequenceOrderId>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>19</SequenceOrderId>
+   <Measure />
+   <SignIndex />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>189</SequenceOrderId>
+   <Word>A people</Word>
+   <Commentary>He also exalted the horn of His people, the praise of all His saints; even of His children, a people near unto Him. Praise you the LORD (Psalms 148:14).</Commentary>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>461</SequenceOrderId>
+   <Word>I AM A people.</Word>
+   <AlphabetSequenceIndex>93</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 4:13, Leviticus 3, Galatians 6, Revelation 18:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A13%2C+Leviticus+3%2C+Galatians+6%2C+Revelation+18%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1036</SequenceOrderId>
+   <Commentary>TheWord.cs: Empty elements should be stored as NULL entries in the database. This will further safeguard the data types interface.</Commentary>
+  </CaseBasedReasoning>
+  
+  <!--
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>239</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+  
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>264</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+  </TheWord>
+</wordOfGod>

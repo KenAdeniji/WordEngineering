@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+  <SequenceOrderId>24</SequenceOrderId>
+  <Dated>2003-08-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Acts 7:60</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Acts+7%3A60&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Olohun O si ni gate.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Remember>
+   <SequenceOrderId>329</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>   
+   <ScriptureReferenceURI></ScriptureReferenceURI>   
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>64</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>21</SequenceOrderId>
+   <Measure>Day</Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>200</SequenceOrderId>
+   <Word>LORD ... Sin</Word>
+   <Commentary>He kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep (Acts 7:60).</Commentary>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>477</SequenceOrderId>
+   <Word>Olohun O si ni gate.</Word>
+   <AlphabetSequenceIndex>184</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 7:24, Deuteronomy 31, John 9, Revelation 13:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A24%2C+Deuteronomy+31%2C+John+9%2C+Revelation+13%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1054</SequenceOrderId>
+   <Commentary>Wake-up Orientation: Horizontal between 0 and 25%, vertical between couch 0% and 66.67%. Wake-up Orientation: Horizontal feets crossed 12.5%, head 33%, vertical between couch 0% and 66.67%. Wake-up Orientation: Horizontal knees bowed between 0 and 25%, vertical couch knees 33%, middle 50%, head 66.67%. TheWordRelease20030805.xslt: TheWord node, include the SequenceOrderId. Olohun O si (ni) gate.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>241</SequenceOrderId>
+   <Commentary>TheWordRelease20030805.xslt</Commentary>
+  </Software>
+  
+  <ClassAssociates>
+   <SequenceOrderId>271</SequenceOrderId>
+   <Commentary>Computer On ... Record ... Computer Noise. Scripture reference reading (Genesis 7:24, Deuteronomy 31, John 9, Revelation 13:10), garage noise ...</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

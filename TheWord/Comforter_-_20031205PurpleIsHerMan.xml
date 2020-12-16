@@ -1,0 +1,112 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>310</SequenceOrderId>
+    <Dated>2003-12-05T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Exodus 39:1, Exodus 39:5, Exodus 39:29, John 19:5, Revelation 18:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+39%3A1%2C+Exodus+39%3A5%2C+Exodus+39%3A29%2C+John+19%3A5%2C+Revelation+18%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Purple is her man.</Title>
+    <ContactId>196</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>11</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>536</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary>
+   </Commentary>
+   <Filename></Filename>
+   <ContactId></ContactId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>479</SequenceOrderId>
+   <Word>Purple ... Man</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2184</SequenceOrderId>
+    <Word>Purple is her man.</Word>
+    <AlphabetSequenceIndex>175</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:15, Deuteronomy 22, John 18, Revelation 14:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A15%2C+Deuteronomy+22%2C+John+18%2C+Revelation+14%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>196</ContactId>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1333</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>309</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>565</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+</wordOfGod>

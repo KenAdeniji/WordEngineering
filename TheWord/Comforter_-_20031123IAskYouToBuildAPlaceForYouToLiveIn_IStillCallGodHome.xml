@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>283</SequenceOrderId>
+  <Dated>2003-11-23T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>1 Samuel 9:27, 2 Chronicles 33:17, Job 2:9, Job 37:14, Psalms 46:10, Jeremiah 8:14, Romans 11:23</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+9%3A27%2C+2+Chronicles+33%3A17%2C+Job+2%3A9%2C+Job+37%3A14%2C+Psalms+46%3A10%2C+Jeremiah+8%3A14%2C+Romans+11%3A23&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>I ask You to build a place for You to live in. I still call God, Home.</Title>
+  <ContactId>163</ContactId>
+  <FromUntil>327</FromUntil>
+  <Commentary>Here is wisdom. Let him that has understanding count the number of the beast: for it is the number of a man; and his number is Six hundred threescore and six (Revelation 13:18).</Commentary>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>509</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>455</SequenceOrderId>
+   <Word>Still ... God</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1584</SequenceOrderId>
+    <Dated>2003-11-22T00:00:00.0000000-08:00</Dated>
+    <Word>I ask You to build a place for You to live in.</Word>
+    <AlphabetSequenceIndex>428</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:3, Esther 2, Jeremiah 17, Jude 1:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A3%2C+Esther+2%2C+Jeremiah+17%2C+Jude+1%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>163</ContactId>
+    <Commentary>FUJIFILM 6 Compact Disc (CD).</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1585</SequenceOrderId>
+    <Word>I still call God, Home.</Word>
+    <AlphabetSequenceIndex>176</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:16, Deuteronomy 23, John 17, Revelation 13:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>163</ContactId>
+    <Commentary>FUJIFILM 6 Compact Disc (CD).</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1312</SequenceOrderId>
+   <Commentary>Wake-up Orientation: Erection ... Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1313</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>299</SequenceOrderId>
+   <Dated>2003-11-22T00:00:00.0000000-08:00</Dated>
+   <Commentary>
+    Comforter_-_20031117Prophecy70thWeekRelease20031122.xslt
+    Comforter_-_WordEngineeringIndexRelease20031122.xml
+    TheWordRelease200311221305.cs
+    TheWordWebFormRelease200311221305.aspx
+    TheWordPageRelease200311221305.aspx.cs
+   </Commentary>
+  </Software>
+
+  <Software>
+   <SequenceOrderId>300</SequenceOrderId>
+   <Commentary>Comforter_-_20031121EnvironmentVariableRelease20031123.bat</Commentary>
+  </Software>
+
+  <Software>
+   <SequenceOrderId>301</SequenceOrderId>
+   <Dated>2003-11-24T00:00:00.0000000-08:00</Dated>
+   <Commentary>Comforter_-_20031121EnvironmentVariableRelease20031124.bat</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>544</SequenceOrderId>
+   <Dated>2003-11-22T00:00:00.0000000-08:00</Dated>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg ... Smell.</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>545</SequenceOrderId>
+   <Commentary>Shower ... Garage Noise ... ContactId 164 Sergey  cloth: Fall down. Comforter_-_20031121EnvironmentVariableRelease20031123.bat User Interface (UI) Cast Error ... Smell ... Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg ... Smell ... Left finger twitches ...</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>546</SequenceOrderId>
+   <Dated>2003-11-24T00:00:00.0000000-08:00</Dated>
+   <Commentary>... Garage Noise ... Smell ... Left finger twitches ... Comforter_-_20031123IAskYouToBuildAPlaceForYouToLiveIn_IStillCallGodHome.sql User Interface (UI) Cast Error.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

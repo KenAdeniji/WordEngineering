@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>500</SequenceOrderId>
+   <Dated>2004-05-18T00:00:00.0000000-08:00</Dated>
+   <FromUntil>139</FromUntil>
+   <ContactId>22</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>46</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6788</SequenceOrderId>
+    <Word>Orinse.</Word>
+    <AlphabetSequenceIndex>80</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:24, Exodus 30, Philippians 3, Revelation 19:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A24%2C+Exodus+30%2C+Philippians+3%2C+Revelation+19%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6789</SequenceOrderId>
+    <Word>A man of authority is accustomed to good living.</Word>
+    <AlphabetSequenceIndex>468</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:10, Job 32, Isaiah 38, 1 John 5:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A10%2C+Job+32%2C+Isaiah+38%2C+1+John+5%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1734</SequenceOrderId>
+   <ContactId>22</ContactId>
+   <Commentary>Cut hair and shave arm pit. Todai 2249 Stoneridge Mall Upper Level 17 Purple Lot C Pleasanton 94588 CA USA Tel: (925) 460-9100 Fax: (925) 460-9101 (888) 55.TODAI http://www.todai.com.</Commentary>
+   <Expense>20</Expense>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>363</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Software>
+  -->
+  
+  <ClassAssociates>
+   <SequenceOrderId>751</SequenceOrderId>
+   <Commentary>Faeces ... private part ... nose ... hip ... sneeze ... running nose ... keyboard error ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>433</SequenceOrderId>
+   <Company />
+   <FirstName />
+   <LastName></LastName>
+   <OtherName />
+   <Title />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

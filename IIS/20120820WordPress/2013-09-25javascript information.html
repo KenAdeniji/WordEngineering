@@ -1,0 +1,45 @@
+<strong>To determine the type of an unevaluated operand</strong>
+
+<code>typeof undefined === "undefined"
+
+typeof null === "object"
+
+typeof true === "boolean"
+
+typeof 3.14 === "number"
+
+typeof "good" === "string"
+
+typeof Infinity === "number"
+
+typeof NaN === "number"
+
+typeof new Date() === "object"
+
+typeof {a:1} === 'object'
+
+typeof [1, 2, 4] === 'object'; // use Array.isArray or Object.prototype.toString.call to differentiate regular objects from arrays
+</code>
+
+<strong>To differentiate between the various typeof objects</strong>
+
+var toClass = {}.toString
+console.log( toClass.call( [1, 2] ) );
+
+<strong>To determine if an object, is a type of a class</strong>
+
+<code>function Car(make, model, year) {
+this.make = make;
+this.model = model;
+this.year = year;
+}
+var mycar = new Car("Honda", "Accord", 1998);
+var a = mycar instanceof Car; // returns true
+var b = mycar instanceof Object; // returns true
+
+</code>
+<strong>Reference</strong>
+
+http://javascript.info
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof

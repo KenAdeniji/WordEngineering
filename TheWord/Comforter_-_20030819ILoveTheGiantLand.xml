@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>50</SequenceOrderId>
+  <Dated>2003-08-19T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Deuteronomy 2:20, Deuteronomy 3:13, Joshua 17:15, Genesis 7:18, Deuteronomy 25, John 15, Revelation 13:16</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Deuteronomy+2%3A20%2C+Deuteronomy+3%3A13%2C+Joshua+17%3A15%2C+Genesis+7%3A18%2C+Deuteronomy+25%2C+John+15%2C+Revelation+13%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>I love ... the giant ... land.</Title>
+  <Commentary>
+  </Commentary>
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>346</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference> 
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <ScriptureReading>
+   <SequenceOrderId>66</SequenceOrderId>
+   <ScriptureReference>1 Samuel 1-28</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+1-28&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </ScriptureReading>
+
+  <!--
+  <Sign>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>227</SequenceOrderId>
+   <Word>Giant Land</Word>
+   <Commentary>
+(That also was accounted a land of giants: giants dwelt therein in old time; and the Ammonites call them Zamzummims (Deuteronomy 2:20).
+The rest of Gilead, and all Bashan, being the kingdom of Og, gave I unto the half tribe of Manasseh; all the region of Argob, with all Bashan, which was called the land of giants (Deuteronomy 3:13).
+Joshua answered them, If you be a great people, then get you up to the wood country, and cut down for yourself there in the land of the Perizzites and of the giants, if mount Ephraim be too narrow for you (Joshua 17:15).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>513</SequenceOrderId>
+   <Word>I love ... the giant ... land.</Word>
+   <AlphabetSequenceIndex>178</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 7:18, Deuteronomy 25, John 15, Revelation 13:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A18%2C+Deuteronomy+25%2C+John+15%2C+Revelation+13%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1090</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: 2nd cooking, rice will fall on the private part.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>251</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>303</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. Scripture Reading: Noise ...</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

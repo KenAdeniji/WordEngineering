@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<body>
+	<!--
+	http://javascript.info/tutorial/document-write
+	-->
+
+		<script>
+			var script = document.createElement('script')
+			script.src = 'http://ads.com/buyme?rand='+Math.random()
+
+			// now append the script into HEAD, it will fetched and executed
+			document.documentElement.firstChild.appendChild(script)
+		</script>
+		
+		<script>
+			var url = 'http://ads.com/buyme?rand='+Math.random()
+			document.write('<script src="'+url+'"></scr'+'ipt>')
+		</script>
+
+	</body>
+</html>

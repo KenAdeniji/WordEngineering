@@ -1,0 +1,117 @@
+﻿<html>
+<!--
+	2016-07-01 	Created Sample statistics in the Bible; based on the numbers, in the Bible.
+-->
+	<head>
+		<title>One for the forbidden boy</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://cdn.jsdelivr.net/jstat/1.1.1/jstat.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<table id="resultSet" border="1">
+				<caption>Sample Statistics in the Bible</caption>
+				<tbody></tbody>
+			</table>
+		</div>
+		<script>
+			function insertTableRow(title, figure)
+			{
+				var table = document.getElementById("resultSet");
+				var tbody = table.getElementsByTagName('tbody')[0];
+				var row = tbody.insertRow(-1);
+				
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+
+				cell1.innerHTML = title;
+				cell2.innerHTML = figure;
+			}
+			
+			function prepareData(data)
+			{
+				var dataSet = [];
+				for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+		                number = dataRow["Number"];
+		                scriptureReference = dataRow["ScriptureReference"];
+						occurrences = scriptureReference.split(/,|;/);
+						for (occurrenceIndex = 0; occurrenceIndex < occurrences.length; ++occurrenceIndex)
+						{
+							dataSet.push(number);
+						}
+		            }
+		        }
+				return dataSet;
+			}
+			
+			function eStats(data)
+			{
+				var dataSet = prepareData(data);
+
+				var hypot = Math.hypot.apply(Math, dataSet);
+				var	maximum = jStat.max(dataSet);
+				var mean = jStat.mean(dataSet);
+				var median = jStat.median(dataSet);
+				var minimum = jStat.min(dataSet);
+				var mode = jStat.mode(dataSet);
+
+				var populationStandardDeviation = jStat.stdev(dataSet, false);
+				var populationVariance = jStat.variance(dataSet, false);	
+
+				var range = jStat.range(dataSet);
+
+				var sampleVariance = jStat.variance(dataSet, true);
+				var sampleStandardDeviation = jStat.stdev(dataSet, true);
+
+				var sum = jStat.sum(dataSet);
+				
+				insertTableRow("Count", dataSet.length);
+				insertTableRow("Hypot", hypot);
+				insertTableRow("Maximum", maximum);
+				insertTableRow("Mean", mean);
+				insertTableRow("Median", median);
+				insertTableRow("Minimum", minimum);
+				insertTableRow("Mode", mode);
+				insertTableRow("Population Standard Deviation", populationStandardDeviation);
+				insertTableRow("Population Variance", populationVariance);
+				insertTableRow("Range", range);
+				insertTableRow("Sample Standard Deviation", sampleStandardDeviation);
+				insertTableRow("Sample Variance", sampleVariance);
+				insertTableRow("Sum", sum);
+			}
+			
+			function querySubmit() {
+				var request = {};
+				//request[""] = document.getElementById("").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/OneForTheForbiddenBoy.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataSet = JSON.parse(data.d);
+						eStats(dataSet);
+					},
+					error: function (xhr) {
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					}
+				});
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+		</script>
+	</body>
+</html>

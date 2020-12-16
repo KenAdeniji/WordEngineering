@@ -1,0 +1,8 @@
+cat 2020-04-20ArmanDineshMasteringLinux.txt
+chmod u=rwx,g=rx,o=r 2020-04-20ArmanDineshMasteringLinux.txt
+chown kadeniji 2020-04-20ArmanDineshMasteringLinux.txt
+cp source destination
+df
+gunzip filename
+zip filename
+

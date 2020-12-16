@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-04-30	Created.	YourGirlSheIsInTrueTips.html 
+		-->
+		<title>Your girl, she is in, true tips.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<label for="percent">Percent:</label>
+				<input id="percent" type="number" size="7" autofocus>
+				<button id="query">Query</button>
+			</fieldset>
+			<div id="scriptureReference"></div>
+			<div id="feedback"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			function clearView()
+			{
+				document.getElementById("scriptureReference").innerHTML = "";
+				document.getElementById("feedback").innerHTML = "";
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var percent = getParameterByName("percent");
+					if (percent !== "")
+					{
+						document.getElementById("percent").value = percent;
+						querySubmit();	
+						isPostBack = true;
+					}	
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				retrievePercent();
+			}
+
+			function retrievePercent()
+			{
+				var request = {};
+			
+				var percent = parseFloat(document.getElementById("percent").value);
+				request["percent"] = percent;
+				console.log(percent);
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/YourGirlSheIsInTrueTips.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						console.log(dataSet.scriptureReference);
+						document.getElementById("scriptureReference").innerHTML = 
+							scriptureReferenceHyperlink(dataSet.scriptureReference);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var percent = document.getElementById("percent");
+			percent.addEventListener("change", querySubmit, false);
+			
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+		</script>
+	</body>
+</html>

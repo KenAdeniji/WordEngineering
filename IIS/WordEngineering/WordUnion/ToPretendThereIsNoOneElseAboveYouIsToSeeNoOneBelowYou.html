@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-11-15	Created. To pretend, there is no one else, above you; is to see, no one, below you.
+	-->
+	<head>
+		<title>To pretend, there is no one else, above you; is to see, no one, below you.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Full-Text</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="groupBy">Group By</label>
+						</td>
+						<td>
+							<select id="groupBy">
+								<option>Testament</option>
+								<option>Book</option>
+								<option>Chapter</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="bibleVersion">Bible Version</label>
+						</td>
+						<td>
+							<select id="bibleVersion"> </select>
+						</td>
+					</tr>
+
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function querySubmit()
+			{
+				var request = {};
+				var groupBy = document.getElementById("groupBy");
+				request["groupByIndex"] = groupBy.selectedIndex;
+
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/ToPretendThereIsNoOneElseAboveYouIsToSeeNoOneBelowYou.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.renderBibleVersionSelect();
+				
+					groupBy = getParameterByName("groupBy");
+					if (groupBy != "")
+					{
+						document.getElementById("groupBy").value = groupBy;
+					}
+					
+					bibleVersion = getParameterByName("bibleVersion");
+					if (bibleVersion != "")
+					{
+						document.getElementById("bibleVersion").value = bibleVersion;
+					}
+					
+					if (groupBy != "" || bibleVersion != "")
+					{
+						querySubmit();
+					}
+
+					isPostBack = true;
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+					
+						var groupBy = scriptLiteral9432.getParameterByName("groupBy");
+						if (groupBy != "")
+						{
+							document.getElementById("groupBy").value = groupBy;
+						}
+						
+						var bibleVersion = scriptLiteral9432.getParameterByName("bibleVersion");
+						if (bibleVersion != "")
+						{
+							document.getElementById("bibleVersion").value = bibleVersion;
+						}
+						
+						if (groupBy != "" || bibleVersion != "")
+						{
+							querySubmit();
+						}
+
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function render(data) 
+			{
+				var info = "<table id='scriptureReferenceTable'><caption>" + "Occurrences: " + 
+					data["Table"].length + "</caption>";
+			
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						info += scriptLiteral9432.buildRow
+						(
+							scriptLiteral9432.buildHyperlink("scriptureReference", dataRow["ScriptureReference"]),			
+							dataRow["VerseText"]
+						);
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+				console.log(info);
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

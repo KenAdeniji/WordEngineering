@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>WordEngineering</ShortName>
+	<Description>WordEngineering</Description>
+	<Url type="text/html" method="get" template="http://e-comfort.ephraimtech.com/WordEngineering/IndexingService.aspx?q={searchTerms}"/>
+	<!--
+	<Image height="16" width="16">16x16 image to appear in the search bar in Firefox</Image>
+	-->	
+	<AdultContent>false</AdultContent>
+	<Language>en-us</Language>
+	<OutputEncoding>UTF-8</OutputEncoding>
+	<InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

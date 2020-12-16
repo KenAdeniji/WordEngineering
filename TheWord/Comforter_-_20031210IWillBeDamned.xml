@@ -1,0 +1,109 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>330</SequenceOrderId>
+    <Dated>2003-12-10T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Acts 27:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Acts+27%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>I will be damned.</Title>
+    <FromUntil>344</FromUntil>
+    <ContactId>113</ContactId>
+    <Commentary>Match between the ContactId and the AlphabetSequenceIndex, 113.</Commentary>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>13</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>113</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>553</SequenceOrderId>
+   <DatedFrom>2003-10-10T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-10T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>61</FromUntil>
+   <Commentary>Kingdom ... Power ... Glory (Daniel 2:37, Matthew 6:13). Seven ewe lambs (Genesis 21:28-30). 61 days: 2 biblical months and 1 day.</Commentary>
+   <Filename>Comforter_-_20031010KingdomPowerGlory_SevenEweLambs.xml</Filename>
+   <ScriptureReference>Daniel 2:37, Matthew 6:13, Genesis 21:28-30</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+2%3A37%2C+Matthew+6%3A13%2C+Genesis+21%3A28-30&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>11</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>486</SequenceOrderId>
+   <Word>I ... Will ... Be ... Damn</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2241</SequenceOrderId>
+    <Word>I will be damned.</Word>
+    <AlphabetSequenceIndex>113</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 5:7, Leviticus 23, 1 Corinthians 15, Revelation 17:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A7%2C+Leviticus+23%2C+1+Corinthians+15%2C+Revelation+17%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>1 outstanding floppy diskette in the right computer, HolySpirit.</Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1342</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>314</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>580</SequenceOrderId>
+   <Commentary>Comforter_-_20031010KingdomPowerGlory_SevenEweLambs.xml ... Smell. Nose. 1 outstanding floppy diskette in the right computer, HolySpirit, disk drive ... Smell. SQL Script: Dam ... Keyboard Error. I ... Will ... Be ... Dam  ... Keyboard Error.</Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

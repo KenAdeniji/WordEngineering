@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>367</SequenceOrderId>
+   <Dated>2004-01-02T00:00:00.0000000-08:00</Dated>
+   <ScriptureReference>Matthew 3:14</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Matthew+3%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Title>Pastor needs John. You just keep it simple.</Title>
+   <FromUntil>2</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>20</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>592</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>86</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>523</SequenceOrderId>
+   <Word>Need John</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2759</SequenceOrderId>
+    <Word>Pastor needs John.</Word>
+    <AlphabetSequenceIndex>183</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:23, Deuteronomy 30, John 10, Revelation 13:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A23%2C+Deuteronomy+30%2C+John+10%2C+Revelation+13%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2760</SequenceOrderId>
+    <Word>You just keep it simple.</Word>
+    <AlphabetSequenceIndex>271</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:4, 2 Samuel 4, Zechariah 8, Revelation 8:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A4%2C+2+Samuel+4%2C+Zechariah+8%2C+Revelation+8%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1395</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>328</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>622</SequenceOrderId>
+   <Commentary>Scripture Reference Search: Matthew 3:14 ... Error. Mail ... Error ...</Commentary>
+  </ClassAssociates>
+  
+</wordOfGod>

@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>446</SequenceOrderId>
+   <Dated>2004-03-05T00:00:00.0000000-08:00</Dated>
+   <FromUntil>65</FromUntil>
+   <ContactId>57</ContactId>
+   <Keyword>Judas</Keyword>
+  </TheWord>
+
+  <JehovahRophe>
+   <SequenceOrderId>41</SequenceOrderId>
+   <Commentary>Jehovah Rophe heart shaped vertically aligned 33% with the couch. Leave Judas alone.</Commentary>
+  </JehovahRophe>
+
+  <!--
+  <Dream>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>646</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId></ContactId>
+   <Commentary>
+   </Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>5266</SequenceOrderId>
+    <Word>Leave Judas alone.</Word>
+    <AlphabetSequenceIndex>147</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:9, Numbers 30, Acts 25, Revelation 16:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A9%2C+Numbers+30%2C+Acts+25%2C+Revelation+16%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1625</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>346</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>699</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </ClassAssociates>
+  -->
+
+  <!--
+  <Contact>
+   <SequenceOrderId>358</SequenceOrderId>
+   <Company></Company>
+   <FirstName></FirstName>
+   <LastName></LastName>
+   <OtherName />
+   <Title></Title>
+   <Commentary>
+   </Commentary>
+  </Contact>
+  -->
+
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

@@ -1,0 +1,37 @@
+<body></body>
+<script type="text/javascript">
+  function mouseeventHandler(event) {
+    /* The following is for compatability */
+    /* IE does NOT by default pass the event object */
+    /* obtain a ref to the event if one was not given */
+    if (!event) event = window.event;
+
+    /* obtain event type and target as earlier */
+    var eType = event.type;
+    var eTarget = event.target || event.srcElement;
+    //alert(eType +' event on element with id: '+ eTarget.id);
+	console.debug(eType +' event on element with id: '+ eTarget.id);
+  }
+
+ function onloadHandler () {
+   /* obtain a ref to the 'body' element of the page */
+   var body = document.body;
+   /* create a span element to be clicked */
+   var span = document.createElement('span');
+   span.id = 'ExampleSpan';
+   span.appendChild(document.createTextNode ('Click Here!'));
+
+   /* register the span object to receive specific mouse events - 
+      notice the lowercase of the events but the free choice in the names of the handlers you replace them with. 
+   */
+   span.onmousedown = mouseeventHandler;
+   span.onmouseup = mouseeventHandler;
+   span.onmouseover = mouseeventHandler;
+   span.onmouseout = mouseeventHandler;
+
+   /* display the span on the page */
+   body.appendChild(span);   
+}
+
+window.onload = onloadHandler; // since we replace the handler, we do NOT have () after the function name
+</script>

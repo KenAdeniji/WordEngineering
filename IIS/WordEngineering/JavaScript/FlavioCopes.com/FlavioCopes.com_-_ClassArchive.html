@@ -1,0 +1,38 @@
+<script>
+	//2019-06-17	https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/
+	class Man 
+	{ 
+		constructor(name, role) 
+		{ 
+			this.name = name;  
+			this.role = role;
+		}
+		toString()
+		{ 
+			return 'Name: ' + this.name + ' Role: ' + this.role;  
+		}
+	}
+	
+	class King extends Man 
+	{ 
+		constructor(name, role, reign) 
+		{ 
+			super(name, role);			
+			this.reign = reign;
+		}
+		toString()
+		{ 
+			return super.toString() + ' Reign: ' + this.reign;  
+		}
+	}
+	
+	function pageLoad()
+	{
+		var adam = new Man("Adam", "First man");
+		console.log(adam.toString());
+		var david = new King("David", "Sweet psalmist", 40 * 360);
+		console.log(david.toString());
+	}
+
+	window.addEventListener("load", pageLoad, false);
+</script>

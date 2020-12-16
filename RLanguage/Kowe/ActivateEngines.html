@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-11-29	ActivateEngines.html
+			2015-11-29	http://www.asciitable.com
+			2015-11-29	http://stackoverflow.com/questions/10745088/greek-letters-in-html5-canvas
+			2015-11-29	http://stackoverflow.com/questions/1772179/get-character-value-from-keycode-in-javascript-then-trim				
+		-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF8">
+		<title>Activate Engines</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<canvas id="myCanvas" width="200" height="100"></canvas>
+			<div id="board"> </div>
+		</div>
+		<script>
+			var body = document.getElementsByTagName('body')[0];
+			/*
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					//querySubmit();
+				}
+				type(e);
+			}
+			*/
+			body.onkeypress = function(e) {
+				keypress(e);
+			}
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");
+			context.fillText("\u03be", 50, 50);
+
+			function type(e)
+			{
+				var printable = String.fromCharCode(e.keyCode);
+				var board = document.getElementById("board");
+				board.innerHTML += printable;	
+				console.log(e.keyCode, printable);
+			}
+			
+			function keypress(event)
+			{
+				var character = "";
+				if (event.which == null)
+				{
+					character = String.fromCharCode(event.keyCode);    // old IE
+				}	
+				else if (event.which != 0 && event.charCode != 0)
+				{
+					character = String.fromCharCode(event.which);	  // All others
+				}	
+				else
+				{
+					// special key
+				}	
+				var board = document.getElementById("board");
+				board.innerHTML += character;	
+				console.log(event.which, event.keyCode, character);
+			}
+		</script>
+	</body>
+</html>

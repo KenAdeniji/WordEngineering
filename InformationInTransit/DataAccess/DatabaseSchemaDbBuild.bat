@@ -1,0 +1,1 @@
+csc DatabaseSchemaDb.cs DataCommand.cs ..\ProcessLogic\DatabaseSchema.cs ..\ProcessLogic\SysObjects.cs

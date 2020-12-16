@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-06-03	Created.
+	-->
+	<head>
+		<title>The Last Time</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="metric">Metric</label>
+							</td>
+							<td>
+								<select id="metric" autofocus> </select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="unit">Unit</label>
+							</td>
+							<td>
+								<input type="number" id="unit" min="1" max="31102" step="1"/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="bibleVersion">Bible Version</label>
+							</td>
+							<td>
+								<select id="bibleVersion"> </select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function querySubmit() {
+				var request = {};
+				request["metric"] = document.getElementById("metric").value;
+				request["unit"] = document.getElementById("unit").value;
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/TheLastTime.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect("metric", metrics);
+						document.getElementById("unit").value = 1;
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+		    window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+
+			var metrics = [
+				["BookID", "bookID"],
+				["ChapterID", "chapterID"],
+				["VerseID", "verseID"],
+				["ChapterIDSequence", "chapterIDSequence"],
+				["VerseIDSequence", "verseIDSequence"],				
+			];
+		</script>
+		</script>
+	</body>
+</html>

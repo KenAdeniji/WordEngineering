@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function Person(){} 
+			
+			//Extend the person class, with the getName() method.
+			Person.prototype.getName = function(){ 
+			  return this.name; 
+			}; 
+			 
+			//Declare the Me class, with the name attribute.
+			function Me(){ 
+			  this.name = "John Resig"; 
+			}
+			
+			//The Me class, inherits an instance of the Person class.
+			Me.prototype = new Person(); 
+			 
+			//Create an instance of the Me class.
+			var me = new Me(); 
+			
+			//assert( me.getName(), "A name was set." );
+			document.write(me.getName());
+		</script>
+	</head>	
+<html>

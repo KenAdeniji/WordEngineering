@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>338</SequenceOrderId>
+    <Dated>2003-12-14T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Isaiah 60:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+60%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>The sun will shine today, the sun will cover us with its glory.</Title>
+    <FromUntil>348</FromUntil>
+    <ContactId>15</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>14</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>563</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>494</SequenceOrderId>
+   <Word>Sun ... Day ... Glory</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2261</SequenceOrderId>
+    <Word>The sun will shine today, the sun will cover us with its glory.</Word>
+    <AlphabetSequenceIndex>694</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 26:1, Isaiah 15, Psalms 18, 1 Peter 2:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+26%3A1%2C+Isaiah+15%2C+Psalms+18%2C+1+Peter+2%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1349</SequenceOrderId>
+   <Commentary>
+    Jimmy Carter: Living Faith ISBN 0-8129-2736-2.
+    Dennis Kucinich http://www.kucinich.com.
+    Lucy Kolin Ressurection Lutheran Church 397 Euclid Avenue Oakland CA 94610 lucyk@pacbell.net (510) 444-5382.
+    Shantayanan Devarajan, F. Halsey Rogers, Lyn Squire: World Bank Economist's Forum Volume 1 ISBN 0-8213-4833-7.
+    Theresa E. Loscalzo: Business-To-Business Internet Exchanges ISBN 0-7355-2939-6 Schnader.com.
+    Simon Bolivar Liberator of Colombia, Ecuador, Panama, Peru, Venezuela, and founder of Bolivia. He led the victorious army from Caracas to Potosi engaging in the conclusive battles of Boyaca 18190807, Carabobo 18210624, Pichincha 18220524, Junin 18240806, Ayacucho 18241209.
+    Ten United Nations Plaza 10 UN Plaza 1130 Market Street 94110 The structure of world peace cannot be thw work of one man, or one people, or one nation ... It must be a peace which rests on the cooperation of the whole world.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>319</SequenceOrderId>
+   <Commentary>Comforter_-_20031214URIChrist.xml Comforter_-_20031214URIWordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>589</SequenceOrderId>
+   <Commentary>Comforter_-_20031214URIChrist.xml: Cari Cole http//www.CariCole.com ... URIEXport.exe Database Error.</Commentary>
+  </ClassAssociates>
+  
+</wordOfGod>

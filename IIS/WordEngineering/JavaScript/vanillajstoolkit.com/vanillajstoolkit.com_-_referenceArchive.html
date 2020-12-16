@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-02-14	Created.	https://vanillajstoolkit.com/reference/
+			2019-02-14	https://stackoverflow.com/questions/359788/how-to-execute-a-javascript-function-when-i-have-its-name-as-a-string
+		-->
+		<title>The Vanilla JS Toolkit</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><select id="menuOption"></select></td></tr>
+				<tr><td><input type="submit" id="submitQuery"></td></tr>
+				<tr><td><div id="resultSet"></div></td></tr>
+			</table>
+		</div>	
+		<script>
+			var isPostBack = false;
+			var	menuOptions = 
+			[
+				"filter",
+				"getComputedStyle",
+				"querySelector",
+				"querySelectorAll"
+			];
+			
+			function dump(elements)
+			{
+				if (Array.isArray(elements) === false)
+				{
+					elements = [elements];
+				}
+				
+				var dumpResult = "<table><tbody>";
+				var elementCurrent;
+				for (var rowIndex = 0, rowCount = elements.length; rowIndex < rowCount; ++rowIndex)
+				{
+					elementCurrent = elements[rowIndex];
+					if (!elementCurrent.id)
+					{
+						continue;
+					}	
+					dumpResult += `<tr><td>${elementCurrent.id}`;
+				}
+				dumpResult += "</tbody></table>" 
+				document.getElementById("resultSet").innerHTML = dumpResult;
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					renderMenuOptions();
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				var selection = document.getElementById("menuOption").value;
+				var	stub = "stub" + selection;
+				window[stub]();
+				//eval(stub)();
+			}
+			
+			function renderMenuOptions() 
+			{
+				var select = document.getElementById("menuOption");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = menuOptions.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = menuOptions[rowIndex];
+					option.value = menuOptions[rowIndex];
+					select.appendChild(option);
+				}
+			}
+			
+			function stubfilter()
+			{
+				dump
+				( 
+					Array.prototype.slice.call(document.querySelectorAll('*'))
+					.filter
+					( 
+						function (item) 
+						{ 
+							return 	item.type === "select-one" ||
+									item.type === "select-multiple"
+						} 
+					)
+				);
+			}
+
+			function stubgetComputedStyle()
+			{
+				var elem = document.querySelector('#resultSet');
+				var bgColor = window.getComputedStyle(elem).backgroundColor;
+				document.getElementById("resultSet").innerHTML = 
+					`id: ${elem.id} backgroundColor: ${bgColor}`;
+			}	
+
+			function stubquerySelector()
+			{
+				dump( document.querySelector('select') );
+			}
+			
+			function stubquerySelectorAll()
+			{
+				dump( Array.prototype.slice.call(document.querySelectorAll('*')) );
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

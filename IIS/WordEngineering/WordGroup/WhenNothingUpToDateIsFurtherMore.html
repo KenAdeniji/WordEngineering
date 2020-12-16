@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-06	Created.
+	-->
+	<head>
+		<title>When nothing up-to-date; is further more.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Sacred Text"/>
+		<meta name="keywords" content="Sacred Text"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="first">First:</label></td>
+					<td><input id="first" type="text" value="N"></td>
+				</tr>
+				<tr>
+					<td><label for="lastOrBeside">Last or Beside:</label></td>
+					<td><input id="lastOrBeside" type="text" value="G"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<select id="upToDate">
+							<option>First and Last</option>
+							<option>Beside</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["first"] = document.getElementById("first").value;
+				request["lastOrBeside"] = document.getElementById("lastOrBeside").value;
+				request["upToDate"] = document.getElementById("upToDate").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/WhenNothingUpToDateIsFurtherMore.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					},
+					timeout: 36000
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("first").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

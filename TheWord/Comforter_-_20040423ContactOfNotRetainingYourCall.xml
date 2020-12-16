@@ -1,0 +1,150 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>475</SequenceOrderId>
+   <Dated>2004-04-23T00:00:00.0000000-08:00</Dated>
+   <FromUntil>114</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>44</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6101</SequenceOrderId>
+    <Word>Contact of not retaining your call.</Word>
+    <AlphabetSequenceIndex>350</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:13, 1 Chronicles 12, Ezekiel 33, Revelation 3:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A13%2C+1+Chronicles+12%2C+Ezekiel+33%2C+Revelation+3%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6102</SequenceOrderId>
+    <Word>Not retaining your call.</Word>
+    <AlphabetSequenceIndex>253</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:18, 1 Samuel 17, Matthew 4, Revelation 9:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A18%2C+1+Samuel+17%2C+Matthew+4%2C+Revelation+9%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6103</SequenceOrderId>
+    <Word>Anigbatete.</Word>
+    <AlphabetSequenceIndex>84</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 4:4, Exodus 34, Ephesians 5, Revelation 19:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A4%2C+Exodus+34%2C+Ephesians+5%2C+Revelation+19%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  
+  <CaseBasedReasoning>
+   <SequenceOrderId>1706</SequenceOrderId>
+   <Commentary>Cut hair. Bashorun Moshood Kashimamo Omoboriowo (MKO) Abiola. Anigbatete. Shave face.</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>354</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>726</SequenceOrderId>
+   <Commentary>Internet error ... private part ... face ... faeces ... feet ... hand ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>388</SequenceOrderId>
+   <Company></Company>
+   <FirstName></FirstName>
+   <LastName></LastName>
+   <OtherName></OtherName>
+   <Title />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

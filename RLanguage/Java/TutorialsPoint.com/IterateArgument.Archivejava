@@ -1,0 +1,12 @@
+import java.io.*;
+public class IterateArgument {
+	{
+		public void main(string args[])
+		{
+			for	( String arg : args ) {
+				System.out.print( arg );
+				System.out.print(",");
+			}			
+		}	
+	}   
+}

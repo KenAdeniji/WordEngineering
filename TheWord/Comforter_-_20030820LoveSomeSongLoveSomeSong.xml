@@ -1,0 +1,98 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>52</SequenceOrderId>
+  <Dated>2003-08-20T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Isaiah 5:1, Ezekiel 33:32</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+5%3A1%2C+Ezekiel+33%3A32&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Love some song ... love some song ...</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>347</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference> 
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>67</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>230</SequenceOrderId>
+   <Word>Love ... Song</Word>
+   <Commentary>
+Now will I sing to my wellbeloved a song of my beloved touching His vineyard. My wellbeloved has a vineyard in a very fruitful hill (Isaiah 5:1).
+And, lo, you are unto them as a very lovely song of one that has a pleasant voice, and can play well on an instrument: for they hear your words, but they do them not (Ezekiel 33:32).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>515</SequenceOrderId>
+   <Word>Love some song ... love some song ...</Word>
+   <AlphabetSequenceIndex>322</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 13:3, 2 Kings 9, Hosea 6, Revelation 5:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A3%2C+2+Kings+9%2C+Hosea+6%2C+Revelation+5%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1091</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>251</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>305</SequenceOrderId>
+   <Commentary>Sleep garage noise ...</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

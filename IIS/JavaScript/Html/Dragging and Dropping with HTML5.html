@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Drag and Drop Example
+    </title>
+
+    <style type="text/css">
+	#target1, #target2, #target3
+	{
+		float:left; width:250px; height:250px;
+		padding:10px; margin:10px;
+	}
+
+	#draggable1, #draggable2, #draggable3
+	{
+		width:75px; height:70px; padding:5px;
+		margin:5px;
+	}
+
+	#target1 {background-color: cyan;}
+	#target2 {background-color: cyan;}
+	#target3 {background-color: cyan;}
+
+	#draggable1 {background-color: orange;}
+	#draggable2 {background-color: orange;}
+	#draggable3 {background-color: orange;}
+    </style>
+
+    <script type="text/javascript">
+	function start(e)
+	{
+		e.dataTransfer.effectAllowed='move'; //Where we're specifying that move operations are OK
+		e.dataTransfer.setData("Data", //storing the ID of the draggable element so we know what element to move when the drag operation is complete
+		  e.target.getAttribute('id'));
+		e.dataTransfer.setDragImage(e.target, 0, 0); // setting the image that the user drags to be a copy of the draggable element that the mouse clicked (as given by the event object e's target attribute).
+		return true;
+	}
+
+	//Drag enter events occur in a drop target when the user drags a draggable element over that target.
+	function enter(e)
+	{
+		return true;
+	}
+
+	//Dragover events occur in a drop target while users drag a draggable element over that target.
+	function over(e)
+	{
+		var iddraggable = e.dataTransfer.getData("Data"); //The object that is being dragged.
+		var id = e.target.getAttribute('id'); //The target where the element is dragged to.
+
+		if(id =='target1') return false;
+
+		if((id =='target2') && iddraggable == 'draggable3')
+		  return false;
+
+		else if(id =='target3' && (iddraggable == 'draggable1' || iddraggable =='draggable2'))
+		  return false;
+
+		else
+		  return true;
+	}
+
+	//Drop events occur in a drop target while users drop a draggable element onto that target.
+	function drop(e)
+	{
+		var iddraggable = e.dataTransfer.getData("Data");
+		e.target.appendChild(document.getElementById(iddraggable));
+		e.stopPropagation(); //stopping further propagation of the event in the browser with the stopPropagation() function (returning a value of false also stops further propagation of the event)
+		return false;
+	}
+
+	function end(e)
+	{
+		e.dataTransfer.clearData("Data");
+		return true
+	}
+    </script>
+  </head>
+
+  <body>
+	<!-- 
+		Required attributes: draggable, ondragenter, ondragover, ondrop, ondragstart, ondragend
+		To make an element draggable, you set its draggable attribute to true.
+	-->
+	<h1>Drag and Drop Example</h1>
+
+    <div id="target1"
+      ondragenter="return enter(event)"
+      ondragover="return over(event)"
+      ondrop="return drop(event)">
+
+      <div id="draggable1" draggable="true"
+        ondragstart="return start(event)"
+        ondragend="return end(event)">1
+      </div>
+
+      <div id="draggable2" draggable="true"
+        ondragstart="return start(event)"
+        ondragend="return end(event)">2
+      </div>
+
+      <div id="draggable3" draggable="true"
+        ondragstart="return start(event)"
+        ondragend="return end(event)">3
+      </div>
+    </div>
+
+    <div id="target2"
+      ondragenter="return enter(event)"
+      ondragover="return over(event)"
+      ondrop="return drop(event)">
+    </div>
+
+    <div id="target3"
+      ondragenter="return enter(event)"
+      ondragover="return over(event)"
+      ondrop="return drop(event)">
+    </div>
+  </body>
+</html>

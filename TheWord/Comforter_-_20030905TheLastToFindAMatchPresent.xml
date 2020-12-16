@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>88</SequenceOrderId>
+  <Dated>2003-09-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Romans 7:21</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Romans+7%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>The last to find a match present.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>33</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>366</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure>y</Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>267</SequenceOrderId>
+   <Commentary />
+   <Word>Find ... Present</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>582</SequenceOrderId>
+   <Word>The last to find a match present.</Word>
+   <AlphabetSequenceIndex>296</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 11:29, 1 Kings 5, Micah 1, Revelation 6:13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A29%2C+1+Kings+5%2C+Micah+1%2C+Revelation+6%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1128</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!-- 
+  <ClassAssociates>
+   <SequenceOrderId>332</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+ 
+  </TheWord>
+</wordOfGod>

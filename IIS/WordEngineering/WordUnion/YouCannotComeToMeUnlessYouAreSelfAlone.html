@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-12-05	You cannot come to Me; unless you are self alone.
+			2016-02-07	http://stackoverflow.com/questions/8847766/how-to-convert-json-to-csv-format-and-store-in-a-variable
+			2016-02-08	http://stackoverflow.com/questions/5180382/convert-json-data-to-a-html-table
+			2016-02-08	http://stackoverflow.com/questions/27395012/rendering-html-table-inside-div-using-javascript-function
+			2016-02-08	https://github.com/abdmob/x2js
+		-->
+		<title>You cannot come to Me; unless you are self alone.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<select id="tables"></select>
+				<select id="format"></select>
+				<input type="submit" id="submitQuery">
+			</fieldset>	
+		</div>
+		<div>	
+			<div id="informationSetDiv"></div>
+			<pre id="informationSetPre"></pre>
+			<div id="feedback"></div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="xml2json.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var _table_ = document.createElement('table'),
+				_tr_ = document.createElement('tr'),
+				_th_ = document.createElement('th'),
+				_td_ = document.createElement('td');
+
+			function buildHtmlTable(arr) {
+				 var table = _table_.cloneNode(false),
+					 columns = addAllColumnHeaders(arr, table);
+				 for (var i=0, maxi=arr.length; i < maxi; ++i) {
+					 var tr = _tr_.cloneNode(false);
+					 for (var j=0, maxj=columns.length; j < maxj ; ++j) {
+						 var td = _td_.cloneNode(false);
+							 cellValue = arr[i][columns[j]];
+						 td.appendChild(document.createTextNode(arr[i][columns[j]] || ''));
+						 tr.appendChild(td);
+					 }
+					 table.appendChild(tr);
+				 }
+				 return table;
+			}
+
+			 // Adds a header row to the table and returns the set of columns.
+			 // Need to do union of keys from all records as some records may not contain
+			 // all records
+			 function addAllColumnHeaders(arr, table)
+			 {
+				 var columnSet = [],
+					 tr = _tr_.cloneNode(false);
+				 for (var i=0, l=arr.length; i < l; i++) {
+					 for (var key in arr[i]) {
+						 if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key)===-1) {
+							 columnSet.push(key);
+							 var th = _th_.cloneNode(false);
+							 th.appendChild(document.createTextNode(key));
+							 tr.appendChild(th);
+						 }
+					 }
+				 }
+				 table.appendChild(tr);
+				 return columnSet;
+			}
+ 
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					rowStub += "<td>" + arguments[columnIndex] + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function buildSelect()
+			{
+				var select = document.getElementById("format");
+				select.options.length = 0;
+
+				for (var index = 0, count = formatOptions.length; index < count; ++index)
+				{
+					var option = document.createElement("option");
+					option.text = formatOptions[index][0];
+					option.value = formatOptions[index][1];
+					select.appendChild(option);
+				}
+			}
+			
+			function clearView()
+			{
+				document.getElementById("informationSetDiv").innerHTML = "";
+				document.getElementById("informationSetPre").innerHTML = "";
+				document.getElementById("feedback").innerHTML = "";
+			}
+			
+			function convertJsonToCSV(json)
+			{
+				var fields = Object.keys(json[0]);
+				var csv = json.map(function(row){
+				  return fields.map(function(fieldName){
+					return '"' + (row[fieldName] || '') + '"';
+				  });
+				});
+				csv.unshift(fields); // add header column
+
+				csvDataSet = csv.join('\r\n');
+				return (csvDataSet);
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var tableName = getParameterByName("tableName");
+					if (tableName !== "")
+					{
+						document.getElementById("tables").value = tableName;
+					}
+					retrieveMenu();
+					buildSelect();	
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				retrieveData();
+			}
+
+			function parseScriptureReference(scriptureReference)
+			{
+				var reference = scriptureReference.split(/,|;/);
+				for (index = 0; index < reference.length; index++)
+				{
+					reference[index] = String.trim(reference[index]);
+				}
+				return reference;
+			}
+
+			function renderMenu(data)
+			{
+				var select = document.getElementById("tables");
+				select.options.length = 0;
+				
+				var choice = null;
+				
+				for (var rowIndex = 0, rowCount = data.length; rowIndex < rowCount; ++rowIndex)
+				{
+					choice = data[rowIndex];
+				
+					var option = document.createElement("option");
+					option.text = choice;
+					option.value = choice;
+					select.appendChild(option);
+				}
+			}
+
+			function retrieveData()
+			{
+				var request = {};
+				var tableName = document.getElementById("tables").value;
+				request["choice"] = tableName;
+				var requestJson = JSON.stringify(request);
+				console.log(tableName);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/YouCannotComeToMeUnlessYouAreSelfAloneWebService.asmx/Choice",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						var format = document.getElementById("format").value;
+						console.log(data.d, dataSet);
+						switch(format)
+						{
+							case "csv":
+								document.getElementById("informationSetPre").innerHTML = 
+									convertJsonToCSV(dataSet[tableName]);
+								break;
+							case "html":
+         						document.getElementById("informationSetDiv").appendChild
+									(buildHtmlTable(dataSet[tableName]));
+								break;	
+							case "json":
+								document.getElementById("informationSetPre").innerHTML = data.d;
+								break;
+							case "xml":
+								var x2js = new X2JS();
+								var xmlAsStr = x2js.json2xml_str( dataSet );
+								text = xmlAsStr;
+								text = text.replace(/(<)/g,"&lt;");
+								text = text.replace(/(>)/g,"&gt;");
+								text = text.replace(/(\r\n|\n|\r)/g,"<br />");
+								document.getElementById("informationSetDiv").innerHTML = text;
+								break;
+						}
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function retrieveMenu()
+			{
+				var request = {};
+				//request[""] = "";
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/YouCannotComeToMeUnlessYouAreSelfAloneWebService.asmx/Menu",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderMenu(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var formatOptions = [
+				//["Array", "array"],
+				["Comma Separated Value (CSV)", "csv"],
+				["HyperText Markup Language (HTML)", "html"],
+				["JavaScript Object Notation (JSON)", "json"],
+				["eXtensible Markup Language (XML)", "xml"]
+			];
+		</script>
+	</body>
+</html>

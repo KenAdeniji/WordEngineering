@@ -214,4 +214,10 @@ http://KenAdeniji.WordPress.com
 			but then an error occurred during the pre-login handshake.
 			(Provider: SSL Provider, error: 0 - The wait operation timed out.)
 			(Microsoft SQL Server: The operation timed out.)
+2020-12-12T13:56:00
+XCOPY E:\2020-12-09T1339WordEngineering E:\WordEngineering /d /e /s /y
+XCOPY E:\2020-12-09T1339WordEngineering D:\2020-12-09T1339WordEngineering /d /e /s /y
+XCOPY E:\2020-12-09T1339WordEngineering F:\2020-12-09T1339WordEngineering /d /e /s /y
+
+XCOPY E:\2020-12-09T1339WordEngineering \\Noor\E$\2020-12-09T1339WordEngineering /d /e /s /y
 :Exit

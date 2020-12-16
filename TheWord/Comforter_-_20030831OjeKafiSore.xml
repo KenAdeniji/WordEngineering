@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>75</SequenceOrderId>
+  <Dated>2003-08-31T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Ruth 2:13</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Ruth+2%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Oje kafi sore.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>362</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>  
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>254</SequenceOrderId>
+   <Word>Let ... Friend</Word>
+   <Commentary>Then she said, Let me find favor in Your sight, My lord; for that You have comforted Me, and for that You have spoken friendly unto Your handmaid, though I be not like unto one of Your handmaidens (Ruth 2:13).</Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>562</SequenceOrderId>
+   <Word>Oje kafi sore.</Word>
+   <AlphabetSequenceIndex>114</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:8, Leviticus 24, 1 Corinthians 14, Revelation 17:13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A8%2C+Leviticus+24%2C+1+Corinthians+14%2C+Revelation+17%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1116</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>323</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+  
+  </TheWord>
+</wordOfGod>

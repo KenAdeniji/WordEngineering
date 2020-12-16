@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-10-03	Created.	Is for identifying the main actor, in a book.
+		-->
+		<title>When Emptyness Is Far Away</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible Books actors"/>
+		<meta name="keywords" content="Bible Books, actors"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			function querySubmit()
+			{
+				var request = {};
+				//request["top"] = document.getElementById("top").value;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/WhenEmptynessIsFarAway.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+				    },
+				    error: function (xhr) {
+				        $("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

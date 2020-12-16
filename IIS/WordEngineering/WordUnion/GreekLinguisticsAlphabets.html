@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-08-18	greeklinguistics.com/Alphabet.html created.
+	-->
+	<head>
+		<title>GreekLinguistics</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="resultSet"> </div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						isPostBack = true;
+						querySubmit();
+					});
+				}
+				if (isPostBack === true)
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/GreekWebService.asmx/Alphabets",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+		    function render(data) {
+				document.getElementById("resultSet").innerHTML = "";
+				var occurrences = data["Table"].length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1>" + caption;
+
+		        var dataRow = null;
+		        var dataTable = null;
+				
+				info += scriptLiteral9432.buildHead
+				(
+					"Uppercase",
+					"Lowercase",
+					"Alphabet",
+					"Pronunciation"
+				);
+				
+				for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+
+						info += scriptLiteral9432.buildRow
+						(
+							dataRow["Uppercase"],
+							dataRow["Lowercase"],
+							dataRow["Alphabet"],
+							"<audio controls> <source src='http://" + dataRow["Uri"] + "' type='audio/mpeg'> </audio>"
+						);	
+		            }
+		        }
+		        info += "</table>"
+		        document.getElementById("resultSet").innerHTML = info;
+		    }
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
+ <audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 

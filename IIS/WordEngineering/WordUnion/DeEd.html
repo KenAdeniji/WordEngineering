@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-05-29	Created.
+		-->
+		<title>DeEd</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Calculates the scripture reference for a percentage"/>
+		<meta name="keywords" content="Bible, scripture reference, percentage"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="percent" type="number" size="3" step="auto" min="0" max="100" maxlength="3" autofocus>%
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function clearView()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var percent = scriptLiteral9432.getParameterByName("percent");
+						if (percent !== "")
+						{
+							document.getElementById("percent").value = percent;
+							querySubmit();	
+							isPostBack = true;
+						}	
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				clearView();
+				
+				var request = {};
+				request["percent"] = document.getElementById('percent').value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/DeEd",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var resultSet = JSON.parse(data.d);
+						renderScriptureReference(resultSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function renderScriptureReference(dataSet)
+			{
+				var info = "";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in dataSet) {
+					dataTable = dataSet[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+
+						info += scriptLiteral9432.buildHyperlink
+						(
+							'scriptureReference',
+							dataRow["verseForward"] + ", " +
+							dataRow["chapterIDForward"] + ", " +
+							dataRow["chapterIDBackward"] + ", " +
+							dataRow["verseBackward"]
+						);	
+					}
+				}
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("percent").addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-12-09	https://technet.microsoft.com/en-us/library/ms174408(v=sql.90).aspx
+		2016-12-09	Created. BibleBookQuery.html
+	-->
+	<head>
+		<title>Bible Book Query</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="bookIDMinimum">Book ID</label>
+						</td>
+						<td>
+							<input id="bookIDMinimum" type="number" min="1" max="66" step="1"/>
+							<input id="bookIDMaximum" type="number" min="1" max="66" step="1"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="bookTitle">Book Title</label>
+						</td>
+						<td>
+							<input id="bookTitle" type="text"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="Testament">Testament</label>
+						</td>
+						<td>
+							<select id="testament">
+								<option value="">Both</option>
+								<option>Old</option>
+								<option>New</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><button id="query">Query</button></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					rowStub += "<td>" + arguments[columnIndex] + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bookIDMinimum"] = Number.parseInt(document.getElementById("bookIDMinimum").value);
+				request["bookIDMaximum"] = Number.parseInt(document.getElementById("bookIDMaximum").value);
+				request["bookTitle"] = document.getElementById("bookTitle").value;
+				request["testament"] = document.getElementById("testament").value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleBookQuery.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var bookIDMinimum = getParameterByName("bookIDMinimum");
+					if (!bookIDMinimum)
+					{
+						bookIDMinimum = 1;
+					}
+					document.getElementById("bookIDMinimum").value = bookIDMinimum;
+			
+					var bookIDMaximum = getParameterByName("bookIDMaximum");
+					if (!bookIDMaximum)
+					{
+						bookIDMaximum = 66;
+					}
+					document.getElementById("bookIDMaximum").value = bookIDMaximum;
+
+					var bookTitle = getParameterByName("bookTitle");
+					if (bookTitle)
+					{
+						document.getElementById("bookTitle").value = bookTitle;
+					}
+
+					var testament = getParameterByName("testament");
+					if (testament)
+					{
+						document.getElementById("testament").value = testament;
+					}
+					
+					querySubmit();		
+					isPostBack = true;
+				}
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='scriptureReferenceTable'><caption>" + "Occurrences: " + 
+					data["Table"].length + "</caption>";
+			
+				var dataRow = null;
+				var dataTable = null;
+				
+				var scriptureReference = null;
+				var scriptureReferenceHyperlink = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						scriptureReferenceHyperlink = buildHyperlinkScriptureReference(dataRow["BookTitle"]);
+						
+						info += buildRow
+						(
+							dataRow["BookID"],
+							scriptureReferenceHyperlink,
+							dataRow["Testament"]
+						);
+					}
+				}
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Portable DBA SQL Server</title>
+</head>
+<body>
+    <h1>Troubleshooting SQL Server Installation</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Problem</th>
+				<th>Likely Cause</th>
+				<th>Solution</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>SQL Server services do not start.</td>
+				<td>SQL Server startup account cannot be authenticated by a domain controller.</td>
+				<td>
+					Confirm network communications to a domain controller.
+					<br/>
+					Configre SQL Server to use the Local System Account.
+				</td>
+			</tr>
+
+			<tr>
+				<td>The following message appears in the event log: Error 1069: The service did not start due to a logon failure.</td>
+				<td>The password for the SQL Server startup domain account is not valid. The password has expired. The password has been configured to be changed at the next logon. The domain account has not been granted the Logon as a service right. The account may not have permissions to log on to the computer.</td>
+				<td>
+					Change the password for the service startup account in the Services MMC snap-in or Control Panel/Services.
+					<br/>
+					Configure the password to never expire.
+					<br/>
+					Clear the User Must Change Password at Next Logon dialog box.
+					<br/>
+					Modify the Domain Security Policy or the Local Security Policy to grant the Logon as a service right.
+					<br/>
+					Remove any workstation restrictions on the domain account.
+				</td>
+			</tr>
+			
+			<tr>
+				<td>SQL Server service does not start.</td>
+				<td>SQL Server registry entries may be corrupt.</td>
+				<td>
+					Rerun Setup and select Registry Rebuild under Advanced Options in SQL Server 2000 to rebuild the registry. For SQL Server 7, run the regrebld utility.
+				</td>
+			</tr>
+
+			<tr>
+				<td>SQL Server Agent does not start.</td>
+				<td>The startup domain account for SQL Server Agent does not have permission to access SQL Server.</td>
+				<td>
+					Add the domain account used to start SQL Server Agent to the local Administrators group. Grant the domain account the sysadmin role on SQL Server.	
+				</td>
+			</tr>			
+
+			<tr>
+				<td>Clients cannot connect to SQL Server.</td>
+				<td>SQL Server service has not been started. Client and server network libraries do not match. Clienr and/or server do not have the underlying operating system network protocol installed or configured. The client does not have permissions to access the SQL Server.</td>
+				<td>
+					Start SQL Server services.<br/>
+					Verify the network libraries on the client and server using the Client Network Utility and Server Network Utility, respectively.<br/>
+					Install and configure the appropriate network protocols on the client and server.
+					Use an account that has the appropriate permissions or grant the user permissions.
+				</td>
+			</tr>			
+			
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="3">Table 2-8. Common SQL Server Installation Problems, Causes, and Solutions</th>
+			</tr>
+		</tfoot>
+
+	</table>
+	
+    <h1>SQL Server Security</h1>
+
+		<h2>SQL Server Security Model</h2>
+	
+			<h3>Login</h3>
+				A login operates at the server level, and it enables an individual user or Windows group
+				to connect to SQL Server.
+				Beginning from SQL Server 2005, logins are stored in the master.sys.server_principals view.
+				For SQL Server 7 and 2000, logins are stored in the master's database sysxlogins table.
+				For SQL Server 6.x,  logins are stored in the master's database syslogins table.
+			
+				CREATE LOGIN [COMFORT\LoginName] 
+				FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english] 
+				GO
+
+				exec sp_addsrvrolemember [COMFORT\LoginName], sysadmin; 
+				GO
+				
+			<h3>User</h3>
+				A login requires a complementary user to access the database.
+				This user is contained in the sysusers table, or more recently
+				in the sys.database_principals.
+
+	<h1>Setting Database Options</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Option</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Auto</td>
+					<td>Auto_Close ON | OFF</td>
+					<td>When on, instructs SQL Server to take the database offline when the last user disconnects.</td>
+				</tr>
+				<tr>
+					<td>Auto</td>
+					<td>Auto_Create_Statistics ON | OFF</td>
+					<td>Instructs SQL Server to create statistics needed to optimize a query if they are not available.</td>
+				</tr>
+				<tr>
+					<td>Auto</td>
+					<td>Auto_Shrink ON | OFF</td>
+					<td>Enables the automatic shrinking of files in the database.</td>
+				</tr>
+				<tr>
+					<td>Auto</td>
+					<td>Auto_Update_Statistics ON | OFF</td>
+					<td>Instructs SQL Server to automatically update any out-of-date required by a query for optimization.</td>
+				</tr>
+				<tr>
+					<td>Cursor</td>
+					<td>Cursor_Close_On_Commit ON | OFF</td>
+					<td>When on, cursors are closed, if a transaction is committed or rolled back. If set to off, cursors remain open when a commit takes place, but a rollback closes any cursors except INSENSITIVE or STATIC cursors.</td>
+				</tr>
+
+				<tr>
+					<td>Cursor</td>
+					<td>Cursor_Default LOCAL | GLOBAL</td>
+					<td>Determines if a cursor will be GLOBAL (referenceable in any stored procedure or batch for the session).</td>
+				</tr>
+				
+				<tr>
+					<td>Recovery</td>
+					<td>Recovery Full | Bulk_Logged | Simple</td>
+					<td>Recovery determines how transaction logs and certain operations are handled. When full is specified, transaction logs are not cleared out until they are backed up. When Bulk_Logged is specified, certain operations (SELECT INTO, bcp, Bulk Insert, Create Index, WriteText, and UpdateText) will not generate transaction log entries. With Simple, transaction logs are cleared, whenever a checkpoint occurs.</td>
+				</tr>
+
+				<tr>
+					<td>Recovery</td>
+					<td>Trunc. log on ckpt. True | False</td>
+					<td>Truncates the transaction log when a checkpoint occurs.</td>
+				</tr>
+
+				<tr>
+					<td>Recovery</td>
+					<td>Select into/bulk copy True | False</td>
+					<td>Enables performing non-logged operations such as a SELECT ... INTO and bcp on a database.</td>
+				</tr>
+				
+				<tr>
+					<td>Recovery</td>
+					<td>Torn_Page_Detection On | Off</td>
+					<td>When on, SQL Server can detect pages with incomplete or damaged structure and prevent further corruption.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>ANSI_Null_Default On | Off</td>
+					<td>Specifies whether the database follows SQL-92 rules to determine whether a column allows null values when a CREATE TABLE command is issued.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>ANSI_NULLS On | Off</td>
+					<td>If on, all comparisons to NULL evaluate to NULL. If Off, comparisons to NULL evaluate to true, if both values are NULL.</td>
+				</tr>
+				
+				<tr>
+					<td>SQL</td>
+					<td>ANSI_Padding On | Off</td>
+					<td>Strings are padded to the same length, when compared, or an insert, when set to On.</td>
+				</tr>
+				
+				<tr>
+					<td>SQL</td>
+					<td>ANSI_Warnings On | Off</td>
+					<td>When on, errors and warnings are issued when certain conditions occur, such as divide by zero.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>ARITHABORT On | Off</td>
+					<td>When on, a query is aborted when an overflow or divide by zero occurs. Transations are rolled back.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>Concat_Null_Yields_Null On | Off</td>
+					<td>When on, the result of a concatenation operation, involving NULL, yields NULL. When off, NULL is treated as an empty string.</td>
+				</tr>
+				
+				<tr>
+					<td>SQL</td>
+					<td>Quoted_Identifier On | Off</td>
+					<td>When on, double quote marks are useable for enclosing delimited identifiers.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>Numeric_RoundAbort On | Off</td>
+					<td>When on, if a loss of precision occurs in an expression, it returns an error.</td>
+				</tr>
+
+				<tr>
+					<td>SQL</td>
+					<td>Recursive_Triggers On | Off</td>
+					<td>When on, recursive firing of triggers is allowed.</td>
+				</tr>
+     				
+			</tbody>
+		</table>
+		
+	<h1>Broken Ownership Chains</h1>
+		
+		Views in views, held by different owners.
+		Avoid by having a single user owns all objects. 
+		Grant any user, likely to create objects, a db_owner fixed database role.
+
+	<h1>Full Backup Exclusions</h1>
+		
+		The operations that are not permitted during full backup, include:
+		Adding or modifying indexes in the database.
+		Shrinking database and log files.
+		Increasing the size of the database.
+		Issuing a CREATE or ALTER DATABASE statement.
+		Performing non-logged operations.
+		
+	<h1>Restoring and Recovering System Databases</h1>
+		RebuildM.exe
+		SqlServr.exe -c -m
+		Restore the master database, and the other system databases.
+		
+	<h1>Tools for Monitoring SQL Server Performance</h1>
+		<h2>Windows Event Viewer</h2>
+			EventVwr
+		<h2>Performance Monitor</h2>
+			PerfMon
+			
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">Memory-Related Counters</th>
+					</tr>
+
+					<tr>
+						<th>Object Counter</th>
+						<th>Description</th>
+						<th>Guidelines</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Memory: Available Bytes</td>
+						<td>Returns the amount of free memory at the operating system level available for programs.</td>
+						<td>It is suggested that the free memory does not fall below 5 MB. Too little, will result in high paging and poor performance.</td>
+					</tr>
+
+					<tr>
+						<td>Memory: Pages/sec</td>
+						<td>Returns the number of times per second that Windows moved pages from physical RAM to hard disk (or vice versa).</td>
+						<td>A value higher than zero, indicates insufficient RAM.</td>
+					</tr>
+
+					<tr>
+						<td>Process: Page Faults/sec <SQL Server Instance></td>
+						<td>Page faults as a result of Windows trimming the working set (in-use memory) of a particular SQL Server instance.</td>
+						<td>Low value, recommended.</td>
+					</tr>
+
+					<tr>
+						<td>Process: Working Set <SQL Server Instance></td>
+						<td>The amount of memory used by a particular SQL instance.</td>
+						<td>This value should exceed 5 MB, or the configured minimum memory for SQL Server.</td>
+					</tr>
+					
+					<tr>
+						<td>SQL Server Buffer Manager : Buffer cache hit ratio</td>
+						<td>The percentage of information available in cache, as compared to disk.</td>
+						<td>The optimal value is 100%. A value lower than 90% suggests inadequate RAM for SQL Server.</td>
+					</tr>
+
+					<tr>
+						<td>SQL Server Buffer Manager : Total pages</td>
+						<td>The total number of 8K pages in the buffer cache.</td>
+						<td>Should exceed 50% of the total memory available to SQL Server (working set).</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">CPU-Related Counters</th>
+					</tr>
+
+					<tr>
+						<th>Object Counter</th>
+						<th>Description</th>
+						<th>Guidelines</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Processor: % Processor Time</td>
+						<td>This is how busy the cpu is.</td>
+						<td>This figure should fluctuate and never be consistently higher than 80%.</td>
+					</tr>
+
+					<tr>
+						<td>System: Processor Queue Length</td>
+						<td>The number of threads waiting to access the CPU.</td>
+						<td>If this counter is consistently greater than 2, then the difficulty is cpu related. If there is high cpu utilization, and large amount of disk activity, then RAM is probably not adequate, causing paging.</td>
+					</tr>
+		
+					<tr>
+						<td>Processor: % Privileged Time</td>
+						<td>The % of time the CPU is doing privileged operating system tasks instead of running user processes.</td>
+						<td>A high value, accompanied with high physical disk counters, may be because of slow disk subsystem or insufficient RAM.</td>
+					</tr>
+
+					<tr>
+						<td>Processor: % User Time</td>
+						<td>The % of time the CPU spends executing user process tasks.</td>
+						<td>This value should exceed % Privileged Time.</td>
+					</tr>
+					
+					<tr>
+						<td>System: Context Switches/sec</td>
+						<td>The number of times that a process has switched execution between threads.</td>
+						<td>If CPU utilization is high, and this value is high (8000 or more), and you are running on a multi-CPU computer, consider enabling SQL Server mode switching by setting the SQL Server lightweight pooling parameter to 1.</td>
+					</tr>
+					
+				</tbody>
+			</table>	
+			
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">Disk I/O Counters</th>
+					</tr>
+
+					<tr>
+						<th>Object Counter</th>
+						<th>Description</th>
+						<th>Guidelines</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Physical Disk: % Disk Time</td>
+						<td>The % of time spent in reading or writing to the hard disk. This is the sum of Physical Disk: % Disk Read Time, and Physical Disk: % Disk Write Time.</td>
+						<td>This counter should be less than 90 percent, with a lower value being preferred. Disk I/O could be read, write, or paging.</td>
+					</tr>
+
+					<tr>
+						<td>Physical Disk: % Disk Read Time</td>
+						<td>The % of read operation.</td>
+						<td>Data warehouse should have high read, in comparison to low write.</td>
+					</tr>
+
+					<tr>
+						<td>Physical Disk: % Disk Write Time</td>
+						<td>The % of write operation.</td>
+						<td>Could be equilvalent or lower to read time.</td>
+					</tr>
+					
+					<tr>
+						<td>Physical Disk: Disk Reads/sec. Physical Disk: Disk Writes/sec.</td>
+						<td>The rate of I/O performing read and write operations on the disks.</td>
+						<td>Should be less then specified values for your hardware. The hardware types include (SCSI, Serial ATA, IDE).</td>
+					</tr>
+					
+					<tr>
+						<td>SQL Server Buffer Manager: Page reads/sec. SQL Server Buffer Manager: Page writes/sec.</td>
+						<td>These are the amount of I/O performed by SQL Server for read and write operations.</td>
+						<td>OLTP databases will have higher values for writing to the disk, because of transaction log activty. Data warehouse databases will have higher values for read.</td>
+					</tr>
+				</tbody>
+			</table>	
+		
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">Network I/O Counters</th>
+					</tr>
+
+					<tr>
+						<th>Object Counter</th>
+						<th>Description</th>
+						<th>Guidelines</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Network Interface: Bytes Total/sec</td>
+						<td>The total amount of traffic sent and received through the network interface. Network Interface: Bytes Sent/sec and Network Interface: Bytes Received/sec are subsets of this counter.</td>
+						<td>This value should be lower than the theorectical maximum. The network adapter and card combination should be taken into consideration.</td>
+					</tr>
+
+					<tr>
+						<td>Network Interface: Current Bandwidth</td>
+						<td>For varying rate interfaces (e.g. wireless), returns the available bandwidth used; for permanent interfaces (Ethernet Card) returns the bandwidth used.</td>
+						<td>For 100Mb Ethernet, it should represent less than 75Mb/ps.</td>
+					</tr>
+
+				</tbody>
+			</table>	
+	
+		<h2>SQL Profiler</h2>
+			Profiler.exe
+	
+		<h2>Current Activity Window</h2>
+			To open the current activity window, press Control + Alternate + A.
+			
+		<h2>Stored Procedures</h2>
+			sp_who
+			sp_who2
+			sp_lock
+			sp_spaceused
+			sp_monitor
+			sp_statistics
+			sp_helpdb
+			dbcc (database consistency checker)
+			
+		<h2>Windows System Monitor</h2>
+			<table>
+				<thead>
+					<tr>
+						<th colspan="3">SQL Server-Related Counters</th>
+					</tr>
+					<tr>
+						<th>Object Counter</th>
+						<th>Description</th>
+						<th>Guidelines</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>SQL Server Access Methods: Full Scans/sec</td>
+						<td>The number of full table or index scans performed.</td>
+						<td>Full scans take up the longest time, and should be avoided.</td>
+					</tr>
+
+					<tr>
+						<td>SQL Server Access Methods: Index Searches/sec</td>
+						<td>The number of index searches started.</td>
+						<td>Should be higher than Full Scans/sec.</td>
+					</tr>					
+					
+					<tr>
+						<td>SQL Server Access Methods: Range Scans/sec</td>
+						<td>The number of range scans that take place on the database.</td>
+						<td>Should be high in relation to Full Scans/sec.</td>
+					</tr>					
+
+					<tr>
+						<td>SQL Server Access Methods: Page Splits/sec</td>
+						<td>The number of index pages that had to be split because of insufficient space for new index entries.</td>
+						<td>If this is constant or increasing, you should rebuild the index using the DROP EXISTING clause, and set an appropriate FILL FACTOR.</td>
+					</tr>					
+
+					<tr>
+						<td>SQL Server SQL Statistics: SQL Compilations/sec</td>
+						<td>The number of compiles of execution plans per second. Also includes compiles as a result of recompilation.</td>
+						<td>This number will climb after the SQL Server instance starts, but should level off after a time of normal running.</td>
+					</tr>					
+
+					<tr>
+						<td>SQL Server SQL Statistics: SQL Recompilations/sec</td>
+						<td>The number of recompiles taking place on the server.</td>
+						<td>Generally, should be a low value when using OLTP databases and stored procedures.</td>
+					</tr>					
+					
+				</tbody>
+			</table>
+		
+		<h2>Database Engine Tuning Advisor</h2>
+			Recommend the best mix of indexes for database by using the query optimizer to analyze queries in a workload.	
+
+		<h2>Query Optimizer</h2>
+			Execution plan, factoring in cost.
+			
+			use master
+			EXEC sp_configure 'show advanced option', 1
+			RECONFIGURE
+			
+			use master
+			EXEC sp_configure 'query governor cost limit', 900 --(15 minutes * 60)
+			RECONFIGURE
+	</body>
+</html>

@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-18	When hope arrive.
+	-->
+	<head>
+		<title>Properties on the web</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+    </head>
+	<body>
+        <div align="center">
+            <table id="propertiesOnTheWeb">
+                <thead>
+                    <tr>
+                        <th />
+                        <th>Address</th>
+                        <th>Role</th>
+						<th>Dated From</th>
+						<th>Dated Until</th>
+						<th>Time Span</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <a href="#" id="insertTableRow">Insert new item</a>
+                        </td>
+                        <td>
+                            <input id="newAddress" required title="Address is Required!" />
+                        </td>
+                        <td>
+                            <input id="newRole" />
+                        </td>
+                        <td>
+                            <input id="newDatedFrom" />
+                        </td>
+                        <td>
+                            <input id="newDatedUntil" />
+                        </td>
+					</tr>
+                    <tr>
+                        <td>
+                            <a href="#" id="clear">Clear</a>
+                        </td>
+                    </tr>
+                </tfoot>
+				<tbody>
+				</tbody>
+            </table>
+        </div>
+		<script>
+			var propertiesOnTheWeb =
+			{
+				isPostBack: false,
+				propertiesOnTheWebID: "propertiesOnTheWeb",
+				cellsIDs:	
+				{
+					"command": 0,
+					"address": 1,
+					"role": 2,
+					"datedFrom": 3,
+					"datedUntil": 4,
+					"timeSpan": 5
+				},
+				defaultProtocol: "http://",
+				urlPattern: /^((http|https|ftp):\/\/)/,
+				buildCommandCell: function(cellFormat)
+				{
+					// Add some text to the new cells:
+					var container = document.createElement("span"); //Create command container
+					//container.id = "left"; //Assign container id
+					//container.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set container attributes
+					container.setAttribute("style", "float:left; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set container attributes				
+					//container.style.background =  "#FF0000";
+					var a = document.createElement("a");
+					a.href = cellFormat.anchorHRef; // Instead of calling setAttribute 
+					a.innerHTML = cellFormat.anchorLabel; // <a>INNER_TEXT</a>
+					a.style.visibility = cellFormat.visibility;
+					container.appendChild(a); // Append the link to the container
+					//document.body.appendChild(container); // And append the container to the document body
+					cellFormat.cellID.appendChild(container); // And append the container to the cell
+					
+					a.addEventListener
+					(
+						"click",
+						function (event) {
+							if (cellFormat.preventDefault == undefined || cellFormat.preventDefault === true) {
+								event.preventDefault();
+							}	
+							if (cellFormat.confirmation)
+							{
+								if (!confirm('Are you sure?')) {
+									return;
+								}
+							}
+							cellFormat.callback(event);
+						}, 
+						false
+					);
+				},		
+				clear: function() {
+					var table = document.getElementById(propertiesOnTheWeb.propertiesOnTheWebID);
+					var tbody = table.getElementsByTagName('tbody')[0];
+					tbody.innerHTML = "";
+				},
+				dateDiff: function(from, until) {
+					return Math.floor((Date.parse(until) - Date.parse(from)) / (1000*60*60*24));
+				},
+				eventHandlers: function() {
+					window.addEventListener("load", this.pageLoad, false);
+					document.getElementById("insertTableRow").addEventListener("click", this.insertTableRowClick, false);
+					document.getElementById("clear").addEventListener("click", this.clear, false);
+				},
+				exitFromEditMode: function(event) {
+					var anchor = event.target;
+					var tr = propertiesOnTheWeb.findParent(anchor, "tr");
+					var cells = tr.getElementsByTagName("td");
+					
+					var action = anchor.innerHTML.toLowerCase();
+					
+					var addressCell = cells[propertiesOnTheWeb.cellsIDs.address];
+					var addressAnchor = addressCell.getElementsByTagName("a")[0];
+					var addressInput = addressCell.getElementsByTagName("input")[0];
+
+					var roleCell = cells[propertiesOnTheWeb.cellsIDs.role];
+					var roleLabel = roleCell.getElementsByTagName("label")[0];
+					var roleInput = roleCell.getElementsByTagName("input")[0];
+
+					var datedFromCell = cells[propertiesOnTheWeb.cellsIDs.datedFrom];
+					var datedFromLabel = datedFromCell.getElementsByTagName("label")[0];
+					var datedFromInput = datedFromCell.getElementsByTagName("input")[0];
+					var datedFromValue = datedFromInput.value;
+					
+					var datedUntilCell = cells[propertiesOnTheWeb.cellsIDs.datedUntil];
+					var datedUntilLabel = datedUntilCell.getElementsByTagName("label")[0];
+					var datedUntilInput = datedUntilCell.getElementsByTagName("input")[0];
+					var datedUntilValue = datedUntilInput.value;
+
+					var timeSpanCell = cells[propertiesOnTheWeb.cellsIDs.timeSpan];
+					var timeSpanLabel = timeSpanCell.getElementsByTagName("label")[0];
+					
+					if (action === "update")
+					{	
+						addressAnchor.innerHTML = addressInput.value;
+						addressAnchor.href = propertiesOnTheWeb.prependAddressProtocol(addressInput.value);
+						
+						roleLabel.innerHTML = roleInput.value;
+						datedFromLabel.innerHTML = datedFromValue;
+						datedUntilLabel.innerHTML = datedUntilValue;
+						
+						timeSpanLabel.innerHTML = propertiesOnTheWeb.dateDiff(datedFromValue, datedUntilValue);
+					}
+
+					addressCell.removeChild(addressInput);
+					addressAnchor.style.visibility = "visible";
+
+					roleCell.removeChild(roleInput);
+					roleLabel.style.visibility = "visible";
+
+					datedFromCell.removeChild(datedFromInput);
+					datedFromLabel.style.visibility = "visible";
+
+					datedUntilCell.removeChild(datedUntilInput);
+					datedUntilLabel.style.visibility = "visible";
+					
+					var commandCell = cells[propertiesOnTheWeb.cellsIDs.command];
+					propertiesOnTheWeb.toggleAnchorsVisibility(commandCell);
+				},
+				findParent: function(currentObject, parentTagName)
+				{
+					parentTagName = parentTagName.toLowerCase();
+					while(true)
+					{
+						currentTagName = currentObject.tagName.toLowerCase();
+						if (currentTagName === parentTagName)
+						{
+							return currentObject;
+						}
+						if (currentTagName === "html")
+						{
+							return null;
+						}
+						currentObject = currentObject.parentNode;
+					}
+				},
+				insertTableRowClick: function(event) {
+					// Find a <table> element with the given ID.
+					var table = document.getElementById(propertiesOnTheWeb.propertiesOnTheWebID);
+					var tbody = table.getElementsByTagName('tbody')[0];
+					// Create an empty <tr> element and add it to the bottom position of the table:
+					var tableRowsCount = tbody.getElementsByTagName('tr').length;
+					//var row = table.insertRow(tableRowsCount);
+					var row = tbody.insertRow(-1);
+
+					// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+					var commandCell = row.insertCell(propertiesOnTheWeb.cellsIDs.command);
+					var addressCell = row.insertCell(propertiesOnTheWeb.cellsIDs.address);
+					var roleCell = row.insertCell(propertiesOnTheWeb.cellsIDs.role);
+					var datedFromCell = row.insertCell(propertiesOnTheWeb.cellsIDs.datedFrom);
+					var datedUntilCell = row.insertCell(propertiesOnTheWeb.cellsIDs.datedUntil);
+					var timeSpanCell = row.insertCell(propertiesOnTheWeb.cellsIDs.timeSpan);
+					
+					var editCommandDefinition = 
+					{
+						cellID: commandCell,
+						anchorLabel: "Edit",
+						callback: propertiesOnTheWeb.rowEditMode,
+						confirmation: false,
+						anchorHRef: "#",
+						visibility: "visible"
+					};
+					propertiesOnTheWeb.buildCommandCell(editCommandDefinition);
+
+					var deleteCommandDefinition = 
+					{
+						cellID: commandCell,
+						anchorLabel: "Delete",
+						callback: propertiesOnTheWeb.rowDelete,
+						confirmation: true,
+						anchorHRef: "#",
+						visibility: "visible"
+					};
+					propertiesOnTheWeb.buildCommandCell(deleteCommandDefinition);
+
+					var updateCommandDefinition = 
+					{
+						cellID: commandCell,
+						anchorLabel: "Update",
+						callback: propertiesOnTheWeb.rowUpdate,
+						confirmation: false,
+						anchorHRef: "#",
+						visibility: "hidden"
+					};
+					propertiesOnTheWeb.buildCommandCell(updateCommandDefinition);
+
+					var cancelCommandDefinition = 
+					{
+						cellID: commandCell,
+						anchorLabel: "Cancel",
+						callback: propertiesOnTheWeb.rowCancel,
+						confirmation: false,
+						anchorHRef: "#",
+						visibility: "hidden"
+					};
+					propertiesOnTheWeb.buildCommandCell(cancelCommandDefinition);
+					
+					var addressCommandDefinition = 
+					{
+						cellID: addressCell,
+						anchorLabel: document.getElementById("newAddress").value,
+						callback: propertiesOnTheWeb.rowAddressClick,
+						confirmation: false,
+						anchorHRef: propertiesOnTheWeb.prependAddressProtocol(document.getElementById("newAddress").value),
+						visibility: "visible",
+						preventDefault: false
+					};
+					propertiesOnTheWeb.buildCommandCell(addressCommandDefinition);
+					
+					var roleLabel = document.createElement("label");
+					roleLabel.innerHTML = document.getElementById("newRole").value;
+					roleCell.appendChild(roleLabel);
+					
+					var datedFromLabel = document.createElement("label");
+					var	datedFromValue = document.getElementById("newDatedFrom").value;
+					datedFromLabel.innerHTML = datedFromValue;
+					datedFromCell.appendChild(datedFromLabel);
+
+					var datedUntilLabel = document.createElement("label");
+					var	datedUntilValue = document.getElementById("newDatedUntil").value;
+					datedUntilLabel.innerHTML = datedUntilValue;
+					datedUntilCell.appendChild(datedUntilLabel);
+					
+					var timeSpanLabel = document.createElement("label");
+					timeSpanLabel.innerHTML = propertiesOnTheWeb.dateDiff(datedFromValue, datedUntilValue);;
+					timeSpanCell.appendChild(timeSpanLabel);
+				},
+				pageLoad: function()
+				{
+					if (!this.isPostBack)
+					{
+						this.isPostBack = true;
+					}	
+				},
+				prependAddressProtocol: function(address)
+				{
+					if(!propertiesOnTheWeb.urlPattern.test(address) || address.indexOf("@") > -1) {
+						if (address.indexOf("@") > -1)
+						{
+							address = "mailto:" + address;
+						}
+						else
+						{
+							address = propertiesOnTheWeb.defaultProtocol + address;
+						}	
+					}
+					return address;
+				},
+				rowCancel: function(event) {
+					propertiesOnTheWeb.exitFromEditMode(event);
+				},
+				rowDelete: function(event) {
+					var anchor = event.target;
+					var tr = propertiesOnTheWeb.findParent(anchor, "tr");
+					var table = propertiesOnTheWeb.findParent(tr, "table");
+					table.deleteRow(tr.rowIndex);
+				},
+				rowEditMode: function(event)
+				{
+					var anchor = event.target;
+					var tr = propertiesOnTheWeb.findParent(anchor, "tr");
+					var cells = tr.getElementsByTagName("td");
+					
+					var commandCell = cells[propertiesOnTheWeb.cellsIDs.command];
+					propertiesOnTheWeb.toggleAnchorsVisibility(commandCell);
+					
+					var addressCell = cells[propertiesOnTheWeb.cellsIDs.address];
+					var anchors = addressCell.getElementsByTagName("a");
+					var addressInput = document.createElement("INPUT");
+					addressInput.setAttribute("type", "url"); 
+					addressInput.value = anchors[0].innerHTML;
+					addressInput.required = true;
+					addressCell.appendChild(addressInput);
+					anchors[0].style.visibility = "hidden";
+					
+					var roleCell = cells[propertiesOnTheWeb.cellsIDs.role];
+					var labels = roleCell.getElementsByTagName("label");
+					var roleInput = document.createElement("INPUT");
+					roleInput.setAttribute("type", "text"); 
+					roleInput.value = labels[0].innerHTML;
+					roleCell.appendChild(roleInput);
+					labels[0].style.visibility = "hidden";
+					
+					var datedFromCell = cells[propertiesOnTheWeb.cellsIDs.datedFrom];
+					var labels = datedFromCell.getElementsByTagName("label");
+					var datedFromInput = document.createElement("INPUT");
+					datedFromInput.setAttribute("type", "text"); 
+					datedFromInput.value = labels[0].innerHTML;
+					datedFromCell.appendChild(datedFromInput);
+					labels[0].style.visibility = "hidden";
+
+					var datedUntilCell = cells[propertiesOnTheWeb.cellsIDs.datedUntil];
+					var labels = datedUntilCell.getElementsByTagName("label");
+					var datedUntilInput = document.createElement("INPUT");
+					datedUntilInput.setAttribute("type", "text"); 
+					datedUntilInput.value = labels[0].innerHTML;
+					datedUntilCell.appendChild(datedUntilInput);
+					labels[0].style.visibility = "hidden";
+				},
+				rowUpdate: function(event) {
+					propertiesOnTheWeb.exitFromEditMode(event);
+				},
+				toggleAnchorsVisibility: function(commandCell)
+				{
+					var anchors = commandCell.getElementsByTagName("a");
+					for(var index = 0, length = anchors.length; index < length; ++index)
+					{
+						var oldVisibility = anchors[index].style.visibility.toLowerCase();
+						var newVisibility = oldVisibility === "hidden" ? "visible" : "hidden";
+						anchors[index].style.visibility = newVisibility;
+					}
+				}
+			}
+			propertiesOnTheWeb.eventHandlers();
+        </script>
+	</body>
+</html>

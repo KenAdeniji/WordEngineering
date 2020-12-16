@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-14	Created.
+	-->
+	<head>
+		<title>Our Fixation On Number</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="bibleWord">Word</label>
+						</td>
+						<td>
+							<input id="bibleWord" type="text" autofocus placeholder="A set of letters that must exists in the word(s) found."/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				if (!scriptureReference)
+				{
+					return "";
+				}
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+
+			function buildHead()
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["bibleWord"] = document.getElementById("bibleWord").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/Exact.asmx/OurFixationOnNumber",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var word = getParameterByName("word");
+					if (word)
+					{
+						document.getElementById("word").value = word;
+						querySubmit();
+						isPostBack = true;
+					}	
+				}
+ 			}
+
+			function render(data) 
+			{
+				var info = "<table id='ourFixationOnNumberTable'><caption>Occurrences: " + data["Table"].length + "</caption>";
+				
+				info += buildHead
+				(
+					"SequenceOrderId",
+					"Bible Word",
+					"First Occurrence",
+					"Last Occurrence",
+					"Difference",
+					"Frequency of Occurrence",
+					"AlphabetSequenceIndex"
+				 );
+					
+				var dataRow = null;
+				var dataTable = null;
+				
+				var scriptureReference = null;
+				var scriptureReferenceHyperlink = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						scriptureReferenceHyperlink = buildHyperlinkScriptureReference(dataRow["BookTitle"]);
+						
+						info += buildRow
+						(
+							dataRow["ExactID"],
+							dataRow["BibleWord"],
+							buildHyperlinkScriptureReference(dataRow["FirstOccurrence"]),
+							buildHyperlinkScriptureReference(dataRow["LastOccurrence"]),
+							dataRow["Difference"],
+							dataRow["FrequencyOfOccurrence"],
+							dataRow["AlphabetSequenceIndex"]
+						);
+					}
+				}
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

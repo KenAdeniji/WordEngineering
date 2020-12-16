@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-07 Created.	https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
+	-->
+	<head>
+		<title>Learning JavaScript Design Patterns A book by Addy Osmani Revealing Module</title>
+	</head>
+	<body>
+		<table border="1">
+			<tbody>
+				<tr><td>Name:</td><td id="name"/></tr>
+				<tr><td>Greeting:</td><td id="greeting"/></tr>
+			</tbody>
+		</table>
+		<script>
+			var myRevealingModule = (function () {
+			 
+					var privateVar = "Ben Cherry",
+						publicVar = "Hey there!";
+			 
+					function privateFunction() {
+						//console.log( "Name:" + privateVar );
+						return privateVar;
+					}
+			 
+					function publicSetName( strName ) {
+						privateVar = strName;
+					}
+			 
+					function publicGetName() {
+						return privateFunction();
+					}
+			 
+			 
+					// Reveal public pointers to
+					// private functions and properties
+			 
+					return {
+						setName: publicSetName,
+						greeting: publicVar,
+						getName: publicGetName
+					};
+			 
+				})();
+			 
+			function pageLoad()
+			{
+				myRevealingModule.setName( "Jesus Christ" );
+				document.getElementById("name").innerHTML = myRevealingModule.getName();
+				document.getElementById("greeting").innerHTML = myRevealingModule.greeting;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

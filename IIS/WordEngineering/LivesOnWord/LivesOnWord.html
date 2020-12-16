@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-11-28	Created.
+		2017-11-28	http://json.org/example.html
+		2017-11-28
+{
+    "firstMan": {
+        "name": "Adam",
+		"pre-condition": "And every plant of the field before it was in the earth, and every herb of the field before it grew: for the LORD God had not caused it to rain upon the earth, and there was not a man to till the ground. But there went up a mist from the earth, and watered the whole face of the ground (Genesis 2:5-6)."
+    }
+}
+	2017-11-30	https://stackoverflow.com/questions/36280818/how-to-convert-file-to-base64-in-javascript
+	2017-11-30	https://stackoverflow.com/questions/47195119/how-to-capture-filereader-base64-as-variable
+	2017-11-30	https://gist.github.com/sandeep1995/3e9829c276d4e55e5b89ba4d32d0e6a8
+	2017-11-30	https://developer.mozilla.org/en-US/docs/Web/Events/change
+	2017-11-30	https://www.w3schools.com/jsref/prop_select_disabled.asp
+	2017-12-01	https://stackoverflow.com/questions/14544104/checkbox-check-event-listener
+	-->
+	<head>
+		<title>Lives on Word</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+			<legend>Request</legend>
+				<table>
+					<tr>
+						<td><label for="requestFormat">Format:</label></td>
+						<td>
+							<select ID="requestFormat"></select>
+						</td>
+					</tr>	
+					<tr>
+						<td><label for="requestDescription">Description:</label></td>
+						<td>
+							<textarea ID="requestDescription"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="requestFileUpload">FileUpload:</label></td>
+						<td>
+							<input type="file" ID="requestFileUpload">
+						</td>
+					</tr>
+				</table>
+			</fieldset>	
+
+			<div style="text-align: center;">
+				<input type="checkbox" id="ftpInformation">
+				<label for="ftpInformation">File Transfer Protocol (FTP)</label>
+			</div>	
+			
+			<fieldset id="ftpDetails">
+			<legend>File Transfer Protocol (FTP)</legend>
+				<table>
+					<tr>
+						<td><label for="ftpDirectory">Directory:</label></td>
+						<td>
+							<input ID="ftpDirectory" type="text"/>
+						</td>
+					</tr>	
+					<tr>
+						<td><label for="ftpFilename">Filename:</label></td>
+						<td>
+							<input ID="ftpFilename" type="text"/>
+						</td>
+					</tr>	
+					<tr>
+						<td><label for="ftpUsername">Username:</label></td>
+						<td>
+							<input ID="ftpUsername" type="text"/>
+						</td>
+					</tr>	
+					<tr>
+						<td><label for="ftpPassword">Password:</label></td>
+						<td>
+							<input ID="ftpPassword" type="password"/>
+						</td>
+					</tr>	
+				</table>
+			</fieldset>	
+
+			<input type="submit" id="submitQuery" style="text-align: center;">
+		</div>
+		<div align="center" id="resultSet">	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function ftpInformationSetting(event)
+			{
+				if( this.checked )
+				{
+					document.getElementById("ftpDetails").disabled = false;
+				}
+				else
+				{
+					document.getElementById("ftpDetails").disabled = true;
+				}
+			}
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					document.getElementById("requestFileUpload").disabled = true;
+					document.getElementById("ftpInformation").checked = false;
+					document.getElementById("ftpDetails").disabled = true;
+
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect
+						(
+							"requestFormat",
+							scriptLiteral9432.dataFormats
+						);
+					});
+				}
+				isPostBack = true;
+			}
+			
+			const querySubmit = async() => 
+			{
+				var request = {};
+			
+				var requestFormat = document.getElementById("requestFormat").value;
+				request["format"] = requestFormat;
+
+				var requestDescription = document.getElementById("requestDescription").value;
+				request["description"] = requestDescription;
+								
+				var filename = "";
+				var fileContents = "";
+				
+				if (requestFormat === "File Upload")
+				{
+					var fileUpload = document.getElementById("requestFileUpload");
+					
+					file = fileUpload.files[0];
+					filename = file.name;
+				
+					fileContents = await scriptLiteral9432.getFileBase64(file);
+				}
+				
+				request["filename"] = filename;
+				request["fileContents"] = fileContents;
+
+				var ftpInformation = document.getElementById("ftpInformation").checked;
+				request["ftpInformation"] = ftpInformation;
+
+				var ftpDirectory = document.getElementById("ftpDirectory").value;
+				request["ftpDirectory"] = ftpDirectory;
+
+				var ftpFilename = document.getElementById("ftpFilename").value;
+				request["ftpFilename"] = ftpFilename;
+
+				var ftpUsername = document.getElementById("ftpUsername").value;
+				request["ftpUsername"] = ftpUsername;
+
+				var ftpPassword = document.getElementById("ftpPassword").value;
+				request["ftpPassword"] = ftpPassword;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/LivesOnWord/LivesOnWord.asmx/Request",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataArriveBack = JSON.parse(data.d);
+						render(dataArriveBack);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(dataArriveBack) 
+			{
+				document.getElementById("resultSet").innerHTML = dataArriveBack;
+			}
+
+			function requestFormatSetting(event)
+			{
+				var formatValue = event.target.value;
+				switch(formatValue)
+				{
+					case "File Upload":
+						document.getElementById("requestDescription").disabled = true;		
+						document.getElementById("requestFileUpload").disabled = false;
+						break;
+					default:
+						document.getElementById("requestDescription").disabled = false;		
+						document.getElementById("requestFileUpload").disabled = true;
+						break;
+				}
+			}
+			
+			//document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener
+			(
+				"click", () => 
+				{
+					querySubmit();
+				}
+			);
+
+			document.getElementById("requestFormat").addEventListener("change", requestFormatSetting, false);
+			document.getElementById("ftpInformation").addEventListener("change", ftpInformationSetting, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

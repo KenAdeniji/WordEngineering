@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<!--
+	2015-10-19	Created.	http://www.w3schools.com/ajax/default.asp
+	2015-10-19	http://stackoverflow.com/questions/2225514/javascript-replace-linebreak
+-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Bible Book Import Text"/>
+		<meta name="keywords" content="Bible, book, text"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<title>Bible Book Import Text</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+
+<body>
+	<div id="demo"></div>
+	<script>
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			var text = xhttp.responseText;
+			text = text.replace(/\n|\r/g, '<br />');
+			document.getElementById("demo").innerHTML = text;
+		}
+	  }
+	  xhttp.open("GET", "BibleBook.txt", true);
+	  xhttp.send();
+	}
+	window.addEventListener("load",  loadDoc, false);
+	</script>
+</body>
+</html>

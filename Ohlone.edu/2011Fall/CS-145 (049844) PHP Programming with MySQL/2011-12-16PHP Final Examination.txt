@@ -1,0 +1,695 @@
+Take Test: FinalExam
+Content
+Assistive Technology Tips [opens in new window]
+Instructions
+Description 	
+Instructions 	
+ Please answer the following questions.
+Timed Test 	This Test has the time limit of 2 hour. You are notified when time expires, and you may continue or submit.
+Warnings appear when half the time, 5 minutes, 1 minute, and 30 seconds remain.
+Multiple Attempts 	Not allowed. This Test can only be taken once.
+Force Completion 	This Test can be saved and resumed later.
+Remaining Time: 56 minute, 27 seconds.
+Expand Question Completion Status:
+
+Question 1
+
+     
+    Which of the following is NOT part of an HTTP URL:
+    Answer
+    	a. 	
+    filename
+    	b. 	
+    protocol
+    	c. 	
+    path
+    	d. 	
+    node
+
+3 points  
+Question 2
+
+     
+    A PHP variable name
+    Answer
+    	a. 	
+    can be a PHP reserved word
+    	b. 	
+    can contain special characters
+    	c. 	
+    is case-sensitive
+    	d. 	
+    can start with a letter, a digit, or two underscores
+
+3 points  
+Question 3
+
+     
+    A web application is a type of
+    Answer
+    	a. 	
+    client-side application
+    	b. 	
+    client/server application
+    	c. 	
+    database application
+    	d. 	
+    server-side application
+
+3 points  
+Question 4
+
+     
+    After the if statement that follows is executed, what will the value of $discountAmount be?
+    $discount_amount;
+    $order_total = 200;
+    if ($order_total > 200) {
+        $discount_amount = $order_total * .3;
+    } else if ($order_total > 100) {
+        $discount_amount = $order_total * .2;
+    } else {
+        $discount_amount = $order_total * .1;
+    }
+    Answer
+    	a. 	
+    60
+    	b. 	
+    20
+    	c. 	
+    40
+    	d. 	
+    0
+
+3 points  
+Question 5
+
+     
+    How many times will the while loop that follows be executed?
+    $months = 5;
+    $i = 1;
+    while ($i > $months) {
+       $futureValue = $futureValue * (1 + $monthlyInterestRate);
+       $i = $i+1;
+    }
+    Answer
+    	a. 	
+    1
+    	b. 	
+    4
+    	c. 	
+    0
+    	d. 	
+    5
+
+3 points  
+Question 6
+
+     
+    The HTTP response for a dynamic web page is passed
+    Answer
+    	a. 	
+    from the web server to PHP
+    	b. 	
+    from the web server to the browser
+    	c. 	
+    from PHP to the browser
+    	d. 	
+    from the database server to the web server
+
+3 points  
+Question 7
+
+     
+    Code example 2-1
+
+        <h1>Future Value Calculator</h1>
+        <?php if (!empty($error_message)) { ?>
+            <p class="error"><?php echo $error_message; ?></p>
+        <?php } ?>
+        <form action="display_results.php" method="post">
+            <div id="data">
+                <label>Investment Amount:</label>
+                <input type="text" name="investment"
+                       value="<?php echo $investment; ?>"/><br />
+
+                <label>Yearly Interest Rate:</label>
+                <input type="text" name="interest_rate"
+                       value="<?php echo $interest_rate; ?>"/><br />
+
+                <label>Number of Years:</label>
+                <input type="text" name="years"
+                       value="<?php echo $years; ?>"/><br />
+            </div>
+
+
+    (Refer to code example 2-1) If this code is from the first page of this application, what do the three <input> tags display the second time this page is executed?
+    Answer
+    	a. 	
+    Text boxes that contain zero values
+    	b. 	
+    Text boxes that contain the data the user entered the first time the page was displayed
+    	c. 	
+    The text boxes aren’t displayed because the condition in the if statement is false
+    	d. 	
+    Text boxes that contain empty strings
+
+3 points  
+Question 8
+
+     
+    Code example 4-1
+    The starting code for the index.php file which is the first page of an application
+
+    <?php
+        require 'database.php';
+
+        $category_id = $_GET['category_id'];
+        if (!isset($category_id)) {
+            $category_id = 1;
+        }
+
+        // Routine 1
+        $query = "SELECT * FROM categories
+                  WHERE categoryID = $category_id";
+        $category = $db->query($query);
+        $category = $category->fetch();
+        $category_name = $category['categoryName'];
+
+        // Routine 2
+        $query = "SELECT * FROM products
+                  WHERE categoryID = $category_id
+                  ORDER BY productID";
+        $products = $db->query($query);
+    ?>
+
+
+    (Refer to code example 4-1) What does routine 1 store in the variable named $category_name?
+    Answer
+    	a. 	
+    The category name for the row in categories table that corresponds to the value in $category_id
+    	b. 	
+    The category name for the first row in the categories table of the database
+    	c. 	
+    An array of the category names in the categories table
+    	d. 	
+    The category name for the row in categories table that has a category ID of 1
+
+3 points  
+Question 9
+
+     
+    Code example 5-1
+
+    function get_product($product_id) {
+        global $db;
+        $query = "SELECT * FROM products
+                  WHERE productID = '$product_id'";
+        $product = $db->query($query);
+        $product = $product->fetch();
+        return $product;
+    }
+
+
+    (Refer to code example 5-1) What does this function return when it is called?
+    Answer
+    	a. 	
+    an array of all the rows in the products table
+    	b. 	
+    an array of the columns in the row with the specified product ID
+    	c. 	
+    an array of all the rows with the specified category ID
+    	d. 	
+    an array of the columns in the first row of the products table
+
+3 points  
+Question 10
+
+     
+    Code example 10-1
+
+    $current_date = new DateTime();
+    $due_days_diff = $current_date->diff($due_date);
+    if ($current_date > $due_date) {
+        $overdue_message = $due_days_diff->format(
+            '%y years, %m months, and %d days overdue.');
+    }
+
+
+    (Refer to code example 10-1) If $due_date contains a DateTime object for a date that comes 1 month and 7 days before the date stored in the $current_date variable, what will $overdue_message contain when this code finishes executing:
+    Answer
+    	a. 	
+    0 years, 1 months, and 7 days overdue.
+    	b. 	
+    $overdue_message won’t be set because the if clause won’t be executed
+    	c. 	
+    1 month and 7 days overdue.
+    	d. 	
+    -0 years, -1 months, and -7 days overdue.
+
+3 points  
+Question 11
+
+     
+    Code example 10-1
+
+    $current_date = new DateTime();
+    $due_days_diff = $current_date->diff($due_date);
+    if ($current_date > $due_date) {
+        $overdue_message = $due_days_diff->format(
+            '%y years, %m months, and %d days overdue.');
+    }
+
+
+    (Refer to code example 10-1) If $due_date contains a DateTime object, $due_date_diff will contain
+    Answer
+    	a. 	
+    a TimeStamp object
+    	b. 	
+    a TimeInterval object
+    	c. 	
+    a DateInterval object
+    	d. 	
+    a DateTime object
+
+3 points  
+Question 12
+
+     
+    Code example 4-1
+    The starting code for the index.php file which is the first page of an application
+
+    <?php
+        require 'database.php';
+
+        $category_id = $_GET['category_id'];
+        if (!isset($category_id)) {
+            $category_id = 1;
+        }
+
+        // Routine 1
+        $query = "SELECT * FROM categories
+                  WHERE categoryID = $category_id";
+        $category = $db->query($query);
+        $category = $category->fetch();
+        $category_name = $category['categoryName'];
+
+        // Routine 2
+        $query = "SELECT * FROM products
+                  WHERE categoryID = $category_id
+                  ORDER BY productID";
+        $products = $db->query($query);
+    ?>
+
+
+    (Refer to code example 4-1) The first statement in this example gets and runs a file named database.php. What must this code do for the rest of the statements in this example to work?
+    Answer
+    	a. 	
+    Create a PDOStatement object named $db that connects to the right database
+    	b. 	
+    Create a PDO object named $db that connects to the right database
+    	c. 	
+    Create a PDOStatement object named $db-> that connects to the right database
+    	d. 	
+    Create a PDO object named $db-> that connects to the right database
+
+3 points  
+Question 13
+
+     
+    Code example 3-1
+    SELECT vendorName, invoiceNumber, invoiceDate, invoiceTotal
+    FROM vendors Inner Join invoices
+        On vendors.vendorID = invoices.vendorID
+    WHERE invoiceTotal >= 500
+    ORDER BY vendorName DESC
+
+
+    (Refer to code example 3-1.) How many columns will the result set have?
+    Answer
+    	a. 	
+    4
+    	b. 	
+    7
+    	c. 	
+    6
+    	d. 	
+    5
+
+3 points  
+Question 14
+
+     
+    A “natural” comparison of two values
+    Answer
+    	a. 	
+    puts “10” before both “09” and “9”
+    	b. 	
+    puts both “09” and “9” before “10”
+    	c. 	
+    is case-sensitive
+    	d. 	
+    is case-insensitive
+
+3 points  
+Question 15
+
+     
+    A PHP variable name
+    Answer
+    	a. 	
+    is case-sensitive
+    	b. 	
+    can contain special characters
+    	c. 	
+    can be a PHP reserved word
+    	d. 	
+    can start with a letter, a digit, or two underscores
+
+3 points  
+Question 16
+
+     
+    Code example 2-1
+
+        <h1>Future Value Calculator</h1>
+        <?php if (!empty($error_message)) { ?>
+            <p class="error"><?php echo $error_message; ?></p>
+        <?php } ?>
+        <form action="display_results.php" method="post">
+            <div id="data">
+                <label>Investment Amount:</label>
+                <input type="text" name="investment"
+                       value="<?php echo $investment; ?>"/><br />
+
+                <label>Yearly Interest Rate:</label>
+                <input type="text" name="interest_rate"
+                       value="<?php echo $interest_rate; ?>"/><br />
+
+                <label>Number of Years:</label>
+                <input type="text" name="years"
+                       value="<?php echo $years; ?>"/><br />
+            </div>
+
+
+    (Refer to code example 2-1) If this code is from the first page of this application, what does the if statement in the PHP tag do the first time this page is executed?
+    Answer
+    	a. 	
+    Displays an error message in a <p> tag
+    	b. 	
+    Displays an empty error message in a <p> tag
+    	c. 	
+    Displays an empty <p> tag
+    	d. 	
+    Doesn’t do anything because $error_message will be empty
+
+3 points  
+Question 17
+
+     
+    A hidden field
+    Answer
+    	a. 	
+    doesn’t appear on the form but its data is sent to the server
+    	b. 	
+    appears on the form with its data grayed out
+    	c. 	
+    has data that is obscured by bullets or asterisks
+    	d. 	
+    appears on the form but its data is hidden
+
+3 points  
+Question 18
+
+     
+    A join that returns records from related tables only if their related fields match is called
+    Answer
+    	a. 	
+    a cross join
+    	b. 	
+    an inner join
+    	c. 	
+    a data join
+    	d. 	
+    an outer join
+
+3 points  
+Question 19
+
+     
+    A web application is a type of
+    Answer
+    	a. 	
+    database application
+    	b. 	
+    client/server application
+    	c. 	
+    client-side application
+    	d. 	
+    server-side application
+
+3 points  
+Question 20
+
+     
+    After the if statement that follows is executed, what will the value of $discountAmount be?
+    $discount_amount;
+    $order_total = 200;
+    if ($order_total > 200) {
+        $discount_amount = $order_total * .3;
+    } else if ($order_total > 100) {
+        $discount_amount = $order_total * .2;
+    } else {
+        $discount_amount = $order_total * .1;
+    }
+    Answer
+    	a. 	
+    0
+    	b. 	
+    60
+    	c. 	
+    40
+    	d. 	
+    20
+
+3 points  
+Question 21
+
+     
+    An error that lets the application run but produces the wrong results is known as a
+    Answer
+    	a. 	
+    logic error
+    	b. 	
+    user error
+    	c. 	
+    runtime error
+    	d. 	
+    syntax error
+
+3 points  
+Question 22
+
+     
+    An error that occurs after an application is running is known as a
+    Answer
+    	a. 	
+    logic error
+    	b. 	
+    user error
+    	c. 	
+    runtime error
+    	d. 	
+    syntax error
+
+3 points  
+Question 23
+
+     
+    Assume that the second radio button in the code below has been selected by the user. When you get the value of that radio button, what will the value be?
+    <input type="radio" name="delivery" value="USPS" />USPS
+    <input type="radio" name="delivery" value="FedEx" />Federal Express
+    <input type="radio" name="delivery" value="UPS" />UPS
+    Answer
+    	a. 	
+    fedex
+    	b. 	
+    federal express
+    	c. 	
+    FedEx
+    	d. 	
+    Federal Express
+
+3 points  
+Question 24
+
+     
+    Assume that the statements that follow get the data from a text area named comments. After these statements are executed, how will the $comments variable be displayed by an echo statement?
+    $comments = $_POST['comments'];
+    $comments = htmlspecialchars($comments);
+    Answer
+    	a. 	
+    With both character entities and <br> tags
+    	b. 	
+    With character entities for both special characters and new line characters
+    	c. 	
+    With <br> tags for new line characters
+    	d. 	
+    With character entities for special characters
+
+3 points  
+Question 25
+
+     
+    How many radio buttons from the following code can be selected at any given time?
+    <input type="radio" name="address" value="Home" />Home Address
+    <input type="radio" name="delivery" value="FedEx" />Federal Express
+    <input type="radio" name="delivery" value="UPS" />UPS
+    Answer
+    	a. 	
+    0
+    	b. 	
+    2
+    	c. 	
+    3
+    	d. 	
+    1
+
+3 points  
+Question 26
+
+     
+    If $totalMonths has a value of 13, what does $message contain after this if statement is executed?
+    $years = $total_months / 12;
+    $years = number_format($years);
+    $months = $total_months % 12;
+    if ( $years == 0 ) {
+        $message = $months . " months";
+    } else if ( $months == 0 ) {
+        $message = $years . " years";
+    } else {
+        $message = $years . " years, and " . $months . " months";
+    }
+    Answer
+    	a. 	
+    1 years
+    	b. 	
+    1 year, and 1 month
+    	c. 	
+    1 years, and 1 months
+    	d. 	
+    1 year
+
+3 points  
+Question 27
+
+     
+    If a URL specifies a directory that doesn’t contain a default page, Apache displays
+    Answer
+    	a. 	
+    a list of all of the web applications in that directory
+    	b. 	
+    a list of all of the directories in that directory
+    	c. 	
+    a list of the PHP applications in that directory
+    	d. 	
+    an error message
+
+3 points  
+Question 28
+
+     
+    If you want to generate a random number that ranges from 1000 to 500,000 as a multiple of 100 (1000, 1100, 1200, etc.), and store it in a variable named $number, you can use the code that follows.
+    Answer
+    	a. 	
+    $number = mt_rand(10,5000);
+    $number *= 100;
+    	b. 	
+    $number = mt_rand(1000,500000);
+    	c. 	
+    $number = mt_rand(100,50000);
+    $number *= 10;
+    	d. 	
+    $number = mt_rand(1,500);
+    $number *= 1000;
+
+3 points  
+Question 29
+
+     
+    If you want to round a number within an arithmetic expression, which function should you use?
+    Answer
+    	a. 	
+    number_format
+    	b. 	
+    round
+    	c. 	
+    sprintf
+
+3 points  
+Question 30
+
+     
+    In an if statement, which is a correct right way to find out whether the string in $a comes before (is less than) the string in $b in a case-insensitive comparison?
+    Answer
+    	a. 	
+    if (strcomp($a, $b) < 1)
+    	b. 	
+    if ((strtolower($a) < (strtolower($b))
+    	c. 	
+    if ($a < $b)
+    	d. 	
+    if (strnatcomp($a, $b) < 1)
+
+3 points  
+Question 31
+
+     
+    In the catch block of a try/catch statement for handling PDO exceptions, you can get a message that describes the exception by using the getMessage method of the
+    Answer
+    	a. 	
+    PDOStatement object
+    	b. 	
+    PDO object
+    	c. 	
+    PDOException object
+    	d. 	
+    Result set array
+
+3 points  
+Question 32
+
+     
+    One reason for using the header function to redirect a request
+    Answer
+    	a. 	
+    is to reduce the number of round trips that are required
+    	b. 	
+    is that it’s more efficient than forwarding a request
+    	c. 	
+    is to have a PHP file run itself again
+    	d. 	
+    is to do all processing for the request on the server
+
+3 points  
+Question 33
+
+     
+    Suppose that $name contains a last name followed by a comma and a space, followed by a first name. Then, you can store the first and last names in variables with code like this:
+    Answer
+    	a. 	
+    $i = strpos($name, ', ');
+    $first_name = substr($name, 0, $i);
+    $last_name = substr($name, $i+1);
+    	b. 	
+    $i = strpos($name, ', ');
+    $last_name = substr($name, 0, $i);
+    $first_name = substr($name, $i+1);
+    	c. 	
+    $i = strpos($name, ', ');
+    $first_name = substr($name, 0, $i);
+    $last_name = substr($name, $i+2);
+    	d. 	
+    $i = strpos($name, ', ');
+    $last_name = substr($name, 0, $i);
+    $first_name = substr($name, $i+2);
+

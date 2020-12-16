@@ -1,0 +1,101 @@
+Downloading the Apache HTTP Server
+	http://httpd.apache.org/download.cgi
+		http://www.apachehaus.com/
+		
+Change the listen port, httpd.conf
+	Listen 800
+	
+	Check the ports being used, 
+		netstat -o
+		netstat -o -n -a | findstr :80 
+		
+	Tasklist o find what is using, what port?
+	
+	http://stackoverflow.com/questions/9143964/make-sock-could-not-bind-to-address-443-when-restarting-apache-installi
+	
+	Comment out the ssl port, httpd.conf
+		#Include conf/extra/httpd-ahssl.conf #2016-01-06
+		http://localhost:800
+		
+	To Install Apache as a service:
+
+		In most cases you will want to run Apache as a Windows Service.
+		To do so you install Apache as a service by typing at the command prompt [1];
+
+			httpd -k install
+
+		You can then start Apache by typing
+
+			httpd -k start
+
+		Apache will then start and eventually release the command prompt window.
+
+		[1] You have to run the command prompt as Administrator in Windows Vista/7/2008/8/8.1/10/2012/
+
+		Other Command line options:
+		Stop Apache 	  	httpd -k stop
+		Restart Apache 	httpd -k restart
+		Uninstall Apache Service 	httpd -k uninstall
+		Test Config Syntax 	httpd -t
+		Version Details 	httpd -V
+		Command Line Options List 	httpd -h
+
+	http://localhost:800/~Username
+	
+	http://localhost:800/2016-01-06InstallCommon%20Gateway%20Interface%20%28CGI%29.txt
+	
+	To change the root directory, httpd.conf
+		DocumentRoot "E:/WordEngineering/CommonGatewayInterface"
+		<Directory "E:/WordEngineering/CommonGatewayInterface">
+
+	Install ActivePerl
+		Go to http://www.activestate.com/Products/ActivePerl/ and click on the download link to begin.
+		Directory	E:\Perl64\
+		E:\Apache24\logs\error.log
+		
+		first.cgi perl64 instead of perl.
+			#!/perl64/bin/perl -wT
+			print "Content-type: text/html\n\n";
+			print "<h2>Hello, World!</h2>\n";
+		
+		http://perldoc.perl.org/ and entering "CGI.pm"
+		
+		http://localhost:800/cgi101.com/book/chapter03/getform.html
+		
+			<html><head><title>Test Form</title></head>
+			<body>
+
+			<form action="/cgi101.com/book/chapter03/get.cgi" method="GET">  
+			First Name: <input type="text" name="firstname" size=30><br>
+			Last Name: <input type="text" name="lastname" size=30><br>
+			<input type="submit"><p>
+			</form>
+
+			</body></html>
+		
+		http://localhost:800/cgi101.com/book/chapter03/get.cgi?firstname=ss&lastname=sss
+
+			#!/perl64/bin/perl -wT
+			use CGI qw(:standard);
+			use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+			use strict;
+			use Socket;
+
+			#2016-01-07	http://www.cgi101.com/book/ch3/text.html
+
+			print header;
+			print start_html("Get Form");
+
+			my %form;
+			foreach my $p (param()) {
+				$form{$p} = param($p);
+				print "$p = $form{$p}<br>\n";
+			}
+
+			print end_html;
+		
+		Use name not id from HTML's control alias.
+		
+		Retrieve query string parameters
+			my $bookTitle = param('bookTitle');
+			

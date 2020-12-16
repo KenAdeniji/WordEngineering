@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<!--
+		2015-04-30	Created.	http://blog.stevenlevithan.com/archives/parseuri
+		2012-05-31	go4answers.webhost4life.com/Example/javascript-detect-pageisvalid-91418.aspx			
+	-->
+	<head>
+		<title>StevenLevithan.com parseUri</title>
+		<style>
+			body { background: blue; color: yellow; }
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<input id="uri" type="url">
+			<button id="query">Query</button>
+			<br>
+			<div id="feedback"></div>
+		</div>
+		<script>
+			var isPostBack = false; 
+			
+			function parseUri (str) {
+				var	o   = parseUri.options,
+					m   = o.parser[o.strictMode ? "strict" : "loose"].exec(str),
+					uri = {},
+					i   = 14;
+
+				while (i--) uri[o.key[i]] = m[i] || "";
+
+				uri[o.q.name] = {};
+				uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
+					if ($1) uri[o.q.name][$1] = $2;
+				});
+
+				return uri;
+			};
+
+			parseUri.options = {
+				strictMode: false,
+				key: ["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],
+				q:   {
+					name:   "queryKey",
+					parser: /(?:^|&)([^&=]*)=?([^&]*)/g
+				},
+				parser: {
+					strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
+					loose:  /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
+				}
+			};
+
+			function init() 
+			{ 
+				if (!isPostBack)
+				{ 
+					var uri = document.getElementById("uri");
+					uri.value = window.location;
+					work();
+					isPostBack = true; 
+				} 
+			}
+
+			function work()
+			{
+				var uri = document.getElementById("uri").value;
+				var uriParts = parseUri(uri);
+				
+				var info = "";
+				
+				for(var key in uriParts){
+					var value = uriParts[key];
+					if (value === "")
+					{
+						continue;
+					}	
+					info += key + ": " + value + "<br>";
+				}				
+				
+				var feedback = document.getElementById("feedback");
+				feedback.innerHTML = info;
+			}
+			
+			window.addEventListener("load", init, "false");
+			
+			var query = document.getElementById("query");
+			query.addEventListener("click", work, "false");
+		</script>
+	</body>
+</html>

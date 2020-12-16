@@ -1,0 +1,146 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>315</SequenceOrderId>
+    <Dated>2003-12-06T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>2 Chronicles 35:21, Esther 4:11, Esther 5:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Chronicles+35%3A21%2C+Esther+4%3A11%2C+Esther+5%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>
+     Thy king come this day.
+     All bats are here.
+     We fun.
+     Fo so ke.
+     It's raining and you let me in, so I say let me reciprocate.  
+    </Title>
+    <ContactId>7</ContactId>
+    <FromUntil>340</FromUntil>
+    <Commentary>Helmer ASLAKSEN: The Islamic Calendar http://www.math.nus.edu.sg/aslaksen/calendar/islamic.html aslaksen@math.nus.edu.sg</Commentary>
+    <Keyword>Islamic Calendar</Keyword>    
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>12</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>539</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>475</SequenceOrderId>
+   <Word>King ... Come ... Day</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2218</SequenceOrderId>
+    <Word>Thy king come this day.</Word>
+    <AlphabetSequenceIndex>216</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:10, Judges 5, Luke 1, Revelation 11:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A10%2C+Judges+5%2C+Luke+1%2C+Revelation+11%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2219</SequenceOrderId>
+    <Word>All bats are here.</Word>
+    <AlphabetSequenceIndex>127</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 5:21, Numbers 10, 1 Corinthians 1, Revelation 16:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A21%2C+Numbers+10%2C+1+Corinthians+1%2C+Revelation+16%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2220</SequenceOrderId>
+    <Word>We fun.</Word>
+    <AlphabetSequenceIndex>69</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:13, Exodus 19, 1 Timothy 2, Revelation 19:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A13%2C+Exodus+19%2C+1+Timothy+2%2C+Revelation+19%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2221</SequenceOrderId>
+    <Word>Fo so ke.</Word>
+    <AlphabetSequenceIndex>71</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:15, Exodus 21, 2 Thessalonians 3, Revelation 19:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A15%2C+Exodus+21%2C+2+Thessalonians+3%2C+Revelation+19%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2222</SequenceOrderId>
+    <Word>It's raining and you let me in, so I say let me reciprocate.</Word>
+    <AlphabetSequenceIndex>534</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:20, Psalms 56, Proverbs 28, 1 John 2:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A20%2C+Psalms+56%2C+Proverbs+28%2C+1+John+2%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1334</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>310</SequenceOrderId>
+   <Commentary>Comforter_-_20031206URIWordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>569</SequenceOrderId>
+   <Commentary>Neck. Lip. Explorer memory error. Explorer memory error.</Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

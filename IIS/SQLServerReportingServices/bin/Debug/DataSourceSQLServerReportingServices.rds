@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSourceSQLServerReportingServices">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=(local);Initial Catalog=Bible;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=60;</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Specify a user name and password for data source DataSourceSQLServerReportingServices</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>1fd01764-70ea-4c85-87a8-35e9dd3ad0db</DataSourceID>
+</RptDataSource>

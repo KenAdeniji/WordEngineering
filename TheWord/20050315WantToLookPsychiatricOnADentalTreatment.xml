@@ -1,0 +1,239 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>776</SequenceOrderId>
+ <Dated>2005-03-15T00:00:00.0000000-08:00</Dated>
+ <FromUntil>72</FromUntil>
+   
+  <!--
+  <Anointing>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Rhema></Rhema>
+   <Commentary></Commentary>
+   <Filename />
+  </Anointing>
+  -->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>65</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>153</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>700</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Filename></Filename>
+   <ContactId></ContactId>
+   <Commentary></Commentary>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <URI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>91</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>705</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </BibleWord>
+  -->
+
+  <!--
+  <NameIdentity>
+   <SequenceOrderId>36</SequenceOrderId>
+   <IssuedAlliance></IssuedAlliance>
+   <InclusiveLiteral />
+   <Commentary />
+   <URI></URI>
+   <ContactId></ContactId>
+   <Dated></Dated>
+  </NameIdentity>
+  -->
+
+  <!--
+  <KaiserPermanenteBloodPressure>
+   <Dated></Dated>
+   <SequenceOrderId>2</SequenceOrderId>
+   <Systolic></Systolic>
+   <Diastolic></Diastolic>
+   <Pulse></Pulse>
+   <ContactId></ContactId>
+  </KaiserPermanenteBloodPressure>
+  -->
+
+  <!--
+  <AlphabetSequence>
+    <SequenceOrderId>13103</SequenceOrderId>
+    <Word></Word>
+    <AlphabetSequenceIndex></AlphabetSequenceIndex>
+    <ScriptureReference></ScriptureReference>
+    <ScriptureReferenceURI></ScriptureReferenceURI>
+    <Commentary></Commentary>
+  </AlphabetSequence>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>13101</SequenceOrderId>
+    <Word>Want to look.</Word>
+    <AlphabetSequenceIndex>146</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:8, Numbers 29, Acts 22, Revelation 16:2</ScriptureReference>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>13102</SequenceOrderId>
+    <Word>Psychiatric on a dental treatment.</Word>
+    <AlphabetSequenceIndex>333</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:14, 2 Kings 20, Daniel 2, Revelation 4:1</ScriptureReference>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>2460</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Event>
+   <SequenceOrderId>97</SequenceOrderId>
+   <Commentary></Commentary>
+  </Event>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>485</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>1564</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+  <!--
+  <Contact>
+   <SequenceOrderId>1267</SequenceOrderId>
+   <Dated></Dated>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Suffix />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Contact>
+  -->
+      
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>84</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>376</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <StreetAddress>
+   <SequenceOrderId>442</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <AddressLine1></AddressLine1>
+   <City></City>
+   <State></State>
+   <ZipCode></ZipCode>
+   <Country></Country>
+  </StreetAddress>
+  -->
+
+  <!--
+  <Telephone>
+   <SequenceOrderId>581</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <TelephoneNo></TelephoneNo>
+  </Telephone>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

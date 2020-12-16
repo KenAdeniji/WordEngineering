@@ -1,0 +1,109 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>264</SequenceOrderId>
+  <Dated>2003-11-15T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 23:8, Exodus 4:22, Exodus 5:10, Exodus 6:12, Exodus 6:29, Exodus 11:8, Deuteronomy 6:21, Joshua 18:8, 1 Chronicles 4:10, Jeremiah 26:9, Jeremiah 37:7, Jeremiah 44:4, Ezekiel 29:3, Matthew 11:7, Matthew 11:11, Matthew 16:14, Matthew 21:26, Mark 6:25, Mark 11:32, Luke 1:63, Luke 7:28, Luke 9:28, Luke 20:6, Acts 10:37</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A8%2C+Exodus+4%3A22%2C+Exodus+5%3A10%2C+Exodus+6%3A12%2C+Exodus+6%3A29%2C+Exodus+11%3A8%2C+Deuteronomy+6%3A21%2C+Joshua+18%3A8%2C+1+Chronicles+4%3A10%2C+Jeremiah+26%3A9%2C+Jeremiah+37%3A7%2C+Jeremiah+44%3A4%2C+Ezekiel+29%3A3%2C+Matthew+11%3A7%2C+Matthew+11%3A11%2C+Matthew+16%3A14%2C+Matthew+21%3A26%2C+Mark+6%3A25%2C+Mark+11%3A32%2C+Luke+1%3A63%2C+Luke+7%3A28%2C+Luke+9%3A28%2C+Luke+20%3A6%2C+Acts+10%3A37&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Junior, Say, Oh.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>111</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>496</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <ScriptureReading>
+   <SequenceOrderId>82</SequenceOrderId>
+   <Dated>2003-11-14T00:00:00.0000000-08:00</Dated>
+   <ScriptureReference>Leviticus 1-8</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Leviticus+1-8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </ScriptureReading>
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>439</SequenceOrderId>
+   <Word>Say ... Oh</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1456</SequenceOrderId>
+    <Word>Junior, Say, Oh.</Word>
+    <AlphabetSequenceIndex>155</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:17, Deuteronomy 2, Acts 17, Revelation 15:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A17%2C+Deuteronomy+2%2C+Acts+17%2C+Revelation+15%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1300</SequenceOrderId>
+   <Dated>2003-11-14T00:00:00.0000000-08:00</Dated>
+   <Commentary>Fremont Main Library 2400 Stevenson Blvd. Fremont CA 94538-2325. General Information: (510) 745-1400. http://www.aclibrary.org. HispanicOnline.com. Taiwan Review.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1301</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>292</SequenceOrderId>
+   <Dated>2003-11-14T00:00:00.0000000-08:00</Dated>
+   <Commentary>Comforter_-_20031114URIWordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>525</SequenceOrderId>
+   <Commentary>... Smell ... BibleWord 439 Sa(y) ... Smell. BibleWord 439 Say ... Oh: Car horn.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

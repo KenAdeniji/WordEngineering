@@ -1,0 +1,24 @@
+<!--
+2014-07-30 https://speakerdeck.com/rauschma/six-technologies-that-will-change-the-web-platform
+Six technologies that will change the web platform
+by Axel Rauschmayer
+-->
+<script>
+	function addTemplate() {
+		var template = document.querySelector('#mytemplate');
+		
+		//Fill in data
+		template.content.querySelector('img').src = '../../images/skyline-cairo-egypt_6686_100x75.jpg';
+		
+		//Add to document
+		 var clone = document.importNode(template.content, true);
+		 document.body.appendChild(clone);
+	}
+	
+	window.addEventListener('load', addTemplate, false);
+</script>
+
+<template id="mytemplate">
+	<img src="" alt="great image">
+	<div class="comment"></div>
+</template>

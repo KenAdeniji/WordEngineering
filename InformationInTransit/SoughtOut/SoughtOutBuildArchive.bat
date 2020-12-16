@@ -1,0 +1,1 @@
+csc /recurse:*.cs /reference:System.Data.Entity.dll

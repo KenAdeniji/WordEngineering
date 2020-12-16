@@ -1,0 +1,52 @@
+<html>
+	<!--
+		2016-01-07	Use name not id from HTML's control alias attribute.
+	-->
+	<head>
+		<title>At a study man</title>
+	</head>
+	<body>
+		<form action="/At a study man/At a study man.cgi" method="GET"> 
+			<fieldset>
+				<legend>Query</legend>
+				<table align="center">
+					<tbody>
+						<tr>
+							<td><label for="bookIDFrom">Book ID:</label></td>
+							<td>
+								<input autofocus type="number" id="bookIDFrom" name="bookIDFrom" min="1" max="66" step="1">
+								-
+								<input type="number" id="bookIDUntil" name="bookIDUntil" min="1" max="66" step="1">
+							</td>
+						</tr>
+						<tr>
+							<td><label for="bookTitle">Book Title:</label></td>
+							<td>
+								<input type="text" id="bookTitle" name="bookTitle">
+							</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2"><input type="submit"></td>
+						</tr>	
+					</tbody>	
+				</table>
+			</fieldset>	
+		</form>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					document.getElementById("bookIDFrom").value = 1;
+					document.getElementById("bookIDUntil").value = 66;
+					isPostBack = true;
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
+

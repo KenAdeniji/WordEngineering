@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-11-03	Created.	http://flaviocopes.com/how-to-get-index-item-array-javascript
+		2020-11-01	What kind of places, do you guys like going to?
+					There is a baby, its mother, and someone else, I urinated on top of the baby, and I see police cars sirens at North West.
+	-->
+	<head>
+		<title>What kind of places, do you guys like going to?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What kind of places, do you guys like going to?"/>
+		<meta name="keywords" content="JavaScript, findIndex, indexOf"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<p>
+				Please enter the URI of the document to parse, by extracting the index from the key and value.
+			</p>
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="uri">URI:</label></td>
+						<td><input id="uri" type="url" size="50" autofocus/></td>
+					</tr>
+					<tr>
+						<td><label for="heading">Heading:</label></td>
+						<td><input id="heading" type="text"/></td>
+					</tr>
+					<tr>
+						<td><label for="key">Key:</label></td>
+						<td><input id="key" type="text"/></td>
+					</tr>
+					<tr>
+						<td><label for="value">Value:</label></td>
+						<td><input id="value" type="text"/></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>
+			<br/><br/>	
+			<div id="resultSet"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var uriDefault = "http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleBook.Json";
+			var isPostBack = false;
+
+			var headingElement = document.getElementById("heading");
+			var keyElement = document.getElementById("key");
+			var resultSetElement = document.getElementById("resultSet");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var uriElement = document.getElementById("uri");
+			var valueElement = document.getElementById("value");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var uriParam = urlParams.get("uri");
+						uriElement.value = uriParam ? uriParam : uriDefault;
+						
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}	
+			}
+
+			function querySubmit()
+			{
+				var r = new XMLHttpRequest();
+					r.open('GET', uriElement.value, false);
+					r.send(null); 
+				if (r.status == 200) 
+				{ 
+					var data = JSON.parse(r.responseText);
+					if (headingElement.value)
+					{
+						data = data[headingElement.value];
+					}
+					var index = data.findIndex
+					(
+						item => item[keyElement.value] == valueElement.value
+					);
+					resultSetElement.innerHTML = index;
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

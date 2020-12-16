@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>86</SequenceOrderId>
+  <Dated>2003-09-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 8:11, Genesis 29:3, Genesis 29:8, Genesis 29:10, Judges 7:6, Nehemiah 9:20, Proverbs 18:4, Revelation 12:15</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A11%2C+Genesis+29%3A3%2C+Genesis+29%3A8%2C+Genesis+29%3A10%2C+Judges+7%3A6%2C+Nehemiah+9%3A20%2C+Proverbs+18%3A4%2C+Revelation+12%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Are you sure you are ok?</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>33</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>365</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>265</SequenceOrderId>
+   <Commentary />
+   <Word>Mouth ... Water</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>580</SequenceOrderId>
+   <Word>Are you sure, you are ok?</Word>
+   <AlphabetSequenceIndex>259</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:24, 1 Samuel 23, Matthew 2, Revelation 9:3</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A24%2C+1+Samuel+23%2C+Matthew+2%2C+Revelation+9%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1127</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg: Water secretion from the mouth.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>331</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+ 
+  </TheWord>
+</wordOfGod>

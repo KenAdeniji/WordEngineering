@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script type="text/javascript">
+		var empty = {};
+		empty.notReally = 1000;
+		console.log(empty.notReally);
+		
+		var thing = {"gabba gabba": "hey", "5": 10};
+		console.log(thing["5"]);
+		thing["5"] = 20;
+		console.log(thing[2 + 3]);
+		delete thing["gabba gabba"];
+		
+		var propertyName = "length";
+		var text = "mainline";
+		console.log(text[propertyName]); //The length of the value in text.
+		
+		var mack = [];
+		mack.push("Mack");
+		mack.push("the");
+		mack.push("Knife");
+		console.log(mack.join(" "));
+		console.log(mack.pop());
+		console.log(mack);
+    </script>
+</head>
+<body>
+</body>
+</html>

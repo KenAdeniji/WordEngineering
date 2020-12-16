@@ -1,0 +1,120 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>263</SequenceOrderId>
+  <Dated>2003-11-14T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 19:14, Genesis 37:6, Numbers 14:29, Numbers 16:21, Numbers 16:45, Numbers 22:19, Joshua 1:14, Joshua 22:3, Joshua 24:15, Judges 19:23, 2 Samuel 19:22, 1 Kings 12:24, 1 Kings 20:7, 2 Chronicles 11:4, Isaiah 42:23, Ezekiel 24:24, Ezekiel 36:32, Malachi 1:9, Matthew 10:23, Matthew 26:13, Mark 7:6, Mark 11:23, Mark 14:9, Luke 10:11, Luke 22:37, John 14:30, Acts 5:28, Acts 20:26</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A14%2C+Genesis+37%3A6%2C+Numbers+14%3A29%2C+Numbers+16%3A21%2C+Numbers+16%3A45%2C+Numbers+22%3A19%2C+Joshua+1%3A14%2C+Joshua+22%3A3%2C+Joshua+24%3A15%2C+Judges+19%3A23%2C+2+Samuel+19%3A22%2C+1+Kings+12%3A24%2C+1+Kings+20%3A7%2C+2+Chronicles+11%3A4%2C+Isaiah+42%3A23%2C+Ezekiel+24%3A24%2C+Ezekiel+36%3A32%2C+Malachi+1%3A9%2C+Matthew+10%3A23%2C+Matthew+26%3A13%2C+Mark+7%3A6%2C+Mark+11%3A23%2C+Mark+14%3A9%2C+Luke+10%3A11%2C+Luke+22%3A37%2C+John+14%3A30%2C+Acts+5%3A28%2C+Acts+20%3A26&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>You got to cut it loose. E ba Mi reti iyawo Mi. You've done this for Me, I have done this for you, too.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>111</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>496</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>82</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Commentary></Commentary>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>438</SequenceOrderId>
+   <Word>You ... This ... Me</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1453</SequenceOrderId>
+    <Word>You got to cut it loose.</Word>
+    <AlphabetSequenceIndex>277</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:10, 2 Samuel 10, Zechariah 2, Revelation 7:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A10%2C+2+Samuel+10%2C+Zechariah+2%2C+Revelation+7%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1454</SequenceOrderId>
+    <Word>E ba Mi reti iyawo Mi.</Word>
+    <AlphabetSequenceIndex>177</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:17, Deuteronomy 24, John 16, Revelation 13:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A17%2C+Deuteronomy+24%2C+John+16%2C+Revelation+13%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1455</SequenceOrderId>
+    <Word>You've done this for Me, I have done this for you, too.</Word>
+    <AlphabetSequenceIndex>528</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:14, Psalms 50, Ecclesiastes 3, 1 John 2:24</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A14%2C+Psalms+50%2C+Ecclesiastes+3%2C+1+John+2%3A24&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1299</SequenceOrderId>
+   <Commentary>Wake-up Orientation: Knees upright. Wake-up Orientation: Knees upright. Rain shower. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>291</SequenceOrderId>
+   <Commentary>ArchiveHolySpiritComfortBcpRelease20031114.bat</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>524</SequenceOrderId>
+   <Commentary>Sleep: ... Smell ... Gara(f)ge noise. You've done this for M(e).</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

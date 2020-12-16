@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence 20050315WantToLookPsychiatricOnADentalTreatment.txt 20050315WantToLookPsychiatricOnADentalTreatmentAlphabet.xml

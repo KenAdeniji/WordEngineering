@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-09-26 	Created.
+						The words that have the same first letters are returned.
+						First letters, for example, In the beginning (ITB), or pharaoh called (PC).
+						"PC" is an initialism for "personal computer".
+		-->
+		<title>Making today, a memory, of tomorrow</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="firstLetters">First letters, for example, In the beginning (ITB), or pharaoh called (PC):</label></td>
+						<td><input id="firstLetters" type="text" required></td>
+					</tr>
+					<tr>
+						<td><label for="bibleVersion">Version:</label></td>
+						<td><select id="bibleVersion"> </select></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>
+				</table>
+			</fieldset>			
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit() {
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				var firstLetters = document.getElementById("firstLetters").value;
+				
+				if (!firstLetters)
+				{
+					return;
+				}
+				
+				request["firstLetters"] = firstLetters;
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/MakingTodayAMemoryOfTomorrow.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function (xhr) {
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					}
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+						document.getElementById("firstLetters").value = "PC";
+						//document.getElementById("bibleVersions").value = "VerseText";
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function render(data) 
+			{
+				var occurrences = data["Table1"].length;
+				var caption = "<caption>Making today, a memory, of tomorrow - (Occurrences: " + occurrences + ") </caption>";
+				var info = 	"<table>" + caption;
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Scripture Reference",
+					"Word"
+				);
+
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						info += scriptLiteral9432.buildRow
+						(
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["ScriptureReference"]
+							),
+							dataRow["Phrase"]		
+						);
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}	
+
+			var bibleVersions = [
+				["King James Version", "VerseText"],
+				["American Standard Bible", "AmericanStandardBible"],
+				["Young's Literal Translation", "YoungLiteralTranslation"] 
+			];
+			
+			var firstLetterss = [
+				["Previous", "<"],
+				["Equal, same", "="],
+				["Next", ">"] 
+			];
+		</script>
+	</body>
+</html>

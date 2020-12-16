@@ -1,0 +1,63 @@
+<table border="1">
+	<caption>
+		<a href="http://tcpipguide.com/free/t_ICMPVersion4ICMPv4ErrorMessageTypesandFormats.htm">ICMP Version 4 (ICMPv4) Error Message Types and Formats</a>
+	</caption>
+	<thead>
+		<tr>
+			<th>Message Type and Format</th>
+			<th>Commentary</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4DestinationUnreachableMessages.htm">
+					ICMPv4 Destination Unreachable Messages
+				</a>
+			</td>
+			<td>
+			So in general, while IP is designed to allow IP datagram deliveries to fail, we should take any such failures seriously. What we really need is a feedback mechanism that can tell a source device that something improper is happening, and why. In IPv4, this service is provided through the transmission of Destination Unreachable ICMP messages. When a source node receives one of these messages it knows there was a problem sending a datagram, and can then decide what action, if any, it wants to take. Like all ICMP error messages, Destination Unreachable messages include a portion of the datagram that could not be delivered, which helps the recipient of the error figure out what the problem is.
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<a href="http://tcpipguide.com/free/t_ICMPv4SourceQuenchMessages.htm">
+					ICMPv4 Source Quench Messages
+				</a>
+			</td>
+			<td>In IPv4, a device that is forced to drop datagrams due to congestion provides feedback to the sources that overwhelmed it by sending them ICMPv4 Source Quench messages.</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://tcpipguide.com/free/t_ICMPv4TimeExceededMessages.htm">
+					ICMPv4 Time Exceeded Messages
+				</a>
+			</td>
+			<td>Each IP datagram includes in its header a Time To Live (TTL) field. This field was originally intended to limit the maximum time (in seconds) that a datagram could be on the internetwork, but now limits the life of a datagram by limiting the number of times the datagram can be passed from one device to the next. The TTL is set to a value by the source that represents the maximum number of hops it wants for the datagram. Each router decrements the value; if it ever reaches zero the datagram is said to have expired and is discarded.
+
+When a datagram is dropped due to expiration of the TTL field, the device that dropped the datagram will inform the source of this occurrence by sending it an ICMPv4 Time Exceeded message, as shown in Figure 141. Receipt of this message indicates to the original sending device that there is either a routing problem when sending to that particular destination, or that it set the TTL field value too low in the first place. As with all ICMP messages, the device receiving it must decide whether and how to respond to receipt of the message. For example, it may first try to re-send the datagram with a higher TTL value.</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://tcpipguide.com/free/t_ICMPv4RedirectMessages.htm">
+					ICMPv4 Redirect Messages
+				</a>
+			</td>
+			<td>
+Consider a network N1 that contains a number of hosts (H1, H2, etc) and two routers, R1 and R2. Host H1 has been configured to send all datagrams to R1, as its default router. Suppose it wants to send a datagram to a device on a different network (N2). However, N2 is most directly connected to N1 using R2 and not R1. The datagram will first be sent to R1. R1 will look in its routing table and see that datagrams for N2 need to be sent through R2. "But wait," R1 says. "R2 is on the local network, and H1 is on the local network—so why am I needed as a middleman? H1 should just send datagrams for N2 directly to R2 and leave me out of it.
+
+In this situation, R1 will send an ICMPv4 Redirect message back to H1, telling it that in the future it should send this type of datagram directly to R2. This is shown in Figure 143. R1 will of course also forward the datagram to R2 for delivery, since there is no reason to drop the datagram. Thus, despite usually being grouped along with true ICMP error messages, Redirect messages are really arguably not error messages at all; they represent a situation only where an inefficiency exists, not an outright error. (In fact, in ICMPv6 they have been reclassified.)			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://tcpipguide.com/free/t_ICMPv4ParameterProblemMessages.htm">
+					ICMPv4 Parameter Problem Messages
+				</a>
+			</td>
+			<td>
+If a device finds a problem with any of the parameters in an IP datagram header that is serious enough that it cannot complete processing the header, it must discard the datagram. Like other cases where a datagram must be tossed out, this is serious enough to warrant communication of the problem back to the device that sent the original datagram. This is accomplished in ICMPv4 using the Parameter Problem message type.
+			</td>
+		</tr>
+	<tbody>	
+</table>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-11-15	Get a page.
+			2015-12-16	Created.
+		-->
+		<title>Bible Dictionary</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible Dictionary"/>
+		<meta name="keywords" content="Bible, word, dictionary"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="bibleWord" type="text" size="50" autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="bibleDictionary"></div>
+			<div id="feedback"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function appendCommentary(source, word, commentary)
+			{
+				var combined = "";
+				if (commentary != null)
+				{
+					combined = "<tr><td>" + source + ": " + word + "<br>" + commentary + "</td></tr>";
+				}
+				return combined;
+			}
+
+			function clearView()
+			{
+				document.getElementById("bibleDictionary").innerHTML = "";
+				document.getElementById("feedback").innerHTML = "";
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var bibleWord = getParameterByName("bibleWord");
+					if (bibleWord)
+					{
+						document.getElementById("bibleWord").value = bibleWord;
+						querySubmit();	
+						isPostBack = true;
+					}	
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				retrieveBibleDictionary();
+			}
+
+			function renderBibleDictionary(data) 
+			{
+				var info = "<table id='bibleDictionaryContent'>Bible Dictionary<br><tr><td>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var bibleDictionaryWord = null;
+				var bibleDatabaseEastonCommentary = null;
+				var bibleDatabaseHitchcockBiblicalNameCommentary = null;
+				var	bibleFoundationNaveTopicalBibleCommentary = null;
+				var	bibleFoundationRATorreyTheNewTopicalTextBookCommentary = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						bibleDictionaryWord = dataRow["BibleDictionaryWord"];
+						bibleDatabaseEastonCommentary = dataRow["BibleDatabaseEastonCommentary"];
+						bibleDatabaseHitchcockBiblicalNameCommentary = dataRow["BibleDatabaseHitchcockBiblicalNameCommentary"];
+						bibleFoundationNaveTopicalBibleCommentary = dataRow["BibleFoundationNaveTopicalBibleCommentary"];
+						bibleFoundationRATorreyTheNewTopicalTextBookCommentary = dataRow["BibleFoundationRATorreyTheNewTopicalTextBookCommentary"];
+						
+						info += "<table>";
+						info += appendCommentary("Easton's", bibleDictionaryWord, bibleDatabaseEastonCommentary);
+						info += appendCommentary("Hitchcock's Biblical Name", bibleDictionaryWord, bibleDatabaseHitchcockBiblicalNameCommentary);
+						info += appendCommentary("Nave's Topical", bibleDictionaryWord, bibleFoundationNaveTopicalBibleCommentary);
+						info +=	appendCommentary("R.A. Torrey The New Topical Text Book", bibleDictionaryWord, bibleFoundationRATorreyTheNewTopicalTextBookCommentary);
+						info += "</table>";		
+					}
+				}
+				info += "</td></tr></table>"
+				document.getElementById("bibleDictionary").innerHTML = info;
+			}
+
+			function retrieveBibleDictionary()
+			{
+				var request = {};
+				request["question"] = document.getElementById("bibleWord").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleDictionaryWebService.asmx/GetAPage",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderBibleDictionary(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("bibleDictionary").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+					} 
+				});
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var word = document.getElementById("bibleWord");
+			word.addEventListener("change", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

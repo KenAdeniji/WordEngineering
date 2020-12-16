@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<form>
+			<input type="radio" name="age" value="10">
+			<input type="radio" name="age" value="20">
+		</form>
+
+		<script>
+			var form = document.forms[0]
+
+			var elems = form.elements.age
+
+			console.log(elems[0].value) // 10
+		</script>
+	</body>
+</html>

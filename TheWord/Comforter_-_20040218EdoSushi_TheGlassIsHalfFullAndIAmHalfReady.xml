@@ -1,0 +1,394 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>430</SequenceOrderId>
+   <Dated>2004-02-18T00:00:00.0000000-08:00</Dated>
+   <ContactId>71</ContactId>
+   <FromUntil>49</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>38</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>624</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <ContactId></ContactId>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>4902</SequenceOrderId>
+    <Word>The glass is half full, and I am half ready.</Word>
+    <AlphabetSequenceIndex>319</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:20, 2 Kings 6, Hosea 9, Revelation 5:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A20%2C+2+Kings+6%2C+Hosea+9%2C+Revelation+5%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4903</SequenceOrderId>
+    <Word>He didn't say it out of hate, he said it out of love for you and I.</Word>
+    <AlphabetSequenceIndex>583</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:11, Psalms 105, Psalms 129, 2 Peter 2:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A11%2C+Psalms+105%2C+Psalms+129%2C+2+Peter+2%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4904</SequenceOrderId>
+    <Word>He took both.</Word>
+    <AlphabetSequenceIndex>119</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 5:13, Numbers 2, 1 Corinthians 9, Revelation 17:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A13%2C+Numbers+2%2C+1+Corinthians+9%2C+Revelation+17%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4905</SequenceOrderId>
+    <Word>Six seeks employment, You think get more done.</Word>
+    <AlphabetSequenceIndex>493</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:35, Psalms 15, Isaiah 18, 1 John 4:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A35%2C+Psalms+15%2C+Isaiah+18%2C+1+John+4%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4906</SequenceOrderId>
+    <Word>Reach out your hand.</Word>
+    <AlphabetSequenceIndex>197</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:13, Joshua 10, Luke 20, Revelation 12:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A13%2C+Joshua+10%2C+Luke+20%2C+Revelation+12%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4907</SequenceOrderId>
+    <Word>Look across the field and you know what is on.</Word>
+    <AlphabetSequenceIndex>449</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:24, Job 13, Isaiah 62, 2 John 1:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A24%2C+Job+13%2C+Isaiah+62%2C+2+John+1%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4908</SequenceOrderId>
+    <Word>She stolled away on the stallion.</Word>
+    <AlphabetSequenceIndex>333</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:14, 2 Kings 20, Daniel 7, Revelation 4:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A14%2C+2+Kings+20%2C+Daniel+7%2C+Revelation+4%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4909</SequenceOrderId>
+    <Word>As we are older fellows, we are heart at fellows.</Word>
+    <AlphabetSequenceIndex>435</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:10, Esther 9, Jeremiah 10, 3 John 1:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A10%2C+Esther+9%2C+Jeremiah+10%2C+3+John+1%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4910</SequenceOrderId>
+    <Word>Just pretend I am alive.</Word>
+    <AlphabetSequenceIndex>224</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:18, Judges 13, Mark 9, Revelation 11:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A18%2C+Judges+13%2C+Mark+9%2C+Revelation+11%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4911</SequenceOrderId>
+    <Word>Every prayer is love given.</Word>
+    <AlphabetSequenceIndex>297</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:30, 1 Kings 6, Jonah 4, Revelation 6:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A30%2C+1+Kings+6%2C+Jonah+4%2C+Revelation+6%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4912</SequenceOrderId>
+    <Word>For you and I to find God, we have to love people.</Word>
+    <AlphabetSequenceIndex>444</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:19, Job 8, Jeremiah 1, 2 John 1:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A19%2C+Job+8%2C+Jeremiah+1%2C+2+John+1%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4913</SequenceOrderId>
+    <Word>To commemorate senior facility.</Word>
+    <AlphabetSequenceIndex>321</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:2, 2 Kings 8, Hosea 7, Revelation 5:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A2%2C+2+Kings+8%2C+Hosea+7%2C+Revelation+5%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4914</SequenceOrderId>
+    <Word>For a locomotive world.</Word>
+    <AlphabetSequenceIndex>241</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:6, 1 Samuel 5, Matthew 20, Revelation 9:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A6%2C+1+Samuel+5%2C+Matthew+20%2C+Revelation+9%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4915</SequenceOrderId>
+    <Word>Will you watch out for me, since I am rinsing you, now.</Word>
+    <AlphabetSequenceIndex>561</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 22:13, Psalms 83, Proverbs 1, 1 John 1:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+22%3A13%2C+Psalms+83%2C+Proverbs+1%2C+1+John+1%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4916</SequenceOrderId>
+    <Word>Too much tension in the torrential.</Word>
+    <AlphabetSequenceIndex>379</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:18, 2 Chronicles 12, Ezekiel 9, Revelation 2:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A18%2C+2+Chronicles+12%2C+Ezekiel+9%2C+Revelation+2%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4917</SequenceOrderId>
+    <Word>Slice my felt needs for you.</Word>
+    <AlphabetSequenceIndex>276</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:9, 2 Samuel 9, Zechariah 3, Revelation 7:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A9%2C+2+Samuel+9%2C+Zechariah+3%2C+Revelation+7%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4918</SequenceOrderId>
+    <Word>In the season of goodwill the wind blew our way, in the season of darkness we stood in the fear of God.</Word>
+    <AlphabetSequenceIndex>950</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 32:21, Matthew 21, 1 Samuel 4, Hebrews 10:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+32%3A21%2C+Matthew+21%2C+1+Samuel+4%2C+Hebrews+10%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4919</SequenceOrderId>
+    <Word>In heaven and hell their are opinions to be shared.</Word>
+    <AlphabetSequenceIndex>426</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:1, Nehemiah 13, Jeremiah 19, Jude 1:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A1%2C+Nehemiah+13%2C+Jeremiah+19%2C+Jude+1%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4920</SequenceOrderId>
+    <Word>The God in you, is the God in me.</Word>
+    <AlphabetSequenceIndex>271</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:4, 2 Samuel 4, Zechariah 8, Revelation 8:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A4%2C+2+Samuel+4%2C+Zechariah+8%2C+Revelation+8%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4921</SequenceOrderId>
+    <Word>The government is running a red deficit.</Word>
+    <AlphabetSequenceIndex>375</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:14, 2 Chronicles 8, Ezekiel 13, Revelation 2:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A14%2C+2+Chronicles+8%2C+Ezekiel+13%2C+Revelation+2%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4922</SequenceOrderId>
+    <Word>I am desperately looking for survival.</Word>
+    <AlphabetSequenceIndex>399</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:1, 2 Chronicles 32, Jeremiah 46, Revelation 1:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A1%2C+2+Chronicles+32%2C+Jeremiah+46%2C+Revelation+1%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4923</SequenceOrderId>
+    <Word>He is going to get paid whether you like it or not.</Word>
+    <AlphabetSequenceIndex>486</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:28, Psalms 8, Isaiah 25, 1 John 4:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A28%2C+Psalms+8%2C+Isaiah+25%2C+1+John+4%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4924</SequenceOrderId>
+    <Word>As hard as we fight, we always end up at the bottom.</Word>
+    <AlphabetSequenceIndex>457</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:32, Job 21, Isaiah 54, 1 John 5:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A32%2C+Job+21%2C+Isaiah+54%2C+1+John+5%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4925</SequenceOrderId>
+    <Word>Once you understand people, things start to work out for you, you need to understand people though.</Word>
+    <AlphabetSequenceIndex>1092</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 37:8, Galatians 1, Leviticus 8, Hebrews 3:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+37%3A8%2C+Galatians+1%2C+Leviticus+8%2C+Hebrews+3%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4926</SequenceOrderId>
+    <Word>Organize a Seiko session.</Word>
+    <AlphabetSequenceIndex>255</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:20, 1 Samuel 19, Matthew 6, Revelation 9:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A20%2C+1+Samuel+19%2C+Matthew+6%2C+Revelation+9%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4927</SequenceOrderId>
+    <Word>East Wood.</Word>
+    <AlphabetSequenceIndex>102</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 4:22, Leviticus 12, 2 Corinthians 10, Revelation 18:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A22%2C+Leviticus+12%2C+2+Corinthians+10%2C+Revelation+18%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4928</SequenceOrderId>
+    <Word>You're putting yourself as a fraud in frog clothing.</Word>
+    <AlphabetSequenceIndex>540</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:26, Psalms 62, Proverbs 22, 1 John 2:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A26%2C+Psalms+62%2C+Proverbs+22%2C+1+John+2%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1566</SequenceOrderId>
+   <Commentary>Edo Sushi 3924 Decoto Road Fremont 94555 CA USA (510) 792-5677. Helen Kim. Jake Joe. Monday ... Friday 11:30AM-2:00PM, 5:00PM-9:30PM. Saturday 12:00PM-3:00PM, 5:00PM-9:30PM. To serve you for good health and good soul.</Commentary>
+   <Expense>20</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1567</SequenceOrderId>
+   <Commentary>Marquez Brothers International Inc. http://www.ElMexicano.net San Jose CA 95138 (408) 960-2700. Saborico 7fl. oz. (207mL) 0 42743 12551 0. Saborico 7fl. oz. (207mL) 0 42743 12554 1.</Commentary>
+   <ContactId>296</ContactId>
+   <Expense>2</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1568</SequenceOrderId>
+   <Commentary>Haagen-Dazs</Commentary>
+   <ContactId>296</ContactId>
+   <Expense>2</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1569</SequenceOrderId>
+   <Commentary>Walong Marketing Inc. Asian Taste. Coconut juice 6 73367 23011 5.</Commentary>
+   <ContactId>261</ContactId>
+   <Expense>1</Expense>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>334</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>683</SequenceOrderId>
+   <Commentary>Private part ... Face ... feet ... hip ... keyboard error ... mouse error ... Explorer memory error ... faeces ... East Wood ... Private part ... feet ... SequenceOrderId Error ... You're putting yourself as a fraud in frog clothing.</Commentary>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>332</SequenceOrderId>
+   <Company>I Sushi</Company>
+   <FirstName />
+   <LastName />
+   <Commentary>I Sushi</Commentary>
+  </Contact>
+
+  <StreetAddress>
+   <SequenceOrderId>207</SequenceOrderId>
+   <ContactId>332</ContactId>
+   <AddressLine1>5980 Jarvis Avenue</AddressLine1>
+   <City>Newark</City>
+   <ZipCode>94560</ZipCode>
+   <State>CA</State>
+  </StreetAddress>
+
+  <Telephone>
+   <SequenceOrderId>285</SequenceOrderId>
+   <ContactId>332</ContactId>
+   <TelephoneNo>(510) 742-5177</TelephoneNo>
+   <TelephoneLocation />
+  </Telephone>
+
+  <Telephone>
+   <SequenceOrderId>286</SequenceOrderId>
+   <ContactId>332</ContactId>
+   <TelephoneNo>(510) 742-5178</TelephoneNo>
+   <TelephoneLocation />
+  </Telephone>
+
+  <Telephone>
+   <SequenceOrderId>287</SequenceOrderId>
+   <ContactId>332</ContactId>
+   <TelephoneNo>(510) 742-5180</TelephoneNo>
+   <TelephoneLocation>F</TelephoneLocation>
+  </Telephone>
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>20</SequenceOrderId>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>92</SequenceOrderId>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+  <Contact>
+   <SequenceOrderId>71</SequenceOrderId>
+   <FirstName>Helen</FirstName>
+   <LastName>Kim</LastName>
+   <Commentary>Edo Sushi 3924 Decoto Road Fremont 94555 CA USA (510) 792-5677. Helen Kim. Jake Joe. Monday ... Friday 11:30AM-2:00PM, 5:00PM-9:30PM. Saturday 12:00PM-3:00PM, 5:00PM-9:30PM. To serve you for good health and good soul.</Commentary>
+  </Contact>   
+
+  <Contact>
+   <SequenceOrderId>333</SequenceOrderId>
+   <Company>Edo Sushi</Company>
+   <FirstName>Jake</FirstName>
+   <LastName>Joe</LastName>
+   <Commentary>Edo Sushi 3924 Decoto Road Fremont 94555 CA USA (510) 792-5677. Helen Kim. Jake Joe. Monday ... Friday 11:30AM-2:00PM, 5:00PM-9:30PM. Saturday 12:00PM-3:00PM, 5:00PM-9:30PM. To serve you for good health and good soul.</Commentary>
+  </Contact>
+   
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

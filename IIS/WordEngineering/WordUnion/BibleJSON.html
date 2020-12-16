@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-12-10	https://msdn.microsoft.com/en-us/library/dn921900.aspx
+		2016-12-10	Created. BibleJSON.html
+		2016-12-10	https://code.google.com/archive/p/jsonpath/wikis/Javascript.wiki
+		2016-12-14	$..bookTitle
+		2016-12-15	https://github.com/dchester/jsonpath
+	-->
+	<head>
+		<title>BibleJSON</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+			#resultSet{
+				width: 90vw;
+				height: 80vh;				
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<textarea id="question" type="text">$..verseText</textarea>	
+				<input type="submit" id="submitQuery">
+			</fieldset>	
+			<textarea id="resultSet"> 
+			</textarea>
+			<table id="books"> </table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="jsonpath-0.8.0.js"></script>
+		<script>
+			var isPostBack = false;
+			var jsonContent = null;
+			
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					var argument = arguments[columnIndex];
+					if (!argument)
+					{
+						argument = "";
+					}
+					rowStub += "<td>" + argument + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				$.getJSON("Bible.Json.txt", function(data, status, xhr) {
+					if (status == "success"){
+						//do something with the data
+					}else if (status == "timeout"){
+						alert("Something is wrong with the connection");
+					}else if (status == "error" || status == "parsererror" ){
+						alert("An error occured");
+					}else{
+						alert("datatosend did not change");
+					}  
+					render(data);
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var question = getParameterByName("question");
+					if (question)
+					{
+						document.getElementById("question").value = question;
+					}
+					querySubmit();		
+					isPostBack = true;
+				}
+			}
+
+			function render(data)
+			{
+				out = "";
+				var question = document.getElementById("question").value;
+				out += jsonPath(data, question);//.toJSONString();
+				//document.getElementById("resultSet").innerHTML = out;	
+				document.getElementById("resultSet").value = out;	
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			document.getElementById("question").addEventListener("change", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

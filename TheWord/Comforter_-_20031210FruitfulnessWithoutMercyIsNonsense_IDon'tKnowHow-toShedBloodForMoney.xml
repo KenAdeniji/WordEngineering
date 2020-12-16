@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>331</SequenceOrderId>
+    <Dated>2003-12-10T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>James 3:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=James+3%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>
+     Fruitfulness without mercy is nonsense.
+     I don't know how-to shed blood for money.
+    </Title>
+    <FromUntil>344</FromUntil>
+    <ContactId>113</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>13</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>113</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>554</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>487</SequenceOrderId>
+   <Word>Fruit Mercy</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2242</SequenceOrderId>
+    <Word>Fruitfulness without mercy is nonsense.</Word>
+    <AlphabetSequenceIndex>483</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:25, Psalms 5, Isaiah 28, 1 John 4:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A25%2C+Psalms+5%2C+Isaiah+28%2C+1+John+4%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>3</ContactId>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2243</SequenceOrderId>
+    <Word>I don't know how-to shed blood for money.</Word>
+    <AlphabetSequenceIndex>401</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:3, 2 Chronicles 34, Jeremiah 44, Revelation 1:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A3%2C+2+Chronicles+34%2C+Jeremiah+44%2C+Revelation+1%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>113</ContactId>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1342</SequenceOrderId>
+   <Commentary>
+    Ressurection Lutheran Church 397 Euclid Avenue Oakland CA 94610.
+    Church Calendar:
+    1 Advent the prior Sunday 4 weeks before Christmas 2003-11-30T00:00:00.0000000-08:00 ... 2003-12-24T00:00:00.0000000-08:00.
+    2 Christmas season 12 days 2003-12-25T00:00:00.0000000-08:00 ... 2004-01-06T00:00:00.0000000-08:00.
+    3 Epiphany, Greek, short forth, make manifest, commences after the Christmas season and ends the day before Ash Wednesday, 2004-01-07T00:00:00.0000000-08:00 ... 2004-02-21T00:00:00.0000000-08:00.
+    4 Ash Wednesday, last Wednesday in February 2004-02-25T00:00:00.0000000-08:00.
+    5 Lent, 40 days before Easter Sunday 2004-03-09T00:00:00.0000000-08:00.
+    6 Easter Sunday 2004-04-18T00:00:00.0000000-08:00.
+    7 Pentecost, 50 days after Easter Sunday 2004-06-07T00:00:00.0000000-08:00.
+    Asiana Airlines FlyAsiana.com. 3 sweets.
+    Social Security the intersection of 3100 Mowry Avenue and 38900 Paseo Padre Parkway.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>314</SequenceOrderId>
+   <Commentary>Comforter_-_20031210URIWordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>581</SequenceOrderId>
+   <Commentary>Asiana Airlines FlyAsiana.com ... Nose ... Smell ... AlphabetSequence 2242 ContactId 3 ... Smell ... Nose.</Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

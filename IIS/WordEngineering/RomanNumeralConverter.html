@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Roman Numeral Converter</title>
+    <script type="text/javascript" src="ScriptLibrary/BrowserCompatibility.js"> </script>    
+    <script type="text/javascript" src="ScriptLibrary/RomanNumeralConverter.js"> </script>
+    <script type="text/javascript" src="ScriptLibrary/Trim.js"> </script>
+    <script type="text/javascript">
+        function compute() {
+            var answerControl = document.getElementById("answer");
+            var choiceControl = document.getElementById("choice");
+            var questionControl = document.getElementById("question");
+            var result = 0;
+            questionControl.value = trim(questionControl.value);
+            switch (choiceControl.value) {
+                case "Deromanize":
+                    result = RomanNumeralConverter.deromanize(questionControl.value);
+                    break;
+                case "Romanize":
+                    result = RomanNumeralConverter.romanize(questionControl.value);
+                    break;
+            }
+            BrowserCompatibility.setTextByControl(answerControl, result);
+        }    
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Number</td>
+            <td><input id="question" type="text" /></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <select id="choice">
+                    <option value="Deromanize">Deromanize</option>
+                    <option value="Romanize">Romanize</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <input type="button" onclick="compute();" value="Submit Query" /> 
+            </td>
+        </tr>
+        <tr>
+            <td>Answer</td>
+            <td><label id="answer" /></td>
+        </tr>
+    </table>
+    <table>        
+        <tr>
+            <td>M = 1000</td>
+            <td>D = 500</td>
+            <td>C = 100</td>
+            <td>L = 50</td>
+        </tr>
+        <tr>
+            <td>X = 10</td>
+            <td>V = 5</td>
+            <td>I = 1</td>
+        </tr>
+    </table>
+</body>
+</html>

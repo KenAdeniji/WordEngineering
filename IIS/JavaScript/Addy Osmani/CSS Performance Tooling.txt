@@ -1,0 +1,146 @@
+https://speakerdeck.com/addyosmani/css-performance-tooling
+smani
+
+CSS Performance Tooling
+
+3 Tiers of Optimization Tooling
+1. Baseline 
+	Minification, concatenation, image optimization, compression,
+	async scripts, leverage caching. WOFF2 for fonts, spriting,
+	avoid redirects.
+2.	Get fast, stay fast.
+	Inlining critical CSS, deferring non-critical assets to avoid
+	render blocking, removing unused CSS. Performance benchmarking.
+3.	Reduce duplicate colors, selectors, font-families, sizes.
+
+Step 1: Measure
+	Speed Index
+		The average time at which visible parts of the page are
+		displayed. Expressed in milliseconds and depended on size
+		of the viewport.
+		https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
+		
+	Average page size
+		1.8 MB
+		Image					~1.2MB 		67.9%
+		Scripts & styles		0.3MB		17.3%
+		Flash								4%
+		Other								7.5%				
+		HTML								3.4%				
+		
+Step 2: Optimize
+	Build Tools
+		Grunt - scheduling, task.
+		Gulp.
+		npm.
+		Make.
+	Minify CSS, HTML, JS & Images
+	Eliminate render-blocking JavaScript and CSS in above-the-fold content. Place CSS, at head; and JS at body.
+	grunt. gulp. Minify.
+	Minify duplicates, colors, keyframes, pseudos, filters, font-weight
+	Remove unused CSS
+	1186 rules (91%) of CSS not used by the current page.
+	When bootstrap is used for convenience in "overkill" mode.
+	Deliver only the goods that will be used.
+		Wrong way to think about unused CSS.
+			"I just want to ship the CSS for current page"
+			"I'm going to ignore styles used in other pages"
+		Right way
+			What site-wide CSS am I shipping that is not used by any pages?
+		Isn't using 56% of the site wide styles being shipped
+		Isn't using ~56% of them
+		Pattern? Maybe. Optimize, then check mileage.
+		Removing unused CSS.
+			Load files and execute JavaScript.
+			Extract stylesheets from HTML.
+			Stylesheets concatenated & parsed.
+			Filter out selectors not found in HTML.
+			Remaining rules converted back to CSS.
+			Phantom JS.
+		Sizing up the average Bootstrap page.
+			Original styles 120KB
+			Minified 110KB
+			Uncss + Minification 11KB
+			90% improvement
+		Sizing up JSConf.eu styles
+			Original styles 20KB
+			Minified 11KB
+			Uncss + Minification 7KB
+			50% improvement
+			UnCSS is most useful when using a CSS library or have a large site
+		Unused CSS removed
+			Old speed index 2093
+			1316 Speed index
+		We cannot identify with 100% certainty all the CSS that you still need for your site, since its likely to be missing some CSS that you will actually need in some cases.
+		Dynamically injected styles are supported.
+		
+	Optimize Critical Path CSS
+		Our goal is to show content asap
+		Fast server response. No redirects
+		Must optimize critical rendering path
+			a. Inline critical CSS
+			b. Remove any blocking JavaScript
+		Extract stylesheets from HTML
+			Choice of extraction or defining *.css files upfront
+			Should you extract your presentation from the content?
+		Generate the above the fold CSS
+			Viewports. Should you have the same CSS for all your media?
+		Inline critical-path CSS in head
+		Asynchrously load the rest of your styles.
+			Remove them from the critical path
+		Critical's workflow
+			Source. 
+			Extract stylesheets (Oust).
+			Generate critial path CSS for a viewport (Penthouse).
+			Inline styles in head (Inline-critical).
+			Wrap link tags in noscript for users with JS disabled.
+			Inject loadCSS & asynchronous load site. css.
+
+//Asynchronous load CSS with loadCSS.js
+function loadCss(href, before, media) {
+	var ss = window.document.createElement("link");
+	var ref = before || window.document.getElementsTagName("script")[0];
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	//inject link
+	ref.parentNode.insertBefore(ss, ref);
+	setTimeout( function() {
+		ss.media = media || "all";
+	});
+	return ss;
+}
+	ImageOptim / Imagemin
+	(1) Optimizations made with best tools available
+		PNGOUT, Zopfli, Pngcrush, AdvPNG, extended OptiPNG
+		JpngOptim, jpegrescan, jpegtran, and Gifsicle
+	(2)	Animated GIFS are hard to automate optimizations to
+	GIFBrewery
+		~4MB full-resolution, 256 colors. ~1MB half resolution, 256 colors
+	Video element
+		Method of playing videos on web pages (without requiring a plug-in).
+	Automate performance measurement
+		Detect when you've fallen off the fast-path
+		
+	Tier 3: Stylesheet complexity analysis
+		The easiest way to keep CSS maintainable is to minimize repetition.
+Step 3: Rinse & Repeat
+	about:blank is the baseline to beat
+
+	Speed Index Scores
+		Original ~2100
+		Minification & Concatenation ~1321
+		Remove unused CSS ~1316
+		Critical-path optimized ~1225
+		Video instead of GIF ~1327
+		Non-critical + static header ~923
+		Critical + static header ~917
+	
+	Strategically speaking, the following could be your performance roadmap:
+		Remove blocking scripts from the header of the page.
+		Identify and defer non-critical CSS and JavaScript.
+		Identify critical CSS and load it inline in the head, and then load the full css after rendering.
+		Keep all critical HTML and CSS to under 14KB, and aim for a speed index of under 1000.
+		Consider using WOFF2 to further reduce latency and the size of the web-fonts.
+		Replace JavaScirpt libraries with leaner JavaScript modules.
+			

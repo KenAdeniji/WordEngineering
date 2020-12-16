@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>87</SequenceOrderId>
+  <Dated>2003-09-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Esther 8:15</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Esther+8%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Are the last to find the match.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>33</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>365</SequenceOrderId>
+   <DatedFrom>2003-08-22T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-09-05T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>14</FromUntil>
+   <Commentary>A friend of God. (Vision: The intersection of Fremont Blvd and Country Road, on the other side of Washington High School but on the side of Domino Pizza, but heading towards the intersection of Fremont Blvd and Mowry, female in light blue top, white shorts.) (Record: The pencil will roll upwards towards the keyboard: purple eraser, blue background but purple lettering, and black lead.)</Commentary>
+   <Filename>Comforter_-_20030822AFriendOfGod.xml</Filename>
+   <ScriptureReference>Isaiah 49:1, Genesis 4:24,Leviticus 14,2 Corinthians 8,Revelation 18:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+49%3A1%2C+Genesis+4%3A24%2C+Leviticus+14%2C+2+Corinthians+8%2C+Revelation+18%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <Sign>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Measure>Day</Measure>
+   <SignIndex>14</SignIndex>
+   <Commentary />
+   <ScriptureReference>Exodus 12:6, Exodus 12:18, Leviticus 23:5, Numbers 9:3, Numbers 9:5, Numbers 9:11, Numbers 28:16, Joshua 5:10, 2 Chronicles 30:15, 2 Chronicles 35:1, Ezra 6:19, Esther 9:15, Esther 9:17, Esther 9:19, Esther 9:21, Ezekiel 45:21, Acts 27:33</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+12%3A6%2C+Exodus+12%3A18%2C+Leviticus+23%3A5%2C+Numbers+9%3A3%2C+Numbers+9%3A5%2C+Numbers+9%3A11%2C+Numbers+28%3A16%2C+Joshua+5%3A10%2C+2+Chronicles+30%3A15%2C+2+Chronicles+35%3A1%2C+Ezra+6%3A19%2C+Esther+9%3A15%2C+Esther+9%3A17%2C+Esther+9%3A19%2C+Esther+9%3A21%2C+Ezekiel+45%3A21%2C+Acts+27%3A33&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Sign>
+
+  <BibleWord>
+   <SequenceOrderId>266</SequenceOrderId>
+   <Commentary />
+   <Word>Blue ... White</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>581</SequenceOrderId>
+   <Word>Are the last to find the match.</Word>
+   <AlphabetSequenceIndex>255</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 10:20, 1 Samuel 19, Matthew 6, Revelation 9:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A20%2C+1+Samuel+19%2C+Matthew+6%2C+Revelation+9%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1128</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <ClassAssociates>
+   <SequenceOrderId>331</SequenceOrderId>
+   <Commentary>Remember FromUntil(14)13. Mouse. Noise from the computer on the left, Comfort.</Commentary>
+  </ClassAssociates>
+ 
+  </TheWord>
+</wordOfGod>

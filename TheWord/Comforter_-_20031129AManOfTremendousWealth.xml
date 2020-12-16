@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>298</SequenceOrderId>
+  <Dated>2003-11-29T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Proverbs 12:8, Jeremiah 35:15, 2 Corinthians 4:2, 1 Samuel 17:25, Revelation 9:9</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Proverbs+12%3A8%2C+Jeremiah+35%3A15%2C+2+Corinthians+4%3A2%2C+1+Samuel+17%3A25%2C+Revelation+9%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>A man of tremendous wealth.</Title>
+  <Commentary>9th book, 253rd chapter, and 7644th verse (1 Samuel 17:25)</Commentary>
+  <ContactId>178</ContactId>
+  <FromUntil>333</FromUntil>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>527</SequenceOrderId>
+   <DatedFrom>2003-11-22T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-29T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>7</FromUntil>
+   <Commentary>When I know I will miss you, that's when I said know all the way.</Commentary>
+   <Filename>Comforter_-_20031122WhenIKnowIWillMissYouThat'sWhenISaidKnowAllTheWay.xml</Filename>
+   <ScriptureReference>Luke 1:77, Proverbs 11:31</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Luke+1%3A77%2C+Proverbs+11%3A31&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>163</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>468</SequenceOrderId>
+   <Word>Man ... Mend</Word>
+   <ScriptureReference>Proverbs 12:8, Jeremiah 35:15, 2 Corinthians 4:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Proverbs+12%3A8%2C+Jeremiah+35%3A15%2C+2+Corinthians+4%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1623</SequenceOrderId>
+    <Word>A man of tremendous wealth.</Word>
+    <AlphabetSequenceIndex>253</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:18, 1 Samuel 17, Matthew 8, Revelation 9:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A18%2C+1+Samuel+17%2C+Matthew+8%2C+Revelation+9%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>178</ContactId>
+    <Commentary>Shower.</Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1325</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>307</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>562</SequenceOrderId>
+   <Commentary>Nose.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

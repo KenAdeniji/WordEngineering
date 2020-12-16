@@ -1,0 +1,16 @@
+<html>
+<head>
+<script type="text/javascript">
+function displayMultiplication()
+{
+var multiply = new Function("x", "y", "return x * y");
+var theAnswer = multiply(7,6);
+document.getElementById("demo").innerHTML=theAnswer;
+}
+</script>
+</head>
+<body>
+<p id="demo" />
+<button type="button" onclick="displayMultiplication()">Display Multiplication</button>
+</body>
+</html> 

@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>38</SequenceOrderId>
+  <Dated>2003-08-13T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Deuteronomy 4:16, 1 Kings 6:29, Isaiah 44:13, Hebrews 9:9, Hebrews 9:24, Hebrews 11:19, 1 Peter 3:21</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Deuteronomy+4%3A16%2C+1+Kings+6%3A29%2C+Isaiah+44%3A13%2C+Hebrews+9%3A9%2C+Hebrews+9%3A24%2C+Hebrews+11%3A19%2C+1+Peter+3%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>... Was that, I figured out what she wants me to put on the table.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>341</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>  
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>65</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>214</SequenceOrderId>
+   <Word>Figure</Word>
+   <Commentary>
+Less you corrupt yourselves, and make you a graven image, the similitude of any figure, the likeness of male or female (Deuteronomy 4:16).
+He carved all the walls of the house round about with carved figures of cherubim and palm trees and open flowers, within and without (1 Kings 6:29).
+The carpenter stretched out his rule; he marks it out with a line; he fits it with planes, and he marks it out with the compass, and makes it after the figure of a man, according to the beauty of a man; that it may remain in the house (Isaiah 44:13).
+Which was a figure for the time then present, in which were offered both gifts and sacrifices, that could not make him that did the service perfect, as pertaining to the conscience (Hebrews 9:9).
+For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us (Hebrews 9:24).
+Accounting that God was able to raise Him up, even from the dead; from whence also He received Him in a figure (Hebrews 11:19).
+The like figure whereunto even baptism does also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ (1 Peter 3:21).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>500</SequenceOrderId>
+   <Word>... Was that, I figured out what she wants me to put on the table.</Word>
+   <AlphabetSequenceIndex>600</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 24:8, Psalms 122, Psalms 112, 2 Peter 2:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A8%2C+Psalms+122%2C+Psalms+112%2C+2+Peter+2%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1073</SequenceOrderId>
+   <Commentary>
+    Right nose running. 
+    Wake-up Orientation: Between 0 and 25%, knees bowed, hands inside knees.
+    ClassAssociates Node commented out, fly, flys to the center of the monitor.
+    Scripture Reference Search Figure: Butterfly crosses towards the 25% left hand side, and moves right downwards. Fly, flys towards the heart. Fly, flys towards the right.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>248</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>287</SequenceOrderId>
+   <Commentary>ClassAssociates Node commented out, fly, flys to the center of the mon(i)tor. Mouse ...</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

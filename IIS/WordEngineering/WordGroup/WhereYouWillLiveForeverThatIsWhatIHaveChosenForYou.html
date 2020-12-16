@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-09-23	Created.
+		2018-09-23	When you decide to change a thing; it is still, now.
+		2018-09-23	http://www.whois.com/whois/givingpledge.org
+		2018-09-23	Needing man, is a example, of following him.
+		2018-09-23	What good, I have done; is how, I remain.
+		2018-09-23	A accompany of change.
+		2018-09-23	This I have search for a useful man, as a proven me.
+		2018-09-23	All I have search for; is how I seem, as a able man.
+		2018-09-23	I wrote; He perfected.
+	-->
+	<head>
+		<title>Where you will live, forever; that is what, I have chosen for you.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Dated from, intermission, until, percentage"/>
+		<meta name="keywords" content="Dated from, intermission, until, percentage"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="datedFrom">Date From:</label></td>
+						<td><input id="datedFrom" type="Date" value="2010-03-10" /></td>
+					</tr>
+					<tr>
+						<td><label for="datedIntermission">Date Intermission:</label></td>
+						<td><input id="datedIntermission" type="Date" value="2018-09-23" /></td>
+					</tr>
+					<tr>
+						<td><label for="datedUntil">Date Until:</label></td>
+						<td><input id="datedUntil" type="Date" value="2020-03-10" /></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+					<tr>
+						<td><label for="intermissionPercentage">Intermission Percentage (%):</label></td>
+						<td><span id="intermissionPercentage"></span></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<script>
+			function dateDifference()
+			{
+				var datedFrom = document.getElementById("datedFrom").value;
+				var datedUntil = document.getElementById("datedUntil").value;
+				var datedIntermission = document.getElementById("datedIntermission").value;
+				
+				var from = new Date(datedFrom);
+				var until = new Date(datedUntil);
+				var intermission = new Date(datedIntermission);
+				
+				var intermissionPercentage = daydiff(from, intermission) * 100 / daydiff(from, until);
+				
+				document.getElementById("intermissionPercentage").textContent = intermissionPercentage;
+			}
+
+			function daydiff(first, second) {
+				return Math.round((second-first)/(1000*60*60*24));
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", dateDifference, false);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					dateDifference();
+				}
+			}
+		</script>		
+	</body>
+</html>

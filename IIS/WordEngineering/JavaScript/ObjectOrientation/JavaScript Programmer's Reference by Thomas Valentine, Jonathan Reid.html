@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>JavaScript Programmer's Reference by Thomas Valentine, Jonathan Reid</title>
+	</head>
+	<body>
+		<script>
+			var scriptLiteral =
+			{
+				pi: 22 / 7,
+				e: 2.718,
+
+				writeConstants: function() {
+					alert("pi = " + this.pi + " | e = " + this.e);
+				}
+			}
+			
+			var myChild = Object.create(scriptLiteral);
+			console.log(myChild.pi);
+		</script>
+	</body>
+</html>

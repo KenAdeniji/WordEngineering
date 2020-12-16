@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+  <SequenceOrderId>15</SequenceOrderId>
+  <Dated>2003-08-02T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Chronicles 16:9, 2 Corinthians 5:12</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Chronicles+16%3A9%2C+2+Corinthians+5%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Ki eyan dogba.</Title>
+  <Commentary />
+  <Keyword />
+  
+  <Remember>
+   <SequenceOrderId>321</SequenceOrderId>
+   <DatedFrom>2003-07-20T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-02T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>12</SignIndex>
+   <Commentary />
+   <Filename>Comforter_-_20030720TwoHundredAndFortyfiveThousand.xml</Filename>
+   <ScriptureReference>
+    Isaiah 14:20
+   </ScriptureReference>   
+   <ScriptureReferenceURI>
+    http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+14%3A20&amp;section=0&amp;version=nkj&amp;language=en
+   </ScriptureReferenceURI>   
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>63</SequenceOrderId>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </ScriptureReading>
+  -->
+
+  <Sign>
+   <SequenceOrderId>19</SequenceOrderId>
+   <Measure>Day</Measure>
+   <SignIndex>12</SignIndex>
+   <Commentary>
+    On the twelfth day Ahira the son of Enan, prince of the children of Naphtali, offered (Numbers 7:78).
+    Then we departed from the river of Ahava on the twelfth day of the first month, to go unto Jerusalem: and the hand of our God was upon us, and He delivered us from the hand of the enemy, and of such as lay in wait by the way (Ezra 8:31). 
+    In the tenth year, in the tenth month, in the twelfth day of the month, the word of the LORD came unto me, saying (Ezekiel 29:1). 
+    Because that you may understand, that there are yet but twelve days since I went up to Jerusalem for to worship (Acts 24:11). 
+   </Commentary>
+   <ScriptureReference>Numbers 7:78, Ezra 8:31, Ezekiel 29:1, Acts 24:11</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Numbers+7%3A78%2C+Ezra+8%3A31%2C+Ezekiel+29%3A1%2C+Acts+24%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Sign>
+
+  <BibleWord>
+   <SequenceOrderId>190</SequenceOrderId>
+   <Word>Half Heart</Word>
+   <Commentary>For the eyes of the LORD run to and fro throughout the whole earth, to show Himself strong in the behalf of them whose heart is perfect toward Him. Herein you have done foolishly: therefore from henceforth you shall have wars (2 Chronicles 16:9). For we commend not ourselves again unto you, but give you occasion to glory on our behalf, that you may have somewhat to answer them which glory in appearance, and not in heart (2 Corinthians 5:12).</Commentary>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>462</SequenceOrderId>
+   <Word>Ki eyan dogba.</Word>
+   <AlphabetSequenceIndex>94</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 4:14, Leviticus 4, Galatians 5, Revelation 18:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A14%2C+Leviticus+4%2C+Galatians+5%2C+Revelation+18%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1037</SequenceOrderId>
+   <Commentary>Comforter_-_20030802KiEyanDogba.xml: Record ClassAssociates 264, sneeze. SELECT * FROM CaseBasedReasoning WHERE (Dated >= '20030801') ORDER BY SequenceOrderId. Day table 12th day: Include the scripture reference Acts 24:11. Copy the database data files from the HolySpirit (right) computer, to the Comfort (left) computer. Scripture reference reading (the right hand on the chin with the fingers pointing outwards): the priest shall dip his finger in the blood, and sprinkle of the blood seven times before the LORD, before the vail of the sanctuary (Leviticus 4:6). Shower: butterfly, right border, kill.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>239</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+  
+  <ClassAssociates>
+   <SequenceOrderId>264</SequenceOrderId>
+   <Commentary>Comforter_-_20030802KiEyanDogba.xml: Sleep: Noise. Computer: On, User Interface (UI). SELECT DATEDIFF (c). Remember: Identity column (322) 321. Internet Explorer: Comforter_-_20030802KiEyanDogba.xml User Interface (UI) error. XCopy Comforter_-_20030802KiEyanDogba*.* files from the hard disk to the floppy Disk: floppy disk not formatted. Keyboard interference: Copy the database data files from the HolySpirit (right) computer, to the Comfort (left) computer.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

@@ -203,7 +203,7 @@ http://KenAdeniji.WordPress.com
 		<!--
 			<script src="/WordEngineering/jquery/jquery-latest.js"></script>
 		-->
-2020-12-07	SeparateTheirDesireOfTheBible.html
+2020-12-07	TheNightWasOverWhenIWas_HeCelebrateHimselfOverYou.html
 2020-12-07	07:38 ... 08:05 Outlook Web can't reach the internet. Check your connection.
 2020-12-07	07:40 ... 07:52	Microsoft SQL Server Management Studio re-start.
 2020-12-07	07:40 ... 07:52	Microsoft SQL Server Management Studio
@@ -214,4 +214,8 @@ http://KenAdeniji.WordPress.com
 			but then an error occurred during the pre-login handshake.
 			(Provider: SSL Provider, error: 0 - The wait operation timed out.)
 			(Microsoft SQL Server: The operation timed out.)
+2020-12-12T13:56:00
+XCOPY E:\2020-12-09T1339WordEngineering E:\WordEngineering /d /e /s /y
+XCOPY E:\2020-12-09T1339WordEngineering D:\2020-12-09T1339WordEngineering /d /e /s /y
+XCOPY E:\2020-12-09T1339WordEngineering F:\2020-12-09T1339WordEngineering /d /e /s /y
 :Exit

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-03-21	Created.	https://javascriptweekly.com/issues/480
+					https://github.com/leeoniya/uPlot/tree/master/docs
+		11:48		TypeError: i is undefined
+		11:49		Sleepy & dizzy.
+		11:53		Urine.
+	-->
+	<head>
+		<title>uPlot: 70 Weeks Of Daniel.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="uPlot: 70 Weeks Of Daniel"/>
+		<meta name="keywords" content="Bible, 70 Weeks, prophet Daniel, uPlot, chart"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script src="uPlot.iife.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+ 			}
+
+			function querySubmit()
+			{
+let opts = {
+  title: "70 Weeks of Daniel",
+  id: "chart1",
+  class: "my-chart",
+  width: 800,
+  height: 600,
+  series: [
+    {},
+    {
+      // initial toggled state (optional)
+      show: true,
+
+      spanGaps: false,
+
+      // in-legend display
+      label: "Weeks of Years",
+      value: (self, rawValue) => "$" + rawValue.toFixed(2),
+
+      // series style
+      stroke: "red",
+      width: 1,
+      fill: "rgba(255, 0, 0, 0.3)",
+      dash: [10, 5],
+    }
+  ],
+};
+
+let uplot = new uPlot(opts, data, document.body);
+			}	
+
+			window.addEventListener("load", pageLoad, false);
+			
+let data = [
+  [ -76203849600, -1190894400],    // x-values (timestamps)
+  [        0,         69]	// y-values (series 1		
+];			
+		</script>
+	</body>
+</html>

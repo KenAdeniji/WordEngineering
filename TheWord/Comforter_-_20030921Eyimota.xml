@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>138</SequenceOrderId>
+  <Dated>2003-09-21T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 34:10, Genesis 46:34, Ezekiel 27:13, Ezekiel 27:14, Ezekiel 27:17</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+34%3A10%2C+Genesis+46%3A34%2C+Ezekiel+27%3A13%2C+Ezekiel+27%3A14%2C+Ezekiel+27%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Eyimota</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>3</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>52</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>394</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>   
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>74</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>318</SequenceOrderId>
+   <Word>Trade ... In</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>656</SequenceOrderId>
+   <Word>Eyimota</Word>
+   <AlphabetSequenceIndex>88</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 4:8, Exodus 38, Ephesians 5, Revelation 18:21</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A8%2C+Exodus+38%2C+Ephesians+5%2C+Revelation+18%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1177</SequenceOrderId>
+   <Commentary>
+    Newark Church of Christ 5880 Thornton Avenue Newark CA 94560 (510) 793-3060.
+    First Assembly of God 4766 Thornton Avenue Fremont CA 94536 (510) 744-2233 http://www.fremontfirstassembly.org.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>261</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>374</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+  </TheWord>
+</wordOfGod>

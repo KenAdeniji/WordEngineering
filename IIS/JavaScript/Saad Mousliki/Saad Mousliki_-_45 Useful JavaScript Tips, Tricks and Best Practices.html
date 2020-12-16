@@ -1,0 +1,46 @@
+<html>
+	<!--
+		2015-01-16	http://modernweb.com/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices
+	-->
+	<head>
+		<title>45 Useful JavaScript Tips, Tricks and Best Practices by Saad Mousliki</title>
+	</head>
+	<body>
+		<script>
+//This is often called a Self-Invoked Anonymous Function or Immediately Invoked Function Expression (IIFE). It is a function that executes automatically when you create it, and has the following form:		
+(function(){
+    // some private code that will be executed automatically
+})();  
+var aPlusB = (function(a,b){
+    var result = a+b;
+    return result;
+})(10,20)
+console.log(aPlusB);
+
+//Get a random item from an array
+var items = [12, 548 , 'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' , 2145 , 119];
+var  randomItem = items[Math.floor(Math.random() * items.length)];
+console.log(randomItem);
+
+//Get a random number in a specific range
+var min = 2;
+var max = 12;
+var x = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(x);
+
+//Generate an array of numbers with numbers from min to max
+var numbersArray = [], min = 51, max = 100;
+for( var i=min; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100]
+console.log(numbersArray);
+
+function generateRandomAlphaNum(len) {
+    var rdmString = "";
+    for( ; rdmString.length < len; rdmString  += Math.random().toString(36).substr(2));
+    return  rdmString.substr(0, len);
+}
+console.log(generateRandomAlphaNum(5));
+
+//Append an array to another array
+		</script>
+	</body>	
+</html>

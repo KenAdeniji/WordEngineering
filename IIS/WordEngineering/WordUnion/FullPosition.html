@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-07-09	Created.
+	-->
+	<head>
+		<title>Full Position</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Determines the next and previous Scripture Reference."/>
+		<meta name="keywords" content="Bible, Scripture Reference, previous, next"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input type="text" ID="scriptureReference" size="50" autofocus required/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<br><br>
+		<div align="center" id="resultSet">	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			var	scriptureReferenceDefault = "Numbers 2";
+			
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var scriptureReference = getParameterByName("scriptureReference");
+					if (!scriptureReference)
+					{
+						scriptureReference = scriptureReferenceDefault;
+					}	
+					document.getElementById("scriptureReference").value = scriptureReference;
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/FullPositionWebService.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(dataSet) 
+			{
+				scriptureReference = dataSet.scriptureReference;
+				scriptureReferenceHyperlink = buildHyperlinkScriptureReference(scriptureReference);
+				document.getElementById("resultSet").innerHTML = scriptureReferenceHyperlink;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

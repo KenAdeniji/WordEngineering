@@ -1,0 +1,162 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>556</SequenceOrderId>
+ <Dated>2004-07-23T00:00:00.0000000-08:00</Dated>
+ <FromUntil>205</FromUntil>
+ <ContactId>290</ContactId>
+ <Commentary>King James Version (KJV) or the Christian church.</Commentary>
+   
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>50</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>60</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>575</SequenceOrderId>
+   <Word></Word>
+   <Commentary></Commentary>   
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>7375</SequenceOrderId>
+    <Word>Annoyance syndrome.</Word>
+    <AlphabetSequenceIndex>205</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:21, Joshua 18, Luke 8, Revelation 12:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A21%2C+Joshua+18%2C+Luke+8%2C+Revelation+12%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>290</ContactId>
+    <Commentary>Prince of Peace Lutheran Church &amp; School  38451 Fremont Blvd Fremont 94538 CA USA</Commentary>   
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>7376</SequenceOrderId>
+    <Word>Popular ballot doesn't undermine the cut.</Word>
+    <AlphabetSequenceIndex>418</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:20, Nehemiah 5, Jeremiah 22, Jude 1:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A20%2C+Nehemiah+5%2C+Jeremiah+22%2C+Jude+1%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>670</ContactId>
+    <Commentary>Yoido Full Gospel Church. Cho Yonggi. http://www.fgtv.com. Korean unification. Edo Sushi Helen Kim 3924 Decoto Road Fremont 94555 CA USA (510) 792-5677. edosushi@home.com. Jake Joe.</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1883</SequenceOrderId>
+   <Commentary>Robert Tabor: Microsoft .NET XML Web Services ISBN 0-672-320886 SamsPublishing.com SoapWebServices.com.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>409</SequenceOrderId>
+   <Commentary> 
+   </Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>858</SequenceOrderId>
+   <Commentary>Feet. St. James Episcopal Church Thornton Avenue at Cabrillo Terrace Fremont 94537 CA USA (510) 797-1492 male pushing baby cart. Holy Spirit Church (510) 797-1660 37588 Fremont Boulevard Fremont CA 94536 at the intersection of Fremont Boulevard and Central Avenue (oti pe ta tin lo e). Door not open, sit down on the porch. Explorer memory error, King James Version (KJV) or the Christian church (ole mu mi) (dont cross the line) Korean unification (we are treating you badly, you are our team) upset stomach, knee, private part, ass, eye, Internet Explorer (IE) error, logoff, nose.</Commentary>
+   <ContactId>670</ContactId>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>859</SequenceOrderId>
+   <Commentary>AsianJournal.com 2004-07-23T00:00:00.0000000-08:00 ... 2004-07-29T00:00:00.0000000-08:00 Volume 3 Issue 30. 3 Sections, 26 pages hotmail.com error (esu ni wa), feet (ofe ke) face, back (o wrong ba se lo e) (we are proving difficult, ok) private part (olow ba se lo e) (bo ra) faeces (dide ni ile jo) (mu iwe wa) (wan kin se omo won be) (eat our own food).</Commentary>
+   <ContactId>69</ContactId>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>670</SequenceOrderId>
+   <Company>Yoido Full Gospel Church</Company>
+   <FirstName>Cho</FirstName>
+   <LastName>Yonggi</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>http://www.fgtv.com</Commentary>
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>671</SequenceOrderId>
+   <Company>Holy Spirit Church</Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary>Holy Spirit Church (510) 797-1660 37588 Fremont Boulevard Fremont CA 94536 at the intersection of Fremont Boulevard and Central Avenue.</Commentary>
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

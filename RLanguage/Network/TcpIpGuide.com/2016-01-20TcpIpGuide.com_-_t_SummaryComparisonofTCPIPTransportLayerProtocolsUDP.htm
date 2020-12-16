@@ -1,0 +1,69 @@
+<table border="1">
+	<caption>
+		<a href="http://tcpipguide.com/free/t_SummaryComparisonofTCPIPTransportLayerProtocolsUDP.htm">Summary Comparison of User Datagram Protocol (UDP) and Transmission Control Protocol (TCP)</a>
+	</caption>
+	<thead>
+		<tr>
+			<th>Characteristic / Description</th>
+			<th>User Datagram Protocol (UDP)</th>
+			<th>Transmission Control Protocol (TCP)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>General Description</td>
+			<td>Simple, high-speed, low-functionality "wrapper" that interfaces applications to the network layer and does little else.</td>
+			<td>Full-featured protocol that allows applications to send data reliably without worrying about network layer issues.</td>
+		</tr>
+		<tr>
+			<td>Protocol Connection Setup</td>
+			<td>Connectionless; data is sent without setup.</td>
+			<td>Connection-oriented; connection must be established prior to transmission.</td>
+		</tr>
+		<tr>
+			<td>Data Interface To Application</td>
+			<td>Message-based; data is sent in discrete packages by the application.</td>
+			<td>Stream-based; data is sent by the application with no particular structure.</td>
+		</tr>
+		<tr>
+			<td>Reliability and Acknowledgments</td>
+			<td>Unreliable, best-effort delivery without acknowledgments.</td>
+			<td>Reliable delivery of messages; all data is acknowledged.</td>
+		</tr>
+		<tr>
+			<td>Retransmissions</td>
+			<td>Not performed. Application must detect lost data and retransmit if needed.</td>
+			<td>Delivery of all data is managed, and lost data is retransmitted automatically.</td>
+		</tr>
+		<tr>
+			<td>Features Provided to Manage Flow of Data</td>
+			<td>None</td>
+			<td>Flow control using sliding windows; window size adjustment heuristics; congestion avoidance algorithms.</td>
+		</tr>
+		<tr>
+			<td>Overhead</td>
+			<td>Very low</td>
+			<td>Low, but higher than UDP</td>
+		</tr>
+		<tr>
+			<td>Transmission Speed</td>
+			<td>Very high</td>
+			<td>High, but not as high as UDP</td>
+		</tr>
+		<tr>
+			<td>Data Quantity Suitability</td>
+			<td>Small to moderate amounts of data (up to a few hundred bytes)</td>
+			<td>Small to very large amounts of data (up to gigabytes)</td>
+		</tr>
+		<tr>
+			<td>Types of Applications That Use The Protocol</td>
+			<td>Applications where data delivery speed matters more than completeness, where small amounts of data are sent; or where multicast/broadcast are used.</td>
+			<td>Most protocols and applications sending data that must be received reliably, including most file and message transfer protocols.</td>
+		</tr>
+		<tr>
+			<td>Well-Known Applications and Protocols</td>
+			<td>Multimedia applications, DNS, BOOTP, DHCP, TFTP, SNMP, RIP, NFS (early versions)</td>
+			<td>FTP, Telnet, SMTP, DNS, HTTP, POP, NNTP, IMAP, BGP, IRC, NFS (later versions)</td>
+		</tr>
+	<tbody>	
+</table>

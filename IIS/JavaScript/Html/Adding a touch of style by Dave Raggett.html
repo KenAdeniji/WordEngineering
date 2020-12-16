@@ -1,0 +1,39 @@
+<!doctype html>  
+<html>  
+	<head>  
+		<title>Adding a touch of style by Dave Raggett</title>
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<style type="text/css">
+			body
+			{ 
+				color: black; background: white; 
+				margin-left: 10%; margin-right: 10%;
+			}
+
+			div.box { border: solid; border-width: thin; width: 100%; }
+
+			h1 { margin-left: -8%;}
+			h2,h3,h4,h5,h6 { margin-left: -4%; }
+			h2.subsection { margin-top: 8em; margin-bottom: 3em; }
+			
+			/* It indents the first line of each paragraph by 2 em's and suppresses the inter-paragraph spacing. */
+			p { text-indent: 2em; margin-top: 0; margin-bottom: 0; }
+			
+			/*
+			When a heading is followed by a paragraph, the value for margin-bottom for the heading isn't added to
+			the value for margin-top for the paragraph. Instead, the maximum of the two values is used for the
+			spacing between the heading and paragraph. This subtlety applies to margin-top and margin-bottom 
+			regardless of which tags are involved.
+			*/
+		</style>
+	</head>
+	<body>
+		<h2 class="subsection">Getting started</h2>
+		
+		<div class="box">
+		The content within this DIV element will be enclosed
+		in a box with a thin line around it.
+		</div>
+
+	</body>
+</html>

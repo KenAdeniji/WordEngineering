@@ -1,0 +1,91 @@
+#include <iostream>
+#include <windows.h>
+#include <sql.h>
+#include <sqltypes.h>
+#include <sqlext.h>
+
+#include <windows.h> 
+#include <sql.h> 
+#include <sqlext.h> 
+#include <stdio.h> 
+#include <conio.h> 
+#include <tchar.h> 
+#include <stdlib.h> 
+#include <sal.h> 
+
+using namespace std;
+
+/*
+	2018-10-06	https://stackoverflow.com/questions/5345110/using-odbc-to-connect-to-sql-server-2008
+	2018-10-06	http://forums.codeguru.com/showthread.php?70111-UNRESOLVED-EXTERNAL-SYMBOL
+*/
+
+void show_error(unsigned int handletype, const SQLHANDLE& handle){
+    SQLCHAR sqlstate[1024];
+    SQLCHAR message[1024];
+    if(SQL_SUCCESS == SQLGetDiagRec(handletype, handle, 1, sqlstate, NULL, message, 1024, NULL))
+        cout<<"Message: "<<message<<"\nSQLSTATE: "<<sqlstate<<endl;
+}
+
+int main(){
+
+    SQLHANDLE sqlenvhandle;
+    SQLHANDLE sqlconnectionhandle;
+    SQLHANDLE sqlstatementhandle;
+    SQLRETURN retcode;
+
+    if(SQL_SUCCESS!=SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &sqlenvhandle))
+        goto FINISHED;
+
+    if(SQL_SUCCESS!=SQLSetEnvAttr(sqlenvhandle,SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0))
+        goto FINISHED;
+
+    if(SQL_SUCCESS!=SQLAllocHandle(SQL_HANDLE_DBC, sqlenvhandle, &sqlconnectionhandle))
+        goto FINISHED;
+
+    SQLCHAR retconstring[1024];
+    switch(SQLDriverConnect (sqlconnectionhandle,
+                NULL,
+                (SQLCHAR*)"DRIVER={SQL Server};SERVER=localhost, 1433;DATABASE=Northwind;Integrated Security=SSPI;",
+                SQL_NTS,
+                retconstring,
+                1024,
+                NULL,
+                SQL_DRIVER_NOPROMPT)){
+        case SQL_SUCCESS_WITH_INFO:
+            show_error(SQL_HANDLE_DBC, sqlconnectionhandle);
+            break;
+        case SQL_INVALID_HANDLE:
+        case SQL_ERROR:
+            show_error(SQL_HANDLE_DBC, sqlconnectionhandle);
+            goto FINISHED;
+        default:
+            break;
+    }
+
+    if(SQL_SUCCESS!=SQLAllocHandle(SQL_HANDLE_STMT, sqlconnectionhandle, &sqlstatementhandle))
+        goto FINISHED;
+
+    if(SQL_SUCCESS!=SQLExecDirect(sqlstatementhandle, (SQLCHAR*)"select * from Categories", SQL_NTS)){
+        show_error(SQL_HANDLE_STMT, sqlstatementhandle);
+        goto FINISHED;
+    }
+    else{
+        char name[15];
+        char description[8000];
+        int id;
+        while(SQLFetch(sqlstatementhandle)==SQL_SUCCESS){
+            SQLGetData(sqlstatementhandle, 1, SQL_C_ULONG, &id, 0, NULL);
+            SQLGetData(sqlstatementhandle, 2, SQL_C_CHAR, name, 64, NULL);
+            SQLGetData(sqlstatementhandle, 3, SQL_C_CHAR, description, 64, NULL);
+            cout<<id<<" "<<name<<" "<<description<<endl;
+        }
+    }
+
+FINISHED:
+    SQLFreeHandle(SQL_HANDLE_STMT, sqlstatementhandle );
+    SQLDisconnect(sqlconnectionhandle);
+    SQLFreeHandle(SQL_HANDLE_DBC, sqlconnectionhandle);
+    SQLFreeHandle(SQL_HANDLE_ENV, sqlenvhandle);
+
+}

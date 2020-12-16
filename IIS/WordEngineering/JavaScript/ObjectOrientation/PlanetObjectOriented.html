@@ -1,0 +1,34 @@
+<html>
+	<!--
+		2015-08-08 File created.
+	-->
+	<head>
+		<title>Planet Object Oriented</title>
+	</head>
+	<body>
+		<script>
+			function Planet(name, distance, mass) {
+				this.name = name;
+				this.distance = distance;
+				this.mass = mass;
+				
+				planets.push(this);
+			}
+
+			Planet.prototype.toString = function()
+			{
+				return this.name;
+			}
+			
+			var planets = new Array();
+			var sun = new Planet('Sun', 1.495949e11, 1.989e30);
+			console.log(planets);
+			planets.forEach(console.log)
+			for (var index = 0, length = planets.length; index < length; ++index)
+			{
+				console.log(planets[index]);
+			}	
+		</script>
+	</body>
+</html>
+

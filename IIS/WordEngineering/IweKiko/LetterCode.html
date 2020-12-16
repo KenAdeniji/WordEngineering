@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--
+		2016-02-29 Created.	http://stackoverflow.com/questions/94037/convert-character-to-ascii-code-in-javascript
+	-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>IweKiko: Letter code</title>
+	<style>
+		body {background: #737CA1}
+		/*
+		table{
+			width:100%; 
+			border-collapse:collapse; 
+		}
+		*/
+		table td{ 
+			padding:7px; border:#4e95f4 1px solid;
+		}
+		/* provide some minimal visual accomodation for IE8 and below */
+		table tr{
+			background: #b8d1f3;
+		}
+		/*  Define the background color for all the ODD background rows  */
+		table tr:nth-child(odd){ 
+			background: #b8d1f3;
+		}
+		/*  Define the background color for all the EVEN background rows  */
+		table tr:nth-child(even){
+			background: #dae5f4;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="informationSet"></div>
+	<script>
+		window.addEventListener("load", startUp, "false");
+		
+		function startUpDeprecated()
+		{
+			document.write("<table border='1'><thead>");
+			document.write("<tr><th>Code</th><th>Character</th></tr>");
+			document.write("</thead></tbody>");
+			for (code = 0; code <= 255; ++code)
+			{
+				document.write("<tr><td>" + code + "</td><td>" + String.fromCharCode(code) + "</td></tr>");
+			}
+			document.write("</tbody></table>");
+		}
+		
+		function startUp()
+		{
+			var keys = "<table border='1'><thead>";
+			keys += "<tr><th>Code</th><th>Character</th></tr>";
+			keys += "</thead></tbody>";
+			for (code = 0; code <= 255; ++code)
+			{
+				keys += "<tr><td>" + code + "</td><td>" + String.fromCharCode(code) + "</td></tr>";
+			}
+			keys += "</tbody></table>";
+			var informationSet = document.getElementById("informationSet");
+			informationSet.innerHTML = keys;
+		}
+	</script>
+</body>
+</html>

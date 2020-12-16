@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>390</SequenceOrderId>
+   <Dated>2004-01-17T00:00:00.0000000-08:00</Dated>
+   <ScriptureReference>Genesis 39:17, Jeremiah 3:12, Malachi 2:17, Acts 15:24</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+39%3A17%2C+Jeremiah+3%3A12%2C+Malachi+2%3A17%2C+Acts+15%3A24&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>9</ContactId>
+  </TheWord>
+
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary>It is not words that will say, this is Me that will say ... Jehovah Rophe: Lower half of the zipper, on both sides.</Commentary>
+  </JehovahRophe>
+
+  <!--
+  <Dream>
+   <SequenceOrderId>22</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>608</SequenceOrderId>
+   <DatedFrom>2003-12-08T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2004-01-17T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>40</FromUntil>
+   <Commentary>In all this world.</Commentary>
+   <Filename>Comforter_-_20031208InAllThisWorld.xml</Filename>
+   <ScriptureReference>Matthew 12:32, Matthew 13:40</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>113</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>86</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>546</SequenceOrderId>
+   <Word>Words ... Say ... Me</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>3431</SequenceOrderId>
+    <Word>It is not words that will say, this is Me that will say.</Word>
+    <AlphabetSequenceIndex>587</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:15, Psalms 109, Psalms 125, 2 Peter 2:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A15%2C+Psalms+109%2C+Psalms+125%2C+2+Peter+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1446</SequenceOrderId>
+   <Dated>2004-01-16T00:00:00.0000000-08:00</Dated>
+   <Commentary>Saint Edward's Catholic Church 5788 Thornton Avenue Newark CA 94560 (510) 797-0241 http://www.rc.net/oakland/st_edward. Mary Legion: Barnie, Barbara.</Commentary>
+   <ContactId>3</ContactId>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>329</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>646</SequenceOrderId>
+   <Commentary>
+    Comforter_-_20040116IslamicSocietyOfEastBay(ISEB)_ZaytunaInstitute_TheTypesetEventuallyDisappearsTheThirdFridayInTwoThousandAndFourAbrahamIssacJacobSaulDavidSolomonChrist.xml Error ...
+    Comforter_-_20040116IslamicSocietyOfEastBay(ISEB)_ZaytunaInstitute_TheTypesetEventuallyDisappearsTheThirdFridayInTwoThousandAndFourAbrahamIssacJacobSaulDavidSolomonChrist.sql Error ...
+    Private part ... feet ...
+   </Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

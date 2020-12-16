@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><title>Canvas Bar Graph</title>
+<style type="text/css">
+ canvas { border-bottom: thin solid; }
+</style>
+</head>
+<body> 
+
+<!-- Define a 400 x 400 pixel drawing canvas with id = c1 -->
+<!-- give it a thin bottom border for the x axis          -->
+<canvas id="c1" width="400" height="400">
+Sadly, your browser doesn't support the <em>canvas</em> element.
+</canvas>
+
+<!-- Define an input field for numbers from 0 to 100    -->
+<!-- The form returns without submitting anything       -->
+<!-- the draw function is called when the input changes -->
+<form onsubmit="return false;">
+  <input type="text" size="3"          onchange="drawBar(this.value); this.value = '';" />
+       enter a number from zero to 100 and hit return.
+</form>
+
+<!-- JavaScript for drawing vertical bars on the canvas -->
+<script type="text/javascript">
+
+// get the canvas DOM object and set a 2-dimensional context 
+  var canvas = document.getElementById("c1");
+  var c1 = canvas.getContext("2d");
+  var offset = 5;              // initial x position
+
+// our draw function.
+  function drawBar(val) {  
+      val *= 4;                // scale the input to pixels
+      c1.fillStyle = 'blue';         // set the fill color
+
+// draw a filled rectangle 30 pixels wide with user input height
+    c1.fillRect(offset, 400 - val, 30, val);
+
+// set the text color to white and write the value
+    c1.fillStyle = 'white';  
+    c1.font = 'bold 15px arial,sans-serif';
+    c1.fillText(val/4, offset + 5, 420 - val, 26);
+    offset += 40;            // offset to the next bar
+  }
+</script>
+</body>
+</html>

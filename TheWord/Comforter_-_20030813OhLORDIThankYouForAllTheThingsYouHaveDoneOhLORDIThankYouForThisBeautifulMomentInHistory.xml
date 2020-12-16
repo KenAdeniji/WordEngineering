@@ -1,0 +1,95 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>40</SequenceOrderId>
+  <Dated>2003-08-13T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 3:24, 2 Chronicles 29:4</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A24%2C+2+Chronicles+29%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Oh LORD I thank You for all the things You have done. Oh LORD I thank You for this beautiful moment in history.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>341</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>  
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>65</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>216</SequenceOrderId>
+   <Word>East ... Tree</Word>
+   <Commentary>
+So He drove out the man; and He placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life (Genesis 3:24).
+He brought in the priests and the Levites, and gathered them together into the east street (2 Chronicles 29:4).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>502</SequenceOrderId>
+   <Word>Oh LORD I thank You for all the things You have done. Oh LORD I thank You for this beautiful moment in history.</Word>
+   <AlphabetSequenceIndex>1110</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 37:26, Colossians 3, Exodus 30, Hebrews 2:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+37%3A26%2C+Colossians+3%2C+Exodus+30%2C+Hebrews+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1075</SequenceOrderId>
+   <Commentary>Shave face and armpit.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>248</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>289</SequenceOrderId>
+   <Commentary>Mouse. Comforter_-_20030812AChildAndHisMother.xml: FileCopy 3rd floppy diskette, Explorer memory error ... Restart computer, shave face and armpit. Comforter_-_20030813.xml: FileSave network error. Comforter_-_20030813Archive.xml: FileSave network error. Comforter_-_20030813OhLORDIThankYouForAllTheThingsYouHaveDoneOhLORDIThankYouForThisBeautifulMomentInHistory.xml: FileSave network error. Comforter_-_20030813OhLORDIThankYouForAllTheThingsYouHaveDoneOhLORDIThankYouForThisBeautifulMomentInHistoryArchive.xml: FileSave network error. TheWord Comforter_-_20030813OhLORDIThankYouForAllTheThingsYouHaveDoneOhLORDIThankYouForThisBeautifulMomentInHistory.xml Explorer memory error. TheWord Comforter_-_20030813OhLORDIThankYouForAllTheThingsYouHaveDoneOhLORDIThankYouForThisBeautifulMomentInHistory.xml Explorer memory error.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

@@ -1,0 +1,11 @@
+<html>
+<body>
+How are you? <input type="text" />
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$('input').on('change', function () {
+  alert('The new value is: ' + this.value);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Arguments</title>
+	</head>
+	<body>
+		<script>
+			function sayHi() {
+				console.log(arguments.length);
+				for(var i=0, argumentsLength = arguments.length; i < argumentsLength; ++i) {
+					console.log(arguments[i])
+				}
+			}
+
+			sayHi("Cat", "Alice")
+			console.log(sayHi.length);
+			
+			function showWarning(width, height, title, contents, showYesNo) {
+				width = width || 200; // default values
+				height = height || 100;
+  
+				var title = title || "Warning";
+				console.log(title);
+				document.body.style.backgroundColor = 'blue';
+			}
+			showWarning();
+		</script>	
+	</body>	
+</html>

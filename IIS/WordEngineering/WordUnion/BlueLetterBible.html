@@ -1,0 +1,40 @@
+<meta charset="UTF-8"/>
+<meta name="description" content="Blue Letter Bible"/>
+<meta name="keywords" content="Bible, Blue Letter Bible"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Ken Adeniji"/>
+
+<form action="http://blb.org/search/preSearch.cfm"
+  method="get">
+  
+  <input type="text" name="Criteria" />
+  
+  <select name="Version">
+    <option value="KJV">KJV</option>
+    <option value="NKJV">NKJV</option>
+    <option value="NLT">NLT</option>
+    <option value="NIV">NIV</option>
+    <option value="ESV">ESV</option>
+    <option value="RVR">RVR</option>
+    <option value="NASB">NASB</option>
+    <option value="RSV">RSV</option>
+    <option value="ASV">ASV</option>
+    <option value="YNG">YNG</option>
+    <option value="DBY">DBY</option>
+    <option value="WEB">WEB</option>
+    <option value="HNV">HNV</option>
+    <option value="VUL">VUL</option>
+  </select> 
+  
+<input type="text" name="cscs"
+    title="Use semicolons to separate groups -
+      Gen;Jdg;Psa-Mal;Rom 3-12; Mat 1:15;Mat 5:12-22"
+    value="Optional Verse Range"
+    onfocus="if(this.value=='Optional Verse Range')
+      this.value='';"
+    onblur="if(this.value=='')
+      this.value='Optional Verse Range';" /> 
+	  
+  <input type="submit" value="Search" />
+  
+</form> 

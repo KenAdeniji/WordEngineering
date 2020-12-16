@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>json</title>
+		<script type="text/javascript">
+			var myJSONObject = {"bindings": [
+			{"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
+			{"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
+			{"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
+			]
+		}
+		var bindingsLength = myJSONObject.bindings.length;
+		
+		document.write("<table>");
+		for (var bindingsIndex = 0; bindingsIndex < bindingsLength; ++bindingsIndex)
+		{
+			document.write("<tr><td>"+myJSONObject.bindings[bindingsIndex].ircEvent+"</td>");
+			document.write("<td>"+myJSONObject.bindings[bindingsIndex].method+"</td>");
+			document.write("<td>"+myJSONObject.bindings[bindingsIndex].regex+"</td></tr>");
+		}
+		document.write("</table>");
+		
+		myJSONtext = {"bindings": [
+			{"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
+			{"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
+			{"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
+			]
+		}
+		
+		var myObject = eval('(' + myJSONtext + ')');
+		</script>
+	</head>	
+<html>

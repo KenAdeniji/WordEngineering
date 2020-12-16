@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>89</SequenceOrderId>
+  <Dated>2003-09-05T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Acts 11:26</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Acts+11%3A26&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Luxemborg</Title>
+
+  <Prophet>
+   <SequenceOrderId>33</SequenceOrderId>
+   <Commentary>When he had found him, he brought him unto Antioch. And it came to pass, that a whole year they assembled themselves with the church, and taught much people. And the disciples were called Christians first in Antioch (Acts 11:26).</Commentary>
+  </Prophet>
+
+  <!--
+  <Remember>
+   <SequenceOrderId>366</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure>y</Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>268</SequenceOrderId>
+   <Commentary />
+   <Word>Antioch ... Christians ... Antioch</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>583</SequenceOrderId>
+   <Word>Luxemborg</Word>
+   <AlphabetSequenceIndex>117</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:11, Leviticus 27, 1 Corinthians 11, Revelation 17:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A11%2C+Leviticus+27%2C+1+Corinthians+11%2C+Revelation+17%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1128</SequenceOrderId>
+   <Commentary>Wake-up Orientation: Center, Legs partly exposed. User interface (UI) left border invisible ... Wash cloth, cut hair, dryer error, garage noise. Oakland Sister Cities: Comforter_-_20030831WordEngineering.xml: Left computer, Comfort, noise. Keyboard error. Explorer memory error. Shave face and armpit. Fremont Main Library 2400 Stevenson Blvd. Fremont CA 94538-2325. General Information: (510) 745-1400. http://www.aclibrary.org. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary>Comforter_-_20030831WordEngineering.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>332</SequenceOrderId>
+   <Commentary>User interface (UI) left border invisible. Keyboard error. Explorer memory error.</Commentary>
+  </ClassAssociates>
+ 
+  </TheWord>
+</wordOfGod>

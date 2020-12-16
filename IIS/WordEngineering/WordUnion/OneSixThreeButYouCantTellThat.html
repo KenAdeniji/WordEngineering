@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-11-24	One six three, but you can't tell that.
+	-->
+	<head>
+		<title>One six three, but you can't tell that.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookID">Book ID:</label></td>
+					<td><input type="number" ID="bookID" min="1"/></td>
+				</tr>	
+				<tr>
+					<td><label for="chapterID">Chapter ID:</label></td>
+					<td><input type="number" ID="chapterID" min="1"/></td>
+				</tr>	
+				<tr>
+					<td><label for="verseID">Verse ID:</label></td>
+					<td><input type="number" ID="verseID" min="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<br><br>
+		<div align="center" id="resultSet">	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			var	bookIDDefault = 1;
+			var chapterIDDefault = 6;
+			var verseIDDefault = 3;
+			
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var bookID = getParameterByName("bookID");
+					if (!bookID)
+					{
+						bookID = bookIDDefault;
+					}	
+					document.getElementById("bookID").value = bookID;
+
+					var chapterID = getParameterByName("chapterID");
+					if (!chapterID)
+					{
+						chapterID = chapterIDDefault;
+					}	
+					document.getElementById("chapterID").value = chapterID;
+					
+					var verseID = getParameterByName("verseID");
+					if (!verseID)
+					{
+						verseID = verseIDDefault;
+					}	
+					document.getElementById("verseID").value = verseID;
+
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["bookID"] = document.getElementById("bookID").value;
+				request["chapterID"] = document.getElementById("chapterID").value;
+				request["verseID"] = document.getElementById("verseID").value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/OneSixThreeButYouCantTellThat.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(dataSet) 
+			{
+				scriptureReference = dataSet.scriptureReference;
+				scriptureReferenceHyperlink = buildHyperlinkScriptureReference(scriptureReference);
+				document.getElementById("resultSet").innerHTML = scriptureReferenceHyperlink;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

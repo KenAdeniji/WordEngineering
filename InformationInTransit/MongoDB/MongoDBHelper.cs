@@ -1,0 +1,85 @@
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text;
+
+using System.Threading.Tasks;
+
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessLogic;
+
+namespace InformationInTransit.MongoDB
+{
+	///<summary>
+	/// 2018-04-22 	Created.
+	///	2018-04-22	http://stackoverflow.com/questions/37940065/insert-datatable-in-mongo-db-using-c-sharp?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+	///</summary>
+	public partial class MongoDBHelper
+	{
+		public static void SaveDataTableToCollection
+		(
+			String		connectionString,
+			String		databaseName,
+			String		tableName,
+			DataTable 	dataTable
+		)
+		{
+			var client = new MongoClient();
+			var database = client.GetDatabase(databaseName);
+
+			/*
+				use Bible
+				db.Scripture.drop();			
+			*/
+			
+			//database.DropCollection(tableName);
+			
+			var collection = database.GetCollection<BsonDocument>(tableName);
+
+			List<BsonDocument> batch = new List<BsonDocument>();
+			
+			foreach (DataRow dataRow in dataTable.Rows)
+			{
+				var dictionary = dataRow.Table.Columns.Cast<DataColumn>().ToDictionary(col => col.ColumnName, col => dataRow[col.ColumnName]);
+				batch.Add(new BsonDocument(dictionary));
+			}
+
+			collection.InsertMany(batch.AsEnumerable());
+		}
+		
+		public static void FindAllDocumentsInACollection
+		(
+			String		connectionString,
+			String		databaseName,
+			String		tableName
+		)
+		{
+			var client = new MongoClient();
+
+			var database = client.GetDatabase(databaseName);
+
+			var collection = database.GetCollection<BsonDocument>(tableName);
+			
+			var cursor = collection.Find(new BsonDocument()).ToCursor();
+			foreach (var document in cursor.ToEnumerable())
+			{
+				Console.WriteLine(document);   
+			}
+		}
+	}
+}

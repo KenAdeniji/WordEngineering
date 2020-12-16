@@ -1,0 +1,105 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>279</SequenceOrderId>
+  <Dated>2003-11-20T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>John 6:53</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=John+6%3A53&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>If their is no originality, their is no life.</Title>
+  <Commentary>Talk, AlphabetSequence 44. Cry, AlphabetSequence 46. Speak, AlphabetSequence 52.</Commentary>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>507</SequenceOrderId>
+   <DatedFrom>2003-05-22T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-20T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>182</FromUntil>
+   <Commentary>Se kin gbe te mina wa. 182 days: 6 biblical months and 2 days.</Commentary>
+   <Filename>Comforter_-_20030523SeKinGbeTeMinaWa.xml</Filename>
+   <ScriptureReference>Numbers 20:7-12, Numbers 20:25, Numbers 27:12-23, Numbers 22:20, Numbers 23:1, Numbers 23:2, Numbers 23:4, Numbers 23:14, Numbers 23:29, Numbers 23:30, Isaiah 53:12, Matthew 16:25, Mark 8:35, Luke 9:24, Luke 17:33</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Numbers+20%3A7-12%2C+Numbers+20%3A25%2C+Numbers+27%3A12-23%2C+Numbers+22%3A20%2C+Numbers+23%3A1%2C+Numbers+23%3A2%2C+Numbers+23%3A4%2C+Numbers+23%3A14%2C+Numbers+23%3A29%2C+Numbers+23%3A30%2C+Isaiah+53%3A12%2C+Matthew+16%3A25%2C+Mark+8%3A35%2C+Luke+9%3A24%2C+Luke+17%3A33&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>450</SequenceOrderId>
+   <Word>No Life</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>1576</SequenceOrderId>
+   <Word>If their is no originality, their is no life.</Word>
+   <AlphabetSequenceIndex>420</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 17:22, Nehemiah 7, Jeremiah 25, Jude 1:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A22%2C+Nehemiah+7%2C+Jeremiah+25%2C+Jude+1%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>The train track on Newark Blvd between Paseo Padre Parkway and Highway 84: Walk along the path way ... You are the greatest ... Train Track ... If their is no originality, their is no life.</Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1309</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>297</SequenceOrderId>
+   <Commentary>Comforter_-_20031117Prophecy70thWeekRelease20031120.xml Comforter_-_20031117Prophecy70thWeekRelease20031120.xslt</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>540</SequenceOrderId>
+   <Commentary>No Life(,). Database update error ... Update AlphabetSequence SET ContactId = 159 WHERE SequenceOrderId IN (1250).</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

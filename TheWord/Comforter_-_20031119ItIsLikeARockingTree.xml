@@ -1,0 +1,112 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>275</SequenceOrderId>
+  <Dated>2003-11-19T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>1 Kings 7:33, Job 19:10, Psalms 1:3, Psalms 37:35, Psalms 52:8, Psalms 92:12, Song of Solomon 7:7, Isaiah 10:6, Jeremiah 11:19, Lamentations 2:19, Ezekiel 31:18, Ezekiel 40:16, Hosea 9:10, Hosea 14:8, Nahum 3:12, Luke 13:19</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Kings+7%3A33%2C+Job+19%3A10%2C+Psalms+1%3A3%2C+Psalms+37%3A35%2C+Psalms+52%3A8%2C+Psalms+92%3A12%2C+Song+of+Solomon+7%3A7%2C+Isaiah+10%3A6%2C+Jeremiah+11%3A19%2C+Lamentations+2%3A19%2C+Ezekiel+31%3A18%2C+Ezekiel+40%3A16%2C+Hosea+9%3A10%2C+Hosea+14%3A8%2C+Nahum+3%3A12%2C+Luke+13%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>It is like a rocking tree.</Title>
+  <ContactId>29</ContactId>
+  <FromUntil>323</FromUntil>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>504</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <ContactId></ContactId>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>447</SequenceOrderId>
+   <Word>Like ... Tree</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>1498</SequenceOrderId>
+   <ContactId>29</ContactId>
+   <Word>It is like a rocking tree.</Word>
+   <AlphabetSequenceIndex>220</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 9:14, Judges 9, Mark 13, Revelation 11:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A14%2C+Judges+9%2C+Mark+13%2C+Revelation+11%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary>Yuri Japanese Restaurant. 3810 Mowry Avenue, Fremont CA 94538. Tel: (510) 945-6701. Female voice.</Commentary>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1307</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>28</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>297</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>536</SequenceOrderId>
+   <Commentary>TheWord 275 AlphabetSequence 1498 BibleWord 447 Lake Merritt Sergey vs Joshua ... Sleep ... Garage Noise ... Floppy disk drive error ... Floppy disk drive error ... Reboot.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

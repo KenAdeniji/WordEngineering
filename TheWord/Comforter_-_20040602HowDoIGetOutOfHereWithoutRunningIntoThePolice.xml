@@ -1,0 +1,193 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>511</SequenceOrderId>
+ <Dated>2004-06-02T00:00:00.0000000-08:00</Dated>
+ <FromUntil>154</FromUntil>
+ <ContactId>7</ContactId>
+ <Commentary>Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Place French baguettes on face ...</Commentary>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>46</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>35</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6958</SequenceOrderId>
+    <ContactId>290</ContactId>
+    <Word>How do I get out of here without running into the police?</Word>
+    <AlphabetSequenceIndex>583</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:11, Psalms 105, Psalms 129, 2 Peter 2:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A11%2C+Psalms+105%2C+Psalms+129%2C+2+Peter+2%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Prince of Peace Lutheran Church &amp; School 38451 Fremont Blvd Fremont CA 94538 Paz Friede Kapayapaan His peace for all people. David Wilson: How do I get out of here without running into the police?</Commentary>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6959</SequenceOrderId>
+    <ContactId>2</ContactId>
+    <Word>Place French baguettes on face ...</Word>
+    <AlphabetSequenceIndex>235</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:29, Ruth 3, Matthew 26, Revelation 10:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A29%2C+Ruth+3%2C+Matthew+26%2C+Revelation+10%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Place French baguettes on face ...</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1760</SequenceOrderId>
+   <ContactId>290</ContactId>
+   <Commentary>Prince of Peace Lutheran Church &amp; School 38451 Fremont Blvd Fremont CA 94538 Paz Friede Kapayapaan His peace for all people. David Wilson: How do I get out of here without running into the police?</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1761</SequenceOrderId>
+   <Dated>2004-06-21T09:00:00.0000000-08:00</Dated>
+   <ContactId>460</ContactId>
+   <Commentary>Superior Court of California, County of Alameda. Fremont Hall of Justice. 39439 Paseo Padre Parkway Fremont CA 94538. http://www.co.Alameda.ca.us/courts. Violation of Section 1329(a) PC. I further understand that punishment following conviction is imprisonment in the county jail not exceeding 1 year, or by fine not exceeding One Thousand Dollars and five hundred ($1500) or by both. Department 602. Judge Keith Fudenna. Case #: 207747.</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1762</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>
+    Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.
+    Juval Lowey: Programming .NET Components ISBN: 0-596-00347-1.
+    using System.IO;
+    using System.Security;
+    using System.Security.Permissions;
+    IPermission  iPermission;
+    string path = @"C:\Temp\";
+    iPermission = new FileIOPermission( FileIOPermissionAccess.Write, path);
+    try
+    {
+     iPermission.Demand();
+    }
+    catch( SecurityException securityException )
+    {
+     System.Console.WriteLine("SecurityException: {0}", SecurityException.Message );
+    }
+   </Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1763</SequenceOrderId>
+   <Dated>2004-06-04T09:00:00.0000000-08:00</Dated>
+   <Commentary>Melanie Kidder MKidder@boardvantage.com (650) 330-8900 (650) 330-8080 Toll Free 1.866.380.7600 Ext 6020.</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1764</SequenceOrderId>
+   <ContactId>2</ContactId>
+   <Commentary>Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Place French baguettes on face ...</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>366</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+  
+  <ClassAssociates>
+   <SequenceOrderId>762</SequenceOrderId>
+   <ContactId>2</ContactId>
+   <Commentary>Face ... urine ... noise ... keyboard error ... faeces ... cry ... private part ... Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Place French baguettes on face ...</Commentary>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>460</SequenceOrderId>
+   <Dated>2004-06-21T09:00:00.0000000-08:00</Dated>
+   <Company>Superior Court of California, County of Alameda. Fremont Hall of Justice.</Company>
+   <FirstName>Keith</FirstName>
+   <LastName>Fudenna</LastName>
+   <OtherName />
+   <Title>Judge</Title>
+   <Commentary>Superior Court of California, County of Alameda. Fremont Hall of Justice. 39439 Paseo Padre Parkway Fremont CA 94538. Violation of Section 1329(a) PC. I further understand that punishment following conviction is imprisonment in the county jail not exceeding 1 year, or by fine not exceeding One Thousand Dollars and five hundred ($1500) or by both. Department 602. Judge Keith Fudenna. Case #: 207747.</Commentary>
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

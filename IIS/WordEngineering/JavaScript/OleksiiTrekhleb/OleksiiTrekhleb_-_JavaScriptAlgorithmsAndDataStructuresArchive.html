@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-12-11	Date created.	https://github.com/trekhleb/javascript-algorithms
+	2019-12-11T18:00	https://stackoverflow.com/questions/1723287/calling-a-javascript-function-named-in-a-variable
+-->
+    <head>
+        <title>Oleksii Trekhleb</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="JavaScript Algorithms and Data Structures"/>
+		<meta name="keywords" content="JavaScript, Algorithms and Data Structures"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+	<body>
+		<div align="center">
+			<input id="number" type="number" autofocus/> <br/> 
+			<input type="submit" id="submitQuery">
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+		    var isPostBack = false;
+
+			var numberID = document.getElementById("number");
+			var resultSetID = document.getElementById("resultSet");
+
+		    function querySubmit() {
+				var resultSetValue = "<table id='resultTable'><thead><tr><th>Name</th><th>Value</th></thead>";
+				var numberValue = parseFloat(numberID.value);
+				Object.keys(oleksiiTrekhleb).forEach(function(key,index) {
+					// key: the name of the object key
+					// index: the ordinal position of the key within the object 
+					// myFuncs[funcToRun]();
+					var keyValue = oleksiiTrekhleb[key](numberValue);
+					resultSetValue += "<tr><td>" + key + "</td><td>" + keyValue + "</td></tr>";
+				});
+				resultSetValue += "</table>";
+				resultSetID.innerHTML = resultSetValue;
+				tsorter.create("resultTable");
+		    }
+
+		    function pageLoad() { 
+		        if (!isPostBack) { 
+					$.getScript( "/WordEngineering/JavaScript/OleksiiTrekhleb/OleksiiTrekhleb_-_JavaScriptAlgorithmsAndDataStructures.js", function( data, textStatus, jqxhr ) 
+					{
+						numberID.value = 161;
+						querySubmit();
+						isPostBack = true;
+					});
+		        }
+				else
+				{
+					querySubmit();
+				}
+		    }
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

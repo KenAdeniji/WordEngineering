@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-04-20 	Created.	1017-04-20	Mo fe ma lole; mo niyawo le. MoFeMaLoleMoNiyawoLe.html
+						Danny, got out of Wienerschnitzel, exit westward.
+		-->
+		<title>Mo fe ma lole; mo niyawo le</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+			.hidden { display: none }			
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			Enter a scripture reference, 
+			for example, Genesis 49-John 20,
+			and it will output the distinct count of books, chapters, and verses.
+			<legend>Query</legend>
+			<div align="center">
+				<input id="scriptureReference" type="text" size="70" autofocus/>
+				<input type="submit" id="submitQuery">
+				<br>
+				<div id="resultSet">
+			</div>
+		</fieldset>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var scriptureReference = getParameterByName("scriptureReference");
+					if (scriptureReference === "")
+					{
+						scriptureReference = document.getElementById("scriptureReference").value;
+					}	
+					if (scriptureReference !== "")
+					{
+						document.getElementById("scriptureReference").value = scriptureReference;
+						querySubmit();	
+						isPostBack = true;
+					}	
+				}
+			}
+			
+			function parseScriptureReference()
+			{
+				var scriptureReference = document.getElementById("scriptureReference").value;
+				var reference = scriptureReference.split(/,|;/);
+				for (index = 0; index < reference.length; index++)
+				{
+					reference[index] = String.trim(reference[index]);
+				}
+				return reference;
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/MoFeMaLoleMoNiyawoLe",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var scriptureReferenceSubset = parseScriptureReference();
+				
+				var scriptureReferenceSubsetIndex = 0;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for 
+					(
+						var rowIndex = 0, rowCount = dataTable.length;
+						rowIndex < rowCount;
+						++rowIndex, ++scriptureReferenceSubsetIndex
+					)
+					{
+						dataRow = dataTable[rowIndex];
+				
+						info += "<tr>"
+						info += "<td>Scripture Reference: " + 
+								scriptureReferenceSubset[scriptureReferenceSubsetIndex] +
+								"</td>";	
+						info +=	"<td>Book Id(s): " + dataRow["BookIDCount"] + "</td>";
+						info += "<td>Chapter Id(s): " + dataRow["ChapterIDSequenceCount"] + "</td>";
+						info += "<td>Verse Id(s): " + dataRow["VerseIDSequenceCount"] + "</td>";
+						info +=	"</tr>";
+					}
+				}
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			document.getElementById("scriptureReference").addEventListener("change", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

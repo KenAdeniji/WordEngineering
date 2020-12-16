@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Type detection</title>
+		<script>
+			console.log("typeof undefined: ", typeof undefined)// "undefined" 
+			console.log("typeof 0: ", typeof 0)    // "number" 
+			console.log("typeof true: ", typeof true) // "boolean" 
+			console.log('typeof "foo": ', typeof "foo") // "string" 
+			console.log("typeof {}: ", typeof {}) // "object" 
+			console.log("typeof null: ", typeof null)  // "object" 
+			console.log("typeof function(){}: ", typeof function(){}) // "function" 
+			console.log("typeof NaN: ", typeof NaN)  // "number"
+			
+			var toClass = {}.toString
+			console.log( "toClass.call( [1, 2] )", toClass.call( [1, 2] ) );
+			console.log( "toClass.call( new Date )", toClass.call( new Date ) );
+			
+			function Animal(name) { 
+				this.name = name
+			}
+			var animal = new Animal("Goofy")
+			console.log( animal instanceof Animal ) // true
+		</script>
+	</head>
+</html>

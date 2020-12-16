@@ -1,0 +1,2 @@
+import BibleBookGenerateRandom
+print(BibleBookGenerateRandom.get_description())

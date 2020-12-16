@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>91</SequenceOrderId>
+  <Dated>2003-09-06T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 14:22, Genesis 40:17, Exodus 26:4, Exodus 26:33, Exodus 26:34, Exodus 30:10, Exodus 36:11, Exodus 36:17, Numbers 22:41, Deuteronomy 11:24, 2 Kings 7:5, 1 Chronicles 6:49, Psalms 45:3, Psalms 56:2, Song of Solomon 8:6, Isaiah 17:6, Isaiah 17:9, Isaiah 26:7, Ezekiel 23:12, Ezekiel 42:5, Ezekiel 43:12, Daniel 4:34, Daniel 9:24, Daniel 11:15, Matthew 11:20, Matthew 12:42, Matthew 23:6, Mark 12:39, Luke 7:43, Luke 11:31, Luke 11:43, Acts 1:8, 1 Thessalonians 2:16, Jude 1:20</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A22%2C+Genesis+40%3A17%2C+Exodus+26%3A4%2C+Exodus+26%3A33%2C+Exodus+26%3A34%2C+Exodus+30%3A10%2C+Exodus+36%3A11%2C+Exodus+36%3A17%2C+Numbers+22%3A41%2C+Deuteronomy+11%3A24%2C+2+Kings+7%3A5%2C+1+Chronicles+6%3A49%2C+Psalms+45%3A3%2C+Psalms+56%3A2%2C+Song+of+Solomon+8%3A6%2C+Isaiah+17%3A6%2C+Isaiah+17%3A9%2C+Isaiah+26%3A7%2C+Ezekiel+23%3A12%2C+Ezekiel+42%3A5%2C+Ezekiel+43%3A12%2C+Daniel+4%3A34%2C+Daniel+9%3A24%2C+Daniel+11%3A15%2C+Matthew+11%3A20%2C+Matthew+12%3A42%2C+Matthew+23%3A6%2C+Mark+12%3A39%2C+Luke+7%3A43%2C+Luke+11%3A31%2C+Luke+11%3A43%2C+Acts+1%3A8%2C+1+Thessalonians+2%3A16%2C+Jude+1%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>I have to be up at six o'clock, it is up most importantly.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>366</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>69</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Measure>y</Measure>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>270</SequenceOrderId>
+   <Word>Up ... Most</Word>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>585</SequenceOrderId>
+   <Word>I have to be up at six o'clock, it is up most importantly.</Word>
+   <AlphabetSequenceIndex>580</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 23:8, Psalms 102, Psalms 132, 2 Peter 2:22</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A8%2C+Psalms+102%2C+Psalms+132%2C+2+Peter+2%3A22&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1130</SequenceOrderId>
+   <Commentary>Sleep: smell, noise. Wake-up Orientation: Knees upright. Computer on, user interface (UI), shower, fly, flys right, cut nail. Fremont Main Library 2400 Stevenson Blvd. Fremont CA 94538-2325. General Information: (510) 745-1400. http://www.aclibrary.org. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>257</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>333</SequenceOrderId>
+   <Commentary>Alphabet sequence error ...</Commentary>
+  </ClassAssociates>
+ 
+  </TheWord>
+</wordOfGod>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bible Books</title>
+	</head>
+	<body>
+		<table id="resultSet">
+		</table>
+			
+		<script>
+		/*
+			2016-11-24	http://devcenter.wintellect.com/nstieglitz/5-great-features-in-es6-harmony
+			2016-11-25	Created.
+			2016-11-25	http://stackoverflow.com/questions/6307514/is-it-possible-to-override-javascripts-tostring-function-to-provide-meaningfu
+			2016-11-25	http://www.2ality.com/2011/04/iterating-over-arrays-and-objects-in.html
+			
+			--let Revelation = new BibleBook(66, "Revelation");
+			SELECT 
+				'let Book' +
+				REPLACE(BookTitle, ' ', '') + ' = new BibleBook(' +
+				CONVERT(VARCHAR, BookId) + ', "' + BookTitle + '");'
+			FROM
+				Bible..KJV
+			GROUP BY
+				BookID, BookTitle
+			ORDER BY
+				BookID
+		*/
+			var bibleBooks = [];
+			class BibleBook {
+				constructor(id, title) { //constructors!
+					this.id = id;
+					this.title = title;
+					bibleBooks.push(this);
+				}
+
+				printCurrentBook(){
+					  console.log('ID: ' + this.id + ' title: ' + this.title);
+				}
+				
+				toString(){
+					return 'ID: ' + this.id + ' title: ' + this.title;
+				}	
+			}
+
+			function dump()
+			{
+				var holdingArea = "";
+				bibleBooks.forEach(function(elem) {
+					holdingArea += `<tr><td>${elem.id}</td><td>${elem.title}</td></tr>`;
+				});
+				
+				console.log(holdingArea);
+				document.getElementById("resultSet").innerHTML = holdingArea;	
+			}
+			
+			function pageLoad()
+			{
+				let BookGenesis = new BibleBook(1, "Genesis");
+				let BookExodus = new BibleBook(2, "Exodus");
+				let BookLeviticus = new BibleBook(3, "Leviticus");
+				let BookNumbers = new BibleBook(4, "Numbers");
+				let BookDeuteronomy = new BibleBook(5, "Deuteronomy");
+				let BookJoshua = new BibleBook(6, "Joshua");
+				let BookJudges = new BibleBook(7, "Judges");
+				let BookRuth = new BibleBook(8, "Ruth");
+				let Book1Samuel = new BibleBook(9, "1 Samuel");
+				let Book2Samuel = new BibleBook(10, "2 Samuel");
+				let Book1Kings = new BibleBook(11, "1 Kings");
+				let Book2Kings = new BibleBook(12, "2 Kings");
+				let Book1Chronicles = new BibleBook(13, "1 Chronicles");
+				let Book2Chronicles = new BibleBook(14, "2 Chronicles");
+				let BookEzra = new BibleBook(15, "Ezra");
+				let BookNehemiah = new BibleBook(16, "Nehemiah");
+				let BookEsther = new BibleBook(17, "Esther");
+				let BookJob = new BibleBook(18, "Job");
+				let BookPsalms = new BibleBook(19, "Psalms");
+				let BookProverbs = new BibleBook(20, "Proverbs");
+				let BookEcclesiastes = new BibleBook(21, "Ecclesiastes");
+				let BookSongofSolomon = new BibleBook(22, "Song of Solomon");
+				let BookIsaiah = new BibleBook(23, "Isaiah");
+				let BookJeremiah = new BibleBook(24, "Jeremiah");
+				let BookLamentations = new BibleBook(25, "Lamentations");
+				let BookEzekiel = new BibleBook(26, "Ezekiel");
+				let BookDaniel = new BibleBook(27, "Daniel");
+				let BookHosea = new BibleBook(28, "Hosea");
+				let BookJoel = new BibleBook(29, "Joel");
+				let BookAmos = new BibleBook(30, "Amos");
+				let BookObadiah = new BibleBook(31, "Obadiah");
+				let BookJonah = new BibleBook(32, "Jonah");
+				let BookMicah = new BibleBook(33, "Micah");
+				let BookNahum = new BibleBook(34, "Nahum");
+				let BookHabakkuk = new BibleBook(35, "Habakkuk");
+				let BookZephaniah = new BibleBook(36, "Zephaniah");
+				let BookHaggai = new BibleBook(37, "Haggai");
+				let BookZechariah = new BibleBook(38, "Zechariah");
+				let BookMalachi = new BibleBook(39, "Malachi");
+				let BookMatthew = new BibleBook(40, "Matthew");
+				let BookMark = new BibleBook(41, "Mark");
+				let BookLuke = new BibleBook(42, "Luke");
+				let BookJohn = new BibleBook(43, "John");
+				let BookActs = new BibleBook(44, "Acts");
+				let BookRomans = new BibleBook(45, "Romans");
+				let Book1Corinthians = new BibleBook(46, "1 Corinthians");
+				let Book2Corinthians = new BibleBook(47, "2 Corinthians");
+				let BookGalatians = new BibleBook(48, "Galatians");
+				let BookEphesians = new BibleBook(49, "Ephesians");
+				let BookPhilippians = new BibleBook(50, "Philippians");
+				let BookColossians = new BibleBook(51, "Colossians");
+				let Book1Thessalonians = new BibleBook(52, "1 Thessalonians");
+				let Book2Thessalonians = new BibleBook(53, "2 Thessalonians");
+				let Book1Timothy = new BibleBook(54, "1 Timothy");
+				let Book2Timothy = new BibleBook(55, "2 Timothy");
+				let BookTitus = new BibleBook(56, "Titus");
+				let BookPhilemon = new BibleBook(57, "Philemon");
+				let BookHebrews = new BibleBook(58, "Hebrews");
+				let BookJames = new BibleBook(59, "James");
+				let Book1Peter = new BibleBook(60, "1 Peter");
+				let Book2Peter = new BibleBook(61, "2 Peter");
+				let Book1John = new BibleBook(62, "1 John");
+				let Book2John = new BibleBook(63, "2 John");
+				let Book3John = new BibleBook(64, "3 John");
+				let BookJude = new BibleBook(65, "Jude");
+				let BookRevelation = new BibleBook(66, "Revelation");
+				
+/*
+				Revelation.printCurrentBook();
+				console.log(JSON.stringify(Revelation));
+				puts(Revelation);
+*/				
+				dump();
+			}
+
+			// utility function for printing objects using their `toString` methods
+			const puts = (...any) => console.log(...any.map(String));
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
+	

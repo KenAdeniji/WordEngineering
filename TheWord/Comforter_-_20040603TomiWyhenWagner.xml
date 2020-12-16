@@ -1,0 +1,172 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>512</SequenceOrderId>
+ <Dated>2004-06-03T00:00:00.0000000-08:00</Dated>
+ <FromUntil>155</FromUntil>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>46</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>35</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6960</SequenceOrderId>
+    <Word>Tomi. Wyhen Wagner.</Word>
+    <AlphabetSequenceIndex>200</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:16, Joshua 13, Luke 17, Revelation 12:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A16%2C+Joshua+13%2C+Luke+17%2C+Revelation+12%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1765</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>Wash clothes. Shave. Cut hair. Microsoft SQL Server 2000 Performance Tuning Technical Reference ISBN 0-7356-1270-6. Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>366</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+  
+  <ClassAssociates>
+   <SequenceOrderId>763</SequenceOrderId>
+   <Commentary>Face ... urine ... noise ... keyboard error ... faeces ... private part ...</Commentary>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>461</SequenceOrderId>
+   <Company />
+   <FirstName>Patrick</FirstName>
+   <LastName>Omoregbee</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>Omoregbee: Patrick, Megan, Hohan, Irayae. 10 Tutor Close, Winmalee New South Wales (NSW), 2777 Australia 61-2-47541735.</Commentary>
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>462</SequenceOrderId>
+   <Company>L. J. Hooker</Company>
+   <FirstName>Andrew</FirstName>
+   <LastName>Andriopoulos</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>L. J. Hooker. Andrew Andriopoulos. http://www.ljh.com.au. campsie@ljh.com.au. 142 Beamish Street, Campsie New South Wales (NSW) Tel: 61-2-9789-6088 Fax: 61-2-9718-5835 Mobile: 61-15914398.</Commentary>
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>463</SequenceOrderId>
+   <Company>Commonwealth Bank of Australia</Company>
+   <FirstName>Olayemi</FirstName>
+   <LastName>Adeyinfa</LastName>
+   <OtherName />
+   <Title>Manager Integration &amp; Development IBS MIS</Title>
+   <Commentary>Olayemi Adeyinfa. Adeyinol@cba.com.au. Commonwealth Bank of Australia. http://www.cba.com.au. Manager Integration &amp; Development IBS MIS. Level 8 120 Pitt Street Sydney New South Wales (NSW). Tel: 61-2-9312-7136. Fax: 61-2-9312-7181.</Commentary>
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>464</SequenceOrderId>
+   <Company>Johnson &amp; Johnson</Company>
+   <FirstName>Matthew</FirstName>
+   <LastName>Adebayo</LastName>
+   <OtherName>Kehinde</OtherName>
+   <Title />
+   <Commentary>Johnson &amp; Johnson. Matthew Kehinde Adebayo.</Commentary>
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>465</SequenceOrderId>
+   <Company>Commonwealth Bank of Australia</Company>
+   <FirstName>Tai</FirstName>
+   <LastName>Bello</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>Tai Bello. Commonwealth Bank of Australia.</Commentary>
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

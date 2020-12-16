@@ -1,0 +1,51 @@
+ <html>
+	<head>
+		<title>
+		http://www.addyosmani.com/resources/essentialjsdesignpatterns/book
+		Constructor Pattern
+		</title>
+	</head>
+	<body>
+		
+		<script>
+			// Each of the following options will create a new empty object:
+			var newObject = {};
+			var newObject = Object.create(null);
+			var newObject = new Object();
+			
+			// There are then four ways in which keys and values can then be assigned to an object:
+			// 1. Dot syntax
+			
+			// Set property
+			newObject.someKey = "1. Dot syntax";
+			var key = newObject.someKey;
+			console.log(newObject);
+			
+			// 2. Square bracket syntax
+			newObject["someKey"] = "2. Square bracket syntax";
+			var key = newObject["someKey"];
+			console.log(newObject);
+			
+			//// Create a race car driver that inherits from the person object
+			var child = Object.create(newObject);
+			console.log(child);
+			
+			function Car(model, year, miles) {
+				this.model = model;
+				this.year = year;
+				this.miles = miles;
+				
+				this.toString = function() {
+					return this.model + " has done " + this.miles + " miles";
+				}
+				
+				Car.prototype.toStringOneMethodPerClass = function () {
+					return this.model + " has done " + this.miles + " miles";
+				};
+			}
+			
+			var civic = new Car( "Honda Civic", 2009, 20000 );
+			console.log( civic.toString() );
+		</script>
+	</body>
+ </html> 

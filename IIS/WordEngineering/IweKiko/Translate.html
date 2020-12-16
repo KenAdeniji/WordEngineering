@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--
+		2016-02-29 Created. Google Translate.
+	-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>IweKiko: Translate</title>
+	<style>
+		body {background: #737CA1}
+		/*
+		table{
+			width:100%; 
+			border-collapse:collapse; 
+		}
+		*/
+		table td{ 
+			padding:7px; border:#4e95f4 1px solid;
+		}
+		/* provide some minimal visual accomodation for IE8 and below */
+		table tr{
+			background: #b8d1f3;
+		}
+		/*  Define the background color for all the ODD background rows  */
+		table tr:nth-child(odd){ 
+			background: #b8d1f3;
+		}
+		/*  Define the background color for all the EVEN background rows  */
+		table tr:nth-child(even){
+			background: #dae5f4;
+		}
+		
+		/* div inside a div, border. */
+		div > div {
+			border: 1px solid #ccc;
+		} 
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<select name="src" id="src"></select>
+		>>
+		<select name="dst" id="dst"></select>
+		<input id="word" type="text"/>
+		<button class="button" id="queryRequest">Translate</button>
+	</div>
+
+	<div id="informationSet"></div>
+
+	<script>
+		window.addEventListener("load", startUp, "false");
+		
+		queryRequest = document.getElementById("queryRequest");
+		queryRequest.addEventListener("click", informationRequest, "false");
+		
+		var _table_ = document.createElement('table'),
+			_tr_ = document.createElement('tr'),
+			_th_ = document.createElement('th'),
+			_td_ = document.createElement('td');
+
+		function buildHtmlTable(arr) {
+			 var table = _table_.cloneNode(false),
+				 columns = addAllColumnHeaders(arr, table);
+			 for (var i=0, maxi=arr.length; i < maxi; ++i) {
+				 var tr = _tr_.cloneNode(false);
+				 for (var j=0, maxj=columns.length; j < maxj ; ++j) {
+					 var td = _td_.cloneNode(false);
+						 cellValue = arr[i][columns[j]];
+					 td.appendChild(document.createTextNode(arr[i][columns[j]] || ''));
+					 tr.appendChild(td);
+				 }
+				 table.appendChild(tr);
+			 }
+			 return table;
+		}
+
+		 // Adds a header row to the table and returns the set of columns.
+		 // Need to do union of keys from all records as some records may not contain
+		 // all records
+		 function addAllColumnHeaders(arr, table)
+		 {
+			 var columnSet = [],
+				 tr = _tr_.cloneNode(false);
+			 for (var i=0, l=arr.length; i < l; i++) {
+				 for (var key in arr[i]) {
+					 if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key)===-1) {
+						 columnSet.push(key);
+						 var th = _th_.cloneNode(false);
+						 th.appendChild(document.createTextNode(key));
+						 tr.appendChild(th);
+					 }
+				 }
+			 }
+			 table.appendChild(tr);
+			 return columnSet;
+		}
+
+		function informationRequest()
+		{
+			var request = {};
+			request["src"] = document.getElementById("src").value;
+			request["dst"] = document.getElementById("dst").value;
+			request["word"] = document.getElementById("word").value;
+			var requestJson = JSON.stringify(request);
+			
+			informationSet = document.getElementById("informationSet");
+			
+			var fromWord = null;
+			var destinationWord = null;
+
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/IweKiko/IweKiko.asmx/Translate",
+				data: requestJson,
+				dataType: "json",
+				success: function(data) 
+				{
+					var resultSet = JSON.parse(data.d);
+					informationSet.innerHTML = "";
+					document.getElementById("informationSet").appendChild
+						(buildHtmlTable(resultSet.Table));
+				},
+				error: function(xhr)
+				{ 
+					informationSet.innerHTML =
+						'Status: ' + xhr.status + "<br>" + 
+						'StatusText: ' + xhr.statusText + "<br>" +
+						'ResponseText: ' + xhr.responseText
+				} 
+			});
+		}
+
+		function languages()
+		{
+			selectLanguage( "FromLanguage", document.getElementById("src") );
+			selectLanguage( "DestinationLanguage", document.getElementById("dst") );
+		}
+
+		function selectLanguage(column, select)
+		{
+			var request = {};
+			request["sourceOrDestination"] = column;
+			
+			var requestJson = JSON.stringify(request);
+		
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/IweKiko/IweKiko.asmx/Language",
+				data: requestJson,
+				dataType: "json",
+				success: function(data) 
+				{
+					var resultSet = JSON.parse(data.d);
+					var count = resultSet.Table.length;
+					var resultHTML = "";
+					for (var index = 0; index < count; ++index)
+					{
+						var language = resultSet.Table[index].Language;
+						resultHTML += 	"<option value='" + language + "'>" + language + "</option>";
+					}
+					select.innerHTML = resultHTML;
+				},
+				error: function(xhr)
+				{ 
+					informationSet.innerHTML =
+						'Status: ' + xhr.status + "<br>" + 
+						'StatusText: ' + xhr.statusText + "<br>" +
+						'ResponseText: ' + xhr.responseText
+				} 
+			});
+		}
+		
+		function startUp()
+		{
+			languages();
+		}
+	</script>
+
+</body>
+</html>

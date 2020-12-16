@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Client-Side JavaScript Reference Chapter 25 - JavaScript The Definitive Guide by David Flanagan. Canvas.</title>
+	</head>
+	<body>
+		<canvas id="canvas" height="300" width="300">
+			The browser does not support canvas.
+		</canvas>
+		<script>
+			function canvasSetup()
+			{
+				var endAngle = 2 * Math.PI;
+				
+				var canvas = document.getElementById("canvas");
+				var context = canvas.getContext("2d");
+
+                context.beginPath();
+                context.moveTo(10, 10);
+                context.lineTo(10, 290);
+				
+				context.lineCap = "round";
+				context.lineWidth = 10;
+				
+                context.strokeStyle = "#000";
+                context.stroke();
+				
+				context.beginPath();
+				context.rect(20, 20, 280, 30);
+				context.fillStyle = "yellow";
+				context.fill();
+				context.lineWidth = 8;
+				context.strokeStyle = "blue";
+				context.stroke();
+
+				context.beginPath();
+				context.strokeStyle = "gray";
+				context.arc(150, 150, 120, Math.PI, endAngle, false); //center x, center y, radius, start angle, end angle
+				context.stroke();
+				
+				context.save();
+
+				context.restore();	
+			}
+			
+			window.addEventListener("load", canvasSetup, false);
+		</script>
+	</body>
+</html>

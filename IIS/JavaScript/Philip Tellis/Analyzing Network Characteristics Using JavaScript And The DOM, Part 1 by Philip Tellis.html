@@ -1,0 +1,46 @@
+<html>
+	<!--
+		2014-09-18 Created.
+		2014-09-18 http://www.smashingmagazine.com/2011/11/14/analyzing-network-characteristics-using-javascript-and-the-dom-part-1/	
+	-->
+	<head>
+	
+	</head>
+	<body>
+		<script>
+			/*
+			Network latency is typically the time it takes to send a signal across the network and get a response. 
+			It's also often called roundtrip time or ping time because it’s the time reported by the ping command. 
+			While this is interesting to network engineers who are diagnosing network problems, Web developers care 
+			more about the time it takes to make an HTTP request and get a response. Therefore, we'll define HTTP 
+			latency as the time it takes to make the smallest HTTP request possible, and to get a response with 
+			insignificant server-processing time (i.e. the only thing the server does is send a response).
+			*/
+			var t=[], n=2, tcp, rtt;
+			function measuringNetworkLatencyWithJavaScript()
+			{
+				var dateTimeStamp = +new Date;
+				t.push(dateTimeStamp);
+				console.log(dateTimeStamp);
+				if(t.length > n)
+				 done();
+				else {
+				 var img = new Image;
+				 img.onload = measuringNetworkLatencyWithJavaScript();
+				 //img.src="1x1.gif?" + Math.random() + '=' + new Date;
+				 //img.src="http://upload.wikimedia.org/wikipedia/commons/2/23/1x1.GIF" + Math.random() + '=' + new Date;
+				 img.src="http://upload.wikimedia.org/wikipedia/commons/archive/2/23/20110101023927%211x1.GIF" + Math.random() + '=' + new Date;
+				}
+			};
+			
+			var done = function() {
+			  rtt=t[2]-t[1];
+			  tcp=t[1]-t[0]-rtt;
+			  console.log("rtt: ", rtt);
+			  console.log("tcp: ", tcp);
+			};
+
+			measuringNetworkLatencyWithJavaScript();
+		</script>
+	</body>
+</html>

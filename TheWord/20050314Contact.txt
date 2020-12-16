@@ -1,0 +1,9 @@
+Map to \\Harvest\D$\WebSite\RemindMe to copy the close.gif delete.gif edit.gif files.
+ <a id='hyperlink' href="" runat='server' />
+  <img src='edit.gif' border=0>
+ </a>
+ 
+ALTER TABLE Contact ADD Suffix VARCHAR(5) NULL
+ALTER TABLE Contact ADD Suffix VARCHAR(5) NOT NULL DEFAULT 'Jr.'
+
+ALTER TABLE Contact ADD Prefix VARCHAR(5) NULL

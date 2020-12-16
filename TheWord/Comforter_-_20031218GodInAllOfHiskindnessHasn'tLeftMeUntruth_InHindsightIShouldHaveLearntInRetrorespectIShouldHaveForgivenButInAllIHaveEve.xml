@@ -1,0 +1,178 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>346</SequenceOrderId>
+    <Dated>2003-12-18T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Psalms 89:49</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Psalms+89%3A49&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>
+     God in all of His kindness hasn't left me untruth.
+     Mofebe iwo lo ni ile.
+     Population in Mine is well but difference is otherwise.
+     Olodumare modupe ejo.
+     Come and play with Me, I will not bite, I will not hug, but I will cherish you.
+     In hindsight I should have learnt, in retrorespect I should have forgiven, but in all I have Eve.
+    </Title>
+    <FromUntil>352</FromUntil>
+    <ContactId>2</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>15</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>569</SequenceOrderId>
+   <DatedFrom>2003-10-26T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-18T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>71</FromUntil>
+   <Commentary>Dennis Kucinich http://www.kucinich.com Out of date.</Commentary>
+   <Filename>Comforter_-_20031008ViewContact.xml</Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <ContactId>206</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>502</SequenceOrderId>
+   <Word>Kindness ... Un ... Truth</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2302</SequenceOrderId>
+    <Word>God in all of His kindness hasn't left me untruth.</Word>
+    <AlphabetSequenceIndex>471</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:13, Job 35, Isaiah 40, 1 John 5:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A13%2C+Job+35%2C+Isaiah+40%2C+1+John+5%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2303</SequenceOrderId>
+    <Word>Mofebe iwo lo ni ile.</Word>
+    <AlphabetSequenceIndex>169</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:9, Deuteronomy 16, Acts 3, Revelation 14:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A9%2C+Deuteronomy+16%2C+Acts+3%2C+Revelation+14%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2304</SequenceOrderId>
+    <Word>Population in Mine is well but difference is otherwise.</Word>
+    <AlphabetSequenceIndex>551</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 22:3, Psalms 73, Proverbs 11, 1 John 2:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+22%3A3%2C+Psalms+73%2C+Proverbs+11%2C+1+John+2%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2305</SequenceOrderId>
+    <Word>Olodumare modupe ejo.</Word>
+    <AlphabetSequenceIndex>208</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:2, Joshua 21, Luke 9, Revelation 12:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A2%2C+Joshua+21%2C+Luke+9%2C+Revelation+12%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2306</SequenceOrderId>
+    <Word>Come and play with Me, I will not bite, I will not hug, but I will cherish you.</Word>
+    <AlphabetSequenceIndex>726</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 26:33, Isaiah 47, Job 28, 1 Peter 1:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+26%3A33%2C+Isaiah+47%2C+Job+28%2C+1+Peter+1%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2307</SequenceOrderId>
+    <Word>In hindsight I should have learnt, in retrorespect I should have forgiven, but in all I have Eve.</Word>
+    <AlphabetSequenceIndex>888</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 31:14, Amos 9, 1 Kings 11, Hebrews 12:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+31%3A14%2C+Amos+9%2C+1+Kings+11%2C+Hebrews+12%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1357</SequenceOrderId>
+   <Commentary>
+    Towards the intersection of Stevenson Boulevard and Paseo Padre Parkway: Fence with 20 bars, 17 bars.
+    Lake Elizabeth: Walk 3 rounds, 12 legs, around the lake.
+    Middle of the 6th leg and 7th leg, middle of the walk: We have our own women ... Sophia Loren, John Loren ... 13th signpost.
+    End of the 9th leg: bird with light top and dark bottom.
+    End of the 10th leg: God in all of His kindness hasn't left me untruth ... Untruth: 122 ... Truth table.
+    The intersection of Stevenson Boulevard and Blacow Road: Mofebe iwo lo ni ile ... Towards the intersection of Stevenson Boulevard and Omar Street 40000.
+    Fremont Business Park, the intersection of Christy Street and Albrae Street 43000 Olodumare modupe ejo.
+    The intersection of Albrae Street 41000 and Stewart Avenue 5550: In hindsight I should have learnt, in retrorespect I should have forgiven, but in all I have Eve.
+    Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes.
+    The intersection of Cherry Street and Central Avenue Truck Route to 84 Dumbarton Bridge: Julius Caesar beware of the Ides of March ... And you Brutus ... Pink flower towards the right.
+    Comforter_-_20031008ViewContact.xml out of date for Dennis Kucinich. Include the ContactId column in the ClassAssociates table. ClassAssociates 597. 
+    ALTER TABLE ClassAssociates ADD ContactId INTEGER NULL.
+    Urine: Towards the left side of the toilet seat, dyed cloth in light blue and black.
+    Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>320</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <ContactId>206</ContactId>
+   <SequenceOrderId>597</SequenceOrderId>
+   <Commentary>
+    Comforter_-_20031008ViewContact.xml From 2003-10-08T00:00:00.0000000-08:00 until 2003-12-18T00:00:00.0000000-08:00 are 71 days. Out of date: WaldenPondBooks.com | Prince | Dennis Kucinich | Kurt Yoos | First lady of Taiwan Wu.
+    Comforter_-_20031218HungryHunter_MyFavoriteSonIsYourSon_InAllTheThingsGodHasDoneForMeHeHasn'tLeftMeWithoutMemories_InSleepingYouRememberWhereYouWake-up_IncludingTheBestYouGot.xml: BibleWord 501 My Son Is Your User Interface (UI) Cast Error.
+    Comforter_-_20031008ViewContact.xml out of date for Dennis Kucinich. Include the ContactId column in the ClassAssociates table. ClassAssociates 597. 
+    ALTER TABLE ClassAssociates ADD ContactId INTEGER NULL.
+    Face. Don't cross the line.
+    Comforter_-_20031008ViewContact.xml ... Nose.
+    Dennis Kucinich http://www.kucinich.com Out of date ... FirstBorn ... Monitor Noise ... Private Part ... Nose ... Face ... Don't cross the line ... Right foot thumb.
+    Sushiya ContactId 215 ... Ko Fair.
+    Population in Mine is well but difference is oth ... Keyboard Error.
+    Come and play with Me, I will not bite, I will not hug, but I will ch ... Keyboard Error.
+    In hindsight I should have learnt, in retrorespect I should have forgiven, but in all I have Eve ... FileName Comforter_-_20031218GodInAllOfHiskindnessHasn'tLeftMeUntruth_InHindsightIShouldHaveLearntInRetrorespectIShouldHaveForgivenButInAllIHaveEve.xml ... Oko ase wo.
+   </Commentary>
+  </ClassAssociates>
+  
+</wordOfGod>

@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script>
+			<!--
+				oreilly.com/javascript/excerpts/javascript-tdg/core-javascript-reference.html
+			-->	
+			// An unnamed function literal uses the callee property to refer
+			// to itself so that it can be recursive
+			var factorial = function(x) {
+				if (x < 2) return 1;
+				else return x * arguments.callee(x-1);
+			}
+			var y = factorial(5);  // Returns 120
+			document.write("factorial(5): ", factorial(5));
+		</script>
+	</head>
+</html>

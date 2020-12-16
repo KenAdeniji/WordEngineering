@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-03-10	BibleReference.	
+		2017-04-05	Idea for BibleReference conversion to ScriptureReference
+		2017-04-08	BibleReference.html created.
+		2017-04-08	https://scottdowne.wordpress.com/2010/07/13/javascript-array-split-on-multiple-characters/
+		2017-04-09	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+		2017-04-09	http://stackoverflow.com/questions/24718349/how-do-i-make-array-indexof-case-insensitive
+		2017-04-09	http://stackoverflow.com/questions/858181/how-to-check-a-not-defined-variable-in-javascript
+		2017-04-10	http://stackoverflow.com/questions/2998784/how-to-output-integers-with-leading-zeros-in-javascript	
+	-->
+	<head>
+		<title>Bible Reference</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Convert Bible Reference to Scripture Reference</legend>
+				<table>
+					<tr>
+						<td align="center" colspan="2">
+							7 digits with leading zeros, book - 2 digits, chapter - 3 digits, verse - 3 digits.<br/>
+							Scripture Reference: Exodus 2:1-10, Hebrews 11:23-29<br/>
+							Bible Reference: 02002001-02002010, 58011023-58011029<br/>
+						</td>
+					<tr>
+					<tr>
+						<td>
+							<label for="bibleReference">Bible Reference:</label>
+						</td>
+						<td>
+							<input id="bibleReference" type="text" size="70" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<button id="convertBibleReferenceToScriptureReference">Convert</button>
+						</td>
+					<tr>
+					<tr>
+						<td align="center" colspan="2">
+							<span id="resultBibleReferenceToScriptureReference"></span>
+						</td>
+					<tr>
+				</table>
+			</fieldset>
+			<br/><br/>	
+			<fieldset>
+				<legend>Convert Scripture Reference to Bible Reference</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="scriptureReference">Scripture Reference:</label>
+						</td>
+						<td>
+							<input id="scriptureReference" type="text" size="70" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+							<button id="convertScriptureReferenceToBibleReference">Convert</button>
+						</td>
+					<tr>
+					<tr>
+						<td align="center" colspan="2">
+							<div id="resultScriptureReferenceToBibleReference"></div>
+						</td>
+					<tr>
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		
+		<script>
+			const BookTitleChapterSeparator = " ";
+			const Books = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
+			const ChapterVerseSeparator = ':';
+			var   IsPostBack = false;
+			const Pre = 0;
+			const PrePostSeparator = '-';
+			const Post = 1;
+			const SongOfSolomonBookId = 21;
+			const SubsetSeparator = /[-]+/;
+			
+			function buildHead() 
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildHyperlink(address, parameter)
+			{
+				if (!parameter) { return ""; }	
+				var uri = encodeURI(address + ".html?" + address + "=" + parameter);
+				var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+				return hyperlink;
+			}
+			
+			function buildRow() 
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function buildUri(address)
+			{
+				var uri = encodeURI(address);
+				var hyperlink = "<a href=" + uri + ">" + uri + "</a>";
+				return hyperlink;
+			}
+			
+			function capitalize(string) {
+				return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+			}
+			
+			function checkForBookTitle(currentReference, bookTitleChapterSeparatorPosition)
+			{
+				var isSong = currentReference.toLowerCase() ===	Books[SongOfSolomonBookId].toLowerCase();
+				if (isSong)
+				{
+					return true;
+				}	
+				var leftOfSeparator = currentReference.substring(0, bookTitleChapterSeparatorPosition + 1).trim();
+				var number = parseInt(leftOfSeparator);
+				console.log
+				(
+					"currentReference: " + currentReference + " " +
+					"bookTitleChapterSeparatorPosition: " + bookTitleChapterSeparatorPosition + " " +
+					"leftOfSeparator: " + leftOfSeparator + " " +
+					"number: " + number + " " +
+					"!isNaN(number): " + !isNaN(number)
+				);
+				return (!isNaN(number))
+			}
+			
+			function extractBookTitle(currentReference, scriptureReference)
+			{
+				scriptureReference.BookTitle = currentReference;
+				scriptureReference.Chapter = null;
+				scriptureReference.Verse = null;
+			}
+			
+			function conversionBibleReferenceToScriptureReference() 
+			{
+				var bibleReference = document.getElementById("bibleReference").value;
+				var references = bibleReference.split(/[,;]+/);
+				var referencesPrePost = [];
+				var resultReference = "";
+				
+				var currentReference = '';
+				
+				var book, chapter, verse;
+				
+				for(var index = 0, length = references.length; index < length; ++index)
+				{
+					if (index > 0)
+					{
+						resultReference += ', ';
+					}
+					
+					currentReference = '' + references[index];
+					currentReference = currentReference.trim();
+					
+					referencesPrePost = currentReference.split('-');
+					for
+					(
+						var indexReferencesPrePost = 0, 
+						lengthReferencesPrePost = referencesPrePost.length;
+						indexReferencesPrePost < lengthReferencesPrePost;
+						++indexReferencesPrePost
+					)
+					{
+						if (indexReferencesPrePost === 1)
+						{
+							resultReference += '-'
+						}	
+					
+						referencesPrePost[indexReferencesPrePost] = referencesPrePost[indexReferencesPrePost].trim();
+					
+						book = parseInt(referencesPrePost[indexReferencesPrePost].substring(0, 2)); 
+						chapter = parseInt(referencesPrePost[indexReferencesPrePost].substring(2, 5)); 
+						verse = parseInt(referencesPrePost[indexReferencesPrePost].substring(5, 8 )); 
+			
+						resultReference += Books[book - 1];
+						
+						if (isNaN(chapter) === false)
+						{
+							resultReference += ' ' + chapter;
+							if (isNaN(verse) === false)
+							{
+								resultReference += ':' + verse;
+							}
+						}	
+					}		
+				}
+				
+				document.getElementById("resultBibleReferenceToScriptureReference").innerHTML = 
+					buildHyperlink("scriptureReference", resultReference);
+			}
+
+			function conversionScriptureReferenceToBibleReference()
+			{
+				var references = arguments[0].split(/[,;]+/);
+			
+				var chapter = -1;
+				var	verse = -1;
+				
+				var previousReference = null;
+				previousReference = new ScriptureReference();
+				
+				var scriptureReference = null;
+				var scriptureReferenceSubset = null;
+				var scriptureReferenceSubsets = [];
+				
+				var prePost = null;
+				
+				var preOrPostIndex = -1;
+				var number = 1;
+				
+				var currentReference = null;
+				var ChapterVerseSeparatorPosition = -1;
+				
+				var bookTitleChapterSeparatorPosition = -1;
+				
+				var isBookTitle = false;
+				
+				//try
+				{
+					for (var index = 0; index < references.length; ++index)
+					{
+						var prePost = references[index].split(SubsetSeparator);
+						
+						if (prePost.length == 0)
+						{
+							return scriptureReferenceSubsets;
+						}		
+						
+						console.log(references[index]);
+						
+						scriptureReferenceSubset = new ScriptureReferenceSubset();
+						
+						for(preOrPostIndex = 0; preOrPostIndex < prePost.length; ++preOrPostIndex)
+						{
+							scriptureReference = new ScriptureReference();
+							currentReference = prePost[preOrPostIndex].trim();
+
+							number = parseInt(currentReference);
+							
+							if (isNaN(number) === false)
+							{
+								scriptureReference = previousReference;
+								if (previousReference.verse == null)
+								{
+									scriptureReference.chapter = number;
+								}
+								else
+								{
+									scriptureReference.verse = number;
+								}
+								
+								if (preOrPostIndex === Pre)
+								{
+									scriptureReferenceSubset.pre = scriptureReference;
+								}
+								else
+								{
+									scriptureReferenceSubset.post = scriptureReference;
+								}
+
+								previousReference = new ScriptureReference(scriptureReference);
+
+								continue;
+							}
+							
+							chapterVerseSeparatorPosition = currentReference.lastIndexOf(ChapterVerseSeparator);
+							
+							if (chapterVerseSeparatorPosition > 0) //There must be a chapter and verse reference
+							{
+								verse = parseInt(currentReference.substring(chapterVerseSeparatorPosition + 1));
+								if (isNaN(verse) === true)
+								{
+									return scriptureReferenceSubsets;
+								}	
+								scriptureReference.verse = verse;
+								currentReference = currentReference.substring(0, chapterVerseSeparatorPosition);
+							}
+							else
+							{
+								scriptureReference.verse = null;
+							}
+
+							bookTitleChapterSeparatorPosition = currentReference.lastIndexOf(BookTitleChapterSeparator);
+							
+							if (bookTitleChapterSeparatorPosition > -1)
+							{
+								isBookTitle = checkForBookTitle(currentReference, bookTitleChapterSeparatorPosition);
+								
+								if (isBookTitle == true)
+								{
+									extractBookTitle(currentReference, scriptureReference);
+									if (preOrPostIndex === Pre)
+									{
+										scriptureReferenceSubset.pre = scriptureReference;
+									}
+									else
+									{
+										scriptureReferenceSubset.post = scriptureReference;
+									}
+
+									previousReference = new ScriptureReference(scriptureReference);
+
+									continue;		
+								}
+
+								chapter = parseInt(currentReference.substring(bookTitleChapterSeparatorPosition + 1));
+								
+								if (isNaN(chapter))
+								{
+									return scriptureReferenceSubsets;
+								}
+								
+								scriptureReference.chapter = chapter;
+								
+								scriptureReference.setTitle(currentReference.substring(0, bookTitleChapterSeparatorPosition));
+							}
+							else
+							{
+								number = parseInt(currentReference);
+								if (isNaN(number) === false)
+								{
+									scriptureReference.chapter = parseInt(currentReference);  
+									scriptureReference.setTitle(previousReference.getTitle());
+								}
+								else
+								{
+									extractBookTitle(currentReference, scriptureReference);
+								}	
+							}
+							
+							if (preOrPostIndex === Pre)
+							{
+								scriptureReferenceSubset.pre = scriptureReference;
+							}
+							else
+							{
+								scriptureReferenceSubset.post = scriptureReference;
+							}
+							previousReference = new ScriptureReference(scriptureReference);
+							
+						}
+		
+						scriptureReferenceSubsets.push(scriptureReferenceSubset);
+
+					}
+				}
+				/*
+				catch(ex)
+				{
+					console.log(ex);
+				}
+				*/	
+				return scriptureReferenceSubsets;
+			}
+
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		
+			function pad(num, size) {
+				var s = num+"";
+				while (s.length < size) s = "0" + s;
+				return s;
+			}
+			
+			function pageLoad()
+			{
+				if (IsPostBack === false)
+				{
+					var bibleReference = getParameterByName("bibleReference");
+					if (bibleReference !== "")
+					{
+						document.getElementById("bibleReference").value = bibleReference;
+						conversionBibleReferenceToScriptureReference();
+					}	
+				}
+				IsPostBack = true;
+			}
+
+			function setBibleReference()
+			{
+				var scriptureReference = document.getElementById("scriptureReference").value;
+				var scriptureReferenceSubsets = conversionScriptureReferenceToBibleReference(scriptureReference);
+				var resultReference = "";
+				var resultStub = "";
+				for 
+				(
+					index = 0, length = scriptureReferenceSubsets.length;
+					index < length;
+					++index
+				)
+				{
+					if (index > 0)
+					{
+						resultReference += ', ';
+					}
+
+					resultReference += scriptureReferenceSubsets[index].convertToBibleReference();
+				}	
+				document.getElementById("resultScriptureReferenceToBibleReference").textContent = resultReference;	
+			}
+
+			class ScriptureReference
+			{
+				constructor
+				(
+					ID,
+					chapter,
+					verse
+				) 
+				{
+					this.ID = null;
+					this.chapter = null;
+					this.verse = null;
+
+					if 
+					(
+						Number.isInteger(ID) && Number.isInteger(chapter) && Number.isInteger(verse)
+					)
+					{
+						this.ID = ID;
+						this.chapter = chapter;
+						this.verse = verse;
+					}
+					else if (ID instanceof ScriptureReference)
+					{
+						this.ID = ID.ID;
+						this.chapter = ID.chapter;
+						this.verse = ID.verse;
+					}
+				}	
+
+				getTitle()
+				{
+					return Books[this.ID - 1];
+				}
+
+				setTitle(title)
+				{
+					var index = Books.findIndex(item => title.toLowerCase() === item.toLowerCase());
+					console.log(title, index);
+					this.ID = (index > -1) ? index + 1 : index;
+				}
+				
+				toString()
+				{
+					return
+					(
+						this.getTitle() +
+						(this.chapter) ? ' ' + this.chapter : '' +
+						(this.verse) ? ':' + this.verse : ''
+					);	
+				}	
+			}
+			
+			class ScriptureReferenceSubset
+			{
+				constructor
+				(
+					pre,
+					post
+				)
+				{
+					this.pre = (undefined != pre) ? pre : null;	
+					this.post = (undefined != post) ? post : null;
+				}
+				
+				convertToBibleReference()
+				{
+					var result = "";
+					if (this.pre.ID)
+					{
+						result += pad(this.pre.ID, 2);
+						if (this.pre.chapter)
+						{
+							result += pad(this.pre.chapter, 3);
+							if (this.pre.verse)
+							{
+								result += pad(this.pre.verse, 3);
+							}
+						}
+					}
+					if (this.post.ID)
+					{
+						result += '-' + pad(this.post.ID, 2);
+						if (this.post.chapter)
+						{
+							result += pad(this.post.chapter, 3);
+							if (this.post.verse)
+							{
+								result += pad(this.post.verse, 3);
+							}
+						}
+					}
+					return result;
+				}
+				
+				toString()
+				{
+					return
+					(
+						this.pre.toString() + 
+						(this.post) ? '-' + this.post.toString() : ''
+					);
+				}	
+			}
+				
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("convertBibleReferenceToScriptureReference").addEventListener
+			(
+				"click",
+				conversionBibleReferenceToScriptureReference,
+				false
+			);
+			
+			document.getElementById("convertScriptureReferenceToBibleReference").addEventListener
+			(
+				"click",
+				setBibleReference,
+				false
+			);
+
+		</script>		
+	</body>
+</html>

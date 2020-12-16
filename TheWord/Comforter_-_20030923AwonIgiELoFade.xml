@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>141</SequenceOrderId>
+  <Dated>2003-09-23T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Samuel 22:46, Psalms 18:45, Isaiah 1:30, Isaiah 24:4, Isaiah 40:7, Isaiah 40:8, Isaiah 64:6, Jeremiah 8:13, Ezekiel 47:12, James 1:11, 1 Peter 1:4, 1 Peter 5:4</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Samuel+22%3A46%2C+Psalms+18%3A45%2C+Isaiah+1%3A30%2C+Isaiah+24%3A4%2C+Isaiah+40%3A7%2C+Isaiah+40%3A8%2C+Isaiah+64%3A6%2C+Jeremiah+8%3A13%2C+Ezekiel+47%3A12%2C+James+1%3A11%2C+1+Peter+1%3A4%2C+1+Peter+5%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Awon igi e lo fade.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>3</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>54</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+   <ScriptureReference>Genesis 41:9-13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+41%3A9-13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>396</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>74</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>321</SequenceOrderId>
+   <Word>Fade</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>659</SequenceOrderId>
+   <Word>Awon igi e lo fade.</Word>
+   <AlphabetSequenceIndex>126</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:20, Numbers 9, 1 Corinthians 2, Revelation 17:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A20%2C+Numbers+9%2C+1+Corinthians+2%2C+Revelation+17%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1180</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>263</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>376</SequenceOrderId>
+   <Commentary></Commentary>  
+  </ClassAssociates>
+  -->
+
+  </TheWord>
+</wordOfGod>

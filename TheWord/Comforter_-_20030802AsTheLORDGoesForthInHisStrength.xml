@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+  <SequenceOrderId>16</SequenceOrderId>
+  <Dated>2003-08-02T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Deuteronomy 16:6, Nehemiah 9:7</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Deuteronomy+16%3A6%2C+Nehemiah+9%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>As the LORD goes forth in His strength.</Title>
+  <Commentary />
+  <Keyword />
+
+  <Remember>
+   <SequenceOrderId>322</SequenceOrderId>
+   <DatedFrom>2003-06-23T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-02T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>39</SignIndex>
+   <Commentary />
+   <Filename>Comforter_-_200306231855AsTheLORDGoesInHisStrength.xml</Filename>
+   <ScriptureReference>Psalms 56:5-12, Psalms 108:6-13, Psalms 68:27, Ruth 4, Luke 10:21-42, Psalms 77:13, Psalms 81:5, Psalms 83:18, Psalms 84, Psalms 85:7-13, Psalms 86:8-12, Psalms 86:15-17, Psalms 86:15-17, Psalms 87, Psalms 89, Psalms 90:1, Psalms 90:4, Psalms 90:9-10, Psalms 90:12, Psalms 90:17, Psalms 91, Psalms 92:1-4, Psalms 92:12-15, Psalms 93, Psalms 95, Psalms 97:1-2, Psalms 97:6, Psalms 97:9, Psalms 97:11-12, Psalms 98, Psalms 99, Psalms 100, Psalms 102:6-7, Psalms 102:17-28, Psalms 103:17-22, Psalms 104, Psalms 105, Psalms 108</ScriptureReference>   
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Psalms+56%3A5-12%2C+Psalms+108%3A6-13%2C+Psalms+68%3A27%2C+Ruth+4%2C+Luke+10%3A21-42%2C+Psalms+77%3A13%2C+Psalms+81%3A5%2C+Psalms+83%3A18%2C+Psalms+84%2C+Psalms+85%3A7-13%2C+Psalms+86%3A8-12%2C+Psalms+86%3A15-17%2C+Psalms+86%3A15-17%2C+Psalms+87%2C+Psalms+89%2C+Psalms+90%3A1%2C+Psalms+90%3A4%2C+Psalms+90%3A9-10%2C+Psalms+90%3A12%2C+Psalms+90%3A17%2C+Psalms+91%2C+Psalms+92%3A1-4%2C+Psalms+92%3A12-15%2C+Psalms+93%2C+Psalms+95%2C+Psalms+97%3A1-2%2C+Psalms+97%3A6%2C+Psalms+97%3A9%2C+Psalms+97%3A11-12%2C+Psalms+98%2C+Psalms+99%2C+Psalms+100%2C+Psalms+102%3A6-7%2C+Psalms+102%3A17-28%2C+Psalms+103%3A17-22%2C+Psalms+104%2C+Psalms+105%2C+Psalms+108&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>   
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>63</SequenceOrderId>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>20</SequenceOrderId>
+   <Measure>Day</Measure>
+   <SignIndex></SignIndex>
+   <Commentary>
+   </Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>191</SequenceOrderId>
+   <Word>LORD Forth Choose</Word>
+   <Commentary>But at the place which the LORD your God shall choose to place His name in, there you shall sacrifice the passover at even, at the going down of the sun, at the season that you came forth out of Egypt (Deuteronomy 16:6). You are the LORD the God, Who did choose Abram, and brought him forth out of Ur of the Chaldees, and gave him the name of Abraham (Nehemiah 9:7).</Commentary>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>463</SequenceOrderId>
+   <Word>As the LORD goes forth in His strength.</Word>
+   <AlphabetSequenceIndex>385</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 16:3, 2 Chronicles 18, Ezekiel 3, Revelation 1:20</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+16%3A3%2C+2+Chronicles+18%2C+Ezekiel+3%2C+Revelation+1%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1038</SequenceOrderId>
+   <Commentary>
+    11 cents will drop down, firstly 10 cents, and secondly 1 cent. 
+    Run from Highway 84 Newark Blvd, bird, flys, towards the right. 
+    Train Track 27 Paseo Padre Parkway: Bird, orange, on the right. 
+    Comforter_-_20030802AsTheLORDGoesForthInHisStrength.xml: Previously the AlphabetSequence and BibleWord tables will use the Word columns as their primary keys, but change the primary keys to the SequenceOrderId column and create nonclustered indexes for the Word columns.
+    Keturah Job 2:11 728 page 1996: Bildad may have been a descendant of Shuah, the youngest son of Abraham and Keturah (Job 2:11, Genesis 25:2). The NIV Study Bible, 10th Anniversary Edition, 1995. New International Version. Words of Christ in Red Letter. ZondervanPublishingHouse Grand Rapids MI 49530 USA. FBF Youth Ministry. The Committee on Bible Translation. Library of Congress Catalog Card Number: 95-060484. ISBN: 0-310-925681-1. EAN CODE: 9 780310 925682. UPC CODE: 0 25986 92568 0. 1820 Jet Stream Drive, Colorado Springs, Colorado 80921-3696 U.S.A. Address Table: SequenceOrderId 39.
+    Highway 880 Coliseum: armpit, sweat, right.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>239</SequenceOrderId>
+   <Commentary>Comforter_-_20030802AsTheLORDGoesForthInHisStrength.sql UtilityDatabaseRelease20030802.cs</Commentary>
+  </Software>
+  
+  <ClassAssociates>
+   <SequenceOrderId>265</SequenceOrderId>
+   <Commentary>Comforter_-_20030802KiEyanDogba.xml: Intrusion and junk mail. TheWord: Comforter_-_20030802AsTheLORDGoesForthInHisStrength.xml Explorer error. Scripture reference reading: Genesis 16:3, 2 Chronicles 18, Ezekiel 3, Revelation 1:20; Internet Explorer error. Keturah Job 2:11 728 page 1996 The NIV Study Bible, 10th Anniversary Edition, 1995. New International Version. Words of Christ in Red Letter. ZondervanPublishingHouse Grand Rapids MI 49530 USA. FBF Youth Ministry. The Committee on Bible Translation. Library of Congress Catalog Card Number ... (database error) Explorer error, (3) David's: wife and best friend e-mail. Internet Explorer error, Logoff, (mouth outburst). UtilityDatabase200308021627.cs: XCopy Floppy disk Explorer error. UtilityDatabase200308021627.cs: XCopy Floppy disk, floppy disk space error, format floppy disk. UtilityDatabase200308021627.cs: XCopy Floppy disk, Explorer memory error. Barnes &amp; Nobles Booksellers 98 Broadway Oakland CA 94607 Tel: (510) 272-0120 Fax: (510) 272-0343 http://barnesandnoble.com http://bn.com: Sexually explicit posture, record mouth outburs(e)t. China Harbour Seafood Restaurant 34755 Ardenwood Blvd Fremont CA 94555 Tel: (510) 797-7181 Fax: (510) 797-7186: Japanese entree, We will leave the lights on ...</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

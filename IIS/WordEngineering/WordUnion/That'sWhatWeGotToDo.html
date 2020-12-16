@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-06	Created.
+			2018-02-06	That's what we got to do.
+			2018-02-06	That's is what we got to do.
+			2018-02-06	Someone inquired about CSS on Windows? A request was made to install IIS.
+			2018-02-06	https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
+			2018-02-06	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#Using_global_and_ignore_case_flags_with_match()
+			2018-02-06	https://gist.github.com/m-coding/c96d99558a47d30aef4992c6dd60437a
+			2018-02-07	https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
+		-->
+		<title>That's what we got to do.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query: cross-origin resource sharing (CORS)</legend>
+				<table>
+					<tr>
+						<td><label for="url">url:</label></td>
+						<td><input id="url" type="url"/></td>
+					</tr>	
+					<tr>
+						<td><label for="dated">dated:</label></td>
+						<td><input id="dated" type="date"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var urlDefault = "http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html";
+
+			function loadDoc() {
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					/*
+						document.getElementById("resultSet").innerHTML =
+						this.responseText;
+					*/
+					parseDate(this.responseText);
+				}
+			  };
+			  var url = document.getElementById("url").value;
+			  xhttp.open("GET", url, true);
+			  xhttp.send();
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var url = scriptLiteral9432.getParameterByName("url");
+						if (!url)
+						{
+							url = urlDefault;
+						}	
+						document.getElementById("url").value = url;
+
+						var dated = scriptLiteral9432.getParameterByName("dated");
+						if (!dated)
+						{
+							dated = scriptLiteral9432.todayTimezoneOffset();
+						}	
+						document.getElementById("dated").value = dated;
+					
+						loadDoc();
+						isPostBack = true;	
+					});
+				}
+			}
+			
+			function parseDate(str)
+			{
+				var regexp = /(\d{4})-(\d{2})-(\d{2})/gi;
+				var matches_array = str.match(regexp);
+				document.getElementById("resultSet").innerHTML = matches_array;
+				var dated = document.getElementById("dated").value;
+				var matchDate;
+				var daysBetween;
+				var resultSet = "<table>";
+				resultSet += scriptLiteral9432.buildHead
+				(
+					"Dated",
+					"Days",
+					"Biblical Calendar",
+					"Common Era"
+				);
+				for 
+				(
+					var index = 0, length = matches_array.length;
+					index < length;
+					++index
+				)
+				{
+					var reference = dated;
+					var referenceDate = Date.parse(reference);
+					match = matches_array[index];
+					matchDate = Date.parse(match);
+					if (matchDate > referenceDate)
+					{
+						[matchDate, referenceDate] = scriptLiteral9432.swap(matchDate, referenceDate);
+					}
+					daysBetween = scriptLiteral9432.daysDifference(matchDate, referenceDate);
+					resultSet += scriptLiteral9432.buildRow
+					(
+						match,
+						daysBetween,
+						scriptLiteral9432.daysDifferenceBiblicalCalendar(daysBetween),
+						scriptLiteral9432.daysDifferenceCommonEra
+						(
+							new Date(matchDate), 
+							new Date(referenceDate) 
+						)
+					);
+				}
+				resultSet += "</table>";
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", loadDoc, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					loadDoc();
+				}
+			}
+		</script>
+	</body>
+</html>

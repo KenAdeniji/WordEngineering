@@ -1,0 +1,154 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>434</SequenceOrderId>
+   <Dated>2004-02-22T00:00:00.0000000-08:00</Dated>
+   <ContactId>113</ContactId>
+   <FromUntil>53</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>39</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>627</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>4980</SequenceOrderId>
+    <Word>Iwo na mu omu.</Word>
+    <AlphabetSequenceIndex>145</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:7, Numbers 28, Acts 27, Revelation 16:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A7%2C+Numbers+28%2C+Acts+27%2C+Revelation+16%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1577</SequenceOrderId>
+   <Commentary>Saint Edward's Catholic Church 5788 Thornton Avenue Newark CA 94560 (510) 797-0241 http://www.rc.net/oakland/st_edward. 2 bakings.</Commentary>
+   <ContactId>3</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1578</SequenceOrderId>
+   <Commentary>
+    Everett Kalin. Lucy Kolin. Ressurection Lutheran Church 397 Euclid Avenue Oakland CA 94610 lucyk@pacbell.net (510) 444-5382.
+    The transfiguration of our LORD/Jubilee Sunday.
+    2004-02-25T00:00:00.0000000-08:00 Lent season begins.
+    2004-02-29T00:00:00.0000000-08:00 Pastor Sharon Stalkfleet (510) 207-1441 sstalkfleet@hotmail.com Training for Nursing Home Visitors Trinity Lutheran 650 Alma Street Oakland CA 94610. Clinton Village Convalescent Hospital 1833 10th Avenue Oakland CA 94606 http://www.lm2nh.com.
+    2004-04-11T00:00:00.0000000-08:00 Easter Sunday.
+   </Commentary>
+   <ContactId>3</ContactId>
+   <Expense>10</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1579</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <ContactId>7</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>336</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>687</SequenceOrderId>
+   <ContactId>3</ContactId>
+   <Commentary>Sleep: Private part ... face ... feet ... hip ... keyboard error ... mouse error ... faeces ... cry ... garage noise ... explorer memory error ... floppy disk error ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>339</SequenceOrderId>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+   
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

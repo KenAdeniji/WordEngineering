@@ -1,0 +1,142 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>332</SequenceOrderId>
+    <Dated>2003-12-11T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>1 Samuel 25:39</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+25%3A39&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>
+     You don't have passengers.
+     I don't know what to say, I love you.
+     Color dull, ra mi. Joy exceeds necessity.
+     When you turn their is no one there, but care to the one another, big big.
+    </Title>
+    <FromUntil>345</FromUntil>
+    <ContactId>203</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>13</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>113</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>555</SequenceOrderId>
+   <DatedFrom>2003-07-22T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-11T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>142</FromUntil>
+   <Commentary>There are no more, there are no more passengers. 142 days: 4 biblical months and 22 days.</Commentary>
+   <Filename>Comforter_-_20030722ThereAreNoMoreThereAreNoMorePassengers.xml</Filename>
+   <ScriptureReference>Deuteronomy 29:22, 1 Chronicles 29:15, Ephesians 2:19, Hebrews 11:13, Hebrews 13:2, 1 Peter 2:11, 3 John 1:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Deuteronomy+29%3A22%2C+1+Chronicles+29%3A15%2C+Ephesians+2%3A19%2C+Hebrews+11%3A13%2C+Hebrews+13%3A2%2C+1+Peter+2%3A11%2C+3+John+1%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>7</ContactId>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>488</SequenceOrderId>
+   <Word>Turn ... Big</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2244</SequenceOrderId>
+    <Word>You don't have passengers.</Word>
+    <AlphabetSequenceIndex>273</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:6, 2 Samuel 6, Zechariah 6, Revelation 8:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A6%2C+2+Samuel+6%2C+Zechariah+6%2C+Revelation+8%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>7</ContactId>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2245</SequenceOrderId>
+    <Word>I don't know what to say, I love you.</Word>
+    <AlphabetSequenceIndex>381</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:20, 2 Chronicles 14, Ezekiel 7, Revelation 2:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A20%2C+2+Chronicles+14%2C+Ezekiel+7%2C+Revelation+2%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>203</ContactId>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2246</SequenceOrderId>
+    <Word>Color dull, ra mi. Joy exceeds necessity.</Word>
+    <AlphabetSequenceIndex>387</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 16:5, 2 Chronicles 20, Ezekiel 1, Revelation 1:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+16%3A5%2C+2+Chronicles+20%2C+Ezekiel+1%2C+Revelation+1%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>203</ContactId>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2247</SequenceOrderId>
+    <Word>When you turn their is no one there, but care to the one another, big big.</Word>
+    <AlphabetSequenceIndex>680</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 25:21, Isaiah 1, Psalms 32, 1 Peter 2:23</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A21%2C+Isaiah+1%2C+Psalms+32%2C+1+Peter+2%3A23&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>203</ContactId>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1343</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>315</SequenceOrderId>
+   <Commentary>ChurchCalendarBuildRelease200312110900.bat ChurchCalendarRelease200312110900.cs ChurchCalendarRelease200312110900.mak</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>582</SequenceOrderId>
+   <Commentary>
+    Wake-up: Turn on the computer ... Garage noise ...
+    ChurchCalendar.cs ... Easter Sunday ... (E) (E) (E).
+    ChurchCalendar.cs ... ChurchCalendarYearDefault() ... Error ...
+    ChurchCalendar.cs ... dateTimeAdvent.DayOfWeek ... (E) (E) (E).
+    Comforter_-_20031210FruitfulnessWithoutMercyIsNonsense_IDon'tKnowHow-toShedBloodForMoney.xml: ClassAssociates 581 Asiana Airlines FlyAsiana.com ... Nose ... Smell ... AlphabetSequence 2242 ContactId 3 ... Smell ... Nose ... Smell.
+   </Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

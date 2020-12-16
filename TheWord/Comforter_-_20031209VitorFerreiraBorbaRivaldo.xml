@@ -1,0 +1,106 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>328</SequenceOrderId>
+    <Dated>2003-12-09T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Amos 3:4, Amos 9:1, Amos 9:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Amos+3%3A4%2C+Amos+9%3A1%2C+Amos+9%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Vitor Borba Ferreira Rivaldo</Title>
+    <FromUntil>343</FromUntil>
+    <ContactId>113</ContactId>
+    <Commentary>Vitor Borba Ferreira Rivaldo: Japanese cleats, 1.5km trek to and from soccer training, pay outstanding.</Commentary>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>13</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>551</SequenceOrderId>
+   <DatedFrom>2002-10-19T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-09T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>416</FromUntil>
+   <Commentary>Job's Chapters With 22 Verses (Job 1, 8, 10, 14, 16, 32). 416 days: 13 biblical months and 26 days.</Commentary>
+   <Filename>Comforter_-_20021019JobChaptersWith22Verses.html</Filename>
+   <ScriptureReference>Job 1, Job 8, Job 10, Job 14, Job 16, Job 32</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Job+1%2C+Job+8%2C+Job+10%2C+Job+14%2C+Job+16%2C+Job+32&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>200</ContactId>
+  </Remember>
+
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference>Joel, Amos</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Joel+1-3%2C+Amos+1-9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </ScriptureReading>
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>485</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <!--
+  <AlphabetSequence>
+    <SequenceOrderId>2240</SequenceOrderId>
+    <Word></Word>
+    <AlphabetSequenceIndex></AlphabetSequenceIndex>
+    <ScriptureReference></ScriptureReference>
+    <ScriptureReferenceURI></ScriptureReferenceURI>
+  </AlphabetSequence>
+  -->
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1341</SequenceOrderId>
+   <Commentary>Shave face. Cut hair. Cut nail.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>313</SequenceOrderId>
+   <Commentary>TheWordRelease200312091800.cs TheWordPageRelease200312091800.aspx.cs</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>579</SequenceOrderId>
+   <Commentary>Garage Noise ... Smell ... Nose.</Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

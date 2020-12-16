@@ -1,0 +1,10 @@
+<script language="JavaScript">
+
+	function doClock() {
+		window.setTimeout( "doClock()", 1000 );
+		today = new Date();
+		self.status = today.toString();
+		document.write(today.toString());
+    }
+doClock()
+</script>

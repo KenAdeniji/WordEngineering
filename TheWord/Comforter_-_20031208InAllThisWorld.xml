@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>325</SequenceOrderId>
+    <Dated>2003-12-08T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Matthew 12:32, Matthew 13:40</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>In all this world.</Title>
+    <FromUntil>342</FromUntil>
+    <ContactId>113</ContactId>
+    <Commentary>In all teach Word.</Commentary>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>13</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>547</SequenceOrderId>
+   <DatedFrom>2003-05-17T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-12-08T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>205</FromUntil>
+   <Commentary>
+    Jehovah Rophe: 
+    1. West, highest, broadest, spherical sea;
+    2. West, lowest, center, spot;
+    3. West, niddle, eastward, spot.
+
+    Your head in the top in the nineteen eighties, or your smaller vessels in the top.
+    Adidas.com UPC 308387001 ISBN 0 98092 03162 0 ABSOX/1002/V01. 
+    205 days: 6 biblical months and 25 days.
+   </Commentary>
+   <ContactId>32</ContactId>
+   <Filename>Comforter_-_20030517OfeRiDa_YourHeadInTheTopInTheNineteenEightiesOrYourSmallerVesselsInTheTop.xml</Filename>
+   <ScriptureReference>Exodus 33:18</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+33%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>482</SequenceOrderId>
+   <Word>In ... All ... This ... World</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2235</SequenceOrderId>
+    <Word>In all this World.</Word>
+    <AlphabetSequenceIndex>176</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:16, Deuteronomy 23, John 17, Revelation 13:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>113</ContactId>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1338</SequenceOrderId>
+   <Commentary>Adidas.com UPC 308387001 ISBN 0 98092 03162 0 ABSOX/1002/V01.</Commentary>
+   <ContactId>32</ContactId>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>312</SequenceOrderId>
+   <Commentary>
+    BcpBatchRelease20031208.bat
+    Comforter_-_WordEngineeringIndexRelease20031208.xml
+    Comforter_-_20031208ThreeMissingOneRelease20031208.bat
+    Comforter_-_20031208ThreeMissingOneRelease20031208.xslt
+    Comforter_-_20031208ThreeMissingOneRelease20031208.xml
+    Comforter_-_20031208URIChrist.xml
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>576</SequenceOrderId>
+   <Commentary>
+    Floppy disk error ... format floppy disk.
+    Explorer memory error.
+    SQL Server Enterprise Manager ... Three's Missing One ... Face.
+    Owo Brazil ti de ... (Genesis 3:1-5).
+    Bitter gall (Matthew 28:34). Myrrh (Mark 15:23) ... You are a fool ...
+   </Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

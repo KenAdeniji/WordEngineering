@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>59</SequenceOrderId>
+  <Dated>2003-08-23T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Job 32:19, Proverbs 3:10, Isaiah 30:14, Jeremiah 2:20, Jeremiah 5:5, Jeremiah 30:8, Nahum 1:13, Mark 2:22, Luke 5:37, Acts 1:18, Genesis 15:14, 2 Chronicles 8, Ezekiel 13, Revelation 2:10</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Job+32%3A19%2C+Proverbs+3%3A10%2C+Isaiah+30%3A14%2C+Jeremiah+2%3A20%2C+Jeremiah+5%3A5%2C+Jeremiah+30%3A8%2C+Nahum+1%3A13%2C+Mark+2%3A22%2C+Luke+5%3A37%2C+Acts+1%3A18%2C+Genesis+15%3A14%2C+2+Chronicles+8%2C+Ezekiel+13%2C+Revelation+2%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Don't start bursting until noon.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>355</SequenceOrderId>
+   <DatedFrom>2003-03-29T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-23T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>147</FromUntil>
+   <Commentary>International House of Pancakes (IHOP), Union City. Paul an Albanian is the waiter. Paul's female friend is an Iranian Persia.</Commentary>
+   <Filename>Comforter_-_200303290940GboOro.xml</Filename>
+   <ScriptureReference>Daniel 11:17, Daniel 11:37, Acts 11:27-28, Acts 21:9-11</ScriptureReference>   
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+11%3A17%2C+Daniel+11%3A37%2C+Acts+11%3A27-28%2C+Acts+21%3A9-11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>67</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure></Measure>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <ScriptureReference</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>237</SequenceOrderId>
+   <Word>Burst</Word>
+   <Commentary>
+Behold, my belly is as wine which has no vent; it is ready to burst like new bottles (Job 32:19).
+So shall your barns be filled with plenty, and your presses shall burst out with new wine (Proverbs 3:10).
+He shall break it as the breaking of the potters' vessel that is broken in pieces; he shall not spare: so that there shall not be found in the bursting of it a sherd to take fire from the hearth, or to take water withal out of the pit (Isaiah 30:14).
+For of old time I have broken your yoke, and burst your bands; and you said, I will not transgress; when upon every high hill and under every green tree you wander, playing the harlot (Jeremiah 2:20).
+I will get me unto the great men, and will speak unto them; for they have known the way of the LORD, and the judgment of their God: but these have altogether broken the yoke, and burst the bonds (Jeremiah 5:5).
+For it shall come to pass in that day, said the LORD of hosts, that I will break his yoke from off your neck, and will burst your bonds, and strangers shall no more serve themselves of him (Jeremiah 30:8).
+For now will I break his yoke from off you, and will burst your bonds in sunder (Nahum 1:13).
+No man puts new wine into old bottles: else the new wine does burst the bottles, and the wine is spilled, and the bottles will be marred: but new wine must be put into new bottles (Mark 2:22).
+No man puts new wine into old bottles; else the new wine will burst the bottles, and be spilled, and the bottles shall perish (Luke 5:37).
+Now this man purchased a field with the reward of iniquity; and falling headlong, he burst asunder in the midst, and all his bowels gushed out (Acts 1:18).
+   </Commentary>
+   <ScriptureReference>Job 32:19, Proverbs 3:10, Isaiah 30:14, Jeremiah 2:20, Jeremiah 5:5, Jeremiah 30:8, Nahum 1:13, Mark 2:22, Luke 5:37, Acts 1:18</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Job+32%3A19%2C+Proverbs+3%3A10%2C+Isaiah+30%3A14%2C+Jeremiah+2%3A20%2C+Jeremiah+5%3A5%2C+Jeremiah+30%3A8%2C+Nahum+1%3A13%2C+Mark+2%3A22%2C+Luke+5%3A37%2C+Acts+1%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>523</SequenceOrderId>
+   <Word>Don't start bursting until noon.</Word>
+   <AlphabetSequenceIndex>375</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 15:14, 2 Chronicles 8, Ezekiel 13, Revelation 2:10</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A14%2C+2+Chronicles+8%2C+Ezekiel+13%2C+Revelation+2%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1099</SequenceOrderId>
+   <Commentary>
+    Naked. Wake-up Orientation: Feets crossed 25%, head 50%, hands crossed. 
+    Scripture reference reading, Ezekiel 13, sneeze (2).
+    Shower butterfly
+     Left, below the window;
+     right, below the window;
+     left, outside the door, 20% vertically;
+     left, outside the door, 30% vertically;
+     left, aligned with the tap;
+     right, aligned with the soap bar;
+     right, aligned with the top of the door;
+     right, infront, ceiling;
+     right, middle, ceiling;
+     right, behind, ceiling;
+     right, behind, 20% vertically;
+     right, behind, below the 1st left light;
+     right, ceiling, 3rd light;
+     right, ceiling, 4th light.
+    Newark Blvd Lido Faire: Heart beat, stop.
+    Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>253</SequenceOrderId>
+   <Commentary>
+    GoogleAdvancedSearchPageRelease20030823.aspx.cs
+    UtilityGoogleRelease20030823.mak       
+    UtilityGoogleRelease20030823.cs 
+    UtilityURIRelease20030823.cs 
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>312</SequenceOrderId>
+   <Commentary>Naked. Wake-up Orientation: Feets 0% keyboard error. Daniel 11:17, Daniel 11:37, Acts 11:27-28, (Acts 21:9-11) user interface (UI) error. Record shower butterfly, garage noise...</Commentary>
+  </ClassAssociates>
+  
+  </TheWord>
+</wordOfGod>

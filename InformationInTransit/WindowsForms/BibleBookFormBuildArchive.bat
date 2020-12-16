@@ -1,0 +1,1 @@
+csc /r:System.Windows.Forms.dll /target:winexe BibleBookForm.cs

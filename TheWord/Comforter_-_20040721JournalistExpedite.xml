@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>554</SequenceOrderId>
+ <Dated>2004-07-21T00:00:00.0000000-08:00</Dated>
+ <FromUntil>203</FromUntil>
+ <ContactId>177</ContactId>
+ <Keyword>Songtime John DeBrine, Ejemoni, Royal Dutch Shell, long file, war sing, world singing</Keyword>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>50</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>60</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>575</SequenceOrderId>
+   <Word></Word>
+   <Commentary></Commentary>   
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>7335</SequenceOrderId>
+    <Word>Journalist expedite.</Word>
+    <AlphabetSequenceIndex>227</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:21, Judges 16, Mark 2, Revelation 11:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A21%2C+Judges+16%2C+Mark+2%2C+Revelation+11%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>177</ContactId>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>7336</SequenceOrderId>
+    <Word>Such a long file. Their is a war sing, the world is singing.</Word>
+    <AlphabetSequenceIndex>524</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:10, Psalms 46, Ecclesiastes 2, 1 John 2:28</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A10%2C+Psalms+46%2C+Ecclesiastes+2%2C+1+John+2%3A28&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Paternal figure, former Nigerian hockey captain, visits younger sibling nearby, supposedly far away to procure release from prison. The reason for the early discharge is because sibling's mate joins him in prison and partners well in a friendly soccer exhibition, although goaless. African descent female calls a cop as self visits Royal Dutch Shell with 2 adjacent stations. As sibling's mate exits, exit from the West, their is a vision of him swinging mid brief sideways with ass facing the bank's customer bar on the East.</Commentary>
+    <ContactId>665</ContactId>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1875</SequenceOrderId>
+   <Commentary>Shave face. Cut nail. Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <ContactId>7</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1876</SequenceOrderId>
+   <Commentary>Odell Jordan of Jubilee Christian Center http://www.Jubilee.org: Please correspond concerning prison frontline ministy.</Commentary>
+   <ContactId>18</ContactId>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>408</SequenceOrderId>
+   <Commentary> 
+    ImageBuildRelease20040721.bat
+    ImagePageRelease20040721.aspx.cs
+    ImageRelease20040721.mak
+    ImageWebFormRelease20040721.aspx
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>853</SequenceOrderId>
+   <Commentary>Songtime (USA) John DeBrine clipboard cut and paste error. Green floppy disk, file copy error, Explorer memory error. Internet Explorer memory error, logoff. Teeth, faeces, nose, feet, eye, back, face, thigh (mu gbo gbo wa) (ofe ku).</Commentary>
+   <ContactId>177</ContactId>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>664</SequenceOrderId>
+   <Company>Ejemoni</Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary />
+  </Contact>
+
+  <Contact>
+   <SequenceOrderId>665</SequenceOrderId>
+   <Company>Royal Dutch Shell</Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary />
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

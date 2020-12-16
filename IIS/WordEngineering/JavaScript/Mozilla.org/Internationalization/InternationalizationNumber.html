@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-10	Created.	https://hacks.mozilla.org/2014/12/introducing-the-javascript-internationalization-api/
+		2016-05-10	http://www.devx.com/tips/Tip/33409
+	-->
+	<head>
+		<title>Internationalization Number</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<table align="center">
+			<tbody>
+				<tr>
+					<td><label for="number">Number:</label></td>
+					<td><input id="number" type="Number" size="50" step="any"></td>
+				</tr>	
+				<tr>
+					<td><label for="format">Format:</label></td>
+					<td><input id="format" type="text" size="50"></td>
+				</tr>	
+				<tr>
+					<td><label for="style">Style:</label></td>
+					<td>
+						<select id="style">
+							<option>currency</option>
+							<option selected="selected">decimal</option>
+							<option>percent</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="currency">Currency:</label></td>
+					<td>
+						<input type="text" id="currency" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+					</td>
+				</tr>
+<!--
+				<tr>
+					<td><label for="minimumIntegerDigits">Minimum Integer Digits:</label></td>
+					<td><input id="minimumIntegerDigits" type="Number" size="5" min="1" max="21"></td>
+				</tr>	
+				<tr>
+					<td><label for="minimumFractionDigits">Minimum Fraction Digits:</label></td>
+					<td><input id="minimumFractionDigits" type="Number" size="5" min="1" max="20"></td>
+				</tr>
+				<tr>
+					<td><label for="maximumFractionDigits">Maximum Fraction Digits:</label></td>
+					<td><input id="maximumFractionDigits" type="Number" size="5" min="1" max="20"></td>
+				</tr>
+				<tr>
+					<td><label for="minimumSignificantDigits">Minimum Significant Digits:</label></td>
+					<td><input id="minimumSignificantDigits" type="Number" size="5" min="1" max="21"></td>
+				</tr>
+				<tr>
+					<td><label for="maximumSignificantDigits">Maximum Significant Digits:</label></td>
+					<td><input id="maximumSignificantDigits" type="Number" size="5" min="1" max="21"></td>
+				</tr>
+-->				
+				<tr>
+					<td><label for="useGrouping">Use Grouping:</label></td>
+					<td><input id="useGrouping" type="CheckBox"></td>
+				</tr>
+
+				<tr>
+					<td align="center" colspan="2">
+						<button id="query">Query</buttton>
+						<button id="formatSelect">Formats</button>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><div id="resultSet"></div></td>
+				</tr>
+			</tbody>	
+		</table>
+		<script>
+			var isPostBack = false;
+			
+			function formatSelect()
+			{
+				window.open("FormatSelect.html");
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var number = getParameterByName("number");
+					if (number != "")
+					{
+						document.getElementById("number").value = number;
+					}
+
+					var format = getParameterByName("format");
+					if (format == "")
+					{
+						format = Format;
+					}
+					document.getElementById("format").value = format;
+					
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+
+			function passArgument(format, currency)
+			{
+				document.getElementById("format").value = format;
+				document.getElementById("currency").value = currency;
+			}
+			
+			function querySubmit()
+			{
+				var numberFormat = new Intl.NumberFormat
+				(
+					document.getElementById("format").value,
+                    { 
+						style: document.getElementById("style").value, 
+						currency: document.getElementById("currency").value,
+						useGrouping: document.getElementById("useGrouping").checked
+					}
+				);
+
+				document.getElementById("resultSet").innerHTML = 
+					numberFormat.format(document.getElementById("number").value);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("number").addEventListener("change", querySubmit, false);
+			document.getElementById("formatSelect").addEventListener("click", formatSelect, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			var Format = window.navigator.userLanguage || window.navigator.language;//returns value like 'en-us'
+			var RegexCRLFSeparator = /\r\n|\r|\n/g;
+		</script>
+	</body>
+</html>

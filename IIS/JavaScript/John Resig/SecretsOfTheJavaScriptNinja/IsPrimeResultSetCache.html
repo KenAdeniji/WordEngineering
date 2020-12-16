@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function isPrime( num ) { 
+			  if ( isPrime.cache[ num ] != null ) 
+				return isPrime.cache[ num ]; 
+			   
+			  var prime = num != 1; // Everything but 1 can be prime 
+			  for ( var i = 2; i < num; i++ ) { 
+				if ( num % i == 0 ) { 
+				  prime = false; 
+				  break; 
+				} 
+			  } 
+			  
+			  isPrime.cache[ num ] = prime 
+			  
+			  return prime; 
+			} 
+			 
+			isPrime.cache = {}; 
+			 
+			document.write( isPrime(5), "Make sure the function works, 5 is prime." ); 
+			document.write( isPrime.cache[5], "Make sure the answer is cached." );
+		</script>
+	</head>	
+<html>

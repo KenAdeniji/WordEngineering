@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-12-24	Created.
+			2018-12-24	http://codepen.io/niush/pen/awJWMb
+		-->
+		<title>restcountries.eu</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="country" type="text" value="Nigeria" autofocus required>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var url = 	"https://restcountries.eu/rest/v2/name/" + 
+							document.getElementById("country").value;
+				$.getJSON(url,function(val)
+				{
+					document.getElementById("resultSet").innerHTML = val;
+					resultSet = "<table>";
+					for(var i = 0 ; i < val.length ; i++)
+					{
+						var name = val[i].name;
+						var topLevelDomain = val[i].topLevelDomain;
+						var callingCodes = val[i].callingCodes[0];
+						var capital = val[i].capital;
+						var region = val[i].region;
+						var population = val[i].population;
+						var latlng = val[i].latlng[0] + "," + val[i].latlng[1];
+						var area = val[i].area + " km sq.";
+						var nativeName = val[i].nativeName;
+						var currencies = val[i].currencies[0].symbol;
+						var language = val[i].languages[0].nativeName;
+						var flag = val[i].flag;
+
+						resultSet +=	`<tr><td colspan="2"><img src='${flag}'</td></tr><tr><td>Name</td><td>${name}</td></tr><tr><td>Capital</td><td>${capital}</td></tr><tr><td>Region</td><td>${region}</td></tr><tr><td>Latitude and Longitude</td><td>${latlng}</td></tr><tr><td>Language</td><td>${language}</td></tr><tr><td>Population</td><td>${population}</td></tr><tr><td>Area</td><td>${area}</td></tr><tr><td>Currencies</td><td>${currencies}</td></tr><tr><td>Top Level Domain</td><td>${topLevelDomain}</td></tr><tr><td>Calling code</td><td>${callingCodes}</td></tr>`;
+					}
+					resultSet += "</table>";
+					document.getElementById("resultSet").innerHTML = resultSet;
+				});	
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("country").addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-03-01	UserTechnology.
+			2016-06-24	Aid in finding rememberance in dates.
+		-->
+		<title>User Technology</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<label id="labelDated" for="dated">Dated:<label>
+			<input id="dated" type="date">
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="informationSet"></div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function clearView()
+			{
+				document.getElementById("informationSet").innerHTML = "";
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					document.getElementById("dated").value = "2008-03-07";
+					querySubmit();
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				retrieveUserTechnology();
+			}
+
+			function renderUserTechnology(data) 
+			{
+				var info = "<table id='userTechnologyTable'><caption>UserTechnology</caption>";
+				info += "<thead><tr><th>Dated</th><th>Occasion</th><th>Contact ID</th>";
+				info += "<th>URI</th><th>Scripture Reference</th></tr></thead><tbody>";
+				
+				var dataRow = null;
+				var dataTable = null;
+			
+				var contactID = null;
+				var dated = null;
+				var occasion = null;
+				var	scriptureReference = null;
+				var	scriptureReferenceLink = null;
+				var URI = null;
+				var	URILink = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						contactID = dataRow["ContactID"];
+						if(!contactID)
+						{
+							contactID = "";
+						}	
+
+						dated = dataRow["Dated"];
+						
+						occasion = dataRow["Occasion"];
+						if(!occasion)
+						{
+							occasion = "";
+						}	
+
+						URI = dataRow["URI"];
+						if(!URI)
+						{
+							URI = "";
+							URILink = "";
+						}
+						else
+						{
+							URILink = uriHyperlink(URI);
+						}
+						
+						scriptureReference = dataRow["ScriptureReference"];
+						if(!scriptureReference)
+						{
+							scriptureReferenceLink = "";
+						}	
+						else
+						{
+							scriptureReferenceLink = scriptureReferenceHyperlink(scriptureReference);
+						}	
+						
+						info += "<tr>";
+						info += "<td>" + dated + "</td>";
+						info += "<td>" + occasion + "</td>";
+						info += "<td>" + contactID + "</td>";
+						info += "<td>" + URILink + "</td>";
+						info += "<td>" + scriptureReferenceLink + "</td>";
+						info += "</tr>";
+					}
+				}
+
+				info += "</tbody>"
+				info += "</table>"
+				document.getElementById("informationSet").innerHTML = info;
+			}
+			
+			function retrieveUserTechnology()
+			{
+				var request = {};
+				request["datedUntil"] = document.getElementById("dated").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/UserTechnologyWebService.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderUserTechnology(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("informationSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+
+			function uriHyperlink(uri)
+			{
+				var uriLink = uri;
+				if (uriLink.startsWith("http://") === false)
+				{
+					uriLink = "http://" + uriLink;
+				}
+				var uriReference = "<a href='" + uriLink + "'>" + uri + "</a>";
+				return uriReference;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

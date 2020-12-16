@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>74</SequenceOrderId>
+  <Dated>2003-08-31T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Isaiah 48:13, Haggai 2:10</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+48%3A13%2C+Haggai+2%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Elevator call.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>361</SequenceOrderId>
+   <DatedFrom>2003-08-08T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-09-01T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>24</FromUntil>
+   <Commentary>Todai Restaurant Pleasanton 2249 Stoneridge Mall Pleasanton CA 94588 Tel: (925) 460-9100 Fax: (925) 460-9101 www.TODAI.com.</Commentary>
+   <Filename>Comforter_-_20030807(LetItBeMeLORD)LetItBeYouLORD_Cleansing_KeepingTheGeneration_SometimesSomebodyComesAroundThatChangesEverything_MaJeODaPo_OhLORDRescueMe.xml</Filename>
+   <ScriptureReference>Genesis 44:10, Exodus 23:13, Ezra 6:9</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+44%3A10%2C+Exodus+23%3A13%2C+Ezra+6%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure>Day</Measure>
+   <SignIndex>24</SignIndex>
+   <Commentary>Consider now from this day and upward, from the four and twentieth day of the ninth month, even from the day that the foundation (Haggai 2:18).</Commentary>
+   <ScriptureReference>Daniel 10:4, Haggai 1:15, Haggai 2:10, Haggai 2:18, Haggai 2:20, Zechariah 1:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+10%3A4%2C+Haggai+1%3A15%2C+Haggai+2%3A10%2C+Haggai+2%3A18%2C+Haggai+2%3A20%2C+Zechariah+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Sign>
+
+  <BibleWord>
+   <SequenceOrderId>253</SequenceOrderId>
+   <Word>Call Up</Word>
+   <Commentary>Mine hand also has laid the foundation of the earth, and My right hand has spanned the heavens: when I call unto them, they stand up together (Isaiah 48:13).</Commentary>
+   <ScriptureReference>Isaiah 48:13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+10%3A4%2C+Haggai+1%3A15%2C+Haggai+2%3A10%2C+Haggai+2%3A18%2C+Haggai+2%3A20%2C+Zechariah+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>561</SequenceOrderId>
+   <Word>Elevator call.</Word>
+   <AlphabetSequenceIndex>126</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:20, Numbers 9, 1 Corinthians 2, Revelation 17:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A20%2C+Numbers+9%2C+1+Corinthians+2%2C+Revelation+17%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1115</SequenceOrderId>
+   <Commentary>Wake-up Orientation: ... 25%. SQL: Call Up, left arm pit, sweat.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <ClassAssociates>
+   <SequenceOrderId>322</SequenceOrderId>
+   <Commentary>Wake-up Orientation: ... 25%. Computer on, user interface (UI) ... Comforter_-_20030830PublicRelations.xml.</Commentary>
+  </ClassAssociates>
+  
+  </TheWord>
+</wordOfGod>

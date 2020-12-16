@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>159</SequenceOrderId>
+  <Dated>2003-09-28T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Exodus 15:20, Leviticus 23:22, Deuteronomy 28:47, Deuteronomy 33:19, Judges 11:34, Judges 21:21, Judges 21:23, 1 Samuel 1:16, 1 Samuel 21:11, 1 Samuel 29:5, 2 Samuel 6:14, 2 Samuel 12:30, 1 Kings 1:19, 1 Kings 1:25, 1 Kings 10:5, 1 Kings 10:10, 1 Kings 10:27, 1 Kings 18:41, 1 Chronicles 22:3, 1 Chronicles 22:4, 1 Chronicles 22:14, 1 Chronicles 22:15, 1 Chronicles 29:2, 1 Chronicles 29:21, 2 Chronicles 1:15, 2 Chronicles 2:9, 2 Chronicles 4:18, 2 Chronicles 9:1, 2 Chronicles 9:4, 2 Chronicles 9:9, 2 Chronicles 9:27, 2 Chronicles 11:23, 2 Chronicles 14:15, 2 Chronicles 15:9, 2 Chronicles 17:5, 2 Chronicles 18:1, 2 Chronicles 18:2, 2 Chronicles 20:25, 2 Chronicles 24:11, 2 Chronicles 29:35, 2 Chronicles 31:5, 2 Chronicles 32:5, 2 Chronicles 32:29, Nehemiah 9:25, Esther 1:7, Job 21:11, Job 22:11, Job 36:31, Job 38:34, Psalms 37:11, Psalms 52:7, Psalms 72:7, Psalms 105:30, Psalms 149:3, Psalms 150:4, Ecclesiastes 3:4, Ecclesiastes 5:10, Ecclesiastes 5:12, Isaiah 7:22, Isaiah 13:21, Isaiah 15:7, Isaiah 47:9, Isaiah 60:5, Isaiah 66:11, Jeremiah 31:4, Jeremiah 31:13, Jeremiah 33:6, Lamentations 5:15, Ezekiel 16:49, Ezekiel 26:10, Zephaniah 1:18, Zechariah 14:14, Matthew 11:17, Matthew 12:34, Matthew 13:12, Matthew 14:6, Matthew 25:29, Mark 6:22, Mark 12:44, Luke 6:45, Luke 7:32, Luke 12:15, Luke 21:4, Romans 5:17, 2 Corinthians 8:2, 2 Corinthians 8:14, 2 Corinthians 8:20, 2 Corinthians 12:7, 1 Timothy 4:13, Hebrews 7:13, Revelation 18:3</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+15%3A20%2C+Leviticus+23%3A22%2C+Deuteronomy+28%3A47%2C+Deuteronomy+33%3A19%2C+Judges+11%3A34%2C+Judges+21%3A21%2C+Judges+21%3A23%2C+1+Samuel+1%3A16%2C+1+Samuel+21%3A11%2C+1+Samuel+29%3A5%2C+2+Samuel+6%3A14%2C+2+Samuel+12%3A30%2C+1+Kings+1%3A19%2C+1+Kings+1%3A25%2C+1+Kings+10%3A5%2C+1+Kings+10%3A10%2C+1+Kings+10%3A27%2C+1+Kings+18%3A41%2C+1+Chronicles+22%3A3%2C+1+Chronicles+22%3A4%2C+1+Chronicles+22%3A14%2C+1+Chronicles+22%3A15%2C+1+Chronicles+29%3A2%2C+1+Chronicles+29%3A21%2C+2+Chronicles+1%3A15%2C+2+Chronicles+2%3A9%2C+2+Chronicles+4%3A18%2C+2+Chronicles+9%3A1%2C+2+Chronicles+9%3A4%2C+2+Chronicles+9%3A9%2C+2+Chronicles+9%3A27%2C+2+Chronicles+11%3A23%2C+2+Chronicles+14%3A15%2C+2+Chronicles+15%3A9%2C+2+Chronicles+17%3A5%2C+2+Chronicles+18%3A1%2C+2+Chronicles+18%3A2%2C+2+Chronicles+20%3A25%2C+2+Chronicles+24%3A11%2C+2+Chronicles+29%3A35%2C+2+Chronicles+31%3A5%2C+2+Chronicles+32%3A5%2C+2+Chronicles+32%3A29%2C+Nehemiah+9%3A25%2C+Esther+1%3A7%2C+Job+21%3A11%2C+Job+22%3A11%2C+Job+36%3A31%2C+Job+38%3A34%2C+Psalms+37%3A11%2C+Psalms+52%3A7%2C+Psalms+72%3A7%2C+Psalms+105%3A30%2C+Psalms+149%3A3%2C+Psalms+150%3A4%2C+Ecclesiastes+3%3A4%2C+Ecclesiastes+5%3A10%2C+Ecclesiastes+5%3A12%2C+Isaiah+7%3A22%2C+Isaiah+13%3A21%2C+Isaiah+15%3A7%2C+Isaiah+47%3A9%2C+Isaiah+60%3A5%2C+Isaiah+66%3A11%2C+Jeremiah+31%3A4%2C+Jeremiah+31%3A13%2C+Jeremiah+33%3A6%2C+Lamentations+5%3A15%2C+Ezekiel+16%3A49%2C+Ezekiel+26%3A10%2C+Zephaniah+1%3A18%2C+Zechariah+14%3A14%2C+Matthew+11%3A17%2C+Matthew+12%3A34%2C+Matthew+13%3A12%2C+Matthew+14%3A6%2C+Matthew+25%3A29%2C+Mark+6%3A22%2C+Mark+12%3A44%2C+Luke+6%3A45%2C+Luke+7%3A32%2C+Luke+12%3A15%2C+Luke+21%3A4%2C+Romans+5%3A17%2C+2+Corinthians+8%3A2%2C+2+Corinthians+8%3A14%2C+2+Corinthians+8%3A20%2C+2+Corinthians+12%3A7%2C+1+Timothy+4%3A13%2C+Hebrews+7%3A13%2C+Revelation+18%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>If I asked You how-to dance will You dance with Me, if I asked You how-to play will You play with Me.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <Dream>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Commentary>Woman in cream veil. Girl in cream gown.</Commentary>
+  </Dream>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>62</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>406</SequenceOrderId>
+   <DatedFrom>2003-09-13T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-09-28T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>15</FromUntil>
+   <Commentary>Ati fun iwe. When You stand praying, forgive, if You have ought against any: that Your Father also which is in heaven may forgive You Your trespasses (Mark 11:25).</Commentary>
+   <Filename>Comforter_-_20030913AtiFunIwe.xml</Filename>
+   <ScriptureReference>1 Samuel 25:28, 1 Kings 8:30, 2 Chronicles 6:39, 2 Chronicles 7:14, Mark 11:25, Acts 8:22, James 5:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+25%3A28%2C+1+Kings+8%3A30%2C+2+Chronicles+6%3A39%2C+2+Chronicles+7%3A14%2C+Mark+11%3A25%2C+Acts+8%3A22%2C+James+5%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>74</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>340</SequenceOrderId>
+   <Word>Dance</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>713</SequenceOrderId>
+   <Word>If I asked You how-to dance will You dance with Me, if I asked You how-to play will You play with Me.</Word>
+   <AlphabetSequenceIndex>964</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 33:3, Mark 7, Judges 15, Hebrews 10:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+33%3A3%2C+Mark+7%2C+Judges+15%2C+Hebrews+10%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1195</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>264</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>395</SequenceOrderId>
+   <Commentary></Commentary>  
+  </ClassAssociates>
+  -->
+
+  </TheWord>
+</wordOfGod>

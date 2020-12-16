@@ -1,0 +1,120 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <SequenceOrderId>306</SequenceOrderId>
+    <Dated>2003-12-04T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>Exodus 23:11, Deuteronomy 4:4, Jeremiah 49:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+23%3A11%2C+Deuteronomy+4%3A4%2C+Jeremiah+49%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Leaveless lives. The christening of America.</Title>
+    <ContactId>193</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>11</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>112</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>536</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary>
+   </Commentary>
+   <Filename></Filename>
+   <ContactId></ContactId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>469</SequenceOrderId>
+   <Word>Leave ... Life</Word>
+  </BibleWord>
+
+
+  <AlphabetSequence>
+    <SequenceOrderId>2154</SequenceOrderId>
+    <Word>Leaveless lives.</Word>
+    <AlphabetSequenceIndex>167</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:7, Deuteronomy 14, Acts 5, Revelation 14:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A7%2C+Deuteronomy+14%2C+Acts+5%2C+Revelation+14%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Shower.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>2155</SequenceOrderId>
+    <Word>The christening of America.</Word>
+    <AlphabetSequenceIndex>230</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:24, Judges 19, Mark 3, Revelation 10:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A24%2C+Judges+19%2C+Mark+3%2C+Revelation+10%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Pick the record paper.</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1331</SequenceOrderId>
+   <Commentary>Kioku Sushi Japanese Restaurant 6180U-6180V Mowry Avenue Newark 94560 CA: 3 bowls of rice with the right hand; request the 3rd bowl while eating the 2nd bowl.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>309</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>564</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+</wordOfGod>

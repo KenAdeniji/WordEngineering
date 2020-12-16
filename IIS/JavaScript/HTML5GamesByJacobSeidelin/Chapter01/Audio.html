@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 2014-05-31 wiley.com/go/html5games.com -->
+<head>
+	<title>Chapter 1: Audio example</title>
+</head>
+<body>
+	<audio 
+		id="myAudio"
+		src="http://upload.wikimedia.org/wikipedia/commons/a/a9/Tromboon-sample.ogg" 
+		controls="controls"
+	>
+	</audio>
+	
+	<script>
+		var audio = document.getElementById("myAudio");
+		document.onkeydown = function(e) {
+			//console.log(audio.currentSrc);
+			if (e.keyCode == 83) {
+				audio.pause(); // Key pressed was S
+			} else if (e.keyCode == 80) {
+				audio.play(); // Key pressed was P
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>32</SequenceOrderId>
+  <Dated>2003-08-09T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Colossians 1:23, Colossians 4:2, 1 Timothy 2:15</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Colossians+1%3A23%2C+Colossians+4%3A2%2C+1+Timothy+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Continue to yield to the Holy Spirit.</Title>
+  <Commentary />
+  <Keyword />
+
+  <Remember>
+   <SequenceOrderId>334</SequenceOrderId>
+   <DatedFrom>2003-05-15T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-09T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>86</SignIndex>
+   <Commentary>20030515: Created the WeightMeasure table. 20030809: Created the Comforter_-_20030809WeightMeasure.xml. There are 86 days between 20030515 and 20030809.</Commentary>
+   <Filename>Comforter_-_20030809WeightMeasure.xml</Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+ 
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>64</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>208</SequenceOrderId>
+   <Word>Continue</Word>
+   <Commentary>
+If you continue in the faith grounded and settled, and be not moved away from the hope of the gospel, which you have heard, and which was preached to every creature which is under heaven; whereof I Paul am made a minister (Colossians 1:23).
+Continue in prayer, and watch in the same with thanksgiving (Colossians 4:2).
+Notwithstanding she shall be saved in childbearing, if they continue in faith and charity and holiness with sobriety (1 Timothy 2:15).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>492</SequenceOrderId>
+   <Word>Continue to yield to the Holy Spirit.</Word>
+   <AlphabetSequenceIndex>410</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 17:12, Ezra 7, Jeremiah 35, Jude 1:20</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A12%2C+Ezra+7%2C+Jeremiah+35%2C+Jude+1%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1064</SequenceOrderId>
+   <Commentary>3EHL323 California the intersection of Fremont Blvd 38000 and Norris Road 4000. Cash Teller Register: The 2 shopping bags will fall down away from the cash register towards Cedar Blvd. Check the creation date of the WeightMeasure table, 20030515, bug, travel towards the left computer, HolySpirit, kill at the bottom of the monitor vertical aligned with the PrintScreen SysRq key, while recording, fly, flys, on top of the head towards the left. Create the WeightMeasure.xml file, Eternal WeightMeasure, fly, flys towards the face. WeightMeasure.xml: FileOpen, fly, flys, towards the left. Trim the trailing spaces from the end of the WeightMeasure table, BiblicalUnit column, fly, flys, towards the left. Comforter_-_20030809WeightMeasure.xml: Update the stylesheet universal resource index (URI) from WeightMeasure.xslt to Comforter_-_20030809WeightMeasure.xslt, fly, flys, towards the NorthCenter of the monitor. Comforter_-_20030809WeightMeasure.xslt: Append the MetricUnit column entry, fly, flys. ALTER TABLE WeightMeasure ALTER COLUMN BiblicalUnit VARCHAR(50) NOT NULL, fly, flys towards the left, previously CHAR(50). SQL Query: Continue, orange pencil falls towards the right from the top of the white papers towards the red mouse pad. Correct the AlphabetSequence dated column from 20030810 to 20030809, fly, flys.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1065</SequenceOrderId>
+   <Dated>2003-08-10T00:00:00.0000000-08:00</Dated>
+   <Commentary>Naked. Wake-Orientation: The right feets between the 4th and 5th left toes. Wake-Orientation: Knees bowed extending towards 33%, hands inside knees with the right hand ahead. Faeces: cut nails, excreate on the 3rd left nail, use the left fingers to remove the 7th, 2nd right, nail.</Commentary>
+  </CaseBasedReasoning>
+
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary>Comforter_-_20030809Export.txt Comforter_-_20030809WeightMeasure.txt</Commentary>
+  </Export>
+
+  <Software>
+   <SequenceOrderId>245</SequenceOrderId>
+   <Commentary>Comforter_-_20030809WeightMeasure.xml Comforter_-_20030809WeightMeasure.xslt</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>280</SequenceOrderId>
+   <Commentary>Floppy disk drive: noise, open the front door.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

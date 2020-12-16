@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-12-20	NaturalOccurringSequence.html created.
+		-->
+		<title>Natural Occurring Sequence</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="naturalOccurringSequence" align="center"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			function renderNaturalOccurringSequence(data) 
+			{
+				var info = "<table id='naturalOccurringSequenceTable'><caption>Lag Lead</caption>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var word = null;
+			
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						if (dataRow["DifferenceOccurrence"] != 0)
+						{
+							continue;
+						}
+						info += "<tr>";
+						info += "<td>" + dataRow["Word"] + "</td>";
+						info += "<td>" + dataRow["WordPrevious"] + "</td>";
+						info += "</tr>";		
+					}
+				}
+
+				info += "</table>"
+				document.getElementById("naturalOccurringSequence").innerHTML = info;
+			}
+
+			function retrieveNaturalOccurringSequence()
+			{
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/NaturalOccurringSequenceWebService.asmx/NaturalOccurringSequence",
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderNaturalOccurringSequence(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("naturalOccurringSequence").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+						var dataSet = JSON.parse(jsonData);
+						renderNaturalOccurringSequence(dataSet);
+					} 
+				});
+			}
+
+			window.addEventListener("load", retrieveNaturalOccurringSequence, false);
+
+			var dataSet = JSON.parse(jsonData);
+			renderNaturalOccurringSequence(dataSet);
+			document.write(dataSet);
+			var jsonData =
+{
+  "Table": [
+    {
+      "Word": "Te mini kogbo",
+      "WordPrevious": "Te mini kose",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "If this is it?",
+      "WordPrevious": "If I was You.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Invariably of how difficult it is, I said you will make it.",
+      "WordPrevious": "In Your time, You will make Your voice know to me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You share the Word in a way that is non intrusive.",
+      "WordPrevious": "You remember the people by the things they don't say.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is my holy day.",
+      "WordPrevious": "They took Philip in.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We stand on the sides, offer pathways, and tucking.",
+      "WordPrevious": "This is what you've said, this is what I have said.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The voice didn't sing, the words re-instate.",
+      "WordPrevious": "The son of his mother, wonderful God, draft.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You cover the rest, while I cover you.",
+      "WordPrevious": "You can only look until you liftoff.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The light of God is to shine all stars.",
+      "WordPrevious": "The comfort of a father, the joy of a son.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The village veil towards Pasedena.",
+      "WordPrevious": "The undercloth with assurance.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "McDonald's M two.",
+      "WordPrevious": "Match matching tech.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You put a stop until the end is found.",
+      "WordPrevious": "You have to set precedence to set example.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Oriburuku oni gbemila.",
+      "WordPrevious": "Mixed parentage. Divorcee.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "They call themselves christians but the cat out.",
+      "WordPrevious": "They broke a lead pencil, since they couldn't turn black.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "What do you do with the people after you feed them?",
+      "WordPrevious": "What about the land? They misjudged the presence of God.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I got to rape you to give you a baby.",
+      "WordPrevious": "I don't use technology, I can't develop.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "LORD, I found You a vital resource.",
+      "WordPrevious": "Lime, they don't meet until due dates.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "An admission of guilt. Utter darkness.",
+      "WordPrevious": "Ah, You just paid us, for a Sunday way.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A master's degree holder drops out college.",
+      "WordPrevious": "Your church attendance is not attainable.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Their most brilliant russian player.",
+      "WordPrevious": "The President attacker is the majesty foe?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The trophy cost.",
+      "WordPrevious": "The tireless some.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You did check out.",
+      "WordPrevious": "You could do it.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "What does it cost you, and what does it cost the government for each declined credit administration?",
+      "WordPrevious": "Were these as caucasians saying we need to be careful about the bones we break and the bones taken out of us?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The tailor measures the guard set.",
+      "WordPrevious": "The later we act, the normal the cost.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Green on black translucent blue.",
+      "WordPrevious": "Good evening in evening classes.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "She walked you once on bancrupt own.",
+      "WordPrevious": "She told you take a shower not hawk?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You didn't know if it was a real human life.",
+      "WordPrevious": "You didn't get in a postal model in show.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A boy and his madam in chancellor's concubines.",
+      "WordPrevious": "What is your name? Can you save America?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "If telephone operators are cute DBs, I am half?",
+      "WordPrevious": "If she was leaving Mushin from Ilupeju?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Stationary objecting stage.",
+      "WordPrevious": "Standard repeating condition.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The final deciding election.",
+      "WordPrevious": "The burial sent me home.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "What if I am counting my advance spaces?",
+      "WordPrevious": "What if he was teaching them how to dance?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "2009-07-25T05:45:00",
+      "WordPrevious": "2008-02-13T08:00:00",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I want to do some beautiful things, but I need everybody's help.",
+      "WordPrevious": "Can you imagine the hope in you. Using crossword puzzle.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Trading places in equal places.",
+      "WordPrevious": "Trading places in equal places",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I wonder why You are fitting me?",
+      "WordPrevious": "I don't see you much more than in me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is how I accumulate my own ownership.",
+      "WordPrevious": "We choose which ancient history perfects us.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is where I pass, this is where he follows.",
+      "WordPrevious": "We realize He makes twins, who should align them?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "If its not too much trouble, lets find out how You did it?",
+      "WordPrevious": "Oh yeah, I am happy He is on my mind. Oh yeah, I am happy He is on my mind.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "He left his way.",
+      "WordPrevious": "You don't dick.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You are my love valentine.",
+      "WordPrevious": "It shall not find its root.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is our representative calling.",
+      "WordPrevious": "These are our lost unchosen children.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I regularly annunciate My part.",
+      "WordPrevious": "You remind me of my unspent age.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "It is too clear to declare the danger.",
+      "WordPrevious": "He reads where I am written often.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "These are the usual reoccurrence of us.",
+      "WordPrevious": "This is where we each sat upon each other.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You were making a call in a process.",
+      "WordPrevious": "I can not determine in absolute need.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "If you are looking for an introduction, let me practice.",
+      "WordPrevious": "As I set my eyes on heaven, I remove the mirror before me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Individually independent.",
+      "WordPrevious": "The strength we share on.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have regularly regulated my procedure.",
+      "WordPrevious": "Each of my planetary is in observant use.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Equally independent have we risen above the occassion.",
+      "WordPrevious": "In each football team, there is the umpire and the eleven men.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have received, what I am lost founding.",
+      "WordPrevious": "I can not engage the failure, abnormal in man.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I was caught in a later dream.",
+      "WordPrevious": "I re-organize My valor.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Those are my hand picking initiative.",
+      "WordPrevious": "I need to re-purchase all my ancient need.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have set you above men, to decide in Me.",
+      "WordPrevious": "I am less required in useful of Him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "He was walking in parallel circle of him.",
+      "WordPrevious": "He mostly distance His official use.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I must be able to speak in all common language given to me.",
+      "WordPrevious": "I have totally displaced you in my present usage.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Answer permit response.",
+      "WordPrevious": "Equally the procedure in me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We cannot afford high paying fees.",
+      "WordPrevious": "We method our chosen children.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Three minus the available seven.",
+      "WordPrevious": "This is my wife, taught in him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The use of the significant in three.",
+      "WordPrevious": "How much, is it six fiftythree?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "As if you were two.",
+      "WordPrevious": "By home side of Julie Lee",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We miss the enrichment.",
+      "WordPrevious": "How do I legitimize home?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "What are my ascendancy?",
+      "WordPrevious": "Approaching the rest.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Nineteen hundred and eighty five.",
+      "WordPrevious": "If any bless you, sing alleluia.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "For all human effort.",
+      "WordPrevious": "Will you will Me?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We are satisfactory in our accommodation ratio.",
+      "WordPrevious": "He decides the counterpart in your chosen action.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have sent a message, in parcel of you.",
+      "WordPrevious": "Give me disame, He provides for you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You don't have to chase me, to pay for you.",
+      "WordPrevious": "We must calculate the risk of abstaining him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have captured My renewal process.",
+      "WordPrevious": "Can I find a fine-grained in one, similar to Me?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I am informing you, of my perform date.",
+      "WordPrevious": "I am fully represented of the even in me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Equally with an handshake, I have entangled mine.",
+      "WordPrevious": "Equally with an handshake, I have enslaved mine.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Do you disassociate the cost of fulfilling you?",
+      "WordPrevious": "What does it have? A guaranty of His sovereignty.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You have a journey, pretentious in heaven.",
+      "WordPrevious": "This is my distant past, present in you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "An ojo, pretend writer.",
+      "WordPrevious": "Insurance broken value.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Its the value of the drop.",
+      "WordPrevious": "Italy likes no athletics.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We are only a pictoral in view.",
+      "WordPrevious": "The climax of our solution.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "George Smith. Cindy Smithenset.",
+      "WordPrevious": "Bethel, Memphis. Count the world.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You don't mix an ocean with ...",
+      "WordPrevious": "We might come back on some of the ...",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Surrogate state.",
+      "WordPrevious": "I am using Aquafresh.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Are you His' star man?",
+      "WordPrevious": "Are you His star man?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I Am passing by, let Me gather you in Me.",
+      "WordPrevious": "To each I have achieved, I Am the reminder part.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Also, known as, Maverick guide.",
+      "WordPrevious": "Also known as, Maverick guide.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Ran.",
+      "WordPrevious": "Ise.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Each of my centric, is manufactured ...",
+      "WordPrevious": "I need complete end, for re-enabling man.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I don't lose you alone, I am solving you in me.",
+      "WordPrevious": "I am sending him home, in pattern adventure of him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I just put on high alert.",
+      "WordPrevious": "This is not nursery.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "He has been invited to the world class.",
+      "WordPrevious": "Have you guided the illusion in him?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Its representative, parallel of us.",
+      "WordPrevious": "I will not yield to him, to master me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "In so, I have distance myself.",
+      "WordPrevious": "I may re-schedule a journey.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "How did I choose my intellectual gain?",
+      "WordPrevious": "He stood on His standard journey.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A further realizing of His opinion.",
+      "WordPrevious": "A thorough understanding of the bible.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have chosen, a clear relationship with you.",
+      "WordPrevious": "I have carefully created you, for manful use.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Jimmy Grant.",
+      "WordPrevious": "E ka bo o, ba wo ni le?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Lo ri wo. Ma da lam ki.",
+      "WordPrevious": "Chicken in service.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Blame blinds the eye.",
+      "WordPrevious": "Its a high class game.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "An unbelieve at male walk-in at female international.",
+      "WordPrevious": "To ba je ko mu lo si ibi to gbe. Cube of iwe lori obirin.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Aye o ni te o.",
+      "WordPrevious": "On Diallo race.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Oya we o.",
+      "WordPrevious": "Do bo, je ran.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Thumbs up.",
+      "WordPrevious": "Reggie Miller.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "So, you help Electronic Arts.",
+      "WordPrevious": "He had to die, way lorry the way.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We had purchase with all that.",
+      "WordPrevious": "I have provably used you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Ride on, a little bit more, nno repeat.",
+      "WordPrevious": "Daddy yin o care, onje to the maximum.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I need, a friendlier, nature of you.",
+      "WordPrevious": "According to my length in color.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You will not marginalize time, in me.",
+      "WordPrevious": "I have spent my recent color, in you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is my own perceived color, in announcing time.",
+      "WordPrevious": "Counted in the representation of God, he assumed time.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "In this, I am entirely, participating in myself.",
+      "WordPrevious": "I have heard you, and I have performed My need in you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We are building with staff. Over the announcement of the ...",
+      "WordPrevious": "What is the road? You don't know the road. None beginning.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Uncle Miller kicked a blind winner program to the blind signal.",
+      "WordPrevious": "I might go over to my mom's house, in the afternoon, Goke.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Will not depart from You.",
+      "WordPrevious": "The right time, for our time.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I am normal in class.",
+      "WordPrevious": "Note I, not you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "To this desired aim, I Am much gain.",
+      "WordPrevious": "I could really, personalize.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Fun loke ofe.",
+      "WordPrevious": "Becoming self.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The Alexander.",
+      "WordPrevious": "Equal as mine.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Tell Bond, I am not blond.",
+      "WordPrevious": "Slavery in legalism.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Jisore.",
+      "WordPrevious": "Atinubi.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is my prayer, you help me, assist you.",
+      "WordPrevious": "In this Thanksgiving, I am absolutely yours.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have arrived, on the day announced, acceptable to God.",
+      "WordPrevious": "The admittance of Christ? Is Christ his origin?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "AmSimple.",
+      "WordPrevious": "Almagamize.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Advancing the exchange, of the digital clock.",
+      "WordPrevious": "You watch His end, He might see you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I am well, confirmed in time.",
+      "WordPrevious": "This I grow, as in you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Today, I commenmorate, my matter.",
+      "WordPrevious": "Do I provide, your true guidance?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I send for You, that You may see me inside. So full of myself, nothing inside.",
+      "WordPrevious": "I will recover from the laughter, but I will never love you, as it please me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Adimoka to ni buruku, ko lohun e, so toto.",
+      "WordPrevious": "To each percentage, I have given you allocation.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Could you change my appearance, one more time?",
+      "WordPrevious": "It is, I received the boy, that I know, I had a son.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Aye gbe omo.",
+      "WordPrevious": "Greg Ademola.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Appenture.",
+      "WordPrevious": "Yemi Adegboye.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "There are no more broken promise.",
+      "WordPrevious": "I have begotten you, in My self made.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I have gather them, as opposite.",
+      "WordPrevious": "This is where, you know me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "We don't export, our own.",
+      "WordPrevious": "I have gather them, as opposite.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I see all people, yet I define as one.",
+      "WordPrevious": "Senior intelligent of police.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Haven that we have overstepped.",
+      "WordPrevious": "Everyhing  that has to be touched.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Aye oni fe esan.",
+      "WordPrevious": "Be My increase.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Come this moment.",
+      "WordPrevious": "To know, I am at peace.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Criminalization of color.",
+      "WordPrevious": "Integrating a personal life.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Two along a certain circle; I circled you.",
+      "WordPrevious": "Private ownership is obscenery.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I carry no loss, I have taken.",
+      "WordPrevious": "Equal have I tailor, as I have made.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Who is the mighty man.",
+      "WordPrevious": "It ought to be deliver.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Out of the ground, I have driven her.",
+      "WordPrevious": "Dani, What about our other neighbor?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Seeing you, is forever, lasting in you.",
+      "WordPrevious": "Making you mine, seem easy; as making you me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "As upon men.",
+      "WordPrevious": "Make His own.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "How am I going to get this, in light of these?",
+      "WordPrevious": "Death women come around. come around every.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Come reading, for your book.",
+      "WordPrevious": "Loving you, I am dwelt need.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Ma de ni, Thursday, ma pe.",
+      "WordPrevious": "Making a God, one each, for all.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A margin at last, equal in spending, actual in expenditure.",
+      "WordPrevious": "If you will like to be with Me, you will have to make Me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A comprehensive re-use of man.",
+      "WordPrevious": "Can I grow, in so much, as I can gain?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You need to accept My time.",
+      "WordPrevious": "I have departed, from my way.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "To have it happen, you present it at arrangement.",
+      "WordPrevious": "Could I carry you through, in a self made journey?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A input, is as given.",
+      "WordPrevious": "I made you, as I made mine.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "You move Me, in a personal level.",
+      "WordPrevious": "To nearest to Me, is to know Me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I sought Him, in satisfying me.",
+      "WordPrevious": "The lasting expiration of men.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Ora cornflakes, o de bere jeans.",
+      "WordPrevious": "The grand sum, of the cost.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Resting, in a certain kind; I found, my history.",
+      "WordPrevious": "Always travel, personalizing, yourself.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Could you throw me, a catch?",
+      "WordPrevious": "To re-build; I need, a pre-builder.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Clear giving.",
+      "WordPrevious": "Carlos Albina.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I guess, I want you, this way.",
+      "WordPrevious": "Academic excellence, to score in real life.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "In knowing God, I am nearer, to Him.",
+      "WordPrevious": "I have found Him, where I sent Him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Among you have chosen, is among, He has chosen for you.",
+      "WordPrevious": "Time has been my companion, I should not desert time.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Bayes.",
+      "WordPrevious": "Ciatra.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "David and I, went from epalepa.",
+      "WordPrevious": "It has grow, as its span.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "And, I saw, a green tree field.",
+      "WordPrevious": "How is your own?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Ever since, I see you; I shine, on my own.",
+      "WordPrevious": "Will you be able to equip me; as a further?",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "To learn God; you need to succeed man.",
+      "WordPrevious": "I have know him, that I may please him.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I left it at home, yesterday.",
+      "WordPrevious": "I have to spend, an urge to Dele.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Agbe enu Mi soke.",
+      "WordPrevious": "No time, before.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I cannot recover man, fully in me.",
+      "WordPrevious": "Clear as the sky, that is who, I need.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The foot of our land.",
+      "WordPrevious": "Equally, I have divided.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "If you they slap me.",
+      "WordPrevious": "No, it is at a good price.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Always the Swedish, reseller song.",
+      "WordPrevious": "For MIT, we had as counsel, T.J. counsel.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Knowing on my behalf.",
+      "WordPrevious": "Increase, as I make you.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "I am the author, the 650 6, is for you.",
+      "WordPrevious": "Except me, resulting in You.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "This is My sign, to you.",
+      "WordPrevious": "To make expected end, of the meet.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "Know no enemy; know no friend; that is Me.",
+      "WordPrevious": "Jesus began His ministry; and He served God.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "In servitude of the desired.",
+      "WordPrevious": "When you know, My own.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The whole wins; one whole time.",
+      "WordPrevious": "You're riding your problem.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "A percentage of My given.",
+      "WordPrevious": "Your soul is being.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "The headings associated with the text.",
+      "WordPrevious": "May it be to you, as you have kept me.",
+      "DifferenceOccurrence": 0
+    },
+    {
+      "Word": "What is at present? Is most at use.",
+      "WordPrevious": "This is how, I made you; as a example of me.",
+      "DifferenceOccurrence": 0
+    },
+  ]
+};
+		</script>
+	</body>
+</html>

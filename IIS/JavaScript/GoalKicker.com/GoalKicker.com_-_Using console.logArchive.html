@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="paragraph"></p>
+		<script>
+			function pageLoad()
+			{
+				var greet = "Hello", who = "World"; console.log("%s, %s!", greet, who);
+				console.log(document.body);
+				document.getElementById("paragraph").textContent = "Hello, World";
+				
+				var element = document.createElement('p');
+				element.textContent = "Adding an element"; 
+				document.body.appendChild(element); //add the newly created element to the DOM
+			}
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>	
+</html>

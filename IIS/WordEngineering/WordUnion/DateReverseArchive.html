@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-03-12	Created.
+	-->
+	<head>
+		<title>Date Reverse</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="dated">Dated</label>
+							</td>
+							<td>
+								<input type="date" id="dated" autofocus/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="otherDate">Other Date</label>
+							</td>
+							<td>
+								<input type="date" id="otherDate" disabled/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="resultSet">
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var datedDefault = "2018-03-12";
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var dated = scriptLiteral9432.getParameterByName("dated");
+						if (!dated)
+						{
+							dated = datedDefault;
+						}
+						document.getElementById("dated").value = dated;
+						
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+
+				var datedLiteral = document.getElementById("dated").value;
+				var dated = new Date(datedLiteral);
+				
+				var month = dated.getUTCMonth(); //months from 0-11
+				var day = dated.getUTCDate();
+				var year = dated.getUTCFullYear();
+				
+				var otherDateLiteral = 	scriptLiteral9432.pad(year, 4) + "-" +
+										scriptLiteral9432.pad(day, 2) + "-" + 
+										scriptLiteral9432.pad((month + 1), 2);
+				var otherDate = new Date(otherDateLiteral);
+				
+				if (!otherDate)
+				{
+					return;
+				};	
+				
+				document.getElementById("otherDate").value = otherDateLiteral;
+				
+				if (dated > otherDate)
+				{
+					scriptLiteral9432.swap(dated, otherDate);
+				}
+				
+				var daysBetween = scriptLiteral9432.daysBetween(dated, otherDate);
+				
+				var resultSet = "<table>";
+				resultSet += scriptLiteral9432.buildHead("Unit", "Value");
+				resultSet += scriptLiteral9432.buildRow("Days Difference", daysBetween);
+				resultSet += scriptLiteral9432.buildRow
+				(
+					"Days Difference (Biblical Calendar)",
+					scriptLiteral9432.daysDifferenceBiblicalCalendar(daysBetween)
+				);
+				resultSet += scriptLiteral9432.buildRow
+				(
+					"Days Difference (Common Era)",
+					scriptLiteral9432.daysDifferenceCommonEra(dated, otherDate)
+				);
+				resultSet += "</table>";
+				
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

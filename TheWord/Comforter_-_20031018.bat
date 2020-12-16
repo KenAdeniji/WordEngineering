@@ -1,0 +1,8 @@
+TheWord Comforter_-_20031018RideOn.xml                                                                                                             Comforter_-_20031018RideOn.txt     
+TheWord Comforter_-_20031018ForYouAreAGoodGodToMeAndMyHouse.xml                                                                                    Comforter_-_20031018ForYouAreAGoodGodToMeAndMyHouse.txt
+TheWord Comforter_-_20031018OhGodThereIsAPlaceWhereYouStandThereIsAPlaceWhereYouLiveAndIWillBePresentWithYou.xml                                   Comforter_-_20031018OhGodThereIsAPlaceWhereYouStandThereIsAPlaceWhereYouLiveAndIWillBePresentWithYou.txt
+TheWord Comforter_-_20031018NowWeUnderstandHowGoodTheLORDIs.xml                                                                                    Comforter_-_20031018NowWeUnderstandHowGoodTheLORDIs.txt
+TheWord Comforter_-_20031018AsIWake-upInTheMorning.xml                                                                                             Comforter_-_20031018AsIWake-upInTheMorning.txt
+TheWord Comforter_-_20031019AmASurvival.xml                                                                                                        Comforter_-_20031019AmASurvival.txt
+TheWord Comforter_-_20031019DearDearILoveYouMoreThanSilverMotherAndDaughterProposeMore.xml                                                         Comforter_-_20031019DearDearILoveYouMoreThanSilverMotherAndDaughterProposeMore.txt
+TheWord Comforter_-_20031019PerpetualBondage_DoYouLikeMeLORDYesILikeYouLORD_NeverEverFocusOnEvilFocusOnGodOnly_HeShowedGodInAllHisTrueness.xml     Comforter_-_20031019PerpetualBondage_DoYouLikeMeLORDYesILikeYouLORD_NeverEverFocusOnEvilFocusOnGodOnly_HeShowedGodInAllHisTrueness.txt

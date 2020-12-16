@@ -1,0 +1,26 @@
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+// A car "class"
+function Car( model ) {
+
+  this.model = model;
+  this.color = "silver";
+  this.year  = "2012";
+
+  this.getInfo = function () {
+    return this.model + " " + this.year;
+  };
+
+}
+
+var myCar = new Car("ford");
+
+myCar.year = "2010";
+
+//window.document.write( myCar.getInfo() );
+
+$(document).ready(function() {
+	$(document.body).append(myCar.getInfo());
+});
+
+</script>

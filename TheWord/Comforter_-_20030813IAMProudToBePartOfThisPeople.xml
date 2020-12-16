@@ -1,0 +1,100 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>37</SequenceOrderId>
+  <Dated>2003-08-13T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Chronicles 1:10, Isaiah 8:11, Zechariah 8:12</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Chronicles+1%3A10%2C+Isaiah+8%3A11%2C+Zechariah+8%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>I AM proud to be part of This people.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>340</SequenceOrderId>
+   <DatedFrom>2003-07-10T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-08-13T00:00:00.0000000-08:00</DatedUntil>
+   <SignIndex>34</SignIndex>
+   <Commentary />
+   <Filename>Comforter_-_20030710TheseAreAStrongPeople.xml</Filename>
+   <ScriptureReference>Exodus 20:12, Exodus 27:9, Numbers 9:18, Numbers 9:19, 2 Chronicles 1:11, 2 Chronicles 26:5, Psalms 72:17, Psalms 91:16, Psalms 104:33, Psalms 116:2, Proverbs 3:2, Proverbs 25:15, John 9:5, Philippians 1:8, James 5:7, 2 Peter 1:13, 2 Peter 2:3</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+20%3A12%2C+Exodus+27%3A9%2C+Numbers+9%3A18%2C+Numbers+9%3A19%2C+2+Chronicles+1%3A11%2C+2+Chronicles+26%3A5%2C+Psalms+72%3A17%2C+Psalms+91%3A16%2C+Psalms+104%3A33%2C+Psalms+116%3A2%2C+Proverbs+3%3A2%2C+Proverbs+25%3A15%2C+John+9%3A5%2C+Philippians+1%3A8%2C+James+5%3A7%2C+2+Peter+1%3A13%2C+2+Peter+2%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>65</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>213</SequenceOrderId>
+   <Word>This people</Word>
+   <Commentary>
+Give me now wisdom and knowledge, that I may go out and come in before this people: for who can judge this Your people, that is so great? (2 Chronicles 1:10).
+For the LORD spoke to me with a strong hand, and instructed me that I should not walk in the way of this people, saying (Isaiah 8:11).
+For the seed shall be prosperous; the vine shall give her fruit, and the ground shall give her increase, and the heavens shall give their dew; and I will cause the remnant of this people to possess all these things (Zechariah 8:12).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>499</SequenceOrderId>
+   <Word>I AM proud to be part of This people.</Word>
+   <AlphabetSequenceIndex>340</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 14:3, 1 Chronicles 2, Ezekiel 48, Revelation 3:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A3%2C+1+Chronicles+2%2C+Ezekiel+48%2C+Revelation+3%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1072</SequenceOrderId>
+   <Commentary>
+    Naked.
+    Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.: Left nose running. 
+    Wake-up Orientation: Center, handless.
+    Scripture Reference, left hand on the chin pointing towards the right: For the LORD spoke to me with a strong hand, and instructed me that I should not walk in the way of this people, saying (Isaiah 8:11).
+    Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.
+   </Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>248</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>286</SequenceOrderId>
+   <Commentary>Sleep: Noise ... SELECT  * FROM AlphabetSequence WHERE  (Dated >= '20030812') ORDER BY Seque(n)ceOrderId. Naked(/), open the front door.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>547</SequenceOrderId>
+ <Dated>2004-07-10T00:00:00.0000000-08:00</Dated>
+ <FromUntil>192</FromUntil>
+ <ContactId>144</ContactId>
+ <Keyword>Japan, osan, choose, hockey, fair play, SouthWest, rubber band, CenterEast, spectator stand, official/sales table, Goke toja, Tonga</Keyword>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>50</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>53</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>575</SequenceOrderId>
+   <Word></Word>
+   <Commentary></Commentary>   
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>7241</SequenceOrderId>
+    <Word>Ka ra osan. Choose.</Word>
+    <AlphabetSequenceIndex>145</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:7, Numbers 28, Acts 27, Revelation 16:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A7%2C+Numbers+28%2C+Acts+27%2C+Revelation+16%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>In an effort to balance food allotment budget, co-ordinate gender food purchase.</Commentary>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>7242</SequenceOrderId>
+    <Word>Goke, toja.</Word>
+    <AlphabetSequenceIndex>84</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 4:4, Exodus 34, Philippians 3, Revelation 19:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A4%2C+Exodus+34%2C+Philippians+3%2C+Revelation+19%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Hockey match involving the German team, player unconventionally tackled with the stick in the SouthWest corner, in violation of the fair play act, cousin and crowd proceed towards the CenterEast spectator stand, self ask if I can bring out the rubber band, spectators pushed back towards the official/sales table. Tonga.</Commentary>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1837</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. Cut nail.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>399</SequenceOrderId>
+   <Commentary> 
+    UtilityMailRelease20040710.cs
+    UtilityProcessRelease20040710.cs
+    UtilityTcpIpRelease20040710.cs
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>823</SequenceOrderId>
+   <Commentary>Sleep: Swollen face, teeth, private part, ass, eye, knee, lip, neck, ka ra osan. choose cry. (o low ju) (on'se fool) (move on) (ofe se pe) (our food) breast (don't prove difficult) (ofe ke) neck (you are doing your best) (we long view) (oye gbogbo eyan) UtilityMail.mak compile error ...</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>824</SequenceOrderId>
+   <Commentary>UtilityMailRelease20040710.cs UtilityTcpIpRelease20040710.cs Read() error ... Network Monitor waist (you are our fool) unconventionall(y) (ofe ke) (bo enu) (ori e oda) ass ... CenterEast elbow BACKUP DATABASE WordEngineering TO DISK = 'D:\SQLServerBackup\WordEngineering\WordEngineering_db_200407101150.BAK' error neck ... Cut nail (don't cross the line) (you are our food) feet finger ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>636</SequenceOrderId>
+   <Company></Company>
+   <FirstName></FirstName>
+   <LastName />
+   <OtherName />
+   <Title></Title>
+   <Commentary></Commentary>   
+  </Contact>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

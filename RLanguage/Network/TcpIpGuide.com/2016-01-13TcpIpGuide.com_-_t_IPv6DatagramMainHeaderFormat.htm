@@ -1,0 +1,70 @@
+<table border="1">
+	<caption>
+		<a href="http://tcpipguide.com/free/t_IPv6DatagramMainHeaderFormat.htm">IPv6 Main Header Format</a>
+	</caption>
+	<thead>
+		<tr>
+			<th>Field Name</th>
+			<th>Size (bytes)</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Version</td>
+			<td>1/2 (4 bits)</td>
+			<td>Version: Identifies the version of IP used to generate the datagram. This field is used the same way as in IPv4, except of course that it carries the value 6 (0110 binary).</td>
+		</tr>
+		<tr>
+			<td>Traffic Class</td>
+			<td>1</td>
+			<td>
+			Traffic Class: This field replaces the Type Of Service (TOS) field in the IPv4 header. It is used not in the original way that the TOS field was defined (with Precedence, D, T and R bits) but using the new Differentiated Services (DS) method defined in RFC 2474. That RFC actually specifies quality of service (QOS) techniques for both IPv4 and IPv6; see the IPv4 format description for a bit more information.
+			</td>
+		</tr>
+		<tr>
+			<td>Flow Label</td>
+			<td>2 1/2 (20 bits)</td>
+			<td>Flow Label: This large field was created to provide additional support for real-time datagram delivery and quality of service features. The concept of a flow is defined in RFC 2460 as a sequence of datagrams sent from a source device to one or more destination devices. A unique flow label is used to identify all the datagrams in a particular flow, so that routers between the source and destination all handle them the same way, to help ensure uniformity in how the datagrams in the flow are delivered. For example, if a video stream is being sent across an IP internetwork, the datagrams containing the stream could be identified with a flow label to ensure that they are delivered with minimal latency.
+
+Not all devices and routers may support flow label handling, and use of the field by a source device is entirely optional. Also, the field is still somewhat experimental and may be refined over time.
+			</td>
+		</tr>
+		<tr>
+			<td>Payload Length</td>
+			<td>2</td>
+			<td>
+			Payload Length: This field replaces the Total Length field from the IPv4 header, but it is used differently. Rather than measuring the length of the whole datagram, it only contains the number of bytes of the payload. However, if extension headers are included, their length is counted here as well.
+
+In simpler terms, this field measures the length of the datagram less the 40 bytes of the main header itself.
+			</td>
+		</tr>
+		<tr>
+			<td>Next Header</td>
+			<td>1</td>
+			<td>
+			Next Header: This field replaces the Protocol field and has two uses. When a datagram has extension headers, this field specifies the identity of the first extension header, which is the next header in the datagram. When a datagram has just this "main" header and no extension headers, it serves the same purpose as the old IPv4 Protocol field and has the same values, though new numbers are used for IPv6 versions of common protocols. In this case the "next header" is the header of the upper layer message the IPv6 datagram is carrying. See below for more details.
+			</td>
+		</tr>
+		<tr>
+			<td>Hop Limit</td>
+			<td>1</td>
+			<td>
+			Hop Limit: This replaces the Time To Live (TTL) field in the IPv4 header; its name better reflects the way that TTL is used in modern networks (since TTL is really used to count hops, not time.)
+			</td>
+		</tr>
+		<tr>
+			<td>Source Address</td>
+			<td>16</td>
+			<td>Source Address: The 128-bit IP address of the originator of the datagram. As with IPv4, this is always the device that originally sent the datagram.
+			</td>
+		</tr>
+		<tr>
+			<td>Destination Address</td>
+			<td>16</td>
+			<td>Destination Address: The 128-bit IP address of the intended recipient of the datagram; unicast, anycast or multicast. Again, even though devices such as routers may be the intermediate targets of the datagram, this field is always for the ultimate destination.
+			</td>
+		</tr>
+		
+	<tbody>	
+</table>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<!--
+		2015-01-05 Created http://www.wrox.com/WileyCDA/WroxTitle/JavaScript-and-jQuery-for-Data-Analysis-and-Visualization.productCd-1118847067,descCd-DOWNLOAD.html
+		2017-07-23 http://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.js		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>Read Data from Text File into Objects and Output as Table</title>
+		<meta name="description" content="A Doctoral Dissertation on WordEngineering"/>
+		<meta name="keywords" content="Bible, Comma Separated Values, csv"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<!--
+			<script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+		-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.js"></script>
+	</head>	
+	<body>
+		<h1>Pull data from CSV file into an object and output as table</h1>
+		<div class="result">
+		  <table id="theResult" border="1"></table>
+		</div>
+		<script>
+			$( document ).ready(function() {
+			  $.get('YouAreThePlaces.csv', function(theData) {
+				var data = $.csv.toObjects(theData);
+				var theHtml = createTable(data);
+				$('#theResult').html(theHtml);
+			  });
+			});
+
+			function createTable(data) {
+			  var html = '';
+			  
+			  if(data[0].constructor === Object) {
+				html += '<tr>\r\n';
+				for(var item in data[0]) {
+				  html += '<th>' + item + '</th>\r\n';
+				}
+				html += '</tr>\r\n';
+				
+				for(var row in data) {
+				  html += '<tr>\r\n';
+				  for(var item in data[row]) {
+					html += '<td>' + data[row][item] + '</td>\r\n';
+				  }
+				  html += '</tr>\r\n';
+				}
+			  }
+			  return html;
+			}
+		</script>
+	</body>
+</html>

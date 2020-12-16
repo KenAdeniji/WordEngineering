@@ -1,0 +1,424 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>456</SequenceOrderId>
+   <Dated>2004-03-28T00:00:00.0000000-08:00</Dated>
+   <FromUntil>88</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>43</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>5509</SequenceOrderId>
+    <Word>You put a stop until the end is found.</Word>
+    <AlphabetSequenceIndex>409</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:11, Ezra 6, Jeremiah 36, Jude 1:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A11%2C+Ezra+6%2C+Jeremiah+36%2C+Jude+1%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5510</SequenceOrderId>
+    <Word>If you could measure my length then I will measure your shoulder.</Word>
+    <AlphabetSequenceIndex>692</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 25:33, Isaiah 13, Psalms 20, 1 Peter 2:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A33%2C+Isaiah+13%2C+Psalms+20%2C+1+Peter+2%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5511</SequenceOrderId>
+    <Word>When he needed some attack, Israel is V parked.</Word>
+    <AlphabetSequenceIndex>377</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:16, 2 Chronicles 10, Ezekiel 11, Revelation 2:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A16%2C+2+Chronicles+10%2C+Ezekiel+11%2C+Revelation+2%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5512</SequenceOrderId>
+    <Word>You have a strong dedication to your energy.</Word>
+    <AlphabetSequenceIndex>463</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:5, Job 27, Isaiah 48, 1 John 5:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A5%2C+Job+27%2C+Isaiah+48%2C+1+John+5%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5513</SequenceOrderId>
+    <Word>Manage my alliance with the other people that have forsaken me in the past.</Word>
+    <AlphabetSequenceIndex>668</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 25:9, Ecclesiastes 9, Psalms 44, 1 Peter 3:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A9%2C+Ecclesiastes+9%2C+Psalms+44%2C+1+Peter+3%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5514</SequenceOrderId>
+    <Word>The transformation of Moses.</Word>
+    <AlphabetSequenceIndex>308</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:9, 1 Kings 17, Amos 3, Revelation 6:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A9%2C+1+Kings+17%2C+Amos+3%2C+Revelation+6%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5515</SequenceOrderId>
+    <Word>God is saying unto me, you can be My friend. God is saying to you, will you be My friend. Friendliness form nest.</Word>
+    <AlphabetSequenceIndex>1084</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 36:43, 2 Corinthians 6, Leviticus 16, Hebrews 4:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+36%3A43%2C+2+Corinthians+6%2C+Leviticus+16%2C+Hebrews+4%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5516</SequenceOrderId>
+    <Word>Incendiary: Don't go into their mailbox.</Word>
+    <AlphabetSequenceIndex>371</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:10, 2 Chronicles 4, Ezekiel 17, Revelation 2:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A10%2C+2+Chronicles+4%2C+Ezekiel+17%2C+Revelation+2%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5517</SequenceOrderId>
+    <Word>Brand identity is dynamic organism.</Word>
+    <AlphabetSequenceIndex>338</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:1, 2 Kings 25, Daniel 2, Revelation 3:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A1%2C+2+Kings+25%2C+Daniel+2%2C+Revelation+3%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5518</SequenceOrderId>
+    <Word>He can't even do pushups and he is supposed to applause God.</Word>
+    <AlphabetSequenceIndex>563</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 22:15, Psalms 85, Psalms 149, 2 Peter 3:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+22%3A15%2C+Psalms+85%2C+Psalms+149%2C+2+Peter+3%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5519</SequenceOrderId>
+    <Word>You have to set precedence to set example.</Word>
+    <AlphabetSequenceIndex>409</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:11, Ezra 6, Jeremiah 36, Jude 1:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A11%2C+Ezra+6%2C+Jeremiah+36%2C+Jude+1%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5520</SequenceOrderId>
+    <Word>The central christian alliance deserves aim.</Word>
+    <AlphabetSequenceIndex>384</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 16:2, 2 Chronicles 17, Ezekiel 4, Revelation 2:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+16%3A2%2C+2+Chronicles+17%2C+Ezekiel+4%2C+Revelation+2%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5521</SequenceOrderId>
+    <Word>The first and the last, the French subsequently credited my failures by bailing me out.</Word>
+    <AlphabetSequenceIndex>828</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 29:32, Ezekiel 26, 1 Chronicles 24, James 1:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+29%3A32%2C+Ezekiel+26%2C+1+Chronicles+24%2C+James+1%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5522</SequenceOrderId>
+    <Word>You don't seat in the back seat when their action upfront.</Word>
+    <AlphabetSequenceIndex>559</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 22:11, Psalms 81, Proverbs 3, 1 John 1:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+22%3A11%2C+Psalms+81%2C+Proverbs+3%2C+1+John+1%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5523</SequenceOrderId>
+    <Word>Inside me, my soul wrenches; inside me, I am following God in me.</Word>
+    <AlphabetSequenceIndex>559</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 22:11, Psalms 81, Proverbs 3, 1 John 1:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+22%3A11%2C+Psalms+81%2C+Proverbs+3%2C+1+John+1%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5524</SequenceOrderId>
+    <Word>You expect the older man to guarantee success, to disadvantage evil.</Word>
+    <AlphabetSequenceIndex>655</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:63, Proverbs 27, Psalms 57, 1 Peter 4:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A63%2C+Proverbs+27%2C+Psalms+57%2C+1+Peter+4%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5525</SequenceOrderId>
+    <Word>If found it undenialing that I didn't find my image in Italy; therefore, you draw the image.</Word>
+    <AlphabetSequenceIndex>794</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 28:20, Jeremiah 49, 2 Chronicles 29, James 2:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+28%3A20%2C+Jeremiah+49%2C+2+Chronicles+29%2C+James+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5526</SequenceOrderId>
+    <Word>Auction accruals.</Word>
+    <AlphabetSequenceIndex>161</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:1, Deuteronomy 8, Acts 11, Revelation 14:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A1%2C+Deuteronomy+8%2C+Acts+11%2C+Revelation+14%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5527</SequenceOrderId>
+    <Word>The biblical communication term is null and void according to the scriptural literature.</Word>
+    <AlphabetSequenceIndex>853</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 30:22, Daniel 3, 2 Kings 24, Hebrews 13:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+30%3A22%2C+Daniel+3%2C+2+Kings+24%2C+Hebrews+13%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5528</SequenceOrderId>
+    <Word>At sixteen you took enough trust in me, punctually I am indebted.</Word>
+    <AlphabetSequenceIndex>679</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 25:20, Song of Solomon 8, Psalms 33, 1 Peter 2:24</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+25%3A20%2C+Song+of+Solomon+8%2C+Psalms+33%2C+1+Peter+2%3A24&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5529</SequenceOrderId>
+    <Word>Policy is directionless.</Word>
+    <AlphabetSequenceIndex>260</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:25, 1 Samuel 24, Matthew 1, Revelation 9:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A25%2C+1+Samuel+24%2C+Matthew+1%2C+Revelation+9%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5530</SequenceOrderId>
+    <Word>How you body, pidgin.</Word>
+    <AlphabetSequenceIndex>212</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:6, Judges 1, Luke 5, Revelation 11:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A6%2C+Judges+1%2C+Luke+5%2C+Revelation+11%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5531</SequenceOrderId>
+    <Word>Chicago offers no counterpunches.</Word>
+    <AlphabetSequenceIndex>326</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:7, 2 Kings 13, Hosea 2, Revelation 4:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A7%2C+2+Kings+13%2C+Hosea+2%2C+Revelation+4%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5532</SequenceOrderId>
+    <Word>A stronger economy detains a greater attention.</Word>
+    <AlphabetSequenceIndex>472</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:14, Job 36, Isaiah 39, 1 John 5:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A14%2C+Job+36%2C+Isaiah+39%2C+1+John+5%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5533</SequenceOrderId>
+    <Word>singles matchup.</Word>
+    <AlphabetSequenceIndex>167</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:7, Deuteronomy 14, Acts 5, Revelation 14:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A7%2C+Deuteronomy+14%2C+Acts+5%2C+Revelation+14%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5534</SequenceOrderId>
+    <Word>Cancer cantoneses.</Word>
+    <AlphabetSequenceIndex>159</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:21, Deuteronomy 6, Acts 13, Revelation 14:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A21%2C+Deuteronomy+6%2C+Acts+13%2C+Revelation+14%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5535</SequenceOrderId>
+    <Word>Home showing is a schooling experience.</Word>
+    <AlphabetSequenceIndex>371</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:10, 2 Chronicles 4, Ezekiel 17, Revelation 2:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A10%2C+2+Chronicles+4%2C+Ezekiel+17%2C+Revelation+2%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5536</SequenceOrderId>
+    <Word>You have to make a call that defines the need: Tryout or Tom in.</Word>
+    <AlphabetSequenceIndex>586</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:14, Psalms 108, Psalms 126, 2 Peter 2:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A14%2C+Psalms+108%2C+Psalms+126%2C+2+Peter+2%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5537</SequenceOrderId>
+    <Word>Mechanical interval.</Word>
+    <AlphabetSequenceIndex>170</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:10, Deuteronomy 17, Acts 2, Revelation 14:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A10%2C+Deuteronomy+17%2C+Acts+2%2C+Revelation+14%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5538</SequenceOrderId>
+    <Word>We can outland the distance.</Word>
+    <AlphabetSequenceIndex>241</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:6, 1 Samuel 5, Matthew 20, Revelation 9:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A6%2C+1+Samuel+5%2C+Matthew+20%2C+Revelation+9%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5539</SequenceOrderId>
+    <Word>The interchange of technology is a nuisance and we have outsmart the surety, shirt renting.</Word>
+    <AlphabetSequenceIndex>909</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 31:35, Zephaniah 3, 2 Samuel 14, Hebrews 11:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+31%3A35%2C+Zephaniah+3%2C+2+Samuel+14%2C+Hebrews+11%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5540</SequenceOrderId>
+    <Word>The basic infrastructure is a disillusionary of the asset.</Word>
+    <AlphabetSequenceIndex>594</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:2, Psalms 116, Psalms 118, 2 Peter 2:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A2%2C+Psalms+116%2C+Psalms+118%2C+2+Peter+2%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5541</SequenceOrderId>
+    <Word>We still can sit behind the wheel, or sit on the wheel.</Word>
+    <AlphabetSequenceIndex>490</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:32, Psalms 12, Isaiah 21, 1 John 4:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A32%2C+Psalms+12%2C+Isaiah+21%2C+1+John+4%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5542</SequenceOrderId>
+    <Word>Is real estate a showcase of the people or the facts of life.</Word>
+    <AlphabetSequenceIndex>519</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:5, Psalms 41, Ecclesiastes 12, 1 John 3:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A5%2C+Psalms+41%2C+Ecclesiastes+12%2C+1+John+3%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5543</SequenceOrderId>
+    <Word>Is this real life or dictatorship dictation.</Word>
+    <AlphabetSequenceIndex>422</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:24, Nehemiah 9, Jeremiah 23, Jude 1:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A24%2C+Nehemiah+9%2C+Jeremiah+23%2C+Jude+1%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5544</SequenceOrderId>
+    <Word>Consultation fixed, commission variable, test shady volatile.</Word>
+    <AlphabetSequenceIndex>627</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:35, Psalms 149, Psalms 85, 1 Peter 5:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A35%2C+Psalms+149%2C+Psalms+85%2C+1+Peter+5%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5545</SequenceOrderId>
+    <Word>What are the impossiblities of finding a home?</Word>
+    <AlphabetSequenceIndex>411</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:13, Ezra 8, Jeremiah 34, Jude 1:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A13%2C+Ezra+8%2C+Jeremiah+34%2C+Jude+1%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5546</SequenceOrderId>
+    <Word>Buy, sell, refinance? At close of escrow. We determine the needs of our ancestry.</Word>
+    <AlphabetSequenceIndex>731</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 27:3, Isaiah 52, Job 23, James 5:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+27%3A3%2C+Isaiah+52%2C+Job+23%2C+James+5%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5547</SequenceOrderId>
+    <Word>The Democratic party organises an eleven million dollars fund raising for the de-facto presidential nomination John Kerry, representatives included Jimmy Carter, Bill Clinton, Al Gore, who was the old man out, no quotes.</Word>
+    <AlphabetSequenceIndex>2128</AlphabetSequenceIndex>
+    <ScriptureReference>Exodus 22:14, Matthew 10, 1 Samuel 15, 2 Corinthians 10:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+22%3A14%2C+Matthew+10%2C+1+Samuel+15%2C+2+Corinthians+10%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1662</SequenceOrderId>
+   <Dated>2004-03-27T00:00:00.0000000-08:00</Dated>
+   <Commentary>Sweet Tomatoes http://www.SweetTomatoes.com 39370 Paseo Padre Parkway Fremont 94538 CA Tel: (510) 494-0300.</Commentary>
+   <ContactId>370</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1663</SequenceOrderId>
+   <Commentary>Everett Kalin. Lucy Kolin. Ressurection Lutheran Church 397 Euclid Avenue Oakland CA 94610 lucyk@pacbell.net (510) 444-5382.</Commentary>
+   <ContactId>113</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1664</SequenceOrderId>
+   <Commentary>Flavor Dyer Century 21 Alpha 1900 McCarthy Boulevard Suite 400 Milpitas CA 95035 Work Tel: (408) 934-8212 Work Tel: (408) 262-0500 Ext 212 Mobile Tel: (408) 849-1926 Home (408) 923-4328 http://www.soldsister.com FlavorDyer2000@yahoo.com FlavorDyer@Yahoo.com. Great Mall Montague McDonalds Capital Avenue.</Commentary>
+   <ContactId>369</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1665</SequenceOrderId>
+   <Commentary>Svenhard's Swedish Bakery 0 71166 02901 3. 16 variety pack. 2 LBS 908kg. 4 Apple Horns, 4 Raising-ettes, 4 Berry Horns, 4 Breakfast Claw. Net Wt. 20z (56g).</Commentary>
+   <ContactId>81</ContactId>
+   <Expense>8.29</Expense>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>352</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>707</SequenceOrderId>
+   <Commentary>Private part ... hip ... feet ... leg ... face ... hand ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>371</SequenceOrderId>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

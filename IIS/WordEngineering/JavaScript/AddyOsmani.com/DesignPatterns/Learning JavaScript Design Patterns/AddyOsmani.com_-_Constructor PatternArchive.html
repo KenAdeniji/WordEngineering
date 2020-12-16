@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-05 Created.	https://addyosmani.com/resources/essentialjsdesignpatterns/book/#constructorpatternjavascript
+			A need, for involvement.
+			Adapting use.
+			When He first told, His tale; this is how, He used it.
+			https://stackoverflow.com/questions/4162749/convert-js-object-to-json-string
+			https://stackoverflow.com/questions/16507222/create-json-object-dynamically-via-javascript-without-concate-strings
+	-->
+	<head>
+		<title>Learning JavaScript Design Patterns A book by Addy Osmani Constructor Pattern</title>
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>
+		<script>
+			var man = new Object();
+			man = {
+					"first man": {
+						"name": "Adam",
+						"scriptureReference": "Genesis 2:19, 1 Corinthians 15:45, 1 Corinthians 15:47"
+					},
+					"mother of all living": {
+						"name": "Eve",
+						"scriptureReference": "Genesis 3:20"
+					}
+			};
+		
+			document.getElementById("resultSet").innerHTML = JSON.stringify(man);
+		</script>
+	</body>
+</html>

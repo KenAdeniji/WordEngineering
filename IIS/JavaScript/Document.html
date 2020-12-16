@@ -1,0 +1,68 @@
+<html>
+	<!--
+		2015-07-18	eval.
+	-->
+	<head>
+		<title>Document</title>
+		<style>
+			body { background: blue; color: yellow; }
+		</style>
+	</head>
+	<body>
+		<div id="informationSet"> </div>
+		<!--
+		<table>
+			<tbody>
+				<script type="text/javascript">
+					function writeRow(label, value)
+					{
+						document.write
+						(
+							"<tr><td>" + label + "</td><td>" + value + "</td></tr>"
+						);
+					}
+					writeRow("Last Modified", document.lastModified);
+					writeRow("readyState", document.readyState);
+					writeRow("referrer", document.referrer);
+				</script>
+			</tbody>
+		</table>
+		-->
+		<script>
+			function startUp()
+			{
+				var informationSet = "<table>";
+				for 
+				(
+					var instructionIndex = 0, instructionCount = instructionSet.length;
+					instructionIndex < instructionCount;
+					++instructionIndex
+				)
+				{
+					informationSet += 	"<tr><td>" + instructionSet[instructionIndex] + "</td><td>" + 
+										eval(instructionSet[instructionIndex]) + "</td></tr>"
+				}	
+				informationSet += "</table>"
+				document.getElementById("informationSet").innerHTML = informationSet;
+			}
+			
+			var instructionSet = [
+				"document.lastModified",
+				"document.location", //"window.location.href"
+				"document.readyState",
+				"document.referrer",
+				"document.title",
+				"window.innerHeight",
+				"window.innerWidth"
+			]
+			window.addEventListener("load", startUp, false);
+/*			
+for (var name in document) {
+	if (document.hasOwnProperty(name)) {
+		document.write(name + ": " + document[name]);
+	}
+}
+*/
+		</script>	
+	</body>
+</html>

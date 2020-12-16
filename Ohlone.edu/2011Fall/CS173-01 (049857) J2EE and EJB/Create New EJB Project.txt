@@ -1,0 +1,83 @@
+Project Name: SimpleEJBProject
+From the Project menu, choose Properties, Java Build Path, Libraries tab, Add External JARS
+	appserv-rt.jar - E:\glassfish3\glassfish\lib
+	javaee.jar - E:\glassfish3\glassfish\lib
+New Package
+	Source folder: SimpleEJBProject/ejbModule
+	Name: com.ohlone.ejb3
+New Interface
+	Name: IMyBean
+	External Interfaces: java.io.Serializable
+
+package com.ohlone.ejb3;
+
+import java.io.Serializable;
+
+public interface IMyBean extends Serializable {
+	public String doSomething();
+}
+
+From the EJB project, select the new menu, select EJB, and Session Bean	
+
+Create EJB 3.x Session Bean
+	EJB project: SimpleEJBProject
+	Source folder: \SimpleEJBProject\ejbModule
+	Java package: com.ohlone.ejb3
+	Class name: MyBean
+	Superclass: java.lang.Object
+	State type: Stateless
+	Remote: com.ohlone.ejb3.MyBeanRemote
+	Local: com.ohlone.ejb3.MyBeanLocal
+	
+Start Glassfish and Deploy the application
+E:
+cd \Glassfish3\GlassFish
+asadmin start-domain
+
+Export EJB JAR file
+	EJB project: SimpleEJBProject
+	Destination: E:\glassfish3\glassfish\domains\domain1\autodeploy\SimpleEJBProject.jar
+	Check - Export source files
+	Check - Overwrite existing file
+		
+CREATE A NEW CLIENT PROJECT
+	SimpleEJBClient
+
+package com.ohlone.ejb3;
+
+public interface MyBean {
+    public String doSomething(); 
+}
+
+
+package com.ohlone.ejb3;
+
+public interface MyBeanRemote extends MyBean{
+
+}
+
+
+package com.ohlone.ejb3;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class EJBClientTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str;
+	   try {
+	        InitialContext ctx = new InitialContext();
+	        MyBeanRemote bean = (MyBeanRemote) ctx.lookup("ejb/MyBeanJNDI");
+	        str = bean.doSomething();
+	        System.out.println(str);
+	    } catch (NamingException e) {
+	        e.printStackTrace();
+	    } 		
+	}
+}
+	

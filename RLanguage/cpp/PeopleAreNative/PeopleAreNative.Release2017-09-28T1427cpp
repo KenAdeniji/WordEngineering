@@ -1,0 +1,24 @@
+#include <iostream>
+
+#include "DateTimeHandler.hpp"
+
+using namespace std;
+
+using namespace PeopleAreNative;
+
+/*
+	vcvars32.bat
+	2017-09-27	cl PeopleAreNative.cpp DateTimeHandler.cpp
+	2017-09-27	http://stackoverflow.com/questions/14218894/number-of-days-between-two-dates-c
+	2017-09-28	https://msdn.microsoft.com/en-us/library/5cb46ksf.aspx?f=255&MSPPError=-2147217396
+	2017-09-28	http://albertech.blogspot.com/2014/12/how-to-compile-dll-using-clexe.html
+	2017-09-28	cl.exe /D_USRDLL /D_WINDLL DateTimeHandler.cpp PeopleAreNative.cpp /MT /link /DLL /OUT:PeopleAreNative.dll
+	2017-09-28	https://drthitirat.wordpress.com/2013/05/30/combine-gui-of-c-with-c-codes/
+*/
+
+int main(){
+	long days = DateTimeHandler::dateDifference(2012, 1, 24, 2013, 1, 8);
+	days = call_DateTimeHandler_dateDifference(2012, 1, 24, 2013, 1, 8);
+	cout << "Days: " << days;
+}
+

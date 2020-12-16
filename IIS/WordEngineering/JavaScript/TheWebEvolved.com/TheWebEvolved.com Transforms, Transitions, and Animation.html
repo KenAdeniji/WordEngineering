@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-04-19	http://thewebevolved.com/download/The-Web-Evolved-Sample-Chapter12.pdf
+	-->
+	<head>
+		<title>TheWebEvolved.com Transforms, Transitions, and Animation</title>
+		<style>
+div {
+  position: relative;
+  padding-top: 24px;
+  height: 136px;
+}
+div>div {
+  /* position: absolute; */
+  width: 18%;
+  height: 100px;
+  border: 3px solid #000;
+  border-radius: .5em;
+  padding-top: 0;
+  background: #fff;
+  text-align: center;
+  line-height: 100px;
+}		
+			.translate {transform: translate(-24px, -24px);}
+			.rotate {transform: rotate(-205deg);}
+			.scale {transform: scale(.75);}
+			.skew {transform: skewX(-18deg);}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<div class="normal">Normal</div>
+			<div class="translate">Translate</div>
+			<div class="scale">Scale</div>
+			<div class="skew">Skew</div>
+		</div>
+	</body>
+</html>

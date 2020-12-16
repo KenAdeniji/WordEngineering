@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-03-24	Created.
+			2016-03-24	https://en.wikipedia.org/wiki/List_of_biblical_places
+			2016-03-24	https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes
+			2016-03-25	PlacesInTheBible.html pass long scripture reference, in query string.
+			2016-03-25	http://forums.asp.net/t/1366194.aspx?call+child+windows+function+from+parent+window
+			2016-03-25	http://stackoverflow.com/questions/13953321/how-can-i-call-a-window-child-function-in-javascript
+			2016-03-25	http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-url-parameter
+		-->
+		<title>Places in the Bible</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="placesInTheBible"></div>
+			<div id="feedback"></div>
+			<br>
+			Please note, the information set, is not complete.
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function anchorPostHandler(event)
+			{
+				event.stopPropagation();
+				event.preventDefault();
+				var href = this.href;
+				var parts = href.split('?');
+				var url = parts[0];
+				var scriptureReference = getURLParameter("scriptureReference", this.href)
+				var scriptureReferenceWindow = window.open(url);
+				scriptureReferenceWindow.onload = function(){
+					scriptureReferenceWindow.setScriptureReference(scriptureReference);
+					scriptureReferenceWindow.focus();
+				};				
+			}
+			
+			function getURLParameter(name, url) {
+				if (!url)
+				{
+					url = location.search;
+				}
+				return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(url)||[,""])[1].replace(/\+/g, '%20'))||null;
+			}
+			
+			function pageLoad()
+			{ 
+				if (!isPostBack) 
+				{ 
+					querySubmit();
+					isPostBack = true;
+				} 
+			}
+
+			function querySubmit()
+			{
+				retrieveQuery();
+			}
+
+			function renderQuery(data) 
+			{
+				var info = "<table id='placesInTheBibleTable'><caption>Places in the Bible</caption>";
+				info += "<thead><tr><th>Number</th>";
+				info += "<th>Scripture Reference</th><th>URI</th></tr></thead><tbody>";
+				
+				var dataRow = null;
+				var dataTable = null;
+			
+				var place = null;
+				var placeLink = null;
+				
+				var	scriptureReference = null;
+				var	scriptureReferenceLink = null;
+				
+				var	uri = null;
+				var uriLink = null;
+				
+				var requestArray = new Array();
+
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+					 	
+						place = dataRow["Place"];
+						placeLink = "<a href='BibleDictionary.html?word=" + place + "'>" + place + "</a>";
+						
+						scriptureReference = dataRow["PlacesInTheBibleScriptureReference"];
+						if(!scriptureReference)
+						{
+							scriptureReferenceLink = "";
+						}	
+						else
+						{
+							scriptureReferenceLink = scriptureReferenceHyperlink(scriptureReference);
+						}	
+
+						uri = dataRow["Uri"];
+						if(!uri)
+						{
+							uriLink = "";
+						}	
+						else
+						{
+							uriLink = uriHyperlink(uri);
+						}	
+						
+						info += "<tr>";
+						info += "<td>" + placeLink + "</td>";
+						info += "<td>" + scriptureReferenceLink + "</td>";
+						console.log(scriptureReferenceLink);
+						info += "<td>" + uriLink + "</td>";
+						info += "</tr>";		
+					}
+				}
+
+				info += "</tbody>"
+				info += "</table>"
+				document.getElementById("placesInTheBible").innerHTML = info;
+				
+				var anchors = document.querySelectorAll('a[data-getPost="post"]');
+				for (var i = 0; i < anchors.length; i++) {
+					anchors[i].addEventListener("click", anchorPostHandler, false);
+				}
+			}
+
+			function retrieveQuery()
+			{
+				var request = {};
+				var requestJson = JSON.stringify(request);
+
+				$.ajax   
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/PlacesInTheBibleWebService.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderQuery(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?" +
+					"scriptureReference=" + scriptureReference + "' " +
+					"data-getPost='post'>" + scriptureReference + "</a>";
+			}
+			
+			function tableRow()
+			{
+				line = "<tr>";
+				for (var index = 0; index < arguments.length; ++index)
+				{
+					line += "<td>" + arguments[index] + "</td>";
+				}
+				line += "</tr>";
+				return line;
+			}
+
+			function uriHyperlink(uri)
+			{
+				var uriLink = uri.toLowerCase();
+				var position = uriLink.indexOf("http:");
+				if (position === -1)
+				{
+					uriLink = "http://" + uriLink;
+				}
+				return "<a href='" + uriLink + "'>" + uri + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

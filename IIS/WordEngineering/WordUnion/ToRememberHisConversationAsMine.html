@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-07-31	Created.
+	-->
+	<head>
+		<title>To remember His conversation, as mine.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="referenceDate">Reference Date:</label></td>
+						<td><input id="referenceDate" type="Date" autofocus/></td>
+					</tr>
+					<tr>
+						<td><label for="country">Country:</label></td>
+						<td><select id="country"></select></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+					</tr>
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			function queryCountry() {
+				var request = {};
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/ToRememberHisConversationAsMine.asmx/Country",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        renderCountry(informationSet);
+				    },
+				    error: function (xhr) {
+				        document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+				    }
+				});
+			}
+			
+			function querySubmit() {
+				var request = {};
+				
+				var referenceDate = document.getElementById("referenceDate").value;
+				if (!referenceDate)
+				{
+					referenceDate = scriptLiteral9432.todayTimezoneOffset();
+					document.getElementById("referenceDate").value = referenceDate;
+				}
+				
+				request["referenceDate"] = referenceDate;
+				request["country"] = document.getElementById("country").value;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/ToRememberHisConversationAsMine.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						var sorter = tsorter.create('resultSet');
+				    },
+				    error: function (xhr) {
+				        $("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+			
+		    function renderCountry(data) 
+			{
+				for (var table in data) {
+					dataTable = data[table];
+					
+					CountryEntries = [];
+					//CountryEntries.push(["(All)", ""]);
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						CountryEntries.push([dataRow["Country"], dataRow["Country"]]);
+					}
+				}
+				scriptLiteral9432.buildSelect("country", CountryEntries);
+				querySubmit();
+		    }
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						queryCountry();
+						isPostBack = true;
+					});
+				}
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

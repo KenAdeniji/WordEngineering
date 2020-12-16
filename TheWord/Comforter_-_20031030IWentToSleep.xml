@@ -1,0 +1,109 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>236</SequenceOrderId>
+  <Dated>2003-10-30T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Psalms 127:2</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Psalms+127%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>I went to sleep.</Title>
+  <FromUntil>303</FromUntil>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>6</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>104</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>461</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Filename></Filename>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>81</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>416</SequenceOrderId>
+   <Word>I ... Sleep.</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>1135</SequenceOrderId>
+   <Word>I went to sleep.</Word>
+   <AlphabetSequenceIndex>163</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 7:3, Deuteronomy 10, Acts 9, Revelation 14:13</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A3%2C+Deuteronomy+10%2C+Acts+9%2C+Revelation+14%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <Commentary />
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1275</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>26</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>281</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>489</SequenceOrderId>
+   <Commentary>Shutdown the left computer, Comfort ... Comfort computer noise. Smell ... Urine ... Left hand twitches.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>
+

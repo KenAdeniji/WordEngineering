@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-17	I was called to arbitrate between president Donald Trump versus some women, and the call is that he has older women in his family, and he has female children. ((9 * 60) + 49) / 24 * 60 = 40.90277777777778
+	-->
+	<head>
+		<title>What time is it, please? Nine forty nine.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Time, Bible Books"/>
+		<meta name="keywords" content="Time, Bible Books"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<label for="inputTime">Time
+				<input type="time" ID="inputTime" step="01"/>
+			</label>
+			<select id="limit" size="1">
+				<option value="All" selected="selected">All</option>		
+				<option value="Old Testament">Old Testament</option>
+				<option value="New Testament">New Testament</option>
+				<option value="Pentateuch">Pentateuch</option>
+				<option value="Joshua - 2 Chronicles">Joshua - 2 Chronicles</option>
+				<option value="Major Prophets">Major Prophets</option>
+				<option value="Minor Prophets">Minor Prophets</option>
+				<option value="Gospel">Gospel</option>
+			</select>
+			&nbsp; &nbsp; &nbsp;
+			<input type="submit" id="submitQuery">
+		</div>
+		</fieldset>
+		<br><br>
+		<div align="center">	
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			 
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					var inputTime = getParameterByName("inputTime");
+					if (!inputTime)
+					{
+						inputTime = "09:49:00";
+					}	
+					document.getElementById("inputTime").value = inputTime;
+					
+					var select = document.getElementById("limit");
+					
+					for
+					(
+						var index = 0, length = Books.length;
+						index < length;
+						++index
+					)
+					{		
+						var option = document.createElement("option");
+						var choice = Books[index];
+						option.text = choice;
+						option.value = choice;
+						select.appendChild(option);
+					}
+					
+					if (inputTime !== "")
+					{
+						querySubmit();	
+						isPostBack = true;
+					}
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["limit"] = document.getElementById("limit").value;
+				var inputTime = document.getElementById("inputTime").value;
+				var times = inputTime.split(":");
+				var seconds = 	(times[0] * 3600) +
+								(times[1] * 60) +
+								(times[2]); 
+				var percentage = seconds / (24 * 60 * 60);
+				request["percentage"] = percentage;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BiblePercentage.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						document.getElementById("resultSet").innerHTML = scriptureReferenceHyperlink(data.d);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);		
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var Books = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
+		
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

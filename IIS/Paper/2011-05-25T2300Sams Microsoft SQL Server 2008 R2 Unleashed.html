@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sams Microsoft SQL Server 2008 R2 Unleashed</title>
+</head>
+<body>
+    <h1>A page and an extent</h1>
+	A page is 8KB of a data file. An extent is 8 pages, 64KB.
+	<h1>Editing sqlcmd Scripts in SSMS</h1>
+		Must be in SQLCmd Mode. Menu Query, SQLCmd Mode.
+	<h1>Source Control</h1>
+		Menu Tools, Options, Source Control.
+	<h1>Command-Line Utility Installation Locations</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Utility</th>
+				<th>Install Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>sqlcmd</td>
+				<td>x:\Program Files\Microsoft SQL Server\100\Tools\Binn</td>
+			</tr>
+			<tr>
+				<td>dta</td>
+				<td>x:\Program Files\Microsoft SQL Server\100\Tools\Binn</td>
+			</tr>
+			<tr>
+				<td>tablediff</td>
+				<td>x:\Program Files\Microsoft SQL Server\100\COM</td>
+			</tr>
+			<tr>
+				<td>bcp</td>
+				<td>x:\Program Files\Microsoft SQL Server\100\Tools\Binn</td>
+			</tr>
+			<tr>
+				<td>sqldiag</td>
+				<td>x:\Program Files\Microsoft SQL Server\100\Tools\Binn</td>
+			</tr>
+			<tr>
+				<td>sqlservr</td>
+				<td>x:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\Binn</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h1>SQLCmd ServerName</h1>
+		REM -Q Query. -E Trusted connection.<br/>
+		SQLCmd -S(local) -E -Q "Select @@ServerName"<br/>
+		SQLCmd -S(local) -E -Q "Select GetDate()" -o c:\TestOutput.txt -e
+		
+	<h1>Database Engine Tuning Advisor. The DTA Command-Line Utility</h1>
+		DTA -S (local) -E -D AdventureWorks -if c:\MyScript.sql -s MySessionX -of C:\MySessionOutputScript.sql -F
+	
+	<h1>The TableDiff Command-Line Utility</h1>	
+		Normally used in replication, to determine non-convergence.<br/>
+		SELECT * INTO AdventureWorks.Person.AddressTypeCopy
+			FROM AdventureWorks.Person.AddressType<br/>
+		tablediff
+			/sourceserver . /sourcedatabase AdventureWorks /sourceSchema Person /sourceTable AddressType
+			/destinationserver . /destinationDatabase AdventureWorks /destinationSchema Person /destinationTable AddressTypeCopy
+			-f c:\TableDiff_Output
+			<br/>
+	
+	<h1>SqlDiag</h1>
+		The results of the diagnostics are stored in the SqlDiag sub-directory.
+		
+	<h1>SqlServr</h1>
+		NET START MSSQLSERVER
+	
+	<h1>SQL Server Profiler</h1>
+		Start, SQL Server, Performance Tools, SQL Server Profiler.<br/>
+		SSMS menu, Tools, SQL Server Profiler.<br/>
+		
+		<h2>SQL Profiler Templates</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Template</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>SP_Counts</td>
+						<td>Tracks running stored procedures.</td>
+					</tr>
+					<tr>
+						<td>Standard</td>
+						<td>Traces the completion of SQL statements and Remote Procedure Calls (RPCs) as well as key connection information.</td>
+					</tr>
+					<tr>
+						<td>TSQL</td>
+						<td>Traces the start of SQL statements and RPCs. This template is useful for debugging client applications where some of the statements are not completing successfully.</td>
+					</tr>
+					<tr>
+						<td>TSQL_Duration</td>
+						<td>Determines the total execution time for each completed SQL statement or RPC.</td>
+					</tr>
+					<tr>
+						<td>TSQL_Grouped</td>
+						<td>Traces the start of SQL statements and RPCs, grouped by Application, NTUser, LoginName, and ClientProcessId.</td>
+					</tr>
+					<tr>
+						<td>TSQL_Locks</td>
+						<td>Traces the completion of SQL statements along with the key lock information that is usable for troubleshooting lock timeouts, deadlocks, and lock escalation issues.</td>
+					</tr>
+					<tr>
+						<td>TSQL_Replay</td>
+						<td>Captures profiling information that is useful for replay. The information set expands on the standard template, by adding more detail, such as cursor and rpc output details.</td>
+					</tr>
+					<tr>
+						<td>TSQL_SPs</td>
+						<td>Traces stored procedures start, end, and the SQL statements.</td>
+					</tr>
+					<tr>
+						<td>Tuning</td>
+						<td>Track the completion of SQL statements and RPCs.</td>
+					</tr>
+				</tbody>
+			</table>	
+</body>
+</html>

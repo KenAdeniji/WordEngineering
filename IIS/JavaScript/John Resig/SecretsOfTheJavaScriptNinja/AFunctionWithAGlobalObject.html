@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function katana(){ 
+			  this.isSharp = true; 
+			} 
+			katana(); 
+			//assert( isSharp === true, "A global object now exists with that name and value." ); 
+			if (isSharp === true)
+			{
+				document.write("A global object now exists with that name and value.");
+			}
+			 
+			var shuriken = { 
+			  toss: function(){ 
+				this.isSharp = true; 
+			  } 
+			}; 
+			shuriken.toss(); 
+			//assert( shuriken.isSharp === true, "When it's an object property, the value is set within the object." );
+			if (shuriken.isSharp === true)
+			{
+				document.write("When it's an object property, the value is set within the object.");
+			}
+		</script>
+	</head>	
+<html>

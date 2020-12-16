@@ -1,0 +1,110 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+    <UniqueId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</UniqueId>
+    <SequenceOrderId>1</SequenceOrderId>
+    <Dated>2003-07-23T00:00:00.0000000-08:00</Dated>
+    <ScriptureReference>1 Samuel 19:6, 1 Samuel 20:3, 1 Samuel 20:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=1+Samuel+19%3A6%2C+1+Samuel+20%3A3%2C+1+Samuel+20%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Title>Sultan</Title>
+    <Keyword />
+    <Filename>Comforter_-_20030723Sultan.xml</Filename>
+    <!--
+    <Remember>
+      <SequenceOrderId>313</SequenceOrderId>
+    </Remember>
+    -->
+    <ScriptureReading>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{BDD21703-14FD-4AE8-B435-7C06D6E7686B}</UniqueId>
+      <SequenceOrderId>57</SequenceOrderId>
+      <Dated>2003-07-22T00:00:00.0000000-08:00</Dated>
+      <ScriptureReference>Jeremiah 18-20</ScriptureReference>
+      <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Jeremiah+18-20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    </ScriptureReading>
+    <!--
+    <Sign>
+      <TheWordId />
+      <UniqueId />
+      <SequenceOrderId>18</SequenceOrderId>
+      <Measure />
+      <SignIndex />
+    </Sign>
+    -->
+    <BibleWord>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{26352F4E-DB51-41DE-AE45-124E68ED2422}</UniqueId>
+      <SequenceOrderId>173</SequenceOrderId>
+      <Word>LORD Live</Word>
+      <Commentary>Saul hearkened unto the voice of Jonathan: and Saul sware, As the LORD lives, David shall not be slain (1 Samuel 19:6). David sware moreover, and said, Your father certainly knows that I have found grace in your eyes; and he said, Let not Jonathan know this, less he be grieved: but truly as the LORD lives, and as your soul lives, there is but a step between me and death (1 Samuel 20:3). Behold, I will send a lad, saying, Go, find out the arrows. If I expressly say unto the lad, Behold, the arrows are on this side of you, take them; then come: for there is peace to you, and no hurt; as the LORD live (1 Samuel 20:21).</Commentary>
+      <ScriptureReference />
+    </BibleWord>
+    <AlphabetSequence>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{9BAA23A6-C5B9-46D8-BC4E-3AAA1067B02E}</UniqueId>
+      <SequenceOrderId>448</SequenceOrderId>
+      <Word>Sultan</Word>
+      <ScriptureReference>Genesis 4:7, Exodus 37, Ephesians 6, Revelation 18:22</ScriptureReference>  
+      <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A18%2C+Job+7%2C+Jeremiah+2%2C+3+John+1%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+    </AlphabetSequence>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{EDC45E1A-4423-4DC7-B646-FD4BD6752A8C}</UniqueId>
+      <SequenceOrderId>1010</SequenceOrderId>
+      <Commentary>Naked. Wake-up Orientation: Feets 25%, head center. TheWord.xslt: Fly. Fly, wall right. Fly, center, right. Fly, left. Fly, left. Scripture Reference: Sneeze. Comforter_-_20030723Sultan.xml: AlphabetSequence (s)ScriptureReference. Comforter_-_20030723Sultan.xml: Copy; first disk, fly on the other 2 disks. Nose, left, running.</Commentary>
+    </CaseBasedReasoning>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{30D03547-679A-44D5-8233-910E470BF102}</UniqueId>
+      <SequenceOrderId>1011</SequenceOrderId>
+      <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+    </CaseBasedReasoning>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{43C0FDE9-A062-4240-8193-9DE3445DD28B}</UniqueId>
+      <SequenceOrderId>1012</SequenceOrderId>
+      <Commentary>Naked. Wake-up Orientation: 25% eastward.</Commentary>
+    </CaseBasedReasoning>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{D15E39C5-52B5-4917-8BAE-5CD283A62289}</UniqueId>
+      <SequenceOrderId>1013</SequenceOrderId>
+      <Commentary>Naked. Wake-up Orientation: Feets 25%, head center, hands under the head, 4 left fingers except the thumb between the 1st and 2nd right fingers. Comforter_-_20030723SultanArchive.xml: File Save, sneeze.</Commentary>
+    </CaseBasedReasoning>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{6B793CE4-E460-48DB-A8CB-2626E08AA4E3}</UniqueId>
+      <SequenceOrderId>1014</SequenceOrderId>
+      <Commentary>
+       20030722 Cherry Street. Keep the pig's bag. House, left border, white shirted running through the backyard. 20030723 City of Newark 37101 Newark Boulevard Newark California 94560-3796 (510) 793-1400 Ext. 730 Fax: (510) 794-2329 Incident # 23850 D.L. Shearn Dispatch 6 S. Nauroth #17.
+      </Commentary>
+    </CaseBasedReasoning>
+    <CaseBasedReasoning>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{DDB13593-CF29-467E-8169-0315F6823363}</UniqueId>
+      <SequenceOrderId>1015</SequenceOrderId>
+      <Commentary>
+       Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.
+      </Commentary>
+    </CaseBasedReasoning>
+    <Export>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{8C44213F-0A92-4E46-ADDB-7B8825E89ADF}</UniqueId>
+      <SequenceOrderId>21</SequenceOrderId>
+      <Commentary>Comforter_-_20030723Address.txt Comforter_-_20030723AlphabetSequence.txt Comforter_-_20030723BibleWord.txt Comforter_-_20030723CaseBasedReasoning.txt Comforter_-_20030723Export.txt Comforter_-_20030723JehovahRophe.txt Comforter_-_20030723Prophet.txt Comforter_-_20030723Remember.txt Comforter_-_20030723ScriptureReading.txt Comforter_-_20030723Sign.txt Comforter_-_20030723Software.txt Comforter_-_20030723TheWord.txt</Commentary>
+    </Export>
+    <Software>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{818A7B59-53C7-4AE5-B439-7BE8F889D3EB}</UniqueId>
+      <SequenceOrderId>229</SequenceOrderId>
+      <Commentary>WordEngineeringRelease20030723.config TheWordRelease20030723.cs UtilityDatabaseRelease20030723.cs</Commentary>
+    </Software>
+    <ClassAssociates>
+      <TheWordId>{DFCDED5B-9FAD-4C44-9DD7-3A07C314392C}</TheWordId>
+      <UniqueId>{9268448C-7C0B-4706-99B3-FCFF32AE8234}</UniqueId>
+      <SequenceOrderId>247</SequenceOrderId>
+      <Commentary>Sleep: Dog Noise. Comforter_-_20030723Sultan.xml. Sleep: Dog Noise. Comforter_-_20030723Sultan.xml: SELECT * FROM  ClassAssociates WHERE (Dated >= '20030722') ORDER BY SequenceOrderId. Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. (pig's bag). UtilityDatabaseRelease20030723.cs: StringBuilder.</Commentary>
+    </ClassAssociates>
+  </TheWord>
+</wordOfGod>

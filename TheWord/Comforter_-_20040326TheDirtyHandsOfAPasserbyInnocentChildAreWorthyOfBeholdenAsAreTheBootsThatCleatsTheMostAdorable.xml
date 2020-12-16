@@ -1,0 +1,689 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>454</SequenceOrderId>
+   <Dated>2004-03-26T00:00:00.0000000-08:00</Dated>
+   <FromUntil>86</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>43</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>5366</SequenceOrderId>
+    <Word>Follow me as I make away.</Word>
+    <AlphabetSequenceIndex>210</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:4, Joshua 23, Luke 7, Revelation 12:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A4%2C+Joshua+23%2C+Luke+7%2C+Revelation+12%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5367</SequenceOrderId>
+    <Word>Oluwa iya mi oni bere.</Word>
+    <AlphabetSequenceIndex>197</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:13, Joshua 10, Luke 20, Revelation 12:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A13%2C+Joshua+10%2C+Luke+20%2C+Revelation+12%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5368</SequenceOrderId>
+    <Word>I murmur mind my manners, summon me in your sermon.</Word>
+    <AlphabetSequenceIndex>574</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:2, Psalms 96, Psalms 138, 2 Peter 3:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A2%2C+Psalms+96%2C+Psalms+138%2C+2+Peter+3%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5369</SequenceOrderId>
+    <Word>Same sometime; different language denote the same meaning.</Word>
+    <AlphabetSequenceIndex>489</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:31, Psalms 11, Isaiah 22, 1 John 4:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A31%2C+Psalms+11%2C+Isaiah+22%2C+1+John+4%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5370</SequenceOrderId>
+    <Word>The dirty hands of a passerby innocent child are worthy of beholden as are the boots that cleats the most adorable.</Word>
+    <AlphabetSequenceIndex>1046</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 36:5, Acts 28, Numbers 27, Hebrews 6:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+36%3A5%2C+Acts+28%2C+Numbers+27%2C+Hebrews+6%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5371</SequenceOrderId>
+    <Word>I mirror God when I am obedient to His service.</Word>
+    <AlphabetSequenceIndex>425</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:27, Nehemiah 12, Jeremiah 20, Jude 1:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A27%2C+Nehemiah+12%2C+Jeremiah+20%2C+Jude+1%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5372</SequenceOrderId>
+    <Word>Won't you let me rub your hand; would you let me rock your soul, beads.</Word>
+    <AlphabetSequenceIndex>750</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 27:22, Jeremiah 5, Job 4, James 4:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+27%3A22%2C+Jeremiah+5%2C+Job+4%2C+James+4%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5373</SequenceOrderId>
+    <Word>The bookshelf is a memory of me, as the audience is a rememberance of how we ought to live our life.</Word>
+    <AlphabetSequenceIndex>864</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 30:33, Hosea 2, 2 Kings 13, Hebrews 12:26</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+30%3A33%2C+Hosea+2%2C+2+Kings+13%2C+Hebrews+12%3A26&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5374</SequenceOrderId>
+    <Word>As I dedicate my home in you, honor my shallow bones.</Word>
+    <AlphabetSequenceIndex>496</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:38, Psalms 18, Isaiah 15, 1 John 4:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A38%2C+Psalms+18%2C+Isaiah+15%2C+1+John+4%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5375</SequenceOrderId>
+    <Word>Next time I course heaven, I'll love to surf your tides.</Word>
+    <AlphabetSequenceIndex>577</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:5, Psalms 99, Psalms 135, 2 Peter 3:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A5%2C+Psalms+99%2C+Psalms+135%2C+2+Peter+3%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5376</SequenceOrderId>
+    <Word>The translucent blinds distinguish the emeralds hidden in our guide.</Word>
+    <AlphabetSequenceIndex>656</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:64, Proverbs 28, Psalms 56, 1 Peter 3:22</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A64%2C+Proverbs+28%2C+Psalms+56%2C+1+Peter+3%3A22&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5377</SequenceOrderId>
+    <Word>Past patience yields clever clearview; therefore, transpose precautionary peanuts pasture.</Word>
+    <AlphabetSequenceIndex>955</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 32:26, Matthew 26, Ruth 3, Hebrews 10:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+32%3A26%2C+Matthew+26%2C+Ruth+3%2C+Hebrews+10%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5378</SequenceOrderId>
+    <Word>Dissuade less, peruse, persuade potential.</Word>
+    <AlphabetSequenceIndex>422</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:24, Nehemiah 9, Jeremiah 23, Jude 1:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A24%2C+Nehemiah+9%2C+Jeremiah+23%2C+Jude+1%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5379</SequenceOrderId>
+    <Word>Plausible parables are parenthesis, the differences are dividends derived in our household, stature, talent, tenure.</Word>
+    <AlphabetSequenceIndex>1080</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 36:39, 2 Corinthians 2, Leviticus 20, Hebrews 4:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+36%3A39%2C+2+Corinthians+2%2C+Leviticus+20%2C+Hebrews+4%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5380</SequenceOrderId>
+    <Word>God let me remind you of the time that changes Your hand.</Word>
+    <AlphabetSequenceIndex>518</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:4, Psalms 40, Song of Solomon 1, 1 John 3:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A4%2C+Psalms+40%2C+Song+of+Solomon+1%2C+1+John+3%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5381</SequenceOrderId>
+    <Word>The keg and the tangerine are the thank you note, I care to tell you, carry me, we whole.</Word>
+    <AlphabetSequenceIndex>782</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 28:8, Jeremiah 37, Ezra 5, James 3:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+28%3A8%2C+Jeremiah+37%2C+Ezra+5%2C+James+3%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5382</SequenceOrderId>
+    <Word>Salon sauna, studio salute.</Word>
+    <AlphabetSequenceIndex>283</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:16, 2 Samuel 16, Zephaniah 1, Revelation 7:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A16%2C+2+Samuel+16%2C+Zephaniah+1%2C+Revelation+7%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5383</SequenceOrderId>
+    <Word>Trial tights, trial tingles heights.</Word>
+    <AlphabetSequenceIndex>365</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:4, 1 Chronicles 27, Ezekiel 23, Revelation 2:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A4%2C+1+Chronicles+27%2C+Ezekiel+23%2C+Revelation+2%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5384</SequenceOrderId>
+    <Word>The porshe in the garage didn't deserve the attention, since you were not the one demanding the utilization.</Word>
+    <AlphabetSequenceIndex>1027</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 35:15, Acts 9, Deuteronomy 10, Hebrews 7:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+35%3A15%2C+Acts+9%2C+Deuteronomy+10%2C+Hebrews+7%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5385</SequenceOrderId>
+    <Word>I know that God still sends slides, our hindsight rears our foresight.</Word>
+    <AlphabetSequenceIndex>722</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 26:29, Isaiah 43, Job 32, 1 Peter 1:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+26%3A29%2C+Isaiah+43%2C+Job+32%2C+1+Peter+1%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5386</SequenceOrderId>
+    <Word>The cast signed eternally flavors goodness.</Word>
+    <AlphabetSequenceIndex>437</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:12, Job 1, Jeremiah 8, 3 John 1:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A12%2C+Job+1%2C+Jeremiah+8%2C+3+John+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5387</SequenceOrderId>
+    <Word>Mediocre, method mentor, menthol.</Word>
+    <AlphabetSequenceIndex>309</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:10, 1 Kings 18, Amos 2, Revelation 5:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A10%2C+1+Kings+18%2C+Amos+2%2C+Revelation+5%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5388</SequenceOrderId>
+    <Word>Egypt, the three years of sorrow abscond.</Word>
+    <AlphabetSequenceIndex>417</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:19, Nehemiah 4, Jeremiah 28, Jude 1:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A19%2C+Nehemiah+4%2C+Jeremiah+28%2C+Jude+1%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5389</SequenceOrderId>
+    <Word>Egypt, tuck under the bed, eastward, feet hanging out.</Word>
+    <AlphabetSequenceIndex>477</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:19, Job 41, Isaiah 34, 1 John 5:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A19%2C+Job+41%2C+Isaiah+34%2C+1+John+5%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5390</SequenceOrderId>
+    <Word>Egypt, pipe tear sail well, roll peas.</Word>
+    <AlphabetSequenceIndex>354</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:17, 1 Chronicles 16, Ezekiel 34, Revelation 3:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A17%2C+1+Chronicles+16%2C+Ezekiel+34%2C+Revelation+3%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5391</SequenceOrderId>
+    <Word>We are talking about this one in the kitten.</Word>
+    <AlphabetSequenceIndex>410</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:12, Ezra 7, Jeremiah 35, Jude 1:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A12%2C+Ezra+7%2C+Jeremiah+35%2C+Jude+1%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5392</SequenceOrderId>
+    <Word>Little Joe said thank you to jolly ride.</Word>
+    <AlphabetSequenceIndex>401</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:3, 2 Chronicles 34, Jeremiah 44, Revelation 1:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A3%2C+2+Chronicles+34%2C+Jeremiah+44%2C+Revelation+1%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5393</SequenceOrderId>
+    <Word>Freetown makeover, lane curves.</Word>
+    <AlphabetSequenceIndex>316</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:17, 2 Kings 3, Hosea 12, Revelation 5:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A17%2C+2+Kings+3%2C+Hosea+12%2C+Revelation+5%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5394</SequenceOrderId>
+    <Word>The joy of winning is losing the whiner in our heart.</Word>
+    <AlphabetSequenceIndex>537</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:23, Psalms 59, Proverbs 25, 1 John 2:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A23%2C+Psalms+59%2C+Proverbs+25%2C+1+John+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5395</SequenceOrderId>
+    <Word>Son in Nile, thundered our shores.</Word>
+    <AlphabetSequenceIndex>348</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:11, 1 Chronicles 10, Ezekiel 40, Revelation 3:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A11%2C+1+Chronicles+10%2C+Ezekiel+40%2C+Revelation+3%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5396</SequenceOrderId>
+    <Word>Cajoled in song, sojourn in tale.</Word>
+    <AlphabetSequenceIndex>301</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:2, 1 Kings 10, Obadiah 1, Revelation 6:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A2%2C+1+Kings+10%2C+Obadiah+1%2C+Revelation+6%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5397</SequenceOrderId>
+    <Word>Creative mass, one for a mean of us.</Word>
+    <AlphabetSequenceIndex>303</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:4, 1 Kings 12, Amos 8, Revelation 6:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A4%2C+1+Kings+12%2C+Amos+8%2C+Revelation+6%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5398</SequenceOrderId>
+    <Word>Qualitative analysis, quotient throughly.</Word>
+    <AlphabetSequenceIndex>492</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:34, Psalms 14, Isaiah 19, 1 John 4:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A34%2C+Psalms+14%2C+Isaiah+19%2C+1+John+4%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5399</SequenceOrderId>
+    <Word>Stress strains, drum revive.</Word>
+    <AlphabetSequenceIndex>337</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:18, 2 Kings 24, Daniel 3, Revelation 3:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A18%2C+2+Kings+24%2C+Daniel+3%2C+Revelation+3%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5400</SequenceOrderId>
+    <Word>Onise ile, onise ina.</Word>
+    <AlphabetSequenceIndex>174</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:14, Deuteronomy 21, John 19, Revelation 14:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A14%2C+Deuteronomy+21%2C+John+19%2C+Revelation+14%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5401</SequenceOrderId>
+    <Word>Simply you don't touch your hands where your eyes have not twinkled.</Word>
+    <AlphabetSequenceIndex>775</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 28:1, Jeremiah 30, Nehemiah 2, James 3:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+28%3A1%2C+Jeremiah+30%2C+Nehemiah+2%2C+James+3%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5402</SequenceOrderId>
+    <Word>March marshall, madam.</Word>
+    <AlphabetSequenceIndex>159</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:21, Deuteronomy 6, Acts 13, Revelation 14:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A21%2C+Deuteronomy+6%2C+Acts+13%2C+Revelation+14%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5403</SequenceOrderId>
+    <Word>None behind bars, altar loosen alley.</Word>
+    <AlphabetSequenceIndex>317</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:18, 2 Kings 4, Hosea 11, Revelation 5:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A18%2C+2+Kings+4%2C+Hosea+11%2C+Revelation+5%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5404</SequenceOrderId>
+    <Word>Trees fragile, roof roaring.</Word>
+    <AlphabetSequenceIndex>261</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:26, 1 Samuel 25, Malachi 4, Revelation 9:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A26%2C+1+Samuel+25%2C+Malachi+4%2C+Revelation+9%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5405</SequenceOrderId>
+    <Word>You're cutten the violin.</Word>
+    <AlphabetSequenceIndex>281</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:14, 2 Samuel 14, Zephaniah 3, Revelation 7:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A14%2C+2+Samuel+14%2C+Zephaniah+3%2C+Revelation+7%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5406</SequenceOrderId>
+    <Word>Floppy disk error ... living in shame ... growing in disgrace.</Word>
+    <AlphabetSequenceIndex>531</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 21:17, Psalms 53, Proverbs 31, 1 John 2:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+21%3A17%2C+Psalms+53%2C+Proverbs+31%2C+1+John+2%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5407</SequenceOrderId>
+    <Word>It would have been good, I admit, but I was a tokenizer.</Word>
+    <AlphabetSequenceIndex>482</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:24, Psalms 4, Isaiah 29, 1 John 4:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A24%2C+Psalms+4%2C+Isaiah+29%2C+1+John+4%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5408</SequenceOrderId>
+    <Word>Is it democracy or our genealogy?</Word>
+    <AlphabetSequenceIndex>322</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:3, 2 Kings 9, Hosea 6, Revelation 5:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A3%2C+2+Kings+9%2C+Hosea+6%2C+Revelation+5%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5409</SequenceOrderId>
+    <Word>Partly vein, flatly tan.</Word>
+    <AlphabetSequenceIndex>253</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:18, 1 Samuel 17, Matthew 8, Revelation 9:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A18%2C+1+Samuel+17%2C+Matthew+8%2C+Revelation+9%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5410</SequenceOrderId>
+    <Word>I will like two, in a theater ballroom.</Word>
+    <AlphabetSequenceIndex>349</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:12, 1 Chronicles 11, Ezekiel 39, Revelation 3:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A12%2C+1+Chronicles+11%2C+Ezekiel+39%2C+Revelation+3%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5411</SequenceOrderId>
+    <Word>That's the crew angular.</Word>
+    <AlphabetSequenceIndex>224</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:18, Judges 13, Mark 9, Revelation 11:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A18%2C+Judges+13%2C+Mark+9%2C+Revelation+11%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5412</SequenceOrderId>
+    <Word>Insummortable task seek divine aim.</Word>
+    <AlphabetSequenceIndex>339</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:2, 1 Chronicles 1, Daniel 1, Revelation 3:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A2%2C+1+Chronicles+1%2C+Daniel+1%2C+Revelation+3%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5413</SequenceOrderId>
+    <Word>Appreciate precious associate.</Word>
+    <AlphabetSequenceIndex>292</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:25, 1 Kings 1, Micah 5, Revelation 6:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A25%2C+1+Kings+1%2C+Micah+5%2C+Revelation+6%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5414</SequenceOrderId>
+    <Word>Smooth simulate movers.</Word>
+    <AlphabetSequenceIndex>282</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:15, 2 Samuel 15, Zephaniah 2, Revelation 7:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A15%2C+2+Samuel+15%2C+Zephaniah+2%2C+Revelation+7%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5415</SequenceOrderId>
+    <Word>Arrange the lease structure.</Word>
+    <AlphabetSequenceIndex>284</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:17, 2 Samuel 17, Habakkuk 3, Revelation 7:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A17%2C+2+Samuel+17%2C+Habakkuk+3%2C+Revelation+7%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5416</SequenceOrderId>
+    <Word>I see you in me, so I thrill.</Word>
+    <AlphabetSequenceIndex>262</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:27, 1 Samuel 26, Malachi 3, Revelation 8:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A27%2C+1+Samuel+26%2C+Malachi+3%2C+Revelation+8%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5417</SequenceOrderId>
+    <Word>Thanks for the last time, which was the longest.</Word>
+    <AlphabetSequenceIndex>463</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:5, Job 27, Isaiah 48, 1 John 5:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A5%2C+Job+27%2C+Isaiah+48%2C+1+John+5%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5418</SequenceOrderId>
+    <Word>You stand misunderstood when you justify the unsatiable restriction.</Word>
+    <AlphabetSequenceIndex>803</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 29:7, Ezekiel 1, 2 Chronicles 20, James 2:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+29%3A7%2C+Ezekiel+1%2C+2+Chronicles+20%2C+James+2%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5419</SequenceOrderId>
+    <Word>Refine the router, tithe.</Word>
+    <AlphabetSequenceIndex>249</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:14, 1 Samuel 13, Matthew 12, Revelation 9:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A14%2C+1+Samuel+13%2C+Matthew+12%2C+Revelation+9%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5420</SequenceOrderId>
+    <Word>I stare alone without the supporting stair.</Word>
+    <AlphabetSequenceIndex>490</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:32, Psalms 12, Isaiah 21, 1 John 4:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A32%2C+Psalms+12%2C+Isaiah+21%2C+1+John+4%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5421</SequenceOrderId>
+    <Word>The undercloth with assurance.</Word>
+    <AlphabetSequenceIndex>314</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:15, 2 Kings 1, Hosea 14, Revelation 5:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A15%2C+2+Kings+1%2C+Hosea+14%2C+Revelation+5%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5422</SequenceOrderId>
+    <Word>The village veil towards Pasedena.</Word>
+    <AlphabetSequenceIndex>314</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:15, 2 Kings 1, Hosea 14, Revelation 5:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A15%2C+2+Kings+1%2C+Hosea+14%2C+Revelation+5%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5423</SequenceOrderId>
+    <Word>Arouse the saliva.</Word>
+    <AlphabetSequenceIndex>176</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:16, Deuteronomy 23, John 17, Revelation 13:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5424</SequenceOrderId>
+    <Word>Glazed laced.</Word>
+    <AlphabetSequenceIndex>80</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:24, Exodus 30, Colossians 3, Revelation 19:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A24%2C+Exodus+30%2C+Colossians+3%2C+Revelation+19%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5425</SequenceOrderId>
+    <Word>Freedom mall with the residential library inside.</Word>
+    <AlphabetSequenceIndex>458</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:33, Job 22, Isaiah 53, 1 John 5:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A33%2C+Job+22%2C+Isaiah+53%2C+1+John+5%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5426</SequenceOrderId>
+    <Word>Dry light or browse or secure.</Word>
+    <AlphabetSequenceIndex>322</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:3, 2 Kings 9, Hosea 6, Revelation 5:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A3%2C+2+Kings+9%2C+Hosea+6%2C+Revelation+5%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5427</SequenceOrderId>
+    <Word>The camouflage tailors.</Word>
+    <AlphabetSequenceIndex>211</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:5, Joshua 24, Luke 6, Revelation 11:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A5%2C+Joshua+24%2C+Luke+6%2C+Revelation+11%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5428</SequenceOrderId>
+    <Word>Allure the edible.</Word>
+    <AlphabetSequenceIndex>139</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:1, Numbers 22, Romans 5, Revelation 16:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A1%2C+Numbers+22%2C+Romans+5%2C+Revelation+16%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5429</SequenceOrderId>
+    <Word>Cyclical rout in one stretch.</Word>
+    <AlphabetSequenceIndex>292</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:25, 1 Kings 1, Micah 5, Revelation 6:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A25%2C+1+Kings+1%2C+Micah+5%2C+Revelation+6%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5430</SequenceOrderId>
+    <Word>Complement contradicts.</Word>
+    <AlphabetSequenceIndex>242</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:7, 1 Samuel 6, Matthew 19, Revelation 9:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A7%2C+1+Samuel+6%2C+Matthew+19%2C+Revelation+9%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5431</SequenceOrderId>
+    <Word>The law of first course, the elderly above the cutoff.</Word>
+    <AlphabetSequenceIndex>506</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 20:10, Psalms 28, Isaiah 5, 1 John 3:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+20%3A10%2C+Psalms+28%2C+Isaiah+5%2C+1+John+3%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5432</SequenceOrderId>
+    <Word>Sectarian nectar.</Word>
+    <AlphabetSequenceIndex>151</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:13, Numbers 34, Acts 21, Revelation 15:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A13%2C+Numbers+34%2C+Acts+21%2C+Revelation+15%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5433</SequenceOrderId>
+    <Word>Baptist academy, rectangular outlets.</Word>
+    <AlphabetSequenceIndex>371</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:10, 2 Chronicles 4, Ezekiel 17, Revelation 2:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A10%2C+2+Chronicles+4%2C+Ezekiel+17%2C+Revelation+2%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5434</SequenceOrderId>
+    <Word>Payload pitas.</Word>
+    <AlphabetSequenceIndex>139</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:1, Numbers 22, Romans 5, Revelation 16:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A1%2C+Numbers+22%2C+Romans+5%2C+Revelation+16%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5435</SequenceOrderId>
+    <Word>Two decent believers, pa's.</Word>
+    <AlphabetSequenceIndex>242</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:7, 1 Samuel 6, Matthew 19, Revelation 9:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A7%2C+1+Samuel+6%2C+Matthew+19%2C+Revelation+9%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5436</SequenceOrderId>
+    <Word>Threshold flavor.</Word>
+    <AlphabetSequenceIndex>183</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:23, Deuteronomy 30, John 10, Revelation 13:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A23%2C+Deuteronomy+30%2C+John+10%2C+Revelation+13%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5437</SequenceOrderId>
+    <Word>Hose heal host.</Word>
+    <AlphabetSequenceIndex>135</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 5:29, Numbers 18, Romans 9, Revelation 16:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A29%2C+Numbers+18%2C+Romans+9%2C+Revelation+16%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5438</SequenceOrderId>
+    <Word>Recede the silent annulment, recit the architect announcement.</Word>
+    <AlphabetSequenceIndex>580</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:8, Psalms 102, Psalms 132, 2 Peter 2:22</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A8%2C+Psalms+102%2C+Psalms+132%2C+2+Peter+2%3A22&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5439</SequenceOrderId>
+    <Word>Demonstrate badminton hospitality.</Word>
+    <AlphabetSequenceIndex>380</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:19, 2 Chronicles 13, Ezekiel 8, Revelation 2:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A19%2C+2+Chronicles+13%2C+Ezekiel+8%2C+Revelation+2%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5440</SequenceOrderId>
+    <Word>Westfield Nigeria limited.</Word>
+    <AlphabetSequenceIndex>238</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:3, 1 Samuel 2, Matthew 23, Revelation 10:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A3%2C+1+Samuel+2%2C+Matthew+23%2C+Revelation+10%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5441</SequenceOrderId>
+    <Word>Dictonomy approval consent.</Word>
+    <AlphabetSequenceIndex>309</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:10, 1 Kings 18, Amos 2, Revelation 5:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A10%2C+1+Kings+18%2C+Amos+2%2C+Revelation+5%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>5442</SequenceOrderId>
+    <Word>Igbohun Oluwa, igbohun ola.</Word>
+    <AlphabetSequenceIndex>252</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:17, 1 Samuel 16, Matthew 9, Revelation 9:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A17%2C+1+Samuel+16%2C+Matthew+9%2C+Revelation+9%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1654</SequenceOrderId>
+   <Commentary>99 Ranch Market 34444 Fremont Boulevard Fremont CA 94555 (510) 791-8899 http://www.99ranch.com.</Commentary>
+   <ContactId>257</ContactId>
+   <Expense>4</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1655</SequenceOrderId>
+   <Commentary>Boston Market Fremont Hub.</Commentary>
+   <ContactId>51</ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1656</SequenceOrderId>
+   <Commentary>Umi Sushi Boat 6225 Jarvis Avenue Newark CA 94560 Tel: (510) 494-8944 Fax: (510) 494-0360.</Commentary>
+   <ContactId>366</ContactId>
+   <Expense>20</Expense>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1657</SequenceOrderId>
+   <Commentary>Keebler http://www.keebler.com Elmhurst Illinois 60128 1-877-453-5387 PO Box CAMB BattleCreek MI 49016-1986.</Commentary>
+   <ContactId>367</ContactId>
+   <Expense>5</Expense>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>350</SequenceOrderId>
+   <Commentary>
+    BcpBatchRelease20040325.bat
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>705</SequenceOrderId>
+   <Commentary>Private part ... feet ... face ... nose ... hip ... garage noise ... floppy disk error ... explorer memory error ... I will like two, in a bang ... Comforter_-_20040326TheWordAlphabetSequenceTheDirtyHandsOfAPasserbyInnocentChildAreWorthyOfBeholdenAsAreTheBootsThatCleatsTheMostAdorable.bat error ... logoff ... shutdown ... Is it democracy or our genealogy? ... keyboard error ... creditability in tatters ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>368</SequenceOrderId>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

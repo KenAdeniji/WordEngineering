@@ -1,0 +1,45 @@
+<script>
+function printCoord(x, y) {
+    console.log('(${x}, ${y})');
+}
+printCoord(5, 6);
+
+const arr = ['a', 'b', 'c'];
+for (const elem of arr) {
+    console.log(elem);
+}
+for (const [index, elem] of arr.entries()) {
+    console.log(index+'. '+elem);
+}
+
+function foo(x, y) {
+    x = x || 0;
+    y = y || 0;
+}
+
+function foo_es6(x=0, y=0) {
+    console.log("x= " + x);
+	console.log("y= " + y);
+}
+foo_es6();
+
+//Handling named parameters
+
+
+function selectEntries(options) {
+    var start = options.start || 0;
+    var end = options.end || -1;
+    var step = options.step || 1;
+    console.log("start: " + start + " end: " + end + " step: " + step);
+}
+
+function selectEntries_es6({ start=0, end=-1, step=1 }) {
+    console.log("start: " + start + " end: " + end + " step: " + step);
+}
+
+selectEntries_es6({ start: 0, end: -1 });
+
+var preSquares = [1, 2, 3];
+var squares = preSquares.map(x => x * x);
+console.log(squares);
+</script>

@@ -1,0 +1,116 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>103</SequenceOrderId>
+  <Dated>2003-09-10T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Exodus 20:24, Deuteronomy 16:10, Judges 5:9, 2 Samuel 6:18, 1 Chronicles 16:2, 2 Chronicles 31:10, Isaiah 66:3</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Exodus+20%3A24%2C+Deuteronomy+16%3A10%2C+Judges+5%3A9%2C+2+Samuel+6%3A18%2C+1+Chronicles+16%3A2%2C+2+Chronicles+31%3A10%2C+Isaiah+66%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Time to offer blessing. The legacy of hate doesn't stay with You.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>8</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>3</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>372</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename />
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>70</SequenceOrderId>
+   <Commentary></Commentary> 
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference>Lamentations 5:3</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>282</SequenceOrderId>
+   <Word>Offer ... Bless</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>609</SequenceOrderId>
+   <Word>Time to offer blessing.</Word>
+   <AlphabetSequenceIndex>219</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 9:13, Judges 8, Mark 14, Revelation 11:11</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A13%2C+Judges+8%2C+Mark+14%2C+Revelation+11%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>610</SequenceOrderId>
+   <Word>The legacy of hate doesn't stay with You.</Word>
+   <AlphabetSequenceIndex>404</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 17:6, Ezra 1, Jeremiah 41, Revelation 1:1</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A6%2C+Ezra+1%2C+Jeremiah+41%2C+Revelation+1%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1145</SequenceOrderId>
+   <Commentary>Wake-up Orientation: knees upright.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>258</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>342</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+ 
+  </TheWord>
+</wordOfGod>

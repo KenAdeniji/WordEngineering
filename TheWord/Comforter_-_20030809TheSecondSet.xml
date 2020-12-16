@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>31</SequenceOrderId>
+  <Dated>2003-08-09T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 10:5, Psalms 91:3, Ezekiel 7:15, Revelation 11:2</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A5%2C+Psalms+91%3A3%2C+Ezekiel+7%3A15%2C+Revelation+11%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>The second set.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Remember>
+   <SequenceOrderId>335</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+ 
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>64</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>207</SequenceOrderId>
+   <Word>Tile</Word>
+   <Commentary>
+By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations (Genesis 10:5).
+Surely He shall deliver you from the snare of the fowler, and from the noisome pestilence (Psalms 91:3).
+The sword is without, and the pestilence and the famine within: he that is in the field shall die with the sword; and he that is in the city, famine and pestilence shall devour him (Ezekiel 7:15).
+But the court which is without the temple leave out, and measure it not; for it is given unto the Gentiles: and the holy city shall they tread under foot forty and two months (Revelation 11:2).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>491</SequenceOrderId>
+   <Word>The second set.</Word>
+   <AlphabetSequenceIndex>137</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 5:31, Numbers 20, Romans 7, Revelation 16:11</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+5%3A31%2C+Numbers+20%2C+Romans+7%2C+Revelation+16%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1063</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. Wake-up Orientation: Naked, feets crossed between 25% and 33%, head center between the 66.67% and 84% vertical mark. Comforter_-_20030809TheSecondSet.xml: FileSave sneeze. Wake-up Orientation: Naked, knees bowed towards 33%, back 25%, left hand on the head, right hand inside the legs, the right feets extending past the left feets. http://www.microsoft.com/sql/evaluation/betanominations.asp: Reporting Services. ScriptureReferenceBookChapterVersePrePostRelease20030809.cs: Bible.xml XPath. Food4Less 39966 Cedar Blvd Newark 94560 CA French Baguettes. Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>24</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>244</SequenceOrderId>
+   <Commentary>ScriptureReferenceBookChapterVersePrePostRelease20030809.cs ScriptureReferenceSearchPageRelease20030809.aspx.cs ScriptureReferenceRelease20030809.cs WordEngineeringRelease20030809.config</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>279</SequenceOrderId>
+   <Commentary>SELECT * FROM AlphabetSequence WHERE (Dated >= '20030808') ORDER BY SequenceOrderId. Floppy noise. Mouse. User interface (UI). (r)tighs. feet(s). Job e-mail. Power of Attorney. w3.org: error. (C).</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

@@ -1,0 +1,69 @@
+<html>
+<head>
+	<!-- Reference:
+		ibm.com/developerworks/web/library/wa-oojavascript
+			Get started with the JavaScript language, Part 2: Events, cookies, timing, and more
+		travel.nationalgeographic.com/travel/countries/egypt-photos	
+	-->
+<title>Getting Started with Object-Oriented JavaScript</title>
+<script type="text/javascript" src="js/Gallery.js"></script>
+</head>
+
+<body>
+
+<img src="../../images/pyramids-giza-egypt_6699_600x450.jpg" id="photo-gallery" />
+<p>
+    <a href="#" onclick="Gallery.Prev();">&lt; Previous</a>
+    &nbsp;
+    <a href="#" onclick="Gallery.Next();">Next &gt;</a>
+</p>
+
+<script>
+var Gallery = new Object(); //Instantiate the gallery object.
+window.onload= function() //When all the DOM have loaded, initialize your variables.
+{
+    Gallery.Images = //Store the filenames, for all the images to display.
+	[
+		'pyramids-giza-egypt_6699_600x450.jpg', 'camel-races-egypt_6689_600x450.jpg', 
+		'azhar-mosque-egypt_6685_600x450.jpg', 'mosque-citadel-cairo_6697_100x75.jpg',
+		'skyline-cairo-egypt_6686_100x75.jpg'
+	];
+    Gallery.CurrentIndex = 0; //Start at the first image.
+    Gallery._loopInterval = setInterval(Gallery.Next, 2500); //Switch to the first image, after 2.5 seconds.
+};
+
+Gallery.Next = function()
+{
+    if(Gallery.CurrentIndex < (Gallery.Images.length-1)) //If this is not the last image, goto the next image.
+    {
+        Gallery.CurrentIndex++;
+    }
+    else //If this is the last image, return to the first.
+    {
+        Gallery.CurrentIndex = 0;
+    }
+    Gallery.Display(); //Display the next image.
+};
+
+Gallery.Prev = function()
+{
+    if(Gallery.CurrentIndex > 0) //If this is not the first image, go to the previous image.
+    {
+        Gallery.CurrentIndex--;
+    }
+    else //If this is the first image, go to the last image.
+    {
+        Gallery.CurrentIndex = (Gallery.Images.length-1);
+    }
+    Gallery.Display();
+};
+
+Gallery.Display = function() //Set the image source, to the current image.
+{
+    var photoGallery = document.getElementById('photo-gallery');
+    var currentImage = Gallery.Images[Gallery.CurrentIndex];
+    photoGallery.src = "../../images/"+currentImage;
+};
+</script>
+</body>
+</html>

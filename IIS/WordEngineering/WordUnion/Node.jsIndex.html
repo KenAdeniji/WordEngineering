@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-04-14	Created.	http://stackoverflow.com/questions/11401897/get-the-current-domain-name-with-javascript-not-the-path-etc
+	-->
+	<head>
+		<title>Node.js Index</title>
+	</head>
+	<body>
+		<div id="index"></div>
+		<script>
+			function listing()
+			{
+				var table = "<table><thead><caption>Node.js</caption></thead><tbody>";
+				for(index = 0, length = menu.length; index < length; ++index)
+				{
+					var fragment = "<tr><td><a href='"  
+						+ document.location.protocol + "//"	+ document.location.hostname +
+						":" + menu[index][0] + "'>" + menu[index][1] + "</a></td></tr>";
+					table += fragment;	
+				}
+				table += "</tbody></table>";
+				document.getElementById("index").innerHTML = table;
+			}
+			window.addEventListener("load", listing, false);
+			var menu = [
+				[8079, "Separated in the Body Making the Last"],
+				[8086, "Content Syndication"],
+				[8085, "Domain Name System (DNS)"],
+				[8084, "Express and Jade"],
+				[8083, "Statistics String"],
+				[8082, "Data Format"],
+				[8081, "Bible Book Format"],
+				[8080, "Operating System and Process"]
+			]
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+	<!--
+		2014-07-31 http://www.html5rocks.com/en/tutorials/webcomponents/imports/ HTML Imports
+#include for the web
+	-->
+	<head>
+		<title>Import</title>
+
+		<script async>
+		  function handleLoad(e) {
+			console.log('Loaded import: ' + e.target.href);
+		  }
+		  function handleError(e) {
+			console.log('Error loading import: ' + e.target.href);
+		  }
+		</script>
+
+		<link rel="import" href="warnings.html" onload="handleLoad(event)" onerror="handleError(event)">
+	</head>
+	<body>
+		<div id="container"></div>
+
+		<script>
+			function openExchange()
+			{
+				var link = document.querySelector('link[rel="import"]');
+				var content = link.import;
+
+				// Grab DOM from warning.html's document.
+				var el = content.querySelector('.warning');
+
+				document.body.appendChild(el.cloneNode(true));				
+			}
+			
+			function isSupportsImport() {
+				return 'import' in document.createElement('link');
+			}
+			
+			function dynamicImport()
+			{
+				var link = document.createElement('link');
+				link.rel = 'import';
+				link.href = 'import.html';
+				link.onload = function(e)
+				{
+					console.log('Loaded import: ' + e.target.href);
+				};
+				link.onerror = function(e) 
+				{
+					console.log('Error loading import: ' + e.target.href);
+				};
+				document.head.appendChild(link);
+			}
+			
+			function importTemplate()
+			{
+				var links = document.querySelectorAll('link[rel="import"]');
+				var link = links[1];
+		
+				var content = link.import;
+
+				// Clone the <template> in the import.
+				var template = link.import.querySelector('template');
+				var clone = document.importNode(template.content, true);
+
+				document.querySelector('#container').appendChild(clone);
+			}
+			
+			window.addEventListener('load', openExchange, false);
+			window.addEventListener('load', dynamicImport, false);
+			window.addEventListener('load', importTemplate, false);
+		</script>
+	</body>
+</html>

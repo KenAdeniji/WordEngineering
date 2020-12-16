@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<script>
+function displayDate()
+{
+	var useDate = $("#useDate").val();
+	var newDate = new Date();
+	if (useDate !== '')
+	{
+		newDate = new Date(useDate);
+	}
+	document.getElementById("demo").innerHTML=newDate;
+}
+</script>
+</head>
+<body>
+
+<h1>Display Date</h1>
+<input id="useDate" type="date" />
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+</body>
+</html> 

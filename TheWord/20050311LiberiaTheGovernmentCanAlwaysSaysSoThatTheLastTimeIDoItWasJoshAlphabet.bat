@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWordAlphabetSequence 20050311LiberiaTheGovernmentCanAlwaysSaysSoThatTheLastTimeIDoItWasJosh.txt  20050311LiberiaTheGovernmentCanAlwaysSaysSoThatTheLastTimeIDoItWasJoshTheWord.xml

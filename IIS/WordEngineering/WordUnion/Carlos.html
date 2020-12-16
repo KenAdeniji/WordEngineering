@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2016-06-08	Carlos. Soundex.
+	-->
+	<head>
+		<title>Carlos</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is an experiment with the Soundex	implementation of Microsoft SQL Server"/>
+		<meta name="keywords" content="Bible, word, SQL Server, Soundex"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+			<legend>Query</legend>
+			<div align="center">
+				<input type="text" ID="bibleWord" size="50"/>
+			
+				<select id="accordingTo"></select>
+
+				<input type="submit" id="submitQuery">
+				<br>
+				<div id="resultSet"> </div>
+			</div>
+		</fieldset>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			 
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					renderAccordingToSelect();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["accordingTo"] = document.getElementById("accordingTo").value;
+				request["question"] = document.getElementById("bibleWord").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/CarlosWebService.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'>";
+				
+				var dataRow = null;
+				var dataTable = null;
+
+				var bibleWord = "";
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						bibleWord = dataRow["BibleWord"];
+						
+						info += "<tr>" +
+								"<td><a href='BibleWord.html?bibleWord=" + bibleWord + "'>BibleWord</a></td>" +
+								"<td><a href='BibleDictionary.html?bibleWord=" + bibleWord + "'>BibleDictionary</a></td>" +
+								"<td>" + bibleWord + "</td>" + 
+								"</tr>";
+					}			
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function renderAccordingToSelect() 
+			{
+				var select = document.getElementById("accordingTo");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = accordingTos.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = accordingTos[rowIndex][0];
+					option.value = accordingTos[rowIndex][1];;
+					select.appendChild(option);
+				}
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var accordingTos = [
+				["Length", "Length"],
+				["Soundex", "Soundex"] 
+			]
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

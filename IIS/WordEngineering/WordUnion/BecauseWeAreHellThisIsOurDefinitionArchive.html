@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-28	Because we are hell; this is our definition.
+		2017-03-01	Created.
+		2017-03-01	http://stackoverflow.com/questions/3989324/javascript-set-dropdown-selected-item-based-on-option-text
+		2017-03-01	http://stackoverflow.com/questions/1358810/how-do-i-change-the-text-of-a-div-element-in-javascript
+					document.getElementById(dateControlID).textContent = dated;
+		2017-03-01	https://www.w3schools.com/jsref/jsref_obj_date.asp
+		2017-03-01	https://www.codeproject.com/Questions/236281/How-to-change-cell-value-of-an-html-table-through
+		2018-12-11	Inclusion, Friday thirteenth.
+	-->
+	<head>
+		<title>Because we are hell; this is our definition.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="dated">Dated</label>
+							</td>
+							<td>
+								<input type="date" id="dated" autofocus/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="weekDay">Weekday</label>
+							</td>
+							<td>
+								<select type="text" id="weekDay"></select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="dayOfTheMonth">Day of the Month</label>
+							</td>
+							<td>
+								<input type="number" id="dayOfTheMonth" step="1" min="1"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="occurrences">Occurrences</label>
+							</td>
+							<td>
+								<input type="number" id="occurrences" step="1" min="1"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<table id="resultSet">
+				<thead>
+					<tr>
+						<th>Occurrence</th>
+						<th>Past Date</th>
+						<th>Future Date</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			function addCell(newRow, cellContent) 
+			{
+				// Insert a cell in the row at index 0
+				var newCell = newRow.insertCell(-1);
+
+				// Append a text node to the cell
+				var newText = document.createTextNode(cellContent);
+				newCell.appendChild(newText);
+			}
+			
+			function addDays(date, days) 
+			{
+				var result = new Date(date);
+				result.setDate(result.getDate() + days);
+				return result;
+			}
+			
+			function addRow(tableID) 
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById(tableID).getElementsByTagName('tbody')[0];
+
+				// Insert a row in the table at row index 0
+				var newRow = tableRef.insertRow(tableRef.rows.length);
+				//var newRow = tableRef.insertRow(-1);
+				console.log(newRow, tableID);
+				return newRow;
+			}
+			
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					option.text = selectChoices[index][0];
+					option.value = selectChoices[index][1];
+					select.appendChild(option);
+				}
+			}
+
+			function findTheDay
+			(
+				dated,
+				weekDayRequired,
+				dayOfTheMonthRequired,
+				occurrences,
+				step,
+				callback,
+				cellIndex
+			)
+			{
+				var newDate = dated;
+				
+				var dayOfTheMonthCompare = -1;
+				var dayOfTheWeekCompare = -1;
+				var occurrence = 0;
+				
+				while(true) 
+				{
+					newDate = addDays(newDate, step);
+					dayOfTheWeekCompare = newDate.getDay();
+					dayOfTheMonthCompare = newDate.getDate();
+
+					if 
+					(
+						weekDayRequired == dayOfTheWeekCompare && 
+						dayOfTheMonthRequired == dayOfTheMonthCompare
+					)
+					{
+						++occurrence;
+						callback(occurrence, cellIndex, newDate);
+						if (occurrence >= occurrences)
+						{
+							break;
+						}	
+					}	
+				}
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function setCellContent(tableID, rowIndex, cellIndex, cellContent)
+			{
+				var tableControl = document.getElementById(tableID);
+				tableControl.rows[rowIndex].cells[cellIndex].innerHTML = cellContent;
+			}	
+			
+			function setDate(rowIndex, cellIndex, dated)
+			{
+				setCellContent("resultSet", rowIndex, cellIndex, dated);
+			}
+			
+			function setSelectByText(selectControl, text)
+			{
+				var select = document.getElementById(selectControl);
+				for (var i = 0; i < select.options.length; i++) {
+					if (select.options[i].text === text) {
+						select.selectedIndex = i;
+						break;
+					}
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					var dated = getParameterByName("dated");
+					if (!dated)
+					{
+						dated = "2017-03-01";
+					}
+					document.getElementById("dated").value = dated;
+					
+					buildSelect("weekDay", dayOfTheWeeks);
+					var weekDay = getParameterByName("weekDay");
+					if (!weekDay)
+					{
+						weekDay = dayOfTheWeeks[5][0];
+					}
+					setSelectByText("weekDay", weekDay);
+
+					var dayOfTheMonth = getParameterByName("dayOfTheMonth");
+					if (!dayOfTheMonth)
+					{
+						dayOfTheMonth = 13;
+					}
+					document.getElementById("dayOfTheMonth").value = dayOfTheMonth;
+
+					var occurrences = getParameterByName("occurrences");
+					if (!occurrences)
+					{
+						occurrences = 1;
+					}
+					document.getElementById("occurrences").value = occurrences;
+					
+					isPostBack = true;
+				}
+				if (isPostBack === true)
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var dated = document.getElementById("dated").value;
+				var weekDay = document.getElementById("weekDay").value;
+				var dayOfTheMonth = parseInt(document.getElementById("dayOfTheMonth").value);
+				var occurrences = parseInt(document.getElementById("occurrences").value);
+				
+				// Get a reference to the table
+				var tableRef = document.getElementById("resultSet").getElementsByTagName('tbody')[0];
+				tableRef.innerHTML = "";
+
+				for (occurrence = 1; occurrence <= occurrences; ++occurrence)
+				{
+					var newRow = addRow("resultSet");
+					addCell(newRow, occurrence);
+					addCell(newRow, "");
+					addCell(newRow, "");
+				}
+				
+				findTheDay(dated, weekDay, dayOfTheMonth, occurrences, -1, setDate, 1);
+				findTheDay(dated, weekDay, dayOfTheMonth, occurrences, 1, setDate, 2);
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			var dayOfTheWeeks = [
+				["Sunday", 0],
+				["Monday", 1],
+				["Tuesday", 2],
+				["Wednesday", 3],
+				["Thursday", 4],
+				["Friday", 5],
+				["Saturday", 6]
+			];
+		</script>
+	</body>
+</html>

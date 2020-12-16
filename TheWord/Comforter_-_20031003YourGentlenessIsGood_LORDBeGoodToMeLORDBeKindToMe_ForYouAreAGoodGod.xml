@@ -1,0 +1,123 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>181</SequenceOrderId>
+  <Dated>2003-10-03T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>2 Samuel 22:36, Psalms 18:35, 2 Corinthians 10:1, Galatians 5:22</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=2+Samuel+22%3A36%2C+Psalms+18%3A35%2C+2+Corinthians+10%3A1%2C+Galatians+5%3A22&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  <Title>Your gentleness is good. LORD be good to Me. LORD be kind to Me. For You are a good God.</Title>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>10</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>6</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>80</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>425</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>   
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Filename></Filename>
+  </Remember>
+  -->
+ 
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>76</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>34</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>360</SequenceOrderId>
+   <Word>Gentleness</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+   <SequenceOrderId>752</SequenceOrderId>
+   <Word>Your gentleness is good.</Word>
+   <AlphabetSequenceIndex>268</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 11:1, 2 Samuel 1, Zechariah 11, Revelation 8:7</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A1%2C+2+Samuel+1%2C+Zechariah+11%2C+Revelation+8%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>753</SequenceOrderId>
+   <Word>LORD be good to Me. LORD be kind to Me.</Word>
+   <AlphabetSequenceIndex>297</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 11:30, 1 Kings 6, Jonah 4, Revelation 6:12</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A30%2C+1+Kings+6%2C+Jonah+4%2C+Revelation+6%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+   <SequenceOrderId>754</SequenceOrderId>
+   <Word>For You are a good God.</Word>
+   <AlphabetSequenceIndex>192</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 8:8, Joshua 5, John 1, Revelation 13:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A8%2C+Joshua+5%2C+John+1%2C+Revelation+13%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1215</SequenceOrderId>
+   <Commentary>China AA Buffet 24100 Mission Blvd Hayward CA 94544 Tel (510) 690-0888 Fax (510) 690-1368. Restroom: Your gentleness is good. 4th Serving including shrimp dumpling: LORD be good to Me. LORD be kind to Me. Serving including vegetable Lo Mein: For You are a good God (record: sneeze.).</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>266</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>416</SequenceOrderId>
+   <Commentary></Commentary>  
+  </ClassAssociates>
+  -->
+
+  </TheWord>
+</wordOfGod>

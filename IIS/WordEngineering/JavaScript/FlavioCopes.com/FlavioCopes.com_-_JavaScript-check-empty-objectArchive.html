@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-11-03	Created.	http://flaviocopes.com/javascript-check-empty-object
+	-->
+	<head>
+		<title>http://flaviocopes.com/javascript-check-empty-object</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="http://flaviocopes.com/javascript-check-empty-object"/>
+		<meta name="keywords" content="JavaScript, check empty object"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script>
+			const emptyObject = {};
+			console.log("emptyObject: ", emptyObject, checkEmptyObject(emptyObject));
+			
+			const fullObject = {author:"Flavio Copes"};
+			console.log("fullObject: ", fullObject, checkEmptyObject(fullObject));
+			
+			function checkEmptyObject(obj)
+			{
+				return (Object.keys(obj).length === 0 && obj.constructor === Object);
+			}	
+		</script>
+	</body>
+</html>

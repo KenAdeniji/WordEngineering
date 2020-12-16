@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Find the next date</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{ 
+				if (!isPostBack) 
+				{ 
+					var date = new Date();
+					var startingYear = date.getFullYear();
+					$("#startingYear").val(startingYear);
+					isPostBack = true; 
+				} 
+			}
+			
+			function calculateDay()
+			{
+				var weekday = parseInt($("#weekday").val(), 10);
+				var month = parseInt($("#month").val(), 10);
+				var day = parseInt($("#day").val(), 10);
+				var startingYear = parseInt($("#startingYear").val(), 10);
+				
+				var calculatedYear = startingYear;
+				var yearOffset = 1;
+				isLeap = new Date(calculatedYear, 1, 29).getMonth() === 1;
+				if (month === 1 && day === 29 && isLeap === true)
+				{
+					yearOffset = 4; //Untested.
+				}
+				var calculatedDate;
+				
+				while (true)
+				{
+					calculatedDate = new Date(calculatedYear, month, day);
+					var dayOfTheWeek = calculatedDate.getDay();
+					if (weekday === dayOfTheWeek)
+					{
+						break;
+					}
+					calculatedYear += yearOffset;
+				}
+				
+				$("#response").html
+				(
+					"The date is " + calculatedDate.toLocaleDateString()
+				);
+			}
+			
+			$(document).ready(function(){
+				pageLoad();
+ 				$("#query").click(function() {
+					calculateDay();
+				});
+			});	
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<select id="weekday">
+				<option value=0>Sunday</option>
+				<option value=1>Monday</option>
+				<option value=2>Tuesday</option>
+				<option value=3>Wednesday</option>
+				<option value=4>Thursday</option>
+				<option value=5>Friday</option>
+				<option value=6>Saturday</option>
+			</select>
+
+			<select id="month">
+				<option value=0>January</option>
+				<option value=1>February</option>
+				<option value=2>March</option>
+				<option value=3>April</option>
+				<option value=4>May</option>
+				<option value=5>June</option>
+				<option value=6>July</option>
+				<option value=7>August</option>
+				<option value=8>September</option>
+				<option value=9>October</option>
+				<option value=10>November</option>
+				<option value=11>December</option>
+			</select>
+
+			<label for="day">Day</label>
+			<input id="day" type="text" columns="2" />
+
+			<label for="startingYear">Year</label>
+			<input id="startingYear" type="text" columns="4" />
+			
+			<button id="query">Query</button>
+			<br/>
+			<div id="response"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,266 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>433</SequenceOrderId>
+   <Dated>2004-02-21T00:00:00.0000000-08:00</Dated>
+   <ContactId>336</ContactId>
+   <FromUntil>52</FromUntil>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>39</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>29</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>627</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>88</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>4960</SequenceOrderId>
+    <Word>Don't ever do things with a view to spite.</Word>
+    <AlphabetSequenceIndex>423</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:25, Nehemiah 10, Jeremiah 22, Jude 1:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A25%2C+Nehemiah+10%2C+Jeremiah+22%2C+Jude+1%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4961</SequenceOrderId>
+    <Word>Co-operative efforts, restrains damages.</Word>
+    <AlphabetSequenceIndex>391</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 16:9, 2 Chronicles 24, Lamentations 2, Revelation 1:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+16%3A9%2C+2+Chronicles+24%2C+Lamentations+2%2C+Revelation+1%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4962</SequenceOrderId>
+    <Word>Trial outs don't timeout.</Word>
+    <AlphabetSequenceIndex>291</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:24, 2 Samuel 24, Micah 6, Revelation 7:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A24%2C+2+Samuel+24%2C+Micah+6%2C+Revelation+7%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4963</SequenceOrderId>
+    <Word>God light my story.</Word>
+    <AlphabetSequenceIndex>217</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:11, Judges 6, Mark 16, Revelation 11:13</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A11%2C+Judges+6%2C+Mark+16%2C+Revelation+11%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4964</SequenceOrderId>
+    <Word>Originate ordinaryliness.</Word>
+    <AlphabetSequenceIndex>280</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:13, 2 Samuel 13, Haggai 1, Revelation 7:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A13%2C+2+Samuel+13%2C+Haggai+1%2C+Revelation+7%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4965</SequenceOrderId>
+    <Word>Let us learn You.</Word>
+    <AlphabetSequenceIndex>188</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:4, Joshua 1, John 5, Revelation 13:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A4%2C+Joshua+1%2C+John+5%2C+Revelation+13%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4966</SequenceOrderId>
+    <Word>Let Your guilding light, light our lives.</Word>
+    <AlphabetSequenceIndex>432</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:7, Esther 6, Jeremiah 13, 3 John 1:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A7%2C+Esther+6%2C+Jeremiah+13%2C+3+John+1%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4967</SequenceOrderId>
+    <Word>Sinners sat on the lane, onlookers joined in.</Word>
+    <AlphabetSequenceIndex>436</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:11, Esther 10, Jeremiah 9, 3 John 1:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A11%2C+Esther+10%2C+Jeremiah+9%2C+3+John+1%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4968</SequenceOrderId>
+    <Word>Half of a life, is half of Me.</Word>
+    <AlphabetSequenceIndex>175</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:15, Deuteronomy 22, John 18, Revelation 14:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A15%2C+Deuteronomy+22%2C+John+18%2C+Revelation+14%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4969</SequenceOrderId>
+    <Word>Natural nylon.</Word>
+    <AlphabetSequenceIndex>167</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 7:7, Deuteronomy 14, Acts 5, Revelation 14:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A7%2C+Deuteronomy+14%2C+Acts+5%2C+Revelation+14%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4970</SequenceOrderId>
+    <Word>Hello, all of you.</Word>
+    <AlphabetSequenceIndex>159</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 6:21, Deuteronomy 6, Acts 13, Revelation 14:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A21%2C+Deuteronomy+6%2C+Acts+13%2C+Revelation+14%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4971</SequenceOrderId>
+    <Word>The owner of the house is the loaner of the house.</Word>
+    <AlphabetSequenceIndex>478</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:20, Job 42, Isaiah 33, 1 John 4:21</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A20%2C+Job+42%2C+Isaiah+33%2C+1+John+4%3A21&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4972</SequenceOrderId>
+    <Word>The side of love, sided all.</Word>
+    <AlphabetSequenceIndex>211</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:5, Joshua 24, Luke 6, Revelation 11:19</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A5%2C+Joshua+24%2C+Luke+6%2C+Revelation+11%3A19&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4973</SequenceOrderId>
+    <Word>Framework firmware.</Word>
+    <AlphabetSequenceIndex>203</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:19, Joshua 16, Luke 14, Revelation 12:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A19%2C+Joshua+16%2C+Luke+14%2C+Revelation+12%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4974</SequenceOrderId>
+    <Word>You never look your back.</Word>
+    <AlphabetSequenceIndex>274</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:7, 2 Samuel 7, Zechariah 5, Revelation 8:1</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A7%2C+2+Samuel+7%2C+Zechariah+5%2C+Revelation+8%3A1&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4975</SequenceOrderId>
+    <Word>Settle.</Word>
+    <AlphabetSequenceIndex>81</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 4:1, Exodus 31, Colossians 2, Revelation 19:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A1%2C+Exodus+31%2C+Colossians+2%2C+Revelation+19%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4976</SequenceOrderId>
+    <Word>Ila olu.</Word>
+    <AlphabetSequenceIndex>70</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:14, Exodus 20, 1 Timothy 1, Revelation 19:15</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A14%2C+Exodus+20%2C+1+Timothy+1%2C+Revelation+19%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4977</SequenceOrderId>
+    <Word>How would you be when tomorrow calls, how would you be when everything is ok?</Word>
+    <AlphabetSequenceIndex>849</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 30:18, Ezekiel 47, 1 Chronicles 3, Hebrews 13:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+30%3A18%2C+Ezekiel+47%2C+1+Chronicles+3%2C+Hebrews+13%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4978</SequenceOrderId>
+    <Word>Learn discipline, disciple yourself.</Word>
+    <AlphabetSequenceIndex>348</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:11, 1 Chronicles 10, Ezekiel 40, Revelation 3:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A11%2C+1+Chronicles+10%2C+Ezekiel+40%2C+Revelation+3%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>4979</SequenceOrderId>
+    <Word>Long road, less travelled by men than God.</Word>
+    <AlphabetSequenceIndex>368</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:7, 2 Chronicles 1, Ezekiel 20, Revelation 2:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A7%2C+2+Chronicles+1%2C+Ezekiel+20%2C+Revelation+2%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1577</SequenceOrderId>
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+   <Expense />
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>335</SequenceOrderId>
+   <Commentary>GutenbergWebsterUnabridgedDictionaryBuildRelease20040221.bat GutenbergWebsterUnabridgedDictionaryRelease20040221.cs GutenbergWebsterUnabridgedDictionaryRelease20040221.mak</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>686</SequenceOrderId>
+   <Commentary>Sleep: Private part ... face ... feet ... hip ... keyboard error ... mouse error ... faeces ... cry ... garage noise ... explorer memory error ...</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>337</SequenceOrderId>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <Commentary></Commentary>
+  </Contact>
+  -->
+   
+</wordOfGod>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

@@ -1,0 +1,1 @@
+cl RandomNumber.cpp /EHsc

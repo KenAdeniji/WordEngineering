@@ -1,0 +1,109 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>46</SequenceOrderId>
+  <Dated>2003-08-16T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 24:42, Deuteronomy 4:40, Ecclesiastes 8:12, Ecclesiastes 8:13</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A42%2C+Deuteronomy+4%3A40%2C+Ecclesiastes+8%3A12%2C+Ecclesiastes+8%3A13&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>This is the day, that I know all things will be well; this is the day, that I know all things will be godly.</Title>
+  <Commentary />
+  <Keyword />
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>23</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>343</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <SignIndex></SignIndex>
+   <Commentary />
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>   
+   <ScriptureReferenceURI></ScriptureReferenceURI>   
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>65</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>223</SequenceOrderId>
+   <Word>Day Well ... God</Word>
+   <Commentary>
+    I came this day unto the well, and said, O LORD God of my master Abraham, if now you do prosper my way which I go: (Genesis 24:42).
+    You shall keep therefore His statutes, and His commandments, which I command you this day, that it may go well with you, and with your children after you, and that you may prolong your days upon the earth, which the LORD your God gives you, for ever (Deuteronomy 4:40).
+    Though a sinner do evil an hundred times, and his days be prolonged, yet surely I know that it shall be well with them that fear God, which fear before Him (Ecclesiastes 8:12).
+    But it shall not be well with the wicked, neither shall He prolong his days, which are as a shadow; because He fears not before God (Ecclesiastes 8:13).
+   </Commentary>
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>509</SequenceOrderId>
+   <Word>This is the day, that I know all things will be well; this is the day, that I know all things will be godly.</Word>
+   <AlphabetSequenceIndex>981</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 33:20, Luke 8, Joshua 22, Hebrews 9:16</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+33%3A20%2C+Luke+8%2C+Joshua+22%2C+Hebrews+9%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>  
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1084</SequenceOrderId>
+   <Commentary>Sneha 1214 Apollo Way (off Lawrence Expwy), Suite 404B Sunnyvale CA 94086 (408) 736-2720. Lido Supermarket: Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg. Wake-up Orientation: Head horizontal 25% vertical 83.33%, right hand horizontal 25%, left hand on the heart horizontal 33%, right knee upright, left leg diagonal horizontal between 25% and 33%. Cut nail. Faeces: running. Shower: Butterfly, behind, right wall; butterfly, front, top right ceiling. Lake Blvd: Excreate. Kill bug (Tiles vertical 24, horizontal 33): vertical 15, horizontal 20; vertical 14, horizontal 19; vertical 11, horizontal 20.</Commentary>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1085</SequenceOrderId>
+   <Dated>2003-08-17T00:00:00.0000000-08:00</Dated>
+   <Commentary>Brush teeth. Shower: Butterfly, right wall, vertically with the top of the door; butterfly, top right ceiling; butterfly, center, below the window. Wear trouser, sneeze twice; wear t-shirt, sneeze once.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>249</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>298</SequenceOrderId>
+   <Commentary>Comforter_-_20030815SingAlongWithMeOhSonSingAlongWithMe.xml: FileRename Explorer memory error. Internet Explorer error, logoff. Comforter_-_20030816.xml: FileSave network error. Comforter_-_20030816Archive.xml: FileSave network error. Comforter_-_20030816ThisIsTheDayThatIKnowAllThingsWillBeWellThisIsTheDayThatIKnowAllThingsWillBeGodly.xml: FileSave network error. Comforter_-_20030816ThisIsTheDayThatIKnowAllThingsWillBeWellThisIsTheDayThatIKnowAllThingsWillBeGodlyArchive.xml: FileSave network error. SELECT  * FROM ClassAssociates WHERE  (Dated (?)>= '20030816') ORDER BY SequenceOrderId. Garage Noise.</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>299</SequenceOrderId>
+   <Dated>2003-08-17T00:00:00.0000000-08:00</Dated>
+   <Commentary>Garage Noise.</Commentary>
+  </ClassAssociates>
+
+  </TheWord>
+</wordOfGod>

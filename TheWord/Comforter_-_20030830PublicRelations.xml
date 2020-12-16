@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>73</SequenceOrderId>
+  <Dated>2003-08-30T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Esther 8:15, Acts 1:10</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Esther+8%3A15%2C+Acts+1%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Public relations</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>361</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure></Measure>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <ScriptureReference</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>252</SequenceOrderId>
+   <Word>White Apparel</Word>
+   <Commentary />
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>560</SequenceOrderId>
+   <Word>Public relations.</Word>
+   <AlphabetSequenceIndex>176</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 7:16, Deuteronomy 23, John 17, Revelation 13:18</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+7%3A16%2C+Deuteronomy+23%2C+John+17%2C+Revelation+13%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1114</SequenceOrderId>
+   <Commentary>Sleep in clothes. Comforter_-_20030830PublicRelations.sql: FileSave, fly, flys towards the keyboard and towards self back.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>322</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+  
+  </TheWord>
+</wordOfGod>

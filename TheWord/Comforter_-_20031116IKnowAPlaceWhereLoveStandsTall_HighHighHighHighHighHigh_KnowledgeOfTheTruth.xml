@@ -1,0 +1,137 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>269</SequenceOrderId>
+  <Dated>2003-11-16T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Romans 2:20, 1 Timothy 2:4, 2 Timothy 3:7, Hebrews 10:26</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Romans+2%3A20%2C+1+Timothy+2%3A4%2C+2+Timothy+3%3A7%2C+Hebrews+10%3A26&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>
+   I know a place where love stands tall.
+   High, high, high; high, high, high.
+   Knowledge of the truth.
+  </Title>
+  <FromUntil>320</FromUntil>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>7</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>111</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>496</SequenceOrderId>
+   <DatedFrom>1998-04-10T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-16T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>2046</FromUntil>
+   <Commentary>Out of Egypt. 2046 days: 5 biblical years, 8 biblical months, and 6 days.</Commentary>
+   <Filename />
+   <ScriptureReference>Hosea 11:1, Matthew 2:15</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Hosea+11%3A1%2C+Matthew+2%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <Remember>
+   <SequenceOrderId>497</SequenceOrderId>
+   <DatedFrom>2002-07-01T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2003-11-16T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>503</FromUntil>
+   <Commentary>Know therefore and understand, that from the going forth of the commandment to restore and to build Jerusalem unto the Messiah the Prince shall be seven weeks, and threescore and two weeks: the street shall be built again, and the wall, even in troublous times (Daniel 9:25). 3.5 biblical years. 503 days: 1 biblical years,  4 biblical months, and 23 days.</Commentary>
+   <Filename />
+   <ScriptureReference>Daniel 9:25</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Daniel+9%3A25&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>83</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>443</SequenceOrderId>
+   <Word>Knowledge ... Truth</Word>
+   <ScriptureReference>Romans 2:20, 1 Timothy 2:4, 2 Timothy 3:7, Hebrews 10:26</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Romans+2%3A20%2C+1+Timothy+2%3A4%2C+2+Timothy+3%3A7%2C+Hebrews+10%3A26&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1477</SequenceOrderId>
+    <Word>I know a place where love stands tall.</Word>
+    <AlphabetSequenceIndex>345</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:8, 1 Chronicles 7, Ezekiel 43, Revelation 3:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A8%2C+1+Chronicles+7%2C+Ezekiel+43%2C+Revelation+3%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1478</SequenceOrderId>
+    <Word>High, high, high; high, high, high.</Word>
+    <AlphabetSequenceIndex>192</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:8, Joshua 5, John 1, Revelation 13:2</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A8%2C+Joshua+5%2C+John+1%2C+Revelation+13%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <AlphabetSequence>
+    <SequenceOrderId>1479</SequenceOrderId>
+    <Word>Knowledge of the truth.</Word>
+    <AlphabetSequenceIndex>237</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:2, 1 Samuel 1, Matthew 24, Revelation 10:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A2%2C+1+Samuel+1%2C+Matthew+24%2C+Revelation+10%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>1304</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Export>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>293</SequenceOrderId>
+   <Commentary>Comforter_-_20031116KnowledgeOfTheTruth.xml Comforter_-_20031116KnowledgeOfTheTruth.xslt Comforter_-_WordEngineeringIndexRelease20031116.xml</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>530</SequenceOrderId>
+   <Commentary>Smell ... Comforter_-_20031116IKnowAPlaceWhereLoveStandsTall_HighHighHighHighHighHigh ... Keyboard error ... Smell.</Commentary>
+  </ClassAssociates>
+
+ </TheWord>
+</wordOfGod>

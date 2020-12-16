@@ -1,0 +1,151 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>579</SequenceOrderId>
+ <Dated>2004-08-15T00:00:00.0000000-08:00</Dated>
+ <FromUntil>228</FromUntil>
+ <ContactId>724</ContactId>
+ <Keyword>Parramatta Christian Center, Bert Bain, decease, emulation</Keyword>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>51</SequenceOrderId>
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>83</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>579</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Commentary></Commentary>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>7542</SequenceOrderId>
+    <Word>Bert Bain</Word>
+    <AlphabetSequenceIndex>71</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 3:15, Exodus 21, 2 Thessalonians 3, Revelation 19:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+3%3A15%2C+Exodus+21%2C+2+Thessalonians+3%2C+Revelation+19%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <Commentary>Dream: Pastor Bert Bain of Parramatta Christian Center New South Wales (NSW) Australia is preaching at the pulpit of his pending retirement and one of the successor contestants, African descent with Afro hair, his sitting among the congregation, Center West back seat.</Commentary>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>7543</SequenceOrderId>
+    <Word>Decease from emulation.</Word>
+    <AlphabetSequenceIndex>204</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:20, Joshua 17, Luke 13, Revelation 12:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A20%2C+Joshua+17%2C+Luke+13%2C+Revelation+12%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1934</SequenceOrderId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <ContactId>7</ContactId>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>428</SequenceOrderId>
+   <Commentary>
+    Comforter_-_20040815PivotExpense.sql
+   </Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <Dated>2004-08-14T00:00:00.0000000-08:00</Dated>
+   <SequenceOrderId>970</SequenceOrderId>
+   <Commentary>Private part, upset stomach (oma dun awa mejeji) (go forward).</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>971</SequenceOrderId>
+   <Commentary>(move on) (iwo ni mafia wo) (mo so wipe move on) (eat our own food) (oti le ju) (otin low ju) (a mu po) (won ti won wa fe ni be, won wa ni be) (ma lo si library) (ma lo si ile esu) red eye with tears dripping, private part, feet, ass, stomach upset, finger, back, lip. Floppy disk error, format floppy disk.</Commentary>
+  </ClassAssociates>
+ 
+  <Contact>
+   <SequenceOrderId>724</SequenceOrderId>
+   <Company>Parramatta Christian Center</Company>
+   <FirstName>Bert</FirstName>
+   <LastName>Bain</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>Dream: Pastor Bert Bain of Parramatta Christian Center New South Wales (NSW) Australia is preaching at the pulpit of his pending retirement and one of the successor contestants, African descent with Afro hair, his sitting among the congregation, Center West back seat.</Commentary>
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

@@ -1,0 +1,4 @@
+TheWord Comforter_-_20031017HowDifficultIsTheRoadToNowhereNowhere.xml                                                                                               Comforter_-_20031017HowDifficultIsTheRoadToNowhereNowhere.txt
+TheWord Comforter_-_20031017CoachJim_ItsWithLoveThatWillContinueToGrow.xml                                                                                          Comforter_-_20031017CoachJim_ItsWithLoveThatWillContinueToGrow.txt
+TheWord Comforter_-_20031018Wake-upOrientationKneesUprightWithPrivatePartTowardsTheLeftThighUrineFallsOnTheRightThighWake-upOrientationBackLeaningOnTheCouch.xml    Comforter_-_20031018Wake-upOrientationKneesUprightWithPrivatePartTowardsTheLeftThighUrineFallsOnTheRightThighWake-upOrientationBackLeaningOnTheCouch.txt
+TheWord Comforter_-_20031018RideOn.xml                                                                                                                              Comforter_-_20031018RideOn.txt     

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-04	Created.
+			will compare two scripture references and it will display the words that differ.
+		-->
+		<title>Did the Dutch won?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will compare two scripture references and it will display the words that are the same and the words that differ"/>
+		<meta name="keywords" content="Bible, scripture reference, compare, same, differ"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query: Will compare two scripture references and it will display the words that are the same and the words that differ.</legend>
+				<table>
+					<tr>
+						<td><label for="bibleVersion">Version:</label></td>
+						<td><select id="bibleVersion"></select></td>
+					</tr>	
+					<tr>
+						<td><label for="scriptureReferenceFirst">First Scripture Reference:</label></td>
+						<td><input id="scriptureReferenceFirst" type="text"></td>
+					</tr>	
+					<tr>
+						<td><label for="scriptureReferenceSecond">Second Scripture Reference:</label></td>
+						<td><input id="scriptureReferenceSecond" type="text"></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var scriptureReferenceFirstDefault = "Matthew 1:1-17";
+			var scriptureReferenceSecondDefault = "Luke 3:23-34";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						var bibleVersion = scriptLiteral9432.getParameterByName("bibleVersion");
+						if (bibleVersion)
+						{
+							document.getElementById("bibleVersion").value = bibleVersion;
+						}	
+
+						var scriptureReferenceFirst = scriptLiteral9432.getParameterByName("scriptureReferenceFirst");
+						if (!scriptureReferenceFirst)
+						{
+							scriptureReferenceFirst = scriptureReferenceFirstDefault;
+						}	
+						document.getElementById("scriptureReferenceFirst").value = scriptureReferenceFirst;
+
+						var scriptureReferenceSecond = scriptLiteral9432.getParameterByName("scriptureReferenceSecond");
+						if (!scriptureReferenceSecond)
+						{
+							scriptureReferenceSecond = scriptureReferenceSecondDefault;
+						}	
+						document.getElementById("scriptureReferenceSecond").value = scriptureReferenceSecond;
+						
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				request["scriptureReferenceFirst"] = document.getElementById("scriptureReferenceFirst").value;
+				request["scriptureReferenceSecond"] = document.getElementById("scriptureReferenceSecond").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/DidTheDutchWon.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						console.log("dataSet");
+						var dataSet = JSON.parse(data.d);
+						console.log(dataSet);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

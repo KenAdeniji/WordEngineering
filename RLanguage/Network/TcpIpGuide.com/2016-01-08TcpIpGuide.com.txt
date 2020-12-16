@@ -1,0 +1,37 @@
+A connection-oriented protocol is one where a logical connection is first established between devices prior to data being sent. In a connectionless protocol, data is just sent without a connection being created.
+
+IPv6 Address Size
+
+In IPv4, IP addresses are 32 bits long; these are usually grouped into four octets of eight bits each. The theoretical IPv4 address space is 232, or 4,294,967,296 addresses. To increase this address space we simply increase the size of addresses; each extra bit we give to the address size doubles the address space. Based on this, some folks expected the IPv6 address size to increase from 32 to 48 bits, or perhaps 64 bits. Either of these numbers would have given a rather large number of addresses.
+
+However, IPv6 addressing doesn't use either of these figures; instead, the IP address size jumps all the way to 128 bits, or sixteen 8-bit octets/bytes. This represents a truly remarkable increase in the address size, which surprised a lot of people.
+
+Port-based or "overloaded" NAT is an enhancement of regular NAT that allows a large number of devices on a private network to simultaneously "share" a single inside global address by changing the port numbers used in TCP and UDP messages.
+
+Secure Sockets Layer (SSL) port 443.
+
+Route Internet Protocol versus Open Shortest Path First (OSPF)
+
+http://tcpipguide.com/free/t_TransportLayerProtocols.htm
+The first three layers of the OSI Reference Model—the physical layer, data link layer and network layer—are very important layers for understanding how networks function. The physical layer moves bits over wires; the data link layer moves frames on a network; the network layer moves datagrams on an internetwork. Taken as a whole, they are the parts of a protocol stack that are responsible for the actual “nuts and bolts” of getting data from one place to another.
+
+TCP/IP Transport Layer Protocols
+Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP).
+
+http://tcpipguide.com/free/t_TCPIPClientEphemeralPortsandClientServerApplicatio.htm
+To know where to send the reply, the server must know the port number the client is using. This is supplied by the client as the Source Port in the request, and then used by the server as the destination port to send the reply. Client processes don't use well-known or registered ports. Instead, each client process is assigned a temporary port number for its use. This is commonly called an ephemeral port number.
+
+http://tcpipguide.com/free/t_TCPIPSocketsandSocketPairsProcessandConnectionIden.htm
+The overall identifier of a TCP/IP application process on a device is the combination of its IP address and port number, which is called a socket.
+
+Domain naming system (DNS)
+Top-level domains (TLDs)
+
+nslookup
+traceroute. tracert tcpipguide.com
+ping
+
+DNS Root Name Servers. Top level domain name resolve.
+
+I describe the TCP/IP Bootstrap Protocol (BOOTP), the first truly capable automated configuration tool for IP hosts. I then describe BOOTP's successor, the feature-filled Dynamic Host Configuration Protocol (DHCP), which is used extensively in modern TCP/IP hardware and software.
+ 

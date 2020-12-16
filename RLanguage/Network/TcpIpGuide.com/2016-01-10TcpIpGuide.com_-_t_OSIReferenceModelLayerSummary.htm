@@ -1,0 +1,74 @@
+<table border="1">
+	<caption><a href="http://tcpipguide.com/free/t_OSIReferenceModelLayerSummary.htm">OSI Reference Model</a></caption>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Responsibilities</th>
+			<th>Data Type</th>
+			<th>Scope</th>
+			<th>Protocols and Technology</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Physical</td>
+			<td>Encoding and Signaling; Physical Data Transmission; Hardware Specifications; Topology and Design</td>
+			<td>Bits</td>
+			<td>Electrical or light signals sent between local devices</td>
+			<td>(Physical layers of most of the technologies listed for the data link layer)</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Data Link</td>
+			<td>Logical Link Control; Media Access Control; Data Framing; Addressing; Error Detection and Handling; Defining Requirements of Physical Layer</td>
+			<td>Frames</td>
+			<td>Low-level data messages between local devices</td>
+			<td>IEEE 802.2 LLC, Ethernet Family; Token Ring; FDDI and CDDI; IEEE 802.11 (WLAN, Wi-Fi); HomePNA; HomeRF; ATM; SLIP and PPP</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Network</td>
+			<td>Logical Addressing; Routing; Datagram Encapsulation; Fragmentation and Reassembly; Error Handling and Diagnostics</td>
+			<td>Datagrams / Packets</td>
+			<td>Messages between local or remote devices</td>
+			<td>IP; IPv6; IP NAT; IPsec; Mobile IP; ICMP; IPX; DLC; PLP; Routing protocols such as RIP and BGP</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Transport</td>
+			<td>Process-Level Addressing; Multiplexing/Demultiplexing; Connections; Segmentation and Reassembly;
+Acknowledgments and Retransmissions;
+Flow Control</td>
+			<td>Datagrams / Segments</td>
+			<td>Communication between software processes</td>
+			<td>TCP and UDP; SPX; NetBEUI/NBF</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Session</td>
+			<td>Session Establishment, Management and Termination</td>
+			<td>Sessions</td>
+			<td>Sessions between local or remote devices</td>
+			<td>NetBIOS, Sockets, Named Pipes, RPC</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Presentation</td>
+			<td>Data Translation; Compression and Encryption</td>
+			<td>Encoded User Data</td>
+			<td>Application data representations</td>
+			<td>SSL; Shells and Redirectors; MIME</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Application</td>
+			<td>User Application Services</td>
+			<td>User Data</td>
+			<td>Application data</td>
+			<td>DNS; NFS; BOOTP; DHCP; SNMP; RMON; FTP; TFTP; SMTP; POP3; IMAP; NNTP; HTTP; Telnet</td>
+		</tr>
+	</tbody>
+</table>
+

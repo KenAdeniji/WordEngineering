@@ -1,0 +1,291 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+  <TheWord>
+   <SequenceOrderId>388</SequenceOrderId>
+   <Dated>2004-01-15T00:00:00.0000000-08:00</Dated>
+   <ScriptureReference>Isaiah 32:9, Isaiah 47:8, Mark 12:14</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Isaiah+32%3A9%2C+Isaiah+47%3A8%2C+Mark+12%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+   <ContactId>87</ContactId>
+  </TheWord>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>37</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>22</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>607</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <ContactId></ContactId>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>86</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>544</SequenceOrderId>
+   <Word>Give Care</Word>
+  </BibleWord>
+
+  <AlphabetSequence>
+    <SequenceOrderId>3395</SequenceOrderId>
+    <Word>First thing first.</Word>
+    <AlphabetSequenceIndex>202</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:18, Joshua 15, Luke 15, Revelation 12:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A18%2C+Joshua+15%2C+Luke+15%2C+Revelation+12%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3396</SequenceOrderId>
+    <Word>Oh, God, How wonderful you are.</Word>
+    <AlphabetSequenceIndex>298</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:31, 1 Kings 7, Jonah 3, Revelation 6:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A31%2C+1+Kings+7%2C+Jonah+3%2C+Revelation+6%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3397</SequenceOrderId>
+    <Word>In offering you, I am offering Me.</Word>
+    <AlphabetSequenceIndex>285</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 11:18, 2 Samuel 18, Habakkuk 2, Revelation 7:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+11%3A18%2C+2+Samuel+18%2C+Habakkuk+2%2C+Revelation+7%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3398</SequenceOrderId>
+    <Word>You don't know God when you don't know Him.</Word>
+    <AlphabetSequenceIndex>460</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:2, Job 24, Isaiah 51, 1 John 5:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A2%2C+Job+24%2C+Isaiah+51%2C+1+John+5%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3399</SequenceOrderId>
+    <Word>Food, raiment, hand, word, stewardship.</Word>
+    <AlphabetSequenceIndex>349</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:12, 1 Chronicles 11, Ezekiel 39, Revelation 3:7</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A12%2C+1+Chronicles+11%2C+Ezekiel+39%2C+Revelation+3%3A7&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3400</SequenceOrderId>
+    <Word>I have offered you as a sacrifice.</Word>
+    <AlphabetSequenceIndex>259</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:24, 1 Samuel 23, Matthew 2, Revelation 9:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A24%2C+1+Samuel+23%2C+Matthew+2%2C+Revelation+9%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3401</SequenceOrderId>
+    <Word>Compromise in duty, compromise in obligation.</Word>
+    <AlphabetSequenceIndex>472</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 19:14, Job 36, Isaiah 39, 1 John 5:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A14%2C+Job+36%2C+Isaiah+39%2C+1+John+5%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3402</SequenceOrderId>
+    <Word>If Adam had offered food to Eve, would Eve have had to go outside. If Cain had offered clothing to God, would Cain have had to go outside.</Word>
+    <AlphabetSequenceIndex>1083</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 36:42, 2 Corinthians 5, Leviticus 17, Hebrews 4:5</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+36%3A42%2C+2+Corinthians+5%2C+Leviticus+17%2C+Hebrews+4%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3403</SequenceOrderId>
+    <Word>Natural resources often obligate God.</Word>
+    <AlphabetSequenceIndex>367</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:6, 1 Chronicles 29, Ezekiel 21, Revelation 2:18</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A6%2C+1+Chronicles+29%2C+Ezekiel+21%2C+Revelation+2%3A18&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3404</SequenceOrderId>
+    <Word>Noah, Lot, You don't have to steal it.</Word>
+    <AlphabetSequenceIndex>356</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:19, 1 Chronicles 18, Ezekiel 32, Revelation 2:29</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A19%2C+1+Chronicles+18%2C+Ezekiel+32%2C+Revelation+2%3A29&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3405</SequenceOrderId>
+    <Word>In the mystery of God is godliness found.</Word>
+    <AlphabetSequenceIndex>420</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 17:22, Nehemiah 7, Jeremiah 25, Jude 1:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+17%3A22%2C+Nehemiah+7%2C+Jeremiah+25%2C+Jude+1%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3406</SequenceOrderId>
+    <Word>To My people, I am God. To your people, I am hope.</Word>
+    <AlphabetSequenceIndex>441</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 18:16, Job 5, Jeremiah 4, 3 John 1:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+18%3A16%2C+Job+5%2C+Jeremiah+4%2C+3+John+1%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3407</SequenceOrderId>
+    <Word>Thirst for Me, as I thirst for you.</Word>
+    <AlphabetSequenceIndex>374</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 15:13, 2 Chronicles 7, Ezekiel 14, Revelation 2:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+15%3A13%2C+2+Chronicles+7%2C+Ezekiel+14%2C+Revelation+2%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3408</SequenceOrderId>
+    <Word>Bone for bone, love for love.</Word>
+    <AlphabetSequenceIndex>258</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:23, 1 Samuel 22, Matthew 3, Revelation 9:4</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A23%2C+1+Samuel+22%2C+Matthew+3%2C+Revelation+9%3A4&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3409</SequenceOrderId>
+    <Word>If it helps you, you marry time.</Word>
+    <AlphabetSequenceIndex>348</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 14:11, 1 Chronicles 10, Ezekiel 40, Revelation 3:8</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+14%3A11%2C+1+Chronicles+10%2C+Ezekiel+40%2C+Revelation+3%3A8&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3410</SequenceOrderId>
+    <Word>Horizontally, their was none. Vertically, their was God.</Word>
+    <AlphabetSequenceIndex>582</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 23:10, Psalms 104, Psalms 130, 2 Peter 2:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+23%3A10%2C+Psalms+104%2C+Psalms+130%2C+2+Peter+2%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3411</SequenceOrderId>
+    <Word>Little do I understand when I am not listening. Little do I care when I am not giving.</Word>
+    <AlphabetSequenceIndex>780</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 28:6, Jeremiah 35, Ezra 7, James 3:3</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+28%3A6%2C+Jeremiah+35%2C+Ezra+7%2C+James+3%3A3&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3412</SequenceOrderId>
+    <Word>In contention their is dispute, in dispute their is horror.</Word>
+    <AlphabetSequenceIndex>631</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:39, Proverbs 3, Psalms 81, 1 Peter 5:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A39%2C+Proverbs+3%2C+Psalms+81%2C+1+Peter+5%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3413</SequenceOrderId>
+    <Word>Antelopes isn't God's gift to women alone, its all to all mankind.</Word>
+    <AlphabetSequenceIndex>607</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 24:15, Psalms 129, Psalms 105, 2 Peter 1:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+24%3A15%2C+Psalms+129%2C+Psalms+105%2C+2+Peter+1%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3414</SequenceOrderId>
+    <Word>Do our son's feel ok?</Word>
+    <AlphabetSequenceIndex>194</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:10, Joshua 7, Luke 23, Revelation 12:17</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A10%2C+Joshua+7%2C+Luke+23%2C+Revelation+12%3A17&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3415</SequenceOrderId>
+    <Word>In God I am ok, but in you I am mad.</Word>
+    <AlphabetSequenceIndex>266</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 10:31, 1 Samuel 30, Zechariah 13, Revelation 8:9</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+10%3A31%2C+1+Samuel+30%2C+Zechariah+13%2C+Revelation+8%3A9&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>3416</SequenceOrderId>
+    <Word>The same way you treat your sons.</Word>
+    <AlphabetSequenceIndex>391</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 16:9, 2 Chronicles 24, Lamentations 2, Revelation 1:14</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+16%3A9%2C+2+Chronicles+24%2C+Lamentations+2%2C+Revelation+1%3A14&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1438</SequenceOrderId>
+   <Commentary>Lido Supermarket 35219-B Newark Blvd, Newark CA 94560. Lunch.</Commentary>
+   <ContactId>87</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1439</SequenceOrderId>
+   <Commentary>Imperial Taste Pineapple Cake Net Weight 8oz (227g) Gemini Food Corporation Walnut CA 91789 7 41861 081516.</Commentary>
+   <ContactId>276</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1440</SequenceOrderId>
+   <Commentary>Hwa Tai Kraker Bijan http://www.hwatai.com Sesamio Sesame Coated Crackers Net Weight 150g (5.29oz) 12 Jalan Jorak Kawasan Perindustrial Tel: 6 07-4151688 Fax: 6-07-4151688 Tongkang Pecah 83010 Butu Pahat Johor Malaysia. Do our son's feel ok?</Commentary>
+   <ContactId>277</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1441</SequenceOrderId>
+   <Commentary>Perfect Food Manufacturing (M) SDN. BHP. AG 6876 Alor Gajah Industrial Estate 7800 Alor Gajah Melaka Malaysia Tel: (606) 556 1401 Fax: (606) 556 62476. In God I am ok, but in you I am mad.</Commentary>
+   <ContactId>278</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1442</SequenceOrderId>
+   <Commentary>
+    Albertsons Newark Blvd, Newark CA 94560. (510) 797-3681. The same way you treat your sons.
+   </Commentary>
+   <ContactId>24</ContactId>
+  </CaseBasedReasoning>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1443</SequenceOrderId>
+   <Commentary>
+    Roundy Apparel Adult Sweat Shirts 6 30829 21762 6 RN 93148 CA 91-1380686 50% Cotton/Algodon Coton 50% Polyester Poliester/Polyester 3X 3 Extra Grande 3 Extra Grand Made of U.S.A. Components Assembled in Mexico Hecho En E.U.A. Con Components Ensamblado En Mexico Fabrique Aux E.U. Composant Assemble En Mexico.
+    Roundy Apparel Adult Sweat Shirts  09064 6 30829 21762 6 RN 93148 CA 91-1380686 50% Cotton/Algodon Coton 50% Polyester Poliester/Polyester 3X 3 Extra Grande 3 Extra Grand Made of U.S.A. Components Assembled in Mexico Hecho En E.U.A. Con Components Ensamblado En Mexico Fabrique Aux E.U. Composant Assemble En Mexico.
+   </Commentary>
+   <ContactId>279</ContactId>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>31</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>329</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <SequenceOrderId>644</SequenceOrderId>
+   <Commentary>
+    Food, raiment, hand, word, ... ScriptureReference ... private part ... Food, raiment, hand, word, stewardship (Matthew 24:45-51).
+    Noa ... Keyboard error.
+    Perfect Food Manufacturing (M) SDN. BHP. AG 6876 Alor Gajah Industrial Estate 7800 Alor Gajah Melaka Malaysia Tel: (606) 556 1401 Fax: (606) 556 62476. In God I am ok, but in you I am mad ... Private part ... Don't cross the line ... Database Archive.
+    BibleWord 544 ... User Interface (UI) Error ... Understand Listen. Under Stand Listen. Under Care ... User Interface (UI) Error ... Private part ...
+   </Commentary>
+  </ClassAssociates>
+
+</wordOfGod>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<a href="#">Hi</a> <!-- this is a HTMLAnchorElement which inherits from... -->
+
+<script>
+
+//get reference to element node object
+var nodeAnchor = document.querySelector('a');
+
+//create props array to store property keys for element node object
+var props = [];
+
+//loop over element node object getting all properties & methods (inherited too)
+for(var key in nodeAnchor){
+    props.push(key);   
+}
+
+//log alphabetical list of properties & methods 
+console.log(props.sort());
+
+</script>
+</body>
+</html>

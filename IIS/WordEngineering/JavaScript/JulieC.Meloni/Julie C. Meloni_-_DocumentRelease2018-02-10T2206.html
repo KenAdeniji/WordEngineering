@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-10	Created.	http://www.informit.com/articles/article.aspx?p=2832403
+		-->
+		<title>Julie C. Meloni_-_Document</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						render();
+						isPostBack = true;
+					});
+				}
+			}
+
+			function render()
+			{
+				var info = "<table id='documentTable'><caption>Document</caption>";
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Property",
+					"Value"
+				);
+					
+				info += scriptLiteral9432.buildRow("document.lastModified", document.lastModified);
+
+				info += "</table>";
+				
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

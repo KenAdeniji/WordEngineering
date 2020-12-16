@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-08-22	Created.	https://elijahmanor.com/format-js-numbers
+		2020-08-22	https://stackoverflow.com/questions/673905/best-way-to-determine-users-locale-within-browser
+	-->
+	<head>
+		<title>Natively Format JavaScript Numbers</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Natively Format JavaScript Numbers"/>
+		<meta name="keywords" content="Native, Format, Numbers, language, locale, currency, i18n, Internationalization and localization"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Number</label></td>
+					<td><input id="word" type="number" step=".01" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="language">Language</label></td>
+					<td><input id="language" type="text"/></td>
+				</tr>	
+				<tr>
+					<td><label for="currency">Currency</label></td>
+					<td><input id="currency" type="text"/></td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	currencyElement = document.getElementById("currency");
+			var	languageElement = document.getElementById("language");
+			var	resultSetElement = document.getElementById("resultSet");
+			var submitQueryElement = document.getElementById("submitQuery");			
+			var wordElement = document.getElementById("word");
+			
+			const getLang = () => navigator.language || navigator.browserLanguage || ( navigator.languages || [ "en" ] ) [ 0 ] 
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var wordValue = urlParams.get("word");
+					if (!wordValue)
+					{
+						wordValue = wordDefault
+					}
+					wordElement.value = wordValue;
+					
+					var languageValue = urlParams.get("language");
+					if (!languageValue)
+					{
+						languageValue = getLang();
+					}
+					languageElement.value = languageValue;
+
+					var currencyValue = urlParams.get("currency");
+					if (!currencyValue)
+					{
+						currencyValue = currencyDefault;
+					}
+					currencyElement.value = currencyValue;
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var entry = parseFloat(wordElement.value);
+				var display = "<table border='1'>" +
+					"<caption>Natively Format JavaScript Numbers</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("Locale", entry.toLocaleString(languageElement.value)) +
+					tabular
+					(
+						"Currency", 
+						entry.toLocaleString
+						(
+							languageElement.value,
+							{
+								style: "currency",
+								currency: currencyElement.value
+							}
+						)	
+					)
+					+
+					tabular
+					(
+						"Accounting", 
+						entry.toLocaleString
+						(
+							languageElement.value,
+							{
+								style: "currency",
+								currency: currencyElement.value,
+								currencySign: "accounting",
+								signDisplay: "always"
+							}
+						)	
+					)
+					+
+					tabular
+					(
+						"Percent", 
+						entry.toLocaleString
+						(
+							languageElement.value,
+							{
+								style: "percent"
+							}
+						)	
+					)
+					+
+					"</tbody></table>"
+					;
+
+				document.getElementById("resultSet").innerHTML = display;		
+			}
+
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+			const currencyDefault = "USD";
+			const wordDefault = "12345.6789";
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

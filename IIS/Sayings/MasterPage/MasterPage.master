@@ -1,0 +1,51 @@
+<%@ Master 
+    Language="C#"
+    AutoEventWireup="true"
+    CodeFile="MasterPage.master.cs"
+    Inherits="WordEngineering.MasterPage_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+<link runat="server" id="CssDefault" href="../App_Themes/default/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="Body1" runat="server">
+	<form enctype="multipart/form-data" id="Form1" runat="server">
+        <div class="MasterPage">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<asp:HyperLink
+						runat="server"
+						id="hyperLinkContact"
+						NavigateUrl="~/Contact/ContactList.aspx"
+						Text="Contact"
+					/>	
+					<asp:HyperLink
+						runat="server"
+						id="hyperLinkQuote"
+						NavigateUrl="~/Quote/QuoteList.aspx"
+						Text="Quote"
+					/>	
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<asp:ContentPlaceHolder id="contentPlaceHolderActionMenu" runat="server" />
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">            		        
+			<tr class="MasterPageFooter">
+				<td class="MasterPageFooterCopyright">
+					© 2012 WordEngineering.
+				</td>
+			</tr>
+		</table>
+        </div>
+    </form>
+</body>
+</html>

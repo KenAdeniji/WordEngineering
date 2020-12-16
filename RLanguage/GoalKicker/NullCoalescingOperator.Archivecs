@@ -1,0 +1,20 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+/*
+	2018-08-13	https://goalkicker.com/CSharpBook/CSharpNotesForProfessionals.pdf
+*/
+namespace InformationInTransit.GoalKicker
+{
+	public static partial class NullCoalescingOperator
+	{
+		public static void Main(string[] argv)
+		{
+			string testString = null;
+			Console.WriteLine("The specified string is - " + (testString ?? "not provided"));
+		}
+    }
+}

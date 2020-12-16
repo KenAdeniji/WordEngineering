@@ -1,0 +1,1 @@
+cl /clr "dynamic memory.cpp"

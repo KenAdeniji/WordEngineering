@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<wordOfGod>
+ <TheWord>
+
+  <SequenceOrderId>70</SequenceOrderId>
+  <Dated>2003-08-28T00:00:00.0000000-08:00</Dated>
+  <ScriptureReference>Genesis 19:4, Genesis 19:10-11, Judges 19:22, 2 Samuel 4:11, 2 Chronicles 32:21, Ezekiel 8:11, Ezekiel 11:15</ScriptureReference>
+  <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+19%3A4%2C+Genesis+19%3A10-11%2C+Judges+19%3A22%2C+2+Samuel+4%3A11%2C+2+Chronicles+32%3A21%2C+Ezekiel+8%3A11%2C+Ezekiel+11%3A15&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  <Title>Men of the house.</Title>
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>30</SequenceOrderId>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>361</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>68</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>27</SequenceOrderId>
+   <Measure></Measure>
+   <ButtonGetGroupMembers></ButtonGetGroupMembers>
+   <Commentary></Commentary>
+   <ScriptureReference</ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>249</SequenceOrderId>
+   <Word>Men ... House</Word>
+   <Commentary />
+  </BibleWord>  
+
+  <AlphabetSequence>
+   <SequenceOrderId>557</SequenceOrderId>
+   <Word>Men of the house.</Word>
+   <AlphabetSequenceIndex>154</AlphabetSequenceIndex>
+   <ScriptureReference>Genesis 6:16, Deuteronomy 1, Acts 18, Revelation 15:2</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+6%3A16%2C+Deuteronomy+1%2C+Acts+18%2C+Revelation+15%3A2&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1111</SequenceOrderId>
+   <Commentary>Fremont Main Library 2400 Stevenson Blvd. Fremont CA 94538-2325. General Information: (510) 745-1400. http://www.aclibrary.org. Current Medical Diagnosis &amp; Treatment current-med.com. Wash cloth, shave hair.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export>
+   <SequenceOrderId>25</SequenceOrderId>
+   <Commentary></Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>256</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+ 
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>322</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+  
+  </TheWord>
+</wordOfGod>

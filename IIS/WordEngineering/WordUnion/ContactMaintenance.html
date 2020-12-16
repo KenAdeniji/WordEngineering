@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-09-30	Created.
+		2017-10-05	Susan Warren, Microsoft.
+		2017-10-05	scriptLiteral9432.whatIDoNowIsWhatIDoForeverWhatIDoTodayIsHowIWillBePublicizeTomorrow
+			(
+				dataSet,
+				"resultSub"
+			);
+	-->
+	<head>
+		<title>Contact Maintenance</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+/* Up and Down Arrows */
+.sortable th.descend:after{
+	content: "\25B2";
+	}
+.sortable th.ascend:after{
+	content: "\25BC";
+	}		</style>
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td>
+						<input id="question" size="50" autofocus>
+					</td>
+				</tr>	
+				<tr>
+					<td align="center">
+						<input type="submit" id="submitQuery">
+					</td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<div id="resultSet"> </div>
+			<div id="resultSub"> </div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						isPostBack = true;
+					});
+				}
+				if (isPostBack)
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["question"] = document.getElementById("question").value;				
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/ContactMaintenance.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						render(dataTable);
+						//scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+						tsorter.create("resultSet0");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+		    function render(data) 
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				
+				var occurrences = scriptLiteral9432.countOccurences(data);
+				
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1 id='tableContact'>" + caption;
+				
+		        var dataRow = null;
+		        var dataTable = null;
+
+				info += scriptLiteral9432.buildHead
+				(
+					"",
+					"First Name",
+					"Last Name",
+					"Other Name",
+					"Title",
+					"Company",
+					"Commentary",
+					"Dated",
+					"ContactID"
+				);
+	
+				var	selectLinkButton = "";
+	
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+			
+						selectLinkButton = scriptLiteral9432.buildLinkButton
+						(
+							"selectContact",
+							dataRow["ContactID"],
+							"Select"
+						);	
+
+						info += scriptLiteral9432.buildRow
+						(
+							selectLinkButton,
+							dataRow["FirstName"],
+							dataRow["LastName"],
+							dataRow["OtherName"],
+							dataRow["Title"],
+							dataRow["Company"],
+							dataRow["Commentary"],
+							dataRow["Dated"],
+							dataRow["ContactID"]
+						);	
+					}	
+		        }
+
+		        info += "</table>"
+		        document.getElementById("resultSet").innerHTML = info;
+				tsorter.create("tableContact");
+		    }
+
+			function selectContact(contactID)
+			{
+				var request = {};
+				request["contactID"] = contactID;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/ContactMaintenance.asmx/Select",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSub");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

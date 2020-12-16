@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>516</SequenceOrderId>
+ <Dated>2004-06-07T00:00:00.0000000-08:00</Dated>
+ <FromUntil>159</FromUntil>
+ <ContactId>7</ContactId>
+ <Keyword>Nylock</Keyword>
+ 
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>46</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <Dream>
+   <SequenceOrderId>35</SequenceOrderId>
+   <Commentary>Will reach out and take the hand of a long haired Asian male, Nylock, we can bill for your life.</Commentary>
+  </Dream>
+  
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+  
+  <!--
+  <Remember>
+   <SequenceOrderId>648</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId />
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>574</SequenceOrderId>
+   <Word></Word>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>6973</SequenceOrderId>
+    <Word>Conway, is the denway; winway, gas.</Word>
+    <AlphabetSequenceIndex>336</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 13:17, 2 Kings 23, Daniel 4, Revelation 3:20</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+13%3A17%2C+2+Kings+23%2C+Daniel+4%2C+Revelation+3%3A20&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6974</SequenceOrderId>
+    <Word>Mind your pitfalls.</Word>
+    <AlphabetSequenceIndex>214</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:8, Judges 3, Luke 3, Revelation 11:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A8%2C+Judges+3%2C+Luke+3%2C+Revelation+11%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>6975</SequenceOrderId>
+    <Word>Nylock, we can bill for your life.</Word>
+    <AlphabetSequenceIndex>311</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 12:12, 1 Kings 20, Joel 3, Revelation 5:12</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+12%3A12%2C+1+Kings+20%2C+Joel+3%2C+Revelation+5%3A12&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1776</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>Wake-up Orientation: 180%. Nomura Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 20LBS 9.07kg.</Commentary>
+   <Expense />
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>369</SequenceOrderId>
+   <Commentary>
+    UtilityPingBuildRelease20040607.bat
+    UtilityPingRelease20040607.cs
+    UtilityPingRelease20040607.mak
+   </Commentary>
+  </Software>
+  
+  <ClassAssociates>
+   <SequenceOrderId>767</SequenceOrderId>
+   <Commentary>Face ... urine ... noise ... keyboard error ... faeces ... private part ... Filename error: Comforter_-_20040607TheWordAlphabetSequence(ConwayIsTheDenwayWinwayGas_MindYourPitfalls_NylockWeCanBillForYourLife.bat) ... UtilityPing200406072100.cs socket error ...</Commentary>
+  </ClassAssociates>
+
+  <Contact>
+   <SequenceOrderId>469</SequenceOrderId>
+   <Company />
+   <FirstName />
+   <LastName>Nylock</LastName>
+   <OtherName />
+   <Title />
+   <Commentary>Nylock, we can bill for your life.</Commentary>
+  </Contact>
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

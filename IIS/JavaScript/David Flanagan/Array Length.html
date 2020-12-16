@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script>
+			<!--
+				oreilly.com/javascript/excerpts/javascript-tdg/core-javascript-reference.html
+			-->	
+			// Array Length
+				The length property of an array is always one larger than the index of the highest element defined in the array. For traditional "dense" arrays that have contiguous elements and begin with element 0, the length property specifies the number of elements in the array.
+
+				The length property of an array is initialized when the array is created with the Array( ) constructor method. Adding new elements to an array updates the length, if necessary:
+
+				a = new Array( );                         // a.length initialized to 0
+				b = new Array(10);                       // b.length initialized to 10
+				c = new Array("one", "two", "three");    // c.length initialized to 3
+				c[3] = "four";                           // c.length updated to 4
+				c[10] = "blastoff";                      // c.length becomes 11
+
+				You can set the value of the length property to change the size of an array. If you set length to be smaller than its previous value, the array is truncated, and elements at the end are lost. If you set length to be larger than its previous value, the array becomes bigger, and the new elements added at the end of the array have the undefined value.		</script>
+	</head>
+</html>

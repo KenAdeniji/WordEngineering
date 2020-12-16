@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function highest(){
+				return Math.max.apply( Math, arguments ); 
+			}
+			function smallest(array){ 
+				return Math.min.apply( Math, array ); 
+			} 
+			function largest(array){ 
+				return Math.max.apply( Math, array ); 
+			}
+			function lowest(){
+				return Math.min.apply( Math, arguments ); 
+			}
+			//assert(smallest([0, 1, 2, 3]) == 0, "Locate the smallest value."); 
+			document.write(smallest([0, 1, 2, 3]));
+			//assert(largest([0, 1, 2, 3]) == 3, "Locate the largest value.");
+			document.write(largest([0, 1, 2, 3]));
+			document.write(lowest(0, 1, 2, 3));
+			document.write(highest(0, 1, 2, 3));
+		</script>
+	</head>	
+<html>

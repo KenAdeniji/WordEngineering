@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence 20050105BeneditionJehovahRopheError.txt 20050105BeneditionJehovahRopheErrorAlphabet.xml
