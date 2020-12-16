@@ -1,0 +1,3 @@
+TheWord Comforter_-_20030921TeachSayDo.xml                                                                                              Comforter_-_20030921TeachSayDo.txt
+TheWord Comforter_-_20030921Eyimota.xml                                                                                                 Comforter_-_20030921Eyimota.txt
+TheWord Comforter_-_20030922IAmNotSureHow-toGoHomeAndTryToTellThemThatAllUourAttentionToTryToWelcomeMeIsNotWorking-OutWithTheKids.xml   Comforter_-_20030922IAmNotSureHow-toGoHomeAndTryToTellThemThatAllUourAttentionToTryToWelcomeMeIsNotWorking-OutWithTheKids.txt
