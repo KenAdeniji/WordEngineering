@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040218EdoSushi_TheGlassIsHalfFullAndIAmHalfReady.txt   Comforter_-_20040218TheWordAlphabetSequenceEdoSushi_TheGlassIsHalfFullAndIAmHalfReady.xml
