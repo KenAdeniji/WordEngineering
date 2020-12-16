@@ -1,0 +1,3 @@
+@ECHO OFF
+TheWord Comforter_-_20031225SaintEdward'sCatholicChurch_Todai_CESoftware_ConnectLeadershipToFacts.xml                  Comforter_-_20031225SaintEdward'sCatholicChurch_Todai_CESoftware_ConnectLeadershipToFacts.txt
+TheWord Comforter_-_20031227NomuraHoldingsKokuho_Isumolara_EverybodyGivingHimALoveHeCan'tGetGiveHimALoveHeCanGet.xml   Comforter_-_20031227NomuraHoldingsKokuho_Isumolara_EverybodyGivingHimALoveHeCan'tGetGiveHimALoveHeCanGet.txt

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence Comforter_-_20031225SaintEdward'sCatholicChurch_Todai_CESoftware_ConnectLeadershipToFacts.txt   Comforter_-_20031225SaintEdward'sCatholicChurch_Todai_CESoftware_ConnectLeadershipToFacts.xml
