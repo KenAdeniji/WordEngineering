@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040118ChristianLayman_Walgreens_InDeclineInIsolation_TheBackSeatIsNotForForecast.txt  Comforter_-_20040118ChristianLayman_Walgreens_InDeclineInIsolation_TheBackSeatIsNotForForecast.xml
