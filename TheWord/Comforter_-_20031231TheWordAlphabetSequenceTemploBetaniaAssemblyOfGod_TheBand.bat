@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence   Comforter_-_20031231TemploBetaniaAssemblyOfGod_TheBand.txt  Comforter_-_20031231TemploBetaniaAssemblyOfGod_TheBand.xml
