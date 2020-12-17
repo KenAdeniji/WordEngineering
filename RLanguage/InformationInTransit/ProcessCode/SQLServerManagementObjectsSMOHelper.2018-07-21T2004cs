@@ -1,0 +1,44 @@
+//using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using System;
+using System.Collections.Specialized;
+using System.Data.Sql;
+using System.Data.SqlClient;
+
+namespace InformationInTransit.ProcessCode
+{
+	public static partial class SQLServerManagementObjectsSMOHelper
+	{
+		public static void Main(string[] argvs)
+		{
+			Stub();
+		}	
+	
+		public static void Stub()
+		{
+			Server myServer = new Server(@"localhost");
+			
+			Scripter scripter = new Scripter(myServer);
+			Database myAdventureWorks = myServer.Databases["Master"];
+			/* With ScriptingOptions you can specify different scripting  
+			* options, for example to include IF NOT EXISTS, DROP  
+			* statements, output location etc*/
+			var scriptOptions = new ScriptingOptions();
+			scriptOptions.ScriptDrops = true;
+			scriptOptions.IncludeIfNotExists = true;  
+			foreach (Table myTable in myAdventureWorks.Tables)
+			{
+				/* Generating IF EXISTS and DROP command for tables */
+				StringCollection tableScripts = myTable.Script(scriptOptions);
+				foreach (string script in tableScripts)
+					Console.WriteLine(script);
+			 
+				/* Generating CREATE TABLE command */
+				tableScripts = myTable.Script();
+				foreach (string script in tableScripts)
+					Console.WriteLine(script);
+			}	
+		}
+	}	
+}
+	

@@ -1,0 +1,2 @@
+REM csc WordEntrance.cs /reference:..\Bin\Debug\InformationInTransit.dll
+csc /main:InformationInTransit.ProcessLogic.WordEntrance /reference:mscorlib.dll,System.Core.dll WordEntrance.cs ..\DataAccess\DataCommand.cs 

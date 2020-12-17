@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040603TomiWyhenWagner.txt  Comforter_-_20040603TheWordAlphabetSequenceTomiWyhenWagner.xml

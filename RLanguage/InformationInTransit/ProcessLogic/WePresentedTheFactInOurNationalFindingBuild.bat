@@ -1,0 +1,2 @@
+REM csc WePresentedTheFactInOurNationalFinding.cs /reference:..\Bin\Debug\InformationInTransit.dll
+csc /main:InformationInTransit.ProcessLogic.WePresentedTheFactInOurNationalFinding /reference:mscorlib.dll,System.Core.dll WePresentedTheFactInOurNationalFinding.cs AlphabetSequence.cs ..\DataAccess\DataCommand.cs 

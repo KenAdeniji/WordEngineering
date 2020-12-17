@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20041030MuncherHausGermanDeliRita.txt  Comforter_-_20041030TheWordAlphabetSequenceMuncherHausGermanDeliRita.xml

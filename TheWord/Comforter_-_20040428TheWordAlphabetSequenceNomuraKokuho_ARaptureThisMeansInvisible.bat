@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence Comforter_-_20040428NomuraKokuho_ARaptureThisMeansInvisible.txt Comforter_-_20040428TheWordAlphabetSequenceNomuraKokuho_ARaptureThisMeansInvisible.xml

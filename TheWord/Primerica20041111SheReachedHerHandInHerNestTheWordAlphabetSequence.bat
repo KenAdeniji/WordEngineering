@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Primerica20041111SheReachedHerHandInHerNest.txt  Primerica20041111SheReachedHerHandInHerNestTheWordAlphabetSequence.xml

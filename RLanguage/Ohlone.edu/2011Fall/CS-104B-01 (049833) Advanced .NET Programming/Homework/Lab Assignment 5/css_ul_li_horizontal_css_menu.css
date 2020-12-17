@@ -1,0 +1,57 @@
+﻿/* http://www.secondpicture.com/tutorials/web_design/css_ul_li_horizontal_css_menu.html */
+body {
+/* background-color: #000; */
+}
+
+* { /* Universal selector. */
+margin: 0;
+padding: 0;
+}
+
+/*
+The first declaration removes the default HTML list bullets.
+The second declaration places small (1x80 pixels) image in the background (repeated automatically.)
+The third declaration sets the height of the list. 
+The fourth declaration sets the width of the list.
+The fifth declaration is voluntary. Auto margin will center the list within its parent element.
+*/
+ul {
+list-style-type: none;
+background-image: url(navi_bg.png);
+height: 80px;
+width: 663px;
+margin: auto;
+}
+
+li {
+float: left;
+}
+
+/*
+The first declaration places a small (2x80 pixels) background image to each link. 
+The background image works as a divider between the links (picture 5). 
+The second declaration forbids the repeating of the background image.
+The third declaration defines the location of the background image.
+The fourth and fifth declaration create padding around each link.
+The sixth declaration makes the whole block clickable (instead of just the text)
+The seventh declaration sets the height of the link. This is needed so that the whole height of the block would be clickable. This also centers the text vertically.
+The eighth declaration removes the underlining from the links.
+The 9th - 11th declarations are just for styling the text.
+*/
+ul a {
+background-image: url(navi_bg_divider.png);
+background-repeat: no-repeat;
+background-position: right;
+padding-right: 32px;
+padding-left: 32px;
+display: block;
+line-height: 80px;
+text-decoration: none;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 21px;
+color: #371C1C;
+}
+
+ul a:hover {
+color: #FFF;
+}

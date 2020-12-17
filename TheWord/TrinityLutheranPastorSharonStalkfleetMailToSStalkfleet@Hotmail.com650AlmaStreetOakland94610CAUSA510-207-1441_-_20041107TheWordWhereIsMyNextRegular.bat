@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  TrinityLutheranPastorSharonStalkfleetMailToSStalkfleet@Hotmail.com650AlmaStreetOakland94610CAUSA510-207-1441_-_20041107WhereIsMyNextRegular.xml  TrinityLutheranPastorSharonStalkfleetMailToSStalkfleet@Hotmail.com650AlmaStreetOakland94610CAUSA510-207-1441_-_20041107TheWordWhereIsMyNextRegular.xml

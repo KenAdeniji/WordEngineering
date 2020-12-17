@@ -1,0 +1,63 @@
+using System;
+using System.Linq;
+using System.Data.Linq;
+
+using bible;
+
+/*
+	2018-11-04	https://books.google.com/books/about/Pro_LINQ.html?id=438nCgAAQBAJ&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false
+	2018-11-08	Created.
+	2018-11-08	SqlMetal /server:(local) /database:bible /code:ThereIsOnlyOneBook.cs /namespace:bible
+	2018-11-08	When is originality? The same.
+	2018-11-08	I have change; this is my cover.
+	2018-11-08	To one summing; it is a final score.
+					E-mail question? Knowledge base, tech support? Dan Foley, books.
+	2018-11-08	The love that last forever; never change in time.
+	2018-11-08	Perfection is alike.
+	2018-11-08	How did you, get to live, in Ketu?
+					Keturah, Kehinde, second twin.
+					Hayward Toyota. Hayward Honda.
+	2018-11-12	https://docs.microsoft.com/en-us/dotnet/csharp/linq/group-query-results				
+*/
+public static partial class HelloLinqBibleBookTitle
+{
+	public static void Main(String[] argv)
+	{
+		Query();
+	}
+
+	public static void Query()
+	{
+		Bible db = new Bible
+		(
+			DatabaseConnectionString
+		);
+		
+/*
+		var books =
+			from book in db.Scripture
+			where book.BookTitle.EndsWith("Kings")
+			select book;
+*/
+
+		var books =
+			from book in db.Scripture
+			where book.BookTitle.EndsWith("Kings")
+			group book by book.BookTitle into newGroup
+			orderby newGroup.Key
+			select newGroup;
+
+		foreach(var book in books)
+		{
+			System.Console.WriteLine
+			(
+				"{0}",
+				book.Key
+			);
+		}
+	}
+	
+	public const string DatabaseConnectionString =
+		@"Data Source=(local);Initial Catalog=Bible;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=600;Application Name=Northwind;MultipleActiveResultSets=True;";
+}	
+			

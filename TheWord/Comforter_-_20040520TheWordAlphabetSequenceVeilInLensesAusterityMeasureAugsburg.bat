@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040520VeilInLensesAusterityMeasureAugsburg.txt Comforter_-_20040520TheWordAlphabetSequenceVeilInLensesAusterityMeasureAugsburg.xml

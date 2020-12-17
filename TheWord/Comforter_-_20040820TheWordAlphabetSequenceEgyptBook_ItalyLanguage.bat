@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040820EgyptBook_ItalyLanguage.txt   Comforter_-_20040820TheWordAlphabetSequenceEgyptBook_ItalyLanguage.xml

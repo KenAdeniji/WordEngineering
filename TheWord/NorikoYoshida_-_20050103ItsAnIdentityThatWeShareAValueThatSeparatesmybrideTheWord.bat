@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWord NorikoYoshida_-_20050103ItsAnIdentityThatWeShareAValueThatSeparatesmybride.xml

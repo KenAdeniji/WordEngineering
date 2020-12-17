@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  McDonald's_-_200411061955RayAKrocDesPlainesIllinoisIDidNotTransitMyNameByDesign.txt  McDonald's_-_200411061955TheWordAlphabetSequenceRayAKrocDesPlainesIllinoisIDidNotTransitMyNameByDesign.xml

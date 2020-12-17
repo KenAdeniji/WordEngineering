@@ -1,0 +1,7 @@
+		SELECT ContactID, COUNT(*) AS Count FROM WordEngineering..HisWord WHERE ContactID IS NOT NULL GROUP BY ContactID HAVING COUNT(*) > 0 ORDER BY Count DESC,
+		SELECT Convert(Date, Dated) AS Dated, COUNT(*) AS Count FROM WordEngineering..HisWord GROUP BY Convert(Date, Dated) ORDER BY Count DESC,
+		SELECT URI, COUNT(*) AS Count FROM WordEngineering..HisWord WHERE URI IS NOT NULL GROUP BY URI HAVING COUNT(*) > 0 ORDER BY Count DESC,
+		SELECT Year(Dated) AS Year, COUNT(*) AS Count FROM WordEngineering..HisWord GROUP BY Year(Dated) ORDER BY Count DESC,
+		SELECT CAST(YEAR(dated) AS VARCHAR(4)) + '-' + right('00' + CAST(MONTH(dated) AS VARCHAR(2)), 2) AS YearMonth, COUNT(*) AS Count FROM WordEngineering..HisWord GROUP BY CAST(YEAR(dated) AS VARCHAR(4)) + '-' + right('00' + CAST(MONTH(dated) AS VARCHAR(2)), 2) ORDER BY Count DESC,
+		SELECT CAST(YEAR(dated) AS VARCHAR(4)) + 'Q' + CAST(datepart(qq, dated) AS VARCHAR(1)) AS YearQuarter, COUNT(*) AS Count FROM WordEngineering..HisWord GROUP BY CAST(YEAR(dated) AS VARCHAR(4)) + 'Q' + CAST(datepart(qq, dated) AS VARCHAR(1)) ORDER BY Count DESC,
+		SELECT CAST(YEAR(dated) AS VARCHAR(4)) + 'W' + right('00' + CAST(datepart(ISO_WEEK, dated) AS VARCHAR(2)), 2) AS YearMonth, COUNT(*) AS Count FROM WordEngineering..HisWord GROUP BY CAST(YEAR(dated) AS VARCHAR(4)) + 'W' + right('00' + CAST(datepart(ISO_WEEK, dated) AS VARCHAR(2)), 2) ORDER BY Count DESC

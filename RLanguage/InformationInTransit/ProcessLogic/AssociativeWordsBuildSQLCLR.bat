@@ -1,0 +1,2 @@
+"C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe" /main:AssociativeWords /reference:mscorlib.dll,System.Core.dll AssociativeWords.cs
+csc.exe /target:library /reference:mscorlib.dll,System.Core.dll AssociativeWords.cs

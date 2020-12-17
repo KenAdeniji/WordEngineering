@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20041102MichaelPitts_OtiSo_BiIwo_SeRi_AroundTheWorld.txt  Comforter_-_20041102TheWordAlphabetSequenceMichaelPitts_OtiSo_BiIwo_SeRi_AroundTheWorld.xml

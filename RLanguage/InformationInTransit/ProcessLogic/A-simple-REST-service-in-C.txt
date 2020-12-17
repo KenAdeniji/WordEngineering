@@ -1,0 +1,153 @@
+http://www.progware.org/Blog/post/A-simple-REST-service-in-C.aspx
+Ioannis Panagopoulos blog
+Tutorials on HTML5, Javascript, WinRT and .NET
+
+    Home Archive Contact Subscribe Feed Search 
+
+A simple REST service in C#
+29. January 2011 by Ioannis Panagopoulos
+
+(For an approach that uses ASP.NET MVC3 please go to this post)
+
+In this post, we will see a simple implementation of a REST service.The service will consist of only one method and it can be consumed from your websites, directly from your browser or from a Desktop application.
+
+When implementing a service you need to specify the following:
+
+    The service contract (the methods it offers).
+    How do you know which one to access from the URL given (URL Routing).
+    The implementation of the service.
+    How you will host the service.
+
+Defining the Contract
+
+Create a new Class Library Project and call it “RESTService.Lib”. Add references to “System.ServiceModel” and “System.ServiceModel.Web”. Create an Interface class called IRESTDemoServices and add the definitions of the methods that represent the services offered. Our interface will offer just one service as follows:
+
+public interface IRESTDemoServices
+{
+    string GetClientNameById(string Id);
+}
+
+In order to tell the framework to treat this interface as a service we need to decorate it as follows:
+
+[ServiceContract(Name = "RESTDemoServices")]
+public interface IRESTDemoServices
+{
+    [OperationContract]
+    string GetClientNameById(int Id);
+}
+
+Apparently we could offer more than one methods in our service by adding more methods in the interface.
+
+Defining the URL to be used to access the service (URL Routing)
+
+Although you can actually specify the routing within the interface it is better to create a new static class that will hold all your routing paths. Create a new static class named Routing and provide the following:
+
+public static class Routing
+{
+    public const string GetClientRoute = "/Client/{id}";
+}
+
+Note the {id} element which specifies that the value supplied there should be matched with a parameter of the method of the interface. The connection of the URL Route to the method in the interface is achieved by decorating the interface with an attribute as follows:
+
+[ServiceContract(Name = "RESTDemoServices")]
+public interface IRESTDemoServices
+{
+    [OperationContract]
+    [WebGet(UriTemplate = Routing.GetClientRoute, BodyStyle = WebMessageBodyStyle.Bare)]
+    string GetClientNameById(string Id);
+}
+
+The WebGet attribute also specifies that the method will be accessed by a typical GET request to the specified URL.
+
+Implementing the service
+
+Implementing the service is as simple as creating a class that implements the service’s interface and decorating it with two specific attributes:
+
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, 
+
+                 ConcurrencyMode = ConcurrencyMode.Single, IncludeExceptionDetailInFaults = true)]
+[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+public class RestDemoServices:IRESTDemoServices
+{
+    public string GetClientNameById(string Id)
+    {
+        Random r = new Random();
+        string ReturnString="";
+        int Idnum=Convert.ToInt32(id);
+        for (int i = 0; i < Idnum; i++)
+            ReturnString += char.ConvertFromUtf32(r.Next(65, 85));
+
+        return ReturnString;
+
+    }
+}
+
+This is of course dummy code just to return a string. In real life this is the place to access the database and request for the name of the client with this id.
+
+And this is it! Your service is ready to be hosted.
+
+Hosting your service
+
+The simplest solution is to create a console application that will act as the server of your service. Create a new project “Console Application” and add the same references as in the class library project along with the reference to the class library project itself. There is a possibility that you may need to change the “Target Framework” of your app to .NET Framework 4 from the one with the client profile in order to be able to include the “System.ServiceModel.Web” assembly. In the main method you host the service as follows:
+
+static void Main(string[] args)
+{
+    RestDemoServices DemoServices = new RestDemoServices();
+    WebServiceHost _serviceHost = new WebServiceHost(DemoServices, 
+
+                                                     new Uri("http://localhost:8000/DEMOService"));
+    _serviceHost.Open();
+    Console.ReadKey();
+    _serviceHost.Close();
+}
+
+That is you initialize the service and then you host it under the root URL of http://localhost:8000/DEMOService. And off you go! Run the application and open your browser and type the following:
+
+image
+
+That’s it. Of course in a production environment you may have to open the port your service communicates.
+
+Alternatively you may host this service in IIS. Create a new Empty Web Application Project. Add a reference to the class library project containing the Demo service and create an empty .svc file with the following contents (when you add it from the Add Item menu you will get some extra cs flies which you can safely delete):
+
+<%@ ServiceHost Language="C#" Debug="true" Service="RESTService.Lib.RestDemoServices" 
+
+Factory="System.ServiceModel.Activation.WebServiceHostFactory"%> 
+
+This is it. Right Click on the svc file and select “View in Browser”. You will achieve the same result as before:
+
+image
+
+ 
+
+Deploying the .svc file to a web server is similar to deploying a webpage.
+
+This was a very simple demonstration of creating a web service. I haven’t shown any POST requests neither I have demonstrated session management. But apart from those, I think you will see that there will be a lot of times that a simple web service with only GET Requests will be the only one thing needed and this approach will come in handy.
+
+Again the project for this post can be downloaded here
+Shout it
+
+ 
+
+restful services | services | rest | wcf | ASP.NET MVC | RESTful Services | Permalink | Comments (0)
+Related posts
+XNA Game Development (Scenes and Game Services)
+In the previous post, we have talked about decentralizing our XNA application by taking advanta...
+Implementing a JSON REST service with ASP.NET MVC
+Two years ago, I have written a post about implementing a REST service using WCF. Back then, I didn'...
+A simple way to detect memory leaks in C# and how to create one with events :)
+In this post we will see a simple code fragment that can be used to detect memory leaks (more specif...
+about me
+
+Phd (Hardware/Software codesign)
+Microsoft MVP (Visual C#)
+
+I specialize in software development. I am also offerring consulting services regarding software design and implementation in .NET, WinRT and Web technologies. I have given lectures in higher education in the subject of "software development". I am also an invited speaker in several Microsoft development events. My current passions are HTML5, Javascript, ASP.NET MVC, Windows Store and WP8 mobile apps. I live in Athens,Greece (more).
+contact info
+
+Ioannis Panagopoulos,PhD
+Ventouri 23
+15561, Athens
+Greece
+
+email:ipplos@gmail.com
+tel:+306974115185

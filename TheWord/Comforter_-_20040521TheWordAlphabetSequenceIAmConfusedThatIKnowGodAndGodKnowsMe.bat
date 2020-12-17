@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_200400521IAmConfusedThatIKnowGodAndGodKnowsMe.txt  Comforter_-_200400521TheWordAlphabetSequenceIAmConfusedThatIKnowGodAndGodKnowsMe.xml

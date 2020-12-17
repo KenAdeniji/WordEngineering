@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040824PsalmFiveTwoFive_PhysicalEducation.txt   Comforter_-_20040824TheWordAlphabetSequencePsalmFiveTwoFive_PhysicalEducation.xml

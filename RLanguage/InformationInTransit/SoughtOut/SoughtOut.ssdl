@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoughtOutModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SoughtOutModelStoreContainer">
+    <EntitySet Name="Actors" EntityType="SoughtOutModel.Store.Actors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Days" EntityType="SoughtOutModel.Store.Days" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Days_Actors" Association="SoughtOutModel.Store.FK_Days_Actors">
+      <End Role="Actors" EntitySet="Actors" />
+      <End Role="Days" EntitySet="Days" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Actors">
+    <Key>
+      <PropertyRef Name="ActorID" />
+    </Key>
+    <Property Name="ActorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Dated" Type="datetime" Nullable="false" />
+    <Property Name="ScriptureReference" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Commentary" Type="varchar(max)" />
+    <Property Name="Uri" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Days">
+    <Key>
+      <PropertyRef Name="DayID" />
+    </Key>
+    <Property Name="DayID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Dated" Type="datetime" Nullable="false" />
+    <Property Name="ActorID" Type="int" />
+    <Property Name="ScriptureReference" Type="varchar(max)" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Commentary" Type="varchar(max)" />
+    <Property Name="Uri" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Days_Actors">
+    <End Role="Actors" Type="SoughtOutModel.Store.Actors" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Days" Type="SoughtOutModel.Store.Days" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actors">
+        <PropertyRef Name="ActorID" />
+      </Principal>
+      <Dependent Role="Days">
+        <PropertyRef Name="ActorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

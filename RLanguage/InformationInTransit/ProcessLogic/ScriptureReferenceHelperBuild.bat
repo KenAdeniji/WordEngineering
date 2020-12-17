@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.ScriptureReferenceHelper ScriptureReferenceHelper.cs ..\ProcessCode\SacredTextHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs ..\ProcessCode\LogicHelper.cs StringHelper.cs ..\ProcessCode\YourPartOfTheHistory.cs

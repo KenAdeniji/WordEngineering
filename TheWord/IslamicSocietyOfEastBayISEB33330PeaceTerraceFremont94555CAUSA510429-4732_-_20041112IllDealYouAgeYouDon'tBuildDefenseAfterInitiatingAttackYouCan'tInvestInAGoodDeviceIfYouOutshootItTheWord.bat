@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  IslamicSocietyOfEastBayISEB33330PeaceTerraceFremont94555CAUSA510429-4732_-_20041112IllDealYouAgeYouDon'tBuildDefenseAfterInitiatingAttackYouCan'tInvestInAGoodDeviceIfYouOutshootIt.xml

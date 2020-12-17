@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20041004SanFranciscoStateUniversityWhenDoesAWriterNeedALetter.txt   Comforter_-_20041004TheWordAlphabetSequenceSanFranciscoStateUniversityWhenDoesAWriterNeedALetter.xml

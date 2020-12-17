@@ -1,0 +1,7 @@
+@Echo Off
+Call TheWord NorikoYoshida_-_20050107IAmFurnishingMyLifeWithHalfYourPresence.xml
+Call TheWord Hannah_-_20050108HeartBeatMidChestPutAwayThatCrazyThingPrinceNinetysevenPercent.xml
+Call SQLCMD –E –d WordEngineering –i ..\Documentation\Comforter.org\20050108HouseKeepingURI.sql
+Call TheWord ResurrectionLutheranChurch397EuclidAvenueOakland94610CAUSA5104445382Fax5108341445LucyKolinLucyK@Pacbell.netSPFoodUSAIncChinaSeasonBuffetRestaurant39410FremontBlvdFremontCA94538_-_20050109.xml
+Call ..\WordOfGod\PrinceNinetySevenPercentBuild.bat
+Call TheWord KaiserPermanente_-_20050110ChaoticChinaSeparateTheTwoOfYou.xml

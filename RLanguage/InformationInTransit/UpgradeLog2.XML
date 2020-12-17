@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="InformationInTransit">
+</Property><Property Name="Solution File" Value="E:\WordEngineering\InformationInTransit\InformationInTransit.sln">
+</Property><Property Name="Date" Value="Monday, November 29, 2010">
+</Property><Property Name="Time" Value="22:05 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="InformationInTransit" Source="InformationInTransit.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="InformationInTransit" Source="InformationInTransit.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="InformationInTransit.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="InformationInTransit.sln" Description="Converted">
+</Event></UpgradeLog>

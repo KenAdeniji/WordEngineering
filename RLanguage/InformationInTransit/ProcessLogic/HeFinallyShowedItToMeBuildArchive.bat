@@ -1,0 +1,1 @@
+csc /main:InformationInTransit.ProcessLogic.HeFinallyShowedItToMe HeFinallyShowedItToMe.cs CreatingADataTableFromAQuery.cs /reference:..\bin\debug\HtmlAgilityPack.dll

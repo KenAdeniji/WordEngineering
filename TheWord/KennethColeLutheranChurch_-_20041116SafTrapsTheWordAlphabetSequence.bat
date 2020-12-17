@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  KennethColeLutheranChurch_-_20041116SafTraps.txt   KennethColeLutheranChurch_-_20041116SafTrapsTheWordAlphabetSequence.xml

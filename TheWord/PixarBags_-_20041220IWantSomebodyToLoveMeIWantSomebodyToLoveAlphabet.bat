@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence  PixarBags_-_20041220IWantSomebodyToLoveMeIWantSomebodyToLove.txt  PixarBags_-_20041220IWantSomebodyToLoveMeIWantSomebodyToLoveAlphabet.xml

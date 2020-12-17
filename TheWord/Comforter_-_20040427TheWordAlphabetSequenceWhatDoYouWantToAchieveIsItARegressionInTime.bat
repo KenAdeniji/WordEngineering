@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence Comforter_-_20040427WhatDoYouWantToAchieveIsItARegressionInTime.txt Comforter_-_20040427TheWordAlphabetSequenceWhatDoYouWantToAchieveIsItARegressionInTime.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040602HowDoIGetOutOfHereWithoutRunningIntoThePolice.txt  Comforter_-_20040602TheWordAlphabetSequenceHowDoIGetOutOfHereWithoutRunningIntoThePolice.xml

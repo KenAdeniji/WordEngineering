@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>596</SequenceOrderId>
+ <Dated>2004-09-03T00:00:00.0000000-08:00</Dated>
+ <FromUntil>247</FromUntil>
+ <Keyword />
+ <ContactId>341</ContactId>
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>54</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>96</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>650</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <ContactId></ContactId>
+   <Commentary></Commentary>
+   <Filename></Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>89</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>582</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+   <Commentary></Commentary>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>8086</SequenceOrderId>
+    <Word>Stay california last.</Word>
+    <AlphabetSequenceIndex>205</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 8:21, Joshua 18, Luke 12, Revelation 12:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+8%3A21%2C+Joshua+18%2C+Luke+12%2C+Revelation+12%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <CaseBasedReasoning>
+   <SequenceOrderId>1973</SequenceOrderId>
+   <ContactId>7</ContactId>
+   <Commentary>Kokuho Rice U.S. #1 Extra Fancy New Crop Net Wt. 50LBS 22.68kg.</Commentary>
+  </CaseBasedReasoning>
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>436</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Software>
+  -->
+
+  <ClassAssociates>
+   <Dated>2004-09-02T00:00:00.0000000-08:00</Dated>
+   <SequenceOrderId>1077</SequenceOrderId>
+   <Commentary>Comforter_-_20040902ReadingFacesAcceptingValuesHeDoesn'tComeInUntilNortunalTimes_SlicedRunThroughTheFruitSystem.* delete error.</Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>1078</SequenceOrderId>
+   <Commentary>
+    Filename Comforter_-_20040903OhloneCollege_ProjectGutenberg_StayCaliforniaLast.* error.
+    Smell.
+    (can't you have it, come to me).
+    (beautiful).
+    (ofe wo le) (o ti lo ju).
+    (eat our dog food).
+    Comforter_-_20040902TheWordReadingFacesAcceptingValuesHeDoesn'tComeInUntilNortunalTimes_SlicedRunThroughTheFruitSystem.bat AlphabetSequence Id error.
+   </Commentary>
+  </ClassAssociates>
+
+  <ClassAssociates>
+   <SequenceOrderId>1079</SequenceOrderId>
+   <Commentary>Explorer Floppy Disk Drive: The computer on the left hand side, West, refers to a computer that can no longer be referenced.</Commentary>
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>762</SequenceOrderId>
+   <Company></Company>
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Commentary />
+  </Contact>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>175</SequenceOrderId>
+   <ContactId></ContactId>   
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>64</SequenceOrderId>
+   <ContactId></ContactId>   
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

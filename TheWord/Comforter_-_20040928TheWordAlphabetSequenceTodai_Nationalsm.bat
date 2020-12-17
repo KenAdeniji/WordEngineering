@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040928Todai_Nationalsm.txt  Comforter_-_20040928TheWordAlphabetSequenceTodai_Nationalsm.xml

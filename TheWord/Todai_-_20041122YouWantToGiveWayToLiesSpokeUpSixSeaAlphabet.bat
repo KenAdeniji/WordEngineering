@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Todai_-_20041122YouWantToGiveWayToLiesSpokeUpSixSea.txt  Todai_-_20041122YouWantToGiveWayToLiesSpokeUpSixSeaAlphabet.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040927SwissParkItMakesTwoToMakeALoveEconomy.txt  Comforter_-_20040927TheWordAlphabetSequenceSwissParkItMakesTwoToMakeALoveEconomy.xml

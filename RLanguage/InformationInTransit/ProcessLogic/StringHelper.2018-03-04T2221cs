@@ -1,0 +1,224 @@
+﻿#region Using directives
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using System.Globalization;
+using System.Text.RegularExpressions;
+#endregion
+
+/*
+	2017-03-05	Created MakeQueryClause() method.
+*/
+namespace InformationInTransit.ProcessLogic
+{
+    #region StringHelper definition
+    public static partial class StringHelper
+    {
+        #region Methods
+        public static void Main(String[] argv)
+        {
+            //string sentence = String.Join(" ", argv);
+            //System.Console.WriteLine(WordCount(sentence));
+
+			string whereClause = MakeQueryClause
+			(
+				"who",
+				"Matthew, Mark, Luke, John",
+				"And",
+				"Or"
+			);
+			System.Console.WriteLine(whereClause);	
+        }
+
+        public static string CapitalizeFirstLetterOfAllTheWords(this string sentence)
+        {
+            string capitalized = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence);
+            return capitalized;
+            /*
+             *  TextInfo UsaTextInfo = new CultureInfo("en-US", false).TextInfo;
+             *  string capitalized = UsaTextInfo.ToTitleCase("asp.net simply rocks!!!");
+            */ 
+        }
+
+		
+		public static StringBuilder CombineLogic(string columnName, string columnValue, string logic)
+		{
+			String[] columnValues = columnValue.Split(SplitSeparator, StringSplitOptions.RemoveEmptyEntries);
+			StringBuilder sb = new StringBuilder();
+			foreach(String columnCurrent in columnValues)
+			{
+				if (sb.Length != 0)
+				{
+					sb.Append(logic);
+				}	
+				sb.AppendFormat
+				(
+					" {0} LIKE '%[^a-z]{1}[^a-z]%' ",
+					columnName,
+					columnCurrent
+				);	
+			}
+			return sb;	
+		}
+		
+        public static Boolean Contains(this String str, String value, StringComparison options)
+        {
+            return str.IndexOf(value, options) >= 0;
+        }
+
+		//2017-04-06 Created.
+		public static string HTMLContent(this String str)
+		{
+			int firstGreaterThan = -1;
+			int lastLessThan = -1;
+
+			string htmlContent = null;
+			firstGreaterThan = str.IndexOf('>');
+			
+			if (firstGreaterThan > -1)
+			{	
+				lastLessThan = str.IndexOf('<', firstGreaterThan);
+				if (lastLessThan > -1)
+				{	
+					htmlContent = str.Substring
+					(
+						firstGreaterThan + 1,
+						lastLessThan - firstGreaterThan - 2
+					).Trim();
+				}	
+			}	
+			
+			return htmlContent;
+		}
+		
+		///<example>
+		///Type type = ("Taiwan").GetType();
+		///bool isString = type.IsString();
+		///</example>
+		///<example>
+		///http://extensionmethod.net/csharp/type/isstring
+		///</example>
+		public static bool IsString(this Type type)
+		{
+			return type.Equals(typeof(string));
+		}
+
+		// 2018-03-04 https://social.msdn.microsoft.com/Forums/en-US/4be305bf-0b0a-4f6b-9ad5-309efa9188b8/count-the-number-of-characters-in-a-string?forum=csharplanguage
+		public static int LetterCount(string st)
+		{
+			int count = 0;
+			foreach(char c in st) {
+			  if(char.IsLetter(c)) {
+				count++;
+			  }
+			}
+			return count;
+		}
+
+		public static string MakeQueryClause
+		(
+			string	columnName,
+			string	columnValue,
+			string	combinationLogicPreceeding,
+			string	combinationLogicJoin
+		)
+		{
+			columnValue = columnValue.Trim();
+			if (columnValue == "") { return ""; }
+			string[] currentValues = columnValue.Split(SplitSeparator, StringSplitOptions.RemoveEmptyEntries);
+			StringBuilder sb = new StringBuilder(" " + combinationLogicPreceeding + " (");
+			bool contained = false;
+			foreach(string currentValue in currentValues)
+			{
+				if (contained) 
+				{
+					sb.Append(" " + combinationLogicJoin + " ");
+				}	
+				contained = true;
+				sb.AppendFormat
+				(
+					WholeWordsWildCardSearchQueryFormat,
+					columnName,
+					currentValue.Trim()
+				);
+			}
+			return sb.Append(")").ToString();
+		}
+		
+        /*
+        public static string Reverse(this string s)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                sb.Append(s[i]);
+            }
+            return sb.ToString();
+        }
+        */
+
+		public static string Reverse(this string s)
+        {
+            char[] c = s.ToCharArray();
+            Array.Reverse(c);
+            return new string(c);
+        }
+
+        public static string StripNumberFormat(string value)
+        {
+            string number = value.Trim().Replace("%", "").Replace(CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol, "");
+            if (number.Length == 0)
+            {
+                number = "0";
+            }
+            return number;
+        }
+
+        public static string ToPlural(this string singular)
+        {
+            // Multiple currentValues in the form A of B : Apply the plural to the first currentValue only (A)
+            int index = singular.LastIndexOf(" of ");
+            if (index > 0) return (singular.Substring(0, index)) + singular.Remove(0, index).ToPlural();
+
+            // single Word rules
+            // sibilant ending rule
+            if (singular.EndsWith("sh")) return singular + "es";
+            if (singular.EndsWith("ch")) return singular + "es";
+            if (singular.EndsWith("us")) return singular + "es";
+            if (singular.EndsWith("ss")) return singular + "es";
+            //-ies rule
+            if (singular.EndsWith("y")) return singular.Remove(singular.Length - 1, 1) + "ies";
+            // -oes rule
+            if (singular.EndsWith("o")) return singular.Remove(singular.Length - 1, 1) + "oes";
+            // -s suffix rule
+            return singular + "s";
+        }
+
+		///<remarks>
+		///http://extensionmethod.net/csharp/string/topropercase
+		///</remarks>
+		public static string ToProperCase(this string text)
+		{
+			System.Globalization.CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+			System.Globalization.TextInfo textInfo = cultureInfo.TextInfo;
+			return textInfo.ToTitleCase(text);
+		}
+		
+        public static int WordCount(this string input)
+        {
+            var count = 0;
+            // Exclude whitespaces, Tabs and line breaks
+            Regex regex = new Regex(@"[^\s]+");
+            MatchCollection matches = regex.Matches(input);
+            count = matches.Count;
+            return count;
+        }
+        #endregion
+		
+		public static readonly char[] SplitSeparator = new Char [] {' ', ',', '.', ':', ';', '(', ')', '?', '!'};
+		public const string WholeWordsWildCardSearchQueryFormat = " ( {0} LIKE '%[^a-z]{1}[^a-z]%' ) ";
+    }
+    #endregion
+}

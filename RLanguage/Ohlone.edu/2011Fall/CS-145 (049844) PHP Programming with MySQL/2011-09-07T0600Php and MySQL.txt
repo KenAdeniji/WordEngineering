@@ -1,0 +1,856 @@
+    // get the data from the form
+    $product_description = $_POST['product_description'];
+    $list_price = $_POST['list_price'];
+    $discount_percent = $_POST['discount_percent'];
+    
+    // calculate the discount
+    $discount = $list_price * $discount_percent * .01;
+    $discount_price = $list_price - $discount;
+
+    // apply currency formatting to the dollar and percent amounts
+    $list_price_formatted = "$".number_format($list_price, 2);
+
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	
+    <label>List Price:</label>
+    <span><?php echo $list_price_formatted; ?></span><br />
+
+The document root directory is xampp\htdocs.
+The application root directory is guitar_store.
+
+Comment
+/* */
+//
+#
+
+The six PHP data types
+Integer, double, boolean, string, array, object.
+
+Variable Names
+Case-sensitive
+May contain letters, digits, and underscores.
+Can't contain special characters.
+Can't begin with a digit, or two undersores.
+Can't be reserve keywords.
+
+Constant
+define('PI', 3.14159265);
+
+HTTP Get versus Http Post
+The superglobals are the $_GET and $_POST arrays.
+Use the GET method, when the page is going to read data from the database server.
+Use the Post method, when the page is going to write data to the database server.
+POST doesn't append parameters to the end of the URI.
+If your parameters contain more than 4 KB of data, the GET method won't work.
+The GET method is faster than the POST method.
+It lets the user bookmark the page along with the parameters.
+
+To join or concatenate two or more strings, use the period.
+Single quote is faster than double quotes.
+The NULL keyword is not case sensitive.
+
+The order of precedence for arithmetic expressions
+Order	Operators	Direction		Descriptions
+1		++			Left to right	Increment operator
+2		--			Left to right	Decrement operator
+3		* / %		Left to right	Multipy, divide, modulus
+4		++			Left to right	Add, minus
+
+The compound assignment operators
+Operator	Description
+.=			Append a string expression to the variable
+
+number_format($number, $decimals) Format with a comma. If the second parameter is specified, it is to round to the decimal places.
+
+Commonly used characters for formatting a date
+Y	A four-digit year, such as, 2010
+y	A two-digit year, such as, 10
+m	Month with leading zeroes (01-12)
+d	Day with leading zeroes (01-31)
+
+isset($var)			Returns a TRUE value, if the variable has been set, and it is not a NULL value.
+empty($var)			Returns a TRUE value, if the variable has not been set, contains a NULL value, or contains an empty string.
+is_numeric($var)	Returns a TRUE value, if the variable is a number or a string that can be converted to a number.
+
+The relational operators
+Operator	Name					Example
+==			Equal					$last_name == "Harris"
+!=			Not equal				$first_name != "Ray"
+<			Less than				$age < 18
+<=			Less than or equal		$investment <= 0
+>			Greater than			$test_score > 100
+>=			Greater than or equal	$rate / 100 >= .1
+
+The logical operators in order of precedence
+!			NOT						!is_numeric($age)
+&&			AND						$age > 17 && $score < 70
+||			OR						!is_numeric($rate) || $rate < 0
+
+If statement
+Starts with if, can include multiple else if, and one else at the end.
+
+A while loop that stores the numbers from 1 through 5 in a string
+	$counter = 1
+	while ($counter <= 5) {
+		$message = $message . $counter . '|';
+		$counter++;
+	}
+
+A for loop that stores the numbers from 1 through 5 in a string		
+	for ($counter = 1; $counter <= 5; $counter++) {
+		$message = $message . $counter . '|';
+	}
+
+Built-in functions that you can use to pass control to another page
+Name						Description
+include($path)				Inserts and runs the specified file.
+include_once($path)			Include only once.
+require($path)				Same as include, but an error is fatal.
+require_once($path)			Same as require, but only once.
+exit([$status])				Exits the current PHP script. If there is no status, the parentheses are optional. If there is a status string, it is sent to the browser.
+die ([$status])				Same as exit.
+
+GRANT ALL PRIVILEGES ON *.* TO 'NeatUser'@'localhost' IDENTIFIED BY 'password';
+
+SELECT 		column-1
+FROM		table-1
+			INNER | LEFT OUTER | RIGHT OUTER JOIN table-2
+WHERE		selection criteria
+ORDER BY	column-1 [ASC | DESC]
+
+GRANT SELECT
+ON my_guitar_shop1.products
+TO mgs_tester@localhost
+IDENTIFIED BY 'pa55word'
+
+GRANT SELECT, INSERT, DELETE, UPDATE, CREATE TABLE, DROP TABLE
+ON my_guitar_shop1.*
+TO mgs_tester@localhost
+IDENTIFIED BY 'pa55word'
+
+PDO (PHP Data Objects)
+DSN (Data Source Name)
+
+$dsn = 'mysql:host=localhost;dbname=my-guitar_shop1';
+$db = new PDO($dsn, $username, $password);
+
+$products = $db->query('SELECT * FROM PRODUCTS');
+
+$query = "INSERT INTO PRODUCTS(categoryId, productCode) VALUES ($categoryId, '$code')";
+$insert_count = $db->exec($query);
+
+try {
+	$db = new PDO($dsn, $username, $password);
+} catch (PDOException $e) {
+	$error_message = $e->getMessage();
+}
+
+rates = array();	Create an array.
+count($rates)		Returns the number of elements in the specified array.
+rates[0] = 5;		Set the value of an array element;
+
+for (i = 0; i < count(rates); $i++) {
+	$message .= $rates[i] . '|';
+}
+
+foreach ($rates	as rate) {
+	$message .= $rate . '|';
+}
+
+fetch()	Returns an array for the next row in the result set.
+
+E:\Program Files\MySQL\MySQL Server 5.5\my.ini
+log_output=FILE,TABLE
+#log=mysql_general.log
+
+SELECT * FROM `general_log` LIMIT 0 , 30
+
+SET ContactId = LAST_INSERT_ID(); /* @@Identity MySql_Insert_Id() */
+
+Highlights in the history of PHP
+Version		Year	Description
+2			1995	Rename Personal Home Page
+3			1998	PHP: Hypertext Processor
+4
+5			2004	PHP Data Objects extension (PDO)
+
+String variables that are numbers only are usable in calculations.
+
+\xampp\htdocs directory
+
+HTTP URL
+Protocol		http
+Domain name		
+Path
+Filename
+
+PHP Data Types
+Integer
+Double
+Boolean True or False
+String
+Array
+Object
+
+Variable names are case-sensitive.
+Variable names can contain letters, numbers, and underscores.
+Variable names can't contain special characters.
+Variable names can't begin with a digit or two underscores.
+Variable names can't be reserved by PHP.
+
+Constants
+define('PI', 3.142);
+define('name', 'John Doe');
+
+The $GET variable is a superglobal variable.
+
+Compound Assignment Operators
+.= string concatenation
++=, -=, *=, /=, %=
+
+Increment operator
+++
+
+number_format($number, $decimal); --Comma and round to decimal spaces.
+
+date('Y-m-d'); '2010-06-12'
+
+isset($var)			Returns a TRUE value, if the variable has been set, and is not a NULL value.
+empty($var)			Returns a TRUE value, if the variable has not been set, contains a NULL value, or an empty string.
+isnumeric($var)		Returns a TRUE value, if the variable is a number, or a string that can be converted to a number.
+
+Relational Operators
+== != < <= > >=
+
+Logical Operators
+!  &&  ||
+
+Condition
+if
+else if
+else
+
+while(condition)
+for (initializer, condition, update)
+
+include(filename);
+include_once(filename);
+require(filename);
+require_once(filename);
+exit(status string);
+die(status string);
+
+include('view/header.php');  /*Navigate down, one directory*/
+include('./error.php');  /*The same directory*/
+include('../error.php');  /*Up one directory*/
+include('../../error.php');  /*Up two directories*/
+
+phpMyAdmin
+
+Common privileges
+SELECT
+UPDATE
+INSERT
+DELETE
+CREATE TABLE
+DROP TABLE
+
+$dsn = 'mysql:host=localhost;dbname=my_guitar_shop1';
+$db = PDO($dsn, $username, $password);
+
+$products = $db->query('SELECT * FROM products');
+$product = $products->fetch();
+
+$products = $db->exec('UPDATE products ...');
+try { }
+catch (PDOException $e) {
+	$errorMessage = $e->getMessage();
+}
+
+The model consists of the PHP files that represent the data of the application.
+The view consists of the HTML and PHP files that represent the user interface of the application.
+The controller consists of the PHP files that receive requests from users, get the appropriate data from the model, and return the appropriate views to the users.
+
+header('Location: .');	//the current directory
+header('Location: ..');	//navigate up one directory
+header('Location: ./admin');	//navigate down one directory
+header('Location: error.php');
+
+header('Location: .?category_id=$category_id');
+
+<input type="radio" name="card_type" value="visa" checked="checked">Visa<br/>
+<input type="radio" name="card_type" value="mastercard">MasterCard<br/>
+<input type="radio" name="card_type" value="mastercard">MasterCard<br/>
+
+<?php $card_type = $_POST['card_type']; ?>
+
+<?php
+	if (isset($POST['card_type'])) {
+		$card_type = $_POST['card_type'];
+	} else {
+		$card_type = "unknown";
+	}
+?>
+
+<input type="checkbox" name="pep" checked="checked"> Pepperoni<br/>
+<input type="checkbox" name="msh"> Mushrooms<br/>
+<input type="checkbox" name="olv"> Olives
+
+<?php
+	$pepperoni = isset($POST['pep']);
+	$mushrooms = isset($POST['msh']);
+	$olives = isset($POST['olv']);
+?>
+
+<input type="checkbox" name="top[]" checked="checked"> Pepperoni<br/>
+<input type="checkbox" name="top[]"> Mushrooms<br/>
+<input type="checkbox" name="top[]"> Olives
+
+<?php
+	$toppings = $_POST['top'];
+	$top1 = $toppings[0];	//top1 is pepperoni
+	$top2 = $toppings[1];	//top2 is mushrooms
+	$top3 = $toppings[2];	//top3 is olives
+?>
+
+<?php
+	if (isset($_POST['top'])) {
+		$toppings = $_POST['top'];
+		foreach($toppings as $key => $value) {
+			echo $key. ' = ' . $value . '<br/>'
+		}
+	}	else {
+		echo 'No toppings selected.';
+	}
+?>
+
+<select name="card_type">
+	<option value="visa" selected="selected">Visa</option>
+	<option value="mastercard">MasterCard</option>
+	<option value="discover">Discover</option>
+</select>
+<?php $card_type = $_POST['card_type']; ?>
+Attribute	Description
+Size		When set to 1 or omitted, a drop-down list displays the options. When set to two
+			or more, a list box displays the specified number of options.
+Multiple	Allows the user to select multiple options, only use when the size option exceeds one.
+			The list box name must end with [], when the multiple option is on.
+<select name="card_type" size="3" multiple="multiple">
+	<option value="visa" selected="selected">Visa</option>
+	<option value="mastercard">MasterCard</option>
+	<option value="discover">Discover</option>
+</select>
+
+<?php
+if (isset($_POST['top']) {
+	$toppings = $_POST['top'];
+	foreach ($toppings as $key => $value) {
+		echo $key. ' = ' . $value . <br/> // 0 = pep, 1 = msh
+	}
+	}
+	else {
+		echo 'No toppings selected.';
+	}	
+?>
+<textarea name="comment" rows="4" cols="50">Welcome to PHP and MySQL.</textarea>
+
+htmlspecialchars($string, $quote_style, $charset, $double_encode);
+
+Parameter			Description
+$string				The string to convert.
+$quote_style		ENT_COMPAT, the default, only converts double quotes.
+					ENT_QUOTES constant converts single and double quotes.
+					ENT_NOQUOTES constant does not convert single and double quotes.
+$charset			The default is "ISO-8859-1".
+$double_encode		A Boolean value.
+
+nl2br()				Convert new line to line breaks. <br/>.
+
+The echo and print statements send strings to the web page.
+The echo statement can accept one or more string values, but the print statement can only accept one value.
+The parentheses are optional for both the echo and print statements. However, if you are supplying multiple values to the echo statement, you must omit the parenthesis.
+The echo statement does not return a value, and cannot be used as part of an expression.
+The echo and print statements are not functions. They are part of the PHP language definition.
+
+parse_str($_SERVER['REQUEST_URI']);
+$contact = get_viewcontact($contactID); /*Parse querystring.*/
+
+Chapter 8
+Equality and Identity Operators
+== Equality
+!= <> Not equal
+
+PHP Type Coercion Rules
+Operand 1				Operand 2				Action
+NULL					String					Convert null to an empty string, and compare as two strings.
+Boolean or NULL			Not a string			Convert both to Boolean and compare.
+String					Number					Converts string to a number and compare as two numbers.
+Numeric string			Numeric string			Converts string to a number and compare as two numbers.
+Text string				Text string				Compare string as if using the strcmp function.
+
+Expression				Result					Description
+null == ''				True					NULL is converted to the empty string.
+null == false			True					NULL is converted to false.
+null == 0				True					NULL is equal to any value that equals to false.
+false == "0"			True					Empty strings and "0" are converted to false.
+true == "false"			True					All other strings are converted to true.
+3.5 == "\t 3.5 mi"		True					The string is converted to a number, and then compared.
+INF == "INF"			False					The string INF is converted to zero.
+0 == ''					True					The empty string is converted to zero.
+0 == "harris"			True					Any string that is not numeric is converted to zero.
+
+The Identity Operators
+===
+!==
+
+Comparing strings to numbers with the relational operators
+Expression				Result					Description
+1 < 3					True					The string "3" is converted to the number 3.
+'10' < 3				False					The string "10" is converted to the number 10.
+
+Convert to uppercase
+strtoupper
+
+INF or -INF.
+is_infinite — Finds whether a value is infinite
+Report a bug
+reject note Description
+bool is_infinite ( float $val )
+
+Returns TRUE if val is infinite (positive or negative), like the result of log(0) or any value too big to fit into a float on this platform.
+
+When converting to the Boolean type, the following values are equivalent to FALSE: Null, 0, "0", empty string, and empty array. All other values are equivalent to TRUE.
+
+Relational operators are done before equality and identity operations, and AND operations are done before OR operations.
+An arithmetic operator is evaluated before the relational operator.
+
+The order of precedence for operators in conditional expressions
+Order	Operators					Description
+1		!							The NOT operator
+2		<, <=, >, >=, <>			Relational operators
+3		==, !=, ===, !==			Equality and identity operators
+4		&&							The AND operator
+5		||							The OR operator
+
+The equality operators use type coercion. The identity operators don't use type coercion.
+To create a conditional expression, you can use equality operators, identify operators, relational operators, logical operators, and arithmetic operators.
+In the order of precedence for a conditional expression, the arithmetic operators come between the NOT logical operator and the relational operators.
+The if statement is used to implement the selection structure, and the switch structure is used to implement the case structure.
+
+
+Chapter 9 - How-to work with Strings and Numbers
+
+<?php
+    $count = 12;
+    $item = "Flower";
+    //$message1 = "You bought $count $items.";
+    $message2 = "You bought $count ${item}s."; //You bought 12 Flowers.
+    echo $message2;
+    $message3 = "You bought $count $[item]s.";
+    echo $message3;	//You bought 12 $[item]s.
+    $message4 = "You bought $count $(item)s.";
+    echo $message4; You bought 12 $(item)s.
+
+    $language = "PHP";
+    $message = <<<MESSAGE
+    The heredoc syntax allows you to build multi-line
+    strings in $language. Inside, it acts like a double-quoted
+    string and performs variable substitution.
+MESSAGE;
+    echo $message;
+    $message = <<<'MESSAGE'
+    The nowdoc syntax also allows you to build multi-line
+    strings in PHP. However, no variable substitution takes place.
+    It acts like a single-quote.
+MESSAGE;
+    echo $message;
+    $dir = 'C:\\xampp\\php';
+    $name = 'Mike\'s Music Store';
+    $quote = "He said, \"It costs \$12.\"";
+    $comment1 = "This is a \nmulti-line string.";
+    $comment2 = 'Not a \nmulti-line string.';
+
+    //htmlentities($str [, $quotes])
+
+    $name = "John Doe";
+    $length = strlen($name);
+    $firstName = substr($name, 0, 4);
+    echo $firstName;
+    $lastName = substr($name, 5);
+    echo $lastName;
+    $lastName = substr($name, -3);
+    echo $lastName;
+
+    //Code that displays each letter in a string, in a separate line.
+    $input = 'JAN';
+    //for ($index = 0; index < strlen($
+
+    strpos($str1, $str2, $offset);
+    stripos($str1, $str2, $offset); //case insensitive
+    strrpos($str1, $str2, $offset); //reverse search
+    strripos($str1, $str2, $offset); //reverse search, case insensitive
+
+    str_replace('.', '-', phone); //replace . with -.
+?>
+
+Escape sequences only used in some strings
+Sequence	Description		Used in...
+\\			Backslash		All strings except nowdocs
+\'			Single quote	Single-quoted strings
+\"			Double quote	Double-quoted strings
+
+Escape sequences used in double-quoted strings and heredocs
+Sequence	Description
+\$			Dollar sign
+\n			New line
+\t			Tab
+\r			Carriage return
+\f			Form feed
+\v			Vertical tab
+\000		Character with the specified octal value
+\xhh		Character with the specified hex value
+
+The htmlentities function
+Function						Description
+htmlentities(str, $quotes)		Returns a string with all special HTML characters converted to the HTML entity.
+
+An example that does not use the htmlentities function
+$copyright1 = "\xa9 2010";		//Result is copyright symbol 2010
+echo $copyright1;				//Displays 2010
+
+An example that uses the htmlentities function
+$copyright2 = htmlentities("\xa9 2010");	//Result is '&copy; symbol 2010
+echo $copyright2;							//Displays copyright symbol 2010
+
+The empty function returns true if the variable has not been set, or it contains NULL, empty string, or "0".
+
+http://www.php.net/manual/en/ref.strings.php
+
+strpos Search a string, for another string.
+stripos Search a string, for another string. Case insensitive.
+strrpos Search is reverse, from the end of the string to the start.
+strripos A version of strrpos that is case insensitive.
+
+str_replace Replace a string with another string.
+str_ireplace Replace a string with another string. Case insensitive.
+
+ltrim($str)
+rtrim($str)
+trim($str)
+str_pad($str, $len, $pad, $type) 	$type can be STR_PAD_RIGHT, STR_PAD_LEFT, and STR_PAD_BOTH.
+lcfirst($str)						The first character is converted to lowercase.
+ucfirst($str)						The first character is converted to uppercase.
+ucwords($str)						The first letter of each word is converted to uppercase.
+strtolower($str)					All letters in lowercase.
+strtoupper($str)					All letters in uppercase.
+strrev($str)						The sequence of characters in reverse.
+str_shuffle($str)					Characters randomly shuffled.
+str_repeat($str, $i)				String repeated $i times.
+
+explode($sep, $str)					Break string into array.
+implode($sep, $sa)					Build array into string.
+
+chr()								Convert an integer value to an ASCII character.
+ord()								To convert a character to an integer value.
+
+strcmp								String compare is case-sensitive.
+strcasecmp							Ignore case, when comparing strings.
+stratcmp
+stratcasecmp
+
+How-to find the maximum and minimum integer values (base 10)
+$max_int	=	PHP_INT_MAX;
+$min_int	=	-1 * (PHP_INT_MAX + 1);
+
+For a float, the exponent is between -307 to 308.
+
+INF Positive infinity. -INF Negative infinity.
+if (is_infinite($result)) { }
+
+abs($value)						Returns the absolute value of a number.
+ceil($value)					Returns the value rounded up to the next highest whole number.
+floor($value)					Returns the value rounded down to the next lowest whole number.
+max($n1, $n2[, $n3])			Returns the value of the largest number provided.
+min($n1, $n2[, $n3])			Returns the value of the smallest number provided.
+pi()							3.142
+pow($base, exp)					Power of.
+round($value, $precision)
+sqrt($value)					The square root of value.
+
+Functions that generate random numbers
+getrandmax()					The largest integer the rand function can return.
+rand()							A random integer between 0 and getrandmax().
+rand($lo, $hi)					A random integer between $lo and $hi.
+
+mt_getrandmax()					The largest integer the mt_rand function can return. This number is typically PHP_INT_MAX.
+mt_rand()						A random integer between 0 and mt_getrandmax(). It is faster and more random than the algorithm used by the rand function.
+mt_rand($lo, $hi)				A random integer between $lo and $hi using the Mersenne Twister algorithm.
+
+sprintf("%s %d");				Formats a string and integer.
+
+Data Type Code
+Character		Description
+s				Formats the value as a string.
+d				Formats the value as an integer.
+f				Formats the value as a floating-point number.
+e				Formats the value using exponential notation.
+c				Formats an integer value as its corresponding ASCII character.
+b				Formats an integer value as a binary number.
+o				Formats an integer value as an octal number.
+x				Formats an integer value as a hexadecimal number (lowercase).
+X				Formats an integer value as a hexadecimal number (uppercase).
+
+How to use sprintf to convert numbers to strings
+$s1 = sprintf('It cost %s dollars', 12);			//It cost 12 dollars
+$s2 = sprintf('%s', 4.5);							//4.5
+$s3 = sprintf('%s', 94510000.000000);				//9451000
+$s4 = sprintf('%f', 9.451e6);						//9451000.000000
+$s5 = sprintf('%e', 9451000.0000000);				//9.451000e+6
+$s6 = sprintf('%c', 65);							//A
+$s7 = sprintf('%x', 15);							//f
+$s8 = sprintf('%X', 15);							//F
+$s9 = sprintf('%s%%', 4.5);							//4.5%
+
+Specifier		Required?		Description
+%				Required		A percent sign starts the format code. To code a percent sign within a format code, code two percent signs in a row (%%).
+Sign			Optional		To always display a sign, code a plus (+), or minus (-) sign.
+Alignment		Optional		By default, the value is right-aligned. To align on the left, code a dash (-) character.
+Padding			Optional		By default, the padding character is a space. To specify a different padding character, code a zero or a single quote (') followed by the padding character.
+Width			Optional		To specify a minimum width, code an integer.
+Precision		Optional		To specify precision, code a period (.) followed by an integer value. For a number, this indicates the number of decimal spaces. For a string, this indicates the maximum characters. Longer strings are truncated.
+Data Type		Required		A code that specifies the data type.
+
+Two functions for converting strings to numbers
+Function		Description
+intval($var) 	Returns an integer value.
+floatval($var)	Returns a floating-point value.
+
+If the value is too large to fit in its data type, integer values are converted to PHP_INT_MAX constant and floating point values to the INF constant.
+
+PHP e-mail
+bool mail ( string $to , string $subject , string $message [, string $additional_headers [, string $additional_parameters ]] )
+
+(Windows only) When PHP is talking to a SMTP server directly, if a full stop is found on the start of a line, it is removed. To counter-act this, replace these occurrences with a double dot.
+<?php
+$text = str_replace("\n.", "\n..", $text);
+?>
+
+additional_headers
+String to be inserted at the end of the email header.
+
+This is typically used to add extra headers (From, Cc, and Bcc). Multiple extra headers should be separated with a CRLF (\r\n).
+
+    Note:
+
+    When sending mail, the mail must contain a From header. This can be set with the additional_headers parameter, or a default can be set in php.ini.
+
+    Failing to do this will result in an error message similar to Warning: mail(): "sendmail_from" not set in php.ini or custom "From:" header missing. The From header sets also Return-Path under Windows. 
+	
+additional_parameters (optional)
+
+    The additional_parameters parameter can be used to pass additional flags as command line options to the program configured to be used when sending mail, as defined by the sendmail_path configuration setting. For example, this can be used to set the envelope sender address when using sendmail with the -f sendmail option.
+
+    The user that the webserver runs as should be added as a trusted user to the sendmail configuration to prevent a 'X-Warning' header from being added to the message when the envelope sender (-f) is set using this method. For sendmail users, this file is /etc/mail/trusted-users.
+
+Returns TRUE if the mail was successfully accepted for delivery, FALSE otherwise.
+
+It is important to note that just because the mail was accepted for delivery, it does NOT mean the mail will actually reach the intended destination. 
+
+<?php
+// The message
+$message = "Line 1\nLine 2\nLine 3";
+
+// In case any of our lines are larger than 70 characters, we should use wordwrap()
+$message = wordwrap($message, 70);
+
+// Send
+mail('caffeinated@example.com', 'My Subject', $message);
+?>
+
+<?php
+$to      = 'nobody@example.com';
+$subject = 'the subject';
+$message = 'hello';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+mail($to, $subject, $message, $headers);
+?>
+
+<?php
+mail('nobody@example.com', 'the subject', 'the message', null,
+   '-fwebmaster@example.com');
+?>
+
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Additional headers
+$headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
+$headers .= 'From: Birthday Reminder <birthday@example.com>' . "\r\n";
+$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
+$headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
+
+For the sending of large amounts of email, see the » PEAR::Mail, and » PEAR::Mail_Queue packages. 
+
+Send mail. Chapter 22.
+
+The protocol that's used to send email is Simple Message Transfer Protocol (SMTP).
+The recipient's email client uses either the Post Office Protocol (POP) or Internet Message Access Protocol (IMAP) to retrieve the email from the recipient's email server.
+
+The Pear Mail web site
+http://pear.php.net/package/Mail
+
+Limitations of the built-in PHP mail function
+You must modify the php.ini file to change email servers.
+You cannot use an encrypted connection to the email server.
+You cannot provide a username and password when connecting to the email server.
+
+You need to know the hostname of your SMTP server.
+SSL port 465. Regular port 25.
+
+PHP was written in Perl.
+
+Cookies last for up-to 3 days.
+20 cookies from each site.
+_SESSION
+$lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds
+session_set_cookie_params($lifetime, '/');
+session_start();
+
+Step 1: Load the Pear Mail package
+require_once 'Mail.php';
+
+$options = array();
+$options['host'] = 'mail.example.com';
+$options['port'] = 465;
+$options['auth'] = true;
+$options['username'] = 'mail@example.com';
+$options['password'] = 'password';
+
+$mailer = Mail::factory('smtp', $options);
+
+'Mail.php'
+'Mail/RFC822.php'
+
+$emailObjects = Mail_RFC822::parseAddressList($email);
+if (PEAR::isError($$emailObjects)) return false;
+
+cURL is for retrieving e-mail.
+
+To create a cookie, you can use the setcookie function.
+To get the value of a cookie, use the autoglobal $COOKIE variable. This variable is an associative array.
+If you set the $expire parameter to 0, the cookie only exists until the user closes the browser, a per-session cookie.
+If you set the $expire parameter to a date up to three years, from the current date, and this is a persistent cookie.
+Use the strotime to get a timestamp.
+
+Use the isset function, to determine if the cookie is in the array.
+
+To delete a cookie, use the set the expiry date to a previous day.
+
+The $path parameter should be set to the root of your web site. Set the expire parameter to a date in the past.
+Set the $value parameter to an empty string, and set all remaining parameters to the same values that were
+used when the cookie was created.
+
+Start a session with the the default cookie parameters
+session_start()
+session_set_cookie_params($lifetime, $path, domain, $sesure, $httponly)
+
+$_SESSION = array();
+session_destroy();
+//Destroy the session cookie from the browser.
+
+
+UDDI is a directory service where companies can register and search for Web services.
+
+Chapter 4
+PDO Php Data Objects
+
+new PDO($dsn, $username, $password);
+
+$dsn = 'mysql:host=localhost;dbname=my_guitar_shop1';
+$username = 'mgs_user';
+$password = 'pa55word';
+
+$db = new PDO($dsn, $username, $password);
+
+$dsn means data source name.
+
+$products = $db->query('SELECT * FROM products');
+
+$query = "INSERT INTO products (categoryID, productCode, productName, listPrice) VALUES ($categoryId, '$code', '$name', $price)";
+
+$insert_count = $db->exec($query);
+
+try {
+	//statements that might throw an exception
+} catch (Exception $e) {
+	$error_message = $e->getMessage();
+	echo "<p>Error message: $error_message </p>";
+}
+
+PDOException.
+
+Two of the built-in functions for working with arrays.
+array()				Returns an array that doesn't include any elements.
+count($array_name)	Returns the number of elements in the specified array.
+
+$products = $db->query($query);
+$product = $products->fetch();
+
+$product_code = $product['productCode'];
+$product_code = $product[0];
+
+How-to use a foreach statement to display the result set in an HTML table
+<?php foreach ($products as $product) { ?>
+<tr>
+	<td><?php echo $product['productCode']; ?></td>
+</tr>
+<?php } ?>
+
+Another syntax for the foreach statement that works better within PHP tags
+<?php foreach ($products as $product) : ?>
+<tr>
+	<td><?php echo $product['productCode']; ?></td>
+</tr>
+<?php endforeach; ?>
+
+Chapter 5: MVC
+
+header('Location: .');			// the current directory
+header('Location: ..');			// navigate up one directory
+header('Location: ./admin');	// navigate down one directory
+header('Location: error.php');
+header('Location: http://www.murach.com');
+
+The global keyword makes a variable available within a function.
+
+header() or include() or include_once() or require() or require_once()
+
+Three test phases
+Check the user interface to make sure that it works correctly.
+Test the application with valid input data to make sure the results are correct.
+Test the application with invalid data or unexpected user actions. Try everything you can think of to make the application fail.
+
+The three types of errors that can occur
+Syntax errors violate the rules for how PHP statements must be written. These errors cause the PHP interpreter to display an error and to stop execution of the script.
+Runtime errors don't violate the syntax rules, but they cause the PHP interpreter to display an error tha may or may not stop execution of the script.
+Logic errors are statements that don't cause syntax or runtime errors, but produce the wrong results.
+
+XAMPP includes a debugger named xDebug that is usable with an IDE such as NetBeans.
+When debugging, the variables window contain the Superglobals variable.
+The Call Stack window shows the stack trace, which is a list of functions in the reverse order in which they were called.
+
+Attributes of the HTML <input> tag for getting text input
+type	Set to "text" for a text field, password, or hidden.
+name	The name for the field when the form is submitted.
+value	The value for the field.
+
+Attributes of the HTML <input> tag for radio buttons
+type	Set to "radio" for a radio button.
+name	The same name must be used for all radio buttons in a group.
+value	The value for a radio button.
+checked	This optional attribute selects the default radio button.
+ 

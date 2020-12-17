@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040915AlJumuahTheFailingOfOurSuccessesAreThingsOfThePast.txt  Comforter_-_20040915TheWordAlphabetSequenceAlJumuahTheFailingOfOurSuccessesAreThingsOfThePast.xml

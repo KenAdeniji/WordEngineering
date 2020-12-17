@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWordAlphabetSequence NorikoYoshida_-_20050103ItsAnIdentityThatWeShareAValueThatSeparatesmybride.txt  NorikoYoshida_-_20050103ItsAnIdentityThatWeShareAValueThatSeparatesmybrideAlphabet.xml

@@ -1,0 +1,221 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>743</SequenceOrderId>
+ <Dated>2004-12-20T00:00:00.0000000-08:00</Dated>
+ <FromUntil>355</FromUntil>
+ <ContactId>771</ContactId>
+ <Keyword>Do you have a business card? What do you mean by business card? I do have lunch with me.</Keyword>
+ <URI>SpunkMeyer.com</URI> 
+
+  <!--
+  <Anointing>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Rhema></Rhema>
+   <Commentary></Commentary>
+   <Filename />
+  </Anointing>
+  -->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>60</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>148</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <Remember>
+   <SequenceOrderId>693</SequenceOrderId>
+   <DatedFrom>2004-11-02T00:00:00.0000000-08:00</DatedFrom>
+   <DatedUntil>2004-12-20T00:00:00.0000000-08:00</DatedUntil>
+   <FromUntil>48</FromUntil>
+   <Filename>Comforter_-_20041102StanceFaxFrequentlyDisable_HowHeGotHisOneMillionOnLoudSentences.xml</Filename>
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <Commentary>2004-09-05T00:00:00.0000000-07:00Corner Smart &amp; Final Food Supplies Business Home OtisSpunkMeyer Muffins 1701 47269 www.SpunkMeyer.com 1-888-ASK-OTIS WILD BLUEBERRY NET WT 4 oz (113g) 0 9175 2 00100 1 San Leandro, CA 94577 Product of U.S.A. Conn License #03004 4T2267 The Smaller Faster Warehouse Store #435 www.smartandfinal.com SmartAdvantage 866-411-SMART 1 (510) 623-1183</Commentary>
+   <ContactId>771</ContactId>
+   <URI>SpunkMeyer.com</URI>   
+  </Remember>
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>91</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <BibleWord>
+   <SequenceOrderId>676</SequenceOrderId>
+   <Word>Mean You By Have</Word>
+   <ScriptureReference>Romans 1:10, 1 Thessalonians 3:5</ScriptureReference>
+   <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Romans+1%3A10%2C+1+Thessalonians+3%3A5&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </BibleWord>
+
+  <!--
+  <NameIdentity>
+   <SequenceOrderId>29</SequenceOrderId>
+   <IssuedAlliance></IssuedAlliance>
+   <InclusiveLiteral />
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+   <Dated></Dated>
+  </NameIdentity>
+  -->
+
+  <!--
+  <KaiserPermanenteBloodPressure>
+   <Dated></Dated>
+   <SequenceOrderId>2</SequenceOrderId>
+   <Systolic></Systolic>
+   <Diastolic></Diastolic>
+   <Pulse></Pulse>
+   <ContactId></ContactId>
+  </KaiserPermanenteBloodPressure>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>12902</SequenceOrderId>
+    <Word>Do you have a business card? What do you mean by business card? I do have lunch with me.</Word>
+    <AlphabetSequenceIndex>777</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 28:3, Jeremiah 32, Ezra 5, James 3:6</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+28%3A3%2C+Jeremiah+32%2C+Ezra+5%2C+James+3%3A6&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+    <ContactId>771</ContactId>
+    <Commentary>Otis Spunkmeyer SpunkMeyer.com San Leandro 94577 CA USA 1 (510) 623-1183</Commentary>
+    <URI>SpunkMeyer.com</URI>
+  </AlphabetSequence>
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>2432</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Event>
+   <SequenceOrderId>97</SequenceOrderId>
+   <Commentary></Commentary>
+  </Event>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <Software>
+   <SequenceOrderId>476</SequenceOrderId>
+   <Commentary>TheWordRelease20041220.xslt</Commentary>
+  </Software>
+
+  <ClassAssociates>
+   <SequenceOrderId>1518</SequenceOrderId>
+   <Commentary>File search Meyer error. SELECT Dated, ContactId, Commentary FROM CaseBasedReasoning (NOLOCK) WHERE Commentary LIKE '%Meyer%' error. SpunkMeyer.comOtisSpunkmeyerSanLeandro94577CAUSA15106231183_-_20041220DoYouHaveABusinessCardWhatDoYouMeanByBusinessCardIDoHaveLunchWithMeTheWord.bat error.</Commentary>
+   <ContactId>771</ContactId>
+   <URI>SpunkMeyer.com</URI>   
+  </ClassAssociates>
+
+  <!--
+  <Contact>
+   <SequenceOrderId>1229</SequenceOrderId>
+   <Dated></Dated>
+   <Company />
+   <FirstName />
+   <LastName />
+   <OtherName />
+   <Title />
+   <Suffix />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Contact>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>82</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>365</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <StreetAddress>
+   <SequenceOrderId>438</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <AddressLine1></AddressLine1>
+   <City></City>
+   <State></State>
+   <ZipCode></ZipCode>
+   <Country></Country>
+  </StreetAddress>
+  -->
+
+  <!--
+  <Telephone>
+   <SequenceOrderId>573</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <TelephoneNo></TelephoneNo>
+  </Telephone>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

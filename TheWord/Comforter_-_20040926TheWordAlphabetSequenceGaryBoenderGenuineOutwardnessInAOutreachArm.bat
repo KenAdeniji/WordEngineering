@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040926GaryBoenderGenuineOutwardnessInAOutreachArm.txt  Comforter_-_20040926TheWordAlphabetSequenceGaryBoenderGenuineOutwardnessInAOutreachArm.xml

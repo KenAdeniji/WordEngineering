@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040605IThankTheLORDForLovingEachAndEveryChildAndWeLoveOffspring.txt  Comforter_-_20040605TheWordAlphabetSequenceIThankTheLORDForLovingEachAndEveryChildAndWeLoveOffspring.xml

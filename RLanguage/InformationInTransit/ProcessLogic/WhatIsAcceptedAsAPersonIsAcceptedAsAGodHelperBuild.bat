@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.WhatIsAcceptedAsAPersonIsAcceptedAsAGodHelper WhatIsAcceptedAsAPersonIsAcceptedAsAGodHelper.cs ..\DataAccess\DataCommand.cs

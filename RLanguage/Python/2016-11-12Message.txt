@@ -1,0 +1,218 @@
+Traceback (most recent call last):
+  File "NumPyStub.py", line 41, in <module>
+    main()
+  File "NumPyStub.py", line 16, in main
+    funcStatistices();
+  File "NumPyStub.py", line 36, in funcStatistices
+    array1 = np.array(numbers) # rank 1 array
+AttributeError: module 'numpy' has no attribute 'array'
+
+E:\WordEngineering\IIS\WordEngineering\Python>python NumPyStub.py 11 12 13 11
+Traceback (most recent call last):
+  File "NumPyStub.py", line 12, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+
+E:\Program Files\Python36> pip install numpy
+
+E:\Program Files\Python36>pip install matplotlib
+Collecting matplotlib
+  Downloading matplotlib-1.5.3.tar.gz (51.6MB)
+    100% |████████████████████████████████| 51.6MB 11kB/s
+    Complete output from command python setup.py egg_info:
+    ==========================================================================
+
+    Edit setup.cfg to change the build options
+
+    BUILDING MATPLOTLIB
+                matplotlib: yes [1.5.3]
+                    python: yes [3.6.0b3 (default, Nov  1 2016, 03:21:01) [MSC
+                            v.1900 64 bit (AMD64)]]
+                  platform: yes [win32]
+
+    REQUIRED DEPENDENCIES AND EXTENSIONS
+                     numpy: yes [version 1.11.2]
+                  dateutil: yes [dateutil was not found. It is required for da
+
+                            axis support. pip/easy_install may attempt to
+                            install it after matplotlib.]
+                      pytz: yes [pytz was not found. pip will attempt to insta
+
+                            it after matplotlib.]
+                    cycler: yes [cycler was not found. pip will attempt to
+                            install it after matplotlib.]
+                   tornado: yes [tornado was not found. It is required for the
+                            WebAgg backend. pip/easy_install may attempt to
+                            install it after matplotlib.]
+                 pyparsing: yes [pyparsing was not found. It is required for
+                            mathtext support. pip/easy_install may attempt to
+                            install it after matplotlib.]
+                    libagg: yes [pkg-config information for 'libagg' could not
+                            be found. Using local copy.]
+                  freetype: no  [The C/C++ header for freetype (ft2build.h)
+                            could not be found.  You may need to install the
+                            development package.]
+                       png: no  [The C/C++ header for png (png.h) could not be
+                            found.  You may need to install the development
+                            package.]
+                     qhull: yes [pkg-config information for 'qhull' could not
+
+                            found. Using local copy.]
+
+    OPTIONAL SUBPACKAGES
+               sample_data: yes [installing]
+                  toolkits: yes [installing]
+                     tests: yes [nose 0.11.1 or later is required to run the
+                            matplotlib test suite. Please install it with pip
+
+                            your preferred tool to run the test suite / using
+                            unittest.mock]
+            toolkits_tests: yes [nose 0.11.1 or later is required to run the
+                            matplotlib test suite. Please install it with pip
+
+                            your preferred tool to run the test suite / using
+                            unittest.mock]
+
+    OPTIONAL BACKEND EXTENSIONS
+                    macosx: no  [Mac OS-X only]
+                    qt5agg: no  [PyQt5 not found]
+                    qt4agg: no  [PySide not found; PyQt4 not found]
+                   gtk3agg: no  [Requires pygobject to be installed.]
+                 gtk3cairo: no  [Requires cairocffi or pycairo to be installed
+
+                    gtkagg: no  [Requires pygtk]
+                     tkagg: yes [installing; run-time loading from Python Tcl
+                            Tk]
+                     wxagg: no  [requires wxPython]
+                       gtk: no  [Requires pygtk]
+                       agg: yes [installing]
+                     cairo: no  [cairocffi or pycairo not found]
+                 windowing: yes [installing]
+
+    OPTIONAL LATEX DEPENDENCIES
+                    dvipng: no
+               ghostscript: no
+                     latex: no
+                   pdftops: no
+
+    OPTIONAL PACKAGE DATA
+                      dlls: no  [skipping due to configuration]
+
+    ==========================================================================
+
+                            * The following required packages can not be built
+                            * freetype, png
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in E:\Temp\2\pip-b
+ld-q6h1fooh\matplotlib\
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' co
+and.
+
+E:\Program Files\Python36>
+
+E:\Program Files\Python36>pip install dateutil
+Collecting dateutil
+  Could not find a version that satisfies the requirement dateutil (from version
+s: )
+No matching distribution found for dateutil
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install pytz
+Collecting pytz
+  Downloading pytz-2016.7-py2.py3-none-any.whl (480kB)
+    100% |████████████████████████████████| 481kB 820kB/s
+Installing collected packages: pytz
+Successfully installed pytz-2016.7
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install cycler
+Collecting cycler
+  Downloading cycler-0.10.0-py2.py3-none-any.whl
+Collecting six (from cycler)
+  Downloading six-1.10.0-py2.py3-none-any.whl
+Installing collected packages: six, cycler
+Successfully installed cycler-0.10.0 six-1.10.0
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' com
+and.
+
+E:\Program Files\Python36>pip install tornado
+Collecting tornado
+  Downloading tornado-4.4.2.tar.gz (460kB)
+    100% |████████████████████████████████| 460kB 18kB/s
+Installing collected packages: tornado
+  Running setup.py install for tornado ... done
+Successfully installed tornado-4.4.2
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install pyparsing
+Collecting pyparsing
+  Downloading pyparsing-2.1.10-py2.py3-none-any.whl (56kB)
+    100% |████████████████████████████████| 61kB 393kB/s
+Installing collected packages: pyparsing
+Successfully installed pyparsing-2.1.10
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' com
+and.
+
+E:\Program Files\Python36>pip install libagg
+Collecting libagg
+  Could not find a version that satisfies the requirement libagg (from versions:
+ )
+No matching distribution found for libagg
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install freetype
+Collecting freetype
+  Could not find a version that satisfies the requirement freetype (from version
+s: )
+No matching distribution found for freetype
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install png
+Collecting png
+  Could not find a version that satisfies the requirement png (from versions: )
+No matching distribution found for png
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+E:\Program Files\Python36>pip install qhull
+Collecting qhull
+  Could not find a version that satisfies the requirement qhull (from versions:
+)
+No matching distribution found for qhull
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+
+E:\Program Files\Python36>pip install pandas
+Collecting pandas
+  Downloading pandas-0.19.1-cp36-cp36m-win_amd64.whl (7.0MB)
+    100% |████████████████████████████████| 7.0MB 71kB/s
+Requirement already satisfied (use --upgrade to upgrade): numpy>=1.7.0 in e:\pro
+gram files\python36\lib\site-packages (from pandas)
+Requirement already satisfied (use --upgrade to upgrade): pytz>=2011k in e:\prog
+ram files\python36\lib\site-packages (from pandas)
+Collecting python-dateutil>=2 (from pandas)
+  Downloading python_dateutil-2.6.0-py2.py3-none-any.whl (194kB)
+    100% |████████████████████████████████| 194kB 1.1MB/s
+Requirement already satisfied (use --upgrade to upgrade): six>=1.5 in e:\program
+ files\python36\lib\site-packages (from python-dateutil>=2->pandas)
+Installing collected packages: python-dateutil, pandas
+Successfully installed pandas-0.19.1 python-dateutil-2.6.0
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm

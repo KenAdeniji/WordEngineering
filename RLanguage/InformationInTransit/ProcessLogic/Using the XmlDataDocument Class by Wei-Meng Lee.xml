@@ -1,0 +1,43 @@
+<books>
+  <book>
+    <title isbn="0-596-00461-3">Linus Server Hacks</title>
+    <authors>
+      <author>Rob Flickenger</author>
+    </authors>
+    <pubdate>January 2003</pubdate>
+    <pages>240</pages>
+    <prices>
+      <us>24.95</us>
+      <ca>38.95</ca>
+      <uk>17.50</uk>
+    </prices>
+  </book>
+  <book>
+    <title isbn="0-596-00447-8">Google Hacks</title>
+    <authors>
+      <author>Tara Calishain</author>
+      <author>Rael Dornfest</author>
+    </authors>
+    <pubdate>February 2003</pubdate>
+    <pages>352</pages>
+    <prices>
+      <us>24.95</us>
+      <ca>38.95</ca>
+      <uk>17.50</uk>
+    </prices>
+  </book>
+  <book>
+    <title isbn="0-596-00460-5">Mac OS X Hacks</title>
+    <authors>
+      <author>Rael Dornfest</author>
+      <author>Kevin Hemenway</author>
+    </authors>
+    <pubdate>March 2003</pubdate>
+    <pages>430</pages>
+    <prices>
+      <us>24.95</us>
+      <ca>38.95</ca>
+      <uk>17.50</uk>
+    </prices>
+  </book>
+</books>

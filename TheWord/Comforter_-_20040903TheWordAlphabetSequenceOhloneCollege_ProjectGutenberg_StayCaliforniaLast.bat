@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence   Comforter_-_20040903OhloneCollege_ProjectGutenberg_StayCaliforniaLast.txt   Comforter_-_20040903TheWordAlphabetSequenceOhloneCollege_ProjectGutenberg_StayCaliforniaLast.xml

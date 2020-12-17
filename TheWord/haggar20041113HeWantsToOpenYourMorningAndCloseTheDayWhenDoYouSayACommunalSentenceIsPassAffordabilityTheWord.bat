@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  haggar20041113HeWantsToOpenYourMorningAndCloseTheDayWhenDoYouSayACommunalSentenceIsPassAffordability.xml

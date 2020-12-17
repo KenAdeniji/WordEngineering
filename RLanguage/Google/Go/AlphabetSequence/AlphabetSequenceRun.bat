@@ -1,0 +1,1 @@
+go run AlphabetSequence.go Good

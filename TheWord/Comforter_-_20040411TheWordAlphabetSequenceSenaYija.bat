@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040411SenaYija.txt  Comforter_-_20040411TheWordAlphabetSequenceSenaYija.xml

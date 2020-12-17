@@ -1,0 +1,1 @@
+csc DataContextHelper.cs nwind.cs /reference:System.Data.Linq.dll

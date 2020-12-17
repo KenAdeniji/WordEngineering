@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  MarionSandlerGoldenWestFinancialCorpHerb_-_20041115IsSomebodySmellingBarapel.txt   MarionSandlerGoldenWestFinancialCorpHerb_-_20041115IsSomebodySmellingBarapelTheWordAlphabetSequence.xml

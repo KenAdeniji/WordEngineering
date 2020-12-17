@@ -1,0 +1,1 @@
+csc /main:InformationInTransit.ProcessLogic.IValueMostWhereIAmPurposelyUse /reference:mscorlib.dll,System.Core.dll IValueMostWhereIAmPurposelyUse.cs ..\DataAccess\DataCommand.cs 

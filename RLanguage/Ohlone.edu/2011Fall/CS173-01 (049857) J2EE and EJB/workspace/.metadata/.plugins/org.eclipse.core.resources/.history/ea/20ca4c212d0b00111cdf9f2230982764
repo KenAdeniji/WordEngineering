@@ -1,0 +1,20 @@
+package WordEngineerng;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class SearchFacadeBean
+ */
+@Stateless
+@LocalBean
+public class SearchFacadeBean {
+
+    /**
+     * Default constructor. 
+     */
+    public SearchFacadeBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+//using System.Diagnostics.Contracts;
+using System.Collections.ObjectModel;
+using System.Xml;
+using System.Xml.Serialization;
+
+using Microsoft.Office.Interop;
+using Microsoft.Office.Interop.Excel;
+
+namespace InformationInTransit.ProcessCode
+{
+    public partial class BibleBook
+    {
+        public static void Main(string[] argv)
+        {
+			Stub();
+        }
+
+        public static void Stub()
+        {
+			var app = new Application { Visible = false };
+			Workbook workbook = app.Workbooks.Add();
+			Worksheet worksheet = app.ActiveSheet;
+			int row = 1; 
+			foreach (var product in Product.GetSampleProducts().Where(p => p.Price != null))
+			{
+				worksheet.Cells[row, 1].Value = product.Name; 
+				worksheet.Cells[row, 2].Value = product.Price; row++;
+			} 
+			workbook.SaveAs(Filename: "demo.xls",FileFormat: XlFileFormat.xlWorkbookNormal);
+			app.Application.Quit();			
+        }
+    }
+}

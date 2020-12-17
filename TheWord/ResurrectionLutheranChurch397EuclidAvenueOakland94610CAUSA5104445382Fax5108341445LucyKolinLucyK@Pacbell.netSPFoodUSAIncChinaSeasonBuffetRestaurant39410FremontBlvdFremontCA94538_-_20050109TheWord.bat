@@ -1,0 +1,2 @@
+@Echo Off
+Call TheWord ResurrectionLutheranChurch397EuclidAvenueOakland94610CAUSA5104445382Fax5108341445LucyKolinLucyK@Pacbell.netSPFoodUSAIncChinaSeasonBuffetRestaurant39410FremontBlvdFremontCA94538_-_20050109.xml

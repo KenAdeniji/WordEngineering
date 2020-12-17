@@ -1,0 +1,14 @@
+TheWord.exe Comforter_-_20030910ForTheSakeOfAllGoodPeople_Gbogboile.xml                                                               >Comforter_-_20030910ForTheSakeOfAllGoodPeople_Gbogboile.err
+TheWord.exe Comforter_-_20030911DifferentRaceWillOpen.xml                                                                             >Comforter_-_20030911DifferentRaceWillOpen.err
+TheWord.exe Comforter_-_20030911FormerU.S.PresidentJustTheLetters.xml                                                                 >Comforter_-_20030911FormerU.S.PresidentJustTheLetters.err
+TheWord.exe Comforter_-_20030911OurFortuneIsWeWantYouBack.xml                                                                         >Comforter_-_20030911OurFortuneIsWeWantYouBack.err
+TheWord.exe Comforter_-_20030911ThisIsMySpiritIGiveToYouThisIsOurLoveThatWeShareTogether.xml                                          >Comforter_-_20030911ThisIsMySpiritIGiveToYouThisIsOurLoveThatWeShareTogether.err
+TheWord.exe Comforter_-_20030911ThisIsYour.xml                                                                                        >Comforter_-_20030911ThisIsYour.err
+TheWord.exe Comforter_-_20030912WillYouHoldUp.xml                                                                                     >Comforter_-_20030912WillYouHoldUp.err
+TheWord.exe Comforter_-_20030912AlleluiaGodIsAmongUsGodIsSinging_EverydayTheRainIsSingingEverydayIAMFindingOutHow-toLoveWithYou.xml   >Comforter_-_20030912AlleluiaGodIsAmongUsGodIsSinging_EverydayTheRainIsSingingEverydayIAMFindingOutHow-toLoveWithYou.err
+TheWord.exe Comforter_-_20030912FormerChancellorIDidn'tFeelPain.xml                                                                   >Comforter_-_20030912FormerChancellorIDidn'tFeelPain.err
+TheWord.exe Comforter_-_20030912NineteenSeven.xml                                                                                     >Comforter_-_20030912NineteenSeven.err
+TheWord.exe Comforter_-_20030913IThinkIDo.IDo.xml                                                                                     >Comforter_-_20030913IThinkIDo.IDo.err
+TheWord.exe Comforter_-_20030913It'sALaunchPerViewForOurNewspaperPureLaunchPerView.xml                                                >Comforter_-_20030913It'sALaunchPerViewForOurNewspaperPureLaunchPerView.err
+TheWord.exe Comforter_-_20030913TheNextOneIsHeavyWeight.xml                                                                           >Comforter_-_20030913TheNextOneIsHeavyWeight.err
+TheWord.exe Comforter_-_20030913EwoLefaNinuOje.xml                                                                                    >Comforter_-_20030913EwoLefaNinuOje.err

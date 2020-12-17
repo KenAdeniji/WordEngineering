@@ -1,0 +1,18 @@
+python
+>>> the_world_is_flat = True
+>>> if the_world_is_flat:
+...    print("Be careful")
+...
+Be careful
+
+# this is the first comment
+spam = 1  # and this is the second comment
+          # ... and now a third!
+text = "# This is not a comment because it's inside quotes."
+
+Division (/) always returns a float.
+To do floor division and get an integer result (discarding any fractional result) you can use the // operator; to calculate the remainder you can use %:
+
+spam_eggs = 'spam eggs aren\'t spam'
+print(spam_eggs)
+

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040830Philips_ClassifyingEquality_PercentageNinth.txt   Comforter_-_20040830TheWordAlphabetSequencePhilips_ClassifyingEquality_PercentageNinth.xml

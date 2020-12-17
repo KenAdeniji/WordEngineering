@@ -1,0 +1,84 @@
+using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Management.Sdk.Sfc;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Text;
+
+
+namespace InformationInTransit.ProcessCode
+{
+	public static partial class SQLServerManagementObjectsSMOHelper
+	{
+		public static void Main(string[] argv)
+		{
+			DataDefinitionLanguageDDL(argv[0], argv[1]);
+		}	
+	
+		public static String DataDefinitionLanguageDDL
+		(
+			String serverName,
+			String databaseName
+		)
+		{
+			StringBuilder sb = new StringBuilder();
+			Server myServer = new Server(serverName);
+			
+			Scripter scripter = new Scripter(myServer);
+			Database database = myServer.Databases[databaseName];
+			/* With ScriptingOptions you can specify different scripting  
+			* options, for example to include IF NOT EXISTS, DROP  
+			* statements, output location etc*/
+			var scriptOptions = new ScriptingOptions();
+			scriptOptions.ScriptDrops = true;
+			scriptOptions.IncludeIfNotExists = true; 
+			scriptOptions.Indexes = true;
+			if (database == null || database.Tables == null)
+			{
+				return "";
+			}	
+			foreach (Table myTable in database.Tables)
+			{
+				/* Generating IF EXISTS and DROP command for tables */
+				StringCollection tableScripts = myTable.Script(scriptOptions);
+				sb.Append(ScriptInfo(tableScripts));
+				/* Generating CREATE TABLE command */
+				tableScripts = myTable.Script();
+				sb.Append(ScriptInfo(tableScripts));
+				foreach (ForeignKey key in myTable.ForeignKeys) 
+                {
+					sb.Append(ScriptInfo(key.Script()));
+                }
+				foreach (Index index in myTable.Indexes)
+				{
+					sb.Append(ScriptInfo(index.Script()));
+                }
+			}
+			return sb.ToString();	
+		}
+		
+		public static StringBuilder ScriptInfo(StringCollection objectToScript)
+		{
+			StringBuilder sb = new StringBuilder();
+			if (objectToScript != null)
+			{	
+				foreach (string script in (IEnumerable)objectToScript)
+				{
+					if (String.IsNullOrEmpty(script) == false)
+					{	
+						Console.WriteLine(script);
+						sb.Append(script);
+					}	
+				}
+			}	
+			return sb;
+		}	
+	}	
+}
+	

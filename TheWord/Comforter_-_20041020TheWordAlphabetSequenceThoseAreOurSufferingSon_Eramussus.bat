@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20041020ThoseAreOurSufferingSon_Eramussus.txt  Comforter_-_20041020TheWordAlphabetSequenceThoseAreOurSufferingSon_Eramussus.xml

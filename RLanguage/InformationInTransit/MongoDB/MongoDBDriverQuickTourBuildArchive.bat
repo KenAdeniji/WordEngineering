@@ -1,0 +1,2 @@
+@ECHO OFF
+csc /main:InformationInTransit.MongoDB.MongoDBDriverQuickTour /reference:System.Xml.dll,MongoDB.Bson.dll,MongoDB.Driver.Core.dll,MongoDB.Driver.dll MongoDBDriverQuickTour.cs MongoDBHelper.cs ..\DataAccess\DataCommand.cs ..\ProcessLogic\BibleBook.cs ..\ProcessLogic\ObjectDumper.cs

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040916RobertJossAdvance_CafuInsteadOfLatiOhunLoLoSi.txt  Comforter_-_20040916TheWordAlphabetSequenceRobertJossAdvance_CafuInsteadOfLatiOhunLoLoSi.xml

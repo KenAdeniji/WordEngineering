@@ -1,0 +1,16 @@
+@Echo Off
+Rhema /bennyHinn:..\URI\20041125URIWordEngineering.xml
+TheWord  NomuraHoldingsKokuho20041125_-_FaKanSileFiKanDele.xml
+TheWord  20041126_-_IWillKillYouIfYouMessAroundWithMe_That'sWhereWeDoStopFastAndGood_Ogingbede_LikeJuniorNineteenSeventyFourTheUsTheFirstOne_NanjitUgandaThrowBackAtTheLaw.xml
+TheWord  FredKoenig_-_20041127JamesIsGotTheScissorsOfJohnson_YouAreHelpingThemTakeOutTheirMoneyTheyArePuttingYouInChain_ThePersonWasGoingToBeAJuniorMe.xml
+TheWord  Enterprise_-_20041128AmongTheFamily.xml
+SQLCMD –E –d WordEngineering –i ..\Documentation\Comforter.org\SQLServerScriptBostonMarket_-_20041128IfIWereToAskGodToComeInShouldIAskForAnOutsider.sql
+TheWord  GreekOrthodoxChurchOfTheAscensionAscensionCathedral.org4700LincolnAvenueOakland94602CAUSA_-_20041128TheirIsNoPlusForAbsenteeObligationDeserveAttention.xml
+Rhema /bennyHinn:..\URI\20041128URIChrist.xml
+SQLCMD –E –d WordEngineering –i ..\Documentation\Comforter.org\PhilippinesAdvanceManagement20041128.sql
+Rhema /bennyHinn:..\WordOfGod\PhilippinesAdvanceManagement20041128.xml
+TheWord  Philippines_-_20041129WithAnOffHandleYouDon'tWantToFightJohnSide.xml
+TheWord  Comforter_-_20041027WeDon'tBeginTheCrowdWithTheTopHead_TheyProbablyHaveToGetItIn_SpendingLifeOutsideOfTownThisIsTheWorkOfTheLORDIKnow.xml
+TheWord  TodaiAjax.nl_-_20041130WeWishWeCouldReturnToTheEarlierSufferingWhoIsSupremelyResponsibleForThePeaceOrderInAfghanistanSULC.xml
+SQLCMD –E –d WordEngineering –i ..\Documentation\Comforter.org\PhilippinesAdvanceManagement20041128.sql
+Eternal /sqlQuery:"Select ContactDated, ContactSequenceOrderId, ContactTitle, ContactFirstName, ContactLastName, ContactOtherName, ContactCompany, ContactEmailEmailAddress, ContactURIInternetAddress, StreetAddressAddressLine1, StreetAddressCity, StreetAddressState, StreetAddressZipCode, StreetAddressCountry, TheWordDated, TheWordSequenceOrderId, TheWordTitle, TelephoneTelephoneNo, TelephoneTelephoneLocation FROM WordEngineering..ViewContact (NOLOCK)" /filenameXml:Comforter_-_20031008ViewContact.xml /filenameStylesheet:Comforter_-_20031008ViewContact.xslt

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  Comforter_-_20040728FOLACapitalLetters_TheOriginalityOfTheCode.xml   Comforter_-_20040728TheWordFOLACapitalLetters_TheOriginalityOfTheCode.xml

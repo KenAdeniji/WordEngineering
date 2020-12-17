@@ -1,0 +1,8 @@
+@Echo Off
+Call Rhema /bennyHinn:../URI/20041231URIWordEngineering.xml
+Call TheWord TutuOloko_-_20050101IAmMedicalAndIAmGay.xml
+Call TheWord 20050101OneManEssentialEquallyHeAssociatesWhatHeDesiresInMeWhyActThePlayWithTheWrittenScriptRelativeToThePastIServeThePresent.xml
+Call TheWord NorikoYoshida_-_20050103ItsAnIdentityThatWeShareAValueThatSeparatesmybride.xml
+Call TheWord GenevieveTarzer_-_20050104ItWasToNobodySundayFoundYourVoiceYourDogIsAnAngelCallingYouForExcitement.xml
+Call TheWord 20050105BeneditionJehovahRopheError.xml
+Call Rhema /bennyHinn:../URI/20050105URIBenedition.xml

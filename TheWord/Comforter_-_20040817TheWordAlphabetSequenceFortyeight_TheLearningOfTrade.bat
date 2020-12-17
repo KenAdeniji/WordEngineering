@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040817Fortyeight_TheLearningOfTrade.txt   Comforter_-_20040817TheWordAlphabetSequenceFortyeight_TheLearningOfTrade.xml

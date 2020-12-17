@@ -1,0 +1,1 @@
+csc NorthwindDLinqHelper.cs NorthwindProductDLinq.cs NorthwindSupplierDLinq.cs

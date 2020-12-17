@@ -1,0 +1,1 @@
+csc /reference:"C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll" SQLServerManagementObjectsSMOHelper.cs

@@ -1,0 +1,240 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href='TheWord.xslt'?>
+<TheWord>
+ <SequenceOrderId>658</SequenceOrderId>
+ <Dated>2004-11-04T00:00:00.0000000-08:00</Dated>
+ <FromUntil>309</FromUntil>
+ <ContactId>523</ContactId>
+
+  <!--
+  <Anointing>
+   <SequenceOrderId>4</SequenceOrderId>
+   <Rhema></Rhema>
+   <Commentary></Commentary>
+   <Filename />
+  </Anointing>
+  -->
+
+  <!--
+  <JehovahRophe>
+   <SequenceOrderId>57</SequenceOrderId>
+   <Commentary></Commentary>
+  </JehovahRophe>
+  -->
+
+  <!--
+  <Dream>
+   <SequenceOrderId>132</SequenceOrderId>
+   <Commentary></Commentary>
+  </Dream>
+  -->
+
+  <!--
+  <Prophet>
+   <SequenceOrderId>114</SequenceOrderId>
+   <Commentary></Commentary>
+  </Prophet>
+  -->
+
+  <!--
+  <Remember>
+   <SequenceOrderId>683</SequenceOrderId>
+   <DatedFrom></DatedFrom>
+   <DatedUntil></DatedUntil>
+   <FromUntil></FromUntil>
+   <Filename></Filename>
+   <ContactId />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+   <Commentary></Commentary>
+  </Remember>
+  -->
+
+  <!--
+  <ScriptureReading>
+   <SequenceOrderId>91</SequenceOrderId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </ScriptureReading>
+  -->
+
+  <!--
+  <Sign>
+   <SequenceOrderId>36</SequenceOrderId>
+   <Measure></Measure>
+   <SignIndex></SignIndex>
+   <Commentary></Commentary>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </Sign>
+  -->
+
+  <!--
+  <BibleWord>
+   <SequenceOrderId>605</SequenceOrderId>
+   <Word></Word>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </BibleWord>
+  -->
+
+  <AlphabetSequence>
+    <SequenceOrderId>11485</SequenceOrderId>
+    <Word>What's the pride of a child?</Word>
+    <AlphabetSequenceIndex>214</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 9:8, Judges 3, Mark 15, Revelation 11:16</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+9%3A8%2C+Judges+3%2C+Mark+15%2C+Revelation+11%3A16&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>11486</SequenceOrderId>
+    <Word>Fatai amuko.</Word>
+    <AlphabetSequenceIndex>98</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 4:18, Leviticus 8, 2 Corinthians 10, Revelation 18:11</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+4%3A18%2C+Leviticus+8%2C+2+Corinthians+10%2C+Revelation+18%3A11&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+  <AlphabetSequence>
+    <SequenceOrderId>11487</SequenceOrderId>
+    <Word>What should his own grand mother do, and what should a casual observer say?</Word>
+    <AlphabetSequenceIndex>718</AlphabetSequenceIndex>
+    <ScriptureReference>Genesis 26:25, Isaiah 39, Job 31, 1 Peter 1:10</ScriptureReference>
+    <ScriptureReferenceURI>http://bible.crosswalk.com/OnlineStudyBible/bible.cgi?new=1&amp;word=Genesis+26%3A25%2C+Isaiah+39%2C+Job+31%2C+1+Peter+1%3A10&amp;section=0&amp;version=nkj&amp;language=en</ScriptureReferenceURI>
+  </AlphabetSequence>
+
+  <!--
+  <NameIdentity>
+   <SequenceOrderId>4</SequenceOrderId>
+   <IssuedAlliance></IssuedAlliance>
+   <InclusiveLiteral></InclusiveLiteral>
+   <Commentary></Commentary>
+   <ContactId></ContactId>
+   <ScriptureReference></ScriptureReference>
+   <ScriptureReferenceURI></ScriptureReferenceURI>
+  </NameIdentity>
+  -->
+
+  <!--
+  <CaseBasedReasoning>
+   <SequenceOrderId>2236</SequenceOrderId>
+   <Commentary></Commentary>
+  </CaseBasedReasoning>
+  -->
+
+  <!--
+  <Event>
+   <SequenceOrderId>94</SequenceOrderId>
+   <Commentary></Commentary>
+  </Event>
+  -->
+
+  <!--
+  <Export> 
+   <SequenceOrderId>32</SequenceOrderId>
+   <Commentary>
+   </Commentary>
+  </Export>
+  -->
+
+  <!--
+  <Software>
+   <SequenceOrderId>458</SequenceOrderId>
+   <Commentary></Commentary>
+  </Software>
+  -->
+
+  <!--
+  <ClassAssociates>
+   <SequenceOrderId>1385</SequenceOrderId>
+   <Commentary></Commentary>
+  </ClassAssociates>
+  -->
+
+  <!--
+  <Contact>
+   <SequenceOrderId>1050</SequenceOrderId>
+   <Dated></Dated>
+   <Company></Company>
+   <FirstName></FirstName>
+   <LastName></LastName>
+   <OtherName />
+   <Title />
+   <Commentary />
+   <ScriptureReference />
+   <ScriptureReferenceURI />
+  </Contact>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>77</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <!--
+  <ContactURI>
+   <SequenceOrderId>279</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <InternetAddress></InternetAddress>
+  </ContactURI>
+  -->
+
+  <!--
+  <StreetAddress>
+   <SequenceOrderId>365</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <AddressLine1></AddressLine1>
+   <City></City>
+   <State></State>
+   <ZipCode></ZipCode>
+   <Country></Country>
+  </StreetAddress>
+  -->
+
+  <!--
+  <ContactEmail>
+   <SequenceOrderId>76</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <EmailAddress></EmailAddress>
+  </ContactEmail>
+  -->
+
+  <ContactURI>
+   <SequenceOrderId>277</SequenceOrderId>
+   <Dated>2004-11-04T00:00:00.0000000-08:00</Dated>
+   <ContactId>1049</ContactId>
+   <InternetAddress>http://www.schindler.com</InternetAddress>
+  </ContactURI>
+
+  <!--
+  <Telephone>
+   <SequenceOrderId>482</SequenceOrderId>
+   <Dated></Dated>
+   <ContactId></ContactId>
+   <TelephoneNo></TelephoneNo>
+  </Telephone>
+  -->
+
+</TheWord>
+
+<!--
+Legal filter operators are:
+ =    (equal) 
+ !=   (not equal) 
+ &lt; less than 
+ &gt; greater than
+-->
+
+<!--
+HTML Special Entities
+Character   Meaning        Entity   Numeric
+<           Less Than      &lt;     &#60;
+>           Greater Than   &gt;     &#62;
+&           Ampersand      &amp;    &#38;
+'           Apostrophe     &apos;   &#39;
+"           Quote          &quot;   &#34;
+-->

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SoughtOutModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SoughtOutEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actors" EntityType="SoughtOutModel.Actors" />
+    <EntitySet Name="Days" EntityType="SoughtOutModel.Days" />
+    <AssociationSet Name="FK_Days_Actors" Association="SoughtOutModel.FK_Days_Actors">
+      <End Role="Actors" EntitySet="Actors" />
+      <End Role="Days" EntitySet="Days" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Actors">
+    <Key>
+      <PropertyRef Name="ActorID" />
+    </Key>
+    <Property Name="ActorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dated" Type="DateTime" Nullable="false" />
+    <Property Name="ScriptureReference" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Commentary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Days" Relationship="SoughtOutModel.FK_Days_Actors" FromRole="Actors" ToRole="Days" />
+  </EntityType>
+  <EntityType Name="Days">
+    <Key>
+      <PropertyRef Name="DayID" />
+    </Key>
+    <Property Name="DayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dated" Type="DateTime" Nullable="false" />
+    <Property Name="ActorID" Type="Int32" />
+    <Property Name="ScriptureReference" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Commentary" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Actors" Relationship="SoughtOutModel.FK_Days_Actors" FromRole="Days" ToRole="Actors" />
+  </EntityType>
+  <Association Name="FK_Days_Actors">
+    <End Role="Actors" Type="SoughtOutModel.Actors" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Days" Type="SoughtOutModel.Days" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actors">
+        <PropertyRef Name="ActorID" />
+      </Principal>
+      <Dependent Role="Days">
+        <PropertyRef Name="ActorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

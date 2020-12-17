@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040612TheWelderWoodsTheGlassOnly_AshbyAllianceKotei_QuemaNutritionValue.txt   Comforter_-_20040612TheWordAlphabetSequenceTheWelderWoodsTheGlassOnly_AshbyAllianceKotei_QuemaNutritionValue.xml

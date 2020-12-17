@@ -1,0 +1,116 @@
+using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+	
+/*
+	2018-12-11	Created.	https://www.dotnetperls.com/datagridview-tutorial
+*/
+namespace InformationInTransit.WindowsForms
+{
+	public class BibleBookForm : Form    // inherits from System.Windows.Forms.Form
+	{
+		public BibleBookForm()
+		{
+			FillData();
+		}
+		
+		public static void Main()
+		{
+			Application.EnableVisualStyles();
+			Application.Run(new BibleBookForm());     // display the form
+		}
+		
+        public void FillData()
+        {
+            // 1
+            // Open connection
+			//MessageBox.Show("connection");
+			String connection = "";
+			
+			connection = System.Configuration.ConfigurationManager.
+				ConnectionStrings["Bible"].ConnectionString;
+			connection = ConfigurationManager.ConnectionStrings["Bible"].ConnectionString.ToString();	
+
+			
+ExeConfigurationFileMap configMap = new ExeConfigurationFileMap();
+configMap.ExeConfigFilename = @"App.config";
+Configuration config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);			
+			
+			ConnectionStringsSection connectionStringsSettings = config.ConnectionStrings;
+			
+			//int length = connectionStringsSettings.Count;
+			
+			//String element = connectionStringsSettings.Name["Bible"].ConnectionString;
+			//MessageBox.Show(element.connectionString);
+//ConnectionStringsSection csSection = config.ConnectionStrings;			
+			//var connectionString = connectionStringsSettings["Bible"].ConnectionString;
+			//connectionString=ConfigurationManager.ConnectionStrings["CharityManagement"].ConnectionString;
+			//connection = config.ConnectionStrings["Bible"].ConnectionString;
+			
+			//ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+			//config.AppSettings.Settings["test"].Value; 
+
+/*			
+ExeConfigurationFileMap efm = new ExeConfigurationFileMap { ExeConfigFilename = "AppConfig/app.config" };
+Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(efm, ConfigurationUserLevel.None);
+if (configuration.HasFile)
+{
+AppSettingsSection appSettings = configuration.AppSettings;
+KeyValueConfigurationElement  element = appSettings.Settings["myconfig"];
+Console.WriteLine(element.Value);
+*/
+/*			
+            foreach(ConnectionStringSettings cs in connectionStringsSettings)
+            {
+                Console.WriteLine(cs.Name);
+                Console.WriteLine(cs.ProviderName);
+                Console.WriteLine(cs.ConnectionString);
+            }
+*/			
+			if (String.IsNullOrEmpty(connection))
+			{
+				connection = "Data Source=(local);Initial Catalog=Bible;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=600;Application Name=WordEngineering;MultipleActiveResultSets=True;";
+            }
+			//MessageBox.Show(connection);
+			using 
+			(
+				SqlConnection sqlConnection = new SqlConnection
+				(
+					connection
+				)
+			)
+            {
+                sqlConnection.Open();
+                // 2
+                // Create new DataAdapter
+                using 
+				(
+					SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
+					(
+						"SELECT * FROM Bible..BibleBook ORDER BY BookID", sqlConnection
+					)
+				)
+                {
+                    // 3
+                    // Use DataAdapter to fill DataTable
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    // 4
+                    // Render data onto the screen
+					
+					DataGridView dataGridViewBibleBook = new DataGridView();
+					dataGridViewBibleBook.Location = new Point(20, 20);
+					dataGridViewBibleBook.Size = new Size(500, 300);
+					dataGridViewBibleBook.Font = new Font("Arial", 12);
+					this.Controls.Add(dataGridViewBibleBook);	// adding the control to the form
+					
+                    dataGridViewBibleBook.DataSource = dataTable;
+                }
+            }
+		}	
+	}
+}

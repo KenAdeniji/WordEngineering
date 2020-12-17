@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040816Candace.txt   Comforter_-_20040816TheWordAlphabetSequenceCandace.xml

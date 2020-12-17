@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040921TheGloryOfThePastDoor_HeStayedInSchoolToDoSomething.txt   Comforter_-_20040921TheWordAlphabetSequenceTheGloryOfThePastDoor_HeStayedInSchoolToDoSomething.xml

@@ -1,0 +1,15 @@
+///<ref>
+///2018-05-10	http://www.itprotoday.com/microsoft-sql-server/undocumented-dbcc-commands
+///</ref>
+namespace InformationInTransit.ProcessCode
+{
+	public static partial class DBCCDatabaseConsoleCommandBalindaWindow
+	{
+		public static string[] DBCCDatabaseConsoleCommand =
+		{
+			"dbcc dbinfo with tableresults, no_infomsgs",
+			"dbcc memorystatus"
+			"dbcc stackdump";
+		};	
+	}
+}

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040329DateOfLastMonth'sPriorNumber.txt  Comforter_-_20040329TheWordAlphabetSequenceDateOfLastMonth'sPriorNumber.xml

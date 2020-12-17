@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040529TogoDeremiMafatoreSchmidt.txt   Comforter_-_20040529TheWordAlphabetSequenceTogoDeremiMafatoreSchmidt.xml

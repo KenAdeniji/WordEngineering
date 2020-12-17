@@ -1,0 +1,2 @@
+@Echo Off
+TheWord  GreekOrthodoxChurchOfTheAscensionAscensionCathedral.org4700LincolnAvenueOakland94602CAUSA_-_20041128TheirIsNoPlusForAbsenteeObligationDeserveAttention.xml

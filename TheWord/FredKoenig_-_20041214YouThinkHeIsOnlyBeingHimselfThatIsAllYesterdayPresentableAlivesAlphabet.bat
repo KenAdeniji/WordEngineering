@@ -1,0 +1,2 @@
+@Echo Off
+TheWordAlphabetSequence  FredKoenig_-_20041214YouThinkHeIsOnlyBeingHimselfThatIsAllYesterdayPresentableAlives.txt  FredKoenig_-_20041214YouThinkHeIsOnlyBeingHimselfThatIsAllYesterdayPresentableAlivesAlphabet.xml

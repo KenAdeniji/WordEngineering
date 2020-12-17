@@ -1,0 +1,4 @@
+# External assembly references.
+/r:System.Windows.Forms.dll
+# output and files to compile (using wildcard syntax).
+/target:exe /out:MessageBoxForm.exe *.cs 

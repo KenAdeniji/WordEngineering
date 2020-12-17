@@ -1,0 +1,62 @@
+using System; 
+using System.Xml.Linq; 
+using MongoDB.Bson; 
+using MongoDB.Driver; 
+ 
+namespace WordEngineering 
+{ 
+    class MongoDB10GenTutorial
+    { 
+        static void Main(string[] args) 
+        { 
+            try
+			{
+				Console.WriteLine("Connect..."); 
+	 
+				MongoServer mongo = MongoServer.Create(); 
+				mongo.Connect(); 
+	 
+				Console.WriteLine("Connected"); 
+				Console.WriteLine(); 
+	 
+				var db = mongo.GetDatabase("MongoDB10GenTutorial"); 
+	 
+				using (mongo.RequestStart(db)) 
+				{ 
+					var collection = db.GetCollection<BsonDocument>("books"); 
+	 
+					BsonDocument book = new BsonDocument() 
+						.Add("_id", BsonValue.Create(BsonType.ObjectId)) 
+						.Add("author", "Ernest Hemingway") 
+						.Add("title", "For Whom the Bell Tolls"); 
+	 
+					collection.Insert(book); 
+	 
+					var query = new QueryDocument("author", "Ernest Hemingway"); 
+	 
+					foreach (BsonDocument item in collection.Find(query)) 
+					{ 
+						BsonElement author = item.GetElement("author"); 
+						BsonElement title = item.GetElement("title"); 
+	 
+						Console.WriteLine("Author: {0}, Title: {1}", author.Value, title.Value); 
+	 
+						foreach (BsonElement element in item.Elements) 
+						{ 
+							Console.WriteLine("Name: {0}, Value: {1}", element.Name, element.Value); 
+						} 
+					} 
+				} 
+	 
+				Console.WriteLine(); 
+				Console.Read(); 
+	 
+				mongo.Disconnect(); 
+			}
+			catch (Exception ex)
+			{
+				System.Console.WriteLine(ex.Message);
+			}	
+        } 
+    } 
+}

@@ -1,0 +1,2 @@
+@Echo off
+TheWordAlphabetSequence  NomuraHoldingsKokuho20041125_-_FaKanSileFiKanDele.txt  NomuraHoldingsKokuho20041125_-_FaKanSileFiKanDeleAlphabet.xml

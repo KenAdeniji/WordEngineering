@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20041103SenatorJohnMcCainArizonaHowDoYouOutGuessTheStator.txt  Comforter_-_20041103TheWordAlphabetSequenceSenatorJohnMcCainArizonaHowDoYouOutGuessTheStator.xml

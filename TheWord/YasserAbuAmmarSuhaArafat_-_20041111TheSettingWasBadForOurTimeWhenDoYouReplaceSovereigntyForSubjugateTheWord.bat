@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWord  YasserAbuAmmarSuhaArafat_-_20041111TheSettingWasBadForOurTimeWhenDoYouReplaceSovereigntyForSubjugate.xml  YasserAbuAmmarSuhaArafat_-_20041111TheSettingWasBadForOurTimeWhenDoYouReplaceSovereigntyForSubjugateTheWord.xml

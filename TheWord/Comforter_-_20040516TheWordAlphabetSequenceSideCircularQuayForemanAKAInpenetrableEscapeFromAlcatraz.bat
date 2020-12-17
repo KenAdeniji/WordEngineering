@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040516SideCircularQuayForemanAKAInpenetrableEscapeFromAlcatraz.txt  Comforter_-_20040516SideCircularQuayForemanAKAInpenetrableEscapeFromAlcatraz.xml

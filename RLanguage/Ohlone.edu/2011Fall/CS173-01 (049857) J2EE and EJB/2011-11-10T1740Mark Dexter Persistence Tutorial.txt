@@ -1,0 +1,212 @@
+Eclipsetutorial.sourceforge.net/persistence.html
+
+Menu. File. Import. Existing Projects into Workspace.
+	Select archive file: E:\Documentation\Java\Mark Dexter\persistencetutorial.zip. Browse button.
+	
+Create ScrapBook. File. New. Other. Java Run/Debug. Scrapbook Page.
+	Enter or select the parent folder: PersistenceTutorial.
+	File name: MyScrapBook.
+
+AllTests.java. 
+	Menu Run. Run As. JUnit Test.
+	
+	import org.junit.runner.*;
+	import org.junit.runners.*;
+	
+	Control 1.
+	
+	@RunWith(Suite.class)
+	@Suite.SuiteClasses(value={
+		PersonTest.class,
+		BookTest.class,
+		MyLibraryTest.class
+	})
+	
+Open Run Configurations. Select between Jrun3 or Jrun4.
+
+Saving objects to XML files.
+	Convert object to XML String. convertToXML()
+	Save String to text file. saveStringToFile()
+	File saved to disk("file.txt")
+	
+New JUnit Test Case.
+	New. JUnit 4 test.
+	Source folder: 	PersistenceTutorial/test
+	Package:		org.persistence.tutorial
+	Name:			MyUtilitiesTest.java
+	
+MyUtilitiesTest.java
+
+package org.persistence.tutorial;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+public class MyUtilitiesTest {
+	@Test
+	public void saveStringToFile() {
+		String saveString = "this is test line one\n" + 
+							"this is test line two\n";
+		File testFile = new File("testsavetostring.txt");
+		testFile.delete();
+		assertFalse("File should not exist", testFile.exists());
+		
+		assertTrue("File should have been saved", MyUtilities.saveStringToFile("testsavestring.txt", saveString));
+		String newString = MyUtilities.getStringFromFile("testsavestring.txt");
+		assertTrue("Save and get strings should be equal", saveString.equals(newString));
+		
+		assertFalse("File should not be saved", MyUtilities.saveStringToFile("non-existent directory/thisshouldfail.txt", saveString));
+		String emptyString = MyUtilities.getStringFromFile("badfilename.txt");
+		assertTrue("String should be empty", emptyString.length() == 0);
+	}
+}
+
+The class, MyUtilities.java, does not exist, yet. Create by pressing, control 1.
+
+Writing Text Files in Java
+BufferedWriter(FileWriter) improves efficiency by writing blocks of characters into buffer
+	BufferedWriter(new FileWriter(fileName))
+FileWriter(fileName) writes characters to disk file
+
+To display the project explorer, double click on the file icon at the top of the screen.
+
+MyUtilities.java
+
+package org.persistence.tutorial;
+import java.io.*;
+
+public class MyUtilities {
+	public static boolean saveStringToFile(String fileName, String saveString) {
+		boolean saved = false;
+		BufferedWriter bw = null;
+		
+		try {
+			bw = new BufferedWriter(new FileWriter(fileName));
+			
+			try {
+				bw.write(saveString);
+				saved = true;
+			}
+			finally {
+				bw.close();
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return saved;	
+	}
+	
+	public void testStuff() throws IOException {
+		FileWriter fw = new FileWriter("test");
+		fw.write("test");
+	}
+	
+	public static String getStringFromFile(String fileName) {
+		return null;
+	}
+}
+
+BufferedReader(FileReader) improves efficiency by reading blocks of characters into buffer.
+FileReader(fileName) reads characters from File.
+
+new BufferedReader(new FileReader(fileName))
+BufferedReader in
+   = new BufferedReader(new FileReader("foo.in"));
+   
+//TODO tasks list. Eclipse.
+
+public static String getStringFromFile(String fileName)
+{
+	BufferedReader br = null;
+	StringBuilder sb = new StringBuilder();
+	
+	try {
+		br = new BufferedReader( new FileReader(fileName));
+		try {
+			String s;
+			while ((s = br.readLine()) != null) {
+				//add linefeed back since stripped by readline()
+				sb.append(s);
+				sb.append("\n");
+				}
+			}	
+		}
+		finally {
+			br.close();
+		}
+	}
+	catch (IOException ex) {
+		ex.printStackTrace();
+	}
+	return sb.toString();
+}
+
+Control Shift P, or click after curly brace to relate start and end block.
+
+XStream.CodeHaus.org
+Download XStream Core only to the Eclipse directory.
+From the Eclipse menu, choose Project. Properties. Libraries. Add External JARs.
+
+From the JRE System Library, choose rt.jar, source attachment Edit. Search for src.zip.
+	E:/Program Files/Java/jdk1.6.0_23/src.zip
+
+ConvertToXml()
+ConvertFromXml()
+	
+public MyLibrary createMyLibrary() {
+
+}
+
+@Test public void convertToXML() {
+	MyLibrary startMyLibrary = createMyLibrary();
+	String testXMLOut = MyUtilities.convertToXML(startMyLibrary);
+	MyLibrary endMyLibrary = MyUtilities.convertFromXML(testXMLOut);
+	assertEquals("Test", endMyLibrary.getName());
+	assertEquals(2, endMyLibrary.getBooks().size());
+	assertEquals(2, endMyLibrary.getPeople().size());
+	assertEquals("Fred", endMyLibrary.getBooks().get(0).getPerson().getName());
+	}
+	
+MyUtilities
+
+public static String convertToXML(MyLibrary startMyLibrary) {
+	XStream xstream = new XStream(new DomDriver());
+	return xstream.toXML(ml);
+}
+
+public static MyLibrary convertFromXML(String XMLString) {
+	MyLibrary ml = null;
+	XStream xstream = new XStream(new DomDriver());
+	Object obj = xstream.fromXML(XMLString);
+	if (obj instanceof MyLibrary) {
+		ml = (MyLibrary) obj;
+	}
+	return ml;
+}
+
+MyUtilitiesTest.java
+	@Test public void saveToXMLFile() {
+		MyLibrary startMyLibrary = createMyLibrary();
+		String fileName = "testmylibrary.xml";
+		File testFile = new File(fileName);
+		testFile.delete();
+		assertFalse("File should not exist", testFile.exists());
+		assertTrue("File should have been saved", MyUtilities.saveMyLibraryToXMLFile(
+													fileName, startMyLibrary));
+		MyLibrary endMyLibrary =
+			MyUtilities.getMyLibraryFromXMLFile(fileName);
+		assertEquals("Test", endMyLibrary.getName());
+		assertEquals(2, endMyLibrary.getBooks().size());
+		assertEquals(2, endMyLibrary.getPeople().size());
+		assertEquals("Fred", endMyLibrary.getBooks().get(0).getPerson().getName());
+	}
+	
+MyUtilities.java
+	public static boolean saveMyLibraryToXMLFile(String fileName, MyLibrary ml) {
+		return saveStringToFile(fileName, convertToXML(ml));
+	}
+	
+	public static MyLibrary getMyLibraryFromXMLFile(String fileName) {
+		return convertFromXML(getStringFromFile(fileName));
+	}	
+	

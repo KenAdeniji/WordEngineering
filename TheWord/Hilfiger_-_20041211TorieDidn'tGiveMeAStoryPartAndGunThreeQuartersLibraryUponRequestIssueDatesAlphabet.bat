@@ -1,0 +1,2 @@
+@Echo off
+TheWordAlphabetSequence  Hilfiger_-_20041211TorieDidn'tGiveMeAStoryPartAndGunThreeQuartersLibraryUponRequestIssueDates.txt   Hilfiger_-_20041211TorieDidn'tGiveMeAStoryPartAndGunThreeQuartersLibraryUponRequestIssueDatesAlphabet.xml

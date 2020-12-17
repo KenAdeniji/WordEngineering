@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  haggar20041113IfIWereToDieWhatIsTheSurvivingAsset.txt  haggar20041113IfIWereToDieWhatIsTheSurvivingAssetTheWordAlphabetSequence.xml

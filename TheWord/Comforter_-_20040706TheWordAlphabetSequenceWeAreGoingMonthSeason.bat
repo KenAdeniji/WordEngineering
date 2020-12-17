@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040706WeAreGoingMonthSeason.txt  Comforter_-_20040706TheWordAlphabetSequenceWeAreGoingMonthSeason.xml

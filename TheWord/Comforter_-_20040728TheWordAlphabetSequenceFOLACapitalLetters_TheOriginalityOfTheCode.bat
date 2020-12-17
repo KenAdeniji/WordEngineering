@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040728FOLACapitalLetters_TheOriginalityOfTheCode.txt  Comforter_-_20040728TheWordAlphabetSequenceFOLACapitalLetters_TheOriginalityOfTheCode.xml

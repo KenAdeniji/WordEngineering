@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040713CounselUpMayBeYouCan'tReceiveCNLJunkByte.txt  Comforter_-_20040713TheWordAlphabetSequenceCounselUpMayBeYouCan'tReceiveCNLJunkByte.xml

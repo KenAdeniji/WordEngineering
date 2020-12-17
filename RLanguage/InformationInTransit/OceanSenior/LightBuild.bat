@@ -1,0 +1,1 @@
+csc Light.cs ..\ProcessLogic\ObjectDumper.cs

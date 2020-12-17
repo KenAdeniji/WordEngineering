@@ -1,0 +1,1 @@
+csc /main:InformationInTransit.ProcessLogic.LinqBibleBook BibleBook.cs LinqBibleBook.cs ObjectDumper.cs XmlHelper.cs

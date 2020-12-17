@@ -1,0 +1,1 @@
+﻿csc /main:InformationInTransit.ProcessLogic.WhatIsYourQuestOfInterestCommonGoalsHelper WhatIsYourQuestOfInterestCommonGoalsHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs

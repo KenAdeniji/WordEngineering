@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040604JapanAirlinesJAL.txt  Comforter_-_20040604TheWordAlphabetSequenceJapanAirlinesJAL.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040525I'llOfferAWhiteSet_SonyPickUp.txt  Comforter_-_20040525TheWordAlphabetSequenceI'llOfferAWhiteSet_SonyPickUp.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040827ChoYonggiYoidoFullGospelChurchFGTVAccountingForHonorable.txt   Comforter_-_20040827TheWordAlphabetSequenceChoYonggiYoidoFullGospelChurchFGTVAccountingForHonorable.xml
