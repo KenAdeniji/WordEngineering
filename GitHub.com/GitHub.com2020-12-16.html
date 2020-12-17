@@ -20,37 +20,52 @@
 		<h1>GitHub.com</h1>
 
 		<h2>git cmd</h2>
-		<pre>
+		<code>
 			MD \WordEngineering
 			CD \WordEngineering
 			git cmd
-		</pre>
+		</code>
 		
 		<h2>git clone</h2>
-		<pre>
+		<code>
 			git clone http://github.com/KenAdeniji/WordEngineering
-		</pre>
+		</code>
 		
 		<h2>git status</h2>
-		<pre>
+		<code>
 			git status
-		</pre>
+		</code>
 
 		<h2>git add</h2>
-		<pre>
+		<code>
 			git add GitHub.com\
 			git add GitHub.com\GitHub.com2020-12-16.html
-		</pre>
+		</code>
 
 		<h2>git commit</h2>
-		<pre>
+		<code>
 			git commit
-		</pre>
+		</code>
 
 		<h2>git push</h2>
-		<pre>
+		<code>
 			git push
+		</code>
+
+		<h2>git add the filenames in a file</h2>
+		<pre>
+setlocal
+
+rem How do you loop through each line in a text file using a windows batch file?
+rem https://stackoverflow.com/questions/155932/how-do-you-loop-through-each-line-in-a-text-file-using-a-windows-batch-file
+
+set "_fileText=e:\temp\gitAdd_20201216.txt"
+
+for /F "tokens=*" %%A in ('type "%_fileText%"') do git add "%%A"
+
+endlocal
 		</pre>
+
 
 	</body>
 </html>
