@@ -1,0 +1,2 @@
+git add        WordGroup/DistributedLedgerAlsoCalledASharedLedgerOrDistributedLedgerTechnologyOrDLT.asmx
+git add        WordGroup/DistributedLedgerAlsoCalledASharedLedgerOrDistributedLedgerTechnologyOrDLTArchive.asmx
