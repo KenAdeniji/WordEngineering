@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040303NumerousThisThingDoesn'tLookRight.txt    Comforter_-_20040303TheWordAlphabetSequenceNumerousThisThingDoesn'tLookRight.xml

@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040320JehovahRophe_MadderMurder_WoefulUpbringing.txt   Comforter_-_20040320TheWordAlphabetSequenceJehovahRophe_MadderMurder_WoefulUpbringing.xml
