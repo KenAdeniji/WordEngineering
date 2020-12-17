@@ -1,0 +1,2 @@
+@ECHO OFF
+TheWordAlphabetSequence  Comforter_-_20040227ClaimGod'sTrueness_AmmunitionAbortion.txt    Comforter_-_20040227TheWordAlphabetSequenceClaimGod'sTrueness_AmmunitionAbortion.xml
