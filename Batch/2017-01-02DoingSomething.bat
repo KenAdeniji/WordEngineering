@@ -220,4 +220,9 @@ XCOPY E:\2020-12-09T1339WordEngineering D:\2020-12-09T1339WordEngineering /d /e 
 XCOPY E:\2020-12-09T1339WordEngineering F:\2020-12-09T1339WordEngineering /d /e /s /y
 
 XCOPY E:\2020-12-09T1339WordEngineering \\Noor\E$\2020-12-09T1339WordEngineering /d /e /s /y
+
+2020-12-14T09:44:00 ... 2020-12-14T10:06:00
+An unexpected error is keeping you from copying the file.
+If you continue to receive this error, you can use the error code to search for help with the problem.
+Error 0x800704FI: The system cannot contact a domain controller to
 :Exit
