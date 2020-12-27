@@ -1,1 +1,0 @@
-csc GenericHelper.cs

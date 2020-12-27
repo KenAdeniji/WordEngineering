@@ -1,2 +1,0 @@
-REM csc ExplainPaulsGospel.cs /reference:..\Bin\Debug\InformationInTransit.dll
-csc /main:InformationInTransit.ProcessLogic.ExplainPaulsGospel /reference:mscorlib.dll,System.Core.dll ExplainPaulsGospel.cs ..\DataAccess\DataCommand.cs

@@ -1,1 +1,0 @@
-csc LinqEssential.cs ObjectDumper.cs

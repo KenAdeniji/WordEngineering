@@ -1,1 +1,0 @@
-cl /GR /EHsc "Algorithm for_each.cpp"

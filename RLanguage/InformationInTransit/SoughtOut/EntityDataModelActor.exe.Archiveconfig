@@ -1,9 +1,0 @@
-<configuration>
-	<connectionStrings>
-		<add name="SoughtOutEntities" 
-			 connectionString="metadata=.\SoughtOut.csdl|.\SoughtOut.ssdl|.\SoughtOut.msl;
-			 provider=System.Data.SqlClient;provider connection string='Data Source=localhost;
-			 Initial Catalog=SoughtOut;Integrated Security=True;Connection Timeout=60;
-			 multipleactiveresultsets=true'" providerName="System.Data.EntityClient" />
-	</connectionStrings>
-</configuration>

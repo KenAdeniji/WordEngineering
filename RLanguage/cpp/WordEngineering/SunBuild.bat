@@ -1,1 +1,0 @@
-cl Sun.cpp /EHsc

@@ -1,2 +1,0 @@
-REM csc ToMostExtentOfTalent.cs /reference:..\Bin\Debug\InformationInTransit.dll
-csc /main:InformationInTransit.ProcessLogic.ToMostExtentOfTalent /reference:mscorlib.dll,System.Core.dll ToMostExtentOfTalent.cs ..\DataAccess\DataCommand.cs 

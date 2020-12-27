@@ -1,2 +1,0 @@
-REM csc IataAirportCode.cs /reference:..\Bin\Debug\InformationInTransit.dll
-csc /main:InformationInTransit.ProcessLogic.IataAirportCode /reference:mscorlib.dll,System.Core.dll IataAirportCode.cs ..\DataAccess\DataCommand.cs 

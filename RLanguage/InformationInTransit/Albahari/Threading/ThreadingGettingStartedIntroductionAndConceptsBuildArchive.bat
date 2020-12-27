@@ -1,1 +1,0 @@
-csc ThreadingGettingStartedIntroductionAndConcepts.cs

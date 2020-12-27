@@ -1,1 +1,0 @@
-csc SQLServerMongoDBHelper.cs /reference:MongoDB.Bson.dll /reference:MongoDB.Driver.dll

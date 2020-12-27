@@ -1,1 +1,0 @@
-cl SizeOfDataType.cpp /EHsc

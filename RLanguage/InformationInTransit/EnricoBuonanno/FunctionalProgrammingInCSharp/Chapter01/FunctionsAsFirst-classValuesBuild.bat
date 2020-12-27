@@ -1,1 +1,0 @@
-csc FunctionsAsFirst-classValues.cs E:\WordEngineering\InformationInTransit\ProcessLogic\ObjectDumper.cs

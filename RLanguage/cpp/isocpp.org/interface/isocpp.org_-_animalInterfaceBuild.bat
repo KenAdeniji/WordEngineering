@@ -1,1 +1,0 @@
-cl /EHsc isocpp.org_-_animalInterface.cpp isocpp.org_-_dog.cpp

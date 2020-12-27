@@ -1,1 +1,0 @@
-cl ../cpp/BibleBookFind.cpp ../cpp/BibleBook.cpp /EHsc /GR

@@ -1,1 +1,0 @@
-cl /clr SixthFirstnameLastname.cpp

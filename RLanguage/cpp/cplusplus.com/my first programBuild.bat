@@ -1,1 +1,0 @@
-cl /clr "my first program.cpp"

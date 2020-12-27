@@ -1,1 +1,0 @@
-csc BibleBook.cs ObjectDumper.cs XmlHelper.cs

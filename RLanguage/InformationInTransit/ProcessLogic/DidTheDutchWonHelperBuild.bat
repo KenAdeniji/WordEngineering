@@ -1,1 +1,0 @@
-csc /main:InformationInTransit.ProcessLogic.DidTheDutchWonHelper BibleVersionHelper.cs BibleDictionaryHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs DidTheDutchWonHelper.cs ParamsHelper.cs ScriptureReferenceHelper.cs

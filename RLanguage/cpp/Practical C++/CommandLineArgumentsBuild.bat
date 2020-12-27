@@ -1,1 +1,0 @@
-cl /clr CommandLineArguments.cpp

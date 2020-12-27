@@ -1,2 +1,0 @@
-REM csc Terminus.cs /reference:..\Bin\Debug\InformationInTransit.dll
-csc /main:InformationInTransit.ProcessLogic.Terminus /reference:mscorlib.dll,System.Core.dll Terminus.cs ..\DataAccess\DataCommand.cs 

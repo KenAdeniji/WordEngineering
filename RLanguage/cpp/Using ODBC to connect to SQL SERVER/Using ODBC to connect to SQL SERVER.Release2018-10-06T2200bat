@@ -1,1 +1,0 @@
-cl "Using ODBC to connect to SQL SERVER.cpp" /link Odbc32.lib

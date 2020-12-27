@@ -1,1 +1,0 @@
-csc MongoDB10GenTutorial.cs /reference:MongoDB.Bson.dll /reference:MongoDB.Driver.dll

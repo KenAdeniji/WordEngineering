@@ -1,1 +1,0 @@
-csc /r:System.Windows.Forms.dll /target:winexe ExampleFormWithLabelAndTextBox.cs

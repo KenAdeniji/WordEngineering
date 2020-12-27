@@ -1,1 +1,0 @@
-cl /GR /EHsc "Change Speed typedef.cpp"

@@ -1,1 +1,0 @@
-cl /clr Fifth.cpp

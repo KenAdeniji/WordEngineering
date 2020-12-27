@@ -1,1 +1,0 @@
-cl EnumeratedType.cpp

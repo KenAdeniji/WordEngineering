@@ -1,4 +1,0 @@
-csc AsynchronousCallWithEndInvoke.cs AsynchronousCallable.cs
-csc AsynchronousCallWithWaitHandle.cs AsynchronousCallable.cs
-csc AsynchronousCallCompletion.cs AsynchronousCallable.cs
-csc AsynchronousCallCompletesExecuteACallbackMethod.cs AsynchronousCallable.cs

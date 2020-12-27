@@ -1,1 +1,0 @@
-﻿csc /main:InformationInTransit.ProcessCode.OurPeople OurPeople.cs ..\DataAccess\DataCommand.cs ..\ProcessLogic\DataSetHelper.cs ..\ProcessLogic\DataTableHelper.cs ..\ProcessLogic\StringHelper.cs

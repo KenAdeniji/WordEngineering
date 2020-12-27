@@ -1,1 +1,0 @@
-csc /r:System.Windows.Forms.dll;System.Drawing.dll /main:MessageBoxForm *.cs 

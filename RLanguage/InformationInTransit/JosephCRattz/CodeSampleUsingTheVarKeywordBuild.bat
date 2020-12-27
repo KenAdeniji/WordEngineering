@@ -1,1 +1,0 @@
-csc CodeSampleUsingTheVarKeyword.cs nwind.cs /reference:System.Data.Linq.dll

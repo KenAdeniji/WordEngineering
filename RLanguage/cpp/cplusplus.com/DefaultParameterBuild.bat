@@ -1,1 +1,0 @@
-cl /clr DefaultParameter.cpp

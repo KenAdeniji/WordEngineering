@@ -1,1 +1,0 @@
-csc ASimpleXMLQueryUsingLINQToXml.cs /reference:System.Xml.Linq.dll

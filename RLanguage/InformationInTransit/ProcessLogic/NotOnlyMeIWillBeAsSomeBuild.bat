@@ -1,1 +1,0 @@
-csc /main:InformationInTransit.ProcessLogic.NotOnlyMeIWillBeAsSome /reference:mscorlib.dll,System.Core.dll NotOnlyMeIWillBeAsSome.cs ScriptureReferenceHelper.cs DataTableHelper.cs ..\DataAccess\DataCommand.cs CommandLineArguments.cs

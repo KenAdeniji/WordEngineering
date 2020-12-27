@@ -1,9 +1,0 @@
-Create a Web application that displays the Products tables in the Northwind database.  Your Web application allows 
-the user to update the data in the product table. Hint: The product table has constraints.    You can use DetailsView
-with pagination.  Please see week 9 hands on example for how to.
-
-Optional:
-
-Use WCF Service to retrieve the data or SQLDataSource. Please see Week 7 HandsOn example as your reference.
- 
-Please see attached pdf file.

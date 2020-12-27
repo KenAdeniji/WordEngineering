@@ -1,1 +1,0 @@
-﻿csc /main:InformationInTransit.ProcessLogic.IHaveKnowItForTwentySixHelper /recurse:*.cs /reference:"..\bin\Debug\iTextSharp.dll","..\bin\Debug\MongoDB.Driver.dll","..\bin\Debug\MongoDB.Bson.dll","..\bin\Debug\Newtonsoft.Json.dll","C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\WPF\PresentationFramework.dll","..\bin\Debug\System.Speech.dll"

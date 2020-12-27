@@ -1,2 +1,0 @@
-﻿csc /main:InformationInTransit.ProcessLogic.FindTheWordThatMakesThePercentageOfTheWord FindTheWordThatMakesThePercentageOfTheWord.cs AlphabetSequence.cs RegexConvert.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs
- 

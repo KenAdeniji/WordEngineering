@@ -1,1 +1,0 @@
-csc BibleBookLinqToXml.cs BibleBook.cs ObjectDumper.cs XmlHelper.cs /main:WordEngineering.BibleBookLinqToXml

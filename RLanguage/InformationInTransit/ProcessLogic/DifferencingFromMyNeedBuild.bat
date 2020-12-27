@@ -1,1 +1,0 @@
-csc /main:InformationInTransit.ProcessLogic.DifferencingFromMyNeed /reference:mscorlib.dll,System.Core.dll DifferencingFromMyNeed.cs BibleWordHelper.cs  ..\DataAccess\DataCommand.cs

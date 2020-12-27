@@ -1,1 +1,0 @@
-csc Eventuate.cs ..\ProcessLogic\BibleWordHelper.cs /main:Eventuate

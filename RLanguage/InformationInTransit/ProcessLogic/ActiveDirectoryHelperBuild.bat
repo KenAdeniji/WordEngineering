@@ -1,1 +1,0 @@
-csc ActiveDirectoryHelper.cs /reference:System.DirectoryServices.AccountManagement.dll

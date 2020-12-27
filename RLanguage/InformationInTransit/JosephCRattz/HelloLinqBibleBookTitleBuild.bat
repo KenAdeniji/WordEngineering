@@ -1,1 +1,0 @@
-csc HelloLinqBibleBookTitle.cs ThereIsOnlyOneBook.cs
