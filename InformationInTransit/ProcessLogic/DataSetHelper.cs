@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ComponentModel;
 using System.Data;
 using System.Text;
@@ -108,5 +109,48 @@ namespace InformationInTransit.ProcessLogic
 				}		
 			}
 		}	
+		
+		/*
+			2020-12-29	https://stackoverflow.com/questions/6617804/how-to-convert-a-column-of-datatable-to-a-list
+			2020-12-29	https://stackoverflow.com/questions/22396749/concatenating-a-list-of-strings-into-a-single-string
+			2020-12-29	https://stackoverflow.com/questions/44843660/convert-dictionary-to-list-of-objects-in-c-sharp		
+		*/
+		public static List<KeyCount> WordStatistics
+		(
+			this DataSet resultSet,
+			int columnID
+		)
+		{
+			DataTable resultTable = resultSet.CustomMerge();
+			
+			List<string> resultList = resultTable.AsEnumerable().Select(x => x[columnID].ToString()).ToList();
+
+			String resultString = String.Join(",", resultList);
+			
+			String[] resultSplit = StringHelper.SplitWords(resultString);
+			
+			Dictionary<string, int> statistics = resultSplit
+				.GroupBy(word => word)
+				.ToDictionary(
+					kvp => kvp.Key, // the word itself is the key
+					kvp => kvp.Count()); // number of occurences is			
+
+			List<KeyCount> keyCount = statistics.Select
+			(
+				kv => new KeyCount
+				{
+					Key = kv.Key,
+					Count = kv.Value
+				}
+			).ToList();
+			
+			return keyCount;
+		}		
+		
+		public class KeyCount
+		{
+			public string Key;
+			public int Count;
+		}		
 	}	
 }

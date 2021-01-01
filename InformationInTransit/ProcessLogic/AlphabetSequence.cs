@@ -253,7 +253,7 @@ namespace InformationInTransit.ProcessLogic
         {
             string reference = (String) DataCommand.DatabaseCommand
                                (
-                                    "SELECT WordEngineering.dbo.udf_AlphabetSequenceIndexScriptureReference(" + alphabetSequenceIndex + ")",
+                                    "SELECT Bible.dbo.udf_AlphabetSequenceIndexScriptureReference(" + alphabetSequenceIndex + ")",
                                     System.Data.CommandType.Text,
                                     DataCommand.ResultType.Scalar
                                 );

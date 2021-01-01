@@ -40,6 +40,7 @@ GOTO Exit
 xcopy e:\SQLServerDataDefinitionLanguageDDL d:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL f:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy e:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 GOTO Exit
 
@@ -119,12 +120,12 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 605);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 15512);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 10796);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 10897);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4267);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 137201);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 137593);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 83091);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -148,6 +149,7 @@ pscp -pw LinuxPassword e:\SQLServerBackup\URI\URI_2020-02-17.bak kadeniji@10.0.4
 pscp -pw LinuxPassword e:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/WordEngineering/WordEngineering_2020-02-18.bak
 
 :SQLScript
+SELECT TOP 1 ContactID FROM WordEngineering..Contact ORDER BY ContactID DESC
 DELETE FROM WordEngineering..APass WHERE SequenceOrderID > 13
 UPDATE WordEngineering..HisWord SET ContactID = 517 WHERE ContactID = 2077
 DELETE FROM WordEngineering..Remember WHERE SequenceOrderID > 48737
@@ -189,6 +191,7 @@ WHERE CONVERT(Date, Dated) = '2018-11-06'
 :ErrorMessage
 KenAdeniji@hotmail.com
 2020-12-02T11:02:00 ... 2020-12-02T11:48:00 Microsoft SQL Server data files archive; network error.
+12:26 Microsoft SQL Server Management Studio user interface (UI) grid error.
 2020-12-04T18:03:00
 I am available at 10AM, Pacific Standard Time, every day of the week.
 
@@ -225,4 +228,43 @@ XCOPY E:\2020-12-09T1339WordEngineering \\Noor\E$\2020-12-09T1339WordEngineering
 An unexpected error is keeping you from copying the file.
 If you continue to receive this error, you can use the error code to search for help with the problem.
 Error 0x800704FI: The system cannot contact a domain controller to
+
+2020-12-21T09:42:00
+You've got a white uniform; what is this, you do?
+
+At Union City BART Station, South East, an African descent male, ran and got on the bus; another African descent male ran and did not get on the bus, he went to a car, parked at East. Urine. When the bus arrived beside McDonald's at Union Square, Union City, we waited for the traffic light, so we could get into Decoto Road, southward, a Caucasian male complained, he is sitting, behind the back door and there are two African descent males beside him.
+
+robert653922_bb8@indeedemail.com
+What time would be best to reach out to you tomorrow to discuss your background?
+
+Best,
+Robert Venegas
+
+robert653922_bb8@indeedemail.com
+
+12:10 ... 12:11 Microsoft SQL Server data files archive, 12:03 Wait keyboard and user interface (UI) freeze error.
+
+12:10 ... 12:11 Microsoft SQL Server data files archive.
+robert653922_bb8@indeedemail.com
+Would you be available at 10am California time? 
+
+Please e-mail in the resume folder.
+
+12:03 Wait keyboard and user interface (UI) freeze error.
+
+12:58 Shower, lost tooth the to the top back left.
+Young truck Highway 880 South.
+
+
+15:02 Dizzy sleepy. (Ko useful) (Gbogbo wa lo ti ye).
+
+2020-12-21T14:18:00
+robert653922_bb8@indeedemail.com
+
+Excellent, the position is a Full Stack Developer position that you had submitted your resume for.
+
+My direct line is: 213-444-3309
+
+I look forward to our conversation tomorrow.
+
 :Exit

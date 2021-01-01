@@ -229,7 +229,13 @@ namespace InformationInTransit.ProcessLogic
 		{
 			return param.Substring(param.Length - length, length);
 		}
-		
+
+		//2020-12-29T22:59:00	https://stackoverflow.com/questions/23292776/counting-the-occurrences-of-every-duplicate-words-in-a-string-using-dictionary-i/23292870	
+		public static string[] SplitWords(string s)
+		{
+			 return Regex.Split(s, @"\W+");
+		}
+
 		//2018-04-24	https://stackoverflow.com/questions/17678798/remove-words-in-string-from-words-in-array-with-c-sharp?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 		//2018-04-24	https://www.dotnetperls.com/distinct
 		public static string StringWordsRemove(string stringToClean, string[] wordsToRemove)

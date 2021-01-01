@@ -44,6 +44,11 @@ namespace InformationInTransit.ProcessLogic
 		2016-05-15	OccurrenceOfTheMotion.
 		2017-05-12	brenocon@cs.umass.edu
 		2018-04-24 	http://quondam.csi.edu/ip/adc/faculty/bbennett/ps011exp.htm
+		2020-12-29	https://stackoverflow.com/questions/23292776/counting-the-occurrences-of-every-duplicate-words-in-a-string-using-dictionary-i/23292870
+					static string[] SplitWords(string s)
+					{
+						 return Regex.Split(s, @"\W+");
+					}
 	*/
 	public static partial class BibleWordHelper
 	{

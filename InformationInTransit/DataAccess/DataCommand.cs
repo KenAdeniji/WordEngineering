@@ -19,7 +19,67 @@ using System.Web;
 	2016-03-13	public const string ContextConnection = "Context Connection = true;";
 	2016-03-13	ALTER DATABASE WordEngineering SET TRUSTWORTHY ON;
 	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=sql.90%29.aspx
+	2020-12-27	https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception?view=net-5.0
+				https://stackoverflow.com/questions/5428406/grant-execute-permission-for-a-user-on-all-stored-procedures-in-database
+					USE [DB]
+					GRANT EXEC TO [User_Name];
+	2020-12-27	https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/clr-integration-enabling?view=sql-server-ver15
+				EXEC sp_configure 'clr enabled', 1;  
+				RECONFIGURE;  
+				GO
+	2020-12-27	alter database [WordEngineering] set trustworthy on;
 */
+/*
+
+    alter database [WordEngineering]
+        set trustworthy on;
+
+*/
+
+/*
+
+alter database [master] set trustworthy on;
+alter database [tempdb] set trustworthy on;
+alter database [model] set trustworthy on;
+alter database [msdb] set trustworthy on;
+alter database [AdminDB] set trustworthy on;
+alter database [lab] set trustworthy on;
+alter database [WordEngineering] set trustworthy on;
+alter database [URI] set trustworthy on;
+alter database [IHaveDecidedToWorkOnAGradualImprovingSystem] set trustworthy on;
+alter database [Bible] set trustworthy on;
+alter database [bibleDB] set trustworthy on;
+alter database [ASPNetDB] set trustworthy on;
+alter database [BibleDictionary] set trustworthy on;
+alter database [ElectronicCopy] set trustworthy on;
+alter database [RatingRank] set trustworthy on;
+alter database [kb] set trustworthy on;
+
+*/
+/*
+select 
+          tblSD.[name]
+
+        , tblSD.[is_trustworthy_on]
+
+        , [sqlTrustworthy]
+            = 'alter database '
+                + quotename( tblSD.[name])
+                + ' set trustworthy on;'
+
+
+        , [sqlTrustworthy]
+            = 'exec ' 
+                + quotename( tblSD.[name])
+                + '..sp_changedbowner '
+                + ' [sa]'
+
+
+from   sys.databases tblSD
+
+where  tblSD.database_id >4
+*/
+
 namespace InformationInTransit.DataAccess
 {
     #region DataCommand definition
@@ -231,12 +291,24 @@ namespace InformationInTransit.DataAccess
             {
                 EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
+				EventLog.WriteEntry
+				(
+					"Application",
+					String.Format("Inner exception: {0}", ex.InnerException),
+					EventLogEntryType.Error
+				);
 				throw;
             }
             catch (Exception ex)
             {
 				EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
+				EventLog.WriteEntry
+				(
+					"Application",
+					String.Format("Inner exception: {0}", ex.InnerException),
+					EventLogEntryType.Error
+				);
                 throw;
             }
             finally
@@ -383,6 +455,7 @@ namespace InformationInTransit.DataAccess
                 CommandTimeout = Convert.ToInt32(commandTimeout, CultureInfo.InvariantCulture);
             }
             ConnectionStringNameDefault = ConfigurationManager.AppSettings["connectionStringNameDefault"];
+			/*
             if (!String.IsNullOrEmpty(ConnectionStringDefault))
             {
                 ConnectionStringDefault = ConfigurationManager.ConnectionStrings[ConnectionStringNameDefault].ConnectionString;
@@ -391,6 +464,19 @@ namespace InformationInTransit.DataAccess
             {
                 ConnectionStringDefault = ConnectionStringMaster;
             }
+			*/
+			ConnectionStringDefault = String.IsNullOrEmpty(ConnectionStringNameDefault)
+									?	ConnectionStringMaster
+									:	ConfigurationManager.ConnectionStrings[ConnectionStringNameDefault].ConnectionString
+									;
+			
+			EventLog.WriteEntry
+			(
+				"Application",
+				ConnectionStringDefault,
+				EventLogEntryType.Error
+			);
+			
         }
         #endregion
 

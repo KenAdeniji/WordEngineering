@@ -8,13 +8,13 @@
 		width: 90vw;
 	}
 */
+/*
 body {
-	/*background-color: #FF9500; */
 	border: 5px solid black;
 	margin: 0 auto;
 	padding: 0 20px 20px 20px;  
-	/* width: 600px; */
 }
+*/
 
 .focus {
   background-color: #ff00ff;
@@ -23,15 +23,9 @@ body {
   font-weight: bold;
 }
 
-/* div inside a div, border. */
-/*
-div > div {
-	border: 1px solid #ccc;
-} 
-*/
-/*
-	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
-*/
+input:valid { color: green; }
+input:invalid { color: red; }
+
 :is(div) :is(div) {
     border: 1px solid #ccc;
 }
@@ -44,24 +38,21 @@ table {
    border: 1px solid black;
    border-spacing: 5px;
    border-collapse: separate;
-   /* width:100%; */ 
 }
 
 th, td { 
 	padding:5px 10px; border:#4e95f4 1px solid;
 }
 
-/*  Define the background color for all the ODD background rows  */
 tr:nth-child(odd) { 
 	background: #b8d1f3;
 }
 
-/*  Define the background color for all the EVEN background rows  */
 tr:nth-child(even) {
 	background: #dae5f4;
 }
 
-#resultSetSQLStatement {background:black; color:lightblue;}
+h1, h2, h3, h4, h5, h6 {text-transform: capitalize;}
 
-input:valid { color: green; }
-input:invalid { color: red; }
+#resultSetSQLStatement {background:black; color:lightblue;}
+*/
