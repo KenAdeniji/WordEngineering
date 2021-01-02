@@ -1,0 +1,149 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using System.Data;
+using System.Data.SqlClient;
+
+using InformationInTransit.ProcessLogic;
+using InformationInTransit.DataAccess;	
+
+namespace InformationInTransit.ProcessCode
+{
+	/*
+		2020-12-31	According to many, I have spoken.
+		2021-01-01	Created.	
+	*/
+    public static partial class AccordingToManyIHaveSpoken
+    {
+		public static String BuildColumnList
+		(
+			String 	columnsPrefix,
+			String	columnsPostfix
+		)
+		{
+			if (String.IsNullOrEmpty(columnsPrefix))
+			{
+				columnsPrefix = DefaultColumnsPrefix;
+			}	
+			if (String.IsNullOrEmpty(columnsPostfix))
+			{
+				columnsPostfix = ScriptureReferenceHelper.BibleVersionDefault;
+			}
+			return columnsPrefix + ", " + columnsPostfix;	
+		}
+		
+		public static DataSet Query
+		(
+				String			bibleWord,
+				String			bibleVersion,
+				String			limitChosen,
+				String			logic,
+				String			scriptureReference,
+				bool			wholeWords,
+			out StringBuilder 	sqlJoin
+		)
+		{
+			if (bibleVersion == "")
+			{
+				bibleVersion = ScriptureReferenceHelper.BibleVersionDefault;
+			}	
+			String[] bibleVersions = bibleVersion.Split(',');
+			if (scriptureReference == "")
+			{
+				scriptureReference = DefaultScriptureReference;
+			}	
+			String[] 	scriptureReferenceSubset = scriptureReference.Split
+			(
+				ScriptureReferenceHelper.SubsetSeparator
+			);
+			List<ScriptureReferenceHelper.ScriptureReferenceSubset> 
+				scriptureReferenceSubsets = ScriptureReferenceHelper.Parse
+			(
+				scriptureReferenceSubset
+			);
+			List<String>	sqlWhereClauses	= new List<String>();
+			DataSet resultSet = new DataSet();
+			ScriptureReferenceHelper.BuildSql
+			(
+					scriptureReferenceSubsets,
+				ref	sqlWhereClauses
+			);
+			
+			StringBuilder parseLimit = BibleWordHelper.ParseLimit(limitChosen);
+
+			String[] keywords = new String[] { bibleWord };
+
+			String limitSQL = "";
+			String logicSQL = "";
+			for 
+			(
+				int indexWhereClause = 0, countWhereClause = sqlWhereClauses.Count;
+				indexWhereClause < countWhereClause;
+				++indexWhereClause
+			)	
+			{
+				if (sqlWhereClauses[indexWhereClause] != "")
+				{
+					limitSQL = parseLimit.ToString();
+					if (limitSQL != "")
+					{
+						limitSQL = " AND ( " + limitSQL + " ) ";
+					}
+					
+					logicSQL = BibleWordHelper.PrepareSqlStatement
+					(
+						logic,
+						bibleWord,
+						wholeWords,
+						out keywords,
+						bibleVersions
+					).ToString();	
+
+					if (logicSQL != "")
+					{
+						logicSQL = " AND ( " + logicSQL + " ) ";
+					};
+			
+					sqlWhereClauses[indexWhereClause] += limitSQL + logicSQL;
+				}	
+			}
+			
+			sqlJoin = new StringBuilder();
+			
+			String columnList = BuildColumnList(null, bibleVersion);
+
+			foreach(String sqlWhereClause in sqlWhereClauses)
+			{
+				sqlJoin.AppendFormat
+				(
+					QueryFormat,
+					columnList,
+					QuerySource,
+					sqlWhereClause
+				);
+			}
+			
+			//return resultSet;
+			
+			resultSet = (DataSet) DataCommand.DatabaseCommand
+			(
+				sqlJoin.ToString(),
+				CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			
+			return resultSet;
+		}
+
+	public const String DefaultColumnsPrefix = "Scripture_View.ScriptureReference, AccordingToManyIHaveSpoken.ScriptureReference AS ScriptureReferenceRelated";
+		public const String DefaultScriptureReference = "Genesis - Revelation";
+		
+		public const String QuerySource	= @"
+			Bible..Scripture_View JOIN WordEngineering..AccordingToManyIHaveSpoken
+			ON Scripture_View.AccordingToManyIHaveSpokenID = AccordingToManyIHaveSpoken.AccordingToManyIHaveSpokenID
+		";
+		public const String QueryFormat = "SELECT {0} FROM {1} WHERE {2} ORDER BY BookID, ChapterID, VerseID;";
+    }
+}
