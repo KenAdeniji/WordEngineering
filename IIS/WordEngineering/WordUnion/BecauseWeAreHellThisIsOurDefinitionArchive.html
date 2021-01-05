@@ -12,6 +12,11 @@
 	-->
 	<head>
 		<title>Because we are hell; this is our definition.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Given a date, weekday, and day of the month; find the previous and next date; for example, Friday the 13th"/>
+		<meta name="keywords" content="date, weekday, day of the month, previous date, next date"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="9432.css">
 	</head>
 	<body>
@@ -172,7 +177,13 @@
 			
 			function setDate(rowIndex, cellIndex, dated)
 			{
-				setCellContent("resultSet", rowIndex, cellIndex, dated);
+				setCellContent
+				(
+					"resultSet",
+					rowIndex,
+					cellIndex,
+					dated.toISOString().split('T')[0]
+				);
 			}
 			
 			function setSelectByText(selectControl, text)

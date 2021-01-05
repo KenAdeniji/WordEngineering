@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2017-02-28	Because we are hell; this is our definition.
-		2017-03-01	Created.
-		2017-03-01	http://stackoverflow.com/questions/3989324/javascript-set-dropdown-selected-item-based-on-option-text
-		2017-03-01	http://stackoverflow.com/questions/1358810/how-do-i-change-the-text-of-a-div-element-in-javascript
-					document.getElementById(dateControlID).textContent = dated;
-		2017-03-01	https://www.w3schools.com/jsref/jsref_obj_date.asp
-		2017-03-01	https://www.codeproject.com/Questions/236281/How-to-change-cell-value-of-an-html-table-through
-		2018-12-11	Inclusion, Friday thirteenth.
+		2021-01-04	Created.
 	-->
 	<head>
-		<title>Because we are hell; this is our definition.</title>
+		<title>Will target Tuesday December 31st.</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Given a date, weekday, and day of the month; find the previous and next date; for example, Friday the 13th"/>
-		<meta name="keywords" content="date, weekday, day of the month, previous date, next date"/>
+		<meta name="description" content="Will target Tuesday December 31st."/>
+		<meta name="keywords" content="date, weekday, day of the month, month, previous date, next date"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<link rel="stylesheet" type="text/css" href="9432.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
 		<div align="center">
@@ -27,18 +20,10 @@
 					<tbody>
 						<tr>
 							<td>
-								<label for="dated">Dated</label>
-							</td>
-							<td>
-								<input type="date" id="dated" autofocus/>
-							</td>
-						</tr>	
-						<tr>
-							<td>
 								<label for="weekDay">Weekday</label>
 							</td>
 							<td>
-								<select type="text" id="weekDay"></select>
+								<select type="text" id="weekDay" focus></select>
 							</td>
 						</tr>
 						<tr>
@@ -49,6 +34,22 @@
 								<input type="number" id="dayOfTheMonth" step="1" min="1"/>
 							</td>
 						</tr>
+						<tr>
+							<td>
+								<label for="month">Month</label>
+							</td>
+							<td>
+								<select type="text" id="month"></select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="year">Year</label>
+							</td>
+							<td>
+								<input type="number" id="year" step="1"/>
+							</td>
+						</tr>	
 						<tr>
 							<td>
 								<label for="occurrences">Occurrences</label>
@@ -81,6 +82,14 @@
 		<script>
 			var isPostBack = false;
 
+			var weekDayElement = document.getElementById("weekDay");
+			var dayOfTheMonthElement = document.getElementById("dayOfTheMonth");
+			var monthElement = document.getElementById("month");
+			var yearElement = document.getElementById("year");
+			var occurrencesElement = document.getElementById("occurrences");
+			
+			var submitQueryElement = document.getElementById("submitQuery");	
+
 			function addCell(newRow, cellContent) 
 			{
 				// Insert a cell in the row at index 0
@@ -91,13 +100,6 @@
 				newCell.appendChild(newText);
 			}
 			
-			function addDays(date, days) 
-			{
-				var result = new Date(date);
-				result.setDate(result.getDate() + days);
-				return result;
-			}
-			
 			function addRow(tableID) 
 			{
 				// Get a reference to the table
@@ -106,8 +108,16 @@
 				// Insert a row in the table at row index 0
 				var newRow = tableRef.insertRow(tableRef.rows.length);
 				//var newRow = tableRef.insertRow(-1);
-				console.log(newRow, tableID);
 				return newRow;
+			}
+			
+			function addYears(date, years)
+			{
+				var year = date.getFullYear();
+				var month = date.getMonth();
+				var day = date.getDate();
+				var newDate = new Date(year + years, month, day);
+				return newDate;
 			}
 			
 			function buildSelect(selectControl, selectChoices)
@@ -125,36 +135,43 @@
 
 			function findTheDay
 			(
-				dated,
-				weekDayRequired,
-				dayOfTheMonthRequired,
-				occurrences,
 				step,
-				callback,
 				cellIndex
 			)
 			{
-				var newDate = dated;
-				
-				var dayOfTheMonthCompare = -1;
-				var dayOfTheWeekCompare = -1;
+				var newDate = new Date
+				(
+					parseInt(yearElement.value),
+					parseInt(monthElement.value),
+					parseInt(dayOfTheMonthElement.value)
+				); 
+
 				var occurrence = 0;
+
+				var dayOfTheWeekCompare;
+				var dayOfTheMonthCompare;
+				var monthCompare;
+				
+				var occurrencesValue = parseInt(occurrencesElement.value);
 				
 				while(true) 
 				{
-					newDate = addDays(newDate, step);
+					newDate = addYears(newDate, step);
+					
 					dayOfTheWeekCompare = newDate.getDay();
 					dayOfTheMonthCompare = newDate.getDate();
+					monthCompare = newDate.getMonth();
 
 					if 
 					(
-						weekDayRequired == dayOfTheWeekCompare && 
-						dayOfTheMonthRequired == dayOfTheMonthCompare
+						weekDayElement.value == dayOfTheWeekCompare && 
+						dayOfTheMonthElement.value == dayOfTheMonthCompare &&
+						monthElement.value == monthCompare
 					)
 					{
 						++occurrence;
-						callback(occurrence, cellIndex, newDate);
-						if (occurrence >= occurrences)
+						setDate(occurrence, cellIndex, newDate);
+						if (occurrence >= occurrencesValue)
 						{
 							break;
 						}	
@@ -201,38 +218,47 @@
 			{
 				if (!isPostBack)
 				{
-					var dated = getParameterByName("dated");
-					if (!dated)
+					var yearValue = getParameterByName("year");
+					if (!yearValue)
 					{
-						dated = "2017-03-01";
+						yearValue = 2021;
 					}
-					document.getElementById("dated").value = dated;
+					document.getElementById("year").value = yearValue;
+
+					buildSelect("month", months);
+					var monthValue = getParameterByName("month");
+					if (!monthValue)
+					{
+						monthValue = months[11][0];
+					}
+					setSelectByText("month", monthValue);
 					
 					buildSelect("weekDay", dayOfTheWeeks);
-					var weekDay = getParameterByName("weekDay");
-					if (!weekDay)
+					var weekDayValue = getParameterByName("weekDay");
+					if (!weekDayValue)
 					{
-						weekDay = dayOfTheWeeks[5][0];
+						weekDayValue = dayOfTheWeeks[2][0];
 					}
-					setSelectByText("weekDay", weekDay);
+					setSelectByText("weekDay", weekDayValue);
 
-					var dayOfTheMonth = getParameterByName("dayOfTheMonth");
-					if (!dayOfTheMonth)
+					var dayOfTheMonthValue = getParameterByName("dayOfTheMonth");
+					if (!dayOfTheMonthValue)
 					{
-						dayOfTheMonth = 13;
+						dayOfTheMonthValue = 31;
 					}
-					document.getElementById("dayOfTheMonth").value = dayOfTheMonth;
+					document.getElementById("dayOfTheMonth").value = dayOfTheMonthValue;
 
-					var occurrences = getParameterByName("occurrences");
-					if (!occurrences)
+					var occurrencesValue = getParameterByName("occurrences");
+					if (!occurrencesValue)
 					{
-						occurrences = 1;
+						occurrencesValue = 1;
 					}
-					document.getElementById("occurrences").value = occurrences;
+					document.getElementById("occurrences").value = occurrencesValue;
 					
+					querySubmit();
 					isPostBack = true;
 				}
-				if (isPostBack === true)
+				else if (isPostBack === true)
 				{
 					querySubmit();
 				}
@@ -240,37 +266,44 @@
 
 			function querySubmit()
 			{
-				var dated = document.getElementById("dated").value;
-				var weekDay = document.getElementById("weekDay").value;
-				var dayOfTheMonth = parseInt(document.getElementById("dayOfTheMonth").value);
-				var occurrences = parseInt(document.getElementById("occurrences").value);
-				
+				console.log("occurrence");
+
 				// Get a reference to the table
 				var tableRef = document.getElementById("resultSet").getElementsByTagName('tbody')[0];
 				tableRef.innerHTML = "";
 
-				for (occurrence = 1; occurrence <= occurrences; ++occurrence)
+				console.log("occurrence");
+
+				for 
+				(
+					var occurrence = 1, occurrencesValue = parseInt(occurrencesElement.value);
+					occurrence <= occurrencesValue;
+					++occurrence
+				)
 				{
+					console.log(occurrence);
 					var newRow = addRow("resultSet");
 					addCell(newRow, occurrence);
 					addCell(newRow, "");
 					addCell(newRow, "");
+					console.log(occurrence);
 				}
 				
-				findTheDay(dated, weekDay, dayOfTheMonth, occurrences, -1, setDate, 1);
-				findTheDay(dated, weekDay, dayOfTheMonth, occurrences, 1, setDate, 2);
+				findTheDay(-1, 1);
+				findTheDay(1, 2);
 			}
 
 		    window.addEventListener("load", pageLoad, false);
-		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		    submitQueryElement.addEventListener("click", querySubmit, false);
 
 		    var body = document.getElementsByTagName('body')[0];
+
 		    body.onkeydown = function (e) {
 		        if (e.keyCode === 13) {  //enter key code
 		            querySubmit();
 		        }
 		    }
-			
+
 			var dayOfTheWeeks = [
 				["Sunday", 0],
 				["Monday", 1],
@@ -279,6 +312,21 @@
 				["Thursday", 4],
 				["Friday", 5],
 				["Saturday", 6]
+			];
+			
+			var months = [
+				["January", 0],
+				["February", 1],
+				["March", 2],
+				["April", 3],
+				["May", 4],
+				["June", 5],
+				["July", 6],
+				["August", 7],
+				["September", 8],
+				["October", 9],
+				["November", 10],
+				["December", 11]
 			];
 		</script>
 	</body>
