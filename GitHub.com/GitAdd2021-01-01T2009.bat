@@ -1,0 +1,20 @@
+git add IIS/WordEngineering/Web Release2020-12-29T1400.config
+git add IIS/WordEngineering/WebRelease2020-12-27T1628.config
+git add IIS/WordEngineering/WordGroup/AccordingToManyIHaveSpoken.asmx
+git add IIS/WordEngineering/WordGroup/AccordingToManyIHaveSpoken.html
+git add IIS/WordEngineering/WordGroup/AccordingToManyIHaveSpokenArchive.asmx
+git add IIS/WordEngineering/WordGroup/AccordingToManyIHaveSpokenArchive.html
+git add IIS/WordEngineering/WordGroup/WhereIChoseIDetermineUse.asmx
+git add IIS/WordEngineering/WordGroup/WhereIChoseIDetermineUse.html
+git add IIS/WordEngineering/WordGroup/WhereIChoseIDetermineUseArchive.asmx
+git add IIS/WordEngineering/WordGroup/WhereIChoseIDetermineUseArchive.html
+git add InformationInTransit/DataAccess/DataCommand.Archivecs
+git add InformationInTransit/DataAccess/DataCommand.Release2020-12-27T1734cs
+git add InformationInTransit/DataAccess/DataCommand.Release2020-12-28T0107cs
+git add InformationInTransit/ProcessCode/AccordingToManyIHaveSpoken.Archivecs
+git add InformationInTransit/ProcessCode/AccordingToManyIHaveSpoken.cs
+git add InformationInTransit/ProcessCode/WhereIChoseIDetermineUse.Archivecs
+git add InformationInTransit/ProcessCode/WhereIChoseIDetermineUse.cs
+git add InformationInTransit/ProcessLogic/DataSetHelper.Archivecs
+
+		

@@ -1,0 +1,27 @@
+git add   Batch/2017-01-02DoingSomething.bat
+git add   Batch/2017-01-02DoingSomethingArchive.bat
+git add   IIS/WordEngineering/Web.config
+git add   IIS/WordEngineering/WebArchive.config
+git add   IIS/WordEngineering/WordGroup/SeparateTheirDesireOfTheBible.html
+git add   IIS/WordEngineering/WordGroup/SeparateTheirDesireOfTheBibleArchive.html
+git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+git add   IIS/WordEngineering/WordUnion/9432.css
+git add   IIS/WordEngineering/WordUnion/9432Archive.css
+git add   IIS/WordEngineering/WordUnion/9432Release2020-03-23.css
+git add   IIS/WordEngineering/bin/InformationInTransit.dll
+git add   InformationInTransit/DataAccess/DataCommand.cs
+git add   InformationInTransit/InformationInTransit.dll
+git add   InformationInTransit/ProcessLogic/AlphabetSequence.cs
+git add   InformationInTransit/ProcessLogic/BibleWordHelper.Archivecs
+git add   InformationInTransit/ProcessLogic/BibleWordHelper.cs
+git add   InformationInTransit/ProcessLogic/DataSetHelper.cs
+git add   InformationInTransit/ProcessLogic/StringHelper.Archivecs
+git add   InformationInTransit/ProcessLogic/StringHelper.cs
+		

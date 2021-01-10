@@ -1,0 +1,71 @@
+/*
+	2021-01-08	https://www.w3schools.com/css/
+	2021-01-09T14:00:00	http://tablestyler.com/#	HTML Table Style Generator by eli geske
+*/
+/*
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+*/
+/*
+body {
+	border: 5px solid black;
+	margin: 0 auto;
+	padding: 0 20px 20px 20px;  
+}
+*/
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input:valid { color: green; }
+input:invalid { color: red; }
+
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: white; /* #00539F; */
+	color: black;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+}
+
+/*
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+*/
+
+th {
+	background: blue;
+}
+
+tr:nth-child(odd) { 
+	background: white; /* #b8d1f3 */
+}
+
+tr:nth-child(even) {
+	background: #E1EEF4; /* #dae5f4; */
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+	text-transform: capitalize;
+}
+
+#resultSetSQLStatement {background:black; color:lightblue;}

@@ -131,7 +131,7 @@ DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 84387);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 11); 
-DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1558);
+DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1368);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
@@ -204,4 +204,15 @@ http://KenAdeniji.WordPress.com
 (510) 796-8121
 2021-01-03T15:20:00
 https://learn.shayhowe.com/
+10:45 ... 10:54 Microsoft SQL Server data files archive. 10:59 https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en user interface (UI) error world, business, technology, entertainment, sports, science, health.
+2021-01-07T22:35:00 http://www.taffydb.com/
+Hmm. We’re having trouble finding that site.
+
+We can’t connect to the server at www.taffydb.com.
+
+If that address is correct, here are three other things you can try:
+
+    Try again later.
+    Check your network connection.
+    If you are connected but behind a firewall, check that Firefox has permission to access the Web.
 :Exit

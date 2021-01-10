@@ -1,0 +1,92 @@
+﻿<html>
+	<!--
+		2021-01-07 	Created.	Dmitri Pavlutin.
+	-->
+	<head>
+		<title>Vocajs.com by Dmitri Pavlutin is a JavaScript library for manipulating strings</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Vocajs.com by Dmitri Pavlutin is a JavaScript library for manipulating strings"/>
+		<meta name="keywords" content="JavaScript library, manipulating strings"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<script src="voca.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="word">Hello world</textarea><br>
+			<br>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet" align="center"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			var wordElement = document.getElementById("word");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();	
+				}	
+			}
+		
+			function querySubmit()
+			{
+				wordValue = wordElement.value;
+				
+				var display = "<table border='1'>" +
+					"<caption>Vocajs.com by Dmitri Pavlutin is a JavaScript library for manipulating strings</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("camelCase", v.camelCase(wordValue)) +
+					tabular("capitalize", v.capitalize(wordValue)) +
+					tabular("decapitalize", v.decapitalize(wordValue)) +
+					tabular("kebabCase", v.kebabCase(wordValue)) +
+					tabular("lowerCase", v.lowerCase(wordValue)) +
+					tabular("snakeCase", v.snakeCase(wordValue)) +
+					tabular("titleCase", v.titleCase(wordValue)) +
+					tabular("upperCase", v.upperCase(wordValue)) +
+					"</tbody></table>"
+					;
+
+				resultSetElement.innerHTML = display;		
+			}
+	
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

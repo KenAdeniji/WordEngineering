@@ -1,4 +1,8 @@
 /*
+	2021-01-08	https://www.w3schools.com/css/
+	2021-01-09T14:00:00	http://tablestyler.com/#	HTML Table Style Generator by eli geske
+*/
+/*
 	html, body{
 	  height: 100%;
 	  width: 100%;
@@ -31,7 +35,8 @@ input:invalid { color: red; }
 }
 
 html {
-	background-color: #00539F;
+	background-color: white; /* #00539F; */
+	color: black;
 }
 
 table {
@@ -40,19 +45,27 @@ table {
    border-collapse: separate;
 }
 
+/*
 th, td { 
 	padding:5px 10px; border:#4e95f4 1px solid;
 }
+*/
+
+th {
+	background: blue;
+}
 
 tr:nth-child(odd) { 
-	background: #b8d1f3;
+	background: white; /* #b8d1f3 */
 }
 
 tr:nth-child(even) {
-	background: #dae5f4;
+	background: #E1EEF4; /* #dae5f4; */
 }
 
-h1, h2, h3, h4, h5, h6 {text-transform: capitalize;}
+h1, h2, h3, h4, h5, h6 
+{
+	text-transform: capitalize;
+}
 
 #resultSetSQLStatement {background:black; color:lightblue;}
-*/
