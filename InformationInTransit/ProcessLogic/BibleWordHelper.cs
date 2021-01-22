@@ -49,6 +49,7 @@ namespace InformationInTransit.ProcessLogic
 					{
 						 return Regex.Split(s, @"\W+");
 					}
+		2021-01-21	Apocalyptic Books			
 	*/
 	public static partial class BibleWordHelper
 	{
@@ -331,12 +332,12 @@ namespace InformationInTransit.ProcessLogic
 
 			if (indexOfOld >= 0 && indexOfNew == -1)
 			{
-				sqlStatement.AppendFormat("Testament = '{0}'", "Old");
+				sqlStatement.AppendFormat(" ( Testament = '{0}' ) ", "Old");
 				return(sqlStatement);
 			}
 			else if (indexOfOld == -1 && indexOfNew >= 0)
 			{
-				sqlStatement.AppendFormat("Testament = '{0}'", "New");
+				sqlStatement.AppendFormat(" ( Testament = '{0}' ) ", "New");
 				return(sqlStatement);
 			}
 			else if (indexOfOld >= 0 && indexOfNew >= 0)
@@ -354,7 +355,7 @@ namespace InformationInTransit.ProcessLogic
 						{
 							sqlStatement.Append(" OR ");
 						}
-						sqlStatement.AppendFormat(" BookID BETWEEN 1 AND 5 ");
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 1 AND 5 ) ");
 					}	
 				}
 
@@ -366,7 +367,7 @@ namespace InformationInTransit.ProcessLogic
 						{
 							sqlStatement.Append(" OR ");
 						}
-						sqlStatement.AppendFormat(" BookID BETWEEN 23 AND 27 ");
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 23 AND 27 ) ");
 					}	
 				}
 
@@ -378,7 +379,7 @@ namespace InformationInTransit.ProcessLogic
 						{
 							sqlStatement.Append(" OR ");
 						}
-						sqlStatement.AppendFormat(" BookID BETWEEN 28 AND 39 ");
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 28 AND 39 ) ");
 					}	
 				}
 
@@ -390,8 +391,41 @@ namespace InformationInTransit.ProcessLogic
 						{
 							sqlStatement.Append(" OR ");
 						}
-						sqlStatement.AppendFormat(" BookID BETWEEN 40 AND 43 ");
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 40 AND 43 ) ");
 					}	
+				}
+				
+				if (limitChosen == "pauline epistles")
+				{
+					if (indexOfNew == -1)
+					{
+						if (sqlStatement.Length > 0)
+						{
+							sqlStatement.Append(" OR ");
+						}
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 45 AND 57 ) ");
+					}	
+				}
+
+				if (limitChosen == "general epistles")
+				{
+					if (indexOfNew == -1)
+					{
+						if (sqlStatement.Length > 0)
+						{
+							sqlStatement.Append(" OR ");
+						}
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 59 AND 65 ) ");
+					}	
+				}
+				
+				if (limitChosen == "apocalyptic books")
+				{
+					if (sqlStatement.Length > 0)
+					{
+						sqlStatement.Append(" OR ");
+					}
+					sqlStatement.AppendFormat(" (BookID = 27 OR BookID = 66 ) ");
 				}
 			}
 			

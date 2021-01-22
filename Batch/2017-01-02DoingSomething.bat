@@ -130,6 +130,7 @@ DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 84387);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
+DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 11); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1368);
@@ -215,4 +216,8 @@ If that address is correct, here are three other things you can try:
     Try again later.
     Check your network connection.
     If you are connected but behind a firewall, check that Firefox has permission to access the Web.
+
+09:35 Microsoft SQL Server Management Studio grid user interface jumps to the upper row, from the blank bottom row to the earlier completed upper row. 09:38 Urine (O ti old).
+17:07 http://bedford-computing.co.uk/learning/wp-content/uploads/2016/08/learning_javascript.pdf
+45 66
 :Exit

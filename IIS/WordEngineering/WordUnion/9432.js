@@ -92,6 +92,17 @@ var scriptLiteral9432 =
 		"Gospels",
 		"Pauline Epistles"
 	],
+	bibleBookGroups: [
+		["Old Testament", "old"],
+		["New Testament", "new"],
+		["Pentateuch", "pentateuch"],
+		["Major Prophets", "major prophets"],
+		["Minor Prophets", "minor prophets"],
+		["Gospel", "gospel"],
+		["Pauline Epistles", "pauline epistles"],
+		["General Epistles", "general epistles"],
+		["Apocalyptic Books", "apocalyptic books"]
+	],
 	bibleGroups: [
 		["Testament", "Testament"],
 		["Book", "BookID, BookTitle"],
@@ -1128,7 +1139,22 @@ var scriptLiteral9432 =
 	  var r = Math.random() * (max - min) + min; 
 	  return integer ? Math.trunc(r) : r;
 	},
-	
+
+	renderBibleBookGroupSelect: function() 
+	{
+		var select = document.getElementById("limit");
+		select.options.length = 0;
+		
+		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleBookGroups.length; rowIndex < rowCount; ++rowIndex)
+		{
+			var option = document.createElement("option");
+			option.text = scriptLiteral9432.bibleBookGroups[rowIndex][0];
+			option.value = scriptLiteral9432.bibleBookGroups[rowIndex][1];
+			select.appendChild(option);
+		}
+	},
+
+
 	renderBibleBookSelect: function() 
 	{
 		var select = document.getElementById("bookID");
