@@ -38,18 +38,8 @@
 					<td><input type=checkbox id="wholeWords" checked/></td>
 				</tr>	
 				<tr>
-					<td><label for="limit">Limit:</label></td>
-					<td>
-						<select id="limit" multiple size="2">
-							<option value="all" selected="selected">All</option>		
-							<option value="old">Old Testament</option>
-							<option value="new">New Testament</option>
-							<option value="pentateuch">Pentateuch</option>
-							<option value="major prophets">Major Prophets</option>
-							<option value="minor prophets">Minor Prophets</option>
-							<option value="gospel">Gospel</option>
-						</select>
-					</td>
+					<td><label for="bibleBookGroup">bibleBookGroup:</label></td>
+					<td><select id="bibleBookGroup" multiple size="2"></select></td>
 				</tr>	
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
@@ -101,10 +91,10 @@
 		<script>
 			var isPostBack = false;
 			
+			var bibleBookGroupElement = document.getElementById("bibleBookGroup");
 			var bibleVersionElement = document.getElementById("bibleVersion");
 			var bibleWordElement = document.getElementById("bibleWord");
 			var collateElement = document.getElementById("collate");
-			var limitElement = document.getElementById("limit");
 			var logicElement = document.getElementById("logic");
 			var joinedElement = document.getElementById("joined");
 			var	scriptureReferenceElement = document.getElementById("scriptureReference");
@@ -120,7 +110,9 @@
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleBookGroupSelect();
 						scriptLiteral9432.renderBibleVersionSelect();
 						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
 						if (bibleWordValue)
@@ -145,10 +137,10 @@
 							bibleVersionElement.value = bibleVersionValue;
 						}	
 						
-						var limitValue = scriptLiteral9432.getParameterByName("limit");
-						if (limitValue)
+						var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
+						if (bibleBookGroupValue)
 						{
-							scriptLiteral9432.selectionSet("limit", [limitValue]);
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
 						}	
 						
 						querySubmit();
@@ -164,10 +156,10 @@
 			function querySubmit()
 			{
 				var request = {};
+				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
 				request["bibleVersion"] = scriptLiteral9432.selectionGet("bibleVersion");
-				request["limitChosen"] = scriptLiteral9432.selectionGet("limit");
-				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
 				request["bibleWord"] = bibleWordElement.value;
+				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
 				request["scriptureReference"] = scriptureReferenceElement.value;
 				request["wholeWords"] = wholeWordsElement.checked;
 

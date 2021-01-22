@@ -38,7 +38,7 @@ public class AccordingToManyIHaveSpokenWebService : System.Web.Services.WebServi
 	(
 		String	bibleVersion,
 		String	bibleWord,
-		String	limitChosen,
+		String	bibleBookGroup,
 		String	logic,
 		String	scriptureReference,
 		bool	wholeWords
@@ -49,7 +49,7 @@ public class AccordingToManyIHaveSpokenWebService : System.Web.Services.WebServi
 		(
 				bibleWord,
 				bibleVersion,
-				limitChosen,
+				bibleBookGroup,
 				logic,
 				scriptureReference,
 				wholeWords,

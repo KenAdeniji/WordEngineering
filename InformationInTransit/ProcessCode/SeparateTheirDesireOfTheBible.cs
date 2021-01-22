@@ -35,9 +35,9 @@ namespace InformationInTransit.ProcessCode
 		
 		public static DataSet Query
 		(
+				String			bibleBookGroup,
+				String			bibleVersion,				
 				String			bibleWord,
-				String			bibleVersion,
-				String			limitChosen,
 				String			logic,
 				String			scriptureReference,
 				bool			wholeWords,
@@ -70,7 +70,7 @@ namespace InformationInTransit.ProcessCode
 				ref	sqlWhereClauses
 			);
 			
-			StringBuilder parseLimit = BibleWordHelper.ParseLimit(limitChosen);
+			StringBuilder sbParseBibleBookGroup = BibleWordHelper.ParseBibleBookGroup(bibleBookGroup);
 
 			String[] keywords = new String[] { bibleWord };
 
@@ -85,7 +85,7 @@ namespace InformationInTransit.ProcessCode
 			{
 				if (sqlWhereClauses[indexWhereClause] != "")
 				{
-					limitSQL = parseLimit.ToString();
+					limitSQL = sbParseBibleBookGroup.ToString();
 					if (limitSQL != "")
 					{
 						limitSQL = " AND ( " + limitSQL + " ) ";

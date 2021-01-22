@@ -72,6 +72,7 @@
 	2020-12-05T12:30:00 ... 2020-12-05T13:13:00 Microsoft ASP.NET QueryString
 		const urlParams = new URLSearchParams(window.location.search);
 		var wordParam = urlParams.get("word");
+	2021-01-21T14:40:00	Support for limit, BibleBookGroup, include Apocalyptic Books, Pauline Epistles, General Letters.
 */
 
 var scriptLiteral9432 =
@@ -1142,7 +1143,7 @@ var scriptLiteral9432 =
 
 	renderBibleBookGroupSelect: function() 
 	{
-		var select = document.getElementById("limit");
+		var select = document.getElementById("bibleBookGroup");
 		select.options.length = 0;
 		
 		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleBookGroups.length; rowIndex < rowCount; ++rowIndex)

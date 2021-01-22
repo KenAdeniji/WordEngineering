@@ -35,10 +35,10 @@ public class SheWalkedTowardInFourDaysWebService : System.Web.Services.WebServic
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
 	(
-		String	bibleGroup,	
-		String	bibleWord,
+		String	bibleBookGroup,
+		String	bibleGroup,
 		String	bibleVersion,
-		String	limitChosen,
+		String	bibleWord,
 		String	logic,
 		String	scriptureReference,
 		bool	wholeWords
@@ -47,10 +47,10 @@ public class SheWalkedTowardInFourDaysWebService : System.Web.Services.WebServic
 		StringBuilder sb;
 		DataSet dataSet = SheWalkedTowardInFourDays.Query
 		(
+				bibleBookGroup,
 				bibleGroup,
-				bibleWord,
 				bibleVersion,
-				limitChosen,
+				bibleWord,
 				logic,
 				scriptureReference,
 				wholeWords,

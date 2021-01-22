@@ -35,9 +35,9 @@ public class SeparateTheirDesireOfTheBibleWebService : System.Web.Services.WebSe
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
 	(
-		String	bibleWord,
 		String	bibleVersion,
-		String	limitChosen,
+		String	bibleWord,		
+		String	bibleBookGroup,
 		String	logic,
 		String	scriptureReference,
 		bool	wholeWords
@@ -46,14 +46,15 @@ public class SeparateTheirDesireOfTheBibleWebService : System.Web.Services.WebSe
 		StringBuilder sb;
 		DataSet dataSet = SeparateTheirDesireOfTheBible.Query
 		(
-				bibleWord,
 				bibleVersion,
-				limitChosen,
+				bibleWord,				
+				bibleBookGroup,
 				logic,
 				scriptureReference,
 				wholeWords,
 			out sb
 		);
+		//return sb.ToString();
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 		return json;
     }

@@ -37,7 +37,7 @@ public class WhereIChoseIDetermineUseWebService : System.Web.Services.WebService
 	(
 		String	bibleVersion,
 		String	bibleWord,
-		String	limitChosen,
+		String	bibleBookGroup,
 		String	logic,
 		String	scriptureReference,
 		bool	wholeWords
@@ -48,7 +48,7 @@ public class WhereIChoseIDetermineUseWebService : System.Web.Services.WebService
 		(
 				bibleWord,
 				bibleVersion,
-				limitChosen,
+				bibleBookGroup,
 				logic,
 				scriptureReference,
 				wholeWords,

@@ -18,10 +18,10 @@ namespace InformationInTransit.ProcessCode
     {
 		public static DataSet Query
 		(
-				String			bibleGroup,		
+				String			bibleBookGroup,
+				String			bibleGroup,
+				String			bibleVersion,				
 				String			bibleWord,
-				String			bibleVersion,
-				String			limitChosen,
 				String			logic,
 				String			scriptureReference,
 				bool			wholeWords,
@@ -54,7 +54,7 @@ namespace InformationInTransit.ProcessCode
 				ref	sqlWhereClauses
 			);
 			
-			StringBuilder parseLimit = BibleWordHelper.ParseLimit(limitChosen);
+			StringBuilder parseLimit = BibleWordHelper.ParseBibleBookGroup(bibleBookGroup);
 
 			String[] keywords = new String[] { bibleWord };
 

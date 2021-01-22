@@ -52,8 +52,8 @@
 					<td><input type=checkbox id="wholeWords" checked/></td>
 				</tr>	
 				<tr>
-					<td><label for="limit">Limit:</label></td>
-					<td><select id="limit" multiple size="2"></select></td>
+					<td><label for="bibleBookGroup">Bible Book Group:</label></td>
+					<td><select id="bibleBookGroup" multiple size="2"></select></td>
 				</tr>	
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
@@ -108,7 +108,7 @@
 			var bibleVersionElement = document.getElementById("bibleVersion");
 			var bibleWordElement = document.getElementById("bibleWord");
 			var collateElement = document.getElementById("collate");
-			var limitElement = document.getElementById("limit");
+			var bibleBookGroupElement = document.getElementById("bibleBookGroup");
 			var logicElement = document.getElementById("logic");
 			var joinedElement = document.getElementById("joined");
 			var	wholeWordsElement = document.getElementById("wholeWords");
@@ -184,10 +184,10 @@
 							bibleVersionElement.value = bibleVersionValue;
 						}	
 						
-						var limitValue = scriptLiteral9432.getParameterByName("limit");
-						if (limitValue)
+						var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
+						if (bibleBookGroupValue)
 						{
-							scriptLiteral9432.selectionSet("limit", [limitValue]);
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
 						}	
 						
 						querySubmit();
@@ -205,7 +205,7 @@
 				var request = {};
 				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
 				
-				request["limitChosen"] = scriptLiteral9432.selectionGet("limit");
+				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
 				request["question"] = bibleWordElement.value;
 				request["wholeWords"] = wholeWordsElement.checked;
 				request["bibleVersion"] = bibleVersionElement.value;

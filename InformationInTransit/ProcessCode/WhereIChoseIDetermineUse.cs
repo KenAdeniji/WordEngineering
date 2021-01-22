@@ -20,7 +20,7 @@ namespace InformationInTransit.ProcessCode
 		(
 				String			bibleWord,
 				String			bibleVersion,
-				String			limitChosen,
+				String			bibleBookGroup,
 				String			logic,
 				String			scriptureReference,
 				bool			wholeWords,
@@ -53,12 +53,13 @@ namespace InformationInTransit.ProcessCode
 				ref	sqlWhereClauses
 			);
 			
-			StringBuilder parseLimit = BibleWordHelper.ParseLimit(limitChosen);
+			StringBuilder sbBibleBookGroup = BibleWordHelper.ParseBibleBookGroup(bibleBookGroup);
 
 			String[] keywords = new String[] { bibleWord };
 
 			String limitSQL = "";
 			String logicSQL = "";
+			
 			for 
 			(
 				int indexWhereClause = 0, countWhereClause = sqlWhereClauses.Count;
@@ -68,7 +69,7 @@ namespace InformationInTransit.ProcessCode
 			{
 				if (sqlWhereClauses[indexWhereClause] != "")
 				{
-					limitSQL = parseLimit.ToString();
+					limitSQL = sbBibleBookGroup.ToString();
 					if (limitSQL != "")
 					{
 						limitSQL = " AND ( " + limitSQL + " ) ";

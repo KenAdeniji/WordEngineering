@@ -54,7 +54,7 @@ namespace InformationInTransit.ProcessLogic
 			String					bibleQueryFormat,
 			String					bibleVersion,
 			String					bibleWord,
-			String					limit,
+			String					bibleBookGroup,
 			String					logic,
 			ref		DataSet			resultSet,
 			String					scriptureReference,
@@ -78,7 +78,7 @@ namespace InformationInTransit.ProcessLogic
 				ref sql
 			);
 			
-            StringBuilder sqlLimit = BibleWordHelper.ParseLimit(limit);		
+            StringBuilder sqlbibleBookGroup = BibleWordHelper.ParseBibleBookGroup(bibleBookGroup);		
 			StringBuilder sqlWord = BibleWordHelper.PrepareSqlStatement
             (
 				logic,
@@ -91,8 +91,8 @@ namespace InformationInTransit.ProcessLogic
 			sqlWhereClause.AppendFormat
 			(
 				WhereQueryFormat,
-				sqlLimit,
-				sqlLimit.Length == 0 ? "" : " AND ",
+				sqlbibleBookGroup,
+				sqlbibleBookGroup.Length == 0 ? "" : " AND ",
 				"(" + sqlWord + ")"
 			);
 			
@@ -104,8 +104,8 @@ namespace InformationInTransit.ProcessLogic
 			
 			System.Console.WriteLine
 			(
-				"sqlLimit: {0} | sqlWord: {1} | sqlWhereClause: {2}, sql: {3}",
-				sqlLimit,
+				"sqlbibleBookGroup: {0} | sqlWord: {1} | sqlWhereClause: {2}, sql: {3}",
+				sqlbibleBookGroup,
 				sqlWord,
 				sqlWhereClause,
 				sql
