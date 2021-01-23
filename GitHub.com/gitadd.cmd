@@ -39,3 +39,8 @@ git add IIS/WordEngineering/WordUnion/WordsInTheBible.aspx.cs
 git add IIS/WordEngineering/WordUnion/YouAreThePlaces.cs
 git add IIS/WordEngineering/WordUnion/YouAreThePlacesBuild.bat
 git add IIS/WordEngineering/WordUnion/nodeStartup.bat
+
+rem added ssh key
+git add readme.ssh.20210122.txt
+
+git add gitadd.cmd
