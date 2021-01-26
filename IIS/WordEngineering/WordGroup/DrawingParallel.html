@@ -17,7 +17,7 @@
 			<table>
 				<tr>
 					<td><label for="bibleWord">Bible Word:</label></td>
-					<td><input type="text" ID="bibleWord"/></td>
+					<td><input type="text" ID="bibleWord" autofocus/></td>
 				</tr>	
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -27,6 +27,7 @@
 		</div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
 		<script>
 			var isPostBack = false;
 			
@@ -40,22 +41,25 @@
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
-						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
-						if (bibleWordValue)
-						{
-							bibleWordElement.value = bibleWordValue;
-						}	
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
 						
+						var bibleWordParam = urlParams.get("bibleWord");
+						if (bibleWordParam)
+						{
+							bibleWordElement.value = bibleWordParam;
+						}
+
 						querySubmit();
 						isPostBack = true;
-					});
+					});	
 				}
 				else
 				{
-					querySubmit();
-				}
- 			}
+					querySubmit();	
+				}	
+			}
 
 			function querySubmit()
 			{
