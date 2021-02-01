@@ -12,7 +12,7 @@ using InformationInTransit.DataAccess;
 namespace InformationInTransit.ProcessCode
 {
 	/*
-		2021-01-31	Created.	https://stackoverflow.com/questions/43502193/find-longest-word-in-string-with-sql
+		2021-01-31T16:20:00 ... 2021-01-31T23:25:00	Created.	https://stackoverflow.com/questions/43502193/find-longest-word-in-string-with-sql
 	*/
 	/*
 		public const String QueryFormat = //SELECT {0} FROM {1} WHERE {2} ORDER BY BookID, ChapterID, VerseID;

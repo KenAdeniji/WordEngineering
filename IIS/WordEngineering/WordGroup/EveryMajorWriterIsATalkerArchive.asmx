@@ -24,7 +24,7 @@ using InformationInTransit.ProcessLogic;
 using InformationInTransit.UserInterface;
 
 ///<summary>
-///	2021-01-31 	Created.	https://stackoverflow.com/questions/43502193/find-longest-word-in-string-with-sql
+///	2021-01-31T16:20:00 ... 2021-01-31T23:25:00	Created.	https://stackoverflow.com/questions/43502193/find-longest-word-in-string-with-sql
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
