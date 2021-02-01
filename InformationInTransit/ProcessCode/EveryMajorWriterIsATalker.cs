@@ -14,6 +14,25 @@ namespace InformationInTransit.ProcessCode
 	/*
 		2021-01-31	Created.	https://stackoverflow.com/questions/43502193/find-longest-word-in-string-with-sql
 	*/
+	/*
+		public const String QueryFormat = //SELECT {0} FROM {1} WHERE {2} ORDER BY BookID, ChapterID, VerseID;
+		@"
+Select A.{0}
+      ,Result = B.RetVal
+ From  {1} A
+ Cross Apply (
+                Select Top 1 with ties *
+                 From  (
+                        Select RetSeq = Row_Number() over (Order By (Select null))
+                              ,RetVal = LTrim(RTrim(B.i.value('(./text())[1]', 'varchar(max)')))
+                        From  
+						(Select x = Cast('<x>' + replace((Select replace(A.{3},' ','§§Split§§') as [*] For XML Path('')),'§§Split§§','</x><x>')+'</x>' as xml).query('.')) as A 
+                        Cross Apply x.nodes('x') AS B(i)
+                       ) B1
+                 Order by Dense_Rank() over (Order by Len(RetVal) Desc)
+             ) B
+ WHERE {2} ORDER BY BookID, ChapterID, VerseID;			 
+	*/	
     public static partial class EveryMajorWriterIsATalker
     {
 		public static String BuildColumnList
@@ -141,23 +160,38 @@ namespace InformationInTransit.ProcessCode
 		public const String DefaultScriptureReference = "Genesis - Revelation";
 		
 		public const String QuerySource	= "Bible..Scripture_View";
+
 		public const String QueryFormat = //SELECT {0} FROM {1} WHERE {2} ORDER BY BookID, ChapterID, VerseID;
 		@"
-Select A.{0}
-      ,Result = B.RetVal
- From  {1} A
- Cross Apply (
-                Select Top 1 with ties *
-                 From  (
-                        Select RetSeq = Row_Number() over (Order By (Select null))
-                              ,RetVal = LTrim(RTrim(B.i.value('(./text())[1]', 'varchar(max)')))
-                        From  
-						(Select x = Cast('<x>' + replace((Select replace(A.{3},' ','§§Split§§') as [*] For XML Path('')),'§§Split§§','</x><x>')+'</x>' as xml).query('.')) as A 
-                        Cross Apply x.nodes('x') AS B(i)
-                       ) B1
-                 Order by Dense_Rank() over (Order by Len(RetVal) Desc)
-             ) B
- WHERE {2} ORDER BY BookID, ChapterID, VerseID;			 
+			;WITH CTE
+			(
+				VerseIDSequence,
+				Word,
+				WordLength
+			)
+			AS
+			(
+				SELECT 
+					VerseIDSequence,
+					tblV.value,
+					LEN(tblV.value)
+				FROM {1}
+				CROSS APPLY STRING_SPLIT({1}.{3}, ' ') AS tblV  
+				WHERE {2}
+			)	
+		
+			SELECT 	{0}, 
+					Word,
+					WordLength
+			FROM CTE JOIN {1} ON CTE.VerseIDSequence = {1}.VerseIDSequence
+			WHERE 
+			    cte.wordLength =
+                (
+                    select max(cteInner.wordLength)
+                    from   cte cteInner
+                    where  cte.VerseIDSequence = cteInner.VerseIDSequence
+                )
+			ORDER BY {1}.VerseIDSequence	
 		";
     }
 }

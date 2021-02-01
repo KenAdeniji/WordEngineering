@@ -35,9 +35,9 @@ public class EveryMajorWriterIsATalkerWebService : System.Web.Services.WebServic
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
 	(
+		String	bibleBookGroup,
 		String	bibleVersion,
 		String	bibleWord,		
-		String	bibleBookGroup,
 		String	logic,
 		String	scriptureReference,
 		bool	wholeWords
@@ -46,9 +46,9 @@ public class EveryMajorWriterIsATalkerWebService : System.Web.Services.WebServic
 		StringBuilder sb;
 		DataSet dataSet = EveryMajorWriterIsATalker.Query
 		(
+				bibleBookGroup,
 				bibleVersion,
 				bibleWord,				
-				bibleBookGroup,
 				logic,
 				scriptureReference,
 				wholeWords,
