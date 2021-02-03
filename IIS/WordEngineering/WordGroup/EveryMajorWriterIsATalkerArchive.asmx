@@ -54,7 +54,7 @@ public class EveryMajorWriterIsATalkerWebService : System.Web.Services.WebServic
 				wholeWords,
 			out sb
 		);
-		//return sb.ToString();
+		return sb.ToString();
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 		return json;
     }

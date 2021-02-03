@@ -176,7 +176,30 @@ Select A.{0}
 					tblV.value,
 					LEN(tblV.value)
 				FROM {1}
-				CROSS APPLY STRING_SPLIT({1}.{3}, ' ') AS tblV  
+				CROSS APPLY 
+				STRING_SPLIT
+				(
+					REPLACE
+					(
+						REPLACE
+						(
+							REPLACE
+							(
+								REPLACE
+								(
+									REPLACE({1}.{3}, '.', ''),
+									';',''
+								),
+								',',''
+							),
+							':',''
+						),
+						'?',''
+					)
+					,
+					' '
+				) 
+				AS tblV  
 				WHERE {2}
 			)	
 		
