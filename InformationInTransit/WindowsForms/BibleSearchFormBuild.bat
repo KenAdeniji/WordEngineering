@@ -1,0 +1,1 @@
+csc /r:System.Windows.Forms.dll,System.Configuration.dll /target:winexe BibleSearchForm.cs
