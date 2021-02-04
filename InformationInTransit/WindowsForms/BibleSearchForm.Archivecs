@@ -63,7 +63,13 @@ using System.Data.SqlClient;
 								E-mail grammar.
 							European Union ... European Community.	
 								We are still finding ourself; as we grow.
-							Can you customize the date field; to local date?	
+							Can you customize the date field; to local date?
+	2021-02-03T18:56:00	Microsoft Windows versus Linux?
+							Linux software are customized for Windows.
+								The step; I threaded.
+	2021-02-03T18:56:00	The preference for desire.
+							This is how; I like to be; myself.
+							In a personal world; there are no changing.
 */
 namespace InformationInTransit.WindowsForms
 {
