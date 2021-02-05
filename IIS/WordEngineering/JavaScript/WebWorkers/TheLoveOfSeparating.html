@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2021-02-04T19:00:00 Created.
+			https://www.codemag.com/Article/2101071/Understanding-and-Using-Web-Workers
+			https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+			2021-02-05T20:52:00 https://www.codeproject.com/Articles/179106/Web-Workers-in-HTML
+		-->
+		<title>The love of separating.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The love of separating."/>
+		<meta name="keywords" content="Bible, word, Web Workers"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="word" type="text" size="50" autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+				<div id="myCondemn"></div>
+				<div id="whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood"></div>
+				<div id="alphabetSequenceIndex"></div>
+				<div id="alphabetSequenceIndexScriptureReference"></div>
+				<div id="sacredText"></div>
+				<div id="bibleWord"></div>
+				<div id="hisWord"></div>
+				<div id="bibleDictionary"></div>
+				<div id="numberSign"></div>
+				<div id="wordToNumber"></div>
+				<div id="meISupposeInTime"></div>
+				<div id="feedback"></div>
+				<div id="performanceNow"></div>
+			</div>	
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var	wordElement = document.getElementById("word");
+			
+			var alphabetSequenceIndexElement = document.getElementById("alphabetSequenceIndex");
+			var alphabetSequenceIndexScriptureReferenceElement = document.getElementById("alphabetSequenceIndexScriptureReference");
+
+			var	submitQueryElement = document.getElementById("submitQuery");
+			
+			var alphabetSequenceWebWorkers = new Worker("AlphabetSequenceWebWorkers.js");
+			
+			function clearView()
+			{
+				var resultSetDiv = document.getElementById("resultSet");
+				var resultSetDivInners = resultSetDiv.getElementsByTagName("div");
+				for (var index = 0, count = resultSetDivInners.length; index < count; index++) {
+					resultSetDivInners[index].innerHTML = "";
+				} 
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var word = scriptLiteral9432.getParameterByName("word");
+						if (word)
+						{
+							wordElement.value = word;
+							querySubmit();
+						}
+						isPostBack = true;		
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+
+				alphabetSequenceWebWorkers.postMessage
+				(
+					[
+						wordElement.value
+					]	
+				);
+			}
+
+			alphabetSequenceWebWorkers.onmessage = function(e) {
+				alphabetSequenceIndexElement.innerHTML = e.data;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

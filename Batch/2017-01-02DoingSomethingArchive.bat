@@ -112,7 +112,7 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17654);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24636);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24657);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 53805);
@@ -225,4 +225,11 @@ If that address is correct, here are three other things you can try:
 I am driving a car at Center West towards the South, I turn the steering and the tire aligned; I saw a tire to the South. 10:27 ... 11:06 Microsoft SQL Server datafiles archive.
 2021-01-23T20:27:00 https://www.peopledatalabs.com/signup/confirm/
 2021-01-26A young man response to every question, is James; this may be, where the name of his partner or where he sleeps. 03:51 Urine.
+2021-02-04T18:50:00 https://www.codemag.com/Article/2101071/Understanding-and-Using-Web-Workers
+By Miguel Castro
+Published in: CODE Magazine: 2021 - January/February
+Last updated: December 28, 2020
+2021-02-05T08:38:00 https://www.codeproject.com/Articles/179106/Web-Workers-in-HTML
+importScripts('WebWorker_XMLHttpRequest.js');
+2021-02-05T12:28:00 https://news.google.com/articles/CBMiTWh0dHBzOi8vdmlzdWFsc3R1ZGlvbWFnYXppbmUuY29tL2FydGljbGVzLzIwMjEvMDIvMDQvZGV2c2tpbGxlci0yMDIxLmFzcHg_bT0x0gEA?hl=en-US&gl=US&ceid=US%3Aen
 :Exit
