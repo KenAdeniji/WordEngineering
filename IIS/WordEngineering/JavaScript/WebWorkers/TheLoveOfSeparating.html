@@ -6,6 +6,7 @@
 			https://www.codemag.com/Article/2101071/Understanding-and-Using-Web-Workers
 			https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 			2021-02-05T20:52:00 https://www.codeproject.com/Articles/179106/Web-Workers-in-HTML
+			2021-02-05T22:00:00	https://javascript.info/xmlhttprequest
 		-->
 		<title>The love of separating.</title>
 		<meta charset="UTF-8"/>
@@ -42,8 +43,11 @@
 
 			var	wordElement = document.getElementById("word");
 			
-			var alphabetSequenceIndexElement = document.getElementById("alphabetSequenceIndex");
-			var alphabetSequenceIndexScriptureReferenceElement = document.getElementById("alphabetSequenceIndexScriptureReference");
+			var alphabetSequenceIndexElement = 
+				document.getElementById("alphabetSequenceIndex");
+				
+			var alphabetSequenceIndexScriptureReferenceElement = 
+				document.getElementById("alphabetSequenceIndexScriptureReference");
 
 			var	submitQueryElement = document.getElementById("submitQuery");
 			
@@ -91,8 +95,31 @@
 				);
 			}
 
-			alphabetSequenceWebWorkers.onmessage = function(e) {
+			alphabetSequenceWebWorkers.onmessage = function(e) 
+			{
+				console.log(e.data);
+				
 				alphabetSequenceIndexElement.innerHTML = e.data;
+				
+				//var dataSet = JSON.parse(e.data);
+				var dataSet = e.data;
+				
+				return;
+				
+				var alphabetSequenceURI = 
+					encodeURI('/WordEngineering/WordUnion/AlphabetSequence.html?word=' + wordElement.value);
+				var alphabetSequenceIndexAnchor = 
+					'<a href="' + alphabetSequenceURI + '">Alphabet Sequence</a>';
+				alphabetSequenceIndexElement.innerHTML = 
+					alphabetSequenceIndexAnchor + '<br>' + dataSet["id"];
+					
+				var alphabetSequenceIndexScriptureReferenceAnchor =
+					"<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
+						dataSet.scriptureReference + "'>" + 
+						dataSet.scriptureReference + "</a>";
+						
+				alphabetSequenceIndexScriptureReferenceElement.innerHTML = 
+					alphabetSequenceIndexScriptureReferenceAnchor;
 			}
 
 			window.addEventListener("load", pageLoad, false);
