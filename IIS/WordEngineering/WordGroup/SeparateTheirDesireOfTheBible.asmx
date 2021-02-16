@@ -46,9 +46,9 @@ public class SeparateTheirDesireOfTheBibleWebService : System.Web.Services.WebSe
 		StringBuilder sb;
 		DataSet dataSet = SeparateTheirDesireOfTheBible.Query
 		(
+				bibleBookGroup,
 				bibleVersion,
 				bibleWord,				
-				bibleBookGroup,
 				logic,
 				scriptureReference,
 				wholeWords,

@@ -97,7 +97,7 @@ namespace InformationInTransit.ProcessCode
         public static readonly Collection<BibleBooksGroup> BibleBooksGroups = new Collection<BibleBooksGroup>
         {
 			new BibleBooksGroup{ Title = "Apocalyptic", Condition = "BookID = 27 OR BookID = 66" },
-			new BibleBooksGroup{ Title = "Gospels", Condition = "BookID BETWEEN 40 AND 43" },
+			new BibleBooksGroup{ Title = "Gospel", Condition = "BookID BETWEEN 40 AND 43" },
 			new BibleBooksGroup{ Title = "Historical", Condition = "BookID BETWEEN 6 AND 17" },
 			new BibleBooksGroup{ Title = "Major Prophets", Condition = "BookID BETWEEN 23 AND 27" },
 			new BibleBooksGroup{ Title = "Minor Prophets", Condition = "BookID BETWEEN 28 AND 39" },

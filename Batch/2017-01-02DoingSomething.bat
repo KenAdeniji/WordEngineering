@@ -121,12 +121,12 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 699);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 15512);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 10897);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 10976);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4267);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 137593);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 139300);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 84387);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -237,5 +237,18 @@ importScripts('WebWorker_XMLHttpRequest.js');
 Daniel, I will run out of Boston Market, on Saturday.
 Please get me 6 meatloaf and the side orders will be 2 sweet potatoes, 2 rice, 2 vegetables.
 Thank you and God bless.
-
+https://javascriptweekly.com/issues/250
+https://javascriptweekly.com/issues/465
+2021-02-08 08:20:28.970 Omo to so pe, iya ohun, o ni sinu; ohun na, o ni, sinu.
+https://javascriptweekly.com/issues/370
+To answer yes; you need to abandon no.
+2021-02-13T11:28:00
+Msg 3201, Level 16, State 1, Line 1
+Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2021-02-13.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+What do you need out of life; that is what I have chosen for you? 
+Called Eric mistakenly Eddie. Called Phoo mistakenly Pee. 
+Pauline Epistles, 2 Corinthians 11:2. 1089 - 1047 = 42. 1133 - 1047 = 86. 42 / 86 = 0.48837209302325581395348837209302.
+He has to be on his own. 28992 - 27932 = 1060. 29964 - 27932 = 2032. 1060 / 2032 = 0.52165354330708661417322834645669. 0.48837209302325581395348837209302 ... 0.52165354330708661417322834645669 = 0.03328145028383080021973997436367 Albertsons Lucky, Charter Square, Parking lot, North East shopping cart.
 :Exit
