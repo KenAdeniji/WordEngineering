@@ -14,7 +14,7 @@ namespace InformationInTransit.ProcessCode
 	/*
 		2020-11-08	Created.	
 	*/
-    public static partial class SeparateTheirDesireOfTheBible
+    public partial class SeparateTheirDesireOfTheBible
     {
 		public static String BuildColumnList
 		(
@@ -35,9 +35,9 @@ namespace InformationInTransit.ProcessCode
 		
 		public static DataSet Query
 		(
+				String			bibleBookGroup,
+				String			bibleVersion,				
 				String			bibleWord,
-				String			bibleVersion,
-				String			limitChosen,
 				String			logic,
 				String			scriptureReference,
 				bool			wholeWords,
@@ -70,7 +70,7 @@ namespace InformationInTransit.ProcessCode
 				ref	sqlWhereClauses
 			);
 			
-			StringBuilder parseLimit = BibleWordHelper.ParseLimit(limitChosen);
+			StringBuilder sbParseBibleBookGroup = BibleWordHelper.ParseBibleBookGroup(bibleBookGroup);
 
 			String[] keywords = new String[] { bibleWord };
 
@@ -85,7 +85,7 @@ namespace InformationInTransit.ProcessCode
 			{
 				if (sqlWhereClauses[indexWhereClause] != "")
 				{
-					limitSQL = parseLimit.ToString();
+					limitSQL = sbParseBibleBookGroup.ToString();
 					if (limitSQL != "")
 					{
 						limitSQL = " AND ( " + limitSQL + " ) ";
@@ -111,8 +111,8 @@ namespace InformationInTransit.ProcessCode
 			
 			sqlJoin = new StringBuilder();
 			
-			String columnList = BuildColumnList(null, bibleVersion);
-
+			String columnList = BuildColumnList(RetrieveDefaultColumnsPrefix, bibleVersion);
+			
 			foreach(String sqlWhereClause in sqlWhereClauses)
 			{
 				sqlJoin.AppendFormat
@@ -124,6 +124,8 @@ namespace InformationInTransit.ProcessCode
 				);
 			}
 			
+			//return resultSet;
+			
 			resultSet = (DataSet) DataCommand.DatabaseCommand
 			(
 				sqlJoin.ToString(),
@@ -134,7 +136,12 @@ namespace InformationInTransit.ProcessCode
 			return resultSet;
 		}
 
-		public const String DefaultColumnsPrefix = "ScriptureReference";
+		public virtual String RetrieveDefaultColumnsPrefix
+		{
+			get { return DefaultColumnsPrefix; }
+		}
+	
+		public static String DefaultColumnsPrefix = "ScriptureReference";
 		public const String DefaultScriptureReference = "Genesis - Revelation";
 		
 		public const String QuerySource	= "Bible..Scripture_View";

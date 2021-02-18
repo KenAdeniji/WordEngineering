@@ -14,7 +14,7 @@ namespace InformationInTransit.ProcessCode
 	/*
 		2020-11-08	Created.	
 	*/
-    public static partial class SeparateTheirDesireOfTheBible
+    public partial class SeparateTheirDesireOfTheBible
     {
 		public static String BuildColumnList
 		(
@@ -41,7 +41,8 @@ namespace InformationInTransit.ProcessCode
 				String			logic,
 				String			scriptureReference,
 				bool			wholeWords,
-			out StringBuilder 	sqlJoin
+			out StringBuilder 	sqlJoin,
+				String			defaultColumnsPrefix
 		)
 		{
 			if (bibleVersion == "")
@@ -111,8 +112,8 @@ namespace InformationInTransit.ProcessCode
 			
 			sqlJoin = new StringBuilder();
 			
-			String columnList = BuildColumnList(null, bibleVersion);
-
+			String columnList = BuildColumnList(defaultColumnsPrefix, bibleVersion);
+			
 			foreach(String sqlWhereClause in sqlWhereClauses)
 			{
 				sqlJoin.AppendFormat
@@ -136,7 +137,12 @@ namespace InformationInTransit.ProcessCode
 			return resultSet;
 		}
 
-		public const String DefaultColumnsPrefix = "ScriptureReference";
+		public virtual String RetrieveDefaultColumnsPrefix
+		{
+			get { return DefaultColumnsPrefix; }
+		}
+	
+		public static String DefaultColumnsPrefix = "ScriptureReference";
 		public const String DefaultScriptureReference = "Genesis - Revelation";
 		
 		public const String QuerySource	= "Bible..Scripture_View";

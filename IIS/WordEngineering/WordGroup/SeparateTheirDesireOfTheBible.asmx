@@ -52,7 +52,8 @@ public class SeparateTheirDesireOfTheBibleWebService : System.Web.Services.WebSe
 				logic,
 				scriptureReference,
 				wholeWords,
-			out sb
+			out sb,
+				"ScriptureReference"
 		);
 		//return sb.ToString();
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
