@@ -56,8 +56,8 @@ namespace InformationInTransit.ProcessCode
 				{
 					dataRow["ChapterIDRatio"] = (double) 
 					(
-						((int)dataRow["ChapterIDSequence"] - chapterIDSequenceMinimum) 
-						/ chapterIDSequenceRange
+						((int)dataRow["ChapterIDSequence"] - chapterIDSequenceMinimum) /
+						chapterIDSequenceRange
 					);
 
 					dataRow["VerseIDRatio"] = (double) 

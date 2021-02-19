@@ -247,4 +247,15 @@ Msg 3201, Level 16, State 1, Line 1
 Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2021-02-13.bak'. Operating system error 3(The system cannot find the path specified.).
 Msg 3013, Level 16, State 1, Line 1
 BACKUP DATABASE is terminating abnormally.
+What do you need out of life; that is what I have chosen for you? 
+Called Eric mistakenly Eddie. Called Phoo mistakenly Pee. 
+Pauline Epistles, 2 Corinthians 11:2. 1089 - 1047 = 42. 1133 - 1047 = 86. 42 / 86 = 0.48837209302325581395348837209302.
+He has to be on his own. 28992 - 27932 = 1060. 29964 - 27932 = 2032. 1060 / 2032 = 0.52165354330708661417322834645669. 0.48837209302325581395348837209302 ... 0.52165354330708661417322834645669 = 0.03328145028383080021973997436367 Albertsons Lucky, Charter Square, Parking lot, North East shopping cart.
+19:26 you may be +black you may be +white it does not make a +difference to me four generations of my family we have been intermarry +kevin michael wyclef
+Matthew 16:21, Matthew 17:23, Matthew 20:19, Matthew 27:64, Mark 9:31, Mark 10:34, Luke 9:22, Luke 13:32, Luke 18:33, Luke 24:7, Luke 24:21, Luke 24:46, Acts 10:40, 1 Corinthians 15:4
+2021-02-17T17:32:00 http://localhost/InformationInTransit/URIMaintenanceWebFOrm.aspx page 113 SequenceOrderId 53862
+2021-02-17T20:56:00 https://play.google.com/store/books/details?id=SJ1eDwAAQBAJ&gl=us&hl=en-US&source=productsearch&utm_source=HA_Desktop_US&utm_medium=SEM&utm_campaign=PLA&pcampaignid=MKT-FDR-na-us-1000189-Med-pla-bk-Evergreen-Jul1520-PLA-eBooks_Computers&gclid=CjwKCAiAmrOBBhA0EiwArn3mfLr7zHQJ6lOesfiaC9wHH0O2qmUXifmh4f09MnCNPKBN3sKMRDXOURoCFr0QAvD_BwE&gclsrc=aw.ds
+2021-02-18T15:13:00 Unsubscribe.
+2021-02-18T14:37:00 ... 2021-02-18T15:54:00 Microsoft Hotmail.com junk mail folder 2021-02-18 08:54:03.373 This woman has messed up your day. Commentary column emptied.
+
 :Exit
