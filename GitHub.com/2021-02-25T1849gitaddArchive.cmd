@@ -19,3 +19,7 @@ git add GitHub.com/2021-02-25T1849gitaddArchive.cmd
         git add   InformationInTransit/InformationInTransit.dll
         git add   InformationInTransit/ProcessCode/WhatDoYouNeedOutOfLifeThatIsWhatIHaveChosenForYou.Archivecs
         git add   InformationInTransit/ProcessCode/WhatDoYouNeedOutOfLifeThatIsWhatIHaveChosenForYou.cs
+
+git add   IIS/WordEngineering/WordGroup/PreparedForTime.html
+git add   IIS/WordEngineering/WordGroup/PreparedForTimeArchive.html
+git add   IIS/WordEngineering/WordGroup/PreparedForTimeRelease2021-02-25T0900.html
