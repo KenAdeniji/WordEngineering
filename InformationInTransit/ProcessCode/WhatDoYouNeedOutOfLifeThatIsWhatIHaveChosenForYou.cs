@@ -14,11 +14,17 @@ namespace InformationInTransit.ProcessCode
 	/*
 		2021-02-13 18:02:14.413	What do you need out of life; that is what I have chosen for you? 
 		Called Eric mistakenly Eddie. Called Phoo mistakenly Pee. 
+		2021-02-15T15:21:00	Created.
 		Pauline Epistles, 2 Corinthians 11:2. 
 		1089 - 1047 = 42. 1133 - 1047 = 86. 42 / 86 = 0.48837209302325581395348837209302. 
 		He has to be on his own.
-		28992 - 27932 = 1060. 29964 - 27932 = 2032. 1060 / 2032 = 0.52165354330708661417322834645669. 0.48837209302325581395348837209302 ... 0.52165354330708661417322834645669 = 0.03328145028383080021973997436367 Albertsons Lucky, Charter Square, Parking lot, North East shopping cart.
-		2021-02-15T15:21:00	Created.	
+		28992 - 27932 = 1060. 29964 - 27932 = 2032. 1060 / 2032 = 0.52165354330708661417322834645669. 
+		0.48837209302325581395348837209302 ... 0.52165354330708661417322834645669 = 0.03328145028383080021973997436367 Albertsons Lucky, Charter Square, Parking lot, North East shopping cart.
+		2021-02-25T13:12:00 Updated.
+		Pentateuch. Numbers 14:16.
+		131 - 1 = 130. 187 - 1 = 186. 130 / 186 = 0.6989247311827956989247311827957.
+		5852 - 1 = 5851. 4125 - 1 = 4124. 4124 / 5851 = 0.70483678003760041018629294137754.
+		0.70483678003760041018629294137754 - 0.6989247311827956989247311827957 = 0.00591204885480471126156175858184 
 	*/
     public static partial class WhatDoYouNeedOutOfLifeThatIsWhatIHaveChosenForYou
     {
@@ -67,8 +73,6 @@ namespace InformationInTransit.ProcessCode
 			int verseIDSequenceMaximum = (int) minMaxTable.Rows[0]["VerseIDSequenceMaximum"];
 			int verseIDSequenceRange = verseIDSequenceMaximum - verseIDSequenceMinimum;
 		
-			int chapterIDSequence, verseIDSequence;
-
 			foreach(DataTable dataTable in resultSet.Tables)
 			{
 				
@@ -80,13 +84,11 @@ namespace InformationInTransit.ProcessCode
 				{
 					dataRow["ChapterIDRatio"] = (double) 
 					(
-						((int)dataRow["ChapterIDSequence"] - chapterIDSequenceMinimum) / 
-						chapterIDSequenceRange
+						100.0 * ((int)dataRow["ChapterIDSequence"] - chapterIDSequenceMinimum) / chapterIDSequenceRange
 					);
 					dataRow["VerseIDRatio"] = (double) 
 					(
-						((int)dataRow["VerseIDSequence"] - verseIDSequenceMinimum) / 
-						verseIDSequenceRange
+						100.0 * ((int)dataRow["VerseIDSequence"] - verseIDSequenceMinimum) / verseIDSequenceRange
 					);
 				}
 			}	

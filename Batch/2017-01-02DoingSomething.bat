@@ -205,6 +205,7 @@ Thank you and God blesses,
 
 KenAdeniji@hotmail.com
 http://KenAdeniji.WordPress.com
+https://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume/
 (510) 796-8121
 2021-01-03T15:20:00
 https://learn.shayhowe.com/
@@ -257,5 +258,8 @@ Matthew 16:21, Matthew 17:23, Matthew 20:19, Matthew 27:64, Mark 9:31, Mark 10:3
 2021-02-17T20:56:00 https://play.google.com/store/books/details?id=SJ1eDwAAQBAJ&gl=us&hl=en-US&source=productsearch&utm_source=HA_Desktop_US&utm_medium=SEM&utm_campaign=PLA&pcampaignid=MKT-FDR-na-us-1000189-Med-pla-bk-Evergreen-Jul1520-PLA-eBooks_Computers&gclid=CjwKCAiAmrOBBhA0EiwArn3mfLr7zHQJ6lOesfiaC9wHH0O2qmUXifmh4f09MnCNPKBN3sKMRDXOURoCFr0QAvD_BwE&gclsrc=aw.ds
 2021-02-18T15:13:00 Unsubscribe.
 2021-02-18T14:37:00 ... 2021-02-18T15:54:00 Microsoft Hotmail.com junk mail folder 2021-02-18 08:54:03.373 This woman has messed up your day. Commentary column emptied.
-
+2021-02-20T06:17:00 Typographical error.
+2021-02-20T16:19:00 ftp://ftp.micronet-rostov.ru/linux-support/books/programming/HTML-CSS/[Wiley.%20Wrox]%20-%20Beginning%20CSS,%203rd%20ed.%20-%20[Pouncey,%20York]/[Wiley.%20Wrox]%20-%20Beginning%20CSS,%203rd%20ed.%20-%20[Pouncey,%20York].pdf
+Beginning CSS: Cascading Style Sheets for Web Design, Third EditionPublished byWiley Publishing, Inc.10475 Crosspoint BoulevardIndianapolis, IN 46256www.wiley.comCopyright © 2011 by Wiley Publishing, Inc., Indianapolis, IndianaISBN: 978-0-470-89152-0ISBN: 978-1-118-12177-1 (ebk)ISBN: 978-1-118-12176-4 (ebk)ISBN: 978-1-118-12178-8 (ebk)
+2021-02-23T18:26:00	Page 89
 :Exit
