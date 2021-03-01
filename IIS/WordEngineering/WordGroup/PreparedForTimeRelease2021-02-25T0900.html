@@ -86,24 +86,18 @@
 				{ 
 					uriContentElement.innerHTML = r.responseText;
 					
-					var pattern = new RegExp(delimiterElement.value); 
-					
-					var blocks =  r.responseText.split(pattern);
-					var blocks =  r.responseText.split(/[.?]+/);
 					var block = "";
-				
-					var filler = "";
-		
-					var noChild = $("#uriContent *:not(:has(*))");
+					var filtered = $("#uriContent *:not(:has(*))");
 					var filler = "<table>";
+
 					for 
 					(
-						var index = 0, length = noChild.length;
+						var index = 0, length = filtered.length;
 						index < length;
 						++index
 					)
 					{
-						block = noChild[index].innerHTML.trim();
+						block = filtered[index].innerHTML.trim();
 						if (!block)
 						{
 							continue;

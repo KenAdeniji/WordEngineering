@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2021-02-24	Prepared for time.
-		2021-02-25	Created.
-		2021-02-25T06:45:00	https://stackoverflow.com/questions/11401897/get-the-current-domain-name-with-javascript-not-the-path-etc
-		2021-02-25T08:54:00	https://stackoverflow.com/questions/11061594/get-all-elements-without-child-node-in-jquery
-		2021-02-25T09:00:00	https://www.w3schools.com/css/css_display_visibility.asp
+		2021-02-27T10:46:00	Created.
+		2021-02-27T10:46:00	https://stackoverflow.com/questions/44919023/how-to-Selector-dynamic-data-attribute-element-in-jquery
+		2021-02-27T12:02:00	https://stackoverflow.com/questions/7084557/Selector-all-elements-with-a-data-xxx-attribute-without-using-jquery
 	-->
 	<head>
-		<title>Prepared for time.</title>
+		<title>You start, forming your own example.</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Prepared for time."/>
-		<meta name="keywords" content="AlphabetSequence"/>
+		<meta name="description" content="You start, forming your own example."/>
+		<meta name="keywords" content="Query"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -28,9 +26,9 @@
 						<td><label for="uri">URI:</label></td>
 						<td><input id="uri" type="url" size="50" autofocus/></td>
 					</tr>
-					<tr style="display: none;">
-						<td><label for="delimiter">Delimiter:</label></td>
-						<td><input id="delimiter" type="text"/></td>
+					<tr>
+						<td><label for="querySelector">Query Selector:</label></td>
+						<td><input id="querySelector" type="text"/></td>
 					</tr>
 					<tr>
 						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
@@ -51,7 +49,7 @@
 			var resultSetElement = document.getElementById("resultSet");
 			var submitQueryElement = document.getElementById("submitQuery");
 			
-			var delimiterElement = document.getElementById("delimiter");
+			var querySelectorElement = document.getElementById("querySelector");
 			var uriElement = document.getElementById("uri");
 			var uriContentElement = document.getElementById("uriContent");
 
@@ -61,10 +59,10 @@
 				{
 					const urlParams = new URLSearchParams(window.location.search);
 
-					var delimiterParam = urlParams.get("delimiter");
+					var querySelectorParam = urlParams.get("querySelector");
 					var uriParam = urlParams.get("uri");
 
-					delimiterElement.value = delimiterParam ? delimiterParam : delimiterDefault;
+					querySelectorElement.value = querySelectorParam ? querySelectorParam : querySelectorDefault;
 					uriElement.value = uriParam ? uriParam : "http://" + window.location.hostname + "/" + uriDefault;
 					
 					querySubmit();
@@ -87,9 +85,14 @@
 					uriContentElement.innerHTML = r.responseText;
 					
 					var block = "";
-					var filtered = $("#uriContent *:not(:has(*))");
+				
+					var filler = "";
+		
+					var filtered = uriContentElement.querySelectorAll(querySelector.value);
+					
+					console.log(filtered.length);
+					
 					var filler = "<table>";
-
 					for 
 					(
 						var index = 0, length = filtered.length;
@@ -120,7 +123,7 @@
 				}
 			}
 			
-			const	delimiterDefault = ".?";
+			const	querySelectorDefault = "[data-ContactID='774']";
 			const	uriDefault = "WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html";
 		</script>		
 	</body>

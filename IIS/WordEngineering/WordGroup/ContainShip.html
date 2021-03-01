@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-28T15:00:00 ... 2021-02-28T15:24:00	Created.
+	-->
+	<head>
+		<title>Contain Ship.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Contain Ship."/>
+		<meta name="keywords" content="Query"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="query">Query:</label></td>
+					<td><input id="query" type="text" autofocus/></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				<tr>
+			</table>
+			<br/><br/>	
+			<div id="resultSet" align="left"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var isPostBack = false;
+
+			var resultSetElement = document.getElementById("resultSet");
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var queryElement = document.getElementById("query");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var queryParam = urlParams.get("query");
+
+						if (queryParam)
+						{
+							queryElement.value = queryParam;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});	
+				}
+				else
+				{
+					querySubmit();
+				}	
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["query"] = queryElement.value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/ContainShip.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+						
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>
