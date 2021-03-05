@@ -76,17 +76,17 @@ namespace InformationInTransit.ProcessCode
 			foreach(DataTable dataTable in resultSet.Tables)
 			{
 				
-				dataTable.Columns.Add("ChapterIDRatio", typeof(double)); 
-				dataTable.Columns.Add("VerseIDRatio", typeof(double)); 
-				dataTable.Columns.Add("ChapterVerseIDRatio", typeof(double), "VerseIDRatio - ChapterIDRatio");
+				dataTable.Columns.Add("ChapterIDPercentage", typeof(double)); 
+				dataTable.Columns.Add("VerseIDPercentage", typeof(double)); 
+				dataTable.Columns.Add("ChapterVerseIDPercentage", typeof(double), "VerseIDPercentage - ChapterIDPercentage");
 				
 				foreach(DataRow dataRow in dataTable.Rows)
 				{
-					dataRow["ChapterIDRatio"] = (double) 
+					dataRow["ChapterIDPercentage"] = (double) 
 					(
 						100.0 * ((int)dataRow["ChapterIDSequence"] - chapterIDSequenceMinimum) / chapterIDSequenceRange
 					);
-					dataRow["VerseIDRatio"] = (double) 
+					dataRow["VerseIDPercentage"] = (double) 
 					(
 						100.0 * ((int)dataRow["VerseIDSequence"] - verseIDSequenceMinimum) / verseIDSequenceRange
 					);

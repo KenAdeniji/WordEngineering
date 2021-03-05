@@ -7,7 +7,7 @@
 		<title>Why pick one and choose another?</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="Why pick one and choose another?"/>
-		<meta name="keywords" content=""/>
+		<meta name="keywords" content="Bible book, scripture reference"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -22,7 +22,7 @@
 		<script>
 			function querySubmit()
 			{
-				var tableStub = "<table id='scriptureReferences'><thead><tr><th>Book ID</th><th>Scripture Reference</th></tr></thead><tbody>";
+				var tableStub = "<table id='bibleBookScriptureReference'><thead><tr><th>Book ID</th><th>Scripture Reference</th></tr></thead><tbody>";
 				for 
 				(
 					var index = 0, length = whyPickOneAndChooseAnother.length;
@@ -34,7 +34,7 @@
 				}
 				tableStub += "</tbody></table";
 				resultSet.innerHTML = tableStub;
-				tsorter.create("scriptureReferences");
+				tsorter.create("bibleBookScriptureReference");
 			}
 						
 			window.addEventListener("load", querySubmit, false);	
