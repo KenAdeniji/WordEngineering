@@ -73,6 +73,7 @@
 		const urlParams = new URLSearchParams(window.location.search);
 		var wordParam = urlParams.get("word");
 	2021-01-21T14:40:00	Support for limit, BibleBookGroup, include Apocalyptic Books, Pauline Epistles, General Letters.
+	2021-03-05T17:45:00	bibleBookGroups: ["Poetry", "poetry"]
 */
 
 var scriptLiteral9432 =

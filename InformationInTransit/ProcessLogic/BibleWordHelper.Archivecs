@@ -49,7 +49,8 @@ namespace InformationInTransit.ProcessLogic
 					{
 						 return Regex.Split(s, @"\W+");
 					}
-		2021-01-21	Apocalyptic Books			
+		2021-01-21	Apocalyptic Books
+		2021-03-05T18:30:00	bibleBookGroups: ["Poetry", "poetry"]		
 	*/
 	public static partial class BibleWordHelper
 	{
