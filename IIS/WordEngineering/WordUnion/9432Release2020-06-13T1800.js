@@ -97,6 +97,7 @@ var scriptLiteral9432 =
 		["Old Testament", "old"],
 		["New Testament", "new"],
 		["Pentateuch", "pentateuch"],
+		["Poetry", "poetry"],
 		["Major Prophets", "major prophets"],
 		["Minor Prophets", "minor prophets"],
 		["Gospel", "gospel"],

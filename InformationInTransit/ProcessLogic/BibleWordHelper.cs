@@ -359,6 +359,18 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
+				if (bookGroup == "poetry")
+				{
+					if (indexOfOld == -1)
+					{
+						if (sqlStatement.Length > 0)
+						{
+							sqlStatement.Append(" OR ");
+						}
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 18 AND 22 ) ");
+					}	
+				}
+
 				if (bookGroup == "major prophets")
 				{
 					if (indexOfOld == -1)

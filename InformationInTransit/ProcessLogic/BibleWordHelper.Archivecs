@@ -28,7 +28,7 @@ namespace InformationInTransit.ProcessLogic
 			Here am I (1 Samuel 3).
 			I Am here (Acts 9:10).
 		2013-07-11T15:49:00 ScriptureReference concatenate visible
-		2014-08-02 	ParseLimit(). Limit All, Old, New.
+		2014-08-02 	ParsebibleBookGroup(). bibleBookGroup All, Old, New.
 		2015-10-04	http://stackoverflow.com/questions/5444300/search-for-whole-word-match-with-sql-server-like-pattern
 		2015-10-04 	WholeWordsWildCardSearchQueryFormat.
 		2015-10-04 	Verse(s) count.
@@ -200,7 +200,7 @@ namespace InformationInTransit.ProcessLogic
 		public static DataSet OccurrenceOfTheMotion
 		(
 			String	logic,
-			String	limitChosen,
+			String	bibleBookGroup,
 			String	question,
 			bool	wholeWords,
 			String	bibleVersion
@@ -209,7 +209,7 @@ namespace InformationInTransit.ProcessLogic
 			DataSet dataSetVerses = Query
 			(
 				logic,
-				limitChosen,
+				bibleBookGroup,
 				question,
 				wholeWords,
 				bibleVersion
@@ -241,7 +241,7 @@ namespace InformationInTransit.ProcessLogic
 		public static DataSet Query
 		(
 			String	logic,
-			String	limitChosen,
+			String	bibleBookGroup,
 			String	question,
 			bool	wholeWords,
 			String	bibleVersion
@@ -251,7 +251,7 @@ namespace InformationInTransit.ProcessLogic
 			StringBuilder sqlWhereClause = new StringBuilder();
 			String[] keywords = null;
 
-            StringBuilder sqlLimit = ParseLimit(limitChosen);		
+            StringBuilder sqlbibleBookGroup = ParseBibleBookGroup(bibleBookGroup);		
 			StringBuilder sqlWord = PrepareSqlStatement
             (
                 logic,
@@ -269,8 +269,8 @@ namespace InformationInTransit.ProcessLogic
 				sqlWhereClause.AppendFormat
 				(
 					WhereQueryFormat,
-					sqlLimit,
-					sqlLimit.Length == 0 ? "" : " AND ",
+					sqlbibleBookGroup,
+					sqlbibleBookGroup.Length == 0 ? "" : " AND ",
 					"(" + sqlWord + ")"
 				);
 			}
@@ -315,15 +315,15 @@ namespace InformationInTransit.ProcessLogic
 			return sb;
 		}
 
-		public static StringBuilder ParseLimit(string limit)
+		public static StringBuilder ParseBibleBookGroup(string bibleBookGroup)
 		{
 			StringBuilder sqlStatement = new StringBuilder();
 			
-			string[] limitChosens = limit.Split(',');
+			string[] bookGroups = bibleBookGroup.Split(',');
 			
-			int indexOfAll = Array.IndexOf(limitChosens, "all");
-			int indexOfOld = Array.IndexOf(limitChosens, "old");
-			int indexOfNew = Array.IndexOf(limitChosens, "new");
+			int indexOfAll = Array.IndexOf(bookGroups, "all");
+			int indexOfOld = Array.IndexOf(bookGroups, "old");
+			int indexOfNew = Array.IndexOf(bookGroups, "new");
 			
 			if (indexOfAll >= 0)
 			{
@@ -345,9 +345,9 @@ namespace InformationInTransit.ProcessLogic
 				return(sqlStatement);
 			}
 			
-			foreach(string limitChosen in limitChosens)
+			foreach(string bookGroup in bookGroups)
 			{
-				if (limitChosen == "pentateuch")
+				if (bookGroup == "pentateuch")
 				{
 					if (indexOfOld == -1)
 					{
@@ -359,7 +359,19 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
-				if (limitChosen == "major prophets")
+				if (bookGroup == "poetry")
+				{
+					if (indexOfOld == -1)
+					{
+						if (sqlStatement.Length > 0)
+						{
+							sqlStatement.Append(" OR ");
+						}
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 18 AND 22 ) ");
+					}	
+				}
+
+				if (bookGroup == "major prophets")
 				{
 					if (indexOfOld == -1)
 					{
@@ -371,7 +383,7 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
-				if (limitChosen == "minor prophets")
+				if (bookGroup == "minor prophets")
 				{
 					if (indexOfOld == -1)
 					{
@@ -383,7 +395,7 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
-				if (limitChosen == "gospel")
+				if (bookGroup == "gospel")
 				{
 					if (indexOfNew == -1)
 					{
@@ -395,7 +407,7 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 				
-				if (limitChosen == "pauline epistles")
+				if (bookGroup == "pauline epistles")
 				{
 					if (indexOfNew == -1)
 					{
@@ -407,7 +419,7 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
-				if (limitChosen == "general epistles")
+				if (bookGroup == "general epistles")
 				{
 					if (indexOfNew == -1)
 					{
@@ -419,7 +431,7 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 				
-				if (limitChosen == "apocalyptic books")
+				if (bookGroup == "apocalyptic books")
 				{
 					if (sqlStatement.Length > 0)
 					{
