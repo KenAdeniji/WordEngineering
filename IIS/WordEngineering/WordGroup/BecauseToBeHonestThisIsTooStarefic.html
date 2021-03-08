@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-03-08T08:19:00	Created.
+	-->
+	<head>
+		<title>Because to be honest, this is too starefic.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Because to be honest, this is too starefic. Pauline Beshay went for a job interview, she is wearing green and white vertically striped long sleeve jersey shirt. The days interval digits are all the digit two, this is Germanic."/>
+		<meta name="keywords" content="date, dated, day of the month, month, previous date, next date"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<label for="dated">Dated</label>
+						</td>
+						<td>
+							<input type="date" id="dated" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="digit">Digit</label>
+						</td>
+						<td>
+							<input type="number" id="digit" step="1" min="1"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="occurrences">Occurrences</label>
+						</td>
+						<td>
+							<input type="number" id="occurrences" step="1" min="1"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="backDate">Back Date</label>
+						</td>
+						<td>
+							<span id="backDate"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="frontDate">Front Date</label>
+						</td>
+						<td>
+							<span id="frontDate"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br><br>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			var datedElement = document.getElementById("dated");
+			var digitElement = document.getElementById("digit");
+			var occurrencesElement = document.getElementById("occurrences");
+			
+			var	backDateElement = document.getElementById("backDate");
+			var	frontDateElement = document.getElementById("frontDate");
+			
+			var submitQueryElement = document.getElementById("submitQuery");	
+
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var datedParam = urlParams.get("dated");
+					var digitParam = urlParams.get("digit");
+					var occurrencesParam = urlParams.get("occurrences");
+					
+					datedElement.value = datedParam ? datedParam : datedDefault;
+					digitElement.value = digitParam ? digitParam : digitDefault;
+					occurrencesElement.value = occurrencesParam ? occurrencesParam : occurrencesDefault;
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else if (isPostBack === true)
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var days = parseInt(digitElement.value.repeat(parseInt(occurrencesElement.value)));
+				
+				var backDateValue = new Date(datedElement.value);
+				backDateValue.setDate(backDateValue.getDate() - days);
+				backDateElement.textContent = backDateValue;
+
+				var frontDateValue = new Date(datedElement.value);
+				frontDateValue.setDate(frontDateValue.getDate() + days);
+				frontDateElement.textContent = frontDateValue;
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+		    submitQueryElement.addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			const datedDefault = "2021-03-08";
+			const digitDefault = "2";
+			const occurrencesDefault = "8";
+			
+		</script>
+	</body>
+</html>
