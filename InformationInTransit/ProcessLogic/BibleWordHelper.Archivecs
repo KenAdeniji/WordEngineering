@@ -328,6 +328,7 @@ namespace InformationInTransit.ProcessLogic
 			
 			if (indexOfAll >= 0)
 			{
+				sqlStatement.AppendFormat(" ( 1 = 1 ) ");
 				return(sqlStatement);
 			}
 
@@ -343,6 +344,7 @@ namespace InformationInTransit.ProcessLogic
 			}
 			else if (indexOfOld >= 0 && indexOfNew >= 0)
 			{
+				sqlStatement.AppendFormat(" ( 1 = 1 ) ");
 				return(sqlStatement);
 			}
 			
