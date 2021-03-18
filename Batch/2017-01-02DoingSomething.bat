@@ -262,4 +262,5 @@ Matthew 16:21, Matthew 17:23, Matthew 20:19, Matthew 27:64, Mark 9:31, Mark 10:3
 2021-02-20T16:19:00 ftp://ftp.micronet-rostov.ru/linux-support/books/programming/HTML-CSS/[Wiley.%20Wrox]%20-%20Beginning%20CSS,%203rd%20ed.%20-%20[Pouncey,%20York]/[Wiley.%20Wrox]%20-%20Beginning%20CSS,%203rd%20ed.%20-%20[Pouncey,%20York].pdf
 Beginning CSS: Cascading Style Sheets for Web Design, Third EditionPublished byWiley Publishing, Inc.10475 Crosspoint BoulevardIndianapolis, IN 46256www.wiley.comCopyright © 2011 by Wiley Publishing, Inc., Indianapolis, IndianaISBN: 978-0-470-89152-0ISBN: 978-1-118-12177-1 (ebk)ISBN: 978-1-118-12176-4 (ebk)ISBN: 978-1-118-12178-8 (ebk)
 2021-02-23T18:26:00	Page 89
+2021-03-17T17:31:00 #RandomVariables
 :Exit
