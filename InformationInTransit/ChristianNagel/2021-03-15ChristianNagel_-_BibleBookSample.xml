@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bookstore>
+  <book
+    genre="Pentateuch">
+    <title>Genesis</title>
+    <ID>1</ID>
+    <author>Moses</author>
+    <chapters>50</chapters>
+  </book>
+  <book
+    genre="Apocalyptic">
+    <title>Revelation</title>
+    <ID>66</ID>
+    <author>Apostle John</author>
+    <chapters>22</chapters>
+  </book>
+</bookstore>

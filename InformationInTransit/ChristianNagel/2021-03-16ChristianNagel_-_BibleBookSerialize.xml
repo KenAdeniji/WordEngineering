@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfBook xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Book genre="Pentateuch">
+    <title>Genesis</title>
+    <id>1</id>
+    <author>Genesis</author>
+    <chapters>50</chapters>
+  </Book>
+  <Book genre="Apocalyptic">
+    <title>Revelation</title>
+    <id>66</id>
+    <author>Apostle John</author>
+    <chapters>22</chapters>
+  </Book>
+</ArrayOfBook>
