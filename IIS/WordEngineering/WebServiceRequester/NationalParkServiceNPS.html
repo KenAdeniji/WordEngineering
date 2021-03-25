@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-03-24T20:42:00	Created.	https://www.raymondcamden.com/2019/09/09/a-national-parks-service-api-demo-with-vuejs
+		https://stackoverflow.com/questions/55836932/unable-to-show-results-of-responsejson
+		https://www.nps.gov/subjects/developer/get-started.htm
+	-->
+	<head>
+		<title>National Park Service (NPS) Parks</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="National Park Service (NPS) Parks"/>
+		<meta name="keywords" content="National Park Service (NPS) Parks"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<p id="results-list">Please wait...</p>
+		<script>
+		function showResults(json) {
+			var element = document.getElementById('results-list');
+			element.innerHTML = '';
+			var html = '';
+			for (var i = 0; i < json.data.length; i++) {
+				var park = json.data[i];
+				html += '<li><h3>' + park.name + '</h3>' +
+					'<p>Description: ' + park.description + '</p>' +
+					'<p>Link: <a href="' + park.url + '">' + park.url + '</a></p>' +
+					'<p>Address: ' + park.directionsInfo + '</p>' +
+					'</li>';
+			}
+			element.innerHTML = html;
+		}
+
+		function fetchPark() {
+			var url = 'https://developer.nps.gov/api/v1/parks?api_key=dpxEeKXtvKQq7BpkghzSxlWq5xrgwcdkcRgoTOy1&limit=10000';
+			fetch(url)
+			.then(response => {
+				if (response.ok) return response.json();
+			})
+			.then(json => showResults(json))
+			.catch(err => { console.error(err); });
+		}
+
+		fetchPark();
+		</script>
+	</body>
+</html>
