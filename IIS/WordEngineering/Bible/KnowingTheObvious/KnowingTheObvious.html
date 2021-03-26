@@ -33,12 +33,26 @@
 		<script>
 			var isPostBack = false;
 
-			var DirectoryPath;
-			var ScriptureReferenceURI;
+			var DirectoryPath,
+				ScriptureReferenceURI,
+				UriUseCaseJson,
+				useCaseTitle
+				;
 			
 			var queryElement = document.getElementById("query");
-			var resultSetElement = document.getElementById("submitQuery");
+			var submitQueryElement = document.getElementById("submitQuery");
 			var resultSetElement = document.getElementById("resultSet");
+
+			function fetchURI(callback, uri)
+			{
+				fetch(uri)
+				.then(response => {
+					if (response.ok) return response.json();
+				})
+				.then(json => callback(json))
+				.catch(err => { resultSetElement.innerHTML = err; })
+				;
+			}
 
 			function pageLoad()
 			{
@@ -46,7 +60,7 @@
 				{
 					DirectoryPath = window.location.pathname.replace(/[^\\\/]*$/, '');
 					ScriptureReferenceURI = "/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=";
-					uriUseCaseJson = DirectoryPath + "UseCase.json";
+					UriUseCaseJson = DirectoryPath + "UseCase.json";
 
 					const urlParams = new URLSearchParams(window.location.search);
 
@@ -68,35 +82,18 @@
 		
 			function querySubmit()
 			{
-				fetch(uriUseCaseJson)
-				.then(response => {
-					if (response.ok) return response.json();
-				})
-				.then(json => renderUseCases(json))
-				.catch(err => { resultSetElement.innerHTML = err; })
-				;
+				fetchURI(renderUseCases, UriUseCaseJson);
 			}
 
 			function requestUseCase(useCase) 
 			{
-				fetch(uriUseCaseJson)
-				.then(response => {
-					if (response.ok) return response.json();
-				})
-				.then
-				(
-					json => 
-					{ 
-						renderUseCase(json, useCase)
-					}
-				)
-				.catch(err => { resultSetElement.innerHTML = err})
-				;
+				useCaseTitle = useCase;
+				fetchURI(renderUseCase, UriUseCaseJson);
 			}
 
-			function renderUseCase(json, useCase) 
+			function renderUseCase(json) 
 			{
-				resultSetElement.innerHTML = JSON.stringify(getObjects(json, "Title", useCase));
+				resultSetElement.innerHTML = JSON.stringify(getObjects(json, "Title", useCaseTitle));
 			}
 
 			function renderUseCases(json) 
@@ -118,33 +115,34 @@
 				resultSetElement.innerHTML = html;
 			}
 
-function getObjects(obj, key, val) {
-    var objects = [];
-    for (var i in obj) {
-        if (!obj.hasOwnProperty(i)) continue;
-        if (typeof obj[i] == 'object') {
-            objects = objects.concat(getObjects(obj[i], key, val));    
-        } else 
-        //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-        if (i == key && obj[i] == val || i == key && val == '') { //
-            objects.push(obj);
-        } else if (obj[i] == val && key == ''){
-            //only add if the object is not already in the array
-            if (objects.lastIndexOf(obj) == -1){
-                objects.push(obj);
-            }
-        }
-    }
-    return objects;
-}
 			window.addEventListener("load", pageLoad, false);
-			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
 
 			var body = document.getElementsByTagName('body')[0];
 			body.onkeydown = function (e) {
 				if (e.keyCode === 13) {  //enter key code
 					querySubmit();
 				}
+			}
+			
+			function getObjects(obj, key, val) {
+				var objects = [];
+				for (var i in obj) {
+					if (!obj.hasOwnProperty(i)) continue;
+					if (typeof obj[i] == 'object') {
+						objects = objects.concat(getObjects(obj[i], key, val));    
+					} else 
+					//if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
+					if (i == key && obj[i] == val || i == key && val == '') { //
+						objects.push(obj);
+					} else if (obj[i] == val && key == ''){
+						//only add if the object is not already in the array
+						if (objects.lastIndexOf(obj) == -1){
+							objects.push(obj);
+						}
+					}
+				}
+				return objects;
 			}
 		</script>
 	</body>
