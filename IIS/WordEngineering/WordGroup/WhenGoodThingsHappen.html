@@ -4,6 +4,7 @@
 		<!--
 			2021-03-27T11:00:00	Created.
 			2021-03-27T16:29:00	https://stackoverflow.com/questions/10272773/split-string-on-the-first-white-space-occurrence/10272822
+			2021-03-27T21:18:00	https://stackoverflow.com/questions/4292468/javascript-regex-remove-text-between-parentheses
 		-->
 		<title>When good things happen?</title>
 		<meta charset="UTF-8"/>
@@ -167,14 +168,17 @@
 					  var output = "";
 					  for (key in data.response) {
 						output += data.response[key].list.synonyms+"<br>";
-						if (combinedWords)
-						{
-							combinedWords += ", ";
-						}
-						combinedWords += data.response[key].list.synonyms.split(" ")[0];
+						combinedWords += data.response[key].list.synonyms;
 					  }
 					  resultThesaurusElement.innerHTML = output;
-					  combinedWords = combinedWords.replaceAll('|', ", ");
+					  combinedWords = combinedWords.replaceAll('|', " ");
+/*
+					  combinedWords = combinedWords.replaceAll('(antonym)', " ");
+					  combinedWords = combinedWords.replaceAll('(generic term)', " ");
+					  combinedWords = combinedWords.replaceAll('(related term)', " ");
+					  combinedWords = combinedWords.replaceAll('(similar term)', " ");
+*/					  
+					  combinedWords = combinedWords.replace(/ *\([^)]*\) */g, " ");
 					  wordThesaurusElement.innerHTML = combinedWords;
 					  querySubmit();
 					} else resultThesaurusElement.innerHTML = "empty data";
