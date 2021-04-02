@@ -2,49 +2,49 @@
 <html>
 <!--
 	2021-04-01T15:30:00 http://javascript.info/testing-mocha
+	2021-04-01T15:30:00	http://plnkr.co/edit/8OgvvBpZI90lA1If?p=preview&preview
+	2021-04-01T15:30:00	http://github.com/lancetw/ebook-1/blob/master/09_other/How-Google-Tests-Software.pdf
 	2021-04-02T08:16:00	http://www.c-sharpcorner.com/article/how-to-force-the-browser-to-reload-cached-js-css-files-to-reflect-latest-chan/
 -->
-<head>
-  <!-- add mocha css, to show results -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-  <!-- add mocha framework code -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-  <script>
-    // enable bdd-style testing
-    mocha.setup('bdd');
-  </script>
-  <!-- add chai -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
-  <script>
-    // chai has a lot of stuff, let's make assert global
-    let assert = chai.assert;
-  </script>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>	
-</head>
+	<head>
+		<!-- add mocha css, to show results -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+		<!-- add mocha framework code -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+		<script>
+			// enable bdd-style testing
+			mocha.setup('bdd');
+		</script>
+		<!-- add chai -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+		<script>
+			// chai has a lot of stuff, let's make assert global
+			let assert = chai.assert;
+		</script>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+	</head>
 
 <body>
 	<script>
-		function bibleBookTitle(n) {
-		  if (n < 0) return NaN;
-		  if (Math.round(n) != n) return NaN;
+		var bibleBooksPentateuch =
+			[
+				"Genesis",
+				"Exodus",
+				"Leviticus",
+				"Numbers",
+				"Deuteronomy"
+			];
+		function validateBibleBook(bookID)
+		{
+			if (bookID < 1 || bookID > 5) return NaN;
+			if (Math.round(bookID) != bookID) return NaN;
 
-		  let result = "Genesis";
+			let result = bibleBooksPentateuch[bookID - 1];
 
-		  return result;
+			return result;
 		}
 	</script>
 
-	<!-- the script with tests (describe, it...)
-		<script src="javascript.info_-_BibleBook_test.js"></script>
-	-->
-	
-    <script type="text/javascript" language="javascript">  
-        var versionUpdate = (new Date()).getTime();  
-        var script = document.createElement("script");  
-        script.type = "text/javascript";  
-        script.src = "javascript.info_-_BibleBook_test.js?v=" + versionUpdate;  
-        document.body.appendChild(script);  
-    </script>  
 	
   <!-- the element with id="mocha" will contain test results -->
   <div id="mocha"></div>

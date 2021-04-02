@@ -1,28 +1,49 @@
 /*
 https://javascript.info/testing-mocha
 */
-describe("bibleBookTitle", function() {
+describe
+(
+	"validateBibleBook", function() 
+	{
+		describe
+		(
+			"retrieve validateBibleBook",
+			function()
+			{
 
-  describe("retrieve bibleBookTitle", function() {
+				function makeTest(bookID) 
+				{
+					let expected;
 
-	var firstBookTitle = "Genesis";
+					switch (bookID)
+					{
+						case 1: expected = "Genesis"; break;
+						case 2: expected = "Exodus"; break;
+						case 3: expected = "Leviticus"; break;
+						case 4: expected = "Numbers"; break;
+						case 5: expected = "Deuteronomy"; break;
+					}		
 
-    function makeTest(x) {
-      let expected = "Genesis";
-      it(`${x} in the firstBookTitle is ${expected}`, function() {
-        assert.equal(firstBookTitle, expected);
-      });
-    }
+					it(`${bookID} in the BookTitle is ${expected}`, function()
+					{
+						assert.equal(validateBibleBook(bookID), expected);
+					});
+				}
+			
+				for (let bookIndex = 1; bookIndex <= 5; bookIndex++)
+				{
+					makeTest(bookIndex);
+				}
+			}
+		);	
 
-    makeTest(1);
-  });
+		it("if n is negative, the result is NaN", function() 
+		{
+			assert.isNaN(validateBibleBook(1));
+		});
 
-  it("if n is negative, the result is NaN", function() {
-    assert.isNaN(bibleBookTitle(1));
-  });
-
-  it("if n is not integer, the result is NaN", function() {
-    assert.isNaN(bibleBookTitle(1.5));
-  });
-
-});
+		it("if n is not integer, the result is NaN", function() {
+			assert.isNaN(validateBibleBook(1.5));
+		});
+	}
+);
