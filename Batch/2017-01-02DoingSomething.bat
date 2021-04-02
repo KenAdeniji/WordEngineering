@@ -115,7 +115,7 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24661);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 53805);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 54999);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 699);
@@ -205,7 +205,8 @@ Thank you and God blesses,
 
 KenAdeniji@hotmail.com
 http://KenAdeniji.WordPress.com
-https://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume/
+http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
+https://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 (510) 796-8121
 2021-01-03T15:20:00
 https://learn.shayhowe.com/
@@ -265,4 +266,9 @@ Beginning CSS: Cascading Style Sheets for Web Design, Third EditionPublished byW
 2021-03-17T17:31:00 #RandomVariables
 2021-03-22T21:40:00 URIMaintenanceWebForm.aspx WordEngineering 2018-01-07 	47606
 2021-03-26T18:12:00 Database Deployment
+2021-03-31T13:21:00 Scott Hanselman Spanish female code.
+Leslie Ramirez Gordian
+Dominican Republic
+Santo Domingo
+https://channel9.msdn.com/Shows/On-NET/Filling-the-content-gap-for-NET-developers
 :Exit
