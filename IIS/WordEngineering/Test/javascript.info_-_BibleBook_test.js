@@ -30,7 +30,7 @@ describe
 					});
 				}
 			
-				for (let bookIndex = 1; bookIndex <= 5; bookIndex++)
+				for (let bookIndex = -1; bookIndex <= 6; bookIndex++)
 				{
 					makeTest(bookIndex);
 				}

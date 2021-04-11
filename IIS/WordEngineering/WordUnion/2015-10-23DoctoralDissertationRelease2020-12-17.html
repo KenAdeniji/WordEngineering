@@ -125,7 +125,7 @@
 				What did the Jews used numbers for, as mentioned in the Bible?
 				<ul>
 					<li>
-						Time: Period of life, marriage, worship, occupation, anniversary, prophecy and fulfillment, schedule
+						Time: Creation ... end time, period of life, marriage, worship, occupation, anniversary, prophecy and fulfillment, schedule
 					</li>
 					<li>
 						Babel: One language and of one speech
@@ -160,21 +160,8 @@
 				The usability of the Bible as a study tool.
 			</p>
 
-			<p datetime="2021-04-03T13:18:00">
-				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20present%20one,%20who%20is%20fully%20used." datetime="2021-04-03T13:18:00" data-HisWordID="140100" data-ContactID="4790">To present one, who is fully used.</a>
-			</p>
-
-			<p datetime="2021-04-02T00:00:00" data-URI="http://aljazeera.com/news/2021/4/2/saudi-fm-says-normalisation-with-israel-extremely-helpful">
-				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20do%20we%20change,%20as%20life?" datetime="2021-04-03T10:35:00" data-HisWordID="140097">Where do we change, as life?</a>
-			</p>
-
 			<p datetime="2021-03-07T22:13:00">
 				The programming approach allows for a result which is reproducible across Bible versions and other sources.
-			</p>
-
-			<p datetime="2021-03-307T18:20:00">
-				What is certain for man; that is what I Am amending
-				(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Colossians%201:18,%20Luke%2017:1">Colossians 1:18, Luke 17:1</a>).
 			</p>
 
 			<h2 id="Acknowledgments">Acknowledgments</h2>
@@ -282,7 +269,7 @@
 			</p>
 			
 			<p>
-				The relationship between a Contact and its related information is one to many;
+				The relationship between a contact and its related information is one to many;
 				that is a contact may have multiple addresses.
 			</p>
 			
@@ -380,7 +367,7 @@
 				For simplicity and clearage of use, the .HTML and .ASMX files, support one operation.
 				This is not the case, with the GetAPage.html file, which is the workhouse, for word spoken.
 				With a single field entry, GetAPage.html, sends AJAX requests to multiple .ASMX files
-				and operations; GetAPage.html is a cummulative of previously isolated .HTML files.
+				and operations; GetAPage.html is a cumulative of previously isolated .HTML files.
 				All the web services files support a single request format, SOAP; and return JSON.
 				jQuery accepts the POST, HTTP verb.
 				We stringify the data we pass to the web service, in the body of the message.
@@ -488,14 +475,14 @@
 			<ol>
 				<li>The secretive web.config file contains the database access information.</li>
 				<li>The web.config file does not explicitly mention the user login name nor password.</li>
-				<li>We give access rights to roles, not to specific login identities nor user names.</li>
+				<li>Give access rights to roles, not to specific login identities nor user names.</li>
 			</ol>
 			
 			<h4>Database Data Types</h4>	
 			<ol>
-				<li>As much as possible, we make effort, to be consistent, in choosing matching data types between our database and application layers.</li>
-				<li>We only pick varchar(max) and nvarchar(max) as the data type, when it is essential to store large data.</li>
-				<li>We prefer the decimal type, when recording the amount in currency, rather than using the float type.</li>
+				<li>As much as possible, make effort, to be consistent, in choosing matching data types between our database and application layers.</li>
+				<li>Only pick varchar(max) and nvarchar(max) as the data type, when it is essential to store large data.</li>
+				<li>Prefer the decimal type, when recording the amount in currency, rather than using the float type.</li>
 			</ol>
 
 			<h4>Nullable type</h4>	
@@ -691,7 +678,6 @@
 				on the KingJamesVersion column, but the author found out during his research, 
 				that the KingJamesVersion is not unique, and indexes
 				are not applicable to like query expressions with leading wildcards.
-				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/HadBeenWrittenToTheChurches.html">Had been written to the churches.</a>
 			</p>	
 
 			<h5 id="Scripture_ViewTestamentColumn">The Scripture View's Testament Column</h5>
@@ -808,15 +794,15 @@
 			<h5 id="ScriptureTableVerseIDSequenceColumn">The Scripture Table's VerseIDSequence Column</h5>
 
 			<p>
-				When loading data, we calculate the VerseIDSequence column,
-				and we increment it, every time, 
+				When loading data, the author calculates the VerseIDSequence column,
+				and increments it, every time, 
 				the BookID, ChapterID, and VerseID
 				changes during the data load.
 				
 				There are some Bible books that have only one chapter,
 				such as,
 				Obadiah, Philemon, 2 John, 3 John, Jude;
-				therefore, be careful when you choose to 
+				therefore, the author is careful when the choice is made to 
 				increment and update the VerseIDSequence column.
 
 				The SQL statement 
@@ -931,7 +917,7 @@
 				it could be argued that there is no need, to have this table,
 				because it sources its information from the Scripture table, and it is available using
 				<a href="http://en.wikipedia.org/wiki/Language_Integrated_Query">Language Integrated Query</a>.
-				Our reasoning is that the Scripture table is static data, and it does not need
+				The reasoning of the author is that the Scripture table is static data, and it does not need
 				processing, each time, there is a request.
 				Speed and lower work load are the advantages of our procedure;
 				its disadvantage is that the exact table needs re-population,
@@ -970,14 +956,14 @@
 				<code>ALTER TABLE Bible..Exact ADD CONSTRAINT  CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891)</code>
 				is for the range restriction.
 
-				For storage reason, we have chosen, not to have a unique index,
+				For storage reason, the author has chosen, not to have a unique index,
 				on this candidate primary key; in-spite, of it being a query item.
 								
 				Future implementation, may issue the SQL statement 
 				<code>CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)</code>
 				
 				<code datetime="2020-12-14T16:51:00">SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact</code>
-				is 789631; this is the sum of words in the KJV Bible.
+				is 789631; this is the sum of the words in the KJV Bible.
 			</p>
 			
 			<h5 id="ExactTableBibleWordColumn">The Exact Table's BibleWord Column</h5>
@@ -985,7 +971,7 @@
 			<p>
 				These are the words that occur in the Bible, in the order of their occurrences.
 
-				We set the
+				The author sets the
 				<a href="http://en.wikipedia.org/wiki/Unique_key">primary key</a>,
 				the constraint, by issuing the SQL statement 
 				<code>ALTER TABLE [dbo].[Exact] ADD  CONSTRAINT [PK_Exact] PRIMARY KEY CLUSTERED ([BibleWord] ASC)</code>.
@@ -999,9 +985,9 @@
 				The author may set-up the relationship by issuing the SQL statement
 				<code>ALTER TABLE [dbo].[Exact]  WITH CHECK ADD  CONSTRAINT [FK_Exact_Scripture] FOREIGN KEY(FirstOccurrenceScriptureReference) REFERENCES dbo.Scripture (ScriptureReference)</code>.
 				Please note, that as discussed earlier,
-				we do not have, a unique constraint, on the Bible..Scripture.ScriptureReference column,
+				the author does not have, a unique constraint, on the Bible..Scripture.ScriptureReference column,
 				since this is a computed column;
-				we can not keep up the relationship, at this time.
+				the author can not keep up the relationship, at this time.
 			</p>
 
 			<h5 id="ExactTableLastOccurrenceScriptureReferenceColumn">The Exact Table's LastOccurrenceScriptureReference Column</h5>
@@ -1229,7 +1215,7 @@
 
 			<h4 id="ActToGod" datetime="2020-12-14T17:03:00">ActToGod</h4>
 			<p>
-				This is subjective work, the author is applying his intelligence to find a pattern and resemblance in the Bible.
+				This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 			</p>
 			
 			<h3><q cite="#bibliographyJoostVisser">A generic grouping of concepts and their representation</q></h3>
@@ -1985,6 +1971,7 @@
 							<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Genesis%2032:28,%20Genesis%2035:10,%20Genesis%2047:27">Genesis 32:28, Genesis 35:10, Genesis 47:27</a>
 						)
 					</li>
+					<li datetime="2021-04-10T22:35:00">We have been doing unconvincing power</li>
 				</ol>
 			</p>
 
@@ -1994,13 +1981,13 @@
 				<a href="http://en.wikipedia.org/wiki/English_alphabet">English Alphabet</a>
 			</p>
 
-			<h3 datetime="2021-04-01T16:19:00">Test</h3>
+			<h3 id="Test" datetime="2021-04-01T16:19:00">Test</h3>
 			
 			<p>
 				The Bible knows, that is man.
-				<ol>
+				<ul>
 					<li datetime="2021-04-02T09:20:00">
-						<a href="http://e-comfort.ephraimtech.com/WordEngineering/Test">Test</a>
+						<a href="http://e-comfort.ephraimtech.com/WordEngineering/Test">Quality Assurance</a>
 					</li>
 					<li datetime="2021-04-01T16:44:00">
 						The author's work is largely based on the SQL's SELECT statement,
@@ -2010,11 +1997,23 @@
 					<li datetime="2021-04-01T16:44:00">
 						The author relies on the Bible database, a recognized source of information,
 						which has stood the standard of time.
-						What he is incapable of doing.
 					</li>
 					<li datetime="2021-04-01T16:19:00">
 						The reason for AlphabetSequence is because the author lacks Biblical knowledge.
 						The author sought for a way to reconcile what he is hearing with the established word.
+					</li>
+					<li datetime="2021-04-04T07:35:00">
+						The SQL COUNT(), AVG() and SUM() Functions are row-based.
+					</li>
+					<li datetime="2021-04-04T11:14:00">
+						Code Analysis:
+						<a href="http://en.wikipedia.org/wiki/JSHint">JSHint</a>,
+						<a href="http://www.en.wikipedia.org/wiki/FxCop">FxCop</a>
+					</li>
+					<li datetime="2021-04-04T11:37:00">
+						Questionaire:
+						<a href="http://e-comfort.ephraimtech.com/WordEngineering/RatingRank/TrueOriginSelect.html">RatingRank</a>
+						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/InDefine.html">InDefine</a>
 					</li>
 					<li datetime="2021-04-01T16:32:00">
 						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html">ScriptureReference</a>,
@@ -2023,10 +2022,7 @@
 						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/Exact.html">Exact</a>
 						are for learning the word.
 					</li>
-					<li datetime="2021-04-04T07:35:00">
-						The SQL COUNT(), AVG() and SUM() Functions are row-based.
-					</li>
-				</ol>
+				</ul>
 			</p>
 
 			<h3 datetime="2021-02-24T17:00:00">Prepared for Time</h3>
@@ -2040,6 +2036,9 @@
 				<span datetime="2021-03-29T19:46:00">
 					<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20know%20how%20I%20kept%20my%20season">To know how I kept my season</a>
 					(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%2011:25">Hebrews 11:25</a>)?
+				</span>
+				<span datetime="2021-04-06T20:55:00">
+					<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=It%20is%20a%20big%20story,%20I%20am%20to%20let%20You%20know;%20but%20those%20are%20Your%20detail." Data-HisWordID="140140" Data-ContactID="11056">It is a big story, I am to let You know; but those are Your detail.</a>
 				</span>
 				When I stated AlphabetSequence, I ate my daily meal at 6PM, read the Bible and went to bed.
 				I could break my day, into punctual scheduled activities, such-as:
@@ -2079,6 +2078,19 @@
 				When the author observes explicit experiences, he may record this additional data,
 				in the HisWord's table ContactID, ScriptureReference, Location and Scene columns.
 				This projection may result in entries of new records in the Remember and APass tables.
+			</p>
+
+			<p datetime="2021-04-08T07:00:00">
+				<span datetime="2021-04-08T07:00:00" data-HisWordID="140166" data-ContactID="2896">
+					Baba o gba ball. A Jew in which there is no impreparedness.
+				</span>
+				<span datetime="2021-04-08T07:00:00" data-HisWordID="140166" data-ContactID="2896">
+					Father did not play ball. A Jew in which there is no impreparedness.
+				</span>
+				<ul>
+					<li>Literacy: Language</li>
+					<li>Influence: Prepared to match</li>
+				</ul>
 			</p>
 
 			<p datetime="2021-02-04T21:00:00">
@@ -2332,6 +2344,15 @@
 				<span datetime="2021-01-11T11:16:00">
 					To word are effect
 					(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2023:19">Numbers 23:19</a>).
+				</span>
+				<span datetime="2021-04-05T09:35:00">
+					<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=When%20is%20the%20word,%20most%20likely%20to%20come?">When is the word, most likely to come?</a>
+				</span>
+				<span datetime="2021-04-05T20:21:00">
+					<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Looking%20in%20the%20way." data-HisWordID="140121" data-ContactID="3537">Looking in the way.</a>
+					Prior to my deportation, I had declined the invitation to move to Fort Lauderdale, Florida.
+					Prior to 1997-12-31, I was getting ready for the New Year.
+					Prior to 1998-05-08, I was participating in prison ministry.
 				</span>
 				At the beginning of WordEngineering, my practice will include:
 			</p>
@@ -4046,6 +4067,8 @@ Trace complete.
 				My thirty-third, 33rd, Biblical years birthday will occur on 2000-04-24.
 				Between 1967-10-15 and 1968-04-04 are 172 days (5 biblical months, 22 days) (5 months, 2 weeks, 6 days).
 				Between 1967-10-15 and 1968-10-15 are 366 days (1 biblical year, 6 days) (1 year, 1 day).
+				Between 1967's Easter Day, 1967-03-26, and 1967-10-15, is 203 days (6 biblical months, 23 days) (6 months, 2 weeks, 5 days).
+				Between 0032-04-06 and 1967-10-15, is 706935 days (1963 biblical years, 8 biblical months, 15 days) (1935 years, 6 months, 1 week, 1 day) 49.09270833 Biblical generations, 280.529761 weeks of years.
 			</p>
 
 			<p>

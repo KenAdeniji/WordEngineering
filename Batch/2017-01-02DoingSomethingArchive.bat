@@ -112,10 +112,10 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17654);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24661);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24667);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 53805);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 54999);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 699);
@@ -271,4 +271,12 @@ Leslie Ramirez Gordian
 Dominican Republic
 Santo Domingo
 https://channel9.msdn.com/Shows/On-NET/Filling-the-content-gap-for-NET-developers
+2021-04-03 to seem, as a part; I have fulfilled.
+2021-04-03T09:45:00 A life, I shared; as among the rest.
+2021-04-03T09:47:00 I will like; to forward My journey.
+2021-04-11T14:21:00
+Msg 0, Level 11, State 0, Line 0
+The connection is broken and recovery is not possible.  The client driver attempted to recover the connection one or more times and all attempts failed.  Increase the value of ConnectRetryCount to increase the number of recovery attempts.
+
+Completion time: 2021-04-11T14:20:30.6731117-07:00
 :Exit
