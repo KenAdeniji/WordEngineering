@@ -126,7 +126,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4267);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 139300);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 140238);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 84387);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -279,4 +279,28 @@ Msg 0, Level 11, State 0, Line 0
 The connection is broken and recovery is not possible.  The client driver attempted to recover the connection one or more times and all attempts failed.  Increase the value of ConnectRetryCount to increase the number of recovery attempts.
 
 Completion time: 2021-04-11T14:20:30.6731117-07:00
+2021-04-12T02:48:00 Microsoft SQL Server Management Studio Data Manipulation Language (DML) Insert statement.
+2021-04-12T11:07:00 Please unsubscribe KenAdeniji@hotmail.com
+2021-04-12T04:44:00 
+https://www.sologig.com/sg/s/about-us
+
+About Sologig
+
+Sologig.com is a division of CareerBuilder - the global leader in human capital solutions - whose online career site, CareerBuilder.com, is the largest in the U.S. with 23 million unique visitors. Sologig is an employment website that connects experienced IT and engineering professionals and matches them with relevant opportunities. Users can also post resumes, sign up for automatic job alerts, and take advantage of job search management tools.
+Contact Us
+
+Thank you for your interest in contacting Sologig.com. We look forward to hearing from you.
+
+By Phone:
+1-888-688-2237
+Mon - Fri: 9:00 am - 6:00 pm EST
+Email Us
+http://www.fuzeqna.com/careerbuilder/consumer/kbdetail_qaonly.asp?kbid=1785
+
+email@careerbuilder.com
+email@cscglobal.com
+
+200 N. LaSalle St
+Suite 1100
+Chicago, IL 60601
 :Exit

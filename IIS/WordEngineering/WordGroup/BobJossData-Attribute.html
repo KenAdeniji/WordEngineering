@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-04-13T22:00:00	Created.
+		2021-04-13T23:00:00	https://stackoverflow.com/questions/41921805/fetch-api-to-get-html-response
+	-->
+	<head>
+		<title>Bob Joss Data-Attribute</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bob Joss Data Attribute"/>
+		<meta name="keywords" content="Web service requestor"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="URISource">URI Source</label></td>
+					<td>
+						<input 
+							id="URISource" 
+							type="url"
+							value="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html"
+							autofocus
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="dataAttribute">Data Attribute</label></td>
+					<td>
+						<input 
+							id="dataAttribute" 
+							type="text"
+							value="data-url"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery">
+					</td>
+				</tr>
+			</table>
+			<div id="URIBody" align="left"></div>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			var	dataAttributeElement = document.getElementById("dataAttribute");
+			var resultSetElement = document.getElementById("resultSet");
+			var submitURIElement = document.getElementById("submitQuery");
+			var URIBodyElement = document.getElementById("URIBody");
+			var URISourceElement = document.getElementById("URISource");
+
+			function ajaxURISource()
+			{
+				resultSetElement.innerHTML = "";
+				var r = new XMLHttpRequest();
+					r.open('GET', URISourceElement.value, false);
+					r.send(null); 
+				if (r.status == 200) 
+				{ 
+					resultSetElement.innerHTML = r.responseText;
+					
+					var block = "";
+				
+					var filler = "";
+		
+					var filtered = resultSetElement.querySelectorAll
+					(
+						"[" + dataAttributeElement.value + "]"
+					);
+					
+					var filler = "<table>";
+					for 
+					(
+						var index = 0, length = filtered.length;
+						index < length;
+						++index
+					)
+					{
+						block = filtered[index].getAttribute(dataAttributeElement.value);
+						if (!block)
+						{
+							continue;
+						}	
+						filler += `<tr><td><a href='${block}'>${block}</a></td></tr>`;
+					}	
+					filler += "</table>";
+					URIBodyElement.innerHTML = filler;
+				}	
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var URISourceParam = urlParams.get("URISource");
+					if (URISourceParam)
+					{
+						URISourceElement.value = URISourceParam;
+					}	
+
+					querySubmit();
+
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+		
+			function querySubmit()
+			{
+				ajaxURISource();
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitURIElement.addEventListener("click", querySubmit, false);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
