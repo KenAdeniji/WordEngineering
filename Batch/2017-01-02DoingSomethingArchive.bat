@@ -126,7 +126,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4267);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 139300);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 140238);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 84387);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -303,4 +303,8 @@ email@cscglobal.com
 200 N. LaSalle St
 Suite 1100
 Chicago, IL 60601
+
+2021-04-14T18:12:00 URI..UriWordEngineering page 52.  	52336 desc.
+2021-04-14T21:26:00	http://12factor.net
+2021-04-15T10:38:00 When the support, realize one, as able to.
 :Exit
