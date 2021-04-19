@@ -112,7 +112,7 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17654);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24667);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24668);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 54999);
@@ -306,5 +306,5 @@ Chicago, IL 60601
 
 2021-04-14T18:12:00 URI..UriWordEngineering page 52.  	52336 desc.
 2021-04-14T21:26:00	http://12factor.net
-2021-04-15T10:38:00 When the support, realize one, as able to.
+2021-04-16T10:54:00 Microsoft hotmail.com Your request can't be completed right now.
 :Exit

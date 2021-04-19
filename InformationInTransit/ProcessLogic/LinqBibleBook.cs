@@ -30,7 +30,7 @@ namespace InformationInTransit.ProcessLogic
         {
 			var oddBibleBooks =
                 from bibleBook in BibleBook.BibleBooks
-                where (bibleBook.Id % 2) == 1
+                where (bibleBook.ID % 2) == 1
                 select bibleBook;
 	
 			ObjectDumper.Write(oddBibleBooks);			

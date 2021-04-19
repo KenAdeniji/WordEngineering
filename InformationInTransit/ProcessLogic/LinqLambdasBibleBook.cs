@@ -18,7 +18,7 @@ namespace InformationInTransit.ProcessLogic
         public static void SampleLessThanEqualTo()
         {
             // use Where() to filter out elements matching a particular condition        
-            var booksOfMoses = BibleBook.BibleBooks.Where(bibleBook => bibleBook.Id <= 5);
+            var booksOfMoses = BibleBook.BibleBooks.Where(bibleBook => bibleBook.ID <= 5);
 
             Console.WriteLine("Id <= 5");
             ObjectDumper.Write(booksOfMoses);
@@ -103,8 +103,8 @@ namespace InformationInTransit.ProcessLogic
                 {
                     Console.WriteLine
                     (
-                        "Book Id: {0} | Title: {1}",
-                        book.Id,
+                        "Book ID: {0} | Title: {1}",
+                        book.ID,
                         book.Title
                     );
                 }
@@ -125,7 +125,7 @@ namespace InformationInTransit.ProcessLogic
         public static void SampleCollectionIndex()
         {
             var index = from book in BibleBook.BibleBooks
-                        select book.Id - 1;
+                        select book.ID - 1;
             ObjectDumper.Write(index);
         }
 
@@ -164,8 +164,8 @@ namespace InformationInTransit.ProcessLogic
                 {
                     Console.WriteLine
                     (
-                        "Book Id: {0} | Title: {1}",
-                        book.Id,
+                        "Book ID: {0} | Title: {1}",
+                        book.ID,
                         book.Title
                     );
                 }
@@ -265,10 +265,10 @@ namespace InformationInTransit.ProcessLogic
             var sample = from book in BibleBook.BibleBooks
                          select new
                              {
-                                 Id = book.Id,
+                                 ID = book.ID,
                                  Testament = book.Testament,
                                  Title = book.Title,
-                                 OddOrEven = book.Id % 2 == 1 ? "Odd" : "Even"
+                                 OddOrEven = book.ID % 2 == 1 ? "Odd" : "Even"
                              }; 
             ObjectDumper.Write(sample);
         }
@@ -309,8 +309,8 @@ namespace InformationInTransit.ProcessLogic
 
         public static void SampleMinimumId()
         {
-            int minimumId = BibleBook.BibleBooks.Min(book => book.Id);
-            Console.WriteLine(minimumId);
+            int minimumID = BibleBook.BibleBooks.Min(book => book.ID);
+            Console.WriteLine(minimumID);
         }
 
         public static void SampleMinimumBookTitleLength()
@@ -327,8 +327,8 @@ namespace InformationInTransit.ProcessLogic
                 select new
                 { 
                     Testament = bookGroup.Key,
-                    MinimumId = bookGroup.Min(book => book.Id),
-                    MaximumId = bookGroup.Max(book => book.Id) 
+                    MinimumId = bookGroup.Min(book => book.ID),
+                    MaximumId = bookGroup.Max(book => book.ID) 
                 };
 
             ObjectDumper.Write(testaments);
