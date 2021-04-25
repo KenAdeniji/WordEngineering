@@ -9,7 +9,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
@@ -19,17 +18,16 @@ using System.Web;
 /*
 	2016-03-13	public const string ContextConnection = "Context Connection = true;";
 	2016-03-13	ALTER DATABASE WordEngineering SET TRUSTWORTHY ON;
-	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=Odbc.90%29.aspx
+	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=sql.90%29.aspx
 	2020-12-27	https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception?view=net-5.0
 				https://stackoverflow.com/questions/5428406/grant-execute-permission-for-a-user-on-all-stored-procedures-in-database
 					USE [DB]
 					GRANT EXEC TO [User_Name];
-	2020-12-27	https://docs.microsoft.com/en-us/Odbc/relational-databases/clr-integration/clr-integration-enabling?view=Odbc-server-ver15
+	2020-12-27	https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/clr-integration-enabling?view=sql-server-ver15
 				EXEC sp_configure 'clr enabled', 1;  
 				RECONFIGURE;  
 				GO
 	2020-12-27	alter database [WordEngineering] set trustworthy on;
-	2021-04-24	providerName=MySql.Data.MySqlClient;
 */
 /*
 
@@ -64,13 +62,13 @@ select
 
         , tblSD.[is_trustworthy_on]
 
-        , [OdbcTrustworthy]
+        , [sqlTrustworthy]
             = 'alter database '
                 + quotename( tblSD.[name])
                 + ' set trustworthy on;'
 
 
-        , [OdbcTrustworthy]
+        , [sqlTrustworthy]
             = 'exec ' 
                 + quotename( tblSD.[name])
                 + '..sp_changedbowner '
@@ -95,7 +93,7 @@ namespace InformationInTransit.DataAccess
             DatabaseCommandDataSetStub();
             DatabaseCommandDataTableStub();
 			*/
-			//DatabaseCommand(OdbcInjection);
+			//DatabaseCommand(SQLInjection);
 
 			DatabaseCommand
 			(
@@ -123,11 +121,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //Odbc statement
+                cmdText, //SQL statement
                 null, //database connection string
                 CommandType.Text,
                 ResultType.DataReader,
-                null //OdbcParameter
+                null //sqlParameter
             );
         }
 
@@ -140,11 +138,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //Odbc statement
+                cmdText, //SQL statement
                 null, //database connection string
                 commandType,
                 resultType,
-                null //OdbcParameter
+                null //sqlParameter
             );
         }
 
@@ -158,11 +156,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //Odbc statement
+                cmdText, //SQL statement
                 connectionString,
                 commandType,
                 resultType,
-                null //OdbcParameterCollection
+                null //sqlParameterCollection
             );
         }
 
@@ -171,32 +169,32 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             CommandType commandType,
             ResultType resultType,
-            Collection<OdbcParameter> OdbcParameterCollection
+            Collection<SqlParameter> sqlParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //Odbc statement
+                cmdText, //SQL statement
                 null, //database connection string
                 commandType,
                 resultType,
-                OdbcParameterCollection
+                sqlParameterCollection
             );
         }
 
         public static object DatabaseCommand
         (
             string cmdText,
-            Collection<OdbcParameter> OdbcParameterCollection
+            Collection<SqlParameter> sqlParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //Odbc statement
+                cmdText, //SQL statement
                 null, //database connection string
                 CommandType.StoredProcedure,
                 ResultType.DataReader,
-                OdbcParameterCollection
+                sqlParameterCollection
             );
         }
 
@@ -207,15 +205,15 @@ namespace InformationInTransit.DataAccess
             string connectionString,
             CommandType commandType,
             ResultType resultType,
-            Collection<OdbcParameter> odbcParameterCollection
+            Collection<SqlParameter> sqlParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            OdbcCommand OdbcCommand;
-            OdbcConnection OdbcConnection = null;
-            OdbcDataAdapter OdbcDataAdapter;
+            SqlCommand sqlCommand;
+            SqlConnection sqlConnection = null;
+            SqlDataAdapter sqlDataAdapter;
 
 			//2018-02-16	http://net-informations.com/q/faq/remove.html
 			string cmdLine = cmdText.Replace(" ", String.Empty);
@@ -235,63 +233,61 @@ namespace InformationInTransit.DataAccess
             try
             {
                 //EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Information);
-                OdbcConnection = new OdbcConnection(connectionString);
-                OdbcConnection.Open();
-                OdbcCommand = new OdbcCommand(cmdText, OdbcConnection);
-                OdbcCommand.CommandType = commandType;
-				OdbcCommand.CommandTimeout = OdbcConnection.ConnectionTimeout;
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(cmdText, sqlConnection);
+                sqlCommand.CommandType = commandType;
+				sqlCommand.CommandTimeout = sqlConnection.ConnectionTimeout;
                 if (CommandTimeout != null)
                 {
-                    OdbcCommand.CommandTimeout = (int)CommandTimeout;
+                    sqlCommand.CommandTimeout = (int)CommandTimeout;
                 }
 				
 				// dadeniji 2018-08-26 12:02 PM
-				//OdbcCommand.commandTimeout = 0;
+				//sqlCommand.commandTimeout = 0;
 				
-				System.Console.WriteLine("OdbcCommand.commandTimeout: {0}", OdbcCommand.CommandTimeout);
+				System.Console.WriteLine("sqlCommand.commandTimeout: {0}", sqlCommand.CommandTimeout);
 				
 				
-                if (odbcParameterCollection != null && odbcParameterCollection.Count > 0)
+                if (sqlParameterCollection != null && sqlParameterCollection.Count > 0)
                 {
-                    foreach (OdbcParameter odbcParameter in odbcParameterCollection)
+                    foreach (SqlParameter sqlParameter in sqlParameterCollection)
                     {
-                        OdbcCommand.Parameters.Add(odbcParameter);
+                        sqlCommand.Parameters.Add(sqlParameter);
                     }
                 }
                 switch (resultType)
                 {
                     case ResultType.DataSet:
-                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
+                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        OdbcDataAdapter.Fill(dataSet);
+                        sqlDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case ResultType.DataTable:
-                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
+                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        OdbcDataAdapter.Fill(dataTable);
+                        sqlDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case ResultType.NonQuery:
-                        returnValue = OdbcCommand.ExecuteNonQuery(); break;
+                        returnValue = sqlCommand.ExecuteNonQuery(); break;
 
                     case ResultType.DataReader:
-                        returnValue = OdbcCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
+                        returnValue = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
 
                     case ResultType.Scalar:
-                        returnValue = OdbcCommand.ExecuteScalar(); break;
+                        returnValue = sqlCommand.ExecuteScalar(); break;
 
-/*
                     case ResultType.XmlReader:
-                        returnValue = OdbcCommand.ExecuteXmlReader(); break;
-*/
+                        returnValue = sqlCommand.ExecuteXmlReader(); break;
                 }
             }
-			catch (OdbcException ex)
+			catch (SqlException ex)
             {
                 EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
@@ -319,7 +315,7 @@ namespace InformationInTransit.DataAccess
             {
                 if (resultType != ResultType.DataReader)
                 {
-                    OdbcConnection.Close();
+                    sqlConnection.Close();
                 }
             }
             return (returnValue);
@@ -330,15 +326,15 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             string connectionString,
 			CommandType commandType,
-            Collection<OdbcParameter> OdbcParameterCollection
+            Collection<SqlParameter> sqlParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            OdbcCommand OdbcCommand;
-            OdbcConnection OdbcConnection = null;
-            OdbcDataAdapter OdbcDataAdapter;
+            SqlCommand sqlCommand;
+            SqlConnection sqlConnection = null;
+            SqlDataAdapter sqlDataAdapter;
 
             Type typeOfT = typeof(T);
             string typeT = typeOfT.ToString();
@@ -349,46 +345,46 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                OdbcConnection = new OdbcConnection(connectionString);
-                OdbcConnection.Open();
-                OdbcCommand = new OdbcCommand(cmdText, OdbcConnection);
-                OdbcCommand.CommandType = commandType;
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(cmdText, sqlConnection);
+                sqlCommand.CommandType = commandType;
                 if (CommandTimeout != null)
                 {
-                    OdbcCommand.CommandTimeout = (int)CommandTimeout;
+                    sqlCommand.CommandTimeout = (int)CommandTimeout;
                 }
-                if (OdbcParameterCollection != null && OdbcParameterCollection.Count > 0)
+                if (sqlParameterCollection != null && sqlParameterCollection.Count > 0)
                 {
-                    foreach (OdbcParameter OdbcParameter in OdbcParameterCollection)
+                    foreach (SqlParameter sqlParameter in sqlParameterCollection)
                     {
-                        OdbcCommand.Parameters.Add(OdbcParameter);
+                        sqlCommand.Parameters.Add(sqlParameter);
                     }
                 }
 
                 switch (typeT)
                 {
                     case "System.Data.DataSet":
-                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
+                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        OdbcDataAdapter.Fill(dataSet);
+                        sqlDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case "System.Data.DataTable":
-                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
+                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        OdbcDataAdapter.Fill(dataTable);
+                        sqlDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case "System.Data.IDataReader":
-                        returnValue = OdbcCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                        returnValue = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
                         break;
                 }
             }
-			catch (OdbcException ex)
+			catch (SqlException ex)
             {
                 EventLog.WriteEntry("WordEngineering", ex.Message, EventLogEntryType.Error);
             }
@@ -401,20 +397,20 @@ namespace InformationInTransit.DataAccess
             {
                 if (typeOfT != typeof(IDataReader))
                 {
-                    OdbcConnection.Close();
+                    sqlConnection.Close();
                 }
             }
             return (T)returnValue;
         }
 
-        public static OdbcConnection GainConnection()
+        public static SqlConnection GainConnection()
         {
             return GainConnection(null);
         }
 
-        public static OdbcConnection GainConnection(string connectionString)
+        public static SqlConnection GainConnection(string connectionString)
         {
-            OdbcConnection OdbcConnection = null;
+            SqlConnection sqlConnection = null;
 
             if (String.IsNullOrEmpty(connectionString))
             {
@@ -422,10 +418,10 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                OdbcConnection = new OdbcConnection(connectionString);
-                OdbcConnection.Open();
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
             }
-            catch (OdbcException ex)
+            catch (SqlException ex)
             {
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
             }
@@ -434,7 +430,7 @@ namespace InformationInTransit.DataAccess
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
                 throw;
             }
-            return OdbcConnection;
+            return sqlConnection;
         }
 
         public static string ReadConnectionString(string connectionStringName)
@@ -502,7 +498,7 @@ namespace InformationInTransit.DataAccess
         public const string ConnectionStringMaster = "Data Source=(local);Initial Catalog=Master;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=36000;";
         public static readonly string ConnectionStringNameDefault;
 		public const string ContextConnection = "Context Connection = true;";
-		public const string OdbcInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
+		public const string SQLInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
 			"' ; DROP DATABASE junk";
         #endregion
     }

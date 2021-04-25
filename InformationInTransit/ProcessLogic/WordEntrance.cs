@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -87,15 +87,15 @@ namespace InformationInTransit.ProcessLogic
 			
 			foreach(KeyValuePair<string, Participation> kvp in uniqueWords)
 			{
-				Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
-				oleDbParameterCollection.Add(new OleDbParameter("@Word", kvp.Key));
-				oleDbParameterCollection.Add(new OleDbParameter("@firstOccurrence", kvp.Value.FirstOccurrence));
+				Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
+				odbcParameterCollection.Add(new OdbcParameter("@Word", kvp.Key));
+				odbcParameterCollection.Add(new OdbcParameter("@firstOccurrence", kvp.Value.FirstOccurrence));
 				
-				OleDbParameter lastOccurrence = new OleDbParameter("@lastOccurrence", SqlDbType.VarChar);
+				OdbcParameter lastOccurrence = new OdbcParameter("@lastOccurrence", SqlDbType.VarChar);
 				lastOccurrence.IsNullable = true;
 				lastOccurrence.Value = DBNull.Value;
 				
-				OleDbParameter difference = new OleDbParameter("@difference", SqlDbType.Int);
+				OdbcParameter difference = new OdbcParameter("@difference", SqlDbType.Int);
 				difference.IsNullable = true;
 				difference.Value = DBNull.Value;
 				
@@ -105,17 +105,17 @@ namespace InformationInTransit.ProcessLogic
 					difference.Value = kvp.Value.LastOccurrencePosition - kvp.Value.FirstOccurrencePosition;
 				}
 				
-				oleDbParameterCollection.Add(lastOccurrence);
-				oleDbParameterCollection.Add(difference);
+				odbcParameterCollection.Add(lastOccurrence);
+				odbcParameterCollection.Add(difference);
 					
-				oleDbParameterCollection.Add(new OleDbParameter("@FrequencyOfOccurrence", kvp.Value.FrequencyOfOccurrence));
+				odbcParameterCollection.Add(new OdbcParameter("@FrequencyOfOccurrence", kvp.Value.FrequencyOfOccurrence));
 				
 				DataCommand.DatabaseCommand
 				(
 					"Generative..usp_WordEntranceInsert",
 					CommandType.StoredProcedure,
 					DataCommand.ResultType.NonQuery,
-					oleDbParameterCollection
+					odbcParameterCollection
 				);
 			}
 		}

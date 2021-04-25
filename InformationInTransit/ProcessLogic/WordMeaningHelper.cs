@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,11 +32,11 @@ namespace InformationInTransit.ProcessLogic
 			string	query
 		)
         {
-            Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+            Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 
             if (!String.IsNullOrEmpty(query))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@query", query));
+				odbcParameterCollection.Add(new OdbcParameter("@query", query));
 			}	
 
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
@@ -44,7 +44,7 @@ namespace InformationInTransit.ProcessLogic
                 "WordEngineering..usp_WordMeaningQuery",
                 CommandType.StoredProcedure,
                 DataCommand.ResultType.DataSet,
-                oleDbParameterCollection
+                odbcParameterCollection
             );
 			
 			return dataSet;

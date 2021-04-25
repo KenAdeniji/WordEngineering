@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,36 +37,36 @@ namespace InformationInTransit.ProcessLogic
 			string	uri
 		)
         {
-            Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+            Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 
             if (year >= 1)
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@year", year));
+				odbcParameterCollection.Add(new OdbcParameter("@year", year));
 			}	
 
             if (month >= 1)
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@month", month));
+				odbcParameterCollection.Add(new OdbcParameter("@month", month));
 			}	
 			
             if (day >= 1)
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@day", day));
+				odbcParameterCollection.Add(new OdbcParameter("@day", day));
 			}	
 			
             if (!String.IsNullOrEmpty(commentary))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@commentary", commentary));
+				odbcParameterCollection.Add(new OdbcParameter("@commentary", commentary));
 			}	
 
             if (!String.IsNullOrEmpty(scriptureReference))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@scriptureReference", scriptureReference));
+				odbcParameterCollection.Add(new OdbcParameter("@scriptureReference", scriptureReference));
 			}
 
             if (!String.IsNullOrEmpty(uri))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@uri", uri));
+				odbcParameterCollection.Add(new OdbcParameter("@uri", uri));
 			}
 			
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
@@ -74,7 +74,7 @@ namespace InformationInTransit.ProcessLogic
                 "WordEngineering..uspBiblicalCalendarSelect",
                 CommandType.StoredProcedure,
                 DataCommand.ResultType.DataSet,
-                oleDbParameterCollection
+                odbcParameterCollection
             );
 			
 			return dataSet;

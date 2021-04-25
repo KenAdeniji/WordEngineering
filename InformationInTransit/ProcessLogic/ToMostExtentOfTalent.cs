@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -91,30 +91,30 @@ namespace InformationInTransit.ProcessLogic
 						++endeavor.FrequencyOfOccurence;
 					}
 					
-					Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+					Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 					
-					OleDbParameter bookId = new OleDbParameter("@bookId", SqlDbType.Int);
-					OleDbParameter chapterId = new OleDbParameter("@chapterId", SqlDbType.Int);
-					OleDbParameter verseId = new OleDbParameter("@verseId", SqlDbType.Int);
+					OdbcParameter bookId = new OdbcParameter("@bookId", SqlDbType.Int);
+					OdbcParameter chapterId = new OdbcParameter("@chapterId", SqlDbType.Int);
+					OdbcParameter verseId = new OdbcParameter("@verseId", SqlDbType.Int);
 
-					OleDbParameter bibleWord = new OleDbParameter("@bibleWord", SqlDbType.VarChar);
+					OdbcParameter bibleWord = new OdbcParameter("@bibleWord", SqlDbType.VarChar);
 
-					OleDbParameter wordIndexInBible = new OleDbParameter("@wordIndexInBible", SqlDbType.Int);
-					OleDbParameter wordIndexInVerse = new OleDbParameter("@wordIndexInVerse", SqlDbType.Int);
-					OleDbParameter wordFrequencyInBible = new OleDbParameter("@wordFrequencyInBible", SqlDbType.Int);
-					OleDbParameter wordFrequencyInVerse = new OleDbParameter("@wordFrequencyInVerse", SqlDbType.Int);
+					OdbcParameter wordIndexInBible = new OdbcParameter("@wordIndexInBible", SqlDbType.Int);
+					OdbcParameter wordIndexInVerse = new OdbcParameter("@wordIndexInVerse", SqlDbType.Int);
+					OdbcParameter wordFrequencyInBible = new OdbcParameter("@wordFrequencyInBible", SqlDbType.Int);
+					OdbcParameter wordFrequencyInVerse = new OdbcParameter("@wordFrequencyInVerse", SqlDbType.Int);
 
-					oleDbParameterCollection.Add(bookId);
-					oleDbParameterCollection.Add(chapterId);
-					oleDbParameterCollection.Add(verseId);
+					odbcParameterCollection.Add(bookId);
+					odbcParameterCollection.Add(chapterId);
+					odbcParameterCollection.Add(verseId);
 
-					oleDbParameterCollection.Add(bibleWord);
+					odbcParameterCollection.Add(bibleWord);
 					
-					oleDbParameterCollection.Add(wordIndexInBible);
-					oleDbParameterCollection.Add(wordFrequencyInBible);
+					odbcParameterCollection.Add(wordIndexInBible);
+					odbcParameterCollection.Add(wordFrequencyInBible);
 					
-					oleDbParameterCollection.Add(wordIndexInVerse);
-					oleDbParameterCollection.Add(wordFrequencyInVerse);
+					odbcParameterCollection.Add(wordIndexInVerse);
+					odbcParameterCollection.Add(wordFrequencyInVerse);
 
 					bookId.Value = dataRow["bookId"];
 					chapterId.Value = dataRow["chapterId"];
@@ -133,7 +133,7 @@ namespace InformationInTransit.ProcessLogic
 						"Bible..usp_ToMostExtentOfTalentInsert",
 						CommandType.StoredProcedure,
 						DataCommand.ResultType.NonQuery,
-						oleDbParameterCollection
+						odbcParameterCollection
 					);
 				}
 				++row;

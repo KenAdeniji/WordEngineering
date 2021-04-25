@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -29,26 +29,26 @@ namespace InformationInTransit.ProcessLogic
 			int?	chapterMaximum
 		)
 		{
-			Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+			Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 
             if (bookIDMinimum.HasValue && bookIDMinimum > 0)
 			{
-				oleDbParameterCollection.Add(new OleDbParameter("@bookIDMinimum", bookIDMinimum));
+				odbcParameterCollection.Add(new OdbcParameter("@bookIDMinimum", bookIDMinimum));
 			}
 
             if (bookIDMaximum.HasValue && bookIDMaximum > 0)
 			{
-				oleDbParameterCollection.Add(new OleDbParameter("@bookIDMaximum", bookIDMaximum));
+				odbcParameterCollection.Add(new OdbcParameter("@bookIDMaximum", bookIDMaximum));
 			}
 
             if (chapterMinimum.HasValue && chapterMinimum > 0)
 			{
-				oleDbParameterCollection.Add(new OleDbParameter("@chapterMinimum", chapterMinimum));
+				odbcParameterCollection.Add(new OdbcParameter("@chapterMinimum", chapterMinimum));
 			}
 
             if (chapterMaximum.HasValue && chapterMaximum > 0)
 			{
-				oleDbParameterCollection.Add(new OleDbParameter("@chapterMaximum", chapterMaximum));
+				odbcParameterCollection.Add(new OdbcParameter("@chapterMaximum", chapterMaximum));
 			}
 			
 			DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
@@ -56,7 +56,7 @@ namespace InformationInTransit.ProcessLogic
 				"WordEngineering..usp_IValueMostWhereIAmPurposelyUse",
 				CommandType.StoredProcedure,
 				DataCommand.ResultType.DataSet,
-				oleDbParameterCollection
+				odbcParameterCollection
 			);
 			
 			return resultSet;

@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -35,19 +35,19 @@ namespace InformationInTransit.ProcessLogic
 			string	testament
 		)
         {
-            Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+            Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 
-			oleDbParameterCollection.Add(new OleDbParameter("@bookIDMinimum", bookIDMinimum));
-			oleDbParameterCollection.Add(new OleDbParameter("@bookIDMaximum", bookIDMaximum));
+			odbcParameterCollection.Add(new OdbcParameter("@bookIDMinimum", bookIDMinimum));
+			odbcParameterCollection.Add(new OdbcParameter("@bookIDMaximum", bookIDMaximum));
 
             if (!String.IsNullOrEmpty(bookTitle))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@bookTitle", bookTitle));
+				odbcParameterCollection.Add(new OdbcParameter("@bookTitle", bookTitle));
 			}	
 
             if (!String.IsNullOrEmpty(testament))
             {
-				oleDbParameterCollection.Add(new OleDbParameter("@testament", testament));
+				odbcParameterCollection.Add(new OdbcParameter("@testament", testament));
 			}
 			
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
@@ -55,7 +55,7 @@ namespace InformationInTransit.ProcessLogic
                 "Bible..usp_BibleBooksQuery",
                 CommandType.StoredProcedure,
                 DataCommand.ResultType.DataSet,
-                oleDbParameterCollection
+                odbcParameterCollection
             );
 			
 			return dataSet;

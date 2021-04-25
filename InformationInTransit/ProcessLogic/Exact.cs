@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -77,15 +77,15 @@ namespace InformationInTransit.ProcessLogic
 			
 			foreach(KeyValuePair<string, Participation> kvp in uniqueWords)
 			{
-				Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
-				oleDbParameterCollection.Add(new OleDbParameter("@bibleWord", kvp.Key));
-				oleDbParameterCollection.Add(new OleDbParameter("@firstOccurrenceScriptureReference", kvp.Value.FirstOccurrenceScriptureReference));
+				Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
+				odbcParameterCollection.Add(new OdbcParameter("@bibleWord", kvp.Key));
+				odbcParameterCollection.Add(new OdbcParameter("@firstOccurrenceScriptureReference", kvp.Value.FirstOccurrenceScriptureReference));
 				
-				OleDbParameter lastOccurrence = new OleDbParameter("@lastOccurrenceScriptureReference", SqlDbType.VarChar);
+				OdbcParameter lastOccurrence = new OdbcParameter("@lastOccurrenceScriptureReference", SqlDbType.VarChar);
 				lastOccurrence.IsNullable = true;
 				lastOccurrence.Value = DBNull.Value;
 				
-				OleDbParameter difference = new OleDbParameter("@difference", SqlDbType.Int);
+				OdbcParameter difference = new OdbcParameter("@difference", SqlDbType.Int);
 				difference.IsNullable = true;
 				difference.Value = DBNull.Value;
 				
@@ -95,17 +95,17 @@ namespace InformationInTransit.ProcessLogic
 					difference.Value = kvp.Value.LastOccurrencePosition - kvp.Value.FirstOccurrencePosition;
 				}
 				
-				oleDbParameterCollection.Add(lastOccurrence);
-				oleDbParameterCollection.Add(difference);
+				odbcParameterCollection.Add(lastOccurrence);
+				odbcParameterCollection.Add(difference);
 					
-				oleDbParameterCollection.Add(new OleDbParameter("@frequencyOfOccurrence", kvp.Value.FrequencyOfOccurrence));
+				odbcParameterCollection.Add(new OdbcParameter("@frequencyOfOccurrence", kvp.Value.FrequencyOfOccurrence));
 				
 				DataCommand.DatabaseCommand
 				(
 					"Bible..usp_ExactInsert",
 					CommandType.StoredProcedure,
 					DataCommand.ResultType.NonQuery,
-					oleDbParameterCollection
+					odbcParameterCollection
 				);
 			}
 		}

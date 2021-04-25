@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -37,16 +37,16 @@ namespace InformationInTransit.ProcessLogic
 					firstWordId = (int) dataTable.Rows[currentRow]["SequenceOrderId"];
 					secondWordId = (int) dataTable.Rows[nextRow]["SequenceOrderId"];
 		
-					Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
-					oleDbParameterCollection.Add(new OleDbParameter("@firstWordId", firstWordId));
-					oleDbParameterCollection.Add(new OleDbParameter("@secondWordId", secondWordId));
+					Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
+					odbcParameterCollection.Add(new OdbcParameter("@firstWordId", firstWordId));
+					odbcParameterCollection.Add(new OdbcParameter("@secondWordId", secondWordId));
 
 					DataCommand.DatabaseCommand
 					(
 						"Bible..usp_TerminusInsert",
 						CommandType.StoredProcedure,
 						DataCommand.ResultType.NonQuery,
-						oleDbParameterCollection
+						odbcParameterCollection
 					);
 				}	
 			}
