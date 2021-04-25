@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
@@ -18,12 +19,12 @@ using System.Web;
 /*
 	2016-03-13	public const string ContextConnection = "Context Connection = true;";
 	2016-03-13	ALTER DATABASE WordEngineering SET TRUSTWORTHY ON;
-	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=sql.90%29.aspx
+	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=OleDb.90%29.aspx
 	2020-12-27	https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception?view=net-5.0
 				https://stackoverflow.com/questions/5428406/grant-execute-permission-for-a-user-on-all-stored-procedures-in-database
 					USE [DB]
 					GRANT EXEC TO [User_Name];
-	2020-12-27	https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/clr-integration-enabling?view=sql-server-ver15
+	2020-12-27	https://docs.microsoft.com/en-us/OleDb/relational-databases/clr-integration/clr-integration-enabling?view=OleDb-server-ver15
 				EXEC sp_configure 'clr enabled', 1;  
 				RECONFIGURE;  
 				GO
@@ -62,13 +63,13 @@ select
 
         , tblSD.[is_trustworthy_on]
 
-        , [sqlTrustworthy]
+        , [OleDbTrustworthy]
             = 'alter database '
                 + quotename( tblSD.[name])
                 + ' set trustworthy on;'
 
 
-        , [sqlTrustworthy]
+        , [OleDbTrustworthy]
             = 'exec ' 
                 + quotename( tblSD.[name])
                 + '..sp_changedbowner '
@@ -93,7 +94,7 @@ namespace InformationInTransit.DataAccess
             DatabaseCommandDataSetStub();
             DatabaseCommandDataTableStub();
 			*/
-			//DatabaseCommand(SQLInjection);
+			//DatabaseCommand(OleDbInjection);
 
 			DatabaseCommand
 			(
@@ -121,11 +122,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //SQL statement
+                cmdText, //OleDb statement
                 null, //database connection string
                 CommandType.Text,
                 ResultType.DataReader,
-                null //sqlParameter
+                null //OleDbParameter
             );
         }
 
@@ -138,11 +139,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //SQL statement
+                cmdText, //OleDb statement
                 null, //database connection string
                 commandType,
                 resultType,
-                null //sqlParameter
+                null //OleDbParameter
             );
         }
 
@@ -156,11 +157,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //SQL statement
+                cmdText, //OleDb statement
                 connectionString,
                 commandType,
                 resultType,
-                null //sqlParameterCollection
+                null //OleDbParameterCollection
             );
         }
 
@@ -169,32 +170,32 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             CommandType commandType,
             ResultType resultType,
-            Collection<SqlParameter> sqlParameterCollection
+            Collection<OleDbParameter> OleDbParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //SQL statement
+                cmdText, //OleDb statement
                 null, //database connection string
                 commandType,
                 resultType,
-                sqlParameterCollection
+                OleDbParameterCollection
             );
         }
 
         public static object DatabaseCommand
         (
             string cmdText,
-            Collection<SqlParameter> sqlParameterCollection
+            Collection<OleDbParameter> OleDbParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //SQL statement
+                cmdText, //OleDb statement
                 null, //database connection string
                 CommandType.StoredProcedure,
                 ResultType.DataReader,
-                sqlParameterCollection
+                OleDbParameterCollection
             );
         }
 
@@ -205,15 +206,15 @@ namespace InformationInTransit.DataAccess
             string connectionString,
             CommandType commandType,
             ResultType resultType,
-            Collection<SqlParameter> sqlParameterCollection
+            Collection<OleDbParameter> oleDbParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            SqlCommand sqlCommand;
-            SqlConnection sqlConnection = null;
-            SqlDataAdapter sqlDataAdapter;
+            OleDbCommand OleDbCommand;
+            OleDbConnection OleDbConnection = null;
+            OleDbDataAdapter OleDbDataAdapter;
 
 			//2018-02-16	http://net-informations.com/q/faq/remove.html
 			string cmdLine = cmdText.Replace(" ", String.Empty);
@@ -233,61 +234,63 @@ namespace InformationInTransit.DataAccess
             try
             {
                 //EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Information);
-                sqlConnection = new SqlConnection(connectionString);
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand(cmdText, sqlConnection);
-                sqlCommand.CommandType = commandType;
-				sqlCommand.CommandTimeout = sqlConnection.ConnectionTimeout;
+                OleDbConnection = new OleDbConnection(connectionString);
+                OleDbConnection.Open();
+                OleDbCommand = new OleDbCommand(cmdText, OleDbConnection);
+                OleDbCommand.CommandType = commandType;
+				OleDbCommand.CommandTimeout = OleDbConnection.ConnectionTimeout;
                 if (CommandTimeout != null)
                 {
-                    sqlCommand.CommandTimeout = (int)CommandTimeout;
+                    OleDbCommand.CommandTimeout = (int)CommandTimeout;
                 }
 				
 				// dadeniji 2018-08-26 12:02 PM
-				//sqlCommand.commandTimeout = 0;
+				//OleDbCommand.commandTimeout = 0;
 				
-				System.Console.WriteLine("sqlCommand.commandTimeout: {0}", sqlCommand.CommandTimeout);
+				System.Console.WriteLine("OleDbCommand.commandTimeout: {0}", OleDbCommand.CommandTimeout);
 				
 				
-                if (sqlParameterCollection != null && sqlParameterCollection.Count > 0)
+                if (oleDbParameterCollection != null && oleDbParameterCollection.Count > 0)
                 {
-                    foreach (SqlParameter sqlParameter in sqlParameterCollection)
+                    foreach (OleDbParameter oleDbParameter in oleDbParameterCollection)
                     {
-                        sqlCommand.Parameters.Add(sqlParameter);
+                        OleDbCommand.Parameters.Add(oleDbParameter);
                     }
                 }
                 switch (resultType)
                 {
                     case ResultType.DataSet:
-                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        sqlDataAdapter.Fill(dataSet);
+                        OleDbDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case ResultType.DataTable:
-                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        sqlDataAdapter.Fill(dataTable);
+                        OleDbDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case ResultType.NonQuery:
-                        returnValue = sqlCommand.ExecuteNonQuery(); break;
+                        returnValue = OleDbCommand.ExecuteNonQuery(); break;
 
                     case ResultType.DataReader:
-                        returnValue = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
+                        returnValue = OleDbCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
 
                     case ResultType.Scalar:
-                        returnValue = sqlCommand.ExecuteScalar(); break;
+                        returnValue = OleDbCommand.ExecuteScalar(); break;
 
+/*
                     case ResultType.XmlReader:
-                        returnValue = sqlCommand.ExecuteXmlReader(); break;
+                        returnValue = OleDbCommand.ExecuteXmlReader(); break;
+*/
                 }
             }
-			catch (SqlException ex)
+			catch (OleDbException ex)
             {
                 EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
@@ -315,7 +318,7 @@ namespace InformationInTransit.DataAccess
             {
                 if (resultType != ResultType.DataReader)
                 {
-                    sqlConnection.Close();
+                    OleDbConnection.Close();
                 }
             }
             return (returnValue);
@@ -326,15 +329,15 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             string connectionString,
 			CommandType commandType,
-            Collection<SqlParameter> sqlParameterCollection
+            Collection<OleDbParameter> OleDbParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            SqlCommand sqlCommand;
-            SqlConnection sqlConnection = null;
-            SqlDataAdapter sqlDataAdapter;
+            OleDbCommand OleDbCommand;
+            OleDbConnection OleDbConnection = null;
+            OleDbDataAdapter OleDbDataAdapter;
 
             Type typeOfT = typeof(T);
             string typeT = typeOfT.ToString();
@@ -345,46 +348,46 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                sqlConnection = new SqlConnection(connectionString);
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand(cmdText, sqlConnection);
-                sqlCommand.CommandType = commandType;
+                OleDbConnection = new OleDbConnection(connectionString);
+                OleDbConnection.Open();
+                OleDbCommand = new OleDbCommand(cmdText, OleDbConnection);
+                OleDbCommand.CommandType = commandType;
                 if (CommandTimeout != null)
                 {
-                    sqlCommand.CommandTimeout = (int)CommandTimeout;
+                    OleDbCommand.CommandTimeout = (int)CommandTimeout;
                 }
-                if (sqlParameterCollection != null && sqlParameterCollection.Count > 0)
+                if (OleDbParameterCollection != null && OleDbParameterCollection.Count > 0)
                 {
-                    foreach (SqlParameter sqlParameter in sqlParameterCollection)
+                    foreach (OleDbParameter OleDbParameter in OleDbParameterCollection)
                     {
-                        sqlCommand.Parameters.Add(sqlParameter);
+                        OleDbCommand.Parameters.Add(OleDbParameter);
                     }
                 }
 
                 switch (typeT)
                 {
                     case "System.Data.DataSet":
-                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        sqlDataAdapter.Fill(dataSet);
+                        OleDbDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case "System.Data.DataTable":
-                        sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        sqlDataAdapter.Fill(dataTable);
+                        OleDbDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case "System.Data.IDataReader":
-                        returnValue = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                        returnValue = OleDbCommand.ExecuteReader(CommandBehavior.CloseConnection);
                         break;
                 }
             }
-			catch (SqlException ex)
+			catch (OleDbException ex)
             {
                 EventLog.WriteEntry("WordEngineering", ex.Message, EventLogEntryType.Error);
             }
@@ -397,20 +400,20 @@ namespace InformationInTransit.DataAccess
             {
                 if (typeOfT != typeof(IDataReader))
                 {
-                    sqlConnection.Close();
+                    OleDbConnection.Close();
                 }
             }
             return (T)returnValue;
         }
 
-        public static SqlConnection GainConnection()
+        public static OleDbConnection GainConnection()
         {
             return GainConnection(null);
         }
 
-        public static SqlConnection GainConnection(string connectionString)
+        public static OleDbConnection GainConnection(string connectionString)
         {
-            SqlConnection sqlConnection = null;
+            OleDbConnection OleDbConnection = null;
 
             if (String.IsNullOrEmpty(connectionString))
             {
@@ -418,10 +421,10 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                sqlConnection = new SqlConnection(connectionString);
-                sqlConnection.Open();
+                OleDbConnection = new OleDbConnection(connectionString);
+                OleDbConnection.Open();
             }
-            catch (SqlException ex)
+            catch (OleDbException ex)
             {
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
             }
@@ -430,7 +433,7 @@ namespace InformationInTransit.DataAccess
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
                 throw;
             }
-            return sqlConnection;
+            return OleDbConnection;
         }
 
         public static string ReadConnectionString(string connectionStringName)
@@ -498,7 +501,7 @@ namespace InformationInTransit.DataAccess
         public const string ConnectionStringMaster = "Data Source=(local);Initial Catalog=Master;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=36000;";
         public static readonly string ConnectionStringNameDefault;
 		public const string ContextConnection = "Context Connection = true;";
-		public const string SQLInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
+		public const string OleDbInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
 			"' ; DROP DATABASE junk";
         #endregion
     }

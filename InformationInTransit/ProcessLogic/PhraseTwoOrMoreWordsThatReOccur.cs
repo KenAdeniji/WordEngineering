@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -109,15 +110,15 @@ namespace InformationInTransit.ProcessLogic
 			
 			foreach(KeyValuePair<string, Participation> kvp in uniqueWords)
 			{
-				Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
-				sqlParameterCollection.Add(new SqlParameter("@biblePhrase", kvp.Key));
-				sqlParameterCollection.Add(new SqlParameter("@firstOccurrence", kvp.Value.FirstOccurence));
+				Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+				oleDbParameterCollection.Add(new OleDbParameter("@biblePhrase", kvp.Key));
+				oleDbParameterCollection.Add(new OleDbParameter("@firstOccurrence", kvp.Value.FirstOccurence));
 				
-				SqlParameter lastOccurence = new SqlParameter("@lastOccurrence", SqlDbType.VarChar);
+				OleDbParameter lastOccurence = new OleDbParameter("@lastOccurrence", SqlDbType.VarChar);
 				lastOccurence.IsNullable = true;
 				lastOccurence.Value = DBNull.Value;
 				
-				SqlParameter difference = new SqlParameter("@difference", SqlDbType.Int);
+				OleDbParameter difference = new OleDbParameter("@difference", SqlDbType.Int);
 				difference.IsNullable = true;
 				difference.Value = DBNull.Value;
 				
@@ -127,17 +128,17 @@ namespace InformationInTransit.ProcessLogic
 					difference.Value = kvp.Value.LastOccurencePosition - kvp.Value.FirstOccurencePosition;
 				}
 				
-				sqlParameterCollection.Add(lastOccurence);
-				sqlParameterCollection.Add(difference);
+				oleDbParameterCollection.Add(lastOccurence);
+				oleDbParameterCollection.Add(difference);
 					
-				sqlParameterCollection.Add(new SqlParameter("@FrequencyOfOccurrence", kvp.Value.FrequencyOfOccurence));
+				oleDbParameterCollection.Add(new OleDbParameter("@FrequencyOfOccurrence", kvp.Value.FrequencyOfOccurence));
 				
 				DataCommand.DatabaseCommand
 				(
 					"Bible..usp_PhraseTwoOrMoreWordsThatReOccurInsert",
 					CommandType.StoredProcedure,
 					DataCommand.ResultType.NonQuery,
-					sqlParameterCollection
+					oleDbParameterCollection
 				);
 			}
 		}

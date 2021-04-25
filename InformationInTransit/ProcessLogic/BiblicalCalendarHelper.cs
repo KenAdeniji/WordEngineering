@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -36,36 +37,36 @@ namespace InformationInTransit.ProcessLogic
 			string	uri
 		)
         {
-            Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
+            Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
 
             if (year >= 1)
             {
-				sqlParameterCollection.Add(new SqlParameter("@year", year));
+				oleDbParameterCollection.Add(new OleDbParameter("@year", year));
 			}	
 
             if (month >= 1)
             {
-				sqlParameterCollection.Add(new SqlParameter("@month", month));
+				oleDbParameterCollection.Add(new OleDbParameter("@month", month));
 			}	
 			
             if (day >= 1)
             {
-				sqlParameterCollection.Add(new SqlParameter("@day", day));
+				oleDbParameterCollection.Add(new OleDbParameter("@day", day));
 			}	
 			
             if (!String.IsNullOrEmpty(commentary))
             {
-				sqlParameterCollection.Add(new SqlParameter("@commentary", commentary));
+				oleDbParameterCollection.Add(new OleDbParameter("@commentary", commentary));
 			}	
 
             if (!String.IsNullOrEmpty(scriptureReference))
             {
-				sqlParameterCollection.Add(new SqlParameter("@scriptureReference", scriptureReference));
+				oleDbParameterCollection.Add(new OleDbParameter("@scriptureReference", scriptureReference));
 			}
 
             if (!String.IsNullOrEmpty(uri))
             {
-				sqlParameterCollection.Add(new SqlParameter("@uri", uri));
+				oleDbParameterCollection.Add(new OleDbParameter("@uri", uri));
 			}
 			
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
@@ -73,7 +74,7 @@ namespace InformationInTransit.ProcessLogic
                 "WordEngineering..uspBiblicalCalendarSelect",
                 CommandType.StoredProcedure,
                 DataCommand.ResultType.DataSet,
-                sqlParameterCollection
+                oleDbParameterCollection
             );
 			
 			return dataSet;

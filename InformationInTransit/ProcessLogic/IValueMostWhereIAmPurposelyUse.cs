@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -28,26 +29,26 @@ namespace InformationInTransit.ProcessLogic
 			int?	chapterMaximum
 		)
 		{
-			Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
+			Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
 
             if (bookIDMinimum.HasValue && bookIDMinimum > 0)
 			{
-				sqlParameterCollection.Add(new SqlParameter("@bookIDMinimum", bookIDMinimum));
+				oleDbParameterCollection.Add(new OleDbParameter("@bookIDMinimum", bookIDMinimum));
 			}
 
             if (bookIDMaximum.HasValue && bookIDMaximum > 0)
 			{
-				sqlParameterCollection.Add(new SqlParameter("@bookIDMaximum", bookIDMaximum));
+				oleDbParameterCollection.Add(new OleDbParameter("@bookIDMaximum", bookIDMaximum));
 			}
 
             if (chapterMinimum.HasValue && chapterMinimum > 0)
 			{
-				sqlParameterCollection.Add(new SqlParameter("@chapterMinimum", chapterMinimum));
+				oleDbParameterCollection.Add(new OleDbParameter("@chapterMinimum", chapterMinimum));
 			}
 
             if (chapterMaximum.HasValue && chapterMaximum > 0)
 			{
-				sqlParameterCollection.Add(new SqlParameter("@chapterMaximum", chapterMaximum));
+				oleDbParameterCollection.Add(new OleDbParameter("@chapterMaximum", chapterMaximum));
 			}
 			
 			DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
@@ -55,7 +56,7 @@ namespace InformationInTransit.ProcessLogic
 				"WordEngineering..usp_IValueMostWhereIAmPurposelyUse",
 				CommandType.StoredProcedure,
 				DataCommand.ResultType.DataSet,
-				sqlParameterCollection
+				oleDbParameterCollection
 			);
 			
 			return resultSet;

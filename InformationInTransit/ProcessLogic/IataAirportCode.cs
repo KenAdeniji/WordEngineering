@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 
 using InformationInTransit.DataAccess;
@@ -29,13 +30,13 @@ namespace InformationInTransit.ProcessLogic
 
 			foreach (DataRow dataRow in dataSet.Tables[0].Rows)
 			{
-				Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
+				Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
 					
-				SqlParameter code = new SqlParameter("@code", SqlDbType.VarChar);
-				SqlParameter airport = new SqlParameter("@airport", SqlDbType.VarChar);
+				OleDbParameter code = new OleDbParameter("@code", SqlDbType.VarChar);
+				OleDbParameter airport = new OleDbParameter("@airport", SqlDbType.VarChar);
 
-				sqlParameterCollection.Add(code);
-				sqlParameterCollection.Add(airport);
+				oleDbParameterCollection.Add(code);
+				oleDbParameterCollection.Add(airport);
 
 				code.Value = dataRow["code"];
 				airport.Value = dataRow["airport"];
@@ -45,7 +46,7 @@ namespace InformationInTransit.ProcessLogic
 					"AManDevelopedInAll..usp_IataAirportCodeInsert",
 					CommandType.StoredProcedure,
 					DataCommand.ResultType.NonQuery,
-					sqlParameterCollection
+					oleDbParameterCollection
 				);
 			}
         }

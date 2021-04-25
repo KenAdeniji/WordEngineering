@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -167,16 +168,16 @@ namespace InformationInTransit.ProcessLogic
 
             foreach (KeyValuePair<Int64, Participation> kvp in uniqueWords)
             {
-                Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
-                sqlParameterCollection.Add(new SqlParameter("@number", kvp.Key));
-                sqlParameterCollection.Add(new SqlParameter("@phrase", kvp.Value.Phrase.ToString()));
-                sqlParameterCollection.Add(new SqlParameter("@firstOccurrence", kvp.Value.FirstOccurrence));
+                Collection<OleDbParameter> oleDbParameterCollection = new Collection<OleDbParameter>();
+                oleDbParameterCollection.Add(new OleDbParameter("@number", kvp.Key));
+                oleDbParameterCollection.Add(new OleDbParameter("@phrase", kvp.Value.Phrase.ToString()));
+                oleDbParameterCollection.Add(new OleDbParameter("@firstOccurrence", kvp.Value.FirstOccurrence));
 
-                SqlParameter lastOccurrence = new SqlParameter("@lastOccurrence", SqlDbType.VarChar);
+                OleDbParameter lastOccurrence = new OleDbParameter("@lastOccurrence", SqlDbType.VarChar);
                 lastOccurrence.IsNullable = true;
                 lastOccurrence.Value = DBNull.Value;
 
-                SqlParameter difference = new SqlParameter("@difference", SqlDbType.Int);
+                OleDbParameter difference = new OleDbParameter("@difference", SqlDbType.Int);
                 difference.IsNullable = true;
                 difference.Value = DBNull.Value;
 
@@ -186,17 +187,17 @@ namespace InformationInTransit.ProcessLogic
                     difference.Value = kvp.Value.LastOccurrencePosition - kvp.Value.FirstOccurrencePosition;
                 }
 
-                sqlParameterCollection.Add(lastOccurrence);
-                sqlParameterCollection.Add(difference);
+                oleDbParameterCollection.Add(lastOccurrence);
+                oleDbParameterCollection.Add(difference);
 
-                sqlParameterCollection.Add(new SqlParameter("@Occurrence", kvp.Value.Occurrence));
+                oleDbParameterCollection.Add(new OleDbParameter("@Occurrence", kvp.Value.Occurrence));
 
                 DataCommand.DatabaseCommand
                 (
                     "Bible..usp_MeetMyEndThroughInsert",
                     CommandType.StoredProcedure,
                     DataCommand.ResultType.NonQuery,
-                    sqlParameterCollection
+                    oleDbParameterCollection
                 );
             }
         }

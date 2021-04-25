@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -30,11 +31,11 @@ namespace InformationInTransit.ProcessLogic
 			string	query
 		)
         {
-            Collection<SqlParameter> sqlParameterCollection = new Collection<SqlParameter>();
+            Collection<OleDbParameter> sqlParameterCollection = new Collection<OleDbParameter>();
 
             if (!String.IsNullOrEmpty(query))
             {
-				sqlParameterCollection.Add(new SqlParameter("@query", query));
+				sqlParameterCollection.Add(new OleDbParameter("@query", query));
 			}	
 
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
