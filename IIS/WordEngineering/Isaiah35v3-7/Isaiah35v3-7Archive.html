@@ -3,6 +3,8 @@
 	<head>
 		<!--
 			2021-03-24	Created.
+			DRIVER={MySQL ODBC 8.0 ANSI Driver};SERVER=adriel;DATABASE=bible;UID=;PASSWORD=;OPTION=3;
+			Driver={SQL Server};Server=(local);Database=WordEngineering;Trusted_Connection=Yes;
 		-->
 		<title>Isaiah 35:3-7</title>
 		<meta charset="UTF-8"/>
@@ -70,13 +72,13 @@
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/Isaiah35v3-7/Isaiah35v3-7.asmx/SelectTables",
+					url: "/WordEngineering/Isaiah35v3-7/Isaiah35v3-7.asmx/information_schema",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
 					{
-						var dataTable = JSON.parse(data.d);
-						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 					},
 					error: function(xhr)
 					{ 
