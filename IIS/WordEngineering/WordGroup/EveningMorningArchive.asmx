@@ -22,7 +22,7 @@ using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessLogic;
 
 ///<summary>
-///	2021-04-26T15:20:00 Created.
+///	2021-04-26T15:20:00 Created. In place.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -83,7 +83,7 @@ public class EveningMorningWebService : System.Web.Services.WebService
 	@"
 		SELECT ScriptureReference, {0}
 		FROM Bible..Scripture_View 
-		WHERE ( CHARINDEX('{1}', {0}) > -1 ) 
+		WHERE ( CHARINDEX('{1}', {0}) > 0 ) 
 	";	
 	public const string WordIndexOfFormat = " AND ( CHARINDEX('{0}', {2}) < CHARINDEX('{1}', {2}) )";
 }

@@ -22,7 +22,7 @@ using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessLogic;
 
 ///<summary>
-///	2021-04-26T15:20:00 Created.
+///	2021-04-26T15:20:00 Created. In place.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
