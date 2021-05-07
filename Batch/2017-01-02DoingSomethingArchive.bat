@@ -193,6 +193,7 @@ WHERE CONVERT(Date, Dated) = '2018-11-06'
 :ErrorMessage
 http://e-comfort.ephraimtech.com/WordEngineering/Resume/KenAdenijiResume.html
 E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
+E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
 2020-12-02T11:02:00 ... 2020-12-02T11:48:00 Microsoft SQL Server data files archive; network error.
 12:26 Microsoft SQL Server Management Studio user interface (UI) grid error.
@@ -318,4 +319,10 @@ Please call him back.
 Thanks,
 
 Daniel
+2021-05-03T12:39:03
+2021-05-03T14:08:00 Whose sufficiency, is unknown? 14:08 Microsoft SQL Server Management Studio data entry error.
+2021-05-03T14:22:00 google.com javascript filetype:pdf
+2021-05-03T21:07:00 Senior Software Engineer (C#, 
+2021-05-04T09:45:00 Second dose Alameda County Fairgrounds Drive-Through Vaccine Clinic 501 Pleasanton Avenue, Pleasanton, CA 94566 Call 925-426-7500 covax@acgov.org
+InYourKindnessYouHaveNotExcludedMe.html
 :Exit

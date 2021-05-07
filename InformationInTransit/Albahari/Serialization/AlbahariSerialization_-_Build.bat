@@ -1,0 +1,1 @@
+csc Albahari_-_Serialization.cs ..\..\ProcessLogic\ObjectDumper.cs

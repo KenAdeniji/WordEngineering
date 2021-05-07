@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfBibleBook xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BibleBook ID="1">
+    <Title xmlns="http://KenAdeniji.WordPress.com">Genesis</Title>
+  </BibleBook>
+  <BibleBook ID="2">
+    <Title xmlns="http://KenAdeniji.WordPress.com">Exodus</Title>
+  </BibleBook>
+  <BibleBook ID="3">
+    <Title xmlns="http://KenAdeniji.WordPress.com">Leviticus</Title>
+  </BibleBook>
+  <BibleBook ID="4">
+    <Title xmlns="http://KenAdeniji.WordPress.com">Numbers</Title>
+  </BibleBook>
+  <BibleBook ID="5">
+    <Title xmlns="http://KenAdeniji.WordPress.com">Deuteronomy</Title>
+  </BibleBook>
+</ArrayOfBibleBook>

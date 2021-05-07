@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2021-05-06T13:00:00	Created.
+			2021-05-06T14:30:00	https://stackoverflow.com/questions/22240554/split-string-with-trimmed-whitespace-c-sharp
+		-->
+		<title>When does God step into the affairs of men?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="When does God step into the affairs of men?"/>
+		<meta name="keywords" content="Scripture Reference, VerseIDSequence, Genesis 22:2, 2 Samuel 23:5, Matthew 1:20"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td>
+						<input
+							type="text" 
+							ID="scriptureReference"
+							value="Genesis 22:2, 2 Samuel 23:5, Matthew 1:20" 
+							autofocus
+							required
+						/>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion" required size="2"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><span id="infoSet"></span></td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="center"></div>
+
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var scriptureReferenceElement = document.getElementById("scriptureReference");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			var infoSetElement = document.getElementById("infoSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleVersionParam = urlParams.get("bibleVersion");
+						if (bibleVersionParam)
+						{
+							bibleVersionElement.value = bibleVersionParam;
+						}	
+						
+						var scriptureReferenceParam = urlParams.get("scriptureReference");
+						if (scriptureReferenceParam)
+						{
+							scriptureReferenceElement.value = scriptureReferenceParam;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bibleVersion"] = bibleVersionElement.value;;
+				request["scriptureReference"] = scriptureReferenceElement.value;;
+
+				var requestJson = JSON.stringify(request);
+	
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/WhenDoesGodStepIntoTheAffairsOfMen.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+						
+						infoSetElement.textContent = 
+							(dataTable[1]["VerseIDSequence"] - dataTable[0]["VerseIDSequence"])
+							/
+							(dataTable[2]["VerseIDSequence"] - dataTable[0]["VerseIDSequence"])
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
