@@ -12,6 +12,7 @@
 			2021-05-13T18:10:00 https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
 			2021-05-13T20:25:00	If life could show the way; then I will belong.
 			2021-05-13T20:25:00	If life could show a way; then I will belong. If life could tell a story; then I will share. If somebody want to convert this idea; how easy is it to convert this idea, to their own environment.
+			2021-05-14T10:18:00	JSON array.
 		-->
 		<title>Bill Gates and Melinda French: Personal</title>
 		<meta charset="UTF-8"/>
@@ -102,6 +103,7 @@
 								<caption>Genealogy</caption>
 								<thead>
 									<tr>
+										<th>Title</th>
 										<th>Scripture Reference</th>
 										<th>People</th>
 										<th>Filter</th>
@@ -143,19 +145,20 @@
 						totalFilter += rowFilter;
 						tableInfo += 
 							`<tr>
-							<td>
-							<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=${scriptureReference[outerIndex]}'>${scriptureReference[outerIndex]}</a>
-							</td>
-							<td>${recordInfo}</td>
-							<td align='right'>${rowFilter}</td>
-							<td align='right'>${personal[outerIndex].length}</td>
+								<td>${bible.bible[outerIndex].title}</td>
+								<td>
+									<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=${bible.bible[outerIndex].scriptureReference}'>${bible.bible[outerIndex].scriptureReference}</a>
+								</td>
+								<td>${recordInfo}</td>
+								<td align='right'>${rowFilter}</td>
+								<td align='right'>${personal[outerIndex].length}</td>
 							</tr>`;
 						overall += personal[outerIndex].length;	
 					}	
 				}
 				tableInfo += `<tfoot>
 					<tr>
-						<td colspan='2'/>
+						<td colspan='3'/>
 						<td align='right'>${totalFilter}</td>
 						<td align='right'>${overall}</td>
 					</tr>
@@ -181,11 +184,15 @@
 				["Adam", "Seth", "Enos", "Cainan", "Mahalaleel", "Jared", "Enoch", "Methuselah", "Lamech","Noah"],
 				["Abraham", "Isaac", "Jacob", "Judah", "Perez", "Hezron", "Ram", "Amminadab", "Nahshon", "Salmon", "Boaz", "Obed", "Jesse", "David", "Solomon", "Rehoboam", "Abijah", "Asa", "Jehoshaphat", "Joram", "Uzziah", "Jotham", "Ahaz", "Hezekiah", "Manasseh", "Amon", "Josiah", "Jeconiah", "Shealtiel", "Zerubbabel", "Abiud", "Eliakim", "Azor", "Zadok", "Achim", "Eliud", "Eleazer", "Matthan", "Jacob", "Joseph", "Jesus Christ"] 
 			]; 
-			var scriptureReference =
-			[ 
-				"Genesis 5",
-				"Matthew 1"
-			]; 
+
+			var bible = 
+				{
+					"bible":
+					[ 
+						{"title":"This is the book of the generations of Adam.", "scriptureReference":"Genesis 5"},
+						{"title":"The book of the generation of Jesus Christ, the son of David, the son of Abraham.", "scriptureReference":"Matthew 1"},						
+					]
+				};	
 	</script>
 </body>
 </html>
