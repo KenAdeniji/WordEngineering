@@ -8,6 +8,7 @@
 			2021-05-13T16:58:00	The visiting of a human stage.
 			2021-05-13T16:59:00	Much perusal.
 								Wikipedia.org, when Microsoft, started, Bill Gates checked every line of code.
+			2021-05-13T18:00:00 Filter overall.					
 		-->
 		<title>Bill Gates and Melinda French: Personal</title>
 		<meta charset="UTF-8"/>
@@ -92,9 +93,18 @@
 			function querySubmit()
 			{
 				var recordInfo = "";
-				var tableInfo = "<table id='tablePersonal'><caption>Genealogy</caption>" +
-								"<thead><tr><th>Scripture Reference</th><th>People</th><th>Count</th></thead>";
-				var people = 0;
+				var tableInfo = `<table id='tablePersonal'>
+								<caption>Genealogy</caption>
+								<thead>
+									<tr>
+										<th>Scripture Reference</th>
+										<th>People</th>
+										<th>Filter</th>
+										<th>Overall</th>
+									</tr>	
+								</thead>
+								`;
+				var rowFilter = 0, totalFilter = 0, overall = 0;
 				for 
 				(
 					var outerIndex = 0, 
@@ -124,18 +134,27 @@
 					}
 					if (recordInfo)
 					{
+						rowFilter = recordInfo.split(",").length;
+						totalFilter += rowFilter;
 						tableInfo += 
 							`<tr>
 							<td>
 							<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=${scriptureReference[outerIndex]}'>${scriptureReference[outerIndex]}</a>
 							</td>
 							<td>${recordInfo}</td>
+							<td align='right'>${rowFilter}</td>
 							<td align='right'>${personal[outerIndex].length}</td>
 							</tr>`;
-						people += personal[outerIndex].length;	
+						overall += personal[outerIndex].length;	
 					}	
 				}
-				tableInfo += `<tfoot><tr><td colspan='3' align='right'>${people}</td></tr></tfoot>`;
+				tableInfo += `<tfoot>
+					<tr>
+						<td colspan='2'/>
+						<td align='right'>${totalFilter}</td>
+						<td align='right'>${overall}</td>
+					</tr>
+				</tfoot>`;
 				tableInfo += "</table>";
 				resultSetElement.innerHTML = tableInfo;	
 				tsorter.create("tablePersonal");
