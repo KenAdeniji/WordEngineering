@@ -207,8 +207,16 @@ Thank you and God blesses,
 KenAdeniji@hotmail.com
 http://KenAdeniji.WordPress.com
 http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
-https://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
+http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 (510) 796-8121
 2021-01-03T15:20:00
-
+2021-05-17T05:12:00 415-250-5365
+2021-03-17T21:01:00
+Bobbi Heath
+Company	Streambase Systems, Inc.
+Work e-mail	bobbi.heath@streambase.com
+Work phone	(781) 761-0808
+Notes	2007-06-25 Hello Ken, Thank you for submitting your resume to Streambase. Would you be available for a phone screen sometime this week? I can be flexible during the day, and in the evening here on the east coast, until about 7PM your time. Regards, Bobbi Heath Bobbi Heath, Ph.D. VP of Professional Services StreamBase Systems, Inc. www.streambase.com 781-761-0808 Bobbi Heath, My present work commitment will not offer me the opportunity to pursue a relationship with StreamBase. I thank you for the opportunity, and I wish StreamBase much success. Database.
+2021-05-19T11:47
+Please send resumes to Jaime.Belton@rht.com or give me a call at 415-434-4940 ext. 29667 Robert Half Technology is looking for an experienced .NET Developer for a contract opportunity in the Burlingame area. (No third party agency inquiries) Job Requirements ? 5+ years of experience building web based applications using C#, ASP.Net Broad experience with the .NET Framework Strong Sql Server knowledge (ability to develop Database from SCRATCH, queries, Stored Procedures, etc?). Deep knowledge in OOP and N-Tier architecture. Multithreaded Application Programming. WCF Services and WEB.API Experience with transitioning from older .Net Framework (VB.NET) to newer .Net Framework (C#) Hands-on experience of HTML5, JavaScript, JQuery. (nice to have)
 :Exit
