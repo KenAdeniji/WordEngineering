@@ -115,7 +115,7 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24668);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 55007);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57024);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 699);

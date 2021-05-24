@@ -33,13 +33,17 @@ class Subsequences
 		int startWithATGIndex = 0;
 		
 		String[] endWithLiterals = {"TAA", "TAG", "TGA"};
-		int[] endWithIndexes = {-1, -1, -1};
-		int endWithEitherIndex = input.length();
+		int endWithLength = endWithLiterals.length;
+		int endWithIndex = 0;
+		int endWithIndexes = 0;
+		int endBlock = 0;
+
+		boolean endWithFound = false;	
 		
 		List<String> resultSet = new ArrayList<String>();
 		
 		String output;
-		
+	
 		for (;;)
 		{
 			startWithATGIndex = input.indexOf(startWithATGLiteral, startWithATGIndex);
@@ -49,40 +53,46 @@ class Subsequences
 			}	
 			for 
 			(
-				int endWithIndex = 0, endWithLength = endWithIndexes.length;
+				endWithIndex = 0, 
+				endWithFound = false
+				;
 				endWithIndex < endWithLength;
 				++endWithIndex
 			)
 			{
-				endWithIndexes[endWithIndex] = 
-					input.indexOf
-					(
-						endWithLiterals[endWithIndex],
-						startWithATGIndex + 1
-					);
+				endWithIndexes = input.indexOf
+				(
+					endWithLiterals[endWithIndex],
+					startWithATGIndex
+				);
 				if 
 				(
-					endWithIndexes[endWithIndex] > startWithATGIndex &&
-					endWithIndexes[endWithIndex] < endWithEitherIndex
+					endWithIndexes > -1
 				)
 				{
-					endWithEitherIndex = endWithIndexes[endWithIndex];
+					endWithFound = true;
+					endBlock = endWithIndexes + ((endWithLiterals[endWithIndex]).length());
+					break;
 				}		
 			}
-			if 
-			(
-				endWithEitherIndex <= startWithATGIndex
-			)
+
+			if (!endWithFound)
 			{
-				endWithEitherIndex = input.length();
-			}	
+				endBlock = input.length();
+			}		
+
 			resultSet.add
 			(
 				'"' + 
-				input.substring(startWithATGIndex, endWithEitherIndex) +
-				'"'
+				input.substring
+				(
+					startWithATGIndex,
+					endBlock
+				)
+				+ '"'
 			);
-			++startWithATGIndex;
+	
+			startWithATGIndex = endBlock;
 		}
 		
 		output = "[" + String.join(", ", resultSet) + "]";
