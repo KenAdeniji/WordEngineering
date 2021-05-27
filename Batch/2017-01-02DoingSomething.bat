@@ -117,7 +117,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57024);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 563);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 878);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 699);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 15512);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -218,4 +218,28 @@ Work e-mail	bobbi.heath@streambase.com
 Work phone	(781) 761-0808
 Notes	2007-06-25 Hello Ken, Thank you for submitting your resume to Streambase. Would you be available for a phone screen sometime this week? I can be flexible during the day, and in the evening here on the east coast, until about 7PM your time. Regards, Bobbi Heath Bobbi Heath, Ph.D. VP of Professional Services StreamBase Systems, Inc. www.streambase.com 781-761-0808 Bobbi Heath, My present work commitment will not offer me the opportunity to pursue a relationship with StreamBase. I thank you for the opportunity, and I wish StreamBase much success. Database.
 2021-05-19T11:47:00 Please send resumes to Jaime.Belton@rht.com or give me a call at 415-434-4940 ext. 29667 Robert Half Technology is looking for an experienced .NET Developer for a contract opportunity in the Burlingame area. (No third party agency inquiries) Job Requirements ? 5+ years of experience building web based applications using C#, ASP.Net Broad experience with the .NET Framework Strong Sql Server knowledge (ability to develop Database from SCRATCH, queries, Stored Procedures, etc?). Deep knowledge in OOP and N-Tier architecture. Multithreaded Application Programming. WCF Services and WEB.API Experience with transitioning from older .Net Framework (VB.NET) to newer .Net Framework (C#) Hands-on experience of HTML5, JavaScript, JQuery. (nice to have)
+2021-05-25T11:21:00
+Kindly mail me resumes in word format at  heline@tekrek.com & Phone: 925-326-1320
+
+ 
+
+ 
+
+To unsubscribe from future emails or to update your email preferencesclick here .
+2021-05-26T14:08:00
+
+
+From: craigslist 7327075979 <5aee4192f48130aa82f17f47fcc37c0e@job.craigslist.org>Sent: Wednesday, May 26, 2021 9:01 PMTo: 5aee4192f48130aa82f17f47fcc37c0e@reply.craigslist.org <5aee4192f48130aa82f17f47fcc37c0e@reply.craigslist.org>Subject: Re: Angel Funded Startup Seeking Cofounding CTO in NFT Space (Sacramento)
+ 
+Excellent, Ken, this is a very strong résumé and we appreciate your interest.
+
+I have Timothy, a manager, reviewing it now. We will be back to you within a day or two.
+
+Alex
+916-530-6977
+
+2021-05-26T16:37:00
+Great! Thank you, Ken, I’ve forwarded to Timothy.
+
+916-530-6977
 :Exit
