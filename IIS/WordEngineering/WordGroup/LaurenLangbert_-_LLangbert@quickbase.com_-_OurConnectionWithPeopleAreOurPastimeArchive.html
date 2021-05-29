@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2021-05-27T11:15:00	Created.
+		-->
+		<title>Our connection with people are our pastime.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Our connection with people are our pastime."/>
+		<meta name="keywords" content="Time, hour, day, week, month, year"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion" autofocus required size="2"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="center"></div>
+
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleVersionParam = urlParams.get("bibleVersion");
+						if (bibleVersionParam)
+						{
+							bibleVersionElement.value = bibleVersionParam;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bibleVersion"] = bibleVersionElement.value;;
+
+				var requestJson = JSON.stringify(request);
+	
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/LaurenLangbert_-_LLangbert@quickbase.com_-_OurConnectionWithPeopleAreOurPastime.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
