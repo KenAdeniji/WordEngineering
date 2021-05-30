@@ -11,6 +11,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessCode;
 
 /*
 	2016-05-18	In such; He has provided for man.
@@ -25,6 +26,9 @@ using InformationInTransit.DataAccess;
 				After a life, you justify yourself.
 				Prior to HTML, the link, bibliography was at the bottom. Léopold, alphabetsequence, 74. Leopold, alphabetsequence, 79.	
 	2018-08-01	Support for word, numeric. Odun. It is sweet. A friend shared the wafers he purchased at $1.50 from 99 Ranch Market, when the wafers were first introduced they cost less, but when people started buying them, the price was brought higher.
+	2021-05-30	Equidistant Letter Sequence (ELS). The Bible Code. Word broken into length; and determine the AlphabetSequence for each set?
+					Could I come, as final answer? Making improvement in advance.
+					https://stackoverflow.com/questions/7316258/how-to-get-only-letters-from-a-string-in-c/7316298
 */
 namespace InformationInTransit.ProcessLogic
 {
@@ -35,14 +39,23 @@ namespace InformationInTransit.ProcessLogic
 			//InSuch( argv[0], argv[1] );	
 			//DeEd(Convert.ToDecimal(argv[0]));
 			
+			/*
 			int id = Id(argv[0]);
 			string scriptureReference = ScriptureReference(id);
+			
 			System.Console.WriteLine
 			(
 				"Word: {0} Id: {1} ScriptureReference: {2}",
 				argv[0],
 				id,
 				scriptureReference
+			);
+			*/
+			
+			Collection<ItHadStayForIntegration> itHadStayForIntegrations = WordBrokenIntoLength
+			(
+				argv[0],
+				5
 			);
 		}
 		
@@ -328,6 +341,51 @@ namespace InformationInTransit.ProcessLogic
 				}	
 				sb.Append(currentCharacter);
 				currentWord = sb.ToString();
+				id = Id(currentWord);
+				scriptureReference = ScriptureReference(id);
+				itHadStayForIntegration = new ItHadStayForIntegration
+				{
+					Word = currentWord,
+					Id = id,
+					ScriptureReference = scriptureReference
+				};
+				itHadStayForIntegrations.Add(itHadStayForIntegration);
+			}	
+			return itHadStayForIntegrations;
+		}	
+
+		public static Collection<ItHadStayForIntegration> WordBrokenIntoLength
+		(
+			string word,
+			int sizeLength
+		)
+		{
+			Collection<ItHadStayForIntegration> itHadStayForIntegrations =
+				new Collection<ItHadStayForIntegration>();
+			String onlyLetters = new String(word.Where(Char.IsLetter).ToArray());
+			String currentWord;
+			int id;
+			string scriptureReference;
+			ItHadStayForIntegration itHadStayForIntegration;
+			for
+			(
+				int currentPosition = 0, lengthTotal = onlyLetters.Length;
+				currentPosition < lengthTotal;
+				currentPosition += sizeLength
+			)
+			{
+				if (currentPosition + sizeLength > lengthTotal)
+				{
+					sizeLength = lengthTotal - currentPosition;
+				}		
+				/*
+				System.Console.WriteLine
+				(
+					"{0} {1} {2} {3}",
+					onlyLetters, currentPosition, sizeLength, lengthTotal
+				);
+				*/		
+				currentWord = onlyLetters.Substring(currentPosition, sizeLength);
 				id = Id(currentWord);
 				scriptureReference = ScriptureReference(id);
 				itHadStayForIntegration = new ItHadStayForIntegration
