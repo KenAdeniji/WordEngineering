@@ -26,6 +26,9 @@ using InformationInTransit.ProcessLogic;
 ///	2017-06-05	Where about of God; is where about; I know.
 /// 2017-12-16	IAmAfraidOfTheMark.
 ///	2017-12-25	YourIDOrWhatDoYouWriteYourCommonID.
+///	2021-05-30	Equidistant Letter Sequence (ELS). The Bible Code. Word broken into length; and determine the AlphabetSequence for each set?
+///					Could I come, as final answer? Making improvement in advance.
+///					https://stackoverflow.com/questions/7316258/how-to-get-only-letters-from-a-string-in-c/7316298
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -200,6 +203,23 @@ public class AlphabetSequenceWebService : System.Web.Services.WebService
 		Collection<ItHadStayForIntegration> itHadStayForIntegrations = AlphabetSequence.WhoSoughtTheEarlierPeopleTrial
 		(
 			word
+		);	
+		string json = JsonConvert.SerializeObject(itHadStayForIntegrations, Formatting.Indented);
+		return json;
+	}
+
+	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String WordBrokenIntoLength
+	(
+		String word,
+		int sizeLength
+	)	
+    {
+		Collection<ItHadStayForIntegration> itHadStayForIntegrations = AlphabetSequence.WordBrokenIntoLength
+		(
+			word,
+			sizeLength
 		);	
 		string json = JsonConvert.SerializeObject(itHadStayForIntegrations, Formatting.Indented);
 		return json;

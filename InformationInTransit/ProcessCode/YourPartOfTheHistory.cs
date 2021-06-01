@@ -7,11 +7,12 @@ using System.Data.SqlClient;
 using System.Linq;
 
 using InformationInTransit.DataAccess;
+using InformationInTransit.ProcessLogic;
 
 /*
 	2019-12-17 Created.
 */
-namespace InformationInTransit.ProcessLogic
+namespace InformationInTransit.ProcessCode
 {
 	public static partial class YourPartOfTheHistory
 	{
@@ -83,14 +84,14 @@ namespace InformationInTransit.ProcessLogic
 			return uniqueWords;
 		}
 		
-		public static DataTable ToDataTable(Dictionary<String, InformationInTransit.ProcessLogic.YourPartOfTheHistory.Participation> data)
+		public static DataTable ToDataTable(Dictionary<String, InformationInTransit.ProcessCode.YourPartOfTheHistory.Participation> data)
 		{
 			DataTable table = new DataTable();
 			table.Columns.Add("BibleWord");
 			table.Columns.Add("FirstOccurrenceScriptureReference");
 			table.Columns.Add("LastOccurrenceScriptureReference");
 			table.Columns.Add("FrequencyOfOccurrence", System.Type.GetType("System.Int32"));
-			foreach(KeyValuePair<string, InformationInTransit.ProcessLogic.YourPartOfTheHistory.Participation> kvp in data)
+			foreach(KeyValuePair<string, InformationInTransit.ProcessCode.YourPartOfTheHistory.Participation> kvp in data)
 			{
 				DataRow row = table.NewRow();
 				row["BibleWord"] = kvp.Key;

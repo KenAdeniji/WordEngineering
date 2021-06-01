@@ -9,6 +9,8 @@ using System.Collections.Specialized;
 
 using System.Linq;
 
+using InformationInTransit.ProcessCode;
+
 /*
 	2017-02-26	http://stackoverflow.com/questions/1568593/how-to-use-indexof-method-of-listobject
 */
@@ -227,14 +229,14 @@ namespace InformationInTransit.ProcessLogic
 			return table;
 		}
 */
-		public static DataTable ToDataTableObsolete(Dictionary<String, InformationInTransit.ProcessLogic.YourPartOfTheHistory.Participation> data)
+		public static DataTable ToDataTableObsolete(Dictionary<String, InformationInTransit.ProcessCode.YourPartOfTheHistory.Participation> data)
 		{
 			DataTable table = new DataTable();
 			table.Columns.Add("BibleWord");
 			table.Columns.Add("FirstOccurrenceScriptureReference");
 			table.Columns.Add("LastOccurrenceScriptureReference");
 			table.Columns.Add("FrequencyOfOccurrence", System.Type.GetType("System.Int32"));
-			foreach(KeyValuePair<string, InformationInTransit.ProcessLogic.YourPartOfTheHistory.Participation> kvp in data)
+			foreach(KeyValuePair<string, InformationInTransit.ProcessCode.YourPartOfTheHistory.Participation> kvp in data)
 			{
 				DataRow row = table.NewRow();
 				row["BibleWord"] = kvp.Key;
