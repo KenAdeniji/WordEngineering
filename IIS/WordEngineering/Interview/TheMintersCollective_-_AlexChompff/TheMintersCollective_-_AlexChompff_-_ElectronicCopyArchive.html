@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-06-05T22:01:00	Created.
+		2021-06-05T22:01:00 ... 2021-06-05T23:25:00	
+			Work type: Universal Resource Link (URL).
+		2021-06-06T05:32:00	http://github.com/oreillymedia/Using_SVGhttps://github.com/oreillymedia/Using_SVG/blob/master/ch01-overview-files/simple-stoplight-inline.html
+	-->
+	<head>
+		<title>The Minters Collective. Alex Chompff. Electronic Copy.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The Minters Collective. Alex Chompff. Electronic Copy."/>
+		<meta name="keyword" content="timothy@minters.art, Sacramento"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="emailAddress">Artist e-mail Address:</label></td>
+					<td><input id="emailAddress" type="email" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="workType">Work Type:</label></td>
+					<td><select id="workType"></select></td>
+				</tr>
+				<tr>
+					<td><label for="url">URL:</label></td>
+					<td>
+						<input 
+							id="url" 
+							type="url"
+							value="http://e-comfort.ephraimtech.com/WordEngineering/Images/pyramids-giza-egypt_6699_600x450.jpg"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="code">Code:</label></td>
+					<td>
+						<textarea id="code">
+    <svg width="100%" height="100%">
+        <rect x="0" y="0" width="100%" height="100%" 
+              fill="green" stroke="black" stroke-width="3" /> 
+        <rect x="33%" y="0" width="33%" height="100%" 
+              fill="white" stroke="black" stroke-width="3" /> 
+     </svg>
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="center"></div>
+
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var codeElement = document.getElementById("code");
+			var artistElement = document.getElementById("artist");
+			var workTypeElement = document.getElementById("workType");
+			var	urlElement = document.getElementById("url");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect("workType", workTypes)
+					
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var artistParam = urlParams.get("artist");
+						if (artistParam)
+						{
+							artistElement.value = artistParam;
+						}	
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var resultInfo = "";
+				switch (workTypeElement.value)
+				{
+					case "Code":
+						resultInfo = codeElement.value;
+						break;
+					case "File Upload":
+						resultInfo = "Not implemented, yet.";
+						break;
+					case "Universal Resource Link (URL)":
+						resultInfo = `<img src='${urlElement.value}'></img>`
+						break;
+				}
+				resultSetElement.innerHTML = resultInfo;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			const workTypes = [
+				"Universal Resource Link (URL)",
+				"File Upload",
+				"Code"
+			];
+			
+		</script>		
+	</body>
+</html>
