@@ -126,7 +126,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4267);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 140476);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141182);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 89557);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -209,18 +209,8 @@ http://KenAdeniji.WordPress.com
 http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
 http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 (510) 796-8121
-From: craigslist 7327075979 <5aee4192f48130aa82f17f47fcc37c0e@job.craigslist.org>Sent: Wednesday, May 26, 2021 9:01 PMTo: 5aee4192f48130aa82f17f47fcc37c0e@reply.craigslist.org <5aee4192f48130aa82f17f47fcc37c0e@reply.craigslist.org>Subject: Re: Angel Funded Startup Seeking Cofounding CTO in NFT Space (Sacramento)
- 
-Excellent, Ken, this is a very strong résumé and we appreciate your interest.
 
-I have Timothy, a manager, reviewing it now. We will be back to you within a day or two.
+2021-06-10T21:19:00 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf 
+	The HisWordID column is an
 
-Alex
-916-530-6977
-
-2021-05-26T16:37:00
-Great! Thank you, Ken, I’ve forwarded to Timothy.
-
-2021-06-05T21:45:00
-file:///E:/WordEngineering/IIS/WordEngineering/Scalable%20Vector%20Graphics%20(SVG)/NigeriaFlag.html
 :Exit
