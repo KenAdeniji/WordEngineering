@@ -1,6 +1,6 @@
 @echo off
 :BeginAgain
-echo 1=BCP, 2=Node.js, 3=SQLServerBackup, 4=SQLServerDataDefinitionLanguageDDL, 5=SQLServerDataFiles, 6=SQLServerExport, 7=WordEngineering, 8=WordOfGod
+echo 1=BCP, 2=Node.js, 3=SQLServerBackup, 4=SQLServerDataDefinitionLanguageDDL, 5=SQLServerDataFiles, 6=SQLServerExport, 7=WinScp, 8=WordEngineering, 9=WordOfGod
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
@@ -9,8 +9,9 @@ IF %id% == 3 GOTO SQLServerBackup
 IF %id% == 4 GOTO SQLServerDataDefinitionLanguageDDL
 IF %id% == 5 GOTO SQLServerDataFiles
 IF %id% == 6 GOTO SQLServerExport
-IF %id% == 7 GOTO WordEngineering
-IF %id% == 8 GOTO WordOfGod
+IF %id% == 7 GOTO WinScp
+IF %id% == 8 GOTO WordEngineering
+IF %id% == 9 GOTO WordOfGod
 GOTO Exit
 
 :BCP
@@ -64,6 +65,9 @@ xcopy e:\SQLServerExport f:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
+
+:WinScp
+WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 
 :WordEngineering
 xcopy e:\WordEngineering d:\WordEngineering /d /e /s /y
@@ -128,7 +132,7 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141182);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 89557);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 90776);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -210,4 +214,18 @@ http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
 http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 (510) 796-8121
 
+2021-06-16T04:18:00 Microsoft SQL Server Management Studio
+SQL Execution Error.
+Executed SQL Statement: SELECT        TOP (15) TheWordId, RememberID, DatedFrom, DatedUntil, Filename, Commentary, ScriptureReference, ContactId, URI, HisWordID, FromUntilFirst
+FROM            Remember
+ORDER BY RememberID DESC
+Error Source: .NET SQL Client Data Provider
+Error Message: Connection Timeout Expired. The timeout period elapsed
+while attempting to consume the pre-login handshake failed or the
+server was unable to respond back in time. The duration spent
+while attempting to connect to this server [pre-login initialization=30981; handshake=15750.
+09:31 ... 09:44 Is that how you want to live your life?
+2021-06-10T21:19:00 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf 
+	The HisWordID column is an
+	2021-06-16T11:27:00 Who is the work for? Who can benefit from reading this work?
 :Exit

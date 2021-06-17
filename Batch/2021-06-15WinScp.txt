@@ -1,0 +1,12 @@
+#open kadeniji@adriel
+
+open adriel
+
+ls /
+
+#placing files
+put e:/tmp/sammi.txt sammi.txt
+
+close
+
+exit
