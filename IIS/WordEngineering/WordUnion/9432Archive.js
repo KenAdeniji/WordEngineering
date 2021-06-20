@@ -75,6 +75,15 @@
 	2021-01-21T14:40:00	Support for limit, BibleBookGroup, include Apocalyptic Books, Pauline Epistles, General Letters.
 	2021-03-05T17:45:00	bibleBookGroups: ["Poetry", "poetry"]
 	2021-03-16T15:00:00	bibleBookGroups: ["(All)", "all"]
+	2021-06-20
+		bibleDays: [
+		"Atonement",
+		"Exodus",
+		"Pentecost",
+		"Sabbath",
+		"Unleavened Bread"	
+	],
+
 */
 
 var scriptLiteral9432 =
@@ -107,6 +116,13 @@ var scriptLiteral9432 =
 		["Pauline Epistles", "pauline epistles"],
 		["General Epistles", "general epistles"],
 		["Apocalyptic Books", "apocalyptic books"]
+	],
+	bibleDays: [
+		"Atonement",
+		"Passover",
+		"Pentecost",
+		"Sabbath",
+		"Unleavened Bread"	
 	],
 	bibleGroups: [
 		["Testament", "Testament"],
