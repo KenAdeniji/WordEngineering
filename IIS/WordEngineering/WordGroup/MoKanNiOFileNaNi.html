@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-06-20	Created.	https://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator
+	-->
+	<head>
+		<title>Mo kan ni, o file na ni.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Mo kan ni, o file na ni."/>
+		<meta name="keywords" content="Holiday, HisWord"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="holiday">Holiday:</label></td>
+					<td><select ID="holiday" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="yearFrom">Year:</label></td>
+					<td>
+						<input type="number" id="fromYear"/>
+						-
+						<input type="number" id="untilYear"/>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div align="center">	
+			<table>
+				<tr>
+					<td>
+						<div id="resultSet"> </div>
+					</td>
+				</tr>	
+			</table>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var holidayElement = document.getElementById("holiday");
+			
+			var fromYearElement = document.getElementById("fromYear");
+			var untilYearElement = document.getElementById("untilYear");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var holidayValue = scriptLiteral9432.getParameterByName("holiday");
+						if (holidayValue)
+						{
+							holidayElement.value = scriptLiteral9432.selectionGet("holidayValue");
+						}	
+
+						var fromYearValue = scriptLiteral9432.getParameterByName("fromYear");
+						if (!fromYearValue)
+						{
+							fromYearValue = new Date(scriptLiteral9432.nowTimezoneOffset()).getFullYear();
+						}	
+						fromYearElement.value = fromYearValue;
+
+						var untilYearValue = scriptLiteral9432.getParameterByName("untilYear");
+						if (!untilYearValue)
+						{
+							untilYearValue = new Date(scriptLiteral9432.nowTimezoneOffset()).getFullYear();
+						}	
+						untilYearElement.value = untilYearValue;
+						
+						queryHoliday();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					queryHoliday();
+				}
+ 			}
+
+			function queryHoliday()
+			{
+				var request = {};
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/MoKanNiOFileNaNi.asmx/HolidayNames",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.buildSelect("holiday", dataSet);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			function querySubmit()
+			{
+				if (fromYearElement.value > untilYearElement.value)
+				{
+					resultSetElement.innerHTML = "Please validate the year entries.";
+					return;
+				}
+				
+				var request = {};
+				request["holidayNames"] = scriptLiteral9432.selectionGet("holiday");
+				request["fromYear"] = Number.parseInt(fromYearElement.value);
+				request["untilYear"] = Number.parseInt(untilYearElement.value);
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/MoKanNiOFileNaNi.asmx/ProcessHolidayNames",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

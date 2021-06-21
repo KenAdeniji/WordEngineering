@@ -1,0 +1,9 @@
+git add		GitHub.com/2021-06-20T1749GitHub.bat
+git add     GitHub.com/2021-06-20T1749GitHubArchive.bat
+git add     IIS/WordEngineering/HolidayCalculator.xml
+git add     IIS/WordEngineering/WordGroup/MoKanNiOFileNaNi.asmx
+git add     IIS/WordEngineering/WordGroup/MoKanNiOFileNaNi.html
+git add     IIS/WordEngineering/WordGroup/MoKanNiOFileNaNiArchive.asmx
+git add     IIS/WordEngineering/WordGroup/MoKanNiOFileNaNiArchive.html
+git add		InformationInTransit/ProcessCode/MoKanNiOFileNaNi.Archivecs
+git add     InformationInTransit/ProcessCode/MoKanNiOFileNaNi.cs
