@@ -68,6 +68,7 @@ GOTO Exit
 
 :WinScp
 WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
+GOTO Exit
 
 :WordEngineering
 xcopy e:\WordEngineering d:\WordEngineering /d /e /s /y

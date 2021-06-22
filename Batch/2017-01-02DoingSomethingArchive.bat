@@ -68,6 +68,7 @@ GOTO Exit
 
 :WinScp
 WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
+GOTO Exit
 
 :WordEngineering
 xcopy e:\WordEngineering d:\WordEngineering /d /e /s /y
@@ -229,6 +230,10 @@ while attempting to connect to this server [pre-login initialization=30981; hand
 	The HisWordID column is an
 	2021-06-16T11:27:00 Who is the work for? Who can benefit from reading this work?
 2021-06-18T10:22:00 800 Service 1-800-991-8708
+	Before you are to lower your credit card interest rate,
+	press one to speak to the member service department,
+	or press two and your eligibility to lower your interest will expire.
+2021-06-18T16:14:00 800 Service 1-800-991-8708
 	Before you are to lower your credit card interest rate,
 	press one to speak to the member service department,
 	or press two and your eligibility to lower your interest will expire.
