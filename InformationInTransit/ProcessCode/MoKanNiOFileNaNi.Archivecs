@@ -21,6 +21,8 @@ namespace InformationInTransit.ProcessCode
 {
 	/*
 		2021-06-20	Created.	https://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator
+		2021-06-22	Added the Holiday column to the result set,
+					and replaced the SQL in statement with union.
 	*/
     public partial class MoKanNiOFileNaNi //I just said, you should leave it alone.
     {
@@ -54,7 +56,7 @@ namespace InformationInTransit.ProcessCode
 			return holidayNames;
 		}	
 
-		public List<DateTime> ProcessHolidayNames
+		public List<HolidayCalculator.Holiday> ProcessHolidayNames
 		(
 			String filename,
 			String[] holidayNames,
@@ -64,7 +66,7 @@ namespace InformationInTransit.ProcessCode
 		{
 			filename = DetermineFilename(filename);
 			DateTime dated;
-			List<DateTime> holidays = new List<DateTime>();
+			List<HolidayCalculator.Holiday> holidays = new List<HolidayCalculator.Holiday>();
 			for 
 			(
 				int currentYear = fromYear;
@@ -78,7 +80,7 @@ namespace InformationInTransit.ProcessCode
 				{
 					if (Array.IndexOf(holidayNames, h.Name) >= 0)
 					{	
-						holidays.Add(h.Date);
+						holidays.Add(h);
 					}	
 				}
 			}

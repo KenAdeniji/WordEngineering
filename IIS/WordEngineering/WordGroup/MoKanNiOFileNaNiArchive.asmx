@@ -13,9 +13,15 @@ using System.Xml;
 
 using Newtonsoft.Json;
 
+using JayMuntzCom;
+
 using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 
+/*
+		2021-06-22	Added the Holiday column to the result set,
+					and replaced the SQL in statement with union.
+*/
 ///<summary>
 ///	2021-06-20T18:50:00 Created.	https://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator
 ///</summary>
@@ -49,7 +55,7 @@ public class MoKanNiOFileNaNiWebService : System.Web.Services.WebService
 	)
     {
 		MoKanNiOFileNaNi moKanNiOFileNaNi = new MoKanNiOFileNaNi();
-		List<DateTime> holidays = moKanNiOFileNaNi.ProcessHolidayNames
+		List<HolidayCalculator.Holiday> holidays = moKanNiOFileNaNi.ProcessHolidayNames
 		(
 			moKanNiOFileNaNi.FilenameConfigurationXml,
 			holidayNames.Split(','),
@@ -58,24 +64,28 @@ public class MoKanNiOFileNaNiWebService : System.Web.Services.WebService
 		);
 
 		StringBuilder sb = new StringBuilder();
-		foreach(DateTime dated in holidays)
+		foreach(HolidayCalculator.Holiday holiday in holidays)
 		{
 			if ( sb.Length > 0 )
 			{
-				sb.Append(',');
+				sb.Append(" UNION ");
 			}
 			sb.AppendFormat
 			(
-				"'{0}'",
-				dated.ToShortDateString()
+				SQLStatement,
+				holiday.Name.Replace("'", "''"),
+				holiday.Date.ToShortDateString()
 			);
 		}
 
-		String sqlStatement = String.Format(SQLStatement, sb.ToString());
+		if ( sb.Length > 0 )
+		{
+			sb.Append(" ORDER BY Dated ");
+		}
 
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			sqlStatement,
+			sb.ToString(),
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
@@ -86,10 +96,9 @@ public class MoKanNiOFileNaNiWebService : System.Web.Services.WebService
 	
 	public const string SQLStatement = 
 	@"
-		SELECT	HisWordID, Dated, Word, Commentary, Uri, ScriptureReference, Filename, EnglishTranslation
+		SELECT	Dated, '{0}' AS Holiday, HisWordID, Word, Commentary, Uri, ScriptureReference, Filename, EnglishTranslation
 		FROM WordEngineering..HisWord
-		WHERE CONVERT(Date, Dated) IN ({0})
-		ORDER BY Dated
+		WHERE CONVERT(Date, Dated) = '{1}'
 	";	
 }
 
