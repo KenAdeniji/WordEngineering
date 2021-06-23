@@ -98,7 +98,7 @@ public class MoKanNiOFileNaNiWebService : System.Web.Services.WebService
 	@"
 		SELECT	Dated, '{0}' AS Holiday, HisWordID, Word, Commentary, Uri, ScriptureReference, Filename, EnglishTranslation
 		FROM WordEngineering..HisWord
-		WHERE CONVERT(Date, Dated) = '{1}'
+		WHERE '{1}' = CONVERT(Date, Dated)
 	";	
 }
 
