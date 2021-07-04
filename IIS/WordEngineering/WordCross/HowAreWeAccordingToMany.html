@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-07-03T15:17:00	Created.
+		2021-07-03T19:01:00	http://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
+		2021-07-03T22:22:00	https://gist.github.com/prof3ssorSt3v3/61ccf69758cd6dbdc429934564864650
+	-->
+	<head>
+		<title>How are we, according to many?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="How are we, according to many?"/>
+		<meta name="keyword" content="poll, schema, data"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceType">Source Type:</label></td>
+					<td>
+						<select id="sourceType" autofocus>
+							<option value="CSV">Comma-Separated Values (CSV)</option>
+							<option value="DDL">Data Definition Language (DDL)</option>
+							<option value="DML">Data Manipulation Language (DML)</option>
+							<option value="JSON">JavaScript Object Notation (JSON)</option>
+							<option value="SQL">Structured Query Language (SQL)</option>
+							<option value="XML">eXtensible Markup Language (XML)</option>
+							<option value="XSD">XML Schema Definition (XSD)</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input id="sourceAddress" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="sourceContent">Source Content:</label></td>
+					<td>
+						<textarea id="sourceContent"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="schemaVersusData">Schema versus (VS) Data:</label></td>
+					<td>
+						<select id="schemaVersusData"> 
+							<option value="dataOnly">Data only</option>
+							<option value="schemaAndData">Schema and Data</option>
+							<option value="schemaOnly">Schema only</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="fetchContent">Fetch Content</button>
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+
+			var	sourceAddressElement = document.getElementById("sourceAddress");
+			var	sourceContentElement = document.getElementById("sourceContent");
+			var	sourceTypeElement = document.getElementById("sourceType");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var sourceTypeParam = urlParams.get("sourceType");
+					if (sourceTypeParam)
+					{
+						sourceTypeElement.value = sourceTypeParam;
+					}	
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				fetch(sourceAddressElement.value).then(response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							sourceContentElement.value = JSON.stringify(data);
+						});
+					}
+					else if (contentType && contentType.indexOf("text/xml") !== -1) {
+						return response.text().then(data => {
+							// process your XML data further
+							let parser = new DOMParser();
+							let xml = parser.parseFromString(data, "application/xml");
+							sourceContentElement.value = data;
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							sourceContentElement.value = text;
+						});
+					};
+				});
+			}
+			
+			function querySubmit()
+			{
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			document.getElementById("fetchContent").addEventListener("click", contentFetch, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
