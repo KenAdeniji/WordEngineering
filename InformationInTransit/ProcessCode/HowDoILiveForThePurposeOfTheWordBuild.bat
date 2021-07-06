@@ -1,0 +1,1 @@
+csc HowDoILiveForThePurposeOfTheWord.cs ..\ProcessLogic\ObjectDumper.cs /reference:System.Data.Linq.dll
