@@ -17,7 +17,8 @@ using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 
 ///<summary>
-///	2021-07-05 Created.
+///	2021-07-04	How do I live; for the purpose of the Word?
+///	2021-07-05	Created. Names, titles.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]

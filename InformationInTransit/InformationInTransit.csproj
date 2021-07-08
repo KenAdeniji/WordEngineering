@@ -55,6 +55,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.6.15.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IIS\WordEngineering\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="iTextSharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IIS\WordEngineering\Bin\iTextSharp.dll</HintPath>
@@ -116,21 +120,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssertHelper.cs" />
     <Compile Include="DataAccess\AccessBible.cs" />
     <Compile Include="DataAccess\AdventureWorksPersonContactDb.cs" />
     <Compile Include="DataAccess\DatabaseSchemaDb.cs" />
-    <Compile Include="DateDifferenceHelper.cs" />
-    <Compile Include="DBCCDatabaseConsoleCommandBalindaWindow.cs" />
-    <Compile Include="DictionaryToDataTable.cs" />
-    <Compile Include="FirstAtLast.cs" />
-    <Compile Include="HeActedHisWillOut.cs" />
-    <Compile Include="IWillTakeThemUpForTakingMyDelay.cs" />
-    <Compile Include="JsonHelper.cs" />
-    <Compile Include="KnowingMeAsAPersonIsSeeingYouAsAPeople.cs" />
-    <Compile Include="MakeMeKnow.cs" />
     <Compile Include="MongoDB\MongoDBHelper.cs" />
-    <Compile Include="OurPeople.cs" />
     <Compile Include="ProcessLogic\AccessControlHelper.cs" />
     <Compile Include="ProcessLogic\ActiveDirectoryHelper.cs" />
     <Compile Include="ProcessLogic\ActiveXInfo.cs" />
@@ -232,6 +225,8 @@
     <Compile Include="ProcessLogic\HelloLinqToXml.cs" />
     <Compile Include="ProcessLogic\HexCode.cs" />
     <Compile Include="ProcessLogic\HisWordHelper.cs" />
+    <Compile Include="ProcessLogic\HolidayCalculator.cs" />
+    <Compile Include="ProcessLogic\HolidayCalculatorDemonstrator.cs" />
     <Compile Include="ProcessLogic\HtmlControlHelper.cs" />
     <Compile Include="ProcessLogic\HtmlGenericControlHelper.cs" />
     <Compile Include="ProcessLogic\IArrayContract.cs" />
@@ -479,12 +474,73 @@
     <Compile Include="ProcessLogic\YieldHelper.cs" />
     <Compile Include="ProcessLogic\YieldIEnumerableHelper.cs" />
     <Compile Include="ProcessLogic\ZIPCodes.cs" />
-    <Compile Include="SacredTextHelper.cs" />
-    <Compile Include="SQLServerManagementObjectsSMOHelper.cs" />
-    <Compile Include="SQLStatementLog.cs" />
-    <Compile Include="TimeSpanYearMonthDay.cs" />
-    <Compile Include="ToHaveLiveALifeIAmAProveOf.cs" />
-    <Compile Include="TransactSQLCookbookByAlesSpetic_JonathanGennick_-_PivotTable.cs" />
+    <Compile Include="ProcessCode\AccordingToManyIHaveSpoken.cs" />
+    <Compile Include="ProcessCode\AmericaWorkingFour.cs" />
+    <Compile Include="ProcessCode\APerhapsCompareHelper.cs" />
+    <Compile Include="ProcessCode\AssertHelper.cs" />
+    <Compile Include="ProcessCode\BibleBooksGroup.cs" />
+    <Compile Include="ProcessCode\BigIntegerDelegateOperation.cs" />
+    <Compile Include="ProcessCode\BigIntegerHelper.cs" />
+    <Compile Include="ProcessCode\BringWaterDown.cs" />
+    <Compile Include="ProcessCode\CouldYouRecoverTheTerritory.cs" />
+    <Compile Include="ProcessCode\DataTableExtensionMethods.cs" />
+    <Compile Include="ProcessCode\DateDifferenceHelper.cs" />
+    <Compile Include="ProcessCode\DBCCDatabaseConsoleCommandBalindaWindow.cs" />
+    <Compile Include="ProcessCode\DictionaryToDataTable.cs" />
+    <Compile Include="ProcessCode\DynamicLoadAssemblyReflector.cs" />
+    <Compile Include="ProcessCode\EsvApi.orgHelper.cs" />
+    <Compile Include="ProcessCode\Eventuate.cs" />
+    <Compile Include="ProcessCode\EveryMajorWriterIsATalker.cs" />
+    <Compile Include="ProcessCode\ExistsIn.cs" />
+    <Compile Include="ProcessCode\FileQueryHelper.cs" />
+    <Compile Include="ProcessCode\FirstAtLast.cs" />
+    <Compile Include="ProcessCode\GarbageCollectorHelper.cs" />
+    <Compile Include="ProcessCode\GenericHelper.cs" />
+    <Compile Include="ProcessCode\GermanIsDetermineToAriseToTheGristlyFifteenYearsAgo.cs" />
+    <Compile Include="ProcessCode\HeActedHisWillOut.cs" />
+    <Compile Include="ProcessCode\HowDoILiveForThePurposeOfTheWord.cs" />
+    <Compile Include="ProcessCode\IEnumerableExtensionMethods.cs" />
+    <Compile Include="ProcessCode\IfIPassIWillGetThereAtOneOClock.cs" />
+    <Compile Include="ProcessCode\InTheUpside.cs" />
+    <Compile Include="ProcessCode\IWillTakeThemUpForTakingMyDelay.cs" />
+    <Compile Include="ProcessCode\JohnJohnToFourteen.cs" />
+    <Compile Include="ProcessCode\JsonConverterHelper.cs" />
+    <Compile Include="ProcessCode\JsonHelper.cs" />
+    <Compile Include="ProcessCode\KnowingMeAsAPersonIsSeeingYouAsAPeople.cs" />
+    <Compile Include="ProcessCode\LogicHelper.cs" />
+    <Compile Include="ProcessCode\MakeMeKnow.cs" />
+    <Compile Include="ProcessCode\MoKanNiOFileNaNi.cs" />
+    <Compile Include="ProcessCode\mysql.cs" />
+    <Compile Include="ProcessCode\MySQLODBCConnection.cs" />
+    <Compile Include="ProcessCode\OftenTime.cs" />
+    <Compile Include="ProcessCode\OurPeople.cs" />
+    <Compile Include="ProcessCode\PaulWhoCouldTalkAboutYouIndividualProsperity.cs" />
+    <Compile Include="ProcessCode\PingHelper.cs" />
+    <Compile Include="ProcessCode\PointExtensionMethods.cs" />
+    <Compile Include="ProcessCode\ReadFileHelper.cs" />
+    <Compile Include="ProcessCode\Rectangle.cs" />
+    <Compile Include="ProcessCode\SacredTextHelper.cs" />
+    <Compile Include="ProcessCode\SeparateTheirDesireOfTheBible.cs" />
+    <Compile Include="ProcessCode\SheWalkedTowardInFourDays.cs" />
+    <Compile Include="ProcessCode\SQLBuild.cs" />
+    <Compile Include="ProcessCode\SQLServerManagementObjectsSMOHelper.cs" />
+    <Compile Include="ProcessCode\SQLServerODBCConnection.cs" />
+    <Compile Include="ProcessCode\SQLStatementLog.cs" />
+    <Compile Include="ProcessCode\ThatIsWhyWeAreTodayToSeemTomorrowForever.cs" />
+    <Compile Include="ProcessCode\TheNeglectityOfDesireHelper.cs" />
+    <Compile Include="ProcessCode\TimeSpanYearMonthDay.cs" />
+    <Compile Include="ProcessCode\ToHaveLiveALifeIAmAProveOf.cs" />
+    <Compile Include="ProcessCode\TraceRouteHelper.cs" />
+    <Compile Include="ProcessCode\TransactSQLCookbookByAlesSpetic_JonathanGennick_-_PivotTable.cs" />
+    <Compile Include="ProcessCode\TypeHelper.cs" />
+    <Compile Include="ProcessCode\TypeViewerHelper.cs" />
+    <Compile Include="ProcessCode\WhatDoYouNeedOutOfLifeThatIsWhatIHaveChosenForYou.cs" />
+    <Compile Include="ProcessCode\WhatRolesAreMentionMostInTheBible.cs" />
+    <Compile Include="ProcessCode\WhenGoodThingsHappen.cs" />
+    <Compile Include="ProcessCode\WhenThePastorIsPreachingYouDontWithTheScriptureToComeInSubsequent.cs" />
+    <Compile Include="ProcessCode\WhereIChoseIDetermineUse.cs" />
+    <Compile Include="ProcessCode\WroteToTheRomanEmpireAskingToReleasePaulAndYetSheJustWasntMoving.cs" />
+    <Compile Include="ProcessCode\YourPartOfTheHistory.cs" />
     <Compile Include="UserInterface\AppendImageCopyrightHandler.cs" />
     <Compile Include="UserInterface\DataAccessHandler.cs" />
     <Compile Include="ProcessLogic\EnumHelper.cs" />
