@@ -240,4 +240,7 @@ while attempting to connect to this server [pre-login initialization=30981; hand
 
 2021-07-07 git clone http://github.com/KenAdeniji/WordEngineering
 2021-07-07 https://theswissbay.ch/pdf/Gentoomen Library/Programming/Bash/O'Reilly bash CookBook.pdf
+
+2021-07-11T07:10:00 C:\Users\kadeniji\OneDrive\SQLServerDataFiles
+
 :Exit

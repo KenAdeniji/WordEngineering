@@ -1,0 +1,120 @@
+<html>
+	<!--
+		2015-07-15	Created.	http://www.programmableweb.com/api/wmg-tour-dates
+		2015-07-15	https://tours-api.dsp.wmg.com
+		2021-07-10	Changed the style from yellow and blue.
+		2021-07-10T08:35:00 Loading failed for the <script> with source “https://tours-api.dsp.wmg.com/shows?format=json&callback=jQuery21108107241116405132_1625931243626&_=1625931243627”.
+	-->
+	<head>
+		<title>Warner Music Group (WMG) Tours</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Warner Music Group (WMG) Tours"/>
+		<meta name="keywords" content="Warner Bros, Warner Music, tours/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div text-align="center">
+			<div id="toursQuery">
+				<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td><label for="artistName">Artist Name:</label></td>
+							<td><input id="artistName" type="text"></td>
+						</tr>
+						<tr>
+							<td><label for="countryName">Country Name:</label></td>
+							<td><input id="countryName" type="text"></td>
+						</tr>
+						<tr>
+							<td><label for="tourID">Tour ID:</label></td>
+							<td><input id="tourID" type="text"></td>
+						</tr>
+						<tr>
+							<td><label for="tourName">Tour Name:</label></td>
+							<td><input id="tourName" type="text"></td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2"><button id="query">Query</button></td>
+						</tr>
+					</tbody>
+				</table>
+				</fieldset>
+			</div>
+			<br><br>
+			<div id="toursInfo"></div>
+		</div>	
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function retrieveToursInfo()
+			{
+				var uri = "https://tours-api.dsp.wmg.com/shows?format=json";
+				
+				var artistName = document.getElementById("artistName").value;
+				var countryName = document.getElementById("countryName").value;
+				var tourID = document.getElementById("tourID").value;
+				var tourName = document.getElementById("tourName").value;
+				
+				if (artistName != "") {
+					uri += "&artist=" + artistName;
+				}
+				
+				if (countryName != "") {
+					uri += "&countryName=" + countryName;
+				}
+
+				if (tourID != "") {
+					uri += "&tourID=" + tourID;
+				}
+
+				if (tourName != "") {
+					uri += "&tourName=" + tourName;
+				}
+				
+				$.ajax({ 
+					dataType: 'jsonp',
+					url: uri,
+					success: function(data)	{ 
+						render(data);
+					},
+					error: function(XHR, textStatus, errorThrown) {
+						console.log("XHR", XHR);
+						console.log("textStatus", textStatus);
+						console.log("errorThrown", errorThrown);
+					}					
+				});
+			}
+			
+			function render(data) 
+			{
+				var info = "";
+				var column = "";
+				var record = null;
+				var value = "";
+				
+				for (var tourIndex = 0, tourCount = data.shows.length; tourIndex < tourCount; ++tourIndex)
+				{
+					record = data.shows[tourIndex];
+					for (var key in record) {
+						if (record.hasOwnProperty(key)) {
+							value = record[key];
+							if (value !== null && value != "")
+							{
+								column = key + ": " + value + "<br>";
+								info += column;
+							}	
+						}
+					}
+					info += "<hr>";
+				}
+				document.getElementById("toursInfo").innerHTML = info;
+			}
+			
+			window.addEventListener("load", retrieveToursInfo, false);
+			document.getElementById("query").addEventListener("click", retrieveToursInfo, false);
+		</script>
+	</body>
+<html>
