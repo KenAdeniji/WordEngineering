@@ -355,7 +355,7 @@
 				author has a relationship with.
 				These affiliations are family, friends, or business links.
 				Also recordable are the street, e-mail, web addresses, and telephone numbers.
-				The author stores the various exchanges with these people.
+				The author stores the various information exchanges with these people.
 				A known date of birth, is for notification of the subject's birthday and relative age.
 				To keep up with the privacy and sensitivity of this personal information,
 				the author is not sharing this highly confidential data.
@@ -485,7 +485,7 @@
 				In most cases, there is a one-to-one mapping between the .HTML, .ASMX, .CS files,
 				and the database relational table, Bible..Scripture.
 				For simplicity and clearage of use, the .HTML and .ASMX files, support one operation.
-				This is not the case, with the GetAPage.html file, which is the workhouse, for word spoken.
+				This is not the case, with the GetAPage.html file, which is the workhorse, for word spoken.
 				With a single field entry, GetAPage.html, sends AJAX requests to multiple .ASMX files
 				and operations; GetAPage.html is a cumulative of previously isolated .HTML files.
 				All the web services files support a single request format, SOAP; and return JSON.
@@ -584,11 +584,11 @@
 			<h4>Database Design</h4>
 			<ol>
 				<li>The relational model is for storing information in tables.</li>
-				<li>The author normalizes data, going along with, Object-relational mapping.</li>
-				<li>All the databases, are OLTP (Online Transactional Processing), not OLAP (Online analytical processing).</li>
+				<li>The author normalizes data using Object-relational mapping.</li>
+				<li>All the databases are OLTP (Online Transactional Processing), not OLAP (Online analytical processing).</li>
 				<li>Avoid deadlock occurrences by not permitting user database updates.</li>
-				<li>All the transactions, follow similar routes, and sequences; and the author practices granularity with the locks.</li>
-				<li>Database updates are through stored-procedures, which recognize and avoid the potential of integrity violation.</li>
+				<li>All the transactions follow similar routes and sequences, and the author practices granularity with the locks.</li>
+				<li>Database updates are through stored procedures, which recognize and avoid the potential of integrity violation.</li>
 			</ol>
 
 			<h4>Database Security</h4>	
@@ -600,9 +600,9 @@
 			
 			<h4>Database Data Types</h4>	
 			<ol>
-				<li>As much as possible, make effort, to be consistent, in choosing matching data types between the database and application layers.</li>
+				<li>Choose matching data types between the database and application layers.</li>
 				<li>Only pick varchar(max) and nvarchar(max) as the data type, when it is essential to store large data.</li>
-				<li>Prefer the decimal type, when recording the amount in currency, rather than using the float type.</li>
+				<li>Prefer the decimal type; when recording the amount in currency rather than using the float type.</li>
 			</ol>
 
 			<h4>Nullable type</h4>	
@@ -612,14 +612,17 @@
 
 			<h4>Indexes</h4>	
 			<ol>
-				<li>Indexes influence the duration of database modifications.</li>
-				<li>The field sequence in indexes, follows the frequency of occurrences.</li>
-				<li>In cases, where the major and minor columns, make-up the natural primary key, think of placing a clustered non-unique index on the major column, when the major column is likely the searchable column, for instance, the foreign-key.</li>
+				<li>Database changes lags with indexes.</li>
+				<li>The field sequence in indexes should follow the frequency of usage.</li>
+				<li>When using a composite index, place a clustered non-unique index on the major column.</li>
 			</ol>
 
 			<h4>Naming Conventions</h4>	
 			<ol>
-				<li>Overall consistency, encourages that we use lowercase keywords in all our programming. Keywords in lowercases is mandatory in C# and Javascript, but not in SQL.</li>
+				<li>
+					Overall consistency encourages lowercase keywords.
+					Keywords in lowercase are mandatory in C# and JavaScript but not in SQL.
+				</li>
 				<li>Use Pascal casing for naming literals, such as, tables, columns, stored procedures and functions.</li>
 				<li>Use Camel casing for naming parameters and local variables.</li>
 			</ol>
@@ -679,25 +682,24 @@
 
 			<h3>Backup and Off-site Storage</h3>
 			<p>
-				The author does backup of the database and source files after every major change, and store
-				these backup on local computers, 
+				The author archives the database and source files to the local computers, 
 				<a href="http://drive.google.com">Google</a>,
 				<a href="http://onedrive.live.com">Microsoft</a> 
-				drives.
+				drives,
+				<span datetime="2021-07-24T16:00:00">after changes.</span>
 				
 				The author uses <a href="http://github.com/KenAdeniji">GitHub.com</a> version control.
 			</p>
 				
 			<h3>Development Time</h3>
 			<p>
-				The development time is separable into the time it takes to program, compile, test, and deploy.
-				The stored procedure, C#, ASMX, and HTML files are build-able in one day, in most use-case.
+				The development time is separable into the time it takes to program, compile, test, deploy.
+				The stored procedure, C#, ASMX, HTML files are build-able in one day, in most use-case.
 			</p>
 
 			<h3>Reproducible</h3>
 			<p>
-				The author keeps backups which are transferable to other environments 
-				to reach the consistent conclusion.
+				The work of the author is transferable to other environments to reach similar conclusions.
 			</p>
 
 			<h3>Database Deployment</h3>
@@ -714,7 +716,7 @@
 			<h3>Surrogate Keys</h3>
 			<p>
 				<q cite="#bibliographyJosephSack2008">
-					The author takes advantage of potential natural primary keys; otherwise; 
+					The author takes advantage of potential natural primary keys; otherwise, 
 					the author uses surrogate keys.
 					A surrogate key may be an identity or GUID type column.
 					URIs are examples of natural primary keys.
