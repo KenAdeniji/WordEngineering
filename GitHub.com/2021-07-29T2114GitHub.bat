@@ -1,0 +1,12 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat
+        git add   IIS/WordEngineering/JavaScript/OleksiiTrekhleb/modules/OleksiiTrekhleb_-_JavaScriptAlgorithmsAndDataStructuresModule.js
+        git add   IIS/WordEngineering/JavaScript/OleksiiTrekhleb/modules/OleksiiTrekhleb_-_JavaScriptAlgorithmsAndDataStructuresModuleArchive.js
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+git add        GitHub.com/2021-07-26T2242GitHub.bat
+git add        GitHub.com/2021-07-26T2242GitHubArchive.bat
+git add        GitHub.com/2021-07-29T2114GitHub.bat
+git add        GitHub.com/2021-07-29T2114GitHubArchive.bat

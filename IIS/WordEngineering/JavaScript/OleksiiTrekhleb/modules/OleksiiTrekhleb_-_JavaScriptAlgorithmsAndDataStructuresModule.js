@@ -2,6 +2,7 @@
 	2021-07-26T07:33:00 Created.
 */
 
+//	2021-07-26T22:15:00	https://github.com/trekhleb/javascript-algorithms/blob/master/src/algorithms/math/bits/getBit.js
 /**
  * @param {number} number
  * @param {number} bitPosition - zero based.
