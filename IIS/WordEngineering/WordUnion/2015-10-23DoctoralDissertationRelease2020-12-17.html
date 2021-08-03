@@ -132,7 +132,11 @@
 			</p>
 
 			<p datetime="2020-09-18T00:00:00">
-				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleReference.html">BibleReference</a>
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleReference.html"
+				>
+					BibleReference
+				</a>
 				uses whole numbers for representation.
 			</p>
 
@@ -144,7 +148,11 @@
 			</p>
 
 			<p datetime="2021-07-29T20:00:00" data-HisWordID="141803" data-ContactID="257">
-				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Living%20among%20our%20realization.">Living among our realization.</a>
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Living%20among%20our%20realization."
+				>
+					Living among our realization.
+				</a>
 			</p>
 
 			<ul>
@@ -182,42 +190,6 @@
 				</ol>
 			</p>
 
-			<p datetime="2020-07-22T06:49:00">
-				What are the examples of a term in the Bible?
-				<ol>
-					<li>
-						Sabbatical rest
-						(
-							<a 
-								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:2-3,%20Exodus%2016:5,%20Exodus%2016:22-30,%20Exodus%2020:8-11,%20Exodus%2023:12,%20Exodus%2031:13-17,%20Exodus%2034:21,%20Exodus%2035:2-3,%20Leviticus%2023:3,%20Numbers%2028:25,%20Numbers%2031:24,%20Deuteronomy%205:12-15,%20Deuteronomy%2016:8,%20Ezekiel%2045:20,%20Hebrews%204:4"
-							>
-								Genesis 2:2-3, Exodus 16:5, Exodus 16:22-30, Exodus 20:8-11, Exodus 23:12, Exodus 31:13-17, Exodus 34:21, Exodus 35:2-3, Leviticus 23:3, Numbers 28:25, Numbers 31:24, Deuteronomy 5:12-15, Deuteronomy 16:8, Ezekiel 45:20, Hebrews 4:4
-							</a>
-						).
-					</li>
-					<li>
-						Sabbatical year
-						(
-							<a 
-								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2023:10-11"
-							>
-								Exodus 23:10-11, Leviticus 25, Deuteronomy 15:1-2, Deuteronomy 15:9, Deuteronomy 15:12, 2 Chronicles 36:21, Nehemiah 10:31
-							</a>
-						).
-					</li>
-					<li>
-						First resurrection
-						(
-							<a 
-								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:5-6"
-							>
-								Revelation 20:5-6
-							</a>
-						).
-					</li>
-				</ol>
-			</p>
-			
 			<h2 id="Acknowledgments">Acknowledgments</h2>
 
 			<p>
@@ -256,7 +228,14 @@
 			
 			<ol>
 				<li datetime="2020-12-14T19:13:00">
-					Taking example from the Bible (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:2,%20Genesis%2018:19,%20Job%2023:12">Daniel 9:2, Genesis 18:19, Job 23:12</a>).
+					Taking example from the Bible
+					(
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:2,%20Genesis%2018:19,%20Job%2023:12"
+						>
+							Daniel 9:2, Genesis 18:19, Job 23:12
+						</a>
+					).
 				</li>
 				<li>
 					Creating an address book.
@@ -357,7 +336,7 @@
 			<p>
 				Contact is a primary entity, and it identifies the people and organizations that the
 				author has a relationship with.
-				These affiliations are family, friends, or business links.
+				These affiliations are family, friends, business, or public service links.
 				Also recordable are the street, e-mail, web addresses, and telephone numbers.
 				The author stores the various information exchanges with these people.
 				A known date of birth, is for notification of the subject's birthday and relative age.
@@ -764,9 +743,9 @@
 				<code>
 				ALTER TABLE Bible..Scripture ADD  CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED 
 				(
-					[bookId] ASC,
-					[chapterId] ASC,
-					[verseId] ASC
+					BookID ASC,
+					ChapterID ASC,
+					VerseID ASC
 				)
 				</code>
 				is for setting the primary key.
@@ -810,7 +789,7 @@
 
 			<p>
 				The SQL statement 
-				<code>(case when [BookId]&lt;=(39) then 'Old' else 'New' end)</code>
+				<code>(case when BookID &lt;=(39) then 'Old' else 'New' end)</code>
 				will set this computed column.
 				The Testament column serves as a filter, such as, in the
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html">BibleWord</a>.
@@ -820,7 +799,7 @@
 
 			<p>
 				The SQL statement 
-				<code>[dbo].[udf_BookTitle]([BookID])</code>
+				<code>dbo.udf_BookTitle(BookID)</code>
 				is for determining this computed column.
 				
 				As expected, there is a correlation between the BookID column, and 
@@ -849,7 +828,7 @@
 
 			<p>
 				The SQL statement 
-				<code>[dbo].[udf_ScriptureReference]([BookID], [ChapterID], [VerseID])</code>
+				<code>dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)</code>
 				will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
 				
 				Since this is a computed column; therefore, you can not set its 
@@ -895,11 +874,11 @@
 					; with cte
 					(
 						  BookID
-						, chapterID
+						, ChapterID
 					)
 					as
 					(
-						select distinct BookID, chapterID
+						select distinct BookID, ChapterID
 						FROM	Bible..Scripture
 					)
 					select cnt = count(*)
@@ -974,7 +953,7 @@
 
 			<p>
 				The SQL statement 
-				<code>((right('00'+CONVERT([varchar](2),[bookId],(0)),(2))+right('000'+CONVERT([varchar](3),[chapterId],(0)),(3)))+right('000'+CONVERT([varchar](3),[verseId],(0)),(3)))</code>
+				<code>((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3)))</code>
 				will combine the BookID, ChapterID, and VerseID.
 			
 				This is a convention for referring to Bible rows, by a unique identifier,
@@ -1049,7 +1028,7 @@
 				its disadvantage is that the exact table needs re-population,
 				when there is a shift to another Bible version, which we do not project, at this time.
 				If there is a need, to support another Bible version, then the 
-				exact table loading procedure needs expansion to aid,
+				Exact table loading procedure needs expansion to aid,
 				this flexibility.
 				
 				The 

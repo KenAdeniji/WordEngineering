@@ -131,7 +131,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4751);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141790);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141815);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 91694);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -254,4 +254,8 @@ If that address is correct, here are three other things you can try:
     If you are connected but behind a firewall, check that Firefox has permission to access the Web.
 2021-07-27T07:53:00 google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
 2021-07-27T11:24:00 Microsoft SQL Server Management Studio HisWord tab grid cursor moved upward.
+2021-08-02T07:04:00 foxnews.com/world/death-toll-jumps-300-china-flooding
+System.Exception: There is insufficient system memory in resource pool 'internal' to run this query. Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped. A severe error occurred on the current command. The results, if any, should be discarded. 
+2021-08-02T07:04:00
+System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
 :Exit
