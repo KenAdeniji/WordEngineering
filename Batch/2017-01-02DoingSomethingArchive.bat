@@ -114,13 +114,13 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESE
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1173);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
-DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17687);
+DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17700);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 2728);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24668);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57024);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 902);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2060);
@@ -257,5 +257,8 @@ If that address is correct, here are three other things you can try:
 2021-08-02T07:04:00 foxnews.com/world/death-toll-jumps-300-china-flooding
 System.Exception: There is insufficient system memory in resource pool 'internal' to run this query. Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped. A severe error occurred on the current command. The results, if any, should be discarded. 
 2021-08-02T07:04:00
-System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
+Microsoft SQL Server Management Studio System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
+Isaiah 1:11, Ezekiel 18
+To tell me, my journey; is as numerous, as possible? Where did He see; the difference; in His participation?
+
 :Exit

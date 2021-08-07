@@ -2,6 +2,7 @@
 <html>
 	<!--
 		2016-02-19	Created.	Exact.html
+		2021-08-07	render(informationSet); versus scriptLiteral9432.renderDataSet(informationSet, "resultSet");
 	-->
 	<head>
 		<title>Exact</title>
@@ -76,9 +77,10 @@
 				</table>
 			</fieldset>
 			<br><br>
-			<div id="response"></div>
+			<div id="resultSet"></div>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="tsorter.min.js" type="text/javascript"></script>	
 		<script>
 			var isPostBack = false;
 		
@@ -122,14 +124,15 @@
 				    dataType: "json",
 				    success: function (data) {
 				        var informationSet = JSON.parse(data.d);
-				        render(informationSet);
+				        //render(informationSet);
+						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
 				    },
 				    error: function (xhr) {
-				        $("#response").html
+				        $("#resultSet").html
 						(
 							'Status: ' + xhr.status + " | " +
 							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
+							'resultSetText: ' + xhr.resultSetText
 						);
 				    }
 				});
@@ -173,7 +176,7 @@
 		            }
 		        }
 		        info += "</table>"
-		        document.getElementById("response").innerHTML = info;
+		        document.getElementById("resultSet").innerHTML = info;
 		    }
 
 			function pageLoad()
@@ -186,10 +189,14 @@
 						if (bibleWord)
 						{
 							document.getElementById("bibleWord").value = bibleWord;
-							querySubmit();
-							isPostBack = true;
-						}	
+						}
+						isPostBack = true;						
+						querySubmit();
 					});
+				}
+				else
+				{
+					querySubmit();
 				}
 			}
 			
