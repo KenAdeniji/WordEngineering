@@ -1,4 +1,8 @@
 /*
+	2021-08-13T00:00:00	https://www.oreilly.com/pub/missingmanuals/csstmm4e
+	2021-08-15T19:17:00 Control-F5 Mozilla Firefox refresh css only
+*/
+/*
 	html, body{
 	  height: 100%;
 	  width: 100%;
@@ -10,9 +14,9 @@
 */
 body {
 	/*background-color: #FF9500; */
-	border: 5px solid black;
-	margin: 0 auto;
-	padding: 0 20px 20px 20px;  
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
 	/* width: 600px; */
 }
 
@@ -38,6 +42,7 @@ div > div {
 
 html {
 	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 table {
