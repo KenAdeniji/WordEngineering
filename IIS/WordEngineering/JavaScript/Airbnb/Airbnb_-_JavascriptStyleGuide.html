@@ -38,6 +38,21 @@ console.log
 const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
 console.log("has.call(firstBookOfTheBible, 'id'):", has.call(firstBookOfTheBible, 'id'));
 console.log("has.call(firstBookOfTheBible, 'ids'):", has.call(firstBookOfTheBible, 'ids'));	
+
+const testaments = [];
+testaments.push('Old');
+testaments.push('New');
+console.log(testaments.join(', '));
+
+const iterableObject = document.querySelectorAll('*');
+const nodes = [...iterableObject]; //To convert an iterable object to an array, use spreads ... instead of Array.from.
+
+const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+
+// good
+const arr = Array.from(arrLike);
+
+console.log(JSON.stringify(arrLike), JSON.stringify(arr));
 		</script>
 	</body>
 </html>
