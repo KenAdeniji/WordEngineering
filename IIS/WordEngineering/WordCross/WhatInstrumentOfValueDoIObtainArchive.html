@@ -60,9 +60,9 @@ Total Content: 	218946 	100%
 					<td><span id="textContentPercent"></span>%</td>
 				</tr>
 				<tr>
-					<td><label for="markupContent">Markup Content:</label></td>
-					<td><span id="markupContent"></span></td>
-					<td><span id="markupContentPercent"></span>%</td>
+					<td><label for="markup">Markup:</label></td>
+					<td><span id="markup"></span></td>
+					<td><span id="markupPercent"></span>%</td>
 				</tr>
 				<tr>
 					<td><label for="totalContent">Total Content:</label></td>
@@ -85,8 +85,8 @@ Total Content: 	218946 	100%
 			var	textContentElement = document.getElementById("textContent");
 			var textContentPercentElement = document.getElementById("textContentPercent");
 			
-			var	markupContentElement = document.getElementById("markupContent");
-			var markupContentPercentElement = document.getElementById("markupContentPercent");
+			var	markupElement = document.getElementById("markup");
+			var markupPercentElement = document.getElementById("markupPercent");
 			
 			var	totalContentElement = document.getElementById("totalContent");
 						
@@ -148,12 +148,12 @@ Total Content: 	218946 	100%
 				
 				var markupLength = sourceContentElement.value.length - stripTags.length;
 				
-				markupContentElement.textContent = markupLength;
-				totalContentElement.textContent = sourceContentElement.value.length;
+				markupElement.textContent = markupLength;
+				totalContent.textContent = sourceContentElement.value.length;
 				
 				textContentPercentElement.textContent = stripTags.length * 100.0 /
 														sourceContentElement.value.length;
-				markupContentPercentElement.textContent =  markupLength * 100.0 /
+				markupPercentElement.textContent =  markupLength * 100.0 /
 														sourceContentElement.value.length;
 			}
 
