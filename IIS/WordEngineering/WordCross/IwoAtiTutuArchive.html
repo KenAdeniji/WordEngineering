@@ -3,12 +3,13 @@
 	<!--
 		2021-08-24T14:00:00	Created.
 		2021-08-24T14:00:00	https://www.techiedelight.com/determine-elements-type-with-javascript/
+		2021-08-24T14:00:00	https://www.w3schools.com/jsref/met_element_queryselectorall.asp
 	-->
 	<head>
 		<title>Iwo ati Tutu.</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="Iwo ati Tutu."/>
-		<meta name="keyword" content="Elements statistics, node types"/>
+		<meta name="keyword" content="DOM Elements statistics, node types"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -28,7 +29,7 @@
 			<table>
 				<tr>
 					<td><label for="sourceAddress">Source Address:</label></td>
-					<td colspan="2">
+					<td>
 						<input 
 							id="sourceAddress"
 							type="url"
@@ -39,12 +40,12 @@
 				</tr>
 				<tr>
 					<td><label for="sourceContent">Source Content:</label></td>
-					<td colspan="2">
+					<td>
 						<textarea id="sourceContent"></textarea>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="3" align="center">
+					<td colspan="2" align="center">
 						<button id="fetchContent">Fetch Content</button>
 						<input type="submit" id="submitQuery"/>
 					</td>
@@ -57,7 +58,9 @@
 		<script>
 			var isPostBack = false;
 			
+			var fetchContentElement = document.getElementById("fetchContent");
 			var submitQueryElement = document.getElementById("submitQuery");
+
 			var	resultSetElement = document.getElementById("resultSet");
 
 			var	sourceAddressElement = document.getElementById("sourceAddress");
@@ -171,8 +174,8 @@
 				tsorter.create("resultSetTable");
 			}
 
-			document.getElementById("fetchContent").addEventListener("click", contentFetch, false);
-			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
 		
 			var body = document.getElementsByTagName('body')[0];
 			body.onkeydown = function (e) {

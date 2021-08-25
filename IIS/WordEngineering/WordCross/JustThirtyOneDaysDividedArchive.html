@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2021-08-24T14:00:00	Created.
-		2021-08-24T14:00:00	https://www.techiedelight.com/determine-elements-type-with-javascript/
-		2021-08-24T14:00:00	https://www.w3schools.com/jsref/met_element_queryselectorall.asp
+		2021-08-25T12:03:00	Created.	http://miageprojet2.unice.fr/@api/deki/files/1333/=JavaScript.pdf
 	-->
 	<head>
-		<title>Iwo ati Tutu.</title>
+		<title>Just thirty one days, divided.</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Iwo ati Tutu."/>
-		<meta name="keyword" content="DOM Elements statistics, node types"/>
+		<meta name="description" content="Just thirty one days, divided."/>
+		<meta name="keyword" content="DOM Elements"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -45,6 +43,16 @@
 					</td>
 				</tr>
 				<tr>
+					<td><label for="selector">Selector:</label></td>
+					<td>
+						<input 
+							id="selector"
+							type="text"
+							value="*"
+						/>
+					</td>
+				</tr>
+				<tr>
 					<td colspan="2" align="center">
 						<button id="fetchContent">Fetch Content</button>
 						<input type="submit" id="submitQuery"/>
@@ -58,15 +66,17 @@
 		<script>
 			var isPostBack = false;
 			
+			var	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			var	sourceContentElement = document.getElementById("sourceContent");
+			var sourceHTMLElement = document.getElementById("sourceHTML");
+
+			var	selectorElement = document.getElementById("selector");
+
 			var fetchContentElement = document.getElementById("fetchContent");
 			var submitQueryElement = document.getElementById("submitQuery");
-
-			var	resultSetElement = document.getElementById("resultSet");
-
-			var	sourceAddressElement = document.getElementById("sourceAddress");
-			var	sourceContentElement = document.getElementById("sourceContent");
 			
-			var sourceHTMLElement = document.getElementById("sourceHTML");
+			var	resultSetElement = document.getElementById("resultSet");
 			
 			function pageLoad()
 			{
@@ -121,52 +131,19 @@
 			function querySubmit()
 			{
 				sourceHTMLElement.innerHTML = sourceContentElement.value;
-				var nodes = sourceHTMLElement.querySelectorAll("*");
-				
-				var elementsStatistics = {};
-				var tagName;
-				
-				var elementArray = [...nodes]; // converts NodeList to Array
-				
-				var elementCurrent;
-				
-				for 
-				(
-					var elementIndex = 0, elementLength = elementArray.length;
-					elementIndex <= elementLength;
-					elementIndex++
-				)
-				{
-					elementCurrent = elementArray[elementIndex];
-					if (!elementCurrent)
-					{
-						continue;
-					}	
-					tagName = elementCurrent.tagName;
-					if( !elementsStatistics.hasOwnProperty( tagName ) )
-					{
-						elementsStatistics[tagName] = 1;
-					}
-					else
-					{
-						var currentValue = ++elementsStatistics[tagName];
-						elementsStatistics[tagName] = currentValue;
-					}
-				};				
+				var nodes = sourceHTMLElement.querySelectorAll(selectorElement.value);
 				
 				var resultSetLiteral = 
 					`
 						<table id="resultSetTable">
 							<thead>
-								<tr><th>Element</th><th>Occurrences</th></tr>
+								<tr><th>Unit of Metric</th><th>Value</th></tr>
 							</thead>
 							<tbody>
 					`;
 		
-				for (const [key, value] of Object.entries(elementsStatistics)) 
-				{
-				  resultSetLiteral += `<tr><td>${key}</td><td>${value}</td></tr>`;
-				}
+				resultSetLiteral += `<tr><td>Length</td><td>${nodes.length}</td></tr>`;
+
 				
 				resultSetLiteral += "</tbody></table>";
 				
