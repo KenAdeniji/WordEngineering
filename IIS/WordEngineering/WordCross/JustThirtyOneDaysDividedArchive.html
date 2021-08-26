@@ -2,6 +2,9 @@
 <html>
 	<!--
 		2021-08-25T12:03:00	Created.	http://miageprojet2.unice.fr/@api/deki/files/1333/=JavaScript.pdf
+		2021-08-25T12:03:00	Selector examples include:
+			p[Data-ContactID="10721"]
+		2021-08-26T03:22:00	https://stackoverflow.com/questions/16607557/perform-join-on-value-in-array-of-objects
 	-->
 	<head>
 		<title>Just thirty one days, divided.</title>
@@ -133,6 +136,11 @@
 				sourceHTMLElement.innerHTML = sourceContentElement.value;
 				var nodes = sourceHTMLElement.querySelectorAll(selectorElement.value);
 				
+				var IDs = Object.values(nodes).map
+				(
+					function(obj){return obj.id;}
+				);
+				
 				var resultSetLiteral = 
 					`
 						<table id="resultSetTable">
@@ -142,9 +150,8 @@
 							<tbody>
 					`;
 		
-				resultSetLiteral += `<tr><td>Length</td><td>${nodes.length}</td></tr>`;
-
-				
+				resultSetLiteral += `<tr><td>Occurrences</td><td>${nodes.length}</td></tr>`;
+				resultSetLiteral += `<tr><td>IDs</td><td>${IDs}</td></tr>`;
 				resultSetLiteral += "</tbody></table>";
 				
 				resultSetElement.innerHTML = resultSetLiteral;
