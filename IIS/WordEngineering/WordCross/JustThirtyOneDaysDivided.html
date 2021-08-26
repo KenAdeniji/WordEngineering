@@ -5,6 +5,7 @@
 		2021-08-25T12:03:00	Selector examples include:
 			p[Data-ContactID="10721"]
 		2021-08-26T03:22:00	https://stackoverflow.com/questions/16607557/perform-join-on-value-in-array-of-objects
+		2021-08-26T06:36:00	https://stackoverflow.com/questions/9141951/splitting-string-by-whitespace-without-empty-elements/39184134
 	-->
 	<head>
 		<title>Just thirty one days, divided.</title>
@@ -138,9 +139,21 @@
 				
 				var IDs = Object.values(nodes).map
 				(
-					function(obj){return obj.id;}
+					function(element)
+					{
+						return element.id;
+					}
 				);
 				
+				var elementsWithIDs = IDs.toString().trim().split(',').filter(function(i){return i});
+				var elementsWithIDsLinks = Object.values(elementsWithIDs).map
+				(
+					function(element)
+					{
+						return `<a href="${sourceAddressElement.value}#${element}" target="_blank">${element}</a>`;
+					}
+				);
+		
 				var resultSetLiteral = 
 					`
 						<table id="resultSetTable">
@@ -151,7 +164,8 @@
 					`;
 		
 				resultSetLiteral += `<tr><td>Occurrences</td><td>${nodes.length}</td></tr>`;
-				resultSetLiteral += `<tr><td>IDs</td><td>${IDs}</td></tr>`;
+				resultSetLiteral += `<tr><td>IDs</td><td>${IDs.toString().replaceAll(',', ' ')}</td></tr>`;
+				resultSetLiteral += `<tr><td>Links</td><td>${elementsWithIDsLinks}</td></tr>`;
 				resultSetLiteral += "</tbody></table>";
 				
 				resultSetElement.innerHTML = resultSetLiteral;
