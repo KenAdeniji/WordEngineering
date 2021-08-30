@@ -273,5 +273,4 @@ Your message can't be displayed right now. Please check your network connection 
 2021-08-20T13:52:00 What He truly realizes; is how He truly values ( 2 Chronicles 25:9 ).
 2021-08-21T23:57:00 http://js4ds.org
 2021-08-28T16:52:00 C:\Users\kadeniji\OneDrive
-12:42 cnn.com/2021/08/29/politics/mitt-romney-afghanistan-withdrawal-cnntv
 :Exit
