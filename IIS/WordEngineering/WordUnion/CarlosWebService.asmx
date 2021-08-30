@@ -12,6 +12,7 @@ using System.Web.Services.Protocols;
 using System.Web.Script.Services;
 
 using System.Data;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 
 using Newtonsoft.Json;
@@ -43,17 +44,22 @@ public class CarlosWebService : System.Web.Services.WebService
 		String	question
 	)
     {
-		List<SqlParameter> sqlParameterCollection = new List<SqlParameter>();
+		List<OdbcParameter> odbcParameterCollection = new List<OdbcParameter>();
 
-		sqlParameterCollection.Add(new SqlParameter("@question", question));
-		sqlParameterCollection.Add(new SqlParameter("@accordingTo", accordingTo));
+		odbcParameterCollection.Add(new OdbcParameter("@question", question));
+		odbcParameterCollection.Add(new OdbcParameter("@accordingTo", accordingTo));
 		
-		DataSet resultSet = (DataSet) Repository.DatabaseCommand
+		DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
 		(
-			"Bible..usp_Carlos",
+			String.Format
+			(
+				"Bible..usp_Carlos '{0}', '{1}'",
+				question,
+				accordingTo
+			),
 			CommandType.StoredProcedure,
-			Repository.ResultSet.DataSet,
-			sqlParameterCollection
+			DataCommand.ResultType.DataSet //,
+			//odbcParameterCollection
 		);
 		
 		string json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
