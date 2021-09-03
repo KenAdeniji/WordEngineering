@@ -273,4 +273,15 @@ Your message can't be displayed right now. Please check your network connection 
 2021-08-20T13:52:00 What He truly realizes; is how He truly values ( 2 Chronicles 25:9 ).
 2021-08-21T23:57:00 http://js4ds.org
 2021-08-28T16:52:00 C:\Users\kadeniji\OneDrive
+2021-08-30T19:26:00
+dotnet
+dir "C:\Program Files\dotnet\sdk\3.1.412"
+CD E:\Accounting\dmitry-merzlyakov\nledger\nledger\Build
+NLedgerBuild.Console.cmd
+2021-08-30T20:53:00
+System Variables Path. 
+This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
+env
+https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1045
+build
 :Exit

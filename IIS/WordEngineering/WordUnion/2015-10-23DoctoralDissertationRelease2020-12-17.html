@@ -111,6 +111,26 @@
 				</span>
 			</p>
 
+			<p datetime="2020-10-24T13:53:00">
+				The importance of this work?
+				<ul>
+					<li>
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=So%20there%20is%20God,%20I%20joined%20where%20that%20God%20is."
+						>
+							So there is God, I joined where that God is.
+						</a>
+					</li>
+					<li>
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20we%20will%20be?"
+						>
+							Where we will be?
+						</a>
+					</li>
+				</ul>
+			</p>
+
 			<p datetime="2021-04-18T10:43:00">
 				The author is working on variations of AlphabetSequence:
 				These are not suitable for general use.
@@ -140,17 +160,6 @@
 					BibleReference
 				</a>
 				uses whole numbers for representation.
-			</p>
-
-			<p datetime="2020-10-24T13:53:00">
-				The importance of this work?
-				<span datetime="2020-10-29T07:34:00">
-					<a 
-						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=So%20there%20is%20God,%20I%20joined%20where%20that%20God%20is."
-					>
-						So there is God, I joined where that God is.
-					</a>
-				</span>
 			</p>
 
 			<p datetime="2020-08-16T00:00:00" data-HisWordID="135462" data-ContactID="10721">
@@ -456,6 +465,12 @@
 				This will reduce the sizes of the .HTML files, and it helps to achieve a common user interface.
 			</p>
 
+			<p datetime="2021-08-15T20:56:00">
+				The work of the author is interactive, and there are links to questions and answers pages.
+				Most of the input entries are textual, but some are numeric, datetime, select options.
+				The answers are mostly in tabular format.
+			</p>
+
 			<q cite="#bibliographyElizabethCastro2012">
 				<p datetime="2021-08-24T08:24:00">
 					A HTML document contains:
@@ -479,15 +494,6 @@
 			</q>
 			(Elizabeth Castro).
 			
-			<p datetime="2021-08-15T20:56:00">
-				The work of the author is interactive, 
-				and to achieve this, the author depends 
-				on Javascript to work.
-				This document links to questions and answers pages.
-				Most of the input entries are textual, but some are numeric, datetime, select options.
-				The answers are mostly in tabular format.
-			</p>
-
 			<q cite="#bibliographyJonathanSnook">
 				<h4 id="CascadingStyleSheetsCSS" datetime="2021-05-06T21:00:00">Cascading Style Sheets (CSS)</h4>
 				<ul>
@@ -517,22 +523,21 @@
 			<h3>Web Services</h3>
 			<p>
 				<q cite="#bibliographyFrederikBulthoff2019">
-					We have standardized on the first .NET web services architecture, .ASMX.
+					There is standardization on the first .NET web services architecture, .ASMX.
 				</q>
 				(FrederikBulthoff, 2019)
 				In most cases, there is a one-to-one mapping between the .HTML, .ASMX, .CS files,
 				and the database relational table, Bible..Scripture.
 				For simplicity and clearage of use, the .HTML and .ASMX files, support one operation.
-				This is not the case, with the GetAPage.html file, which is the workhorse, for word spoken.
-				With a single field entry, GetAPage.html, sends AJAX requests to multiple .ASMX files
-				and operations; GetAPage.html is a cumulative of previously isolated .HTML files.
-				All the web services files support a single request format, SOAP; and return JSON.
+				GetAPage.html is the workhorse for word utterances.
+				GetAPage.html will send AJAX requests to multiple .ASMX files and operations. 
+				GetAPage.html is a cumulation of separate .HTML files.
+				All the web services files support the SOAP request format and return JSON.
 				jQuery accepts the POST, HTTP verb.
-				The author stringified the data he passes to the web service, in the body of the message.
+				The author stringified the data he passes to the web service in the body of the message.
 				Errors are unforeseen, in the rare case, the author logs errors on the back-end, 
 				and display quantitative message.
-				Security is lacking; this is permissible, since the author only queries information,
-				and the Bible database can be readonly.
+				Security is lacking; this is permissible; since the author only queries information.
 			</p>
 
 			<p>	
@@ -737,7 +742,7 @@
 
 			<h3>Reproducible</h3>
 			<p>
-				The work of the author is transferable to other environments to reach similar conclusions.
+				The deliverable of the author is transferable to other environments to reach similar conclusions.
 			</p>
 
 			<h3>Database Deployment</h3>
@@ -1017,7 +1022,7 @@
 				BookID which will have two digits,
 				ChapterID which will have three digits,
 				and VerseID which will also have three digits.
-				It is easier, faster, and more compact to restrict and order by numbers than text.
+				It is easier, faster, and more compact to restrict and order by numbers rather than text.
 							
 				Listed below, is the result set, for this SQL statement.
 				<code>
@@ -1062,7 +1067,7 @@
 				table's, primary task, is to tell, on the words 
 				that are in the Bible. Its information set include each word's first and last 
 				scripture reference occurrence(s), and count of occurrence(s).
-				If the word, occurs only once, then the last occurrence is null.
+				If the word, occurs only once, then the last occurrence is set to null.
 				The incentive for writing the exact module comes from 
 				<a href="http://en.wikipedia.org/wiki/Dave_Hunt_%28Christian_apologist%29">Dave Hunt</a>,
 				who will talk of each word's specifics,
@@ -1079,7 +1084,7 @@
 				<a href="http://en.wikipedia.org/wiki/Language_Integrated_Query">Language Integrated Query</a>.
 				The reasoning of the author is that the Scripture table is static data, and it does not need
 				processing, each time, there is a request.
-				Speed and lower work load are the advantages of our procedure;
+				Speed and lower work load are the advantages of the approach of the author;
 				its disadvantage is that the exact table needs re-population,
 				when there is a shift to another Bible version, which we do not project, at this time.
 				If there is a need, to support another Bible version, then the 
@@ -1182,69 +1187,46 @@
 			
 			<h4 id="HisWord">The HisWord Table</h4>
 			<p>
-				As the name of the table denotes, the HisWord table, is what the author heard
-				from the source.
-				The entries in the HisWord table is exact, and representable in alphanumeric format
+				The HisWord table is what the author heard from the source.
+				The entries in the HisWord table are exact and representable in alphanumeric format
 				(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2012:6-8">Numbers 12:6-8</a>).
 
-				In following, the Bible's New Testament convention, where there is translation of Hebrew words 
-				to English,
+				In following, the Bible's New Testament convention, where there are translations of Hebrew words 
+				to English
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=which%20is%20being%20interpreted">which is being interpreted</a>,
 				(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%201:23,%20Mark%205:41,%20Mark%2015:22,%20Mark%2015:34,%20John%201:38,%20John%201:41,%20Acts%20:36,%201%20Corinthians%2014:28">Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36</a>); 
-				so also, there is translation of Yoruba words to English.
+				so also, there are translations of Yoruba words to English.
 			</p>
 
 			<p>
-				There have been cases, when the author cannot spell, and fully comprehend, what he heard.
+				There have been cases when the author cannot spell and fully comprehend what he heard.
 				In such cases, and not dispose of the records, the author will partly enter what
 				he heard. 
 				
-				This impedance mismatch, between what the speaker said, and what the listener heard,
-				rarely occurs with English words, but it is likely, 
-				in the author's native language, Yoruba, which exploits word combinations, phrases.
+				This impedance mismatch between what the speaker said and what the listener heard,
+				rarely occurs with English words.
+				But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases.
 				
-				The character set differ slightly between the English and Yoruba languages, Yoruba contains diacritic alphabets.
+				The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets.
 				
-				When a word, is heard, we make efforts to spell the word, and we reach judgment,
-				to decide if the word is English or Yoruba, as a last authority, we enter the word
-				into <a href="http://www.google.com">Google</a>.
-				
-				The author has sought a Yoruba dictionary and translator,
+				The author requires a Yoruba dictionary and translator;
 				a recent success is with the <a href="http://translate.google.com">http://translate.google.com</a> web page.
-			</p>
-			
-			<p>
-				Innovative made, as a concession towards the Hispanic community, 
-				especially after the interview with
-				<a href="http://www.cetweb.org">Center for Employment Training</a>
-				and 
-				<a href="http://www.yesvideo.com">YesVideo.com</a>,
-				was to extend the HisWord table with include columns.
-				
-				These columns will find, when group of words occur,
-				these words are numbers, colors, animals, plants, 
-				or other word groupings.
-				
-				The advantage of this approach, is that it helps non-language speakers
-				to better decipher word meanings, and it offers an opportunity to use statistics
-				to see word and grouping trends.
 			</p>
 			
 			<p>	
 				The HisWord table's most important column, 
 				as the name suggests, is the word column,
 				which is either English or Yoruba; or a mixture of both languages.
-				When a word is in the Yoruba language, the author, will yield to the Holy Spirit,
-				in translating the word from Yoruba to English.
+				
+				The author will yield to the Holy Spirit in translating Yoruba words to English.
 				
 				From previous experience, this translation is not always the most right or relevant, and
 				different words may contain the diacritic alphabets; therefore, introduce various meanings
 				(<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%2012:30,%201%20Corinthians%2014">1 Corinthians 12:30, 1 Corinthians 14</a>).
 				
-				To account for the discrepancy in translation, the author sought help from the LORD;
-				and at about, 
-				2015-11-02T22:55:00 In a dream, the LORD said, And, the merge, is the money, convert.
-				2015-11-03T02:17:00 In a dream, the LORD said, The specifics, a language.
+				To account for the discrepancy in translation, the author sought help from the LORD.
+				2015-11-02T22:55:00 And, the merge, is the money, convert.
+				2015-11-03T02:17:00 The specifics, a language.
 			</p>
 
 			<p>	
@@ -1259,10 +1241,9 @@
 			</p>
 
 			<p>
-				The HisWord's table, commentary column, is the implicit information, received from the LORD.
-				This communication is most likely non-verbal, and it is information comprehended by the author
-				during dream and vision, like creatures standing or moving towards particular locations,
-				or engaging in other visible activities.
+				The HisWord's table, commentary column, contains implicit information.
+				This communication is most likely non-verbal, and it is information such as creatures
+				standing or moving towards particular locations	or engaging in other visible activities.
 			</p>
 
 			<p>
@@ -1281,9 +1262,9 @@
 			</p>
 			
 			<p>
-				The HisWordID column is an 
-				<a href="http://en.wikipedia.org/wiki/Identity_column">identity column</a> 
-				maintained by SQL Server, which automatically generates a sequential next identity.
+				SQL Server generates sequential numbers for the HisWordID
+				<a href="http://en.wikipedia.org/wiki/Identity_column">identity column</a>.
+				
 				The goodness of this technique is that it is a candidate primary key,
 				data loss is trackable, and it provides a sort key.
 				
@@ -1293,14 +1274,10 @@
 				<a href="http://www.1keydata.com/sql/sql-foreign-key.html">foreign key</a>, 
 				the backbone of the 
 				<a href="http://en.wikipedia.org/wiki/Referential_integrity">Referential Integrity Constraint</a>.
-				
-				It is debatable, the need for this identity column when there is a dated column
-				which does similar work and
-				offers almost identical benefit; the author will discuss the dated column, next.
 			</p>
 			
 			<p>
-				The Dated column, as the name implies, is of the DateTime type.
+				The Dated column is of the DateTime type.
 				If an insert statement does not explicitly specify a value for the dated column, 
 				then it defaults to the current date and time of the
 				<a href="http://en.wikipedia.org/wiki/Pacific_Time_Zone">(UTC-08:00) Pacific Time (US &amp; Canada) time zone</a>.
@@ -1311,8 +1288,7 @@
 
 			<h4 id="Hisword_view">HisWord_view</h4>
 			<p>
-				The HisWord_view composes of the computed columns deducted from analyzing the Word 
-				received by the author.
+				The HisWord_view composes of the computed columns deducted from analyzing the Word.
 				
 				The two most significant computations are the AlphabetSequenceIndex, and the
 				reliant AlphabetSequenceIndexScriptureReference, respectively.
@@ -1329,7 +1305,7 @@
 				
 				The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture.
 				
-				The author considers the chapter and verse sequences, in forward and backward orders.
+				The author will consider the chapter and verse place, forward and backward.
 				
 				Use the
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/AlphabetSequence.html">AlphabetSequence.html</a>
@@ -1339,8 +1315,6 @@
 				<a href="http://en.wikipedia.org/wiki/Gematria">Gematria, Mispar Hechrachi method</a>
 				
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/AndThePriestSaidAreOneOnlyForMe.html">Titles of God</a>.
-				
-				The author will note the other interesting similarities in the future.
 			</p>
 
 			<h4 id="Remember">The Remember Table</h4>
@@ -1681,8 +1655,6 @@
 			<p>
 				Our computation is separable to back-end and forward-end code residence;
 				SQL-CLR provides the opportunity to have functionality callable from both parts.
-				This closeness, proximity to calling, accessibility; AJAX, is not always best.
-				When a certain thread calls all; this thread is subjective to particular use.
 			</p>
 
 			<p>
@@ -2265,6 +2237,10 @@
 				What artifact can the author produce; in compliance with the word of God?
 				What benefit has his training giving him, and where is he lacking?
 				Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
+			</p>
+
+			<p datetime="2021-09-01T11:06:00" Data-HisWordID="142231">
+				We want personal data, when is public data sufficient?			
 			</p>
 
 			<p datetime="2021-08-12T14:34:00">
