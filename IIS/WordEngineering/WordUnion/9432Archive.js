@@ -240,7 +240,16 @@ var scriptLiteral9432 =
 			alphabetSequence = Number.parseInt(word)
 			return alphabetSequence;
 		}
+		
 		word = word.toUpperCase();
+
+		var ascii = word.charCodeAt(0);
+		
+		if (word < 'A' || word > 'Z')
+		{
+			return ascii;
+		}		
+		
 		for 
 		(
 			var index = 0, length = word.length, currentCode, asciiCode;
@@ -1317,8 +1326,8 @@ var scriptLiteral9432 =
 		selectMultiObject=document.getElementById(objectId);
 		for ( var i = 0, l = selectMultiObject.options.length, o; i < l; i++ )
 		{
-		  o = selectMultiObject.options[i];
-		  o.selected = (values.indexOf (o.value) != -1);
+			o = selectMultiObject.options[i];
+			o.selected = (values.indexOf (o.value) != -1);
 		}
 	},
 	

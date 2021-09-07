@@ -52,7 +52,7 @@
 					<td><input type=checkbox id="wholeWords" checked/></td>
 				</tr>	
 				<tr>
-					<td><label for="bibleBookGroup">bibleBookGroup:</label></td>
+					<td><label for="bibleBookGroup">Bible Book Group:</label></td>
 					<td><select id="bibleBookGroup" multiple size="2"></select></td>
 				</tr>	
 				<tr>
@@ -159,35 +159,38 @@
 				if (isPostBack === false)
 				{
 					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
 						scriptLiteral9432.renderBibleBookGroupSelect();
 						scriptLiteral9432.renderBibleVersionSelect();
-						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
+						
+						var bibleWordValue = urlParams.get("bibleWord");
 						if (bibleWordValue)
 						{
 							bibleWordElement.value = bibleWordValue;
 						}	
 						
-						var logicValue = scriptLiteral9432.getParameterByName("logic");
+						var logicValue = urlParams.get("logic");
 						if (logicValue)
 						{
 							logicElement.value = logicValue;
 						}	
 
-						var wholeWordsValue = scriptLiteral9432.getParameterByName("wholeWords");
+						var wholeWordsValue = urlParams.get("wholeWords");
 						var wholeWordsLowerCaseValue =  wholeWordsValue.toLowerCase();
 						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
 						wholeWordsElement.checked = wholeWordsChecked;
 
-						var bibleVersionValue = scriptLiteral9432.getParameterByName("bibleVersion");
+						var bibleVersionValue = urlParams.get("bibleVersion");
 						if (bibleVersionValue)
 						{
 							bibleVersionElement.value = bibleVersionValue;
 						}	
 						
-						var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
-						if (bibleBookGroupValue)
+						var bibleBookGroupParam = urlParams.get("bibleBookGroup");
+						if (bibleBookGroupParam)
 						{
-							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupParam]);
 						}	
 						
 						querySubmit();
@@ -209,6 +212,8 @@
 				request["question"] = bibleWordElement.value;
 				request["wholeWords"] = wholeWordsElement.checked;
 				request["bibleVersion"] = bibleVersionElement.value;
+
+				console.log( request["bibleBookGroup"], scriptLiteral9432.selectionGet("bibleBookGroup") );
 
 				var requestJson = JSON.stringify(request);
 				

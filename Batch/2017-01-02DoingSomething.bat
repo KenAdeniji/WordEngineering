@@ -131,7 +131,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141980);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 142266);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 91694);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
@@ -283,5 +283,6 @@ System Variables Path.
 This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
 env
 https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1045
+2021-09-03 A Comparance of Age
 build
 :Exit

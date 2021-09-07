@@ -283,5 +283,6 @@ System Variables Path.
 This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
 env
 https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1045
+2021-09-03 A Comparance of Age
 build
 :Exit
