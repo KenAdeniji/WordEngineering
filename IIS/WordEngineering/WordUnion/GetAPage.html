@@ -96,10 +96,10 @@
 			
 			function domHighResTimeStampRecord(category, start, end)
 			{
-				console.log(category, start, end);
+				//console.log(category, start, end);
 				//performanceNowElement.innerHTML += `<tr><td>${category}</td><td>${start}</td><td>${end}</td><td>${end-start}</td></tr>`;
 				performanceNowElement.innerHTML = "<table><tr><td>" + category + "</td><td>" + start + "</td><td>" + end + "</td><td>" + (end - start) + "</td></tr></table>";
-				console.log(category, start, end);
+				//console.log(category, start, end);
 			}
 			
 			function pageLoad()
@@ -138,7 +138,8 @@
 				retrieveMyCondemn();
 
 				var letterNumber = /^[0-9a-zA-Z]+$/;
-				if (!wordElement.value.match(letterNumber)) 
+				
+				if (wordElement.value.match(letterNumber).length > 0) 
 				{
 					return;
 				}	
@@ -440,12 +441,16 @@
 				var terminusAQuo = performance.now();
 				var request = {};
 
-				var words = scriptLiteral9432.splitDelimiters(document.getElementById("word").value);
+				var words = scriptLiteral9432.splitDelimiters(wordElement.value);
 		
 				if (words.length === 1)
 				{
 					words = scriptLiteral9432.alphabetSequenceIndex(words[0]);
-				}	
+				}
+				else
+				{
+					words = wordElement.value;
+				}
 
 				request["word"] = words;
 				
