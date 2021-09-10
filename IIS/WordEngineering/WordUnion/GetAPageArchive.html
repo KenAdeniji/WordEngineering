@@ -137,13 +137,12 @@
 				retrieveWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood()
 				retrieveMyCondemn();
 
-				var letterNumber = /^[0-9a-zA-Z]+$/;
-				
-				if (wordElement.value.match(letterNumber).length > 0) 
+				const pattern = /[^-\w .\,]/;
+				if (pattern.test(wordElement.value)) 
 				{
-					return;
-				}	
-				
+					return false;
+				}
+
 				retrieveBibleWord();
 				retrieveHisWord();
 				retrieveMeISupposeInTime();
