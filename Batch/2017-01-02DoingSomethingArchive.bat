@@ -126,14 +126,14 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 902);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2131);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11009);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11281);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 141980);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 142266);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 91694);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 93795);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -282,7 +282,6 @@ NLedgerBuild.Console.cmd
 System Variables Path. 
 This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
 env
-https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1045
-2021-09-03 A Comparance of Age
-build
+2021-09-16T18:30:00
+https://learn.shayhowe.com/
 :Exit
