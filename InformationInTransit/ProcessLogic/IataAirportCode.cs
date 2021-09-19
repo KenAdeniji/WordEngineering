@@ -23,13 +23,14 @@ namespace InformationInTransit.ProcessLogic
 			
 			DataCommand.DatabaseCommand
 			(
-				"TRUNCATE TABLE AManDevelopedInAll..IataAirportCode",
+				"TRUNCATE TABLE AManDevelopedInAll..IATA_Airport_Code",
 				CommandType.Text,
 				DataCommand.ResultType.NonQuery
 			);
 
 			foreach (DataRow dataRow in dataSet.Tables[0].Rows)
 			{
+/*
 				Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 					
 				OdbcParameter code = new OdbcParameter("@code", SqlDbType.VarChar);
@@ -40,13 +41,19 @@ namespace InformationInTransit.ProcessLogic
 
 				code.Value = dataRow["code"];
 				airport.Value = dataRow["airport"];
-				
+*/				
 				DataCommand.DatabaseCommand
 				(
-					"AManDevelopedInAll..usp_IataAirportCodeInsert",
-					CommandType.StoredProcedure,
-					DataCommand.ResultType.NonQuery,
-					odbcParameterCollection
+					//"AManDevelopedInAll..usp_IataAirportCodeInsert",
+					String.Format
+					(
+						"INSERT INTO AManDevelopedInAll..IATA_Airport_Code VALUES ('{0}', '{1}')",
+						Convert.ToString(dataRow["airport"]).Replace("'", "''"),
+						dataRow["code"]
+					),	
+					CommandType.Text,
+					DataCommand.ResultType.NonQuery
+					//,odbcParameterCollection
 				);
 			}
         }

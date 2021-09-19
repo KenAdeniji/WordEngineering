@@ -499,7 +499,7 @@ namespace InformationInTransit.DataAccess
         #region Fields
         public static readonly int? CommandTimeout;
         public static readonly string ConnectionStringDefault;
-        public const string ConnectionStringMaster = "Data Source=(local);Initial Catalog=Master;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=36000;";
+        public const string ConnectionStringMaster = "Driver={SQL Server};Server=(local);Database=WordEngineering;Trusted_Connection=Yes;";
         public static readonly string ConnectionStringNameDefault;
 		public const string ContextConnection = "Context Connection = true;";
 		public const string OdbcInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +

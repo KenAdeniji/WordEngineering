@@ -282,6 +282,10 @@ NLedgerBuild.Console.cmd
 System Variables Path. 
 This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
 env
-2021-09-16T18:30:00
-https://learn.shayhowe.com/
+2021-09-17T06:59:00
+06:59 Urine. 07:35 Urine. 07:51 Urine. 08:08 Urine. 08:58 Urine. 10:46 Urine.
+--SELECT * FROM Sys.all_columns where name = 'ContactID'
+--UPDATE Sys.all_columns set name = 'ContactID' where name = 'ContactID'
+EXEC sp_configure 'allow updates', 1
+RECONFIGURE
 :Exit

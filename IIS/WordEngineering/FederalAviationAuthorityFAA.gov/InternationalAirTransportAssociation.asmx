@@ -46,10 +46,19 @@ public class InternationalAirTransportAssociation : System.Web.Services.WebServi
 		
 		DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
 		(
-			"AManDevelopedInAll.dbo.usp_InternationalAirTransportAssociationIATA3LetterAirportCodeSelect",
+			String.Format
+			(
+				@"
+					SELECT * 
+					FROM AManDevelopedInAll.dbo.IATA_Airport_Code 
+					WHERE Airport LIKE '%{0}%' OR Code LIKE '%{1}%'
+					ORDER BY Airport
+				",
+				airportName,
+				airportCode
+			),	
 			CommandType.StoredProcedure,
-			DataCommand.ResultType.DataSet,
-			sqlParameterCollection
+			DataCommand.ResultType.DataSet
 		);
 		
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
