@@ -134,7 +134,7 @@ DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 142266);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 93795);
-DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 544);
+DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 11); 
@@ -142,7 +142,7 @@ DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1368);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
-DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 419);
+DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 479);
 
 SET IDENTITY_INSERT ClassAssociates ON
 SET IDENTITY_INSERT ClassAssociates OFF
@@ -287,5 +287,16 @@ env
 --SELECT * FROM Sys.all_columns where name = 'ContactID'
 --UPDATE Sys.all_columns set name = 'ContactID' where name = 'ContactID'
 EXEC sp_configure 'allow updates', 1
-RECONFIGURE
+1 Samuel 16:1-3, 1 Samuel 16:10, Acts 13:22
+
+SELECT    top 1    WordsInTheBibleID, Dated, Word, Logic, HisWordId, Commentary, ContactID, Uri
+FROM     wordengineering..WordsInTheBible
+ORDER BY WordsInTheBibleID desc
+DANIEL 2:10-11, dANIEL 2:26-28
+Ninth, involve story, as Himself.
+
+2021-09-28T21:55:00
+Get-Process | Get-Member | Out-Host -Paging
+powershell -command "Get-Process | Get-Member | Out-Host -Paging
+
 :Exit
