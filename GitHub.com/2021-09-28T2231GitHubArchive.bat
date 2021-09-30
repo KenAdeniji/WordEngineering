@@ -19,3 +19,5 @@ git add        GitHub.com/2021-09-28T2231GitHubArchive.bat
 git add        IIS/WordEngineering/Images/CT_SkillTest_v3.psd
 git add        IIS/WordEngineering/Interview/CoalitionTechnologies.com/
 git add        PowerShell/Microsoft/
+
+git rm IIS/WordEngineering/Images/CT_SkillTest_v3.psd
