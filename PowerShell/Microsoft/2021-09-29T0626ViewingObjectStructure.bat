@@ -1,6 +1,6 @@
 @echo off
 
-REM 2021-00-29T07:25:00 https://docs.microsoft.com/en-us/powershell/scripting/samples/selecting-parts-of-objects--select-object-?view=powershell-7.1
+REM 2021-09-29T07:25:00 https://docs.microsoft.com/en-us/powershell/scripting/samples/selecting-parts-of-objects--select-object-?view=powershell-7.1
 REM I pre-append the source URI; so I can give credit, and contiune referencing at a later time.
 REM 2021-09-29T06:37:00 List the Members of a Process Object
 PowerShell -command "Get-Process | Get-Member | Out-Host -Paging"
