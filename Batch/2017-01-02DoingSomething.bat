@@ -126,18 +126,18 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 902);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2131);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11281);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11318);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 142266);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 143764);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 93795);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
-DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 11); 
+DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1368);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
@@ -298,5 +298,32 @@ Ninth, involve story, as Himself.
 2021-09-28T21:55:00
 Get-Process | Get-Member | Out-Host -Paging
 powershell -command "Get-Process | Get-Member | Out-Host -Paging
+2021-10-02 23:15:30.007 2021-10-02T23:03:00 Wake-up Orientation: Head at West; legs cross at knee; right foot at South East to the North; lamp light goes off during the recording writing; left foot at South East to the West. 2021-10-02T23:17:00 Dizzy sleepy.
+2021-10-02T11:59:00
+12 quantity of books.
+70 sheets wide ruled.
+1 subject notebook.
+10 1/2" * 8"
+26.7 * 20.3 cm
+Daiso Japan.
+Bazic Products.
+Los Angeles, CA, U.S.A
+Made in Vietnam / Hecho en Vietnam
+538
+7 64608 00538 5
+www.BazicProducts.com
+V01236-012021-70002262
+3 sets of four pieces of pencils, made in Japan.
+sac@DaisoBrasil.com
+
+Kraft
+Serving suggestion
+Slow Simmered
+Original
+Barbecue Sauce
+See nutrition for sodium content
+60 calories per tbsp
+Net weight (wt) 18 oz (1 LB 2 OZ) 510g
+04050032152600
 
 :Exit
