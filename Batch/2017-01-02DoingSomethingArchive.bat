@@ -142,7 +142,7 @@ DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1368);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
-DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 479);
+DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 481);
 
 SET IDENTITY_INSERT ClassAssociates ON
 SET IDENTITY_INSERT ClassAssociates OFF
