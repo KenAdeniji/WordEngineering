@@ -219,6 +219,9 @@ namespace InformationInTransit.DataAccess
 
 			//2018-02-16	http://net-informations.com/q/faq/remove.html
 			string cmdLine = cmdText.Replace(" ", String.Empty);
+			
+			string strCommandTimeOut = "";
+			
 
 /*			
 			if (cmdLine.IndexOf("';") > 0)
@@ -246,10 +249,11 @@ namespace InformationInTransit.DataAccess
                 }
 				
 				// dadeniji 2018-08-26 12:02 PM
-				//OdbcCommand.commandTimeout = 0;
+				OdbcCommand.CommandTimeout = 0;
 				
 				System.Console.WriteLine("OdbcCommand.commandTimeout: {0}", OdbcCommand.CommandTimeout);
 				
+				strCommandTimeOut = "OdbcCommand.commandTimeout is " + OdbcCommand.CommandTimeout;
 				
                 if (odbcParameterCollection != null && odbcParameterCollection.Count > 0)
                 {
@@ -293,6 +297,9 @@ namespace InformationInTransit.DataAccess
             }
 			catch (OdbcException ex)
             {
+				EventLog.WriteEntry("Application", connectionString, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", strCommandTimeOut, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Error);
                 EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
 				EventLog.WriteEntry
@@ -305,6 +312,9 @@ namespace InformationInTransit.DataAccess
             }
             catch (Exception ex)
             {
+				EventLog.WriteEntry("Application", connectionString, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", strCommandTimeOut, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
 				EventLog.WriteEntry

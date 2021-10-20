@@ -325,4 +325,11 @@ See nutrition for sodium content
 60 calories per tbsp
 Net weight (wt) 18 oz (1 LB 2 OZ) 510g
 04050032152600
+
+06:51 ... 07:24
+06:51 Microsoft SQL Server data files archive.
+06:56 Could not stop the service.
+07:20 Services.
+		Windows could not start SQL Server (MSSQLSERVER) service on local computer.
+		Error 1053: The service did not respond to the start or control request in a timely fashion.
 :Exit

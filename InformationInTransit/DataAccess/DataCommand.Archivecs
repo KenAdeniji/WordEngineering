@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
@@ -19,16 +19,17 @@ using System.Web;
 /*
 	2016-03-13	public const string ContextConnection = "Context Connection = true;";
 	2016-03-13	ALTER DATABASE WordEngineering SET TRUSTWORTHY ON;
-	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=OleDb.90%29.aspx
+	2016-03-13	CLR Scalar-Valued Functions https://msdn.microsoft.com/es-es/library/ms131043%28v=Odbc.90%29.aspx
 	2020-12-27	https://docs.microsoft.com/en-us/dotnet/api/system.exception.innerexception?view=net-5.0
 				https://stackoverflow.com/questions/5428406/grant-execute-permission-for-a-user-on-all-stored-procedures-in-database
 					USE [DB]
 					GRANT EXEC TO [User_Name];
-	2020-12-27	https://docs.microsoft.com/en-us/OleDb/relational-databases/clr-integration/clr-integration-enabling?view=OleDb-server-ver15
+	2020-12-27	https://docs.microsoft.com/en-us/Odbc/relational-databases/clr-integration/clr-integration-enabling?view=Odbc-server-ver15
 				EXEC sp_configure 'clr enabled', 1;  
 				RECONFIGURE;  
 				GO
 	2020-12-27	alter database [WordEngineering] set trustworthy on;
+	2021-04-24	providerName=MySql.Data.MySqlClient;
 */
 /*
 
@@ -63,13 +64,13 @@ select
 
         , tblSD.[is_trustworthy_on]
 
-        , [OleDbTrustworthy]
+        , [OdbcTrustworthy]
             = 'alter database '
                 + quotename( tblSD.[name])
                 + ' set trustworthy on;'
 
 
-        , [OleDbTrustworthy]
+        , [OdbcTrustworthy]
             = 'exec ' 
                 + quotename( tblSD.[name])
                 + '..sp_changedbowner '
@@ -94,7 +95,7 @@ namespace InformationInTransit.DataAccess
             DatabaseCommandDataSetStub();
             DatabaseCommandDataTableStub();
 			*/
-			//DatabaseCommand(OleDbInjection);
+			//DatabaseCommand(OdbcInjection);
 
 			DatabaseCommand
 			(
@@ -122,11 +123,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //OleDb statement
+                cmdText, //Odbc statement
                 null, //database connection string
                 CommandType.Text,
                 ResultType.DataReader,
-                null //OleDbParameter
+                null //OdbcParameter
             );
         }
 
@@ -139,11 +140,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //OleDb statement
+                cmdText, //Odbc statement
                 null, //database connection string
                 commandType,
                 resultType,
-                null //OleDbParameter
+                null //OdbcParameter
             );
         }
 
@@ -157,11 +158,11 @@ namespace InformationInTransit.DataAccess
         {
             return DatabaseCommand
             (
-                cmdText, //OleDb statement
+                cmdText, //Odbc statement
                 connectionString,
                 commandType,
                 resultType,
-                null //OleDbParameterCollection
+                null //OdbcParameterCollection
             );
         }
 
@@ -170,32 +171,32 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             CommandType commandType,
             ResultType resultType,
-            Collection<OleDbParameter> OleDbParameterCollection
+            Collection<OdbcParameter> OdbcParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //OleDb statement
+                cmdText, //Odbc statement
                 null, //database connection string
                 commandType,
                 resultType,
-                OleDbParameterCollection
+                OdbcParameterCollection
             );
         }
 
         public static object DatabaseCommand
         (
             string cmdText,
-            Collection<OleDbParameter> OleDbParameterCollection
+            Collection<OdbcParameter> OdbcParameterCollection
         )
         {
             return DatabaseCommand
             (
-                cmdText, //OleDb statement
+                cmdText, //Odbc statement
                 null, //database connection string
                 CommandType.StoredProcedure,
                 ResultType.DataReader,
-                OleDbParameterCollection
+                OdbcParameterCollection
             );
         }
 
@@ -206,18 +207,21 @@ namespace InformationInTransit.DataAccess
             string connectionString,
             CommandType commandType,
             ResultType resultType,
-            Collection<OleDbParameter> OleDbParameterCollection
+            Collection<OdbcParameter> odbcParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            OleDbCommand OleDbCommand;
-            OleDbConnection OleDbConnection = null;
-            OleDbDataAdapter OleDbDataAdapter;
+            OdbcCommand OdbcCommand;
+            OdbcConnection OdbcConnection = null;
+            OdbcDataAdapter OdbcDataAdapter;
 
 			//2018-02-16	http://net-informations.com/q/faq/remove.html
 			string cmdLine = cmdText.Replace(" ", String.Empty);
+			
+			string strCommandTimeOut = "";
+			
 
 /*			
 			if (cmdLine.IndexOf("';") > 0)
@@ -234,64 +238,68 @@ namespace InformationInTransit.DataAccess
             try
             {
                 //EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Information);
-                OleDbConnection = new OleDbConnection(connectionString);
-                OleDbConnection.Open();
-                OleDbCommand = new OleDbCommand(cmdText, OleDbConnection);
-                OleDbCommand.CommandType = commandType;
-				OleDbCommand.CommandTimeout = OleDbConnection.ConnectionTimeout;
+                OdbcConnection = new OdbcConnection(connectionString);
+                OdbcConnection.Open();
+                OdbcCommand = new OdbcCommand(cmdText, OdbcConnection);
+                OdbcCommand.CommandType = commandType;
+				OdbcCommand.CommandTimeout = OdbcConnection.ConnectionTimeout;
                 if (CommandTimeout != null)
                 {
-                    OleDbCommand.CommandTimeout = (int)CommandTimeout;
+                    OdbcCommand.CommandTimeout = (int)CommandTimeout;
                 }
 				
 				// dadeniji 2018-08-26 12:02 PM
-				//OleDbCommand.commandTimeout = 0;
+				OdbcCommand.CommandTimeout = 0;
 				
-				System.Console.WriteLine("OleDbCommand.commandTimeout: {0}", OleDbCommand.CommandTimeout);
+				System.Console.WriteLine("OdbcCommand.commandTimeout: {0}", OdbcCommand.CommandTimeout);
 				
+				strCommandTimeOut = "OdbcCommand.commandTimeout is " + OdbcCommand.CommandTimeout;
 				
-                if (OleDbParameterCollection != null && OleDbParameterCollection.Count > 0)
+                if (odbcParameterCollection != null && odbcParameterCollection.Count > 0)
                 {
-                    foreach (OleDbParameter OleDbParameter in OleDbParameterCollection)
+                    foreach (OdbcParameter odbcParameter in odbcParameterCollection)
                     {
-                        OleDbCommand.Parameters.Add(OleDbParameter);
+                        OdbcCommand.Parameters.Add(odbcParameter);
                     }
                 }
                 switch (resultType)
                 {
                     case ResultType.DataSet:
-                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
+                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        OleDbDataAdapter.Fill(dataSet);
+                        OdbcDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case ResultType.DataTable:
-                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
+                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        OleDbDataAdapter.Fill(dataTable);
+                        OdbcDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case ResultType.NonQuery:
-                        returnValue = OleDbCommand.ExecuteNonQuery(); break;
+                        returnValue = OdbcCommand.ExecuteNonQuery(); break;
 
                     case ResultType.DataReader:
-                        returnValue = OleDbCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
+                        returnValue = OdbcCommand.ExecuteReader(CommandBehavior.CloseConnection); break;
 
                     case ResultType.Scalar:
-                        returnValue = OleDbCommand.ExecuteScalar(); break;
+                        returnValue = OdbcCommand.ExecuteScalar(); break;
 
 /*
                     case ResultType.XmlReader:
-                        returnValue = OleDbCommand.ExecuteXmlReader(); break;
+                        returnValue = OdbcCommand.ExecuteXmlReader(); break;
 */
                 }
             }
-			catch (OleDbException ex)
+			catch (OdbcException ex)
             {
+				EventLog.WriteEntry("Application", connectionString, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", strCommandTimeOut, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Error);
                 EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
 				EventLog.WriteEntry
@@ -304,6 +312,9 @@ namespace InformationInTransit.DataAccess
             }
             catch (Exception ex)
             {
+				EventLog.WriteEntry("Application", connectionString, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", strCommandTimeOut, EventLogEntryType.Error);
+				EventLog.WriteEntry("Application", cmdText, EventLogEntryType.Error);
 				EventLog.WriteEntry("Application", cmdLine, EventLogEntryType.Error);
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
 				EventLog.WriteEntry
@@ -318,7 +329,7 @@ namespace InformationInTransit.DataAccess
             {
                 if (resultType != ResultType.DataReader)
                 {
-                    OleDbConnection.Close();
+                    OdbcConnection.Close();
                 }
             }
             return (returnValue);
@@ -329,15 +340,15 @@ namespace InformationInTransit.DataAccess
             string cmdText,
             string connectionString,
 			CommandType commandType,
-            Collection<OleDbParameter> OleDbParameterCollection
+            Collection<OdbcParameter> OdbcParameterCollection
         )
         {
             DataSet dataSet;
             DataTable dataTable;
             Object returnValue = null;
-            OleDbCommand OleDbCommand;
-            OleDbConnection OleDbConnection = null;
-            OleDbDataAdapter OleDbDataAdapter;
+            OdbcCommand OdbcCommand;
+            OdbcConnection OdbcConnection = null;
+            OdbcDataAdapter OdbcDataAdapter;
 
             Type typeOfT = typeof(T);
             string typeT = typeOfT.ToString();
@@ -348,46 +359,46 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                OleDbConnection = new OleDbConnection(connectionString);
-                OleDbConnection.Open();
-                OleDbCommand = new OleDbCommand(cmdText, OleDbConnection);
-                OleDbCommand.CommandType = commandType;
+                OdbcConnection = new OdbcConnection(connectionString);
+                OdbcConnection.Open();
+                OdbcCommand = new OdbcCommand(cmdText, OdbcConnection);
+                OdbcCommand.CommandType = commandType;
                 if (CommandTimeout != null)
                 {
-                    OleDbCommand.CommandTimeout = (int)CommandTimeout;
+                    OdbcCommand.CommandTimeout = (int)CommandTimeout;
                 }
-                if (OleDbParameterCollection != null && OleDbParameterCollection.Count > 0)
+                if (OdbcParameterCollection != null && OdbcParameterCollection.Count > 0)
                 {
-                    foreach (OleDbParameter OleDbParameter in OleDbParameterCollection)
+                    foreach (OdbcParameter OdbcParameter in OdbcParameterCollection)
                     {
-                        OleDbCommand.Parameters.Add(OleDbParameter);
+                        OdbcCommand.Parameters.Add(OdbcParameter);
                     }
                 }
 
                 switch (typeT)
                 {
                     case "System.Data.DataSet":
-                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
+                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
                         dataSet = new DataSet();
                         dataSet.Locale = CultureInfo.CurrentCulture;
-                        OleDbDataAdapter.Fill(dataSet);
+                        OdbcDataAdapter.Fill(dataSet);
                         returnValue = dataSet;
                         break;
 
                     case "System.Data.DataTable":
-                        OleDbDataAdapter = new OleDbDataAdapter(OleDbCommand);
+                        OdbcDataAdapter = new OdbcDataAdapter(OdbcCommand);
                         dataTable = new DataTable();
                         dataTable.Locale = CultureInfo.CurrentCulture;
-                        OleDbDataAdapter.Fill(dataTable);
+                        OdbcDataAdapter.Fill(dataTable);
                         returnValue = dataTable;
                         break;
 
                     case "System.Data.IDataReader":
-                        returnValue = OleDbCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                        returnValue = OdbcCommand.ExecuteReader(CommandBehavior.CloseConnection);
                         break;
                 }
             }
-			catch (OleDbException ex)
+			catch (OdbcException ex)
             {
                 EventLog.WriteEntry("WordEngineering", ex.Message, EventLogEntryType.Error);
             }
@@ -400,20 +411,20 @@ namespace InformationInTransit.DataAccess
             {
                 if (typeOfT != typeof(IDataReader))
                 {
-                    OleDbConnection.Close();
+                    OdbcConnection.Close();
                 }
             }
             return (T)returnValue;
         }
 
-        public static OleDbConnection GainConnection()
+        public static OdbcConnection GainConnection()
         {
             return GainConnection(null);
         }
 
-        public static OleDbConnection GainConnection(string connectionString)
+        public static OdbcConnection GainConnection(string connectionString)
         {
-            OleDbConnection OleDbConnection = null;
+            OdbcConnection OdbcConnection = null;
 
             if (String.IsNullOrEmpty(connectionString))
             {
@@ -421,10 +432,10 @@ namespace InformationInTransit.DataAccess
             }
             try
             {
-                OleDbConnection = new OleDbConnection(connectionString);
-                OleDbConnection.Open();
+                OdbcConnection = new OdbcConnection(connectionString);
+                OdbcConnection.Open();
             }
-            catch (OleDbException ex)
+            catch (OdbcException ex)
             {
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
             }
@@ -433,7 +444,7 @@ namespace InformationInTransit.DataAccess
                 EventLog.WriteEntry("Application", ex.Message, EventLogEntryType.Error);
                 throw;
             }
-            return OleDbConnection;
+            return OdbcConnection;
         }
 
         public static string ReadConnectionString(string connectionStringName)
@@ -498,10 +509,10 @@ namespace InformationInTransit.DataAccess
         #region Fields
         public static readonly int? CommandTimeout;
         public static readonly string ConnectionStringDefault;
-        public const string ConnectionStringMaster = "Data Source=(local);Initial Catalog=Master;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=36000;";
+        public const string ConnectionStringMaster = "Driver={SQL Server};Server=(local);Database=WordEngineering;Trusted_Connection=Yes;";
         public static readonly string ConnectionStringNameDefault;
 		public const string ContextConnection = "Context Connection = true;";
-		public const string OleDbInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
+		public const string OdbcInjection = "SELECT * FROM WordEngineering..HisWord WHERE Word = '" +
 			"' ; DROP DATABASE junk";
         #endregion
     }

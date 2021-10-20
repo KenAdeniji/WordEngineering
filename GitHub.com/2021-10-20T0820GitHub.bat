@@ -1,0 +1,24 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+        git add   IIS/WordEngineering/Web.config
+        git add   IIS/WordEngineering/WordCross/IWasThereForAMinuteNevada.asmx
+        git add   IIS/WordEngineering/WordCross/IWasThereForAMinuteNevadaArchive.asmx
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+        git add   IIS/WordEngineering/bin/InformationInTransit.dll
+        git add   InformationInTransit/DataAccess/DataCommand.Archivecs
+        git add   InformationInTransit/DataAccess/DataCommand.cs
+        git add   InformationInTransit/InformationInTransit.dll
+        git rm    InformationInTransit/ProcessLogic/IataAirportCode2021-09-17T1201.cs
+        git rm    InformationInTransit/ProcessLogic/IataAirportCode2021-09-17T1208.cs
+
+git add        GitHub.com/2021-10-20T0820GitHub.bat
+git add        GitHub.com/2021-10-20T0820GitHubArchive.bat
+git add        IIS/WordEngineering/WebArchive.config
+git add        InformationInTransit/ProcessLogic/IataAirportCode.2021-09-17T1201cs
+git add        InformationInTransit/ProcessLogic/IataAirportCode.2021-09-17T1208cs
+git add        PowerShell/TutorialsPoint.com/

@@ -68,17 +68,36 @@ public class IWasThereForAMinuteNevadaWebService : System.Web.Services.WebServic
     }
 	
 	public const string QueryStatement = @"
-SELECT '{0}' AS Role, COUNT('*') AS Occurrences
+SELECT 
+	'{0}' AS Role,
+	COUNT('*') AS Occurrences,
+	(
+		SELECT TOP 1 Work_View.ScriptureReference
+		FROM Bible..Scripture_View AS Work_View
+		WHERE Work_View.{1} LIKE '%[^a-z]{0}[^a-z]%'
+		ORDER BY Work_View.VerseIDSequence
+	) AS ScriptureReferenceFirstMention,
+	(
+		SELECT TOP 1 Work_View.ScriptureReference
+		FROM Bible..Scripture_View AS Work_View
+		WHERE Work_View.{1} LIKE '%[^a-z]{0}[^a-z]%'
+		ORDER BY Work_View.VerseIDSequence DESC
+	) AS ScriptureReferenceLastMention
 FROM Bible..Scripture
-WHERE {1} LIKE '%{0}%'
+WHERE {1} LIKE '%[^a-z]{0}[^a-z]%'
 ";	
 	public static readonly string[] Roles = new String[]
 	{
+		"Apostle",
+		"Disciple",
 		"King",
 		"Queen",
 		"Prince",
+		"Princess",		
 		"Priest",
+		"Prophetess",		
 		"Prophet",
+		"Seer",
 		"Son of Man"
 	};
 	
