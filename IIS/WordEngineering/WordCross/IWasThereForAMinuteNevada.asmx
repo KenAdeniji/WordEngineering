@@ -29,6 +29,11 @@ using InformationInTransit.UserInterface;
 ///		Jesus, a prophet like Moses
 ///		And when they had gone through the isle unto Paphos, they found a certain sorcerer, a false prophet, a Jew, whose name was Barjesus: (Acts 13:6).
 ///		Judaea a certain prophet, named Agabus (Acts 21:10)
+///	2021-10-20T09:56:00
+/// Pharisee versus Pharisees
+///		Identified as a group and only Paul explicitly identify his background as a Pharisee.
+/// Sadducee versus Sadducees
+///		Competition between the sects, Pharisees versus Sadducees. Both side of history.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -92,6 +97,7 @@ WHERE {1} LIKE '%[^a-z]{0}[^a-z]%'
 		"Disciple",
 		"King",
 		"Queen",
+		"Pharisee",
 		"Prince",
 		"Princess",		
 		"Priest",
