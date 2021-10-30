@@ -1,0 +1,1 @@
+csc LINQQueryExpressionsBibleBook.cs /reference:System.Data.Linq.dll

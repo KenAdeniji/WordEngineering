@@ -122,16 +122,16 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1032);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1037);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2131);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11330);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11348);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 143893);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 144171);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 93795);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -332,4 +332,13 @@ Net weight (wt) 18 oz (1 LB 2 OZ) 510g
 07:20 Services.
 		Windows could not start SQL Server (MSSQLSERVER) service on local computer.
 		Error 1053: The service did not respond to the start or control request in a timely fashion.
+2021-10-26T18:27:00	Douglas, Thomas Hotmail e-mail sender. Interview.
+	Your message can't be displayed right now.
+	Please check your network connection and try again later.
+	
+2021-10-27T11:42:00
+
+I do not have personal access to a mobile device nor video recorder and microphone, the (510) 796-8121 is my home telephone number; therefore, I am currently only available for a telephone conversation.
+
+Please indicate that the above is okay with you, and I will expect your telephone call at 2021-10-27T12:30:00.	
 :Exit
