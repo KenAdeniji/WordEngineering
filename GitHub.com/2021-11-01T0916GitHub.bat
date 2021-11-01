@@ -1,0 +1,15 @@
+git add        GitHub.com/2021-11-01T0916GitHub.bat
+git add        GitHub.com/2021-11-01T0916GitHubArchive.bat
+git add        IIS/WordEngineering/2018-05-03Correspondence/2021-10-31T1530J.AndreasHjelming.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2021-10-31T1530J.AndreasHjelmingArchive.txt
+git add        PowerShell/BibleBookTitleQuery.ps1
+git add        PowerShell/BibleBookTitleQueryArchive.ps1
+git add        PowerShell/Get-BookTitle.bat
+git add        PowerShell/Get-BookTitle.ps1
+git add        PowerShell/Get-BookTitleArchive.bat
+git add        PowerShell/Get-BookTitleArchive.ps1
+git add        PowerShell/PowerShell101ByMikeFRobbins/Chapter10-ScriptModules.ps1
+git add        PowerShell/PowerShell101ByMikeFRobbins/Chapter10-ScriptModulesArchive.ps1
+git add        PowerShell/PowerShell101ByMikeFRobbins/MyScriptModule.psm1
+git add        PowerShell/PowerShell101ByMikeFRobbins/MyScriptModuleArchive.psm1
+git add        PowerShell/jdhitsolutions.com/
