@@ -12,7 +12,7 @@ Consider the following:
 
 Given an instruction file coming in and giving a list of commands each with their own specific data.
 
-Instruction Files come in the format of: <EPOCH TIMESTAMP> <MessageType> <data>
+Instruction Files come in the format of: EPOCH TIMESTAMP, MessageType, data
 
 Use OOP to design a program to parse line by line. Each MesageType has its own data formating.
 
