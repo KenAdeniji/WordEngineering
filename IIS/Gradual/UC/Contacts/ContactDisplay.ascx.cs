@@ -66,9 +66,9 @@ namespace WordEngineering
 
         void CreateTableRow(DataRow row, string description, string columnName, string format)
         {
-            if (row == null) return;
+            if (row == null) { return; }
             string columnValue = row[columnName].ToString();
-            if (String.IsNullOrEmpty(columnValue)) return;
+            if (String.IsNullOrEmpty(columnValue)) { return; }
             TableRow tableRow = new TableRow();
             TableCell tableCell = new TableCell();
             tableCell.Controls.Add(new LiteralControl(description));
@@ -101,8 +101,9 @@ namespace WordEngineering
             bool suppressFullname = false;
 
             if (rowId == null)
+			{	
                 rowId = System.Convert.ToInt64(contactRow["ContactId"]);
-
+			}
             ContactId = rowId;
 
             if (String.Compare(contactRow["NicknameOrFullname"].ToString(), contactRow["Fullname"].ToString()) == 0)

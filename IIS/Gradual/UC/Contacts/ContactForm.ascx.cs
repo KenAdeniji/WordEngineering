@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Configuration;
 using System.Collections;
+using System.IO;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -16,6 +17,9 @@ using InformationInTransit.ProcessLogic;
 using InformationInTransit.UserInterface;
 #endregion
 
+/*
+	2021-11-02T16:38:00 ... 2021-11-02T18:45:00 https://docs.microsoft.com/en-us/dotnet/api/system.web.httputility.htmlencode?view=net-5.0
+*/
 namespace WordEngineering
 {
     #region UC_Contacts_ContactForm definition
@@ -97,13 +101,26 @@ namespace WordEngineering
             Initiate = HeaderMenuInitiate.Edit;
             ContactId = contactId;
             ControlHelper.Reset(this);
+			
+			StringWriter myWriter = new StringWriter();
+			
             DataRow contact = GetRow(ContactSet, (int)ContactsListResultSet.Contact, contactId);
             if (contact == null)
+			{
                 return;
+			}	
             FirstName.Text = contact["FirstName"].ToString();
             LastName.Text = contact["LastName"].ToString();
             NickName.Text = contact["NickName"].ToString();
-            Note.Text = contact["Note"].ToString();
+            
+/*
+			String note = contact["Note"].ToString();
+			HttpUtility.HtmlDecode(note, myWriter);
+			string myDecodedString = myWriter.ToString();			
+			Note.Text = myDecodedString;
+*/			
+			Note.Text = contact["Note"].ToString();
+			
             DateTime? birthday = null;
             if (contact["Birthday"] != DBNull.Value)
             {
@@ -174,7 +191,9 @@ namespace WordEngineering
             DataRow[] foundRows;
             DataRow foundRow = null;
             if (table.Rows.Count == 0)
+			{	
                return null;
+			}   
             // Use the Select method to find all rows matching the filter.
             foundRows = table.Select(expression);
             if (foundRows.Length > 0)
@@ -199,7 +218,9 @@ namespace WordEngineering
             {
                 contactId = ContactId;
                 if (contactId == null)
+				{	
                     return;
+				}	
             }
             Contact contact = new Contact
             (
@@ -211,7 +232,7 @@ namespace WordEngineering
                 NickName.Text,
                 DateTimeCollection.Parse(BirthdayYear.SelectedValue, BirthdayMonth.SelectedIndex, BirthdayDay.SelectedIndex),
                 null, //Anniversary
-                Note.Text,
+                Note.Text, //HttpUtility.HtmlEncode(Note.Text)
 				Company.Text
             );
 
@@ -240,7 +261,9 @@ namespace WordEngineering
                 string.IsNullOrEmpty(BusinessZipPostalCode.Text) &&
                 string.IsNullOrEmpty(BusinessCountry.Text)
             )
+			{
                 return;
+			}	
             StreetAddress streetAddress = new StreetAddress
             (
                 null, //StreetAddressId

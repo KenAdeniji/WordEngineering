@@ -27,7 +27,9 @@ namespace WordEngineering
                 GridViewContact.DataBind();
                 ViewState["GridViewContact"] = value;
                 if (value != null)
+				{	
                     GridViewContact.SelectedIndex = 0;
+				}	
             }
         }
 

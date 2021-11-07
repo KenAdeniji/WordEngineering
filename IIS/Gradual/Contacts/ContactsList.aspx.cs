@@ -34,7 +34,9 @@ namespace WordEngineering
         private void ContactDelete(Int64? contactId)
         {
             if (contactId == null || string.IsNullOrEmpty(Page.User.Identity.Name))
+			{	
                 return;
+			}	
             Contact.DatabaseDelete((Int64)contactId);
             DatabaseQuery();
         }

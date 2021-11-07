@@ -126,8 +126,8 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1037);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2131);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11348);
-DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 5958);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11354);
+DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -341,4 +341,24 @@ Net weight (wt) 18 oz (1 LB 2 OZ) 510g
 I do not have personal access to a mobile device nor video recorder and microphone, the (510) 796-8121 is my home telephone number; therefore, I am currently only available for a telephone conversation.
 
 Please indicate that the above is okay with you, and I will expect your telephone call at 2021-10-27T12:30:00.	
+
+2021-11-04T09:05:00
+Gah. Your tab just crashed.
+We can help!
+
+Choose Restore This Tab to reload the page.
+Will you help us?
+
+Crash reports help us diagnose problems and make Firefox better.
+Report this tab
+Send an automated crash report so we can fix issues like this
+
+    Include the URLs of the sites you were on when Firefox crashed
+
+Report background tabs
+Update preferences to automatically submit reports when Firefox crashes
+09:06 Hot throat (O ti old).
+Alibaba, Jack Ma, Amazon, Jeff Bezos, Similarities, Amazon employee and recommender guru Greg Linden, Item-based, User-based, real-time, computation offline
+2021-11-06T18:30:00
+https://stackoverflow.com/questions/14010446/count-words-and-characters
 :Exit
