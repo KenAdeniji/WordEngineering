@@ -52,11 +52,14 @@ public class DiscoverPowerShellWebService : System.Web.Services.WebService
 	SELECT Dated, Minor, Actor, ScriptureReference, HisWordID, Commentary, URI, ContactID
 	FROM WordEngineering..ActToGod
 	WHERE 
-		Minor LIKE '%{0}%' OR
-		Actor LIKE '%{0}%' OR
-		ScriptureReference LIKE '%{0}%' OR
-		Commentary LIKE '%{0}%' OR
-		URI LIKE '%{0}%'
+		Major = 'PowerShell' AND
+		(
+			Minor LIKE '%{0}%' OR
+			Actor LIKE '%{0}%' OR
+			ScriptureReference LIKE '%{0}%' OR
+			Commentary LIKE '%{0}%' OR
+			URI LIKE '%{0}%'
+		)	
 	ORDER BY ActToGodID
 	";	
 }

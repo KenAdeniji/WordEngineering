@@ -1519,7 +1519,10 @@ var scriptLiteral9432 =
 									+ (cellContent.includes("http") ? cellContent : "http://" + cellContent) 
 									+ "'>" + cellContent + "</>";
 				}		
-				
+				else if (cellName.includes("Actor")) //2021-11-08T13:49:00 DiscoverPowerShell.asmx
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
+				}		
 				cells += "<td>" + cellContent + "</td>";
 			}
 
