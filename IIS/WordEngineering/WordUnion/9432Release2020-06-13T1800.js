@@ -240,7 +240,16 @@ var scriptLiteral9432 =
 			alphabetSequence = Number.parseInt(word)
 			return alphabetSequence;
 		}
+		
 		word = word.toUpperCase();
+
+		var ascii = word.charCodeAt(0);
+		
+		if (word < 'A' || word > 'Z')
+		{
+			return ascii;
+		}		
+		
 		for 
 		(
 			var index = 0, length = word.length, currentCode, asciiCode;
@@ -1317,8 +1326,8 @@ var scriptLiteral9432 =
 		selectMultiObject=document.getElementById(objectId);
 		for ( var i = 0, l = selectMultiObject.options.length, o; i < l; i++ )
 		{
-		  o = selectMultiObject.options[i];
-		  o.selected = (values.indexOf (o.value) != -1);
+			o = selectMultiObject.options[i];
+			o.selected = (values.indexOf (o.value) != -1);
 		}
 	},
 	
@@ -1510,7 +1519,10 @@ var scriptLiteral9432 =
 									+ (cellContent.includes("http") ? cellContent : "http://" + cellContent) 
 									+ "'>" + cellContent + "</>";
 				}		
-				
+				else if (cellName.includes("Actor")) //2021-11-08T13:49:00 DiscoverPowerShell.asmx
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
+				}		
 				cells += "<td>" + cellContent + "</td>";
 			}
 

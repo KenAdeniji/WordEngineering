@@ -12,6 +12,6 @@ git add        IIS/WordEngineering/WordCross/DiscoverPowerShellArchive.asmx
 git add        IIS/WordEngineering/WordCross/DiscoverPowerShellArchive.html
 git add        PowerShell/DiscoverPowerShell/
 
-git add   IIS/WordEngineering/WordUnion/9432.js
-git add   IIS/WordEngineering/WordUnion/9432Archive.js
-
+git add   	IIS/WordEngineering/WordUnion/9432.js
+git add   	IIS/WordEngineering/WordUnion/9432Archive.js
+git add		IIS/WordEngineering/WordUnion/9432Release2020-06-13T1800.js
