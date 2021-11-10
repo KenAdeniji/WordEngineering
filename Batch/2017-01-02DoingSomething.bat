@@ -122,7 +122,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1037);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1047);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2131);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -361,6 +361,13 @@ Update preferences to automatically submit reports when Firefox crashes
 Alibaba, Jack Ma, Amazon, Jeff Bezos, Similarities, Amazon employee and recommender guru Greg Linden, Item-based, User-based, real-time, computation offline
 2021-11-06T18:30:00 https://stackoverflow.com/questions/14010446/count-words-and-characters
 2021-11-07 01:25:26.020 Microsoft SQL Server datafiles archive; Microsoft Windows user interface (UI) error, pop-up window.
-2021-11-07
-Between Jacksonville, Florida and Charlotte is 45 minutes by flight, and 4.5 hours driving; Jacksonville is next door to Savannah, Georgia.
+
+2021-11-08T15:41:00
+Cezanne Lim
+Company	Nova Module
+Work e-mail	cezanne.lim@novamodule.com
+Website	linkedin.com/in/cezanne-lim-641717a8
+Notes	2021-11-05T14:24:00 ... 2021-11-05T14:40:00 I will expect your call on (510) 796-8121 at 2021-11-08T15:30:00. 2021-11-05T14:24:00 Let me know if you are available for 3:30 pm PT on Monday, 11/8/21 then will give you a call on the number you provided. 2021-11-04T18:00:00 I did not receive an online invitation. I will prefer a telephone call. 2021-11-04T18:00:00 I sent an online interview invitation for 9:30 am PT on Monday, 11/8/21. Please accept the invite. Warm Regards, Cezanne Lim 2021-11-04T14:05:00 Any day at 9AM. Please specify the telephone number for Basang Malunov or yourself, in case I have to contact either of you. Thank you and God blesses. 2021-11-04T13:57:00 Cc: Basang Malunov basang@novamodule.com; Carl Pezold carl.pezold@novamodule.com Subject: Product Engineer Thank you for your interest in the Technical Project Manager position at Nova Module. We would like to learn more about your work experience, career goals and tell you about Nova Module. To get started, we would like to schedule a brief conversation with Basang Malunov who heads up Product and Implementation Services. Please reply with a few times that work for you for a 15 - 30 minute initial call. Thank you Warm Regards, Cezanne Lim Connect with me on LinkedIn Cezanne Lim Sales Development Representative | www.novamodule.com Email cezanne.lim@novamodule.com Time Zone: Pacific
+
+
 :Exit

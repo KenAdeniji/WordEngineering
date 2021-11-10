@@ -362,5 +362,4 @@ Alibaba, Jack Ma, Amazon, Jeff Bezos, Similarities, Amazon employee and recommen
 2021-11-06T18:30:00 https://stackoverflow.com/questions/14010446/count-words-and-characters
 2021-11-07 01:25:26.020 Microsoft SQL Server datafiles archive; Microsoft Windows user interface (UI) error, pop-up window.
 2021-11-07
-Between Jacksonville, Florida and Charlotte is 45 minutes by flight, and 4.5 hours driving; Jacksonville is next door to Savannah, Georgia.
 :Exit
