@@ -46,15 +46,15 @@
 			function querySubmit(groupCurrent)
 			{
 				var request = {};
-				request["typeName"] = groupCurrent;
+				//request["typeName"] = groupCurrent;
 				
 				var requestJson = JSON.stringify(request);
-				
+				var resultSetElement = document.getElementById("resultSet" + groupCurrent);
 				$.ajax
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordCross/GroupOfPeople.asmx/Query",
+					url: "/WordEngineering/WordCross/GroupOfPeople.asmx/Query" + groupCurrent,
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
@@ -64,7 +64,6 @@
 					},
 					error: function(xhr)
 					{ 
-						var resultSetElement = document.getElementById("resultSet" + groupCurrent);
 						resultSetElement.innerHTML =
 							'Status: ' + xhr.status + " | " + 
 							'StatusText: ' + xhr.statusText + " | " +

@@ -8,17 +8,17 @@ namespace InformationInTransit.ProcessCode
 	*/
     public partial class GroupOfPeople
     {
-		public List<Actor> Actors;
+		public List<Person> Persons;
 		public List<Request> Requests;
 		
 		public partial class ChildOfJacob : GroupOfPeople
 		{
 			public ChildOfJacob()
 			{
-				Actors = new List<Actor>
+				Persons = new List<Person>
 				{
-					new Actor{ Title = "Judah", ScriptureReference = "Genesis 29:35, Genesis 37:26-28, Genesis 38" },
-					new Actor{ Title = "Joseph", ScriptureReference = "Genesis 30:24, Genesis 37,  Genesis 39-50" }
+					new Person{ Actor = "Judah", ScriptureReference = "Genesis 29:35, Genesis 37:26-28, Genesis 38" },
+					new Person{ Actor = "Joseph", ScriptureReference = "Genesis 30:24, Genesis 37,  Genesis 39-50" }
 				};	
 
 				Requests = new List<Request>
@@ -32,10 +32,10 @@ namespace InformationInTransit.ProcessCode
 		{
 			public Apostle()
 			{
-				Actors = new List<Actor>
+				Persons = new List<Person>
 				{
-					new Actor{ Title = "Simon, who is called Peter", ScriptureReference = "Matthew 16-23, John 21:15-17" },
-					new Actor{ Title = "John, the beloved disciple", ScriptureReference = "John 19:26-27" }
+					new Person{ Actor = "Peter", ScriptureReference = "Matthew 16-23, John 21:15-17" },
+					new Person{ Actor = "John", ScriptureReference = "John 19:26-27" }
 				};	
 
 				Requests = new List<Request>
@@ -46,9 +46,9 @@ namespace InformationInTransit.ProcessCode
 			}	
 		}
 		
-		public partial class Actor
+		public partial class Person
 		{
-			public string Title { get; set; }
+			public string Actor { get; set; }
 			public string ScriptureReference { get; set; }
 		}
 		
