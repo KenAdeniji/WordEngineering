@@ -24,11 +24,21 @@ public class GroupOfPeopleWebService : System.Web.Services.WebService
 {
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-	public String Query
+	public String QueryApostle
 	(
 	)
     {
 		string json = JsonConvert.SerializeObject(new GroupOfPeople.Apostle(), Formatting.Indented);
+		return json;
+    }
+	
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String QueryChildOfJacob
+	(
+	)
+    {
+		string json = JsonConvert.SerializeObject(new GroupOfPeople.ChildOfJacob(), Formatting.Indented);
 		return json;
     }
 }

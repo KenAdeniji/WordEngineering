@@ -13,7 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<div id="resultSet" align="center"> </div>
+		<div id="resultSetChildOfJacob" align="center"> </div>
+		<div id="resultSetApostle" align="center"> </div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
@@ -26,19 +27,26 @@
 				if (isPostBack === false)
 				{
 					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
-						querySubmit();
+						queryGroup();
 						isPostBack = true;
 					});
 				}
 				else
 				{
-					querySubmit();
+					queryGroup();
 				}
  			}
 
-			function querySubmit()
+			function queryGroup()
+			{
+				querySubmit("ChildOfJacob");
+				querySubmit("Apostle");
+			}
+			
+			function querySubmit(groupCurrent)
 			{
 				var request = {};
+				request["typeName"] = groupCurrent;
 				
 				var requestJson = JSON.stringify(request);
 				
@@ -52,10 +60,11 @@
 					success: function(data) 
 					{
 						var dataSet = JSON.parse(data.d);
-						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet" + groupCurrent);
 					},
 					error: function(xhr)
 					{ 
+						var resultSetElement = document.getElementById("resultSet" + groupCurrent);
 						resultSetElement.innerHTML =
 							'Status: ' + xhr.status + " | " + 
 							'StatusText: ' + xhr.statusText + " | " +
