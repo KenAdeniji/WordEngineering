@@ -220,7 +220,28 @@ var scriptLiteral9432 =
 		chapterCount: 1189,
 		verseCount: 31102,
 		verseCountOldTestament: 23145
-	},	
+	},
+	bibleBookGroups: [
+		["(All)", "all"],	
+		["Old Testament", "old"],
+		["New Testament", "new"],
+		["Pentateuch", "pentateuch"],
+		["Poetry", "poetry"],
+		["Major Prophets", "major prophets"],
+		["Minor Prophets", "minor prophets"],
+		["Gospel", "gospel"],
+		["Pauline Epistles", "pauline epistles"],
+		["General Epistles", "general epistles"],
+		["Apocalyptic Books", "apocalyptic books"]
+	],
+	calendarUnitOfMeasurement: [ //2021-11-10T12:24:00
+		"Day",
+		"Week",
+		"Biblical Month",
+		"Gregorian Month",
+		"Biblical Year",
+		"Gregorian Year"		
+	],
 	//2019-02-13 https://stackoverflow.com/questions/24657463/how-to-add-http-to-url-if-no-protocol-is-defined-in-javascript
 	addhttp: function(url)
 	{

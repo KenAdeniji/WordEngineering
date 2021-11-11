@@ -112,10 +112,12 @@
 				{
 					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
 					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
 						scriptLiteral9432.renderBibleBookGroupSelect();
 						scriptLiteral9432.renderBibleVersionSelect();
 
-						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
+						var bibleWordValue = urlParams.get("bibleWord");
 						if (bibleWordValue)
 						{
 							bibleWord.Element = bibleWordElement;
@@ -125,7 +127,7 @@
 							queryVerb();
 						}	
 						
-						var logicValue = scriptLiteral9432.getParameterByName("logic");
+						var logicValue = urlParams.get("logic");
 						if (logicValue)
 						{
 							logicElement.value = logicValue;
@@ -135,18 +137,18 @@
 							value="or"
 						}	
 
-						var wholeWordsValue = scriptLiteral9432.getParameterByName("wholeWords");
+						var wholeWordsValue = urlParams.get("wholeWords");
 						var wholeWordsLowerCaseValue =  wholeWordsValue.toLowerCase();
 						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
 						wholeWordsElement.checked = wholeWordsChecked;
 
-						var bibleVersionValue = scriptLiteral9432.getParameterByName("bibleVersion");
+						var bibleVersionValue = urlParams.get("bibleVersion");
 						if (bibleVersionValue)
 						{
 							bibleVersionElement.value = bibleVersionValue;
 						}	
 						
-						var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
+						var bibleBookGroupValue = urlParams.get("bibleBookGroup");
 						if (bibleBookGroupValue)
 						{
 							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);

@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-11-10	Created.
+	-->
+	<head>
+		<title>Date Iterator</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Date Iterator"/>
+		<meta name="keywords" content="Date, iterate, unit, step, count, times"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input type="date" id="dated" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="calendarUnitOfMeasurement">Calendar Unit of Measurement:</label></td>
+					<td><select id="calendarUnitOfMeasurement"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="occurrence">Occurrence:</label></td>
+					<td><input type="number" id="occurrence" value="3" step="1" min="1"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div id="resultSet" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var	datedElement = document.getElementById("dated");
+			var	occurrenceElement = document.getElementById("occurrence");
+			var	calendarUnitOfMeasurementElement = document.getElementById("calendarUnitOfMeasurement");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						scriptLiteral9432.buildSelect
+						(
+							"calendarUnitOfMeasurement",
+							scriptLiteral9432.calendarUnitOfMeasurement
+						);	
+						
+						var calendarUnitOfMeasurementValue = urlParams.get("calendarUnitOfMeasurement");
+						if (calendarUnitOfMeasurementValue)
+						{
+							calendarUnitOfMeasurementElement = calendarUnitOfMeasurementValue;
+						}	
+						
+						var datedValue = urlParams.get("dated");
+						if (!datedValue)
+						{
+							datedValue = scriptLiteral9432.todayTimezoneOffset();
+						}	
+						datedElement.value = datedValue;
+						
+						var occurrenceValue = urlParams.get("occurrence");
+						if (occurrenceValue)
+						{
+							occurrenceElement.value = occurrenceValue;
+						}	
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var dataSet =
+					`
+						<table id="resultSetTable">
+							<thead>
+								<tr>
+									<th>Occurrence</th>
+									<th>From</th>
+									<th>Until</th>
+								</tr>
+							</thead>
+					`;
+
+				for
+				(
+					var 
+						occurrenceIndex = 1,
+						occurrenceValue = occurrenceElement.value,
+						calendarUnitOfMeasurementValue = calendarUnitOfMeasurementElement.value,
+						datedNow = datedElement.value,
+						datedFrom,
+						datedUntil
+				; 
+					occurrenceIndex <= occurrenceValue;
+					occurrenceIndex++
+				)
+				{
+					switch(calendarUnitOfMeasurementValue)
+					{
+						case "Day":
+							datedFrom = scriptLiteral9432.daysAdd(datedNow, -occurrenceIndex);
+							datedUntil = scriptLiteral9432.daysAdd(datedNow, occurrenceIndex);
+							break;
+						case "Week":
+							datedFrom = scriptLiteral9432.daysAdd(datedNow, (-occurrenceIndex * 7));
+							datedUntil = scriptLiteral9432.daysAdd(datedNow, (occurrenceIndex * 7));
+							break;
+						case "Biblical Month":
+							datedFrom = scriptLiteral9432.daysAdd(datedNow, (-occurrenceIndex * 30));
+							datedUntil = scriptLiteral9432.daysAdd(datedNow, (occurrenceIndex * 30));
+							break;
+						case "Biblical Year":
+							datedFrom = scriptLiteral9432.daysAdd(datedNow, (-occurrenceIndex * 360));
+							datedUntil = scriptLiteral9432.daysAdd(datedNow, (occurrenceIndex * 360));
+							break;
+						case "Gregorian Month":
+							var datedNowJS = new Date(datedNow);
+							datedFrom = new Date(datedNowJS.setMonth(datedNowJS.getMonth() - occurrenceIndex));	
+							datedNowJS = new Date(datedNow);
+							datedUntil = new Date(datedNowJS.setMonth(datedNowJS.getMonth() + occurrenceIndex));
+							break;
+						case "Gregorian Year":
+							var datedNowJS = new Date(datedNow);
+							datedFrom = new Date(datedNowJS.setFullYear(datedNowJS.getFullYear() - occurrenceIndex));	
+							datedNowJS = new Date(datedNow);
+							datedUntil = new Date(datedNowJS.setFullYear(datedNowJS.getFullYear() + occurrenceIndex));
+							break;
+					}
+					dataSet +=
+						`
+							<tr>
+								<td>${occurrenceIndex}</td>
+								<td>${datedFrom.toLocaleDateString()}</td>
+								<td>${datedUntil.toLocaleDateString()}</td>
+							</tr>	
+						`
+				}	
+
+				dataSet += "</tbody></table>";		
+				resultSetElement.innerHTML = dataSet;
+				tsorter.create("resultSetTable");
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
