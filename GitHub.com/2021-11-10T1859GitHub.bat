@@ -13,3 +13,8 @@ git add        IIS/WordEngineering/WordCross/GroupOfPeopleArchive.asmx
 git add        IIS/WordEngineering/WordCross/GroupOfPeopleArchive.html
 git add        InformationInTransit/ProcessCode/GroupOfPeople.Archivecs
 git add        InformationInTransit/ProcessCode/GroupOfPeople.cs
+
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
