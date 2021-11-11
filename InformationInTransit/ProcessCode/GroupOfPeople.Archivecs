@@ -23,7 +23,7 @@ namespace InformationInTransit.ProcessCode
 
 				Requests = new List<Request>
 				{
-					new Request{ Title = "Send Benjamin on the second journey to Egypt", ScriptureReference = "Genesis 43" }
+					new Request{ BibleWord = "Benjamin Egypt", ScriptureReference = "Genesis 43" }
 				};	
 			}	
 		}
@@ -40,8 +40,8 @@ namespace InformationInTransit.ProcessCode
 
 				Requests = new List<Request>
 				{
-					new Request{ Title = "Teach us to pray", ScriptureReference = "Luke 11:1" },
-					new Request{ Title = "Increase our faith", ScriptureReference = "Luke 17:5" }
+					new Request{ BibleWord = "Teach us to pray", ScriptureReference = "Luke 11:1" },
+					new Request{ BibleWord = "Increase our faith", ScriptureReference = "Luke 17:5" }
 				};	
 			}	
 		}
@@ -54,7 +54,7 @@ namespace InformationInTransit.ProcessCode
 		
 		public partial class Request
 		{
-			public string Title { get; set; }
+			public string BibleWord { get; set; }
 			public string ScriptureReference { get; set; }
 		}
     }
