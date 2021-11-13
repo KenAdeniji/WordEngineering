@@ -5,9 +5,11 @@ using System.Collections.ObjectModel;
 
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting;
 
 /*
 	Date Created:	2020-10-01	https://stackoverflow.com/questions/10261824/how-can-i-get-all-constants-of-a-type-by-reflection
+	2021-11-11T10:33:00 Created. https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly.createinstance?view=net-5.0	
 */
 namespace InformationInTransit.ProcessLogic
 {
@@ -43,6 +45,14 @@ namespace InformationInTransit.ProcessLogic
 				.Select(x => (T)x.GetRawConstantValue())
 				.ToList();
 		}
+		
+		public static object Instantiate(String typeName)
+		{
+			Assembly assem = typeof(TypeHelper).Assembly;
+			return assem.CreateInstance("InformationInTransit.ProcessCode.GroupOfPeople." + typeName);
+			
+			ObjectHandle handle = Activator.CreateInstance("InformationInTransit", "InformationInTransit.ProcessCode.GroupOfPeople." + typeName);
+			return (handle.Unwrap());
+		}		
 	}
 }
-

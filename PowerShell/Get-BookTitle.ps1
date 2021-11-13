@@ -10,6 +10,7 @@ SELECT '''' + BookTitle + ''',' AS BookTitle
 FROM Bible..Scripture_View
 Group BY BookID, BookTitle
 ORDER BY BookID
+	2021-11-12T17:06:00 https://stackoverflow.com/questions/52170699/how-to-save-each-line-of-text-file-as-array-through-powershell/52170755
 #>
 Function Get-BookTitle {
     [cmdletbinding()]
@@ -26,84 +27,18 @@ Function Get-BookTitle {
         [string]$BookTitleLike = ""
     )
 
-	[string[]]$BibleBookTitle = 
-	@(
-'Genesis',
-'Exodus',
-'Leviticus',
-'Numbers',
-'Deuteronomy',
-'Joshua',
-'Judges',
-'Ruth',
-'1 Samuel',
-'2 Samuel',
-'1 Kings',
-'2 Kings',
-'1 Chronicles',
-'2 Chronicles',
-'Ezra',
-'Nehemiah',
-'Esther',
-'Job',
-'Psalms',
-'Proverbs',
-'Ecclesiastes',
-'Song of Solomon',
-'Isaiah',
-'Jeremiah',
-'Lamentations',
-'Ezekiel',
-'Daniel',
-'Hosea',
-'Joel',
-'Amos',
-'Obadiah',
-'Jonah',
-'Micah',
-'Nahum',
-'Habakkuk',
-'Zephaniah',
-'Haggai',
-'Zechariah',
-'Malachi',
-'Matthew',
-'Mark',
-'Luke',
-'John',
-'Acts',
-'Romans',
-'1 Corinthians',
-'2 Corinthians',
-'Galatians',
-'Ephesians',
-'Philippians',
-'Colossians',
-'1 Thessalonians',
-'2 Thessalonians',
-'1 Timothy',
-'2 Timothy',
-'Titus',
-'Philemon',
-'Hebrews',
-'James',
-'1 Peter',
-'2 Peter',
-'1 John',
-'2 John',
-'3 John',
-'Jude',
-'Revelation'
-)
+	[string[]]$bibleBookTitle = Get-Content -Path "BookTitle.txt"
 	
-	$BookIDStart = $BookIDFrom - 1
-	$BookIDEnd = $BookIDUntil - 1
+	$bookIDStart = $BookIDFrom - 1
+	$bookIDEnd = $BookIDUntil - 1
 
-	[string[]]$BookIDFiltered = $BibleBookTitle[ $BookIDStart .. $BookIDEnd ].ToUpper()
+	[string[]]$BookIDFiltered = $bibleBookTitle[ $bookIDStart .. $bookIDEnd ].ToUpper()
 	
 	$BookTitleLike = $BookTitleLike.ToUpper()
 		
-	$BookID_TitleFiltered = $BookIDFiltered.Where({$_.Contains($BookTitleLike)})
+	$bookID_TitleFiltered = $bookIDFiltered.Where({$_.Contains($BookTitleLike)})
 
-	$BookID_TitleFiltered
+	$bookID_TitleCombined = $bookID_TitleFiltered -join ", "
+	
+	Write-Output $bookID_TitleCombined
 }

@@ -1,0 +1,1 @@
+PowerShell -command "& { . E:\WordEngineering\PowerShell\Get-GroupOfBook.ps1; Get-GroupOfBook 55 11 in }" 

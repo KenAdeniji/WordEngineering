@@ -15,6 +15,7 @@ using System.Runtime.Remoting;
 
 using Newtonsoft.Json;
 
+using InformationInTransit.ProcessLogic;
 using InformationInTransit.ProcessCode;
 
 ///<summary>
@@ -42,6 +43,7 @@ public class GroupOfPeopleWebService : System.Web.Services.WebService
 		);
 		return json;
 */		
+/*
 		Assembly assem = typeof(GroupOfPeople).Assembly;
 		dynamic groupOfPeople = assem.CreateInstance("InformationInTransit.ProcessCode.GroupOfPeople." + typeName);
 		string json = JsonConvert.SerializeObject
@@ -50,7 +52,14 @@ public class GroupOfPeopleWebService : System.Web.Services.WebService
 			Formatting.Indented
 		);
 		return json;
-
+*/
+		dynamic groupOfPeople = TypeHelper.Instantiate(typeName);
+		string json = JsonConvert.SerializeObject
+		(
+			groupOfPeople,
+			Formatting.Indented
+		);
+		return json;
     }
 
    	[WebMethod]
