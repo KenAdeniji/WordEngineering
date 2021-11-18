@@ -122,9 +122,9 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1047);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1062);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2300);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16513);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11354);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
@@ -369,5 +369,5 @@ Work e-mail	cezanne.lim@novamodule.com
 Website	linkedin.com/in/cezanne-lim-641717a8
 Notes	2021-11-05T14:24:00 ... 2021-11-05T14:40:00 I will expect your call on (510) 796-8121 at 2021-11-08T15:30:00. 2021-11-05T14:24:00 Let me know if you are available for 3:30 pm PT on Monday, 11/8/21 then will give you a call on the number you provided. 2021-11-04T18:00:00 I did not receive an online invitation. I will prefer a telephone call. 2021-11-04T18:00:00 I sent an online interview invitation for 9:30 am PT on Monday, 11/8/21. Please accept the invite. Warm Regards, Cezanne Lim 2021-11-04T14:05:00 Any day at 9AM. Please specify the telephone number for Basang Malunov or yourself, in case I have to contact either of you. Thank you and God blesses. 2021-11-04T13:57:00 Cc: Basang Malunov basang@novamodule.com; Carl Pezold carl.pezold@novamodule.com Subject: Product Engineer Thank you for your interest in the Technical Project Manager position at Nova Module. We would like to learn more about your work experience, career goals and tell you about Nova Module. To get started, we would like to schedule a brief conversation with Basang Malunov who heads up Product and Implementation Services. Please reply with a few times that work for you for a 15 - 30 minute initial call. Thank you Warm Regards, Cezanne Lim Connect with me on LinkedIn Cezanne Lim Sales Development Representative | www.novamodule.com Email cezanne.lim@novamodule.com Time Zone: Pacific
 
-
+At 99 Ranch Market, I met Amber, the daughter of Kandace; they were buying crab, from Eddie.
 :Exit

@@ -7,8 +7,13 @@
 						instead of relying on my experience? C# Linq, JavaScript, SQL.
 						Where you are; is where your experience is.	
 						.NET Framework? Programming languages.
+	$bookID_TitleFiltered = $bookIDFiltered.Where({$_.Contains($BookTitleLike) -And ($_.Substring(0,1) -match "[0-9]")})						
 	2021-11-12T14:41:00	PowerShell -command "& { . E:\WordEngineering\PowerShell\Get-GroupOfBook.ps1; Get-GroupOfBook 55 11 in }" 
 	2021-11-12T17:06:00 https://stackoverflow.com/questions/52170699/how-to-save-each-line-of-text-file-as-array-through-powershell/52170755
+	2021-11-15T16:36:00 https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/?utm_source=blog&utm_medium=blog&utm_content=indexref
+						$bookID_TitleFiltered = $bookIDFiltered.Where({$_.Contains($BookTitleLike) -And ($_.Substring(0,1) -match "[0-9]")})
+						Versus (vs)				
+						$bookID_TitleFiltered = $bookIDFiltered.Where({$_ -like $BookTitleLikeWildcard  -And ($_.Substring(0,1) -match "[0-9]")})
 #>
 Function Get-GroupOfBook {
     [cmdletbinding()]
@@ -30,11 +35,11 @@ Function Get-GroupOfBook {
 	$bookIDStart = $BookIDFrom - 1
 	$bookIDEnd = $BookIDUntil - 1
 
-	[string[]]$bookIDFiltered = $bibleBookTitle[ $bookIDStart .. $bookIDEnd ].ToUpper()
+	[string[]]$bookIDFiltered = $bibleBookTitle[ $bookIDStart .. $bookIDEnd ]
 	
-	$BookTitleLike = $BookTitleLike.ToUpper()
-		
-	$bookID_TitleFiltered = $bookIDFiltered.Where({$_.Contains($BookTitleLike) -And ($_.Substring(0,1) -match "[0-9]")})
+	$BookTitleLikeWildcard = "*" + $BookTitleLike + "*" 
+
+	$bookID_TitleFiltered = $bookIDFiltered.Where({$_ -like $BookTitleLikeWildcard  -And ($_.Substring(0,1) -match "[0-9]")})
 
 	$bookID_TitleCombined = $bookID_TitleFiltered -join ', '
 	
