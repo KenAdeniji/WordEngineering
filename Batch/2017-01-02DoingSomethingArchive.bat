@@ -131,9 +131,9 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 144171);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 144377);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 93795);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 95362);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -371,4 +371,5 @@ Notes	2021-11-05T14:24:00 ... 2021-11-05T14:40:00 I will expect your call on (51
 
 2021-11-17 At 99 Ranch Market, I met Amber, the daughter of Kandace; they were buying crab, from Eddie.
 2021-11-18T09:45:00 Git Hub. Git CMD exits ends error.
+2021-11-19T09:19:00 https://octopus.com/blog/sql-server-powershell
 :Exit
