@@ -1,0 +1,25 @@
+        git add    Batch/2017-01-02DoingSomething.bat
+        git add    Batch/2017-01-02DoingSomethingArchive.bat
+        git add    IIS/WordEngineering/Resume/KenAdenijiResume.html
+        git add    IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+        git add    IIS/WordEngineering/Resume/KenAdenijiResumeArchive.html
+        git add    IIS/WordEngineering/Resume/KenAdenijiResumeRelease2020-08-21.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+
+git add         GitHub.com/2021-11-22T1832GitHub.bat
+git add         IIS/WordEngineering/GeoLocation/ChrisVeness_-_movable-type.co.uk_-_geodesy.html
+git add         IIS/WordEngineering/GeoLocation/ChrisVeness_-_movable-type.co.uk_-_geodesyArchive.html
+git add         IIS/WordEngineering/WordCross/WhereDidHeSearchForSufficiencyOfUse.asmx
+git add         IIS/WordEngineering/WordCross/WhereDidHeSearchForSufficiencyOfUse.html
+git add         IIS/WordEngineering/WordCross/WhereDidHeSearchForSufficiencyOfUseArchive.asmx
+git add         IIS/WordEngineering/WordCross/WhereDidHeSearchForSufficiencyOfUseArchive.html
+git add         IIS/WordEngineering/WordCross/WhoWhatWhenWhereWhy.asmx
+git add         IIS/WordEngineering/WordCross/WhoWhatWhenWhereWhy.html
+git add         IIS/WordEngineering/WordCross/WhoWhatWhenWhereWhyArchive.asmx
+git add         IIS/WordEngineering/WordCross/WhoWhatWhenWhereWhyArchive.html
