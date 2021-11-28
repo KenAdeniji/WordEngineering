@@ -1,0 +1,11 @@
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+git add        GitHub.com/2021-11-28T0843GitHub.bat
+git add        InformationInTransit/SeanBurns/
+git add        PowerShell/Get-ComputerInformation.bat
+git add        PowerShell/Get-ComputerInformation.ps1
+git add        PowerShell/Get-ComputerInformationArchive.bat
+git add        PowerShell/Get-ComputerInformationArchive.ps1
