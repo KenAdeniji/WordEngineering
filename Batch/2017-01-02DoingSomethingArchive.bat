@@ -196,186 +196,46 @@ FROM
 WHERE CONVERT(Date, Dated) = '2018-11-06'
 
 :ErrorMessage
-http://e-comfort.ephraimtech.com/WordEngineering/Resume/KenAdenijiResume.html
+http://kenadeniji.wordpress.com
+http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
+http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
-2020-12-02T11:02:00 ... 2020-12-02T11:48:00 Microsoft SQL Server data files archive; network error.
-12:26 Microsoft SQL Server Management Studio user interface (UI) grid error.
-2020-12-04T18:03:00
-I am available at 9AM, Pacific Standard Time, every day of the week.
 
-Share your contact information, such as telephone number, email and web address?
-
-Thank you and God blesses,
-
-KenAdeniji@hotmail.com
-http://KenAdeniji.WordPress.com
-http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
-http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
-(510) 796-8121
-
-2021-06-16T04:18:00 Microsoft SQL Server Management Studio
-SQL Execution Error.
-Executed SQL Statement: SELECT        TOP (15) TheWordId, RememberID, DatedFrom, DatedUntil, Filename, Commentary, ScriptureReference, ContactId, URI, HisWordID, FromUntilFirst
-FROM            Remember
-ORDER BY RememberID DESC
-Error Source: .NET SQL Client Data Provider
-Error Message: Connection Timeout Expired. The timeout period elapsed
-while attempting to consume the pre-login handshake failed or the
-server was unable to respond back in time. The duration spent
-while attempting to connect to this server [pre-login initialization=30981; handshake=15750.
-09:31 ... 09:44 Is that how you want to live your life?
-2021-06-10T21:19:00 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf 
-	The HisWordID column is an
-	2021-06-16T11:27:00 Who is the work for? Who can benefit from reading this work?
-2021-06-18T10:22:00 800 Service 1-800-991-8708
-	Before you are to lower your credit card interest rate,
-	press one to speak to the member service department,
-	or press two and your eligibility to lower your interest will expire.
-2021-06-18T16:14:00 800 Service 1-800-991-8708
-	Before you are to lower your credit card interest rate,
-	press one to speak to the member service department,
-	or press two and your eligibility to lower your interest will expire.
-
-2021-07-07 git clone http://github.com/KenAdeniji/WordEngineering
-2021-07-07 https://theswissbay.ch/pdf/Gentoomen Library/Programming/Bash/O'Reilly bash CookBook.pdf
-
-2021-07-23T15:09:00 ResultsAndDiscussion
-2021-07-23T15:22:00 The author uses the div as a container for the ubiquitous result set; which may contain a single or multiple tables.
-13:05 Urine, dizzy sleepy. 13:12 Dizzy, sleepy. I see your true color, shining true. 13:05 Urine. 13:30 Urine. (Go forward, Kehinde) (No turning people backward). 15:01 Teeth (Kehinde go forward). Hotmail.com advertisement The Climate Pledge. TheClimatePledge.com 15:16 Mouse highlight copy error Mozilla Firefox. 15:23 Hmm. We’re having trouble finding that site.
-
-We can’t connect to the server at www.grammarcheck.net.
-
-If that address is correct, here are three other things you can try:
-
-    Try again later.
-    Check your network connection.
-    If you are connected but behind a firewall, check that Firefox has permission to access the Web.
-2021-07-27T07:53:00 google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
-2021-07-27T11:24:00 Microsoft SQL Server Management Studio HisWord tab grid cursor moved upward.
-2021-08-02T07:04:00 foxnews.com/world/death-toll-jumps-300-china-flooding
-System.Exception: There is insufficient system memory in resource pool 'internal' to run this query. Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped. A severe error occurred on the current command. The results, if any, should be discarded. 
-2021-08-02T07:04:00
-Microsoft SQL Server Management Studio System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
-2021-08-16T16:40:00 ... 2021-08-16T16:49:00
-Re: 2021-08-13T21:34:00 Market Research Manager (santa cruz)
-Your message can't be displayed right now. Please check your network connection and try again later.
-05:20AM. 0001-01-01 ... 2021-08-18, 738019. (738019 * 320) / (60 * 24) = 164004.22222222222222222222222222. 0001-01-01 + 164004 = 0450-01-11.
-05:40AM. 0001-01-01 ... 2021-08-18, 738019. (738019 * 340) / (60 * 24) = 174254.48611111111111111111111111. 0001-01-01 + 174254 = 0478-02-03.
-2021-08-18T13:18:00 Soumya Sourav. (732) 301-6270.
-2021-08-18T19:20:00 ... 2021-08-18T19:28:00 Microsoft Windows Services services.msc
-	Windows could not stat the SQL Server (MSSQLSERVER) service on local computer.
-	Error 1053: The service did not respond to the start or control request in a timely fashion.
-	OK
-2021-08-20T12:27:00	is.js.org 	Arasatasaygin 		JavaScript, check, Dubai 	2021-02-07 	54942
-2021-08-20T13:38:00 Psalms 37:9, Psalms 123:2, Isaiah 30:18, Isaiah 40:31, Jeremiah 14:22, Zephaniah 3:8,  Zechariah 11:11	
-2021-08-20T13:52:00 What He truly realizes; is how He truly values ( 2 Chronicles 25:9 ).
-2021-08-21T23:57:00 http://js4ds.org
-2021-08-28T16:52:00 C:\Users\kadeniji\OneDrive
-2021-08-30T19:26:00
-dotnet
-dir "C:\Program Files\dotnet\sdk\3.1.412"
-CD E:\Accounting\dmitry-merzlyakov\nledger\nledger\Build
-NLedgerBuild.Console.cmd
-2021-08-30T20:53:00
-System Variables Path. 
-This environment variable is too large. This dialog allows setting Windows up to 2027 characters long.
-env
-2021-09-17T06:59:00
-06:59 Urine. 07:35 Urine. 07:51 Urine. 08:08 Urine. 08:58 Urine. 10:46 Urine.
---SELECT * FROM Sys.all_columns where name = 'ContactID'
---UPDATE Sys.all_columns set name = 'ContactID' where name = 'ContactID'
-EXEC sp_configure 'allow updates', 1
-1 Samuel 16:1-3, 1 Samuel 16:10, Acts 13:22
-
-SELECT    top 1    WordsInTheBibleID, Dated, Word, Logic, HisWordId, Commentary, ContactID, Uri
-FROM     wordengineering..WordsInTheBible
-ORDER BY WordsInTheBibleID desc
-DANIEL 2:10-11, dANIEL 2:26-28
-Ninth, involve story, as Himself.
-
-2021-09-28T21:55:00
-Get-Process | Get-Member | Out-Host -Paging
-powershell -command "Get-Process | Get-Member | Out-Host -Paging
-2021-10-02 23:15:30.007 2021-10-02T23:03:00 Wake-up Orientation: Head at West; legs cross at knee; right foot at South East to the North; lamp light goes off during the recording writing; left foot at South East to the West. 2021-10-02T23:17:00 Dizzy sleepy.
-2021-10-02T11:59:00
-12 quantity of books.
-70 sheets wide ruled.
-1 subject notebook.
-10 1/2" * 8"
-26.7 * 20.3 cm
-Daiso Japan.
-Bazic Products.
-Los Angeles, CA, U.S.A
-Made in Vietnam / Hecho en Vietnam
-538
-7 64608 00538 5
-www.BazicProducts.com
-V01236-012021-70002262
-3 sets of four pieces of pencils, made in Japan.
-sac@DaisoBrasil.com
-
-Kraft
-Serving suggestion
-Slow Simmered
-Original
-Barbecue Sauce
-See nutrition for sodium content
-60 calories per tbsp
-Net weight (wt) 18 oz (1 LB 2 OZ) 510g
-04050032152600
-
-06:51 ... 07:24
-06:51 Microsoft SQL Server data files archive.
-06:56 Could not stop the service.
-07:20 Services.
-		Windows could not start SQL Server (MSSQLSERVER) service on local computer.
-		Error 1053: The service did not respond to the start or control request in a timely fashion.
-2021-10-26T18:27:00	Douglas, Thomas Hotmail e-mail sender. Interview.
-	Your message can't be displayed right now.
-	Please check your network connection and try again later.
-	
-2021-10-27T11:42:00
-
-I do not have personal access to a mobile device nor video recorder and microphone, the (510) 796-8121 is my home telephone number; therefore, I am currently only available for a telephone conversation.
-
-Please indicate that the above is okay with you, and I will expect your telephone call at 2021-10-27T12:30:00.	
-
-2021-11-04T09:05:00
-Gah. Your tab just crashed.
-We can help!
-
-Choose Restore This Tab to reload the page.
-Will you help us?
-
-Crash reports help us diagnose problems and make Firefox better.
-Report this tab
-Send an automated crash report so we can fix issues like this
-
-    Include the URLs of the sites you were on when Firefox crashed
-
-Report background tabs
-Update preferences to automatically submit reports when Firefox crashes
-09:06 Hot throat (O ti old).
-Alibaba, Jack Ma, Amazon, Jeff Bezos, Similarities, Amazon employee and recommender guru Greg Linden, Item-based, User-based, real-time, computation offline
-2021-11-06T18:30:00 https://stackoverflow.com/questions/14010446/count-words-and-characters
-2021-11-07 01:25:26.020 Microsoft SQL Server datafiles archive; Microsoft Windows user interface (UI) error, pop-up window.
-
-2021-11-08T15:41:00
-Cezanne Lim
-Company	Nova Module
-Work e-mail	cezanne.lim@novamodule.com
-Website	linkedin.com/in/cezanne-lim-641717a8
-Notes	2021-11-05T14:24:00 ... 2021-11-05T14:40:00 I will expect your call on (510) 796-8121 at 2021-11-08T15:30:00. 2021-11-05T14:24:00 Let me know if you are available for 3:30 pm PT on Monday, 11/8/21 then will give you a call on the number you provided. 2021-11-04T18:00:00 I did not receive an online invitation. I will prefer a telephone call. 2021-11-04T18:00:00 I sent an online interview invitation for 9:30 am PT on Monday, 11/8/21. Please accept the invite. Warm Regards, Cezanne Lim 2021-11-04T14:05:00 Any day at 9AM. Please specify the telephone number for Basang Malunov or yourself, in case I have to contact either of you. Thank you and God blesses. 2021-11-04T13:57:00 Cc: Basang Malunov basang@novamodule.com; Carl Pezold carl.pezold@novamodule.com Subject: Product Engineer Thank you for your interest in the Technical Project Manager position at Nova Module. We would like to learn more about your work experience, career goals and tell you about Nova Module. To get started, we would like to schedule a brief conversation with Basang Malunov who heads up Product and Implementation Services. Please reply with a few times that work for you for a 15 - 30 minute initial call. Thank you Warm Regards, Cezanne Lim Connect with me on LinkedIn Cezanne Lim Sales Development Representative | www.novamodule.com Email cezanne.lim@novamodule.com Time Zone: Pacific
-
-2021-11-17 At 99 Ranch Market, I met Amber, the daughter of Kandace; they were buying crab, from Eddie.
-2021-11-18T09:45:00 Git Hub. Git CMD exits ends error.
-2021-11-19T09:19:00 https://octopus.com/blog/sql-server-powershell
-All opinion; are better; as one.
-117; 94; 54
-Twin sibling shared that his renumeration will be 220000, and he is taking a month off, there will have been 3 parties, after his next party. I am grinding a female or male at the North of a bed, that is sideways, stretches between West and East, with the West being the head. October 12, 539 BC ... 2021-11-19, Duration 934,700
- days. Earlier this evening, at Albertsons Lucky, Charter Square, I saw Russ, the store manager driving out, with his car parked at the last parking lot, beside the South Center; Shontee arranging jiffy boxes; Mary Kolmeyer talking to a female; Katie beside the Deli.
-2021-11-20T05:31:00 http://instacart.careers/job/?id=1924632
-2021-11-21T07:59:00 http://github.com/chrisveness/geodesy
+2021-11-28T19:45:00 BookOfSpeed.com 	Book of Speed By Stoyan Stefanov 		Performance 	2019-12-29 	52613
+13:47 NotePad++ file save folder error, C:\Users\kadeniji\OneDrive\The Winter Tech
+13:52 NotePad++ file save folder error, C:\Users\kadeniji\OneDrive\The Winter Tech
+The thesis contains some images for database and object modeling. 11:53 Urine (Jo ko le). 13:17 Dizzy sleepy. 13:35 To find a reason for our use? (O low) left ear. 13:52 NotePad++ file save folder error, C:\Users\kadeniji\OneDrive\The Winter Tech.
+06:16 When I close a tab on Mozilla Firefox, multiple tabs close.
+2021-11-30T07:21:00 http://leanpub.com/windowspowershellnetworkingguide/read
+	PowerShell Networking Guide By Ed Wilson Created by Microsoft’s “The Scripting Guy,” Ed Wilson, this guide helps you understand how PowerShell can be used to manage the networking aspects of your server and client computers. Ed Wilson is the Microsoft Scripting Guy and a well-known scripting expert. He writes the twice daily Hey Scripting Guy! blog (the number 1 blog on TechNet). He is a Microsoft-certified trainer who has delivered a popular Windows PowerShell workshop to Microsoft Premier Customers worldwide.
+	Mozilla Firefox error, Microsoft SQL Server Management Studio object explorer error with the URI..URIWordEngineering table.
+	Re-start Microsoft SQL Server Management Studio.
+	07:43 I see nobody, has evolved as someone.
+	07:50 Urine. 07:58 Urine.
+	08:01 I love for somebody as me; as I seem somebody as me.
+	08:02 Urine.
+	08:02 Without nobody as a target, there is nobody as a representative.
+	The birthday for Seun Fatai Adeniji is December 2, not December 1, as mother figure. 10:41 ... 11:07 https://www.governmentjobs.com/careers/humboldtcountyca?keywords=%20IT%20Applications%20Analyst%20III%20-%20County%20of%20Humboldt%20(Eureka)%20 https://sfbay.craigslist.org/sfc/sof/d/eureka-it-applications-analyst-iii/7414272884.html e-mail for password reset not received.  IT Applications Analyst III - County of Humboldt (Eureka). 
+	11:11 Microsoft SQL Server Management Studio timeout error.
+2021-11-30T11:49:00 ... 2021-11-30T12:05:00
+	Microsoft SQL Server Management Studio.
+	No row was updated.
+	The data in row 1 was not committed.
+	Error Source: .NET SQLClient Data Provider.
+	Error Message: The connection is broken and recovery is not 
+	possible. The client driver attempted to recover the
+	connection one or more times and all attempts failed.
+	Increase the value of ConnectRetryCount to increase
+	the number of recovery attempts.
+	Correct the errors and retry or press ESC to cancel the change(s).
+	OK.
+September 15, 2008, which was when Stack Overflow launched.
+2021-12-01T15:07:00 URIMaintenance.aspx 43
+Tam Quach
+30 Minute Meeting
+30 min
+2:00pm - 2:30pm, Thursday, December 2, 2021
+Pacific Time - US & Canada
 :Exit
