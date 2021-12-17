@@ -110,6 +110,7 @@ BACKUP DATABASE AManDevelopedInAll TO DISK = 'e:\SQLServerBackup\AManDevelopedIn
 
 :DbccCheckIdent
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 20082);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 19000);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 10404);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1173);
@@ -232,10 +233,7 @@ The thesis contains some images for database and object modeling. 11:53 Urine (J
 	Correct the errors and retry or press ESC to cancel the change(s).
 	OK.
 September 15, 2008, which was when Stack Overflow launched.
-2021-12-01T15:07:00 URIMaintenance.aspx 43
-Tam Quach
-30 Minute Meeting
-30 min
-2:00pm - 2:30pm, Thursday, December 2, 2021
-Pacific Time - US & Canada
+2021-12-08T16:40:00 URIMaintenance.aspx 15
+
+15:38 C:\Users\kadeniji\OneDrive\The Winter Tech NotePad++ folder error.
 :Exit

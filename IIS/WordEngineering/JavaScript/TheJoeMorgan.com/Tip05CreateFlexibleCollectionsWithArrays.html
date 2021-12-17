@@ -1,0 +1,51 @@
+<script>
+const bibleBooks = [
+	{
+		ID: 1,
+		title: "Genesis",
+		author: "Moses"
+	},
+	{
+		ID: 40,
+		title: "Matthew",
+		author: "Matthew"
+	},
+	{
+		ID: 66,
+		title: "Revelation",
+		author: "John"
+	}
+];
+console.log("Bible Books:", JSON.stringify(bibleBooks));
+
+console.log("Beginning Book:", JSON.stringify(bibleBooks.filter(member => member.ID === 1)));
+
+console.log("Last Book:", JSON.stringify(bibleBooks.filter(member => member.ID === 66)));
+
+console.log("New Testament:", JSON.stringify(bibleBooks.filter(member => member.ID >= 40)));
+
+console.log("Written by author's name starting with the alphabet M:", JSON.stringify(bibleBooks.filter(member => member.author[0] == 'M')));
+
+const objectKeys = Object.keys(bibleBooks[0]);
+for 
+(
+	let bookIndex = 0, bookCount = bibleBooks.length;
+	bookIndex < bookCount;
+	++bookIndex
+)
+{
+	let bookInfo = "";
+	for 
+	(
+		let keyIndex = 0, keyCount = objectKeys.length;
+		keyIndex < keyCount;
+		++keyIndex
+	)
+	{
+		const bookKey = objectKeys[keyIndex];
+		const bookKeyValue = bibleBooks[bookIndex][bookKey];
+		bookInfo += `"${bookKey}": ${bookKeyValue} `; 
+	}
+	console.log(bookInfo);
+}	
+</script>
