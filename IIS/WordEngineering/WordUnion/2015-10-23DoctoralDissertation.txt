@@ -1,0 +1,1483 @@
+WordEngineering
+Ken Adeniji
+
+A thesis submitted for the degree of Doctor of Philosophy in the Faculty of Science.
+Abstract
+
+Thesis Statement: This dissertation introduces AlphabetSequence. The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
+
+The importance of this work?
+
+    So there is God, I joined where that God is.
+    Follow God, as a character.
+
+The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word.
+
+    2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
+    3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
+
+What retains the prove of living ( Revelation 22:2 )?
+
+    BibleReference uses whole numbers for representation.
+    Who, what, when, where, why?
+    Prophecy and Fulfillment: Keyword Variation
+
+The author is linking words spoken to related verses and dictionaries.
+
+Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
+
+Intention:
+
+    The research of the author is for beginning Bible scholars.
+    The research produces a set of web pages that will equip the scholar.
+    The usability of the Bible as a study tool.
+    The programming approach allows for a result which is reproducible across Bible versions and other sources.
+
+Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
+
+Alphabets and digits. There are 51 occurrences of the word, count, in the King James Version (KJV) Gospel. Word 	Count 	Scripture Reference
+Account 	3 	Matthew 12:36, Matthew 18:23, Luke 16:2
+Accounted 	4 	Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24
+Counted 	2 	Matthew 14:5, Mark 11:32
+Counteth 	1 	Luke 14:28
+Countenance 	3 	Matthew 6:16, Matthew 28:3, Luke 9:29
+Countries 	1 	Luke 21:21
+Country 	37 	Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57, Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
+
+On behalf, of someone, I seem Actor 	Type 	Scripture Reference
+Jesus Christ		Passover Lamb 	John 1:29, John 1:36
+John the Baptist		Forerunner 	John 1:33
+Moses		Prophet 	Exodus 7:1, Numbers 12:6, Deuteronomy 18:15, Deuteronomy 18:18, Deuteronomy 34:10
+
+What substitution lies ahead? Type 	Actor 	Scripture Reference
+Man 	Seth 	Genesis 4:25, Genesis 5:3
+Land 	Isaac 	Genesis 26:2, Genesis 26:12
+Believe 	Abraham 	Romans 4
+
+Acknowledgments
+
+Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
+
+There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
+Introduction
+
+The incentives to begin work on WordEngineering will include:
+
+    Taking example from the Bible ( Daniel 9:2, Genesis 18:19, Job 23:12 ).
+    Creating an address book. To relate; who I use ( Genesis 2:5, Genesis 2:7-8, Genesis 2:15-25, Genesis 3:20 ). Where does He need one person? Many ( 2 Samuel 11-12 )?
+    Keeping a diary.
+    Expounding on His word.
+
+Theory
+"
+Programming
+" (Microsoft)
+The Author Programs in the Following Tiers and Languages Tier 	Language 	Commentary
+Front-End Browser 	HyperText Markup Language (HTML), Javascript, Cascading Style Sheet (CSS) 	The front-end code may run on a desktop, laptop, or mobile telephone that offers a user interface (UI). The task is to accept the user query and to display the result. Initially, as a novice programmer, the author wrote specific code for each user request; later, the author rests on generic code which will handle multiple variety of requests. This is high-level programming, and the skill-set entry level is minimal. The author also believes that the users should not require any formal training to use his work. Customization is achievable by varying the request options, such as entry form selections, query arguments, or data attributes.
+Middle-Tier Application 	C#, Embedded-SQL 	For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the author has experience with Microsoft Visual Studio and command-line tools.
+Server-Side Backend 	Standard Query Language (SQL) 	The author most recent experience is with the Sybase and Microsoft Transact-SQL assortment. Now a days, to be compatible and after experimentation; the author rarely uses Standard Query Language - Common Language Runtime (SQL-CLR). The author does database data entry, maintenance, development by using the Microsoft SQL Server Management Studio.
+The Author Uses the Git Code Repository Key 	Value 	Commentary
+Universal Resource Identifier (URI) 	github.com/KenAdeniji 	This is the home page for storing the repositories.
+Date Created 	2013-04-27 	This is the date of creating the github.com account.
+Version 	git version 2.29.2.windows.3 	The git --version command offers the release detail. The author is not sufficiently knowledgeable on the version update.
+Configuration Profile 	git config --list 	The commands below will set the profile: git config --global user.name "your-name" git config --global user.email "your-email"
+Change Tracking 	git status 	This will decide the differences between your local copy and the version control code repository.
+Add Updates 	git add 	The git add . command will add all the updates, or the user may add particular directories and files.
+Accessibility
+
+    Image elements have alt attributes; so that the reader may perceive what it shows
+    The software generates images in the .png format
+    The author does not duplicate hyperlinks
+    The user may solely use the keyboard navigation to tab between the various controls, this substitutes for the taborder attribute. The autofocus attribute is for setting the cursor on the first input control.
+
+JavaScript Basics: Data Types
+
+    JavaScript supports three keywords for declaring variables. These are the var, let, const keywords.
+    From its pre-conception, JavaScript supported the var keyword. When the author does not precede a variable initialization with a keyword, then the variable will have global scope. The author averts from variable hoisting. Variable definition with the var keyword is re-usable. The strict mode is a later addition to JavaScript. Helps in enforcing variable rules.
+    For one-time definitions, such as, issuing the document.getElementById command, the author relies on the const keyword.
+    Unlike some typed languages, JavaScript does not support explicitly identifying the type of a variable.
+    JavaScript comparisons are case-sensitive.
+
+Functions and Methods
+
+    Methods are functions that are referrable from a class. Methods support object orientation by offering encapsulation, inheritance, polymorphism. The author uses functions when placing localizable code inside the script section of a HTML file; otherwise, generalized methods are referenceable from a JavaScript library.
+    JavaScript treats functions as first-class citizens, and they are passable as variables. This abstraction feature is rarely necessary.
+    JavaScript does not make use of overloading. The earlier arguments array variable and the later parameter default initialization supplements.
+    The author consistently uses anonymous functions for processing the success and error returns when using jQuery to access web services.
+
+Conditions
+
+    The author emulates the Microsoft ASP.NET Page.IsPostBack property check, and when it is so, parse the query arguments; otherwise, skip the parsing and proceed to page submittion.
+
+Arrays and Loops
+
+    For displaying the Bible book titles, the 66 books are in a JavaScript iterable array. This reduces the data load from the server to client, and it offers spelling flexibility. The select options resemble similar customization.
+
+HyperText Markup Language (HTML) Document
+
+    The DOCTYPE is the first declaration in an HTML document, and it is the conformation standard specification.
+    The html tag is the root and the container for all the other tags.
+    The head tag contains the title and the meta tags for the search engine optimization (SEO). The various documents will indicate the cascading style sheet (CSS) directive.
+    The body tag contains the visible content of the document. Its resultset div will contain the particular details that the program generates.
+
+"
+Data Science
+" (Microsoft)
+What is Data?
+
+The data that the author fundamentally operates on is the word from God. The initial and primary data is textual, but now the author places importance on dates and numbers.
+
+    The author extracts knowledge from data; by finding meaning to the word.
+    The author uses scientific methods, such as counting the number of occurrences, determining the first and last occurrences, and excluding the parts of speech.
+    The actionable insights take, so far, is to computerize the work.
+    The vast majority of the work is structured data. Unstructured data does not fit into the background of the author.
+    The application domain is Bible studies; how relevant is the Bible to our work?
+
+Practicing Data Science
+
+    Empirical, find implication from the Bible?
+    Theoretical, to determine a better way to doing work?
+    Computational, is human labor replaceable?
+    Data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Involving the data in how we do our work?
+
+Where to get Data
+
+    The Bible is our primary source of data.
+    The author records information sources. This is either a person or media?
+
+What you can do with Data
+
+    Data Acquisition: The Bible is available on the Microsoft Access database.
+    Data Storage: The author imports this tabular data into the Microsoft SQL Server relational database.
+    Data Processing: The SQL Select statement is the means of retrieving data from the database. This is not always a monolithic fashion; since there are various ways of composing the queries.
+    Visualization / Human Insights:
+        The raw data is viewable on the Microsoft SQL Server Management Studio.
+        The web service, .asmx, file, which is accessible from the browser, offers the opportunity to fill-in the query and see the JSON result.
+        The .html presents the result in a human readable format.
+
+Defining Data
+
+    Quantitative Data: This makes itself subjective to numeric computation. AlphabetSequence is an attempt to give value to words.
+    Qualitative Data: These are rarely measurable and are personal interpretation.
+
+A Brief Introduction to Statistics and Probability
+
+    At the beginning of the study, the author made a presumption that words are unique. Later the author found out that there are duplicate Bible verses.
+
+"
+Data
+" (Vaibhav Verdhan)
+Structured and Unstructured
+
+Structured data is alphanumeric put in row-column. Unstructured data is either text, image, audio, or video. This research is solely structured data.
+Standard
+
+The author imports complete, not NULL nor empty data, such as the Bible and the dictionaries.
+
+The author achieves data validity by constraining and restricting inputs. Since this is not a commercial work, Key Performance Indicators (KPIs) are not vital.
+
+The author references and is not tampering with authoritative Bible work; this helps to make sure correctness - accuracy, consistency, integrity.
+
+Timeliness is effectual in the single user data entry table, HisWord.
+Unified Modeling Language (UML)
+Class
+
+The information which the author documents in this section of the paper; is the Data Declaration Language (DDL) and Data Dictionary, which is available at GitHub.com SQLServerDataDefinitionLanguageDDL Repository The Data Manipulation Language (DML) is too large to fit into the GitHub.com repository, and it is intellectual property. For the people that have access to the database, this private information is available by generating the database script.
+
+Contact is a primary entity, and it identifies the people and organizations that the author has a relationship with. These affiliations are family, friends, business, or public service links. Also recordable are their street, e-mail, web addresses, and telephone numbers. The author stores the various information exchanges with these people. A known date of birth, is for notification of the subject's birthday and relative age. To keep up with the privacy and sensitivity of this personal information, the author is not sharing this highly confidential data.
+
+The relationship between a contact and its related information is one to many; that is a contact may have multiple addresses.
+
+A URI is a link to a web resource that will add to the audience's knowledge. The author notes the address and the date, when the author became aware of this information. The content at an address is either textual, audio, video, or image? For URIs, the author rarely explicitly specifies the entire http protocol and directory post-fix, /. An incomplete address will not validate as an input url type. The author only records the Wikipedia address' at the place of reference since it is easy to associate the title with the Wikipedia address.
+
+Exists or does not exists? The transact-sql exists clause is useful for checking the existence of an object and if so, drop the object. This is applicable prior to re-creating the object. Please note that the metadata information is lost and the create or alter statement supercedes this approach. The exists clause is also useful in queries for determining the existence of a resultset.
+
+These classes are important asset for the anniversary triggers; in the Remember entries.
+Database and Application Server Source Files
+
+The author chose a multi-tier architecture for building the application. The database layer is made-up of tables, views, stored procedures, functions. The database tables are easily storable and movable to other storage media. The SQL Server's data definition language (DDL), now supports DateTime2, and its date range extend between January 1, 1 CE through December 31, 9999 CE. Some dates in Wikipedia mention these dates. The HisWord_view contains computed columns, which depend on entries in the HisWord table. The author extracts database information by building query statements.
+The application layer is the bridge between the user interface layer and the database layer. The application layer compiles into a single Dynamic-link library (DLL), called InformationInTransit.dll. The application layer consists of four namespaces, namely, InformationInTransit.DataAccess, InformationInTransit.ProcessCode, InformationInTransit.ProcessLogic, InformationInTransit.UserInterface. What the author builds on the server; is accessible to all the clients. What is the lifetime of this code, and what neutrality does it condone? The author started out with dBASE II. The lines of code for the application layer are in the C# and embedded SQL.
+Client Browser Source Files
+
+    HTML5 (.html)
+    JavaScript (.js)
+    Cascading Style Sheets (.css)
+
+The .HTML files will work in all browsers; that support AJAX. Most of the interactive web pages are reliant on JavaScript to work, mainly because they use Ajax to interact with the server. Each .HTML file, performs specific task, and may have a corresponding back-end associate, web service. The unobtrusive JavaScript file 9432.js contains re-usable code that is not .HTML files specific. The .HTML files originally contained the .CSS specifications; however, the author now places styling information in a single external file, 9432.css. This will reduce the sizes of the .HTML files, and it helps to achieve a consistent user interface.
+
+The work of the author is interactive, and there are links to questions and answers pages. Most of the input entries are textual, but some are numeric, datetime, select options. The answers are mostly in tabular format.
+" A HTML document contains:
+
+    Text content: The author informs the reader by describing His word.
+    References to other files: The author refers to external files, such as UML images.
+    Markup:
+        Elements: The anchor tag is the most specific.
+        Attributes and Values: The author benefits from the introduction of the customizable data- prefix attribute.
+
+" (Elizabeth Castro). "
+Cascading Style Sheets (CSS)
+
+    Base Rules: A base rule is an element and not a class nor ID selector. The author does not use CSS Resets. The author issues element selectors for the html, body, table and row.
+    Layout Rules: There are no layout rules, such as header nor footer.
+    Module Rules: The table of content (TOC) is for page navigation that the author offers using class names.
+    State Rules: A state rule is for toggling, such as using Javascript to set the visibility.
+
+" (Jonathan Snook).
+Web Services
+
+" There is standardization on the first .NET web services architecture, .ASMX. " (FrederikBulthoff, 2019) In most cases, there is a one-to-one mapping between the .HTML, .ASMX, .CS files, and the database relational table, Bible..Scripture. For simplicity and clearage of use, the .HTML and .ASMX files, support one operation. GetAPage.html is the workhorse for word utterances. GetAPage.html will send AJAX requests to multiple .ASMX files and operations. GetAPage.html is a cumulation of separate .HTML files. All the web services files support the SOAP request format and return JSON. jQuery accepts the POST, HTTP verb. The author stringified the data he passes to the web service in the body of the message. Errors are unforeseen, in the rare case, the author logs errors on the back-end, and display quantitative message. Security is lacking; this is permissible; since the author only queries information.
+
+The web service code, .asmx, file is not necessary, does not have a place, when there is no server database access ( Numbers 19:2, 2 Chronicles 15:3, John 15:25, Romans 2:12, Romans 3:21, Romans 3:28, Romans 7:8, Romans 7:9, 1 Corinthians 9:21, Hebrews 9:22 ).
+
+The Web Service Description Language (WSDL) is available, for example, by specifying the URI, AlphabetSequenceWebService.asmx?WSDL To generate a proxy code, issue the following command; wsdl.exe /language:CS /namespace:InformationInTransit.ProcessLogic /out:"AlphabetSequenceWebServiceProxy.cs" http://localhost/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx?WSDL The Web Services Discovery Utility (disco) command: disco.exe "http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/AlphabetSequenceWebService.disco" will generate the companion files; AlphabetSequenceWebService.disco, AlphabetSequenceWebService.wsdl, and results.discomap
+
+A lecture of our beginning. (Hafida Na ̈ım, 2016) The business rule is storable and processable in C#, (.cs), source files. The dynamic link library, (.dll), is callable from everywhere. GetAPage.html computes AlphabetSequence from a simple logic, which is easily representable everywhere. The AlphabetSequenceIndexScriptureReference is retrievable from the Bible, using non-complex SQL query. The Bible word and HisWord reference, requires substantive query. The Bible dictionary returns dataset from the local database. The author can not make a business decision, to go to a web service, to retrieve what is locally resideable.
+Database Size
+
+The usp_DatabaseLogSize stored procedure is for determining the size of the databases data files; and it is available at T-SQL to find Data,Log,Size and Other Useful information -SQL 2000/2005/2008/R2.
+Database Size Name 	Data Files 	Data MB 	Log Files 	Log MB 	Total Size MB
+Bible 	5 	304 	1 	82 	386
+BibleDictionary 	5 	38 	1 	17 	55
+WordEngineering 	5 	138 	1 	298 	436
+Database Standard
+
+" When should He believe; other have represented Himself. " (ABB Asea Brown Boveri)
+Database Design
+
+    The relational model is for storing information in tables.
+    The author normalizes data using Object-relational mapping.
+    All the databases are OLTP (Online Transactional Processing), not OLAP (Online analytical processing).
+    Avoid deadlock occurrences by not permitting user database updates.
+    All the transactions follow similar routes and sequences, and the author practices granularity with the locks.
+    Database updates are through stored procedures, which recognize and avoid the potential of integrity violation.
+
+Database Security
+
+    The secretive web.config file contains the database access information.
+    The web.config file does not explicitly mention the user login name nor password.
+    Give access rights to roles, not to specific login identities nor user names.
+
+Database Data Types
+
+    Choose matching data types between the database and application layers.
+    Only pick varchar(max) and nvarchar(max) as the data type, when it is essential to store large data.
+    Prefer the decimal type; when recording the amount in currency rather than using the float type.
+
+Nullable type
+
+    Consider defaulting textual data to empty string; instead of NULL.
+
+Indexes
+
+    Database changes lags with indexes.
+    The field sequence in indexes should follow the frequency of usage.
+    When using a composite index, place a clustered non-unique index on the major column.
+
+Naming Conventions
+
+    Overall consistency encourages lowercase keywords. Keywords in lowercase are mandatory in C# and JavaScript but not in SQL.
+    Use Pascal casing for naming literals, such as, tables, columns, stored procedures and functions.
+    Use Camel casing for naming parameters and local variables.
+
+"
+Performance
+" (Stoyan Stefanov)
+
+The web page components practice of the author, include:
+
+    Keep the count of web page components to a minimum
+    Specialize input entries by using the most simple and basic component
+    Reduce bloating by limiting the use of framework and library
+
+Most of the work of the author is available at the following locations, in the order of efficiency:
+
+    The current web page, such as, 2015-10-23DoctoralDissertation.html file
+    The general Cascading Style Sheet, 9432.css file
+    The general JavaScript file, 9432.js file
+    The specific Web Service file, such as, ScriptureReferenceWebService.asmx file
+    The dynamic link library file, InformationInTransit.dll file
+    The database
+
+The reason for noting this observation is that the Domain Name System (DNS) lookup time is low; since the author uses relative directory addressing as much as possible and only uses root addressing for calling web services. The .html and .asmx files are in numerous directories, because GitHub.com directories have content count limitations.
+
+Images:
+
+    The author does not use background-image nor list-style-image
+    The thesis only contains images for database and object modeling
+    The author does not use CSS sprite; since it requires additional storage space
+    The author does not use Data URIs
+    The author does not support nor take advantage of Expires Headers
+
+Does not use compression nor minification; because the file sizes are low and technology conformity.
+Code Statistics
+Al Danial's Cloc
+
+				  36 text files.
+				classified 36 files
+				  36 unique files.                              
+				   0 files ignored.
+
+				github.com/AlDanial/cloc v 1.84  T=1.00 s (36.0 files/s, 2947.0 lines/s)
+				-------------------------------------------------------------------------------
+				Language                     files          blank        comment           code
+				-------------------------------------------------------------------------------
+				C#                              36            300            362           2285
+				-------------------------------------------------------------------------------
+				SUM:                            36            300            362           2285
+				-------------------------------------------------------------------------------
+				 414 text files.
+				classified 414 files
+				Duplicate file check 414 files (398 known unique)
+				Unique:      100 files                                          
+				Unique:      200 files                                          
+				Unique:      300 files                                          
+				 414 unique files.                              
+				Counting:  100
+				Counting:  200
+				Counting:  300
+				Counting:  400
+				   2 files ignored.
+
+				github.com/AlDanial/cloc v 1.84  T=5.00 s (82.8 files/s, 10288.0 lines/s)
+				-------------------------------------------------------------------------------
+				Language                     files          blank        comment           code
+				-------------------------------------------------------------------------------
+				C#                             414           5858           5760          39822
+				-------------------------------------------------------------------------------
+				SUM:                           414           5858           5760          39822
+				-------------------------------------------------------------------------------
+				   1 text file.
+				   1 unique file.                              
+				   0 files ignored.
+
+				github.com/AlDanial/cloc v 1.84  T=0.50 s (2.0 files/s, 3372.0 lines/s)
+				-------------------------------------------------------------------------------
+				Language                     files          blank        comment           code
+				-------------------------------------------------------------------------------
+				JavaScript                       1            220            189           1277
+				-------------------------------------------------------------------------------		
+			
+
+Backup and Off-site Storage
+
+The author archives the database and source files to the local computers, Google, Microsoft drives, after changes. The author uses GitHub.com version control.
+Development Time
+
+The development time is separable into the time it takes to program, compile, test, deploy. The stored procedure, C#, ASMX, HTML files are build-able in one day, in most use-case.
+Reproducible
+
+The deliverable of the author is transferable to other environments to reach similar conclusions.
+Database Deployment
+
+The author suggests the following alternative methods for deploying the databases:
+
+    Restore
+    Attach
+    Snapshot
+    SQL Server Data Definition Language (DDL)
+
+Surrogate Keys
+
+" The author takes advantage of potential natural primary keys; otherwise, the author uses surrogate keys. A surrogate key may be an identity or GUID type column. URIs are examples of natural primary keys. " (Joseph Sack, 2008)
+The Bible Database
+The Scripture Table
+
+The Bible SQL Server database, principally consists, of one table, the Scripture table. The Scripture table has a composite primary key, which consists of three columns; the BookID, ChapterID, and VerseID columns. There are varchar(MAX) columns which has the text for each Bible version.
+
+The author proposes creating a non-unique index, IDX_Scripture_ChapterIDSequence, on the ChapterIDSequence column. The author is undecided, if this index will be clustered or non-clustered.
+The Scripture Table's BookID Column
+
+Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66; starting from Genesis and ending at Revelation. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66) will set the range restriction. The BookID participates in the natural primary key; and it is part of the composite index with the ChapterID and VerseID columns. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED ( BookID ASC, ChapterID ASC, VerseID ASC ) is for setting the primary key.
+The Scripture Table's ChapterID Column
+
+The ChapterID ranges between 1 and 150; the SQL statement SELECT MAX(ChapterID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK (([ChapterID]>=(1) AND [ChapterID]<=(150))) will set the range restriction.
+The Scripture Table's VerseID Column
+
+The VerseID ranges between 1 and 176; the SQL statement SELECT MAX(VerseID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_VerseID_Range] CHECK (([VerseID]>=(1) AND [VerseID]<=(176))) will set the range restriction.
+The Scripture Table's KingJamesVersion Column
+
+The author would have considered placing an index on the KingJamesVersion column, but the author found out during his research, that the KingJamesVersion is not unique, and indexes are not applicable to like query expressions with leading wildcards.
+The Scripture View's Testament Column
+
+The SQL statement (case when BookID <=(39) then 'Old' else 'New' end) will set this computed column. The Testament column serves as a filter, such as, in the BibleWord.
+The Scripture View's BookTitle Column
+
+The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
+The Scripture Table's ScriptureReference Column
+
+The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the title of the book.
+The Scripture Table's ChapterIDSequence Column
+
+When loading data, the author decides the ChapterIDSequence column; and increment it, every time, the BookID and ChapterID, changes during load. The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22. The SQL statement SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID will decide the greatest value for ChapterIDSequence. An alternative SQL statement select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture Another SQL statement ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) will do the range correctness. Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
+The Scripture Table's VerseIDSequence Column
+
+When loading data, the author calculates the VerseIDSequence column, and increments it, every time, the BookID, ChapterID, and VerseID changes during the data load. There are some Bible books that have only one chapter, such as, Obadiah, Philemon, 2 John, 3 John, Jude; therefore, the author is careful when the choice is made to increment and update the VerseIDSequence column. The SQL statement SELECT BookTitle FROM Bible..Scripture GROUP BY BookID, BookTitle HAVING MAX(ChapterID) = 1 ORDER BY BookID is for listing these one chapter, Bible books. The VerseIDSequence ranges between 1 and 31102; starting from Genesis 1:1, and ending at Revelation 22:21. The SQL statement SELECT COUNT(*) FROM Bible..Scripture will decide the greatest value for VerseIDSequence, the total number of rows, records, in the Bible..Scripture table. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_VerseIDSequence_Range CHECK (VerseIDSequence BETWEEN 1 AND 31102) will do the data integrity. As said earlier, although it is good to know the VerseIDSequence, but it is primarily used to decide the boundaries for scripture reference queries. The identity functionality which auto-increments, before inserting each row is useful, for ensuring this candidate primary key, abides by the entity integrity constraint; however, The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence) is supplementary.
+The Scripture_View BibleReference Column
+
+The SQL statement ((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3))) will combine the BookID, ChapterID, and VerseID. This is a convention for referring to Bible rows, by a unique identifier, which consists of the BookID, ChapterID, and VerseID. The leading zeros are placeholders for blocks of IDs, such as, BookID which will have two digits, ChapterID which will have three digits, and VerseID which will also have three digits. It is easier, faster, and more compact to restrict and order by numbers rather than text. Listed below, is the result set, for this SQL statement. SELECT ScriptureReference, BibleReference FROM Bible..Scripture_View WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
+ScriptureReference	BibleReference
+John 1:1	43001001
+
+There is a conversion page BibleReference.html. Please note, that the author has not developed this further, it is just our introduction and speculation, which others may wish to adopt.
+
+Most of the applications, extract information, and query the Scripture table. If the user chooses to, he may choose to load another Bible version, into the Scripture table and the application will still work as usual, and there will be no need to make changes to the application; thereby, achieving Separation of concerns (SoC).
+The Exact Table
+
+The Exact table's, primary task, is to tell, on the words that are in the Bible. Its information set include each word's first and last scripture reference occurrence(s), and count of occurrence(s). If the word, occurs only once, then the last occurrence is set to null. The incentive for writing the exact module comes from Dave Hunt, who will talk of each word's specifics, and Chuck Missler who noted that the first occurrence of the word, love is in Genesis 22:2. The exact table, is a holding area, for staging information; it could be argued that there is no need, to have this table, because it sources its information from the Scripture table, and it is available using Language Integrated Query. The reasoning of the author is that the Scripture table is static data, and it does not need processing, each time, there is a request. Speed and lower work load are the advantages of the approach of the author; its disadvantage is that the exact table needs re-population, when there is a shift to another Bible version, which we do not project, at this time. If there is a need, to support another Bible version, then the Exact table loading procedure needs expansion to aid, this flexibility. The Exact result for the author's initials, KAA, is Karkaa, meaning floor (Joshua 15:3). Word Occurrences is dynamic, and it supports the other versions of the Bible.
+The Exact Table's ExactID Column
+
+The ExactID is an identity column, meaning the database, SQL Server, auto-increments its value, before insertion. There are 12891 unique words, in the Bible..Exact table. The SQL statement SELECT MAX(ExactID) FROM Bible..Exact is for determining the highest value. The SQL statement SELECT COUNT(BibleWord) FROM Bible..Exact is for determining the word count. The SQL statement ALTER TABLE Bible..Exact ADD CONSTRAINT CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891) is for the range restriction. For storage reason, the author has chosen, not to have a unique index, on this candidate primary key; in-spite, of it being a query item. Future implementation, may issue the SQL statement CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID) SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact is 789631; this is the sum of the words in the KJV Bible.
+The Exact Table's BibleWord Column
+
+These are the words that occur in the Bible, in the order of their occurrences. The author sets the primary key, the constraint, by issuing the SQL statement ALTER TABLE [dbo].[Exact] ADD CONSTRAINT [PK_Exact] PRIMARY KEY CLUSTERED ([BibleWord] ASC).
+The Exact Table's FirstOccurrenceScriptureReference Column
+
+This is the scripture reference where the word first occurs in the Bible. The author may set-up the relationship by issuing the SQL statement ALTER TABLE [dbo].[Exact] WITH CHECK ADD CONSTRAINT [FK_Exact_Scripture] FOREIGN KEY(FirstOccurrenceScriptureReference) REFERENCES dbo.Scripture (ScriptureReference). Please note, that as discussed earlier, the author does not have, a unique constraint, on the Bible..Scripture.ScriptureReference column, since this is a computed column; the author can not keep up the relationship, at this time.
+The Exact Table's LastOccurrenceScriptureReference Column
+
+This is the reference to the scripture where the word last occurs in the Bible; if there is only one occurrence, the value of this entry is null. As with the FirstOccurrence column, the referential integrity rule applies.
+The Exact Table's Difference Column
+
+This is to measure the word's longevity; the difference in VerseIDSequence between when it first and last appeared.
+The Exact Table's Occurrence Column
+
+This is the pervasiveness of the word, how often is the word used in the Bible?
+The WordEngineering Database
+
+The WordEngineering SQL Server database, mainly consists, of four tables - HisWord, Remember, APass, ActToGod.
+The HisWord Table
+
+The HisWord table is what the author heard from the source. The entries in the HisWord table are exact and representable in alphanumeric format (Numbers 12:6-8). In following, the Bible's New Testament convention, where there are translations of Hebrew words to English which is being interpreted, (Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36); so also, there are translations of Yoruba words to English.
+
+There have been cases when the author cannot spell and fully comprehend what he heard. In such cases, and not dispose of the records, the author will partly enter what he heard. This impedance mismatch between what the speaker said and what the listener heard, rarely occurs with English words. But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases. The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets. The author requires a Yoruba dictionary and translator; a recent success is with the http://translate.google.com web page.
+
+The HisWord table's most important column, as the name suggests, is the word column, which is either English or Yoruba; or a mixture of both languages. The author will yield to the Holy Spirit in translating Yoruba words to English. From previous experience, this translation is not always the most right or relevant, and different words may contain the diacritic alphabets; therefore, introduce various meanings (1 Corinthians 12:30, 1 Corinthians 14). To account for the discrepancy in translation, the author sought help from the LORD. 2015-11-02T22:55:00 And, the merge, is the money, convert. 2015-11-03T02:17:00 The specifics, a language.
+
+The word column is a potential natural primary key, since duplicates are rare. When redundancies do occur, we may append the sequence to the word, to generate a unique word. We do this manually, but an insert trigger, will offer automation, and will cut the risk of primary key violation, which leads to gaps in the identity column.
+
+The HisWord's table, commentary column, contains implicit information. This communication is most likely non-verbal, and it is information such as creatures standing or moving towards particular locations or engaging in other visible activities.
+
+As such, from the creation account, on the first day, there is a commandment, and there may be an action/response. The commandment is in the word column God created light ( Genesis 1:3, 5 ). The action is in the commentary column; God separated the light from the darkness (Genesis 1:1-2, 4).
+
+SQL Server generates sequential numbers for the HisWordID identity column. The goodness of this technique is that it is a candidate primary key, data loss is trackable, and it provides a sort key. The HisWordID column may serve as the primary and/or foreign key, the backbone of the Referential Integrity Constraint.
+
+The Dated column is of the DateTime type. If an insert statement does not explicitly specify a value for the dated column, then it defaults to the current date and time of the (UTC-08:00) Pacific Time (US & Canada) time zone. There is a preference for the Coordinated Universal Time (UTC)	format.
+HisWord_view
+
+The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. For example, the places of alphabet A and a is 1; and the places of alphabet Z and z is 26. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
+The Remember Table
+
+The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
+
+When the author references the time, then the date is a ratio of the Common Era.
+APass
+
+First, inside and last dates.
+ActToGod
+
+This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+"A generic grouping of concepts and their representation"
+Module 	Unit
+GetAPage.html 	retrieveAlphabetSequence()
+AlphabetSequenceWebService.asmx 	Query(word)
+AlphabetSequence.cs 	ID(word)
+ScriptureReference(int alphabetSequenceIndex).
+DataCommand.cs 	DatabaseCommand()
+WordEngineeringSchema.sql 	WordEngineering.dbo.udf_AlphabetSequenceIndexScriptureReference(ID)
+GetAPage.html Program Flow
+
+The event handlers are the first code the system executes. These are the page load, submit click, item change events. If this is a page load event, and it is not a postback, and the query string has a word argument, then the processing of the word occurs. If this is a postback, then it is the user's data entry that the system processes. The term processing means the browser submits the word to the back-end asynchronous web services and renders each result.
+International Standard ISO/IEC 25010. Systems and Software Engineering -- Systems and software Quality Requirements and Evaluation (SQuaRE) -- System and Software Quality Models. First Edition, 2011-03-01.
+
+Software quality is demonstrable in eight characteristics: maintainability, functional suitability, performance efficiency, compatibility, usability, reliability, security, and portability.
+Maintainability
+Corrective Maintenance
+
+This is error correction.
+Adaptive Maintenance
+
+Transition from building console to web applications.
+Perfective Maintenance
+
+The author now considers partial and lookback scripture references. Such as, when there is no book title, then this default to the earlier book title.
+
+Choosing the right .NET Framework Data Providers. The author standardized on ODBC; the other choices are OLE DB, or SQLClient.
+Preventive Maintenance
+
+Servicing the system to avoid larger mishaps.
+Metric Quality Profiles
+Unit Size Quality Profiles
+Module 	Unit 	Lines of Code
+GetAPage.html 	retrieveAlphabetSequence() 	40
+AlphabetSequenceWebService.asmx 	Query(word) 	10
+AlphabetSequence.cs 	ID(word) 	50
+ScriptureReference(int alphabetSequenceIndex). 	10
+DataCommand.cs		DatabaseCommand() 	90
+SQL Server		WordEngineering.dbo.udf_AlphabetSequenceIndexScriptureReference(ID) 	105
+Sum 	325
+
+Determining the AlphabetSequence takes 325 lines of code, which starts and callbacks 40 lines of AJAX code and concludes with 200 lines of database interaction. A unit of code should not exceed 15 lines.
+
+All the web services (.asmx) files return JSON by default; the AlphabetSequenceWebService.asmx file, Query method, returns a hand crafted JSON which has a numeric AlphabetSequenceIndex and a string AlphabetSequenceIndexScriptureReference.
+Limit the number of branch points per unit to 4
+
+The C# compiler will translate code to an intermediate language (IL). This code runs Just In Time (JIT), according to the condition clauses and operators.
+
+In the case of dynamic SQL, re-compiling imposes cost.
+"
+The Twelve-Factor App
+"
+
+    Codebase: The WordEngineering application is storable in the GitHub.com version control with a one-to-one mapping between the codebase and the application. There are multiple but separate websites that access the InformationInTransit.dll. The author builds the InformationInTransit.dll in the developer's working directory, and deploys the InformationInTransit.dll in each production's website bin directory. The steps for storing files in GitHub.com are:
+        git status
+        git add
+        git commit
+        git push
+    Dependencies: The web.config file identifies the .net library versions that the environment should contain. The third-party supporting libraries are in the software bundle.
+    Config: The web.config file contains the database connection strings; web services user specific credentials. The system adminstrator at external locations may customize these information for there specific use.
+    Backing services: These are external independent resources, such as the database, SMTP.
+    Build, release, run: These are the stages that a code goes through. Code compilation is deferrable for scripting, as opposed to compilable languages. Ever since the advent of the Java programming language, Just-In-Time (JIT) execution has been the norm.
+    Processes: The author's earlier applications were stand-alone console applications that are run by the .NET Framework, later examples are the ASP.NET web pages and services. These applications run in a single thread, except they share static variables. The SQL Server encompasses services which are stoppable to do data files backup.
+    Port binding: Web servers traditionally run on port 80, and SQL Server runs on the changeable port 1433. Javascript's Node and Python's Flask run on diversified ports.
+    Concurrency: The author isolate his applications from the particulars of the base scaling concurrency choice.
+    Disposability: The author's take on expendable work includes the following:
+        Pure functions
+        On-demand compilation of web pages and services
+        Adjustable time-out setting for the database and web request threads
+        The .NET Framework minute work, such as, the singleton design pattern, and static method calling and variable(s) initialization
+    Development/production parity: By first finalizing non repeatitive work, the author can now focus on specialization activities.
+        The time gap: These include placing the common work in a central environment. Superseding the waterfall methodology with the more recent process, Agile and Scrum.
+        The personnel gap: Dev/ops expertise
+        The tools gap: The author prefers the stable infrastructure to the fly-by-night trends. Testing on the multiple operating systems and the various programming languages reflects the author's wish for compatibility. Prior to advent of the Internet, communication did not support a worldwide trend; therefore, the need for distributing scaling, that is remote applications depending on the scarce resources.
+    Logs: The author logs exceptions, that is, viewable in the Event Viewer. The author displays error messages to the user, the .NET Framework determines the detail, and the localhost address offers in-depth perculiarities.
+    Adminstration processes: These are one-off tasks that the environment demands of the knowledge worker. The tools are available everywhere for achieving the goal. Prior to graphical user interface (GUI), these are command-line responsibilities.
+
+Artificial Intelligence
+Deep Learning
+
+Utterances are storable in the Word column of the HisWord table. An expressible event is storable in the Commentary column. The information relay is the basis for more computation in the HisWord_View and Remember_View tables.
+" Machine Learning "
+(Goodfellow et al. 2016).
+
+Our entirety chiefly pertains to Him.
+Multilayer Perceptron (MLP)
+
+DateDifference.html is browser computation, built on JavaScript. The overall function calls particular functions for determining the days difference in the Biblical and Gregorian Calendar.
+
+DateDifference.aspx is a server-side C# ASP.NET web form.
+
+The Remember's table computed columns are Transact-SQL and SQL-CLR functions.
+
+Our computation is separable to back-end and forward-end code residence; SQL-CLR provides the opportunity to have functionality callable from both parts.
+
+Code re-use sounds good, but it is dependent on many factors.
+Feature
+
+He addressed time. Each information the author measures is a feature that the author appraises. The features are the words spoken and the events seen.
+Factors of Variation
+
+These are out of context attributes that influence the outcome. Outside the context of managing. Their influence is not determinable.
+Depth of the Computational Graph
+
+The author does ASCII code alphabet place summations. There is just not one result, but a set of alternatives; the user may select the most right. For example, AlphabetSequence, produces an index and a scripture reference. The depth in the case of AlphabetSequence is two, with the first result, index, acting as an entry to the second result, scripture reference. The index is an arithmetic calculation, addition; the second result, scripture reference, is a composition algorithm that includes determining the beginning and end span, for the chapter and verse.
+Depth of the Probabilistic Modeling Graph
+
+This checks the path to our succession, the thread between concepts. Earlier and recent entries are comparable. The earlier Bible versions serve as a resource for the later versions of the Bible.
+Probability
+
+Formerly, the HisWord's table primary key is its Word column, and in SQL Server the maximum size of a unique key is 900 bytes; therefore, the limit of its distinct entries is 900 ^ (2 ^ 8) = 900 ^ 256 = 1.932334983228891510545406872202e+756.
+Degree of Belief
+
+In GetAPage.html we will consider the word(s) AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference. The AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference correlate. Each word is a feature, however, hidden and has a contributing influence on the result.
+
+In the BibleWord section, we look at each word, in the context of the sentence, and see if it is in the Bible, as a phrase or word combination.
+
+In the BibleDictionary section, we will explain the meaning of each word. The degree of belief is most certain; since we display each word found in the Bible dictionaries.
+Frequentist Probability
+
+In GetAPage.html the same input will produce the same result; because the database is consistent. When the user enters a new word, this trains the system.
+
+WordEngineering started out as the author trying to use the Bible to decipher God's word; however, to do growth, personalization, customization, appeal to more audience. Our task is to see them, say, I done ( John 19:30 ).
+Bayesian Probability
+
+Making specific, a generalization; given one result set, can we make a general result? Does it stand the test of a general audience? Does a sample, qualify for the total?
+Random_variable
+
+The AlphabetSequenceIndex may range between 1 and (8000 * 26), 1 ... 208000; 8000 being the largest length of a SQL Server VARCHAR datatype column, and the count of alphabets being 26. This is a discrete set; since it is finite.
+Probability Mass Functions
+
+Each sentence will give the same result, and this value is a weighted value of the result set; please note that vowels are probably more popular than consonants, and parts of speech have different frequencies of occurrences.
+" Statistics Terms "
+(Bruce et al. 2017).
+Key Terms for Data Types
+Continuous
+
+The Dated column is a valid DateTime, and generally, it is ongoing, rarely do we backdate.
+Discrete
+
+The identity columns and AlphabetSequenceIndex are integer values; that fall into a small unique set.
+Categorical
+
+The AlphabetSequenceIndexScriptureReference is of the scripture reference type, and it is a string.
+Binary
+
+The Testament column is either Old or New.
+Ordinal
+
+The identity columns are all ordinal, following an ascending order.
+Key Terms for Rectangular Data
+Data frame
+
+The data storage is a relational database; other options include spreadsheet, comma separated value (CSV), eXtensible mark-up language (XML), JavaScript Object Notation (JSON) file format.
+Feature
+
+The most important predictor columns are the Word, Dated, and ContactID.
+Outcome
+
+The dependent columns include the AlphabetSequenceIndex, AlphabetSequenceIndexScriptureReference and FromUntil date difference.
+Records
+
+A row in a spreadsheet is comparable to a database table record.
+Software Engineering
+Programmer's Workbench (PWB)
+
+" This technology will make all the before and current versions of the code accessible, re-viewable, and testable. " All the words that the author hears while sleeping are recordable and the author has never had any tendency to alter this utterance from the LORD. When the author is awake and he says something, out of his own volition and pre-meditation, he has massaged this information, but now he rarely does so. The words in the past and future event dates are useful for remembrance entries. As the author technically matures, he automates manual work.
+
+The dreams are re-collect-able, and recallable ( Numbers 12:6-8 ).
+Web Design Fundamental
+" I have made what I have spoken, ready " (Jakob Nielsen).
+Business Model
+
+The Bible fits man's perception. The author adapts to what he learns.
+Project Management
+
+The author is querying the Bible database. The first step of work is to store the Biblical text in an electronic medium. The second step of work is to create an application layer that will access this information in a non-proprietary format. The on-going work is to present as relevant today.
+Information Architecture
+
+How will this scriptural text bring new originality? What events of today, follow the text?
+Page Design
+
+What He brings to us, is a form of Him.
+Content Authoring
+
+How query means more (Isaiah 43:22)?
+Linking Strategy
+
+This is what I have done; this is what you will do. What did we understand as His part, what did we understand as our future? To reflect, My correlate. In an anchor, if there is no href attribute or its empty; then the browser should link to the default search engine as its destination and pass its innerText. Alternatively, when the user right clicks on a browser hyperlink, there may be a suggestion option for the search engine to re-direct to a specific web page or to list URIs as in a browser search.
+Web
+
+" We will make advancement over Tim Berners-Lee earlier idea of a unified web: " (Jakob Nielsen).
+
+    Cascading Style Sheets (CSS) will offer customization of what the user views by the use of, for example, Media Queries.
+    Single Page Application (SPA) will circumvent the unit of navigation.
+    Uniform Resource Identifier (URI) is supportable by other means of specifying information, such as Global Positioning System (GPS) Geo-Location.
+    Clients such as browsers store information on cookies, local and session storage.
+
+Hypertext
+
+" The author presents this dissertation in a hypertext format. The table of content is to the left and it contains focusing anchors and internal links, to the rest of the document which is to the right. The references section contains broadening links to external documents, which are available on the web. The web applications do not contain internal links. Same Origin are for retrieving scripture reference, Bible word; Cross-Origin Resource Sharing (CORS) are for requesting information from external URIs. "
+Characteristic
+Resilient
+
+GetAPage The Bible is separable into parts; these are books, chapters, verses. Dividing a life, according to purpose (Matthew 1:17). 14 Biblical Generations = 14 * 40 * 360 = 201600.
+
+DateDifference.aspx The .NET Framework, C# and SQL Server support the Common Era; the date ranges between 0001-01-01 and 9999-12-31. The date difference will display correctly for the time interval - days, Biblical Calendar, and all the dates after the introduction of the Gregorian Calendar.
+Declarative
+
+SQL, Linq, CSS are declarative languages, but JavaScript is a functional language.
+Contextual
+
+Enhancements to JavaScript, such as const and let influence hoisting. So does script literal, strict mode, class.
+
+The author contends with the C# class container model and the optional namespace alias.
+
+Cascading Style Sheets (CSS) is modular, and its rules trickle down.
+Continuous
+
+Placing the App_Offline.htm file in the virtual directory of the web application will shut-down the application, unload the application domain from the server, and stop processing any new incoming requests for the application.
+
+A single batch file, with a single command line, builds the only .dll, InformationInTransit.dll
+csc /out:InformationInTransit.dll /target:library /recurse:*.cs /reference:System.DirectoryServices.AccountManagement.dll,"bin\Debug\HtmlAgilityPack.dll","bin\Debug\iTextSharp.dll","bin\Debug\MongoDB.Bson.dll","bin\Debug\MongoDB.Driver.dll","bin\Debug\MongoDB.Driver.Core.dll","bin\Debug\Newtonsoft.Json.dll","C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\WPF\PresentationFramework.dll","bin\Debug\System.Speech.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Dmf.Adapters.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Dmf.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.DmfSqlClrWrapper.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll",Microsoft.VisualBasic.dll /nowarn:162,168,219,618,649 /unsafe
+After testing, InformationInTransit.dll is deployable to the WordEngineering's virtual directory, bin sub-directory. This transfer is via the xcopy command or the Microsoft Windows Explorer user interface (UI).
+
+When the content of a server-side file with an .aspx or .asmx extension changes, the ASP.NET framework automatically re-compiles for serving future requests.
+
+jQuery by John Resig is for making Ajax calls to the server. The more recent fetch command is also useful in later cases. jQuery helps to load the latest copy of the author's JavaScript repository 9432.js; since browser caching occurs for JavaScript files for a length of time.
+
+The single .css file 9432.css is callable at the bottom of each .html file's head node; JavaScript statements are in the last lines of the .html files. This means that the browser knows how to show the HTML elements before reaching their origination, and the browser's JavaScript engine will not reference a HTML node before its definition.
+
+Set a Database to Single-user Mode
+
+		ALTER DATABASE WordEngineering
+		SET SINGLE_USER
+		WITH ROLLBACK IMMEDIATE;
+		GO
+		ALTER DATABASE WordEngineering
+		SET READ_ONLY;
+		GO
+		ALTER DATABASE WordEngineering
+		SET MULTI_USER;		
+			
+
+If the research of the author is a team effort; the additional expense, time and effort, in staged deployments, is justifiable; such as development, test, production phases.
+
+The author will place non-Microsoft DLLs in the virtual directory bin sub-directory, and the author will refer to Microsoft DLLs in the web.config file.
+
+The web.config is generally consistent across deployment, the only variable is the database server name, and when the application and database server exists on the same machine, the connectionStrings may use Data Source=(local);Initial Catalog=master;Integrated Security=SSPI. This means that the author will explictly specify the database, object owner, and system object name. The Application pool will take care of the security. There are no environment variables, in use, at this time. The HTML files, when calling web services, will specify the full virtual directory path, but when appending css and JavaScript files, relative directories will suffice, full path directory and filename is unnecessary and an overkill.
+
+The author standardized on Microsoft SQL Server as the relational database of choice. There are several alternatives in the market. All database interaction goes through one access point, DataCommand.cs, only this single file needs re-work if there is a database variety change.
+
+When running a unit of code, for the first time, it will initialize the static variables. The ScriptureReference.html will issue a unique quote-of-the-day, every day; and a random quote, every time. The author program uses the release version of jQuery, which is the most up-to-date. The web services, such as, Sefaria.org, should not need code-revisit. The code in the third-party libraries, such as, Newtonsoft.Json.dll, is consistent, and should rarely need re-deployment.
+
+The application is mostly stateless except for the database read.
+
+Internet Information Server (IIS) HyperText Transfer Protocol (HTTP) by default runs on port 80, like other web servers, but this is modifiable.
+
+Using the current architecture, the author takes care of concurrency and deadlocks; because database writes rarely occur and are short, reads are tolerant.
+
+The threads are simple and conclusive; therefore, there are small start-up and short-down periods.
+
+There is unity between the development and production team, environment, and time frame. The same knowledge worker can write, deploy, and run code.
+
+The author has experience, reporting web server logs, using WebTrends. The author relies on Event Viewer for logging and monitoring exceptions. The SQL Server Management Studio offers the Error Log, for viewing the database activities.
+
+The SQL Server Maintenance Plan is for scheduling full database and transaction log backup, periodically.
+
+" To reduce database load, the author considers the selection operation - where clause, distinct and top; projection operation - specify the column list, and not use the universal *, for all columns. Rarely does the author join tables, minimizing the work and resultset, in a set-level language. " (DB2 Developer's Guide).
+HTML5
+Semantic Elements
+
+The author makes heavy use of the table semantic element for rendering tabular information. The author uses the input element and specifies either the text, number or date type attribute. The author tries the canvas and video elements for proof-of-concept.
+Non-Semantic Elements
+
+The div and span elements are for rendering block and in-line information. The author uses the div as a container for the ubiquitous result set; which may contain a single or multiple tables. The span is a space for a non-block display.
+Biblically
+What did the Jews used numbers for, as mentioned in the Bible?
+
+    Time: Creation ... end time, period of life, marriage, worship, occupation, anniversary, prophecy and fulfillment, schedule
+    Babel: One language and of one speech ( Genesis 11:1, Genesis 11:9 )
+    Witness: Two or three ( Deuteronomy 17:6, Deuteronomy 19:15, Matthew 18:16, 2 Corinthians 13:1, 1 Timothy 5:19, Hebrews 10:28, Revelation 11:3 )
+    No man could number ( Revelation 7:9, Matthew 10:30, Luke 12:7 )
+
+How are names issued Biblically?
+
+    God initial naming such as, Adam, Ishmael, Isaac, John the Baptist, Jesus (Genesis 5:2, Genesis 16:11, Genesis 17:19, Luke 1:13, Isaiah 7:14, Matthew 1:23)
+    God name changes such as, Abram to Abraham, Sarai to Sarah, Jacob to Israel (Genesis 17:5, Genesis 17:15, Genesis 32:28, Genesis 35:10)
+    Family naming, such as, Eve, Cain, Seth (Genesis 3:20, Genesis 4:1, Genesis 4:25)
+
+The word is the author's file naming convention.
+Results and Discussion
+
+The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme.
+
+This research does not limit itself to a particular Bible subject nor word. But, rather it illustrates the response of the author to the word of God. What artifact can the author produce; in compliance with the word of God? Is the training of the author beneficiary or lacking? Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
+
+Coming from an IT background
+
+    Familiarize with keyword Noun.
+    Letters in the English language?
+    The work? Is to associate the reference.
+
+What did He see Himself as?
+What did He see Himself as? Alias 	Scripture Reference
+Son of God 	Matthew 16:13-20
+Son of David 	Matthew 22:42
+Son of Man 	1 Corinthians 15:45
+Word 	John 1
+
+There is more to you, than you are ( Ephesians 3:18 ).
+
+We want personal data, when is public data sufficient?
+
+From ... Until AlphabetSequence
+
+    God expressed His wish for me
+    God spoke intermittenly
+    God explicitly mentioned about some of the specific people that were in my life
+    To acknowledge, where I am present. I had left Westpac, I was at DTEC. God asked me to leave my friends at Campsie and relate with Lakemba.
+    God did not initially identify Himself, with a particular name
+
+" The author will not break each experience into sequences. At this late stage of the research, the author is content, with his original table design, and will elaborate, when it is appropriate, to newer suggestions. " (John Whalen).
+What Do You Want To Use It For?
+
+It is firstly, a database work. That is the author records God's word. What the author hears, he relates to the Bible and the other scriptural sources. These information are all in database tables, giving the author the luxury of using relational technology. The benefit includes storage and archive, that is, the work is usable in tabular format. There is a copy of the information running Microsoft SQL Server on a Linux operating system; which the author switches to, by changing the database connection string of one node in the web.config. When the user decides to stabilize and admit no further changes; then there is no need to do additional database update work. As with such work, the database schema remains consistent, since the beginning. The choice of word, meets today's expectations. The addition of the ActToGod table, demonstrates the maturity of the author.
+
+The author, first wrote his history, in multiple stand-alone files .HTML, .XML. (Acts 7:22). This documentation didn't allow for enough dating, to track creation and change, nor easy querying. Therefore, the decision to move to a relational database; that will augment this fact.
+
+Since the beginning, the author wrote a ContactMaintenance.aspx server-side page as a user-interface (UI) to record contact information. This page remains active, till today.
+
+The author uses Microsoft SQL Server Management Studio to document general information. When the author is offsite, text editors provides a place to scribble data manipulation language (DML) statements into SQL script files, for later execution. Please understand that both means mentioned above do not always support the checking of spellings nor grammar, and have limited formatting.
+
+I have a product; where is the method?
+
+AlphabetSequence concerns include:
+
+    How essential are we; to the personification of God?
+    The spirit man holds
+    How are we acceptable; to what is new? How does God, build up, to His word ( 1 Samuel 9:15-17 )?
+    Copyright violation: Not giving credit to the original speaker
+    Separating the word from the deed
+    The grammar needs refining
+    Name spelling, for example, Bryan versus Brian
+    Non-English alphabets
+    British versus American spelling
+    Soundex, this is what I heard; this is the interpretation; such as, this versus these, has versus as, there versus their
+    Inference, such as, abbreviation
+    Differences in Bible verses ( Matthew 23:14, Acts 8:37, Acts 15:34, 3 John 1:15 )
+    Naming of words ( Genesis 32:28, Genesis 35:10, Genesis 47:27 )
+    We have been doing unconvincing power
+    I said, I heard. 2021-04-11T08:37:00 In a location to the North, probably 99 Ranch Market or Daiso, a young Asian male makes a selection, first, I am testing black rubber sandals shoes of different sizes, the shoe size written 6 9 is too short, tight, I said, 6 9, in my sleep, while dreaming, I heard (six ten). 2021-08-03T17:22:38 Where are we misguided by flight?
+    What does He volunteer as time? AlphabetSequence is resource minimal:
+        Doable by hand
+        Compute: Not technologically demanding
+        Maturity: Since 2002
+    Separation into Segment.
+    Is this a finalized work, and how is it accessible? It is a transient database.
+    Scripture reference in context.
+
+To co-operate as we are. Robert Estienne English Alphabet
+
+Adoptability:
+
+    What is the minimum requirement? The author believes it is the Holy Spirit spreading the Word, and it is not him, making up the word. As long as you have the spirit of God, then you are receptive to this information sharing. The word is not always clearly heard, and the sighting is not always 20/20 visibile.
+    What is the literacy level requirement? If you know the alphabets arrangements, then you can determine the AlphabetSequenceIndex by hand. To determine the AlphabetSequenceIndexScriptureReference, you need to know, the count of chapters and verses. This manual work gives way to computation, which is not error prone.
+    The Biblical account wrote dreams and visions textually, without resorting to the database. Search Engines Crawlers parse the standard HTML files and rarely query the database. The calendar: years, months, days, may benefit from the stipulation and generability of the Common Era.
+    Where is the world leading and how do we follow it? The author fiddles with the idea of bringing technology to the Word of God. The author is unaware of the start and early beginnings of dictionaries, concordance and commentaries; but the author gains from this works as a reference. The widely acception of a work, accompanies preference and prevalence.
+    The result of the Bible, is how we use it. The emphasises of Jesus Christ and apostle Paul is the word for today? As the author sees from the Bible, Moses assigned intervention to leaders, and Moses went to God as a higher authority. Who is the work for? Who can benefit from reading this work?
+
+There are duplicates in the Bible. Type 	Commentary
+Name 	
+
+    Giving a person's name to a place, such as, Enoch, Israel, Judah, tribes names
+    Name changes, such as Abram to Abraham, Sarai to Sarah, Jacob to Israel, Saul of Tarsus to apostle Paul
+    Name misspelling, Rahel for Rachel
+    Referring to people with their alias, sons of Zebedee, sons of Thunder, Boanerges
+    Multiple people bearing the same name, such as John the Baptist, apostle John, the beloved disciple
+
+Historical Account 	
+
+    Deuteronomy - Rememberance
+    Monarchy - Kings versus Chronicles
+    Gospels - Our LORD's, life story
+    Apocalyptic - Daniel versus Revelation
+
+Quotation 	
+
+    Retelling previous events
+    Prophecy fulfillment
+    Answers based on scripture
+
+To be reminded of things ( Genesis 3 ). These duplicates may introduce statistical error and require clarification.
+
+As the Open? Actor 	Commentary 	Scripture Reference
+Adam 	The first man will need a companion 	Genesis 1:26-31, Genesis 2:6-25
+Jesus Christ 	Transformation of the spirit 	John 3
+Quality Assurance
+
+    Quality Assurance
+    To achieve performance beneficiary, the author uses AJAX, a single Javascript and CSS file, and minute images.
+    The author's work is largely based on the SQL's SELECT statement, a matured declarative language, which the author uses to query God's word.
+    The author relies on the Bible database, a recognized source of information, which has stood the standard of time.
+    The reason for AlphabetSequence is because the author lacks Biblical knowledge. The author sought for a way to reconcile what he is hearing with the established word.
+    The SQL COUNT(), AVG() and SUM() Functions are row-based.
+    Code Analysis: JSHint, FxCop
+    Questionaire: RatingRank InDefine
+
+Prepared for Time
+
+On 2019-04-04T09:00:00 andre.nguyen@gqrgm.com will telephone me about the role with Google's co-founder Larry Page jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403 Andre Nguyen asked how I spend my day?
+
+When I stated AlphabetSequence, I ate my daily meal at 6PM, read the Bible and went to bed. I could break my day, into punctual scheduled activities, such-as:
+
+    Wake-up
+    Brush my teeth and shower
+    Breakfast
+    Work
+    Lunch
+    Dinner
+    Bedtime
+
+This is how most people, live their lives; this is what I have accepted as mine. When I receive a word, I make it my work, to record the word and personalize my entries. I try to match this new story segment, with the preceding and forthcoming event threads.
+
+    Is this how life is punctual (Genesis 37:9, Genesis 41:32, Daniel 1:8-16)?
+    What do we note as behavior (Romans 6:1)?
+    You start, forming your own example.
+
+When the author observes explicit experiences, he may record this additional data, in the HisWord's table ContactID, ScriptureReference, Location and Scene columns. This projection may result in entries of new records in the Remember and APass tables.
+
+However, he is present, that is how I use.
+
+    If I have a paper and pencil available, I write down the word, and I calculate the AlphabetSequenceIndex.
+    When I have access to the database, I enter and store the record electronically.
+    Internet connection means the resultset is retrievable via GetAPage.html.
+    Text editor is useful for writing SQL.
+
+God's word; human interpretation
+
+The author separates the word of God from the supporting information:
+
+    Cast which fits into the Contact ID column
+    Scripture reference is the Biblical theme
+    Scenery which is the dream setting.
+    Location which is an awake surrounding
+    Language translation
+
+Specificity guides our entries into the HisWord table; for example if the information is not explicit, do not record it. This means that the nullable columns may be left empty. When there are more than one possible entries, choose the most rare.
+
+What we do minimally, is how we do enormously.
+
+How do you, reference the Bible?
+
+    Search Engine? Requires Internet access.
+    ScriptureReference.html Requires Bible knowledge and place in the Bible.
+    BibleWord.html Requires word knowledge
+
+What is the certaincy of the word:
+
+    When the author hears a word and there is a reference to a place in the Bible, it affirms its relevance to the Scripture.
+    Grammatically correctness is also vital.
+    If a word correlates with a historical event, then it is credible.
+    When the Spirit leads and guides towards an utterance ( Matthew 10:19-20 ).
+    Where am I, resemblance of how I am made ( 1 Corinthians 14 )?
+
+What does He choose as example?
+
+    God rested on the Sabbath day (Luke 23:56)
+    Jesus Christ (Daniel 9:24-27, 1 Corinthians 15:45, 1 Corinthians 15:47)
+    Man such as King David (2 Kings 14:3, 2 Kings 16:2, 2 Chronicles 28:1, Amos 6:5)
+    Place such as Sodom (Matthew 10:15, Matthew 11:23-24 , Mark 6:11, Luke 10:12, Luke 17:29, Romans 9:29, 2 Peter 2:6, Jude 1:7, Revelation 11:8).
+    Other living things (Numbers 22:21-33).
+
+Contribution
+The Contribution of the Author's Historical Information Unit 	Value
+Dream 	Unique
+Freight 	Free
+Cost and Price 	Free
+Expiry Date 	Indefinite
+Ownership 	Shareable
+Audience 	Bible scholars
+
+The author does not have the advantage of a crawler; the author is querying a database in real time, without the benefit of search engine optimization (SEO).
+Lifecyle
+Lifecyle Period 	Commentary
+2000-10-05 	Registered the WordEngineering trademark.
+2002 	Commenced recording the word from the LORD in the Microsoft SQL Server relational database, introduced the AlphabetSequence algorithm, and started developing Biblical applications using the Microsoft .NET and the ASP.NET framework, and coded with the C# language.
+2015 	Migrated to HTML files and web services using AJAX. What is resideable at home, is present abroad. This will continue the separation of duty approach. The benefit includes making accessible our work; focused user interface renewal. Open standard and performance gain.
+Development History
+
+God doesn't use inform ( Psalms 81:5, John 16:30 ). He mandates.
+Technology 	Commentary
+Relational Database 	After the introduction of the author to Microsoft SQL Server; the author does not feel the need to adopt newer technology like object-oriented database, nor nosql.
+Server-side Programming, Back-end 	The author learnt C#, and there has been no reason to adopt upgrades. When Microsoft MVC learning is not necessary. The scripture reference class offers partition for instantiation. The Microsoft platform is the author's choice, although the migration to .NET core may be inevitable.
+Programming Style 	This lineage are passage. C# is object-oriented. JavaScript is functional programming. SQL is declarative and imperative.
+A Causal to Hearing Words
+
+He said and He did. Word work (Genesis 11:1-9). At the beginning of WordEngineering, my practice will include:
+
+    Read and recite the Bible.
+    Pray.
+    Sexual abstinence and celibacy.
+    Take computer courses at Ohlone College, in the Fremont and Newark campuses.
+    Read books and magazines at Barnes & Noble, Borders, Walden Pond Books and public libraries.
+    Listen to Christian commentators.
+    Solitary living at Newark City in California. Patmos.
+    Fast, everyday, only ate, once a day, in the evening. I ate Nomura Holdings Kokuho rice.
+    Walk, two hours a day, between Newark and Fremont, to do programming. Learn how to program today's technology, with relevance to the word's revelation.
+    Only familiar with Case-based Reasoning and Use-Case.
+    AlphabetSequence is abecedary.
+    Set-based: Effort to record everything Bible code.
+    This is a man; he wanted to know about his favorite ( Daniel 1:3-21, Daniel 9:23, Daniel 10:11, Daniel 10:19 )?
+    1997-12-31 I will not entertain Nada. Prophets make New Year predictions.
+
+Lessons Learnt
+
+    Esteem word: Leading up-to 2008-03-07, I was not fully recording the word of the LORD (Job 23:12).
+    Relative to the world (Proverbs 3:5).
+    What I have learnt from Bill Gates, through using the software from Microsoft.
+        Normalize the relational database for on-line transaction processing (OLTP); specifically the Remember table should reference the HisWord table, and the Commentary column should not contain the duplicate data.
+        The BibleWord table may not be necessary to relate the HisWord table to the Scripture. How much manual work does the author do, and can the author automate this work?
+        What value can we attain to this work?
+
+Web Site Performance Metrics
+
+The load time, and response time to user action and submission. The author tested the time, it takes to load each page, after development; and the wait period was satisfactory. For the Bible database, the author does not expect further increase in database size, which will put premium on the load. Ahmdal's Law comes into recognition in GetAPage.html, by performing multiple tasks with Web Services and measuring with performance.now().
+pingdom URL 	Load time 	Page size 	Commentary
+2015-10-23DoctoralDissertation.html 	379 ms 	33.5 kB 	2015-10-23DoctoralDissertation.html This is the thesis document, and this is the initial finding, as there is progress and as the author reaches conclusions, the author estimates further increase in load time and page size.
+http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BecauseWeAreHellThisIsOurDefinition.html 	5.96 s 	3.3 kB 	BecauseWeAreHellThisIsOurDefinition.html is standalone, it does not load additional CSS, HTML files, nor does it make AJAX calls to the back-end.
+Network Unit 	Value 	Commentary
+Internet speed test Testing download.. 	8.54 Megabits per second
+Internet speed test Testing upload.. 	4.74 Megabits per second
+ping e-comfort.ephraimtech.com 	Pinging e-comfort.ephraimtech.com [98.248.137.149] with 32 bytes of data: Reply from 98.248.137.149: bytes=32 time<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time<1ms TTL=128 Ping statistics for 98.248.137.149: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms
+tracert e-comfort.ephraimtech.com 	Tracing route to e-comfort.ephraimtech.com [98.248.137.149] over a maximum of 30 hops: 1 <1 ms <1 ms <1 ms Comfort.ephraimtech.com [98.248.137.149] Trace complete. 	The Unix platforms offers the traceroute command
+Progress
+
+After the author conceived the notion for AlphabetSequence, he stored the word spoken into XML files, along with manually determining the relevant Bible word. This, the author did, because the author thought and felt that the readers will prefer to read the recent information, and they do not have to regurgitate the entire database. The author was living at Newark, and working from Fremont.
+
+The author recorded, the FromUntil Time Span, explicitly into the Remember's table commentary column. Now, there are three computed columns, managing this period(s); these are the days difference, the Biblical time period, and Common Era computation. The author is saving memory storage space this way. And, also offering the opportunity to other people, the possibility to calculate their preferred period.
+
+Using the knowledge learnt from horizontal replication and partition, the audience are no longer forced to accept the author's calendar. The audience can choose their acceptable fact, and ignore nor standard derivation.
+
+The history, this way, is to say; at the begining, the author will record every entry after six p.m. as the next day saying, just like the Jewish day starts at 6 p.m. With the reasoning advent, the Tanakh, the New Testament, and the Koran, the truth partiality, is our governance.
+The basic of facilitating the truth
+
+Most words have precedence, and do not exist in an emptiness. Words follow a trend. Are their supportive collaboration, to the utterance the author hears; these are linkable for historical evidence.
+
+How do we give our actualities? I have found written text, the easiest and most applicable way of sharing thoughts. Words spoken, when passed from generation to generation, may gain legend status, and therefore, lose appropriateness.
+
+Examine the course of history? You will find, that most truth, are actually realizing the dream. In my case, when I try to recall, the past, I search by keywords, numbers and dates. So, entries in the word, are most to realization. The first words spoken have higher importance and closer affinity; so also, prophetic application, have standard occurrence.
+
+Our work, so much depends on data entry. The Remember table relies on relationship, deductive reasoning.
+Can we Look Back at History, as we Precede our Future
+An angel said to prophet Daniel, many shall run to and fro ( Daniel 12:4 )
+
+Is this phenomenal traceable, Biblically, and can we name a person that bears similar resemblance? When we study, king David, we can see that David fled from king Saul, his predecessor; and two of his sons, who purported, to overthrow him as king. In the Book of Revelation, the only three mentions of king David, talk of movement ( Revelation 3:7, Revelation 5:5, Revelation 22:16 ).
+Why we Accumulate the Same ( Matthew 26:53, Revelation 9:16, Revelation 7:4-8 )
+
+Samuel anointed David, during king Saul's reign. The choice, one makes, ahead ( Genesis 2:2-3, 2 Samuel 11:4, 2 Samuel 12:24, Ruth 3:1, Ruth 3:8, Ruth 3:18 ). Knew versus lay.
+A Comparance of Age
+
+Divided as separated. Go this way, that way.
+
+I want to program, but I don't want to match two programs together, except for deep thought.
+
+See when God grants increase; such as in creation, when God counts the days, and separates it into evening and morning. Increase versus decrease were first explicitly mentioned during Noah's flood. These differences in size we can associate with signs - the sun and the moon. During the day, you need the sun for your activities; during the evening, it is not necessary. Rachel's prayer, and naming of Joseph; Joseph's dreams and interpretations. These counting is explicit, before Exodus, such as, the 10 plagues of Egypt ( Genesis 37:5-11, Genesis 30:24, Genesis 40-41 ).
+
+TCP/IP is separable into four layers; these are the link, Internet, transport and application layers. No breaking ( Matthew 19:8 ).
+Marriage
+
+Marriage is not a practice, in the life after, resurrection ( Matthew 22:30, Mark 12:25, Luke 20:35 ). Co-incidentally, the disciple, who Jesus love, John the apostle, does not mention this event, in the Gospel of John. Jesus resurrected, after three days ( Matthew 12:40, Matthew 26:61, Matthew 27:40, Matthew 27:63, Mark 8:31, Mark 14:58, Mark 15:29, Luke 2:46, John 2:19, John 2:20, 2 Corinthians 11:2, Revelation 21:2, Revelation 21:9, Revelation 22:17 ). The breaking of device ( Psalms 34:20, John 19:36 ).
+
+On the client, HTML is content, CSS is presentation, and JavaScript is behavior. Both ASPX and ASMX are server-side logic.
+
+The application tier is in a dynamic link library (DLL), and it is separable into client, database, and application logics, but with the advent of language integrated query (Linq), this delineation is slowly diminishing. Linq rivals previous division of labor.
+
+The database consists of tables, views, indexes, constraints, stored procedures and functions. These programming logic may be SQL or SQLCLR. SQL critics complain that while the rest of software development have progressed, we still use an archaic language; NoSQL is a challenger.
+Visibility ( John 4 )
+
+The client is accessible from the browser, both the user interface and the source code, along with the errors and exceptions. The interface is made-up of request and response. Text-to-Speech will aid the people with poor visibility. The client handles the human computer interface (HCI). The Bible versions are selectable options in HTML or JavaScript.
+
+The database contains the real information, that makes-up the result set.
+Lifecycle ( John 3:3, John 3:7 )
+
+In computing, we have had mainframes and terminals, client/server, Internet, mobile and now cloud. The trend has been from proprietary to open architecture.
+Accompany ( Matthew 4:6, Matthew 18:10 )
+
+What are the pairing?
+
+The client started as HTML, but now has JavaScript and CSS.
+
+CGI originally served the back-end. Flash and plug-ins have made way for other technology, such as HTML5 video and canvas.
+
+JSON and XML have made in-roads.
+Information Flow
+" Sharing His word; is following His deed. " (Charles M. Kozierok).
+
+With .asmx web services, the author, standardized on JSON for returning data. The alternative is XML. The preference for JSON, is because of its lighter payload. Another difference, in the result set, the author chooses if to return a dataset, datatable, or scalar? The datatable is useful for a singular resultset. With SQL Query select statements, the column list may refer to *, for returning all the columns, in the order they are arranged in the container, table or view; or otherwise the stricter, specification of each column to return. The author restricts which rows to return, by issuing the conditional where clause; the top 1 select clause is useful, for quote of the day; as it supercedes the set rowcount 1, limitation. The author depends on the database order by clause, for sorting in ascending or descending order, Data is also rankable by clicking on the table's column header.
+Basic Communication Modes of Operation
+
+The author's SQL Server TCP/IP is turned off; because the author does not want interference from the outside. The author imposes an artificial Simplex Operation; only supporting external read requests, and not allowing updates; which is a one-way traffic of data from the server to the clients. The other options are Half-Duplex Operation and Full-Duplex Operation.
+Quality of Service (QoS)
+
+Most of the author's web pages transmit textual data; but a few pages offer text-to-speech or video capabilities; these rare application rely on high-grade speciality. The author as a programmer does not meddle with these intricacies; the technology provider takes care of the nitty-grity.
+Parameter Standardization
+
+The column name is kept consistent in the query string, up-to the naming convention and the case-sensitivity; this also applies to where we specifically refer to a column name in JavaScript. This is most seen, in the Scripture reference and Bible word variables, which the author shares around.
+Global Resource Allocation and Identifier Uniqueness
+
+The domain name is unique to the organization; and the Javascript code for AJAX explicitly mentions the virtual directory; the internet provider issues the IP address.
+Wanting a Member of ...
+
+In the first words, in the Bible, God referred to the beginning, of His work, giving time, an annotation. God also mentioned two places, heaven and earth, creation generally centers on the activities on the earth; and God we understand, resides in the heaven, the last point for good on earth. To seek a development; it had a beginning.
+
+In the second sentence, second verse, God mentions, that the earth was without form and void; meaning the earth was without content. Nothing was a member of the earth. Also, God's spirit, a member of God, moved across the water.
+
+When time is maximal used; time is ideal allowed. When our association to follow; is association to the end.
+To whose advantage am I?
+
+In every scenario, we participate in, our last outcome should be holy ( 2 Samuel 12:14 ). Future study, may consider the actors in the Bible, and award their holiness in each scenario.
+Centeredness
+
+This is our attempt to find follow-up, continuity in the Bible. A brief repetition of our activities, subsequently. Firmer consequence ( Isaiah 23:15, Isaiah 23:17, Jeremiah 25:11, Jeremiah 25:12, Jeremiah 29:10, Daniel 9:2, Zechariah 7:5 ). Listed below are some of the repeated reinforcements.
+Samson's Birth ( Judges 13 )
+
+An angel of the LORD appears to the wife of Manoah and prophesy that she will give birth to a Nazarite son ( Judges 13:2-5 ).
+
+The same angel appears to Manoah and his wife ( Judges 13:6-25 ). The angel reinforces the their responsibility and defers reverence to God.
+The Birth of the Messiah ( Luke 1 )
+
+Foretelling the birth of John the Baptist ( Luke 1:5-25, Malachi 4:5 ). Transitioning the present to the after ( Luke 1:17 ).
+
+Foretelling the birth of Jesus Christ ( Luke 1:26-38 ). Continuing the Davidic line ( Luke 1:32-33, 2 Samuel 7:12-13, 2 Samuel 7:16 ).
+The Baptism of Cornelius ( Acts 10 )
+
+The Bible does not explicitly mention the citizenship of Cornelius, but it mentions his rank as a centurion in the Italian band ( Acts 10:1 ).
+
+Simon Peter is a fisherman, but without the LORD's presence, fishery is not sustaining ( Luke 5:4-11, John 21:3-6, Matthew 17:24-27, Acts 10:9-16 ). What I bring to Him; is me alone, to value Him.
+Full Position
+
+The first occurrence of the word, full, in the Bible, occurs in ( Genesis 14:10 ); and is in reference to the vale of Siddim, which was full of slime pits, and this is where the kings of Sodom and Gomorrah fled, and fell. The father of the faithful, Abraham, died, full of years, and the son of promise, Isaac, died, full of days ( Genesis 25:8, Genesis 35:29 ); The last occurrence of the word, full, in the Bible, occurs in ( Revelation 21:9 ). Living a presence ( Jeremiah 28:11 ). To creating a future full of all. To creating a future free of all.
+One Chance; Seem the Rest.
+
+Our LORD's prayer is a communal prayer; directed to the one God ( Matthew 6:9-13, Luke 11:2-4 ). Please note that it is Jesus; teaching this prayer; so He doesn't refer to Himself or the Holy Spirit explicitly; as in another passage, when He mentions Himself as the bread ( John 6:31-35 ). He explains the truth; that we may fall short of it, by explicitly referring to the Father. He is alluding to the events in the apocalyptic books, Daniel and Revelation. We are on earth, and we have an earthly father; where we are, is not where, we wish and will to reside ( Matthew 6:9, Luke 11:2, Daniel 2, Revelation 5 ). When no matter, where I go; this is how, I Am found ( John 20:17 ).
+To set everything true
+
+The word, true, occurs in seventy-seven verses in the Scripture Bible, and there are eighty-one occurrences. True, first occurs in Joseph's interaction with his brothers ( Genesis 42:11, Genesis 42:19, Genesis 42:31, Genesis 42:33, Genesis 42:34 ); Jacob had colluded with Rebecca, his mother, to get Isaac, his father's, blessing; God shows that Joseph will have elevation over his parents and siblings. There are ten occurrences of the word, true, in the book of ( Revelation ); in response, to God.
+To Whom Masculine?
+
+How the Bible compares the gender?
+Man, after his Fall
+
+During Creation, God asked all living things, be fruitful and multiply; God asked Adam to name the living creatures, and God required Adam to take care of the Garden of Eden, but this taking care is to dress and keep the garden; there is a role for man, the tree of the knowledge of good and evil, and the tree of life. God did not specify the welfare of animals. Out of Adam, God made a helper for Adam, Eve.
+
+After the Fall of Man, Adam's labor will be thorough; and there is enmity between the serpent and Eve, and each other's seed; and Eve will have pain, during child-birth.
+
+God made coats of skins, and clothed them; it is our presumption, that the clothing is from living things, generally perceived as sin sacrificial animal(s), but since this clothing is not specified, an alternative, is that it is a plant, or another creature entirely.
+
+God created an adult male, Adam; and his female counterpart, Eve ( Deuteronomy 2:14, John 5:5 ). There is no mention of Adam's activity, after the fall of man; as Eve bares and name their children; Adam's earlier effort, which was to cater for the Garden of Eden and name the animals.
+Man at Birth
+
+We can only suggest, that the struggle between good and evil, continues upon the birth of Cain, Abel, and Seth. Eve named Cain, as her possession; and Seth, as the appointed seed.
+
+God instituted male circumcision, which should take place on the eighth day, as man's responsibility in keeping the Abrahamic covenant.
+
+At times, there is proclamation of a mantle, before livelihood; as in the case of Ishmael, Isaac, Jacob, Samson, John the Baptist, and Jesus Christ. In each example, there is a relationship between God and a parent; and God is directing, the offspring's onus. The want similar to Christ; is to see yourself, among fold.
+Man's Task
+
+Historical man's profession are keeper of sheep, a tiller of the ground, handle the harp and organ, an instructor of every artificer in brass and iron. Unlike the first men, in the Bible, Seth's service was not identified, we only know that after the birth of Seth's son, Enos, men began to call, on the name of the LORD.
+
+The 10 Commandments details the relationship we aspire to have with God, and our fellow-men.
+
+God may consign men to overseer, as in the case of Melchizedek king of Salem, the priest of the most high God, and collector of tithes; Joseph, dreamer and interpreter, and he will save much life, in Egypt; as in incorporating the end. We share among us; as no foundation separates us.
+Our Choice is Where we Want to be? What we Want to be?
+
+A choice between what you have, and what you will want? ( Revelation 5:5, Matthew 1:25, Luke 2:7, Romans 8:29, Colossians 1:15, Colossians 1:18, Hebrews 11:28, Hebrews 12:23 ). Where I take you; is where you belong ( Genesis 13:14-18, Deuteronomy 34 ).
+Future Work
+
+Where My word, has developed His need ( 2 Kings 8:5 )?
+
+The select inputs do not have default values.
+
+The Scripture table is a one-to-one mapping between the Bible version and column. These arrangements are futile when there are inconsistencies in the Bibles versions separations. An alternative is to have a table for each version. Publishers issue Bible version.
+Word to Today
+
+The remember table correlates the events and the calendar. Currently, the author is manually deriving the entries for the Remember table. When there is an association, then the author considers the first, last, relevant mentions.
+
+    To forget time is responsible ( Revelation 21:23, Matthew 17:5, Mark 9:7, Luke 9:35 ).
+
+The gain from automating this process will include:
+
+    Limiting human labor
+    Speeding up the task
+    Reducing storage need
+
+He Handicaped Time; as His Usage Title 	Scripture Reference
+Servitude 	Jeremiah 25:11-12, Jeremiah 29:10, Daniel 9:2
+Fulfillment 	Luke 9:31
+Incentive 	Daniel 12:13, Isaiah 53:12
+
+We may need, human help, to determine, the theme-of-the-day?
+
+Is there going to be a safe development to this design? There is key to reason. This work is not defamatory nor inflammatory.
+Reuse
+
+    Issue a SQL database query statement SQLToHTMLTable.html. This is the most raw form of querying the database, but it offers the most flexibility, and it does not restrict, to pre-built application.
+    Navigate the web pages from a client browser 2019-10-05ArtifactDescription.html WhenThePastorIsPreachingYouDontWithTheScriptureToComeInSubsequent.html
+    Build a web service requestor, without the limitations of Cross-origin resource sharing (CORS).
+    Download the DLLs, or the source files, and customize, if necessary WordEngineering
+
+Will SQL deliver all the purpose in the Bible?
+
+Such as, will a query language find the mother, father, and child relationship?
+knew wife SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%knew%' and KingJamesVersion LIKE '%wife%'
+wife child SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%wife%' and KingJamesVersion LIKE '%child%'
+WordToNumberHelper.cs
+
+Numbers in the Bible are written out as words. The author made effort to parse these words and find the numbers, but it was not totally successful, largely because of the arrangement of the numerals.
+Translate the Original AlphabetSequence C# Code to the Other Programming Languages
+
+AlphabetSequence was first implemented in the C# programming language AlphabetSequence.cs Later work, saw translation to AlphabetSequence.go AlphabetSequence.js AlphabetSequence.py udf_AlphabetSequenceIndex.sql AlphabetSequence.vb R Perhaps, other programming languages should have their own sample code. The author is only conversant in English and Yoruba, additional work will be to see the use in other lingua franca. And, the priest said, Are one only for me?
+Data Residence
+
+Where should the data reside? Database, JSON or XML files?
+Which side, the love felt?
+
+SQL returns records in rows; there is a result set. Would we, be able, to amalgate the result set? For example, how can we, find themes in the Bible? When you enter a topic, can we return a trend? Clustering, can we return a number; as its present ( 1 Kings 19:11-13 )?
+Where I arrive, is where He as conclusively use
+
+Initially, when I got a word, I made efforts to expound, on this word; but now, I share the word, and wait on God to reinforce the word, or share a new theme.
+
+2019-05-30 My ancestral home is Ile-Ife, the site of the Oranmiyan staff. My search for the word, Staff, inspired relating the Bible to my life. Staff, first occurs in, ( Genesis 32:10 ). In my ninth year, my twin sibling and I, relocated from Ile-Ife Staff School to Lagos. In our tenth year, we visited London. In my 32nd year, I re-located to the United States of America (USA).
+I Am letting Myself; be many as a people.
+
+God intended man, to be a personal use. The work of the author is an individual effort, and it targets a singular person. The author separates his work into web pages, but the user may click on a hyperlink, to get more information, and sometime do additional work. The work of the author, builds on the efforts of other people, like the Bible, dictionary and commentary. The HisWord table and associated queries, only currently refers to the contribution of the author. How could we, specialize our work? Who uses, and for what? The setting, is it normal? What are the influence of God, as a person? What are His contribution, solely to man? What part of Him, as He analyzed, as a person? What role, as man, placed on Me? What stimulate you, as a human being; is where My opinion placed? The author read the Bible and listened to His word, prior to the introduction of AlphabetSequence. Where do we follow, His partnership? He has said the word; I have collaborated with Him.
+Outstanding Work
+
+The source code and schema are available at Github.com. This means that the public can review and make updates to the original work of the author. This aged work is not up-to-date with the industry trend, such as cloud computing, mobile applications, decentralized ledger, nosql. Part of the justification for this immaturity; is the need to maintain a low entry point and capture a wide audience for its adoption.
+
+WhoIs for social networking sites like WordPress, Github, Twitter, LinkedIn, Facebook, etc. When nothing without Me; is sufficient without Me. Where I retain.
+
+When does He say a word, when does He put a thought ( Daniel 5:25-28 )? Ability to say.
+
+When does He talk in the past, present or future?
+
+Which is the information container? The ActToGod table, Major column value, Comparative verse; supercedes the WordsInTheBible table; which is the exact word for the King James Version (KJV) and not all versions of the Bible; and doesn't take into consideration the English language British versus American spelling, such as favour versus favor, nor the generic word, such as, man versus men. When is this, anointing of the Spirit ( 1 Samuel 2:26, Luke 2:52 )?
+
+Can you create a fictitious record in the Contact table, that meet later fulfillment. This record in the contact table will contain a word that is placeable in the title or company field/column. This information is substantiable in the commentary column of the CaseBasedReasoning table. This is compatible to Ghost city. A bit column is settable, for this contact. It allows to keep the contact ID as a foreign key. A record to be someone else.
+
+The effort of the author is to share and comprehend the word of God. What can the author provide to the other; to substantiate the work of the author? God made man as similar to Him to see how life can be? If I spoke the same, how am I the same? I know, I am. The love of being the same supersedes feeling the same. Being in the spirit; is alluding to the sufficiency of men.
+Terminology - Words and Meaning
+
+When you write a thesis, it is a paradigm work, shift in thinking, and it should contain a terminology section. The practice of the author will be to list existing words, and include their meanings. For technical jargons, the author will rely on the Internet, as a definition resource. If the author is introducing a new word, the author will explain its meaning, but this is rare.
+
+WordEngineering Created of an intellect.
+
+Client-Side Programs
+    The norm of today is to build with HTML, JavaScript, CSS.
+
+Database
+    The database of choice is Microsoft SQL Server. Prior to specializing on SQL Server, the author experienced fifth generation scripting languages such as dBase, R:BASE, Clipper, Access, FoxPro; other relational databases, like Oracle, SQL Anywhere from Watcom, Sybase, and Informix. When the author applies the Microsoft implementation of SQL, Transact-SQL and SQL CLR or SQLCLR (SQL Common Language Runtime) the author risks not being vendor-agnostic. 
+
+HyperText Markup Language (HTML)
+    The document that the reader is currently reading, uses rudimentary formatting and links. JavaScript dynamically accesses and updates the Document Object Model (DOM). During the first page load, the application retrieves the available Bible versions. Based on the user's request, the application generates the result sets, on-the-fly. 
+
+HyperText Transfer Protocol (HTTP)
+    The web uses the HTTP network protocol; there is a limit to how many requests that a particular host, may handle simultaneously. 
+
+HTTP Client (or Web Browser)
+    There is partiality of the author towards Mozilla's Firefox, because Mozilla is a non-profit organization, committed to web standards, and it was closely associated with Brendan Eich, the creator of JavaScript, the software is open source, and its gives us the opportunity to test our Microsoft implemented software in a non-proprietary, vendor neutral environment. For compatibility with standard, the author performs tests on Microsoft's Internet Explorer (MSIE), Google's Chrome, mobile telephones simulation. 
+
+HTTP Server
+    The author use Microsoft Internet Information Server (IIS), the author has experience with both the Apache HTTP Server, Apache Tomcat Server. The author preference for IIS, includes its tight integration to the Windows Operating System, SQL Server and .net framework. 
+
+Latency
+    This is the amount of time, it takes to respond to request. The use of AJAX, helps to decrease the duration, the length of time, it takes to load-up a page. 
+
+Linking
+    This dissertation depends on the structural navigation links for the table of contents. The associative links help to drill-down to particular scripture reference and Bible words. The author also lists, outbound links, re-direct to source web references, as in the bibliography section. Registration with search engines is one of the ways to encourage incoming links. 
+
+Machine Learning
+    A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E (Goodfellow et al. 2016). Machine Learning takes as input: data and answers and derives rules (Bileschi et al. 2020). 
+
+Page Size
+    The HTML file sizes are small; since the author distributes the work between HTML, JavaScript, CSS and the back-end source files. 
+
+Page Title
+    The page title is a microcontent that serves as a prominent content in search engine listing, bookmarks, history lists and the page header on the browser. 
+
+Semantic HTML
+    This is the choice of a particular HTML tag, to reinforce its meaning and content. 
+
+Server-Side Programs
+    Ever circulating?
+
+Style Sheet
+    The author prefers linked to embedded style sheet. 
+
+Web Application
+    The everyday web pages of the author include:
+
+        GetAPage.html
+        BibleWord.html
+        ScriptureReference.html
+        DateDifference.aspx
+
+WordEngineering
+    To study the Bible by using an engineering approach.
+
+References
+
+    ABB (Asea Brown Boveri) W3C web page; Available from http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL Server Coding Standards (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs
+    The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
+    Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
+    Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
+    RESTful or RESTless –Current State of Today’s Top Web APIs Frederik B ̈ulthoff, Maria Maleshkova AIFB, Karlsruhe Institute of Technology (KIT), Germany frederik.buelthoff@student.kit.edu, maria.maleshkova@kit.edu; W3C web page; Available from http://arxiv.org/pdf/1902.10514.pdf
+    HTML5 and CSS3, Seventh Edition: Visual Quick Start Guide Elizabeth Castro and Bruce Hyslop; W3C web page; Available from http://bruceontheloose.com/htmlcss
+    Department of Computer Science at the University of Cape Town Department of Computer Science at the University of Cape Town W3C web page; Available from http://www.cs.uct.ac.za/mit_notes/web_programming/pdfs/chp01.pdf
+    The Bible Code Michael Drosnin (1997); W3C web page; Available from http://en.wikipedia.org/wiki/Bible_code
+    The Art of Storytelling in Academic Writing: 5 Steps to a Better Research Paper W3C web page; Available from http://www.edit911.com/the-art-of-storytelling-in-academic-writing-5-steps-to-a-better-research-paper
+    SQL Server Execution Plans Third Edition For SQL Server 2008 through to 2017 and Azure SQL Database Grant Fritchey (2018); W3C web page; Available from http://assets.red-gate.com/community/books/sql-server-execution-plans-3rd-edition.pdf
+    Deep Learning Ian Goodfellow and Yoshua Bengio and Aaron Courville (2016); W3C web page; Available from http://www.deeplearningbook.org
+    Resilient, Declarative, Contextual Keith J. Grant (2018-06-08); W3C web page; Available from http://keithjgrant.com/posts/2018/06/resilient-declarative-contextual
+    Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
+    The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
+    Koinonia House W3C web page; Available from http://www.khouse.org
+    The TCP/IP Guide Charles M. Kozierok (2003-2017); W3C web page; Available from http://www.tcpipguide.com
+    Cascading Style Sheets Håkon Wium Lie (2006); W3C web page; Available from http://www.wiumlie.no/2006/phd/
+    Web Style Guide Patrick J. Lynch and Sarah Horton; W3C web page; Available from http://www.webstyleguide.com
+    Steve McConnell Steve McConnell; W3C web page; Available from http://www.stevemcconnell.com
+    Web-Dev-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Web-Dev-For-Beginners
+    Web-Dev-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Web-Dev-For-Beginners
+    DB2 Developer's Guide Craig S. Mullins (May 2000); W3C web page; Available from http://www.craigsmullins.com
+    Semantic Pattern Mining Based Web Service Recommendation Hafida Na ̈ım, Mustapha Aznag, Nicolas Durand, and Mohamed Quafafou Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille, France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand, mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from http://hal.archives-ouvertes.fr/hal-01465113/document
+    Brendan T. O'Connor Brendan T. O'Connor; W3C web page; Available from http://BrenOCon.com
+    Designing Web Usability: The Practice of Simplicity (2000) Jakob Nielsen; W3C web page; Available from http://www.useit.com
+    Refactoring Object-Oriented Frameworks William F. Opdyke (1992); W3C web page; Available from http://laputan.org/pub/papers/opdyke-thesis.pdf
+    How To Write A Dissertation or Bedtime Reading For People Who Do Not Have Time To Sleep W3C web page; Available from https://www.cs.purdue.edu/homes/dec/essay.dissertation.html
+    Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P., Gallelli, C., Silverstein, A. T.; Microsoft SQL Server 2014 Unleashed; (2015) ISBN-13: 978-0672337291 ISBN-10: 0672337290
+    An Analysis of the Dynamic Behavior of JavaScript Programs Gregor Richards, Sylvain Lebresne, Brian Burg, Jan Vitek (2010); W3C web page; Available from http://brrian.org/papers/pldi2010-dynamics-of-JavaScript.pdf
+    SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN: 978-1-59059-980-8 W3C web page; Available from http://www.apress.com/us/book/9781590599808?token=cyberweek18&utm_campaign=3_fjp8312_Apress_US_PLA_cyberweek18#otherversion=9781430206255
+    Nation-brands.gfk.com gfk (2017); W3C web page; Available from http://Nation-brands.gfk.com
+    Option B: Facing Adversity, Building Resilience, and Finding Joy Sheryl Sandberg and Adam Grant (2017); W3C web page; Available from http://www.optionb.org/book
+    Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave Taylor Linda S. Sanford with Dave Taylor (2006); ISBN: 0-13-148208-4 W3C web page; Available from Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave Taylor Pearson Education, Dec 12, 2005 - Business & Economics - 224 pages. In Let Go To Grow , IBM senior executive Linda Sanford and long-time entrepreneur Dave Taylor show exactly how to do that.
+    Performance Issues and Optimizations in JavaScript: An Empirical Study Marija Selakovic and Michael Pradel (October 2015); W3C web page; Available from http://mp.binaervarianz.de/JS_perf_study_TR_Oct2015.pdf
+    A Practical Introduction to Data Structures and Algorithm Analysis Clifford A. Shaffer; W3C web page; Available from http://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf
+    Jonathan Snook W3C web page; Available from http://www.smacss.com
+    Stoyan Stefanov W3C web page; Available from http://www.BookOfSpeed.com
+    Bjarne Stroustrup W3C web page; Available from http://www.stroustrup.com
+    The Twelve-Factor App W3C web page; Available from http://www.12factor.net
+    Building Maintainable Software Ten Guidelines for Future-Proof Code Joost Visser, Pascal van Eck of Software Improvement Group, B.V. Amsterdam, Netherlands; W3C web page; Available from http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf
+    Supervised Learning with Python Concepts and Practical Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page; Available from http://www.allitebooks.com/supervised-learning-with-python
+    Design for How People Think: Using Brain Science to Build Better Products Book John Whalen, PhD; W3C web page; Available from https://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
+    Wikipedia W3C web page; Available from http://www.wikipedia.org
+    Microservice Eberhard Wolff; W3C web page; Available from http://www.microservices-book.com
+
+Appendices
+Diagrams
+2018-08-06T1700Entity-Relationship Model - Contact.png
+Entity-Relationship Model - Contact
+2018-08-07Object Model Diagram.png
+Object Model Diagram
+2018-08-07Use Case Diagram.png
+Use Case Diagram
+2018-08-07Sequence Diagram.png
+Sequence Diagram
+2018-08-08Deployment Diagram.png
+Deployment Diagram
+2018-10-31ClassDiagram.png
+Class Diagram
+2020-08-24OccurrenceOnTheWord.png
+Occurrence on the word
+"SQL Server Execution Plan" (Grant Fritchey).
+SQL Server Execution Plan - ScriptureReference.html?scriptureReference=Genesis 22, Daniel 9:24-27, John 1:1, Jude
+ScriptureReference.sql ScriptureReference.sqlplan ScriptureReference.png
+
+The SQL script contains four scripture references; therefore, there are four execution plans. Three of these execution plans, Query 1, 3 and 4, will solely make use of the low cost clustered index primary key seek, PK_Scripture. These three have trivial optimization levels.
+
+Query 2 does an Index Seek on the IDX_Scripture_VerseIDSequence, since the where clause is on the VerseIDSequence column. The IDX_Scripture_VerseIDSequence indexes on the VerseIDSequence column; it is not a covering index, since the Select column-list includes the BookID, ChapterID, VerseID; therefore, the PK_Scripture is referenced as well in a Key Lookup. Both the Index Seek and the Key Lookup have Seek Predicates, and the Nested Loops will join the results.
+"The Definitive Guide to SQL Server Performance" (Don Jones).
+Performance Monitor - SQL Server Objects
+http://content.marketingsherpa.com/heap/realtp/1a.pdf SQL Server Objects 	Commentary
+SQLServer:Access Methods 	Logical data access.
+SQLServer:Buffer Manager Object 	Physical data access. Such as, Buffer cache hit ratio, is how often, data is accessible from memory, rather than the hard disk.
+Artifact Description
+2019-10-05ArtifactDescription.html
+Background
+
+The author's country of birth, Nigeria, gained independence on, 1960-10-01, a Biblical generation before the end of the second millennium (plural millennia). There are 2570 days between 1960-10-01 and the author's date of birth, 1967-10-15. Nigeria became a republic on 1963-10-01; The difference in days between when Nigeria became a republic, 1963-10-01, and 1967-10-15; is 1475 days; 4 Biblical years, 1 month, 5 days; 4 Gregorian years, 2 weeks. The difference in days, between the creation of Lagos State, 1967-05-27 and the author's date of birth is 141 days (4 biblical months, 21 days) (4 months, 2 weeks, 4 days).
+
+1984-07-17 is the date of the author's 17th Biblical birthday (Genesis 37:2). The date of recording this information is 2020-10-23, Epoch timestamp: 1603454400
+
+Jesus Christ began His ministry at the age of thirty, and the estimate is that He served for three years (Luke 3:23). The author was born on 1967-10-15 thirty-three years before the end of the second millennium. 1967-10-15 ... 2000-01-01 = 11766 days (32 biblical years, 8 biblical months, 6 days) (32 years, 2 months, 2 weeks, 3 days). 1967-10-15 B.C. ... 1967-10-15 A.D. = 1436515 days = 47196 months = 3933 years. My thirtieth, 30th, Biblical years birthday will occur on 1997-05-10. My thirty-third, 33rd, Biblical years birthday will occur on 2000-04-24. Between 1967-10-15 and 1968-04-04 are 172 days (5 biblical months, 22 days) (5 months, 2 weeks, 6 days). Between 1967-10-15 and 1968-10-15 are 366 days (1 biblical year, 6 days) (1 year, 1 day). Between 1967's Easter Day, 1967-03-26, and 1967-10-15, is 203 days (6 biblical months, 23 days) (6 months, 2 weeks, 5 days). Between 0032-04-06 and 1967-10-15, is 706935 days (1963 biblical years, 8 biblical months, 15 days) (1935 years, 6 months, 1 week, 1 day) 49.09270833 Biblical generations, 280.529761 weeks of years.
+
+At the age of twelve, Jesus Christ, His father and mother, worshipped at the temple, in Jerusalem. The author worshipped at Saint Edward's Catholic Church on 2002-07-01, 3.5 Biblical years, after coming to the U.S. (Luke 2:42, Matthew 9:20, Mark 5:25, Mark 5:42). The author deportation to Nigeria, occurred in 1988, twelve-years, before the beginning of the third millennium; and forty-years after Israel's independence. The author first visited the United States of America, as a twelve-years old; and he re-located to Australia before the age of twenty-four. Deported at the age of twenty; and returned before turning thirty-two; a twelve-year period (Nehemiah 5:14). Between 1999-01-22 and 2020-06-12, there are 7812 days (21 biblical years, 8 biblical months, 12 days) (21 years, 4 months, 3 weeks). 360 * 12 = 4320, the telephone country code for Nigeria is 234. Moses lived for 120 Biblical years, 120 * 360 = 43200. At twelve post meridiem, 12PM, the elapsed time is forty three thousand, two hundred, 43200, seconds. The author's ancestral home is Ile-Ife. The author's place of birth is Lagos. When the author's biological parents re-located to the United States of America (USA), the author re-located to Ile-Ife. Lagos is the economic capital of Nigeria, and Ile-Ife is the cradle of the Yoruba land. The author re-located from Staff School, University of Ife, as a nine-year old; to Lagos, a two-hour journey. Abati Nursery and Primary School. 1967-10-15 + 9 Biblical years = 1967-10-15 + 3240 = 1976-08-28. In February 1992, the author started work at Information Dialling Services (IDS) White International LonSyd.
+
+The singular word, centurion, occurs twenty-one times in the Bible; its plural word, centurions, occurs three times in the Bible; therefore, centurion(s), occurs twenty-four times in the Bible.
+
+In Australia, the author first worked at:
+Australian Army Headquarters Training Command
+Suakin Drive
+Georges Heights NSW 2088
+Telephone 61 2 9960 9452
+Fax 61 2 9960 9452
+
+The word, covenant, occurs twenty-four times in the New Testament. The word, marriage, occurs sixteen times in the New Testament.
+
+The United Nations began on 1945-10-24, between then, and 1988-10-15, are 15697 days (43 biblical years, 7 biblical months, 7 days) (42 years, 11 months, 3 weeks). (24 - 20) / (70 - 20) = 8% (Numbers 1:3, Psalms 90:10).
+
+1966 Nigerian coup d'état occurred between 1966-01-15 and 1966-01-16 and the author was born on 1967-10-15, 638 days, after.
+
+Biafra commenced on 1967-05-30, and 1967-10-15 is 138 days, after.
+
+Between when Summer traditionally begin, June 21, and October 15, is a span of (3 months, 3 weeks, 3 days).
+
+October 15, is the forty-fifth day, in the September, October, November, December cycle.
+
+Between September 22 and October 15, is 23 days (23 days) (3 weeks, 2 days).
+
+Between October 15 and when Winter starts, December 21, is a span of 67 days (2 biblical months, 7 days) (2 months, 6 days).
+
+Between October 15 and when Winter ends, March 20, is a span of 157 days (5 biblical months, 7 days) (5 months, 5 days).
+
+During Leap years, between the preceding October 15, and May 7, are 205 days (6 biblical months, 25 days).
+
+Military Occupation Six-Day War was fought between 1967-06-05 and 1967-06-10. I was born on 1967-10-15, and nine Biblical months, before that, then, was, 1967-01-18. Between 1967-01-18 and 1967-06-10 is 143 days (4 biblical months, 23 days) (4 months, 3 weeks, 2 days).
+
+2 Biblical years, after I was born, is 1969-10-04. Israel was accepted to the United Nations on 1949-05-11, between then and 1969-10-04, is 7451 days (20 biblical years, 8 biblical months, 11 days) (20 years, 4 months, 3 weeks, 2 days). The adoption of the United Nations Partition Plan for Palestine occurred on 1947-11-29, between then, and 1969-10-04, is 7980 days (22 biblical years, 2 biblical months) (21 years, 10 months, 6 days). The 1948 Arab–Israeli War commenced on 1948-05-15, between then, and 1969-10-04, is 7812 days (21 biblical years, 8 biblical months, 12 days) (21 years, 4 months, 2 weeks, 4 days). The 1948 Arab–Israeli War ended on 1949-03-10, between then, and 1969-10-04, is 7513 days (20 biblical years, 10 biblical months, 13 days) (20 years, 6 months, 3 weeks, 3 days).
+
+Approximately, the author became a fetus, eight weeks after conception, on 1967-03-15. Between when Israel became a nation, 1948-05-14, and 1967-03-15 is 6879 days (19 biblical years, 1 biblical month, 9 days) (18 years, 10 months). Between when United Nations Partition Plan for Palestine 1947-11-29, and 1967-03-15, is 7046 days (19 biblical years, 6 biblical months, 26 days) (19 years, 3 months, 2 weeks). Between when the American Revolutionary War began, 1775-04-19, and 1967-03-15, is 70091 days (194 biblical years, 8 biblical months, 11 days) (191 years, 10 months, 3 weeks, 3 days). Between when the American Revolutionary War ended, 1783-09-03, and 1967-03-15, is 67032 days (186 biblical years, 2 biblical months, 12 days) (183 years, 6 months, 1 week, 5 days). Between when the American Revolutionary War ratification was effective, 1784-05-12, and 1967-03-15, is 66780 days (185 biblical years, 6 biblical months) (182 years, 10 months, 2 days).
+
+Between the beginning of the 400 Silent Years and 1967-10-15, are 864,455 days.
+
+Between the end of the 69th week, 0032-04-06, and 1967-10-15, are 706935 days (1963 biblical years, 8 biblical months, 15 days).
+
+Between the end of the 70th week, if there had been no interruption, 0039-03-01, and 1967-10-15, are 704415 days (1956 biblical years, 8 biblical months, 15 days).
+
+Between 1967-10-15 and 2020-06-03 are 19225 days (53 biblical years, 4 biblical months, 25 days) (52 years, 7 months, 2 weeks, 5 days).
+
+The Yoruba tribe speak the Yoruba language and the Yorubas are in the South West of Nigeria. The Yorubas practice the Christians and Moslems religions. The East of Nigeria include the Ibos who speak the Igbo language and are mainly Catholics. The Hausas and Fulanis are in the North of Nigeria. At the Highway 880 South Fremont Exit, the road separates into two, the Alvarado Boulevard, West direction, and Fremont Boulevard, East direction.
+
+The author's primary languages are English, a Germanic language; and Yoruba, a language spoken by western Nigerians. Between the age of twenty and twenty-four, the author developed Kowe, a word and graphic processor. Kowe is an editor, for typing; Kowe's innovation, is that the typist can type diacritic alphabets by using the function keys combined with the alternate, control, and shift keys. Line drawing is also possible with Kowe. Kowe will translate languages.
+
+Between 1997 - 1998, the author pursued his Doctorate at the University of Wollongong, New South Wales (NSW), Australia; and he visited Villawood Detention Center, a place for illegal migrants and asylum seekers, every Friday, as a Christian missionary. One of those migrants, a Ghanaian, had been at the detention center for up-to six years, and he corresponded with immigration officials, regularly. The author thought of building a website that will allow these migrants to share their experiences with the rest of the world. However, the Internet, was still in its infancy, and the author's knowledge was lacking. Also there were only dial-up access, at that time; and the inmates at Villawood, did not have computer access.
+
+Like Jacob, the author's biological father is the second born, and the author is the second twin. Option B: Facing Adversity, Building Resilience, and Finding Joy. I lived in Australia, Down Under, which is in the Asia-Pacific geographical region, for seven years; we can see a demarcation, West and East Germany, North and South Italy. Tokunbo is the author's biological father's fourth child, and she gave birth to twins.
+
+Massacre of the Innocents. 1967-10-15 ... 1967-12-28, 74 days (2 biblical months, 14 days) (2 months, 1 week, 6 days). 1966-12-28 ... 1967-12-28, 291 days (9 biblical months, 21 days) (9 months, 2 weeks, 3 days). 2003-12-28 ... 2004-07-11, 196 days (6 biblical months, 16 days) (6 months, 1 week, 6 days). 2004-07-11 ... 2004-12-28, 170 days (5 biblical months, 20 days) (5 months, 2 weeks, 3 days).
+Prophecy & Fulfillment
+From	1997-12-31
+To	1998-05-08
+Time Span	128 days (4 biblical months, 8 days) (4 months, 5 days)
+Prophecy	I have brought something against you, but I Am with you.
+Fulfillment 	"Out of Egypt, have I called My son" (Hosea 11:1, Matthew 2:15). My girlfriend, went to Kings Cross and subsequently Campsie, to sleep with another Yoruba man, at my enemies house. 2020-05-02 You were going through, your not being necessary. 1997-12-31 + 7 Biblical Years = 1997-12-31 + 2520 days = 2004-11-24 Silvani Liveup. 1604-02-03 ... 1998-05-08 = 400 Biblical years = 400 * 360 = 144000 days (Genesis 15:13, Revelation 7:4). "Do you not believe, that I will provide your need?" 1996-02-14 ... 1998-05-08, 814 days (2 biblical years, 3 biblical months, 4 days) (2 years, 2 months, 3 weeks, 3 days). 1996-06-06 ... 1998-05-08, 701 days (1 biblical year, 11 biblical months, 11 days) (1 year, 11 months, 1 day). 1995-10-15 ... 1996-02-14, 122 days (4 biblical months, 2 days) (3 months, 4 weeks, 2 days). 1996-02-14 ... 1996-10-15, 244 days (8 biblical months, 4 days) (8 months, 1 day). 122 / 366 = ‭0.33333333333333333333333333333333‬.
+From	2003-12-12
+To	2014-09-25
+Time Span	3940 days (10 biblical years, 11 biblical months, 10 days) (10 years, 9 months, 1 week, 6 days)
+Prophecy	You don't have the beast line, you are my beast line.
+Fulfillment 	Published on Mar 29, 2015 (Rabbi Jonathan Cahn reveals how he learned about the two cows with the number 7 on their heads having appeared in America. The news about the first one was spread on the 1st day of the Shemitah Year 7th year, the 2nd one was born on that same day on the beginning of the Shemitah Year, on September 25th, 2014. What do they stand for?). These video sections have been published at the Jim Bakker Show on March 25 and 26, 2015.
+From	2004-03-23
+To	2004-11-10
+Time Span	232 days (7 biblical months, 22 days) (7 months, 2 weeks, 4 days)
+Prophecy	Do you want a book, Ocean Senior.
+Fulfillment 	www.JesusInTheLamb.com Walking in the Lamb, you shall follow Me.
+From	1973-01-01
+To	2004-07-11
+Time Span	11514 days (31 biblical years, 11 biblical months, 24 days) (31 years, 6 months, 1 week, 3 days)
+Prophecy	The financial stock market has made a concerted effort to keep the British pound from rising beyond forty five percent (45%). Epoch timestamp: 1089504000.
+Fulfillment 	2004-01-01 ... 2004-07-11 192 days (6 biblical months, 12 days) (6 months, 1 week, 3 days). 2008-06-12T10:00:00 Interview. Forty five percent, 45%, day Gregorian calendar. 16th & Mission Bart Station. Walk up Mission, from the 2000 block. Van Ness Muni Stop. Interviewers: Mike, Matthew, Raj Giri. Allaire Cold Fusion. Adobe. We don't know disame alike, as the two of us.
+From	1939-04-03
+To	2004-07-16
+Time Span	23846 days (66 biblical years, 2 biblical months, 26 days) (65 years, 3 months, 2 weeks)
+Prophecy	Tuskegee Airmen, money to train.
+Fulfillment 	Self, 1 in 1000, African descent United States of America (USA) religious men abstain as mercenaries to Germany. Leviticus. Father's land. Air drop. Atomic bombings of Hiroshima and Nagasaki.
+From	2008-03-11
+To	2011-03-11
+Time Span	1095 days (3 biblical years, 15 days) (3 years)
+Prophecy 	2008-03-11 September 22 2007-09-25 Guy Kawasaki "Asian angel of death." At the time of this prophecy, the author was working at Daigaku Honyaku Center (DHC). Ku means die in the Yoruba language.
+Fulfillment 	2011 Tōhoku earthquake and tsunami
+From	1944-09-26
+To	2008-01-17
+Time Span	23123 days (64 biblical years, 2 biblical months, 23 days) (63 years, 3 months, 3 weeks)
+Prophecy 	Human Apartheid. Hispanics that were born in the USA are being sent home. There must be a litmus test to determine their state of origin. Involvement of Germany.
+Fulfillment 	Jan Brewer. Arizona SB 1070.
+From	1969-10-04
+To	2010-01-25
+Time Span	14723 days (40 biblical years, 10 biblical months, 23 days) (40 years, 3 months, 3 weeks)
+Prophecy	
+Fulfillment	Dear America, your loom angle of contract is dead.
+From	2003-11-29
+To	2010-08-30
+Time Span	2466 days (6 biblical years, 10 biblical months, 6 days) (6 years, 8 months, 4 weeks, 1 day)
+Prophecy	Wienerschnitzel
+Fulfillment	The voice of Germany, the end of Germany.
+From	2011-05-29
+To	2011-09-09
+Time Span	103 days (3 biblical months, 13 days) (3 months, 1 week, 4 days)
+Prophecy	I spoke to Disraeli today, he said Israel must prepare for war, within twenty nine days. Played lawn tennis with some Hindi people.
+Fulfillment 	2011 attack on the Israeli Embassy in Egypt. Islamic State of Iraq and the Levant (ISIS).
+From	2014-09-30
+To	2016-09-30
+Time Span	731 days (2 biblical years, 11 days) (2 years, 1 day)
+Prophecy 	We need to replace the cook top as the current is too old and not worth fixing. Cost will be $659 supply and install of cooktop and dispose of old one.
+Fulfillment 	Joshua 6:26. Shimon Peres.
+Copyright © 2015
+Ken Adeniji KenAdeniji@hotmail.com
