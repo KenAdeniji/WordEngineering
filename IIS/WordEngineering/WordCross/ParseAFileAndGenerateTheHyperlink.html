@@ -4,6 +4,7 @@
 		2021-12-18T12:20:00 Created.
 		2021-12-18T12:35:00 Match e-mail.
 		2021-12-18T12:56:00 http://stackoverflow.com/questions/42407785/regex-extract-email-from-strings
+		2021-12-19T03:51:00	email addresses
 	-->
 	<head>
 		<title>Parse a file and generate the hyperlink?</title>
@@ -45,6 +46,12 @@
 					</td>
 				</tr>
 				<tr>
+					<td><label for="emailAddress">e-mail address:</label></td>
+					<td>
+						<a id="emailAddress"></a>
+					</td>
+				</tr>
+				<tr>
 					<td colspan="2" align="center">
 						<button id="fetchContent">Fetch Content</button>
 						<input type="submit" id="submitQuery"/>
@@ -61,11 +68,11 @@
 			var	sourceContentElement = document.getElementById("sourceContent");
 			var sourceHTMLElement = document.getElementById("sourceHTML");
 
-			var	selectorElement = document.getElementById("selector");
+			var	emailAddressElement = document.getElementById("emailAddress");
 
 			var fetchContentElement = document.getElementById("fetchContent");
 			var submitQueryElement = document.getElementById("submitQuery");
-			
+
 			var	resultSetElement = document.getElementById("resultSet");
 			
 			function pageLoad()
@@ -121,7 +128,8 @@
 			function querySubmit()
 			{
 				var emailAddresses = sourceContentElement.value.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
-				resultSetElement.innerHTML = emailAddresses.join();
+				emailAddressElement.text = emailAddresses.join();
+				emailAddressElement.href = "mailto:" + emailAddresses.join();
 			}
 
 			fetchContentElement.addEventListener("click", contentFetch, false);
