@@ -234,6 +234,6 @@ The thesis contains some images for database and object modeling. 11:53 Urine (J
 	OK.
 September 15, 2008, which was when Stack Overflow launched.
 2021-12-17T18:26:00 URIMaintenance.aspx 33
-15:38 C:\Users\kadeniji\OneDrive\The Winter Tech NotePad++ folder error.
+15:38 C:\Users\kadeniji\OneDrive\The Winter Tech NotePad++ file save folder error.
 
 :Exit
