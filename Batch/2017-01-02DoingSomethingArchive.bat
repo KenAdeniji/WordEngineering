@@ -233,7 +233,11 @@ The thesis contains some images for database and object modeling. 11:53 Urine (J
 	Correct the errors and retry or press ESC to cancel the change(s).
 	OK.
 September 15, 2008, which was when Stack Overflow launched.
-2021-12-17T18:26:00 URIMaintenance.aspx 33
-15:38 C:\Users\kadeniji\OneDrive\The Winter Tech NotePad++ file save folder error.
+2021-12-17T18:26:00 URIMaintenance.aspx 101
+05:38 C:\Users\kadeniji\OneDrive\The Winter Tech NotePad++ file save folder error.
+01:04 Microsoft SQL Server Management Studio user interface (UI) error tab.
+02:47
+Firefox had a problem and crashed. We’ll try to restore your tabs and windows when it restarts.
 
+To help us diagnose and fix the problem, you can send us a crash report.
 :Exit
