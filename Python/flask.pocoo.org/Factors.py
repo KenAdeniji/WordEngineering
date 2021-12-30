@@ -1,4 +1,4 @@
-#2021-12-28T17:41:00
+#2021-12-28T17:41:00 ... 2021-12-28T18:23:00
 """
 	http://index-of.es/Varios-2/Doing%20Math%20with%20Python.pdf
 	Find the factors of an integer
