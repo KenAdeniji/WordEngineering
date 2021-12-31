@@ -113,7 +113,7 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED,
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 19000);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 10404);
 
-DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1173);
+DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17700);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
