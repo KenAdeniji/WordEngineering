@@ -14,7 +14,6 @@
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
 	<body>
-		<canvas id="canvas"></canvas>
 		<script>
 			var isPostBack = false;
 
@@ -29,8 +28,10 @@
 
 			function querySubmit()
 			{
-				var canvas = document.getElementById("canvas");
-				
+				var newCanvas = document.createElement("canvas");
+				newCanvas.id = "canvas";
+				document.body.appendChild(newCanvas);
+			
 				if (!canvas.getContext("2d")) { 
 					return;
 				}
