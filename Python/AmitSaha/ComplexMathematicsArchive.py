@@ -8,9 +8,10 @@
 	https://stackoverflow.com/questions/2983139/assign-operator-to-variable-in-python
 	https://stackoverflow.com/questions/54559395/how-to-store-and-use-mathematical-operators-as-python-variable?noredirect=1&lq=1
 	.real .imag
-The standard library’s cmath module (cmath for complex math) provides
-access to a number of other specialized functions to work with complex
-numbers.	
+	The standard library’s cmath module (cmath for complex math) provides
+	access to a number of other specialized functions to work with complex
+	numbers.
+	In a query string the plus, +, symbol is a XML, HTML, reserve.
 """
 from flask import Flask
 from flask import request

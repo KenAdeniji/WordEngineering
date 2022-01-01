@@ -9,7 +9,7 @@
 	http://stackoverflow.com/questions/54559395/how-to-store-and-use-mathematical-operators-as-python-variable?noredirect=1&lq=1
 	
 	http://en.wikipedia.org/wiki/Multiplication_table
-	In Python, 
+	In the Python language range cannot be float.
 """
 from flask import Flask
 from fractions import Fraction
