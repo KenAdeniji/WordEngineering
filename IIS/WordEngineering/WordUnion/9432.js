@@ -1333,6 +1333,32 @@ var scriptLiteral9432 =
 		return selected.join(separation);
 	},
 
+	retrieveSelectionNoValue: function(selectID, startIndex, separation)
+	{
+		var selected = [];
+		var selectControl = document.getElementById(selectID);
+		var selectValue = null;
+		
+		if (!startIndex)
+		{
+			startIndex = 0;
+		}	
+
+		if (!separation)
+		{
+			separation = ",";
+		}	
+		
+		for (var i = startIndex; i < selectControl.length; i++) 
+		{
+			if (selectControl.options[i].selected == true)
+			{
+				selected.push(i + startIndex);
+			}
+		}
+		return selected.join(separation);
+	},
+
 	//2017-12-30	https://stackoverflow.com/questions/11821261/how-to-get-all-selected-values-from-select-multiple-multiple
 	selectionGet: function(objectId)
 	{

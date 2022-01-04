@@ -12,6 +12,8 @@
         git add   Python/AmitSaha/OperationTableArchive.py
 
 git add        GitHub.com/2022-01-01T0616GitHub.bat
+git add        IIS/WordEngineering/WordCross/CouldYouStoreAndRunCodeFromTheDatabase.html
+git add        IIS/WordEngineering/WordCross/CouldYouStoreAndRunCodeFromTheDatabaseArchive.html
 git add        IIS/WordEngineering/WordCross/CrossEuropeUnfinish.html
 git add        IIS/WordEngineering/WordCross/CrossEuropeUnfinishArchive.html
 		
