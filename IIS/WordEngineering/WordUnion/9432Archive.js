@@ -83,7 +83,7 @@
 		"Sabbath",
 		"Unleavened Bread"	
 	],
-
+	2022-01-04	retrieveSelectionIndex()
 */
 
 var scriptLiteral9432 =
@@ -1333,27 +1333,21 @@ var scriptLiteral9432 =
 		return selected.join(separation);
 	},
 
-	retrieveSelectionNoValue: function(selectID, startIndex, separation)
+	retrieveSelectionIndex: function(selectID, startValue, separation)
 	{
 		var selected = [];
 		var selectControl = document.getElementById(selectID);
-		var selectValue = null;
 		
-		if (!startIndex)
-		{
-			startIndex = 0;
-		}	
-
 		if (!separation)
 		{
 			separation = ",";
 		}	
-		
-		for (var i = startIndex; i < selectControl.length + startIndex; i++) 
+	
+		for (var index = 0; index < selectControl.length; index++) 
 		{
-			if (selectControl.options[i].selected == true)
+			if (selectControl.options[index].selected == true)
 			{
-				selected.push(i + 1);
+				selected.push(startValue + index);
 			}
 		}
 		return selected.join(separation);

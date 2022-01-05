@@ -71,7 +71,7 @@
 				request["bibleVersion"] = bibleVersionElement.value;
 				request["bibleWord"] = bibleWordElement.value;
 
-				var bibleBookIDs = scriptLiteral9432.retrieveSelectionNoValue("bookID", 1, ",");
+				var bibleBookIDs = scriptLiteral9432.retrieveSelectionIndex("bookID", 1, ",");
 				request["bookIDs"] = bibleBookIDs;
 
 				var requestJson = JSON.stringify(request);
