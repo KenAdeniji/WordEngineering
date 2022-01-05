@@ -62,7 +62,7 @@ public class WhatDoesHeWantToSeeAsUsWebService : System.Web.Services.WebService
 			{
 				BookID = (int) dataRow["BookID"],
 				BookTitle = (string) dataRow["BookTitle"],
-				BookOccurrence = Regex.Matches(dataRow["Concatenated"].ToString(), bibleWord, RegexOptions.IgnoreCase ).Count
+				WordOccurrence = Regex.Matches(dataRow["Concatenated"].ToString(), bibleWord, RegexOptions.IgnoreCase ).Count
 			};	
 			occurrences.Add(occurrence);
 		}
@@ -75,7 +75,7 @@ public class WhatDoesHeWantToSeeAsUsWebService : System.Web.Services.WebService
 	{
 		public int BookID { get; set; }
 		public string BookTitle { get; set; }
-		public int BookOccurrence { get; set; }
+		public int WordOccurrence { get; set; }
 	}
 	
 	public const string QueryStatement = @"
