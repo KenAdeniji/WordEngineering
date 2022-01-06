@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-01-06T05:28:00 Created.
+	-->
+	<head>
+		<title>Word Comparison</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Word Comparison"/>
+		<meta name="keyword" content="Word Comparison, Ile Ife, Perry Stone, United States of America, Jerusalem, NTT Docomo"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="firstWord">First Word:</label></td>
+						<td><input id="firstWord" type="text" value="United States of America" autofocus/></td>
+					</tr>
+					<tr>
+						<td><label for="secondWord">Second Word:</label></td>
+						<td><input id="secondWord" type="text" value="Jerusalem"/></td>
+					</tr>
+					<tr>
+						<td><label for="inTheFirstButNotInTheSecond">In the first, but not in the second:</label></td>
+						<td><a id="inTheFirstButNotInTheSecond"></a></td>
+					</tr>
+					<tr>
+						<td><label for="inTheSecondButNotInTheFirst">In the second, but not in the first</label></td>
+						<td><a id="inTheSecondButNotInTheFirst"></a></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var	firstWordElement = document.getElementById("firstWord");
+			var	secondWordElement = document.getElementById("secondWord");
+			
+			var	inTheFirstButNotInTheSecondElement = document.getElementById("inTheFirstButNotInTheSecond");
+			var	inTheSecondButNotInTheFirstElement = document.getElementById("inTheSecondButNotInTheFirst");
+
+			var submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var firstWordParam = urlParams.get("firstWord");
+					if (firstWordParam)
+					{
+						firstWordElement.value = firstWordParam;
+					}	
+					
+					var secondWordParam = urlParams.get("secondWord");
+					if (secondWordParam)
+					{
+						secondWordElement.value = secondWordParam;
+					}	
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+
+			function querySubmit()
+			{
+				var notIn = wordComparison
+				(
+					firstWordElement.value,
+					secondWordElement.value
+				);
+				inTheFirstButNotInTheSecondElement.href = getAPageHref + notIn;
+				inTheFirstButNotInTheSecondElement.text = notIn;
+				
+				notIn = wordComparison
+				(
+					secondWordElement.value,
+					firstWordElement.value
+				);
+				inTheSecondButNotInTheFirstElement.href = getAPageHref + notIn;
+				inTheSecondButNotInTheFirstElement.text = notIn;
+			}
+			
+			function wordComparison(first, second)
+			{
+				var notIn = "";
+				first = first.toUpperCase();
+				second = second.toUpperCase();
+				
+				for
+				(
+					var index = 0, length = first.length;
+					index < length;
+					index++
+				)
+				{
+					if (second.indexOf(first[index]) === -1)
+					{
+						notIn += first[index];
+					}	
+				}	
+				return notIn;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const getAPageHref = "/WordEngineering/WordUnion/GetAPage.html?word=";
+		</script>		
+	</body>
+</html>
