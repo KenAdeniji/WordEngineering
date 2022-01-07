@@ -1,7 +1,7 @@
 """
-	2022-01-06Y18:26:00	Created.
-	2022-01-06Y18:26:00 http://matplotlib.org/devdocs/gallery/user_interfaces/web_application_server_sgskip.html
-	2022-01-07Y05:00:00 Marker options are be o, *, x, +, :
+	2022-01-06T18:26:00	Created.
+	2022-01-06T18:26:00 http://matplotlib.org/devdocs/gallery/user_interfaces/web_application_server_sgskip.html
+	2022-01-07T05:00:00 Marker options are be o, *, x, +, :
 		marker='*'
 """
 import base64

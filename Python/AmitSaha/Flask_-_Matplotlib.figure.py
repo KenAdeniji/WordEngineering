@@ -1,6 +1,6 @@
 """
-	2022-01-06Y18:26:00	Created.
-	2022-01-06Y18:26:00 http://matplotlib.org/devdocs/gallery/user_interfaces/web_application_server_sgskip.html
+	2022-01-06T18:26:00	Created.
+	2022-01-06T18:26:00 http://matplotlib.org/devdocs/gallery/user_interfaces/web_application_server_sgskip.html
 """
 import base64
 from io import BytesIO

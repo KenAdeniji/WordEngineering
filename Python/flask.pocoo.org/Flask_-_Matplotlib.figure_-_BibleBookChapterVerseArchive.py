@@ -21,6 +21,7 @@ from io import BytesIO
 
 from flask import Flask
 from matplotlib.figure import Figure
+from matplotlib import legend
 
 app = Flask(__name__)
 
@@ -33,11 +34,12 @@ def chartGraph():
 	bibleBooksChaptersList.append(27)
 	bibleBooksVersesList = [1533, 1213, 859]
 	fig.suptitle("Bible Books Groups")
-	fig.supxlabel('Books')
-	fig.supylabel('Chapters and Verses')
+	fig.supxlabel("Books")
+	fig.supylabel("Chapters and Verses")
 	ax = fig.subplots()
-	ax.plot(bibleBooksTitlesList, bibleBooksChaptersList, '*') 
-	ax.plot(bibleBooksTitlesList, bibleBooksVersesList, '+') 
+	l1, = ax.plot(bibleBooksTitlesList, bibleBooksChaptersList, "*", color="gold") 
+	l2, = ax.plot(bibleBooksTitlesList, bibleBooksVersesList, "+", color="blue") 
+	fig.legend((l1, l2), ("Chapters", "Verses"), "upper right")
 	buf = BytesIO();
 	fig.savefig(buf, format="png");
 	data = base64.b64encode(buf.getbuffer()).decode("ascii");
