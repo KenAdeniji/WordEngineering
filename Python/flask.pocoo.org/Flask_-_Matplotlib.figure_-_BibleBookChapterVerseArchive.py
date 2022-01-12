@@ -15,6 +15,9 @@ BookID      Chapters    Verses
 1           50          1533
 2           40          1213
 3           27          859
+	2022-01-07 fig.legend((l1, l2), ("Chapters", "Verses"), "upper right")
+		The legend position could also be best.
+	2022-01-08T17:22:00	print(ax.axis())	
 """
 import base64
 from io import BytesIO
@@ -40,6 +43,7 @@ def chartGraph():
 	l1, = ax.plot(bibleBooksTitlesList, bibleBooksChaptersList, "*", color="gold") 
 	l2, = ax.plot(bibleBooksTitlesList, bibleBooksVersesList, "+", color="blue") 
 	fig.legend((l1, l2), ("Chapters", "Verses"), "upper right")
+	print(ax.axis())
 	buf = BytesIO();
 	fig.savefig(buf, format="png");
 	data = base64.b64encode(buf.getbuffer()).decode("ascii");

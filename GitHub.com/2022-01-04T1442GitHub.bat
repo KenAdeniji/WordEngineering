@@ -13,3 +13,6 @@ git add        IIS/WordEngineering/WordCross/WhatDoesHeWantToSeeAsUs.asmx
 git add        IIS/WordEngineering/WordCross/WhatDoesHeWantToSeeAsUs.html
 git add        IIS/WordEngineering/WordCross/WhatDoesHeWantToSeeAsUsArchive.asmx
 git add        IIS/WordEngineering/WordCross/WhatDoesHeWantToSeeAsUsArchive.html
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-01-04T1812JuliaRabinovichImmigrationRepresentationUnitSexualOffenderAnnualRegistration.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-01-04T1812JuliaRabinovichImmigrationRepresentationUnitSexualOffenderAnnualRegistrationArchive.txt
