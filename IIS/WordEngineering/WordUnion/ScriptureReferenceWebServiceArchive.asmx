@@ -25,19 +25,13 @@ using InformationInTransit.UserInterface;
 ///	2017-04-20	Mo fe ma lole; mo niyawo le. MoFeMaLoleMoNiyawoLe.html
 ///				Danny, got out of Wienerschnitzel, exit westward.
 /// 2017-12-16	IAmAfraidOfTheMarkHelper.cs Created.
+/// 2022-01-15  SequenceQuery added.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 [ScriptService]
 public class ScriptureReferenceWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Approach
@@ -209,6 +203,24 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
 			ref result,
 				ScriptureReferenceHelper.BibleCommentaryQueryFormat,
 				"KingJamesVersion"
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
+    }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String SequenceQuery(String scriptureReference, string bibleVersion)
+    {
+		String[] scriptureReferenceSubset = null;
+		DataSet result = null;
+		ScriptureReferenceHelper.Process
+		(
+				scriptureReference,
+			ref	scriptureReferenceSubset,
+			ref result,
+				ScriptureReferenceHelper.BibleSequenceQueryFormat,
+				bibleVersion
 		);
 		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
 		return json;

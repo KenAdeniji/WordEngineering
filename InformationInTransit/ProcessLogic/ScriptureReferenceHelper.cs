@@ -63,6 +63,7 @@ namespace InformationInTransit.ProcessLogic
 	///				https://stackoverflow.com/questions/2971055/left-of-a-character-in-a-string-in-c-sharp
 	///	2018-09-28	For sacred text query. The title of a sub-text.
 	///	2020-09-11	BibleGroupSubstitute variable definition, and BibleGroupSubstituteReplace implementation.
+	///	2022-01-15	BibleSequenceQueryFormat added.
 	///</summary>
 	public class ScriptureReferenceHelper
 	{
@@ -1142,6 +1143,7 @@ namespace InformationInTransit.ProcessLogic
 				{0} 
 			ORDER BY bookID, chapterID, verseID;
 		";
+		public const string BibleSequenceQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, ChapterIDSequence, VerseIDSequence, ChapterIDSequencePercent, VerseIDSequencePercent FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, ChapterID, VerseID;";
 		public const string BillInDateQueryFormat = "SELECT * FROM WordEngineering..BillInDate WHERE {0} ORDER BY BookID, ChapterID, VerseID, BillInDateID;";
 		public const string ExactQueryFormat = "SELECT ScriptureReference, VerseText FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, chapterID, verseID;";
 		public const string FullPositionQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, VerseIDSequence, ChapterIDSequence FROM Bible..Scripture_View WHERE {0} ORDER BY BookID, ChapterID, VerseID;";
