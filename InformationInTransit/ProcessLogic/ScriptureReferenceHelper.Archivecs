@@ -1143,7 +1143,7 @@ namespace InformationInTransit.ProcessLogic
 				{0} 
 			ORDER BY bookID, chapterID, verseID;
 		";
-		public const string BibleSequenceQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, ChapterIDSequence, VerseIDSequence, ChapterIDSequencePercent, VerseIDSequencePercent FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, ChapterID, VerseID;";
+		public const string BibleSequenceQueryFormat = "SELECT ScriptureReference, ChapterIDSequence, VerseIDSequence, ChapterIDSequencePercent, VerseIDSequencePercent FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, ChapterID, VerseID;";
 		public const string BillInDateQueryFormat = "SELECT * FROM WordEngineering..BillInDate WHERE {0} ORDER BY BookID, ChapterID, VerseID, BillInDateID;";
 		public const string ExactQueryFormat = "SELECT ScriptureReference, VerseText FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, chapterID, verseID;";
 		public const string FullPositionQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, VerseIDSequence, ChapterIDSequence FROM Bible..Scripture_View WHERE {0} ORDER BY BookID, ChapterID, VerseID;";
