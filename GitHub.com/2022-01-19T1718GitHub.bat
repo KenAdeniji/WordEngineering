@@ -1,0 +1,12 @@
+        git add   IIS/WordEngineering/2018-05-03Correspondence/2022-01-18T1558JuliaRabinovichImmigrationRepresentationUnitSexualOffenderAnnualRegistration.txt
+        git add   IIS/WordEngineering/2018-05-03Correspondence/2022-01-18T1558JuliaRabinovichImmigrationRepresentationUnitSexualOffenderAnnualRegistrationArchive.txt
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+        git add   IIS/WordEngineering/bin/InformationInTransit.dll
+        git add   InformationInTransit/InformationInTransit.dll
+git add        GitHub.com/2022-01-19T1718GitHub.bat
+git add        IIS/WordEngineering/WordCross/UntilAmericaComeToItsForeigners_IfYouKnowYourPartAsPeopleYouWillKnowYourFactAsDeed.asmx
+git add        IIS/WordEngineering/WordCross/UntilAmericaComeToItsForeigners_IfYouKnowYourPartAsPeopleYouWillKnowYourFactAsDeed.html
+git add        IIS/WordEngineering/WordCross/UntilAmericaComeToItsForeigners_IfYouKnowYourPartAsPeopleYouWillKnowYourFactAsDeedArchive.asmx
+git add        IIS/WordEngineering/WordCross/UntilAmericaComeToItsForeigners_IfYouKnowYourPartAsPeopleYouWillKnowYourFactAsDeedArchive.html
