@@ -242,6 +242,10 @@ var scriptLiteral9432 =
 		"Biblical Year",
 		"Gregorian Year"		
 	],
+	calendarTypes: [ //2022-01-28
+		"Biblical",
+		"Gregorian"		
+	],
 	//2019-02-13 https://stackoverflow.com/questions/24657463/how-to-add-http-to-url-if-no-protocol-is-defined-in-javascript
 	addhttp: function(url)
 	{

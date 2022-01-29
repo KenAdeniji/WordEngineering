@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-01-28	Created.
+			Dates Computation, for instance, add to a date, a percentage of its from until.
+			0001-01-01 ... 2004-07-11, 731772 days (2032 biblical years, 8 biblical months, 12 days).
+			731772 * 0.45 = 329297.4.
+			2004-07-11 - 329297 = 1102-12-11.
+			2004-07-11 + 329297 = 2906-02-10.
+			2022-01-29T05:18:00
+				Create .html file, copy page layout, add stylesheet.
+				Include jquery and event handlers, no logic, yet.
+				He has done a lot of re-use.
+				This is what you have done, this is what you want to use as your basis.
+			2022-01-29T05:34:00	http://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local
+			2022-01-29T05:43:00	God does speak in literal men.
+				When did you receive the word, 45%?, After previous word?
+				Ready for the fact? Here is your update.
+				2022-01-29T05:48:00 There is necessity as passage.
+				Input type datetime-local value.
+					With time component.
+			2022-01-29T06:41:00 Pre-Dated. 1102-12-11.
+				When you are working in advance, there is time.
+		-->
+		<title>Dates Computation</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Dates Computation, for instance, add to a date, a percentage of its from until. 0001-01-01 ... 2004-07-11, 731772 days (2032 biblical years, 8 biblical months, 12 days). 731772 * 0.45 = 329297.4. 2004-07-11 - 329297 = 1102-12-11. 2004-07-11 + 329297 = 2906-02-10."/>
+		<meta name="keywords" content="Dates Computation, pound, 45%, 2004-07-11"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 50vw;
+	}
+		</style>	
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Year Month Day:</label></td>
+					<td>
+						<textarea id="yearMonthDay" readonly="true" autofocus>
+FromUntil + 45%						
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="word">Calendar:</label></td>
+					<td><select id="calendarType"></select></td>
+				</tr>
+				<tr>
+					<td><label for="fromDated">From:</label></td>
+					<td><input id="fromDated" type="datetime-local" value="0001-01-01T00:00"/></td>
+				</tr>
+				<tr>
+					<td><label for="untilDated">Until:</label></td>
+					<td><input id="untilDated" type="datetime-local" value="2004-07-11T00:00"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="interval">Interval:</label></td>
+					<td><span id="interval"></span></td>
+				</tr>
+				<tr>
+					<td><label for="preDated">Pre Date:</label></td>
+					<td><span id="preDated"></span></td>
+				</tr>
+				<tr>
+					<td><label for="postDated">Post Date:</label></td>
+					<td><span id="postDated"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const yearMonthDayElement = document.getElementById("yearMonthDay");
+			const calendarTypeElement = document.getElementById("calendarType");
+			
+			const fromDatedElement = document.getElementById("fromDated");
+			const untilDatedElement = document.getElementById("untilDated");
+			
+			const intervalElement = document.getElementById("interval");
+			
+			const preDatedElement = document.getElementById("preDated");
+			const postDatedElement = document.getElementById("postDated");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect("calendarType", scriptLiteral9432.calendarTypes);					
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var wordParam = urlParams.get("word");
+						if (wordParam)
+						{
+							wordElement.value = wordParam;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var daysBetween = scriptLiteral9432.daysBetween
+				(
+					new Date(untilDatedElement.value), 
+					new Date(fromDatedElement.value)
+				);
+				intervalElement.textContent = daysBetween;
+				
+				preDatedElement.textContent = scriptLiteral9432.daysAdd
+				(
+					new Date(untilDatedElement.value),
+					-daysBetween * .45
+				);
+				
+				postDatedElement.textContent = scriptLiteral9432.daysAdd
+				(
+					new Date(untilDatedElement.value),
+					daysBetween * .45
+				);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);		</script>
+	</body>
+</html>

@@ -242,5 +242,6 @@ Firefox had a problem and crashed. We’ll try to restore your tabs and windows 
 To help us diagnose and fix the problem, you can send us a crash report.
 2022-01-02T03:14:00 https://stackoverflow.com/questions/67064101/python-temperature-class-converter-k-f-c
 2022-01-07T05:01:00 Microsoft Windows status bar error.
-2022-01-07T06:32 ... 06:38 Microsoft Windows operating system, Explorer wait error. 
+2022-01-07T06:32 ... 06:38 Microsoft Windows operating system, Explorer wait error.
+Old and well-known pancake family handed from generation to generation. Founder of Kobayashi Pancake and Japanese Mr. Chung-Hsiang became good friends while Mr. Lin served in Japanese Navy during World War II under Japan's occupation of Taiwan. At the time of their departure, Mr. Chung Hsiang, whom was live with pancake in Japan before war, taught Mr. Lin all the unique skills of pancake he learned to Mr. Lin Zhen-nan, and it were at that time the Kobayashi Pancake started to incubation. 
 :Exit

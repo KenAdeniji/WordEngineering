@@ -83,7 +83,7 @@
 		"Sabbath",
 		"Unleavened Bread"	
 	],
-
+	2022-01-04	retrieveSelectionIndex()
 */
 
 var scriptLiteral9432 =
@@ -241,6 +241,10 @@ var scriptLiteral9432 =
 		"Gregorian Month",
 		"Biblical Year",
 		"Gregorian Year"		
+	],
+	calendarTypes: [ //2022-01-28
+		"Biblical",
+		"Gregorian"		
 	],
 	//2019-02-13 https://stackoverflow.com/questions/24657463/how-to-add-http-to-url-if-no-protocol-is-defined-in-javascript
 	addhttp: function(url)
@@ -1328,6 +1332,26 @@ var scriptLiteral9432 =
 					return null;
 				}	
 				selected.push(selectValue);
+			}
+		}
+		return selected.join(separation);
+	},
+
+	retrieveSelectionIndex: function(selectID, startValue, separation)
+	{
+		var selected = [];
+		var selectControl = document.getElementById(selectID);
+		
+		if (!separation)
+		{
+			separation = ",";
+		}	
+	
+		for (var index = 0; index < selectControl.length; index++) 
+		{
+			if (selectControl.options[index].selected == true)
+			{
+				selected.push(startValue + index);
 			}
 		}
 		return selected.join(separation);
