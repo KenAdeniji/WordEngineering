@@ -214,6 +214,13 @@ var scriptLiteral9432 =
 		["Descending", "desc"]
 	],
     e: 2.718,
+	biblicalCalendarDays:	//2022-01-31T10:45:00
+	[
+		["day", "days", 1],
+		["week", "weeks", 7],		
+		["month", "months", 30],
+		["year", "years", 360],		
+	],
 	bibleStatistics:
 	{
 		bookCountOldTestament: 39,
@@ -896,6 +903,24 @@ var scriptLiteral9432 =
 				fileType
 			);	
 		}	
+	},
+
+	//2022-01-31T11:28:00 Created.
+	indexOfMultiDimensionalArray: function(multiDimensionalArray, rank, val)
+	{ 
+		for 
+		(
+			var index = 0, occurrences = multiDimensionalArray.length;
+			index < occurrences;
+			++index
+		)
+		{
+			if (multiDimensionalArray[index][rank] === val)
+			{
+				return index;
+			}
+		}
+		return -1;			
 	},
 	
 	isLeap: function(year)

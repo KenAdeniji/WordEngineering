@@ -26,6 +26,7 @@
 			2022-01-30T20:17:00	http://stackoverflow.com/questions/31247663/using-regular-expressions-to-find-non-numeric-values-in-javascript-jquery-code
 			2022-01-30T22:51:00	Will add date units.
 			2022-01-30T23:12:00	Boris Johnson, 45%.
+			2022-01-31T10:45:00	biblicalCalendarDays
 		-->
 		<title>Dates Computation</title>
 		<meta charset="UTF-8"/>
@@ -82,6 +83,7 @@
 					<td><span id="datedComputed"></span></td>
 				</tr>
 			</table>
+			Gregorian calendar not implemented, yet.
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
@@ -138,7 +140,8 @@
 					metricSum = 0,
 					metricQuantity = 0,
 					metricUnit = "",
-					daysBetween = 0
+					daysBetween = 0,
+					foundIndex = -1
 					;
 			
 				for
@@ -150,28 +153,37 @@
 				{
 					metricQuantity = parseFloat(extractQuantities[metricIndex].trim());
 					metricUnit = extractUnits[metricIndex].trim();
-					switch (metricUnit)
+					if (metricUnit === "fromuntil")
 					{
-						case "day":
-						case "days":
-							metricSum += metricQuantity;
-							break;
-						case "month":
-						case "months":
-							metricSum += metricQuantity * 30;
-							break;
-						case "year":
-						case "years":
-							metricSum += metricQuantity * 360;
-							break;
-						case "fromuntil":
-							daysBetween = scriptLiteral9432.daysBetween
+						daysBetween = scriptLiteral9432.daysBetween
+						(
+							new Date(untilDatedElement.value), 
+							new Date(fromDatedElement.value)
+						);
+						metricSum += (daysBetween * metricQuantity);
+					}
+					else
+					{
+						foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
+						(
+							scriptLiteral9432.biblicalCalendarDays,
+							0,
+							metricUnit
+						);
+						if (foundIndex === -1)
+						{
+							foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
 							(
-								new Date(untilDatedElement.value), 
-								new Date(fromDatedElement.value)
+								scriptLiteral9432.biblicalCalendarDays,
+								1,
+								metricUnit
 							);
-							metricSum += (daysBetween * metricQuantity);
-							break;
+						}	
+						if (foundIndex > -1)
+						{
+							metricSum += metricQuantity * 
+								scriptLiteral9432.biblicalCalendarDays[foundIndex][2];	
+						}
 					}
 				}
 				intervalElement.textContent = metricSum;
