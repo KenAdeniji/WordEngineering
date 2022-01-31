@@ -59,6 +59,10 @@
 					<td><select id="calendarType"></select></td>
 				</tr>
 				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input id="dated" type="datetime-local"/></td>
+				</tr>
+				<tr>
 					<td><label for="fromDated">From:</label></td>
 					<td><input id="fromDated" type="datetime-local" value="0001-01-01T00:00"/></td>
 				</tr>
@@ -74,8 +78,8 @@
 					<td><span id="interval"></span></td>
 				</tr>
 				<tr>
-					<td><label for="dated">DateTime:</label></td>
-					<td><span id="dated"></span></td>
+					<td><label for="datedComputed">DateTime Computed:</label></td>
+					<td><span id="datedComputed"></span></td>
 				</tr>
 			</table>
 		</div>
@@ -86,12 +90,14 @@
 			const yearMonthDayElement = document.getElementById("yearMonthDay");
 			const calendarTypeElement = document.getElementById("calendarType");
 			
+			const datedElement = document.getElementById("dated");
+			
 			const fromDatedElement = document.getElementById("fromDated");
 			const untilDatedElement = document.getElementById("untilDated");
 			
 			const intervalElement = document.getElementById("interval");
 			
-			const datedElement = document.getElementById("dated");
+			const datedComputedElement = document.getElementById("datedComputed");
 			
 			const submitQueryElement = document.getElementById("submitQuery");
 			
@@ -104,12 +110,13 @@
 						scriptLiteral9432.buildSelect("calendarType", scriptLiteral9432.calendarTypes);					
 						const urlParams = new URLSearchParams(window.location.search);
 						
-						var wordParam = urlParams.get("word");
-						if (wordParam)
+						var datedParam = urlParams.get("dated");
+						if (!datedParam)
 						{
-							wordElement.value = wordParam;
+							datedParam = scriptLiteral9432.nowTimezoneOffset().substring(0, 19);
 						}	
-						
+						datedElement.value = datedParam;
+					
 						querySubmit();
 						isPostBack = true;
 					});
@@ -128,7 +135,6 @@
 				var extractUnits = yearMonthDayElementValued.match( UnitPattern );
 				
 				var
-					dated = scriptLiteral9432.todayTimezoneOffset(),
 					metricSum = 0,
 					metricQuantity = 0,
 					metricUnit = "",
@@ -146,9 +152,6 @@
 					metricUnit = extractUnits[metricIndex].trim();
 					switch (metricUnit)
 					{
-						case "datetime":
-							dated = metricQuantity;
-							break;
 						case "day":
 						case "days":
 							metricSum += metricQuantity;
@@ -172,7 +175,7 @@
 					}
 				}
 				intervalElement.textContent = metricSum;
-				datedElement.textContent = scriptLiteral9432.daysAdd(new Date(dated), metricSum);
+				datedComputedElement.textContent = scriptLiteral9432.daysAdd(datedElement.value, metricSum);
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
