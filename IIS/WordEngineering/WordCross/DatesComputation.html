@@ -24,10 +24,12 @@
 				When you are working in advance, there is time.
 			2022-01-30T19:50:00	http://stackoverflow.com/questions/1183903/regex-using-javascript-to-return-just-numbers
 			2022-01-30T20:17:00	http://stackoverflow.com/questions/31247663/using-regular-expressions-to-find-non-numeric-values-in-javascript-jquery-code
+			2022-01-30T22:51:00	Will add date units.
+			2022-01-30T23:12:00	Boris Johnson, 45%.
 		-->
 		<title>Dates Computation</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Dates Computation, for instance, add to a date, a percentage of its from until. 0001-01-01 ... 2004-07-11, 731772 days (2032 biblical years, 8 biblical months, 12 days). 731772 * 0.45 = 329297.4. 2004-07-11 - 329297 = 1102-12-11. 2004-07-11 + 329297 = 2906-02-10."/>
+		<meta name="description" content="Dates Computation will add date units."/>
 		<meta name="keywords" content="Dates Computation, pound, 45%, 2004-07-11"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
@@ -129,12 +131,13 @@
 					dated = scriptLiteral9432.todayTimezoneOffset(),
 					metricSum = 0,
 					metricQuantity = 0,
-					metricUnit = ""
+					metricUnit = "",
+					daysBetween = 0
 					;
 			
 				for
 				(
-					let metricIndex = 0, metricCount = extractQuantities.length;
+					var metricIndex = 0, metricCount = extractQuantities.length;
 					metricIndex < metricCount;
 					metricIndex++
 				)
@@ -158,32 +161,18 @@
 						case "years":
 							metricSum += metricQuantity * 360;
 							break;
+						case "fromuntil":
+							daysBetween = scriptLiteral9432.daysBetween
+							(
+								new Date(untilDatedElement.value), 
+								new Date(fromDatedElement.value)
+							);
+							metricSum += (daysBetween * metricQuantity);
+							break;
 					}
 				}
 				intervalElement.textContent = metricSum;
 				datedElement.textContent = scriptLiteral9432.daysAdd(new Date(dated), metricSum);
-			}
-
-			function queryFortyFivePercent()
-			{
-				var daysBetween = scriptLiteral9432.daysBetween
-				(
-					new Date(untilDatedElement.value), 
-					new Date(fromDatedElement.value)
-				);
-				intervalElement.textContent = daysBetween;
-				
-				preDatedElement.textContent = scriptLiteral9432.daysAdd
-				(
-					new Date(untilDatedElement.value),
-					-daysBetween * .45
-				);
-				
-				postDatedElement.textContent = scriptLiteral9432.daysAdd
-				(
-					new Date(untilDatedElement.value),
-					daysBetween * .45
-				);
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
