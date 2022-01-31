@@ -22,6 +22,8 @@
 					With time component.
 			2022-01-29T06:41:00 Pre-Dated. 1102-12-11.
 				When you are working in advance, there is time.
+			2022-01-30T19:50:00	http://stackoverflow.com/questions/1183903/regex-using-javascript-to-return-just-numbers
+			2022-01-30T20:17:00	http://stackoverflow.com/questions/31247663/using-regular-expressions-to-find-non-numeric-values-in-javascript-jquery-code
 		-->
 		<title>Dates Computation</title>
 		<meta charset="UTF-8"/>
@@ -47,9 +49,7 @@
 				<tr>
 					<td><label for="word">Year Month Day:</label></td>
 					<td>
-						<textarea id="yearMonthDay" readonly="true" autofocus>
-FromUntil + 45%						
-						</textarea>
+						<textarea id="yearMonthDay" autofocus>7 Days</textarea>
 					</td>
 				</tr>
 				<tr>
@@ -72,12 +72,8 @@ FromUntil + 45%
 					<td><span id="interval"></span></td>
 				</tr>
 				<tr>
-					<td><label for="preDated">Pre Date:</label></td>
-					<td><span id="preDated"></span></td>
-				</tr>
-				<tr>
-					<td><label for="postDated">Post Date:</label></td>
-					<td><span id="postDated"></span></td>
+					<td><label for="dated">DateTime:</label></td>
+					<td><span id="dated"></span></td>
 				</tr>
 			</table>
 		</div>
@@ -93,8 +89,7 @@ FromUntil + 45%
 			
 			const intervalElement = document.getElementById("interval");
 			
-			const preDatedElement = document.getElementById("preDated");
-			const postDatedElement = document.getElementById("postDated");
+			const datedElement = document.getElementById("dated");
 			
 			const submitQueryElement = document.getElementById("submitQuery");
 			
@@ -125,6 +120,52 @@ FromUntil + 45%
 
 			function querySubmit()
 			{
+				var yearMonthDayElementValued = yearMonthDayElement.value.toLowerCase();
+				
+				var extractQuantities = yearMonthDayElementValued.match( QuantityPattern );
+				var extractUnits = yearMonthDayElementValued.match( UnitPattern );
+				
+				var
+					dated = scriptLiteral9432.todayTimezoneOffset(),
+					metricSum = 0,
+					metricQuantity = 0,
+					metricUnit = ""
+					;
+			
+				for
+				(
+					let metricIndex = 0, metricCount = extractQuantities.length;
+					metricIndex < metricCount;
+					metricIndex++
+				)
+				{
+					metricQuantity = parseFloat(extractQuantities[metricIndex].trim());
+					metricUnit = extractUnits[metricIndex].trim();
+					switch (metricUnit)
+					{
+						case "datetime":
+							dated = metricQuantity;
+							break;
+						case "day":
+						case "days":
+							metricSum += metricQuantity;
+							break;
+						case "month":
+						case "months":
+							metricSum += metricQuantity * 30;
+							break;
+						case "year":
+						case "years":
+							metricSum += metricQuantity * 360;
+							break;
+					}
+				}
+				intervalElement.textContent = metricSum;
+				datedElement.textContent = scriptLiteral9432.daysAdd(new Date(dated), metricSum);
+			}
+
+			function queryFortyFivePercent()
+			{
 				var daysBetween = scriptLiteral9432.daysBetween
 				(
 					new Date(untilDatedElement.value), 
@@ -154,6 +195,10 @@ FromUntil + 45%
 				}
 			}
 
-			window.addEventListener("load", pageLoad, false);		</script>
+			window.addEventListener("load", pageLoad, false);
+			
+			const QuantityPattern = /\d+/g;
+			const UnitPattern = /\D+/g;
+		</script>
 	</body>
 </html>
