@@ -687,6 +687,20 @@ var scriptLiteral9432 =
 		return result;
 	},
 	
+	/// 2022-01-31T15:03:00 https://stackoverflow.com/questions/5645058/how-to-add-months-to-a-date-in-javascript
+	monthsAdd: function(myDate, months) {
+		var result = new Date(myDate);
+		result.setMonth(result.getMonth() + months);
+		return result;
+	},
+
+	/// 2022-01-31T15:07:00 https://stackoverflow.com/questions/5645058/how-to-add-months-to-a-date-in-javascript
+	yearsAdd: function(myDate, years) {
+		var result = new Date(myDate);
+		result.setFullYear(result.getFullYear() + years);
+		return result;
+	},
+	
 	daysBetween: function(date1, date2) {
 		// The number of milliseconds in one day
 		var ONE_DAY = 1000 * 60 * 60 * 24

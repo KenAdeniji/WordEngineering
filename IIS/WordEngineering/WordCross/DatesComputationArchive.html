@@ -143,6 +143,9 @@
 					daysBetween = 0,
 					foundIndex = -1
 					;
+					
+				var
+					datedGregorian = datedElement.value;
 			
 				for
 				(
@@ -181,13 +184,61 @@
 						}	
 						if (foundIndex > -1)
 						{
-							metricSum += metricQuantity * 
-								scriptLiteral9432.biblicalCalendarDays[foundIndex][2];	
+							if (calendarTypeElement.value === "Biblical")
+							{
+								metricSum += metricQuantity * 
+									scriptLiteral9432.biblicalCalendarDays[foundIndex][2];
+							}
+							else if (calendarTypeElement.value === "Gregorian")
+							{
+								if (foundIndex <= 1) //Days and weeks
+								{
+									datedGregorian = scriptLiteral9432.daysAdd
+									(
+										datedGregorian,
+										metricQuantity * 
+											scriptLiteral9432.biblicalCalendarDays[foundIndex][2]
+									);		
+								}
+								else if (foundIndex === 2) //Months
+								{
+									datedGregorian = scriptLiteral9432.monthsAdd
+									(
+										datedGregorian,
+										metricQuantity
+									);		
+								}	
+								else if (foundIndex === 3) //Years
+								{
+									datedGregorian = scriptLiteral9432.yearsAdd
+									(
+										datedGregorian,
+										metricQuantity
+									);		
+								}	
+							}
 						}
 					}
 				}
-				intervalElement.textContent = metricSum;
-				datedComputedElement.textContent = scriptLiteral9432.daysAdd(datedElement.value, metricSum);
+				if (calendarTypeElement.value === "Biblical")
+				{
+					intervalElement.textContent = metricSum;
+					datedComputedElement.textContent = scriptLiteral9432.daysAdd
+					(
+						datedElement.value, 
+						metricSum
+					);
+				}	
+				else if (calendarTypeElement.value === "Gregorian")
+				{
+					datedComputedElement.textContent = datedGregorian;
+					metricSum = scriptLiteral9432.daysDifference
+					(
+						new Date(datedElement.value), 
+						datedGregorian
+					);
+					intervalElement.textContent = metricSum;
+				}	
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
