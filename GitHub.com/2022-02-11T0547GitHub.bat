@@ -1,0 +1,15 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat		
+        git add   IIS/WordEngineering/WordCross/DatesComputation.html
+        git add   IIS/WordEngineering/WordCross/DatesComputationArchive.html
+        git add   IIS/WordEngineering/WordCross/LetsBringThisToTheConstitutionMovement.html
+        git add   IIS/WordEngineering/WordCross/LetsBringThisToTheConstitutionMovementArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+git add        GitHub.com/2022-02-11T0547GitHub.bat
+git add        Google/Go/GoByExample.com/
+git add        IIS/WordEngineering/JavaScript/CraigBuckler/
+git add        IIS/WordEngineering/WordCross/TheDowGaveMeTwentySixPointsAndTheDowGaveMyTwentySixPointsToTheGovernment.html
+git add        IIS/WordEngineering/WordCross/TheDowGaveMeTwentySixPointsAndTheDowGaveMyTwentySixPointsToTheGovernmentArchive.html

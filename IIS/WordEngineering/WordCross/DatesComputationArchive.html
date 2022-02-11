@@ -68,12 +68,12 @@
 					<td><input id="dated" type="datetime-local"/></td>
 				</tr>
 				<tr>
-					<td><label for="fromDated">From:</label></td>
-					<td><input id="fromDated" type="datetime-local" value="0001-01-01T00:00"/></td>
+					<td><label for="datedFrom">From:</label></td>
+					<td><input id="datedFrom" type="datetime-local" value="0001-01-01T00:00"/></td>
 				</tr>
 				<tr>
-					<td><label for="untilDated">Until:</label></td>
-					<td><input id="untilDated" type="datetime-local" value="2004-07-11T00:00"/></td>
+					<td><label for="datedUntil">Until:</label></td>
+					<td><input id="datedUntil" type="datetime-local" value="2004-07-11T00:00"/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -97,8 +97,8 @@
 			
 			const datedElement = document.getElementById("dated");
 			
-			const fromDatedElement = document.getElementById("fromDated");
-			const untilDatedElement = document.getElementById("untilDated");
+			const datedFromElement = document.getElementById("datedFrom");
+			const datedUntilElement = document.getElementById("datedUntil");
 			
 			const intervalElement = document.getElementById("interval");
 			
@@ -163,8 +163,8 @@
 					{
 						daysBetween = scriptLiteral9432.daysBetween
 						(
-							new Date(untilDatedElement.value), 
-							new Date(fromDatedElement.value)
+							new Date(datedUntilElement.value), 
+							new Date(datedFromElement.value)
 						);
 						if (calendarTypeElement.value === "Biblical")
 						{

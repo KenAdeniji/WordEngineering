@@ -124,7 +124,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1084);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 2445);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3520);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11377);
@@ -139,7 +139,7 @@ DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
-DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1584);
+DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1718);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1471);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
@@ -242,5 +242,6 @@ Firefox had a problem and crashed. We’ll try to restore your tabs and windows 
 To help us diagnose and fix the problem, you can send us a crash report.
 2022-01-02T03:14:00 https://stackoverflow.com/questions/67064101/python-temperature-class-converter-k-f-c
 2022-01-07T05:01:00 Microsoft Windows status bar error.
-2022-01-07T06:32 ... 06:38 Microsoft Windows operating system, Explorer wait error. 
+2022-01-07T06:32 ... 06:38 Microsoft Windows operating system, Explorer wait error.
+Old and well-known pancake family handed from generation to generation. Founder of Kobayashi Pancake and Japanese Mr. Chung-Hsiang became good friends while Mr. Lin served in Japanese Navy during World War II under Japan's occupation of Taiwan. At the time of their departure, Mr. Chung Hsiang, whom was live with pancake in Japan before war, taught Mr. Lin all the unique skills of pancake he learned to Mr. Lin Zhen-nan, and it were at that time the Kobayashi Pancake started to incubation. 
 :Exit

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-02-10	Created.
+		-->
+		<title>The Dow gave me twenty six points and the Dow gave my twenty six points to the government.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The Dow gave me twenty six points and the Dow gave my twenty six points to the government."/>
+		<meta name="keywords" content="Dates Computation, Celicia and Martin Cardenas, San Francisco Bay International Christian Church, dated from, dated until, mod, dividend, divisor"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="fromDated">From:</label></td>
+					<td><input id="datedFrom" type="datetime-local" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="datedUntil">Until:</label></td>
+					<td><input id="datedUntil" type="datetime-local"/></td>
+				</tr>
+				<tr>
+					<td><label for="divisor">Divisor:</label></td>
+					<td><input id="divisor" type="number" value="14" step="7"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="dividend">Dividend:</label></td>
+					<td><span id="dividend"></span></td>
+				</tr>
+				<tr>
+					<td><label for="remainder">Remainder:</label></td>
+					<td><span id="remainder"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const datedFromElement = document.getElementById("datedFrom");
+			const datedUntilElement = document.getElementById("datedUntil");
+			
+			const divisorElement = document.getElementById("divisor");
+			const dividendElement = document.getElementById("dividend");
+			const remainderElement = document.getElementById("remainder");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			function daysBetween(date1, date2) {
+				// The number of milliseconds in one day
+				var ONE_DAY = 1000 * 60 * 60 * 24
+
+				// Convert both dates to milliseconds
+				var date1_ms = date1.getTime()
+				var date2_ms = date2.getTime()
+
+				// Calculate the difference in milliseconds
+				var difference_ms = Math.abs(date1_ms - date2_ms)
+
+				// Convert back to days and return
+				return Math.round(difference_ms/ONE_DAY)
+			}
+
+			function nowTimezoneOffset(now)
+			{	
+				if (arguments.length === 0)
+				{		
+					now = new Date();
+				}	
+				var local = now;
+				local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+				var currentTime = local.toJSON();
+				return currentTime;
+			}
+	
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var datedFromParam = urlParams.get("datedFrom");
+					if (!datedFromParam)
+					{
+						datedFromParam = nowTimezoneOffset().substring(0, 19);
+					}
+					datedFromElement.value = datedFromParam;
+
+					var datedUntilParam = urlParams.get("datedUntil");
+					if (!datedUntilParam)
+					{
+						datedUntilParam = nowTimezoneOffset().substring(0, 19);
+					}
+					datedUntilElement.value = datedUntilParam;
+
+					var divisorParam = urlParams.get("divisor");
+					if (divisorParam)
+					{
+						divisorElement.value = divisorParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var daysDifference = daysBetween
+				(
+					new Date(datedUntilElement.value), 
+					new Date(datedFromElement.value)
+				);
+				dividendElement.textContent = daysDifference;
+				remainderElement.textContent = daysDifference % divisorElement.value;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const QuantityPattern =  /[+-]?\d+(\.\d+)?/g;
+			const UnitPattern = /\D+/g;
+		</script>
+	</body>
+</html>
