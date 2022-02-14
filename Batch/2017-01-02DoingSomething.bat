@@ -132,7 +132,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 145018);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 145490);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 96166);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -244,4 +244,8 @@ To help us diagnose and fix the problem, you can send us a crash report.
 2022-01-07T05:01:00 Microsoft Windows status bar error.
 2022-01-07T06:32 ... 06:38 Microsoft Windows operating system, Explorer wait error.
 Old and well-known pancake family handed from generation to generation. Founder of Kobayashi Pancake and Japanese Mr. Chung-Hsiang became good friends while Mr. Lin served in Japanese Navy during World War II under Japan's occupation of Taiwan. At the time of their departure, Mr. Chung Hsiang, whom was live with pancake in Japan before war, taught Mr. Lin all the unique skills of pancake he learned to Mr. Lin Zhen-nan, and it were at that time the Kobayashi Pancake started to incubation. 
+2022-02-12T20:25:00 URIWordEngineering page 72
+URI	Title	Commentary	Keyword	Dated	SequenceOrderId
+Edit Delete Select	BenNadel.com 				2019-02-02 	51140
+2022-02-12T22:54:00 (bedside light lamp goes off)
 :Exit
