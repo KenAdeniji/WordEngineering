@@ -102,8 +102,8 @@ public class HoweverWeAreThatIsWhereWeAreWebService : System.Web.Services.WebSer
 		VerseIDSequence
 
 	SELECT 
-		'{1}' As OldName,
-		'{2}' As NewName,
+		'{1}' As BibleWordOld,
+		'{2}' As BibleWordNew,
 		STUFF
 		(
 			(
@@ -116,7 +116,7 @@ public class HoweverWeAreThatIsWhereWeAreWebService : System.Web.Services.WebSer
 				FOR XML PATH('')
 			)
 			,1,1,''
-		) AS ScriptureReferenceBothNames,
+		) AS ScriptureReferenceBoth,
 
 		STUFF
 		(
@@ -130,7 +130,7 @@ public class HoweverWeAreThatIsWhereWeAreWebService : System.Web.Services.WebSer
 				FOR XML PATH('')
 			)
 			,1,1,''
-		) AS ScriptureReferenceOldNameOnly,
+		) AS ScriptureReferenceOld,
 
 		STUFF
 		(
@@ -144,7 +144,7 @@ public class HoweverWeAreThatIsWhereWeAreWebService : System.Web.Services.WebSer
 				FOR XML PATH('')
 			)
 			,1,1,''
-		) AS ScriptureReferenceNewNameOnly
+		) AS ScriptureReferenceNew
 		
 ";
 		public static readonly String[,] NameChanges = new String[,]
