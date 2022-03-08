@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-03-06	http://htmldom.dev/check-if-an-element-is-a-descendant-of-another
+		2022-03-07T12:17:00 Created.
+		2022-03-07T13:42:00	SecurityError: Permission denied to access property "document" on cross-origin object
+	-->
+	<head>
+		<title>Assume that we want to find out if the child element is a descendant of the parent element.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Assume that we want to find out if the child element is a descendant of the parent element."/>
+		<meta name="keyword" content="parent contains child"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			iframe{ //viewport
+				height: 80vh;
+				width: 80vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input 
+							id="sourceAddress"
+							type="url"
+							style="width: 55vw;"
+							value="http://info.cern.ch/hypertext/WWW/TheProject.html"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="parentSelector">Parent Selector:</label></td>
+					<td>
+						<input 
+							id="parentSelector"
+							type="text"
+							value=":root"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="childSelector">Child Selector:</label></td>
+					<td>
+						<input 
+							id="childSelector"
+							type="text"
+							value="*"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="fetchContent">Fetch Content</button>
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="parentChild">Parent Child:</label></td>
+					<td>
+						<span id="parentChild"></span>
+					</td>
+				</tr>
+			</table>
+			<iframe id="sourceIFrame"></iframe>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			var parentSelectorElement = document.getElementById("parentSelector");
+			var childSelectorElement = document.getElementById("childSelector");
+
+			var sourceIFrameElement = document.getElementById("sourceIFrame");
+			var	parentChildElement = document.getElementById("parentChild");
+
+			var fetchContentElement = document.getElementById("fetchContent");
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					sourceAddressElement.value = sourceAddressParam ? sourceAddressParam : window.location;
+
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				sourceIFrameElement.src = sourceAddressElement.value;
+			}
+
+			function querySubmit()
+			{
+				var iFrameDocument = sourceIFrame.contentDocument || sourceIFrame.contentWindow.document;
+				
+				var parentElement = iFrameDocument.querySelector(parentSelector.value);
+				var childElement = iFrameDocument.querySelector(childSelector.value);
+				
+				var isDescendant = parentElement.contains( childElement );
+				parentChild.textContent = isDescendant;
+			}
+
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
