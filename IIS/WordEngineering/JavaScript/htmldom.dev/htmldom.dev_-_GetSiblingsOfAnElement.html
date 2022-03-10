@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-03-09T17:09:00 https://htmldom.dev/get-siblings-of-an-element/
+		2022-03-09T18:06:00	https://stackoverflow.com/questions/13365987/how-can-i-append-an-array-of-child-nodes-to-a-parent-node-in-one-operation-using
+	-->
+	<head>
+		<title>Get siblings of an element</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Get siblings of an element"/>
+		<meta name="keyword" content="Element, siblings"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			iframe{ //viewport
+				height: 80vh;
+				width: 80vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input 
+							id="sourceAddress"
+							type="url"
+							style="width: 55vw;"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="Selector">Selector:</label></td>
+					<td>
+						<input 
+							id="selector"
+							type="text"
+							value="*"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="fetchContent">Fetch Content</button>
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<div id="resultSet"></>
+					</td>
+				</tr>
+			</table>
+			<iframe id="sourceIFrame"></iframe>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			var selectorElement = document.getElementById("selector");
+			
+			var resultSetElement = document.getElementById("resultSet");
+			
+			var sourceIFrameElement = document.getElementById("sourceIFrame");
+
+			var fetchContentElement = document.getElementById("fetchContent");
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					sourceAddressElement.value = sourceAddressParam ? sourceAddressParam : window.location;
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				sourceIFrameElement.src = sourceAddressElement.value;
+			}
+
+			function querySubmit()
+			{
+				var iFrameDocument = sourceIFrame.contentDocument || sourceIFrame.contentWindow.document;
+				
+				var element = iFrameDocument.querySelector(selectorElement.value);
+				
+				var arrayOfNodes = elementSelector(element);
+				
+				var frag = document.createDocumentFragment();
+				for (var i = 0; i < arrayOfNodes.length; ++i) {
+					frag.appendChild(arrayOfNodes[i]);
+				}
+				
+				resultSetElement.innerHTML = "";
+				
+				//resultSetElement.appendChild(frag);
+				
+				resultSetElement.append(...arrayOfNodes);
+			}
+
+			function elementSelector(ele)
+			{
+				// Get the parent node
+				const parent = ele.parentNode;
+
+				// Filter the children, exclude the element
+				const siblings = [].slice.call(parent.children).filter(function (child) {
+					return child !== ele;
+				});
+				
+				return siblings;
+			}
+			
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
