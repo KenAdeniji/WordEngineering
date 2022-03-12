@@ -1,0 +1,24 @@
+        git add    Batch/2017-01-02DoingSomething.bat
+        git add    IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetCSSStylesOfAnElement.html
+        git add    IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetCSSStylesOfAnElementArchive.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add    IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+
+git add        GitHub.com/2022-03-11T1620GitHub.bat
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-03-10T0237WhenOneSpreadThoseAreSoAlike.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-03-10T0237WhenOneSpreadThoseAreSoAlikeArchive.txt
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetSizeOfTheSelectedFile.html
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetSizeOfTheSelectedFileArchive.html
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetTheSelectedText.html
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_GetTheSelectedTextArchive.html
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_ResizeAnIframeToFitItsContent.html
+git add        IIS/WordEngineering/JavaScript/htmldom.dev/htmldom.dev_-_ResizeAnIframeToFitItsContentArchive.html
+git add        IIS/WordEngineering/WordCross/ToUseAConstructionOfYourself.html
+git add        IIS/WordEngineering/WordCross/ToUseAConstructionOfYourselfArchive.html
+git add        IIS/WordEngineering/WordCross/ntc.js

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-03-10T13:39:00	https://htmldom.dev/get-size-of-the-selected-file/
+	-->
+	<head>
+		<title>Get size of the selected file</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Get size of the selected file"/>
+		<meta name="keyword" content="File size, upload"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<input type="file" id="upload" />
+		<div id="size"></div>
+		<script>
+			var isPostBack = false;
+			
+			const fileElement = document.getElementById('upload');
+			const sizeElement = document.getElementById('size');
+
+			// Convert the file size to a readable format
+			const formatFileSize = function (bytes) {
+				const sufixes = ['B', 'kB', 'MB', 'GB', 'TB'];
+				const i = Math.floor(Math.log(bytes) / Math.log(1024));
+				return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${sufixes[i]}`;
+			};
+			
+			function fileChange(e)
+			{
+				const files = e.target.files;
+				if (files.length === 0) {
+					// Hide the size element if user doesn't choose any file
+					sizeElement.innerHTML = '';
+					sizeElement.style.display = 'none';
+				} else {
+					// File size in bytes
+					sizeElement.innerHTML = formatFileSize(files[0].size);
+
+					// Display it
+					sizeElement.style.display = 'block';
+				}
+			}
+		
+			fileElement.addEventListener("change", fileChange, false);
+
+		</script>		
+	</body>
+</html>

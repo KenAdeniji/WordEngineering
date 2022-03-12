@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2022-03-09T07:00:00 https://stackoverflow.com/questions/65062831/what-does-getcomputedstyle-return-and-how-to-iterate-over-it
-		2022-03-09T08:27:00	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+		2022-03-10T15:47:00 https://htmldom.dev/resize-an-iframe-to-fit-its-content/
 	-->
 	<head>
-		<title>Get CSS styles of an element</title>
+		<title>Resize an iframe to fit its content</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Get CSS styles of an element"/>
-		<meta name="keyword" content="Element, css styles"/>
+		<meta name="description" content="Resize an iframe to fit its content"/>
+		<meta name="keyword" content="Resize IFrame"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
-		<style>
-			html, body{
-			  height: 100%;
-			  width: 100%;
-			}
-			iframe{ //viewport
-				height: 80vh;
-				width: 80vw;
-			}
-		</style>	
 	</head>
 	<body>
 		<div align="center">
@@ -33,16 +22,6 @@
 							id="sourceAddress"
 							type="url"
 							style="width: 55vw;"
-						/>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="cssStylesSelector">CSS Styles Selector:</label></td>
-					<td>
-						<input 
-							id="cssStylesSelector"
-							type="text"
-							value=":root"
 						/>
 					</td>
 				</tr>
@@ -64,9 +43,6 @@
 			var isPostBack = false;
 			
 			var	sourceAddressElement = document.getElementById("sourceAddress");
-	
-			var cssStylesSelectorElement = document.getElementById("cssStylesSelector");
-			
 			var resultSetElement = document.getElementById("resultSet");
 			
 			var sourceIFrameElement = document.getElementById("sourceIFrame");
@@ -97,52 +73,27 @@
 
 			function querySubmit()
 			{
-				var iFrameDocument = sourceIFrame.contentDocument || sourceIFrame.contentWindow.document;
+				// Get the height of the content
+				const height = sourceIFrameElement.contentDocument.body.scrollHeight;
+
+				// Set the height of iframe
+				sourceIFrameElement.setAttribute("height", "${height}px");
 				
-				var cssStylesElement = iFrameDocument.querySelector(cssStylesSelector.value);
+				// Get the width of the content
+				const width = sourceIFrameElement.contentDocument.body.scrollWidth;
+
+				// Set the width of iframe
+				sourceIFrameElement.setAttribute("width", "${width}px");				
 				
-				var styles = window.getComputedStyle(cssStylesElement, null);
-				
-var styles= [];
-
-// The DOM Level 2 CSS way
-//
-if ('getComputedStyle' in window) {
-    var cs= getComputedStyle(cssStylesElement, '');
-    if (cs.length!==0)
-        for (var i= 0; i<cs.length; i++)
-            styles.push([cs.item(i), cs.getPropertyValue(cs.item(i))]);
-
-    // Opera workaround. Opera doesn't support `item`/`length`
-    // on CSSStyleDeclaration.
-    //
-    else
-        for (var k in cs)
-            if (cs.hasOwnProperty(k))
-                styles.push([k, cs[k]]);
-
-// The IE way
-//
-} else if ('currentStyle' in cssStylesElement) {
-    var cs= cssStylesElement.currentStyle;
-    for (var k in cs)
-        styles.push([k, cs[k]]);
-}
-				resultSetElement.innerHTML = cssStylesIterate(styles);
-			}
-
-			function cssStylesIterate(cssStylesElement)
-			{
-				var cellInfo = "<table>";
-				for (const [key, value] of Object.entries(cssStylesElement)) {
-				  cellInfo += `<tr><td>${key}</td><td>${value}</td></tr>`
-				}
-				cellInfo += "<table>";
-				return cellInfo;
+				resultSetElement.innerHTML = `Height: ${height}px Width: ${width}px`;
 			}
 			
+			sourceIFrameElement.addEventListener("load", querySubmit, false);
+
 			fetchContentElement.addEventListener("click", contentFetch, false);
 			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+		
 		
 			var body = document.getElementsByTagName('body')[0];
 			body.onkeydown = function (e) {
