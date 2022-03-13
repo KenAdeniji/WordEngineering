@@ -16,20 +16,33 @@
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<canvas id="humanBody" width="400px" height="300px" >
-			Your browser does not support HTML5 Canvas element
-		</canvas>
-		<div id="statistics"></div>
-		<div id="hexColor"></div>
-		<div id="nameOfColor"></div>		
-		<div id="partID"></div>
+		<div align="center">
+			<canvas id="humanBody" width="400px" height="300px">
+				Your browser does not support HTML5 Canvas element
+			</canvas>
+			<table id="statistics">
+				<thead>
+					<caption>Statistics: Click on a Body Part</caption>
+					<tr><th>Name</th><th>Value</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Co-ordinate</td><td><span id="coordinate"></span></td></tr>
+					<tr><td>Hex Color</td><td><span id="hexColor"></span></td></tr>
+					<tr><td>Name of Color</td><td><span id="nameOfColor"></span></td></tr>
+					<tr><td>Body Part</td><td><span id="partID"></span></td></tr>
+					<tr><td>Scripture Reference</td><td><span id="scriptureReference"></span></td></tr>
+				</tbody>
+			</table>
+		</div>
 		<script src="http://chir.ag/projects/ntc/ntc.js"></script>
 		<script>
-			const hexColorElement = document.getElementById("hexColor");
 			const humanBodyElement = document.getElementById("humanBody");
+			
+			const coordinateElement = document.getElementById("coordinate");
+			const hexColorElement = document.getElementById("hexColor");
 			const nameOfColorElement = document.getElementById("nameOfColor");
 			const partIDElement = document.getElementById("partID");
-			const statisticsElement = document.getElementById("statistics");
+			const scriptureReferenceElement = document.getElementById("scriptureReference");
 			
 			function pageLoad()
 			{
@@ -110,16 +123,17 @@
 				var c = this.getContext('2d');
 				var p = c.getImageData(x, y, 1, 1).data; 
 				var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-				statisticsElement.innerHTML = coord;
-				hexColorElement.innerHTML = hex;
 
 				var n_match = ntc.name(hex);
 				var n_rgb = n_match[0]; // RGB value of closest match
 				var n_name = n_match[1]; // Text string: Color name
 				var n_exactmatch = n_match[2]; // True if exact color match
   
-				nameOfColorElement.innerHTML = n_name;
-				partIDElement.innerHTML = findPart("color", n_name).part;
+			    coordinateElement.textContent = coord;
+			    hexColorElement.textContent = hex;
+			    nameOfColorElement.textContent = n_name;
+			    partIDElement.textContent = findPart("color", n_name).part;
+				scriptureReferenceElement.textContent = findPart("color", n_name).scriptureReference;
 			};
 			
 			function findPos(obj) {
@@ -154,9 +168,9 @@
 			const bodyParts = [
 			  {part: "head", color: "Bisque"},
 			  {part: "mouth", color: "Red"},
-			  {part: "eye", color: "Green"},
+			  {part: "eye", color: "Green", scriptureReference: "Genesis 27:1, Genesis 48:10, Deuteronomy 34:7"},
 			  {part: "body", color: "Navy"},
-			  {part: "arm", color: "Blue"},
+			  {part: "arm", color: "Blue", scriptureReference: "Genesis 53:1"},
 			  {part: "leg", color: "Orange"},
 			];
 
