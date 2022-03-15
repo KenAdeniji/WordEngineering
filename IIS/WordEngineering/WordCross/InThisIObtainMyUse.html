@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-03-14T17:37:00 Created.
+		2022-03-14T17:51:00	https://stackoverflow.com/questions/10900235/how-to-write-a-nested-multi-dimensional-json-object
+		2022-03-14T18:27:00	https://stackoverflow.com/questions/777455/is-there-a-query-language-for-json
+		https://stackoverflow.com/questions/58287168/how-to-get-object-values-with-dynamic-variable-from-json
+		resultSetElement.innerHTML = JSON.stringify(eval(`hierarchyTree.${namedElement.value}`));
+		man.length
+		man[0].father
+		man[0].mother
+		man[1].increase
+		2022-03-14T20:10:00 The spirit to hold as you are attentive.
+	-->
+	<head>
+		<title>In this I obtain my use.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="In this I obtain my use."/>
+		<meta name="keyword" content="JSON array"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="named" type="text" value="man[1].increase"/>
+			<input type="submit" id="submitQuery"/>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const namedElement = document.getElementById("named");
+			const resultSetElement = document.getElementById("resultSet");
+
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var namedParam = urlParams.get("named");
+					if (namedParam)
+					{
+						namedElement.value = namedParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = JSON.stringify(eval(`hierarchyTree.${namedElement.value}`));
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const hierarchyTree = 
+{
+    "man":
+    [
+		{
+            "father":"Adam",
+            "mother":"Eve",
+            "increase":
+            [
+                {
+                    "named":"Cain",
+                    "comingID":"1"
+                },
+                {
+                    "named":"Abel",
+                    "comingID":"2"
+                },
+                {
+                    "named":"Seth",
+                    "comingID":"3"					
+                }
+            ]
+        },
+        {
+            "father":"Israel",
+            "mother":"Rachel",
+            "increase":
+            [
+                {
+                    "named":"Judah",
+                    "comingID":"1",
+                    "honorID":"2"
+                },
+                {
+                    "named":"Joseph",				
+                    "comingID":"11",
+					"honorID":1
+                }
+            ]
+        }
+    ]
+};
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-03-13T18:16:00 https://www.freecodecamp.org/news/dont-settle-how-you-can-match-your-javascript-collection-to-your-goals-c94cb994be4e
+	-->
+	<head>
+		<title>August 13, 2018 / #JavaScript Don’t settle: how you can match your JavaScript collection to your goals by Joe Morgan</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="August 13, 2018 / #JavaScript Don’t settle: how you can match your JavaScript collection to your goals by Joe Morgan"/>
+		<meta name="keyword" content="Collection, array"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script>
+			function pageLoad()
+			{
+				stub();
+			}
+			
+			function stub()
+			{
+				const bibleAuthors = ['Moses', 'Joshua', 'Samuel'];
+				const [pentateuch, joshua, ...others] = bibleAuthors;
+				console.log(pentateuch, joshua, others.join(", "));
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
