@@ -4,7 +4,8 @@
 		2022-03-14T17:37:00 Created.
 		2022-03-14T17:51:00	https://stackoverflow.com/questions/10900235/how-to-write-a-nested-multi-dimensional-json-object
 		2022-03-14T18:27:00	https://stackoverflow.com/questions/777455/is-there-a-query-language-for-json
-		https://stackoverflow.com/questions/58287168/how-to-get-object-values-with-dynamic-variable-from-json
+		2022-03-14T20:00:00	https://stackoverflow.com/questions/58287168/how-to-get-object-values-with-dynamic-variable-from-json
+		2022-03-14T22:01:00	https://stackoverflow.com/questions/8175093/simple-function-to-sort-an-array-of-objects
 		resultSetElement.innerHTML = JSON.stringify(eval(`hierarchyTree.${namedElement.value}`));
 		man.length
 		man[0].father
@@ -24,16 +25,27 @@
 	</head>
 	<body>
 		<div align="center">
-			<input id="named" type="text" value="man[1].increase"/>
-			<input type="submit" id="submitQuery"/>
+			<table>
+				<tr>
+					<td><label for="filterExpression">Filter Expression:</label></td>
+					<td><input id="filterExpression" type="text" value="man[1].increase"/></td>
+				</tr>
+				<tr>
+					<td><label for="sortKey">Sort Key:</label></td>
+					<td><input id="sortKey" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>
+			</table>
 			<div id="resultSet"></div>
 		</div>
 		<script>
 			var isPostBack = false;
 			
-			const namedElement = document.getElementById("named");
+			const filterExpressionElement = document.getElementById("filterExpression");
 			const resultSetElement = document.getElementById("resultSet");
-
+			const sortKeyElement = document.getElementById("sortKey");
 			const submitQueryElement = document.getElementById("submitQuery");
 
 			function pageLoad()
@@ -42,10 +54,16 @@
 				{
 					const urlParams = new URLSearchParams(window.location.search);
 					
-					var namedParam = urlParams.get("named");
-					if (namedParam)
+					var filterExpressionParam = urlParams.get("filterExpression");
+					if (filterExpressionParam)
 					{
-						namedElement.value = namedParam;
+						filterExpressionElement.value = filterExpressionParam;
+					}
+
+					var sortKeyParam = urlParams.get("sortKey");
+					if (sortKeyParam)
+					{
+						sortKeyElement.value = sortKeyParam;
 					}
 				
 					querySubmit();
@@ -59,7 +77,23 @@
 
 			function querySubmit()
 			{
-				resultSetElement.innerHTML = JSON.stringify(eval(`hierarchyTree.${namedElement.value}`));
+				const evalInfo = eval(`hierarchyTree.${filterExpressionElement.value}`);
+				var sortedInfo = [...evalInfo];
+				if (sortKeyElement.value)
+				{
+					sortedInfo = sortByKey(sortedInfo, sortKeyElement.value);
+				}
+				resultSetElement.innerHTML = JSON.stringify(sortedInfo);
+			}
+
+			function sortByKey(array, key)
+			{
+				return array.sort(function(a, b)
+				{
+					var x = a[key].toLowerCase();
+					var y = b[key].toLowerCase();
+					return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+				});
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
