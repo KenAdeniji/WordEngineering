@@ -16,22 +16,24 @@
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<canvas id="humanBody" width="400px" height="300px">
-			Your browser does not support HTML5 Canvas element
-		</canvas>
-		<table id="statistics" align="center">
-			<thead>
-				<caption>Statistics: Click on a Body Part</caption>
-				<tr><th>Name</th><th>Value</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>Co-ordinate</td><td><span id="coordinate"></span></td></tr>
-				<tr><td>Hex Color</td><td><span id="hexColor"></span></td></tr>
-				<tr><td>Name of Color</td><td><span id="nameOfColor"></span></td></tr>
-				<tr><td>Body Part</td><td><span id="partID"></span></td></tr>
-				<tr><td>Scripture Reference</td><td><span id="scriptureReference"></span></td></tr>
-			</tbody>
-		</table>
+		<div align="center">
+			<canvas id="humanBody" width="400px" height="300px">
+				Your browser does not support HTML5 Canvas element
+			</canvas>
+			<table id="statistics">
+				<thead>
+					<caption>Statistics: Click on a Body Part</caption>
+					<tr><th>Name</th><th>Value</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Co-ordinate</td><td><span id="coordinate"></span></td></tr>
+					<tr><td>Hex Color</td><td><span id="hexColor"></span></td></tr>
+					<tr><td>Name of Color</td><td><span id="nameOfColor"></span></td></tr>
+					<tr><td>Body Part</td><td><span id="partID"></span></td></tr>
+					<tr><td>Scripture Reference</td><td><span id="scriptureReference"></span></td></tr>
+				</tbody>
+			</table>
+		</div>
 		<script src="http://chir.ag/projects/ntc/ntc.js"></script>
 		<script>
 			const humanBodyElement = document.getElementById("humanBody");
@@ -82,16 +84,16 @@
 					context.strokeStyle = findPart("part", "body").color;;
 					context.stroke();
 
-					// arms
+					// hand
 					context.beginPath();
-					context.strokeStyle = findPart("part", "arm").color;
+					context.strokeStyle = findPart("part", "hand").color;
 					context.moveTo(200, 80);
 					context.lineTo(150, 130);
 					context.moveTo(200, 80);
 					context.lineTo(250, 130);
 					context.stroke();
 
-					// legs
+					// leg
 					context.beginPath();
 					context.strokeStyle = findPart("part", "leg").color;
 					context.moveTo(200, 180);
@@ -168,7 +170,7 @@
 			  {part: "mouth", color: "Red"},
 			  {part: "eye", color: "Green", scriptureReference: "Genesis 27:1, Genesis 48:10, Deuteronomy 34:7"},
 			  {part: "body", color: "Navy"},
-			  {part: "arm", color: "Blue", scriptureReference: "Genesis 53:1"},
+			  {part: "hand", color: "Blue", scriptureReference: "Genesis 53:1"},
 			  {part: "leg", color: "Orange"},
 			];
 

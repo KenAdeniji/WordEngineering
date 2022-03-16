@@ -1,0 +1,10 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   IIS/WordEngineering/WordCross/InThisIObtainMyUse.html
+        git add   IIS/WordEngineering/WordCross/InThisIObtainMyUseArchive.html
+        git add   IIS/WordEngineering/WordCross/ToUseAConstructionOfYourself.html
+        git add   IIS/WordEngineering/WordCross/ToUseAConstructionOfYourselfArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+git add        GitHub.com/2022-03-16T0730GitHub.bat
