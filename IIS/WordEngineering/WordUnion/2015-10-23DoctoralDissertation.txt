@@ -1,15 +1,49 @@
+	
+
+    Title
+    Abstract
+    Acknowledgments
+    Introduction
+    Theory
+    Results and Discussion
+    Terminology
+    References
+    Appendices
+    Background
+    Prophecy and Fulfillment
+
 WordEngineering
 Ken Adeniji
 
 A thesis submitted for the degree of Doctor of Philosophy in the Faculty of Science.
 Abstract
 
-Thesis Statement: This dissertation introduces AlphabetSequence. The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
+Thesis Statement: This dissertation introduces AlphabetSequence ( 2 Corinthians 10:9-18 ). The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
 
 The importance of this work?
 
     So there is God, I joined where that God is.
     Follow God, as a character.
+    To know God as an experience of myself.
+    When is He likely to follow-up?
+    I chose to live in the opinion of God.
+    To reconciliate our notion.
+    What did we determine, as one of ours?
+    Keeping know how?
+    I am not your LORD. How can I serve you?
+    What is God to operate?
+    What it takes to make a part is to retain the past.
+    Where He spoke what He wanted?
+    A life that completes His sense.
+    To record time as personal.
+    Is that what God will want for them?
+    How can I keep the giving?
+    When you participate in God, there is no further man.
+    Committing to a later realization of life.
+    Not the difference.
+    To be every design of associate.
+    To create one of a being, you need to be Your entire self.
+    Trying to relate ( Matthew 24:36 ).
 
 The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word.
 
@@ -28,6 +62,7 @@ Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
 
 Intention:
 
+    Lay the effort on family, candor, and community.
     The research of the author is for beginning Bible scholars.
     The research produces a set of web pages that will equip the scholar.
     The usability of the Bible as a study tool.
@@ -44,22 +79,35 @@ Countenance 	3 	Matthew 6:16, Matthew 28:3, Luke 9:29
 Countries 	1 	Luke 21:21
 Country 	37 	Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57, Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
 
-On behalf, of someone, I seem Actor 	Type 	Scripture Reference
-Jesus Christ		Passover Lamb 	John 1:29, John 1:36
-John the Baptist		Forerunner 	John 1:33
-Moses		Prophet 	Exodus 7:1, Numbers 12:6, Deuteronomy 18:15, Deuteronomy 18:18, Deuteronomy 34:10
-
-What substitution lies ahead? Type 	Actor 	Scripture Reference
-Man 	Seth 	Genesis 4:25, Genesis 5:3
-Land 	Isaac 	Genesis 26:2, Genesis 26:12
-Believe 	Abraham 	Romans 4
-
 Acknowledgments
 
 Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Introduction
+Who, What, When, Where, Why?
+Who
+
+The author gives credence to the information source. Whenever it is possible, the author identifies the speaker.
+
+Who obtains the future as our guidance?
+What
+
+The primary contribution of the author is the word. The author draws upon the word of God and tries to derive meaning.
+
+When
+
+God gives most of His information in a dream, vision or face-to-face.
+
+How do people place date? On each day of the week ( Genesis 1-2 )? Senior comes first ( John 1:15, John 1:27, John 1:30 ).
+
+Where
+
+The author refers to the physical location or scenery of participation.
+
+Why
+
+The endeavor of the author is to share the word.
 
 The incentives to begin work on WordEngineering will include:
 
@@ -70,16 +118,31 @@ The incentives to begin work on WordEngineering will include:
 
 Theory
 "
+Indexing
+" (Search engine indexing)
+
+The author manually indexes according to the following progression:
+
+    The URI database is separable into the following tables:
+        URIChrist
+        URIEntertainment
+        URIGoogleNews
+        URIWordEngineering
+    The SacredText table is for scripture reference.
+    The Exact table is an index of the words in the King James Version (KJV) of the Bible.
+    The source of information is in the bibliography section.
+
+"
 Programming
 " (Microsoft)
 The Author Programs in the Following Tiers and Languages Tier 	Language 	Commentary
 Front-End Browser 	HyperText Markup Language (HTML), Javascript, Cascading Style Sheet (CSS) 	The front-end code may run on a desktop, laptop, or mobile telephone that offers a user interface (UI). The task is to accept the user query and to display the result. Initially, as a novice programmer, the author wrote specific code for each user request; later, the author rests on generic code which will handle multiple variety of requests. This is high-level programming, and the skill-set entry level is minimal. The author also believes that the users should not require any formal training to use his work. Customization is achievable by varying the request options, such as entry form selections, query arguments, or data attributes.
-Middle-Tier Application 	C#, Embedded-SQL 	For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the author has experience with Microsoft Visual Studio and command-line tools.
+Middle-Tier Application 	C#, Embedded-SQL 	For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the experience of the author is with Microsoft Visual Studio and command-line tools.
 Server-Side Backend 	Standard Query Language (SQL) 	The author most recent experience is with the Sybase and Microsoft Transact-SQL assortment. Now a days, to be compatible and after experimentation; the author rarely uses Standard Query Language - Common Language Runtime (SQL-CLR). The author does database data entry, maintenance, development by using the Microsoft SQL Server Management Studio.
 The Author Uses the Git Code Repository Key 	Value 	Commentary
 Universal Resource Identifier (URI) 	github.com/KenAdeniji 	This is the home page for storing the repositories.
 Date Created 	2013-04-27 	This is the date of creating the github.com account.
-Version 	git version 2.29.2.windows.3 	The git --version command offers the release detail. The author is not sufficiently knowledgeable on the version update.
+Version 	git version 2.29.2.windows.3 	The git --version command offers the release detail. The author is not sufficiently knowledgeable on tracking the version update.
 Configuration Profile 	git config --list 	The commands below will set the profile: git config --global user.name "your-name" git config --global user.email "your-email"
 Change Tracking 	git status 	This will decide the differences between your local copy and the version control code repository.
 Add Updates 	git add 	The git add . command will add all the updates, or the user may add particular directories and files.
@@ -95,8 +158,8 @@ JavaScript Basics: Data Types
     JavaScript supports three keywords for declaring variables. These are the var, let, const keywords.
     From its pre-conception, JavaScript supported the var keyword. When the author does not precede a variable initialization with a keyword, then the variable will have global scope. The author averts from variable hoisting. Variable definition with the var keyword is re-usable. The strict mode is a later addition to JavaScript. Helps in enforcing variable rules.
     For one-time definitions, such as, issuing the document.getElementById command, the author relies on the const keyword.
-    Unlike some typed languages, JavaScript does not support explicitly identifying the type of a variable.
-    JavaScript comparisons are case-sensitive.
+    Unlike some typed languages, JavaScript does not support explicitly specifying the type of a variable.
+    JavaScript comparisons are by default case-sensitive.
 
 Functions and Methods
 
@@ -169,7 +232,7 @@ Data
 " (Vaibhav Verdhan)
 Structured and Unstructured
 
-Structured data is alphanumeric put in row-column. Unstructured data is either text, image, audio, or video. This research is solely structured data.
+Structured data is alphanumeric put in row-column. Unstructured data is either text, image, audio, or video. This research is mainly structured data.
 Standard
 
 The author imports complete, not NULL nor empty data, such as the Bible and the dictionaries.
@@ -476,6 +539,36 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+"Data Structures and Algorithm Analysis"
+
+The exact-match query is to search for a single Bible book, chapter, or verse. In the case of a verse, the top 1 clause is appropriate to efficiently return a single record. The range query is to search for information within a boundary.
+
+The Remember table's FromUntilFirst bit column is a rare Boolean datatype. It is for documentation purposes and it says the FromUntil period is known and it is used to determine either the FromDated or UntilDated column.
+
+An identity column is a specialization of the integer data type, in that the database issues the next sequence. Most of the tables make use of the identity column as a surrogate primary key.
+
+The aggregate or composite type attempts to store each particular type in its own table, when this is not optimum then normalization calls for several tables distribution joined within one view. The contact record is a single logical datatype spread to multiple physical implementations.
+
+When the author hears a word, what does he do with it? He dates the word, he expresses it grammatically, and he finds a place for it in his memory. For a later date, I remind myself.
+Problems, Algorithms, and Programs
+Problem
+
+When we hear the word, how do we endeavor in Him?
+Function, Input, and Output
+
+The input is the word as the only parameter. Our output is how we find meaning in the word of God. The response of the computer is within the range of the result set.
+Sets and Relations
+
+The alphabets and words make-up the author's work. The composition of the words is indefinite.
+
+    The ASCII table set composes 26 upper and lower case alphabets. Their places will originally decide the AlphabetSequenceIndex.
+    The digits and their larger representations of numbers are also in the ASCII table. These are computable in determining the AlphabetSequenceIndex.
+    The null character is in the Word column, when there is only commentary.
+    Cardinality: Microsoft SQL Server places a limit on the maximum size of a VARCHAR column type, 8000. When there are 2 or 3 words in a column, the author does further computation.
+
+Asymptotic Algorithm Analysis
+
+This is the approximation measurement of how long it should normally take to determine the AlphabetSequenceIndex. The prediction is the length of the word multiplied by the average period taken to determine the place of each alphabet.
 "A generic grouping of concepts and their representation"
 Module 	Unit
 GetAPage.html 	retrieveAlphabetSequence()
@@ -588,19 +681,19 @@ Probability
 Formerly, the HisWord's table primary key is its Word column, and in SQL Server the maximum size of a unique key is 900 bytes; therefore, the limit of its distinct entries is 900 ^ (2 ^ 8) = 900 ^ 256 = 1.932334983228891510545406872202e+756.
 Degree of Belief
 
-In GetAPage.html we will consider the word(s) AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference. The AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference correlate. Each word is a feature, however, hidden and has a contributing influence on the result.
+In GetAPage.html the author will consider the word(s) AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference. The AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference correlate. Each word is a feature, however, hidden and has a contributing influence on the result.
 
-In the BibleWord section, we look at each word, in the context of the sentence, and see if it is in the Bible, as a phrase or word combination.
+In the BibleWord section, the author will look at each word, in the context of the sentence, and see if it is in the Bible, as a phrase or word combination.
 
 In the BibleDictionary section, we will explain the meaning of each word. The degree of belief is most certain; since we display each word found in the Bible dictionaries.
 Frequentist Probability
 
 In GetAPage.html the same input will produce the same result; because the database is consistent. When the user enters a new word, this trains the system.
 
-WordEngineering started out as the author trying to use the Bible to decipher God's word; however, to do growth, personalization, customization, appeal to more audience. Our task is to see them, say, I done ( John 19:30 ).
+WordEngineering started out as the author trying to use the Bible to decipher God's word; however, to do growth, personalization, customization, appeal to more audience. Our task is to see them, say, I done ( John 19:30 ) .
 Bayesian Probability
 
-Making specific, a generalization; given one result set, can we make a general result? Does it stand the test of a general audience? Does a sample, qualify for the total?
+Making specific, a generalization; given one result set, can the author make a general result? Does it stand the test of a general audience? Does a sample, qualify for the total?
 Random_variable
 
 The AlphabetSequenceIndex may range between 1 and (8000 * 26), 1 ... 208000; 8000 being the largest length of a SQL Server VARCHAR datatype column, and the count of alphabets being 26. This is a discrete set; since it is finite.
@@ -612,7 +705,7 @@ Each sentence will give the same result, and this value is a weighted value of t
 Key Terms for Data Types
 Continuous
 
-The Dated column is a valid DateTime, and generally, it is ongoing, rarely do we backdate.
+The Dated column is a valid DateTime, and generally, it is ongoing, rarely does the author backdate.
 Discrete
 
 The identity columns and AlphabetSequenceIndex are integer values; that fall into a small unique set.
@@ -689,7 +782,7 @@ Contextual
 
 Enhancements to JavaScript, such as const and let influence hoisting. So does script literal, strict mode, class.
 
-The author contends with the C# class container model and the optional namespace alias.
+The C# class container model and the optional namespace alias content the author.
 
 Cascading Style Sheets (CSS) is modular, and its rules trickle down.
 Continuous
@@ -771,12 +864,36 @@ Results and Discussion
 The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme.
 
 This research does not limit itself to a particular Bible subject nor word. But, rather it illustrates the response of the author to the word of God. What artifact can the author produce; in compliance with the word of God? Is the training of the author beneficiary or lacking? Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
+Word Inference
 
-Coming from an IT background
+    A lot of Yoruba language words may mean ethnic conflict.
+    The Bible is specific in relation to the Jews. The word, about, generally refers to the surroundings and the time of an event.
+
+Preeminence of data?
+
+How suitable is the data for general use?
+Coming from an Information Background
 
     Familiarize with keyword Noun.
     Letters in the English language?
     The work? Is to associate the reference.
+    How could I collaborate fact with what I know?
+
+On behalf, of someone, I seem Actor 	Type 	Scripture Reference
+Jesus Christ		Passover Lamb 	John 1:29, John 1:36
+John the Baptist		Forerunner 	John 1:33
+Moses		Prophet 	Exodus 7:1, Numbers 12:6, Deuteronomy 18:15, Deuteronomy 18:18, Deuteronomy 34:10
+
+What substitution lies ahead? Type 	Actor 	Scripture Reference
+Man 	Seth 	Genesis 4:25, Genesis 5:3
+Land 	Isaac 	Genesis 26:2, Genesis 26:12
+Believe 	Abraham 	Romans 4
+
+The Accumulation of Age. Title 	Time 	Scripture Reference
+Creation 	6 Days 	Genesis 1
+Exodus from Egypt to the Promised Land 	40 Biblical Years 	Exodus 16:35, Numbers 14:33-34, Numbers 32:13, Deuteronomy 2:7, Deuteronomy 8:2, Deuteronomy 8:4, Deuteronomy 29:5, Joshua 5:6, Nehemiah 9:21, Psalms 95:10, Amos 2:10, Amos 5:25, Acts 7:36, Acts 7:42, Acts 13:18, Hebrews 3:9, Hebrews 3:17
+Weeks of Years 	490 Biblical Years 	Daniel 9:24-27
+First Resurrection 	1000 Biblical Years 	Revelation 20:2-7
 
 What did He see Himself as?
 What did He see Himself as? Alias 	Scripture Reference
@@ -887,7 +1004,7 @@ Prepared for Time
 
 On 2019-04-04T09:00:00 andre.nguyen@gqrgm.com will telephone me about the role with Google's co-founder Larry Page jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403 Andre Nguyen asked how I spend my day?
 
-When I stated AlphabetSequence, I ate my daily meal at 6PM, read the Bible and went to bed. I could break my day, into punctual scheduled activities, such-as:
+When I started AlphabetSequence, I ate my daily meal at 6PM, read the Bible and went to bed. I could break my day, into punctual scheduled activities, such-as:
 
     Wake-up
     Brush my teeth and shower
@@ -926,6 +1043,8 @@ Specificity guides our entries into the HisWord table; for example if the inform
 
 What we do minimally, is how we do enormously.
 
+God may put a thought or question in my mind, rather than sharing a word? To know the need of revealing one another?
+
 How do you, reference the Bible?
 
     Search Engine? Requires Internet access.
@@ -950,6 +1069,7 @@ What does He choose as example?
 
 Contribution
 The Contribution of the Author's Historical Information Unit 	Value
+Metric 	Word, number, date, timespan
 Dream 	Unique
 Freight 	Free
 Cost and Price 	Free
@@ -976,10 +1096,11 @@ He said and He did. Word work (Genesis 11:1-9). At the beginning of WordEngineer
 
     Read and recite the Bible.
     Pray.
-    Sexual abstinence and celibacy.
+    Praise and worship.
     Take computer courses at Ohlone College, in the Fremont and Newark campuses.
     Read books and magazines at Barnes & Noble, Borders, Walden Pond Books and public libraries.
     Listen to Christian commentators.
+    Sexual abstinence and celibacy.
     Solitary living at Newark City in California. Patmos.
     Fast, everyday, only ate, once a day, in the evening. I ate Nomura Holdings Kokuho rice.
     Walk, two hours a day, between Newark and Fremont, to do programming. Learn how to program today's technology, with relevance to the word's revelation.
@@ -993,6 +1114,10 @@ Lessons Learnt
 
     Esteem word: Leading up-to 2008-03-07, I was not fully recording the word of the LORD (Job 23:12).
     Relative to the world (Proverbs 3:5).
+    If the words do not join? Consider separating or putting the lesser word in the commentary column.
+    Do I determine I know?
+    Check for grammatical correctness. As much as possible, put all the spoken word. Only adjust for spelling. As the world sees it. Keeping my own word, ahead of me.
+    If the word and scenery do not fit exactly, it may be a larger scenario.
     What I have learnt from Bill Gates, through using the software from Microsoft.
         Normalize the relational database for on-line transaction processing (OLTP); specifically the Remember table should reference the HisWord table, and the Commentary column should not contain the duplicate data.
         The BibleWord table may not be necessary to relate the HisWord table to the Scripture. How much manual work does the author do, and can the author automate this work?
@@ -1163,6 +1288,7 @@ Word to Today
 The remember table correlates the events and the calendar. Currently, the author is manually deriving the entries for the Remember table. When there is an association, then the author considers the first, last, relevant mentions.
 
     To forget time is responsible ( Revelation 21:23, Matthew 17:5, Mark 9:7, Luke 9:35 ).
+    What replaces time ( Ruth 1:13 )?
 
 The gain from automating this process will include:
 
@@ -1176,6 +1302,10 @@ Fulfillment 	Luke 9:31
 Incentive 	Daniel 12:13, Isaiah 53:12
 
 We may need, human help, to determine, the theme-of-the-day?
+
+The author's work is record specific, GetAPage.html. Future work may consider the entries for a particular date, datetime range, or HisWordID set basket? What this information have in common?
+
+On 2022-01-10, I will recall that the birthday of biological mother is coming up, on 2022-01-12. I should pray about this and reinforce effort. What is He, starting to say?
 
 Is there going to be a safe development to this design? There is key to reason. This work is not defamatory nor inflammatory.
 Reuse
@@ -1329,6 +1459,7 @@ References
     Supervised Learning with Python Concepts and Practical Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page; Available from http://www.allitebooks.com/supervised-learning-with-python
     Design for How People Think: Using Brain Science to Build Better Products Book John Whalen, PhD; W3C web page; Available from https://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Wikipedia W3C web page; Available from http://www.wikipedia.org
+    Search engine indexing W3C web page; Available from http://en.wikipedia.org/wiki/Search_engine_indexing
     Microservice Eberhard Wolff; W3C web page; Available from http://www.microservices-book.com
 
 Appendices
@@ -1369,7 +1500,7 @@ The author's country of birth, Nigeria, gained independence on, 1960-10-01, a Bi
 
 Jesus Christ began His ministry at the age of thirty, and the estimate is that He served for three years (Luke 3:23). The author was born on 1967-10-15 thirty-three years before the end of the second millennium. 1967-10-15 ... 2000-01-01 = 11766 days (32 biblical years, 8 biblical months, 6 days) (32 years, 2 months, 2 weeks, 3 days). 1967-10-15 B.C. ... 1967-10-15 A.D. = 1436515 days = 47196 months = 3933 years. My thirtieth, 30th, Biblical years birthday will occur on 1997-05-10. My thirty-third, 33rd, Biblical years birthday will occur on 2000-04-24. Between 1967-10-15 and 1968-04-04 are 172 days (5 biblical months, 22 days) (5 months, 2 weeks, 6 days). Between 1967-10-15 and 1968-10-15 are 366 days (1 biblical year, 6 days) (1 year, 1 day). Between 1967's Easter Day, 1967-03-26, and 1967-10-15, is 203 days (6 biblical months, 23 days) (6 months, 2 weeks, 5 days). Between 0032-04-06 and 1967-10-15, is 706935 days (1963 biblical years, 8 biblical months, 15 days) (1935 years, 6 months, 1 week, 1 day) 49.09270833 Biblical generations, 280.529761 weeks of years.
 
-At the age of twelve, Jesus Christ, His father and mother, worshipped at the temple, in Jerusalem. The author worshipped at Saint Edward's Catholic Church on 2002-07-01, 3.5 Biblical years, after coming to the U.S. (Luke 2:42, Matthew 9:20, Mark 5:25, Mark 5:42). The author deportation to Nigeria, occurred in 1988, twelve-years, before the beginning of the third millennium; and forty-years after Israel's independence. The author first visited the United States of America, as a twelve-years old; and he re-located to Australia before the age of twenty-four. Deported at the age of twenty; and returned before turning thirty-two; a twelve-year period (Nehemiah 5:14). Between 1999-01-22 and 2020-06-12, there are 7812 days (21 biblical years, 8 biblical months, 12 days) (21 years, 4 months, 3 weeks). 360 * 12 = 4320, the telephone country code for Nigeria is 234. Moses lived for 120 Biblical years, 120 * 360 = 43200. At twelve post meridiem, 12PM, the elapsed time is forty three thousand, two hundred, 43200, seconds. The author's ancestral home is Ile-Ife. The author's place of birth is Lagos. When the author's biological parents re-located to the United States of America (USA), the author re-located to Ile-Ife. Lagos is the economic capital of Nigeria, and Ile-Ife is the cradle of the Yoruba land. The author re-located from Staff School, University of Ife, as a nine-year old; to Lagos, a two-hour journey. Abati Nursery and Primary School. 1967-10-15 + 9 Biblical years = 1967-10-15 + 3240 = 1976-08-28. In February 1992, the author started work at Information Dialling Services (IDS) White International LonSyd.
+At the age of twelve, Jesus Christ, His father and mother, worshipped at the temple, in Jerusalem. The author worshipped at Saint Edward's Catholic Church on 2002-07-01, 3.5 Biblical years, after coming to the U.S. (Luke 2:42, Matthew 9:20, Mark 5:25, Mark 5:42). The author deportation to Nigeria, occurred in 1988, twelve-years, before the beginning of the third millennium; and forty-years after Israel's independence. The author first visited the United States of America, as a twelve-years old; and he re-located to Australia before the age of twenty-four. Deported at the age of twenty; and returned before turning thirty-two; a twelve-year period (Nehemiah 5:14). 2022-01-12 What should I, later use? ( Exodus 4:12 ). Decoy Terrace, South Center. Past the house of James. What are beyond out type? Merit the word. The birthday of biological mother is 1944-01-12. The birthday of paternal aunt is 1948-01-30. The average day of the month is (30 + 12 / 2) = 42 / 2 = 21. I was deported as a 20 year old, just prior to my 21st birthday. Can you become a man? Can you form a man? 1614th verse. 1614 - 816 = 798. Between 1999-01-22 and 2020-06-12, there are 7812 days (21 biblical years, 8 biblical months, 12 days) (21 years, 4 months, 3 weeks). 360 * 12 = 4320, the telephone country code for Nigeria is 234. Moses lived for 120 Biblical years, 120 * 360 = 43200. At twelve post meridiem, 12PM, the elapsed time is forty three thousand, two hundred, 43200, seconds. The author's ancestral home is Ile-Ife. The author's place of birth is Lagos. When the author's biological parents re-located to the United States of America (USA), the author re-located to Ile-Ife. Lagos is the economic capital of Nigeria, and Ile-Ife is the cradle of the Yoruba land. The author re-located from Staff School, University of Ife, as a nine-year old; to Lagos, a two-hour journey. Abati Nursery and Primary School. 1967-10-15 + 9 Biblical years = 1967-10-15 + 3240 = 1976-08-28. In February 1992, the author started work at Information Dialling Services (IDS) White International LonSyd.
 
 The singular word, centurion, occurs twenty-one times in the Bible; its plural word, centurions, occurs three times in the Bible; therefore, centurion(s), occurs twenty-four times in the Bible.
 

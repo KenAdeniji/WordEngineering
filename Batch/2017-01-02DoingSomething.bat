@@ -115,7 +115,7 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESE
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
-DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17700);
+DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17765);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24668);
@@ -132,7 +132,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 145490);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 146988);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 96166);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -259,5 +259,7 @@ If there are None click skip
 2022-03-03T12:58:00 2015-10-23DoctoralDissertation.html <p datetime="2021-11-29T11:30:00">
 The bedside lamp light goes off. Urine.
 http://localhost/informationintransit/urimaintenancewebform.aspx Page 128.
+https://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf
 Data Structures
+2022-03-18T17:12:00 asymptotic algorithm analysis, or simply asymptotic analysis. Asymptotic analysis
 :Exit
