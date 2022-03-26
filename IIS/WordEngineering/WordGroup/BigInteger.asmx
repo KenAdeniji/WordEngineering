@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 using InformationInTransit.ProcessCode;
 
 ///<summary>
-///	2018-11-01 Created.
+///	2018-11-01 Created.	apress.com/us/book/9781484213339
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
