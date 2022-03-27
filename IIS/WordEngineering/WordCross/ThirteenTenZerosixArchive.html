@@ -77,23 +77,21 @@
 					{
 						nodeNames[nodeName] = {};
 						nodeNames[nodeName]["count"] = 0;
+						nodeNames[nodeName]["firstOccurrence"] = index + 1;
+						nodeNames[nodeName]["lastOccurrence"] = index + 1;
+					}
+					else
+					{
+						nodeNames[nodeName]["lastOccurrence"] = index + 1;
 					}
 					++nodeNames[nodeName]["count"];
-					
-					console.log
-					(
-						index,
-						length,
-						nodeList[index].nodeName,
-						nodeList[index].id
-					);
 				}
 				
 				// process your JSON data further
-				var statisticsInfo = `<table id="${statisticsTableID}"><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
+				var statisticsInfo = `<table id="${statisticsTableID}"><thead><tr><th>Node Name</th><th>Count</th><th>First Occurrence</th><th>Last Occurrence</th></tr></thead><tbody>`;
 				for (var key in nodeNames)
 				{		
-					statisticsInfo += `<tr><td>${key}</td><td>${nodeNames[key]["count"]}</td></tr>`;
+					statisticsInfo += `<tr><td>${key}</td><td>${nodeNames[key]["count"]}</td><td>${nodeNames[key]["firstOccurrence"]}</td><td>${nodeNames[key]["lastOccurrence"]}</td></tr>`;
 				}	
 				statisticsInfo += "</tbody></table>";
 				nodeNameStatisticsElement.innerHTML = statisticsInfo;
@@ -129,39 +127,11 @@
 				});
 			}
 			
-function getNodeList(elem){
-var l=new Array(elem),c=1,ret=new Array();
-//This first loop will loop until the count var is stable//
-for(var r=0;r<c;r++){
-    //This loop will loop thru the child element list//
-    for(var z=0;z<l[r].childNodes.length;z++){
-
-         //Push the element to the return array.
-        ret.push(l[r].childNodes[z]);
-
-        if(l[r].childNodes[z].childNodes[0]){
-            l.push(l[r].childNodes[z]);c++;
-        }//IF           
-    }//FOR
-}//FOR
-return ret;
-}
-			
 			function querySubmit()
 			{
 				iFrameDocumentElement.srcdoc = sourceContentElement.value;
-				
-				var currentNode;
-				//var ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT);
-				
-				var doc = iFrameDocumentElement.contentDocument;
-				var ni = doc.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_TEXT);
-
-				var nodeList = getNodeList(doc);
-
 				var iframeDoc = iFrameDocumentElement.contentWindow.document;
 				var nodeList = iframeDoc.getElementsByTagName("*");
-
 				var nodeNames = buildArray(nodeList);
 			}
 			
@@ -179,6 +149,7 @@ return ret;
 					sourceAddressElement.value = sourceAddressParam ?
 						sourceAddressParam : window.location.href;
 					contentFetch();
+					querySubmit();
 					isPostBack = true;
 				}
 				else
@@ -186,7 +157,6 @@ return ret;
 					querySubmit();
 				}
  			}
-
 
 			fetchContentElement.addEventListener("click", contentFetch, false);
 			submitQueryElement.addEventListener("click", querySubmit, false);

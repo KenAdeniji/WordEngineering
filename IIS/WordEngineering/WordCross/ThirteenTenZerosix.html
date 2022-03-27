@@ -77,15 +77,21 @@
 					{
 						nodeNames[nodeName] = {};
 						nodeNames[nodeName]["count"] = 0;
+						nodeNames[nodeName]["firstOccurrence"] = index + 1;
+						nodeNames[nodeName]["lastOccurrence"] = index + 1;
+					}
+					else
+					{
+						nodeNames[nodeName]["lastOccurrence"] = index + 1;
 					}
 					++nodeNames[nodeName]["count"];
 				}
 				
 				// process your JSON data further
-				var statisticsInfo = `<table id="${statisticsTableID}"><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
+				var statisticsInfo = `<table id="${statisticsTableID}"><thead><tr><th>Node Name</th><th>Count</th><th>First Occurrence</th><th>Last Occurrence</th></tr></thead><tbody>`;
 				for (var key in nodeNames)
 				{		
-					statisticsInfo += `<tr><td>${key}</td><td>${nodeNames[key]["count"]}</td></tr>`;
+					statisticsInfo += `<tr><td>${key}</td><td>${nodeNames[key]["count"]}</td><td>${nodeNames[key]["firstOccurrence"]}</td><td>${nodeNames[key]["lastOccurrence"]}</td></tr>`;
 				}	
 				statisticsInfo += "</tbody></table>";
 				nodeNameStatisticsElement.innerHTML = statisticsInfo;
