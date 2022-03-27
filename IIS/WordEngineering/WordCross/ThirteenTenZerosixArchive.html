@@ -3,8 +3,9 @@
 	<!--
 		2022-03-26T06:26:00 Created. 2022-03-25 digitalocean.com/community/books/understanding-the-dom-document-object-model-ebook 	Understanding the DOM — Document Object Model eBook Published on October 8, 2020 by Tania Rascia. 2022-03-26T06:26:00 Node Type: ELEMENT_NODE, TEXT_NODE, COMMENT_NODE
 		2022-01-01T12:52:00	http://stackoverflow.com/questions/5050380/set-innerhtml-of-an-iframe
-		2022-03-26T07:36:00	https://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
-		2022-03-26T16:20:00	https://stackoverflow.com/questions/26836568/javascript-add-multiple-dynamic-values-to-dynamic-key-in-for-loop
+		2022-03-26T07:36:00	http://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
+		2022-03-26T16:20:00	http://stackoverflow.com/questions/26836568/javascript-add-multiple-dynamic-values-to-dynamic-key-in-for-loop
+		2022-03-26T16:50:00	http://johnresig.com/blog/unimpressed-by-nodeiterator/
 	-->
 	<head>
 		<title>Thirteen ten zerosix.</title>
@@ -59,20 +60,33 @@
 			var	iFrameDocumentElement = document.getElementById("iFrameDocument");
 			var	nodeNameStatisticsElement = document.getElementById("nodeNameStatistics");
 
-			function buildArray(ni)
+			function buildArray(nodeList)
 			{
 				var nodeNames = {};	
 				var nodeName;
 				var keyCount;
-				while(currentNode = ni.nextNode()) 
+				for
+				(
+					var index = 0, length = nodeList.length;
+					index < length;
+					++index
+				)	
 				{
-					nodeName = currentNode.nodeName;
+					nodeName = nodeList[index].nodeName;
 					if (!nodeNames[nodeName])
 					{
 						nodeNames[nodeName] = {};
 						nodeNames[nodeName]["count"] = 0;
 					}
 					++nodeNames[nodeName]["count"];
+					
+					console.log
+					(
+						index,
+						length,
+						nodeList[index].nodeName,
+						nodeList[index].id
+					);
 				}
 				
 				// process your JSON data further
@@ -115,17 +129,40 @@
 				});
 			}
 			
+function getNodeList(elem){
+var l=new Array(elem),c=1,ret=new Array();
+//This first loop will loop until the count var is stable//
+for(var r=0;r<c;r++){
+    //This loop will loop thru the child element list//
+    for(var z=0;z<l[r].childNodes.length;z++){
+
+         //Push the element to the return array.
+        ret.push(l[r].childNodes[z]);
+
+        if(l[r].childNodes[z].childNodes[0]){
+            l.push(l[r].childNodes[z]);c++;
+        }//IF           
+    }//FOR
+}//FOR
+return ret;
+}
+			
 			function querySubmit()
 			{
-				document.getElementById("iFrameDocument").srcdoc = sourceContentElement.value;
+				iFrameDocumentElement.srcdoc = sourceContentElement.value;
 				
 				var currentNode;
 				//var ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT);
 				
 				var doc = iFrameDocumentElement.contentDocument;
-				var ni = doc.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT);
+				var ni = doc.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_TEXT);
 
-				var nodeNames = buildArray(ni);
+				var nodeList = getNodeList(doc);
+
+				var iframeDoc = iFrameDocumentElement.contentWindow.document;
+				var nodeList = iframeDoc.getElementsByTagName("*");
+
+				var nodeNames = buildArray(nodeList);
 			}
 			
 			function pageLoad()

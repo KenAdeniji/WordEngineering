@@ -3,8 +3,9 @@
 	<!--
 		2022-03-26T06:26:00 Created. 2022-03-25 digitalocean.com/community/books/understanding-the-dom-document-object-model-ebook 	Understanding the DOM — Document Object Model eBook Published on October 8, 2020 by Tania Rascia. 2022-03-26T06:26:00 Node Type: ELEMENT_NODE, TEXT_NODE, COMMENT_NODE
 		2022-01-01T12:52:00	http://stackoverflow.com/questions/5050380/set-innerhtml-of-an-iframe
-		2022-03-26T07:36:00	https://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
-		2022-03-26T16:20:00	https://stackoverflow.com/questions/26836568/javascript-add-multiple-dynamic-values-to-dynamic-key-in-for-loop
+		2022-03-26T07:36:00	http://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
+		2022-03-26T16:20:00	http://stackoverflow.com/questions/26836568/javascript-add-multiple-dynamic-values-to-dynamic-key-in-for-loop
+		2022-03-26T16:50:00	http://johnresig.com/blog/unimpressed-by-nodeiterator/
 	-->
 	<head>
 		<title>Thirteen ten zerosix.</title>
@@ -59,14 +60,19 @@
 			var	iFrameDocumentElement = document.getElementById("iFrameDocument");
 			var	nodeNameStatisticsElement = document.getElementById("nodeNameStatistics");
 
-			function buildArray(ni)
+			function buildArray(nodeList)
 			{
 				var nodeNames = {};	
 				var nodeName;
 				var keyCount;
-				while(currentNode = ni.nextNode()) 
+				for
+				(
+					var index = 0, length = nodeList.length;
+					index < length;
+					++index
+				)	
 				{
-					nodeName = currentNode.nodeName;
+					nodeName = nodeList[index].nodeName;
 					if (!nodeNames[nodeName])
 					{
 						nodeNames[nodeName] = {};
@@ -117,15 +123,10 @@
 			
 			function querySubmit()
 			{
-				document.getElementById("iFrameDocument").srcdoc = sourceContentElement.value;
-				
-				var currentNode;
-				//var ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT);
-				
-				var doc = iFrameDocumentElement.contentDocument;
-				var ni = doc.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT);
-
-				var nodeNames = buildArray(ni);
+				iFrameDocumentElement.srcdoc = sourceContentElement.value;
+				var iframeDoc = iFrameDocumentElement.contentWindow.document;
+				var nodeList = iframeDoc.getElementsByTagName("*");
+				var nodeNames = buildArray(nodeList);
 			}
 			
 			function pageLoad()
@@ -142,6 +143,7 @@
 					sourceAddressElement.value = sourceAddressParam ?
 						sourceAddressParam : window.location.href;
 					contentFetch();
+					querySubmit();
 					isPostBack = true;
 				}
 				else
@@ -149,7 +151,6 @@
 					querySubmit();
 				}
  			}
-
 
 			fetchContentElement.addEventListener("click", contentFetch, false);
 			submitQueryElement.addEventListener("click", querySubmit, false);
