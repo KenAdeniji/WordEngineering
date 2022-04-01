@@ -72,6 +72,47 @@
 
 			const revelation = factory.createBook("John");
 			revelation.referral();
+			
+			//Design Pattern - Module
+			function propheticMedia()
+			{
+				const media = []; // \[\];
+				
+				function addMedium(medium)
+				{
+					media.push(medium);
+				}
+
+				function getMedia()
+				{
+					return media;
+				}
+
+				function removeMedium(medium)
+				{
+					const index = media.indexOf(medium);
+					if (index < 1)
+					{
+						throw new Error(`Food ${medium} not found.`);
+					}	
+					media.splice(index, 1);
+				}	
+
+				return
+				{
+					add: addMedium //,
+					//get: getMedia,
+					//remove: removeMedium
+				};
+			}	
+
+			const media = new propheticMedia();
+			media.add("Dream");
+			media.add("Vision");
+			media.add("Face-to-face");
+			console.log(media.get());
+			media.remove("Vision");
+			console.log(media.get());
 		</script>
 	</body>
 </html>

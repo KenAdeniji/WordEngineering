@@ -14,3 +14,6 @@ git add        GitHub.com/2022-04-01T1213GitHub.bat
 git add        IIS/WordEngineering/JavaScript/Algorithm/NishaniDissanayake_-_UsingDesignPatternsInJavaScriptTheUltimateGuide.html
 git add        IIS/WordEngineering/JavaScript/Algorithm/NishaniDissanayake_-_UsingDesignPatternsInJavaScriptTheUltimateGuideArchive.html
 git add        Python/WesMcKinney.com/
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-04-01T1606SylviaFlores_CentroLegalDeLaRazaSFlores@CentroLegal.org(510)437-1554ThisIsARecordingOfOurConversation.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-04-01T1606SylviaFlores_CentroLegalDeLaRazaSFlores@CentroLegal.org(510)437-1554ThisIsARecordingOfOurConversationArchive.txt
