@@ -16,3 +16,6 @@
 git add        GitHub.com/2022-03-25T2106GitHub.bat
 git add        IIS/WordEngineering/GeoLocation/WorldTimeApi.org.html
 git add        IIS/WordEngineering/GeoLocation/WorldTimeApi.orgArchive.html
+
+git add        IIS/WordEngineering/WordCross/ThirteenTenZerosix.html
+git add        IIS/WordEngineering/WordCross/ThirteenTenZerosixArchive.html

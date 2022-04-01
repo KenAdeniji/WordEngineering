@@ -134,7 +134,7 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 147090);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 99426);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 99602);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -262,4 +262,8 @@ http://localhost/informationintransit/urimaintenancewebform.aspx Page 128.
 https://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf
 Data Structures
 2022-03-18T17:12:00 asymptotic algorithm analysis, or simply asymptotic analysis. Asymptotic analysis
+2022-03-26T06:26:00 Node Type: ELEMENT_NODE, TEXT_NODE, COMMENT_NODE
+	document.body.childNodes.length
+	https://stackoverflow.com/questions/9808307/how-to-get-the-number-of-dom-elements-used-in-a-web-page
+	https://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
 :Exit
