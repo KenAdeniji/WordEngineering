@@ -83,8 +83,7 @@
 				{
 					querySubmit();
 				}
-				console.log(scriptureReferenceElement.value);
-			}
+				}
 
 			function querySubmit()
 			{
@@ -356,9 +355,11 @@ function scriptureReferenceStringRepresentation
 			{ 
 				informationFormatter += ", "; 
 			}
-			informationFormatter += 
-				element[Pre].stringRepresentation() //+
-				//element[Post] ? element[Post].stringRepresentation() : "";
+			informationFormatter += element[Pre].stringRepresentation();
+			if (element[Post])
+			{
+				informationFormatter += "-" + element[Post].stringRepresentation();
+			}	
 		}
 	);	
 	return informationFormatter;
