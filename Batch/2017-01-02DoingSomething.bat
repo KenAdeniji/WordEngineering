@@ -266,4 +266,12 @@ Data Structures
 	document.body.childNodes.length
 	https://stackoverflow.com/questions/9808307/how-to-get-the-number-of-dom-elements-used-in-a-web-page
 	https://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
+Polio outbreak in Israel caused by lack of vaccinations - Knesset Health Committee
+"Due to fake news, suddenly everything has a question mark over it, even vaccines which we have had for years," said head of Public Health Services Dr. Sharon Alroy-Preis.
+By SHIRA SILKOFF
+Published: APRIL 3, 2022 13:41
+
+Updated: APRIL 3, 2022 14:35 
+2022-04-03T14:53:00 https://developer.mozilla.org/en-US/docs/Web/API/Navigator	
+2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 92
 :Exit

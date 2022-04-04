@@ -1,31 +1,63 @@
+<!DOCTYPE html>
 <html>
-<head>
-<style>
-/*
-body {background: blue; color: yellow;}
-*/
-</style>
-</head>
-<body>
-<script>
-//function render() {
-	document.body.style.backgroundColor = "#00539F"; 
-	document.body.style.color = "#b8d1f3"; 
-	for (var key in navigator) {
-		//if (navigator.hasOwnProperty(key)) 
-		{
-			document.write(key + ": " + navigator[key] + "<br/>");
-		}
-	}
-	var plugins = navigator.plugins;
-	document.write("navigator.plugins");
-	for (var i = 0; i < plugins.length; i++)
-	{
-		//console.log(i, plugins[i].name);
-		document.write(plugins[i].name);
-	}
-//}
-//window.addEventListener("load", render, false);
-</script>
-</body>
+	<head>
+		<!--
+			2017-10-08	Created.	http://notes.corewebprogramming.com/student/JavaScript.pdf
+			2017-10-08	http://www.quirksmode.org/dom/w3c_cssom.html
+		-->
+		<title>Navigator</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="navigatorResultSet"></div>
+			<div id="navigatorPluginsResultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>	
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				if (isPostBack)
+				{
+					querySubmit();
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var keyValue = [];
+				for (var key in navigator)
+				{
+					keyValue.push
+					(
+						[[key], navigator[key]]
+					);
+				}
+				scriptLiteral9432.renderDataTable(keyValue, "navigatorResultSet");
+				
+				keyValue = [];
+				for (var i = 0; i < navigator.plugins.length; i++)
+				{
+					keyValue.push
+					(
+						[navigator.plugins[i].name]
+					);
+				}
+				scriptLiteral9432.renderDataTable(keyValue, "navigatorPluginsResultSet");
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
 </html>

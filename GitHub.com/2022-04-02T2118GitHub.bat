@@ -6,3 +6,6 @@
 git add        GitHub.com/2022-04-02T2118GitHub.bat
 git add        IIS/WordEngineering/JavaScript/RaymondCamden.com/
 git add        IIS/WordEngineering/ScriptureReference/
+
+        git add   IIS/WordEngineering/ScriptureReference/ScriptureReferenceSort.html
+        git add   IIS/WordEngineering/ScriptureReference/ScriptureReferenceSortArchive.html

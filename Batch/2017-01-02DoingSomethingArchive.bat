@@ -109,9 +109,9 @@ BACKUP DATABASE Msdb TO DISK = 'e:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WIT
 BACKUP DATABASE AManDevelopedInAll TO DISK = 'e:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
 
 :DbccCheckIdent
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 20082);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 22489);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 19000);
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 10404);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 12588);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
@@ -266,4 +266,13 @@ Data Structures
 	document.body.childNodes.length
 	https://stackoverflow.com/questions/9808307/how-to-get-the-number-of-dom-elements-used-in-a-web-page
 	https://stackoverflow.com/questions/4256339/how-can-i-loop-through-all-dom-elements-on-a-page
+Polio outbreak in Israel caused by lack of vaccinations - Knesset Health Committee
+"Due to fake news, suddenly everything has a question mark over it, even vaccines which we have had for years," said head of Public Health Services Dr. Sharon Alroy-Preis.
+By SHIRA SILKOFF
+Published: APRIL 3, 2022 13:41
+
+Updated: APRIL 3, 2022 14:35 
+2022-04-03T14:53:00 https://developer.mozilla.org/en-US/docs/Web/API/Navigator	
+2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 130
+2022-04-03T16:05:06 2002-05-23 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days. Sir Robert Anderson.
 :Exit
