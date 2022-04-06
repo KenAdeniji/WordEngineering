@@ -16,3 +16,8 @@ git add        IIS/WordEngineering/WordCross/AndHeFeelsItIsGood.html
 git add        IIS/WordEngineering/WordCross/AndHeFeelsItIsGoodArchive.asmx
 git add IIS/WordEngineering/WordCross/AndHeFeelsItIsGoodArchive.html
 git add Java/AllenB.Downey/
+
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
