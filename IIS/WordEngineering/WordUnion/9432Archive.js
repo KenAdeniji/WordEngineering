@@ -1583,7 +1583,7 @@ var scriptLiteral9432 =
 					var jsonData = '{"contactID":' + dataRow["ContactID"] + '}';
 					cellContent = scriptLiteral9432.buildHyperlinkJSON
 					(
-						"/WordEngineering/TheSpanishHaveQuitResemblingNow/PaulWhoCouldTalkAboutYouIndividualProsperity.html",
+						"/WordEngineering/WordGroup/PaulWhoCouldTalkAboutYouIndividualProsperity.html",
 						jsonData
 					);
 

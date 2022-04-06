@@ -13,7 +13,7 @@ public class AlphabetSequence {
 					alphabetSequenceIndex += (int) character - 64;
 				}			
 			}
-			System.out.format("Word: %s AlphabetSequence: %d\n", arg, alphabetSequenceIndex);
+			System.out.format("Word: %s AlphabetSequenceIndex: %d\n", arg, alphabetSequenceIndex);
 		}			
 	}   
 }

@@ -273,5 +273,6 @@ Published: APRIL 3, 2022 13:41
 
 Updated: APRIL 3, 2022 14:35 
 2022-04-03T14:53:00 https://developer.mozilla.org/en-US/docs/Web/API/Navigator	
-2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 92
+2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 130
+2022-04-03T16:05:06 2002-05-23 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days. Sir Robert Anderson.
 :Exit
