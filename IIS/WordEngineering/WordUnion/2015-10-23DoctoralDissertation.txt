@@ -26,31 +26,18 @@ The importance of this work?
     Follow God, as a character.
     To know God as an experience of myself.
     When is He likely to follow-up?
-    I chose to live in the opinion of God.
-    To reconciliate our notion.
-    What did we determine, as one of ours?
-    Keeping know how?
-    I am not your LORD. How can I serve you?
-    What is God to operate?
-    What it takes to make a part is to retain the past.
-    Where He spoke what He wanted?
-    A life that completes His sense.
-    To record time as personal.
-    Is that what God will want for them?
-    How can I keep the giving?
-    When you participate in God, there is no further man.
-    Committing to a later realization of life.
-    Not the difference.
-    To be every design of associate.
-    To create one of a being, you need to be Your entire self.
     Trying to relate ( Matthew 24:36 ).
+    What perhaps of others ( Genesis 15:2, Genesis 14:23, Genesis 13:14, Genesis 12:13, Genesis 20:2 )?
+
+What encourages people about WordEngineering?
+
+    What the word chose?
+    How we choose our presence?
 
 The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word.
 
     2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
     3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
-
-What retains the prove of living ( Revelation 22:2 )?
 
     BibleReference uses whole numbers for representation.
     Who, what, when, where, why?
@@ -58,7 +45,7 @@ What retains the prove of living ( Revelation 22:2 )?
 
 The author is linking words spoken to related verses and dictionaries.
 
-Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
+Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ). Where did He encounter same? According to the same, that is how I measure.
 
 Intention:
 
@@ -90,7 +77,6 @@ Who
 
 The author gives credence to the information source. Whenever it is possible, the author identifies the speaker.
 
-Who obtains the future as our guidance?
 What
 
 The primary contribution of the author is the word. The author draws upon the word of God and tries to derive meaning.
@@ -564,11 +550,45 @@ The alphabets and words make-up the author's work. The composition of the words 
     The ASCII table set composes 26 upper and lower case alphabets. Their places will originally decide the AlphabetSequenceIndex.
     The digits and their larger representations of numbers are also in the ASCII table. These are computable in determining the AlphabetSequenceIndex.
     The null character is in the Word column, when there is only commentary.
-    Cardinality: Microsoft SQL Server places a limit on the maximum size of a VARCHAR column type, 8000. When there are 2 or 3 words in a column, the author does further computation.
+    Cardinality: Microsoft SQL Server places a limit on the maximum size of a VARCHAR column type, 8000. When there are 2 or 3 words, the author does further computation.
 
 Asymptotic Algorithm Analysis
 
-This is the approximation measurement of how long it should normally take to determine the AlphabetSequenceIndex. The prediction is the length of the word multiplied by the average period taken to determine the place of each alphabet.
+The computer serves the author in due time. The size of the users' input, the number of users, and the complexity of their requests will weigh on the system.
+
+This is the approximation measurement of how long it should normally take to determine the AlphabetSequenceIndex. The prediction is the length of the word multiplied by the average period taken to determine the place of each alphabet. The growth rate is that the processing time increases, as the size of the input grows. There is linear growth, since the growth rate is constant.
+Best, Worst, and Average Cases
+
+There is no variation in time for determining the AlphabetSequenceIndex and AlphabetSequenceIndexScriptureReference. The size of the word will influence AlphabetSequenceIndex, but this should not be noticeable. When parsing and retrieving scripture reference and Bible word, there may be size and time differences.
+Calculating the Running Time for a Program
+
+The author uses a for loop to calculate the AlphabetSequenceIndex.
+
+
+var alphabetSequenceIndex = 0;
+word = word.ToUpper();
+var asciiA = 65;
+for 
+(
+	var index = 0, lengthSize = word.length;
+	index <= lengthSize;
+	++index
+)
+{
+	if (Isalpha(word[index]))
+	{
+		alphabetSequenceIndex += (int)word[index] - asciiA + 1;
+	}
+}	
+				
+
+The cost of executing the for loop is Θ(word.lengthSize)
+
+Lists
+
+One of the few occasions that the author uses a list is when building the Exact table. The author creates a list of words and stores this transient information in memory. The author checks the existence of each word in the list. When it is a new word, the author appends it to the bottom of the list. Otherwise, the author increments its occurrence. At the completion of parsing the words, the author stores the list in a database table. Creating the exact table is a one-time operation, and it takes a couple of hours to complete.
+
+The author is comfortable and familiar with dataset and datatable for work areas. The author uses JSON as a transport medium.
 "A generic grouping of concepts and their representation"
 Module 	Unit
 GetAPage.html 	retrieveAlphabetSequence()
@@ -864,6 +884,24 @@ Results and Discussion
 The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme.
 
 This research does not limit itself to a particular Bible subject nor word. But, rather it illustrates the response of the author to the word of God. What artifact can the author produce; in compliance with the word of God? Is the training of the author beneficiary or lacking? Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
+What has this research revealed?
+
+    GetAPage.html draws resources from a large part of the Bible. What exactly I know, as necessary of me? How numerous we are made.
+    You do remember based on the data, do you need to collect the data, if you don't do remember?
+    What does he want as a set? O pe. In Yoruba?
+        Complete
+        Late
+        Call
+        Thanksgiving
+    Where am I, as a human being?
+
+Software Engineering
+Place
+
+Subjected them to view. This I need for the subject of my life.
+Because it says, I mean
+
+GetAPage.html is separable into AlphabetSequence, and words occurrences and meaning in the Bible. The practice is naming children at birth. Titles are awardable after qualification.
 Word Inference
 
     A lot of Yoruba language words may mean ethnic conflict.
@@ -1002,7 +1040,7 @@ Quality Assurance
 
 Prepared for Time
 
-On 2019-04-04T09:00:00 andre.nguyen@gqrgm.com will telephone me about the role with Google's co-founder Larry Page jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403 Andre Nguyen asked how I spend my day?
+On 2019-04-04T09:00:00 andre.nguyen@gqrgm.com will telephone me about the role with Google's co-founder Larry Page jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403 Andre Nguyen asked how I spend my day? How, on behalf of God, I have lived?
 
 When I started AlphabetSequence, I ate my daily meal at 6PM, read the Bible and went to bed. I could break my day, into punctual scheduled activities, such-as:
 
@@ -1020,13 +1058,13 @@ This is how most people, live their lives; this is what I have accepted as mine.
     What do we note as behavior (Romans 6:1)?
     You start, forming your own example.
 
-When the author observes explicit experiences, he may record this additional data, in the HisWord's table ContactID, ScriptureReference, Location and Scene columns. This projection may result in entries of new records in the Remember and APass tables.
+When the author observes explicit experiences, he may record this additional data, in the HisWord's table ContactID, ScriptureReference, Location and Scene columns. How relevant is Your word to our opinion? This projection may result in entries of new records in the Remember and APass tables. Where are people, his relation?
 
 However, he is present, that is how I use.
 
     If I have a paper and pencil available, I write down the word, and I calculate the AlphabetSequenceIndex.
     When I have access to the database, I enter and store the record electronically.
-    Internet connection means the resultset is retrievable via GetAPage.html.
+    Computer access means the resultset is retrievable via GetAPage.html.
     Text editor is useful for writing SQL.
 
 God's word; human interpretation
@@ -1116,8 +1154,9 @@ Lessons Learnt
     Relative to the world (Proverbs 3:5).
     If the words do not join? Consider separating or putting the lesser word in the commentary column.
     Do I determine I know?
-    Check for grammatical correctness. As much as possible, put all the spoken word. Only adjust for spelling. As the world sees it. Keeping my own word, ahead of me.
+    Check for grammatical correctness. As much as possible, put all the spoken word. Only adjust for spelling.
     If the word and scenery do not fit exactly, it may be a larger scenario.
+    When C++ converts to an integer, it always rounds down, unlike C#.
     What I have learnt from Bill Gates, through using the software from Microsoft.
         Normalize the relational database for on-line transaction processing (OLTP); specifically the Remember table should reference the HisWord table, and the Commentary column should not contain the duplicate data.
         The BibleWord table may not be necessary to relate the HisWord table to the Scripture. How much manual work does the author do, and can the author automate this work?
@@ -1170,7 +1209,7 @@ See when God grants increase; such as in creation, when God counts the days, and
 TCP/IP is separable into four layers; these are the link, Internet, transport and application layers. No breaking ( Matthew 19:8 ).
 Marriage
 
-Marriage is not a practice, in the life after, resurrection ( Matthew 22:30, Mark 12:25, Luke 20:35 ). Co-incidentally, the disciple, who Jesus love, John the apostle, does not mention this event, in the Gospel of John. Jesus resurrected, after three days ( Matthew 12:40, Matthew 26:61, Matthew 27:40, Matthew 27:63, Mark 8:31, Mark 14:58, Mark 15:29, Luke 2:46, John 2:19, John 2:20, 2 Corinthians 11:2, Revelation 21:2, Revelation 21:9, Revelation 22:17 ). The breaking of device ( Psalms 34:20, John 19:36 ).
+Marriage is not a practice, in the life after, resurrection ( Matthew 22:30, Mark 12:25, Luke 20:35, Revelation 21:2, 2 Corinthians 11:2 ). Co-incidentally, the disciple, who Jesus love, John the apostle, does not mention this event, in the Gospel of John. Jesus resurrected, after three days ( Matthew 12:40, Matthew 26:61, Matthew 27:40, Matthew 27:63, Mark 8:31, Mark 14:58, Mark 15:29, Luke 2:46, John 2:19, John 2:20, 2 Corinthians 11:2, Revelation 21:2, Revelation 21:9, Revelation 22:17 ). The breaking of device ( Psalms 34:20, John 19:36 ).
 
 On the client, HTML is content, CSS is presentation, and JavaScript is behavior. Both ASPX and ASMX are server-side logic.
 
@@ -1276,6 +1315,11 @@ God may consign men to overseer, as in the case of Melchizedek king of Salem, th
 Our Choice is Where we Want to be? What we Want to be?
 
 A choice between what you have, and what you will want? ( Revelation 5:5, Matthew 1:25, Luke 2:7, Romans 8:29, Colossians 1:15, Colossians 1:18, Hebrews 11:28, Hebrews 12:23 ). Where I take you; is where you belong ( Genesis 13:14-18, Deuteronomy 34 ).
+What points arrive at succession?
+What points arrive at succession? Title 	Scripture Reference
+Begotten Son 	John 1:18, John 3:16, John 3:18, 1 John 4:9
+Subject 	1 Corinthians 15:28
+Holy Spirit 	Luke 1:35, Acts 2, 2 Thessalonians 2:7
 Future Work
 
 Where My word, has developed His need ( 2 Kings 8:5 )?
@@ -1325,7 +1369,7 @@ WordToNumberHelper.cs
 Numbers in the Bible are written out as words. The author made effort to parse these words and find the numbers, but it was not totally successful, largely because of the arrangement of the numerals.
 Translate the Original AlphabetSequence C# Code to the Other Programming Languages
 
-AlphabetSequence was first implemented in the C# programming language AlphabetSequence.cs Later work, saw translation to AlphabetSequence.go AlphabetSequence.js AlphabetSequence.py udf_AlphabetSequenceIndex.sql AlphabetSequence.vb R Perhaps, other programming languages should have their own sample code. The author is only conversant in English and Yoruba, additional work will be to see the use in other lingua franca. And, the priest said, Are one only for me?
+AlphabetSequence was first implemented in the C# programming language AlphabetSequence.cs Later work, saw translation to AlphabetSequence.go AlphabetSequence.java AlphabetSequence.js AlphabetSequence.py udf_AlphabetSequenceIndex.sql AlphabetSequence.vb R Perhaps, other programming languages should have their own sample code. The author is only conversant in English and Yoruba, additional work will be to see the use in other lingua franca. And, the priest said, Are one only for me?
 Data Residence
 
 Where should the data reside? Database, JSON or XML files?
