@@ -1,5 +1,3 @@
-	
-
     Title
     Abstract
     Acknowledgments
@@ -72,7 +70,7 @@ Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Introduction
-Who, What, When, Where, Why?
+Who, what, when, where, why?
 Who
 
 The author gives credence to the information source. Whenever it is possible, the author identifies the speaker.
@@ -172,7 +170,7 @@ HyperText Markup Language (HTML) Document
 "
 Data Science
 " (Microsoft)
-What is Data?
+What is data?
 
 The data that the author fundamentally operates on is the word from God. The initial and primary data is textual, but now the author places importance on dates and numbers.
 
@@ -209,7 +207,7 @@ Defining Data
     Quantitative Data: This makes itself subjective to numeric computation. AlphabetSequence is an attempt to give value to words.
     Qualitative Data: These are rarely measurable and are personal interpretation.
 
-A Brief Introduction to Statistics and Probability
+A brief introduction to Statistics and Probability
 
     At the beginning of the study, the author made a presumption that words are unique. Later the author found out that there are duplicate Bible verses.
 
@@ -312,7 +310,7 @@ Database Data Types
     Only pick varchar(max) and nvarchar(max) as the data type, when it is essential to store large data.
     Prefer the decimal type; when recording the amount in currency rather than using the float type.
 
-Nullable type
+Nullable Type
 
     Consider defaulting textual data to empty string; instead of NULL.
 
@@ -884,7 +882,7 @@ Results and Discussion
 The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme.
 
 This research does not limit itself to a particular Bible subject nor word. But, rather it illustrates the response of the author to the word of God. What artifact can the author produce; in compliance with the word of God? Is the training of the author beneficiary or lacking? Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
-What has this research revealed?
+What has this Research Revealed?
 
     GetAPage.html draws resources from a large part of the Bible. What exactly I know, as necessary of me? How numerous we are made.
     You do remember based on the data, do you need to collect the data, if you don't do remember?
@@ -894,6 +892,7 @@ What has this research revealed?
         Call
         Thanksgiving
     Where am I, as a human being?
+    The life of appointing something as myself.
 
 Software Engineering
 Place
@@ -907,7 +906,7 @@ Word Inference
     A lot of Yoruba language words may mean ethnic conflict.
     The Bible is specific in relation to the Jews. The word, about, generally refers to the surroundings and the time of an event.
 
-Preeminence of data?
+Preeminence of Data?
 
 How suitable is the data for general use?
 Coming from an Information Background
@@ -953,7 +952,7 @@ From ... Until AlphabetSequence
     God did not initially identify Himself, with a particular name
 
 " The author will not break each experience into sequences. At this late stage of the research, the author is content, with his original table design, and will elaborate, when it is appropriate, to newer suggestions. " (John Whalen).
-What Do You Want To Use It For?
+What do you want to use it for?
 
 It is firstly, a database work. That is the author records God's word. What the author hears, he relates to the Bible and the other scriptural sources. These information are all in database tables, giving the author the luxury of using relational technology. The benefit includes storage and archive, that is, the work is usable in tabular format. There is a copy of the information running Microsoft SQL Server on a Linux operating system; which the author switches to, by changing the database connection string of one node in the web.config. When the user decides to stabilize and admit no further changes; then there is no need to do additional database update work. As with such work, the database schema remains consistent, since the beginning. The choice of word, meets today's expectations. The addition of the ActToGod table, demonstrates the maturity of the author.
 
@@ -1067,7 +1066,7 @@ However, he is present, that is how I use.
     Computer access means the resultset is retrievable via GetAPage.html.
     Text editor is useful for writing SQL.
 
-God's word; human interpretation
+God's Word; Human Interpretation
 
 The author separates the word of God from the supporting information:
 
@@ -1182,7 +1181,7 @@ The author recorded, the FromUntil Time Span, explicitly into the Remember's tab
 Using the knowledge learnt from horizontal replication and partition, the audience are no longer forced to accept the author's calendar. The audience can choose their acceptable fact, and ignore nor standard derivation.
 
 The history, this way, is to say; at the begining, the author will record every entry after six p.m. as the next day saying, just like the Jewish day starts at 6 p.m. With the reasoning advent, the Tanakh, the New Testament, and the Koran, the truth partiality, is our governance.
-The basic of facilitating the truth
+The Basic of Facilitating the Truth
 
 Most words have precedence, and do not exist in an emptiness. Words follow a trend. Are their supportive collaboration, to the utterance the author hears; these are linkable for historical evidence.
 
@@ -1191,7 +1190,7 @@ How do we give our actualities? I have found written text, the easiest and most 
 Examine the course of history? You will find, that most truth, are actually realizing the dream. In my case, when I try to recall, the past, I search by keywords, numbers and dates. So, entries in the word, are most to realization. The first words spoken have higher importance and closer affinity; so also, prophetic application, have standard occurrence.
 
 Our work, so much depends on data entry. The Remember table relies on relationship, deductive reasoning.
-Can we Look Back at History, as we Precede our Future
+Can we look back at History, as we Precede our Future
 An angel said to prophet Daniel, many shall run to and fro ( Daniel 12:4 )
 
 Is this phenomenal traceable, Biblically, and can we name a person that bears similar resemblance? When we study, king David, we can see that David fled from king Saul, his predecessor; and two of his sons, who purported, to overthrow him as king. In the Book of Revelation, the only three mentions of king David, talk of movement ( Revelation 3:7, Revelation 5:5, Revelation 22:16 ).
@@ -1312,7 +1311,7 @@ Historical man's profession are keeper of sheep, a tiller of the ground, handle 
 The 10 Commandments details the relationship we aspire to have with God, and our fellow-men.
 
 God may consign men to overseer, as in the case of Melchizedek king of Salem, the priest of the most high God, and collector of tithes; Joseph, dreamer and interpreter, and he will save much life, in Egypt; as in incorporating the end. We share among us; as no foundation separates us.
-Our Choice is Where we Want to be? What we Want to be?
+Our choice is where we want to be? What we want to be?
 
 A choice between what you have, and what you will want? ( Revelation 5:5, Matthew 1:25, Luke 2:7, Romans 8:29, Colossians 1:15, Colossians 1:18, Hebrews 11:28, Hebrews 12:23 ). Where I take you; is where you belong ( Genesis 13:14-18, Deuteronomy 34 ).
 What points arrive at succession?
@@ -1381,7 +1380,7 @@ Where I arrive, is where He as conclusively use
 Initially, when I got a word, I made efforts to expound, on this word; but now, I share the word, and wait on God to reinforce the word, or share a new theme.
 
 2019-05-30 My ancestral home is Ile-Ife, the site of the Oranmiyan staff. My search for the word, Staff, inspired relating the Bible to my life. Staff, first occurs in, ( Genesis 32:10 ). In my ninth year, my twin sibling and I, relocated from Ile-Ife Staff School to Lagos. In our tenth year, we visited London. In my 32nd year, I re-located to the United States of America (USA).
-I Am letting Myself; be many as a people.
+I Am letting myself; be many as a people.
 
 God intended man, to be a personal use. The work of the author is an individual effort, and it targets a singular person. The author separates his work into web pages, but the user may click on a hyperlink, to get more information, and sometime do additional work. The work of the author, builds on the efforts of other people, like the Bible, dictionary and commentary. The HisWord table and associated queries, only currently refers to the contribution of the author. How could we, specialize our work? Who uses, and for what? The setting, is it normal? What are the influence of God, as a person? What are His contribution, solely to man? What part of Him, as He analyzed, as a person? What role, as man, placed on Me? What stimulate you, as a human being; is where My opinion placed? The author read the Bible and listened to His word, prior to the introduction of AlphabetSequence. Where do we follow, His partnership? He has said the word; I have collaborated with Him.
 Outstanding Work
@@ -1481,6 +1480,7 @@ References
     Steve McConnell Steve McConnell; W3C web page; Available from http://www.stevemcconnell.com
     Web-Dev-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Web-Dev-For-Beginners
     Web-Dev-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Web-Dev-For-Beginners
+    Writing Style Guide Microsoft; W3C web page; Available from http://docs.microsoft.com/en-us/style-guide/welcome
     DB2 Developer's Guide Craig S. Mullins (May 2000); W3C web page; Available from http://www.craigsmullins.com
     Semantic Pattern Mining Based Web Service Recommendation Hafida Na ̈ım, Mustapha Aznag, Nicolas Durand, and Mohamed Quafafou Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille, France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand, mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from http://hal.archives-ouvertes.fr/hal-01465113/document
     Brendan T. O'Connor Brendan T. O'Connor; W3C web page; Available from http://BrenOCon.com
