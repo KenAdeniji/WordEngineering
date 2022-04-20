@@ -132,7 +132,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 147090);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 147269);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 99602);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -275,4 +275,11 @@ Updated: APRIL 3, 2022 14:35
 2022-04-03T14:53:00 https://developer.mozilla.org/en-US/docs/Web/API/Navigator	
 2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 130
 2022-04-03T16:05:06 2002-05-23 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days. Sir Robert Anderson.
+2022-04-06T12:38:00
+MD "C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu\"
+Copy C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu\mssql-jdbc-10.2.0.jre17.jar
+CLASSPATH =.;C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu\mssql-jdbc-10.2.0.jre17.jar
+Bedside lamp light off, once.
+2022-04-06T10:33:00 user interface application database swing java
+2022-04-18T06:41:00 URIMaintenanceWebFOrm.aspx	 	57095
 :Exit

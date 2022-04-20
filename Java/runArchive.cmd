@@ -1,0 +1,1 @@
+java SQLDatabaseConnection -classpath .;mssql-jdbc-10.2.0.jre17.jar;mssql-jdbc_auth-10.2.0.x64.dll

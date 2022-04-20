@@ -50,7 +50,7 @@ public class WhoWhatWhenWhereWhyWebService : System.Web.Services.WebService
 	
 	public const string QueryStatement = @"
 SELECT *
-FROM ComparingYourWordAsYourDeed..WhoWhatWhenWhereWhy_View
+FROM WordEngineering..WhoWhatWhenWhereWhy_View
 WHERE Combined LIKE '%{0}%'
 ORDER BY Dated
 	";
