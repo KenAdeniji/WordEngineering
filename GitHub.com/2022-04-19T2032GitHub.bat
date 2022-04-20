@@ -8,7 +8,7 @@
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
 
 git add        GitHub.com/2022-04-19T2032GitHub.bat
-git add        Java/Java Language Companion for Starting Out with Programming Logic and Design, 3rd Edition By Tony Gaddis/
+git add        "Java/Java Language Companion for Starting Out with Programming Logic and Design, 3rd Edition By Tony Gaddis/"
 git add        Java/SQLDatabaseConnection.Archivejava
 git add        Java/SQLDatabaseConnection.class
 git add        Java/SQLDatabaseConnection.java
