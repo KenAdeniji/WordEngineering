@@ -21,6 +21,12 @@ using InformationInTransit.ProcessCode;
 /*
 		2021-06-22	Added the Holiday column to the result set,
 					and replaced the SQL in statement with union.
+		2022-04-26T15:02:00
+Dynamic Holiday Date Calculator
+Jay Muntz
+Rate me:
+4.91/5 (51 votes)
+4 Jan 2006
 */
 ///<summary>
 ///	2021-06-20T18:50:00 Created.	https://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator

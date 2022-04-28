@@ -283,4 +283,7 @@ Bedside lamp light off, once.
 2022-04-06T10:33:00 user interface application database swing java
 2022-04-18T06:41:00 URIMaintenanceWebFOrm.aspx	 	57036
 2022-04-20T18:15:00 Surrogate Keys
+Bedside lamp light off, once.
+https://goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf
+	Chapter 11: Strings
 :Exit

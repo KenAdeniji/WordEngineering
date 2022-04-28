@@ -357,6 +357,13 @@ var scriptLiteral9432 =
 		});
 		
 	},
+
+	//2022-04-27T19:08:00 https://stackoverflow.com/questions/673905/how-to-determine-users-locale-within-browser
+	browserLanguageLocale: function()
+	{
+		if (navigator.languages != undefined) return navigator.languages[0]; 
+		return navigator.language;
+	},
 	
 	buildDatalist: function(dataListID, variable)
 	{
@@ -985,6 +992,13 @@ var scriptLiteral9432 =
 		this.metric = metric;
 		this.value = value;
 	},
+	
+	//2022-04-27T19:10:00 https://stackoverflow.com/questions/24998624/day-name-from-date-in-js
+	getWeekDays: function(locale)
+	{
+		//const weekDaysInLongFormat = getWeekDays( getBrowserLanguageLocale() );
+		return [...Array(7).keys()].map((v)=>new Date(Date.UTC(1970, 0, 6+v)).toLocaleDateString(locale, { weekday: 'long' }));
+	},	
 	
 	//	2017-05-20 DavidFlanagan.com
 	debug: function(msg) {

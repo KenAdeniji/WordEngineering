@@ -1,0 +1,29 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat
+        git add   IIS/WordEngineering/2018-05-03Correspondence/2022-04-21T1542CentroLegalDeLaRaza_SylviaFlores.txt
+        git add   IIS/WordEngineering/2018-05-03Correspondence/2022-04-21T1542CentroLegalDeLaRaza_SylviaFloresArchive.txt
+        git add   IIS/WordEngineering/WordGroup/MoKanNiOFileNaNi.asmx
+        git add    IIS/WordEngineering/WordGroup/MoKanNiOFileNaNi.html
+        git add   IIS/WordEngineering/WordGroup/MoKanNiOFileNaNiArchive.asmx
+        git add    IIS/WordEngineering/WordGroup/MoKanNiOFileNaNiArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add   IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+        git add   IIS/WordEngineering/WordUnion/9432.js
+        git add   IIS/WordEngineering/WordUnion/9432Archive.js
+        git add   IIS/WordEngineering/WordUnion/9432Release2020-06-13T1800.js
+        git add   IIS/WordEngineering/WordUnion/ToRememberHisConversationAsMine.html
+        git add   IIS/WordEngineering/WordUnion/ToRememberHisConversationAsMineArchive.html
+
+git add        GitHub.com/2022-04-27T2202GitHub.bat
+git add        IIS/WordEngineering/WordCross/WhatWillYouFindThatPlace.html
+git add        IIS/WordEngineering/WordCross/WhatWillYouFindThatPlaceArchive.html
+git add        IIS/WordEngineering/WordCross/cnn.com_-_2022-04-27stylearticlegaza-canaanite-goddess-statue-scli-intl-scn.txt
+git add        IIS/WordEngineering/WordCross/cnn.com_-_2022-04-27stylearticlegaza-canaanite-goddess-statue-scli-intl-scnArchive.txt
+git add        Java/JavaNotesForProfessionals/
