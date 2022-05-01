@@ -46,7 +46,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="arrayFilter">Array Filter:</label></td>
+					<td><label for="arrayFilter">Filter:</label></td>
 					<td>
 						<textarea id="arrayFilter">
 				function isFound(item) {
@@ -56,7 +56,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="arrayMap">Array Map:</label></td>
+					<td><label for="arrayMap">Map:</label></td>
 					<td>
 						<textarea id="arrayMap">
 				function getKey(item) {
@@ -66,6 +66,17 @@
 					</td>
 				</tr>
 				<tr>
+					<td><label for="arrayReduce">Reduce:</label></td>
+					<td>
+						<textarea id="arrayReduce">
+function reducer(a, b) {
+    return a + b;
+}
+						</textarea>
+					</td>
+				</tr>
+			
+				<tr>
 					<td colspan="2" align="center">
 						<button id="fetchContent">Fetch Content</button>
 						<input type="submit" id="submitQuery"/>
@@ -73,7 +84,8 @@
 				</tr>
 			</table>
 			<iframe id="frameInfo" style="display:none"></iframe>
-			<div id="resultSet"></div>
+			<div id="resultSetMap"></div>
+			<div id="resultSetReduce"></div>
 		</div>
 		<script>
 			var isPostBack = false;
@@ -90,8 +102,10 @@
 			
 			const	arrayFilterElement = document.getElementById("arrayFilter");
 			const	arrayMapElement = document.getElementById("arrayMap");
+			const	arrayReduceElement = document.getElementById("arrayReduce");
 			
-			const 	resultSetElement = document.getElementById("resultSet");
+			const 	resultSetMapElement = document.getElementById("resultSetMap");
+			const 	resultSetReduceElement = document.getElementById("resultSetReduce");			
 			
 			function pageLoad()
 			{
@@ -168,7 +182,13 @@
 				
 				const mapArray = filterArray.map( getKey );
 				
-				resultSetElement.innerHTML = mapArray;
+				resultSetMapElement.innerHTML = mapArray;
+				
+				var arrayReduceFunction = eval(arrayReduceElement.value);
+				
+				const reduceResult = mapArray.reduce(reducer, 0);
+				
+				resultSetReduceElement.innerHTML = reduceResult;
 			}
 
 			fetchContentElement.addEventListener("click", contentFetch, false);
