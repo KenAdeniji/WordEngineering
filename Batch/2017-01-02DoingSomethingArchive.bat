@@ -118,7 +118,7 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17765);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24668);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
@@ -286,4 +286,7 @@ Bedside lamp light off, once.
 Bedside lamp light off, once.
 https://goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf
 	Chapter 11: Strings
+Microsoft SQL Server Management Studio grid refresh wait error.
+Microsoft SQL Server Management Studio grid cursor jump.
+Quantitative Data: This makes itself subjective to numeric computation.
 :Exit
