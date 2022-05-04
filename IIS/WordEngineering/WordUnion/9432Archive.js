@@ -22,6 +22,7 @@
 	2017-10-14	renderData()
 	2017-10-14	ContactMaintenance.html	scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 	2017-10-14	ContactMaintenance.html	scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+	2022-05-03	ActiveDirectory.html	scriptLiteral9432.renderDataList: function(data, containerID, caption, columnHeader);
 	2017-11-30	http://en.wikipedia.org/wiki/List_of_file_signatures
 	2018-01-13	https://stackoverflow.com/questions/30389769/converting-one-dimensional-array-to-two-dimensional
 	2018-07-07	https://stackoverflow.com/questions/10642289/return-html-content-as-a-string-given-url-javascript-function
@@ -1781,6 +1782,25 @@ var scriptLiteral9432 =
 		document.getElementById(containerID).innerHTML = info;
 		tsorter.create(tableID);
 		//scriptLiteral9432.selectTableRow(tableID);
+	},
+
+	//2022-05-03
+	renderDataList: function(data, containerID, caption, columnHeader)
+	{
+		var tableID = containerID + 0;
+		var resultSetHTML = `<table id=${tableID}><thead><caption>${caption}</caption><tr><th>${columnHeader}</th></tr></thead><tbody>`;
+		for
+		(
+			index = 0, length = data.length;
+			index < length;
+			++index
+		)
+		{
+			resultSetHTML += `<tr><td>${data[index]}</td></tr>`;
+		}
+		resultSetHTML += "</tbody></table>";
+		document.getElementById(containerID).innerHTML = resultSetHTML;
+		tsorter.create(tableID);
 	},
 
 	//2019-10-01 Created.

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-05-03T10:59:00	https://www.codemag.com/article/1312041/Using-Active-Directory-in-.NET
+		2022-05-03T11:27:00 selectOption Let the times be known?
+	-->
+	<head>
+		<title>Lightweight Directory Access Protocol (LDAP)</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Lightweight Directory Access Protocol (LDAP)"/>
+		<meta name="keyword" content="Lightweight Directory Access Protocol (LDAP), users"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><select autofocus id="selectOption"></select></td></tr>
+				<tr><td><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	selectOptionElement = document.getElementById("selectOption");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.buildSelect("selectOption", SelectOptions);
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["selectOption"] = selectOptionElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/Lightweight Directory Access Protocol (LDAP).asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataList
+						(
+							JSON.parse(data.d),
+							"resultSet",
+							"Lightweight Directory Access Protocol (LDAP)",
+							selectOptionElement.value
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			SelectOptions = 
+			[
+				"User",
+				"Group"
+			];
+		</script>		
+	</body>
+</html>

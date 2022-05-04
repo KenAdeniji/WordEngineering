@@ -287,8 +287,11 @@ Bedside lamp light off, once.
 https://goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf
 	Chapter 11: Strings
 Microsoft SQL Server Management Studio grid refresh wait error.
-Microsoft SQL Server Management Studio grid cursor jump.
+Microsoft SQL Server Management Studio grid cursor jump, once.
 Quantitative Data: This makes itself subjective to numeric computation.
 Dry throat.
 Microsoft hotmail inbox folder mail error.
+http://en.wikipedia.org/wiki/Japan
+http://news.google.com
+2022-05-01 URIMaintenanceWebForm.aspx 45515
 :Exit
