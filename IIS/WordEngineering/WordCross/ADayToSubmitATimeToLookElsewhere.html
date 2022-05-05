@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-05-05T11:37:00	Created.
+		2022-05-05T12:27:00	https://stackoverflow.com/questions/3628210/how-to-get-the-selected-index-of-a-drop-down
+	-->
+	<head>
+		<title>A day to submit. A time to look elsewhere.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="A day to submit. A time to look elsewhere."/>
+		<meta name="keyword" content="Standard, specification, language, keyword, term"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><select id="language" autofocus></select></td></tr>
+				<tr><td><select id="keyword" multiple></select></td></tr>
+				<tr><td><select id="logic"></select></td></tr>
+				<tr><td><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	languageElement = document.getElementById("language");
+			const 	keywordElement = document.getElementById("keyword");
+			const 	logicElement = document.getElementById("logic");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.buildSelect("language", languages);
+						languageElement.selectedIndex = 0;
+						languageChange();
+						keywordElement.selectedIndex = 0;
+						scriptLiteral9432.buildSelect("logic", logics);
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["selectOption"] = scriptLiteral9432.selectionGet("keyword");
+				request["logic"] = logicElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/ADayToSubmitATimeToLookElsewhere.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataTable
+						(
+							JSON.parse(data.d),
+							"resultSet"
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function languageChange()
+			{
+				var languageIndex = languageElement.selectedIndex;
+				var keywords = languages[languageIndex][1].split(',');
+				scriptLiteral9432.buildSelect
+				(
+					"keyword", 
+					keywords
+				);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			languageElement.addEventListener("click", languageChange, false);
+			
+			languages = 
+			[
+				["CSS", "clear, color, float"],
+				["HTML", "body, head, submit, title"],
+				["Javascript", "addEventListener, false, true"],
+			];
+			
+			logics = 
+			[
+				"and",
+				"or"
+			];
+		</script>		
+	</body>
+</html>
