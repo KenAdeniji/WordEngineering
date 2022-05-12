@@ -123,7 +123,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1084);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1148);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3586);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -140,7 +140,7 @@ DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1718);
-DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1471);
+DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1504);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
 DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 481);
