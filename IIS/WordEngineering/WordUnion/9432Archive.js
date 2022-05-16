@@ -254,6 +254,10 @@ var scriptLiteral9432 =
 		"Biblical",
 		"Gregorian"		
 	],
+	logicAndOr: [ //2022-05-15T12:11:00
+		"And",
+		"Or"
+	],
 	//2019-02-13 https://stackoverflow.com/questions/24657463/how-to-add-http-to-url-if-no-protocol-is-defined-in-javascript
 	addhttp: function(url)
 	{
