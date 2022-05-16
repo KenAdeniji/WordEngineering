@@ -26,6 +26,7 @@ using InformationInTransit.UserInterface;
 
 ///<summary>
 ///	2022-05-15T12:52:00 Created.
+/// 2022-05-15T13:45:00	https://stackoverflow.com/questions/7802822/all-possible-combinations-of-a-list-of-values
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -55,45 +56,61 @@ public class ItIsNotHowMuchYouGiveItIsWhoYouGiveOhLORDWebService : System.Web.Se
 		char[] delimiterChars = { ',', ';' };
 		String[] words = word.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
 		
+		String wordCurrent;
+		
 		foreach(String logicCurrent in logics)
 		{
-			sbWord = new StringBuilder();
-			sbWhereClause = new StringBuilder();
-			
-			foreach(String wordCurrent in words)
+			for 
+			(
+				int wordOutIndex = 0, wordOutLength = words.Length - 1;
+				wordOutIndex < wordOutLength;
+				++wordOutIndex
+			)	
 			{
-				if (sbWord.Length > 0)
-				{
-					sbWord.AppendFormat
-					(
-						" {0} ",
-						logicCurrent
-					);
-				}
-				sbWord.Append(wordCurrent);
-				
-				if (sbWhereClause.Length == 0)
-				{
-					sbWhereClause.Append(" WHERE ");
-				}
-				else
-				{
-					sbWhereClause.Append(' ' + logicCurrent + ' ');
-				}
-				
-				sbWhereClause.AppendFormat
+				sbWord = new StringBuilder();
+				sbWhereClause = new StringBuilder();
+
+				for 
 				(
-					" {0} LIKE '%{1}%' ",
-					bibleVersion,
-					wordCurrent
-				);
-
-				if (sqlStatement.Length > 0)
+					int wordInIndex = wordOutIndex, wordInLength = words.Length;
+					wordInIndex < wordInLength;
+					++wordInIndex
+				)	
 				{
-					sqlStatement.Append(" UNION " );
-				}
+					wordCurrent = words[wordInIndex];
+					if (sbWord.Length > 0)
+					{
+						sbWord.AppendFormat
+						(
+							" {0} ",
+							logicCurrent
+						);
+					}
+					sbWord.Append(wordCurrent);
+					
+					if (sbWhereClause.Length == 0)
+					{
+						sbWhereClause.Append(" WHERE ");
+					}
+					else
+					{
+						sbWhereClause.Append(' ' + logicCurrent + ' ');
+					}
+					
+					sbWhereClause.AppendFormat
+					(
+						" {0} LIKE '%{1}%' ",
+						bibleVersion,
+						wordCurrent
+					);
 
-				sqlStatement.AppendFormat(QueryStatement, sbWord, sbWhereClause);
+					if (sqlStatement.Length > 0)
+					{
+						sqlStatement.Append(" UNION " );
+					}
+
+					sqlStatement.AppendFormat(QueryStatement, sbWord, sbWhereClause);
+				}	
 			}
 		}
 		
