@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-05-16T18:36:00	Created. http://html5doctor.com/methods-of-communication/
+		2022-05-16T19:42:00	https://w3schools.invisionzone.com/topic/52192-windowpostmessage-communication/
+	-->
+	<head>
+		<title>Methods of communication Tuesday, January 18th, 2011 by Remy Sharp. onmessage and postMessage or send.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Methods of communication Tuesday, January 18th, 2011 by Remy Sharp. onmessage and postMessage or send."/>
+		<meta name="keywords" content="Remy Sharp, onmessage, postMessage, send"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="data">Data</label></td>
+					<td>
+						<textarea id="data" type="text" autofocus style="width: 70vw;">Hello World</textarea>
+					</td>
+				</tr>	
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+		</div>
+
+		<script>
+			var isPostBack = false;
+
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	dataElement = document.getElementById("data");
+
+			var		receiveMessage;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					dataElement.value = dataDefault;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				// from the sender code
+				receiveMessage=window.open("RemySharp_-_MethodsOfCommunication_-_RecipientMessage.html");
+				receiveMessage.onload = function() {   
+					receiveMessage.postMessage(dataElement.value);
+				}
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			var dataDefault = "Hello world";
+	</script>
+</body>
+</html>
