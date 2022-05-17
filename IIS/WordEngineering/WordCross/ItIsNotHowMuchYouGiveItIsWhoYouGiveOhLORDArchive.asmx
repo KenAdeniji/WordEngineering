@@ -62,7 +62,7 @@ public class ItIsNotHowMuchYouGiveItIsWhoYouGiveOhLORDWebService : System.Web.Se
 		{
 			for 
 			(
-				int wordOutIndex = 0, wordOutLength = words.Length - 1;
+				int wordOutIndex = 0, wordOutLength = words.Length;
 				wordOutIndex < wordOutLength;
 				++wordOutIndex
 			)	
