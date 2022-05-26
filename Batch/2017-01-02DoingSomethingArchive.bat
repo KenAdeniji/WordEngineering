@@ -273,7 +273,6 @@ Published: APRIL 3, 2022 13:41
 
 Updated: APRIL 3, 2022 14:35 
 2022-04-03T14:53:00 https://developer.mozilla.org/en-US/docs/Web/API/Navigator	
-2022-04-03T16:58:00	URIMaintenanceWebFOrm.aspx Page 130
 2022-04-03T16:05:06 2002-05-23 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days. Sir Robert Anderson.
 2022-04-06T12:38:00
 MD "C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu\"
@@ -281,7 +280,6 @@ Copy C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu
 CLASSPATH =.;C:\Program Files\Microsoft JDBC Driver 10.2 for SQL Server\sqljdbc_10.2\enu\mssql-jdbc-10.2.0.jre17.jar
 Bedside lamp light off, once.
 2022-04-06T10:33:00 user interface application database swing java
-2022-04-18T06:41:00 URIMaintenanceWebFOrm.aspx	 	57036
 2022-04-20T18:15:00 Surrogate Keys
 Bedside lamp light off, once.
 https://goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf
@@ -293,7 +291,10 @@ Dry throat.
 Microsoft hotmail inbox folder mail error.
 http://en.wikipedia.org/wiki/Japan
 http://news.google.com
-2022-05-01 URIMaintenanceWebForm.aspx 34070
+2022-05-01 URIMaintenanceWebForm.aspx page  2019-12-12 52577
 2022-05-02 2+2+2+2 = 8. 2*2*2 = 6. The accuser of the brethren. C:\Users\kadeniji\OneDrive\WebAssembly 16:30 Dry throat. 17:01 google.com js filetype:pdf. 17:27 javascript 17:40 html 17:43 Dizzy sleepy (Color lo show). 20 pages. 17:59 Javascript (Ma je ko di ja). 18:00 Dizzy sleepy. 19:18 (Go forward). 18:20 html css javascript
 2022-05-14T13:32:00 Microsoft Windows operating system, Mozilla Firefox browser address line http://localhost error GetAPage.html, ScriptureReference.html, alternate browsers work OK.
+/// 2022-05-15T13:45:00	https://stackoverflow.com/questions/7802822/all-possible-combinations-of-a-list-of-values
+2022-05-17T11:26 Microsoft SQL Server Management Studio tab grid float error.
+2022-05-18T16:28 https://am2.co/2021/12/querying-serverproperty-and-databasepropertyex-from-a-view/
 :Exit
