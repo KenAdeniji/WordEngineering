@@ -10,4 +10,10 @@
         git add   InformationInTransit/InformationInTransitBuildArchive.bat
 
 git add        GitHub.com/2022-05-28T2134GitHub.bat
-git add        MSTest/
+git add        Microsoft/MSTest/
+
+git add           IIS/WordEngineering/Resume/KenAdenijiResume.html
+git add           IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+git add           IIS/WordEngineering/Resume/KenAdenijiResume.txt
+git add           IIS/WordEngineering/Resume/KenAdenijiResumeArchive.html
+git add           IIS/WordEngineering/Resume/KenAdenijiResumeRelease2020-08-21.html
