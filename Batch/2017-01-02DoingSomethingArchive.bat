@@ -297,4 +297,5 @@ http://news.google.com
 /// 2022-05-15T13:45:00	https://stackoverflow.com/questions/7802822/all-possible-combinations-of-a-list-of-values
 2022-05-17T11:26 Microsoft SQL Server Management Studio tab grid float error.
 2022-05-18T16:28 https://am2.co/2021/12/querying-serverproperty-and-databasepropertyex-from-a-view/
+2022-05-26T22:56 Microsoft hotmail inbox folder mail error. Your request can't be completed right now.
 :Exit

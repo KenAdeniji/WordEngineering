@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService.Tests\\PrimeService.Tests.csproj": {}
+  },
+  "projects": {
+    "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService.Tests\\PrimeService.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService.Tests\\PrimeService.Tests.csproj",
+        "projectName": "PrimeService.Tests",
+        "projectPath": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService.Tests\\PrimeService.Tests.csproj",
+        "packagesPath": "C:\\Users\\kadeniji\\.nuget\\packages\\",
+        "outputPath": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kadeniji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\PrimeService.csproj": {
+                "projectPath": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\PrimeService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\PrimeService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\PrimeService.csproj",
+        "projectName": "PrimeService",
+        "projectPath": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\PrimeService.csproj",
+        "packagesPath": "C:\\Users\\kadeniji\\.nuget\\packages\\",
+        "outputPath": "e:\\WordEngineering\\MSTest\\unit-testing-using-mstest\\PrimeService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kadeniji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
