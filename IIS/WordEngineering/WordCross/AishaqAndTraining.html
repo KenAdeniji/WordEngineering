@@ -4,6 +4,10 @@
 		2022-05-29T14:35:00	Created.
 		2022-05-29T18:15:00	https://www.jqwidgets.com/community/topic/jqxgrid-delete-selected-rows-with-php-pdomysql/
 		2022-05-29T18:15:00	https://www.jqwidgets.com/community/topic/add-new-row-and-edit-jqxgrid/
+		2022-05-29T19:58:00	English language Isaac. Yoruba language Aishaq.
+		2022-05-29T19:58:00	English language Isaac. Yoruba language Isaaki.
+		2022-05-29T22:55:00	https://stackoverflow.com/questions/1723287/calling-a-javascript-function-named-in-a-variable
+		2022-05-29T23:08:00	https://en.wikipedia.org/wiki/Yoruba_language
 	-->	
 	<head>
 		<title>Aishaq and training.</title>
@@ -48,14 +52,6 @@
 			
 			function alphabetSequenceIndexEnglish(word)
 			{
-				var alphabetSequence = 0;
-				var notANumber = isNaN(word);
-				if (!notANumber)
-				{	
-					alphabetSequence = Number.parseInt(word)
-					return alphabetSequence;
-				}
-				
 				word = word.toUpperCase();
 
 				var ascii = word.charCodeAt(0);
@@ -67,7 +63,7 @@
 				
 				for 
 				(
-					var index = 0, length = word.length, currentCode, asciiCode;
+					var index = 0, length = word.length, currentCode, asciiCode, alphabetSequence = 0;
 					index < length;
 					++index
 				)
@@ -78,6 +74,45 @@
 						asciiCode = currentCode.charCodeAt(0);
 						alphabetSequence += asciiCode - 64;
 					}
+				}
+				return alphabetSequence;
+			}
+	
+			function alphabetSequenceIndexYoruba(word)
+			{
+				word = word.toUpperCase();
+
+				for 
+				(
+					var index = 0, length = word.length, currentCode, asciiCode, alphabetSequence = 0, alphabetPosition;
+					index < length;
+					++index
+				)
+				{
+					currentCode = word[index];
+					alphabetPosition = 0;
+
+					//A 	B 	D 	E 	Ẹ 	F 	G 	Gb 	H 	I 	J 	K 	L 	M 	N 	O 	Ọ 	P 	R 	S 	Ṣ 	T 	U 	W 	Y 
+					
+					switch(currentCode)
+					{
+						case "A": case "Á": case "À":
+							alphabetPosition = 1;
+							break;
+						case "B":
+							alphabetPosition = 2;
+							break;
+						case "D":
+							alphabetPosition = 3;
+							break;
+						case "E": case "É": case "È":
+							alphabetPosition = 4;
+							break;
+						case "Ẹ": case "Ẹ́": case "Ẹ̀":
+							alphabetPosition = 5;
+							break;
+					}
+					alphabetSequence += alphabetPosition;
 				}
 				return alphabetSequence;
 			}
@@ -99,18 +134,43 @@
 
 			function querySubmit()
 			{
-				alphabetSequenceIndexWords = 0;
+				var alphabetSequenceIndexWord = 0;
+				var alphabetSequenceIndexWords = 0;
+
+				var alphabetSequenceIndexLanguage;
+
+				var notANumber = 0;
 
 				var griddata = $('#jqxgridAlphabetSequence').jqxGrid('getdatainformation');
 				var rows = [];
 
+				var rowSet;
+				var word;
+				var language;
+
 				for (var rowIndex = 0; rowIndex < griddata.rowscount; rowIndex++)
 				{
-					var rowSet = $('#jqxgridAlphabetSequence').jqxGrid('getrenderedrowdata', rowIndex);
-					var word = rowSet["word"];
-					var language = rowSet["language"];
+					rowSet = $('#jqxgridAlphabetSequence').jqxGrid('getrenderedrowdata', rowIndex);
+					word = rowSet["word"];
+					language = rowSet["language"];
 					
-					var alphabetSequenceIndexWord = alphabetSequenceIndexEnglish(word);
+					notANumber = isNaN(word);
+					if (!notANumber)
+					{	
+						alphabetSequenceIndexWord = Number.parseInt(word)
+					}
+					else
+					{
+						if (!language)
+						{
+							language = defaultLanguageElement.value;
+						}
+						
+						alphabetSequenceIndexLanguage = "alphabetSequenceIndex" + language;
+
+						alphabetSequenceIndexWord = window[alphabetSequenceIndexLanguage](word);
+					}
+					
 					$("#jqxgridAlphabetSequence").jqxGrid('setcellvalue', rowIndex, 'alphabetSequenceIndex', alphabetSequenceIndexWord);
 					
 					alphabetSequenceIndexWords += alphabetSequenceIndexWord;
@@ -197,7 +257,7 @@
 			
 			DefaultWords = 
 			[
-				["Aishaq", "Arabic"],
+				["Aishaq", "English", "Arabic"],
 				["and", null],
 				["training", null]
 			];
