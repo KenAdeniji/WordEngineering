@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-05-29T14:35:00	Created.
+		2022-05-29T18:15:00	https://www.jqwidgets.com/community/topic/jqxgrid-delete-selected-rows-with-php-pdomysql/
+		2022-05-29T18:15:00	https://www.jqwidgets.com/community/topic/add-new-row-and-edit-jqxgrid/
+	-->	
+	<head>
+		<title>Aishaq and training.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Aishaq and training."/>
+		<meta name="keyword" content="Isaac, language, AlphabetSequence"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqwidgets/12.2.1/jqwidgets/styles/jqx.base.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jqwidgets/12.2.1/jqwidgets/jqx-all.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="defaultLanguage">Default Language</label></td>
+					<td><input id="defaultLanguage" type="text" autofocus/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+				<tr>
+					<td><label for="alphabetSequenceIndexAll">AlphabetSequenceIndex</label></td>
+					<td><label id="alphabetSequenceIndexAll"></label></td>
+				</tr>				
+			</table>
+			<div id="resultSet"></div>
+			<div class='default'>
+				<div id='jqxWidget' style="font-size: 13px; font-family: Verdana;">
+					<div id="jqxgridAlphabetSequence"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	alphabetSequenceIndexAllElement = document.getElementById("alphabetSequenceIndexAll");
+			const 	defaultLanguageElement = document.getElementById("defaultLanguage");
+			const	jqxgridAlphabetSequenceElement = document.getElementById("jqxgridAlphabetSequence");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function alphabetSequenceIndexEnglish(word)
+			{
+				var alphabetSequence = 0;
+				var notANumber = isNaN(word);
+				if (!notANumber)
+				{	
+					alphabetSequence = Number.parseInt(word)
+					return alphabetSequence;
+				}
+				
+				word = word.toUpperCase();
+
+				var ascii = word.charCodeAt(0);
+				
+				if (word < 'A' || word > 'Z')
+				{
+					return ascii;
+				}		
+				
+				for 
+				(
+					var index = 0, length = word.length, currentCode, asciiCode;
+					index < length;
+					++index
+				)
+				{
+					currentCode = word[index];
+					if (currentCode >= 'A' && currentCode <= 'Z')
+					{	
+						asciiCode = currentCode.charCodeAt(0);
+						alphabetSequence += asciiCode - 64;
+					}
+				}
+				return alphabetSequence;
+			}
+	
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					defaultLanguageElement.value = DefaultLanguage;		
+					prepareTheData();
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				alphabetSequenceIndexWords = 0;
+
+				var griddata = $('#jqxgridAlphabetSequence').jqxGrid('getdatainformation');
+				var rows = [];
+
+				for (var rowIndex = 0; rowIndex < griddata.rowscount; rowIndex++)
+				{
+					var rowSet = $('#jqxgridAlphabetSequence').jqxGrid('getrenderedrowdata', rowIndex);
+					var word = rowSet["word"];
+					var language = rowSet["language"];
+					
+					var alphabetSequenceIndexWord = alphabetSequenceIndexEnglish(word);
+					$("#jqxgridAlphabetSequence").jqxGrid('setcellvalue', rowIndex, 'alphabetSequenceIndex', alphabetSequenceIndexWord);
+					
+					alphabetSequenceIndexWords += alphabetSequenceIndexWord;
+				}
+
+				alphabetSequenceIndexAllElement.textContent = alphabetSequenceIndexWords;
+			}
+
+			function prepareTheData()
+			{
+				var data = new Array();
+				for 
+				(
+					var wordIndex = 0, wordLength = DefaultWords.length; 
+					wordIndex < wordLength;
+					wordIndex++
+				) 
+				{
+					var row = {};
+					row["word"] = DefaultWords[wordIndex][0];
+					row["language"] = DefaultWords[wordIndex][1] ? DefaultWords[wordIndex][1] : "";
+					row["alphabetSequenceIndex"] = 0;
+					data[wordIndex] = row;
+				}
+				var source =
+				{
+					localdata: data,
+					datatype: "array"
+				};
+				var dataAdapter = new $.jqx.dataAdapter(source, {
+					loadComplete: function (data) { },
+					loadError: function (xhr, status, error) { }      
+				});
+				$("#jqxgridAlphabetSequence").jqxGrid
+				(
+					{
+						source: dataAdapter,
+						editable: true,
+						columns: [
+						  { text: 'Word', datafield: 'word', width: 200 },
+						  { text: 'Language', datafield: 'language', width: 200 },
+						  { text: 'AlphabetSequenceIndex', datafield: 'alphabetSequenceIndex', width: 200, cellsalign: 'right', editable: false },
+						],
+						showstatusbar: true,
+						renderstatusbar: function (statusbar) 
+						{
+							// appends buttons to the status bar.
+							var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+							var addButton = $("<div style='float: left; margin-left: 5px;'><img style='position: relative; margin-top: 2px;' src='images/add.png'/><span style='margin-left: 4px; position: relative; top: -3px;'>Add</span></div>");
+							var deleteButton = $("<div style='float: left; margin-left: 5px;'><img style='position: relative; margin-top: 2px;' src='images/close.png'/><span style='margin-left: 4px; position: relative; top: -3px;'>Delete</span></div>");
+							container.append(addButton);
+							container.append(deleteButton);
+							statusbar.append(container);
+							addButton.jqxButton({  width: 60, height: 20 });
+							deleteButton.jqxButton({  width: 85, height: 20 });
+							// add new row.
+							addButton.click(function (event) {
+								$("#jqxgridAlphabetSequence").jqxGrid('addrow', null, {});
+							});
+							// delete selected row.
+							deleteButton.click(function (event) {
+								var selectedrowindex = $("#jqxgridAlphabetSequence").jqxGrid('getselectedrowindex');
+								var rowscount = $("#jqxgridAlphabetSequence").jqxGrid('getdatainformation').rowscount;
+								var id = $("#jqxgridAlphabetSequence").jqxGrid('getrowid', selectedrowindex);
+								$("#jqxgridAlphabetSequence").jqxGrid('deleterow', id);
+							});
+						}
+					}	
+				)	
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			DefaultLanguage	= "English";
+			
+			DefaultWords = 
+			[
+				["Aishaq", "Arabic"],
+				["and", null],
+				["training", null]
+			];
+		</script>		
+	</body>
+</html>
