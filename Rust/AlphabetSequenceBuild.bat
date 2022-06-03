@@ -1,0 +1,1 @@
+%USERPROFILE%\.rustup\toolchains\stable-x86_64-pc-windows-msvc\bin\rustc AlphabetSequence.rs

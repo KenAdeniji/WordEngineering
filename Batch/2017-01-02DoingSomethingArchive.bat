@@ -1,17 +1,19 @@
 @echo off
 :BeginAgain
-echo 1=BCP, 2=Node.js, 3=SQLServerBackup, 4=SQLServerDataDefinitionLanguageDDL, 5=SQLServerDataFiles, 6=SQLServerExport, 7=WinScp, 8=WordEngineering, 9=WordOfGod
+echo 1=BCP, 2=Node.js, 3=Rust, 4=SQLServerBackup, 5=SQLServerDataDefinitionLanguageDDL, 6=SQLServerDataFiles, 7=SQLServerExport, 8=WebAssembly, 9=WinScp, 10=WordEngineering, 11=WordOfGod
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
 IF %id% == 2 GOTO Node.js
-IF %id% == 3 GOTO SQLServerBackup
-IF %id% == 4 GOTO SQLServerDataDefinitionLanguageDDL
-IF %id% == 5 GOTO SQLServerDataFiles
-IF %id% == 6 GOTO SQLServerExport
-IF %id% == 7 GOTO WinScp
-IF %id% == 8 GOTO WordEngineering
-IF %id% == 9 GOTO WordOfGod
+IF %id% == 3 GOTO Rust
+IF %id% == 4 GOTO SQLServerBackup
+IF %id% == 5 GOTO SQLServerDataDefinitionLanguageDDL
+IF %id% == 6 GOTO SQLServerDataFiles
+IF %id% == 7 GOTO SQLServerExport
+IF %id% == 8 GOTO WebAssembly
+IF %id% == 9 GOTO WinScp
+IF %id% == 10 GOTO WordEngineering
+IF %id% == 11 GOTO WordOfGod
 GOTO Exit
 
 :BCP
@@ -27,6 +29,14 @@ xcopy e:\Node.js d:\Node.js /d /e /s /y
 xcopy e:\Node.js f:\Node.js /d /e /s /y
 xcopy e:\Node.js \\Noor\e$\Node.js /d /e /s /y
 REM xcopy e:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
+GOTO Exit
+
+:Rust
+xcopy e:\Rust d:\Rust /d /e /s /y
+xcopy e:\Rust f:\Rust /d /e /s /y
+xcopy e:\Rust \\Noor\e$\Rust /d /e /s /y
+xcopy e:\Rust \\Harvest\e$\Rust /d /e /s /y
+xcopy e:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
 :SQLServerBackup
@@ -64,6 +74,14 @@ xcopy e:\SQLServerExport d:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport f:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
+GOTO Exit
+
+:WebAssembly
+xcopy e:\WebAssembly d:\WebAssembly /d /e /s /y
+xcopy e:\WebAssembly f:\WebAssembly /d /e /s /y
+xcopy e:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
+xcopy e:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
+xcopy e:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
 GOTO Exit
 
 :WinScp
@@ -123,7 +141,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1160);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1164);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3586);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -132,7 +150,7 @@ DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 148021);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 148097);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 99602);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -298,4 +316,10 @@ http://news.google.com
 2022-05-17T11:26 Microsoft SQL Server Management Studio tab grid float error.
 2022-05-18T16:28 https://am2.co/2021/12/querying-serverproperty-and-databasepropertyex-from-a-view/
 2022-05-26T22:56 Microsoft hotmail inbox folder mail error. Your request can't be completed right now.
+E:\WebAssembly>git push
+2022-06-01T15:52:00
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/KenAdeniji/WebAssembly/'
+2022-05-31 When I chose to work on WebAssembly? Follow personal previous code example sample or reference the Internet? 2022-06-01T17:49:00 What anticipates, My supply? How are we; a sufficient being? 2022-06-01T18:11:00 Letting one in.
 :Exit
