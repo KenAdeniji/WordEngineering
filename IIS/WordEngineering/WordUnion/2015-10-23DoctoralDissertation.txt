@@ -118,6 +118,21 @@ The author prescribes the steps below to begin database set-up and usage:
     Stored-procedures, triggers, and functions are programmable logic.
 
 "
+Object Oriented Programming - GetAPage.html
+" (LOOPE Lingo Object Oriented Programming Environment)
+Parent Scripts and Objects
+
+GetAPage.html contains the HTML5 directive, head, and body sections. The head section contains the title and meta tags for search-engine optimization (SEO). The body section is divisible into the 3 languages that make up a web page. These are HTML, JavaScript, and CSS.
+
+HTML is an element's nodes. There are only single instances of the input and submit elements. There are multiple div containers for the result sets. Although HTML supports attributes, the ID attribute is the author's only general declaration.
+
+Both CSS and JavaScript act on HTML tags. JavaScript and CSS render the contents of HTML.
+
+There are minute uses of global variables. The author discourages this, because of encapsulation and debugging traceability and granularity.
+Naming Conventions
+
+JavaScript relaxes variable declarations. Variables do not need explicit declaration, and these declarations are redefinable. In spite of this, the author is judicious about variables. The data- attribute is user customizable.
+"
 Indexing
 " (Search engine indexing)
 
@@ -1034,7 +1049,7 @@ Name
 
     Giving a person's name to a place, such as, Enoch, Israel, Judah, tribes names
     Name changes, such as Abram to Abraham, Sarai to Sarah, Jacob to Israel, Saul of Tarsus to apostle Paul
-    Name misspelling, Rahel for Rachel
+    Name misspelling, Rahel for Rachel. A rewording of your view.
     Referring to people with their alias, sons of Zebedee, sons of Thunder, Boanerges
     Multiple people bearing the same name, such as John the Baptist, apostle John, the beloved disciple
 
@@ -1522,6 +1537,7 @@ References
     Writing Style Guide Microsoft; W3C web page; Available from http://docs.microsoft.com/en-us/style-guide/welcome
     DB2 Developer's Guide Craig S. Mullins (May 2000); W3C web page; Available from http://www.craigsmullins.com
     Semantic Pattern Mining Based Web Service Recommendation Hafida Na ̈ım, Mustapha Aznag, Nicolas Durand, and Mohamed Quafafou Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille, France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand, mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from http://hal.archives-ouvertes.fr/hal-01465113/document
+    LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
     Brendan T. O'Connor Brendan T. O'Connor; W3C web page; Available from http://BrenOCon.com
     Designing Web Usability: The Practice of Simplicity (2000) Jakob Nielsen; W3C web page; Available from http://www.useit.com
     Refactoring Object-Oriented Frameworks William F. Opdyke (1992); W3C web page; Available from http://laputan.org/pub/papers/opdyke-thesis.pdf
