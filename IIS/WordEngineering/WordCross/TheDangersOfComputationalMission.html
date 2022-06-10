@@ -8,7 +8,7 @@
 		<title>The dangers of computational mission.</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="The dangers of computational mission."/>
-		<meta name="keyword" content="anchor, href"/>
+		<meta name="keyword" content="anchor, href, url input, form querystring"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -20,15 +20,19 @@
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="sourceAddress">URI</label></td>
+					<td><label for="sourceAddress">Source Address</label></td>
 					<td><input id="sourceAddress" type="url" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="targetAddress">Target Address</label></td>
+					<td><a id="targetAddress"></a></td>
 				</tr>
 				<tr><td colspan="2" align="center">
 					<button id="fetchContent">Fetch Content</button>
 					<input type="submit" id="submitQuery"/>
 				</td></tr>
 			</table>
-			<input id="sourceContent" type="text"/>
+			<input id="sourceContent" type="text" style="display:none;"/>
 			<div id="resultSet"></div>
 			<div class="default">
 				<div id="jqxWidget" style="font-size: 13px; font-family: Verdana;">
@@ -45,6 +49,7 @@
 			const 	sourceAddressElement = document.getElementById("sourceAddress");
 			const	sourceContentElement = document.getElementById("sourceContent");
 			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	targetAddressElement = document.getElementById("targetAddress");
 			
 			var		inputTags = null;
 			
@@ -54,28 +59,20 @@
 				{
 					sourceAddressElement.value = sourceAddressDefault;
 					contentFetch();
-					//querySubmit();
+					querySubmit();
 					isPostBack = true;
 				}
 				else
 				{
-					//querySubmit();
+					querySubmit();
 				}
  			}
 
 			function contentFetch()
 			{
-				console.log("contentType");
 				fetch(sourceAddressElement.value).then(response => {
 					const contentType = response.headers.get("content-type");
-					console.log(contentType);
-					if (contentType && contentType.indexOf("application/json") !== -1) {
-						return response.json().then(data => {
-							// process your JSON data further
-							sourceContentElement.value = JSON.stringify(data);
-						});
-					}
-					else if 
+					if 
 					(
 						contentType && contentType.indexOf("text/html") !== -1
 					) 
@@ -85,16 +82,10 @@
 							let parser = new DOMParser();
 							let xml = parser.parseFromString(data, "text/html");
 							sourceContentElement.value = xml;
-							InputTags = xml.getElementsByTagName("input");
+							InputTags = xml.querySelectorAll("input, select")
 							prepareTheData();
 						});
 					}
-					else {
-						return response.text().then(text => {
-							// this is text, do something with it
-							sourceContentElement.value = text;
-						});
-					};
 				});
 			}
 
@@ -107,16 +98,31 @@
 				var word;
 				var value;
 
+				var keyValue = "";
+				var parameters = "";
+				
 				for (var rowIndex = 0; rowIndex < griddata.rowscount; rowIndex++)
 				{
 					rowSet = $("#jqxgridKeyValue").jqxGrid("getrenderedrowdata", rowIndex);
 					key = rowSet["key"];
 					value = rowSet["value"];
-					
-					KeyValueIndexkeys += KeyValueIndexkey;
+					if ( value === "")
+					{
+						continue;
+					}	
+					if (!parameters) 
+					{
+						parameters += "?"
+					}
+					else
+					{
+						parameters += "&"
+					}
+					parameters += `${key}=${value}`
 				}
 
-				KeyValueIndexAllElement.textContent = KeyValueIndexkeys;
+				targetAddressElement.href = sourceAddressElement.value + parameters;
+				targetAddressElement.innerHTML = sourceAddressElement.value + parameters;
 			}
 
 			function prepareTheData()
@@ -140,6 +146,7 @@
 					var row = {};
 					row["key"] = InputTags[inputIndex]["id"];
 					row["value"] = "";
+					row["type"] = InputTags[inputIndex]["type"];
 					data[inputIndex] = row;
 				}
 				
@@ -160,6 +167,7 @@
 						columns: [
 						  { text: "key", datafield: "key", width: 200 },
 						  { text: "value", datafield: "value", width: 200 },
+						  { text: "type", datafield: "type", width: 200, editable: false },
 						],
 						showstatusbar: true,
 						renderstatusbar: function (statusbar) 
