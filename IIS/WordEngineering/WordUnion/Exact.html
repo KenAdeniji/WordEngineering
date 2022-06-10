@@ -43,19 +43,19 @@
 								<label for="frequencyOfOccurrenceFrom">Frequency of Occurrence</label>
 							</td>
 							<td>
-								<input type="text" id="frequencyOfOccurrenceFrom"/>
+								<input type="number" id="frequencyOfOccurrenceFrom"/>
 								-
-								<input type="text" id="frequencyOfOccurrenceUntil"/>
+								<input type="number" id="frequencyOfOccurrenceUntil"/>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<label for="exactIDFrom">Sequence Order ID</label>
+								<label for="exactIDFrom">Exact ID</label>
 							</td>
 							<td>
-								<input type="text" id="exactIDFrom"/>
+								<input type="number" id="exactIDFrom"/>
 								-
-								<input type="text" id="exactIDUntil"/>
+								<input type="number" id="exactIDUntil"/>
 							</td>
 						</tr>
 						<tr>
@@ -63,9 +63,9 @@
 								<label for="alphabetSequenceIndexFrom">Alphabet Sequence Index</label>
 							</td>
 							<td>
-								<input type="text" id="alphabetSequenceIndexFrom"/>
+								<input type="number" id="alphabetSequenceIndexFrom"/>
 								-
-								<input type="text" id="alphabetSequenceIndexUntil"/>
+								<input type="number" id="alphabetSequenceIndexUntil"/>
 							</td>
 						</tr>
 						<tr>
@@ -83,34 +83,44 @@
 		<script src="tsorter.min.js" type="text/javascript"></script>	
 		<script>
 			var isPostBack = false;
-		
+
+			const bibleWordElement = document.getElementById("bibleWord");
+			const firstOccurrenceScriptureReferenceElement = document.getElementById("firstOccurrenceScriptureReference");
+			const lastOccurrenceScriptureReferenceElement = document.getElementById("lastOccurrenceScriptureReference");
+			const frequencyOfOccurrenceFromElement = document.getElementById("frequencyOfOccurrenceFrom");
+			const frequencyOfOccurrenceUntilElement = document.getElementById("frequencyOfOccurrenceUntil");
+			const exactIDFromElement = document.getElementById("exactIDFrom");
+			const exactIDUntilElement = document.getElementById("exactIDUntil");
+			const alphabetSequenceIndexFromElement = document.getElementById("alphabetSequenceIndexFrom");
+			const alphabetSequenceIndexUntilElement = document.getElementById("alphabetSequenceIndexUntil");
+
 			function querySubmit() {
 				var request = {};
-		        request["bibleWord"] = document.getElementById("bibleWord").value;
-				request["firstOccurrenceScriptureReference"] = document.getElementById("firstOccurrenceScriptureReference").value;
-				request["lastOccurrenceScriptureReference"] = document.getElementById("lastOccurrenceScriptureReference").value;
+		        request["bibleWord"] = bibleWordElement.value;
+				request["firstOccurrenceScriptureReference"] = firstOccurrenceScriptureReferenceElement.value;
+				request["lastOccurrenceScriptureReference"] = lastOccurrenceScriptureReferenceElement.value;
 				
-				var parameter = document.getElementById("frequencyOfOccurrenceFrom").value;
+				var parameter = frequencyOfOccurrenceFromElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["frequencyOfOccurrenceFrom"] = parameter;
 
-				var parameter = document.getElementById("frequencyOfOccurrenceUntil").value;
+				var parameter = frequencyOfOccurrenceUntilElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["frequencyOfOccurrenceUntil"] = parameter;
 
-				var parameter = document.getElementById("exactIDFrom").value;
+				var parameter = exactIDFromElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["exactIDFrom"] = parameter;
 
-				var parameter = document.getElementById("exactIDUntil").value;
+				var parameter = exactIDUntilElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["exactIDUntil"] = parameter;
 				
-				var parameter = document.getElementById("alphabetSequenceIndexFrom").value;
+				var parameter = alphabetSequenceIndexFromElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["alphabetSequenceIndexFrom"] = parameter;
 
-				var parameter = document.getElementById("alphabetSequenceIndexUntil").value;
+				var parameter = alphabetSequenceIndexUntilElement.value;
 				parameter = parameter ? parseInt(parameter) : -1;
 				request["alphabetSequenceIndexUntil"] = parameter;
 				
@@ -124,7 +134,6 @@
 				    dataType: "json",
 				    success: function (data) {
 				        var informationSet = JSON.parse(data.d);
-				        //render(informationSet);
 						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
 				    },
 				    error: function (xhr) {
@@ -138,58 +147,68 @@
 				});
 			}
 			
-		    function render(data) {
-				var occurrences = data["Table"].length;
-				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
-				var info = "<table border=1>" + caption;
-				
-		        var dataRow = null;
-		        var dataTable = null;
-
-				info += scriptLiteral9432.buildHead
-				(
-					"Bible Word",
-					"ExactID",					
-					"First Occurrence",
-					"Last Occurrence",
-					"Difference",
-					"Frequency of Occurrence",
-					"AlphabetSequenceIndex"
-				);
-				
-				for (var table in data) {
-		            dataTable = data[table];
-
-		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
-		                dataRow = dataTable[rowIndex];
-
-						info += scriptLiteral9432.buildRow
-						(
-							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["BibleWord"]),
-							dataRow["ExactID"],
-							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["FirstOccurrenceScriptureReference"]),
-							scriptLiteral9432.buildHyperlink("bibleWord", dataRow["LastOccurrenceScriptureReference"]),
-							dataRow["Difference"],
-							dataRow["FrequencyOfOccurrence"],
-							dataRow["AlphabetSequenceIndex"]
-						);	
-		            }
-		        }
-		        info += "</table>"
-		        document.getElementById("resultSet").innerHTML = info;
-		    }
-
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
 					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
 					{
-						var bibleWord = scriptLiteral9432.getParameterByName("bibleWord");
-						if (bibleWord)
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
 						{
-							document.getElementById("bibleWord").value = bibleWord;
-						}
+							bibleWordElement.value = bibleWordValue;
+						}	
+
+						var firstOccurrenceScriptureReferenceValue = urlParams.get("firstOccurrenceScriptureReference");
+						if (firstOccurrenceScriptureReferenceValue)
+						{
+							firstOccurrenceScriptureReferenceElement.value = firstOccurrenceScriptureReferenceValue;
+						}	
+
+						var lastOccurrenceScriptureReferenceValue = urlParams.get("lastOccurrenceScriptureReference");
+						if (lastOccurrenceScriptureReferenceValue)
+						{
+							lastOccurrenceScriptureReferenceElement.value = lastOccurrenceScriptureReferenceValue;
+						}	
+
+						var frequencyOfOccurrenceFromValue = urlParams.get("frequencyOfOccurrenceFrom");
+						if ( Number.isInteger( +frequencyOfOccurrenceFromValue ) )
+						{
+							frequencyOfOccurrenceFromElement.value = parseInt( frequencyOfOccurrenceFromValue, 10 );
+						}	
+
+						var frequencyOfOccurrenceUntilValue = urlParams.get("frequencyOfOccurrenceUntil");
+						if ( Number.isInteger( +frequencyOfOccurrenceUntilValue ) )
+						{
+							frequencyOfOccurrenceUntilElement.value = parseInt( frequencyOfOccurrenceUntilValue, 10 );
+						}	
+
+						var exactIDFromValue = urlParams.get("exactIDFrom");
+						if ( Number.isInteger( +exactIDFromValue ) )
+						{
+							exactIDFromElement.value = parseInt( exactIDFromValue, 10 );
+						}	
+
+						var exactIDUntilValue = urlParams.get("exactIDUntil");
+						if ( Number.isInteger( +exactIDUntilValue ) )
+						{
+							exactIDUntilElement.value = parseInt( exactIDUntilValue, 10 );
+						}	
+
+						var alphabetSequenceIndexFromValue = urlParams.get("alphabetSequenceIndexFrom");
+						if ( Number.isInteger( +alphabetSequenceIndexFromValue ) )
+						{
+							alphabetSequenceIndexFromElement.value = parseInt( alphabetSequenceIndexFromValue, 10 );
+						}	
+
+						var alphabetSequenceIndexUntilValue = urlParams.get("alphabetSequenceIndexUntil");
+						if ( Number.isInteger( +alphabetSequenceIndexUntilValue ) )
+						{
+							alphabetSequenceIndexUntilElement.value = parseInt( alphabetSequenceIndexUntilValue, 10 );
+						}	
+						
 						isPostBack = true;						
 						querySubmit();
 					});
