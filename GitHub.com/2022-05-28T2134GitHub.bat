@@ -5,7 +5,8 @@
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
-        git add   InformationInTransit/InformationInTransit.dll
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt
+		git add   InformationInTransit/InformationInTransit.dll
         git add   InformationInTransit/InformationInTransitBuild.bat
         git add   InformationInTransit/InformationInTransitBuildArchive.bat
 

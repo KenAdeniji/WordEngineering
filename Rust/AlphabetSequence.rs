@@ -6,14 +6,14 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-	let before_a = 64; //ASCII value of A is 65.
+	const BEFORE_A: u32 = 64; //ASCII value of A is 65.
 	for index in 1..args.len() {
 		let uppercase = args[index].to_uppercase();
 		let mut alphabet_sequence_index = 0;
 		for current_character in uppercase.chars() { 
 			if current_character >= 'A' && current_character <= 'Z' {
 				let ascii_value = current_character as u32;	
-				alphabet_sequence_index += ascii_value - before_a;
+				alphabet_sequence_index += ascii_value - BEFORE_A;
 			}	
 		}
 		println!

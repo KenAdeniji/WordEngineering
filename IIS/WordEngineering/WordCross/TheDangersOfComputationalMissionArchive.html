@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-06-09T19:48:00	https://www.freecodecamp.org/news/mailto-link-how-to-make-an-html-email-link-example-code
+		2022-06-09T21:56:00	https://stackoverflow.com/questions/36631762/returning-html-with-fetch
+	-->	
+	<head>
+		<title>The dangers of computational mission.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The dangers of computational mission."/>
+		<meta name="keyword" content="anchor, href"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqwidgets/12.2.1/jqwidgets/styles/jqx.base.css" type="text/css" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jqwidgets/12.2.1/jqwidgets/jqx-all.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">URI</label></td>
+					<td><input id="sourceAddress" type="url" autofocus/></td>
+				</tr>
+				<tr><td colspan="2" align="center">
+					<button id="fetchContent">Fetch Content</button>
+					<input type="submit" id="submitQuery"/>
+				</td></tr>
+			</table>
+			<input id="sourceContent" type="text"/>
+			<div id="resultSet"></div>
+			<div class="default">
+				<div id="jqxWidget" style="font-size: 13px; font-family: Verdana;">
+					<div id="jqxgridKeyValue"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	fetchContentElement = document.getElementById("fetchContent");
+			const	jqxgridKeyValueElement = document.getElementById("jqxgridKeyValue");
+			const 	resultSetElement = document.getElementById("resultSet");
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+			const	sourceContentElement = document.getElementById("sourceContent");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			var		inputTags = null;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					sourceAddressElement.value = sourceAddressDefault;
+					contentFetch();
+					//querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					//querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				console.log("contentType");
+				fetch(sourceAddressElement.value).then(response => {
+					const contentType = response.headers.get("content-type");
+					console.log(contentType);
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							sourceContentElement.value = JSON.stringify(data);
+						});
+					}
+					else if 
+					(
+						contentType && contentType.indexOf("text/html") !== -1
+					) 
+					{
+						return response.text().then(data => {
+							// process your XML data further
+							let parser = new DOMParser();
+							let xml = parser.parseFromString(data, "text/html");
+							sourceContentElement.value = xml;
+							InputTags = xml.getElementsByTagName("input");
+							prepareTheData();
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							sourceContentElement.value = text;
+						});
+					};
+				});
+			}
+
+			function querySubmit()
+			{
+				var griddata = $("#jqxgridKeyValue").jqxGrid("getdatainformation");
+				var rows = [];
+
+				var rowSet;
+				var word;
+				var value;
+
+				for (var rowIndex = 0; rowIndex < griddata.rowscount; rowIndex++)
+				{
+					rowSet = $("#jqxgridKeyValue").jqxGrid("getrenderedrowdata", rowIndex);
+					key = rowSet["key"];
+					value = rowSet["value"];
+					
+					KeyValueIndexkeys += KeyValueIndexkey;
+				}
+
+				KeyValueIndexAllElement.textContent = KeyValueIndexkeys;
+			}
+
+			function prepareTheData()
+			{
+				var data = new Array();
+				
+				for 
+				(
+					var inputIndex = 0, inputLength = InputTags.length; 
+					inputIndex < inputLength;
+					inputIndex++
+				) 
+				{
+					if 
+					(
+						InputTags[inputIndex]["type"] === "submit"
+					)
+					{
+						continue;
+					}	
+					var row = {};
+					row["key"] = InputTags[inputIndex]["id"];
+					row["value"] = "";
+					data[inputIndex] = row;
+				}
+				
+				var source =
+				{
+					localdata: data,
+					datatype: "array"
+				};
+				var dataAdapter = new $.jqx.dataAdapter(source, {
+					loadComplete: function (data) { },
+					loadError: function (xhr, status, error) { }      
+				});
+				$("#jqxgridKeyValue").jqxGrid
+				(
+					{
+						source: dataAdapter,
+						editable: true,
+						columns: [
+						  { text: "key", datafield: "key", width: 200 },
+						  { text: "value", datafield: "value", width: 200 },
+						],
+						showstatusbar: true,
+						renderstatusbar: function (statusbar) 
+						{
+							// appends buttons to the status bar.
+							var container = $("<div style='overflow: hidden; position: relative; margin: 5px;'></div>");
+							var addButton = $("<div style='float: left; margin-left: 5px;'><img style='position: relative; margin-top: 2px;' src='images/add.png'/><span style='margin-left: 4px; position: relative; top: -3px;'>Add</span></div>");
+							var deleteButton = $("<div style='float: left; margin-left: 5px;'><img style='position: relative; margin-top: 2px;' src='images/close.png'/><span style='margin-left: 4px; position: relative; top: -3px;'>Delete</span></div>");							container.append(addButton);
+							container.append(deleteButton);
+							statusbar.append(container);
+							addButton.jqxButton({  width: 60, height: 20 });
+							deleteButton.jqxButton({  width: 85, height: 20 });
+							// add new row.
+							addButton.click(function (event) {
+								$("#jqxgridKeyValue").jqxGrid("addrow", null, {});
+							});
+							// delete selected row.
+							deleteButton.click(function (event) {
+								var selectedrowindex = $("#jqxgridKeyValue").jqxGrid("getselectedrowindex");
+								var rowscount = $("#jqxgridKeyValue").jqxGrid("getdatainformation").rowscount;
+								var id = $("#jqxgridKeyValue").jqxGrid("getrowid", selectedrowindex);
+								$("#jqxgridKeyValue").jqxGrid("deleterow", id);
+							});
+						}
+					}	
+				)	
+			}
+			
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const sourceAddressDefault = "/WordEngineering/WordUnion/BibleWord.html";
+		</script>		
+	</body>
+</html>
