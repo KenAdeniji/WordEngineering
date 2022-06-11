@@ -27,6 +27,10 @@
 					<td><label for="targetAddress">Target Address</label></td>
 					<td><a id="targetAddress"></a></td>
 				</tr>
+				<tr>
+					<td><label for="setDefaultValues">Set Default Values</label></td>
+					<td><input id="setDefaultValues" type="checkbox" checked/></a></td>
+				</tr>				
 				<tr><td colspan="2" align="center">
 					<button id="fetchContent">Fetch Content</button>
 					<input type="submit" id="submitQuery"/>
@@ -46,6 +50,7 @@
 			const 	fetchContentElement = document.getElementById("fetchContent");
 			const	jqxgridKeyValueElement = document.getElementById("jqxgridKeyValue");
 			const 	resultSetElement = document.getElementById("resultSet");
+			const 	setDefaultValuesElement = document.getElementById("setDefaultValues");
 			const 	sourceAddressElement = document.getElementById("sourceAddress");
 			const	sourceContentElement = document.getElementById("sourceContent");
 			const 	submitQueryElement = document.getElementById("submitQuery");
@@ -145,7 +150,21 @@
 					}	
 					var row = {};
 					row["key"] = InputTags[inputIndex]["id"];
-					row["value"] = "";
+					if ( !setDefaultValuesElement.checked )
+					{
+						row["value"] = "";
+					}	
+					else
+					{
+						if ( InputTags[inputIndex]["type"] === "checkbox" )
+						{
+							row["value"] = InputTags[inputIndex]["checked"];
+						}
+						else
+						{
+							row["value"] = InputTags[inputIndex]["value"];
+						}	
+					}	
 					row["type"] = InputTags[inputIndex]["type"];
 					data[inputIndex] = row;
 				}

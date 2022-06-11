@@ -327,7 +327,11 @@ Google Workspace storage is almost full
 Your storage for kehindeadeniji@gmail.com is almost full. To make sure your files can sync, clean up space or buy storage.
 
 Don’t show this again
-2022-06-09T13:32:00 drive.onedrive.com recycle bin Something went wrong. Please try again or refresh the page.
+2022-06-09T13:32:00 http://drive.onedrive.com recycle bin Something went wrong. Please try again or refresh the page.
 2022-06-10T11:10:00	http://onedrive.live.com/?id=root&cid=D126FDD160BE56EB&qt=recyclebin
+2022-06-10T11:10:00	http://onedrive.live.com/?id=root&cid=D126FDD160BE56EB&qt=recyclebin
+You're almost out of free storage.
+You may not be able to upload new file soon - Get more storage for as low as $1.99/month.
+Get more storage.
 UEIWordEngineering   52532
 :Exit
