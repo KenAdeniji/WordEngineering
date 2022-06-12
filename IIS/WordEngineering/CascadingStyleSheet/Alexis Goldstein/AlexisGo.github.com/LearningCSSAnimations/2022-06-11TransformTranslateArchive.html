@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-06-11T20:40:00	http://alexisgo.github.io/LearningCSSAnimations/ch2code/box.html
+		2022-06-11T22:07:00	https://stackoverflow.com/questions/34189949/send-javascript-variable-to-csstransform-translate-var-var
+	-->	
+	<head>
+		<title>Transform Translate</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Transform Translate"/>
+		<meta name="keyword" content="Cascading style sheet (CSS), Transform Translate"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="node">Node</label></td>
+					<td><input id="node" type="text" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="distance">Distance</label></td>
+					<td><input id="distance" type="number" value="50"/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+		</div>
+		<div id="inPlace" type="text">inPlace</div>
+		<script>
+			var isPostBack = false;
+			
+			const	distanceElement = document.getElementById("distance");
+			const 	nodeElement = document.getElementById("node");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					nodeElement.value = nodeDefault;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var objectName = document.getElementById(nodeElement.value);
+				var move = parseInt(distanceElement.value);
+				objectName.style.transform = `translate(${move}px,0)`;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const nodeDefault = "node";
+		</script>		
+	</body>
+</html>

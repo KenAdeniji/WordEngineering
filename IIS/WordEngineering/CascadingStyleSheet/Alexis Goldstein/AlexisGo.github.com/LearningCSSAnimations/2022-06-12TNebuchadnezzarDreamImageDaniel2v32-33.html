@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-06-12T11:20:00	http://alexisgo.github.io/LearningCSSAnimations/ch2code/bike.html
+		2022-06-12T11:56:00	http://www.w3schools.com/howto/howto_css_circles.asp
+		2022-06-12T12:13:00	http://www.w3schools.com/css/css_float.asp
+		2022-06-12T14:57:00	https://stackoverflow.com/questions/8054429/how-do-i-handle-a-click-anywhere-in-the-page-even-when-a-certain-element-stops
+	-->	
+	<head>
+		<title>Nebuchadnezzar Dream Image Daniel 2:32-33</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Nebuchadnezzar Dream Image Daniel 2:32-33"/>
+		<meta name="keyword" content="Cascading style sheet (CSS)"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+#head {
+	height: 50px;
+	width: 50px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+}
+		</style>		
+		<div id="image">
+			<div id="head"></div>Head was of fine gold
+			
+			<div id="bodyHand">
+
+				<div id="leftHand" style="float:left;">
+					<hr style="transform: rotate(-45deg);" />
+					Left hand
+				</div>
+				
+				<div id="body" style="float:left;">
+					<hr style="transform: rotate(90deg);"/>
+					Body
+				</div>
+				
+				<div  id="rightHand" style="float:left;">
+					<hr style="transform: rotate(45deg);" />
+					Right hand
+				</div>
+				
+				<div style="clear: both;"></div>
+			</div>
+			
+			<div id="leg">
+
+				<div id="leftLeg" style="float:left;">
+					<hr style="transform: rotate(-45deg);" />
+					Left leg
+				</div>
+				
+				<div id="rightLeg" style="float:left;">
+					<hr style="transform: rotate(45deg);" />
+					Right leg
+				</div>
+				
+				<div style="clear: both;"></div>
+			</div>
+			
+			<br/><br/>
+			<label for="bodyPart">Part of the Body:</label><span id="bodyPart"></span> 
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const bodyPartElement = document.getElementById("bodyPart");
+			
+			document.querySelectorAll('*')
+			  .forEach(element => element.addEventListener('click', e => {
+				bodyPartElement.textContent = e.target.id;
+			}))			
+		</script>		
+	</body>
+</html>
