@@ -38,12 +38,14 @@ namespace InformationInTransit.ProcessCode
 			string 			scriptureReference,
 			ref String[] 	scriptureReferenceSubset,
 			ref DataSet 	result,
-			string			bibleWord,
-			string			bibleVersion
+			string			bibleVersion,
+			string			bibleWord
 		)
 		{
 			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
 			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+
+			int wordID = 0;
 
 			string adjust = null;
 			string verseText = null;
@@ -61,6 +63,7 @@ namespace InformationInTransit.ProcessCode
             );
 
 			DataTable workTable = new DataTable();
+			workTable.Columns.Add("WordID", typeof(int));
 			workTable.Columns.Add("BibleWord", typeof(string));
 			workTable.Columns.Add("FirstOccurrenceScriptureReference", typeof(string));
 			workTable.Columns.Add("LastOccurrenceScriptureReference", typeof(string));
@@ -87,6 +90,7 @@ namespace InformationInTransit.ProcessCode
 						if (workRow == null)
 						{
 							workRow = workTable.NewRow();
+							workRow["WordID"] = ++wordID;
 							workRow["BibleWord"] = adjust;
 							workRow["FirstOccurrenceScriptureReference"] = scriptureReference;
 							workRow["FrequencyOfOccurrence"] = 1;
@@ -101,30 +105,11 @@ namespace InformationInTransit.ProcessCode
 				}	
 			}
 			
+			workTable.AcceptChanges();
+			
 			return workTable;
 		}
 		
 		public static readonly char[] SplitSeparator = new Char [] {' ', ',', '.', ':', ';', '(', ')', '?', '!'};
-
-        public class SameWordComparer : EqualityComparer<string>
-        {
-            public override bool Equals(string s1, string s2)
-            {
-                return s1.Equals(s2, StringComparison.CurrentCultureIgnoreCase);
-            }
-
-            public override int GetHashCode(string s)
-            {
-                return base.GetHashCode();
-            }
-        }
-
-        public class Participation
-        {
-			public string BibleWord { get; set; }
-            public string FirstOccurrenceScriptureReference { get; set; }
-            public string LastOccurrenceScriptureReference { get; set; }
-            public int FrequencyOfOccurrence { get; set; }
-        }	
 	}
 }
