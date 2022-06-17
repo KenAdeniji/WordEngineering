@@ -26,7 +26,8 @@ using InformationInTransit.UserInterface;
 
 ///<summary>
 ///	2022-06-15T22:57:00 Created.
-///	2022-06-15T17:41:00	http://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance
+///	2022-06-16T17:41:00	http://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance
+///	2022-06-17T09:05:00 StringBuilder 	sbExpression = new StringBuilder(" 1 = 1 ");
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -60,7 +61,7 @@ public class OneMustAddToTheSourceOfGovernmentWebService : System.Web.Services.W
 				bibleWord
 		);
 		
-		StringBuilder 	sbExpression = new StringBuilder();
+		StringBuilder 	sbExpression = new StringBuilder(" 1 = 1 ");
 		
 		/*
 		String			currentCondition;
@@ -99,65 +100,37 @@ public class OneMustAddToTheSourceOfGovernmentWebService : System.Web.Services.W
 		
 		if ( !String.IsNullOrEmpty( bibleWord ) )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " BibleWord LIKE '%" + bibleWord + "%'" );
+			sbExpression.Append( " AND BibleWord LIKE '%" + bibleWord + "%'" );
 		}
 
 		if ( !String.IsNullOrEmpty( firstOccurrenceScriptureReference ) )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " FirstOccurrenceScriptureReference LIKE '%" + firstOccurrenceScriptureReference + "%'" );
+			sbExpression.Append( " AND FirstOccurrenceScriptureReference LIKE '%" + firstOccurrenceScriptureReference + "%'" );
 		}
 
 		if ( !String.IsNullOrEmpty( lastOccurrenceScriptureReference ) )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " LastOccurrenceScriptureReference LIKE '%" + lastOccurrenceScriptureReference + "%'" );
+			sbExpression.Append( " AND LastOccurrenceScriptureReference LIKE '%" + lastOccurrenceScriptureReference + "%'" );
 		}
 
 		if ( frequencyOfOccurrenceFrom >= 1 )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " FrequencyOfOccurrence >= " + Convert.ToString( frequencyOfOccurrenceFrom ) );
+			sbExpression.Append( " AND FrequencyOfOccurrence >= " + Convert.ToString( frequencyOfOccurrenceFrom ) );
 		}
 
 		if ( frequencyOfOccurrenceUntil >= 1 )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " FrequencyOfOccurrence <= " + Convert.ToString( frequencyOfOccurrenceUntil ) );
+			sbExpression.Append( " AND FrequencyOfOccurrence <= " + Convert.ToString( frequencyOfOccurrenceUntil ) );
 		}
 	
 		if ( wordIDFrom >= 1 )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " WordID >= " + Convert.ToString( wordIDFrom ) );
+			sbExpression.Append( " AND WordID >= " + Convert.ToString( wordIDFrom ) );
 		}
 
 		if ( wordIDUntil >= 1 )
 		{
-			if ( sbExpression.Length > 0 )
-			{
-				sbExpression.Append( " AND " );
-			}
-			sbExpression.Append( " WordID <= " + Convert.ToString( wordIDUntil ) );
+			sbExpression.Append( " AND WordID <= " + Convert.ToString( wordIDUntil ) );
 		}
 
 		DataRow[] dr = workTable.Select(sbExpression.ToString());
