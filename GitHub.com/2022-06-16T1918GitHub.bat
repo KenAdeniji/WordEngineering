@@ -1,4 +1,6 @@
-        git add    IIS/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernment.asmx
+        git add    IIS/WordEngineering/Images/2011-07-03ChicagoBean.JPG
+		
+		git add    IIS/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernment.asmx
         git add    IIS/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernment.html
         git add    IIS/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernmentArchive.asmx
         git add    IIS/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernmentArchive.html
@@ -11,4 +13,4 @@
         git add    InformationInTransit/ProcessCode/OneMustAddToTheSourceOfGovernmentHelper.Archivecs
         git add    InformationInTransit/ProcessCode/OneMustAddToTheSourceOfGovernmentHelper.cs
 
-git add        GitHub.com/2022-06-16T1918GitHub.bat
+		git add        GitHub.com/2022-06-16T1918GitHub.bat
