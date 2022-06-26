@@ -333,5 +333,17 @@ Don’t show this again
 You're almost out of free storage.
 You may not be able to upload new file soon - Get more storage for as low as $1.99/month.
 Get more storage.
-UEIWordEngineering    3214
+UEIWordEngineering     	47633
+2022-06-20T20:11:00 ... 2022-06-20T21:06:00
+Login
+KenAdeniji@hotmail.com versus (VS) kenadeniji@hotmail.com
+Welcome to Databricks! Please verify your email address.
+Welcome to Databricks!
+To complete your signup, please verify your email address.
+
+Or copy this link and paste it in your web browser:
+
+https://accounts.cloud.databricks.com/login?resetpassword&username=kenadeniji%40hotmail.com&expiration=-60000&token=615639012c47c653b433e8d75fe0fdfc5d1bacfc#reset-password
+
+- The Databricks Team
 :Exit

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-06-25T16:10:00	Created.
+	-->
+	<head>
+		<title>Do we choose to be known as who?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Do we choose to be known as who?"/>
+		<meta name="keywords" content="Scripture Reference, Bible Version, Bible Word, Exact, Dave Hunt, Chuck Missler, Love, Genesis 22:2, consecutive"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference</label></td>
+					<td><input id="scriptureReference" type="text" autofocus style="width: 70vw;"></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Bible Word</label></td>
+					<td><input id="bibleWord" type="text" style="width: 70vw;" value="Oracle"></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			const scriptureReferenceElement = document.getElementById("scriptureReference");
+			const bibleVersionElement = document.getElementById("bibleVersion");
+			const bibleWordElement = document.getElementById("bibleWord");
+
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptureReferenceElement.value = ScriptureReferenceDefault;
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				
+				request["bibleVersion"] = scriptLiteral9432.selectionGet("bibleVersion");
+				request["bibleWord"] = bibleWordElement.value;
+
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/DoWeChooseToBeKnownAsWho.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var ScriptureReferenceDefault = "1 Kings 6";
+	</script>
+</body>
+</html>
