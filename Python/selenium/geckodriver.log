@@ -1,0 +1,14 @@
+1656392110277	geckodriver	INFO	Listening on 127.0.0.1:51779
+1656392113421	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51780" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\kadeniji\\AppData\\Local\\Temp\\rust_mozprofilexk53PN"
+1656392115927	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:51780
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\kadeniji\\AppData\\Local\\Temp\\rust_mozprofilexk53PN\\search.json.mozlz4", (void 0)))
+1656392123702	Marionette	INFO	Listening on port 51814
+Read port: 51814
+1656392123874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://localhost:51780/devtools/browser/d86d3cd8-4099-4c50-a04d-bf7ed28258bb
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+JavaScript error: resource:///actors/FormValidationChild.jsm, line 184: TypeError: this._element is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.python.org"
+1656392130454	Marionette	INFO	Stopped listening on port 51814
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 53: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]

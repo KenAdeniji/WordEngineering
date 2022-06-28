@@ -30,9 +30,30 @@ namespace InformationInTransit.ProcessCode
 {
 	///<summary>
 	///	2022-06-25T14:10:00 Created.
+	///	2022-06-26T12:25:00 Work in progress (WIP).	
+	///	2022-06-26T12:36:00 And, ko wa'nbe. And the next row, is not there.
+	///	2022-06-26T12:36:00 It should continue; while it is in sequence.
 	///</summary>
 	public class DoWeChooseToBeKnownAsWhoHelper
 	{
+		public static void Main(string[] argv)
+		{
+			string 		scriptureReference = "1 Kings 6";
+			String[] 	scriptureReferenceSubset = null;
+			DataSet 	result = null;
+			String		bibleVersion = "KingJamesVersion";
+			String		bibleWord = "Oracle";
+
+			DataTable workTable = DoWeChooseToBeKnownAsWhoHelper.Extract
+			(
+					scriptureReference,
+				ref	scriptureReferenceSubset,
+				ref result,
+					bibleVersion,
+					bibleWord
+			);
+		}
+		
 		public static DataTable Extract
 		(
 			string 			scriptureReference,
@@ -51,17 +72,24 @@ namespace InformationInTransit.ProcessCode
 			string expression = null;
 			string[] words = null;
 			
-			int rowID = -1;
-			int rowCount = 0;
-			int rowFirst = -1;
+			int	bookID = -1;
+			int	chapterID = -1;
+			int	verseID = -1;
+			
+			String scriptureReferenceWorkRow = null;
+			string scriptureReferenceDetail = null;
+			
 			int rowIndex = -1;
+			
+			int	verseIDSequenceCurrent = -1;
+			int	verseIDSequenceLast = -1;
 			
 			ScriptureReferenceHelper.Process
             (
                 scriptureReference,
                 ref scriptureReferenceSubset,
                 ref result,
-                ScriptureReferenceHelper.ExactQueryFormat,
+                ScriptureReferenceHelper.FullPositionQueryFormat,
                 bibleVersion
             );
 
@@ -90,32 +118,62 @@ namespace InformationInTransit.ProcessCode
 				foreach(DataTable dataTable in result.Tables)
 				{
 					expression = String.Format("VerseText LIKE '%" + word + "%'" );
-					DataRow[] dataRows = dataTable.Select(expression);				
+					DataRow[] dataRows = dataTable.Select(expression, "VerseIDSequence");				
 					
-					rowID = -1;
-					rowCount = 0;
+					verseIDSequenceCurrent = (int)dataRows[0]["VerseIDSequence"];
+					verseIDSequenceLast = verseIDSequenceCurrent - 1;
+
+					dataRow = dataRows[0];
+
+					bookID = (int) dataRow["BookID"];
+					chapterID = (int) dataRow["ChapterID"];
+					verseID = (int) dataRow["VerseID"];
+
+					scriptureReferenceWorkRow = 
+						ScriptureReferenceHelper.ScriptureReference.Syntax(bookID, chapterID, verseID);
+
+					scriptureReferenceDetail = scriptureReferenceWorkRow;
 					
 					for(rowIndex = 0; rowIndex < dataRows.Length; ++rowIndex)
 					{
-						if ( rowID == -1 )
-						{
-							rowCount = 1;
-							rowFirst = rowIndex;
-							dataRow = dataRows[rowIndex];
+						dataRow = dataRows[rowIndex];
 
+						if 
+						( 
+							verseIDSequenceCurrent == verseIDSequenceLast + 1
+						)
+						{
 							workRow = workTable.NewRow();
 							workRow["WordID"] = ++wordID;
 							workRow["BibleWord"] = adjust;
-							workRow["FirstOccurrenceScriptureReference"] = dataRow["ScriptureReference"];
+							
+							bookID = (int) dataRow["BookID"];
+							chapterID = (int) dataRow["ChapterID"];
+							verseID = (int) dataRow["VerseID"];
+
+							scriptureReferenceWorkRow = 
+								ScriptureReferenceHelper.ScriptureReference.Syntax(bookID, chapterID, verseID);
+							
+							workRow["FirstOccurrenceScriptureReference"] = scriptureReferenceWorkRow;
+							workRow["FrequencyOfOccurrence"] = 1;
 							workTable.Rows.Add(workRow);
-							continue;
-						}	
-						++rowCount;
-						if ( rowIndex - rowFirst > rowCount )
-						{
-							workRow["FrequencyOfOccurrence"] = rowCount;
-							workRow["LastOccurrenceScriptureReference"] = dataRow["ScriptureReference"];;
 						}
+						else
+						{	
+							workRow["FrequencyOfOccurrence"] = verseIDSequenceCurrent - verseIDSequenceLast + 1;
+							verseIDSequenceLast = verseIDSequenceCurrent;
+							
+							workRow["LastOccurrenceScriptureReference"] = scriptureReferenceDetail;
+						}
+						
+						verseIDSequenceCurrent = (int) dataRow["VerseIDSequence"];
+						
+						bookID = (int) dataRow["BookID"];
+						chapterID = (int) dataRow["ChapterID"];
+						verseID = (int) dataRow["VerseID"];
+
+						scriptureReferenceDetail = 
+							ScriptureReferenceHelper.ScriptureReference.Syntax(bookID, chapterID, verseID);
 					}
 				}
 			}
