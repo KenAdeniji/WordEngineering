@@ -145,7 +145,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1164);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3586);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 11654);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12747);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -346,4 +346,5 @@ Or copy this link and paste it in your web browser:
 https://accounts.cloud.databricks.com/login?resetpassword&username=kenadeniji%40hotmail.com&expiration=-60000&token=615639012c47c653b433e8d75fe0fdfc5d1bacfc#reset-password
 
 - The Databricks Team
+
 :Exit
