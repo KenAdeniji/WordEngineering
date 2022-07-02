@@ -25,6 +25,8 @@ for option in all_options:
 	
 from selenium.webdriver.support.ui import Select
 select = Select(driver.find_element(By.NAME, 'alphabet'))
-#select.select_by_index(0)
-#select.select_by_visible_text("Z")
-#select.select_by_value("m")	
+select.select_by_index(0)
+select.select_by_visible_text("Z")
+select.select_by_value("m")	
+
+driver.find_element(By.ID, "submitQuery").click() #driver.find_element_by_id("submitQuery").click()
