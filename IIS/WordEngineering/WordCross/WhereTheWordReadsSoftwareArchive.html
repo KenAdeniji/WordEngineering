@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2022-07-02T13:00:00	Created.
+		2022-07-02T13:20:00	https://stackoverflow.com/questions/22523822/how-to-get-current-url-with-javascript
+	-->	
+	<head>
+		<title>Where the word reads software.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Where the word reads software."/>
+		<meta name="keyword" content="url input"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 55vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address</label></td>
+					<td><input id="sourceAddress" type="url" style="width: 55vw;" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="sourceContent">Source Content:</label></td>
+					<td>
+						<textarea id="sourceContent"></textarea>
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center">
+					<button id="fetchContent">Fetch Content</button>
+					<input type="submit" id="submitQuery"/>
+				</td></tr>
+			</table>
+			<iframe id="sourceDocument"></iframe>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	fetchContentElement = document.getElementById("fetchContent");
+			const 	sourceDocumentElement = document.getElementById("sourceDocument");
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+			const	sourceContentElement = document.getElementById("sourceContent");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			var		inputTags = null;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					sourceAddressElement.value = document.URL;
+					contentFetch();
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				fetch(sourceAddressElement.value).then(response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							sourceContentElement.value = JSON.stringify(data);
+						});
+					}
+					else if (contentType && contentType.indexOf("text/xml") !== -1) {
+						return response.text().then(data => {
+							// process your XML data further
+							let parser = new DOMParser();
+							let xml = parser.parseFromString(data, "application/xml");
+							sourceContentElement.value = data;
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							sourceContentElement.value = text;
+						});
+					};
+				});
+			}
+
+			function querySubmit()
+			{
+				document.getElementById("sourceDocument").srcdoc = sourceContentElement.value;
+			}
+
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
