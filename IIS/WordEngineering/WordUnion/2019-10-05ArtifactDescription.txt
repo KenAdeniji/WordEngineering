@@ -759,6 +759,8 @@ The WhereIHaveTrainedWhereIHaveFollowedToQueryAsSum.aspx will add two dates.
 
 The WhereIsItNavyGovernment.html will list the various books in the Bible, and their corresponding chapters; either the book or the chapter could be clicked to get the text.
 
+Text-To-Speech Where the word reads software.
+
 The WhereYouWillLiveForeverThatIsWhatIHaveChosenForYou.html will use https://www.whois.com/whois/givingpledge.org as a example. Needing man, is a example, of following him. This I have search for a useful man, as a proven me.
 
 The WhichBookMentionsNumberTheMost.html will list the Bible books according to their number occurrences.
@@ -852,3 +854,6 @@ alphabetSequence = function(word)
 }
 print(alphabetSequence("the"))
 dir() #list directory
+				
+			
+

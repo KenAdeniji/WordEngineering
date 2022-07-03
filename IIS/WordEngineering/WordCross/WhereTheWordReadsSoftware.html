@@ -2,7 +2,14 @@
 <html>
 	<!--
 		2022-07-02T13:00:00	Created.
-		2022-07-02T13:20:00	https://stackoverflow.com/questions/22523822/how-to-get-current-url-with-javascript
+		2022-07-02T13:20:00	http://stackoverflow.com/questions/22523822/how-to-get-current-url-with-javascript
+		2022-07-02T17:29:00	http://en.wikipedia.org/wiki/Waterfall_model
+		2022-07-02T17:32:00	http://en.wikipedia.org/wiki/Event-driven_programming
+		2022-07-02T17:32:00	Result-set: 
+								Lowest version supported?
+								Literacy level?
+								Efficiency performance?
+		2022-07-02T17:59:00	http://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio						
 	-->	
 	<head>
 		<title>Where the word reads software.</title>
@@ -37,6 +44,26 @@
 						<textarea id="sourceContent"></textarea>
 					</td>
 				</tr>
+				<tr>
+					<td><label>Source Flow:</label></td>
+					<td>
+						<input type="radio" id="flowWaterFallModel" name="sourceFlow" value="waterFall" checked>
+						<label for="flowWaterFallModel">Water Fall Model</label>
+
+						<input type="radio" id="flowEventDrivenProgramming" name="sourceFlow" value="event-drivenProgramming" disabled>
+						<label for="flowEventDrivenProgramming">Event-driven Programming</label>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Language:</label></td>
+					<td>
+						<input type="radio" id="languageProgramming" name="targetlanguage" value="programming" checked>
+						<label for="languageProgramming">Programming</label>
+
+						<input type="radio" id="languageNative" name="targetlanguage" value="native" disabled>
+						<label for="languageNative">Native</label>
+					</td>
+				</tr>
 				<tr><td colspan="2" align="center">
 					<button id="fetchContent">Fetch Content</button>
 					<input type="submit" id="submitQuery"/>
@@ -61,7 +88,6 @@
 				{
 					sourceAddressElement.value = document.URL;
 					contentFetch();
-					querySubmit();
 					isPostBack = true;
 				}
 				else
@@ -99,7 +125,28 @@
 
 			function querySubmit()
 			{
-				document.getElementById("sourceDocument").srcdoc = sourceContentElement.value;
+				sourceDocumentElement.srcdoc = sourceContentElement.value;
+				speak( sourceDocumentElement.srcdoc );
+			}
+
+			function speak(text, callback) {
+				var u = new SpeechSynthesisUtterance();
+				u.text = text;
+				u.lang = 'en-US';
+			 
+				u.onend = function () {
+					if (callback) {
+						callback();
+					}
+				};
+			 
+				u.onerror = function (e) {
+					if (callback) {
+						callback(e);
+					}
+				};
+			 
+				speechSynthesis.speak(u);
 			}
 
 			fetchContentElement.addEventListener("click", contentFetch, false);
