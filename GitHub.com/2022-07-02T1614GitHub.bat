@@ -18,3 +18,5 @@
 git add        GitHub.com/2022-07-02T1614GitHub.bat
 git add        IIS/WordEngineering/WordCross/WhereTheWordReadsSoftware.html
 git add        IIS/WordEngineering/WordCross/WhereTheWordReadsSoftwareArchive.html
+
+git add			Python/JasonRBriggs/
