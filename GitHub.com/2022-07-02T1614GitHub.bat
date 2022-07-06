@@ -19,7 +19,13 @@ git add        GitHub.com/2022-07-02T1614GitHub.bat
 git add        IIS/WordEngineering/WordCross/WhereTheWordReadsSoftware.html
 git add        IIS/WordEngineering/WordCross/WhereTheWordReadsSoftwareArchive.html
 
-git add			Python/JasonRBriggs
+git add		   Python/JasonRBriggs
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-05T1125EricaWatts_AlamedaCountyPublicDefenderOffice_CleanSlate_Introduction.txt
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-05T1125EricaWatts_AlamedaCountyPublicDefenderOffice_CleanSlate_IntroductionArchive.txt
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-06T1505EricaWatts_AlamedaCountyPublicDefenderOffice_CleanSlate_Introduction.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-06T1505EricaWatts_AlamedaCountyPublicDefenderOffice_CleanSlate_IntroductionArchive.txt
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-06T1602EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistration.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-07-06T1602EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistrationArchive.txt
