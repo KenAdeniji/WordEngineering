@@ -26,7 +26,6 @@ The importance of this work?
     Meeting unknown is assuming responsibility.
     How opinion gathers us ( Ruth 4:1-2 )?
     To know our part will choose our realization ( Luke 1:34 ).
-    What associationship?
 
 The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word.
 
@@ -48,7 +47,6 @@ Intention:
     The research produces a set of web pages that will equip the scholar.
     The usability of the Bible as a study tool.
     The programming approach allows for a result which is reproducible across Bible versions and other sources.
-    One must add to the source of government.
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 
@@ -113,7 +111,7 @@ The author prescribes the steps below to begin database set-up and usage:
 
     Acquire a database management system (DBMS). Various varieties of DBMS are available. The user may download a DBMS, get a compact disc, or select from the cloud.
     Install a DBMS.
-    Decide on a user interface for managing the database. For Microsoft SQL Server, the choices include the SQLCmd console utility or the SQL Server Management Studio.
+    Decide on a user interface for managing the database. For Microsoft SQL Server, the choices include the SQLCmd console utility or the SQL Server Management Studio or Azure Data Studio.
     Create database. Microsoft SQL Server supports multiple instances and databases.
     The data definition language (DDL) includes commands to create, alter, or delete tables, views, primary and foreign keys, indexes, constraints and defaults.
     The data manipulation language (DML) are commands to insert, update, and delete the database rows and columns, with the option to use the where clause.
@@ -125,7 +123,7 @@ Object Oriented Programming - GetAPage.html
 " (LOOPE Lingo Object Oriented Programming Environment)
 Parent Scripts and Objects
 
-GetAPage.html contains the HTML5 directive, head, and body sections. The head section contains the title and meta tags for search-engine optimization (SEO). The body section is divisible into the 3 languages that make up a web page. These are HTML, JavaScript, and CSS.
+GetAPage.html contains the HTML5 directive, head, and body sections. The head section contains the title and meta tags for search-engine optimization (SEO). The 3 languages that make up a web page are in the following order: CSS, HTML, JavaScript.
 
 HTML is an element's nodes. There are only single instances of the input and submit elements. There are multiple div containers for the result sets. Although HTML supports attributes, the ID attribute is the author's only general declaration.
 
@@ -499,12 +497,12 @@ The SQL statement ((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('00
 ScriptureReference	BibleReference
 John 1:1	43001001
 
-There is a conversion page BibleReference.html. Please note, that the author has not developed this further, it is just our introduction and speculation, which others may wish to adopt.
+There is a conversion page BibleReference.html. Please note, that the author has not developed this further, it is just an introduction and speculation, which others may wish to adopt.
 
 Most of the applications, extract information, and query the Scripture table. If the user chooses to, he may choose to load another Bible version, into the Scripture table and the application will still work as usual, and there will be no need to make changes to the application; thereby, achieving Separation of concerns (SoC).
 The Exact Table
 
-The Exact table's, primary task, is to tell, on the words that are in the Bible. Its information set include each word's first and last scripture reference occurrence(s), and count of occurrence(s). If the word, occurs only once, then the last occurrence is set to null. The incentive for writing the exact module comes from Dave Hunt, who will talk of each word's specifics, and Chuck Missler who noted that the first occurrence of the word, love is in Genesis 22:2. The exact table, is a holding area, for staging information; it could be argued that there is no need, to have this table, because it sources its information from the Scripture table, and it is available using Language Integrated Query. The reasoning of the author is that the Scripture table is static data, and it does not need processing, each time, there is a request. Speed and lower work load are the advantages of the approach of the author; its disadvantage is that the exact table needs re-population, when there is a shift to another Bible version, which we do not project, at this time. If there is a need, to support another Bible version, then the Exact table loading procedure needs expansion to aid, this flexibility. The Exact result for the author's initials, KAA, is Karkaa, meaning floor (Joshua 15:3). Word Occurrences is dynamic, and it supports the other versions of the Bible.
+The Exact table's, primary task, is to tell, on the words that are in the Bible. Its information set include each word's first and last scripture reference occurrence(s), and count of occurrence(s). If the word, occurs only once, then the last occurrence is set to null. The incentive for writing the exact module comes from Dave Hunt, who will talk of each word's specifics, and Chuck Missler who noted that the first occurrence of the word, love is in Genesis 22:2. The exact table, is a holding area, for staging information; it could be argued that there is no need, to have this table, because it sources its information from the Scripture table, and it is available using Language Integrated Query. The reasoning of the author is that the Scripture table is static data, and it does not need processing, each time, there is a request. Speed and lower work load are the advantages of the approach of the author; its disadvantage is that the exact table needs re-population, when there is a shift to another Bible version, which the author does not project, at this time. If there is a need, to support another Bible version, then the Exact table loading procedure needs expansion to aid, this flexibility. The Exact result for the author's initials, KAA, is Karkaa, meaning floor (Joshua 15:3). Word Occurrences is dynamic, and it supports the other versions of the Bible.
 The Exact Table's ExactID Column
 
 The ExactID is an identity column, meaning the database, SQL Server, auto-increments its value, before insertion. There are 12891 unique words, in the Bible..Exact table. The SQL statement SELECT MAX(ExactID) FROM Bible..Exact is for determining the highest value. The SQL statement SELECT COUNT(BibleWord) FROM Bible..Exact is for determining the word count. The SQL statement ALTER TABLE Bible..Exact ADD CONSTRAINT CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891) is for the range restriction. For storage reason, the author has chosen, not to have a unique index, on this candidate primary key; in-spite, of it being a query item. Future implementation, may issue the SQL statement CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID) SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact is 789631; this is the sum of the words in the KJV Bible.
@@ -737,7 +735,7 @@ In GetAPage.html the author will consider the word(s) AlphabetSequenceIndex and 
 
 In the BibleWord section, the author will look at each word, in the context of the sentence, and see if it is in the Bible, as a phrase or word combination.
 
-In the BibleDictionary section, we will explain the meaning of each word. The degree of belief is most certain; since we display each word found in the Bible dictionaries.
+In the BibleDictionary section, the author will explain the meaning of each word. The degree of belief is most certain; since we display each word found in the Bible dictionaries.
 Frequentist Probability
 
 In GetAPage.html the same input will produce the same result; because the database is consistent. When the user enters a new word, this trains the system.
@@ -1602,6 +1600,8 @@ Artifact Description
 Background
 
 The author's country of birth, Nigeria, gained independence on, 1960-10-01, a Biblical generation before the end of the second millennium (plural millennia). There are 2570 days between 1960-10-01 and the author's date of birth, 1967-10-15. Nigeria became a republic on 1963-10-01; The difference in days between when Nigeria became a republic, 1963-10-01, and 1967-10-15; is 1475 days; 4 Biblical years, 1 month, 5 days; 4 Gregorian years, 2 weeks. The difference in days, between the creation of Lagos State, 1967-05-27 and the author's date of birth is 141 days (4 biblical months, 21 days) (4 months, 2 weeks, 4 days).
+
+1967-10-15 + 75 Biblical years is 2041-09-16 (Genesis 12:4).
 
 1984-07-17 is the date of the author's 17th Biblical birthday (Genesis 37:2). The date of recording this information is 2020-10-23, Epoch timestamp: 1603454400
 
