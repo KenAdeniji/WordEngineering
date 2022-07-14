@@ -346,5 +346,6 @@ Or copy this link and paste it in your web browser:
 https://accounts.cloud.databricks.com/login?resetpassword&username=kenadeniji%40hotmail.com&expiration=-60000&token=615639012c47c653b433e8d75fe0fdfc5d1bacfc#reset-password
 
 - The Databricks Team
-
+2022-07-12T16:50:00  	57035
+http://d2l.ai/
 :Exit

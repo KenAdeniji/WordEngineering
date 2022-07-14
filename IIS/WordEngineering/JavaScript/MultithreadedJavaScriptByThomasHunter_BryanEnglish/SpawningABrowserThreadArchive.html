@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-07-09T21:20:00	http://www.google.com/books/edition/Multithreaded_JavaScript/QE9EEAAAQBAJ?hl=en&gbpv=1
+	-->	
+	<head>
+		<title>Spawning a Browser Thread</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Spawning a Browser Thread"/>
+		<meta name="keyword" content="url input"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 55vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="message">Message</label></td>
+					<td><input id="message" type="text" style="width: 55vw;" autofocus/></td>
+				</tr>
+				<tr><td colspan="2" align="center">
+					<input type="submit" id="submitQuery"/>
+				</td></tr>
+			</table>
+			<iframe id="sourceDocument" style="display: none"></iframe>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	messageElement = document.getElementById("message");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			var		inputTags = null;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					messageElement.value = document.URL;
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				const worker = new Worker("SpawningABrowserThread.js");
+				worker.postMessage(messageElement.value);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
