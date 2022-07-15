@@ -107,6 +107,16 @@ The incentives to begin work on WordEngineering will include:
     Expounding on His word.
 
 Theory
+"
+How does the work of the author accompany the Bible?
+" (Dive into Deep Learning)
+The Terminology of Machine Learning in Relation to AlphabetSequence Term	Meaning
+Training dataset or training set	The recording of the word in the database.
+Example (or data point, data instance, sample)	Each database row or record.
+Predict Label (or target)	The corresponding Bible text.
+Linearity assumption	The features alphabet places.
+Weight	Since the word is the only feature, it is the only influence.
+Bias	A starting value.
 
 The author prescribes the steps below to begin database set-up and usage:
 
@@ -1520,6 +1530,7 @@ WordEngineering
 References
 
     ABB (Asea Brown Boveri) W3C web page; Available from http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL Server Coding Standards (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs
+    Dive into Deep Learning W3C web page; Available from d2l.ai
     The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
     Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
