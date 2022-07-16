@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-07-15T15:29:00	Created.	http://javascriptsource.com/get-a-formatted-list-of-months
+	-->
+	<head>
+		<title>AndrewBorstein.com_ChrisFerdinandi_GoMakeThings.com_-_MonthNames</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="AndrewBorstein.com, Chris Ferdinandi, GoMakeThings.com, Month names"/>
+		<meta name="keywords" content="Month number, month names"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="monthNumber">Month Number:</label></td>
+					<td><input id="monthNumber" type="number" min="1" step="1" max="12" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="monthNameShortOrLong">Month Name Short or Long:</label></td>
+					<td><input id="monthNameShortOrLong" type="checkBox"/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+				<tr>
+					<td><label for="monthName">Month Name:</label></td>
+					<td><div id="monthName"></div></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const	monthNameElement = document.getElementById("monthName");
+			const	monthNameShortOrLongElement = document.getElementById("monthNameShortOrLong");
+			const 	monthNumberElement = document.getElementById("monthNumber");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					monthNumberElement.value = ((new Date()).getMonth()) + 1;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var monthNames = getMonths
+				(
+					monthNumberElement.value,
+					monthNameShortOrLongElement.checked
+				);
+				monthNameElement.innerHTML = Array.isArray(monthNames) ?
+					monthNames.join(", ") :
+					monthNames;
+			}
+
+			/*!
+			 * Convert a timestamp into a date
+			 * (c) 2021 Andrew Borstein (https://andrewborstein.com/) & Chris Ferdinandi (https://gomakethings.com)
+			 * MIT License,
+			 * @param  {Integer} month The month integer (1 is January)
+			 * @param  {Boolean}       If true, use short month names (ex. "Jan")
+			 * @return {Array|String}  The month, or an array of months
+			 */
+			function getMonths (month, short) {
+
+				// Create month names
+				let format = short ? 'short' : 'long';
+				let monthNames = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(function (mon) {
+					return new Date(2000, mon).toLocaleString({}, {month: format});
+				});
+
+				// Return month name (or all of them)
+				if (month) {
+					return monthNames[(month - 1)];
+				}
+				return monthNames;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const isAbsoluteURL = str => /^[a-z][a-z0-9+.-]*:/.test(str);
+		</script>		
+	</body>
+</html>

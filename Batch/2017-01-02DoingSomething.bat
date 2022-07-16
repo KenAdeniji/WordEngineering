@@ -17,6 +17,7 @@ IF %id% == 11 GOTO WordOfGod
 GOTO Exit
 
 :BCP
+xcopy e:\BCP c:\BCP /d /e /s /y
 xcopy e:\BCP d:\BCP /d /e /s /y
 xcopy e:\BCP f:\BCP /d /e /s /y
 xcopy e:\BCP \\Noor\e$\BCP /d /e /s /y
@@ -25,6 +26,7 @@ xcopy e:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :Node.js
+xcopy e:\Node.js c:\Node.js /d /e /s /y
 xcopy e:\Node.js d:\Node.js /d /e /s /y
 xcopy e:\Node.js f:\Node.js /d /e /s /y
 xcopy e:\Node.js \\Noor\e$\Node.js /d /e /s /y
@@ -32,6 +34,7 @@ REM xcopy e:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
+xcopy e:\Rust c:\Rust /d /e /s /y
 xcopy e:\Rust d:\Rust /d /e /s /y
 xcopy e:\Rust f:\Rust /d /e /s /y
 xcopy e:\Rust \\Noor\e$\Rust /d /e /s /y
@@ -40,6 +43,7 @@ xcopy e:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
 :SQLServerBackup
+xcopy e:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
 xcopy e:\SQLServerBackup d:\SQLServerBackup /d /e /s /y
 xcopy e:\SQLServerBackup f:\SQLServerBackup /d /e /s /y
 xcopy e:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
@@ -48,6 +52,7 @@ xcopy e:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
 GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
+xcopy e:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL d:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL f:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 xcopy e:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
@@ -60,6 +65,7 @@ setlocal
 set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
+xcopy E:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
@@ -70,6 +76,7 @@ endlocal
 GOTO Exit
 
 :SQLServerExport
+xcopy e:\SQLServerExport c:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport d:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport f:\SQLServerExport /d /e /s /y
 xcopy e:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
@@ -77,6 +84,7 @@ xcopy e:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
+xcopy e:\WebAssembly c:\WebAssembly /d /e /s /y
 xcopy e:\WebAssembly d:\WebAssembly /d /e /s /y
 xcopy e:\WebAssembly f:\WebAssembly /d /e /s /y
 xcopy e:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
@@ -89,6 +97,7 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
+xcopy e:\WordEngineering c:\WordEngineering /d /e /s /y
 xcopy e:\WordEngineering d:\WordEngineering /d /e /s /y
 xcopy e:\WordEngineering f:\WordEngineering /d /e /s /y
 xcopy e:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
@@ -97,6 +106,7 @@ xcopy e:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
 GOTO Exit
 
 :WordOfGod
+xcopy e:\WordOfGod c:\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod d:\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod f:\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
@@ -305,6 +315,7 @@ https://goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf
 Microsoft SQL Server Management Studio grid refresh wait error.
 Microsoft SQL Server Management Studio grid cursor jump, once.
 Quantitative Data: This makes itself subjective to numeric computation.
+Microsoft SQL Server Management Studio hour glass.
 Dry throat.
 Microsoft hotmail inbox folder mail error.
 http://en.wikipedia.org/wiki/Japan
@@ -346,5 +357,16 @@ Or copy this link and paste it in your web browser:
 https://accounts.cloud.databricks.com/login?resetpassword&username=kenadeniji%40hotmail.com&expiration=-60000&token=615639012c47c653b433e8d75fe0fdfc5d1bacfc#reset-password
 
 - The Databricks Team
+2022-07-12T16:50:00  	53711
+http://d2l.ai/
 
+2022-07-14T12:24:00 ... 2022-07-14T12:36:00
+Google Drive
+Almost out of storage
+If you run out, you can't save to Drive, send and receive
+email on Gmail, or back up to Google Photos.
+Don't show this again
+OK Manage storage
+
+2022-07-14 20:28:38.930 Mouse error. MultilayerPerceptron 
 :Exit

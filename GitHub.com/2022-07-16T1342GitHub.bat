@@ -1,0 +1,19 @@
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
+        git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
+
+git add        GitHub.com/2022-07-14T1025GitHub.bat
+git add        GitHub.com/2022-07-16T1342GitHub.bat
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/AndrewBorstein.com_ChrisFerdinandi_GoMakeThings.com_-_MonthNames.html
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/AndrewBorstein.com_ChrisFerdinandi_GoMakeThings.com_-_MonthNamesArchive.html
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/UseARegularExpressionToRemoveHtmlXmlTags.html
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/UseARegularExpressionToRemoveHtmlXmlTagsArchive.html
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/isAbsoluteURL.html
+git add        IIS/WordEngineering/JavaScript/JavaScriptSource.com/isAbsoluteURLArchive.html
+git add        IIS/WordEngineering/WordCross/GodDoesntAbstainFromAnyone.html
+git add        IIS/WordEngineering/WordCross/GodDoesntAbstainFromAnyoneArchive.html
