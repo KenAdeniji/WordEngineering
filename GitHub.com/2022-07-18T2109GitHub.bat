@@ -13,3 +13,6 @@
 git add        GitHub.com/2022-07-18T2109GitHub.bat
 git add        "IIS/WordEngineering/2018-05-03Correspondence/22-CR-003668 - Order on Petition to Terminate Sex Offender Registration CR-418.pdf"
 git add        "IIS/WordEngineering/2018-05-03Correspondence/22-CR-003668 - Order on Petition to Terminate Sex Offender Registration CR-418.txt"
+
+git add       IIS/WordEngineering/WordCross/HeTookSomeWords.html
+git add       IIS/WordEngineering/WordCross/HeTookSomeWordsArchive.html
