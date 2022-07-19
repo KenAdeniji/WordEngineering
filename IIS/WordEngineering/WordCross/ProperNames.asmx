@@ -111,7 +111,6 @@ public class ProperNamesWebService : System.Web.Services.WebService
 			DataCommand.ResultType.DataTable
 		);
 		
-		//string json = JsonConvert.SerializeObject(words, Formatting.Indented);
 		string json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
 		return json;
     }

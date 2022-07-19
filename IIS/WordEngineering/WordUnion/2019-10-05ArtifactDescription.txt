@@ -533,6 +533,8 @@ The PressureByYourTeamMetAtY.html will list similar verses, Soundex, in versions
 
 The Programmative.html will accept a scripture reference, and return the set of scripture references that it has reverse-engineered using the alphabet sequence; these is a corresponding set.
 
+ProperNames.html comparing words with Biblical soundex. For the first time, the author was able to use the JavaScript's set function for distinct words, and also the ASP.Net's C# function accepts the WebMethod()'s List string parameter. Is it self compartmentalized? The chose to place business logic in the .html and .asmx files and not in the database. Although JavaScript offers Soundex, the database contains the Biblical words. The database also supports set-based logic, but there are inconsistencies in database programming; therefore, the need to succumb to row-based affordability cost.
+
 PropertiesOnTheWeb.html is a way of obtaining user maintenance of the web.
 
 PublishingTheFactNotAlludingToTruth.html compares the date the user enters with the dates in history.
@@ -854,6 +856,3 @@ alphabetSequence = function(word)
 }
 print(alphabetSequence("the"))
 dir() #list directory
-				
-			
-
