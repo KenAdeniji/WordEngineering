@@ -124,10 +124,6 @@
 				
 				var words = sourceContentElement.value.toLowerCase().replace(/[^a-zA-Z0-9]/g,' ').split(/\s|\b/);
 				
-				resultSetElement.innerHTML = words.join(" ");
-				
-				//return;
-				
 				var set = new Set(words);
 				
 				const values = set.values();
@@ -135,8 +131,6 @@
 				
 				request["words"] = array;
 				
-				resultSetElement.innerHTML = array;
-
 				var requestJson = JSON.stringify(request);
 
 				$.ajax
