@@ -60,7 +60,7 @@ Partner 	Sarah, Hagar, Keturah 	Genesis 11:29
 Pilgrimage 	Canaan 	Genesis 12:1-5
 Guidian 	Lot 	Genesis 12:4-5
 Possessional Blessing 		Genesis 14:19
-Faitd 	Belief in God, counted for righteousness 	Genesis 15:6
+Faith 	Belief in God, counted for righteousness 	Genesis 15:6
 Covenant 	Abrahamic 	Genesis 15:18
 Seed 	Ishmael and Isaac 	Genesis 16:11
 Name change 	From Abram to Abraham 	Genesis 17:5
@@ -73,7 +73,7 @@ There is indebtedness of the author to Ury Schecow, his Masters degree superviso
 Introduction
 
 Word 	Commentary 	Scripture Reference	
-Re-locate 	My Yoruba tribal name is Kehinde, meaning the second-born of the twins. Is life a comprehension of how further we are separated? Can you be someone? 	Genesis 4:1-17, Genesis 19:30-38, Genesis 25:19-34
+Re-locate 	My Yoruba tribal name is Kehinde, meaning the second-born of the twins. Is life a comprehension of how further we are separated? 	Genesis 4:1-17, Genesis 19:30-38, Genesis 25:19-34
 
 Who, what, when, where, why?
 Who
@@ -123,7 +123,7 @@ The author prescribes the steps below to begin database set-up and usage:
     Install a DBMS.
     Decide on a user interface for managing the database. For Microsoft SQL Server, the choices include the SQLCmd console utility or the SQL Server Management Studio or Azure Data Studio.
     Create database. Microsoft SQL Server supports multiple instances and databases.
-    The data definition language (DDL) includes commands to create, alter, or delete tables, views, primary and foreign keys, indexes, constraints and defaults.
+    The data definition language (DDL) includes the commands to create, alter, or delete tables, views, primary and foreign keys, indexes, constraints and defaults.
     The data manipulation language (DML) are commands to insert, update, and delete the database rows and columns, with the option to use the where clause.
     The SQL Server maintenance plan is for database housekeeping, for example, backup, restore, and re-arrangement.
     Stored-procedures, triggers, and functions are programmable logic.
@@ -185,7 +185,7 @@ JavaScript Basics: Data Types
     From its pre-conception, JavaScript supported the var keyword. When the author does not precede a variable initialization with a keyword, then the variable will have global scope. The author averts from variable hoisting. Variable definition with the var keyword is re-usable. The strict mode is a later addition to JavaScript. Helps in enforcing variable rules.
     For one-time definitions, such as, issuing the document.getElementById command, the author relies on the const keyword.
     Unlike some typed languages, JavaScript does not support explicitly specifying the type of a variable.
-    JavaScript comparisons are by default case-sensitive.
+    JavaScript string comparisons are by default case-sensitive.
 
 Functions and Methods
 
@@ -491,10 +491,10 @@ The Scripture View's Testament Column
 The SQL statement (case when BookID <=(39) then 'Old' else 'New' end) will set this computed column. The Testament column serves as a filter, such as, in the BibleWord.
 The Scripture View's BookTitle Column
 
-The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
+The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor full ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
 The Scripture Table's ScriptureReference Column
 
-The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the title of the book.
+The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the BookID.
 The Scripture Table's ChapterIDSequence Column
 
 When loading data, the author decides the ChapterIDSequence column; and increment it, every time, the BookID and ChapterID, changes during load. The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22. The SQL statement SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID will decide the greatest value for ChapterIDSequence. An alternative SQL statement select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture Another SQL statement ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) will do the range correctness. Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
@@ -577,7 +577,7 @@ An identity column is a specialization of the integer data type, in that the dat
 
 The aggregate or composite type attempts to store each particular type in its own table, when this is not optimum then normalization calls for several tables distribution joined within one view. The contact record is a single logical datatype spread to multiple physical implementations.
 
-When the author hears a word, what does he do with it? He dates the word, he expresses it grammatically, and he finds a place for it in his memory. For a later date, I remind myself.
+When the author hears a word, what does he do with it? He dates the word, he expresses it grammatically, and he finds a place for it in his memory. For a later date, the author reminds himself.
 Problems, Algorithms, and Programs
 Problem
 
@@ -630,7 +630,7 @@ Lists
 
 One of the few occasions that the author uses a list is when building the Exact table. The author creates a list of words and stores this transient information in memory. The author checks the existence of each word in the list. When it is a new word, the author appends it to the bottom of the list. Otherwise, the author increments its occurrence. At the completion of parsing the words, the author stores the list in a database table. Creating the exact table is a one-time operation, and it takes a couple of hours to complete.
 
-The author is comfortable and familiar with dataset and datatable for work areas. The author uses JSON as a transport medium.
+The author is comfortable and familiar with using datasets and datatables for work areas. The author uses JSON as a transport medium.
 "A generic grouping of concepts and their representation"
 Module 	Unit
 GetAPage.html 	retrieveAlphabetSequence()
@@ -1229,6 +1229,7 @@ Lessons Learnt
     Esteem word: Leading up-to 2008-03-07, I was not fully recording the word of the LORD (Job 23:12).
     I used to ask God for a word? To realize where my opinion lies?
     What is in use?
+    That chooses I. When I read the Bible, I adapt to the role I take.
     Relative to the world (Proverbs 3:5).
     If the words do not join? Consider separating or putting the lesser word in the commentary column.
     Do I determine I know?
