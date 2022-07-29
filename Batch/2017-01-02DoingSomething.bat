@@ -372,4 +372,6 @@ OK Manage storage
 
 2008-04-07T10:36:00 And, ultimately, he still has to be happy. Francis Chukwuma Okwechime challenges an Asian male to a duel at Riva's night club, Sydney, New South Wales (NSW) Australia. Francis is in the NorthWest corner, and the Asian male is in the SouthEast corner, both corners are separated by a bar. The Asian lands a karate. Francis falls. I assume that this is a pre-fight, and a duel is forthcoming. I later see Francis lying down vertically in the MidWest corner, and the length of time indicates that he is in a coma.
 ContactID: 1810
+2022-07-25T11:06:00 Microsoft Windows operating system Mozilla Firefox browser hourglass shutdown.
+2022-07-28T09:05:00 System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
 :Exit

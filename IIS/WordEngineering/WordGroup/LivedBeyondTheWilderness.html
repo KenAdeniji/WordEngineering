@@ -77,39 +77,39 @@
 			{
 				var request = {};
 
-				var bookID = document.getElementById("bookID").value;
-				if (!isNaN(bookID))
+				var bookValueID = document.getElementById("bookID").value;
+				if ( !isNaN( parseFloat( bookIDValue ) ) )
 				{
-					bookID = Number.parseInt(bookID);
+					bookIDValue = Number.parseInt(bookIDValue);
 				}
 				else
 				{
-					bookID = -1;
+					bookIDValue = -1;
 				}	
 
-				var chapterID = document.getElementById("chapterID").value;
-				if (!isNaN(chapterID))
+				var chapterIDValue = document.getElementById("chapterID").value;
+				if ( !isNaN( parseFloat( chapterIDValue ) ) )
 				{
-					chapterID = Number.parseInt(chapterID);
+					chapterIDValue = Number.parseInt(chapterIDValue);
 				}
 				else
 				{
-					chapterID = -1;
+					chapterIDValue = -1;
 				}	
 
-				var verseID = document.getElementById("verseID").value;
-				if (!isNaN(verseID))
+				var verseIDValue = document.getElementById("verseID").value;
+				if ( !isNaN( parseFloat( verseIDValue ) ) )
 				{
-					verseID = Number.parseInt(verseID);
+					verseIDValue = Number.parseInt(verseIDValue);
 				}
 				else
 				{
-					verseID = -1;
+					verseIDValue = -1;
 				}	
 
-				request["bookID"] = bookID;
-				request["chapterID"] = chapterID;
-				request["verseID"] = verseID;
+				request["bookID"] = bookIDValue;
+				request["chapterID"] = chapterIDValue;
+				request["verseID"] = verseIDValue;
 				
 				request["bibleVersion"] = document.getElementById("bibleVersion").value;
 				

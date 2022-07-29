@@ -25,7 +25,7 @@ using InformationInTransit.ProcessCode;
 using InformationInTransit.UserInterface;
 
 ///<summary>
-///	2022-07-27 Created. To accept when there are no other.
+///	2022-07-27 Created. To accept when there are no other. Biblical name, actor, place.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -82,10 +82,10 @@ WHERE
 	{0} LIKE '%[^a-z]{1}[^a-z]%'
 ";
 
-public static readonly String[][] JaggedArrayBibleWord = new String[][]
+public static readonly String[][] JaggedArrayBibleWord = new String[][] //Biblical name, actor, place
 {
-new String[] { "God", "Jesus", "Adam", "Eve", "Cain", "Abel", "Seth", "Enoch", "Noah", "Abraham", "Sarah", "Lot", "Isaac", "Ishmael", "Esau", "Israel", "Joseph", "Judah", "Moses", "Aaron", "Joshua", "Samuel", "David", "Solomon", "Elijah", "Elisha", "Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Peter", "Paul" },
-new String[] { "Eden", "Egypt", "Moab", "Ammon", "Jordan", "Bethlehem", "Jerusalem", "Babylon", "Persia", "Grecia", "Italy", "Rome", "Heaven", "Hell" }
+new String[] { "God", "Jesus", "Adam", "Eve", "Cain", "Abel", "Seth", "Enoch", "Noah", "Abraham", "Sarah", "Lot", "Isaac", "Ishmael", "Esau", "Israel", "Joseph", "Judah", "Moses", "Aaron", "Joshua", "Samuel", "David", "Solomon", "Elijah", "Elisha", "Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Peter", "Paul" }, //Actor
+new String[] { "Eden", "Egypt", "Moab", "Ammon", "Jordan", "Bethlehem", "Jerusalem", "Babylon", "Persia", "Grecia", "Italy", "Rome", "Heaven", "Hell" } //Place
 };	
 }
 

@@ -115,6 +115,14 @@ namespace InformationInTransit.ProcessLogic
 			}	
 		}
 		
+		public static void EnumerateValues()
+		{
+			foreach(var input in Enum.GetValues(typeof(EnumFlag)))
+			{
+				System.Console.WriteLine(input);
+			}
+		}
+		
 		///<example>
 		///MyEnum tester = MyEnum.FlagA | MyEnum.FlagB;
  		///if(tester.IsSet(MyEnum.FlagA))

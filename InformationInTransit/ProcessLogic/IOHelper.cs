@@ -6,6 +6,11 @@ namespace InformationInTransit.ProcessLogic
 {
 	public static partial class IOHelper
 	{
+		public static void Main(string[] argv)
+		{
+			System.Console.WriteLine("Temporary File Path: {0}", RetrieveTemporaryPath());
+		}
+		
 		///<remarks>
 		///http://extensionmethod.net/csharp/int64/foldersize
 		///</remarks>
@@ -13,6 +18,7 @@ namespace InformationInTransit.ProcessLogic
 		///path = @"D:\INCOMING\Books";
 		///var size = new DirectoryInfo(path).FolderSize(true);
 		///Console.WriteLine("Size of {0} is {1}", path, size);
+		///</example>		
 		public static long FolderSize(this DirectoryInfo dir, bool bIncludeSub)
 		{
 			long totalFolderSize = 0;
@@ -41,6 +47,18 @@ namespace InformationInTransit.ProcessLogic
 			}
 	 
 			return totalFolderSize;
+		}
+
+		///<remarks>
+		///http://www.devx.com/dotnet/get-the-path-to-the-temporary-folder-in-the-operating-system
+		///</remarks>
+		///<example>
+		///System.Console.WriteLine("Temporary File Path: {0}", RetrieveTemporaryPath());
+		///</example>
+		public static string RetrieveTemporaryPath()
+		{
+			string temporaryFilePath = System.IO.Path.GetTempPath();
+			return temporaryFilePath;
 		}	
 	}	
 }
