@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-07-31T12:53:00	Created.
+			2022-07-31T13:35:00	http://stackoverflow.com/questions/9870512/how-to-obtain-the-query-string-from-the-current-url-with-javascript
+		-->
+		<title>Set a line here, Tulan.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Set a line here, Tulan."/>
+		<meta name="keywords" content="number, divided by two, 67"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookID">Book ID</label></td>
+					<td>
+						<input id="word" type="number" value="67" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const wordElement = document.getElementById("word");
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					const wordParameter = urlParams.get("word");
+					
+					if (wordParameter)
+					{
+						wordElement.value = wordParameter;
+					}
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				numbersAnchors = "";
+				var wordValue = wordElement.value;
+				if ( isNaN( parseFloat( wordValue ) ) )
+				{
+					return;
+				}
+				wordValue = Number.parseInt(wordValue);
+				even = isEven(wordValue);
+				if (even)
+				{
+					numbers = [wordValue / 2];
+				}
+				else
+				{
+					numbers = [ (wordValue - 1) / 2, ( ( 1 + wordValue) / 2 ) ];
+				}
+				for
+				(
+					var numbersIndex = 0, numbersLength = numbers.length;
+					numbersIndex < numbersLength;
+					++numbersIndex
+				)
+				{
+					if ( numbersAnchors )
+					{
+						numbersAnchors += ", ";
+					}
+					numbersAnchors += `<a href="/WordEngineering/WordUnion/GetAPage.html?word=${numbers[numbersIndex]}">${numbers[numbersIndex]}</a>`;
+				}	
+				resultSetElement.innerHTML = numbersAnchors;
+			}
+
+			function isEven(n)
+			{ 
+				return n % 2 == 0; 
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

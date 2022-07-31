@@ -309,7 +309,7 @@ ni 	∋ 	220B 	contains as member
 notin 	∉ 	2209 	not an element of
 isin 	∈ 	2208 	element of
 
-The HeTookSomeWords.html is for extracting words from a URI and converting to past tense and present participle.
+The HeTookSomeWords.html is for extracting words from a URI and converting to past tense, plural and present participle.
 
 The HisWord.Aspx is for making inquiries about the information stored in the HisWord table.
 
@@ -564,6 +564,8 @@ The SeOKa.html will do statistics - count, minimum, maximum.
 The SeparateTheirDesireOfTheBible.html will search for a clause, within a scripture reference.
 
 The ServingWho.html will search for a clause, within a scripture reference; group by book or chapter.
+
+The SetALineHereTulan.html will divide a number by 2, for example, 67 / 2 = 33 and 34.
 
 The SheWalkedTowardInFourDays.html will search for a clause, and group by Testament, book, or chapter.
 
@@ -863,4 +865,5 @@ alphabetSequence = function(word)
 	return (alphabetSequenceIndex)
 }
 print(alphabetSequence("the"))
-dir() #list directory
+dir() #list directory	
+
