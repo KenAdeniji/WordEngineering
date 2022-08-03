@@ -50,6 +50,8 @@ public class BibleWordWebService : System.Web.Services.WebService
 			wordsCount
 		);
 		
+		//return sqlStatement;
+		
         DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
 		(
 			sqlStatement,
@@ -66,7 +68,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	public String OccurrenceOfTheMotion
 	(
 		String	logic,
-		String	limitChosen,
+		String	bibleBookGroup,
 		String	question,
 		bool	wholeWords,
 		string	bibleVersion
@@ -76,7 +78,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 		result = BibleWordHelper.OccurrenceOfTheMotion
 		(
 			logic,
-			limitChosen,
+			bibleBookGroup,
 			question,
 			wholeWords,
 			bibleVersion
@@ -137,7 +139,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	public String Query
 	(
 		String	logic,
-		String	limitChosen,
+		String	bibleBookGroup,
 		String	question,
 		bool	wholeWords,
 		string	bibleVersion
@@ -148,7 +150,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 		result = BibleWordHelper.Query
 		(
 			logic,
-			limitChosen,
+			bibleBookGroup,
 			question,
 			wholeWords,
 			bibleVersion
@@ -162,7 +164,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	public String StoryOutOfLine
 	(
 		String	logic,
-		String	limitChosen,
+		String	bibleBookGroup,
 		String	question,
 		bool	wholeWords,
 		string	bibleVersion
@@ -171,7 +173,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 		DataSet dataSet = BibleWordHelper.Query
 		(
 			logic,
-			limitChosen,
+			bibleBookGroup,
 			question,
 			wholeWords,
 			bibleVersion

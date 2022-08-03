@@ -248,6 +248,7 @@
 					{
 						var dataSet = JSON.parse(data.d);
 						render(dataSet);
+						//scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 					},
 					error: function(xhr)
 					{ 
@@ -289,9 +290,9 @@
 				var dataRow = null;
 				var dataTable = null;
 				
-				var bookId = null;
-				var chapterId = null;
-				var verseId = null;
+				var bookID = null;
+				var chapterID = null;
+				var verseID = null;
 				var verseText = null;
 				
 				var scriptureReference = null;
@@ -306,13 +307,13 @@
 					{
 						dataRow = dataTable[rowIndex];
 						
-						bookId = dataRow["bookId"];
-						bookTitle = scriptLiteral9432.bibleBooks[bookId - 1];
-						chapterId = dataRow["chapterId"];
-						verseId = dataRow["verseId"];
-						verseText = dataRow["verseText"];
+						bookID = dataRow["BookID"];
+						bookTitle = scriptLiteral9432.bibleBooks[bookID - 1];
+						chapterID = dataRow["ChapterID"];
+						verseID = dataRow["VerseID"];
+						verseText = dataRow["VerseText"];
 						
-						scriptureReference = bookTitle + " " + chapterId + ":" + verseId;
+						scriptureReference = bookTitle + " " + chapterID + ":" + verseID;
 						scriptureReferenceHyperlink = scriptLiteral9432.buildHyperlink
 						(
 							"scriptureReference",
