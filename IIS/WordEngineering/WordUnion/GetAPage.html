@@ -223,9 +223,9 @@
 				var dataRow = null;
 				var dataTable = null;
 				
-				var bookId = null;
-				var chapterId = null;
-				var verseId = null;
+				var bookID = null;
+				var chapterID = null;
+				var verseID = null;
 				var verseText = null;
 				
 				var bookTitle = null;
@@ -238,9 +238,9 @@
 						dataRow = dataTable[rowIndex];
 						info += scriptLiteral9432.buildRow
 						(
-							scriptLiteral9432.bibleBooks[dataRow["bookId"] - 1] + " " + 
-							dataRow["chapterId"] + ':' + dataRow["verseId"], 
-							dataRow["verseText"]
+							scriptLiteral9432.bibleBooks[dataRow["BookID"] - 1] + " " + 
+							dataRow["ChapterID"] + ':' + dataRow["VerseID"], 
+							dataRow["VerseText"]
 						);
 					}
 				}
