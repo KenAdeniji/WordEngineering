@@ -80,14 +80,14 @@ public class TwoEighteenTwoNineteenAndForLongCastWebService : System.Web.Service
 		
 		sb.AppendFormat(" ORDER BY VerseIDSequence ");
 		
-		DataSet dataSet = (DataSet)DataCommand.DatabaseCommand
+		DataTable dataTable = (DataTable)DataCommand.DatabaseCommand
 		(
 			sb.ToString(),
 			CommandType.Text,
-			DataCommand.ResultType.DataSet
+			DataCommand.ResultType.DataTable
 		);
 		
-		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
+		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
 		return json;
 	}
 	

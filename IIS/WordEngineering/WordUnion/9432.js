@@ -85,6 +85,8 @@
 		"Unleavened Bread"	
 	],
 	2022-01-04	retrieveSelectionIndex()
+	2022-08-06T12:36:00	scriptureReferenceConcatenate()
+		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
 */
 
 var scriptLiteral9432 =
@@ -1415,6 +1417,25 @@ var scriptLiteral9432 =
 		return selected.join(separation);
 	},
 
+	scriptureReferenceConcatenate: function(table, scriptureReferenceColumn)
+	{
+		let concatenate = "";
+		
+		var tBody = table.getElementsByTagName('tbody')[0];
+		var tableRow = tBody.getElementsByTagName('tr');
+		
+		for(var rowIndex = 0, rowsCount = tableRow.length; rowIndex < rowsCount; ++rowIndex)
+		{
+			var scriptureReference = tableRow[rowIndex].cells[scriptureReferenceColumn].innerHTML;
+			if (concatenate != "")
+			{
+				concatenate += ", ";
+			}
+			concatenate += scriptureReference;
+		}
+		return concatenate;
+	},
+
 	//2017-12-30	https://stackoverflow.com/questions/11821261/how-to-get-all-selected-values-from-select-multiple-multiple
 	selectionGet: function(objectId)
 	{
@@ -1579,7 +1600,7 @@ var scriptLiteral9432 =
 			cells += "<th>" + dataKeys[dataIndex] + "</th>";
 		}
 		
-		info += "<thead><tr>" + cells + "</tr></thead>";
+		info += "<thead><tr>" + cells + "</tr></thead><tbody>";
 		
 		for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
 		{
@@ -1632,7 +1653,7 @@ var scriptLiteral9432 =
 			info += "<tr>" + cells + "</tr>";
 		}
 			
-		info += "</table>";
+		info += "</tbody></table>";
 		
 		info += `<button onclick="scriptLiteral9432.exportTableToCSV('${dataID}')">Export to CSV</button>`
 	

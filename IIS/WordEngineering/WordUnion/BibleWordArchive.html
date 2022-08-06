@@ -10,7 +10,7 @@
 		2020-10-20	<table>
 						<label for="versesCount">Verse(s) count:</label>
 						<label id="versesCount"></label>
-						<div id="resultSet"> </div>
+						<div id="resultTable"> </div>
 						<div id="scriptureReferenceCollate" align="center"> </div>
 						<div id="scriptureReferenceJoin" align="center"> </div>
 					</table>
@@ -85,7 +85,7 @@
 				</tr>	
 				<tr>
 					<td>
-						<div id="resultSet"> </div>
+						<div id="resultTable"> </div>
 					</td>
 				</tr>	
 				<tr>
@@ -105,37 +105,31 @@
 		<script>
 			var isPostBack = false;
 			
-			var bibleVersionElement = document.getElementById("bibleVersion");
-			var bibleWordElement = document.getElementById("bibleWord");
-			var collateElement = document.getElementById("collate");
-			var bibleBookGroupElement = document.getElementById("bibleBookGroup");
-			var logicElement = document.getElementById("logic");
-			var joinedElement = document.getElementById("joined");
-			var	wholeWordsElement = document.getElementById("wholeWords");
+			const 	bibleVersionElement = document.getElementById("bibleVersion");
+			const 	bibleWordElement = document.getElementById("bibleWord");
+			const 	collateElement = document.getElementById("collate");
+			const 	bibleBookGroupElement = document.getElementById("bibleBookGroup");
+			const 	logicElement = document.getElementById("logic");
+			const	joinedElement = document.getElementById("joined");
+			const	wholeWordsElement = document.getElementById("wholeWords");
 			
-			var submitQueryElement = document.getElementById("submitQuery");
+			const 	submitQueryElement = document.getElementById("submitQuery");
 			
-			var	resultSetElement = document.getElementById("resultSet");
-			var scriptureReferenceCollateElement = document.getElementById("scriptureReferenceCollate");
-			var scriptureReferenceJoinElement = document.getElementById("scriptureReferenceJoin");
+			const	resultTableElement = document.getElementById("resultTable");
+			const 	scriptureReferenceCollateElement = document.getElementById("scriptureReferenceCollate");
+			const 	scriptureReferenceJoinElement = document.getElementById("scriptureReferenceJoin");
+
+			const	versesCountElement = document.getElementById("versesCount");
 
 			function combine()
 			{
-				var concatenate="";
-						
 				if (collateElement.checked)
 				{
-					var table=document.getElementById("resultTable");
-					
-					for(var row = 0, rowsCount = table.rows.length; row < rowsCount; ++row)
-					{
-						var scriptureReference = table.rows[row].cells[0].innerHTML;
-						if (concatenate != "")
-						{
-							concatenate += ", ";
-						}
-						concatenate += scriptureReference;
-					}
+					let concatenate = scriptLiteral9432.scriptureReferenceConcatenate
+					(
+						resultTableElement,
+						0
+					);	
 					scriptureReferenceCollateElement.innerHTML = 
 						scriptLiteral9432.buildHyperlink("scriptureReference", concatenate);
 
@@ -248,11 +242,10 @@
 					{
 						var dataSet = JSON.parse(data.d);
 						render(dataSet);
-						//scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 					},
 					error: function(xhr)
 					{ 
-						resultSetElement.innerHTML =
+						resultTableElement.innerHTML =
 							"Status: " + xhr.status + " | " + 
 							"StatusText: " + xhr.statusText + " | " +
 							"ResponseText: " + xhr.responseText;
@@ -285,7 +278,7 @@
 
 			function render(data) 
 			{
-				var info = "<table id='resultTable'>";
+				var info = "<table id='resultTableInfo'>";
 				
 				var dataRow = null;
 				var dataTable = null;
@@ -326,14 +319,10 @@
 				}
 				
 				info += "</table>"
-				resultSetElement.innerHTML = info;
-				
-				var versesCount = document.getElementById("versesCount");
-				var resultTable = document.getElementById("resultTable");
-				if (resultTable)
-				{
-					versesCount.innerHTML = resultTable.rows.length;
-				}	
+				resultTableElement.innerHTML = info;
+	
+				versesCountElement.innerHTML = document.getElementById("resultTableInfo").rows.length;
+
 				combine();
 			}
 

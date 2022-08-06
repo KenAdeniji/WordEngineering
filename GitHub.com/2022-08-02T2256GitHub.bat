@@ -15,3 +15,9 @@ git add        GitHub.com/2022-08-02T2256GitHub.bat
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
         git add   IIS/WordEngineering/WordUnion/GetAPage.html
         git add   IIS/WordEngineering/WordUnion/GetAPageArchive.html
+
+        git add   IIS/WordEngineering/WordCross/DatesComputation.html
+        git add   IIS/WordEngineering/WordCross/DatesComputationArchive.html
+
+git add        IIS/WordEngineering/WordCross/Metadata.html
+git add        IIS/WordEngineering/WordCross/MetadataArchive.html
