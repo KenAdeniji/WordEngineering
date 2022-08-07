@@ -272,7 +272,8 @@
 			
 			//const QuantityPattern = /[+-]?\d+(\.\d+)?/g;
 			const QuantityPattern = /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g;
-			const UnitPattern = /\D+/g;
+			//const UnitPattern = /\D+/g;
+			const UnitPattern = /[a-z]+/g;
 		</script>
 	</body>
 </html>
