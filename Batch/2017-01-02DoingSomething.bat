@@ -149,7 +149,7 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 57055);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 59401);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1164);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3586);
@@ -375,4 +375,5 @@ ContactID: 1810
 2022-07-25T11:06:00 Microsoft Windows operating system Mozilla Firefox browser hourglass shutdown.
 2022-07-28T09:05:00 System.Exception: A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) 
 2022-08-06T20:31:00 URIWordEngineering Dated 2019-07-15 SequenceOrderID 52336
+2022-08-08T09:33:00 Microsoft windows operating system, Mozilla firefox browser hyperlink error • President Vladimir Putin • Prime Minister Mikhail Mishustin • Speaker of theFederation Council	Valentina Matviyenko
 :Exit
