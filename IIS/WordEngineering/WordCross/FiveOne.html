@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-08-11T07:37:00	Created.
+		-->
+		<title>Five one</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Five one"/>
+		<meta name="keywords" content="Five one"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td>
+						<input id="word" type="text" value="Five one" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="bibleVersion">Version</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+			<div id="scriptureReferenceConcatenate"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	wordElement	= document.getElementById("word");
+			
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			const	resultTableElement = document.getElementById("resultTable");
+			const	scriptureReferenceConcatenateElement = document.getElementById("scriptureReferenceConcatenate");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var wordParameter = urlParams.get("word");
+						if (wordParameter)
+						{
+							wordElement.value = wordParameter;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["word"] = wordElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/FiveOne.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						let concatenate = scriptLiteral9432.scriptureReferenceConcatenate
+						(
+							resultTableElement.getElementsByTagName("Table")[0],
+							0
+						);	
+						scriptureReferenceConcatenateElement.innerHTML = 
+							scriptLiteral9432.buildHyperlink("scriptureReference", concatenate);
+
+					},
+					error: function (xhr) {
+						resultTableElement.innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+					}
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

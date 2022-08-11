@@ -33,3 +33,8 @@ git add        Python/EricMatthes/
 git add        IIS/WordEngineering/WordCross/WhatWillDriveYouToHate.html
 git add        IIS/WordEngineering/WordCross/WhatWillDriveYouToHateArchive.html
 git add        Python/PythonBasics.org/ArgumentRangeList.py
+
+git add        IIS/WordEngineering/WordCross/FiveOne.asmx
+git add        IIS/WordEngineering/WordCross/FiveOne.html
+git add        IIS/WordEngineering/WordCross/FiveOneArchive.asmx
+git add        IIS/WordEngineering/WordCross/FiveOneArchive.html
