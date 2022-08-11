@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-08-10	Created.
+			2022-08-10	http://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)
+		-->
+		<title>What will drive you to hate?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What will drive you to hate?"/>
+		<meta name="keywords" content="Dates difference reciprocate"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="datedFrom">From:</label></td>
+					<td><input id="datedFrom" type="datetime-local" value="0070-04-14T00:00"/></td>
+				</tr>
+				<tr>
+					<td><label for="datedUntil">Until:</label></td>
+					<td><input id="datedUntil" type="datetime-local" value="0070-09-08T00:00"/></td>
+				</tr>
+				<tr>
+					<td><label for="datedReference">Reference:</label></td>
+					<td><input id="datedReference" type="datetime-local" value="2022-03-16T00:00"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="datedDifference">Date Difference:</label></td>
+					<td><span id="datedDifference"></span></td>
+				</tr>
+				<tr>
+					<td><label for="datedPrevious">Previous Date:</label></td>
+					<td><span id="datedPrevious"></span></td>
+				</tr>
+				<tr>
+					<td><label for="datedNext">Next Date:</label></td>
+					<td><span id="datedNext"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const datedFromElement = document.getElementById("datedFrom");
+			const datedUntilElement = document.getElementById("datedUntil");
+			
+			const datedReferenceElement = document.getElementById("datedReference");
+			
+			const datedDifferenceElement = document.getElementById("datedDifference");
+			const datedPreviousElement = document.getElementById("datedPrevious");
+			const datedNextElement = document.getElementById("datedNext");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var datedFromParam = urlParams.get("datedFrom");
+						if (datedFromParam)
+						{
+							datedFromElement.value = datedFromParam;
+						}
+					
+						var datedUntilParam = urlParams.get("datedUntil");
+						if (datedUntilParam)
+						{
+							datedUntilElement.value = datedUntilParam;
+						}
+
+						var datedReferenceParam = urlParams.get("datedReference");
+						if (datedReferenceParam)
+						{
+							datedReferenceElement.value = datedReferenceParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var datedDifferenceComputed = scriptLiteral9432.daysDifference
+				(
+					new Date(datedFromElement.value), 
+					new Date(datedUntilElement.value), 
+				);
+
+				datedDifferenceElement.textContent = datedDifferenceComputed;
+				
+				datedPreviousElement.textContent = scriptLiteral9432.daysAdd
+				(
+					new Date(datedReferenceElement.value), 
+					-datedDifferenceComputed
+				);
+				
+				datedNextElement.textContent = scriptLiteral9432.daysAdd
+				(
+					new Date(datedReferenceElement.value), 
+					datedDifferenceComputed
+				);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -21,4 +21,15 @@ git add        Python/EricMatthes/
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationArchive.html
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertationRelease2020-12-17.html
 
-        git add		Python/PythonBasics.org/
+        git add	  Python/PythonBasics.org/
+
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+        git add    Python/PythonBasics.org/ArgumentStatistics.py
+
+git add        IIS/WordEngineering/WordCross/WhatWillDriveYouToHate.html
+git add        IIS/WordEngineering/WordCross/WhatWillDriveYouToHateArchive.html
+git add        Python/PythonBasics.org/ArgumentRangeList.py
