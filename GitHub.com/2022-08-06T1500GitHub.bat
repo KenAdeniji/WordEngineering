@@ -38,3 +38,6 @@ git add        IIS/WordEngineering/WordCross/FiveOne.asmx
 git add        IIS/WordEngineering/WordCross/FiveOne.html
 git add        IIS/WordEngineering/WordCross/FiveOneArchive.asmx
 git add        IIS/WordEngineering/WordCross/FiveOneArchive.html
+
+git add        IIS/WordEngineering/WordCross/MakingMentionAtAges.html
+git add        IIS/WordEngineering/WordCross/MakingMentionAtAgesArchive.html

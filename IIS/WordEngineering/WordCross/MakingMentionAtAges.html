@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-08-17	Created.
+		-->
+		<title>Making mention at ages</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Making mention at ages. Add to days span."/>
+		<meta name="keywords" content="Date, year, Abram, Abraham"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea, div{ //viewport
+		height: 65vh;
+		width: 80vw;
+	}
+		</style>	
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input id="dated" type="datetime-local" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="word">Years:</label></td>
+					<td>
+						<textarea id="yearEntry">75 years old when he departed out of the land of Haran, had lived in Canaan for 10 years, 86 years old when Hagar bare Ishmael to Abram, 99 years old God's request to walk before Him and be perfect, 100 years old gave birth to Isaac, 175 years lived</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="daysComputed">Days Computed:</label></td>
+					<td><div id="daysComputed"></div></td>
+				</tr>
+				<tr>
+					<td><label for="datedComputed">DateTime Computed:</label></td>
+					<td><div id="datedComputed"></div></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const yearEntryElement = document.getElementById("yearEntry");
+			const datedElement = document.getElementById("dated");
+			const daysComputedElement = document.getElementById("daysComputed");
+			const datedComputedElement = document.getElementById("datedComputed");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var datedParam = urlParams.get("dated");
+						if (!datedParam)
+						{
+							datedParam = scriptLiteral9432.nowTimezoneOffset().substring(0, 19);
+						}
+						datedElement.value = datedParam;
+					
+						var yearEntryParam = urlParams.get("yearEntry");
+						if (yearEntryParam)
+						{
+							datedElement.value = yearEntryParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var yearEntryValue = yearEntry.value.toLowerCase();
+				
+				var extractQuantities = yearEntryValue.match( QuantityPattern );
+				
+				var
+					metricDays = 0,
+					metricQuantity = 0,
+					metricUnit = "",
+					daysResult = "",
+					datedResult = ""
+					;
+					
+				for
+				(
+					var metricIndex = 0, metricCount = extractQuantities.length;
+					metricIndex < metricCount;
+					metricIndex++
+				)
+				{
+					metricQuantity = parseFloat(extractQuantities[metricIndex].trim());
+					metricDays = metricQuantity * 360;
+					
+					if (daysResult)
+					{
+						daysResult += ", ";
+					}	
+					daysResult += metricDays;
+					
+					if (datedResult)
+					{
+						datedResult += ", ";
+					}	
+					datedResult += scriptLiteral9432.daysAdd
+					(
+						datedElement.value, 
+						metricDays
+					).toLocaleDateString();
+				}	
+				
+				daysComputedElement.innerHTML = daysResult;
+				datedComputedElement.innerHTML = datedResult;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			//const QuantityPattern = /[+-]?\d+(\.\d+)?/g;
+			const QuantityPattern = /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g;
+			//const UnitPattern = /\D+/g;
+			const UnitPattern = /[a-z]+/g;
+		</script>
+	</body>
+</html>
