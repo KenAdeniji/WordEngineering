@@ -7,7 +7,7 @@
 		<title>Making mention at ages</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="Making mention at ages. Add to days span."/>
-		<meta name="keywords" content="Date, year, Abram, Abraham"/>
+		<meta name="keywords" content="Date, Biblical calendar, years, Abram, Abraham"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<style>
@@ -39,23 +39,18 @@
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 				<tr>
-					<td><label for="daysComputed">Days Computed:</label></td>
-					<td><div id="daysComputed"></div></td>
-				</tr>
-				<tr>
-					<td><label for="datedComputed">DateTime Computed:</label></td>
-					<td><div id="datedComputed"></div></td>
+					<td colspan="2" align="center"><div id="resultSet"></div></td>
 				</tr>
 			</table>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
 		<script>
 			var isPostBack = false;
 	
 			const yearEntryElement = document.getElementById("yearEntry");
 			const datedElement = document.getElementById("dated");
-			const daysComputedElement = document.getElementById("daysComputed");
-			const datedComputedElement = document.getElementById("datedComputed");
+			const resultSetElement = document.getElementById("resultSet");
 			
 			const submitQueryElement = document.getElementById("submitQuery");
 			
@@ -97,11 +92,11 @@
 				var extractQuantities = yearEntryValue.match( QuantityPattern );
 				
 				var
+					metricDated = 0,
 					metricDays = 0,
 					metricQuantity = 0,
 					metricUnit = "",
-					daysResult = "",
-					datedResult = ""
+					resultTable = "<table id='resultTable'><thead><tr><th>Year</th><th>Day</th><th>Date</th></tr></thead><tbody>" 
 					;
 					
 				for
@@ -113,26 +108,19 @@
 				{
 					metricQuantity = parseFloat(extractQuantities[metricIndex].trim());
 					metricDays = metricQuantity * 360;
-					
-					if (daysResult)
-					{
-						daysResult += ", ";
-					}	
-					daysResult += metricDays;
-					
-					if (datedResult)
-					{
-						datedResult += ", ";
-					}	
-					datedResult += scriptLiteral9432.daysAdd
+					metricDated = scriptLiteral9432.daysAdd
 					(
 						datedElement.value, 
 						metricDays
 					).toLocaleDateString();
+					resultTable += `<tr><td>${metricQuantity}</td><td>${metricDays}</td><td>${metricDated}</td></tr>`
 				}	
 				
-				daysComputedElement.innerHTML = daysResult;
-				datedComputedElement.innerHTML = datedResult;
+				resultTable += "</tbody></table>";
+				
+				resultSetElement.innerHTML = resultTable;
+				
+				tsorter.create("resultTable");
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
