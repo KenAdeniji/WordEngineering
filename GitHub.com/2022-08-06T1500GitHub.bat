@@ -41,3 +41,6 @@ git add        IIS/WordEngineering/WordCross/FiveOneArchive.html
 
 git add        IIS/WordEngineering/WordCross/MakingMentionAtAges.html
 git add        IIS/WordEngineering/WordCross/MakingMentionAtAgesArchive.html
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-19T1100BrendaOlivera_-_SanFranciscoZoologicalSociety_-_DataIntegrationAdministrationSpecialist.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-19T1100BrendaOlivera_-_SanFranciscoZoologicalSociety_-_DataIntegrationAdministrationSpecialistArchive.txt
