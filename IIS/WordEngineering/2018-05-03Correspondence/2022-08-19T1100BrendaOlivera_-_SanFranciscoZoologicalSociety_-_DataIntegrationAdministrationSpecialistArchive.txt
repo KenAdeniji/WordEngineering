@@ -18,6 +18,9 @@ Lessons Learnt:
 	I have learnt to listen intently, prior to attributing blame.
 	With data cleansing, I implore us to know the source of bad data? Who is inputting the data?
 		Does the vendor have data definition language (DDL) to pre-empt this?
+			Data type: String, number, date, logic boolean?
+			Not nullable? Can not be empty?
+			Range check: Visiting fee must be greater than zero? Date must exceed the zoo's opening date.
 			Check constraints, for schedule, dated from must precede dated until.
 			Primary and foreign keys with unique indexes help to ascertain data.
 			Default columns are probable system generated that the users may leave unfilled that are available from sequence, identity, system clock.
@@ -30,12 +33,3 @@ Lessons Learnt:
 	To a modern style? There is ours.
 	To attitude to know.
 		http://www.girliemac.com/blog/2011/11/28/html5-form-field-validation-with-css3
-	
-Kehinde Adeniji
-4762 Canvasback Common
-Fremont, California 94555
-(510) 796-8121
-mailto:KenAdeniji@hotmail.com
-http://kenadeniji.wordpress.com
-http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
-http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
