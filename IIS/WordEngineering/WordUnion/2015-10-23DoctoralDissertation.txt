@@ -954,6 +954,13 @@ How are names issued Biblically?
     Family naming, such as, Eve, Cain, Seth (Genesis 3:20, Genesis 4:1, Genesis 4:25)
 
 The word is the author's file naming convention.
+"
+Application Programming Interface (API)
+" (Consumer-Centric API Design)
+
+    The common url scheme, endpoint, that the author prefers for security reasons is https://e-comfort.ephraimtech.com/WordEngineering
+    The Top Level Domain (TLD) is the same for both the website and the API; therefore, allow for sharing of cookies.
+
 Results and Discussion
 
 The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme. It was Me. I was telling you.
@@ -1594,6 +1601,7 @@ References
     SQL Server Execution Plans Third Edition For SQL Server 2008 through to 2017 and Azure SQL Database Grant Fritchey (2018); W3C web page; Available from http://assets.red-gate.com/community/books/sql-server-execution-plans-3rd-edition.pdf
     Deep Learning Ian Goodfellow and Yoshua Bengio and Aaron Courville (2016); W3C web page; Available from http://www.deeplearningbook.org
     Resilient, Declarative, Contextual Keith J. Grant (2018-06-08); W3C web page; Available from http://keithjgrant.com/posts/2018/06/resilient-declarative-contextual
+    Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
