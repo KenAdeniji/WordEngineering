@@ -21,6 +21,8 @@ Lessons Learnt:
 	I have learnt to listen intently, prior to attributing blame.
 	With data cleansing, I implore us to know the source of bad data? Who is inputting the data?
 		Does the vendor have data definition language (DDL) to pre-empt this?
+		Check constraints, for schedule, dated from must precede dated until.
+		Primary and foreign keys with unique indexes help to ascertain data.
 		Is the source of error our employees or on-line users?
 		Is the data incomplete, such as abbreviation, for example CA or California, telephone numbers without country or area code?
 		Is it data manipulation language (DML) deadlock, arrangement of data modification?
