@@ -18,33 +18,19 @@ Abstract
 
 Thesis Statement: This dissertation introduces AlphabetSequence ( 2 Corinthians 10:9-18 ). The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
 
-Objective:
-
-    There is no judgment when constraining constraints are pursued?
-    To what approach is designing the truth? What can I learn from; that is beneficiary to me?
-
-The importance of this work?
-
-    What did He personally use? Word, spirit.
-    What does He want as a continuation of the future? To co-operate for the further of myself ( Genesis 9:23 ).
-    The alternative to God's course ( Acts 1:25 ). What as a resource ( Hebrews 11:32, Genesis 2:20 )? Time, help. What as someone else? ( 1 Kings 1:13, 1 Kings 19:19, Matthew 16:18 )? Succession.
-    Follow God, as a character.
-    Who matters as life is where life disappears ( John 1:29, John 1:36 ). Who is movable? I spend with you, what I will leave after ( Acts 2:29 ).
-    The association of a place as presently Mine? Isaac. ( Genesis 17:21, Exodus 12:27, Revelation 1:10 ). Built to act. How among the time? Reliable presence ( Revelation 21:2 ).
-    Making mention of the following ( Exodus 20:12, Deuteronomy 5:16, Micah 7:6, Matthew 15:4, Matthew 15:6, Matthew 19:19, Mark 7:10, Mark 10:19, Luke 18:20, Ephesians 6:2 )?
-
 The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word. These are positional.
 
     2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
     3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
 
+The importance of this work?
+
+    What did He personally use? Word, spirit.
+    Follow God, as a character.
     BibleReference uses whole numbers for representation.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
-
-The author is linking words spoken to related verses and dictionaries.
-
-Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
+    The author is linking words spoken to related verses and dictionaries. Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
 
 Intention:
 
@@ -55,47 +41,6 @@ Intention:
     The programming approach allows for a result which is reproducible across Bible versions and other sources.
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
-
-Alphabets and digits. There are 51 occurrences of the word, count, in the King James Version (KJV) Gospel. Word 	Count 	Scripture Reference
-Account 	3 	Mattdew 12:36, Mattdew 18:23, Luke 16:2
-Accounted 	4 	Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24
-Counted 	2 	Mattdew 14:5, Mark 11:32
-Countetd 	1 	Luke 14:28
-Countenance 	3 	Mattdew 6:16, Mattdew 28:3, Luke 9:29
-Countries 	1 	Luke 21:21
-Country 	37 	Mattdew 2:12, Mattdew 8:28, Mattdew 9:31, Mattdew 13:54, Mattdew 13:57, Mattdew 14:35, Mattdew 21:33, Mattdew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
-
-Why numbers are preferred? Word 	Scripture Reference
-Divine 	Genesis 41:32
-Alphanumeric
-Multi-Lingual 	Psalms 81:5
-
-What events in Abraham's life are additions? Word 	Commentary 	Scripture Reference
-Partner 	Sarah, Hagar, Keturah 	Genesis 11:29
-Pilgrimage 	Canaan 	Genesis 12:1-5
-Guidian 	Lot 	Genesis 12:4-5
-Possessional Blessing 		Genesis 14:19
-Faith 	Belief in God, counted for righteousness 	Genesis 15:6
-Covenant 	Abrahamic 	Genesis 15:18
-Seed 	Ishmael and Isaac 	Genesis 16:11
-Name change 	From Abram to Abraham 	Genesis 17:5
-Making mention at ages 	75 years old when he departed out of the land of Haran, had lived in Canaan for 10 years, 86 years old when Hagar bare Ishmael to Abram, 99 years old God's request to walk before Him and be perfect, 100 years old gave birth to Isaac, 175 years lived 	Genesis 12:4, Genesis 16:3, Genesis 16:16, Genesis 17:1, Genesis 21:5, Genesis 25:7
-
-A remembrance of Himself in us? Word 	Commentary 	Scripture Reference
-Shema 	The term remember occurs 210 times in the KJV Bible. 	Deuteronomy 6:4–9
-Passover Lamb 		John 1:29, John 1:36
-10 Commandments 	The 10 Commandments are separated into love for God and your fellow man like yourself. 	Exodus 20:2–17, Deuteronomy 5:6–21
-Prophecy and Fulfillment 		Daniel 9:2
-Book of the Law 		Joshua 1:8
-Deuteronomy 	The title of the last book of Moses means remembrance. 	Exodus 20:2–17, Deuteronomy 5:6–21
-Sabbath-Day and Festivals 	Periodic anniversaries of His work. 	Exodus 20:11
-Remember Lot's wife. 		Luke 17:32
-
-How-to have association ... with guidance? Word 	Scripture Reference
-Greatly beloved 	Daniel 9:23, Daniel 10:11, Daniel 10:19
-Birthright 	Daniel 1:3-4
-Marital bestowment 	Ruth 2:10
-
 Acknowledgments
 
 Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
@@ -137,16 +82,105 @@ The incentives to begin work on WordEngineering will include:
     Expounding on His word.
 
 Theory
-"
-How does the work of the author accompany the Bible?
-" (Dive into Deep Learning)
-The Terminology of Machine Learning in Relation to AlphabetSequence Term	Meaning
-Training dataset or training set	The recording of the word in the database.
-Example (or data point, data instance, sample)	Each database row or record.
-Predict Label (or target)	The corresponding Bible text.
-Linearity assumption	The features alphabet places.
-Weight	Since the word is the only feature, it is the only influence.
-Bias	A starting value.
+The Bible Database
+The Scripture Table
+
+The content of the Bible SQL Server database is principally the Scripture table. The Scripture table has a composite primary key, which consists of three columns; the BookID, ChapterID, and VerseID columns. There are varchar(MAX) columns which has the text for each Bible version.
+
+The author proposes creating a non-unique index, IDX_Scripture_ChapterIDSequence, on the ChapterIDSequence column. The author is undecided, if this index will be clustered or non-clustered.
+The Scripture Table's BookID Column
+
+Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66; starting from Genesis and ending at Revelation. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66) will set the range restriction. The BookID participates in the natural primary key; and it is part of the composite index with the ChapterID and VerseID columns. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED ( BookID ASC, ChapterID ASC, VerseID ASC ) is for setting the primary key.
+The Scripture Table's ChapterID Column
+
+The ChapterID ranges between 1 and 150; the SQL statement SELECT MAX(ChapterID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK (([ChapterID]>=(1) AND [ChapterID]<=(150))) will set the range restriction.
+The Scripture Table's VerseID Column
+
+The VerseID ranges between 1 and 176; the SQL statement SELECT MAX(VerseID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_VerseID_Range] CHECK (([VerseID]>=(1) AND [VerseID]<=(176))) will set the range restriction.
+The Scripture Table's KingJamesVersion Column
+
+The author would have considered placing an index on the KingJamesVersion column, but the author found out during his research, that the KingJamesVersion is not unique, and indexes are not applicable to like query expressions with leading wildcards.
+The Scripture View's Testament Column
+
+The SQL statement (case when BookID <=(39) then 'Old' else 'New' end) will set this computed column. The Testament column serves as a filter, such as, in the BibleWord.
+The Scripture View's BookTitle Column
+
+The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor full ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
+The Scripture Table's ScriptureReference Column
+
+The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the BookID.
+The Scripture Table's ChapterIDSequence Column
+
+When loading data, the author decides the ChapterIDSequence column; and increment it, every time, the BookID and ChapterID, changes during load. The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22. The SQL statement SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID will decide the greatest value for ChapterIDSequence. An alternative SQL statement select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture Another SQL statement ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) will do the range correctness. Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
+The Scripture Table's VerseIDSequence Column
+
+When loading data, the author calculates the VerseIDSequence column, and increments it, every time, the BookID, ChapterID, and VerseID changes during the data load. There are some Bible books that have only one chapter, such as, Obadiah, Philemon, 2 John, 3 John, Jude; therefore, the author is careful when the choice is made to increment and update the VerseIDSequence column. The SQL statement SELECT BookTitle FROM Bible..Scripture GROUP BY BookID, BookTitle HAVING MAX(ChapterID) = 1 ORDER BY BookID is for listing these one chapter, Bible books. The VerseIDSequence ranges between 1 and 31102; starting from Genesis 1:1, and ending at Revelation 22:21. The SQL statement SELECT COUNT(*) FROM Bible..Scripture will decide the greatest value for VerseIDSequence, the total number of rows, records, in the Bible..Scripture table. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_VerseIDSequence_Range CHECK (VerseIDSequence BETWEEN 1 AND 31102) will do the data integrity. As said earlier, although it is good to know the VerseIDSequence, but it is primarily used to decide the boundaries for scripture reference queries. The identity functionality which auto-increments, before inserting each row is useful, for ensuring this candidate primary key, abides by the entity integrity constraint; however, The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence) is supplementary.
+The Scripture_View BibleReference Column
+
+The SQL statement ((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3))) will combine the BookID, ChapterID, and VerseID. This is a convention for referring to Bible rows, by a unique identifier, which consists of the BookID, ChapterID, and VerseID. The leading zeros are placeholders for blocks of IDs, such as, BookID which will have two digits, ChapterID which will have three digits, and VerseID which will also have three digits. It is easier, faster, and more compact to restrict and order by numbers rather than text. Listed below, is the result set, for this SQL statement. SELECT ScriptureReference, BibleReference FROM Bible..Scripture_View WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
+ScriptureReference	BibleReference
+John 1:1	43001001
+
+There is a conversion page BibleReference.html. Please note, that the author has not developed this further, it is just an introduction and speculation, which others may wish to adopt.
+
+Most of the applications, extract information, and query the Scripture table. If the user chooses to, he may choose to load another Bible version, into the Scripture table and the application will still work as usual, and there will be no need to make changes to the application; thereby, achieving Separation of concerns (SoC).
+The Exact Table
+
+The Exact table's, primary task, is to tell, on the words that are in the Bible. Its information set include each word's first and last scripture reference occurrence(s), and count of occurrence(s). If the word, occurs only once, then the last occurrence is set to null. The incentive for writing the exact module comes from Dave Hunt, who will talk of each word's specifics, and Chuck Missler who noted that the first occurrence of the word, love is in Genesis 22:2. The exact table, is a holding area, for staging information; it could be argued that there is no need, to have this table, because it sources its information from the Scripture table, and it is available using Language Integrated Query. The reasoning of the author is that the Scripture table is static data, and it does not need processing, each time, there is a request. Speed and lower work load are the advantages of the approach of the author; its disadvantage is that the exact table needs re-population, when there is a shift to another Bible version, which the author does not project, at this time. If there is a need, to support another Bible version, then the Exact table loading procedure needs expansion to aid, this flexibility. The Exact result for the author's initials, KAA, is Karkaa, meaning floor (Joshua 15:3). Word Occurrences is dynamic, and it supports the other versions of the Bible.
+The Exact Table's ExactID Column
+
+The ExactID is an identity column, meaning the database, SQL Server, auto-increments its value, before insertion. There are 12891 unique words, in the Bible..Exact table. The SQL statement SELECT MAX(ExactID) FROM Bible..Exact is for determining the highest value. The SQL statement SELECT COUNT(BibleWord) FROM Bible..Exact is for determining the word count. The SQL statement ALTER TABLE Bible..Exact ADD CONSTRAINT CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891) is for the range restriction. For storage reason, the author has chosen, not to have a unique index, on this candidate primary key; in-spite, of it being a query item. Future implementation, may issue the SQL statement CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID) SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact is 789631; this is the sum of the words in the KJV Bible.
+The Exact Table's BibleWord Column
+
+These are the words that occur in the Bible, in the order of their occurrences. The author sets the primary key, the constraint, by issuing the SQL statement ALTER TABLE [dbo].[Exact] ADD CONSTRAINT [PK_Exact] PRIMARY KEY CLUSTERED ([BibleWord] ASC).
+The Exact Table's FirstOccurrenceScriptureReference Column
+
+This is the scripture reference where the word first occurs in the Bible. The author may set-up the relationship by issuing the SQL statement ALTER TABLE [dbo].[Exact] WITH CHECK ADD CONSTRAINT [FK_Exact_Scripture] FOREIGN KEY(FirstOccurrenceScriptureReference) REFERENCES dbo.Scripture (ScriptureReference). Please note, that as discussed earlier, the author cannot have, a unique constraint, on the Bible..Scripture.ScriptureReference column, since this is a computed column; the author can not keep up the relationship, at this time.
+The Exact Table's LastOccurrenceScriptureReference Column
+
+This is the reference to the scripture where the word last occurs in the Bible; if there is only one occurrence, the value of this entry is null. As with the FirstOccurrence column, the referential integrity rule applies.
+The Exact Table's Difference Column
+
+This is to measure the word's longevity; the difference in VerseIDSequence between when it first and last appeared.
+The Exact Table's Occurrence Column
+
+This is the pervasiveness of the word, how often is the word used in the Bible?
+The WordEngineering Database
+
+The WordEngineering SQL Server database, mainly consists, of four tables - HisWord, Remember, APass, ActToGod.
+The HisWord Table
+
+The HisWord table is what the author heard from the source. The entries in the HisWord table are exact and representable in alphanumeric format (Numbers 12:6-8). In following, the Bible's New Testament convention, where there are translations of Hebrew words to English which is being interpreted, (Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36); so also, there are translations of Yoruba words to English.
+
+There have been cases when the author cannot spell and fully comprehend what he heard. In such cases, and not dispose of the records, the author will partly enter what he heard. This impedance mismatch between what the speaker said and what the listener heard, rarely occurs with English words. But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases. The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets. The author requires a Yoruba dictionary and translator; a recent success is with the http://translate.google.com web page.
+
+The HisWord table's most important column, as the name suggests, is the word column, which is either English or Yoruba; or a mixture of both languages. The author will yield to the Holy Spirit in translating Yoruba words to English. From previous experience, this translation is not always the most right or relevant, and different words may contain the diacritic alphabets; therefore, introduce various meanings (1 Corinthians 12:30, 1 Corinthians 14). To account for the discrepancy in translation, the author sought help from the LORD. 2015-11-02T22:55:00 And, the merge, is the money, convert. 2015-11-03T02:17:00 The specifics, a language.
+
+The word column is a potential natural primary key, since duplicates are rare. When redundancies do occur, we may append the sequence to the word, to generate a unique word. We do this manually, but an insert trigger, will offer automation, and will cut the risk of primary key violation, which leads to gaps in the identity column.
+
+The HisWord's table, commentary column, contains implicit information. This communication is most likely non-verbal, and it is information such as creatures standing or moving towards particular locations or engaging in other visible activities.
+
+As such, from the creation account, on the first day, there is a commandment, and there may be an action/response. The commandment is in the word column God created light ( Genesis 1:3, 5 ). The action is in the commentary column; God separated the light from the darkness (Genesis 1:1-2, 4).
+
+SQL Server generates sequential numbers for the HisWordID identity column. The goodness of this technique is that it is a candidate primary key, data loss is trackable, and it provides a sort key. The HisWordID column may serve as the primary and/or foreign key, the backbone of the Referential Integrity Constraint.
+
+The Dated column is of the DateTime type. If an insert statement does not explicitly specify a value for the dated column, then it defaults to the current date and time of the (UTC-08:00) Pacific Time (US & Canada) time zone. There is a preference for the Coordinated Universal Time (UTC)	format.
+
+A relational constraint limit to a unique foreign key? The author will choose either the most vivid or rare?
+HisWord_view
+
+The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. For example, the places of alphabet A and a is 1; and the places of alphabet Z and z is 26. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
+The Remember Table
+
+The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
+
+When the author references the time, then the date is a ratio of the Common Era.
+APass
+
+First, inside and last dates.
+ActToGod
+
+This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 
 The author prescribes the steps below to begin database set-up and usage:
 
@@ -159,23 +193,6 @@ The author prescribes the steps below to begin database set-up and usage:
     The SQL Server maintenance plan is for database housekeeping, for example, backup, restore, and re-arrangement.
     Stored-procedures, triggers, and functions are programmable logic.
 
-"
-Object Oriented Programming - GetAPage.html
-" (LOOPE Lingo Object Oriented Programming Environment)
-
-A type of us; is a kind of us? GetAPage.html is Bible specific.
-Parent Scripts and Objects
-
-GetAPage.html contains the HTML5 directive, head, and body sections. The head section contains the title and meta tags for search-engine optimization (SEO). The 3 languages that make up a web page are in the following order: CSS, HTML, JavaScript.
-
-HTML is an element's nodes. There are only single instances of the input and submit elements. There are multiple div containers for the result sets. Although HTML supports attributes, the ID attribute is the author's only general declaration.
-
-Both CSS and JavaScript act on HTML tags. JavaScript and CSS render the contents of HTML.
-
-There are minute uses of global variables. The author discourages this, because of encapsulation and debugging traceability and granularity.
-Naming Conventions
-
-JavaScript relaxes variable declarations. Variables do not need explicit declaration, and these declarations are redefinable. In spite of this, the author is judicious about variables. The data- attribute is user customizable.
 "
 Indexing
 " (Search engine indexing)
@@ -501,105 +518,24 @@ The author suggests the following alternative methods for deploying the database
 Surrogate Keys
 
 " The author takes advantage of potential natural primary keys; otherwise, the author uses surrogate keys. A surrogate key may be an identity or GUID type column. URIs are examples of natural primary keys. " (Joseph Sack, 2008)
-The Bible Database
-The Scripture Table
+"
+Application Programming Interface (API)
+" (Consumer-Centric API Design)
 
-The content of the Bible SQL Server database is principally the Scripture table. The Scripture table has a composite primary key, which consists of three columns; the BookID, ChapterID, and VerseID columns. There are varchar(MAX) columns which has the text for each Bible version.
+    The common url scheme, endpoint, that the author prefers for security reasons is https://e-comfort.ephraimtech.com/WordEngineering
+    The Top Level Domain (TLD) is the same for both the website and the API; therefore, allow for sharing of cookies.
+    Content Located at the Root: The practice of the author is to place the website and their reliable API files in the same directories, as they are joinable. The author will not uniquely treat API files. The author makes a case for directory browsing, and there is a special help documentation file.
+    Microsoft released ASP.NET MVC on December 10, 2007. http://stackoverflow.com/questions/41906110/designing-rest-api-endpoints-path-params-vs-query-params	When does one single hope divide all?
+    Out of the Create, Read, Update, and Delete (CRUD) 4 operations, the API only supports the HTTP read, SQL select statement.
+    Filtering Resources: SQL offers a column list, where, top, limit, and order by clauses for matching data.
+    Body Formats: The load penalty in XML overweighs the newness of the JSON transport medium.
+    HTTP Status Codes: jQuery satisfactorily handles the success or error of an asynchronous operation.
+    Expected Body Content: Each API may currently return either a dataset, datatable, or a top level JSON object. The URI database is maintainable via a Patch request type to update a particular record's subset of fields/columns.
+    Versioning: The progress includes:
+        Migration to computed columns
+        Normalization
+        Naming Conventions, SQL for example, is generally case agnostic
 
-The author proposes creating a non-unique index, IDX_Scripture_ChapterIDSequence, on the ChapterIDSequence column. The author is undecided, if this index will be clustered or non-clustered.
-The Scripture Table's BookID Column
-
-Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66; starting from Genesis and ending at Revelation. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66) will set the range restriction. The BookID participates in the natural primary key; and it is part of the composite index with the ChapterID and VerseID columns. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED ( BookID ASC, ChapterID ASC, VerseID ASC ) is for setting the primary key.
-The Scripture Table's ChapterID Column
-
-The ChapterID ranges between 1 and 150; the SQL statement SELECT MAX(ChapterID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK (([ChapterID]>=(1) AND [ChapterID]<=(150))) will set the range restriction.
-The Scripture Table's VerseID Column
-
-The VerseID ranges between 1 and 176; the SQL statement SELECT MAX(VerseID) FROM Bible..Scripture is for determining the upper limit. The SQL statement ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_VerseID_Range] CHECK (([VerseID]>=(1) AND [VerseID]<=(176))) will set the range restriction.
-The Scripture Table's KingJamesVersion Column
-
-The author would have considered placing an index on the KingJamesVersion column, but the author found out during his research, that the KingJamesVersion is not unique, and indexes are not applicable to like query expressions with leading wildcards.
-The Scripture View's Testament Column
-
-The SQL statement (case when BookID <=(39) then 'Old' else 'New' end) will set this computed column. The Testament column serves as a filter, such as, in the BibleWord.
-The Scripture View's BookTitle Column
-
-The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor full ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
-The Scripture Table's ScriptureReference Column
-
-The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the BookID.
-The Scripture Table's ChapterIDSequence Column
-
-When loading data, the author decides the ChapterIDSequence column; and increment it, every time, the BookID and ChapterID, changes during load. The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22. The SQL statement SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID will decide the greatest value for ChapterIDSequence. An alternative SQL statement select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture Another SQL statement ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) will do the range correctness. Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
-The Scripture Table's VerseIDSequence Column
-
-When loading data, the author calculates the VerseIDSequence column, and increments it, every time, the BookID, ChapterID, and VerseID changes during the data load. There are some Bible books that have only one chapter, such as, Obadiah, Philemon, 2 John, 3 John, Jude; therefore, the author is careful when the choice is made to increment and update the VerseIDSequence column. The SQL statement SELECT BookTitle FROM Bible..Scripture GROUP BY BookID, BookTitle HAVING MAX(ChapterID) = 1 ORDER BY BookID is for listing these one chapter, Bible books. The VerseIDSequence ranges between 1 and 31102; starting from Genesis 1:1, and ending at Revelation 22:21. The SQL statement SELECT COUNT(*) FROM Bible..Scripture will decide the greatest value for VerseIDSequence, the total number of rows, records, in the Bible..Scripture table. The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_VerseIDSequence_Range CHECK (VerseIDSequence BETWEEN 1 AND 31102) will do the data integrity. As said earlier, although it is good to know the VerseIDSequence, but it is primarily used to decide the boundaries for scripture reference queries. The identity functionality which auto-increments, before inserting each row is useful, for ensuring this candidate primary key, abides by the entity integrity constraint; however, The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence) is supplementary.
-The Scripture_View BibleReference Column
-
-The SQL statement ((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3))) will combine the BookID, ChapterID, and VerseID. This is a convention for referring to Bible rows, by a unique identifier, which consists of the BookID, ChapterID, and VerseID. The leading zeros are placeholders for blocks of IDs, such as, BookID which will have two digits, ChapterID which will have three digits, and VerseID which will also have three digits. It is easier, faster, and more compact to restrict and order by numbers rather than text. Listed below, is the result set, for this SQL statement. SELECT ScriptureReference, BibleReference FROM Bible..Scripture_View WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
-ScriptureReference	BibleReference
-John 1:1	43001001
-
-There is a conversion page BibleReference.html. Please note, that the author has not developed this further, it is just an introduction and speculation, which others may wish to adopt.
-
-Most of the applications, extract information, and query the Scripture table. If the user chooses to, he may choose to load another Bible version, into the Scripture table and the application will still work as usual, and there will be no need to make changes to the application; thereby, achieving Separation of concerns (SoC).
-The Exact Table
-
-The Exact table's, primary task, is to tell, on the words that are in the Bible. Its information set include each word's first and last scripture reference occurrence(s), and count of occurrence(s). If the word, occurs only once, then the last occurrence is set to null. The incentive for writing the exact module comes from Dave Hunt, who will talk of each word's specifics, and Chuck Missler who noted that the first occurrence of the word, love is in Genesis 22:2. The exact table, is a holding area, for staging information; it could be argued that there is no need, to have this table, because it sources its information from the Scripture table, and it is available using Language Integrated Query. The reasoning of the author is that the Scripture table is static data, and it does not need processing, each time, there is a request. Speed and lower work load are the advantages of the approach of the author; its disadvantage is that the exact table needs re-population, when there is a shift to another Bible version, which the author does not project, at this time. If there is a need, to support another Bible version, then the Exact table loading procedure needs expansion to aid, this flexibility. The Exact result for the author's initials, KAA, is Karkaa, meaning floor (Joshua 15:3). Word Occurrences is dynamic, and it supports the other versions of the Bible.
-The Exact Table's ExactID Column
-
-The ExactID is an identity column, meaning the database, SQL Server, auto-increments its value, before insertion. There are 12891 unique words, in the Bible..Exact table. The SQL statement SELECT MAX(ExactID) FROM Bible..Exact is for determining the highest value. The SQL statement SELECT COUNT(BibleWord) FROM Bible..Exact is for determining the word count. The SQL statement ALTER TABLE Bible..Exact ADD CONSTRAINT CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891) is for the range restriction. For storage reason, the author has chosen, not to have a unique index, on this candidate primary key; in-spite, of it being a query item. Future implementation, may issue the SQL statement CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID) SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact is 789631; this is the sum of the words in the KJV Bible.
-The Exact Table's BibleWord Column
-
-These are the words that occur in the Bible, in the order of their occurrences. The author sets the primary key, the constraint, by issuing the SQL statement ALTER TABLE [dbo].[Exact] ADD CONSTRAINT [PK_Exact] PRIMARY KEY CLUSTERED ([BibleWord] ASC).
-The Exact Table's FirstOccurrenceScriptureReference Column
-
-This is the scripture reference where the word first occurs in the Bible. The author may set-up the relationship by issuing the SQL statement ALTER TABLE [dbo].[Exact] WITH CHECK ADD CONSTRAINT [FK_Exact_Scripture] FOREIGN KEY(FirstOccurrenceScriptureReference) REFERENCES dbo.Scripture (ScriptureReference). Please note, that as discussed earlier, the author cannot have, a unique constraint, on the Bible..Scripture.ScriptureReference column, since this is a computed column; the author can not keep up the relationship, at this time.
-The Exact Table's LastOccurrenceScriptureReference Column
-
-This is the reference to the scripture where the word last occurs in the Bible; if there is only one occurrence, the value of this entry is null. As with the FirstOccurrence column, the referential integrity rule applies.
-The Exact Table's Difference Column
-
-This is to measure the word's longevity; the difference in VerseIDSequence between when it first and last appeared.
-The Exact Table's Occurrence Column
-
-This is the pervasiveness of the word, how often is the word used in the Bible?
-The WordEngineering Database
-
-The WordEngineering SQL Server database, mainly consists, of four tables - HisWord, Remember, APass, ActToGod.
-The HisWord Table
-
-The HisWord table is what the author heard from the source. The entries in the HisWord table are exact and representable in alphanumeric format (Numbers 12:6-8). In following, the Bible's New Testament convention, where there are translations of Hebrew words to English which is being interpreted, (Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36); so also, there are translations of Yoruba words to English.
-
-There have been cases when the author cannot spell and fully comprehend what he heard. In such cases, and not dispose of the records, the author will partly enter what he heard. This impedance mismatch between what the speaker said and what the listener heard, rarely occurs with English words. But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases. The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets. The author requires a Yoruba dictionary and translator; a recent success is with the http://translate.google.com web page.
-
-The HisWord table's most important column, as the name suggests, is the word column, which is either English or Yoruba; or a mixture of both languages. The author will yield to the Holy Spirit in translating Yoruba words to English. From previous experience, this translation is not always the most right or relevant, and different words may contain the diacritic alphabets; therefore, introduce various meanings (1 Corinthians 12:30, 1 Corinthians 14). To account for the discrepancy in translation, the author sought help from the LORD. 2015-11-02T22:55:00 And, the merge, is the money, convert. 2015-11-03T02:17:00 The specifics, a language.
-
-The word column is a potential natural primary key, since duplicates are rare. When redundancies do occur, we may append the sequence to the word, to generate a unique word. We do this manually, but an insert trigger, will offer automation, and will cut the risk of primary key violation, which leads to gaps in the identity column.
-
-The HisWord's table, commentary column, contains implicit information. This communication is most likely non-verbal, and it is information such as creatures standing or moving towards particular locations or engaging in other visible activities.
-
-As such, from the creation account, on the first day, there is a commandment, and there may be an action/response. The commandment is in the word column God created light ( Genesis 1:3, 5 ). The action is in the commentary column; God separated the light from the darkness (Genesis 1:1-2, 4).
-
-SQL Server generates sequential numbers for the HisWordID identity column. The goodness of this technique is that it is a candidate primary key, data loss is trackable, and it provides a sort key. The HisWordID column may serve as the primary and/or foreign key, the backbone of the Referential Integrity Constraint.
-
-The Dated column is of the DateTime type. If an insert statement does not explicitly specify a value for the dated column, then it defaults to the current date and time of the (UTC-08:00) Pacific Time (US & Canada) time zone. There is a preference for the Coordinated Universal Time (UTC)	format.
-
-A relational constraint limit to a unique foreign key? The author will choose either the most vivid or rare?
-HisWord_view
-
-The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. For example, the places of alphabet A and a is 1; and the places of alphabet Z and z is 26. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
-The Remember Table
-
-The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
-
-When the author references the time, then the date is a ratio of the Common Era.
-APass
-
-First, inside and last dates.
-ActToGod
-
-This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 "Data Structures and Algorithm Analysis"
 
 The exact-match query is to search for a single Bible book, chapter, or verse. In the case of a verse, the top 1 clause is appropriate to efficiently return a single record. The range query is to search for information within a boundary.
@@ -954,13 +890,6 @@ How are names issued Biblically?
     Family naming, such as, Eve, Cain, Seth (Genesis 3:20, Genesis 4:1, Genesis 4:25)
 
 The word is the author's file naming convention.
-"
-Application Programming Interface (API)
-" (Consumer-Centric API Design)
-
-    The common url scheme, endpoint, that the author prefers for security reasons is https://e-comfort.ephraimtech.com/WordEngineering
-    The Top Level Domain (TLD) is the same for both the website and the API; therefore, allow for sharing of cookies.
-
 Results and Discussion
 
 The information in the Bible, written, thousands of years ago, is true and applicable, today; the words heard by the author is consistent and it correlates with the Biblical theme. It was Me. I was telling you.
@@ -979,6 +908,73 @@ Country?
 
     British prospect.
 
+Alphabets and digits. There are 51 occurrences of the word, count, in the King James Version (KJV) Gospel. Word 	Count 	Scripture Reference
+Account 	3 	Mattdew 12:36, Mattdew 18:23, Luke 16:2
+Accounted 	4 	Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24
+Counted 	2 	Mattdew 14:5, Mark 11:32
+Countetd 	1 	Luke 14:28
+Countenance 	3 	Mattdew 6:16, Mattdew 28:3, Luke 9:29
+Countries 	1 	Luke 21:21
+Country 	37 	Mattdew 2:12, Mattdew 8:28, Mattdew 9:31, Mattdew 13:54, Mattdew 13:57, Mattdew 14:35, Mattdew 21:33, Mattdew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
+
+Why numbers are preferred? Word 	Scripture Reference
+Divine 	Genesis 41:32
+Alphanumeric
+Multi-Lingual 	Psalms 81:5
+
+What events in Abraham's life are additions? Word 	Commentary 	Scripture Reference
+Partner 	Sarah, Hagar, Keturah 	Genesis 11:29
+Pilgrimage 	Canaan 	Genesis 12:1-5
+Guidian 	Lot 	Genesis 12:4-5
+Possessional Blessing 		Genesis 14:19
+Faith 	Belief in God, counted for righteousness 	Genesis 15:6
+Covenant 	Abrahamic 	Genesis 15:18
+Seed 	Ishmael and Isaac 	Genesis 16:11
+Name change 	From Abram to Abraham 	Genesis 17:5
+Making mention at ages 	75 years old when he departed out of the land of Haran, had lived in Canaan for 10 years, 86 years old when Hagar bare Ishmael to Abram, 99 years old God's request to walk before Him and be perfect, 100 years old gave birth to Isaac, 175 years lived 	Genesis 12:4, Genesis 16:3, Genesis 16:16, Genesis 17:1, Genesis 21:5, Genesis 25:7
+
+A remembrance of Himself in us? Word 	Commentary 	Scripture Reference
+Shema 	The term remember occurs 210 times in the KJV Bible. 	Deuteronomy 6:4–9
+Passover Lamb 		John 1:29, John 1:36
+10 Commandments 	The 10 Commandments are separated into love for God and your fellow man like yourself. 	Exodus 20:2–17, Deuteronomy 5:6–21
+Prophecy and Fulfillment 		Daniel 9:2
+Book of the Law 		Joshua 1:8
+Deuteronomy 	The title of the last book of Moses means remembrance. 	Exodus 20:2–17, Deuteronomy 5:6–21
+Sabbath-Day and Festivals 	Periodic anniversaries of His work. 	Exodus 20:11
+Remember Lot's wife. 		Luke 17:32
+
+How-to have association ... with guidance? Word 	Scripture Reference
+Greatly beloved 	Daniel 9:23, Daniel 10:11, Daniel 10:19
+Birthright 	Daniel 1:3-4
+Marital bestowment 	Ruth 2:10
+
+"
+How does the work of the author accompany the Bible?
+" (Dive into Deep Learning)
+The Terminology of Machine Learning in Relation to AlphabetSequence Term	Meaning
+Training dataset or training set	The recording of the word in the database.
+Example (or data point, data instance, sample)	Each database row or record.
+Predict Label (or target)	The corresponding Bible text.
+Linearity assumption	The features alphabet places.
+Weight	Since the word is the only feature, it is the only influence.
+Bias	A starting value.
+"
+Object Oriented Programming - GetAPage.html
+" (LOOPE Lingo Object Oriented Programming Environment)
+
+A type of us; is a kind of us? GetAPage.html is Bible specific.
+Parent Scripts and Objects
+
+GetAPage.html contains the HTML5 directive, head, and body sections. The head section contains the title and meta tags for search-engine optimization (SEO). The 3 languages that make up a web page are in the following order: CSS, HTML, JavaScript.
+
+HTML is an element's nodes. There are only single instances of the input and submit elements. There are multiple div containers for the result sets. Although HTML supports attributes, the ID attribute is the author's only general declaration.
+
+Both CSS and JavaScript act on HTML tags. JavaScript and CSS render the contents of HTML.
+
+There are minute uses of global variables. The author discourages this, because of encapsulation and debugging traceability and granularity.
+Naming Conventions
+
+JavaScript relaxes variable declarations. Variables do not need explicit declaration, and these declarations are redefinable. In spite of this, the author is judicious about variables. The data- attribute is user customizable.
 " The author acknowledges positive bias in his work. Sometimes the author collaborates with what is said to him. The author may add reinforcement to his word. The author values the population average over the sampling average. For example, the Bible is complete, but the work of the author is on-going. " (Andrew Kelleher). " Causation versus (VS) Correlation? Let the involvement of a personal self; resemble the involvement of a useful self. " (Adam Kelleher). " Bias? Being the other? " (Adam Kelleher).
 
 What describes people? Word 	Commentary 	Scripture Reference

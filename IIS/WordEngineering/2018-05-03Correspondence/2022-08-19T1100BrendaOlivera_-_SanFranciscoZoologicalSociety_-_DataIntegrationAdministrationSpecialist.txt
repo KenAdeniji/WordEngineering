@@ -17,8 +17,8 @@ The business application include:
 Lessons Learnt:
 	I have learnt to listen intently, prior to attributing blame.
 	With data cleansing, I implore us to know the source of bad data? Who is inputting the data?
-		Does the vendor have data definition language (DDL) to pre-empt this?
-			Data type: String, number, date, logic boolean?
+		Does the vendor have data definition language (DDL) to pre-empt data corruption?
+			Data type and size: String, number, date, logic boolean?
 			Not nullable? Can not be empty?
 			Range check: Visiting fee must be greater than zero? Date must exceed the zoo's opening date.
 			Check constraints, for schedule, dated from must precede dated until.
