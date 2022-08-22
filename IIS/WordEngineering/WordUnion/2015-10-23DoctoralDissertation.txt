@@ -51,29 +51,6 @@ Introduction
 Word 	Commentary 	Scripture Reference	
 Re-locate 	My Yoruba tribal name is Kehinde, meaning the second-born of the twins. Is life a comprehension of how further we are separated? 	Genesis 4:1-17, Genesis 19:30-38, Genesis 25:19-34
 
-Who, what, when, where, why?
-Who
-
-The author gives credence to the information source. Whenever it is possible, the author identifies the speaker. If the source is attributable to him, the author rarely explicitly identifies himself.
-
-What
-
-The primary contribution of the author is the word. The author draws upon the word of God and tries to derive meaning.
-
-When
-
-God gives most of His information in a dream, vision or face-to-face.
-
-How do people place date? On each day of the week ( Genesis 1-2 )? Senior comes first ( John 1:15, John 1:27, John 1:30 ).
-
-Where
-
-The author refers to the physical location or scenery of participation.
-
-Why
-
-The endeavor of the author is to share the word.
-
 The incentives to begin work on WordEngineering will include:
 
     Taking example from the Bible ( Daniel 9:2, Genesis 18:19, Job 23:12 ).
@@ -181,8 +158,7 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
-
-The author prescribes the steps below to begin database set-up and usage:
+The author prescribes the steps below to begin database set-up and usage
 
     Acquire a database management system (DBMS). Various varieties of DBMS are available. The user may download a DBMS, get a compact disc, or select from the cloud.
     Install a DBMS.
@@ -208,13 +184,6 @@ The author manually indexes according to the following progression:
     The Exact table is an index of the words in the King James Version (KJV) of the Bible.
     The source of information is in the bibliography section.
 
-"
-Programming
-" (Microsoft)
-The Author Programs in the Following Tiers and Languages Tier 	Language 	Commentary
-Front-End Browser 	HyperText Markup Language (HTML), Javascript, Cascading Style Sheet (CSS) 	The front-end code may run on a desktop, laptop, or mobile telephone that offers a user interface (UI). The task is to accept the user query and to display the result. Initially, as a novice programmer, the author wrote specific code for each user request; later, the author rests on generic code which will handle multiple variety of requests. This is high-level programming, and the skill-set entry level is minimal. The author also believes that the users should not require any formal training to use his work. Customization is achievable by varying the request options, such as entry form selections, query arguments, or data attributes.
-Middle-Tier Application 	C#, Embedded-SQL 	For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the experience of the author is with Microsoft Visual Studio and command-line tools.
-Server-Side Backend 	Standard Query Language (SQL) 	The author most recent experience is with the Sybase and Microsoft Transact-SQL assortment. Now a days, to be compatible and after experimentation; the author rarely uses Standard Query Language - Common Language Runtime (SQL-CLR). The author does database data entry, maintenance, development by using the Microsoft SQL Server Management Studio.
 The Author Uses the Git Code Repository Key 	Value 	Commentary
 Universal Resource Identifier (URI) 	github.com/KenAdeniji 	This is the home page for storing the repositories.
 Date Created 	2013-04-27 	This is the date of creating the github.com account.
@@ -229,6 +198,13 @@ Accessibility
     The author does not duplicate hyperlinks
     The user may solely use the keyboard navigation to tab between the various controls, this substitutes for the taborder attribute. The autofocus attribute is for setting the cursor on the first input control.
 
+"
+Programming
+" (Microsoft)
+The Author Programs in the Following Tiers and Languages Tier 	Language 	Commentary
+Front-End Browser 	HyperText Markup Language (HTML), Javascript, Cascading Style Sheet (CSS) 	The front-end code may run on a desktop, laptop, or mobile telephone that offers a user interface (UI). The task is to accept the user query and to display the result. Initially, as a novice programmer, the author wrote specific code for each user request; later, the author rests on generic code which will handle multiple variety of requests. This is high-level programming, and the skill-set entry level is minimal. The author also believes that the users should not require any formal training to use his work. Customization is achievable by varying the request options, such as entry form selections, query arguments, or data attributes.
+Middle-Tier Application 	C#, Embedded-SQL 	For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the experience of the author is with Microsoft Visual Studio and command-line tools.
+Server-Side Backend 	Standard Query Language (SQL) 	The author most recent experience is with the Sybase and Microsoft Transact-SQL assortment. Now a days, to be compatible and after experimentation; the author rarely uses Standard Query Language - Common Language Runtime (SQL-CLR). The author does database data entry, maintenance, development by using the Microsoft SQL Server Management Studio.
 JavaScript Basics: Data Types
 
     JavaScript supports three keywords for declaring variables. These are the var, let, const keywords.
@@ -446,8 +422,8 @@ Images:
     The author does not use CSS sprite; since it requires additional storage space
     The author does not use Data URIs
     The author does not support nor take advantage of Expires Headers
+    This research excludes compression and minification; because the file sizes are low and technology conformity
 
-Does not use compression nor minification; because the file sizes are low and technology conformity.
 Code Statistics
 Al Danial's Cloc
 
@@ -523,8 +499,8 @@ Application Programming Interface (API)
 " (Consumer-Centric API Design)
 
     The common url scheme, endpoint, that the author prefers for security reasons is https://e-comfort.ephraimtech.com/WordEngineering
-    The Top Level Domain (TLD) is the same for both the website and the API; therefore, allow for sharing of cookies.
-    Content Located at the Root: The practice of the author is to place the website and their reliable API files in the same directories, as they are joinable. The author will not uniquely treat API files. The author makes a case for directory browsing, and there is a special help documentation file.
+    The Top Level Domain (TLD) is the same for both the website and the API, thereby allowing for sharing of cookies.
+    Content Located at the Root: The practice of the author is to place the website and their companion API files in the same directories, as they are joinable. The author will not uniquely treat API files. The author makes a case for directory browsing, and there is a special help documentation file.
     Microsoft released ASP.NET MVC on December 10, 2007. http://stackoverflow.com/questions/41906110/designing-rest-api-endpoints-path-params-vs-query-params	When does one single hope divide all?
     Out of the Create, Read, Update, and Delete (CRUD) 4 operations, the API only supports the HTTP read, SQL select statement.
     Filtering Resources: SQL offers a column list, where, top, limit, and order by clauses for matching data.
@@ -553,7 +529,7 @@ Problem
 When we hear the word, how do we endeavor in Him?
 Function, Input, and Output
 
-The input is the word as the only parameter. Our output is how we find meaning in the word of God. The response of the computer is within the range of the result set.
+The input is the word as the only parameter. The output will find meaning in the word of God. The response of the computer is within the range of the result set.
 Sets and Relations
 
 The alphabets and words make-up the author's work. The composition of the words is indefinite.
@@ -675,6 +651,29 @@ The Twelve-Factor App
         The tools gap: The author prefers the stable infrastructure to the fly-by-night trends. Testing on the multiple operating systems and the various programming languages reflects the author's wish for compatibility. Prior to advent of the Internet, communication did not support a worldwide trend; therefore, the need for distributing scaling, that is remote applications depending on the scarce resources.
     Logs: The author logs exceptions, that is, viewable in the Event Viewer. The author displays error messages to the user, the .NET Framework determines the detail, and the localhost address offers in-depth perculiarities.
     Adminstration processes: These are one-off tasks that the environment demands of the knowledge worker. The tools are available everywhere for achieving the goal. Prior to graphical user interface (GUI), these are command-line responsibilities.
+
+Who, what, when, where, why?
+Who
+
+The author gives credence to the information source. Whenever it is possible, the author identifies the speaker. If the source is attributable to him, the author rarely explicitly identifies himself.
+
+What
+
+The primary contribution of the author is the word. The author draws upon the word of God and tries to derive meaning.
+
+When
+
+God gives most of His information in a dream, vision or face-to-face.
+
+How do people place date? On each day of the week ( Genesis 1-2 )? Seniority comes first ( John 1:15, John 1:27, John 1:30 ).
+
+Where
+
+The author refers to the physical location or scenery of participation.
+
+Why
+
+The endeavor of the author is to share the word.
 
 Artificial Intelligence
 Deep Learning
@@ -1207,7 +1206,7 @@ How do you, reference the Bible?
 
 What is the certaincy of the word:
 
-    When the author hears a word and there is a reference to a place in the Bible, it affirms its relevance to the Scripture.
+    When the author hears a word and there is a reference to a place in the Bible, this affirms the word's relevance to the Scripture.
     Grammatically correctness is also vital.
     If a word correlates with a historical event, then it is credible.
     When the Spirit leads and guides towards an utterance ( Matthew 10:19-20 ).
