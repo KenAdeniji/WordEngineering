@@ -29,44 +29,10 @@
 					<td><select id="bibleVersion"></select></td>
 				</tr>	
 				<tr>
-					<td><label for="collate">Scripture Reference Concatenate Display:</label></td>
-					<td><input type="checkbox" id="collate" onclick="combine();"/></td>
-				</tr>
-				<tr>
-					<td><label for="join">Scripture Reference Join Display:</label></td>
-					<td>
-						<input type="checkbox" id="joined" onclick="together();" checked/>
-					</td>
-				</tr>
-				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
-		</div>
-		<div align="center">	
-			<table>
-				<tr>
-					<td align="center">
-						<label for="versesCount">Verse(s) count:</label>
-						<label id="versesCount"></label>
-					</td>
-				</tr>	
-				<tr>
-					<td>
-						<div id="resultTable"> </div>
-					</td>
-				</tr>	
-				<tr>
-					<td>
-						<div id="scriptureReferenceCollate" align="center"> </div>
-					</td>
-				</tr>	
-				<tr>
-					<td>
-						<div id="scriptureReferenceJoin" align="center"> </div>
-					</td>
-				</tr>	
-			</table>
+			<div id="resultTable"> </div>
 		</div>	
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
@@ -76,46 +42,12 @@
 			
 			const 	bibleVersionElement = document.getElementById("bibleVersion");
 			const 	bibleWordElement = document.getElementById("bibleWord");
-			const 	collateElement = document.getElementById("collate");
-			const 	logicElement = document.getElementById("logic");
-			const	joinedElement = document.getElementById("joined");
 			const	scriptureReferenceElement = document.getElementById("scriptureReference");
 			
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
 			const	resultTableElement = document.getElementById("resultTable");
-			const 	scriptureReferenceCollateElement = document.getElementById("scriptureReferenceCollate");
-			const 	scriptureReferenceJoinElement = document.getElementById("scriptureReferenceJoin");
 
-			const	versesCountElement = document.getElementById("versesCount");
-
-			function combine()
-			{
-				if (collateElement.checked)
-				{
-					let concatenate = scriptLiteral9432.scriptureReferenceConcatenate
-					(
-						resultTableElement,
-						0
-					);	
-					scriptureReferenceCollateElement.innerHTML = 
-						scriptLiteral9432.buildHyperlink("scriptureReference", concatenate);
-
-					scriptureReferenceCollateElement.style.display="block";
-				}
-				else
-				{
-					scriptureReferenceCollateElement.innerHTML = "";
-					scriptureReferenceCollateElement.style.display="none";
-				}
-			}
-
-			function together()
-			{
-				scriptureReferenceJoinElement.style.display = 
-					joinedElement.checked ? "block" : "none";
-			}
-			
 			function pageLoad()
 			{
 				if (isPostBack === false)
@@ -137,24 +69,6 @@
 							bibleWordElement.value = bibleWordValue;
 						}	
 						
-						var collateValue = urlParams.get("collate");
-						if (collateValue === null)
-						{
-							collateValue = "";
-						}
-						var collateLowerCaseValue =  collateValue.toLowerCase();
-						var collateChecked = (collateLowerCaseValue === "true") ? true : false;
-						collateElement.checked = collateChecked;
-
-						var joinedValue = urlParams.get("joined");
-						if (joinedValue === null)
-						{
-							joinedValue = "";
-						}
-						var joinedLowerCaseValue =  joinedValue.toLowerCase();
-						var joinedChecked = (joinedLowerCaseValue === "true") ? true : false;
-						joinedElement.checked = joinedChecked;
-
 						var scriptureReferenceValue = urlParams.get("scriptureReference");
 						if (scriptureReferenceValue)
 						{
@@ -201,8 +115,6 @@
 							"ResponseText: " + xhr.responseText;
 					} 
 				});
-
-				combine();
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
