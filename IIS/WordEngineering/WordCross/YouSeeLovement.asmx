@@ -58,7 +58,12 @@ public class YouSeeLovementWebService : System.Web.Services.WebService
 	}
 	
 	public const String SelectQuery = @"
-		SELECT *
+		SELECT 
+			BibleDictionaryWord AS BibleWord,
+			BibleDatabaseEastonCommentary AS Easton,
+			BibleDatabaseHitchcockBiblicalNameCommentary AS Hitchcock,
+			BibleFoundationNaveTopicalBibleCommentary AS Nave,
+			BibleFoundationRATorreyTheNewTopicalTextBookCommentary AS RATorrey
 		FROM BibleDictionary..BibleDictionary_View
 		WHERE BibleDictionaryWord IN ({0})
 		ORDER BY BibleDictionaryWord
