@@ -49,3 +49,15 @@ git add        IIS/WordEngineering/WordCross/WhereDoesTheNextOccurrence.asmx
 git add        IIS/WordEngineering/WordCross/WhereDoesTheNextOccurrence.html
 git add        IIS/WordEngineering/WordCross/WhereDoesTheNextOccurrenceArchive.asmx
 git add        IIS/WordEngineering/WordCross/WhereDoesTheNextOccurrenceArchive.html
+
+git add		   IIS/WordEngineering/WordUnion/9432.js
+git add        IIS/WordEngineering/WordUnion/9432Archive.js
+git add        IIS/WordEngineering/bin/InformationInTransit.dll
+git add        InformationInTransit/InformationInTransit.dll
+
+git add        IIS/WordEngineering/WordCross/YouSeeLovement.asmx
+git add        IIS/WordEngineering/WordCross/YouSeeLovement.html
+git add        IIS/WordEngineering/WordCross/YouSeeLovementArchive.asmx
+git add        IIS/WordEngineering/WordCross/YouSeeLovementArchive.html
+git add        InformationInTransit/ProcessCode/YouSeeLovement.Archivecs
+git add		   InformationInTransit/ProcessCode/YouSeeLovement.cs

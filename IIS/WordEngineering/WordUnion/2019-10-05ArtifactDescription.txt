@@ -823,6 +823,8 @@ The YourGirlSheIsInTrueTips.html will accept a percentage and present a scriptur
 
 The YourIDOrWhatDoYouWriteYourCommonID.html will accept a scripture reference, and selection; and it will reverse-engineer the AlphabetSequenceIndexScriptureReference.
 
+Input scripture reference and Bible version, output Bible Word YouSeeLovement.html
+
 The YouStartFormingYourOwnExample.html queries the URL based on the query selector.
 AlphabetSequence Language Implementation
 AlphabetSequence.cpp

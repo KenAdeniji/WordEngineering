@@ -87,6 +87,7 @@
 	2022-01-04	retrieveSelectionIndex()
 	2022-08-06T12:36:00	scriptureReferenceConcatenate()
 		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
+	2022-08-24	scriptLiteral9432.renderDataTable(dataTable, "resultSet"); Added rowColumn() parameter argument.
 */
 
 var scriptLiteral9432 =
@@ -1566,105 +1567,6 @@ var scriptLiteral9432 =
 		return div.textContent;
 	},
 	
-	renderData: function(data, dataID)
-	{
-		var dataRow = null;
-		var dataTable = null;
-		var cellContent = null;
-		var cellName = null;
-		var cells = "";
-		var info = "";
-		var detailKeys = null;
-		var detailRow = null;
-		var value = null;
-		
-		info += "<table id='" + dataID + "'>";
-
-		var occurrences = data.length;
-		var caption = "<caption>Occurrences: " + occurrences + "</caption>";
-		
-		info += caption;
-		
-		dataTable = data;
-		
-		if (dataTable.length < 1)
-		{
-			return "";
-		}	
-
-		dataRow = dataTable[0];
-		
-		dataKeys = Object.keys(dataRow);
-		for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
-		{
-			cells += "<th>" + dataKeys[dataIndex] + "</th>";
-		}
-		
-		info += "<thead><tr>" + cells + "</tr></thead><tbody>";
-		
-		for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
-		{
-			dataRow = dataTable[rowIndex];
-			cells = "";
-	
-			for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
-			{
-				cellName = dataKeys[dataIndex];
-				cellContent = dataRow[cellName];
-				
-				if (!cellContent)
-				{
-					cellContent = "";
-				}
-				
-				if (cellName.includes("ContactID"))
-				{
-					//jsonData = '{"bibleWord":"' + answer + '", "wholeWords":' + true + '}';
-					var jsonData = '{"contactID":' + dataRow["ContactID"] + '}';
-					cellContent = scriptLiteral9432.buildHyperlinkJSON
-					(
-						"/WordEngineering/WordGroup/PaulWhoCouldTalkAboutYouIndividualProsperity.html",
-						jsonData
-					);
-
-				}
-				else if (cellName.includes("ScriptureReference"))
-				{
-					cellContent = scriptLiteral9432.buildHyperlink("scriptureReference", cellContent);
-				}		
-				else if (cellName.includes("BibleWord")) //2018-05-06 BodyPart.asmx
-				{
-					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
-				}		
-				else if (cellName.includes("URI")) //2018-06-21 ResumeAid.asmx
-				{
-					
-					cellContent = 	"<a href='"  //2018-09-10 prefix http
-									+ (cellContent.includes("http") ? cellContent : "http://" + cellContent) 
-									+ "'>" + cellContent + "</>";
-				}		
-				else if (cellName.includes("Actor")) //2021-11-08T13:49:00 DiscoverPowerShell.asmx
-				{
-					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
-				}		
-				cells += "<td>" + cellContent + "</td>";
-			}
-
-			info += "<tr>" + cells + "</tr>";
-		}
-			
-		info += "</tbody></table>";
-		
-		info += `<button onclick="scriptLiteral9432.exportTableToCSV('${dataID}')">Export to CSV</button>`
-	
-		info += `<button onclick="scriptLiteral9432.exportTableToJSON('${dataID}')">Export to JSON</button>`
-
-		info += `<button onclick="scriptLiteral9432.exportTableToXML('${dataID}')">Export to XML</button>`
-	
-		return info;
-	},	
-	
-	
 	downloadFile: function(csv, filename, fileType) 
 	{
 		var csvFile;
@@ -1769,8 +1671,117 @@ var scriptLiteral9432 =
 
 		return xml;
     },
+
+	renderData: function(data, dataID, rowColumn)
+	{
+		var dataRow = null;
+		var dataTable = null;
+		var cellContent = null;
+		var cellName = null;
+		var cells = "";
+		var info = "";
+		var detailKeys = null;
+		var detailRow = null;
+		var value = null;
+		
+		info += "<table id='" + dataID + "'>";
+
+		var occurrences = data.length;
+		var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+		
+		info += caption;
+		
+		dataTable = data;
+		
+		if (dataTable.length < 1)
+		{
+			return "";
+		}	
+
+		dataRow = dataTable[0];
+		
+		dataKeys = Object.keys(dataRow);
+		
+		if ( !rowColumn )
+		{
+			for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+			{
+				cells += "<th>" + dataKeys[dataIndex] + "</th>";
+			}
+		}
+		
+		info += "<thead><tr>" + cells + "</tr></thead><tbody>";
+		
+		for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+		{
+			dataRow = dataTable[rowIndex];
+			cells = "";
 	
-	renderDataSet: function(data, containerID)
+			for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+			{
+				cellName = dataKeys[dataIndex];
+				cellContent = dataRow[cellName];
+				
+				if (!cellContent)
+				{
+					cellContent = "";
+				}
+				
+				if (cellName.includes("ContactID"))
+				{
+					//jsonData = '{"bibleWord":"' + answer + '", "wholeWords":' + true + '}';
+					var jsonData = '{"contactID":' + dataRow["ContactID"] + '}';
+					cellContent = scriptLiteral9432.buildHyperlinkJSON
+					(
+						"/WordEngineering/WordGroup/PaulWhoCouldTalkAboutYouIndividualProsperity.html",
+						jsonData
+					);
+
+				}
+				else if (cellName.includes("ScriptureReference"))
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("scriptureReference", cellContent);
+				}		
+				else if (cellName.includes("BibleWord")) //2018-05-06 BodyPart.asmx
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
+				}		
+				else if (cellName.includes("URI")) //2018-06-21 ResumeAid.asmx
+				{
+					
+					cellContent = 	"<a href='"  //2018-09-10 prefix http
+									+ (cellContent.includes("http") ? cellContent : "http://" + cellContent) 
+									+ "'>" + cellContent + "</>";
+				}		
+				else if (cellName.includes("Actor")) //2021-11-08T13:49:00 DiscoverPowerShell.asmx
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
+				}
+				if (rowColumn && cellContent)
+				{	
+					cells += `<tr><td>${cellName}</td><td>${cellContent}</td></tr>`;
+				}
+				else
+				{	
+					cells += "<td>" + cellContent + "</td>";
+				}	
+			}
+
+			info += "<tr>" + cells + "</tr>";
+		}
+			
+		info += "</tbody></table>";
+		
+		info += `<button onclick="scriptLiteral9432.exportTableToCSV('${dataID}')">Export to CSV</button>`
+	
+		info += `<button onclick="scriptLiteral9432.exportTableToJSON('${dataID}')">Export to JSON</button>`
+
+		info += `<button onclick="scriptLiteral9432.exportTableToXML('${dataID}')">Export to XML</button>`
+	
+		return info;
+	},	
+	
+	renderDataSet: function(data, containerID, rowColumn)
 	{
 		var	info = "";
 		var tableID = "";
@@ -1781,7 +1792,7 @@ var scriptLiteral9432 =
 		for (var table in data) 
 		{
 			tableID = containerID + tableIndex;
-			info += scriptLiteral9432.renderData(data[table], tableID);
+			info += scriptLiteral9432.renderData(data[table], tableID, rowColumn);
 			++tableIndex;
 		}
 		
@@ -1799,11 +1810,11 @@ var scriptLiteral9432 =
 		}
 	},
 	
-	renderDataTable: function(data, containerID)
+	renderDataTable: function(data, containerID, rowColumn)
 	{
 		var tableID = containerID + 0;
 		//var info = scriptLiteral9432.renderData(data["Table"], tableID);
-		var info = scriptLiteral9432.renderData(data, tableID);
+		var info = scriptLiteral9432.renderData(data, tableID, rowColumn);
 		document.getElementById(containerID).innerHTML = info;
 		tsorter.create(tableID);
 		//scriptLiteral9432.selectTableRow(tableID);
