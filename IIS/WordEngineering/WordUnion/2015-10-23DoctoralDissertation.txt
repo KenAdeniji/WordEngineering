@@ -158,6 +158,20 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+Data Cleansing
+
+    Is the source of bad data input our employees, on-line users, or error in programming? He doesn't envision error in reference data.
+    Does the vendor have data definition language (DDL) to pre-empt data corruption?
+        Data type and size: String, number, date, logic boolean?
+        Not nullable? Can not be empty?
+        Range check: Fees must be greater than zero? Dates of activities must be after the establishment creation date.
+        Check constraints, for schedule, dated from must precede dated until.
+        Non-surrogate primary and foreign keys with unique indexes help to ascertain data.
+        Default columns are probable system generated that the users may leave unfilled that are available from sequence, identity, system clock.
+    Is the data incomplete, such as abbreviation, for example CA or California, telephone numbers without country or area code?
+    Is it data manipulation language (DML) deadlock, arrangement of data modification? Transaction commit or rollback? Cascade?
+    Duplicate entries are isolatable by using the group by clause.
+
 The author prescribes the steps below to begin database set-up and usage
 
     Acquire a database management system (DBMS). Various varieties of DBMS are available. The user may download a DBMS, get a compact disc, or select from the cloud.
@@ -897,6 +911,8 @@ This research does not limit itself to a particular Bible subject nor word. But,
 
 The author will want a conciliation with time?
 
+AlphabetSequence is a novice attempt to tie what the author hears to the Bible. As one reads the Bible, they have a more familiar method of communicating. As we begin today, how can we let tomorrow?
+
 That is what we are trying to say, how can we make ample use of time? Word of God. Word from God? The commentary is a human interpretation. You can fit more into time, by making a luxury of time. Why do we have to repeat the meaning in our words? Bible dictionary and commmentary. As a result of who are we? When does the scenario introduce God ( Genesis 3:8 )?
 
 Country?
@@ -1268,9 +1284,10 @@ He said and He did. Word work (Genesis 11:1-9). At the beginning of WordEngineer
 Lessons Learnt
 
     Esteem word: Leading up-to 2008-03-07, I was not fully recording the word of the LORD (Job 23:12).
-    I used to ask God for a word? To realize where my opinion lies? Other name? When among the people, I have chosen Myself. Have names? I could continue to reference the Bible, and get keywords from stories and place these in tables? Without explanation. Where is essentially the type I live?
+    I used to ask God for a word? To realize where my opinion lies? Acceptable to You, is what You have given. That is what my knowledge gives me. Other name? When among the people, I have chosen Myself. Have names? I could continue to reference the Bible, and get keywords from stories and place these in tables? Without explanation. Where is essentially the type I live?
     People have asked me how I do my work? My twin sibling calls my work, data entry. I start my day, electronically recording the activities of the previous night. The bare minimal requirement is an editor, but I now use a database. I have always contemplated whether I should personally store my information, or look for a cloud provider? Build or buy? Another thing of note is storage? How often should I backup and archive my memory and to where? What is in random access memory (RAM) may be lost when there is power loss or when the application or computer shuts down for any reason. What is on the hard disk may be lost when the computer does not start, or there is a viral and intruder attack. How do we resume our work ( 1 Samuel 25:28 )? Needs to be met?
     The author will record the publishing and receipt.
+    O mo Bunmi, Clari re. You know Bunmi, Clari is this. We are inside a building and we heard that food is being giving away at West. I jumped down multiple rocks. There is a team to the South East and either Beni or Buki and their friends are sitting at Center. 04:27 Dizzy sleepy. 20:13 Beni or Buki, I forget who? I grew up with them, but I am no longer associated with them. Nuclear or extended family?
     What past the time ( Isaiah 61:2, Luke 4:19 )?
     What is in use?
     That chooses I. When I read the Bible, I adapt to the role I take.

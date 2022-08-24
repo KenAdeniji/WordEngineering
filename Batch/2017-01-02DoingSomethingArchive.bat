@@ -137,8 +137,9 @@ BACKUP DATABASE Msdb TO DISK = 'e:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WIT
 BACKUP DATABASE AManDevelopedInAll TO DISK = 'e:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
 
 :DbccCheckIdent
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 22489);
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 19000);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 24539);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..EmailAddress', RESEED, 22139);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 24539);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 12588);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
@@ -149,13 +150,13 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 59400);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 59417);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1164);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1182);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 3586);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12747);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12814);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -167,7 +168,7 @@ DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
-DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1718);
+DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1782);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1504);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);

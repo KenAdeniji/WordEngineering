@@ -24,9 +24,12 @@ Lessons Learnt:
 			Check constraints, for schedule, dated from must precede dated until.
 			Primary and foreign keys with unique indexes help to ascertain data.
 			Default columns are probable system generated that the users may leave unfilled that are available from sequence, identity, system clock.
-		Is the source of error our employees or on-line users?
+		Is the source of bad data input our employees, on-line users, or error in programming?
 		Is the data incomplete, such as abbreviation, for example CA or California, telephone numbers without country or area code?
-		Is it data manipulation language (DML) deadlock, arrangement of data modification?
+		Is it data manipulation language (DML) deadlock, arrangement of data modification? 
+			2022-08-21T17:14:00 Transaction commit or rollback?
+			2022-08-21T17:14:00	Cascase?
+		Duplicate entries are isolatable by using the group by clause.
 		Steps to correction, schedule outside business hours, take backup?
 	I will ask SFZoo to investigate, and if need be, migrate?
 	There can be no use without determination.
