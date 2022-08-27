@@ -34,7 +34,7 @@
 							id="sourceAddress"
 							type="url"
 							style="width: 55vw;"
-							value="/WordEngineering/Resume/KenAdenijiResume.html"
+							value="/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html"
 						/>
 					</td>
 				</tr>
@@ -149,46 +149,40 @@
 			{
 				frameInfoElement.srcdoc = sourceContentElement.value;
 				
-				var resultInfo = "";
+				var resultInfo = "<table><tbody>";
 				var nodeInfo = "";
-				
-				var queryFindLowerCase = queryFind.value.toLowerCase();
-				
-				var children;
 				
 				var findLocation = -1;
 				
 				var mixedData = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
-				if (mixedData.hasChildNodes()) 
+				var children = mixedData.querySelectorAll("*");
+
+				for (const node of children) 
 				{
-					children = mixedData.childNodes;
-					children = mixedData.querySelectorAll("*");
-					for (const node of children) 
+					if (node.textContent == null)
 					{
-						if (node.textContent == null)
-						{
-							continue;
-						}	
-						if (!node.textContent)
-						{
-							continue;
-						}	
+						continue;
+					}	
+					if (!node.textContent)
+					{
+						continue;
+					}	
 
-						nodeInfo = node.textContent.trim().toLowerCase();
+					nodeInfo = node.textContent.trim();
 
-						findLocation = nodeInfo.indexOf(queryFindLowerCase);
-						
-						if 
-						(
-							findLocation === -1
-						)
-						{
-							continue;
-						}
-
-						resultInfo += nodeInfo + "<br/>";
+					findLocation = nodeInfo.toLowerCase().indexOf(queryFindElement.value.toLowerCase());
+					
+					if 
+					(
+						findLocation === -1
+					)
+					{
+						continue;
 					}
+
+					resultInfo += `<tr><td>${nodeInfo}</td><tr/>`;
 				}
+				resultInfo += "</tbody></table>";
 				resultSetElement.innerHTML = resultInfo;
 			}
 
