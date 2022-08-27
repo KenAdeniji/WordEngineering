@@ -85,16 +85,15 @@
 					{
 						sourceAddressElement.value = sourceAddressParam;
 					}	
-					if (sourceAddressElement.value)
-					{
-						contentFetch();
-					}	
 
 					var datedParam = urlParams.get("dated");
 					datedElement.value = datedParam ? datedParam : todayTimezoneOffset();
 
-					contentFetch();
-					querySubmit();
+					if (sourceAddressElement.value)
+					{
+						contentFetch();
+						querySubmit();
+					}	
 
 					isPostBack = true;
 				}

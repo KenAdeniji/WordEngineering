@@ -19,6 +19,11 @@ using InformationInTransit.ProcessLogic;
 	2022-08-23T22:43:00	You see lovement.
 	2020-08-24	Created.	
 	2020-08-24T09:14:00	http://stackoverflow.com/questions/3575029/c-sharp-liststring-to-string-with-delimiter
+	2022-08-25			Albertsons Lucky, Charter Square,
+						car parking lot North West shopping cart station.
+						Please note that the amount of words is not extensible.
+						A possible solution is to use a table variable,
+						or determine WordID instead of BibleWood.
 */
 namespace InformationInTransit.ProcessCode
 {

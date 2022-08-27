@@ -61,3 +61,9 @@ git add        IIS/WordEngineering/WordCross/YouSeeLovementArchive.asmx
 git add        IIS/WordEngineering/WordCross/YouSeeLovementArchive.html
 git add        InformationInTransit/ProcessCode/YouSeeLovement.Archivecs
 git add		   InformationInTransit/ProcessCode/YouSeeLovement.cs
+
+git add        IIS/WordEngineering/WordCross/WhatWillYouFindThatPlace.html
+git add        IIS/WordEngineering/WordCross/WhatWillYouFindThatPlaceArchive.html
+
+git add        IIS/WordEngineering/WordCross/AssociatingAsALife.html
+git add        IIS/WordEngineering/WordCross/AssociatingAsALifeArchive.html

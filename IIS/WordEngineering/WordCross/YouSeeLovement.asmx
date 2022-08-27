@@ -48,7 +48,7 @@ public class YouSeeLovementWebService : System.Web.Services.WebService
 		
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			String.Format( SelectQuery, uniqueWords ),
+			String.Format(SelectQuery, uniqueWords),
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
