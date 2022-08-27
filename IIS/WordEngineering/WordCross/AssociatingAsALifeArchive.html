@@ -39,14 +39,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="queryKey">Query Key:</label></td>
-					<td><input id="queryKey" type="text"/></td>
+					<td><label for="queryFind">Find:</label></td>
+					<td><input id="queryFind" type="text"/></td>
 				</tr>
-				<tr>
-					<td><label for="queryValue">Query Value:</label></td>
-					<td><input id="queryValue" type="text"/></td>
-				</tr>
-
 				<tr>
 					<td><label for="sourceContent">Source Content:</label></td>
 					<td>
@@ -60,15 +55,14 @@
 					</td>
 				</tr>
 			</table>
-			<iframe id="frameInfo" <!--style="display:none" --> > 
+			<iframe id="frameInfo" style="display:none"> 
 			</iframe>
-			<div id="resultSet"></div>
+			<div id="resultSet" align="left"></div>
 		</div>
 		<script>
 			var isPostBack = false;
 			
-			const 	queryKeyElement = document.getElementById("queryKey");
-			const 	queryValueElement = document.getElementById("queryValue");
+			const 	queryFindElement = document.getElementById("queryFind");
 			const 	sourceAddressElement = document.getElementById("sourceAddress");
 	
 			const	sourceContentElement = document.getElementById("sourceContent");
@@ -97,16 +91,10 @@
 						contentFetch();
 					}	
 
-					var queryKeyParam = urlParams.get("queryKey");
-					if (queryKeyParam)
+					var queryFindParam = urlParams.get("queryFind");
+					if (queryFindParam)
 					{
-						queryKeyElement.value = queryKeyParam;
-					}	
-
-					var queryValueParam = urlParams.get("queryValue");
-					if (queryValueParam)
-					{
-						queryValueElement.value = queryValueParam;
+						queryFindElement.value = queryFindParam;
 					}	
 
 					if (sourceAddressElement.value)
@@ -164,10 +152,11 @@
 				var resultInfo = "";
 				var nodeInfo = "";
 				
-				var queryKeyLowerCase = queryKey.value.toLowerCase();
-				var queryValueLowerCase = queryValue.value.toLowerCase();
+				var queryFindLowerCase = queryFind.value.toLowerCase();
 				
 				var children;
+				
+				var findLocation = -1;
 				
 				var mixedData = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
 				if (mixedData.hasChildNodes()) 
@@ -184,20 +173,20 @@
 						{
 							continue;
 						}	
-						nodeInfo = node.textContent.toLowerCase();
-						console.log(nodeInfo);
-						/*
+
+						nodeInfo = node.textContent.trim().toLowerCase();
+
+						findLocation = nodeInfo.indexOf(queryFindLowerCase);
+						
 						if 
 						(
-							nodeInfo.indexOf(queryKeyLowerCase) === -1
-							&&
-							nodeInfo.indexOf(queryValueLowerCase) === -1
+							findLocation === -1
 						)
 						{
 							continue;
 						}
-						*/
-						resultInfo += nodeInfo;
+
+						resultInfo += nodeInfo + "<br/>";
 					}
 				}
 				resultSetElement.innerHTML = resultInfo;
