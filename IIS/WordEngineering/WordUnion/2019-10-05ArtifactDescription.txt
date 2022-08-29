@@ -62,6 +62,8 @@ The ArrangingAtPresent.html will compare the timing of Date of Birth (DOB), and 
 
 The AsIMadeMan.html will list the specified Bible calendar.
 
+The AssociatingAsALife.html will find word occurrences at a url.
+
 The As so the Scripture says.html will tabulate the various books that make-up the Bible; it sources its information set from BibleBook.xml, and it uses XMLHttpRequest.
 
 The AssociativeWords.html is word associative, finding the next or previous word. This is an example, and it is hoped that it will lead to greater exploration, of how words are relevant to one another; what provokes or precedes one word.
