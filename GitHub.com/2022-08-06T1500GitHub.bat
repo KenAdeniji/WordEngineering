@@ -70,3 +70,6 @@ git add        IIS/WordEngineering/WordCross/AssociatingAsALifeArchive.html
 
 git add 	   IIS/WordEngineering/2018-05-03Correspondence/2022-08-29adeniji.kehinde.terminationofSexualOffenderRegistrationRequirement_2022-June-23.png
 git add        "IIS/WordEngineering/JavaScript/Preez Ockert J. du/"
+
+git add         IIS/WordEngineering/2018-05-03Correspondence/2022-08-29T2128EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistration_BiologicalFather_TwinSibling.txt
+git add			IIS/WordEngineering/2018-05-03Correspondence/2022-08-29T2128EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistration_BiologicalFather_TwinSiblingArchive.txt
