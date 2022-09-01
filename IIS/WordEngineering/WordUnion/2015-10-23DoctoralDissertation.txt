@@ -31,6 +31,7 @@ The importance of this work?
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
     The author is linking words spoken to related verses and dictionaries. Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
+    How do I place one above the other ( Genesis 15:10 )?
 
 Intention:
 
@@ -59,6 +60,7 @@ The incentives to begin work on WordEngineering will include:
     Expounding on His word.
 
 Theory
+"
 Description
 Cross references to related applications
 
@@ -66,6 +68,17 @@ The author has filed two unsuccessful trademark applications. These trademark re
 Computer Listing
 
 The software is available at http://github.com/KenAdeniji. These include the source code and the data definition language (DDL). For size and privacy reasons, the data manipulation language (DML) is not available to the general public. The Bible versions, dictionaries and commentaries are available in the public domain. The author concedes that the length of the source code is large, but it is easily readable.
+Background
+Technical Field
+
+Seeing the Bible as enlightening to man.
+Description of Related Art
+
+To find if a relationship exists between the Bible and what we receive today?
+Brief Summary
+
+To choose the progression of how I count ( Genesis 23:15 )?
+"
 The Bible Database
 The Scripture Table
 
@@ -156,7 +169,7 @@ HisWord_view
 The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. For example, the places of alphabet A and a is 1; and the places of alphabet Z and z is 26. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
 The Remember Table
 
-The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
+The Remember table tries to correlate the period between a prophecy and its fulfillment. What do men date? " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
 
 When the author references the time, then the date is a ratio of the Common Era.
 APass
@@ -1294,6 +1307,7 @@ Lessons Learnt
     I used to ask God for a word? To realize where my opinion lies?
     People have asked me how I do my work? My twin sibling calls my work, data entry. I start my day, electronically recording the activities of the previous night. The bare minimal requirement is an editor, but I now use a database. I have always contemplated whether I should personally store my information, or look for a cloud provider? Build or buy? Another thing of note is storage? How often should I backup and archive my memory and to where? What is in random access memory (RAM) may be lost when there is power loss or when the application or computer shuts down for any reason. What is on the hard disk may be lost when the computer does not start, or there is a viral and intruder attack. How do we resume our work ( 1 Samuel 25:28 )? Needs to be met?
     The author will record the publishing and receipt.
+    When can we do without AlphabetSequence? A place in the Bible justifies the word.
     O mo Bunmi, Clari re. You know Bunmi, Clari is this. We are inside a building and we heard that food is being giving away at West. I jumped down multiple rocks. There is a team to the South East and either Beni or Buki and their friends are sitting at Center. 04:27 Dizzy sleepy. 20:13 Beni or Buki, I forget who? I grew up with them, but I am no longer associated with them. Nuclear or extended family?
     What past the time ( Isaiah 61:2, Luke 4:19 )?
     What is in use?
