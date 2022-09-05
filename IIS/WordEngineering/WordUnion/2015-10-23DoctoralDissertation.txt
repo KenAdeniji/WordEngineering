@@ -1530,7 +1530,7 @@ WordToNumberHelper.cs
 Numbers in the Bible are written out as words. The author made effort to parse these words and find the numbers, but it was not totally successful, largely because of the arrangement of the numerals.
 Translate the Original AlphabetSequence C# Code to the Other Programming Languages
 
-AlphabetSequence was first implemented in the C# programming language AlphabetSequence.cs Later work, saw translation to AlphabetSequence.go AlphabetSequence.java AlphabetSequence.js AlphabetSequence.py AlphabetSequence.rs udf_AlphabetSequenceIndex.sql AlphabetSequence.vb Perhaps, other programming languages should have their own sample code. The author is only conversant in English and Yoruba, additional work will be to see the use in other lingua franca. And, the priest said, Are one only for me?
+AlphabetSequence was first implemented in the C# programming language AlphabetSequence.cs Later work, saw translation to AlphabetSequence.go AlphabetSequence.java AlphabetSequence.js AlphabetSequence.py AlphabetSequence.rs AlphabetSequence.sh udf_AlphabetSequenceIndex.sql AlphabetSequence.vb Perhaps, other programming languages should have their own sample code. The author is only conversant in English and Yoruba, additional work will be to see the use in other lingua franca. And, the priest said, Are one only for me?
 Data Residence
 
 Where should the data reside? Database, JSON or XML files?
