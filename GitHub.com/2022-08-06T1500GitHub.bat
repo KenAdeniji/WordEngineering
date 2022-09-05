@@ -73,3 +73,6 @@ git add        "IIS/WordEngineering/JavaScript/Preez Ockert J. du/"
 
 git add         IIS/WordEngineering/2018-05-03Correspondence/2022-08-29T2128EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistration_BiologicalFather_TwinSibling.txt
 git add			IIS/WordEngineering/2018-05-03Correspondence/2022-08-29T2128EricaWatts_AlamedaCountyPublicDefenderOffice_SexualOffenderRegistration_BiologicalFather_TwinSiblingArchive.txt
+
+git add        IIS/WordEngineering/Linux/2022-09-02ArgumentIterator.sh
+git add        IIS/WordEngineering/Linux/2022-09-02ArgumentIteratorArchive.sh
