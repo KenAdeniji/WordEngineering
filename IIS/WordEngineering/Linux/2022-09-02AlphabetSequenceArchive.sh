@@ -20,10 +20,11 @@ do
 	do
 		characterValue="${word:$i:1}"
 		ascValue=$( printf "%d" "'${characterValue}" )
-		#if (( ($ascValue) > 64 )) && (( ($ascValue) < 91 )); then
+		if (( ($ascValue) > 64 )) && (( ($ascValue) < 91 ))
+		then
 			digitValue=$(($ascValue-64))
 			wordValue=$(($wordValue+$digitValue))
-		#fi
+		fi
 	done
 	echo "Word: ${word} AlphabetSequenceIndex: ${wordValue}"
 done
