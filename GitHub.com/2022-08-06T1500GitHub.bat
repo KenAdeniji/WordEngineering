@@ -79,3 +79,6 @@ git add        IIS/WordEngineering/Linux/2022-09-02AlphabetSequenceArchive.sh
 
 git add        IIS/WordEngineering/WordUnion/DateDifference.aspx.cs
 git add        IIS/WordEngineering/WordUnion/DateDifference.aspx.csRelease2018-10-25T1730
+
+git add        IIS/WordEngineering/Linux/2022-09-07BookTitle.sh
+git add        IIS/WordEngineering/Linux/2022-09-07BookTitleArchive.sh
