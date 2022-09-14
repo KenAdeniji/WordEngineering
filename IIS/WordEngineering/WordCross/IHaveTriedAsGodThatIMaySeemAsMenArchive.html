@@ -189,27 +189,30 @@
 
 						if ( bookOccurrences > 0 && bookID != bookIDCurrent )
 						{
-							console.log("if ( bookOccurrences > 0 && bookID != bookIDCurrent )")
-							scriptureReferenceBook = bookTitle;
+							scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
 							scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
 							(
 								"scriptureReference",
-								scriptureReferenceBook
+								scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
 							);	
 							info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
 							bookIDCurrent = bookID;
 							bookOccurrences = 0;
 						}
 
-						console.log(chapterID, chapterIDCurrent, chapterOccurrences);
 						if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
 						{
-							console.log("if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent)")
-							scriptureReferenceChapter = bookTitle + " " + chapterIDCurrent;
+							scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
 							scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
 							(
 								"scriptureReference",
 								scriptureReferenceChapter
+							);	
+							scriptureReferenceBook = bookTitle;
+							scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+							(
+								"scriptureReference",
+								scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
 							);	
 							info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
 							chapterIDCurrent = chapterID;
@@ -234,12 +237,10 @@
 							if ( biblePartitionsSelected.indexOf("ChapterID") >= -1 )
 							{
 								chapterOccurrences += verseOccurrences;
-								console.log(scriptureReferenceChapter, chapterOccurrences);
 							}	
 							if ( biblePartitionsSelected.indexOf("BookID") >= -1 )
 							{
 								bookOccurrences += verseOccurrences;
-								console.log(scriptureReferenceBook, bookOccurrences);
 							}	
 						}		
 					}
