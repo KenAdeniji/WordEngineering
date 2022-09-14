@@ -2,6 +2,7 @@
 <html>
 	<!--
 		2022-09-13T09:25:00	I have tried as God, that I may seem as men.
+		2022-09-14T04:55:00	Programming.
 	-->
 	<head>
 		<title>I have tried as God, that I may seem as men.</title>
@@ -35,6 +36,7 @@
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
+			<div id="resultTable"> </div>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
@@ -95,11 +97,11 @@
 			function querySubmit()
 			{
 				var request = {};
-				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
+				request["logic"] = "And";
 				
 				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
 				request["question"] = bibleWordElement.value;
-				request["wholeWords"] = wholeWordsElement.checked;
+				request["wholeWords"] = true;
 				request["bibleVersion"] = bibleVersionElement.value;
 
 				var requestJson = JSON.stringify(request);
@@ -138,10 +140,29 @@
 				var verseID = null;
 				var verseText = null;
 				
-				var scriptureReference = null;
-				var scriptureReferenceHyperlink = null;
+				var scriptureReferenceVerse = null;
+				var scriptureReferenceHyperlinkVerse = null;
+
+				var scriptureReferenceChapter = null;
+				var scriptureReferenceHyperlinkChapter = null;
+
+				var scriptureReferenceBook = null;
+				var scriptureReferenceHyperlinkBook = null;
 				
 				var bookTitle = null;
+				
+				var oneWord = (bibleWordElement.value.toLowerCase()).split(/[\s,]+/)[0];
+				
+				var verseOccurrences;
+				var chapterOccurrences = 0;
+				var bookOccurrences = 0;
+				
+				var biblePartitionsSelected = scriptLiteral9432.selectionGet("biblePartition");
+				
+				console.log( `biblePartitionsSelected: ${biblePartitionsSelected}` );
+				
+				var bookIDCurrent = -1;
+				var chapterIDCurrent = -1;
 			
 				for (var table in data) {
 					dataTable = data[table];
@@ -155,25 +176,73 @@
 						chapterID = dataRow["ChapterID"];
 						verseID = dataRow["VerseID"];
 						verseText = dataRow["VerseText"];
+
+						if ( chapterIDCurrent === -1 )
+						{
+							chapterIDCurrent = chapterID;
+						}	
+
+						if ( bookIDCurrent === -1 )
+						{
+							bookIDCurrent = bookID;
+						}	
+
+						if ( bookOccurrences > 0 && bookID != bookIDCurrent )
+						{
+							scriptureReferenceBook = bookTitle;
+							scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+							(
+								"scriptureReference",
+								scriptureReferenceBook
+							);	
+							info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+							bookIDCurrent = bookID;
+							bookOccurrences = 0;
+						}
+
+						if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
+						{
+							console.log("if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent)")
+							scriptureReferenceChapter = bookTitle + " " + chapterIDCurrent;
+							scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+							(
+								"scriptureReference",
+								scriptureReferenceChapter
+							);	
+							info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+							chapterIDCurrent = chapterID;
+							chapterOccurrences = 0;
+						}
 						
-						scriptureReference = bookTitle + " " + chapterID + ":" + verseID;
-						scriptureReferenceHyperlink = scriptLiteral9432.buildHyperlink
+						scriptureReferenceVerse = bookTitle + " " + chapterID + ":" + verseID;
+						scriptureReferenceHyperlinkVerse = scriptLiteral9432.buildHyperlink
 						(
 							"scriptureReference",
-							scriptureReference
+							scriptureReferenceVerse
 						);	
+
+						verseOccurrences = verseText.toLowerCase().split(oneWord).length - 1;
 						
-						info += "<tr><td>" + scriptureReferenceHyperlink + "</td>" + 
-								"<td>" + verseText + "</td></tr>";
+						if ( verseOccurrences > 0 )
+						{
+							if ( biblePartitionsSelected.indexOf("VerseID") >= -1 )
+							{
+								info += `<tr><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
+							}	
+							if ( biblePartitionsSelected.indexOf("ChapterID") >= -1 )
+							{
+								chapterOccurrences += verseOccurrences;
+							}	
+							if ( biblePartitionsSelected.indexOf("BookID") >= -1 )
+							{
+								bookOccurrences += verseOccurrences;
+							}	
+						}		
 					}
 				}
 				
 				info += "</table>"
 				resultTableElement.innerHTML = info;
-	
-				versesCountElement.innerHTML = document.getElementById("resultTableInfo").rows.length;
-
-				combine();
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
