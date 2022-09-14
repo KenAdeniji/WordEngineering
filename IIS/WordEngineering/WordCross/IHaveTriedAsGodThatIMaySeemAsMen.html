@@ -159,10 +159,10 @@
 				
 				var biblePartitionsSelected = scriptLiteral9432.selectionGet("biblePartition");
 				
-				console.log( `biblePartitionsSelected: ${biblePartitionsSelected}` );
-				
 				var bookIDCurrent = -1;
 				var chapterIDCurrent = -1;
+			
+				var firstRow = false;
 			
 				for (var table in data) {
 					dataTable = data[table];
@@ -177,15 +177,25 @@
 						verseID = dataRow["VerseID"];
 						verseText = dataRow["VerseText"];
 
-						if ( chapterIDCurrent === -1 )
+						if ( firstRow === false )
 						{
 							chapterIDCurrent = chapterID;
-						}	
-
-						if ( bookIDCurrent === -1 )
-						{
 							bookIDCurrent = bookID;
-						}	
+							firstRow = true;
+						}
+
+						if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
+						{
+							scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+							scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+							(
+								"scriptureReference",
+								scriptureReferenceChapter
+							);	
+							info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+							chapterIDCurrent = chapterID;
+							chapterOccurrences = 0;
+						}
 
 						if ( bookOccurrences > 0 && bookID != bookIDCurrent )
 						{
@@ -200,25 +210,6 @@
 							bookOccurrences = 0;
 						}
 
-						if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
-						{
-							scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
-							scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
-							(
-								"scriptureReference",
-								scriptureReferenceChapter
-							);	
-							scriptureReferenceBook = bookTitle;
-							scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
-							(
-								"scriptureReference",
-								scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
-							);	
-							info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
-							chapterIDCurrent = chapterID;
-							chapterOccurrences = 0;
-						}
-						
 						scriptureReferenceVerse = bookTitle + " " + chapterID + ":" + verseID;
 						scriptureReferenceHyperlinkVerse = scriptLiteral9432.buildHyperlink
 						(
@@ -244,6 +235,28 @@
 							}	
 						}		
 					}
+				}
+				
+				if ( biblePartitionsSelected.indexOf("ChapterID") >= -1 )
+				{
+					scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+					scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+					(
+						"scriptureReference",
+						scriptureReferenceChapter
+					);	
+					info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+				}
+
+				if ( biblePartitionsSelected.indexOf("BookID") >= -1 )
+				{
+					scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
+					scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+					(
+						"scriptureReference",
+						scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
+					);	
+					info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
 				}
 				
 				info += "</table>"
