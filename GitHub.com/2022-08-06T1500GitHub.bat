@@ -82,3 +82,6 @@ git add        IIS/WordEngineering/WordUnion/DateDifference.aspx.csRelease2018-1
 
 git add        IIS/WordEngineering/Linux/2022-09-07BookTitle.sh
 git add        IIS/WordEngineering/Linux/2022-09-07BookTitleArchive.sh
+
+git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html
+git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMenArchive.html
