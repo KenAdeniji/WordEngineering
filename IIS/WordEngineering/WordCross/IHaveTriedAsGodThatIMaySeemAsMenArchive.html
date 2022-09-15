@@ -95,10 +95,16 @@
 							bibleVersionElement.value = bibleVersionValue;
 						}	
 						
-						var bibleBookGroupParam = urlParams.get("bibleBookGroup");
-						if (bibleBookGroupParam)
+						var bibleBookGroupValue = urlParams.get("bibleBookGroup");
+						if (bibleBookGroupValue)
 						{
-							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupParam]);
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
+						}	
+
+						var biblePartitionValue = urlParams.get("biblePartition");
+						if (biblePartitionValue)
+						{
+							scriptLiteral9432.selectionSet("biblePartition", [biblePartitionValue]);
 						}	
 
 						var logicValue = urlParams.get("logic");
@@ -216,7 +222,8 @@
 
 					info += `<tr><td>${bibleWordHyperlink}</td></tr>`;
 
-					for (var table in data) {
+					for (var table in data) 
+					{
 						dataTable = data[table];
 						
 						firstRow = false;
