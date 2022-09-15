@@ -19,6 +19,20 @@
 				<tr>
 					<td><label for="bibleWord">Bible Word:</label></td>
 					<td><input type="text" ID="bibleWord" autofocus required value="South"/></td>
+				</tr>
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="and">And</option>		
+							<option value="or">Or</option>
+							<option value="phrase">Phrase</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="wholeWords">Whole Words</label></td>
+					<td><input type="checkbox" id="wholeWords" checked/></td>
 				</tr>	
 				<tr>
 					<td><label for="bibleBookGroup">Bible Book Group:</label></td>
@@ -46,7 +60,10 @@
 			const 	bibleWordElement = document.getElementById("bibleWord");
 			const 	bibleBookGroupElement = document.getElementById("bibleBookGroup");
 			const 	biblePartitionElement = document.getElementById("biblePartition");
-						
+		
+			const 	logicElement = document.getElementById("logic");
+			const	wholeWordsElement = document.getElementById("wholeWords");
+		
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
 			const	resultTableElement = document.getElementById("resultTable");
@@ -83,6 +100,21 @@
 						{
 							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupParam]);
 						}	
+
+						var logicValue = urlParams.get("logic");
+						if (logicValue)
+						{
+							logicElement.value = logicValue;
+						}	
+
+						var wholeWordsValue = urlParams.get("wholeWords");
+						if (wholeWordsValue === null)
+						{
+							wholeWordsValue = "";
+						}
+						var wholeWordsLowerCaseValue = wholeWordsValue.toLowerCase();
+						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
+						wholeWordsElement.checked = wholeWordsChecked;
 					
 						querySubmit();
 						isPostBack = true;
@@ -97,11 +129,11 @@
 			function querySubmit()
 			{
 				var request = {};
-				request["logic"] = "And";
+				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
 				
 				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
 				request["question"] = bibleWordElement.value;
-				request["wholeWords"] = true;
+				request["wholeWords"] = wholeWordsElement.checked;
 				request["bibleVersion"] = bibleVersionElement.value;
 
 				var requestJson = JSON.stringify(request);
@@ -140,6 +172,11 @@
 				var verseID = null;
 				var verseText = null;
 				
+				var wordSet = (bibleWordElement.value).split(/[\s,]+/);
+				var wordCurrent = null;
+
+				var bibleWordHyperlink = null;
+
 				var scriptureReferenceVerse = null;
 				var scriptureReferenceHyperlinkVerse = null;
 
@@ -151,9 +188,7 @@
 				
 				var bookTitle = null;
 				
-				var oneWord = (bibleWordElement.value.toLowerCase()).split(/[\s,]+/)[0];
-				
-				var verseOccurrences;
+				var verseOccurrences = 0;
 				var chapterOccurrences = 0;
 				var bookOccurrences = 0;
 				
@@ -163,100 +198,125 @@
 				var chapterIDCurrent = -1;
 			
 				var firstRow = false;
-			
-				for (var table in data) {
-					dataTable = data[table];
-					
-					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
-					{
-						dataRow = dataTable[rowIndex];
+				
+				for 
+				(
+					var wordIndex = 0, wordCount = wordSet.length;
+					wordIndex < wordCount;
+					++wordIndex
+				)
+				{
+					wordCurrent = wordSet[wordIndex];
+
+					bibleWordHyperlink = scriptLiteral9432.buildHyperlink
+					(
+						"bibleWord",
+						wordCurrent
+					);	
+
+					info += `<tr><td>${bibleWordHyperlink}</td></tr>`;
+
+					for (var table in data) {
+						dataTable = data[table];
 						
-						bookID = dataRow["BookID"];
-						bookTitle = scriptLiteral9432.bibleBooks[bookID - 1];
-						chapterID = dataRow["ChapterID"];
-						verseID = dataRow["VerseID"];
-						verseText = dataRow["VerseText"];
-
-						if ( firstRow === false )
+						firstRow = false;
+						
+						for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
 						{
-							chapterIDCurrent = chapterID;
-							bookIDCurrent = bookID;
-							firstRow = true;
-						}
+							dataRow = dataTable[rowIndex];
+							
+							bookID = dataRow["BookID"];
+							bookTitle = scriptLiteral9432.bibleBooks[bookID - 1];
+							chapterID = dataRow["ChapterID"];
+							verseID = dataRow["VerseID"];
+							verseText = dataRow["VerseText"];
 
-						if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
-						{
-							scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
-							scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+							if ( firstRow === false )
+							{
+								chapterIDCurrent = chapterID;
+								bookIDCurrent = bookID;
+
+								verseOccurrences = 0;
+								chapterOccurrences = 0;
+								bookOccurrences = 0;
+
+								firstRow = true;
+							}
+
+							if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
+							{
+								scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+								scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+								(
+									"scriptureReference",
+									scriptureReferenceChapter
+								);	
+								info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+								chapterIDCurrent = chapterID;
+								chapterOccurrences = 0;
+							}
+
+							if ( bookOccurrences > 0 && bookID != bookIDCurrent )
+							{
+								scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
+								scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+								(
+									"scriptureReference",
+									scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
+								);	
+								info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+								bookIDCurrent = bookID;
+								bookOccurrences = 0;
+							}
+
+							scriptureReferenceVerse = bookTitle + " " + chapterID + ":" + verseID;
+							scriptureReferenceHyperlinkVerse = scriptLiteral9432.buildHyperlink
 							(
 								"scriptureReference",
-								scriptureReferenceChapter
+								scriptureReferenceVerse
 							);	
-							info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
-							chapterIDCurrent = chapterID;
-							chapterOccurrences = 0;
-						}
 
-						if ( bookOccurrences > 0 && bookID != bookIDCurrent )
-						{
-							scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
-							scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
-							(
-								"scriptureReference",
-								scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
-							);	
-							info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
-							bookIDCurrent = bookID;
-							bookOccurrences = 0;
+							verseOccurrences = verseText.toLowerCase().split(wordCurrent.toLowerCase()).length - 1;
+							
+							if ( verseOccurrences > 0 )
+							{
+								if ( biblePartitionsSelected.indexOf("VerseID") > -1 )
+								{
+									info += `<tr><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
+								}	
+								if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
+								{
+									chapterOccurrences += verseOccurrences;
+								}	
+								if ( biblePartitionsSelected.indexOf("BookID") > -1 )
+								{
+									bookOccurrences += verseOccurrences;
+								}	
+							}		
 						}
-
-						scriptureReferenceVerse = bookTitle + " " + chapterID + ":" + verseID;
-						scriptureReferenceHyperlinkVerse = scriptLiteral9432.buildHyperlink
+					}
+					
+					if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
+					{
+						scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+						scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
 						(
 							"scriptureReference",
-							scriptureReferenceVerse
+							scriptureReferenceChapter
 						);	
-
-						verseOccurrences = verseText.toLowerCase().split(oneWord).length - 1;
-						
-						if ( verseOccurrences > 0 )
-						{
-							if ( biblePartitionsSelected.indexOf("VerseID") > -1 )
-							{
-								info += `<tr><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
-							}	
-							if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
-							{
-								chapterOccurrences += verseOccurrences;
-							}	
-							if ( biblePartitionsSelected.indexOf("BookID") > -1 )
-							{
-								bookOccurrences += verseOccurrences;
-							}	
-						}		
+						info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
 					}
-				}
-				
-				if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
-				{
-					scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
-					scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
-					(
-						"scriptureReference",
-						scriptureReferenceChapter
-					);	
-					info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
-				}
 
-				if ( biblePartitionsSelected.indexOf("BookID") > -1 )
-				{
-					scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
-					scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
-					(
-						"scriptureReference",
-						scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
-					);	
-					info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+					if ( biblePartitionsSelected.indexOf("BookID") > -1 )
+					{
+						scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
+						scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+						(
+							"scriptureReference",
+							scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
+						);	
+						info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+					}
 				}
 				
 				info += "</table>"
