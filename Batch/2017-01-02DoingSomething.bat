@@ -402,4 +402,5 @@ WHERE
 	APassID = 4136	
 
 2022-09-15T10:39:00	http://localhost/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&bibleLogic=Or&biblePartition=Book
+2022-09-15T17:16:00	https://github.com/ryanmcdermott/clean-code-javascript
 :Exit

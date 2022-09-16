@@ -3,6 +3,7 @@
 	<!--
 		2022-09-13T09:25:00	I have tried as God, that I may seem as men.
 		2022-09-14T04:55:00	Programming.
+		2022-09-15T09:48:00	Mentions the most?
 	-->
 	<head>
 		<title>I have tried as God, that I may seem as men.</title>
@@ -53,6 +54,7 @@
 			<div id="resultTable"> </div>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
 		<script>
 			var isPostBack = false;
 			
@@ -168,7 +170,7 @@
 
 			function render(data) 
 			{
-				var info = "<table id='resultTableInfo'>";
+				var info = "<table id='resultTableInfo'><thead><tr><th>Scripture Reference</th><th>Verse Text</th><th>Occurrences</th></tr></th><tbody>";
 				
 				var dataRow = null;
 				var dataTable = null;
@@ -220,7 +222,7 @@
 						wordCurrent
 					);	
 
-					info += `<tr><td>${bibleWordHyperlink}</td></tr>`;
+					//info += `<tr><td>${bibleWordHyperlink}</td></tr>`;
 
 					for (var table in data) 
 					{
@@ -326,8 +328,9 @@
 					}
 				}
 				
-				info += "</table>"
+				info += "</tbody></table>"
 				resultTableElement.innerHTML = info;
+				tsorter.create("resultTableInfo");
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
