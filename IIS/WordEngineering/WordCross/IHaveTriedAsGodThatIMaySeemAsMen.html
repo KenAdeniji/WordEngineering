@@ -170,7 +170,7 @@
 
 			function render(data) 
 			{
-				var info = "<table id='resultTableInfo'><thead><tr><th>Scripture Reference</th><th>Verse Text</th><th>Occurrences</th></tr></th><tbody>";
+				var info = "<table id='resultTableInfo'><thead><tr><th>Bible Word</th><th>Scripture Reference</th><th>Verse Text</th><th>Occurrences</th></tr></th><tbody>";
 				
 				var dataRow = null;
 				var dataTable = null;
@@ -260,7 +260,7 @@
 									"scriptureReference",
 									scriptureReferenceChapter
 								);	
-								info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+								info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
 								chapterIDCurrent = chapterID;
 								chapterOccurrences = 0;
 							}
@@ -273,7 +273,7 @@
 									"scriptureReference",
 									scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
 								);	
-								info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+								info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
 								bookIDCurrent = bookID;
 								bookOccurrences = 0;
 							}
@@ -291,7 +291,7 @@
 							{
 								if ( biblePartitionsSelected.indexOf("VerseID") > -1 )
 								{
-									info += `<tr><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
+									info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
 								}	
 								if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
 								{
@@ -313,7 +313,7 @@
 							"scriptureReference",
 							scriptureReferenceChapter
 						);	
-						info += `<tr><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+						info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
 					}
 
 					if ( biblePartitionsSelected.indexOf("BookID") > -1 )
@@ -324,7 +324,7 @@
 							"scriptureReference",
 							scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
 						);	
-						info += `<tr><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+						info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
 					}
 				}
 				
