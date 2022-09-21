@@ -85,3 +85,5 @@ git add        IIS/WordEngineering/Linux/2022-09-07BookTitleArchive.sh
 
 git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html
 git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMenArchive.html
+
+git add        c/

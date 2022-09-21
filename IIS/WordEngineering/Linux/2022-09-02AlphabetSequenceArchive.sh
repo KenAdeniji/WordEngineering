@@ -8,7 +8,7 @@
 #2022-09-02		Active Directory
 #adinfo
 #adjoin
-#2022-09-04T16:58:00 	dos2unix.exe 2022-09-02AlphabetSequence.sh
+#2022-09-04T16:58:00 	dos2unix 2022-09-02AlphabetSequence.sh
 #2022-09-04T17:17:00	https://stackoverflow.com/questions/6348902/how-can-i-add-numbers-in-a-bash-script
 #2022-09-04T18:48:00	https://stackoverflow.com/questions/18668556/how-can-i-compare-numbers-in-bash
 #2022-09-04T18:48:00	Rename file 2022-09-02ArgumentIterator.sh to 2022-09-02AlphabetSequence.sh
