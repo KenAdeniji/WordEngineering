@@ -87,3 +87,6 @@ git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.ht
 git add        IIS/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMenArchive.html
 
 git add        c/
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-22T1847ErickaCarr_-_ecarr@reflexion.comSWE_Apps_Screening_Questionnaire_2022.docx
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-22T1847ErickaCarr_-_ecarr@reflexion.comSWE_Apps_Screening_Questionnaire_2022Archive.docx
