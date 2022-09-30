@@ -13,7 +13,13 @@ git add        Python/EricMatthes/
 
         git add   Batch/2017-01-02DoingSomething.bat
         git add   Batch/2017-01-02DoingSomethingArchive.bat
+
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.html
         git add   IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.txt
+        git add   IIS/WordEngineering/Resume/KenAdenijiResumeArchive.html
+        git add   IIS/WordEngineering/Resume/KenAdenijiResumeRelease2020-08-21.html
+
 
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
         git add   IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
@@ -90,3 +96,6 @@ git add        c/
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-22T1847ErickaCarr_-_ecarr@reflexion.comSWE_Apps_Screening_Questionnaire_2022.docx
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-22T1847ErickaCarr_-_ecarr@reflexion.comSWE_Apps_Screening_Questionnaire_2022Archive.docx
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-28T094800_-_3GINTERIORSLLC_-_DanielSchilling_-_daninterviewsections@gmail.com.docx
+git add        "IIS/WordEngineering/JavaScript/Optical character recognition or optical character reader (OCR)/"
