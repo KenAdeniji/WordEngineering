@@ -99,3 +99,6 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-22T1847Erick
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-09-28T094800_-_3GINTERIORSLLC_-_DanielSchilling_-_daninterviewsections@gmail.com.docx
 git add        "IIS/WordEngineering/JavaScript/Optical character recognition or optical character reader (OCR)/"
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-10-01T0842LieutenantBrianShadleBShadle@Fremont.gov_ChiefSeanWashington_EricaWatts.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-10-01T0842LieutenantBrianShadleBShadle@Fremont.gov_ChiefSeanWashington_EricaWattsArchive.txt
