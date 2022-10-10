@@ -9,7 +9,6 @@ def main():
 	pentateuch_tuple = [(title, chapter) for title, chapter in zip(pentateuch_title_list, pentateuch_chapter_list)]
 	print(pentateuch_tuple)
 		
-		
 # Standard boilerplate to call the main() function to begin
 # the program.
 if __name__ == '__main__':

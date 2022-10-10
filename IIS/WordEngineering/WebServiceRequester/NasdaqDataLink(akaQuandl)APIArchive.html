@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2022-10-09	Nasdaq Data Link (aka Quandl) API
+		2022-10-09	https://data.nasdaq.com/api/v3/datasets/WIKI/AAPL.csv
+	-->
+	<head>
+		<title>Nasdaq Data Link (aka Quandl) API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Nasdaq Data Link (aka Quandl) API"/>
+		<meta name="keyword" content="Fetch and Parse URI"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 55vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="symbolCode">Symbol Code:</label>
+					<td><input id="symbolCode" type="text" size="50" value="MSFT" autofocus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	symbolCodeElement = document.getElementById("symbolCode");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var symbolCodeParam = urlParams.get("symbolCode");
+					if (symbolCodeParam)
+					{
+						symbolCodeElement.value = symbolCodeParam;
+					}	
+
+					if (symbolCodeElement.value)
+					{
+						querySubmit();
+					}	
+
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var fetchUri = `http://data.nasdaq.com/api/v3/datasets/WIKI/${symbolCodeElement.value}.json`;
+				fetch
+				(
+					fetchUri,
+       {
+            method: "POST", 
+            //body: JSON.stringify(data),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }					
+				).then(response => {
+					const contentType = response.headers.get("content-type");
+					//console.log(contentType);
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							resultSetElement.innerHTML = JSON.stringify(data);
+						});
+					}
+					else if 
+					(
+						contentType && contentType.indexOf("text/xml") !== -1
+					) 
+					{
+						return response.text().then(data => {
+							// process your XML data further
+							let parser = new DOMParser();
+							let xml = parser.parseFromString(data, "application/xml");
+							resultSetElement.innerHTML = data;
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							resultSetElement.innerHTML = text;
+						});
+					};
+				});
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
