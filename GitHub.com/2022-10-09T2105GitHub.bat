@@ -17,3 +17,9 @@ git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTime.asmx
 git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTime.html
 git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTimeArchive.asmx
 git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTimeArchive.html
+
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
+        git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
