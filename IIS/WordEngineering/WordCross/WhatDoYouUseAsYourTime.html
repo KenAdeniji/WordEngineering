@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-10-10	What do you use as your time?
+			2022-10-11T23:30:00	Created.
+		-->
+		<title>What do you use as your time?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What do you use as your time?"/>
+		<meta name="keywords" content="Count, Group By, Having"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="minimumGroupHavingCount">Minimum Group Having Count:</label></td>
+					<td>
+						<input id="minimumGroupHavingCount" type="number" value="10" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	minimumGroupHavingCountElement	= document.getElementById("minimumGroupHavingCount");
+			const	resultTableElement = document.getElementById("resultTable");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var minimumGroupHavingCountParameter = urlParams.get("minimumGroupHavingCount");
+						if (minimumGroupHavingCountParameter)
+						{
+							minimumGroupHavingCountElement.value = minimumGroupHavingCountParameter;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["minimumGroupHavingCount"] = minimumGroupHavingCountElement.value;
+				
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WhatDoYouUseAsYourTime.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					},
+					error: function (xhr) {
+						resultTableElement.innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+					}
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

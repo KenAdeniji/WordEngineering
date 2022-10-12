@@ -12,3 +12,8 @@ git add        GitHub.com/2022-10-09T2105GitHub.bat
 git add        IIS/WordEngineering/WebServiceRequester/NasdaqDataLink(akaQuandl)API.html
 git add        IIS/WordEngineering/WebServiceRequester/NasdaqDataLink(akaQuandl)APIArchive.html
 git add        Python/PythonForDataScienceAHands-OnIntroductionByYuliVasilievOriginallyPublished2022-08-02.py
+
+git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTime.asmx
+git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTime.html
+git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTimeArchive.asmx
+git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTimeArchive.html
