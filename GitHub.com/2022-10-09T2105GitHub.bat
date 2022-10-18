@@ -23,3 +23,9 @@ git add        IIS/WordEngineering/WordCross/WhatDoYouUseAsYourTimeArchive.html
         git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
         git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionArchive.html
         git add    IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescriptionRelease2020-11-26.html
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-10-18T0917ChiefSeanWashington_EricaWatts_GenerCaguyongJailSupervisor.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-10-18T0917ChiefSeanWashington_EricaWatts_GenerCaguyongJailSupervisorArchive.txt
+git add        IIS/WordEngineering/JavaScript/Processingjs.org/Processingjs.orgHello.html
+git add        IIS/WordEngineering/JavaScript/Processingjs.org/Processingjs.orgHelloArchive.html
+git add        InformationInTransit/BenchmarkDotNet/
