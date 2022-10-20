@@ -450,6 +450,24 @@ The web page components practice of the author, include:
     Specialize input entries by using the most simple and basic component
     Reduce bloating by limiting the use of framework and library
 
+"
+Performance Suggestion
+" (Lara Callender Hogan)
+
+    The most consistent id="resultSet" is usually for AJAX. The self-descriptive tags that do not influence the result normally do not specify IDs, this is left to the browser's decision.
+    Browsers place restrictions on the number of concurrent connections to a particular domain and the overall parallel connections. Consider spreading out the resources to multiple domains.
+    The author standardized on the .png image format because there are few colors.
+    In the year 2008, when the author tried to move away from html table layout styling, the rendering was anaemic.
+
+The Cascading Style Sheets (CSS) performance suggestions include:
+
+    Since, by default, CSS is a render-blocking resource, the author should take advantage of the critical rendering path with media types and media queries.
+    All the programming .html files refer to the common 9432.css file, except this ubiquitous 2015-10-23DoctoralDissertation.html documentation file which includes css.
+
+The JavaScript performance suggestions include:
+
+    Make use of browser cacheable content delivery networks (CDNs). For example, http://code.jquery.com/jquery-latest.js
+
 Most of the work of the author is available at the following locations, in the order of efficiency:
 
     The current web page, such as, 2015-10-23DoctoralDissertation.html file
@@ -1735,6 +1753,7 @@ References
     SQL Server Execution Plans Third Edition For SQL Server 2008 through to 2017 and Azure SQL Database Grant Fritchey (2018); W3C web page; Available from http://assets.red-gate.com/community/books/sql-server-execution-plans-3rd-edition.pdf
     Deep Learning Ian Goodfellow and Yoshua Bengio and Aaron Courville (2016); W3C web page; Available from http://www.deeplearningbook.org
     Resilient, Declarative, Contextual Keith J. Grant (2018-06-08); W3C web page; Available from http://keithjgrant.com/posts/2018/06/resilient-declarative-contextual
+    Designing for Performance Weighing Aesthetics and Speed Lara Callender Hogan (2014); W3C web page; Available from http://designingforperformance.com
     Hyperpiler Brian Holt; W3C web page; Available from http://patents.google.com/patent/US10942709B2/en
     Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
@@ -1765,7 +1784,7 @@ References
     Performance Issues and Optimizations in JavaScript: An Empirical Study Marija Selakovic and Michael Pradel (October 2015); W3C web page; Available from http://mp.binaervarianz.de/JS_perf_study_TR_Oct2015.pdf
     A Practical Introduction to Data Structures and Algorithm Analysis Clifford A. Shaffer; W3C web page; Available from http://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf
     Jonathan Snook W3C web page; Available from http://www.smacss.com
-    Stoyan Stefanov W3C web page; Available from http://www.BookOfSpeed.com
+    http://www.BookOfSpeed.com
     Bjarne Stroustrup W3C web page; Available from http://www.stroustrup.com
     The Twelve-Factor App W3C web page; Available from http://www.12factor.net
     Building Maintainable Software Ten Guidelines for Future-Proof Code Joost Visser, Pascal van Eck of Software Improvement Group, B.V. Amsterdam, Netherlands; W3C web page; Available from http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf
