@@ -8,6 +8,15 @@ using System.Text;
 
 namespace InformationInTransit.ProcessLogic
 {
+/*
+2022-11-03T15:49:00 ... 2022-11-03T18:53:00 string[] queryElements = new string[]{ query }; //query.Split(jesusInTheLambs[jesusInTheLambsIndex].QuerySeparator);
+Vickie Stone
+Company	Pixelberry Studios
+Work e-mail	vickie@pixelberrystudios.com
+Work phone	(619) 889-2354
+Website	codingame.com/evaluate/?id=49064728eaa11923fbf33690657e4768c9dc55c
+Notes	2021-12-13T11:04:00 I appreciate your call on Friday. We send the coding assessment to all engineering candidates that apply for our Eng jobs. I'm sorry to hear you were not comfortable finishing either the Assoc Eng one or the SW Eng-Fullstack assessment. Thank you for making time to speak with me last week. Hopefully there will be a more appropriate opportunity for you out there. Regards, Vickie Stone 2021-12-12T20:57:00
+*/
     #region JesusInTheLamb definition
     /// <summary>
     /// 2004-11-10 www.JesusInTheLamb.com Walking in the Lamb, you shall follow Me.
@@ -88,7 +97,7 @@ namespace InformationInTransit.ProcessLogic
             if (String.IsNullOrEmpty(query)) return null;
             for (int jesusInTheLambsIndex = 0; jesusInTheLambsIndex < jesusInTheLambs.Count; ++jesusInTheLambsIndex)
             {
-                string[] queryElements = query.Split(jesusInTheLambs[jesusInTheLambsIndex].QuerySeparator);
+                string[] queryElements = new string[]{ query }; //query.Split(jesusInTheLambs[jesusInTheLambsIndex].QuerySeparator);
                 bool queryElementOrSeparator = false;
                 for (int queryElementIndex = 0; queryElementIndex < queryElements.Length; ++queryElementIndex)
                 {

@@ -153,20 +153,21 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 59417);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1201);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4231);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12857);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12922);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 6102);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 149570);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 105325);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 103761);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
+DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1782);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1504);
@@ -232,6 +233,9 @@ http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
+
+2022-10-20T06:06:00 ... 2022-10-20T06:26:00
+CustomerRelations@cba.com.au, pottspoint.nsw@cba.com.au, cbaideas@cba.com.au, julie.gallagher@cba.com.au, amanda.hobbins@cba.com.au, mckaych@cba.com.au, fiona.turkovic@cba.com.au, Bobbi.Deacon@cba.com.au, Tony.White@cba.com.au, Stefan.Stankovic@cba.com.au 
 
 2021-11-28T19:45:00 BookOfSpeed.com 	Book of Speed By Stoyan Stefanov 		Performance 	2019-12-29 	52613
 13:47 NotePad++ file save folder error, C:\Users\kadeniji\OneDrive\The Winter Tech
@@ -404,5 +408,18 @@ WHERE
 2022-09-15T10:39:00	http://localhost/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&bibleLogic=Or&biblePartition=Book
 2022-09-15T17:16:00	https://github.com/ryanmcdermott/clean-code-javascript
 2022-09-25T18:35:00	Telephone battery charge low indicator and beeper.
-2022-10-03T16:17:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	 	55010
+2022-10-03T16:17:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page 52462
+2022-10-18T16:14:00	https://www.google.com/books/edition/How_to_Invest/DBeCEAAAQBAJ?hl=en&gbpv=1 page 44
+2022-10-21T16:01:00 2015-10-23DoctoralDissertation.html Functions and Methods
+2022-10-28T05:25:00
+				<li id='bibliographyIlyaGrigorik2013' datetime="2022-10-22T07:48:00">
+					<cite>High Performance Browser Networking</cite>
+					Ilya Grigorik (2013);
+					W3C web page;
+					Available from
+					<a href="http://hpbn.co">http://hpbn.co</a>
+				</li>
+2022-10-29T07:55:00
+Biological mother said, whenever there is trouble, she will see our paternal grandmother making and arranging the house.
+Jim Reeves, this world is not my own, Christian singer.
 :Exit

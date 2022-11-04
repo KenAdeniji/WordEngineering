@@ -29,3 +29,11 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2022-10-18T0917Chief
 git add        IIS/WordEngineering/JavaScript/Processingjs.org/Processingjs.orgHello.html
 git add        IIS/WordEngineering/JavaScript/Processingjs.org/Processingjs.orgHelloArchive.html
 git add        InformationInTransit/BenchmarkDotNet/
+
+        git add   Batch/2017-01-02DoingSomething.bat
+        git add   Batch/2017-01-02DoingSomethingArchive.bat
+        git add   IIS/Gradual/Bin/InformationInTransit.dll
+        git add   "IIS/WordEngineering/JavaScript/Processingjs.org/Processingjs.org Anything.html"
+        git add   IIS/WordEngineering/bin/InformationInTransit.dll
+        git add   InformationInTransit/InformationInTransit.dll
+        git add   InformationInTransit/ProcessLogic/JesusInTheLamb.cs
