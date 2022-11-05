@@ -37,3 +37,9 @@ git add        InformationInTransit/BenchmarkDotNet/
         git add   IIS/WordEngineering/bin/InformationInTransit.dll
         git add   InformationInTransit/InformationInTransit.dll
         git add   InformationInTransit/ProcessLogic/JesusInTheLamb.cs
+		
+git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.asmx
+git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.html
+git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.asmx
+git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.html
+		
