@@ -44,4 +44,5 @@ git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.asmx
 git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.html
 		
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetter.txt
-git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetterArchive.txt		
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetterArchive.txt
+git add        Python/AllenB.Downey/ElementsOfDataScience/
