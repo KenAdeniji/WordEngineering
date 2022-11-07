@@ -1,6 +1,6 @@
 """
 2022-11-05T16:50:00 Created. http://allendowney.github.io/ElementsOfDataScience/02_times.html
-2022-11-05T16:50:00 ... 2022-11-05T17:14:00 IndentationError tab error versus (VS) 4 spaces
+2022-11-05T16:50:00 ... 2022-11-05T17:14:00 IndentationError tab error versus (VS) 4 spaces 17:29 Urine, urine.
 """
 if __name__ == '__main__':
     import sys;
@@ -23,3 +23,5 @@ if __name__ == '__main__':
     boston_longitude = -71.0589; #Positive longitude for the eastern hemisphere and negative longitude for the western hemisphere.
     boston_latitude_longitude = boston_latitude, boston_longitude; #The type of this variable is tuple, which is a mathematical term for a value that contains a sequence of elements.
     print(f'Boston Latitude Longitude {boston_latitude_longitude}');
+    boston_y, boston_x = boston_latitude_longitude
+    print(f'Boston y {boston_y} x {boston_x}');
