@@ -10,7 +10,9 @@
 	2022-11-07T19:07:00 https://en.wikipedia.org/wiki/Ronaldo_(Brazilian_footballer) Ronaldo Luís Nazário de Lima (Brazilian Portuguese: [ʁoˈnawdu ˈlwis nɐˈzaɾju dʒi ˈɫĩmɐ]; born 18 September 1976),[2] commonly known as Ronaldo or Ronaldo Nazário, is a Brazilian business owner, presiden
 	2022-11-07T19:03:00 https://en.wikipedia.org/wiki/Ronaldinho Ronaldo de Assis Moreira (born 21 March 1980), commonly known as Ronaldinho Gaúcho
 	2022-11-07T19:01:00	http://en.wikipedia.org/wiki/Cristiano_Ronaldo Cristiano Ronaldo was born on February 5, 1985, in Funchal, Madeira, Portugal
-	2022-11-07T19:37:00	https://stackoverflow.com/questions/18880766/how-to-calculate-average-time	
+	2022-11-07T19:37:00	https://stackoverflow.com/questions/18880766/how-to-calculate-average-time
+	2022-11-07T21:43:00	https://stackoverflow.com/questions/20169217/how-to-write-isnumber-in-javascript
+	2022-11-07T22:02:00	https://stackoverflow.com/questions/5812220/how-to-validate-a-date
 -->
 	<head>
 		<title>jStat Date</title>
@@ -60,8 +62,17 @@
 
 				var hypot = Math.hypot.apply(Math, requestArray);
 				var	maximum = jStat.max(requestArray);
-				//var mean = jStat.mean(requestArray);
-				var mean = getAverageTime(workingCopy);
+			
+				var mean = -1;
+				
+				if (isNumber(requestArray[0])) 
+				{ 
+					mean = jStat.mean(requestArray);
+				}
+				else if (isDate_(requestArray[0])) 
+				{ 
+					mean = getAverageTime(workingCopy); 
+				}
 				var median = jStat.median(requestArray);
 				var minimum = jStat.min(requestArray);
 				var mode = jStat.mode(requestArray);
@@ -124,6 +135,25 @@ function getAverageTime(array) {
 
   return new Date(sum / array.length);
 }
+
+var isNumber = function isNumber(value) {
+  return typeof value === 'number' && isFinite(value);
+}
+
+var isDate_ = function(input) {
+        var status = false;
+        if (!input || input.length <= 0) {
+          status = false;
+        } else {
+          var result = new Date(input);
+          if (result == 'Invalid Date') {
+            status = false;
+          } else {
+            status = true;
+          }
+        }
+        return status;
+      }
 			
 			window.addEventListener("load", querySubmit, false);
 
