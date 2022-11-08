@@ -46,3 +46,10 @@ git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.html
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetter.txt
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetterArchive.txt
 git add        Python/AllenB.Downey/ElementsOfDataScience/
+
+git add        IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySea.html
+git add        IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySeaArchive.html
+git add        Python/AllenB.Downey/ElementsOfDataScience/Loops.py
+git add        Python/AllenB.Downey/ElementsOfDataScience/LoopsArchive.py
+git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilename.py
+git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilenameArchive.py
