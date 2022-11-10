@@ -53,3 +53,8 @@ git add        Python/AllenB.Downey/ElementsOfDataScience/Loops.py
 git add        Python/AllenB.Downey/ElementsOfDataScience/LoopsArchive.py
 git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilename.py
 git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilenameArchive.py
+
+git add        IIS/WordEngineering/WordCross/DoYouShelterFromAbove.html
+git add        IIS/WordEngineering/WordCross/DoYouShelterFromAboveArchive.html
+git add        Python/AllenB.Downey/ElementsOfDataScience/05_dictionaries.py
+git add        Python/AllenB.Downey/ElementsOfDataScience/05_dictionariesArchive.py
