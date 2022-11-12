@@ -196,11 +196,11 @@ ActToGod
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 Data Cleansing
 
-    Is the source of bad data input our employees, on-line users, or error in programming? He doesn't envision error in reference data.
+    Is the source of bad data input internal, on-line users, or error in programming? He doesn't envision error in reference data.
     Does the vendor have data definition language (DDL) to pre-empt data corruption?
         Data type and size: String, number, date, logic boolean?
         Not nullable? Can not be empty?
-        Range check: Fees must be greater than zero? Dates of activities must be after the establishment creation date.
+        Range check: Expense must be greater than zero? Dates of activities must be after the establishment creation date.
         Check constraints, for schedule, dated from must precede dated until.
         Non-surrogate primary and foreign keys with unique indexes help to ascertain data.
         Default columns are probable system generated that the users may leave unfilled that are available from sequence, identity, system clock.
@@ -303,7 +303,7 @@ Practicing Data Science
     Empirical, find implication from the Bible?
     Theoretical, to determine a better way to doing work?
     Computational, is human labor replaceable?
-    Data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Involving the data in how we do our work?
+    Data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Does it involve the data in how we do our work?
 
 Where to get Data
 
