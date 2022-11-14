@@ -150,7 +150,7 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 59417);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 60488);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1201);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
@@ -407,7 +407,7 @@ WHERE
 2022-09-15T10:39:00	http://localhost/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&bibleLogic=Or&biblePartition=Book
 2022-09-15T17:16:00	https://github.com/ryanmcdermott/clean-code-javascript
 2022-09-25T18:35:00	Telephone battery charge low indicator and beeper.
-2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page 	52452
+2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page 	 	60433
 2022-10-21T16:01:00 2015-10-23DoctoralDissertation.html Functions and Methods
 2022-10-28T05:25:00
 				<li id='bibliographyIlyaGrigorik2013' datetime="2022-10-22T07:48:00">

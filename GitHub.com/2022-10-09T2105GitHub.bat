@@ -38,25 +38,36 @@ git add        InformationInTransit/BenchmarkDotNet/
         git add   InformationInTransit/InformationInTransit.dll
         git add   InformationInTransit/ProcessLogic/JesusInTheLamb.cs
 		
-git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.asmx
-git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.html
-git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.asmx
-git add        IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.html
+git add        	IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.asmx
+git add        	IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApart.html
+git add        	IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.asmx
+git add        	IIS/WordEngineering/WordCross/WillYouKnowMeAsGodApartArchive.html
 		
-git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetter.txt
-git add        IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetterArchive.txt
-git add        Python/AllenB.Downey/ElementsOfDataScience/
+git add        	IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetter.txt
+git add        	IIS/WordEngineering/2018-05-03Correspondence/2022-08-11T0811AbdulHakeemBalogun_-_TheyAreIndicationsICanDoBetterArchive.txt
+git add        	Python/AllenB.Downey/ElementsOfDataScience/
 
-git add        IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySea.html
-git add        IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySeaArchive.html
-git add        Python/AllenB.Downey/ElementsOfDataScience/Loops.py
-git add        Python/AllenB.Downey/ElementsOfDataScience/LoopsArchive.py
-git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilename.py
-git add        Python/AllenB.Downey/ElementsOfDataScience/ScriptFilenameArchive.py
+git add        	IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySea.html
+git add        	IIS/WordEngineering/JavaScript/Algorithm/MyNextIsMySeaArchive.html
+git add        	Python/AllenB.Downey/ElementsOfDataScience/Loops.py
+git add        	Python/AllenB.Downey/ElementsOfDataScience/LoopsArchive.py
+git add        	Python/AllenB.Downey/ElementsOfDataScience/ScriptFilename.py
+git add        	Python/AllenB.Downey/ElementsOfDataScience/ScriptFilenameArchive.py
 
-git add        IIS/WordEngineering/WordCross/DoYouShelterFromAbove.html
-git add        IIS/WordEngineering/WordCross/DoYouShelterFromAboveArchive.html
-git add        Python/AllenB.Downey/ElementsOfDataScience/05_dictionaries.py
-git add        Python/AllenB.Downey/ElementsOfDataScience/05_dictionariesArchive.py
+git add        	IIS/WordEngineering/WordCross/DoYouShelterFromAbove.html
+git add        	IIS/WordEngineering/WordCross/DoYouShelterFromAboveArchive.html
+git add        	Python/AllenB.Downey/ElementsOfDataScience/05_dictionaries.py
+git add        	Python/AllenB.Downey/ElementsOfDataScience/05_dictionariesArchive.py
 
 git add 		IIS/WordEngineering/ArtificialIntelligence/ml5.js/
+
+git add        	IIS/WordEngineering/WordCross/SeOLeBereAddressBukolaOrBuki.aspx
+git add        	IIS/WordEngineering/WordCross/SeOLeBereAddressBukolaOrBukiArchive.aspx
+git add 		IIS/WordEngineering/WordCross/SeOleBereAddressBukolaOrBukiPage.aspx.cs
+git add		 	IIS/WordEngineering/WordCross/SeOleBereAddressBukolaOrBukiPageArchive.aspx.cs
+
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.html
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+        git add   IIS/WordEngineering/Resume/KenAdenijiResume.txt
+        git add   IIS/WordEngineering/Resume/KenAdenijiResumeArchive.html
+        git add   IIS/WordEngineering/Resume/KenAdenijiResumeRelease2020-08-21.html
