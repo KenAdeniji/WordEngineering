@@ -71,3 +71,25 @@ git add		 	IIS/WordEngineering/WordCross/SeOleBereAddressBukolaOrBukiPageArchive
         git add   IIS/WordEngineering/Resume/KenAdenijiResume.txt
         git add   IIS/WordEngineering/Resume/KenAdenijiResumeArchive.html
         git add   IIS/WordEngineering/Resume/KenAdenijiResumeRelease2020-08-21.html
+		
+git add           IIS/WordEngineering/bin/InformationInTransit.dll
+git add           InformationInTransit/InformationInTransit.dll
+
+git add        IIS/WordEngineering/WordCross/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.asmx
+git add        IIS/WordEngineering/WordCross/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.html
+git add        IIS/WordEngineering/WordCross/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongArchive.asmx
+git add        IIS/WordEngineering/WordCross/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongArchive.html
+git add        IIS/WordEngineering/WordUnion/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.html
+git add        InformationInTransit/ProcessCode/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.Archivecs
+git add        InformationInTransit/ProcessCode/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.cs
+git add        cpp/cplusplus.com/BibleBooksChapters.cpp
+git add        cpp/cplusplus.com/BibleBooksChapters.exe
+git add        cpp/cplusplus.com/BibleBooksChapters.obj
+git add        cpp/cplusplus.com/BibleBooksChaptersArchive.cpp
+git add        cpp/cplusplus.com/BibleBooksChaptersBuild.bat
+git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocation.cpp
+git add 		cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocation.exe
+git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocation.obj
+git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationArchive.cpp
+git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationArchiveBuild.bat
+git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationBuild.bat		

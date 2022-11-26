@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-11-25T18:51:00 	Created.
+		-->
+		<title>I keep on finding where I am; that I may choose where I belong.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Scripture Reference"/>
+		<meta name="keywords" content="Scripture Reference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="scriptureReference" type="text" size="50" autofocus/>
+			<select id="bibleVersion"> </select>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	scriptureReferenceElement = document.getElementById("scriptureReference");
+			const 	bibleVersionElement = document.getElementById("bibleVersion");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	resultTableElement = document.getElementById("resultTable");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						var scriptureReferenceValue = urlParams.get("scriptureReference");
+						if (scriptureReferenceValue)
+						{
+							scriptureReferenceElement.value = scriptureReferenceValue;
+						}	
+						
+						var bibleVersionValue = urlParams.get("bibleVersion");
+						if (bibleVersionValue)
+						{
+							bibleVersionElement.value = bibleVersionValue;
+						}
+						
+						if (scriptureReferenceElement.value)
+						{
+							querySubmit();
+						}
+						
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+								
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
