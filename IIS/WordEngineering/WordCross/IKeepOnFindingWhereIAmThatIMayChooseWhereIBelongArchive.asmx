@@ -15,7 +15,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 using InformationInTransit.DataAccess;
-using InformationInTransit.ProcessLogic;
+using InformationInTransit.ProcessCode;
 using InformationInTransit.UserInterface;
 
 ///<summary>
@@ -31,13 +31,9 @@ public class IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongWebService : System
 	public String Query(String scriptureReference, string bibleVersion)
     {
 		String[] scriptureReferenceSubset = null;
-		string result = null;
-		ScriptureReferenceHelper.Process
+		string result = IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong.Query
 		(
 				scriptureReference,
-			ref	scriptureReferenceSubset,
-			ref result,
-				ScriptureReferenceHelper.BibleQueryFormat,
 				bibleVersion
 		);
 		return result;

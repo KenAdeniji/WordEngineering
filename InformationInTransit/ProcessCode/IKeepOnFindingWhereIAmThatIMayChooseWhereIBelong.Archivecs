@@ -31,6 +31,8 @@ namespace InformationInTransit.ProcessCode
 {
 	///<summary>
 	///	2022-11-25T14:37:00 Created.
+	///	2022-11-26T06:21:00 ... 2022-11-26T10:21:00
+	///		http://stackoverflow.com/questions/13139366/c-sharp-linq-query-on-data-table-to-select-all-minimum-values-with-duplicates
 	///</summary>
 	public class IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong
 	{
@@ -48,24 +50,78 @@ namespace InformationInTransit.ProcessCode
 			);
 			
 			DataTable dataTable = DataSetHelper.CustomMerge(dataSet);
-			
-			int verseIDSequenceMinimum = (from row in dataTable.AsEnumerable()
-                select row.Field<Int32>("VerseIDSequence")).Min();
-				
-			int verseIDSequenceMaximum = (from row in dataTable.AsEnumerable()
-                select row.Field<Int32>("VerseIDSequence")).Max();
+
+			DataView dv = new DataView(dataTable);
 
 			DataTable resultDataTable = new DataTable();
 
 			resultDataTable.Columns.Add("Key", typeof(string));
 			resultDataTable.Columns.Add("ScriptureReference", typeof(string));
+			
+			int verseTextLengthMinimum = 
+			(
+				from row in dataTable.AsEnumerable()
+                select row["VerseText"].ToString().Length
+			).Min();
 
+			dv.RowFilter = String.Format
+			(
+				"LEN(VerseText) = {0}",
+				verseTextLengthMinimum
+			);
+			
+			AddRow
+			(
+				resultDataTable,
+				"Verse Text Length Minimum", 
+				ScriptureReferenceHelper.FullPositionQuery
+				(
+					"VerseIDSequence",
+					(int) dv[0]["VerseIDSequence"]
+				)
+			);	
+
+			int verseTextLengthMaximum = 
+			(
+				from row in dataTable.AsEnumerable()
+                select row["VerseText"].ToString().Length
+			).Max();
+
+			dv.RowFilter = String.Format
+			(
+				"LEN(VerseText) = {0}",
+				verseTextLengthMaximum
+			);
+			
+			AddRow
+			(
+				resultDataTable,
+				"Verse Text Length Maximum", 
+				ScriptureReferenceHelper.FullPositionQuery
+				(
+					"VerseIDSequence",
+					(int) dv[0]["VerseIDSequence"]
+				)
+			);	
+
+			int verseIDSequenceMinimum = 
+			(
+				from row in dataTable.AsEnumerable()
+                select row.Field<Int32>("VerseIDSequence")
+			).Min();
+				
 			AddRow
 			(
 				resultDataTable,
 				"Verse Minimum", 
 				ScriptureReferenceHelper.FullPositionQuery("VerseIDSequence", verseIDSequenceMinimum)
 			);	
+
+			int verseIDSequenceMaximum = 
+			(
+				from row in dataTable.AsEnumerable()
+                select row.Field<Int32>("VerseIDSequence")
+			).Max();
 
 			AddRow
 			(
