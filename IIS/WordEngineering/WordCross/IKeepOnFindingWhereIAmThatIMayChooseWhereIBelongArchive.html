@@ -6,15 +6,15 @@
 		-->
 		<title>I keep on finding where I am; that I may choose where I belong.</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Scripture Reference"/>
-		<meta name="keywords" content="Scripture Reference"/>
+		<meta name="description" content="Linq with Scripture Reference"/>
+		<meta name="keywords" content="Scripture Reference, Linq, minimum, maximum"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
 		<div align="center">
-			<input id="scriptureReference" type="text" size="50" autofocus/>
+			<input id="scriptureReference" type="text" size="50" value="Revelation 21, Genesis 43, Revelation 3, Daniel 9, John 17" autofocus/>
 			<select id="bibleVersion"> </select>
 			<input type="submit" id="submitQuery">
 			<br>
@@ -83,7 +83,7 @@
 					success: function(data) 
 					{
 						var dataTable = JSON.parse(data.d);
-						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
 					},
 					error: function(xhr)
 					{ 
