@@ -56,6 +56,7 @@ namespace InformationInTransit.ProcessCode
 			DataTable resultDataTable = new DataTable();
 
 			resultDataTable.Columns.Add("Key", typeof(string));
+			resultDataTable.Columns.Add("VerseText", typeof(string));
 			resultDataTable.Columns.Add("ScriptureReference", typeof(string));
 			
 			int verseTextLengthMinimum = 
@@ -74,6 +75,12 @@ namespace InformationInTransit.ProcessCode
 			(
 				resultDataTable,
 				"Verse Text Length Minimum", 
+				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
+				(
+					"VerseIDSequence",
+					(int) dv[0]["VerseIDSequence"],
+					bibleVersion
+				),
 				ScriptureReferenceHelper.FullPositionQuery
 				(
 					"VerseIDSequence",
@@ -97,6 +104,12 @@ namespace InformationInTransit.ProcessCode
 			(
 				resultDataTable,
 				"Verse Text Length Maximum", 
+				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
+				(
+					"VerseIDSequence",
+					(int) dv[0]["VerseIDSequence"],
+					bibleVersion
+				),
 				ScriptureReferenceHelper.FullPositionQuery
 				(
 					"VerseIDSequence",
@@ -114,6 +127,12 @@ namespace InformationInTransit.ProcessCode
 			(
 				resultDataTable,
 				"Verse Minimum", 
+				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
+				(
+					"VerseIDSequence",
+					verseIDSequenceMinimum,
+					bibleVersion
+				),
 				ScriptureReferenceHelper.FullPositionQuery
 				(
 					"VerseIDSequence",
@@ -131,6 +150,12 @@ namespace InformationInTransit.ProcessCode
 			(
 				resultDataTable,
 				"Verse Maximum", 
+				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
+				(
+					"VerseIDSequence",
+					verseIDSequenceMaximum,
+					bibleVersion
+				),
 				ScriptureReferenceHelper.FullPositionQuery
 				(
 					"VerseIDSequence", 
@@ -147,11 +172,13 @@ namespace InformationInTransit.ProcessCode
 		(
 			DataTable	dataTable,
 			string 		columnKey,
+			string		columnVerseText,
 			string		columnScriptureReference
 		)
 		{	
             DataRow dataRow = dataTable.NewRow();
             dataRow["Key"] = columnKey;
+			dataRow["VerseText"] = columnVerseText;
             dataRow["ScriptureReference"] = columnScriptureReference;
             dataTable.Rows.Add(dataRow);
 		}

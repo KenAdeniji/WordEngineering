@@ -93,3 +93,5 @@ git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocation.obj
 git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationArchive.cpp
 git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationArchiveBuild.bat
 git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationBuild.bat		
+        git add   InformationInTransit/ProcessLogic/ScriptureReferenceHelper.Archivecs
+        git add   InformationInTransit/ProcessLogic/ScriptureReferenceHelper.cs

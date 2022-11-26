@@ -64,6 +64,7 @@ namespace InformationInTransit.ProcessLogic
 	///	2018-09-28	For sacred text query. The title of a sub-text.
 	///	2020-09-11	BibleGroupSubstitute variable definition, and BibleGroupSubstituteReplace implementation.
 	///	2022-01-15	BibleSequenceQueryFormat added.
+	/// 2022-11-26	IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong added.
 	///</summary>
 	public class ScriptureReferenceHelper
 	{
@@ -743,6 +744,27 @@ namespace InformationInTransit.ProcessLogic
 				DataCommand.ResultType.Scalar
 			);
 		}
+
+		public static string IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
+		(
+			string columnName,
+			int columnValue,
+			string bibleVersion
+		)
+		{
+			return (string) DataCommand.DatabaseCommand
+			(
+				String.Format
+				(
+					IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongScalarSelect,
+					columnName,
+					columnValue,
+					bibleVersion
+				),
+				CommandType.Text,
+				DataCommand.ResultType.Scalar
+			);
+		}
 		
 		public static List<ScriptureReferenceSubset> Parse(string[] scriptureReferenceSubset)
 		{
@@ -1148,6 +1170,7 @@ namespace InformationInTransit.ProcessLogic
 		public const string ExactQueryFormat = "SELECT ScriptureReference, VerseText FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, chapterID, verseID;";
 		public const string FullPositionQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, VerseIDSequence, ChapterIDSequence FROM Bible..Scripture_View WHERE {0} ORDER BY BookID, ChapterID, VerseID;";
 		public const string FullPositionQueryFormatScriptureReferenceScalarSelect = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE {0} = {1}";
+		public const string IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongScalarSelect = "SELECT TOP 1 {2} AS VerseText FROM Bible..Scripture_View WHERE {0} = {1}";
 
 		public const string BibleVersionDefault = "KingJamesVersion";
 		
