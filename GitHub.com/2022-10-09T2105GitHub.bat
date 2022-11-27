@@ -95,3 +95,9 @@ git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationArch
 git add        cpp/cplusplus.com/BibleBooksChaptersNewDeleteMemoryAllocationBuild.bat		
         git add   InformationInTransit/ProcessLogic/ScriptureReferenceHelper.Archivecs
         git add   InformationInTransit/ProcessLogic/ScriptureReferenceHelper.cs
+		
+git add  		IIS/WordEngineering/WordCross/DatesComputation.html
+git add   		IIS/WordEngineering/WordCross/DatesComputationArchive.html
+
+git add        IIS/WordEngineering/WordCross/ChangesOfMileInTheMiddleEast.html
+git add        IIS/WordEngineering/WordCross/ChangesOfMileInTheMiddleEastArchive.html

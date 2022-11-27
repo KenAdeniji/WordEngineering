@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-11-26T20:31:00	Changes of mile in the Middle East.	
+			2022-11-27T07:32:00	Created.
+			2022-11-27T07:41:00	http://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
+		-->
+		<title>Changes of mile in the Middle East.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Changes of mile in the Middle East."/>
+		<meta name="keywords" content="census, first, second"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 50vw;
+	}
+		</style>	
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleWord">:</label></td>
+					<td>
+						<textarea id="bibleWord" autofocus>census1["Judah"]-census2["Benjamin"]</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><div id="resultSet"></div></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+	
+			const bibleWordElement = document.getElementById("bibleWord");
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.buildSelect("calendarType", scriptLiteral9432.calendarTypes);					
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var bibleWordParam = urlParams.get("bibleWord");
+					if (bibleWordParam)
+					{
+						bibleWordElement.value = bibleWordParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var bibleWordElementValue = bibleWordElement.value.toLowerCase();
+				resultSetElement.innerHTML = bibleWordElementValue;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
