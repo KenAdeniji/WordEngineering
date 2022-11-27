@@ -56,6 +56,7 @@ namespace InformationInTransit.ProcessCode
 			DataTable resultDataTable = new DataTable();
 
 			resultDataTable.Columns.Add("Key", typeof(string));
+			resultDataTable.Columns.Add("Value", typeof(string));
 			resultDataTable.Columns.Add("VerseText", typeof(string));
 			resultDataTable.Columns.Add("ScriptureReference", typeof(string));
 			
@@ -74,7 +75,8 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Verse Text Length Minimum", 
+				"Minimum Verse Text Length", 
+				verseTextLengthMinimum.ToString(),
 				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
 				(
 					"VerseIDSequence",
@@ -103,7 +105,8 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Verse Text Length Maximum", 
+				"Maximum Verse Text Length",
+				verseTextLengthMaximum.ToString(),
 				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
 				(
 					"VerseIDSequence",
@@ -126,7 +129,8 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Verse Minimum", 
+				"Minimum Verse", 
+				verseIDSequenceMinimum.ToString(),
 				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
 				(
 					"VerseIDSequence",
@@ -149,7 +153,8 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Verse Maximum", 
+				"Maximum Verse", 
+				verseIDSequenceMaximum.ToString(),
 				ScriptureReferenceHelper.IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongQuery
 				(
 					"VerseIDSequence",
@@ -168,8 +173,9 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Count", 
+				"Verse Count", 
 				verseIDSequenceCount.ToString(),
+				"",
 				""
 			);	
 
@@ -182,8 +188,9 @@ namespace InformationInTransit.ProcessCode
 			AddRow
 			(
 				resultDataTable,
-				"Distinct Count", 
+				"Distinct Verse Count", 
 				verseIDSequenceDistinctCount.ToString(),
+				"",
 				""
 			);	
 	
@@ -196,12 +203,14 @@ namespace InformationInTransit.ProcessCode
 		(
 			DataTable	dataTable,
 			string 		columnKey,
+			string		columnValue,
 			string		columnVerseText,
 			string		columnScriptureReference
 		)
 		{	
             DataRow dataRow = dataTable.NewRow();
             dataRow["Key"] = columnKey;
+			dataRow["Value"] = columnValue;
 			dataRow["VerseText"] = columnVerseText;
             dataRow["ScriptureReference"] = columnScriptureReference;
             dataTable.Rows.Add(dataRow);
