@@ -173,6 +173,20 @@ namespace InformationInTransit.ProcessCode
 				""
 			);	
 
+			int verseIDSequenceDistinctCount = dataTable
+				.AsEnumerable()
+				.Select(r => r.Field<int>("VerseIDSequence"))
+				.Distinct()
+				.Count();
+
+			AddRow
+			(
+				resultDataTable,
+				"Distinct Count", 
+				verseIDSequenceDistinctCount.ToString(),
+				""
+			);	
+	
 			resultDataTable.AcceptChanges();
 			string json = JsonConvert.SerializeObject(resultDataTable, Formatting.Indented);
 			return json;
