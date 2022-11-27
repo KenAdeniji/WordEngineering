@@ -163,12 +163,8 @@ namespace InformationInTransit.ProcessCode
 				)
 			);	
 
-			int verseIDSequenceCount = 
-			(
-				from row in dataTable.AsEnumerable()
-				select row.Field<Int32>("VerseIDSequence")
-			).Count();
-
+			int verseIDSequenceCount = dataTable.Rows.Count;
+			
 			AddRow
 			(
 				resultDataTable,
