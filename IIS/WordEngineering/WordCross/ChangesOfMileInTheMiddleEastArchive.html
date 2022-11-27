@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<!--
-			2022-11-26T20:31:00	Changes of mile in the Middle East.	
+			2022-11-26T20:31:00	Changes of mile in the Middle East.
 			2022-11-27T07:32:00	Created.
 			2022-11-27T07:41:00	http://stackoverflow.com/questions/12001953/javascript-and-regex-split-string-and-keep-the-separator
+			2022-11-27T15:12:00	http://stackoverflow.com/questions/6397990/storing-a-key-value-array-into-a-compact-json-string
 		-->
 		<title>Changes of mile in the Middle East.</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="Changes of mile in the Middle East."/>
-		<meta name="keywords" content="census, first, second"/>
+		<meta name="keywords" content="census, first, second, Numbers 1"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<style>
@@ -28,9 +29,9 @@
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="bibleWord">:</label></td>
+					<td><label for="bibleWord">Expression:</label></td>
 					<td>
-						<textarea id="bibleWord" autofocus>census1["Judah"]-census2["Benjamin"]</textarea>
+						<textarea id="bibleWord" autofocus>population.firstcensus["reuben"] + population.secondcensus["simeon"]</textarea>
 					</td>
 				</tr>
 				<tr>
@@ -73,7 +74,10 @@
 			function querySubmit()
 			{
 				var bibleWordElementValue = bibleWordElement.value.toLowerCase();
-				resultSetElement.innerHTML = bibleWordElementValue;
+				resultSetElement.innerHTML = eval
+				(
+					bibleWordElementValue
+				);
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
@@ -86,6 +90,20 @@
 			}
 
 			window.addEventListener("load", pageLoad, false);
+			
+var population = {
+  "firstcensus": {
+    "reuben": 46500,
+    "simeon": 59300,
+    "gad": 45650,
+  },
+  "secondcensus" : {
+    "reuben": 43750, //Numbers 26:7
+    "simeon": 22200, //Numbers 26:14
+    "gad": 40500, //Numbers 26:18
+  },
+};			
+			
 		</script>
 	</body>
 </html>
