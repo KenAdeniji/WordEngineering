@@ -421,4 +421,32 @@ WHERE
 Biological mother said, whenever there is trouble, she will see our paternal grandmother making and arranging the house.
 Jim Reeves, this world is not my own, Christian singer.
 2022-11-12T02:22:00 02:22 Microsoft Windows operating system, Mozilla Firefox browser tab DateDifference.aspx separates into new window.
+2022-11-28
+https://wykesmith.com/
+My UX Process
+Research
+
+    Define the problem to be solved
+    Learn the business domain
+    Understand the user's current workflow
+
+Plan
+
+    Document existing solutions
+    Define user roles
+    Brainstorm "How might we..." improvements
+
+Design
+
+    Flowchart processes
+    Wireframe page/view layouts
+    Prototype pages and interactions
+
+Build
+
+    Prioritize Features
+    Estimate Development Effort
+    Manage development sprints and QA
+
+
 :Exit

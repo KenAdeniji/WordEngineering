@@ -152,7 +152,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 60488);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1201);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -169,7 +169,7 @@ DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1782);
-DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1504);
+DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1541);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
 DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 481);
@@ -407,7 +407,7 @@ WHERE
 2022-09-15T10:39:00	http://localhost/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&bibleLogic=Or&biblePartition=Book
 2022-09-15T17:16:00	https://github.com/ryanmcdermott/clean-code-javascript
 2022-09-25T18:35:00	Telephone battery charge low indicator and beeper.
-2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page 	 	59385
+2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page  	60457
 2022-10-21T16:01:00 2015-10-23DoctoralDissertation.html Functions and Methods
 2022-10-28T05:25:00
 				<li id='bibliographyIlyaGrigorik2013' datetime="2022-10-22T07:48:00">
@@ -421,4 +421,32 @@ WHERE
 Biological mother said, whenever there is trouble, she will see our paternal grandmother making and arranging the house.
 Jim Reeves, this world is not my own, Christian singer.
 2022-11-12T02:22:00 02:22 Microsoft Windows operating system, Mozilla Firefox browser tab DateDifference.aspx separates into new window.
+2022-11-28
+https://wykesmith.com/
+My UX Process
+Research
+
+    Define the problem to be solved
+    Learn the business domain
+    Understand the user's current workflow
+
+Plan
+
+    Document existing solutions
+    Define user roles
+    Brainstorm "How might we..." improvements
+
+Design
+
+    Flowchart processes
+    Wireframe page/view layouts
+    Prototype pages and interactions
+
+Build
+
+    Prioritize Features
+    Estimate Development Effort
+    Manage development sprints and QA
+
+
 :Exit

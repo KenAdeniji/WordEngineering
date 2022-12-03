@@ -433,7 +433,7 @@ The JustThirtyOneDaysDivided.html for a given selector, computes the occurrences
 
 The Kitan.html will display the corresponding book, chapter, and verse; for a user entered number.
 
-The KnowingMeAsAPersonIsSeeingYouAsAPeople.html will list the first and last letters.
+.The KnowingMeAsAPersonIsSeeingYouAsAPeople.html will list the first and last letters.
 
 The KnowingTheObvious.html will list a sample of the use cases in the Bible.
 
@@ -442,6 +442,7 @@ The labs.bible.orgNETBibleWebService.html is for seeing Bible citations from Bib
 The LastAfter.html will list the letters occurrences, in the first and last positions, in the Bible.
 
 The LaurenLangbert_-_LLangbert@quickbase.com_-_OurConnectionWithPeopleAreOurPastime.html will list the time.
+.
 
 The Lent.html adds the date parts, and calculates the AlphabetSequence.
 
@@ -453,7 +454,7 @@ The LetsBringThisToTheConstitutionMovement.html is for regular expression experi
 
 The LeviticusAirDrop.html will allow the user to specify the BookIDs.
 
-The LifesNormancy.html will accept initial or abbreviation, and determine the scripture reference. For example, NCY 2 Chronicles 3, 2 Thessalonians 1
+T.he LifesNormancy.html will accept initial or abbreviation, and determine the scripture reference. For example, NCY 2 Chronicles 3, 2 Thessalonians 1
 
 The ListCount.html will count generations.
 
@@ -514,6 +515,8 @@ The OccurrenceOfTheMotion.html allows the user to enter words; select the combin
 The OftenTimeIsTheGuise.html allows the user to enter a date, and use dates in the Bible as offsets.
 
 The OjoToOhunBaPariPeluWon.html will rank Bible books, according to their number of chapters.
+
+OneOfTomorrow.html Apoclyptic statistics probability.
 
 OneForTheForbiddenBoy.html sample statistics in the Bible; based on the numbers, in the Bible.
 

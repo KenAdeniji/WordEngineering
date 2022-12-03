@@ -25,6 +25,7 @@ The author is working on variations of AlphabetSequence: These are not suitable 
 
 The importance of this work?
 
+    To track dates and words? And, find meaning, correlation.
     What if God is a party ( Exodus 5:2 )?
     What I have, indeed, is, I owe indeed ( 1 John 3:12 ).
     Do I speak in a period as others? My preference for determining the future is how I Am.
@@ -44,13 +45,6 @@ Intention:
     The research produces a set of web pages that will equip the scholar.
     The usability of the Bible as a study tool.
     The programming approach allows for a result which is reproducible across Bible versions and other sources.
-
-"
-
-The need to reference dates of previous work? To whom am I alike?
-
-Using the Bible as a companion to our guidance? With Jesus Christ, where His teaching abides? When His companions have passed ( Matthew 11:7, John 13, Revelation 1:10 )?
-"
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 
@@ -562,6 +556,9 @@ Al Danial's Cloc
 Backup and Off-site Storage
 
 The author archives the database and source files to the local computers, Google, Microsoft drives, after changes. The author uses GitHub.com version control.
+
+Memory, hard disk, network, cloud?
+
 Development Time
 
 The development time is separable into the time it takes to program, compile, test, deploy. The stored procedure, C#, ASMX, HTML files are build-able in one day, in most use-case.
@@ -1820,6 +1817,7 @@ References
     The Staff Engineer's Path Tanya Reilly (September 20, 2022); W3C web page; Available from http://noidea.dog
     An Analysis of the Dynamic Behavior of JavaScript Programs Gregor Richards, Sylvain Lebresne, Brian Burg, Jan Vitek (2010); W3C web page; Available from http://brrian.org/papers/pldi2010-dynamics-of-JavaScript.pdf
     SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN: 978-1-59059-980-8 W3C web page; Available from http://www.apress.com/us/book/9781590599808?token=cyberweek18&utm_campaign=3_fjp8312_Apress_US_PLA_cyberweek18#otherversion=9781430206255
+    Search engine indexing W3C web page; Available from http://en.wikipedia.org/wiki/Search_engine_indexing
     Nation-brands.gfk.com gfk (2017); W3C web page; Available from http://Nation-brands.gfk.com
     Option B: Facing Adversity, Building Resilience, and Finding Joy Sheryl Sandberg and Adam Grant (2017); W3C web page; Available from http://www.optionb.org/book
     Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave Taylor Linda S. Sanford with Dave Taylor (2006); ISBN: 0-13-148208-4 W3C web page; Available from Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave Taylor Pearson Education, Dec 12, 2005 - Business & Economics - 224 pages. In Let Go To Grow , IBM senior executive Linda Sanford and long-time entrepreneur Dave Taylor show exactly how to do that.
@@ -1828,13 +1826,13 @@ References
     Jonathan Snook W3C web page; Available from http://www.smacss.com
     http://www.BookOfSpeed.com
     Bjarne Stroustrup W3C web page; Available from http://www.stroustrup.com
+    Python for Data Science A Hands-On Introduction Yuli Vasiliev (2022-08-02); W3C web page; Available from http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     The Twelve-Factor App W3C web page; Available from http://www.12factor.net
     Building Maintainable Software Ten Guidelines for Future-Proof Code Joost Visser, Pascal van Eck of Software Improvement Group, B.V. Amsterdam, Netherlands; W3C web page; Available from http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf
     Supervised Learning with Python Concepts and Practical Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page; Available from http://www.allitebooks.com/supervised-learning-with-python
     Design for How People Think: Using Brain Science to Build Better Products Book John Whalen, PhD; W3C web page; Available from https://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Wikipedia W3C web page; Available from http://www.wikipedia.org
-    Search engine indexing W3C web page; Available from http://en.wikipedia.org/wiki/Search_engine_indexing
-    Python for Data Science A Hands-On Introduction Yuli Vasiliev (2022-08-02); W3C web page; Available from http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover
+    My UX Process Charles Wyke-Smith (2022); W3C web page; Available from http://WykeSmith.com
     Microservice Eberhard Wolff; W3C web page; Available from http://www.microservices-book.com
 
 Appendices

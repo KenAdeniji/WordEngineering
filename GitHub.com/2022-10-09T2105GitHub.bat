@@ -101,3 +101,6 @@ git add   		IIS/WordEngineering/WordCross/DatesComputationArchive.html
 
 git add        IIS/WordEngineering/WordCross/ChangesOfMileInTheMiddleEast.html
 git add        IIS/WordEngineering/WordCross/ChangesOfMileInTheMiddleEastArchive.html
+
+git add		   IIS/WordEngineering/WordCross/OneOfTomorrow.html
+git add        IIS/WordEngineering/WordCross/OneOfTomorrowArchive.html
