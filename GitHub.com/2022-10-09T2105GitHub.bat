@@ -104,3 +104,6 @@ git add        IIS/WordEngineering/WordCross/ChangesOfMileInTheMiddleEastArchive
 
 git add		   IIS/WordEngineering/WordCross/OneOfTomorrow.html
 git add        IIS/WordEngineering/WordCross/OneOfTomorrowArchive.html
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-09T0818EricaGeronimo_-_erica@whizara.com832852-3611.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-09T0818EricaGeronimo_-_erica@whizara.com832852-3611Archive.txt
