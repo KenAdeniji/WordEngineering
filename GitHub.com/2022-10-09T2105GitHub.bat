@@ -107,3 +107,11 @@ git add        IIS/WordEngineering/WordCross/OneOfTomorrowArchive.html
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-09T0818EricaGeronimo_-_erica@whizara.com832852-3611.txt
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-09T0818EricaGeronimo_-_erica@whizara.com832852-3611Archive.txt
+
+
+git add        IIS/WordEngineering/WordCross/ScriptureReferenceComparance.asmx
+git add        IIS/WordEngineering/WordCross/ScriptureReferenceComparance.html
+git add        IIS/WordEngineering/WordCross/ScriptureReferenceComparanceArchive.asmx
+git add        IIS/WordEngineering/WordCross/ScriptureReferenceComparanceArchive.html
+git add        InformationInTransit/ProcessCode/ScriptureReferenceComparance.Archivecs
+git add        InformationInTransit/ProcessCode/ScriptureReferenceComparance.cs
