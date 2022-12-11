@@ -58,15 +58,9 @@ namespace InformationInTransit.ProcessCode
 			
 			DataTable wordDataTable = new DataTable();
 
-			wordDataTable.Columns.Add("TableID", typeof(int));
-			wordDataTable.Columns.Add("Word", typeof(string));
-			wordDataTable.Columns.Add("Occurrences", typeof(long));
+			wordDataTable.Columns.Add("BibleWord", typeof(string));
 
-			wordDataTable.PrimaryKey = new DataColumn[] 
-			{ 
-				wordDataTable.Columns["TableID"],
-				wordDataTable.Columns["Word"] 				
-			};
+			DataRow wordDataRow = null;
 
 			for
 			(
@@ -75,6 +69,11 @@ namespace InformationInTransit.ProcessCode
 				++dataTableIndex
 			)
 			{
+				wordDataTable.Columns.Add
+				(
+					"Occurrences" + (dataTableIndex + 1).ToString().Trim(), 
+					typeof(long)
+				);
 				dataTable = dataSet.Tables[dataTableIndex];
 				targetSubset[dataTableIndex] = new StringBuilder();
 				for
@@ -90,6 +89,11 @@ namespace InformationInTransit.ProcessCode
 					targetSubset[dataTableIndex].Append(verseText);
 				}
 			}
+
+			wordDataTable.PrimaryKey = new DataColumn[] 
+			{ 
+				wordDataTable.Columns["BibleWord"] 				
+			};
 
 			for
 			(
@@ -115,34 +119,39 @@ namespace InformationInTransit.ProcessCode
 					
 					foreach(String verseWord in verseTexts)
 					{
-						matches = Regex.Matches
+						wordDataRow = wordDataTable.Rows.Find
 						(
-							targetSubset[dataTableIndex].ToString(),
-							verseWord
+							new Object[] 
+							{
+								verseWord
+							}
 						);
-							
-						DataRow exisitingRows = null;
-						//if ( dataTableIndex == 0 )
-						//{
-							exisitingRows = wordDataTable.Rows.Find
-							(
-								new Object[] 
-								{
-									dataTableIndex + 1,
-									verseWord
-								}
-							);
-						//}
-						
-						if ( exisitingRows == null )
+												
+						if ( wordDataRow == null )
 						{
-							wordDataTable.Rows.Add
-							(
-								dataTableIndex + 1,
-								verseWord,
-								matches.Count
-							);
+							wordDataRow = wordDataTable.NewRow(); 
+							wordDataRow["BibleWord"] = verseWord;
+							wordDataTable.Rows.Add(wordDataRow);		
 						}
+			
+						for
+						(
+							int targetIndex = dataTableIndex;
+							targetIndex < dataTablesCount;
+							++targetIndex
+						)
+						{
+							matches = Regex.Matches
+							(
+								targetSubset[targetIndex].ToString(),
+								verseWord
+							);
+							wordDataRow
+							[
+								"Occurrences" + 
+								(targetIndex + 1).ToString().Trim()
+							] = matches.Count;
+						}						
 					}	
 				}
 			}
