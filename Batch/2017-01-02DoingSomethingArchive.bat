@@ -463,4 +463,15 @@ I thank you for giving me $25 cash to deposit at:
 Fremont, California (CA) 94538
 United States of America (USA)
 Raymond Obioma said, he went home 2 years ago, and he is visiting again next year, Raymond Obioma, asked when I am going home?
+2022-12-19T06:23:00 ... 2022-12-19T06:38:00
+SELECT        TOP (515) HisWordID, Dated, Word, Commentary, Uri, ContactId, ScriptureReference, Filename, EnglishTranslation, Location, Scene
+FROM            HisWord
+WHERE        (ContactId IN (1369)) AND (Commentary LIKE '%relat%') OR
+                         (ContactId IN (1369)) AND (Word LIKE '%birin%') OR
+                         (ContactId IN (1369)) AND (Word LIKE '%woman%') OR
+                         (ContactId IN (1369)) AND (Word LIKE '%female%') OR
+                         (ContactId IN (1369)) AND (Commentary LIKE '%birin%') OR
+                         (ContactId IN (1369)) AND (Commentary LIKE '%woman%') OR
+                         (ContactId IN (1369)) AND (Commentary LIKE '%female%')
+ORDER BY HisWordID DESC
 :Exit

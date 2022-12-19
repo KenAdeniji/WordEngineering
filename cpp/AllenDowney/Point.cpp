@@ -1,9 +1,11 @@
 /*
 	2022-12-10T19:52:00 Created.	http://greenteapress.com/thinkcpp/thinkCScpp.pdf
 	2016-10-04	http://stackoverflow.com/questions/1549930/c-equivalent-of-java-tostring
+	2022-12-19T09:24:00 distance method.
 */
 
 #include <cassert>
+#include <cmath>
 #include <string>
 
 #include "Point.hpp"
@@ -39,7 +41,7 @@ void Point::SetPoint
 	double	y
 )
 {
-//	assert(x < 0 || y < 0);
+	assert(x >= 0 || y >= 0);
 	this->x = x;
 	this->y = y;
 }
@@ -59,7 +61,7 @@ void Point::setX
 	double	x
 )
 {
-	assert(x < 0);
+	assert(x > 0);
 	this->x = x;
 }
 
@@ -68,6 +70,6 @@ void Point::setY
 	double y
 )
 {
-	assert(y < 0);
+	assert(y > 0);
 	this->y = y;
 }
