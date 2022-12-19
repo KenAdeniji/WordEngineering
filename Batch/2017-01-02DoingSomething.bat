@@ -156,13 +156,13 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12966);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12859);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4976);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 105325);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 103761);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 151477);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -448,7 +448,7 @@ Build
     Estimate Development Effort
     Manage development sprints and QA
 
-2022-12-02T17:59:00 URIMaintenanceWebFOrm.aspx   	53880
+2022-12-02T17:59:00 URIMaintenanceWebFOrm.aspx 	53726
 
 2022-12-06T09:52:00 ... 2022-12-06T10:46:00 1st United Services Credit Union. Telephone call.
 I don't have any more money in my checking and savings account.

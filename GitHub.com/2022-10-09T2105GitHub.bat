@@ -120,3 +120,4 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-08T0250Carla
 git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-08T0250CarlaPharn_OaklandHousingAuthority_cpharn@Oakha.org_5108741575_1619HarrisonStreet_OaklandCalifornia94612Archive.txt
 
 git add			Python/polars/
+git add			E:/WordEngineering/cpp/AllenDowney/
