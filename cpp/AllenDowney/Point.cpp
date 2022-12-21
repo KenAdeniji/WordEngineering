@@ -19,7 +19,7 @@ Point::Point
 	double	y
 )
 {
-	SetPoint(x, y);
+	setPoint(x, y);
 }
 
 // Point operator overloading
@@ -35,7 +35,7 @@ ostream& operator <<(ostream& outputStream, const Point& point)
 }		
  
 // Point member function
-void Point::SetPoint
+void Point::setPoint
 (
 	double	x,
 	double	y
@@ -72,4 +72,11 @@ void Point::setY
 {
 	assert(y > 0);
 	this->y = y;
+}
+
+void Point::reflect()
+{
+	double temp = x;
+	x = y;
+	y = temp;
 }

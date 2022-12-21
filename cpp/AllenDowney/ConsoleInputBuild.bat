@@ -1,0 +1,1 @@
+cl /EHsc ConsoleInput.cpp

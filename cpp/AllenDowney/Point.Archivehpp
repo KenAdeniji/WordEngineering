@@ -29,7 +29,7 @@ class Point
 
 		friend ostream& operator <<(ostream& outputStream, const Point& point);
 	 
-		void SetPoint
+		void setPoint
 		(
 			double	x,
 			double	y
@@ -40,6 +40,8 @@ class Point
 		
 		double	getY();
 		void	setY(double y);
+		
+		void reflect();
 };
  
 #endif

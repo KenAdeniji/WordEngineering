@@ -24,8 +24,13 @@ void stub()
 	Point* point1 = new Point(3.5, 4);
 	point1->setX(3);
 	Point* point2 = new Point(0, 0);
-	cout	<< "Point1 " << *point1
-			<< " Point2 " << *point2
+	cout	<< "point1 " << *point1
+			<< " point2 " << *point2
+			<< " distance=" << distance(*point1, *point2) 
+			<< endl;
+	point1->reflect();
+	cout	<< "point1 " << *point1
+			<< " point2 " << *point2
 			<< " distance=" << distance(*point1, *point2) 
 			<< endl;
 	delete point1;

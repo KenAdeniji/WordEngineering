@@ -156,7 +156,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12859);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12984);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4976);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -448,7 +448,7 @@ Build
     Estimate Development Effort
     Manage development sprints and QA
 
-2022-12-02T17:59:00 URIMaintenanceWebFOrm.aspx 	53726
+2022-12-02T17:59:00 URIMaintenanceWebFOrm.aspx 	 47539  2017-12-02
 
 2022-12-06T09:52:00 ... 2022-12-06T10:46:00 1st United Services Credit Union. Telephone call.
 I don't have any more money in my checking and savings account.
@@ -473,5 +473,13 @@ WHERE        (ContactId IN (1369)) AND (Commentary LIKE '%relat%') OR
                          (ContactId IN (1369)) AND (Commentary LIKE '%birin%') OR
                          (ContactId IN (1369)) AND (Commentary LIKE '%woman%') OR
                          (ContactId IN (1369)) AND (Commentary LIKE '%female%')
+ORDER BY HisWordID DESC
+"Trap for each of these keywords. If there are already too many ERROR and WARNING, then suppress these two for a while, until we fix them. But the rest of the keyword must be in hunter trap.
+ In IIS, there's HTTPERR log. \windows\system32\inetsrv\LogFiles"
+ 2022-12-20 11:44:04.213 Urine at various places. 11:47 Paseo Padre Parkway overhead bridge, North. Charter Square. Pegasus Center. Fremont Boulevard, Paseo Padre Parkway, Blackstone, Siward, Creekwood.
+2022-12-20T17:15:00 
+SELECT        TOP (15) HisWordID, Dated, Word, Commentary, Uri, ContactId, ScriptureReference, Filename, EnglishTranslation, Location, Scene
+FROM            HisWord
+WHERE        (HisWordID IN (910))
 ORDER BY HisWordID DESC
 :Exit
