@@ -123,3 +123,10 @@ git add			Python/polars/
 git add			E:/WordEngineering/cpp/AllenDowney/
 
 git add			OmarAlZabir/
+
+git add        IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyself.asmx
+git add        IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyself.html
+git add        IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyselfArchive.asmx
+git add IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyselfArchive.html
+git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.Archivecs
+git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.cs
