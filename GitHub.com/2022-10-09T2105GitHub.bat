@@ -121,3 +121,5 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2022-12-08T0250Carla
 
 git add			Python/polars/
 git add			E:/WordEngineering/cpp/AllenDowney/
+
+git add			OmarAlZabir/
