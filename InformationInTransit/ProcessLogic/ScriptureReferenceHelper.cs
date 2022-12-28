@@ -1195,12 +1195,13 @@ namespace InformationInTransit.ProcessLogic
 		public static readonly String[][] BibleGroupSubstitute =
 		{ 
 			new String[] { "All", "Genesis - Revelation" },		
-			new String[] { "Gospel", "Matthew - John" },
+			new String[] { "Gospels", "Matthew - John" },
 			new String[] { "Major Prophets", "Isaiah - Daniel" },
 			new String[] { "Minor Prophets", "Joel - Malachi" },
 			new String[] { "New Testament", "Matthew - Revelation" },
 			new String[] { "Old Testament", "Genesis - Malachi" },
 			new String[] { "Pentateuch", "Genesis - Deuteronomy" },
+			new String[] { "Synoptic Gospels", "Matthew - Luke" }, //2022-12-27T17:55:00
 		};	
 	
 		public class ScriptureReference
