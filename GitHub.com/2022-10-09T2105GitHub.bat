@@ -131,7 +131,7 @@ git add IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyselfArchive.html
 git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.Archivecs
 git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.cs
 
-git add        	IIS/WordEngineering/WordCross/WhatRememberanceOfMan.html
-git add        	IIS/WordEngineering/WordCross/WhatRememberanceOfManArchive.html
+git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfMan.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
+git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfManArchive.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
 git add   		IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
 git add        	IIS/WordEngineering/WordUnion/BibleWordWebServiceArchive.asmx

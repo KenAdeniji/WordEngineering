@@ -25,6 +25,7 @@ using InformationInTransit.UserInterface;
 ///	2015-07-17 	Created.
 ///	2015-11-15	GetAPage();
 ///	2018-08-02	MakeMeKnow();
+///	2022-12-28	WhatRemembranceOfMan()
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -187,18 +188,19 @@ public class BibleWordWebService : System.Web.Services.WebService
 
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-	public String WhatRememberanceOfMan
+	public String WhatRemembranceOfMan
 	(
 		String	logic,
 		String	bibleBookGroup,
 		String	question,
 		bool	wholeWords,
-		string	bibleVersion
+		string	bibleVersion,
+		string	scriptureReference,
+		bool	scriptureReferenceIn
 	)
     {
-		String[] scriptureReferenceSubset = null;
-		DataSet result = null;
-		result = BibleWordHelper.Query
+		string json = null;
+		DataSet bibleWordSet = BibleWordHelper.Query
 		(
 			logic,
 			bibleBookGroup,
@@ -206,7 +208,17 @@ public class BibleWordWebService : System.Web.Services.WebService
 			wholeWords,
 			bibleVersion
 		);
-		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		if (scriptureReference == "")
+		{
+			json = JsonConvert.SerializeObject(bibleWordSet, Formatting.Indented);
+		}
+		else
+		{	
+			DataSet remembSet = BibleWordHelper.Query
+			WhatRemembranceOfMan.Query
+			(
+			)
+		}
 		return json;
     }
 	
