@@ -30,6 +30,7 @@ namespace InformationInTransit.ProcessCode
 {
 	///<summary>
 	///	2022-12-28T22:21:00 Created.
+	///	2022-12-29T07:53:00	Will determine when a Bible Word is included in a Scripture Reference.
 	///</summary>
 	public class WhatRemembranceOfMan
 	{
