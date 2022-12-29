@@ -184,6 +184,31 @@ public class BibleWordWebService : System.Web.Services.WebService
 		return resultSet;
 		
     }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String WhatRememberanceOfMan
+	(
+		String	logic,
+		String	bibleBookGroup,
+		String	question,
+		bool	wholeWords,
+		string	bibleVersion
+	)
+    {
+		String[] scriptureReferenceSubset = null;
+		DataSet result = null;
+		result = BibleWordHelper.Query
+		(
+			logic,
+			bibleBookGroup,
+			question,
+			wholeWords,
+			bibleVersion
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
+    }
 	
 	public const String SQLSelectAssociativeWordsFormat = 
 		"SELECT WordEngineering.dbo.AssociativeWords({0}, '{1}', {2}, {3}) AS	Words, " +

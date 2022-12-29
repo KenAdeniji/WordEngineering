@@ -25,6 +25,7 @@ using InformationInTransit.UserInterface;
 ///	2015-07-17 	Created.
 ///	2015-11-15	GetAPage();
 ///	2018-08-02	MakeMeKnow();
+///	2022-12-28	WhatRememberanceOfMan()
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -183,6 +184,31 @@ public class BibleWordWebService : System.Web.Services.WebService
 		
 		return resultSet;
 		
+    }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String WhatRememberanceOfMan
+	(
+		String	logic,
+		String	bibleBookGroup,
+		String	question,
+		bool	wholeWords,
+		string	bibleVersion,
+		string	scriptureReference,
+		bool	scriptureReferenceIn
+	)
+    {
+		DataSet result = BibleWordHelper.Query
+		(
+			logic,
+			bibleBookGroup,
+			question,
+			wholeWords,
+			bibleVersion
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
     }
 	
 	public const String SQLSelectAssociativeWordsFormat = 
