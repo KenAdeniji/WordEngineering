@@ -80,12 +80,14 @@ namespace InformationInTransit.ProcessCode
 						scriptureReferenceLiteral
 					)	
 				);
-				if (foundRows.Count() > 0)
+
+				if (foundRows.Count() > 0 && !scriptureReferenceIn)
 				{
-					if (!scriptureReferenceIn)
-					{
-						bibleWordDataTable.Rows[bibleWordRowIndex].Delete();
-					}	
+					bibleWordDataTable.Rows[bibleWordRowIndex].Delete();
+				}
+				else if (foundRows.Count() < 1 && scriptureReferenceIn)
+				{
+					bibleWordDataTable.Rows[bibleWordRowIndex].Delete();
 				}
 			}	
 			
