@@ -200,7 +200,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	)
     {
 		string json = null;
-		DataSet bibleWordSet = BibleWordHelper.Query
+		DataSet bibleWordDataSet = BibleWordHelper.Query
 		(
 			logic,
 			bibleBookGroup,
@@ -208,16 +208,20 @@ public class BibleWordWebService : System.Web.Services.WebService
 			wholeWords,
 			bibleVersion
 		);
-		if (scriptureReference == "")
+		if (String.IsNullOrEmpty(scriptureReference))
 		{
-			json = JsonConvert.SerializeObject(bibleWordSet, Formatting.Indented);
+			json = JsonConvert.SerializeObject(bibleWordDataSet, Formatting.Indented);
 		}
 		else
 		{	
-			DataSet remembSet = BibleWordHelper.Query
-			WhatRemembranceOfMan.Query
+			DataSet resultSet = InformationInTransit.ProcessCode.WhatRemembranceOfMan.Query
 			(
-			)
+				bibleVersion,
+				bibleWordDataSet,
+				scriptureReference,
+				scriptureReferenceIn
+			);
+			json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
 		}
 		return json;
     }

@@ -214,10 +214,14 @@ public class BibleWordWebService : System.Web.Services.WebService
 		}
 		else
 		{	
-			DataSet remembSet = BibleWordHelper.Query
-			WhatRemembranceOfMan.Query
+			resultSet = WhatRemembranceOfMan.Query
 			(
+				bibleVersion,
+				bibleWordSet,
+				scriptureReference,
+				scriptureReferenceIn
 			)
+			json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
 		}
 		return json;
     }

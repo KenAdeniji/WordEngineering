@@ -131,7 +131,14 @@ git add IIS/WordEngineering/WordCross/IWillBringAsMuchAsMyselfArchive.html
 git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.Archivecs
 git add InformationInTransit/ProcessCode/IWillBringAsMuchAsMyself.cs
 
-git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfMan.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
-git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfManArchive.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
+REM 2022-12-28T22:51 git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfMan.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
+REM 2022-12-28T22:51 git mv -f       	IIS/WordEngineering/WordCross/WhatRememberanceOfManArchive.html IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
+
+git add       	IIS/WordEngineering/WordCross/WhatRemembranceOfMan.html
+git add       	IIS/WordEngineering/WordCross/WhatRemembranceOfManArchive.html
+
 git add   		IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
 git add        	IIS/WordEngineering/WordUnion/BibleWordWebServiceArchive.asmx
+
+git add	        InformationInTransit/ProcessCode/WhatRemembranceOfMan.Archivecs
+git add 	 	InformationInTransit/ProcessCode/WhatRemembranceOfMan.cs
