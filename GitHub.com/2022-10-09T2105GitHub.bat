@@ -142,3 +142,6 @@ git add        	IIS/WordEngineering/WordUnion/BibleWordWebServiceArchive.asmx
 
 git add	        InformationInTransit/ProcessCode/WhatRemembranceOfMan.Archivecs
 git add 	 	InformationInTransit/ProcessCode/WhatRemembranceOfMan.cs
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-05T0903Tyrone.Fordham@sony.com.txt
+git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-05T0903Tyrone.Fordham@sony.comArchive.txt
