@@ -147,3 +147,8 @@ git add        	IIS/WordEngineering/2018-05-03Correspondence/2023-01-05T0903Tyro
 git add        	IIS/WordEngineering/2018-05-03Correspondence/2023-01-05T0903Tyrone.Fordham@sony.comArchive.txt
 
 git add			Python/spaCy/
+
+git add        IIS/WordEngineering/Linux/2023-01-06T09092LinuxCommand.txt
+git add        IIS/WordEngineering/Linux/2023-01-06T09092LinuxCommandArchive.txt
+git add        IIS/WordEngineering/WordCross/LearnWithJason.dev_-_FormDataAPI.html
+git add        IIS/WordEngineering/WordCross/LearnWithJason.dev_-_FormDataAPIArchive.html
