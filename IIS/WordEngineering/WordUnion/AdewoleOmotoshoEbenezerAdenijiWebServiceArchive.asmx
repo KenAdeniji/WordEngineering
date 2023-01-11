@@ -1,4 +1,4 @@
- <%@ WebService Language="C#" Class="AdewoleOmotoshoEbenezerAdenijiWebService" %>
+<%@ WebService Language="C#" Class="AdewoleOmotoshoEbenezerAdenijiWebService" %>
 using System;
 using System.Data;
 using System.Numerics;
@@ -26,13 +26,6 @@ using InformationInTransit.DataAccess;
 [ScriptService]
 public class AdewoleOmotoshoEbenezerAdenijiWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String FamilyTree()

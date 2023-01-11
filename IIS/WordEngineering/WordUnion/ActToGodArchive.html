@@ -6,6 +6,11 @@
 		2017-03-08	http://stackoverflow.com/questions/11287019/how-to-use-javascript-to-populate-multidimensional-array
 		2017-03-08	To live, to assume; to presume, none.
 		2017-03-08	A unilateral message; for a resembling world.
+		2023-01-09	Variable definition and declaration.
+						majorElement
+						resultSetElement
+					function renderMajor(data)
+						Single dimension array.
 	-->
 	<head>
 		<title>Act to God</title>
@@ -29,33 +34,34 @@
 		<script src="tsorter.min.js" type="text/javascript"></script>
 		<script>
 			var isPostBack = false;
+
+			const majorElement = document.getElementById("major");
+			const resultSetElement = document.getElementById("resultSet");
 			
 			function queryMajor() {
-				var request = {};
-		        var requestJson = JSON.stringify(request);
 		        $.ajax
 				({
 				    type: "POST",
 				    contentType: "application/json; charset=utf-8",
 				    url: "/WordEngineering/WordUnion/ActToGod.asmx/Major",
-				    data: requestJson,
+				    data: "",
 				    dataType: "json",
 				    success: function (data) {
 				        var informationSet = JSON.parse(data.d);
 				        renderMajor(informationSet);
 				    },
 				    error: function (xhr) {
-				        document.getElementById("resultSet").innerHTML =
-							'Status: ' + xhr.status + " | " +
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
+				        resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " +
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText
 				    }
 				});
 			}
 			
 			function querySubmit() {
 				var request = {};
-				request["major"] = document.getElementById("major").value;
+				request["major"] = majorElement.value;
 		        var requestJson = JSON.stringify(request);
 		        $.ajax
 				({
@@ -71,15 +77,15 @@
 					},
 					error: function(xhr)
 					{ 
-						resultSetElement.innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
+				        resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " +
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText
 					} 
 				});
 			}
 			
-		    function renderMajor(data) 
+		    function renderMajor(data)
 			{
 				for (var table in data) {
 					dataTable = data[table];
@@ -89,7 +95,7 @@
 					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
 					{
 						dataRow = dataTable[rowIndex];
-						majorEntries.push([dataRow["Major"], dataRow["Major"]]);
+						majorEntries.push(dataRow["Major"]);
 					}
 				}
 				scriptLiteral9432.buildSelect("major", majorEntries);

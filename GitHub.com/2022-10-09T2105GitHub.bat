@@ -155,3 +155,20 @@ git add        IIS/WordEngineering/WordCross/LearnWithJason.dev_-_FormDataAPIArc
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-09T1450jana.jensen@10xgenomics.com_(801)367-8810_6230StoneridgeMallRoad_Pleasanton_California(CA)_94588.txt
 git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-09T1450jana.jensen@10xgenomics.com_(801)367-8810_6230StoneridgeMallRoad_Pleasanton_California(CA)_94588Archive.txt
+
+        git add   IIS/WordEngineering/WordUnion/AHistoryOfOurPassageATasteAtUs.html
+        git add   IIS/WordEngineering/WordUnion/AHomeIClaim.asmx
+        git add   IIS/WordEngineering/WordUnion/ActToGod.asmx
+        git add   IIS/WordEngineering/WordUnion/ActToGod.html
+        git add   IIS/WordEngineering/WordUnion/ActToGodArchive.asmx
+        git add   IIS/WordEngineering/WordUnion/ActToGodArchive.html
+        git add   IIS/WordEngineering/WordUnion/AddressingThePart.html
+        git add   IIS/WordEngineering/WordUnion/AddressingThePartArchive.html
+        git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdeniji.html
+        git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiArchive.html
+        git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebService.asmx
+        git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebServiceArchive.asmx
+
+git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.html   
+git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.js
+git add        IIS/WordEngineering/JavaScript/Algorithm/wordcountArchive.html

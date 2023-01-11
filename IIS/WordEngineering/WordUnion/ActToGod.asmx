@@ -29,13 +29,6 @@ using InformationInTransit.UserInterface;
 [ScriptService]
 public class ActToGodWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Major()

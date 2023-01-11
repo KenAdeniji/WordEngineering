@@ -144,25 +144,25 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESE
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
-DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17765);
+DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17865);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 60488);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 60540);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12984);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 4976);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5000);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 105325);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 151477);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 151904);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -407,7 +407,7 @@ WHERE
 2022-09-15T10:39:00	http://localhost/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&bibleLogic=Or&biblePartition=Book
 2022-09-15T17:16:00	https://github.com/ryanmcdermott/clean-code-javascript
 2022-09-25T18:35:00	Telephone battery charge low indicator and beeper.
-2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx 	page  	60457
+2022-11-10T08:59:00	http://localhost/informationintransit/urimaintenancewebform.aspx	57176
 2022-10-21T16:01:00 2015-10-23DoctoralDissertation.html Functions and Methods
 2022-10-28T05:25:00
 				<li id='bibliographyIlyaGrigorik2013' datetime="2022-10-22T07:48:00">
@@ -477,4 +477,10 @@ ORDER BY HisWordID DESC
 "Trap for each of these keywords. If there are already too many ERROR and WARNING, then suppress these two for a while, until we fix them. But the rest of the keyword must be in hunter trap.
  In IIS, there's HTTPERR log. \windows\system32\inetsrv\LogFiles"
  2022-12-20 11:44:04.213 Urine at various places. 11:47 Paseo Padre Parkway overhead bridge, North. Charter Square. Pegasus Center. Fremont Boulevard, Paseo Padre Parkway, Blackstone, Siward, Creekwood.
+2022-12-20T17:15:00 
+SELECT        TOP (15) HisWordID, Dated, Word, Commentary, Uri, ContactId, ScriptureReference, Filename, EnglishTranslation, Location, Scene
+FROM            HisWord
+WHERE        (HisWordID IN (910))
+ORDER BY HisWordID DESC
+2023-01-03T23:04:00 I am available everyday at 9AM, on (510) 796-8121.
 :Exit

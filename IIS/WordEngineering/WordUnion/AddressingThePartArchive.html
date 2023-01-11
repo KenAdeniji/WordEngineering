@@ -6,23 +6,40 @@
 			2018-03-02	Daniel 2:32	This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,
 			2018-03-02	Daniel 2:33	His legs of iron, his feet part of iron and part of clay.
 			2018-03-02	http://www.kodyaz.com/html5/draw-stick-man-in-html5-canvas-using-javascript.aspx
+			2023-01-09T20:16:00 Variable definition and declaration
+			const canvasElement = document.getElementById("canvas");
+			
+			function drawStickman()
+			{
+				var context = canvasElement.getContext("2d"); // get Canvas Context object
+
+				if (!context) { 
+					return;
+				}
+				...
+			}
 		-->
-		<title>Addressing the Part - Nebuchadnezzar's Dream (Daniel 2:32-33)</title>
+		<title>Addressing the Part - Nebuchadnezzar's Image Dream (Daniel 2)</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is a canvas drawing of king Nebuchadnezzar's image dream and prophet Daniel's interpretation"/>
+		<meta name="keywords" content="Bible, Daniel 2, king Nebuchadnezzar image dream, prophet Daniel interpretation, HTML5 canvas"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
 	</head>
 	<body>
 		<canvas id="canvas"></canvas>
 		<script>
 			var isPostBack = false;
 
+			const canvasElement = document.getElementById("canvas");
+			
 			function drawStickman()
 			{
-				var canvas = document.getElementById("canvas");
-				
-				if (!canvas.getContext("2d")) { 
+				var context = canvasElement.getContext("2d"); // get Canvas Context object
+
+				if (!context) { 
 					return;
 				}
-			
-				context = canvas.getContext("2d"); // get Canvas Context object
 
 				context.beginPath();
 				context.fillStyle = "gold"; // #ffe4c4

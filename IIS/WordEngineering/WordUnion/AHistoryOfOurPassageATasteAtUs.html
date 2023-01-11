@@ -34,6 +34,10 @@
 		<button id="insert">Insert</button>
 
 		<script>
+			const journeyElement = getElementById("journey");
+			const teamElement = getElementById("team");
+			const recordPositionElement = getElementById("recordPosition");
+			
 			var AHistoryOfOurPassageATasteAtUs =
 			{
 				blankRecord:
@@ -65,8 +69,8 @@
 				renderRecord: function()
 				{
 					var recordNumber = AHistoryOfOurPassageATasteAtUs.recordNumber;
-					document.getElementById("journey").value = AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].journey;
-					document.getElementById("team").value = AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].team;
+					journeyElement.value = AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].journey;
+					teamElement.value = AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].team;
 				},
 				requestMovement: function(e)
 				{
@@ -140,26 +144,24 @@
 				saveRecord: function()
 				{
 					var recordNumber = AHistoryOfOurPassageATasteAtUs.recordNumber;
-					AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].journey = 
-					document.getElementById("journey").value;
-					AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].team = 
-						document.getElementById("team").value;
+					AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].journey = journeyElement.value;
+					AHistoryOfOurPassageATasteAtUs.dataInfo[recordNumber].team = teamElement.value;
 				},
 				writePosition: function()
 				{
-					document.getElementById("recordPosition").innerHTML =
+					recordPositionElement.innerHTML =
 						`${AHistoryOfOurPassageATasteAtUs.recordNumber + 1} of ${AHistoryOfOurPassageATasteAtUs.dataInfo.length}`;
 				}
 			}
 
-			document.getElementById("first").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-			document.getElementById("last").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-			document.getElementById("next").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-			document.getElementById("previous").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-
-			document.getElementById("append").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-			document.getElementById("delete").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
-			document.getElementById("insert").addEventListener("click", AHistoryOfOurPassageATasteAtUs.requestMovement, false);
+			const buttons = document.querySelectorAll('button')
+			buttons.forEach
+			(
+				function(currentButton)
+				{
+					currentButton.addEventListener('click', AHistoryOfOurPassageATasteAtUs.requestMovement)
+				}
+			)
 			
 			window.addEventListener("load", AHistoryOfOurPassageATasteAtUs.pageLoad, false);
 		</script>
