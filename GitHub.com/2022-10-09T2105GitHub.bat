@@ -172,3 +172,8 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-09T1450jana.
 git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.html   
 git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.js
 git add        IIS/WordEngineering/JavaScript/Algorithm/wordcountArchive.html
+
+git add	       IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.asmx
+git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.html
+git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLIArchive.asmx
+git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLIArchive.html
