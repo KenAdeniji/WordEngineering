@@ -16,5 +16,7 @@ more /etc/hosts #Scroll
 less /etc/hosts #Peruse
 head /etc/hosts #Show the beginning
 tail /etc/hosts #Show the ending
-echo $PATH
+echo $PATH #Show the value of the $PATH environment variable
 wc /etc/hosts #Lines, words, and alphabets count
+type -a cat #Find the cat command
+ls /usr/bin/cat #List the cat command

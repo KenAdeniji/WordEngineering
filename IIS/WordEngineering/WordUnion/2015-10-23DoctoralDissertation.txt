@@ -1,7 +1,6 @@
     Title
     Abstract
     Acknowledgments
-    Introduction
     Theory
     Results and Discussion
     Terminology
@@ -26,22 +25,11 @@ The author is working on variations of AlphabetSequence: These are not suitable 
 The importance of this work?
 
     To track dates and words? And, find meaning, correlation.
-    Day of the week gives indication ( Genesis 1:1-2:3 ).
-    To know where I relate?
-    Man desires? God decides.
-    The business of telling us apart ( Genesis 4, Exodus 20:12, Deuteronomy 5:16, Ephesians 6:2 )? Genealogy, profession.
-    What if God is a party ( Exodus 5:2 )?
-    What I have, indeed, is, I owe indeed ( 1 John 3:12 ).
-    Do I speak in a period as others? My preference for determining the future is how I Am.
+    Follow God, as a character.
+    Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
     What does God divide ( Daniel 2:33-35, Daniel 2:41-43, Daniel 2:45, Matthew 27:51, Mark 15:38, Luke 23:45, Genesis 25:23, Genesis 41, Matthew 24:2, Mark 13:2, Luke 19:44, Luke 21:6 )?
     Can the connections be joined? We are hoping the sender of this message bears Himself.
     What did He personally use? Word, spirit.
-    Follow God, as a character.
-    His word spoke as mine.
-    Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
-    He didn't have to take her out of the man, again.
-    What did He introduce as His ( Exodus 12:11 )?
-    To know how best is Mine ( Revelation 21:23, Revelation 21:2, Revelation 5:1-9 )?
 
 Intention:
 
@@ -64,18 +52,6 @@ Acknowledgments
 Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
-Introduction
-
-Word 	Commentary 	Scripture Reference	
-Re-locate 	My Yoruba tribal name is Kehinde, meaning the second-born of the twins. Is life a comprehension of how further we are separated? 	Genesis 4:1-17, Genesis 19:30-38, Genesis 25:19-34
-
-The incentives to begin work on WordEngineering will include:
-
-    Taking example from the Bible ( Daniel 9:2, Genesis 18:19, Job 23:12 ).
-    Creating an address book. To relate; who I use ( Genesis 2:5, Genesis 2:7-8, Genesis 2:15-25, Genesis 3:20 ). Where does He need one person? Many ( 2 Samuel 11-12 )?
-    Keeping a diary.
-    Expounding on His word.
-
 Theory
 Literature Review
 
@@ -95,9 +71,6 @@ Seeing the Bible as enlightening to man.
 Description of Related Art
 
 To find if a relationship exists between the Bible and what we receive today?
-Brief Summary
-
-To choose the progression of how I count ( Luke 7:47 )?
 "
 The Bible Database
 The Scripture Table
@@ -125,7 +98,7 @@ The Scripture View's BookTitle Column
 The SQL statement dbo.udf_BookTitle(BookID) is for determining this computed column. As expected, there is a correlation between the BookID column, and and its corresponding BookTitle column, it progresses from Genesis to Revelation. Because SQL does not support arrays, the author, chose to write a SQL CLR C# function for determining the BookTitle, when passed the BookID. Although, C# supports Design by contract, assertions, but the author only checks BookID range validity, and return NULL, if the argument does not fall within this range. We could throw exceptions, but the author does not know the side effect nor full ramification. Instead of writing and determining the BookTitle using C#, an alternative is to use a database table. A table with two columns, BookID and BookTitle, will store and make extractable the sixty-six books.
 The Scripture Table's ScriptureReference Column
 
-The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the BookID.
+The SQL statement dbo.udf_ScriptureReference(BookID, ChapterID, VerseID) will calculate the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a computed column; therefore, you can not set its Entity Integrity; if it were not; the SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference) will set its entity integrity. The distinction between raw data versus computed columns is performance, space. For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t. An improvement on the current implementation is to use soundex to decipher the book title and the corresponding BookID.
 The Scripture Table's ChapterIDSequence Column
 
 When loading data, the author decides the ChapterIDSequence column; and increment it, every time, the BookID and ChapterID, changes during load. The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22. The SQL statement SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID will decide the greatest value for ChapterIDSequence. An alternative SQL statement select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture Another SQL statement ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte The SQL statement ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) will do the range correctness. Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
@@ -1678,6 +1651,8 @@ Where My word, has developed His need ( 2 Kings 8:5 )?
 The select inputs do not have default values.
 
 The Scripture table is a one-to-one mapping between the Bible version and column. These arrangements are futile when there are inconsistencies in the Bibles versions separations. An alternative is to have a table for each version. Publishers issue Bible version.
+
+What does the Bible teach us about twins? Full-Text search? We have given preference to the word, not the commentary, which is subjective.
 Word to Today
 
 The remember table correlates the events and the calendar. Currently, the author is manually deriving the entries for the Remember table. When there is an association, then the author considers the first, last, relevant mentions.
