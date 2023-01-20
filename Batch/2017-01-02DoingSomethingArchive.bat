@@ -157,7 +157,7 @@ DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12984);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5000);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5015);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 105325);
@@ -483,5 +483,5 @@ FROM            HisWord
 WHERE        (HisWordID IN (910))
 ORDER BY HisWordID DESC
 2023-01-03T23:04:00 I am available everyday at 9AM, on (510) 796-8121.
-#bibliographyLaraCallenderHogan2014
+2023-01-19T13:05:00 without jQuery, JavaScript versus (VS) jQuery 13:09 Faeces.
 :Exit
