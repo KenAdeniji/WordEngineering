@@ -160,7 +160,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 12984);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5015);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 105325);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 151593);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 151904);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
@@ -486,5 +486,6 @@ ORDER BY HisWordID DESC
 2023-01-19T13:05:00 without jQuery, JavaScript versus (VS) jQuery 13:09 Faeces.
 2023-01-20T09:34:00 Microsoft SQL Server management studio user interface (UI) grid tab error.
 2023-01-21T16:57:00 Stephen Hay
-2023-01-21T18:45:00 URIMaintenanceWebForm.aspx SequenceOrderID 41225
+2023-01-21T18:45:00 URIMaintenanceWebForm.aspx SequenceOrderID  47654
+08:03 Mouse click error.
 :Exit
