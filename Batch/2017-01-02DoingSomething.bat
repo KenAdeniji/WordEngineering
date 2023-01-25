@@ -233,6 +233,8 @@ E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
 
+C:\Users\kadeniji\OneDrive\
+
 2022-10-20T06:06:00 ... 2022-10-20T06:26:00
 CustomerRelations@cba.com.au, pottspoint.nsw@cba.com.au, cbaideas@cba.com.au, julie.gallagher@cba.com.au, amanda.hobbins@cba.com.au, mckaych@cba.com.au, fiona.turkovic@cba.com.au, Bobbi.Deacon@cba.com.au, Tony.White@cba.com.au, Stefan.Stankovic@cba.com.au 
 
