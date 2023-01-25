@@ -21,3 +21,4 @@ wc /etc/hosts #Lines, words, and alphabets count
 type -a cat #Find the cat command
 ls /usr/bin/cat #List the cat command
 who | cut -c1-8 #Extract the names of the logged-in users.
+sudo passwd username
