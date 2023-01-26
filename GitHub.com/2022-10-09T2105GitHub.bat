@@ -169,9 +169,13 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-09T1450jana.
         git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebService.asmx
         git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebServiceArchive.asmx
 
-git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.html   
-git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.js
-git add        IIS/WordEngineering/JavaScript/Algorithm/wordcountArchive.html
+git mv   IIS/WordEngineering/JavaScript/Algorithm/wordcount.html		   	IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcount.html   
+git mv   IIS/WordEngineering/JavaScript/Algorithm/wordcount.js				IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcount.js
+git mv   IIS/WordEngineering/JavaScript/Algorithm/wordcountArchive.html		IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcountArchive.html
+
+REM git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.html   
+REM git add        IIS/WordEngineering/JavaScript/Algorithm/wordcount.js
+REM git add        IIS/WordEngineering/JavaScript/Algorithm/wordcountArchive.html
 
 git add	       IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.asmx
 git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.html
