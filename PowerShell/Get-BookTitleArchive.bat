@@ -1,1 +1,0 @@
-PowerShell -command "& { . E:\WordEngineering\PowerShell\Get-BookTitle.ps1; Get-BookTitle 5 60 in }" 

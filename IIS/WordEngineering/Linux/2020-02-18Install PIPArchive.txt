@@ -1,3 +1,0 @@
-sudo yum install epel-release
-sudo dnf install python3-pip
-sudo /usr/bin/pip3.6 install flask

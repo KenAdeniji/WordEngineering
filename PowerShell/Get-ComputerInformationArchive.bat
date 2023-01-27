@@ -1,1 +1,0 @@
-PowerShell -command "& { . E:\WordEngineering\PowerShell\Get-ComputerInformation.ps1; Get-ComputerInformation localhost }" 

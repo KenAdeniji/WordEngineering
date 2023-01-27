@@ -1,6 +1,0 @@
-Create a console application
-	e:\WordEngineering\InformationInTransit\BenchmarkDotNet>dotnet new console
-Install or update a package
-	e:\WordEngineering\InformationInTransit\BenchmarkDotNet>dotnet add package BenchmarkDotNet --version 0.13.2
-Run a console application
-	e:\WordEngineering\InformationInTransit\BenchmarkDotNet>dotnet run

@@ -1,9 +1,0 @@
-vi ~/.bashrc #Edit the user's search path
-	export PATH=$PATH:~/bin
-mkdir bin #Create the bin directory
-cd bin $Change to the bin directory
-vi script.sh #Edit the script.sh
-chmod +x script.sh #Make this file executable
-sh script.sh #Or bash script.sh will run the script
-clear #Clear the terminal
-echo Hello #Greeting

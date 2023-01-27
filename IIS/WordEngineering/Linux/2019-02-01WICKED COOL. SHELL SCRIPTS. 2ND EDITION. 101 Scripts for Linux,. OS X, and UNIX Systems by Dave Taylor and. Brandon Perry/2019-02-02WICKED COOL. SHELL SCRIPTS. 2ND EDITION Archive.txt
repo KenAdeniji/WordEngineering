@@ -1,7 +1,0 @@
-$echo "Hello World"
-$echo $PATH
-which ruby
-cat ~/.bashrc
-	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting.
-./listing0-4
-

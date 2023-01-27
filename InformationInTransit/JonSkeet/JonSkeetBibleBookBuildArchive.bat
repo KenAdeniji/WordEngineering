@@ -1,1 +1,0 @@
-csc /main:InformationInTransit.JonSkeet.BibleBook JonSkeetBibleBook.cs ..\ProcessLogic\ObjectDumper.cs

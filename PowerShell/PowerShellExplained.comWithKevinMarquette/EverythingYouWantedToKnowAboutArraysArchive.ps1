@@ -1,2 +1,0 @@
-$emptyArray = @()
-$emptyArray.count
