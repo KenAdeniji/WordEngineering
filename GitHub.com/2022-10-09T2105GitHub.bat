@@ -169,17 +169,17 @@ git add        IIS/WordEngineering/2018-05-03Correspondence/2023-01-09T1450jana.
         git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebService.asmx
         git add   IIS/WordEngineering/WordUnion/AdewoleOmotoshoEbenezerAdenijiWebServiceArchive.asmx
 
-git add     	IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcount.html   
-git add   		IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcount.js
-git add   		IIS/WordEngineering/JavaScript/Algorithm/UNIXwordcountArchive.html
+git add     	IIS/WordEngineering/OperatingSystem/UNIXwordcount.html   
+git add   		IIS/WordEngineering/OperatingSystem/UNIXwordcount.js
+git add   		IIS/WordEngineering/OperatingSystem/UNIXwordcountArchive.html
 
-git add	       IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.asmx
-git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLI.html
-git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLIArchive.asmx
-git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLIArchive.html
+git add	       IIS/WordEngineering/OperatingSystem/CommandLineInterfaceCLI.asmx
+git add        IIS/WordEngineering/OperatingSystem/CommandLineInterfaceCLI.html
+git add        IIS/WordEngineering/OperatingSystem/CommandLineInterfaceCLIArchive.asmx
+git add        IIS/WordEngineering/OperatingSystem/CommandLineInterfaceCLIArchive.html
 
-git add     	IIS/WordEngineering/JavaScript/Algorithm/UNIXcut.html   
-git add   		IIS/WordEngineering/JavaScript/Algorithm/UNIXcutArchive.html
+git add     	IIS/WordEngineering/OperatingSystem/UNIXcut.html   
+git add   		IIS/WordEngineering/OperatingSystem/UNIXcutArchive.html
 
 git add        "IIS/WordEngineering/2018-05-03Correspondence/2023-01-26T1600LieutenantPaulMcCormick_PMcCormick@FremontPolice.gov_(510) 790-6920_(510) 790-6871_WalletBroughtFromSearsLost.txt"
 git add        "IIS/WordEngineering/2018-05-03Correspondence/2023-01-26T1600LieutenantPaulMcCormick_PMcCormick@FremontPolice.gov_(510) 790-6920_(510) 790-6871_WalletBroughtFromSearsLostArchive.txt"
