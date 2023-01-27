@@ -180,3 +180,6 @@ git add        IIS/WordEngineering/JavaScript/Algorithm/CommandLineInterfaceCLIA
 
 git add     	IIS/WordEngineering/JavaScript/Algorithm/UNIXcut.html   
 git add   		IIS/WordEngineering/JavaScript/Algorithm/UNIXcutArchive.html
+
+git add        "IIS/WordEngineering/2018-05-03Correspondence/2023-01-26T1600LieutenantPaulMcCormick_PMcCormick@FremontPolice.gov_(510) 790-6920_(510) 790-6871_WalletBroughtFromSearsLost.txt"
+git add        "IIS/WordEngineering/2018-05-03Correspondence/2023-01-26T1600LieutenantPaulMcCormick_PMcCormick@FremontPolice.gov_(510) 790-6920_(510) 790-6871_WalletBroughtFromSearsLostArchive.txt"
