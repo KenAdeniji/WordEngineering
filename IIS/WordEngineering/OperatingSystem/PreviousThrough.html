@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2023-01-27T16:18:00 Created.
+			resourceURI
+				http://localhost/WordEngineering/WordUnion/BibleBook.json
+				http://localhost/WordEngineering/WordUnion/Bible.json.txt
+	-->
+	<head>
+		<title>Previous through?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Previous through?"/>
+		<meta name="keywords" content="fetch, .json, .txt, .xml"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="command" style="width: 90vw;" value="sort" autofocus/><br/>
+			<input id="resourceURI" style="width: 90vw;" value="http://localhost/WordEngineering/WordUnion/BibleBook.json"/><br/>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			const commandElement = document.getElementById("command");
+			const resourceURIElement = document.getElementById("resourceURI");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				fetch(resourceURIElement.value).then(response => {
+				  const contentType = response.headers.get("content-type");
+				  if (contentType && contentType.indexOf("application/json") !== -1) {
+					return response.json().then(data => {
+					  // The response was a JSON object
+					  // Process your data as a JavaScript object
+					  resultSetElement.innerHTML = JSON.stringify(data);
+					});
+				  } else {
+					return response.text().then(text => {
+					  // The response wasn't a JSON object
+					  // Process your text as a String
+					});
+				  }
+				});
+				console.log(resourceURIElement.value);
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>
