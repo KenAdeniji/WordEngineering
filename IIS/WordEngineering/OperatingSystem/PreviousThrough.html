@@ -23,7 +23,7 @@
 		<div align="center">
 			<input 	id="command"
 					style="width: 90vw;"
-					value="sort"
+					value="cat"
 					placeholder="command"
 					autofocus
 			/><br/>
@@ -76,18 +76,19 @@
 								(
 									data => 
 									{
-										// The response was a JSON object
-										// Process your data as a JavaScript object
-										/*
-										data.sort
-										(
-											(a, b) => 
-												a[optionsElement.value].localeCompare
+										switch(commandElement.value.toLowerCase())
+										{
+											case "sort":
+												data.sort
 												(
-													b[optionsElement.value]
-												)
-										);
-										*/
+													(a, b) => 
+														a[optionsElement.value].localeCompare
+														(
+															b[optionsElement.value]
+														)
+												);
+												break;
+										}		
 										resultSetElement.innerHTML = JSON.stringify(data);
 									}
 								)
@@ -97,12 +98,17 @@
 								(
 									data => 
 									{
-										resultSetElement.innerHTML = 
-											data.split("\n")
-											.sort()
-											.join("<br/>")
-											;
-									}
+										switch(commandElement.value.toLowerCase())
+										{
+											case "sort":
+												data = data.split("\n")
+												.sort()
+												.join("<br/>")
+												;
+											break;
+										}		
+										resultSetElement.innerHTML = JSON.stringify(data);
+									}	
 								);
 								break;
 							case "text/html":
