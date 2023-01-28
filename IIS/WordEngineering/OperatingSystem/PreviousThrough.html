@@ -3,8 +3,8 @@
 	<!--
 		2023-01-27T16:18:00 Created.
 			resourceURI
+				http://localhost/WordEngineering/WordUnion/Bible.json
 				http://localhost/WordEngineering/WordUnion/BibleBook.json
-				http://localhost/WordEngineering/WordUnion/Bible.json.txt
 		2023-01-27T17:18:00	http://elijahmanor.com/byte/js-locale-sort
 		2023-01-27T17:18:00	http://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
 	-->
@@ -20,7 +20,7 @@
 	<body>
 		<div align="center">
 			<input id="command" style="width: 90vw;" value="sort" autofocus/><br/>
-			<input id="resourceURI" style="width: 90vw;" value="http://localhost/WordEngineering/WordUnion/BibleBook.json"/><br/>
+			<input id="resourceURI" style="width: 90vw;" value="http://localhost/WordEngineering/WordUnion/Bible.json"/><br/>
 			<input type="submit" id="submitQuery">
 			<div id="resultSet" align="left"></div>
 		</div>
@@ -49,6 +49,7 @@
 					return response.json().then(data => {
 					  // The response was a JSON object
 					  // Process your data as a JavaScript object
+					  //data.sort((a, b) => a.ScriptureReference.localeCompare(b.ScriptureReference));
 					  resultSetElement.innerHTML = JSON.stringify(data);
 					});
 				  } else {
@@ -58,7 +59,6 @@
 					});
 				  }
 				});
-				console.log(resourceURIElement.value);
 			}
 
 		    window.addEventListener("load", pageLoad, false);

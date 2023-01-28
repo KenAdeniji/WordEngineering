@@ -9,3 +9,4 @@ git add IIS/WordEngineering/OperatingSystem/UNIXsort.html
 git add IIS/WordEngineering/OperatingSystem/UNIXuniq.html
 git add IIS/WordEngineering/OperatingSystem/CommandLineInterfaceCLI.html
 git add IIS/WordEngineering/OperatingSystem/PreviousThrough.html
+git add IIS/WordEngineering/WordUnion/Bible.json
