@@ -7,6 +7,8 @@
 				http://localhost/WordEngineering/WordUnion/BibleBook.json
 		2023-01-27T17:18:00	http://elijahmanor.com/byte/js-locale-sort
 		2023-01-27T17:18:00	http://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
+		2023-01-28T09:53:00
+		http://localhost/WordEngineering/Resume/KenAdenijiResume.txt
 	-->
 	<head>
 		<title>Previous through?</title>
@@ -31,6 +33,7 @@
 					placeholder="options"
 			/><br/>
 			<input 	id="resourceURI" 
+					type="url"
 					style="width: 90vw;"
 					value="http://localhost/WordEngineering/WordUnion/Bible.json"
 					placeholder="resourceURI"
@@ -63,7 +66,8 @@
 					response =>
 					{
 						const contentType = response.headers.get("content-type");
-						if (contentType && contentType.indexOf("application/json") !== -1) 
+						console.log(contentType);
+						if (contentType.indexOf("application/json") !== -1) 
 						{
 							response.json().then
 							(
@@ -77,16 +81,20 @@
 							);
 							return;
 						} 
-						else 
+						else if (contentType.indexOf("text/plain") !== -1) 
 						{
-							return response.text().then
+							response.text().then
 							(
-								text =>
+								data => 
 								{
-									// The response wasn't a JSON object
-									// Process your text as a String
+									resultSetElement.innerHTML = 
+										data.split("\n")
+										.sort()
+										.join("<br/>")
+										;
 								}
 							);
+							return;
 						}
 					}
 				);
