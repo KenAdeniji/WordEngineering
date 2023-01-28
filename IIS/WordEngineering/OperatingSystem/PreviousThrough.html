@@ -19,8 +19,22 @@
 	</head>
 	<body>
 		<div align="center">
-			<input id="command" style="width: 90vw;" value="sort" autofocus/><br/>
-			<input id="resourceURI" style="width: 90vw;" value="http://localhost/WordEngineering/WordUnion/Bible.json"/><br/>
+			<input 	id="command"
+					style="width: 90vw;"
+					value="sort"
+					placeholder="command"
+					autofocus
+			/><br/>
+			<input 	id="options"
+					style="width: 90vw;"
+					value="ScriptureReference"
+					placeholder="options"
+			/><br/>
+			<input 	id="resourceURI" 
+					style="width: 90vw;"
+					value="http://localhost/WordEngineering/WordUnion/Bible.json"
+					placeholder="resourceURI"
+			/><br/>
 			<input type="submit" id="submitQuery">
 			<div id="resultSet" align="left"></div>
 		</div>
@@ -28,6 +42,7 @@
 			var isPostBack = false;
 
 			const commandElement = document.getElementById("command");
+			const optionsElement = document.getElementById("options");			
 			const resourceURIElement = document.getElementById("resourceURI");
 			const submitQueryElement = document.getElementById("submitQuery");
 			const resultSetElement = document.getElementById("resultSet");
@@ -44,20 +59,21 @@
 			function querySubmit()
 			{
 				fetch(resourceURIElement.value).then(response => {
-				  const contentType = response.headers.get("content-type");
-				  if (contentType && contentType.indexOf("application/json") !== -1) {
-					return response.json().then(data => {
-					  // The response was a JSON object
-					  // Process your data as a JavaScript object
-					  //data.sort((a, b) => a.ScriptureReference.localeCompare(b.ScriptureReference));
-					  resultSetElement.innerHTML = JSON.stringify(data);
+				const contentType = response.headers.get("content-type");
+				if (contentType && contentType.indexOf("application/json") !== -1) {
+					response.json().then(data => {
+						// The response was a JSON object
+						// Process your data as a JavaScript object
+						// data.sort((a, b) => a[optionsElement.value].localeCompare(b[optionsElement.value]));
+						resultSetElement.innerHTML = JSON.stringify(data);
 					});
-				  } else {
-					return response.text().then(text => {
-					  // The response wasn't a JSON object
-					  // Process your text as a String
-					});
-				  }
+					return;
+				} else {
+				return response.text().then(text => {
+				  // The response wasn't a JSON object
+				  // Process your text as a String
+				});
+				}
 				});
 			}
 
