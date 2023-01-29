@@ -39,7 +39,8 @@
 					placeholder="resourceURI"
 			/><br/>
 			<input type="submit" id="submitQuery">
-			<div id="resultSet" align="left"></div>
+			<div id="resultSet" align="left" style="width: 90vw;"></div>
+			<textarea id="resultTextArea" align="left" style="width: 90vw;"></textarea>
 		</div>
 		<script>
 			var isPostBack = false;
@@ -49,7 +50,8 @@
 			const resourceURIElement = document.getElementById("resourceURI");
 			const submitQueryElement = document.getElementById("submitQuery");
 			const resultSetElement = document.getElementById("resultSet");
-
+			const resultTextArea = document.getElementById("resultTextArea");
+			
 			const unknownResponseFormat = "Unknown Response Format";
 			
 			function pageLoad()
@@ -63,6 +65,9 @@
 
 			function querySubmit()
 			{
+				resultSet.innerHTML = "";
+				resultTextArea.value = "";
+				
 				fetch(resourceURIElement.value).then
 				(
 					response =>
@@ -100,14 +105,24 @@
 									{
 										switch(commandElement.value.toLowerCase())
 										{
+											case "cat":
+												resultTextArea.value = data;
+											break;
 											case "sort":
 												data = data.split("\n")
-												.sort()
-												.join("<br/>")
-												;
+												.sort();
+												resultTextArea.value =
+													data.join("\n");
+											break;
+											case "uniq":
+												lines = data.split("\n");
+												uniqueLines = new Set(lines);
+												resultTextArea.value = 
+													Array.from(uniqueLines)
+													.join("\n")
+													;
 											break;
 										}		
-										resultSetElement.innerHTML = JSON.stringify(data);
 									}	
 								);
 								break;
