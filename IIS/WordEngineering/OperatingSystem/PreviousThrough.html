@@ -82,7 +82,14 @@
 								(
 									data => 
 									{
-										data = data["Table"];
+										if 
+										(
+											data[Object.keys(data)[0]]
+										)
+										{
+											data = data[Object.keys(data)[0]];
+										}	
+										
 										switch(commandElement.value.toLowerCase())
 										{
 											case "cat":
