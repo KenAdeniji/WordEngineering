@@ -9,6 +9,7 @@
 		2023-01-27T17:18:00	http://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
 		2023-01-28T10:20:00	http://javascript.info/fetch
 		2023-01-28T12:39:00	http://stackoverflow.com/questions/50248329/fetch-image-from-api
+		2023-01-28T18:00:00	https://javascript.plainenglish.io/the-easy-way-to-create-a-unique-array-of-json-objects-in-javascript-5634254b17aa
 	-->
 	<head>
 		<title>Previous through?</title>
@@ -81,8 +82,12 @@
 								(
 									data => 
 									{
+										data = data["Table"];
 										switch(commandElement.value.toLowerCase())
 										{
+											case "cat":
+												resultSetElement.innerHTML = JSON.stringify(data);
+												break;
 											case "sort":
 												data.sort
 												(
@@ -92,9 +97,31 @@
 															b[optionsElement.value]
 														)
 												);
+												resultSetElement.innerHTML = JSON.stringify(data);
+												break;
+											case "uniq":
+												/*
+												const keys = Object.keys(data[0])
+												const sorted = data.map(dataRecord => {
+													let rtn = {}
+													keys.forEach(key => {
+														rtn[key] = dataRecord[key]
+													})
+													return rtn
+												})
+												const uniqueData = [... new Set(data.map(JSON.stringify))].map(JSON.parse)
+												resultSetElement.innerHTML = JSON.stringify(uniqueData);
+												*/
+												/*
+												const uniqueDataStrings = new Set(data.map(JSON.stringify))
+												const uniqueDataStringsArray = Array.from(uniqueDataStrings)
+												const uniqueDataObjects = uniqueDataStringsArray.map(JSON.parse)
+												*/
+												
+												const uniqueData = [... new Set(data.map(JSON.stringify))].map(JSON.parse)
+												resultSetElement.innerHTML = JSON.stringify(uniqueData);
 												break;
 										}		
-										resultSetElement.innerHTML = JSON.stringify(data);
 									}
 								)
 								break;
