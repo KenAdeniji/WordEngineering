@@ -1,6 +1,6 @@
 @echo off
 :BeginAgain
-echo 1=BCP, 2=Node.js, 3=Rust, 4=SQLServerBackup, 5=SQLServerDataDefinitionLanguageDDL, 6=SQLServerDataFiles, 7=SQLServerExport, 8=WebAssembly, 9=WinScp, 10=WordEngineering, 11=WordOfGod
+echo 1=BCP, 2=Node.js, 3=Rust, 4=SQLServerBackup, 5=SQLServerDataDefinitionLanguageDDL, 6=SQLServerDataFiles, 7=SQLServerDataManipulationLanguageDML, 8=SQLServerExport, 9=WebAssembly, 10=WinScp, 11=WordEngineering, 12=WordOfGod
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
@@ -9,11 +9,12 @@ IF %id% == 3 GOTO Rust
 IF %id% == 4 GOTO SQLServerBackup
 IF %id% == 5 GOTO SQLServerDataDefinitionLanguageDDL
 IF %id% == 6 GOTO SQLServerDataFiles
-IF %id% == 7 GOTO SQLServerExport
-IF %id% == 8 GOTO WebAssembly
-IF %id% == 9 GOTO WinScp
-IF %id% == 10 GOTO WordEngineering
-IF %id% == 11 GOTO WordOfGod
+IF %id% == 7 GOTO SQLServerDataManipulationLanguageDML
+IF %id% == 8 GOTO SQLServerExport
+IF %id% == 9 GOTO WebAssembly
+IF %id% == 10 GOTO WinScp
+IF %id% == 11 GOTO WordEngineering
+IF %id% == 12 GOTO WordOfGod
 GOTO Exit
 
 :BCP
@@ -73,6 +74,15 @@ xcopy E:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e 
 rem  net continue %_service% 
 net start  %_service% /y
 endlocal
+GOTO Exit
+
+:SQLServerDataManipulationLanguageDML
+xcopy e:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy e:\SQLServerDataManipulationLanguageDML d:\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy e:\SQLServerDataManipulationLanguageDML f:\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy e:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy e:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy e:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
 GOTO Exit
 
 :SQLServerExport
@@ -196,4 +206,138 @@ E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.
 KenAdeniji@hotmail.com
 
 2023-01-21T18:45:00 URIMaintenanceWebForm.aspx SequenceOrderID  47654
+2023-01-27T19:49:00 SELECT BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence,                           AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor FROM Scripture_View ORDER BY VerseIDSequence
+2023-01-30T12:43:00 github.com/ept/ddia-references
+
+2023-02-01T13:32:00
+
+TITLE: Microsoft SQL Server Management Studio
+------------------------------
+
+Exception has been thrown by the target of an invocation. (mscorlib)
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (mscorlib)
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+===================================
+
+Exception has been thrown by the target of an invocation. (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.RunDialog(Form form)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Microsoft.SqlServer.Management.SqlMgmt.RunningFormsTable.RunningFormsTableImpl.ThreadStarter.StartThread()
+
+===================================
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.UpdateActionStatus(Int32 actionId, String action, ResultType result, Exception exception)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.worker_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.AsyncOperationCompleted(Object arg)
+
+12:59 Dizzy sleepy (Gbogbo eyan so fun wa). Either 2023-01-31 or 2023-02-01 I put my finger inside twin sibling's asshole. 13:40 2023-02-01T13:32:00
+
+TITLE: Microsoft SQL Server Management Studio
+------------------------------
+
+Exception has been thrown by the target of an invocation. (mscorlib)
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (mscorlib)
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+===================================
+
+Exception has been thrown by the target of an invocation. (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.RunDialog(Form form)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Microsoft.SqlServer.Management.SqlMgmt.RunningFormsTable.RunningFormsTableImpl.ThreadStarter.StartThread()
+
+===================================
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.UpdateActionStatus(Int32 actionId, String action, ResultType result, Exception exception)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.worker_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.AsyncOperationCompleted(Object arg)
+ 
+ 2023-02-01T15:13:00 Microsoft Windows Explorer click on .sql file, Microsoft SQL Server Management Studio opens. 15:26 Microsoft Windows Explorer click on .sql file, Microsoft SQL Server Management Studio opens.
 :Exit

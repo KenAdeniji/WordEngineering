@@ -12,3 +12,10 @@ git add IIS/WordEngineering/OperatingSystem/PreviousThrough.html
 git add IIS/WordEngineering/WordUnion/Bible.json
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2023-01-30T1701_InformationDiallingServicesIDS_RalphSilverman.txt
+
+git add		Batch/2017-01-02DoingSomething.bat
+git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
+git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt
+
+git add     "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2022-02-02T1746DennisO'Brien_Abi_Abibat_5107952434.txt"
