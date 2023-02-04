@@ -1,0 +1,284 @@
+2023-02-03T17:48:00 ... 2023-02-03T18:03:00 Microsoft Windows Explorer lost the folder E:\WordEngineering\Python\Wei-MengLee
+http://levelup.gitconnected.com/plotting-choropleth-maps-in-python-b74c53b8d0a6
+Wei-Meng Lee
+Feb 11, 2022
+
+Plotting Choropleth Maps in Python
+Learn how to use Plotly to plot choropleth maps
+Photo by Gaël Gaborel on Unsplash
+
+A choropleth map is a very useful visualization technique to show aggregate summary of a geographic feature, such as population or income levels of countries in the world. For this article, I will show you how to use the Plotly to plot choropleth maps.
+
+    Plotly is an advanced plotting library in Python for creating interactive plots.
+
+Installing Plotly
+
+For this article, I will be using Jupyter Notebook. To install Plotly, use the following command in your Juypter Notebook:
+
+!pip install plotly
+
+Plotting The Choropleth Map
+
+Before you plot the map, you need to import thegraph_objs (Graph Objects) module:
+
+import plotly.graph_objs as go
+
+You then use the Figure class from the Graph Objects module to create a map:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locationmode':'USA-states',        
+        'locations':['AL','CA','WA'],
+        'colorscale':'Portland',            
+        'text':['Alabama Population',
+                'California Population',
+                'Washington Population'],
+        'z':[5024279,39538223,7705281],                  
+        'colorbar':{'title':'USA Population'}
+    },     
+    layout = {
+      'geo':{
+          'scope':'usa'
+      }  
+    })choropleth_map
+
+In the code snippet above, you passed in two arguments to the Figure’s initializer. The first argument is data with the following dictionary keys and values:
+
+    type — the type of map you are creating
+    locationmode — can either be ISO-3(default), USA-states, or country names. If you set it to ISO-3, then the locations key will have values containing three-letter country codes, such as USA for the United States of America, JPN for Japan, etc. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3 for more details. If you set locationmode to USA-states, then the locations key will take values containing the code for the various states in the US, for example AL for Alabama, CA for California, etc. If you set locationmode to country names, you can pass in the name of countries to the locations key.
+    colorscale — name of the heatmap to apply on the map. Check out this link for the list of heatmap you can use — https://plotly.com/javascript/colorscales/#portland-heatmap.
+    text — to text to display on the map when you hover over a particular location
+    z — sets the color values on the color bar
+    colorbar — a legend showing the values and color coding used on the map
+
+The second argument is layout, which allows you to configure the map to display different parts of the world, as well as the projection of the map (more on this later on).
+
+When you run the above code snippet, you will see the map as follows:
+
+When your mouse hovers over one of the three states, you will see the values specified in the locations, text, and z keys.
+Plotting the 2019 US Population
+
+Now that you know the basics of plotting a choropleth map, let’s load a real world dataset and display the population of the US in 2019. For this, you can find the dataset made available at: https://www.kaggle.com/peretzcohen/2019-census-us-population-data-by-state/version/3.
+
+Download the dataset and load the CSV file into a Pandas DataFrame:
+
+import pandas as pddf = \
+ pd.read_csv('2019_Census_US_Population_Data_By_State_Lat_Long.csv')
+df.head()
+
+You will see the following:
+
+Observe that the various states are spelled out in full, but the locationmode key only supports state code (e.g. AL, NY, etc), country names (China, Japan, etc), or country code (USA, JPN, etc). So in this case you have to convert the STATE column to one containing the respective state code. Fortunately, you can download a CSV file containing the code for each state from https://worldpopulationreview.com/states/state-abbreviations.
+
+Once you have download the CSV file, load it into a Pandas DataFrame:
+
+df_state_mapping = pd.read_csv('abbr-name.csv', 
+                               header=None, 
+                               names=['CODE', 'STATE'])
+df_state_mapping.head()
+
+You should see the following:
+
+You can now perform an inner join between the two dataframes:
+
+df = df.merge(df_state_mapping, on='STATE')
+df.head()
+
+The updated df should now have an additional column named CODE:
+
+You can now go ahead and plot the US 2019 population:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locations':df['CODE'],
+        'locationmode':'USA-states',        
+        'colorscale':'YlGnBu',            
+        'text':df['STATE'],
+        'z':df['POPESTIMATE2019'],
+        'colorbar':{'title':'USA Population'}
+    },     
+    layout = {
+      'geo':{
+          'scope':'usa'
+      }  
+    })choropleth_map
+
+You will see the following map:
+
+Observe that the above map uses the YlGnBu heatmap.
+
+Let’s now modify the map by adding the marker key to the data dictionary. In addition, let’s also add two additional keys to the geo dictionary:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locations':df['CODE'],
+        'locationmode':'USA-states',        
+        'colorscale':'Portland',            
+        'text':df['STATE'],
+        'z':df['POPESTIMATE2019'],
+        'colorbar':{'title':'USA Population'},
+        'marker': {
+            'line': {
+                'color':'rgb(255,255,255)',
+                'width':2
+            }
+        }
+    },     
+    layout = {      
+      'geo':{
+          'scope':'usa', 
+          'showlakes': True,
+          'lakecolor':'rgb(85,173,240)'
+      }  
+    })choropleth_map
+
+You should now see that the map displaying the lakes. In addition, each state has an outline that is white in color:
+
+If you want to display rivers, you can also add the showrivers and rivercolor keys:
+
+    layout = {      
+      'geo':{
+          'scope':'usa', 
+          'showlakes': True,                     
+          'lakecolor':'rgb(85,173,240)',         
+          'showrivers': True,                     
+          'rivercolor':'rgb(85,173,240)',
+      }  
+    })
+
+Plotting World Population
+
+Let’s try another example. This time, I want to plot the world population in 2020. You can download the data from: https://www.kaggle.com/tanuprabhu/population-by-country-2020. Once the CSV file is downloaded, load it into a Pandas DataFrame:
+
+df = pd.read_csv('population_by_country_2020.csv')
+df
+
+You will see the following:
+
+We shall use the Country (or dependency) column as the country name and use the Population (2020) column to display the population for each country:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locations':df['Country (or dependency)'],
+        'locationmode':'country names',
+        'colorscale':'Portland',
+        'z':df['Population (2020)'],
+        'colorbar':{'title':'World Population in 2020'},
+        'marker': {
+            'line': {
+                'color':'rgb(255,255,255)',
+                'width':2
+            }
+        }
+    },     
+    layout = {      
+      'geo':{
+          'scope':'world', 
+      }  
+    })choropleth_map
+
+    Observe that you now set the scope to world. The available scopes are: ‘world’, ‘usa’, ‘europe’, ‘asia’, ‘africa’, ‘north america’, and ‘south america’.
+
+You should now see the world map:
+
+An interesting projection that you can apply to a world map is orthographic:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locations':df['Country (or dependency)'],
+        'locationmode':'country names',        
+        'colorscale':'Portland',         
+        'z':df['Population (2020)'],
+        'colorbar':{'title':'World Population in 2020'},
+        'marker': {  
+            'line': {
+                'color':'rgb(255,255,255)',
+                'width':2
+            }
+        }
+    },
+    layout = {
+      'geo':{
+          'projection':{
+              'type':'orthographic'  # default is 'equirectangular'
+          },
+          'scope':'world',
+      }
+    })choropleth_map
+
+Using the orthographic projection, you can spin the globe using your mouse. You really need to try this out to see the fun!
+
+One thing about the color scale. You can reverse the color scale by appending a _r to the name of the heat map, for example:
+
+choropleth_map = go.Figure(
+    data = {
+        'type':'choropleth',
+        'locations':df['Country (or dependency)'],
+        'locationmode':'country names',        
+        'colorscale':'Portland_r',         
+        'z':df['Population (2020)'],
+        'colorbar':{'title':'World Population in 2020'},
+        'marker': {  
+            'line': {
+                'color':'rgb(255,255,255)',
+                'width':2
+            }
+        }
+    },
+    layout = {
+      'geo':{
+          'projection':{
+              'type':'orthographic'
+          },
+          'scope':'world',
+      }
+    })choropleth_map
+
+This reverses the color scale:
+
+Another way of doing the same thing is to set the reversescale key value to True:
+
+data = {
+        'type':'choropleth',
+        'locations':df['Country (or dependency)'],
+        'locationmode':'country names',        
+        'colorscale':'Portland',
+        'reversescale' : True,
+        'z':df['Population (2020)'],
+        'colorbar':{'title':'World Population in 2020'},
+        'marker': {  
+            'line': {
+                'color':'rgb(255,255,255)',
+                'width':2
+            }
+        }
+    },
+
+Adjusting the Size of the Map
+
+Finally, if you want to adjust the size of the map, you can set the width and height of the map in the layout dictionary:
+
+    layout = {
+        'width':500,
+        'height':500,
+        'geo':{
+            'projection':{
+                'type':'orthographic'
+            },
+            'scope':'world',
+        }
+    })
+
+The map will now be resized:
+Summary
+
+In this article, I have shown you some examples of how to create choropleth maps using Plotly. There are a lot more features to explore, but hopefully this article gets you started!
+Join Medium with my referral link - Wei-Meng Lee
+As a Medium member, a portion of your membership fee goes to writers you read, and you get full access to every story…
+
+weimenglee.medium.com
