@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<div align="center">
+		<div align="center" style="width: 90vw;">
 			<table>
 				<tr>
 					<td><label for="size">Size</label></td> 
@@ -28,7 +28,7 @@
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td> 
 				</tr>	
 			</table>
-			<div id="resultSet" align="left" style="width: 90vw;"></div>
+			<div id="resultSet" align="left"></div>
 		</div>
 		<script>
 			var isPostBack = false;
@@ -45,6 +45,10 @@
 				{
 					isPostBack = true;
 					buildSelect();
+					querySubmit();
+				}
+				else
+				{
 					querySubmit();
 				}
 			}
