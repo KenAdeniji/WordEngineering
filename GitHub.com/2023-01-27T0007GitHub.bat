@@ -24,3 +24,5 @@ git rm	      "2022-02-02T1746DennisO'Brien_AbibatAjiboye_5108710043.txt"
 git add IIS/WordEngineering/2018-05-03Correspondence/2023-02-03T1054mhelody.cadelina@kidztopros.com_julina.gagahasin@kidztopros.com.txt
 
 git add Python/Wei-MengLee/2023-02_03T1758Wei-MengLee_-_PlottingChoroplethMapsInPython_LearnHowToUsePlotlyToPlotChoroplethMaps.txt
+
+git add       IIS/WordEngineering/JavaScript/MarkPilgrim/
