@@ -26,3 +26,6 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2023-02-03T1054mhelody.cade
 git add Python/Wei-MengLee/2023-02_03T1758Wei-MengLee_-_PlottingChoroplethMapsInPython_LearnHowToUsePlotlyToPlotChoroplethMaps.txt
 
 git add       IIS/WordEngineering/JavaScript/MarkPilgrim/
+
+git add       IIS/WordEngineering/Python/TheLoveOfSeeingTheSame/
+git add       Python/MarkPilgrim/
