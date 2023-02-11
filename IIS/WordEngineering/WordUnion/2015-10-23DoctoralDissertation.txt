@@ -166,6 +166,37 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+Database Exclusivity
+
+What did He choose as a member of?
+Where Clause
+Title 	Commentary
+Like wildcard 	Preceding or following restriction '%%'
+Check for NULL 	IS NULL versus (VS) IS NOT NULL
+Between range check 	Lower and upper limits
+Logical comparison 	<, >, =, <=, >=, <>
+Table join superceeds the previous column key equal to 	FROM table join primary and foreign key
+Select Clause
+
+The select clause may explictly include a column list. Pre-compiled statements that implictly cater for all the source columns, may not be up-to-date on the column-list.
+Group By Clause
+
+The group by statement is not for detail listing, except when it is used to regress to the distinct clause. Group by supports statistics, such as, count, sum, min, max, avg.
+Having By Clause
+
+The having clause augments the group by clause. It places restriction on the group(s) returned.
+Insert Statement
+
+Inserts give room to omit the default columns. The Identity Insert statement also grants explicit entry of its identity column.
+Nullable Column
+
+Information unknown is useful for forwarding processing, until and if the information is added. Outer Join stands for this purpose.
+View
+
+Enhances tables by compacting and/or extending the information set.
+Constraint
+
+Primary and foreign keys, unique indexes and check constraints.
 Data Cleansing
 
     Is the source of bad data input internal, on-line users, or error in programming? He doesn't envision error in reference data.
