@@ -3,6 +3,7 @@
 	2023-02-11T18:22:00	http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
 	print(firstCensusReuben)
 	print(len(censuses))
+	Numbers 1:46 six hundred thousand and three thousand and five hundred and fifty
 '''
 import StringHelper
 
@@ -24,4 +25,10 @@ if __name__ == '__main__':
 	firstCensusGad = Census(1, "Gad", 45650, "Numbers 1:25")
 	firstCensusJudah = Census(1, "Judah", 74600, "Numbers 1:27")
 	firstCensusIssachar = Census(1, "Issachar", 54400, "Numbers 1:29")
-	
+	firstCensusZebulun = Census(1, "Zebulun", 57400, "Numbers 1:31")
+	firstCensusEphraim = Census(1, "Ephraim", 40500, "Numbers 1:33")
+	firstCensusManasseh = Census(1, "Manasseh", 32200, "Numbers 1:35")
+	firstCensusBenjamin = Census(1, "Benjamin", 35400, "Numbers 1:37")
+	firstCensusDan = Census(1, "Dan", 62700, "Numbers 1:39")
+	firstCensusAsher = Census(1, "Asher", 41500, "Numbers 1:39")
+	firstCensusNaphtali = Census(1, "Naphtali", 53400, "Numbers 1:41")
