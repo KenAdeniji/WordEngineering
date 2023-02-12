@@ -6,6 +6,7 @@
 	Numbers 1:46 six hundred thousand and three thousand and five hundred and fifty 603550
 	2023-02-12T12:50:00	http://markheath.net/post/python-equivalents-of-linq-methods
 	2023-02-12T12:50:00	http://stackoverflow.com/questions/12734839/linq-like-sum-function-in-python/12734852
+	2023-02-12T13:13:00	http://stackoverflow.com/questions/22895791/python-code-for-sum-with-condition
 '''
 import StringHelper
 
@@ -35,5 +36,5 @@ if __name__ == '__main__':
 	firstCensusAsher = Census(1, "Asher", 41500, "Numbers 1:39")
 	firstCensusNaphtali = Census(1, "Naphtali", 53400, "Numbers 1:41")
 	
-	censusPopulation = sum(x.population for x in censuses)
-	print("Census Population: ", censusPopulation)
+	print("Census Population: ", sum(x.population for x in censuses))
+	print("Census Population: ", sum(x.population for x in censuses if x.tribe in ("Ephraim", "Manasseh")))
