@@ -36,5 +36,5 @@ if __name__ == '__main__':
 	firstCensusAsher = Census(1, "Asher", 41500, "Numbers 1:39")
 	firstCensusNaphtali = Census(1, "Naphtali", 53400, "Numbers 1:41")
 	
-	print("Census Population: ", sum(x.population for x in censuses))
-	print("Census Population: ", sum(x.population for x in censuses if x.tribe in ("Ephraim", "Manasseh")))
+	print("Census population: ", sum(x.population for x in censuses))
+	print("Census population - Joseph's offsprings: ", sum(x.population for x in censuses if x.tribe in ("Ephraim", "Manasseh")))
