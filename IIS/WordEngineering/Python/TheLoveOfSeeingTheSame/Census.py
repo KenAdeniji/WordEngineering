@@ -9,6 +9,8 @@
 	2023-02-12T13:13:00	http://stackoverflow.com/questions/22895791/python-code-for-sum-with-condition
 	2023-02-12T18:02:00	https://stackoverflow.com/questions/72883970/how-to-print-the-contents-of-an-array-line-by-line-in-a-text-file
 	Numbers 26:51	Second census: six hundred thousand and a thousand seven hundred and thirty 601730
+	2023-02-13T12:08:00	http://stackoverflow.com/questions/403421/how-to-sort-a-list-of-objects-based-on-an-attribute-of-the-objects
+	2023-02-13T12:09:00	http://wiki.python.org/moin/HowTo/Sorting#Sortingbykeys
 '''
 import StringHelper
 
@@ -24,8 +26,8 @@ class Census:
     def __str__(self):
         return StringHelper.positionTitle(self.iteration) + " " + str(self.sequence) + " " + self.tribe + " " + str(self.population) + " (" + str(self.scriptureReference) + ")"
 
-    def dumpLog():
-        for census in censuses:
+    def dumpLog( censusList ):
+        for census in censusList:
             print(str(census))
 		
 if __name__ == '__main__':
@@ -57,8 +59,6 @@ if __name__ == '__main__':
 	secondCensusAsher = Census(2, 11, "Asher", 53400, "Numbers 26:47")
 	secondCensusNaphtali = Census(2, 12, "Naphtali", 45400, "Numbers 26:50")
 	
-	Census.dumpLog()
-	
 	print("First Census population (Numbers 1:46): ", sum(x.population for x in censuses if x.iteration == 1))
 	print("First Census population - Joseph's offsprings (Numbers 1:32-35): ", sum(x.population for x in censuses if x.iteration == 1 and x.tribe in ("Ephraim", "Manasseh")))
 
@@ -68,3 +68,6 @@ if __name__ == '__main__':
 	
 	print("Both Census population (Numbers 1:46, Numbers 26:51): ", sum(x.population for x in censuses))
 	print("Both Census population - Joseph's offsprings (Numbers 1:32-35, Numbers 26:28-37): ", sum(x.population for x in censuses if x.tribe in ("Ephraim", "Manasseh")))
+	
+	newlist = sorted(censuses, key=lambda x: x.population, reverse=True)
+	Census.dumpLog(newlist)
