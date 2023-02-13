@@ -28,4 +28,10 @@ git add Python/Wei-MengLee/2023-02_03T1758Wei-MengLee_-_PlottingChoroplethMapsIn
 git add       IIS/WordEngineering/JavaScript/MarkPilgrim/
 
 git add       IIS/WordEngineering/Python/TheLoveOfSeeingTheSame/
-git add       Python/MarkPilgrim/
+git add       Python/MarkPilgrim
+
+git add	IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
+git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
+git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
+
+git add Batch/2017-01-02DoingSomething.bat
