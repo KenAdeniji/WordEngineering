@@ -64,6 +64,12 @@ Description of Related Art
 
 To find if a relationship exists between the Bible and what we receive today?
 "
+Database Scaling
+
+    The transition to computed columns results in smaller storage requirements.
+    Microsoft SQL Server supports multiple databases; therefore, reducing archive needs.
+    Normalization, object-to-relational mapping, is light load.
+
 The Bible Database
 The Scripture Table
 
