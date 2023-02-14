@@ -28,11 +28,11 @@ class Census:
     def __str__(self):
         return StringHelper.positionTitle(self.iteration) + " " + str(self.sequence) + " " + self.tribe + " " + str(self.population) + " (" + (self.scriptureReference) + ")"
 
-    def buildHTML():
+    def buildHTML(censusList = censuses):
         resultSet = "<table border='1'><thead><caption>Census</caption>"
         resultSet += "<tr><th>Iteration</th><th>Sequence</th><th>Tribe</th><th>Population</th><th>Scripture Reference</th></tr>"
         resultSet += "</thead><tbody>"
-        for census in Census.censuses:
+        for census in censusList:
             resultSet += f'<tr><td>{StringHelper.positionTitle(census.iteration)}</td><td>{str(census.sequence)}</td><td>{census.tribe}</td><td>{census.population}</td><td>{census.scriptureReference}</td></tr>'
         resultSet += "</tbody></table>"
 
@@ -50,7 +50,7 @@ class Census:
         resultSet += "</tbody></table>"
         return resultSet
 		
-    def dumpLog(censusList):
+    def dumpLog(censusList = censuses):
         for census in censusList:
             print(str(census))
 			
