@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2023-02-14T20:17:00 Created.
+	-->
+	<head>
+		<title>Don't feel left alone.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Don't feel left alone."/>
+		<meta name="keywords" content="Word, Dated, ContactID, Scripture Reference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input type="date" id="dated" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="contactID">Contact ID:</label></td>
+					<td><input type="text" id="contactID"/></td>
+				</tr>	
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input type="text" id="scriptureReference"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div align="center">	
+			<table>
+				<tr>
+					<td>
+						<div id="resultSet"> </div>
+					</td>
+				</tr>	
+			</table>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var	contactIDElement = document.getElementById("contactID");
+			var datedElement = document.getElementById("dated");
+			var	scriptureReferenceElement = document.getElementById("scriptureReference");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var contactIDParam = urlParams.get("contactID");
+						if (contactIDParam)
+						{
+							contactIDElement.value = contactIDParam;
+						}
+
+						var datedParam = urlParams.get("dated");
+						if (datedParam)
+						{
+							datedElement.value = datedParam;
+						}
+						else
+						{
+							datedElement.value = scriptLiteral9432.todayTimezoneOffset();
+						}
+
+						var scriptureReferenceParam = urlParams.get("scriptureReference");
+						if (scriptureReferenceParam)
+						{
+							scriptureReferenceElement.value = scriptureReferenceParam;
+						}
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["contactID"] = contactIDElement.value;
+				request["dated"] = datedElement.value;
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/DontFeelLeftAlone.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -11,6 +11,7 @@
 	Numbers 26:51	Second census: six hundred thousand and a thousand seven hundred and thirty 601730
 	2023-02-13T12:08:00	http://stackoverflow.com/questions/403421/how-to-sort-a-list-of-objects-based-on-an-attribute-of-the-objects
 	2023-02-13T12:09:00	http://wiki.python.org/moin/HowTo/Sorting#Sortingbykeys
+	2023-02-13T19:23:00	The author prefers to store the first and second census in 1 array but separated. Because of time differences.
 '''
 import StringHelper
 

@@ -35,3 +35,7 @@ git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
 git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
 
 git add Batch/2017-01-02DoingSomething.bat
+
+git add IIS/WordEngineering/WordCross/DontFeelLeftAlone.asmx
+git add IIS/WordEngineering/WordCross/DontFeelLeftAlone.html
+git add InformationInTransit/ProcessCode/DontFeelLeftAlone.cs
