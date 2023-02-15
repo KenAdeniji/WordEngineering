@@ -36,7 +36,7 @@
 			<table>
 				<tr>
 					<td>
-						<div id="resultSet"> </div>
+						<div id="resultSetContact"> </div>
 					</td>
 				</tr>	
 			</table>
@@ -53,7 +53,7 @@
 			
 			var submitQueryElement = document.getElementById("submitQuery");
 			
-			var	resultSetElement = document.getElementById("resultSet");
+			var	resultSetContactElement = document.getElementById("resultSetContact");
 
 			function pageLoad()
 			{
@@ -115,11 +115,11 @@
 					success: function(data) 
 					{
 						var dataSet = JSON.parse(data.d);
-						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						scriptLiteral9432.renderDataSet(dataSet, "resultSetContact");
 					},
 					error: function(xhr)
 					{ 
-						resultSetElement.innerHTML =
+						resultSetContactElement.innerHTML =
 							"Status: " + xhr.status + " | " + 
 							"StatusText: " + xhr.statusText + " | " +
 							"ResponseText: " + xhr.responseText;

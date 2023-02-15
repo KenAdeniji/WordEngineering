@@ -42,8 +42,7 @@ namespace InformationInTransit.ProcessCode
 			String		scriptureReference
 		)
 		{
-			DataSet resultSet = new DataSet();
-			DataTable resultTable;
+			DataSet resultSetContact = new DataSet();
 			int[] contactIDs = contactID.Split(ScriptureReferenceHelper.SubsetSeparator).Select(s => int.TryParse(s, out int n) ? n : 0).ToArray();
 			String[] scriptureReferences = scriptureReference.Split
 			(
@@ -56,21 +55,37 @@ namespace InformationInTransit.ProcessCode
 				dated,
 				string.Join(",", contactIDs.Select(x => x.ToString()).ToArray())
 			);
-			resultTable = (DataTable) DataCommand.DatabaseCommand
+			resultSetContact = (DataSet) DataCommand.DatabaseCommand
 			(
 				queryStatement,
 				CommandType.Text,
-				DataCommand.ResultType.DataTable
+				DataCommand.ResultType.DataSet
 			);
-			resultSet.Tables.Add(resultTable);
-			return resultSet;
+			return resultSetContact;
 		}
 		
         public const string ContactQueryFormat = 
-			@"SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			@"
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil
 			FROM 	WordEngineering..Contact
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
+			;
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, EmailAddress AS URI, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			FROM 	WordEngineering..ContactEmail
+			WHERE	ContactID IN ({1})
+			ORDER BY ContactID, Dated
+			;
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, InternetAddress AS URI, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			FROM 	WordEngineering..ContactURI
+			WHERE	ContactID IN ({1})
+			ORDER BY ContactID, Dated
+			;
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, AddressLine1, City, State, ZipCode, Country, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			FROM 	WordEngineering..StreetAddress
+			WHERE	ContactID IN ({1})
+			ORDER BY ContactID, Dated
+			;
 		";
 	}
 }

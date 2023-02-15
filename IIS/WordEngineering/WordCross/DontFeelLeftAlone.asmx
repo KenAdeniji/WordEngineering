@@ -38,14 +38,14 @@ public class DontFeelLeftAloneWebService : System.Web.Services.WebService
 		String		scriptureReference
 	)
     {
-		DataSet resultSet = DontFeelLeftAlone.Query
+		DataSet resultSetContact = DontFeelLeftAlone.Query
 		(
 			contactID,
 			dated,
 			scriptureReference
 		);
 		
-		string json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
+		string json = JsonConvert.SerializeObject(resultSetContact, Formatting.Indented);
 		return json;
     }
 }
