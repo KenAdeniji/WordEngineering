@@ -67,7 +67,7 @@ namespace InformationInTransit.ProcessCode
 		}
 		
         public const string ContactQueryFormat = 
-			@"SELECT ContactID, Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			@"SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil
 			FROM 	WordEngineering..Contact
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
