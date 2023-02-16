@@ -199,8 +199,6 @@ ContainShip.html Roles and time in office.
 
 The CouldYouStoreAndRunCodeFromTheDatabase.html sets the srcdoc of the IFrame.
 
-The WhatDoYouUseAsYourTime.html will count ContactIDs and Dates occurrences.
-
 The Countrycode.org.html sources its information from country.org.
 
 The CrossEuropeUnfinish.html draws on a canvas.
@@ -238,6 +236,8 @@ The DifferencingFromMyNeed.html is for permutation, using word combination codin
 The DirectoryListing.html is for listing files that are in a specified directory.
 
 The DiscoverPowerShell.html will explain the beginning chapters of the Bible using PowerShell.
+
+The DontFeelLeftAlone.html will query the database to find the date differences for contacts.
 
 The DoWeChooseToBeKnownAsWho.html will use a similar search like Exact to find consecutive Bible verse words.
 
@@ -435,7 +435,7 @@ The JustThirtyOneDaysDivided.html for a given selector, computes the occurrences
 
 The Kitan.html will display the corresponding book, chapter, and verse; for a user entered number.
 
-.The KnowingMeAsAPersonIsSeeingYouAsAPeople.html will list the first and last letters.
+The KnowingMeAsAPersonIsSeeingYouAsAPeople.html will list the first and last letters.
 
 The KnowingTheObvious.html will list a sample of the use cases in the Bible.
 
@@ -732,6 +732,8 @@ The WantingMeToTheGrooveButTheGrooveDontTakeControlOfMeWantingMeToControlOfMysel
 The WillYouKnowMeAsGodApart.html will list the contacts in the IHaveDecidedToWorkOnAGradualImprovingSystem database.
 
 The WhatAreTheRegularFactorInfluencingYourPerception.html will list the various sense organs, and there occurrences in the Bible. For example, smell, sound, see.
+
+The WhatDoYouUseAsYourTime.html will count ContactIDs and Dates occurrences.
 
 The WhatDidGokeSayINL.html will accept initials, and determine the scripture reference.
 

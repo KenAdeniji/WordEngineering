@@ -42,49 +42,128 @@ namespace InformationInTransit.ProcessCode
 			String		scriptureReference
 		)
 		{
-			DataSet resultSetContact = new DataSet();
+			DataSet resultSet = new DataSet();
 			int[] contactIDs = contactID.Split(ScriptureReferenceHelper.SubsetSeparator).Select(s => int.TryParse(s, out int n) ? n : 0).ToArray();
 			String[] scriptureReferences = scriptureReference.Split
 			(
 				ScriptureReferenceHelper.SubsetSeparator,
 				StringSplitOptions.RemoveEmptyEntries 
 			);
-			string queryStatement = String.Format
+			string queryStatementContact = String.Format
 			(
-				ContactQueryFormat,
+				QueryFormatContact,
 				dated,
 				string.Join(",", contactIDs.Select(x => x.ToString()).ToArray())
 			);
-			resultSetContact = (DataSet) DataCommand.DatabaseCommand
+			resultSet = (DataSet) DataCommand.DatabaseCommand
 			(
-				queryStatement,
+				queryStatementContact,
 				CommandType.Text,
 				DataCommand.ResultType.DataSet
 			);
-			return resultSetContact;
+			if (!String.IsNullOrEmpty(scriptureReference))
+			{	
+				StringBuilder sbScriptureReferenceChapters = new StringBuilder();
+				StringBuilder sbScriptureReferenceVerses = new StringBuilder();
+				String scriptureReferenceCurrent = "";
+				for
+				(
+					int scriptureReferenceIndex = 0, scriptureReferenceLength = scriptureReferences.Length;
+					scriptureReferenceIndex < scriptureReferenceLength;
+					scriptureReferenceIndex++
+				)	
+				{
+					scriptureReferenceCurrent = scriptureReferences[scriptureReferenceIndex].Trim();
+					if (scriptureReferenceCurrent.IndexOf(':') > -1)
+					{
+						if (sbScriptureReferenceVerses.Length == 0)
+						{
+							sbScriptureReferenceVerses.Append(" OR ScriptureReference IN ( ");
+						}
+						else
+						{
+							sbScriptureReferenceVerses.Append(", ");
+						}
+						sbScriptureReferenceVerses.AppendFormat
+						(
+							"'{0}'",
+							scriptureReferenceCurrent
+						);
+					}
+					else
+					{
+						if (sbScriptureReferenceChapters.Length == 0)
+						{
+							sbScriptureReferenceChapters.Append(" OR (");
+						}
+						else
+						{
+							sbScriptureReferenceChapters.Append(" OR ");
+						}
+						sbScriptureReferenceChapters.AppendFormat
+						(
+							"ScriptureReference LIKE '%{0}%'",
+							scriptureReferenceCurrent
+						);
+					}
+				}	
+				if (sbScriptureReferenceVerses.Length > 0)
+				{
+					sbScriptureReferenceVerses.Append(" ) ");
+				}		
+				if (sbScriptureReferenceChapters.Length > 0)
+				{
+					sbScriptureReferenceChapters.Append(" ) ");
+				}		
+				string queryStatementScriptureReference = String.Format
+				(
+					QueryFormatNumberSign,
+					dated,
+					sbScriptureReferenceVerses.ToString(),
+					sbScriptureReferenceChapters.ToString()
+				);
+				resultSet.Tables.Add
+				(
+					(DataTable) DataCommand.DatabaseCommand
+					(
+						queryStatementScriptureReference,
+						CommandType.Text,
+						DataCommand.ResultType.DataTable
+					)
+				);	
+			}	
+			return resultSet;
 		}
 		
-        public const string ContactQueryFormat = 
-			@"
-			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil
+        public const string QueryFormatContact = 
+		@"
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, FirstName, OtherName, LastName, Company
 			FROM 	WordEngineering..Contact
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
 			;
-			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, EmailAddress AS URI, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, EmailAddress AS URI
 			FROM 	WordEngineering..ContactEmail
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
 			;
-			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, InternetAddress AS URI, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, InternetAddress AS URI
 			FROM 	WordEngineering..ContactURI
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
 			;
-			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, AddressLine1, City, State, ZipCode, Country, DATEDIFF(day, Dated, '{0}') AS FromUntil
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, AddressLine1, City, State, ZipCode, Country
 			FROM 	WordEngineering..StreetAddress
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
+			;
+		";
+		public const string QueryFormatNumberSign = 
+		@"	
+		SELECT CONVERT(varchar, Dated, 23) AS Dated, CONVERT(varchar, DATEADD(Day, -Number, '{0}'), 23) AS DatedComputed, Number AS Days, ScriptureReference
+			FROM 	WordEngineering..NumberSign
+			WHERE	1 <> 1 {1} {2}
+			ORDER BY Dated, DatedComputed
 			;
 		";
 	}
