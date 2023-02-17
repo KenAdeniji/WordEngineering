@@ -49,22 +49,10 @@ namespace InformationInTransit.ProcessCode
 				ScriptureReferenceHelper.SubsetSeparator,
 				StringSplitOptions.RemoveEmptyEntries 
 			);
-			string queryStatementContact = String.Format
-			(
-				QueryFormatContact,
-				dated,
-				string.Join(",", contactIDs.Select(x => x.ToString()).ToArray())
-			);
-			resultSet = (DataSet) DataCommand.DatabaseCommand
-			(
-				queryStatementContact,
-				CommandType.Text,
-				DataCommand.ResultType.DataSet
-			);
+			StringBuilder sbScriptureReferenceChapters = new StringBuilder();
+			StringBuilder sbScriptureReferenceVerses = new StringBuilder();
 			if (!String.IsNullOrEmpty(scriptureReference))
 			{	
-				StringBuilder sbScriptureReferenceChapters = new StringBuilder();
-				StringBuilder sbScriptureReferenceVerses = new StringBuilder();
 				String scriptureReferenceCurrent = "";
 				for
 				(
@@ -115,27 +103,25 @@ namespace InformationInTransit.ProcessCode
 				{
 					sbScriptureReferenceChapters.Append(" ) ");
 				}		
-				string queryStatementScriptureReference = String.Format
-				(
-					QueryFormatNumberSign,
-					dated,
-					sbScriptureReferenceVerses.ToString(),
-					sbScriptureReferenceChapters.ToString()
-				);
-				resultSet.Tables.Add
-				(
-					(DataTable) DataCommand.DatabaseCommand
-					(
-						queryStatementScriptureReference,
-						CommandType.Text,
-						DataCommand.ResultType.DataTable
-					)
-				);	
 			}	
+			string queryStatement = String.Format
+			(
+				QueryFormat,
+				dated,
+				string.Join(",", contactIDs.Select(x => x.ToString()).ToArray()),
+				sbScriptureReferenceVerses.ToString(),
+				sbScriptureReferenceChapters.ToString()
+			);
+			resultSet = (DataSet) DataCommand.DatabaseCommand
+			(
+				queryStatement,
+				CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
 			return resultSet;
 		}
 		
-        public const string QueryFormatContact = 
+        public const string QueryFormat = 
 		@"
 			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, FirstName, OtherName, LastName, Company
 			FROM 	WordEngineering..Contact
@@ -157,13 +143,10 @@ namespace InformationInTransit.ProcessCode
 			WHERE	ContactID IN ({1})
 			ORDER BY ContactID, Dated
 			;
-		";
-		public const string QueryFormatNumberSign = 
-		@"	
-		SELECT CONVERT(varchar, Dated, 23) AS Dated, CONVERT(varchar, DATEADD(Day, -Number, '{0}'), 23) AS DatedComputed, Number AS Days, ScriptureReference
+		SELECT CONVERT(varchar, DATEADD(Day, -Number, '{0}'), 23) AS Dated, Number AS FromUntil, ScriptureReference
 			FROM 	WordEngineering..NumberSign
-			WHERE	1 <> 1 {1} {2}
-			ORDER BY Dated, DatedComputed
+			WHERE	1 <> 1 {2} {3}
+			ORDER BY Dated, Number
 			;
 		";
 	}

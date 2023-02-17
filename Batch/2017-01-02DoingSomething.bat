@@ -209,6 +209,5 @@ KenAdeniji@hotmail.com
 2023-02-04T18:33:00 https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server?view=sql-server-ver16
 
 Microsoft SQL Server Management Studio user interface (UI) error grid tab drops.
-2023-02-15T14:10:00	http://localhost/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
-2023-02-15T18:51:00 John 2:20, Genesis 22, Daniel 70, Genesis 5:31
+2023-02-15T18:51:00 John 2:20, Genesis 22, Daniel 9, Genesis 5:31
 :Exit
