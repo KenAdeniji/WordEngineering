@@ -88,6 +88,7 @@
 	2022-08-06T12:36:00	scriptureReferenceConcatenate()
 		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
 	2022-08-24	scriptLiteral9432.renderDataTable(dataTable, "resultSet"); Added rowColumn() parameter argument.
+	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil.
 */
 
 var scriptLiteral9432 =
@@ -1679,10 +1680,13 @@ var scriptLiteral9432 =
 		var cellContent = null;
 		var cellName = null;
 		var cells = "";
+		var cellHeader = "";
 		var info = "";
 		var detailKeys = null;
 		var detailRow = null;
 		var value = null;
+
+		var fromUntilBiblicalCalendar = "";
 		
 		info += "<table id='" + dataID + "'>";
 
@@ -1706,7 +1710,12 @@ var scriptLiteral9432 =
 		{
 			for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
 			{
-				cells += "<th>" + dataKeys[dataIndex] + "</th>";
+				cellHeader = dataKeys[dataIndex];
+				cells += "<th>" + cellHeader + "</th>";
+				if ( cellHeader === "FromUntil" )
+				{
+					cells += "<th>BiblicalCalendar</th>";
+				}			
 			}
 		}
 		
@@ -1757,6 +1766,12 @@ var scriptLiteral9432 =
 				{
 					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
 				}
+				else if (cellName.includes("FromUntil")) //2023-02-17T16:10:00
+				{
+					fromUntilBiblicalCalendar = scriptLiteral9432.daysDifferenceBiblicalCalendar(cellContent)
+					cellContent = `${cellContent}</td><td>${fromUntilBiblicalCalendar}`
+				}
+
 				if (rowColumn && cellContent)
 				{	
 					cells += `<tr><td>${cellName}</td><td>${cellContent}</td></tr>`;
