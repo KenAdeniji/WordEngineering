@@ -1,0 +1,332 @@
+namespace EphraimTech.RemindME
+{
+
+    
+    using System;
+    using System.Collections;
+    using System.Web;
+    using System.Web.UI;
+    using System.Web.UI.HtmlControls;        
+    using System.Web.UI.WebControls;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Data.OleDb;
+    using System.Web.Security;
+    using System.Text;    //StringBuilder    
+    using System.Configuration;    
+    
+
+    public class frmCover : System.Web.UI.Page
+    {
+       
+       
+       private String strContact = null;
+       
+       private String strDBConnection = null;
+                                        
+       private OleDbConnection objConnection = null;
+       private OleDbDataAdapter objDbAdapter = null;			                                        
+	   private String strSQLQuery;
+	   
+	   protected DataGrid gridContacts;	 
+	   
+	   protected Label labelInfo;
+	   protected Label labelSQL;         
+	   
+       protected String strMemberID;	   
+       
+       protected TextBox txtContactSearchTag;
+       
+       
+        //read configuration settings                                                                         
+        protected void readConfigurationSettings()
+        {
+            strDBConnection = ConfigurationSettings.AppSettings["oleDBConnection.ConnectionString"];
+        }       
+       
+
+       protected void Page_Load(Object Sender, EventArgs evt)
+       {
+       
+            readConfigurationSettings();
+       
+	    objConnection = new OleDbConnection(strDBConnection);
+        
+            objConnection.Open();
+            
+            getUserInfo();
+            
+            setReportSessionVars();
+            
+            //loadNamesGrid(null);                      
+            
+       }                                               
+        
+        
+       protected void Page_UnLoad(Object Sender, EventArgs evt)
+       {
+       
+            objConnection.Close();       
+			objConnection = null;
+        
+       }                                                       
+
+
+       public void AnchorBtnClick(Object objSource, EventArgs objEvent)
+       {                             
+
+          HtmlAnchor objAnchor  = null;
+          String     strContactFilter = null;
+          
+          string     strAnchorID = null;
+          string     strAnchorInnerText = null;
+          string     strAnchorName = null;          
+          
+          string     strQueryTag = null;
+          string     strQueryFilter = null;
+          string     strQueryTagRevised = null;          
+          
+          objAnchor = (HtmlAnchor) objSource;  
+          
+          /******************************************************************/
+          /*Get Anchor Tags                                                 */
+          /******************************************************************/          
+          strAnchorID = objAnchor.ID;
+          strAnchorInnerText = objAnchor.InnerText;
+          strAnchorName = objAnchor.Name;          
+          
+          
+          if (strContact == "")
+          {
+            return;            
+          }
+          
+          labelInfo.Text = "Anchor Inner text is " + objAnchor.InnerText + " | " + 
+                           "Anchor Name is " + objAnchor.Name + " | " +
+                           "Anchor ID is " + strAnchorID + " | ";
+                                                      
+                           
+          if ((strAnchorID != "") && (strAnchorName != ""))
+          {
+               strQueryTag = "%" +  txtContactSearchTag.Text + "%";            
+               strQueryTagRevised = txtContactSearchTag.Text;
+          }                             
+          else  
+          {
+               strQueryTag = "" +  strAnchorInnerText + "%"; 
+               strQueryTagRevised = strAnchorInnerText;                                        
+          }                            
+
+          labelSQL.Text = "Query Tag is " + strQueryTag;
+          
+          if (strQueryTag == null)
+          {
+            return;  
+          }
+        
+          strContactFilter = " contact  like '" +  strQueryTag + "'";          
+          
+          labelSQL.Text = "Query Filter is " + strContactFilter;          
+
+         	
+          loadNamesGrid(strQueryTagRevised);           
+                        
+       
+       }   
+       
+       
+       public void AnchorAllBtnClick(Object objSource, EventArgs objEvent)
+       {                             
+         
+          loadNamesGrid(null);          
+       
+       }          
+       
+
+       
+       
+       private DataView getRecordSetNames(String strContactFilter)
+	   {
+			
+
+            OleDbDataAdapter objDbAdapter = null;			                                        			
+			DataSet objDataSet;
+		    DataView objDataView;						            
+			OleDbCommand objOleDBCommand;
+							
+			strSQLQuery = "select ContactIdentifier, Contact, affliate, profession ";
+			strSQLQuery = strSQLQuery + " from v_contacts ";
+			strSQLQuery = strSQLQuery + " where memberIdentifier = '" + strMemberID + "' ";			
+			
+			if (strContactFilter != null)
+			{
+			    strSQLQuery = strSQLQuery + " and " + strContactFilter;
+            }			    
+            
+			strSQLQuery = strSQLQuery + " order by Contact";
+			
+			
+			//labelSQL.Visible = false;			
+			strSQLQuery = "usp_GetContactsForMember";
+			labelSQL.Text = strSQLQuery;
+            
+			objOleDBCommand = new OleDbCommand();
+			objOleDBCommand.Connection = objConnection;			
+			objOleDBCommand.CommandType = CommandType.StoredProcedure;
+			objOleDBCommand.CommandText = strSQLQuery;
+			
+            OleDbParameter objDBParametemItemMemberID = new OleDbParameter();
+            objDBParametemItemMemberID.OleDbType = OleDbType.VarChar;
+            objDBParametemItemMemberID.Size = 88;
+            objDBParametemItemMemberID.Value = strMemberID;
+            objOleDBCommand.Parameters.Add(objDBParametemItemMemberID);			
+            
+            OleDbParameter objDBParametemItemContactFilterParam = new OleDbParameter();
+            objDBParametemItemContactFilterParam.OleDbType = OleDbType.VarChar;
+            objDBParametemItemContactFilterParam.Size = 88;
+            objDBParametemItemContactFilterParam.Value = strContactFilter;
+            objOleDBCommand.Parameters.Add(objDBParametemItemContactFilterParam);			            
+
+            objDbAdapter = new OleDbDataAdapter();            		            
+            objDbAdapter.SelectCommand = objOleDBCommand;
+
+            objDataSet = new DataSet("namedetails");
+            
+            objDbAdapter.Fill(objDataSet);						
+			
+			objDataView = objDataSet.Tables[0].DefaultView;
+			
+			objDataView.RowFilter = String.Empty;
+			
+			return objDataView;
+						
+		}              
+       
+       
+	   private void loadNamesGrid(String strContactFilter)
+	   {
+		
+			//ICollection objNames;
+			DataView    objNames;
+			System.Web.UI.WebControls.Unit iWidth;
+			
+			//get Names
+			objNames = getRecordSetNames(strContactFilter);
+			
+			iWidth = gridContacts.Width;
+					
+			//set data source
+			gridContacts.DataSource = objNames;
+			
+			//data Bind
+			gridContacts.DataBind();
+			
+			ifSingleRowFoundDisplayRow(objNames);
+			
+	   }       
+
+
+	   private void ifSingleRowFoundDisplayRow(DataView objGridContents)
+	   {
+	   	
+		int         iNumberofMatches = -1;
+                DataRowView objDataRowView = null;
+                
+                object      objHWID = null;
+                string      strHWID = null;
+                
+                string      strURLPrefix = "ContactBrowse.aspx?ContactID=";
+                string      strRedirectURL = null;
+   	                    
+	        //objDataView = objDataSet.Tables[0].DefaultView;   	        
+	   	
+                iNumberofMatches = objGridContents.Count;   
+                
+                //labelSQL.Text = "Number of matches " + iNumberofMatches;
+                //labelSQL.Visible = true;                     
+                
+                if (iNumberofMatches == 1)
+                {
+                    
+                    //get the first row
+                    objDataRowView = objGridContents[0];
+
+                    //If data row is view is valid
+                    if (objDataRowView != null)
+                    {
+                        
+                        objHWID = objDataRowView[0];
+                    
+                        if (objHWID != null)
+                        {
+                        
+                            //get the Hardware id
+                            strHWID = objHWID.ToString();
+                                        
+                            //format the redirect URL                                        
+                            strRedirectURL = strURLPrefix + strHWID;
+                            
+                            //Redirect
+                            Response.Redirect(strRedirectURL);
+                            
+                        } //if (objHWID != null)
+                        
+                    } //if (objDataRowView != null)
+                    
+                } //if (iNumberofMatches == 1)
+                
+                
+           }
+                
+
+        protected void getUserInfo()
+        {
+        
+            System.Security.Principal.IIdentity objIdentity;
+            Boolean bAuthenticated;
+            
+        
+            objIdentity = User.Identity;
+            
+            bAuthenticated = objIdentity.IsAuthenticated;
+            strMemberID = objIdentity.Name;
+
+            
+        }        
+                 
+                 
+        protected void setReportSessionVars()
+        {
+        	
+        	Boolean	bSessionVarSet = false;
+        	
+        	if (strMemberID != null)
+        	{
+	        	if (strMemberID.CompareTo(Session["@memberID"]) != 0)
+	        	{
+	        		Session["@memberID"] = strMemberID;
+	        		bSessionVarSet = true;
+				}
+			}    
+			
+			
+			/*
+				//labelInfo.Text = "bSessionVarSet is " + bSessionVarSet;
+				
+				//if (Session["@memberID"] != null)
+				//{
+				//	 labelInfo.Text = labelInfo.Text + "Session['@memberID'] " + Session["@memberID"];
+				//}
+								 
+				//labelInfo.Visible = true;
+			*/
+			
+			    		
+
+        }                          
+
+                                                   
+    }
+
+
+}

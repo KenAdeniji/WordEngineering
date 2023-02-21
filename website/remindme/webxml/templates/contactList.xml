@@ -1,0 +1,9 @@
+<?xml version='1.0' ?>
+<contactList xmlns:sql='urn:schemas-microsoft-com:xml-sql'>
+	<sql:query>
+		select contact 
+		from dbo.v_contacts (nolock)
+		order by contact
+		for xml auto
+	</sql:query>	
+</contactList>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Database>
+    <Name>Report Model Project.database</Name>
+    <FullPath>Report Model Project.database</FullPath>
+  </Database>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmR3ZD0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9EYXRhV2FyZWhvdXNlL0Rlc2lnbmVyLzEuMCI+DQogIDxFbmFibGVkPmZhbHNlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+PC9Qcm9qZWN0TmFtZT4NCiAgPEF1eFBhdGg+PC9BdXhQYXRoPg0KICA8TG9jYWxQYXRoPjwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+PC9Qcm92aWRlcj4NCjwvU291cmNlQ29udHJvbEluZm8+</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>Remind ME.ds</Name>
+      <FullPath>Remind ME.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Remind ME - Small Project.dsv</Name>
+      <FullPath>Remind ME - Small Project.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Remind ME.dsv</Name>
+      <FullPath>Remind ME.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
+  <Models>
+    <ModelProjectItem>
+      <Name>Remind ME - Small Project.smdl</Name>
+      <FullPath>Remind ME - Small Project.smdl</FullPath>
+      <DsvName>Remind ME - Small Project</DsvName>
+    </ModelProjectItem>
+    <ModelProjectItem>
+      <Name>Remind ME.smdl</Name>
+      <FullPath>Remind ME.smdl</FullPath>
+      <DsvName>Remind ME</DsvName>
+    </ModelProjectItem>
+  </Models>
+  <Configurations>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin</OutputPath>
+        <RemovePasswords>true</RemovePasswords>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Remind ME</Id>
+            <Name>Remind ME</Name>
+            <Value xsi:type="xsd:string">Data Source=ephDB;Initial Catalog=remindME;Integrated Security=True</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionProviderMappings>
+          <ConfigurationSetting>
+            <Id>Remind ME</Id>
+            <Name>Remind ME</Name>
+            <Value xsi:type="xsd:string">System.Data.SqlClient</Value>
+          </ConfigurationSetting>
+        </ConnectionProviderMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Remind ME</Id>
+            <Name>Remind ME</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+        <TargetServerURL>http://bethel/ReportServer</TargetServerURL>
+        <TargetModelFolder>Models</TargetModelFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

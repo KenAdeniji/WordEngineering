@@ -160,7 +160,7 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 60540);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62606);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
@@ -184,8 +184,10 @@ DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', 
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
 DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 481);
 
-SET IDENTITY_INSERT ClassAssociates ON
-SET IDENTITY_INSERT ClassAssociates OFF
+--2023-02-19T23:01:00
+SET IDENTITY_INSERT URI..URIWordEngineering ON
+INSERT URI.[dbo].[URIWordEngineering] ([SequenceOrderId], [Dated], [Title], [URI], [Keyword], [Commentary]) VALUES (57064, CAST(N'2021-08-15T20:22:53.920' AS DateTime), N'Missing Manuals by Dave McFarland', N'sawmac.com', NULL, NULL)
+SET IDENTITY_INSERT URI..URIWordEngineering OFF
 
 :Restore
 RESTORE DATABASE [AManDevelopedInAll] FROM  DISK = N'E:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak'
@@ -210,4 +212,7 @@ KenAdeniji@hotmail.com
 
 Microsoft SQL Server Management Studio user interface (UI) error grid tab drops.
 2023-02-15T18:51:00 John 2:20, Genesis 22, Daniel 9, Genesis 5:31
+http://localhost/informationintransit/urimaintenancewebform.aspx
+ 	2017-07-17
+cnn.com/2023/02/18/us/asbury-revival-christian-what-is-cec
 :Exit

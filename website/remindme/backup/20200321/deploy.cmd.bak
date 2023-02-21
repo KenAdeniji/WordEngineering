@@ -1,0 +1,1 @@
+xcopy \\10.0.4.6\d$\website\remindme \\10.0.4.1\c$\website\remindme /s /e /Y

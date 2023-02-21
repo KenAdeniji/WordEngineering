@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>DataSource</Name>
+  <DataSourceID>c755bc65-87ae-4e9d-8668-91e5f79f6224</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=ephdb.ephraimtech.com;Initial Catalog=remindME</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

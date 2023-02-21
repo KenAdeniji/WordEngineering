@@ -1,0 +1,737 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="089f463c-f12b-4ae9-839c-490326c5190c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Remind ME</ID>
+  <Name>Remind ME</Name>
+  <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="40" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="2438" scrolltop="-12515" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="15796" y="15187" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contact_task (dbo.contact_task)" left="3692" top="-7515" logicalid="20" controlid="1" masterid="0" hint1="0" hint2="0" width="3228" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800009c0c000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contact_task" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contact_communication (dbo.contact_communication)" left="-1447" top="-56" logicalid="21" controlid="2" masterid="0" hint1="0" hint2="0" width="3493" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000a50d000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contact_communication" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="support_communication (dbo.support_communication)" left="-2937" top="-6488" logicalid="22" controlid="3" masterid="0" hint1="0" hint2="0" width="3228" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800009c0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_support_communication" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contact_comment (dbo.contact_comment)" left="13936" top="6135" logicalid="23" controlid="4" masterid="0" hint1="0" hint2="0" width="3493" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000a50d0000ea120000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contact_comment" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contacts (dbo.contacts)" left="8499" top="-958" logicalid="24" controlid="5" masterid="0" hint1="0" hint2="0" width="3254" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b60c000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contacts" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contact_address (dbo.contact_address)" left="13095" top="18677" logicalid="25" controlid="6" masterid="0" hint1="0" hint2="0" width="3493" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000a50d000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contact_address" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="support_profession (dbo.support_profession)" left="14681" top="14364" logicalid="26" controlid="7" masterid="0" hint1="0" hint2="0" width="3254" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b60c0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_support_profession" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="affliations (dbo.affliations)" left="8784" top="19690" logicalid="27" controlid="8" masterid="0" hint1="0" hint2="0" width="3228" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800009c0c0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_affliations" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="contactEvent (dbo.contactEvent)" left="1601" top="19960" logicalid="28" controlid="9" masterid="0" hint1="0" hint2="0" width="3228" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800009c0c000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_contactEvent" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="documentAttachment (dbo.documentAttachment)" left="6052" top="24562" logicalid="29" controlid="10" masterid="0" hint1="0" hint2="0" width="4921" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800003913000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dbo_documentAttachment" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="1746" top="-56" logicalid="30" controlid="11" masterid="0" hint1="0" hint2="0" width="7053" height="1998" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_contact_communication]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="18" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8499" y="1542" />
+                    <point x="4355" y="1542" />
+                    <point x="4355" y="244" />
+                    <point x="2046" y="244" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-1172" top="-3838" logicalid="31" controlid="12" masterid="0" hint1="0" hint2="0" width="799" height="4082" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Support_Communication_New]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="7" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-773" y="-3339" />
+                    <point x="-773" y="-1592" />
+                    <point x="-801" y="-1592" />
+                    <point x="-801" y="-56" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="8627" top="3543" logicalid="32" controlid="13" masterid="0" hint1="0" hint2="0" width="5609" height="4763" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_contact_comment_contacts]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="1" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9026" y="4042" />
+                    <point x="9026" y="8006" />
+                    <point x="13936" y="8006" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="10926" top="3742" logicalid="33" controlid="14" masterid="0" hint1="0" hint2="0" width="4682" height="11122" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Contact_Profession]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="5" sourceattachpoint="0" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="15208" y="14364" />
+                    <point x="15208" y="9556" />
+                    <point x="11226" y="9556" />
+                    <point x="11226" y="4042" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="9999" top="3742" logicalid="34" controlid="15" masterid="0" hint1="0" hint2="0" width="1527" height="16448" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Contact_Affliation]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="5" sourceattachpoint="4" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10398" y="19690" />
+                    <point x="10398" y="18746" />
+                    <point x="11226" y="18746" />
+                    <point x="11226" y="4042" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="9177" top="3543" logicalid="35" controlid="16" masterid="0" hint1="0" hint2="0" width="4864" height="15434" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Contact_Address]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="6" sourceattachpoint="3" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9576" y="4042" />
+                    <point x="9576" y="11712" />
+                    <point x="13741" y="11712" />
+                    <point x="13741" y="18677" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="3465" top="2793" logicalid="36" controlid="17" masterid="0" hint1="0" hint2="0" width="5334" height="17467" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_contactEvent]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="9" sourceattachpoint="24" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8499" y="3192" />
+                    <point x="3765" y="3192" />
+                    <point x="3765" y="19960" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="8627" top="3543" logicalid="37" controlid="18" masterid="0" hint1="0" hint2="0" width="2385" height="21319" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_documentAttachment]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="10" sourceattachpoint="1" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9026" y="4042" />
+                    <point x="9026" y="23703" />
+                    <point x="10712" y="23703" />
+                    <point x="10712" y="24562" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="3906" top="-2815" logicalid="38" controlid="19" masterid="0" hint1="0" hint2="0" width="4893" height="5307" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_contact_task]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="20" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8499" y="2092" />
+                    <point x="4206" y="2092" />
+                    <point x="4206" y="-2515" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>2438</DiagramViewPortLeft>
+            <DiagramViewPortTop>-12515</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>75</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Remind ME</DataSourceID>
+  <Schema>
+    <xs:schema id="Remind_x0020_ME" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Remind_x0020_ME" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="ef868690-bc24-45a6-b207-ffa9ff2e97d0" msprop:CompareInfo="&lt;CompareInfo&gt;&lt;Culture&gt;en-US&lt;/Culture&gt;&lt;IgnoreCase&gt;true&lt;/IgnoreCase&gt;&lt;IgnoreKanaType&gt;true&lt;/IgnoreKanaType&gt;&lt;IgnoreWidth&gt;true&lt;/IgnoreWidth&gt;&lt;/CompareInfo&gt;">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_contact_task" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_contact_task&quot; Value=&quot;36&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_contact_task&quot; Value=&quot;14&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contact_task" msprop:DbTableName="contact_task" msprop:DbSchemaName="dbo" msprop:stats_RowCount="36" msprop:design-time-name="1f2df81f-7b61-4f18-89a6-08086945aae3" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="userid" msprop:stats_StDevWidth="0" msprop:stats_AvgScale="0" msprop:stats_UniqueValuePercent="4" msprop:FriendlyName="userid" msprop:design-time-name="a109725a-3c7c-4517-9eb4-c693ba0e2d10" msprop:stats_StDevScale="0" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="1" msprop:stats_MaxScale="0" msprop:stats_AvgWidth="1" msprop:DbColumnName="userid" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="contactID" msprop:stats_StDevWidth="0" msprop:stats_AvgScale="0" msprop:stats_UniqueValuePercent="85" msprop:FriendlyName="contactID" msprop:design-time-name="b2512304-066f-44e5-bb47-13f22406ed1e" msprop:stats_StDevScale="0" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="18" msprop:stats_MaxScale="0" msprop:stats_AvgWidth="3" msprop:DbColumnName="contactID" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="taskid" msprop:stats_StDevWidth="0" msprop:stats_AvgScale="0" msprop:stats_UniqueValuePercent="14" msprop:FriendlyName="taskid" msprop:design-time-name="eef373d1-7be3-498c-9eb8-1431a0535494" msprop:stats_StDevScale="0" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="3" msprop:stats_MaxScale="0" msprop:stats_AvgWidth="1" msprop:DbColumnName="taskid" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="statusCode" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="8" msprop:FriendlyName="statusCode" msprop:design-time-name="633c1405-5553-4906-94a5-4dd0990fd91c" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="3" msprop:stats_AvgWidth="1" msprop:DbColumnName="statusCode" type="xs:short" />
+                  <xs:element name="duration" msprop:stats_StDevWidth="0.1666667" msprop:stats_AvgScale="0.05555556" msprop:stats_UniqueValuePercent="22" msprop:FriendlyName="duration" msprop:design-time-name="d9b24e13-0104-4150-8a6f-b1b34ae99f00" msprop:stats_StDevScale="0.2323107" msprop:stats_MaxWidth="2" msprop:stats_UniqueValueCount="8" msprop:stats_MaxScale="1" msprop:stats_AvgWidth="1.027778" msprop:DbColumnName="duration" type="xs:double" minOccurs="0" />
+                  <xs:element name="regarding" msprop:stats_StDevWidth="49.4781" msprop:stats_UniqueValuePercent="97" msprop:FriendlyName="regarding" msprop:design-time-name="abba382e-989a-4b92-8bc7-b2105ee9a5fb" msprop:stats_MaxWidth="246" msprop:stats_UniqueValueCount="35" msprop:stats_AvgWidth="53.55556" msprop:DbColumnName="regarding" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="scheduleDate" msprop:FriendlyName="scheduleDate" msprop:DbColumnName="scheduleDate" msprop:stats_UniqueValuePercent="94" msprop:design-time-name="bb264f22-f01a-4d8a-a668-720d565b5762" msprop:stats_UniqueValueCount="34" type="xs:dateTime" />
+                  <xs:element name="scheduledOn" msprop:FriendlyName="scheduledOn" msprop:DbColumnName="scheduledOn" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="502bf68c-8460-40b9-be18-0ba04fd14fb5" msprop:stats_UniqueValueCount="36" type="xs:dateTime" />
+                  <xs:element name="updatedOn" msprop:FriendlyName="updatedOn" msprop:DbColumnName="updatedOn" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="70092cbf-265b-44a4-91fa-685ac5f48b65" msprop:stats_UniqueValueCount="36" type="xs:dateTime" />
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_task&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_task&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="2" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="79acccc9-fd47-47ae-bb52-26e78912f47a" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_task&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_task&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="38" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="839b3a7f-dddc-4705-87d5-7798bc9d00fb" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="14" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="taskIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_task&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="taskIdentifier" msprop:design-time-name="b2987e37-7ad6-4fbc-b3e4-77d4449a7de5" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="36" msprop:stats_AvgWidth="36" msprop:DbColumnName="taskIdentifier" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_contact_communication" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;FK_FK_Support_Communication_New&quot; Value=&quot;177&quot; /&gt;&lt;GroupRows Key=&quot;IX_PK_contact_communication&quot; Value=&quot;7739&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_contact_communication&quot; Value=&quot;2796&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contact_communication" msprop:DbTableName="contact_communication" msprop:DbSchemaName="dbo" msprop:stats_RowCount="7739" msprop:design-time-name="e52b79c0-7b44-41fd-9af2-023860d4020d" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="contact_id" msprop:stats_StDevWidth="0.512307" msprop:stats_UniqueValuePercent="44" msprop:FriendlyName="contact_id" msprop:design-time-name="d59cf091-f641-427e-9039-533ce8b5a8ff" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="439" msprop:stats_AvgWidth="2.751787" msprop:DbColumnName="contact_id" type="xs:int" minOccurs="0" />
+                  <xs:element name="sequence" msprop:stats_StDevWidth="0.2117186" msprop:stats_UniqueValuePercent="2" msprop:FriendlyName="sequence" msprop:design-time-name="8038dee4-34b1-4c77-8f07-56bc294af453" msprop:stats_MaxWidth="2" msprop:stats_UniqueValueCount="28" msprop:stats_AvgWidth="1.046987" msprop:DbColumnName="sequence" type="xs:int" minOccurs="0" />
+                  <xs:element name="comm_type_id" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;FK_FK_Support_Communication_New&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.4987342" msprop:stats_UniqueValuePercent="2" msprop:FriendlyName="comm_type_id" msprop:design-time-name="b7ff242d-c268-41fb-a809-a9fd227d1e81" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="177" msprop:stats_AvgWidth="1.223414" msprop:DbColumnName="comm_type_id" type="xs:int" />
+                  <xs:element name="comm_data" msprop:stats_StDevWidth="11.98345" msprop:stats_UniqueValuePercent="95" msprop:FriendlyName="comm_data" msprop:design-time-name="5108fa57-07f2-4daf-86eb-f6f1f9254faa" msprop:stats_MaxWidth="120" msprop:stats_UniqueValueCount="7403" msprop:stats_AvgWidth="18.47254" msprop:DbColumnName="comm_data">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="userID" msprop:stats_StDevWidth="0" msprop:stats_AvgScale="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="userID" msprop:design-time-name="f758bd31-6187-4dc9-9795-19bf40f443cf" msprop:stats_StDevScale="0" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="1" msprop:stats_MaxScale="0" msprop:stats_AvgWidth="1" msprop:DbColumnName="userID" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="comment" msprop:stats_StDevWidth="14.70945" msprop:stats_UniqueValuePercent="23" msprop:FriendlyName="comment" msprop:design-time-name="46d063e5-0cbe-4ece-8639-74dd7aa28e16" msprop:stats_MaxWidth="122" msprop:stats_UniqueValueCount="1662" msprop:stats_AvgWidth="6.779853" msprop:DbColumnName="comment" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_communication&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_communication&lt;/Group&gt;&lt;Group&gt;FK_FK_Support_Communication_New&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="201be293-69e4-4ffa-983f-135760f3c40a" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_communication&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_communication&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="36" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="a8fb6dad-9fde-4575-bfc2-546de7d7f0c4" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="2796" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="sequenceIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_communication&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="sequenceIdentifier" msprop:design-time-name="d1ae80f0-ec69-473a-ab79-2623097f2411" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="7739" msprop:stats_AvgWidth="36" msprop:DbColumnName="sequenceIdentifier" type="xs:string" />
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="72" msprop:design-time-name="5989726e-a0f5-450a-9b82-6073f23d8a0e" msprop:stats_UniqueValueCount="5632" type="xs:dateTime" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="76" msprop:design-time-name="a3e3291c-7819-4bce-9019-f19bb0882f7b" msprop:stats_UniqueValueCount="5892" type="xs:dateTime" />
+                  <xs:element name="active" msprop:FriendlyName="active" msprop:DbColumnName="active" msprop:stats_UniqueValuePercent="0" msprop:design-time-name="6ff3d4dc-3b34-436f-94c7-469b70f1ed60" msprop:stats_UniqueValueCount="2" type="xs:boolean" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_support_communication" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_Support_Communication&quot; Value=&quot;188&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="support_communication" msprop:DbTableName="support_communication" msprop:DbSchemaName="dbo" msprop:stats_RowCount="188" msprop:design-time-name="b4b393f5-c7c4-4956-808f-ca5d885e364a" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_Support_Communication&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.5880248" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="id" msprop:design-time-name="0922b29c-53d2-4fcc-a03e-f18f6b8b4281" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="188" msprop:stats_AvgWidth="2.457447" msprop:DbColumnName="id" type="xs:int" />
+                  <xs:element name="comm_type" msprop:stats_StDevWidth="8.110028" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="comm_type" msprop:design-time-name="c9493421-1375-4045-b6ba-44be0c61d059" msprop:stats_MaxWidth="43" msprop:stats_UniqueValueCount="188" msprop:stats_AvgWidth="15.94681" msprop:DbColumnName="comm_type">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="80" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsPhoneNumber" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="1" msprop:FriendlyName="IsPhoneNumber" msprop:design-time-name="d250194c-a58b-424d-a2f2-81d5fa5221e7" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="1" msprop:DbColumnName="IsPhoneNumber" type="xs:short" minOccurs="0" />
+                  <xs:element name="isPrivate" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="1" msprop:FriendlyName="isPrivate" msprop:design-time-name="001cc319-1925-4487-82d3-d328d2ad0182" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="1" msprop:DbColumnName="isPrivate" type="xs:short" minOccurs="0" />
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_Support_Communication&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="82b82d59-1d36-4754-b30f-70a800861a56" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_contact_comment" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_contact_comment&quot; Value=&quot;459&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_contact_comment_contacts&quot; Value=&quot;216&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contact_comment" msprop:DbTableName="contact_comment" msprop:DbSchemaName="dbo" msprop:stats_RowCount="459" msprop:design-time-name="80192cb2-e42e-4e1c-9533-ad59f57a88c7" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="contact_id" msprop:stats_StDevWidth="0.5779697" msprop:stats_UniqueValuePercent="47" msprop:FriendlyName="contact_id" msprop:design-time-name="609e3993-0549-4faf-9e1f-7549e7847661" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="65" msprop:stats_AvgWidth="2.781022" msprop:DbColumnName="contact_id" type="xs:int" minOccurs="0" />
+                  <xs:element name="sequence" msprop:stats_StDevWidth="0.2486546" msprop:stats_UniqueValuePercent="13" msprop:FriendlyName="sequence" msprop:design-time-name="8df7707b-b3e4-4ed4-9f98-061cd28dd704" msprop:stats_MaxWidth="2" msprop:stats_UniqueValueCount="18" msprop:stats_AvgWidth="1.065693" msprop:DbColumnName="sequence" type="xs:int" minOccurs="0" />
+                  <xs:element name="comment" msprop:FriendlyName="comment" msprop:DbColumnName="comment" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="0a089af1-8565-4f60-aad1-5d38dcc92f1e" msprop:stats_UniqueValueCount="459">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2147483647" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="96" msprop:design-time-name="307f73ee-e4da-4303-a0eb-e96232fd03d6" msprop:stats_UniqueValueCount="443" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="userID" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="userID" msprop:design-time-name="6b116b10-ea67-4c2a-b68e-c07d10f6a532" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="1" msprop:DbColumnName="userID" type="xs:int" minOccurs="0" />
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_comment&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_comment_contacts&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="901acb8d-50bf-4df1-bf4f-cca0793ed813" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_comment&lt;/Group&gt;&lt;Group&gt;FK_FK_contact_comment_contacts&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="47" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="ac22a915-31bd-4d26-b14a-3050313ad779" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="216" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="sequenceIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_comment&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="sequenceIdentifier" msprop:design-time-name="0c9e76dd-eea1-4ff7-baf1-54518b9a1c48" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="459" msprop:stats_AvgWidth="36" msprop:DbColumnName="sequenceIdentifier" type="xs:string" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="97" msprop:design-time-name="cf7cfada-d80a-4971-b368-b5a26d2f63b0" msprop:stats_UniqueValueCount="122" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_contacts" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;FK_FK_Contact_Affliation&quot; Value=&quot;437&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_Contact_Profession&quot; Value=&quot;112&quot; /&gt;&lt;GroupRows Key=&quot;IX_PK_contacts&quot; Value=&quot;3178&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contacts" msprop:DbTableName="contacts" msprop:DbSchemaName="dbo" msprop:stats_RowCount="3178" msprop:design-time-name="e8342079-6494-45f4-b527-48ff31ded8af" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:stats_StDevWidth="0.4391389" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="id" msprop:design-time-name="1632264b-3d4a-4c42-a99d-09ed3e6a95b0" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="468" msprop:stats_AvgWidth="2.788461" msprop:DbColumnName="id" type="xs:int" minOccurs="0" />
+                  <xs:element name="contact" msprop:stats_StDevWidth="7.79984" msprop:stats_UniqueValuePercent="98" msprop:FriendlyName="contact" msprop:design-time-name="2511f7db-433c-4bdb-93ec-c6db4d19cb0b" msprop:stats_MaxWidth="80" msprop:stats_UniqueValueCount="3135" msprop:stats_AvgWidth="14.30428" msprop:DbColumnName="contact" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="affliation_code" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;FK_FK_Contact_Affliation&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.5470572" msprop:stats_UniqueValuePercent="21" msprop:FriendlyName="affliation_code" msprop:design-time-name="63a7689c-a760-433b-a042-d92d818ccadb" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="435" msprop:stats_AvgWidth="2.517548" msprop:DbColumnName="affliation_code" type="xs:int" minOccurs="0" />
+                  <xs:element name="profession_code" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;FK_FK_Contact_Profession&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.5642849" msprop:stats_UniqueValuePercent="11" msprop:FriendlyName="profession_code" msprop:design-time-name="b64df528-e7c2-4b6b-93e5-003620b6e996" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="110" msprop:stats_AvgWidth="1.585954" msprop:DbColumnName="profession_code" type="xs:int" minOccurs="0" />
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contacts&lt;/Group&gt;&lt;Group&gt;FK_FK_Contact_Profession&lt;/Group&gt;&lt;Group&gt;FK_FK_Contact_Affliation&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="78cb16b9-2d98-4471-a39f-4562667f6972" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contacts&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="1ee32edf-48a5-48e0-a12f-24d988abefa9" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="3178" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="e3a1609d-532e-4e78-b3d4-5328044dd021" msprop:stats_UniqueValueCount="2710" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="75b841c8-1223-43a1-b991-6973b80f599a" msprop:stats_UniqueValueCount="2782" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="comment" msprop:stats_StDevWidth="18.64789" msprop:stats_UniqueValuePercent="25" msprop:FriendlyName="comment" msprop:design-time-name="17684e82-06b9-4b18-9558-802995edfd11" msprop:stats_MaxWidth="161" msprop:stats_UniqueValueCount="701" msprop:stats_AvgWidth="8.598597" msprop:DbColumnName="comment" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DOB" msprop:FriendlyName="DOB" msprop:DbColumnName="DOB" msprop:stats_UniqueValuePercent="97" msprop:design-time-name="00453b9a-debc-40e9-8078-124525381f34" msprop:stats_UniqueValueCount="79" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_contact_address" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_contact_address&quot; Value=&quot;731&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_Contact_Address&quot; Value=&quot;599&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contact_address" msprop:DbTableName="contact_address" msprop:DbSchemaName="dbo" msprop:stats_RowCount="731" msprop:design-time-name="1addcae1-e788-4eb8-8566-e9bf13255d69" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="contact_id" msprop:stats_StDevWidth="0.5226945" msprop:stats_UniqueValuePercent="94" msprop:FriendlyName="contact_id" msprop:design-time-name="78a02263-d21c-4fdf-a997-4eebef2a8aad" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="111" msprop:stats_AvgWidth="2.717949" msprop:DbColumnName="contact_id" type="xs:int" minOccurs="0" />
+                  <xs:element name="sequence" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="1" msprop:FriendlyName="sequence" msprop:design-time-name="0ef59558-d316-46f0-b9f3-3a1ce7f7d3d5" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="1" msprop:DbColumnName="sequence" type="xs:int" minOccurs="0" />
+                  <xs:element name="address1" msprop:stats_StDevWidth="5.91432" msprop:stats_UniqueValuePercent="94" msprop:FriendlyName="address1" msprop:design-time-name="dbdf0d3e-f0d0-4aaa-824f-18bda7356bcc" msprop:stats_MaxWidth="50" msprop:stats_UniqueValueCount="691" msprop:stats_AvgWidth="19.11217" msprop:DbColumnName="address1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="60" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="address2" msprop:stats_StDevWidth="8.05969" msprop:stats_UniqueValuePercent="32" msprop:FriendlyName="address2" msprop:design-time-name="1e3e2453-7e46-448e-a74c-3ab01879c95c" msprop:stats_MaxWidth="60" msprop:stats_UniqueValueCount="227" msprop:stats_AvgWidth="4.827338" msprop:DbColumnName="address2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="60" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="city" msprop:stats_StDevWidth="2.796389" msprop:stats_UniqueValuePercent="23" msprop:FriendlyName="city" msprop:design-time-name="e2ccc336-a6e9-4baf-b2c4-8acdc92f3918" msprop:stats_MaxWidth="30" msprop:stats_UniqueValueCount="169" msprop:stats_AvgWidth="8.70096" msprop:DbColumnName="city" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="state" msprop:stats_StDevWidth="1.138318" msprop:stats_UniqueValuePercent="5" msprop:FriendlyName="state" msprop:design-time-name="9cffd0b8-573f-4359-864f-8253fac00639" msprop:stats_MaxWidth="20" msprop:stats_UniqueValueCount="37" msprop:stats_AvgWidth="2.099447" msprop:DbColumnName="state" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="postalcode" msprop:stats_StDevWidth="2.778603" msprop:stats_UniqueValuePercent="40" msprop:FriendlyName="postalcode" msprop:design-time-name="7679b871-b08d-43ef-a1ab-0e93c9f90dbe" msprop:stats_MaxWidth="20" msprop:stats_UniqueValueCount="288" msprop:stats_AvgWidth="4.550139" msprop:DbColumnName="postalcode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="country" msprop:stats_StDevWidth="1.272061" msprop:stats_UniqueValuePercent="1" msprop:FriendlyName="country" msprop:design-time-name="7ae95ed9-b46e-4ee6-92c2-6e81dfc2b5f0" msprop:stats_MaxWidth="14" msprop:stats_UniqueValueCount="11" msprop:stats_AvgWidth="0.3397341" msprop:DbColumnName="country" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="40" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="userID" msprop:stats_StDevWidth="0" msprop:stats_AvgScale="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="userID" msprop:design-time-name="c8927adf-9db8-4f80-9789-a50ac2bcc197" msprop:stats_StDevScale="0" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="1" msprop:stats_MaxScale="0" msprop:stats_AvgWidth="1" msprop:DbColumnName="userID" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_address&lt;/Group&gt;&lt;Group&gt;FK_FK_Contact_Address&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="34697c7a-ee0c-4f13-b82c-e1eccb8262b0" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_address&lt;/Group&gt;&lt;Group&gt;FK_FK_Contact_Address&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="81" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="8a58251d-fa35-4c4f-bb74-9ec73c8b2e03" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="599" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="sequenceIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contact_address&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="sequenceIdentifier" msprop:design-time-name="af1ab9e7-675e-4034-a5ef-c297f768ab1c" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="731" msprop:stats_AvgWidth="36" msprop:DbColumnName="sequenceIdentifier" type="xs:string" />
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="84" msprop:design-time-name="7f34b921-d2ae-44cf-b839-49f7ce2812ce" msprop:stats_UniqueValueCount="615" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="854a0963-5b11-4ba1-b952-9b118ce1813b" msprop:stats_UniqueValueCount="528" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="active" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="active" msprop:design-time-name="d6f76552-0d45-4385-9e29-9e9e551ef5a6" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="1" msprop:DbColumnName="active" type="xs:unsignedByte" />
+                  <xs:element name="comment" msprop:stats_StDevWidth="17.78476" msprop:stats_UniqueValuePercent="6" msprop:FriendlyName="comment" msprop:design-time-name="e338f088-7a12-4def-8dd9-66fc1da1ff18" msprop:stats_MaxWidth="255" msprop:stats_UniqueValueCount="36" msprop:stats_AvgWidth="3.089015" msprop:DbColumnName="comment" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_support_profession" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_support_profession&quot; Value=&quot;116&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="support_profession" msprop:DbTableName="support_profession" msprop:DbSchemaName="dbo" msprop:stats_RowCount="116" msprop:design-time-name="55ef354a-f39e-4259-acd5-ae0b4668a8ae" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="profession_code" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_support_profession&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.470414" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="profession_code" msprop:design-time-name="549b28fd-16ea-4232-a80e-0198ac0020ba" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="116" msprop:stats_AvgWidth="2.068965" msprop:DbColumnName="profession_code" type="xs:int" />
+                  <xs:element name="description" msprop:stats_StDevWidth="7.425552" msprop:stats_UniqueValuePercent="98" msprop:FriendlyName="description" msprop:design-time-name="705fa2dd-fc46-4046-9542-7cc95240fd94" msprop:stats_MaxWidth="45" msprop:stats_UniqueValueCount="114" msprop:stats_AvgWidth="14.48276" msprop:DbColumnName="description">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_support_profession&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="f85c7e01-90a3-4791-a0eb-f4b12ae0a984" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_affliations" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_affliation_1__10&quot; Value=&quot;457&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="affliations" msprop:DbTableName="affliations" msprop:DbSchemaName="dbo" msprop:stats_RowCount="457" msprop:design-time-name="b14fd394-1b98-4d28-8f1b-6b65b6e4fc43" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="affliation_code" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_affliation_1__10&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0.4669178" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="affliation_code" msprop:design-time-name="bcfb12f9-11b2-4627-8fb5-1cd68363a6d6" msprop:stats_MaxWidth="3" msprop:stats_UniqueValueCount="457" msprop:stats_AvgWidth="2.768053" msprop:DbColumnName="affliation_code" type="xs:int" />
+                  <xs:element name="affliation_name" msprop:stats_StDevWidth="10.26937" msprop:stats_UniqueValuePercent="99" msprop:FriendlyName="affliation_name" msprop:design-time-name="57717d28-c774-4dd8-ae41-c184f3827957" msprop:stats_MaxWidth="63" msprop:stats_UniqueValueCount="453" msprop:stats_AvgWidth="16.07002" msprop:DbColumnName="affliation_name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="80" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_affliation_1__10&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="2ef64b2e-e776-4803-ad66-c1b7e7d7f4cd" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_contactEvent" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;IX_PK_contactEvent&quot; Value=&quot;3198&quot; /&gt;&lt;GroupRows Key=&quot;FK_FK_contactEvent&quot; Value=&quot;1451&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="contactEvent" msprop:DbTableName="contactEvent" msprop:DbSchemaName="dbo" msprop:stats_RowCount="3198" msprop:design-time-name="70f21360-61d3-4186-b85a-e4614ba5e455" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contactEvent&lt;/Group&gt;&lt;Group&gt;FK_FK_contactEvent&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="e0ff2084-f3b3-4d37-bc56-f130cac6f0a5" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contactEvent&lt;/Group&gt;&lt;Group&gt;FK_FK_contactEvent&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="45" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="91b71ab1-e64e-43ac-8d86-b3f5a4c9019b" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1451" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="eventIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;IX_PK_contactEvent&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="eventIdentifier" msprop:design-time-name="14d66e90-6fd7-46a1-9be1-7ad1273d31a2" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="3198" msprop:stats_AvgWidth="36" msprop:DbColumnName="eventIdentifier" type="xs:string" />
+                  <xs:element name="statusCode" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="statusCode" msprop:design-time-name="a2b768b1-4682-4fc1-8a16-55dce51b5788" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="6" msprop:stats_AvgWidth="1" msprop:DbColumnName="statusCode" type="xs:short" />
+                  <xs:element name="eventName" msprop:stats_StDevWidth="27.74982" msprop:stats_UniqueValuePercent="94" msprop:FriendlyName="eventName" msprop:design-time-name="bd000659-0cd9-4442-adbd-24568adcab88" msprop:stats_MaxWidth="255" msprop:stats_UniqueValueCount="3026" msprop:stats_AvgWidth="56.67261" msprop:DbColumnName="eventName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="eventComment" msprop:stats_StDevWidth="226.5914" msprop:stats_UniqueValuePercent="74" msprop:FriendlyName="eventComment" msprop:design-time-name="35fe3268-87ec-4229-ab4f-73146a7c466a" msprop:stats_MaxWidth="1000" msprop:stats_UniqueValueCount="2375" msprop:stats_AvgWidth="154.0385" msprop:DbColumnName="eventComment">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="startDate" msprop:FriendlyName="startDate" msprop:DbColumnName="startDate" msprop:stats_UniqueValuePercent="49" msprop:design-time-name="f002a61e-03c5-4448-84a1-33ecd0f8c022" msprop:stats_UniqueValueCount="1570" type="xs:dateTime" />
+                  <xs:element name="endDate" msprop:FriendlyName="endDate" msprop:DbColumnName="endDate" msprop:stats_UniqueValuePercent="48" msprop:design-time-name="ef325547-064d-49d0-9a76-1183342df299" msprop:stats_UniqueValueCount="1544" type="xs:dateTime" />
+                  <xs:element name="allDayEvent" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="allDayEvent" msprop:design-time-name="cf6a7e33-1da7-4e09-991c-a791f6ee5458" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="2" msprop:stats_AvgWidth="1" msprop:DbColumnName="allDayEvent" type="xs:short" />
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="97" msprop:design-time-name="a82a3f65-d735-46eb-bdf5-1db6e6da8e5e" msprop:stats_UniqueValueCount="3129" type="xs:dateTime" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="96" msprop:design-time-name="0e5dc30a-8a95-4d3b-892d-d2ce611dd016" msprop:stats_UniqueValueCount="3101" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_documentAttachment" msprop:stats_ColumnGroupUniqueRows="&lt;ColumnGroupUniqueRows&gt;&lt;GroupRows Key=&quot;FK_FK_documentAttachment&quot; Value=&quot;168&quot; /&gt;&lt;/ColumnGroupUniqueRows&gt;" msprop:FriendlyName="documentAttachment" msprop:DbTableName="documentAttachment" msprop:DbSchemaName="dbo" msprop:stats_RowCount="270" msprop:design-time-name="649f5158-5c87-4241-b6da-6fd828d217b5" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="memberIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;FK_FK_documentAttachment&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="memberIdentifier" msprop:design-time-name="2a5f40b9-271b-4849-941a-8ecb753a20ab" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="36" msprop:DbColumnName="memberIdentifier" type="xs:string" />
+                  <xs:element name="contactIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_ColumnGroups="&lt;ColumnGroups&gt;&lt;Group&gt;FK_FK_documentAttachment&lt;/Group&gt;&lt;/ColumnGroups&gt;" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="62" msprop:FriendlyName="contactIdentifier" msprop:design-time-name="c1792ffb-05b6-4f25-a241-1059615d965b" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="168" msprop:stats_AvgWidth="36" msprop:DbColumnName="contactIdentifier" type="xs:string" />
+                  <xs:element name="documentAttachmentIdentifier" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="100" msprop:FriendlyName="documentAttachmentIdentifier" msprop:design-time-name="89205fd3-7b4b-4590-a23d-3e13092b0536" msprop:stats_MaxWidth="36" msprop:stats_UniqueValueCount="270" msprop:stats_AvgWidth="36" msprop:DbColumnName="documentAttachmentIdentifier" type="xs:string" />
+                  <xs:element name="sequenceNbr" msprop:stats_StDevWidth="0" msprop:stats_UniqueValuePercent="0" msprop:FriendlyName="sequenceNbr" msprop:design-time-name="52270916-495e-4983-a1cc-cb1c33ec60b8" msprop:stats_MaxWidth="1" msprop:stats_UniqueValueCount="1" msprop:stats_AvgWidth="1" msprop:DbColumnName="sequenceNbr" type="xs:unsignedByte" />
+                  <xs:element name="dateCreated" msprop:FriendlyName="dateCreated" msprop:DbColumnName="dateCreated" msprop:stats_UniqueValuePercent="100" msprop:design-time-name="a8323226-e0b7-49cd-b073-37c8673690b2" msprop:stats_UniqueValueCount="270" type="xs:dateTime" />
+                  <xs:element name="dateUpdated" msprop:FriendlyName="dateUpdated" msprop:DbColumnName="dateUpdated" msprop:stats_UniqueValuePercent="0" msprop:design-time-name="0af4d4e7-5c9f-4e81-a16b-e186f0f1639f" msprop:stats_UniqueValueCount="0" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="attachmentName" msprop:stats_StDevWidth="21.69584" msprop:stats_UniqueValuePercent="95" msprop:FriendlyName="attachmentName" msprop:design-time-name="4282ff38-6680-4b29-9ff0-2dfe97a6368b" msprop:stats_MaxWidth="120" msprop:stats_UniqueValueCount="259" msprop:stats_AvgWidth="38.26667" msprop:DbColumnName="attachmentName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="attachmentFilename" msprop:stats_StDevWidth="24.40365" msprop:stats_UniqueValuePercent="97" msprop:FriendlyName="attachmentFilename" msprop:design-time-name="38031dc9-70df-4050-ac1f-9768ddf79e13" msprop:stats_MaxWidth="129" msprop:stats_UniqueValueCount="263" msprop:stats_AvgWidth="32.58148" msprop:DbColumnName="attachmentFilename">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="attachmentDescription" msprop:stats_StDevWidth="7.105019" msprop:stats_UniqueValuePercent="2" msprop:FriendlyName="attachmentDescription" msprop:design-time-name="5b391693-c2be-4582-9b7a-28c2003d85f3" msprop:stats_MaxWidth="86" msprop:stats_UniqueValueCount="6" msprop:stats_AvgWidth="0.8222222" msprop:DbColumnName="attachmentDescription" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1000" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="attachment" msprop:stats_UniqueValuePercent="100" msprop:DbColumnName="attachment" msprop:stats_UniqueValueCount="270" msprop:design-time-name="412a2da0-47d2-477b-8823-d12b80b4ee96" msprop:FriendlyName="attachment" msprop:DataSize="2147483647" type="xs:base64Binary" minOccurs="0" />
+                  <xs:element name="contentType" msprop:stats_StDevWidth="4.880944" msprop:stats_UniqueValuePercent="5" msprop:FriendlyName="contentType" msprop:design-time-name="750853cc-9458-4920-8952-bf04d26f1a74" msprop:stats_MaxWidth="28" msprop:stats_UniqueValueCount="16" msprop:stats_AvgWidth="12.95926" msprop:DbColumnName="contentType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contact_task" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+          <xs:field xpath="taskIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_contact_communication_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contact_communication" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+          <xs:field xpath="sequenceIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_support_communication_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_support_communication" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_contact_comment_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contact_comment" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+          <xs:field xpath="sequenceIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_contacts_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contacts" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_contact_address_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contact_address" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+          <xs:field xpath="sequenceIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_support_profession_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_support_profession" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="profession_code" />
+        </xs:unique>
+        <xs:unique name="dbo_affliations_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_affliations" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="affliation_code" />
+        </xs:unique>
+        <xs:unique name="dbo_contactEvent_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_contactEvent" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+          <xs:field xpath="eventIdentifier" />
+        </xs:unique>
+        <xs:unique name="dbo_documentAttachment_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_documentAttachment" />
+          <xs:field xpath="documentAttachmentIdentifier" />
+        </xs:unique>
+        <xs:keyref name="FK_documentAttachment" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_documentAttachment" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+        <xs:keyref name="FK_contactEvent" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_contactEvent" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+        <xs:keyref name="FK_Contact_Address" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_contact_address" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+        <xs:keyref name="FK_Contact_Profession" refer="dbo_support_profession_Constraint1">
+          <xs:selector xpath=".//dbo_contacts" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="profession_code" />
+        </xs:keyref>
+        <xs:keyref name="FK_Contact_Affliation" refer="dbo_affliations_Constraint1">
+          <xs:selector xpath=".//dbo_contacts" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="affliation_code" />
+        </xs:keyref>
+        <xs:keyref name="FK_contact_comment_contacts" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_contact_comment" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+        <xs:keyref name="FK_contact_communication" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_contact_communication" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+        <xs:keyref name="FK_Support_Communication_New" refer="dbo_support_communication_Constraint1">
+          <xs:selector xpath=".//dbo_contact_communication" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="comm_type_id" />
+        </xs:keyref>
+        <xs:keyref name="FK_contact_task" refer="dbo_contacts_Constraint1">
+          <xs:selector xpath=".//dbo_contact_task" />
+          <xs:field xpath="memberIdentifier" />
+          <xs:field xpath="contactIdentifier" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>
