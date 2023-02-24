@@ -88,7 +88,7 @@
 	2022-08-06T12:36:00	scriptureReferenceConcatenate()
 		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
 	2022-08-24	scriptLiteral9432.renderDataTable(dataTable, "resultSet"); Added rowColumn() parameter argument.
-	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil.
+	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil. DontFeelLeftAlone.html.
 */
 
 var scriptLiteral9432 =
