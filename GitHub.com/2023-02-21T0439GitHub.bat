@@ -18,3 +18,6 @@ git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City
 git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-02-24T1120Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Atef.Shaikh@acgov.org_Suicidal.txt"
 
 git add IIS/WordEngineering/WordUnion/9432.js
+
+git add   IIS/WordEngineering/WordUnion/AHomeIClaim.asmx
+git add   IIS/WordEngineering/WordUnion/AHomeIClaim.html

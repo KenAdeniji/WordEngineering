@@ -30,11 +30,11 @@ public class AHomeIClaimWebService : System.Web.Services.WebService
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
 	(
-		string	firstVerse,
-		string	secondVerse
+		string	firstScriptureReferenceVerse,
+		string	secondScriptureReferenceVerse
 	)	
     {
-		string selectStatement = String.Format(SelectStatement, firstVerse, secondVerse);
+		string selectStatement = String.Format(SelectStatement, firstScriptureReferenceVerse, secondScriptureReferenceVerse);
 		
 		DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
 		(

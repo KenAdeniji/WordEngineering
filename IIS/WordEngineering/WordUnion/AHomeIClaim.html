@@ -6,8 +6,8 @@
 	<head>
 		<title>A Home, I Claim</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Will accept a first and second scripture verse, and compute the difference."/>
-		<meta name="keywords" content="Scripture Reference difference"/>
+		<meta name="description" content="Will accept a first and second scripture reference verse, and compute the difference."/>
+		<meta name="keywords" content="Scripture Reference difference, first scripture reference verse, second scripture reference verse"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="9432.css"/>
@@ -20,12 +20,12 @@
 						<table>
 							<form onsubmit="">
 								<tr>
-									<td><label for="firstVerse">First Verse</label></td>
-									<td><input type="text" ID="firstVerse" size="30"/>
+									<td><label for="firstScriptureReferenceVerse">First Scripture Reference Verse</label></td>
+									<td><input type="text" ID="firstScriptureReferenceVerse" size="30"/>
 								</tr>
 								<tr>
-									<td><label for="secondVerse">Second Verse</label></td>
-									<td><input type="text" ID="secondVerse" size="30"/>
+									<td><label for="secondScriptureReferenceVerse">Second Scripture Reference Verse</label></td>
+									<td><input type="text" ID="secondScriptureReferenceVerse" size="30"/>
 								</tr>
 							</form>
 							<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
@@ -44,15 +44,15 @@
 				if (isPostBack === false)
 				{
 					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
-						var firstVerse = scriptLiteral9432.getParameterByName("firstVerse");
-						if (firstVerse)
+						var firstScriptureReferenceVerse = scriptLiteral9432.getParameterByName("firstScriptureReferenceVerse");
+						if (firstScriptureReferenceVerse)
 						{
-							document.getElementById("firstVerse").value = firstVerse;
+							document.getElementById("firstScriptureReferenceVerse").value = firstScriptureReferenceVerse;
 						}	
-						var secondVerse = scriptLiteral9432.getParameterByName("secondVerse");
-						if (secondVerse)
+						var secondScriptureReferenceVerse = scriptLiteral9432.getParameterByName("secondScriptureReferenceVerse");
+						if (secondScriptureReferenceVerse)
 						{
-							document.getElementById("secondVerse").value = secondVerse;
+							document.getElementById("secondScriptureReferenceVerse").value = secondScriptureReferenceVerse;
 						}	
 						querySubmit();
 						isPostBack = true;
@@ -64,8 +64,8 @@
 			{
 				var request = {};
 
-				request["firstVerse"] = document.getElementById("firstVerse").value;
-				request["secondVerse"] = document.getElementById("secondVerse").value;
+				request["firstScriptureReferenceVerse"] = document.getElementById("firstScriptureReferenceVerse").value;
+				request["secondScriptureReferenceVerse"] = document.getElementById("secondScriptureReferenceVerse").value;
 				
 				var requestJson = JSON.stringify(request);
 				
