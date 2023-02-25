@@ -32,6 +32,11 @@ namespace InformationInTransit.ProcessCode
 	///	2023-02-14T18:11:00 Created.
 	///	2023-02-14T18:11:00	Remember automation? Let the user restrict by the Dated, ContactID, ScriptureReference? They have to do new work.
 	/// 2023-02-14T18:45:00	http://stackoverflow.com/questions/2959161/convert-string-to-int-array-using-linq
+	/// 2023-02-25T10:27:00	Support for WordEngineering..CaseBasedReasoning
+	///	SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, Commentary
+	///	FROM 	WordEngineering..CaseBasedReasoning
+	///			WHERE	ContactID IN ({1}) AND Commentary LIKE CONVERT '%Date%' AND CONVERT(Date, Dated) = '{0}'
+	///			ORDER BY ContactID, Dated
 	///</summary>
 	public class DontFeelLeftAlone
 	{
@@ -141,6 +146,11 @@ namespace InformationInTransit.ProcessCode
 			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, AddressLine1, City, State, ZipCode, Country
 			FROM 	WordEngineering..StreetAddress
 			WHERE	ContactID IN ({1})
+			ORDER BY ContactID, Dated
+			;
+			SELECT ContactID, CONVERT(varchar, Dated, 23) AS Dated, DATEDIFF(day, Dated, '{0}') AS FromUntil, Commentary
+			FROM 	WordEngineering..CaseBasedReasoning
+			WHERE	ContactID IN ({1}) AND Commentary LIKE '%Date%'
 			ORDER BY ContactID, Dated
 			;
 		SELECT CONVERT(varchar, DATEADD(Day, -Number, '{0}'), 23) AS Dated, Number AS FromUntil, ScriptureReference
