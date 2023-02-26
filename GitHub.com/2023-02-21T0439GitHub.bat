@@ -23,3 +23,6 @@ git add   IIS/WordEngineering/WordUnion/AHomeIClaim.asmx
 git add   IIS/WordEngineering/WordUnion/AHomeIClaim.html
 
 git add InformationInTransit/ProcessCode/DontFeelLeftAlone.cs
+
+git add IIS/WordEngineering/WordCross/ClaireBentley.asmx
+git add IIS/WordEngineering/WordCross/ClaireBentley.html
