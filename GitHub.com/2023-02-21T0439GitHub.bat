@@ -26,3 +26,6 @@ git add InformationInTransit/ProcessCode/DontFeelLeftAlone.cs
 
 git add IIS/WordEngineering/WordCross/ClaireBentley.asmx
 git add IIS/WordEngineering/WordCross/ClaireBentley.html
+
+git add IIS/WordEngineering/SQLExamples/GetSchema.asmx
+git add IIS/WordEngineering/SQLExamples/GetSchema.html
