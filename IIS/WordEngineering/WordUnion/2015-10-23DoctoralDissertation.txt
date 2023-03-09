@@ -17,11 +17,6 @@ Abstract
 
 Thesis Statement: This dissertation introduces AlphabetSequence ( 2 Corinthians 10:9-18 ). The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
 
-The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word. These are positional.
-
-    2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
-    3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
-
 The importance of this work?
 
     To track dates and words? And, find meaning, correlation.
@@ -29,46 +24,12 @@ The importance of this work?
     Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches. Only when you have diversity.
-To help someone generate size? Keyword 	Commentary
-Light 	Sun, Moon: Evening and day, Sabbath
-Man 	Image of God, helper, seed
-
-The author is linking words spoken to related verses and dictionaries.
-
-    BibleReference uses whole numbers for representation.
-    Who, what, when, where, why?
-    Prophecy and Fulfillment: Keyword Variation
-
 Acknowledgments
 
 Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Theory
-Literature Review
-
-Reading improvement? The literature review and bibliography sections are scanty and brief. The justification of the author is that in the Internet age the references and content are available on-line, and putting into words other people's work is not the author's core strength. When the author recounts non-original thoughts, the author mentions this.
-"
-Description
-Cross references to related applications
-
-The author has filed two unsuccessful trademark applications. These trademark requests are WordEngineering and www.JesusInTheLamb.com. The first trademark application deals with the use of engineering to decipher the Bible. The second trademark effort is for the phrase, Walking in the Lamb, you shall follow Me.
-Computer Listing
-
-The software is available at http://github.com/KenAdeniji. These include the source code and the data definition language (DDL). For size and privacy reasons, the data manipulation language (DML) is not available to the general public. The Bible versions, dictionaries and commentaries are available in the public domain. The author concedes that the length of the source code is large, but it is easily readable.
-Technical Field
-
-Seeing the Bible as enlightening to man.
-Description of Related Art
-
-To find if a relationship exists between the Bible and what we receive today?
-"
-Database Scaling
-
-    The transition to computed columns results in smaller storage requirements.
-    Microsoft SQL Server supports multiple databases; therefore, reducing archive needs.
-    Normalization, object-to-relational mapping, is light load.
-
 The Bible Database
 The Scripture Table
 
@@ -153,7 +114,7 @@ SQL Server generates sequential numbers for the HisWordID identity column. The g
 
 The Dated column is of the DateTime type. If an insert statement does not explicitly specify a value for the dated column, then it defaults to the current date and time of the (UTC-08:00) Pacific Time (US & Canada) time zone. There is a preference for the Coordinated Universal Time (UTC)	format.
 
-A relational constraint limit to a unique foreign key? The author will choose either the most vivid or rare?
+A relational constraint limit to a single foreign key? The author will choose either the most vivid or rare?
 HisWord_view
 
 The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
@@ -168,6 +129,12 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+Database Scaling
+
+    The transition to computed columns results in smaller storage requirements.
+    Microsoft SQL Server supports multiple databases; therefore, reducing archive needs.
+    Normalization, object-to-relational mapping, is light load.
+
 Database Exclusivity
 
 What did He choose as a member of?
@@ -982,6 +949,36 @@ The information in the Bible, written, thousands of years ago, is true and appli
 
 This research does not limit itself to a particular Bible subject nor word. But, rather it illustrates the response of the author to the word of God. What artifact can the author produce; in compliance with the word of God? Is the training of the author beneficiary or lacking? Biblical priesthood training and profession; begins at the ages of 25 and 30, respectively.
 
+The author is working on variations of AlphabetSequence: These are not suitable for general use. These are man's exposition of God's word. These are positional.
+
+    2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
+    3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
+
+The author is linking words spoken to related verses and dictionaries.
+
+    BibleReference uses whole numbers for representation.
+    Who, what, when, where, why?
+    Prophecy and Fulfillment: Keyword Variation
+
+Literature Review
+
+Reading improvement? The literature review and bibliography sections are scanty and brief. The justification of the author is that in the Internet age the references and content are available on-line, and putting into words other people's work is not the author's core strength. When the author recounts non-original thoughts, the author mentions this.
+"
+Description
+Cross references to related applications
+
+The author has filed two unsuccessful trademark applications. These trademark requests are WordEngineering and www.JesusInTheLamb.com. The first trademark application deals with the use of engineering to decipher the Bible. The second trademark effort is for the phrase, Walking in the Lamb, you shall follow Me.
+Computer Listing
+
+The software is available at http://github.com/KenAdeniji. These include the source code and the data definition language (DDL). For size and privacy reasons, the data manipulation language (DML) is not available to the general public. The Bible versions, dictionaries and commentaries are available in the public domain. The author concedes that the length of the source code is large, but it is easily readable.
+Technical Field
+
+Seeing the Bible as enlightening to man.
+Description of Related Art
+
+To find if a relationship exists between the Bible and what we receive today?
+"
+
 What is the aptitude of this work?
 
     AlphabetSequence spreads out.
@@ -1028,6 +1025,9 @@ The business of telling us apart? Word 	Scripture Reference 	Commentary
 Naming 	Genesis 2, Genesis 4 	The author registered a trademark name and much later created and maintained a contact database. The author received the title of a book that he wrote and afterwards a domain name.
 Profession 	Genesis 4 	The author developed an interest in Biblical studies while undergoing tertiary education.
 
+To help someone generate size? Keyword 	Commentary
+Light 	Sun, Moon: Evening and day, Sabbath
+Man 	Image of God, helper, seed
 "
 Data Science A Hands-On Introduction
 
