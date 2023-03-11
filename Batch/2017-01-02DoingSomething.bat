@@ -173,7 +173,7 @@ DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
        
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 151904);
-DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 586);
+DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 606);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
@@ -213,8 +213,6 @@ KenAdeniji@hotmail.com
 Microsoft SQL Server Management Studio user interface (UI) error grid tab drops.
 http://localhost/informationintransit/urimaintenancewebform.aspx
 
-	youtube.com/@gabriel 	A Mission for Meaning: The Choices That Lead to the Life You Really Want by Gabriel Conte 			2022-11-25 	17856
+		youtube.com/watch?v=LYvFrH8zSiI 	Israel Houghton - Again I Say Rejoice 	Philippians 3:1, Philippians 4:4 		2019-06-10 	16486
 	
-<table datetime="2023-01-12T10:49:00" data-ContactID="10938">
-
 :Exit

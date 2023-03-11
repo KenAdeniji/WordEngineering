@@ -29,3 +29,5 @@ git add IIS/WordEngineering/WordCross/ClaireBentley.html
 
 git add IIS/WordEngineering/SQLExamples/GetSchema.asmx
 git add IIS/WordEngineering/SQLExamples/GetSchema.html
+
+REM git mv -f  IIS/WordEngineering/WordUnion/ChurchCalendar.html IIS/WordEngineering/Dated
