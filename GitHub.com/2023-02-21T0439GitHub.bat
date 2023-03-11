@@ -31,3 +31,12 @@ git add IIS/WordEngineering/SQLExamples/GetSchema.asmx
 git add IIS/WordEngineering/SQLExamples/GetSchema.html
 
 REM git mv -f  IIS/WordEngineering/WordUnion/ChurchCalendar.html IIS/WordEngineering/Dated
+
+REM git rm -f IIS/WordEngineering/2023-03-08T0950Encorps.org
+
+git add IIS/WordEngineering/Dated/ChurchCalendar.html
+git add IIS/WordEngineering/bin/InformationInTransit.dll
+git add InformationInTransit/InformationInTransit.dll
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2023-03-08T1349Encorps.orgPresentation.txt
+   
