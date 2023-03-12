@@ -192,6 +192,31 @@ The author prescribes the steps below to begin database set-up and usage
     Stored-procedures, triggers, and functions are programmable logic.
 
 "
+Unified Modeling Language (UML)
+" (Unified Modeling Language)
+Common Structure
+
+UML composes elements and relationships as in its predecessor Entity-Relationship (ER) diagrams.
+
+A model contains elements which may have descendants for specializations. A contact may have children such as addresses. When a contact is removed, this propagates to the removal of its children.
+
+Comments do not impact programatically, they only serve as guides for readers.
+
+A directed relationship may exist between a collection of source and target.
+
+A namespace is a container separator.
+
+An import facilitates the admittance of an external namespace.
+
+Types and multiplicity restrict the units of information. For example, a scripture reference can only identify book titles, chapters and verses. Their limit is a further constraint. For the King James Version of the Bible, the cardinality of the books is 66.
+
+A constraint represents the range of valid values that a member may have.
+
+A dependency replicates changes between the supplier/client.
+Value
+
+Lack of a value is null. A data type may place its own degree of significance on a value. For example integer versus (VS) decimal, date versus (VS) datetime.
+"
 Indexing
 " (Search engine indexing)
 
@@ -1874,8 +1899,8 @@ References
     Writing Style Guide Microsoft; W3C web page; Available from http://docs.microsoft.com/en-us/style-guide/welcome
     DB2 Developer's Guide Craig S. Mullins (May 2000); W3C web page; Available from http://www.craigsmullins.com
     Semantic Pattern Mining Based Web Service Recommendation Hafida Na ̈ım, Mustapha Aznag, Nicolas Durand, and Mohamed Quafafou Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille, France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand, mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from http://hal.archives-ouvertes.fr/hal-01465113/document
-    Brendan T. O'Connor Brendan T. O'Connor; W3C web page; Available from http://BrenOCon.com
     Designing Web Usability: The Practice of Simplicity (2000) Jakob Nielsen; W3C web page; Available from http://www.useit.com
+    Object Management Group® (OMG®) Unified Modeling Language (UML) Object Management Group® (OMG®) W3C web page; Available from http://www.omg.org/spec/UML
     Refactoring Object-Oriented Frameworks William F. Opdyke (1992); W3C web page; Available from http://laputan.org/pub/papers/opdyke-thesis.pdf
     How To Write A Dissertation or Bedtime Reading For People Who Do Not Have Time To Sleep W3C web page; Available from https://www.cs.purdue.edu/homes/dec/essay.dissertation.html
     Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P., Gallelli, C., Silverstein, A. T.; Microsoft SQL Server 2014 Unleashed; (2015) ISBN-13: 978-0672337291 ISBN-10: 0672337290
