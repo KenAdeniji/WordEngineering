@@ -216,6 +216,17 @@ A dependency replicates changes between the supplier/client.
 Value
 
 Lack of a value is null. A data type may place its own degree of significance on a value. For example integer versus (VS) decimal, date versus (VS) datetime.
+
+A string is a combination of alphabets, numbers and symbols. For example, as in scripture reference, when it may concatenate Bible book titles, chapters, verses, and separators.
+
+An integer is a whole number. For example, BibleReference which consists of Book ID, chapter and verse.
+
+A Boolean is either true or false and it is normally used for validation.
+
+A real is a number with decimal relevance, such as ratios and percentages.
+Classification
+
+This work is largely based on migrating from free-text to relational data. Classification serves well with scripture reference pre and post, and book titles, chapters and verses. The C# language class instantiations occur in ScriptureReferenceHelper.cs Exact.cs
 "
 Indexing
 " (Search engine indexing)
@@ -969,6 +980,15 @@ How are names issued Biblically?
 
 The word is the author's file naming convention.
 
+Alphabets and digits. There are 51 occurrences of the word, count, in the King James Version (KJV) Gospel. Word 	Count 	Scripture Reference
+Account 	3 	Matthew 12:36, Matthew 18:23, Luke 16:2
+Accounted 	4 	Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24
+Counted 	2 	Matthew 14:5, Mark 11:32
+Countetd 	1 	Luke 14:28
+Countenance 	3 	Matthew 6:16, Matthew 28:3, Luke 9:29
+Countries 	1 	Luke 21:21
+Country 	37 	Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57, Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
+
 What events in Abraham's life are additions? Word 	Commentary 	Scripture Reference
 Partner 	Sarah, Hagar, Keturah 	Genesis 11:29
 Pilgrimage 	Canaan 	Genesis 12:1-5
@@ -982,14 +1002,11 @@ Making mention at ages 	75 years old when he departed out of the land of Haran, 
 To do without someone 	Separation from his wives and sons, from the physical to the spiritual 	Genesis 15:13, Genesis 21:12, Genesis 22:2, Genesis 23, Genesis 25:6, Acts 7:5-6, Hebrews 11:17-19
 Sarah - the first matriach 	What seems natural as bringing? 	Genesis 18:12, 1 Peter 3:6
 
-Alphabets and digits. There are 51 occurrences of the word, count, in the King James Version (KJV) Gospel. Word 	Count 	Scripture Reference
-Account 	3 	Matthew 12:36, Matthew 18:23, Luke 16:2
-Accounted 	4 	Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24
-Counted 	2 	Matthew 14:5, Mark 11:32
-Countetd 	1 	Luke 14:28
-Countenance 	3 	Matthew 6:16, Matthew 28:3, Luke 9:29
-Countries 	1 	Luke 21:21
-Country 	37 	Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57, Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54
+What will relate as I grow? 841 occurrences of king David in the Old Testament. Word 	Commentary 	Scripture Reference
+Genealogy 	Abraham, David, Jesus Christ 	Matthew 1:17
+Reign for a generation 	Moses, Saul, David, Solomon 	Deuteronomy 29:5, Judges 3:11, Judges 8:28, 1 Samuel 4:18, 2 Samuel 5:4, 1 Kings 2:11, 1 Kings 11:42, 2 Kings 12:1, 1 Chronicles 29:27, 2 Chronicles 9:30, 2 Chronicles 24:1
+Biography 	David, Jesus Christ 	1 Chronicles 29:29, Ruth 4:17, Ruth 4:22, Psalms 40:7, Hebrews 10:7, Matthew 5:18, Psalms, 1 Samuel, 2 Samuel, 1 Chronicles, 2 Chronicles
+Davidic covenant 		Psalms 89:3, Isaiah 55:3, Jeremiah 33:21
 
 "
 Data Science A Hands-On Introduction
