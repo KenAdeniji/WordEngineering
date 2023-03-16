@@ -235,6 +235,10 @@ In the C# language, an abstract class is static, not instantiable. A static clas
 Signals and receptions are similar to events and handlers. A page load or close is an asynchronous signal that its subscribers handle separately. A click event is triggered and resolved internally.
 
 The parts of a scripture reference are pre and post. Each has a Bible book ID, chapter and verse.
+
+Microsoft .Net supports components such as a pre-compiled dynamic link library (.dll), and compiling web forms and web services at first request. Web form matured from code-behind to code-beside.
+
+For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not require such consistency. But the author abides by this rule.
 "
 Indexing
 " (Search engine indexing)
