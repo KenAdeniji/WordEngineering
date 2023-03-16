@@ -227,6 +227,14 @@ A real is a number with decimal relevance, such as ratios and percentages.
 Classification
 
 This work is largely based on migrating from free-text to relational data. Classification serves well with scripture reference pre and post, and book titles, chapters and verses. The C# language class instantiations occur in ScriptureReferenceHelper.cs Exact.cs
+
+The author's work has not featured inheritance. There are no generalizations, parents, nor specializations, children, classes. A substitution for this is an interface, such as, IScriptable UtilitySQLServerManagementObjectsSMO.cs A child may override a parent's virtual member.
+
+In the C# language, an abstract class is static, not instantiable. A static class may contain extension methods.
+
+Signals and receptions are similar to events and handlers. A page load or close is an asynchronous signal that its subscribers handle separately. A click event is triggered and resolved internally.
+
+The parts of a scripture reference are pre and post. Each has a Bible book ID, chapter and verse.
 "
 Indexing
 " (Search engine indexing)

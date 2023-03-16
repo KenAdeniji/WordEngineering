@@ -214,5 +214,7 @@ Microsoft SQL Server Management Studio user interface (UI) error grid tab drops.
 http://localhost/informationintransit/urimaintenancewebform.aspx
 
 		youtube.com/watch?v=LYvFrH8zSiI 	Israel Houghton - Again I Say Rejoice 	Philippians 3:1, Philippians 4:4 		2019-06-10 	16486
-	
+2023-03-14T17:48:00	
+jpost.com/business-and-innovation/opinion/article-724621
+2023-03-15T20:07:00	http://www.omg.org/spec/UML/2.5.1/PDF
 :Exit
