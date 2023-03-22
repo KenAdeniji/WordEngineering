@@ -12,6 +12,12 @@
 	2023-02-13T12:08:00	http://stackoverflow.com/questions/403421/how-to-sort-a-list-of-objects-based-on-an-attribute-of-the-objects
 	2023-02-13T12:09:00	http://wiki.python.org/moin/HowTo/Sorting#Sortingbykeys
 	2023-02-13T19:23:00	The author prefers to store the first and second census in 1 array but separated. Because of time differences.
+	2023-03-21T17:49:00	... 2023-03-21T18:13:00
+						http://github.s3.amazonaws.com/downloads/diveintomark/diveintopython3/dive-into-python3.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5BA2674WEWV2CIOD%2F20230318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230318T020658Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=efc66dc348eee2db537cd2064f19552950b3c37fd30b1b20b97e94ad20e7220c
+						You can use any Python expression in a list comprehension. 3.3. LIST COMPREHENSIONS
+						Previous search on google.com and stackoverflow.com futile Language Integrated Query (Linq).
+	censusPopulationBetween60000And70000 = [census for census in Census.censuses if census.population > 60000 and census.population < 70000] 
+	Census.dumpLog(censusPopulationBetween60000And70000)
 '''
 import StringHelper
 
@@ -85,4 +91,6 @@ class Census:
 if __name__ == '__main__':
 	Census.populate()
 	newlist = sorted(Census.censuses, key=lambda x: x.population, reverse=True)
-	Census.dumpLog(newlist)
+	#Census.dumpLog(newlist)
+	censusPopulationBetween60000And70000 = [census for census in Census.censuses if census.population > 60000 and census.population < 70000] 
+	Census.dumpLog(censusPopulationBetween60000And70000)
