@@ -16,8 +16,12 @@
 						http://github.s3.amazonaws.com/downloads/diveintomark/diveintopython3/dive-into-python3.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5BA2674WEWV2CIOD%2F20230318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230318T020658Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=efc66dc348eee2db537cd2064f19552950b3c37fd30b1b20b97e94ad20e7220c
 						You can use any Python expression in a list comprehension. 3.3. LIST COMPREHENSIONS
 						Previous search on google.com and stackoverflow.com futile Language Integrated Query (Linq).
-	censusPopulationBetween60000And70000 = [census for census in Census.censuses if census.population > 60000 and census.population < 70000] 
-	Census.dumpLog(censusPopulationBetween60000And70000)
+						censusPopulationBetween60000And70000 = [census for census in Census.censuses if census.population > 60000 and census.population < 70000] 
+						Census.dumpLog(censusPopulationBetween60000And70000)
+	2023-03-22T11:51:00	... 2023-03-22T12:05:00
+						http://docs.python.org/3.1/library/string.html#format-specification-mini-language
+						def __str__(self):
+							return StringHelper.positionTitle(self.iteration) + " " + '{0:02}'.format(self.sequence) + " " + self.tribe + " " + '{0:,}'.format(self.population) + " (" + (self.scriptureReference) + ")"
 '''
 import StringHelper
 
@@ -33,7 +37,7 @@ class Census:
         Census.censuses.append(self)
 
     def __str__(self):
-        return StringHelper.positionTitle(self.iteration) + " " + str(self.sequence) + " " + self.tribe + " " + str(self.population) + " (" + (self.scriptureReference) + ")"
+        return StringHelper.positionTitle(self.iteration) + " " + '{0:02}'.format(self.sequence) + " " + self.tribe + " " + '{0:,}'.format(self.population) + " (" + (self.scriptureReference) + ")"
 
     def buildHTML(censusList = censuses):
         resultSet = "<table border='1'><thead><caption>Census</caption>"
