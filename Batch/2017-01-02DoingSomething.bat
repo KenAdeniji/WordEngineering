@@ -166,11 +166,11 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 4323);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13040);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13120);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5015);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-       
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 152444);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 154461);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 606);
