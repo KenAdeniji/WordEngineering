@@ -162,7 +162,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62606);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1246);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1299);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 5818);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -207,14 +207,5 @@ E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
 
-2023-02-01T15:13:00 Microsoft Windows Explorer click on .sql file, Microsoft SQL Server Management Studio opens. 15:26 Microsoft Windows Explorer click on .sql file, Microsoft SQL Server Management Studio opens.
-2023-02-04T18:33:00 https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server?view=sql-server-ver16
-
-Microsoft SQL Server Management Studio user interface (UI) error grid tab drops.
-http://localhost/informationintransit/urimaintenancewebform.aspx
-
-		youtube.com/watch?v=LYvFrH8zSiI 	Israel Houghton - Again I Say Rejoice 	Philippians 3:1, Philippians 4:4 		2019-06-10 	16486
-2023-03-14T17:48:00	
-jpost.com/business-and-innovation/opinion/article-724621
-2023-03-15T20:07:00	http://www.omg.org/spec/UML/2.5.1/PDF
+UriWordEngineering 	2017-12-05 	47552
 :Exit
