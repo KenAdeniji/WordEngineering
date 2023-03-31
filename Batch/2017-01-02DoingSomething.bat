@@ -207,5 +207,6 @@ E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 KenAdeniji@hotmail.com
 
-UriWordEngineering 	2017-12-05 	47552
+UriChrist
+pbs.org/wgbh/pages/frontline/sports/league-of-denial/the-frontline-interview-dr-bennet-omalu/#seg24 	Bennet Omalu - chronic traumatic encephalopathy (CTE). A forensic pathologist, Omalu conducted the autopsy of Pittsburgh Steelers center Mike Webster, which led to his discovery of a new disease that he named chronic traumatic encephalopathy, or CTE. He is currently the chief medical examiner of San Joaquin County, Calif. and a professor in the UC Davis Department of Medical Pathology and Laboratory Medicine. He spoke to FRONTLINE’s Michael Kirk on March 25, 2013. 	2018-11-27 The soccer for a team is football. 	Junior Seau, San Diego Chargers, Concussion, Will Smith, Nigeria, American Football 	2015-12-14 	13915
 :Exit
