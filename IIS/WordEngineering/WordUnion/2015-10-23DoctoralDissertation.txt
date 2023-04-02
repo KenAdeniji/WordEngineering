@@ -121,7 +121,7 @@ HisWord_view
 The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
 The Remember Table
 
-The Remember table tries to correlate the period between a prophecy and its fulfillment. Can we begin to love indeed as we have loved? With past time? What do men date? " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
+The Remember table tries to correlate the period between a prophecy and its fulfillment. What do men date? " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
 
 To determine the HisWord and Remember entries? The author chooses to separate the particular and prompted inputs ( Luke 4:19 ). From today and henceforth.
 APass
@@ -130,6 +130,14 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+"
+Data quality management
+
+    Data quality standards: The author is importing religious data from trusted sources. The author is following rigorous practice.
+    Data quality assessment: The author is reducing human error by automating labor. Once a process is understood, the author computerizes the work.
+    Data quality monitoring: The work has been on-going for at least the last 20 years; therefore, there is awareness of the expected results.
+
+" (Petr Travkin).
 Database Scaling
 
     The transition to computed columns results in smaller storage requirements.
