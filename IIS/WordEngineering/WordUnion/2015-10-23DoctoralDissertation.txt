@@ -137,6 +137,13 @@ Data quality management
     Data quality assessment: The author is reducing human error by automating labor. Once a process is understood, the author computerizes the work.
     Data quality monitoring: The work has been on-going for at least the last 20 years; therefore, there is awareness of the expected results.
     Data quality reporting: There have been spurious cases of data loss, referential integrity violation, corrupt databases, computer breakdown and hard disk not recoverable.
+    Data quality issue management: Having data facing the Internet is a risk, so there is password protection, no web access, little metadata.
+    Data quality improvement: The author educates about data safety.
+
+Data observability
+
+    Data pipeline tracking: Microsoft SQL Server offers overwhelming statistics. There is information on the duration of backup and restore and other tasks in its maintenance plan, profiler, query plan, logs.
+    Data quality assessment: Microsoft .NET relies on a timeout between request and response. Data growth is manageable by size or percentage. Schema changes are done via Transact-SQL, which propagates through replicas of the same database.
 
 " (Petr Travkin).
 Database Scaling
