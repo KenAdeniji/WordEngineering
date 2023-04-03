@@ -22,9 +22,8 @@ The importance of this work?
     To track dates and words? And, find meaning, correlation.
     Follow God, as a character.
     Taken from him, added to him ( Genesis 2:22-23, Genesis 4:1 ).
-    Where does He selectively make a progress ( Genesis 45:7 )?
 
-Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches. Only when you have diversity.
+Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
 
 Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
@@ -121,7 +120,7 @@ HisWord_view
 The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God.
 The Remember Table
 
-The Remember table tries to correlate the period between a prophecy and its fulfillment. What do men date? " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
+The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
 
 To determine the HisWord and Remember entries? The author chooses to separate the particular and prompted inputs ( Luke 4:19 ). From today and henceforth.
 APass
@@ -142,8 +141,8 @@ Data quality management
 
 Data observability
 
-    Data pipeline tracking: Microsoft SQL Server offers overwhelming statistics. There is information on the duration of backup and restore and other tasks in its maintenance plan, profiler, query plan, logs.
-    Data quality assessment: Microsoft .NET relies on a timeout between request and response. Data growth is manageable by size or percentage. Schema changes are done via Transact-SQL, which propagates through replicas of the same database.
+    Data pipeline tracking: Microsoft SQL Server offers overwhelming statistics. There is information on the duration of backup, restore and other tasks in its maintenance plan, profiler, query plan, logs.
+    Data quality assessment: Microsoft .NET limits the timeout between request and response. Data growth is manageable by size or percentage. Schema changes are done via Transact-SQL, which propagates.
 
 " (Petr Travkin).
 Database Scaling
@@ -153,8 +152,6 @@ Database Scaling
     Normalization, object-to-relational mapping, is light load.
 
 Database Exclusivity
-
-What did He choose as a member of?
 Where Clause
 Title 	Commentary
 Like wildcard 	Preceding or following restriction '%%'
@@ -215,7 +212,7 @@ Common Structure
 
 UML composes elements and relationships as in its predecessor Entity-Relationship (ER) diagrams.
 
-A model contains elements which may have descendants for specializations. A contact may have children such as addresses. When a contact is removed, this propagates to the removal of its children.
+A model contains elements which may have descendants for specializations. A contact may have children such as addresses. When a contact is removed, this cascades to the removal of its children.
 
 Comments do not impact programatically, they only serve as guides for readers.
 
@@ -225,7 +222,7 @@ A namespace is a container separator.
 
 An import facilitates the admittance of an external namespace.
 
-Types and multiplicity restrict the units of information. For example, a scripture reference can only identify book titles, chapters and verses. Their limit is a further constraint. For the King James Version of the Bible, the cardinality of the books is 66.
+Types and multiplicity restrict the units of information. For example, a scripture reference can only identify book titles, chapters and verses. For the King James Version of the Bible, the cardinality of the books is 66.
 
 A constraint represents the range of valid values that a member may have.
 
@@ -251,11 +248,9 @@ In the C# language, an abstract class is static, not instantiable. A static clas
 
 Signals and receptions are similar to events and handlers. A page load or close is an asynchronous signal that its subscribers handle separately. A click event is triggered and resolved internally.
 
-The parts of a scripture reference are pre and post. Each has a Bible book ID, chapter and verse.
-
 Microsoft .Net supports components such as a pre-compiled dynamic link library (.dll), and compiling web forms and web services at first request. Web form matured from code-behind to code-beside.
 
-For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not require such consistency. But the author abides by this rule.
+For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not impose such consistency. But the author abides by this rule.
 "
 Indexing
 " (Search engine indexing)
@@ -281,7 +276,7 @@ Add Updates 	git add 	The git add . command will add all the updates, or the use
 Accessibility
 
     Image elements have alt attributes; so that the reader may perceive what it shows
-    The software generates images in the .png format
+    The software offers the option to generate an image in the .png format
     The author does not duplicate hyperlinks
     The user may solely use the keyboard navigation to tab between the various controls, this substitutes for the taborder attribute. The autofocus attribute is for setting the cursor on the first input control.
 
@@ -331,8 +326,6 @@ The data that the author fundamentally operates on is the word from God. The ini
 
 What should you do with a number? Even though the Hebrew language is AlphaNumeric, the numbers in the Bible are in words ( Leviticus 19:26 ). When the author receives a number, he records it in the HisWord's table, Word column, as a numeral.
 
-It is not what do you have, it is what do you give ( Genesis 4, Zephaniah 3:10, Amos 8:7 ).
-
     The author extracts knowledge from data; by finding meaning to the word.
     The author uses scientific methods, such as counting the number of occurrences, determining the first and last occurrences, and excluding the parts of speech.
     The actionable insights take, so far, is to computerize the work.
@@ -368,8 +361,7 @@ Defining Data
 
 A brief introduction to Statistics and Probability
 
-    At the beginning of the study, the author made a presumption that words are unique. Later the author found out that there are duplicate Bible verses.
-
+At the beginning of the study, the author made a presumption that words are unique. Later the author found out that there are duplicate Bible verses.
 "
 Data
 " (Vaibhav Verdhan)
@@ -596,9 +588,6 @@ Al Danial's Cloc
 Backup and Off-site Storage
 
 The author archives the database and source files to the local computers, Google, Microsoft drives, after changes. The author uses GitHub.com version control.
-
-Memory, hard disk, network, cloud?
-
 Development Time
 
 The development time is separable into the time it takes to program, compile, test, deploy. The stored procedure, C#, ASMX, HTML files are build-able in one day, in most use-case.

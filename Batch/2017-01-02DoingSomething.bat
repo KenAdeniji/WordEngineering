@@ -167,7 +167,7 @@ DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 5818);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13120);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5015);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5070);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 152637);
@@ -209,5 +209,5 @@ C:\Users\kadeniji\OneDrive\WordEngineering\IIS\WordEngineering\WordUnion
 KenAdeniji@hotmail.com
 
 UriChrist
- 	Chuck Missler, KHouse.org, Palestinian American, Palestine 	2023-03-04 	18901
+	LauraStoryMusic.com/#video 				2020-03-06 	17594
 :Exit
