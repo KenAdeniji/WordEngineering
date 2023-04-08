@@ -1085,6 +1085,21 @@ The author is linking words spoken to related verses and dictionaries.
     Prophecy and Fulfillment: Keyword Variation
 
 "
+Productivity
+
+    Productivity is the measure of unit tasks completed within a time frame or at a cost.
+    A project cost is its work hours. A work day is 8 hours. A work month is ≈176 work hours. A work year is ≈2000 work hours.
+    The degree of conceptual complexity increases when an expression contains various function calls and many parentheses. Scope complexity is the fitting between parts.
+    To predict productivity? Re-use.
+    Metric:
+        Executable Size Metric: Is the code largeness. It does not fully consider the uninitialized collection data. It includes library code which reduces complexity. It is not a language-independent source. It is not CPU-independent.
+        Machine Instructions Metric: This is the size or count of the machine instructions.
+        Lines of Code Metric (LOC): It counts the number of source code lines. It is consistent across programming languages. It is CPU-independent. The Linux word count, wc, command will suffice.
+        Statement Count Metric: It excludes comments, blank lines, and counts as 1 a statement that spreads across multiple lines.
+        Function Point Analysis (FPA): It looks ahead and assumes the amount of work a program will require. It details the inputs, outputs and basic computation. FPA has become a postmortem (end-of-project) tool.
+        McCabe’s Cyclomatic Complexity Metric developed by Thomas McCabe: It finds out the complexity by determining the paths through it.
+
+" (Randall Hyde). "
 Intellectual presuppositions to enable the rise of science
 
     Intelligibility of nature: Words were part of his life.
@@ -1942,6 +1957,7 @@ References
     Designing for Performance Weighing Aesthetics and Speed Lara Callender Hogan (2014); W3C web page; Available from http://designingforperformance.com
     Hyperpiler Brian Holt; W3C web page; Available from http://patents.google.com/patent/US10942709B2/en
     Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
+    Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity Randall Hyde; W3C web page; Available from http://RandallHyde.com
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
