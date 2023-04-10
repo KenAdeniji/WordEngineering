@@ -1084,6 +1084,11 @@ The author is linking words spoken to related verses and dictionaries.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
 
+What personifies the time?
+
+    First and Last Adam ( 1 Corinthians 15:45 )
+    Firstborn ( Romans 8:29, Colossians 1:15, Colossians 1:18, Hebrews 12:23 )
+
 "
 Productivity
 
@@ -1092,7 +1097,7 @@ Productivity
     The degree of conceptual complexity increases when an expression contains various function calls and many parentheses. Scope complexity is the fitting between parts.
     To predict productivity? Re-use.
     Metric:
-        Executable Size Metric: Is the code largeness. It does not fully consider the uninitialized collection data. It includes library code which reduces complexity. It is not a language-independent source. It is not CPU-independent.
+        Executable Size Metric: Is the code largeness. It does not fully consider the uninitialized array data. It includes library code which reduces complexity. It is not a language-independent source. It is not CPU-independent.
         Machine Instructions Metric: This is the size or count of the machine instructions.
         Lines of Code Metric (LOC): It counts the number of source code lines. It is consistent across programming languages. It is CPU-independent. The Linux word count, wc, command will suffice.
         Statement Count Metric: It excludes comments, blank lines, and counts as 1 a statement that spreads across multiple lines.
