@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2023-04-12T15:24:00	Created.
+	-->
+	<head>
+		<title>System.Environment</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>			
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						isPostBack = true;
+						querySubmit()
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				//request[""] = document.getElementById("").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/SystemEnvironment.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
