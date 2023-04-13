@@ -40,15 +40,9 @@ public class SystemEnvironmentWebService : System.Web.Services.WebService
 
 		List<KeyValue> keysValues = new List<KeyValue>();
 	
-		object keyValue = null;
-	
 		foreach(var property in properties)
 		{
-			keyValue = property.GetValue(null);
-			if (keyValue != null)
-			{
-				keysValues.Add(new KeyValue(property.Name, keyValue));
-			}	
+			keysValues.Add(new KeyValue(property.Name, property.GetValue(null)));
 		}	
 
 		string json = JsonConvert.SerializeObject
