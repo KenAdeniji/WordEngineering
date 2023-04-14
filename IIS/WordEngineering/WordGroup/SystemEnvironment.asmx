@@ -20,6 +20,13 @@ using Newtonsoft.Json;
 ///	http://google.com/books/edition/Pro_C_10_with_NET_6/bVa2zgEACAAJ?hl=en
 ///	http://stackoverflow.com/questions/9893028/c-sharp-foreach-property-in-object-is-there-a-simple-way-of-doing-this
 ///	http://stackoverflow.com/questions/23187288/print-all-system-environment-information-using-system-reflection
+/// ProcessId (new in 10.0)
+/// ProcessPath (new in 10.0)
+///	2023-04-13T09:25:00 What develops our fundamental?
+///		The author could explicitly call property or method.
+///		But if it is an old release it may not later implementation have support.
+///	2023-04-13T09:31:00 Deprecated functionality.
+///		What do I do today to be absent tomorrow?
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
