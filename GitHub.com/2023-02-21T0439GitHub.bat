@@ -62,3 +62,6 @@ git add IIS/WordEngineering/JavaScript/Algorithm/WaitUsingPerformance.now.html
 
 git add IIS/WordEngineering/WordGroup/SystemEnvironment.asmx
 git add IIS/WordEngineering/WordGroup/SystemEnvironment.html
+
+git add InformationInTransit/ProcessLogic/CollectionExtensions.cs
+git add Microsoft/MicrosoftNetCore/

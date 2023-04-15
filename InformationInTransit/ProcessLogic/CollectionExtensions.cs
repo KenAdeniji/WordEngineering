@@ -18,5 +18,5 @@ namespace InformationInTransit.ProcessLogic
                 yield return converter(item);
             } 
         }
-    }
+	}
 }
