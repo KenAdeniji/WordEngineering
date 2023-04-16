@@ -6,38 +6,76 @@
         xmlns:local="clr-namespace:ProCSharp10WithNET6WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="285" Width="325">
-    <Grid>
-		<Canvas Background="LightSteelBlue">
+	<DockPanel>
+		<Menu DockPanel.Dock="Top"
+			HorizontalAlignment="Left" Background="White" BorderBrush="Black">
+			<MenuItem Header="_File">
+				<Separator/>
+				<MenuItem Header="_Exit" MouseEnter="MouseEnterExitArea"
+					MouseLeave="MouseLeaveArea" Click="FileExit_Click" />
+			</MenuItem>	
+			<MenuItem Header="_Tools">
+					<MenuItem Header="_Spelling Hints" MouseEnter="MouseEnterToolsHintsArea"
+					MouseLeave="MouseLeaveArea" Click="ToolsSpellingHints_Click" />
+			</MenuItem>
+		</Menu>
+		<ToolBar DockPanel.Dock="Top">
+			<Button Content="Exit" MouseEnter="MouseEnterExitArea"
+					MouseLeave="MouseLeaveArea" Click="FileExit_Click" />
+			<Separator/>
+			<Button Content="Check" MouseEnter="MouseEnterToolsHintsArea"
+					MouseLeave="MouseLeaveArea" Click="ToolsSpellingHints_Click" />
+		</ToolBar>	
+
+		<Grid Background="LightSteelBlue" DockPanel.Dock="Top">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<Label 
+				x:Name="lblInstructions" Content="Enter Information"
+				Grid.Row="0"
+			/>
+
+			<TextBox
+				SpellCheck.IsEnabled="True"
+				AcceptsReturn="True"
+				x:Name="txtWord" 
+				FontSize="14"
+				BorderBrush="Blue"
+				HorizontalScrollBarVisibility="Auto"
+				VerticalScrollBarVisibility="Auto"
+				Grid.Row="1"
+			/>
+
 			<Button
-				x:Name="btnOK" Canvas.Left="212" Canvas.Top="203" Width="80"
-				Content="OK" Click="btnOK_Click"
+				x:Name="btnOK" Grid.Row="2" Content="OK" Click="btnOK_Click"
 			/>
-			<Label 
-				x:Name="lblInstructions" Canvas.Left="17" Canvas.Top="14"
-				Width="328" FontSize="15" Content="Enter Information"
-			/>
-			<Label 
-				x:Name="lblWord" Canvas.Left="17" Canvas.Top="60" 
-				Width="328" Content="Word"
-			/>
-			<TextBox x:Name="txtWord" Canvas.Left="94" Canvas.Top="60"
-				Width="193" Height="25"/>
-			<Label 
-				x:Name="lblForwardFor" Canvas.Left="17" Canvas.Top="109" 
-				Width="328" Content="Forward"
-			/>
-			<Label 
-				x:Name="lblForward" Canvas.Left="94" Canvas.Top="109" 
-				Width="328"
-			/>
-			<Label 
-				x:Name="lblBackwardFor" Canvas.Left="17" Canvas.Top="155" 
-				Width="328" Content="Backward"
-			/>
-			<Label 
-				x:Name="lblBackward" Canvas.Left="94" Canvas.Top="155" 
-				Width="328"
-			/>
-		</Canvas>
-    </Grid>
+			
+			<Label x:Name="lblSpellingInstructions" FontSize="14" 
+				Grid.Row="3" Content="Spelling Hints" />
+			<Expander x:Name="expanderSpelling" Header="Try these!"
+				Grid.Row="4">
+				<Label x:Name="lblSpellingHints" FontSize="12" /> 
+			</Expander>
+
+			<Label x:Name="lblForwardFor" Content="Forward" Grid.Row="5" />
+			<Label x:Name="lblForward" Grid.Row="6" />
+			<Label x:Name="lblBackwardFor" Content="Backward" Grid.Row="7" />
+			<Label x:Name="lblBackward" Grid.Row="8" />
+		</Grid>
+		<StatusBar DockPanel.Dock="Bottom" Background="Beige">
+			<StatusBarItem>
+				<TextBlock Name="statBarText" Text="Ready"/>
+			</StatusBarItem>
+		</StatusBar>
+	</DockPanel>
 </Window>
