@@ -65,3 +65,7 @@ git add IIS/WordEngineering/WordGroup/SystemEnvironment.html
 
 git add InformationInTransit/ProcessLogic/CollectionExtensions.cs
 git add Microsoft/MicrosoftNetCore/
+
+git add IIS/WordEngineering/Resume/KenAdenijiResume.html
+git add IIS/WordEngineering/Resume/KenAdenijiResume.pdf
+git add IIS/WordEngineering/Resume/KenAdenijiResume.txt
