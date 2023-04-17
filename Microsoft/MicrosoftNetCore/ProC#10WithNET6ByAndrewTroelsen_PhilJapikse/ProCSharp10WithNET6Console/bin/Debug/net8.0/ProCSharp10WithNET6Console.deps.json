@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ProCSharp10WithNET6Console/1.0.0": {
+        "dependencies": {
+          "ProCSharp10WithNET6Library": "1.0.0"
+        },
+        "runtime": {
+          "ProCSharp10WithNET6Console.dll": {}
+        }
+      },
+      "ProCSharp10WithNET6Library/1.0.0": {
+        "runtime": {
+          "ProCSharp10WithNET6Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProCSharp10WithNET6Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProCSharp10WithNET6Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

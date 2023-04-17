@@ -24,13 +24,19 @@ http://localhost:5078/swagger
 
 http://localhost:5078/WeatherForecast
 
-http://localhost:5078/HowITryToBeAsIHaveAssociated?word=hi
+http://localhost:5078/HowITryToBeAsIHaveAssociated?word=how are you
 
 REM 2023-04-15T08:12:00 http://stackoverflow.com/questions/75439874/build-wpf-application-with-net-from-the-command-line
 REM 2023-04-15T08:28:00	github.com/github.com/punker76/kaxaml
 cd ..
 dotnet new wpf --name "ProCSharp10WithNET6WPF" -lang "C#"
 cd ProCSharp10WithNET6WPF
-
 dotnet add reference ..\ProCSharp10WithNET6Library
 dotnet run
+
+REM 2023-04-15T20:05:00 Console application
+cd ..
+dotnet new console --name "ProCSharp10WithNET6Console" -lang "C#"
+cd ProCSharp10WithNET6Console
+dotnet add reference ..\ProCSharp10WithNET6Library
+dotnet run "how are you" "I am fine"

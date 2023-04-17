@@ -208,10 +208,13 @@ E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.
 C:\Users\kadeniji\OneDrive\WordEngineering\IIS\WordEngineering\WordUnion
 KenAdeniji@hotmail.com
 
+2023-04-14T13:25:00 drive.google.com
+2023-04-16T13:23:00 "Don't be evil" is a phrase used in Google's corporate code of conduct, which it also formerly preceded as a motto. Following Google's corporate restructuring under the conglomerate Alphabet Inc. in October 2015, Alphabet took "Do the right thing" as its motto, also forming the opening of its corporate code of conduct.
 UriChrist
 	LauraStoryMusic.com/#video 				2020-03-06 	17594
 2023-04-14T13:25:00 Drive.Google.com Google Drive Almost out of storage.
 2023-04-14T14:17:00	Microsoft Windows Operating System clipboard copy paste.
 2023-04-14T14:35:00 Dizzy sleepy.
-2023-04-15T12:34:00	https://sfbay.craigslist.org/
+2023-04-15T12:34:00	http://sfbay.craigslist.org
+2023-04-16T04:08:00	Lie heard while I slept. Acts 12:23.
 :Exit
