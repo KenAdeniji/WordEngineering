@@ -40,3 +40,17 @@ dotnet new console --name "ProCSharp10WithNET6Console" -lang "C#"
 cd ProCSharp10WithNET6Console
 dotnet add reference ..\ProCSharp10WithNET6Library
 dotnet run "how are you" "I am fine"
+
+REM 2023-04-17T11:35:00 Create WebAppMVC
+REM http://learn.microsoft.com/en-us/aspnet/core/getting-started/?view=aspnetcore-5.0&tabs=windows
+dotnet new webapp -o ProCSharp10WithNET6WebAppMVC
+dotnet dev-certs https --trust
+
+cd ProCSharp10WithNET6WebAppMVC
+dotnet watch run
+
+http://localhost:5014/
+
+Open Pages/Index.cshtml
+
+
