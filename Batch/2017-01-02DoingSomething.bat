@@ -170,7 +170,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13155);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5074);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 152637);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 152981);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 154461);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 606);
@@ -229,4 +229,5 @@ UriChrist
 2023-04-14T14:35:00 Dizzy sleepy.
 2023-04-15T12:34:00	http://sfbay.craigslist.org
 2023-04-16T04:08:00	Lie heard while I slept. Acts 12:23.
+Record sufficient in a story that is able to be your word of the day. Associable with you that day. If you only have one space for a story. Like in the creation account there is each day and the work performed that day. You may other data that is related or specific to you, but when you do Remember or a APass data entry it is date specific.
 :Exit
