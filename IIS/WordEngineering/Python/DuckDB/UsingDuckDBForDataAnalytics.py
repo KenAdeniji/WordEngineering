@@ -51,7 +51,7 @@ df = conn.execute('''
     FROM BibleBook
 ''').df()
 
-ax = sns.barplot(x = 'bookTitle', 
+ax = sns.barplot(x = 'bookId', 
                  y = 'chapters', 
                  hue = 'testament', 
                  data = df, 
@@ -60,3 +60,60 @@ ax = sns.barplot(x = 'bookTitle',
 
 plt.show()
 
+df = conn.execute('''
+    SELECT 
+        bookId,
+        mean(chapters) as chapters
+    FROM BibleBook
+    WHERE bookTitle like '%1%' or 
+          bookId between 23 and 27
+    GROUP BY bookId
+''').df()
+
+f, ax = plt.subplots(1, 1, figsize=(5, 3))
+ax = sns.barplot(x = 'bookId', 
+                 y = 'chapters',
+                 data = df,
+                 palette = 'Reds')
+
+plt.show()
+
+#palette_color = \ seaborn.color_palette('pastel')
+palette_color = sns.color_palette('pastel')
+plt.figure(figsize = (5, 5))
+
+df = conn.execute('''
+    SELECT 
+        count(*) as Count, testament
+    FROM BibleBook
+    GROUP BY testament
+    ORDER BY Count DESC
+''').df()
+
+plt.pie('Count', 
+        labels = 'testament', 
+        colors = palette_color,
+        data = df,
+        autopct='%.0f%%',)
+
+plt.legend(df['testament'], loc="best")
+
+plt.show()
+
+# sum up total number of people
+total = df['Count'].sum()
+def fmt (x):    
+    # display percentage followed by number
+    return '{:.2f}%\n({:.0f})'.format(x, total * x / 100)
+
+palette_color = sns.color_palette('pastel')
+plt.figure(figsize = (5, 5))
+
+plt.pie('Count', 
+        labels = 'testament', 
+        colors = palette_color,
+        data = df,
+        autopct = fmt)  # call fmt()
+plt.legend(df['testament'], loc="best")
+
+plt.show()

@@ -74,3 +74,5 @@ git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City
 git add IIS/WordEngineering/2018-05-03Correspondence/2023-04-17T1915FaithYao_-_WhatPerhapsOfOther.txt
 
 git add IIS/WordEngineering/Python/DuckDB/
+
+git add IIS/WordEngineering/Python/DuckDB/UsingDuckDBForDataAnalytics.py
