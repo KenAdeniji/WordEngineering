@@ -62,6 +62,8 @@ public class ToRunAsLifeWebService : System.Web.Services.WebService
 			);	
 		}
 		
+		//return sb.ToString();
+		
 		DataTable resultTable = (DataTable) DataCommand.DatabaseCommand
 		(
 			sb.ToString(),
@@ -77,16 +79,54 @@ public class ToRunAsLifeWebService : System.Web.Services.WebService
 	@"
 SELECT
 	'{1}' AS BibleWord,
-	COUNT(*) AS WordOccurrences
-FROM
-	Bible..Scripture_View
-CROSS APPLY
-	string_split
 	(
-		Bible..Scripture_View.{0},
-		' '
-	) AS tableView
-WHERE
-	tableView.Value = '{1}'
+		SELECT COUNT(*)
+		FROM
+			Bible..Scripture_View
+		CROSS APPLY
+			string_split
+			(
+				Bible..Scripture_View.{0},
+				' '
+			) AS tableView
+		WHERE
+			tableView.Value = '{1}'
+	)	AS WordOccurrence,
+	(
+		SELECT TOP 1 ScriptureReference
+		FROM
+			Bible..Scripture_View
+		WHERE
+			 Bible..Scripture_View.{0} LIKE '%[^a-z]{1}[^a-z]%'
+		ORDER BY
+			VerseIDSequence	
+	)	AS ScriptureReferenceFirst,
+	(
+		SELECT TOP 1 VerseIDSequence
+		FROM
+			Bible..Scripture_View
+		WHERE
+			 Bible..Scripture_View.{0} LIKE '%[^a-z]{1}[^a-z]%'
+		ORDER BY
+			VerseIDSequence	
+	)	AS VerseIDSequenceFirst,
+	(
+		SELECT TOP 1 ScriptureReference
+		FROM
+			Bible..Scripture_View
+		WHERE
+			 Bible..Scripture_View.{0} LIKE '%[^a-z]{1}[^a-z]%'
+		ORDER BY
+			VerseIDSequence DESC	
+	)	AS ScriptureReferenceLast,
+	(
+		SELECT TOP 1 VerseIDSequence
+		FROM
+			Bible..Scripture_View
+		WHERE
+			 Bible..Scripture_View.{0} LIKE '%[^a-z]{1}[^a-z]%'
+		ORDER BY
+			VerseIDSequence	DESC
+	)	AS VerseIDSequenceLast
 	";
 }
