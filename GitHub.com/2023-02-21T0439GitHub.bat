@@ -82,3 +82,5 @@ git add IIS/WordEngineering/WordCross/ToRunAsLife.html
 
 git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.asmx
 git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.html
+
+git add IIS/WordEngineering/WordCross/ToSeeOneBeginningAndEndAsHim.html
