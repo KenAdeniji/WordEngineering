@@ -80,3 +80,5 @@ git add IIS/WordEngineering/Python/DuckDB/UsingDuckDBForDataAnalytics.py
 git add IIS/WordEngineering/WordCross/ToRunAsLife.asmx
 git add IIS/WordEngineering/WordCross/ToRunAsLife.html
 
+git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.asmx
+git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.html

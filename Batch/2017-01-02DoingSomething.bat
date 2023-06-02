@@ -231,4 +231,5 @@ UriChrist
 2023-04-16T04:08:00	Lie heard while I slept. Acts 12:23.
 Record sufficient in a story that is able to be your word of the day. Associable with you that day. If you only have one space for a story. Like in the creation account there is each day and the work performed that day. You may other data that is related or specific to you, but when you do Remember or a APass data entry it is date specific.
 2023-05-23 02:08:43.763	AQ processing ... role. A man is explaining about food role. 04:28 Saliva secretion ... mouth water. 04:34 Saliva secretion ... mouth water.
+For the dates columns to be accurate, the author has to be consistent with time. When is the entry made, has consistent to the date has possible. In Genesis 1, the events are recorded according to the days. When is the actual event, when is it written, when is its data entry?
 :Exit

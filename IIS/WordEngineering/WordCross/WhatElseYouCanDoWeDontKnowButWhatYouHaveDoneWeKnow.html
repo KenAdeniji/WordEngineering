@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2023-06-01T16:52:00	Created.
+	-->
+	<head>
+		<title>What else You can do we don't know ... but what You have done we know.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What else You can do we don't know ... but what You have done we know."/>
+		<meta name="keywords" content="Bible, GROUP BY ROLLUP"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center" id="resultSet">
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
+/*
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
+						{
+							bibleWordElement.value = bibleWordValue;
+						}	
+*/						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};			
+			
+				//request["bibleWord"] = bibleWordElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataTable
+						(
+							JSON.parse(data.d),
+							"resultSet"
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
