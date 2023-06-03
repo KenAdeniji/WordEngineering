@@ -3,6 +3,7 @@
 	<head>
 		<!--
 			2023-06-01T23:18:00	Created.
+			2023-06-02T14:36:00	https://stackoverflow.com/questions/42279852/format-string-template-with-variables-in-javascript
 		-->
 		<title>To see one beginning and end as Him?</title>
 		<meta charset="UTF-8"/>
@@ -11,14 +12,35 @@
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>		
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 45vh;
+		width: 90vw;
+	}
+		</style>
 	</head>
 	<body>
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="placeHolder">Place Holder:</label></td>
+					<td><label for="placeHolder">Substitute:</label></td>
 					<td>
 						<input type="text" id="placeHolder" value="KenAdeniji" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="templateLiteral">Template literal:</label></td>
+					<td>
+						<textarea id="templateLiteral">
+<a target="_new" href="http://github.com/${substitute}">github.com/${substitute}</a><br/>
+<a target="_new" href="mailto:${substitute}@hotmail.com">${substitute}@hotmail.com</a><br/>
+<a target="_new" href="http://${substitute}.wordpress.com">${substitute}.wordpress.com</a><br/>
+						</textarea>
+
 					</td>
 				</tr>
 				<tr>
@@ -33,6 +55,7 @@
 			var isPostBack = false;
 	
 			const placeHolderElement = document.getElementById("placeHolder");
+			const templateLiteralElement = document.getElementById("templateLiteral");
 			const resultSetElement = document.getElementById("resultSet");
 			const submitQueryElement = document.getElementById("submitQuery");
 			
@@ -48,6 +71,12 @@
 						placeHolderElement.value = placeHolderParam;
 					}
 					
+					var templateLiteralParam = urlParams.get("templateLiteral");
+					if (templateLiteralParam)
+					{
+						templateLiteralElement.value = templateLiteralParam;
+					}
+					
 					querySubmit();
 					isPostBack = true;
 				}
@@ -59,13 +88,17 @@
 
 			function querySubmit()
 			{
-				var placeHolderElementValued = placeHolderElement.value;
-				resultSetElement.innerHTML = 
-`
-<a target="_new" href="http://github.com/${placeHolderElement.value}">github.com/${placeHolderElement.value}</a><br/>
-<a target="_new" href="mailto:${placeHolderElement.value}@hotmail.com">${placeHolderElement.value}@hotmail.com</a><br/>
-<a target="_new" href="http://${placeHolderElement.value}.wordpress.com">${placeHolderElement.value}.wordpress.com</a><br/>
-`;
+				let template = sFormat(templateLiteralElement.value);
+				var substitute = placeHolderElement.value;
+				let resultSetInfo = template({ substitute });
+				resultSetElement.innerHTML = resultSetInfo;
+			}
+
+			function sFormat(template){
+				return data => {
+					return Object.keys(data)
+								 .reduce((acc, key)=>acc.replaceAll(`\$\{${key}\}`, data[key]), template)
+				}
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
@@ -78,7 +111,6 @@
 			}
 
 			window.addEventListener("load", pageLoad, false);
-			
 		</script>
 	</body>
 </html>
