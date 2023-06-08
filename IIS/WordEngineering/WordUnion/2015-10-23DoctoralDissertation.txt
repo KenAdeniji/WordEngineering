@@ -1106,6 +1106,23 @@ The author is linking words spoken to related verses and dictionaries.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
 
+logparser
+
+The log files for this observation are between 2017-01-02 and 2023-06-08.
+
+Elements processed: 938499
+
+logparser.exe "SELECT sc-status, sc-substatus, COUNT(*) FROM *.log GROUP BY sc-status, sc-substatus ORDER BY sc-status" -i:w3c
+sc-status sc-substatus COUNT(ALL *)
+200       0            185115
+304       0            9467
+
+The count of requests served from the server, HTTP Status code of 200, clearly outweighs 304 HTTP status code, local cache.
+
+HTTP 500 Status Code, internal server error, sum is approximately 6400.
+
+logparser.exe "SELECT cs-uri-stem, COUNT(*) FROM *.log WHERE sc-status=500 GROUP BY cs-uri-stem ORDER BY COUNT(*) DESC" -i:w3c
+
 What personifies the time?
 
     First and Last Adam ( 1 Corinthians 15:45 )

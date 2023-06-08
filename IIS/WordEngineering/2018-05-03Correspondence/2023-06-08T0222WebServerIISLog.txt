@@ -14,3 +14,15 @@ sales@webtrends.com
 
 Billing
 accountsreceivable@webtrends.com
+
+http://learn.microsoft.com/en-us/iis/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser
+
+Log Parser 2.2 
+http://www.microsoft.com/en-us/download/confirmation.aspx?id=24659
+LogParser.msi
+
+C:\Program Files (x86)\Log Parser 2.2>
+
+E:\>cd E:\inetpub\logs\LogFiles\W3SVC1
+
+logparser.exe "SELECT sc-status, sc-substatus, COUNT(*) FROM *.log GROUP BY sc-status, sc-substatus ORDER BY sc-status" -i:w3c

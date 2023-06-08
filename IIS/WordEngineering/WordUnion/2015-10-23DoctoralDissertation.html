@@ -3788,6 +3788,36 @@ for
 				</ul>
 			</p>
 
+			<h3 id="logparser" datetime="2023-06-08T02:22:00">logparser</h3>
+
+			<p datetime="2023-06-08T06:23:00">
+				The log files for this observation are between 2017-01-02 and 2023-06-08.
+			</p>
+
+<pre>
+Elements processed: 938499
+</pre>
+
+<pre datetime="2023-06-08T06:03:00">
+logparser.exe "SELECT sc-status, sc-substatus, COUNT(*) FROM *.log GROUP BY sc-status, sc-substatus ORDER BY sc-status" -i:w3c
+sc-status sc-substatus COUNT(ALL *)
+200       0            185115
+304       0            9467
+</pre>
+			<p datetime="2023-06-08T06:03:00">
+				The count of requests served from the server, HTTP Status code of 200,
+				clearly outweighs 
+				304 HTTP status code, local cache.
+			</p>
+
+			<p datetime="2023-06-08T06:11:00">
+				HTTP 500 Status Code, internal server error, sum is approximately 6400.
+			</p>
+
+<pre datetime="2023-06-08T06:24:00">
+logparser.exe "SELECT cs-uri-stem, COUNT(*) FROM *.log WHERE sc-status=500 GROUP BY cs-uri-stem ORDER BY COUNT(*) DESC" -i:w3c
+</pre>
+
 			<p
 				datetime="2023-04-10T14:20:00"
 				data-ContactID="991"
