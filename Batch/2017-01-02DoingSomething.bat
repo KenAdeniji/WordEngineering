@@ -232,4 +232,116 @@ UriChrist
 Record sufficient in a story that is able to be your word of the day. Associable with you that day. If you only have one space for a story. Like in the creation account there is each day and the work performed that day. You may other data that is related or specific to you, but when you do Remember or a APass data entry it is date specific.
 2023-05-23 02:08:43.763	AQ processing ... role. A man is explaining about food role. 04:28 Saliva secretion ... mouth water. 04:34 Saliva secretion ... mouth water.
 For the dates columns to be accurate, the author has to be consistent with time. When is the entry made, has consistent to the date has possible. In Genesis 1, the events are recorded according to the days. When is the actual event, when is it written, when is its data entry?
+2021-02-06
+2023-06-04T16:36:00 	javascriptweekly.com/issues 	JavaScript Weekly 		JavaScript 	2021-02-06
+2023-06-04T21:00:00	... 2023-06-04T21:05:00
+Microsoft SQL Server Management Studio
+No row was updated.
+The data in row 1 was not committed.
+Error Source: .NET SQL Client Data Provider.
+Error Message Execution Timeout Expired:
+The timeout perior elapsed prior to completion
+of the operation or the server is not responding.
+Correct the errors and retry or press
+ESC to cancel the changes.
+OK Cancel
+RightingSoftware.org 	Righting Software by Juval Löwy of IDesign. To my father, Thomas Charles (Tommy) Löwy. Wife, Dina. Originally published: November 27, 2019. For the beginner architect, there are many options; for the master architect, there are but a few. Software Legend, six people, so far. Juval Lowy is 51 years old and was born on 01/01/1969. 		Software Legend, Jew 	2020-01-03 	52631
+2023-06-05T16:16:00 Place of Birth: Greece, Greek.
+joshclose.github.io/CsvHelper 				2019-04-12 	52237
+19:39 EthanMarcotte Responsive Design
+
+Server Error in '/InformationInTransit' Application.
+Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+Exception Details: System.Data.SqlClient.SqlException: Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+
+
+Source Error:
+
+An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.
+
+Stack Trace:
+
+
+[SqlException (0x80131904): Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+]
+   System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +3331072
+   System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose) +334
+   System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady) +4289
+   System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows) +255
+   System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more) +298
+   System.Data.SqlClient.SqlDataReader.Read() +43
+   System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping) +166
+   System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue) +219
+   System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords) +492
+   System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior) +289
+   System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior) +180
+   System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable) +123
+   System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments) +2947
+   System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback) +26
+   System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound() +134
+   System.Web.UI.WebControls.GridView.OnPreRender(EventArgs e) +45
+   System.Web.UI.Control.PreRenderRecursiveInternal() +132
+   System.Web.UI.Control.PreRenderRecursiveInternal() +227
+   System.Web.UI.Control.PreRenderRecursiveInternal() +227
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3671
+
+
+Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.4330.0 
+
+
+Server Error in '/InformationInTransit' Application.
+There is insufficient system memory in resource pool 'internal' to run this query.
+Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+
+A severe error occurred on the current command.  The results, if any, should be discarded.
+Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+Exception Details: System.Data.SqlClient.SqlException: There is insufficient system memory in resource pool 'internal' to run this query.
+Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+
+A severe error occurred on the current command.  The results, if any, should be discarded.
+
+Source Error:
+
+An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.
+
+Stack Trace:
+
+
+[SqlException (0x80131904): There is insufficient system memory in resource pool 'internal' to run this query.
+Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+
+A severe error occurred on the current command.  The results, if any, should be discarded.]
+   System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +3331072
+   System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose) +334
+   System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady) +4289
+   System.Data.SqlClient.SqlDataReader.TryConsumeMetaData() +89
+   System.Data.SqlClient.SqlDataReader.get_MetaData() +101
+   System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted) +624
+   System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest) +3392
+   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry) +725
+   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method) +84
+   System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method) +312
+   System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior) +214
+   System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior) +180
+   System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable) +123
+   System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect(DataSourceSelectArguments arguments) +2947
+   System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e) +389
+   System.Web.UI.WebControls.ListControl.PerformSelect() +44
+   System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound() +134
+   System.Web.UI.WebControls.ListControl.OnPreRender(EventArgs e) +36
+   System.Web.UI.Control.PreRenderRecursiveInternal() +132
+   System.Web.UI.Control.PreRenderRecursiveInternal() +227
+   System.Web.UI.Control.PreRenderRecursiveInternal() +227
+   System.Web.UI.Control.PreRenderRecursiveInternal() +227
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +3671
+
+
+Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.4330.0
+
+PaulAngone.com 	Millennial generation 			2018-06-30 	16341
+
+<h5 id="ScriptureTableChapterIDColumn">The Scripture Table's ChapterID Column</h5>
 :Exit
