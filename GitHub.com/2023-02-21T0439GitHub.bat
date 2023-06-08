@@ -84,3 +84,7 @@ git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDo
 git add IIS/WordEngineering/WordCross/WhatElseYouCanDoWeDontKnowButWhatYouHaveDoneWeKnow.html
 
 git add IIS/WordEngineering/WordCross/ToSeeOneBeginningAndEndAsHim.html
+
+git add 		IIS/WordEngineering/Python/NationalSecurityAgencyNSA/BuiltInFunctionsAndMethods.py
+git add         IIS/WordEngineering/2018-05-03Correspondence/2023-06-08T0222WebServerIISLog.txt
+git add         IIS/WordEngineering/2018-05-03Correspondence/2023-06-08T0327WebTrends.txt
