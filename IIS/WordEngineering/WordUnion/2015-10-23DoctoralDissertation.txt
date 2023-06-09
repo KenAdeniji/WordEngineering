@@ -1123,6 +1123,44 @@ HTTP 500 Status Code, internal server error, sum is approximately 6400.
 
 logparser.exe "SELECT cs-uri-stem, COUNT(*) FROM *.log WHERE sc-status=500 GROUP BY cs-uri-stem ORDER BY COUNT(*) DESC" -i:w3c
 
+logparser.exe "SELECT TOP 20 cs-uri-stem, COUNT(*) AS Total, MAX(time-taken) AS MaxTime, AVG(time-taken) AS AvgTime FROM *.log GROUP BY cs-uri-stem ORDER BY Total DESC " -i:w3c
+cs-uri-stem                                                                       Total MaxTime  AvgTime
+--------------------------------------------------------------------------------- ----- -------- -------
+/                                                                                 43980 18711085 769
+/WordOfGod/ContactMaintenance.aspx                                                25272 303113   957
+/WordEngineering/WordUnion/DateDifference.aspx                                    12821 529647   201
+/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query                9138  520928   713
+/WordEngineering/WordUnion/BibleDictionaryWebService.asmx/GetAPage                7211  347890   1323
+/WordEngineering/WordUnion/WordToNumberWebService.asmx/RetrieveScriptureReference 7052  258768   1285
+/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/Query                  7048  227800   1213
+/WordEngineering/WordUnion/HisWord.asmx/APairingOfOurSum                          7045  384623   2972
+/WordEngineering/WordUnion/BibleWordWebService.asmx/GetAPage                      7039  258120   3267
+/WordEngineering/WordUnion/NumberSignWebService.asmx/TalentBonding                6937  219007   1138
+Press a key...
+cs-uri-stem                                               Total MaxTime AvgTime
+--------------------------------------------------------- ----- ------- -------
+/WordOfGod/URIMaintenanceWebForm.aspx                     6803  62837   400
+/robots.txt                                               3537  137904  755
+/WordEngineering/WordUnion/9432.js                        3518  212131  181
+/WordEngineering/WordUnion/9432.css                       2830  225968  120
+/WordEngineering/WordUnion/BibleWordWebService.asmx/Query 2425  174641  1089
+/WordOfGod/URIMaintenanceWebFOrm.aspx                     2406  113505  488
+/remindme/ContactBrowse.aspx                              2173  139821  1597
+/remindme/Cover.aspx                                      1892  58242   774
+/WordEngineering/WordUnion/ScriptureReference.html        1804  183555  392
+/Gradual/Contacts/ContactsList.aspx                       1789  67613   874
+Task completed with parse errors.
+Parse errors:
+1356596 parse errors occurred during processing (To see details about the
+  parse error(s), execute the command again with a non-zero value for the
+  "-e" argument)
+
+Statistics:
+-----------
+Elements processed: 266572
+Elements output:    20
+Execution time:     84.46 seconds (00:01:24.46)
+
 What personifies the time?
 
     First and Last Adam ( 1 Corinthians 15:45 )
