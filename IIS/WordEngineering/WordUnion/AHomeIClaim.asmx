@@ -36,17 +36,25 @@ public class AHomeIClaimWebService : System.Web.Services.WebService
     {
 		string selectStatement = String.Format(SelectStatement, firstScriptureReferenceVerse, secondScriptureReferenceVerse);
 		
-		DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
+		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
 			selectStatement,
 			CommandType.Text,
-			DataCommand.ResultType.DataSet
+			DataCommand.ResultType.DataTable
 		);
 		
-		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
+		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
 		return json;
 	}
 	
-	public const string SelectStatement = "SELECT * FROM Bible..Scripture_View WHERE ScriptureReference IN " +
-		"('{0}', '{1}') ORDER BY verseIDSequence";
+	public const string SelectStatement = @"
+		SELECT 
+			ChapterIDSequence,
+			ChapterIDSequencePercent,
+			VerseIDSequence,
+			VerseIDSequencePercent
+		FROM Bible..Scripture_View
+		WHERE ScriptureReference IN ('{0}', '{1}') 
+		ORDER BY verseIDSequence
+	";
 }

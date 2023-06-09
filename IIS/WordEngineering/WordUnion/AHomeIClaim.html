@@ -2,6 +2,13 @@
 <html>
 	<!--
 		2016-09-01	Created.
+		2023-06-09T05:19:00 ... 2023-06-09T07:23:00
+			Defined constant element.
+			Transition to 
+				new URLSearchParams(window.location.search);
+				urlParams.get("firstScriptureReferenceVerse");
+			Use Template literals (Template strings)
+				for AJAX error	
 	-->
 	<head>
 		<title>A Home, I Claim</title>
@@ -14,61 +21,70 @@
 	</head>
 	<body>
 		<div align="center">
-				<fieldset>
-					<legend>Query</legend>
-					<div>
-						<table>
-							<form onsubmit="">
-								<tr>
-									<td><label for="firstScriptureReferenceVerse">First Scripture Reference Verse</label></td>
-									<td><input type="text" ID="firstScriptureReferenceVerse" size="30"/>
-								</tr>
-								<tr>
-									<td><label for="secondScriptureReferenceVerse">Second Scripture Reference Verse</label></td>
-									<td><input type="text" ID="secondScriptureReferenceVerse" size="30"/>
-								</tr>
-							</form>
-							<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
-						</table>
-					</div>
-				</fieldset>
+			<table>
+				<form onsubmit="">
+					<tr>
+						<td><label for="firstScriptureReferenceVerse">First Scripture Reference Verse</label></td>
+						<td><input type="text" ID="firstScriptureReferenceVerse" size="30"/>
+					</tr>
+					<tr>
+						<td><label for="secondScriptureReferenceVerse">Second Scripture Reference Verse</label></td>
+						<td><input type="text" ID="secondScriptureReferenceVerse" size="30"/>
+					</tr>
+				</form>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
+			</table>
 			<div id="resultSet"> </div>
 		</div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
 			var isPostBack = false;
+			
+			const	firstScriptureReferenceVerseElement = document.getElementById("firstScriptureReferenceVerse");
+			const	secondScriptureReferenceVerseElement = document.getElementById("secondScriptureReferenceVerse");
 
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+			
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
-						var firstScriptureReferenceVerse = scriptLiteral9432.getParameterByName("firstScriptureReferenceVerse");
-						if (firstScriptureReferenceVerse)
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						var firstScriptureReferenceVerseValue = urlParams.get("firstScriptureReferenceVerse");
+						if (firstScriptureReferenceVerseValue)
 						{
-							document.getElementById("firstScriptureReferenceVerse").value = firstScriptureReferenceVerse;
-						}	
-						var secondScriptureReferenceVerse = scriptLiteral9432.getParameterByName("secondScriptureReferenceVerse");
-						if (secondScriptureReferenceVerse)
+							firstScriptureReferenceVerseElement.value = firstScriptureReferenceVerseValue;
+						}
+
+						var secondScriptureReferenceVerseValue = urlParams.get("secondScriptureReferenceVerse");
+						if (secondScriptureReferenceVerseValue)
 						{
-							document.getElementById("secondScriptureReferenceVerse").value = secondScriptureReferenceVerse;
-						}	
+							secondScriptureReferenceVerseElement.value = secondScriptureReferenceVerseValue;
+						}
+						
 						querySubmit();
 						isPostBack = true;
 					});
 				}
-			}
+				else
+				{
+					querySubmit();
+				}
+ 			}
 			
 			function querySubmit()
 			{
 				var request = {};
 
-				request["firstScriptureReferenceVerse"] = document.getElementById("firstScriptureReferenceVerse").value;
-				request["secondScriptureReferenceVerse"] = document.getElementById("secondScriptureReferenceVerse").value;
+				request["firstScriptureReferenceVerse"] = firstScriptureReferenceVerseElement.value;
+				request["secondScriptureReferenceVerse"] = secondScriptureReferenceVerseElement.value;
 				
 				var requestJson = JSON.stringify(request);
-				
+
 				$.ajax
 				({
 					type: "POST",
@@ -78,87 +94,22 @@
 					dataType: "json",
 					success: function(data) 
 					{
-						
-						var dataSet = JSON.parse(data.d);
-						render(dataSet);
+						scriptLiteral9432.renderDataTable
+						(
+							JSON.parse(data.d),
+							"resultSet"
+						);
 					},
 					error: function(xhr)
 					{ 
-						$("#resultSet").html
-						(
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
-						);
+						resultSetElement.innerHTML =
+							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
+							;
 					} 
 				});
 			}
 
-			function render(data) 
-			{
-				document.getElementById("resultSet").innerHTML = "";
-				
-				var caption = "<caption>A home, I claim.</caption>";
-				var info = 	"<table>" + caption + "<thead><tr>" + 
-					"<th>Text</th>" +
-					"<th>Scripture Reference</th>" +
-					"<th>Chapter ID Sequence</th>" +	
-					"<th>Chapter ID Sequence (%)</th>" +
-					"<th>Verse ID Sequence</th>" +	
-					"<th>Verse ID Sequence (%)</th>" +
-					"</tr></thead><tbody>";
-
-				var dataRow = null;
-				var dataTable = null;
-				
-				var scriptureReferenceURI = null;
-				
-				for (var table in data) {
-					dataTable = data[table];
-					
-					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
-					{
-						dataRow = dataTable[rowIndex];
-
-						scriptureReferenceURI = scriptLiteral9432.buildHyperlink
-						(
-							"scriptureReference",
-							dataRow.ScriptureReference
-						);
-						
-						console.log(dataRow);
-						
-						info += "<tr>" +
-							"<td>" + dataRow.KingJamesVersion + "</td>" +
-							"<td>" + scriptureReferenceURI + "</td>" +
-							"<td>" + dataRow.ChapterIDSequence + "</td>" +
-							"<td>" + dataRow.ChapterIDSequencePercent + "</td>" +
-							"<td>" + dataRow.VerseIDSequence + "</td>" +
-							"<td>" + dataRow.VerseIDSequencePercent + "</td>" +
-							"</tr>";
-					}
-				}
-				
-				var dataRowFirst = data["Table"][0];
-				var dataRowSecond = data["Table"][1];
-
-				if ( dataRowSecond == undefined)
-				{
-					return;
-				}	
-				
-				info += "</tbody><tfoot><tr><td colspan='2'>" +
-					"<td>" + (parseInt(dataRowSecond.ChapterIDSequence) - parseInt(dataRowFirst.ChapterIDSequence)) + "</td>" +
-					"<td>" + (parseInt(dataRowSecond.ChapterIDSequencePercent) - parseInt(dataRowFirst.ChapterIDSequencePercent)) + "</td>" +
-					"<td>" + (parseInt(dataRowSecond.VerseIDSequence) - parseInt(dataRowFirst.VerseIDSequence)) + "</td>" +
-					"<td>" + (parseInt(dataRowSecond.VerseIDSequencePercent) - parseInt(dataRowFirst.VerseIDSequencePercent)) + "</td>" +
-					"</tr></tfoot>";
-				
-				info += "</table>"
-				document.getElementById("resultSet").innerHTML = info;
-			}
-			
-			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
 			
 			var body = document.getElementsByTagName('body')[0];
 			body.onkeydown = function (e) {
@@ -168,6 +119,7 @@
 			}
 			
 			window.addEventListener("load", pageLoad, false);
+			
 	</script>
 </body>
 </html>
