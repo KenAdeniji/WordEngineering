@@ -34,10 +34,14 @@
 				</form>
 				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
 			</table>
+			<br/>
+			<table id="resultFiller"> </table><br/>
 			<div id="resultSet"> </div>
+			<br/>
 		</div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="tsorter.min.js" type="text/javascript"></script>	
 		<script>
 			var isPostBack = false;
 			
@@ -94,10 +98,24 @@
 					dataType: "json",
 					success: function(data) 
 					{
+						var dataParsed = JSON.parse(data.d);
+
 						scriptLiteral9432.renderDataTable
 						(
-							JSON.parse(data.d),
+							dataParsed,
 							"resultSet"
+						);
+						
+						var firstTableID = document.getElementById("resultSet0");
+						
+						scriptLiteral9432.tableRowAppend
+						(
+							firstTableID,
+							"Difference",
+							dataParsed[1]["ChapterIDSequence"] - dataParsed[0]["ChapterIDSequence"],
+							dataParsed[1]["ChapterIDSequencePercent"] - dataParsed[0]["ChapterIDSequencePercent"],
+							dataParsed[1]["VerseIDSequence"] - dataParsed[0]["VerseIDSequence"],
+							dataParsed[1]["VerseIDSequencePercent"] - dataParsed[0]["VerseIDSequencePercent"]
 						);
 					},
 					error: function(xhr)
@@ -108,6 +126,16 @@
 					} 
 				});
 			}
+
+function tableRowAppend() {
+    var personName = document.getElementById("personName").value;
+    var newRow = document.createElement("tr");
+    var newCell = document.createElement("td");
+    newCell.innerHTML = personName;
+    newRow.append(newCell);
+    document.getElementById("rows").appendChild(newRow);
+    document.getElementById("personName").value = '';
+}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			

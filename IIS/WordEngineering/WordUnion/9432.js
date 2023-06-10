@@ -2033,6 +2033,25 @@ var scriptLiteral9432 =
 		return [right, left]	
 	},
 
+	//2023-06-10T03:50:00 https://stackoverflow.com/questions/52997839/append-data-to-html-table
+	tableRowAppend: function(tableID)
+	{
+		var newRow = document.createElement("tr");
+		var newCell;
+
+		for
+		(
+			var argumentsIndex = 1, argumentsLength = arguments.length;
+			argumentsIndex < argumentsLength;
+			++argumentsIndex
+		)
+		{
+			newCell = document.createElement("td");
+			newCell.innerHTML = arguments[argumentsIndex];
+			newRow.append(newCell);
+		}
+		tableID.appendChild(newRow);
+	},
 	//2018-02-07	https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
 	todayTimezoneOffset: function(now)
 	{	

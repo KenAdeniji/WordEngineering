@@ -49,6 +49,7 @@ public class AHomeIClaimWebService : System.Web.Services.WebService
 	
 	public const string SelectStatement = @"
 		SELECT 
+			NULL AS Metric,
 			ChapterIDSequence,
 			ChapterIDSequencePercent,
 			VerseIDSequence,
