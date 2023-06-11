@@ -26,34 +26,36 @@ using InformationInTransit.DataAccess;
 [ScriptService]
 public class AlwaysCountForYouWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
 	(
-		string	interval,
-		int		entry
+		string	datepartMetric,
+		int		datepartValue
 	)	
     {
-		string json = null;
-		string selectStatement = String.Format(SelectStatement, interval, entry);
+		string selectStatement = String.Format
+		(
+			SelectStatement,
+			datepartMetric,
+			datepartValue
+		);
 
- 		DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
+ 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
 			selectStatement,
 			CommandType.Text,
-			DataCommand.ResultType.DataSet
+			DataCommand.ResultType.DataTable
 		);
 		
-		json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
+		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
 		return json;
 	}
 	
-	public const string SelectStatement = "SELECT * FROM WordEngineering..HisWord WHERE DATEPART({0}, dated) = {1} ORDER BY Dated DESC";
+	public const string SelectStatement = @"
+		SELECT * 
+		FROM WordEngineering..HisWord
+		WHERE DATEPART({0}, dated) = {1}
+		ORDER BY Dated DESC
+	";
 }

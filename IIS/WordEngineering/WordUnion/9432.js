@@ -1002,10 +1002,16 @@ var scriptLiteral9432 =
 		this.value = value;
 	},
 	
-	//2022-04-27T19:10:00 https://stackoverflow.com/questions/24998624/day-name-from-date-in-js
-	getWeekDays: function(locale)
+	getBrowserLanguageLocale: function()
 	{
-		//const weekDaysInLongFormat = getWeekDays( getBrowserLanguageLocale() );
+		if (navigator.languages != undefined) return navigator.languages[0]; 
+		return navigator.language;
+	},	
+
+	//2022-04-27T19:10:00 http://stackoverflow.com/questions/24998624/day-name-from-date-in-js
+	getWeekDays: function()
+	{
+		var locale = scriptLiteral9432.getBrowserLanguageLocale();
 		return [...Array(7).keys()].map((v)=>new Date(Date.UTC(1970, 0, 6+v)).toLocaleDateString(locale, { weekday: 'long' }));
 	},	
 	
