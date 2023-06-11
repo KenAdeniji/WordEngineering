@@ -9,6 +9,10 @@
 				urlParams.get("firstScriptureReferenceVerse");
 			Use Template literals (Template strings)
 				for AJAX error	
+		2023-06-10T03:50:00 ... 2023-06-10T06:16:00
+			Append difference row
+		2023-06-10T06:51:00 ... 2023-06-10T06:57:00			
+			Luke 24:47, Philippians 1:12
 	-->
 	<head>
 		<title>A Home, I Claim</title>
@@ -25,17 +29,16 @@
 				<form onsubmit="">
 					<tr>
 						<td><label for="firstScriptureReferenceVerse">First Scripture Reference Verse</label></td>
-						<td><input type="text" ID="firstScriptureReferenceVerse" size="30"/>
+						<td><input type="text" ID="firstScriptureReferenceVerse" size="30" value="Luke 24:47"  autofocus />
 					</tr>
 					<tr>
 						<td><label for="secondScriptureReferenceVerse">Second Scripture Reference Verse</label></td>
-						<td><input type="text" ID="secondScriptureReferenceVerse" size="30"/>
+						<td><input type="text" ID="secondScriptureReferenceVerse" size="30" value="Philippians 1:12" />
 					</tr>
 				</form>
 				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
 			</table>
 			<br/>
-			<table id="resultFiller"> </table><br/>
 			<div id="resultSet"> </div>
 			<br/>
 		</div>
@@ -126,16 +129,6 @@
 					} 
 				});
 			}
-
-function tableRowAppend() {
-    var personName = document.getElementById("personName").value;
-    var newRow = document.createElement("tr");
-    var newCell = document.createElement("td");
-    newCell.innerHTML = personName;
-    newRow.append(newCell);
-    document.getElementById("rows").appendChild(newRow);
-    document.getElementById("personName").value = '';
-}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			
