@@ -98,3 +98,6 @@ git add	IIS/WordEngineering/WordUnion/AlwaysCountForYou.asmx
 git add	IIS/WordEngineering/WordUnion/AlwaysCountForYou.html
 
 git add IIS/WordEngineering/WordCross/ThereComeATimeWhenTheLightCloseTheLightSoItCanGoTheLightFairestWay.html
+
+git add IIS/WordEngineering/WordCross/WeAcceptEachOtherAsOurs.asmx
+git add IIS/WordEngineering/WordCross/WeAcceptEachOtherAsOurs.html
