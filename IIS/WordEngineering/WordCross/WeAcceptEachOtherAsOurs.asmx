@@ -26,6 +26,7 @@ using InformationInTransit.UserInterface;
 
 ///<summary>
 ///	2023-06-12T00:00:00 Created. We accept each other ... as ours.
+///	2023-06-13T17:31:00 AlphabetSequenceIndexIgnore
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -40,14 +41,27 @@ public class WeAcceptEachOtherAsOursWebService : System.Web.Services.WebService
 		int		alphabetSequenceIndex
 	)
     {
-		DataTable resultTable = (DataTable) DataCommand.DatabaseCommand
-		(
-			String.Format
+		string sqlStatement = "";
+		if (alphabetSequenceIndex < 1)
+		{
+			sqlStatement = String.Format
+			(
+				QueryStatementAlphabetSequenceIndexIgnore,
+				bibleWord
+			);
+		}		
+		else
+		{
+			sqlStatement = String.Format
 			(
 				QueryStatement,
 				alphabetSequenceIndex,
 				bibleWord
-			),	
+			);
+		}		
+		DataTable resultTable = (DataTable) DataCommand.DatabaseCommand
+		(
+			sqlStatement,
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
@@ -65,6 +79,16 @@ public class WeAcceptEachOtherAsOursWebService : System.Web.Services.WebService
 		WHERE
 			AlphabetSequenceIndex = {0}
 		AND	Difference(BibleWord, '{1}') = 4	
+	";
+
+	public const String QueryStatementAlphabetSequenceIndexIgnore =
+	@"
+		SELECT
+			*
+		FROM
+			Bible..Exact_View
+		WHERE
+			Difference(BibleWord, '{0}') = 4	
 	";
 }
 
