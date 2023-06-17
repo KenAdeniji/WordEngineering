@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<!-- 
+		2023-06-16T18:29:00 ... 2023-06-16T20:41:00 Created.
+		2023-06-16T20:41:00	http://stackoverflow.com/questions/5001554/regular-expression-for-a-list-of-items-separated-by-comma-or-by-comma-and-a-spac
+	-->
+	<head>
+		<title>I want to clock the joy out.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I want to clock the joy out."/>
+		<meta name="keywords" content="C#, indexers, indices, ranges"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<textarea
+				id="resourceEditor"
+				style="width: 90vw; height: 25vh;"
+			></textarea>
+			<textarea
+				id="resourceRegularExpressionPattern"
+				style="width: 90vw; height: 25vh;"
+			></textarea>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet" align="left" style="width: 90vw; height: 10vh;"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			const resourceEditorElement = document.getElementById("resourceEditor");
+			const resourceRegularExpressionPatternElement = document.getElementById("resourceRegularExpressionPattern");
+
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					resourceEditorElement.value = resourceEditorDefault;
+					resourceRegularExpressionPatternElement.value = resourceRegularExpressionPatternDefault;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var matches = [];
+				var regularExpressionMask;
+				
+				regularExpressionMask = new RegExp
+				(
+					`${resourceRegularExpressionPatternElement.value}`,
+					'gi'
+				);
+
+				matches = resourceEditorElement.value.match
+				(
+					regularExpressionMask
+				);
+
+				resultSet.innerHTML = matches.join("<br/>");
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+
+			const resourceRegularExpressionPatternDefault = `[^,(?!. )]+`;
+			const resourceEditorDefault = "Hello, world. How are you?";
+		</script>
+	</body>
+</html>
