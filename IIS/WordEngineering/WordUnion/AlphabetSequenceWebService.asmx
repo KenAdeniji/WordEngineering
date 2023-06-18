@@ -34,6 +34,21 @@ using InformationInTransit.ProcessLogic;
 				AlphabetSequenceIndexPercentage 41.02564102564103%
 				AlphabetSequenceIndexPercentageScriptureReference Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
 				http://stackoverflow.com/questions/3210393/how-do-i-remove-all-non-alphanumeric-characters-from-a-string-except-dash
+	2023-06-18T11:05:00 ... 2023-06-18T11:44:00
+        public static string VeliciaThreeThreeFourEnd
+		(
+			string	question
+		)
+        {
+			int alphabetSequenceIndex = Id(question);
+		
+			question = question.Replace("?", "");
+			question = question.Replace(".", "");
+			question = question.Replace(",", "");
+			question = question.Replace(";", "");
+			question = question.Replace(" ", "");
+			question = question.Replace("\"", "");
+			question = question.Replace("'", "");
 */
 ///<summary>
 ///	2015-11-05	Created.	AlphabetSequenceWebService.asmx

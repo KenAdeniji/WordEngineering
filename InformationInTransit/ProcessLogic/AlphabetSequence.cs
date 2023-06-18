@@ -62,7 +62,6 @@ using InformationInTransit.ProcessCode;
 			question = question.Replace(" ", "");
 			question = question.Replace("\"", "");
 			question = question.Replace("'", "");
-
 */
 namespace InformationInTransit.ProcessLogic
 {
