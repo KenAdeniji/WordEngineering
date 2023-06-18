@@ -38,10 +38,11 @@ using InformationInTransit.ProcessCode;
 				At 99 Ranch Market Filipinos ... Hindi wife and husband
 				I walked at the Center lane and I exited at South West.
 				Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
-				alphabetSequenceIndexPercentage 
-					41%
-				alphabetSequenceIndexPercentageScriptureReference
-					Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+				Alphabet Sequence
+				256
+				Genesis 10:21, 1 Samuel 20, Matthew 4, Revelation 9:5
+				AlphabetSequenceIndexPercentage 41.02564102564103%
+				AlphabetSequenceIndexPercentageScriptureReference Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
 				http://stackoverflow.com/questions/3210393/how-do-i-remove-all-non-alphanumeric-characters-from-a-string-except-dash
 */
 namespace InformationInTransit.ProcessLogic
@@ -347,8 +348,8 @@ namespace InformationInTransit.ProcessLogic
 			Regex regularExpression = new Regex("[^a-zA-Z]");
 			string alphabetsOnly = regularExpression.Replace(question, "");
 			decimal alphabetSequenceIndexPercentage = 
-				( 100 * alphabetSequenceIndex ) / 
-				( alphabetsOnly.Length * 26 );
+				( AlphabetSequenceIndexPercentageRatio * alphabetSequenceIndex )
+				/ alphabetsOnly.Length;
 			String alphabetSequenceIndexPercentageScriptureReference = BiblePercentage.Query
 			(
 				alphabetSequenceIndexPercentage
@@ -495,7 +496,8 @@ namespace InformationInTransit.ProcessLogic
 			
 		}
 		
-        public const int ChapterIdSequenceMaximum = 1189;
+        public const decimal AlphabetSequenceIndexPercentageRatio = 100M / 26M;
+		public const int ChapterIdSequenceMaximum = 1189;
         public const int VerseIdSequenceMaximum = 31102;
 
 		public const string ScriptureReferenceWhereClauseFormat = " ( verseIdSequence IN ({0}, {3}) OR chapterIdSequence IN ({1}, {2}) ) ";
