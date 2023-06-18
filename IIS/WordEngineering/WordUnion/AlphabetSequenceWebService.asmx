@@ -18,17 +18,22 @@ using Newtonsoft.Json;
 using InformationInTransit.ProcessLogic;
 
 /*
-			2023-06-17T18:05:00	Velicia ... three three ... four end.
-								Uncle Jimi walked out of a Center room eastward. Homosexual sex involved. He said Velicia Kim lives on a dignitary street. 1963-04-24 smell (Gbo enu) (We are proving difficult). (We are proving difficult). Alexander III of Macedon (Ancient Greek: ????a?d???, romanized: Alexandros; 20/21 July 356 BC – 10/11 June 323 BC), commonly known as Alexander the Great,[a] was a king of the ancient Greek kingdom of Macedon. Duration	
-								http://en.wikipedia.org/wiki/Alexander_the_Great
-								Revelation 5:9, Revelation 10, Genesis 13, Genesis 12:14
-								At 99 Ranch Market Filipinos ... Hindi wife and husband
-								I walked at the Center lane and I exited at South West.
-								Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
-								alphabetSequenceIndexPercentage 
-									41%
-								alphabetSequenceIndexPercentageScriptureReference
-									Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+	2023-06-17T18:05:00	Velicia ... three three ... four end.
+				Uncle Jimi walked out of a Center room eastward. Homosexual sex involved. He said Velicia Kim lives on a dignitary street. 1963-04-24 smell (Gbo enu) (We are proving difficult). (We are proving difficult). Alexander III of Macedon (Ancient Greek: ????a?d???, romanized: Alexandros; 20/21 July 356 BC – 10/11 June 323 BC), commonly known as Alexander the Great,[a] was a king of the ancient Greek kingdom of Macedon. Duration	
+				http://en.wikipedia.org/wiki/Alexander_the_Great
+				Revelation 5:9, Revelation 10, Genesis 13, Genesis 12:14
+				At 99 Ranch Market Filipinos ... Hindi wife and husband
+				I walked at the Center lane and I exited at South West.
+				Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
+				Between 2023-06-17 ... 2023-06-18 twin sibling kept on urinating on the South West toilet bowl seat,
+					I went to urinate at North Center on a few occasions,
+					I later undressed my trouser and I pulled my shirt up.
+				Alphabet Sequence
+				256
+				Genesis 10:21, 1 Samuel 20, Matthew 4, Revelation 9:5
+				AlphabetSequenceIndexPercentage 41.02564102564103%
+				AlphabetSequenceIndexPercentageScriptureReference Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+				http://stackoverflow.com/questions/3210393/how-do-i-remove-all-non-alphanumeric-characters-from-a-string-except-dash
 */
 ///<summary>
 ///	2015-11-05	Created.	AlphabetSequenceWebService.asmx

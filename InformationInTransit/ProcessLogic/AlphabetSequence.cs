@@ -38,6 +38,9 @@ using InformationInTransit.ProcessCode;
 				At 99 Ranch Market Filipinos ... Hindi wife and husband
 				I walked at the Center lane and I exited at South West.
 				Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
+				Between 2023-06-17 ... 2023-06-18 twin sibling kept on urinating on the South West toilet bowl seat,
+					I went to urinate at North Center on a few occasions,
+					I later undressed my trouser and I pulled my shirt up.
 				Alphabet Sequence
 				256
 				Genesis 10:21, 1 Samuel 20, Matthew 4, Revelation 9:5
@@ -344,6 +347,14 @@ namespace InformationInTransit.ProcessLogic
 		)
         {
 			int alphabetSequenceIndex = Id(question);
+		
+			question = question.Replace("?", "");
+			question = question.Replace(".", "");
+			question = question.Replace(",", "");
+			question = question.Replace(";", "");
+			question = question.Replace(" ", "");
+			question = question.Replace("\"", "");
+			question = question.Replace("'", "");
 			
 			Regex regularExpression = new Regex("[^a-zA-Z]");
 			string alphabetsOnly = regularExpression.Replace(question, "");
