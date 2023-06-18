@@ -130,8 +130,8 @@
 				resultOutputRange.innerHTML = matches
 					.slice
 					(
-						resourceInputRangeFromElement.value,
-						resourceInputRangeUntilElement.value
+						parseInt(resourceInputRangeFromElement.value),
+						parseInt(resourceInputRangeUntilElement.value)
 					)
 					.join("<br/>");
 			}

@@ -37,6 +37,17 @@ namespace InformationInTransit.ProcessCode
 	///	FROM 	WordEngineering..CaseBasedReasoning
 	///			WHERE	ContactID IN ({1}) AND Commentary LIKE CONVERT '%Date%' AND CONVERT(Date, Dated) = '{0}'
 	///			ORDER BY ContactID, Dated
+	///	2023-06-17T23:58:00 ... 2023-06-18T00:36:00	
+	///		(Iwo ko lo se ki ni yi, Kehinde).
+	///		http://stackoverflow.com/questions/2959161/convert-string-to-int-array-using-linq
+	///			int[] contactIDs = contactID.Split
+	///		(
+	///			ScriptureReferenceHelper.SubsetSeparator
+	///		).
+	///		Select
+	///		(
+	///			s => Convert.ToInt32(s)
+	///		).ToArray();
 	///</summary>
 	public class DontFeelLeftAlone
 	{
@@ -48,7 +59,14 @@ namespace InformationInTransit.ProcessCode
 		)
 		{
 			DataSet resultSet = new DataSet();
-			int[] contactIDs = contactID.Split(ScriptureReferenceHelper.SubsetSeparator).Select(s => int.TryParse(s, out int n) ? n : 0).ToArray();
+			int[] contactIDs = contactID.Split
+			(
+				ScriptureReferenceHelper.SubsetSeparator
+			).
+			Select
+			(
+				s => Convert.ToInt32(s)
+			).ToArray();
 			String[] scriptureReferences = scriptureReference.Split
 			(
 				ScriptureReferenceHelper.SubsetSeparator,

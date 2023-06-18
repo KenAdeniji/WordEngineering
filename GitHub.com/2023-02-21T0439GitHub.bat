@@ -103,3 +103,10 @@ git add IIS/WordEngineering/WordCross/WeAcceptEachOtherAsOurs.asmx
 git add IIS/WordEngineering/WordCross/WeAcceptEachOtherAsOurs.html
 
 git add IIS/WordEngineering/WordCross/IWantToClockTheJoyOut.html
+
+        git add    IIS/WordEngineering/WordUnion/9432.css
+        git add    IIS/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx
+        git add    IIS/WordEngineering/WordUnion/BiblePercentage.asmx
+        git add    IIS/WordEngineering/WordUnion/GetAPage.html
+        git add    InformationInTransit/ProcessLogic/AlphabetSequence.cs
+        git add    InformationInTransit/ProcessLogic/BiblePercentage.cs

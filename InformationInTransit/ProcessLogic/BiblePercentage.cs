@@ -12,11 +12,31 @@ using InformationInTransit.DataAccess;
 2016-04-02	BiblePercentage.cs Created. You wouldn't see this thing, unless your wisdom prevade the LORD.
 2016-04-03	https://msdn.microsoft.com/en-us/library/bb531208.aspx
 2016-04-03	https://msdn.microsoft.com/en-us/library/xfhwa508.aspx
+			2023-06-17T18:05:00	Velicia ... three three ... four end.
+								Uncle Jimi walked out of a Center room eastward. Homosexual sex involved. He said Velicia Kim lives on a dignitary street. 1963-04-24 smell (Gbo enu) (We are proving difficult). (We are proving difficult). Alexander III of Macedon (Ancient Greek: ????a?d???, romanized: Alexandros; 20/21 July 356 BC – 10/11 June 323 BC), commonly known as Alexander the Great,[a] was a king of the ancient Greek kingdom of Macedon. Duration	
+								http://en.wikipedia.org/wiki/Alexander_the_Great
+								Revelation 5:9, Revelation 10, Genesis 13, Genesis 12:14
+								At 99 Ranch Market Filipinos ... Hindi wife and husband
+								I walked at the Center lane and I exited at South West.
+								Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
+								alphabetSequenceIndexPercentage 
+									41%
+								alphabetSequenceIndexPercentageScriptureReference
+									Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+			public static string Query(decimal percentage)
+			{
+				return Query(percentage, "All");
+			}
 */
 namespace InformationInTransit.ProcessLogic
 {
 	public static partial class BiblePercentage
 	{
+		public static string Query(decimal percentage)
+		{
+			return Query(percentage, "All");
+		}
+		
 		public static string Query(decimal percentage, string limit)
 		{
 			Prevade	prevade = null;

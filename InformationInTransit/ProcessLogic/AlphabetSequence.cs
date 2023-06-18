@@ -10,6 +10,8 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Data.SqlClient;
 
+using System.Text.RegularExpressions;
+
 using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 
@@ -29,6 +31,18 @@ using InformationInTransit.ProcessCode;
 	2021-05-30	Equidistant Letter Sequence (ELS). The Bible Code. Word broken into length; and determine the AlphabetSequence for each set?
 					Could I come, as final answer? Making improvement in advance.
 					https://stackoverflow.com/questions/7316258/how-to-get-only-letters-from-a-string-in-c/7316298
+	2023-06-17T18:05:00	Velicia ... three three ... four end.
+				Uncle Jimi walked out of a Center room eastward. Homosexual sex involved. He said Velicia Kim lives on a dignitary street. 1963-04-24 smell (Gbo enu) (We are proving difficult). (We are proving difficult). Alexander III of Macedon (Ancient Greek: ????a?d???, romanized: Alexandros; 20/21 July 356 BC – 10/11 June 323 BC), commonly known as Alexander the Great,[a] was a king of the ancient Greek kingdom of Macedon. Duration	
+				http://en.wikipedia.org/wiki/Alexander_the_Great
+				Revelation 5:9, Revelation 10, Genesis 13, Genesis 12:14
+				At 99 Ranch Market Filipinos ... Hindi wife and husband
+				I walked at the Center lane and I exited at South West.
+				Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
+				alphabetSequenceIndexPercentage 
+					41%
+				alphabetSequenceIndexPercentageScriptureReference
+					Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+				http://stackoverflow.com/questions/3210393/how-do-i-remove-all-non-alphanumeric-characters-from-a-string-except-dash
 */
 namespace InformationInTransit.ProcessLogic
 {
@@ -322,6 +336,31 @@ namespace InformationInTransit.ProcessLogic
                                 );
             return reference;
         }
+
+        public static string VeliciaThreeThreeFourEnd
+		(
+			string	question
+		)
+        {
+			int alphabetSequenceIndex = Id(question);
+			
+			Regex regularExpression = new Regex("[^a-zA-Z]");
+			string alphabetsOnly = regularExpression.Replace(question, "");
+			decimal alphabetSequenceIndexPercentage = 
+				( 100 * alphabetSequenceIndex ) / 
+				( alphabetsOnly.Length * 26 );
+			String alphabetSequenceIndexPercentageScriptureReference = BiblePercentage.Query
+			(
+				alphabetSequenceIndexPercentage
+			);
+			string alphabetSequenceIndexJSON = String.Format
+			(
+				VeliciaThreeThreeFourEndJsonFormat,
+				alphabetSequenceIndexPercentage,
+				alphabetSequenceIndexPercentageScriptureReference
+			);	
+            return alphabetSequenceIndexJSON;
+        }
 		
 		public static Collection<ItHadStayForIntegration> WhoSoughtTheEarlierPeopleTrial(string word)
 		{
@@ -477,7 +516,9 @@ namespace InformationInTransit.ProcessLogic
 
 		public const string	SQLStatementTwoFieldFormat = 
 			"SELECT WordEngineering.dbo.udf_TwoField({0}, {1}, {2}, {3}, '{4}');";
-			
+
+		public const string	VeliciaThreeThreeFourEndJsonFormat = "{{\"alphabetSequenceIndexPercentage\": {0}, \"alphabetSequenceIndexPercentageScriptureReference\": \"{1}\"}}";
+		
 		public const string SQLStatementYourIDOrWhatDoYouWriteYourCommonIDFormat =
 			"SELECT TOP 1 {0} FROM Bible..Scripture_View WHERE ScriptureReference LIKE '%{1}%' ORDER BY VerseIdSequence";
 			

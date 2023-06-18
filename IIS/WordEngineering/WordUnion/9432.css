@@ -67,3 +67,13 @@ tr:nth-child(even) {
 }
 
 #resultSetSQLStatement {background:black; color:lightblue;}
+
+/* 2023-06-13 http://www.buildingwebsitesfordummies.net */
+a { color: #cc0000; }
+a:link { color: #000000; }
+a:visited { color: #009900; }
+a:hover { color: #000000; background-color: #ccc }
+a:active { color: #990000; }
+
+/* 2023-06-13 http://www.buildingwebsitesfordummies.net */
+#liDisplayInline {display:inline;}

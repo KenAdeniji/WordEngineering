@@ -26,13 +26,6 @@ using InformationInTransit.ProcessLogic;
 [ScriptService]
 public class BiblePercentageWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query(decimal percentage, String limit)
