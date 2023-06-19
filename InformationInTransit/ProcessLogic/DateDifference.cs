@@ -111,7 +111,7 @@ GO
 	2017-04-03	UnixEpoch()
 */
 /*
-	2023-06-19T09:26:00	GregorianCalendarYearMonthWeekDay
+	2023-06-19T09:26:00 ... 2023-06-19T10:49:00	GregorianCalendarYearMonthWeekDay
 		http://stackoverflow.com/questions/38215171/calculate-year-month-and-day-between-two-dates-in-c-sharp
 */
 namespace InformationInTransit.ProcessLogic
