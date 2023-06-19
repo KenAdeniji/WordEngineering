@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Data.Linq;	
 using System.Text;
 
-using InformationInTransit.ProcessCode;
+using InformationInTransit.ProcessLogic;
 
 /*
 	2014-01-29 	http://english.stackexchange.com/questions/132423/word-or-phrase-for-the-beginning-or-end-of-an-event-or-period-of-time 
@@ -32,13 +32,13 @@ public partial class DateDifference : System.Web.UI.Page
 {
     protected void Submit_Click(object sender, EventArgs e)
     {
-        DateTime from;
-        DateTime to;
-        DateTime.TryParse(datedFrom.Text, out from);
-		from = from.Date;
-        DateTime.TryParse(datedTo.Text, out to);
-		to = to.Date;
-        TimeSpan dateDifference = to.Subtract(from);
+        DateTime dateFrom;
+        DateTime dateUntil;
+        DateTime.TryParse(datedFrom.Text, out dateFrom);
+		dateFrom = dateFrom.Date;
+        DateTime.TryParse(datedTo.Text, out dateUntil);
+		dateUntil = dateUntil.Date;
+        TimeSpan dateDifference = dateUntil.Subtract(dateFrom);
 		
 		if (dateDifference.Days < 0) { yearMonthWeekDay.Text = ""; return; }
 		
@@ -47,10 +47,13 @@ public partial class DateDifference : System.Web.UI.Page
 		sb.AppendFormat
 		(
 			"{0} ({1}) ({2})",
-			InformationInTransit.ProcessCode.DateDifferenceHelper.Days(dateDifference),
-			InformationInTransit.ProcessCode.DateDifferenceHelper.BiblicalCalendar(dateDifference),
-			InformationInTransit.ProcessCode.DateDifferenceHelper.YearMonthWeekDay(from, to)
-			//,InformationInTransit.ProcessCode.DateDifferenceHelper.GregorianCalendar(from, to)
+			InformationInTransit.ProcessLogic.DateDifference.Days(dateDifference),
+			InformationInTransit.ProcessLogic.DateDifference.BiblicalCalendar(dateDifference),
+			InformationInTransit.ProcessLogic.DateDifference.YearMonthWeekDay
+			(
+				dateFrom,
+				dateUntil
+			)
 		);
 		
 		yearMonthWeekDay.Text = sb.ToString();

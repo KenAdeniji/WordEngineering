@@ -110,7 +110,11 @@ GO
 /*
 	2017-04-03	UnixEpoch()
 */
-namespace InformationInTransit.ProcessLogic 
+/*
+	2023-06-19T09:26:00	GregorianCalendarYearMonthWeekDay
+		http://stackoverflow.com/questions/38215171/calculate-year-month-and-day-between-two-dates-in-c-sharp
+*/
+namespace InformationInTransit.ProcessLogic
 {
 	public static partial class DateDifference
 	{
@@ -223,7 +227,51 @@ namespace InformationInTransit.ProcessLogic
 			
 			return duration.Days;
 		}
-		
+	
+		[SqlFunction(IsDeterministic = true)]
+		public static SqlString GregorianCalendarYearMonthWeekDay(DateTime dateFrom, DateTime dateTo)
+		{
+			DateTime zeroTime = new DateTime(1, 1, 1);
+			
+			TimeSpan span = dateTo - dateFrom;
+
+			// because we start at year 1 for the Gregorian 
+			// calendar, we must subtract a year here.
+
+			int years = (zeroTime + span).Year - 1;
+			int months = (zeroTime + span).Month - 1;
+			int days = (zeroTime + span).Day;
+			
+			--days;
+			
+			int weeks = (int) days / 7;
+			days = days % 7;
+			
+			List<DaysInYears>	daysInYears = new List<DaysInYears>();
+	
+			daysInYears.Add( new DaysInYears{ Metric = "year", Value = years } );
+			daysInYears.Add( new DaysInYears{ Metric = "month", Value = months } );
+			daysInYears.Add( new DaysInYears{ Metric = "week", Value = weeks } );
+			daysInYears.Add( new DaysInYears{ Metric = "day", Value = days } );
+			
+			StringBuilder sb = new StringBuilder();
+			
+			for (int index = 0, count = daysInYears.Count; index < count; ++index)
+			{
+				if (daysInYears[index].Value == 0) { continue; }
+				sb.AppendFormat
+				(
+					"{0}{1} {2}{3}", 
+					sb.Length == 0 ? "" : ", ",
+					daysInYears[index].Value,
+					daysInYears[index].Metric,
+					daysInYears[index].Value == 1 ? "" : "s"
+				);			
+			}
+			
+			return sb.ToString();
+		}
+	
 		/*
 			2017-01-02 The Children of Donald.	https://en.wikipedia.org/wiki/Donald_Trump
 			https://en.wikipedia.org/wiki/Donald_Trump_Jr.	December 31, 1977
