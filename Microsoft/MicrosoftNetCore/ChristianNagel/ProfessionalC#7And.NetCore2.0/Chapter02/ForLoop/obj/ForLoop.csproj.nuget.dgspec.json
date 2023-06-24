@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\WordEngineering\\Microsoft\\MicrosoftNetCore\\ChristianNagel\\ProfessionalC#7And.NetCore2.0\\Chapter02\\ForLoop\\ForLoop.csproj": {}
+  },
+  "projects": {
+    "E:\\WordEngineering\\Microsoft\\MicrosoftNetCore\\ChristianNagel\\ProfessionalC#7And.NetCore2.0\\Chapter02\\ForLoop\\ForLoop.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\WordEngineering\\Microsoft\\MicrosoftNetCore\\ChristianNagel\\ProfessionalC#7And.NetCore2.0\\Chapter02\\ForLoop\\ForLoop.csproj",
+        "projectName": "ForLoop",
+        "projectPath": "E:\\WordEngineering\\Microsoft\\MicrosoftNetCore\\ChristianNagel\\ProfessionalC#7And.NetCore2.0\\Chapter02\\ForLoop\\ForLoop.csproj",
+        "packagesPath": "C:\\Users\\kadeniji\\.nuget\\packages\\",
+        "outputPath": "E:\\WordEngineering\\Microsoft\\MicrosoftNetCore\\ChristianNagel\\ProfessionalC#7And.NetCore2.0\\Chapter02\\ForLoop\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kadeniji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.3.23178.7\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
