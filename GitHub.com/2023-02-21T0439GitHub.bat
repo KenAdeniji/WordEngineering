@@ -121,4 +121,5 @@ git add IIS/WordEngineering/WordCross/IWantToClockTheJoyOut.html
 		
 git add IIS/WordEngineering/SeanMcManus_-_Sean.co.uk/
 git add IIS/WordEngineering/System/EnvironmentVariablesHelper.asmx
-git add IIS/WordEngineering/System/EnvironmentVariablesHelper.html		
+git add IIS/WordEngineering/System/EnvironmentVariablesHelper.html
+git add InformationInTransit/DesignPattern/
