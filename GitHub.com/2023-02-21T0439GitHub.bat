@@ -114,5 +114,11 @@ git add IIS/WordEngineering/WordCross/IWantToClockTheJoyOut.html
         git add   IIS/WordEngineering/Dated/DateDifference.aspx.cs
         git add   InformationInTransit/ProcessLogic/DateDifference.cs
 		
-        git add IIS/WordEngineering/WordCross/DiagnosticsHelper.asmx
-        git add Microsoft/MicrosoftNetCore/ChristianNagel/		
+		REM git mv -f  IIS/WordEngineering/WordCross/DiagnosticsHelper.asmx IIS/WordEngineering/System
+		git add IIS/WordEngineering/System/DiagnosticsHelper.asmx
+		
+        git add Microsoft/MicrosoftNetCore/ChristianNagel/
+		
+git add IIS/WordEngineering/SeanMcManus_-_Sean.co.uk/
+git add IIS/WordEngineering/System/EnvironmentVariablesHelper.asmx
+git add IIS/WordEngineering/System/EnvironmentVariablesHelper.html		
