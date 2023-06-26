@@ -123,3 +123,6 @@ git add IIS/WordEngineering/SeanMcManus_-_Sean.co.uk/
 git add IIS/WordEngineering/System/EnvironmentVariablesHelper.asmx
 git add IIS/WordEngineering/System/EnvironmentVariablesHelper.html
 git add InformationInTransit/DesignPattern/
+
+git add InformationInTransit/ProcessCode/ChildrenOfJacob.cs
+git add InformationInTransit/ProcessCode/ChildrenOfJacob.exe
