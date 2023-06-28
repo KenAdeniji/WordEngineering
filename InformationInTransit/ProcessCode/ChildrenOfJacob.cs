@@ -1,6 +1,6 @@
 /*
-		2023-06-25T23:05:00 ... 2023-06-26T00:37:00 wiley.com/en-us/Professional+C%23+7+and+NET+Core+2+0-p-9781119449263 	Professional C# 7 and .NET Core 2.0 Christian Nagel ISBN: 978-1-119-44926-3 March 2018 1440 Pages 			2023-06-22
-		2023-06-25T23:55:00 http://github.com/ProfessionalCSharp/ProfessionalCSharp7/blob/main/ObjectsAndTypes/ObjectsAndTypes/EnumSample/DaysOfWeek.cs		
+	2023-06-25T23:05:00 ... 2023-06-26T00:37:00 wiley.com/en-us/Professional+C%23+7+and+NET+Core+2+0-p-9781119449263 	Professional C# 7 and .NET Core 2.0 Christian Nagel ISBN: 978-1-119-44926-3 March 2018 1440 Pages 			2023-06-22
+	2023-06-25T23:55:00 http://github.com/ProfessionalCSharp/ProfessionalCSharp7/blob/main/ObjectsAndTypes/ObjectsAndTypes/EnumSample/DaysOfWeek.cs
 */
 using System;
 
@@ -47,7 +47,12 @@ namespace ChristianNagel
 				);
 				if (argumentParsedSuccessfully)
 				{
-					System.Console.WriteLine(childrenOfJacobArgument);
+					System.Console.WriteLine
+					(
+						"Argument {0} Enum {1}",
+						arg,
+						childrenOfJacobArgument
+					);
 				}	
 			}	
 			foreach(var childrenOfJacob in Enum.GetNames(typeof(ChildrenOfJacob)))
