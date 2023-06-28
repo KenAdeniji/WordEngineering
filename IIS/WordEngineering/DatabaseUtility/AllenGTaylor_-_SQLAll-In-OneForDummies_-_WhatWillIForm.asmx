@@ -27,9 +27,31 @@ public class WhatWillIFormWebService : System.Web.Services.WebService
 {
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String QueryColumns
+	(
+		String	connectionString,
+		String 	tableName
+	)
+    {
+		return
+		(
+			JsonConvert.SerializeObject
+			(
+				InformationInTransit.DatabaseUtility.WhatWillIForm.QueryColumns
+				(
+					connectionString,
+					tableName
+				),	
+				Formatting.Indented
+			)
+		);
+    }
+	
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String QueryTables
 	(
-		string	connectionString
+		String	connectionString
 	)
     {
 		return
@@ -43,6 +65,6 @@ public class WhatWillIFormWebService : System.Web.Services.WebService
 				Formatting.Indented
 			)
 		);
-    }
+    }	
 }
 

@@ -89,6 +89,8 @@
 		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
 	2022-08-24	scriptLiteral9432.renderDataTable(dataTable, "resultSet"); Added rowColumn() parameter argument.
 	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil. DontFeelLeftAlone.html.
+	2023-06-27T19:57:00 addTableRowClickHandlers()
+		http://stackoverflow.com/questions/1207939/adding-an-onclick-event-to-a-table-row/1207963#1207963
 */
 
 var scriptLiteral9432 =
@@ -270,6 +272,30 @@ var scriptLiteral9432 =
 			url = "http://" + url;
 		}
 		return url;
+	},
+
+	addTableRowClickHandlers: function
+	(
+		tableID,
+		columnID,
+		rowClickHandler
+	)
+	{
+		var rows = tableID.getElementsByTagName("tr");
+		for (rowIndex = 0; rowIndex < rows.length; rowIndex++)
+		{
+			var currentRow = tableID.rows[rowIndex];
+			var createClickHandler = function(row) 
+			{
+				return function() 
+				{
+					var cell = row.getElementsByTagName("td")[columnID];
+					var cellData = cell.innerHTML;
+					rowClickHandler(cellData);	
+				}	
+			};
+			currentRow.onclick = createClickHandler(currentRow);			
+		}	
 	},
 	
 	alphabetSequenceIndex: function(word)
