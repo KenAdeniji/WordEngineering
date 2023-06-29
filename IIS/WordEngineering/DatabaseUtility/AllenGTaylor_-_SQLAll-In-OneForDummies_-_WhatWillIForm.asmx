@@ -24,6 +24,11 @@ using InformationInTransit.DataAccess;
 	public const String SQLStatementColumnsFormat = 
 		@"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{0}' ORDER BY COLUMN_NAME";
 	public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
+	2023-06-28T17:37:00 ... 2023-06-28T22:19:00
+		QuerySchema()
+		QueryTables
+		public const String SQLStatementTablesFormat = @"SELECT * FROM INFORMATION_SCHEMA.{0} WHERE TABLE_NAME = '{1}'";
+		public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
 */
 ///<summary>
 ///	2023-06-27T16:06:00 Created.
