@@ -12,10 +12,11 @@ using System.Web.Script.Services;
 
 using System.Data;
 using System.Data.Odbc;
+using System.Data.SqlClient;
 
 using Newtonsoft.Json;
 
-using InformationInTransit.DatabaseUtility;
+using InformationInTransit.DataAccess;
 
 ///<summary>
 ///	2023-06-27T16:06:00 Created.
@@ -37,11 +38,18 @@ public class WhatWillIFormWebService : System.Web.Services.WebService
 		(
 			JsonConvert.SerializeObject
 			(
-				InformationInTransit.DatabaseUtility.WhatWillIForm.QueryColumns
+				(DataTable) DataCommand.DatabaseCommand
 				(
+					String.Format
+					(
+						SQLStatementColumnsFormat,
+						tableName
+					),	
 					connectionString,
-					tableName
-				),	
+					CommandType.Text,
+					DataCommand.ResultType.DataTable,
+					null
+				),
 				Formatting.Indented
 			)
 		);
@@ -58,13 +66,21 @@ public class WhatWillIFormWebService : System.Web.Services.WebService
 		(
 			JsonConvert.SerializeObject
 			(
-				InformationInTransit.DatabaseUtility.WhatWillIForm.QueryTables
+				(DataTable) DataCommand.DatabaseCommand
 				(
-					connectionString
-				),	
+					SQLStatementTables,
+					connectionString,
+					CommandType.Text,
+					DataCommand.ResultType.DataTable,
+					null
+				),
 				Formatting.Indented
 			)
 		);
     }	
+	
+	public const String SQLStatementColumnsFormat = 
+		@"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{0}' ORDER BY COLUMN_NAME";
+	public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
 }
 
