@@ -2,6 +2,7 @@
 <html>
 	<!--
 		2023-06-27T16:55:00	Created.
+		2023-06-28T21:44:00	http://stackoverflow.com/questions/19159075/how-to-append-div-in-existing-div
 	-->
 	<head>
 		<title>AllenGTaylor_-_SQLAll-In-OneForDummies_-_WhatWillIForm</title>
@@ -45,9 +46,8 @@
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
-			<div id="resultSetTables"> </div>
-			<div id="resultSetColumns"> </div>
-			<div id="resultSetFeedback"> </div>
+			<div id="resultSetMaster"> </div>
+			<div id="resultSetDetails"> </div>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
@@ -58,7 +58,8 @@
 			
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
-			const	resultSetTablesElement = document.getElementById("resultSetTables");
+			const	resultSetDetailsElement = document.getElementById("resultSetDetails");
+			const	resultSetMasterElement = document.getElementById("resultSetMaster");
 			
 			function pageLoad()
 			{
@@ -73,7 +74,7 @@
 							connectionStringElement.value = connectionStringValue;
 						}	
 						
-						querySubmit();
+						queryMaster();
 						isPostBack = true;
 					});
 				}
@@ -83,7 +84,33 @@
 				}
  			}
 
-			function querySubmit()
+			function queryDetails
+			(
+				tableName
+			)
+			{
+				resultSetDetailsElement.innerHTML = "";
+				for
+				(
+					var detailIndex = 0, detailLength = DetailDivs.length;
+					detailIndex < detailLength;
+					++detailIndex
+				)	
+				{
+					var childDiv = document.createElement("div");
+					childDiv.id = "resultSetDetails" + String(detailIndex);
+					resultSetDetailsElement.appendChild(childDiv);
+					
+					querySchema
+					(
+						DetailDivs[detailIndex],
+						tableName,
+						childDiv.id
+					);
+				}
+			}
+			
+			function queryMaster()
 			{
 				var request = {};			
 			
@@ -103,13 +130,13 @@
 						scriptLiteral9432.renderDataTable
 						(
 							JSON.parse(data.d),
-							"resultSetTables"
+							"resultSetMaster"
 						);
 						scriptLiteral9432.addTableRowClickHandlers
 						(
-							resultSetTablesElement.getElementsByTagName("table")[0],
+							resultSetMasterElement.getElementsByTagName("table")[0],
 							2,
-							querySubmitColumns
+							queryDetails
 						);
 					},
 					error: function(xhr)
@@ -121,14 +148,17 @@
 				});
 			}
 
-			function querySubmitColumns
+			function querySchema
 			(
-				tableName
+				schemaTableName,
+				tableName,
+				resultSetName
 			)
 			{
 				var request = {};			
 			
 				request["connectionString"] = connectionStringElement.value;
+				request["schemaTableName"] = schemaTableName;
 				request["tableName"] = tableName;
 
 				var requestJson = JSON.stringify(request);
@@ -137,7 +167,7 @@
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/DatabaseUtility/AllenGTaylor_-_SQLAll-In-OneForDummies_-_WhatWillIForm.asmx/QueryColumns",
+					url: "/WordEngineering/DatabaseUtility/AllenGTaylor_-_SQLAll-In-OneForDummies_-_WhatWillIForm.asmx/QuerySchema",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
@@ -145,28 +175,35 @@
 						scriptLiteral9432.renderDataTable
 						(
 							JSON.parse(data.d),
-							"resultSetColumns"
+							resultSetName
 						);
 					},
 					error: function(xhr)
 					{ 
-						resultSetColumnsElement.innerHTML =
+						document.getElementById(resultSetName).innerHTML =
 							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
 							;							
 					} 
 				});
 			}
 
-			submitQueryElement.addEventListener("click", querySubmit, false);
+			submitQueryElement.addEventListener("click", queryMaster, false);
 			
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
 				if (e.keyCode === 13) {  //enter key code
-					querySubmit();
+					queryMaster();
 				}
 			}
 
 			window.addEventListener("load", pageLoad, false);
+			
+			const DetailDivs =
+			[
+				"Columns",
+				"Table_Constraints"
+				//"Referential_Constraints",
+			];
 	</script>
 </body>
 </html>
