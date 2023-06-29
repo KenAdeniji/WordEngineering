@@ -29,6 +29,9 @@ using InformationInTransit.DataAccess;
 		QueryTables
 		public const String SQLStatementTablesFormat = @"SELECT * FROM INFORMATION_SCHEMA.{0} WHERE TABLE_NAME = '{1}'";
 		public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
+	2023-06-29T12:18:00 ... 2023-06-29T15:17:00
+		Foreign keys
+		SQLStatementCustomFormat
 */
 ///<summary>
 ///	2023-06-27T16:06:00 Created.
@@ -38,6 +41,35 @@ using InformationInTransit.DataAccess;
 [ScriptService]
 public class WhatWillIFormWebService : System.Web.Services.WebService
 {
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String QueryCustom
+	(
+		String	connectionString,
+		String 	tableName
+	)
+    {
+		return
+		(
+			JsonConvert.SerializeObject
+			(
+				(DataSet) DataCommand.DatabaseCommand
+				(
+					String.Format
+					(
+						SQLStatementCustomFormat,
+						tableName
+					),	
+					connectionString,
+					CommandType.Text,
+					DataCommand.ResultType.DataSet,
+					null
+				),
+				Formatting.Indented
+			)
+		);
+    }	
+
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String QuerySchema
@@ -95,5 +127,23 @@ public class WhatWillIFormWebService : System.Web.Services.WebService
 
 	public const String SQLStatementTablesFormat = @"SELECT * FROM INFORMATION_SCHEMA.{0} WHERE TABLE_NAME = '{1}'";
 	public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
+
+	public const String SQLStatementCustomFormat = 
+@"
+SELECT
+	OBJECT_NAME(sys.objects.object_id) AS ForeignKeyName,
+	OBJECT_NAME(sys.foreign_key_columns.parent_object_id) AS ParentTableName,
+	ParentColumn.name AS ParentColumnName,
+	OBJECT_NAME(sys.foreign_key_columns.referenced_object_id) AS ReferencedTableName,
+	ReferencedColumn.name AS ReferencedColumnName
+FROM sys.objects
+FULL OUTER JOIN sys.foreign_keys ON sys.objects.object_id = sys.foreign_keys.parent_object_id
+FULL OUTER JOIN sys.foreign_key_columns ON sys.foreign_keys.object_id = sys.foreign_key_columns.parent_object_id
+FULL OUTER JOIN sys.columns AS ParentColumn ON sys.foreign_key_columns.parent_object_id = ParentColumn.object_id AND sys.foreign_key_columns.parent_column_id = ParentColumn.column_id
+FULL OUTER JOIN sys.columns AS ReferencedColumn ON sys.foreign_key_columns.parent_object_id = ReferencedColumn.object_id AND sys.foreign_key_columns.parent_column_id = ReferencedColumn.column_id
+WHERE OBJECT_NAME(sys.foreign_key_columns.parent_object_id) = '{0}'
+ORDER BY ParentColumn.object_id, ParentColumn.column_id
+";
+
 }
 

@@ -10,6 +10,9 @@
 			queryMaster()
 			queryDetails()
 			querySchema()
+		2023-06-29T12:18:00 ... 2023-06-29T15:17:00
+			Foreign keys
+			SQLStatementCustomFormat
 	-->
 	<head>
 		<title>AllenGTaylor_-_SQLAll-In-OneForDummies_-_WhatWillIForm</title>
@@ -55,6 +58,8 @@
 			</table>
 			<div id="resultSetMaster"> </div>
 			<div id="resultSetDetails"> </div>
+			<div id="resultSetCustom"> </div>
+			
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
@@ -65,6 +70,7 @@
 			
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
+			const	resultSetCustomElement = document.getElementById("resultSetCustom");
 			const	resultSetDetailsElement = document.getElementById("resultSetDetails");
 			const	resultSetMasterElement = document.getElementById("resultSetMaster");
 			
@@ -91,6 +97,42 @@
 				}
  			}
 
+			function queryCustom
+			(
+				tableName
+			)
+			{
+				var request = {};			
+			
+				request["connectionString"] = connectionStringElement.value;
+				request["tableName"] = tableName;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/DatabaseUtility/AllenGTaylor_-_SQLAll-In-OneForDummies_-_WhatWillIForm.asmx/QueryCustom",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataSet
+						(
+							JSON.parse(data.d),
+							"resultSetCustom"
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetCustomElement.innerHTML =
+							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
+							;							
+					} 
+				});
+			}
+
 			function queryDetails
 			(
 				tableName
@@ -115,6 +157,8 @@
 						childDiv.id
 					);
 				}
+				
+				queryCustom(tableName);
 			}
 			
 			function queryMaster()
@@ -148,7 +192,7 @@
 					},
 					error: function(xhr)
 					{ 
-						resultSetTablesElement.innerHTML =
+						resultSetMasterElement.innerHTML =
 							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
 							;							
 					} 
