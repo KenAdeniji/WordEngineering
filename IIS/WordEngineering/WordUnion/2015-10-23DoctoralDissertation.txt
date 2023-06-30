@@ -65,6 +65,9 @@ Relational Model
 View
 
 A view is a virtual table that does not reside permanently on a physical storage. The MyURI view is a union of all the URI tables. The ViewContactSet view is a join of the columns in the Contact and contact details tables. The HisWord_view view appends computed columns to the HisWord table.
+Users
+
+The general operating system and compact database are the 2 types of authentication.
 " (Allen G. Taylor).
 The Bible Database
 The Scripture Table
