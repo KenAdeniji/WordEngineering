@@ -61,6 +61,10 @@ The contact entity is strong because it can exist on its own. The weak contact d
 ID-dependent entities
 
 The weak contact details, primary keys include their ContactID.
+Relational Model
+View
+
+A view is a virtual table that does not reside permanently on a physical storage. The MyURI view is a union of all the URI tables. The ViewContactSet view is a join of the columns in the Contact and contact details tables. The HisWord_view view appends computed columns to the HisWord table.
 " (Allen G. Taylor).
 The Bible Database
 The Scripture Table
