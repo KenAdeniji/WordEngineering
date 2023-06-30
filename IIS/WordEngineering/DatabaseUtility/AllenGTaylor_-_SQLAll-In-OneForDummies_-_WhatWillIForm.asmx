@@ -29,9 +29,9 @@ using InformationInTransit.DataAccess;
 		QueryTables
 		public const String SQLStatementTablesFormat = @"SELECT * FROM INFORMATION_SCHEMA.{0} WHERE TABLE_NAME = '{1}'";
 		public const String SQLStatementTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME";
-	2023-06-29T12:18:00 ... 2023-06-29T15:17:00
-		Foreign keys
+	2023-06-29T12:18:00 ... 2023-06-29T15:30:00
 		SQLStatementCustomFormat
+			Foreign keys
 */
 ///<summary>
 ///	2023-06-27T16:06:00 Created.
