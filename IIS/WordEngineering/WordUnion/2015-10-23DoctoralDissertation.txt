@@ -45,6 +45,22 @@ Previously, the author thought of the word as unique.
 Relationships
 
 In most cases, surrogate keys such as ContactID, HisWordID are pointers to associations.
+Degree-Two Relationships
+
+Normalization results in a master Contact table with multiple details. There is a one-to-many (1:N) relationship.
+Cardinality
+Maximum cardinality
+
+This is the largest number of possible occurrences on one side of a relationship. There can be only one contact for each contact detail.
+Minimum cardinality
+
+There may be no contact details for a contact.
+Strength of Entity
+
+The contact entity is strong because it can exist on its own. The weak contact details are existence-dependent on the contact entity.
+ID-dependent entities
+
+The weak contact details, primary keys include their ContactID.
 " (Allen G. Taylor).
 The Bible Database
 The Scripture Table

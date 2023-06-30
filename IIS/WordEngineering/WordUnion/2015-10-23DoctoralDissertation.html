@@ -217,7 +217,7 @@
 				
 			<h4 datetime="2023-06-29T16:48:00" id="EntityRelationshipModel">Entity-Relationship (ER) Model</h4>
 			
-			<h5 datetime="2023-06-29T16:49:00" id="Entities">Entities</h5>
+			<h5 datetime="2023-06-29T16:49:00" id="EntityRelationshipModel_Entities">Entities</h5>
 			
 			<p datetime="2023-06-29T16:52:00">
 				A relational database identifies an entity as a table.
@@ -226,24 +226,59 @@
 				The scripture table serves as input for scripture reference, Bible word search, and gauge for AlphabetSequence.
 			</p>
 
-			<h5 datetime="2023-06-29T17:13:00" id="Attributes">Attributes</h5>
+			<h5 datetime="2023-06-29T17:13:00" id="EntityRelationshipModel_Attributes">Attributes</h5>
 			
 			<p datetime="2023-06-29T17:14:00">
 				The Holy Spirit informed the Word.
 			</p>
 
-			<h5 datetime="2023-06-29T17:27:00" id="Identifiers">Identifiers</h5>
+			<h5 datetime="2023-06-29T17:27:00" id="EntityRelationshipModel_Identifiers">Identifiers</h5>
 			
 			<p datetime="2023-06-29T17:27:00">
 				Previously, the author thought of the word as unique.
 			</p>
 
-			<h5 datetime="2023-06-29T17:37:00" id="Relationships">Relationships</h5>
+			<h5 datetime="2023-06-29T17:37:00" id="EntityRelationshipModel_Relationships">Relationships</h5>
 			
 			<p datetime="2023-06-29T17:37:00">
 				In most cases, surrogate keys such as ContactID, HisWordID are pointers to associations.
 			</p>
-				
+
+			<h6 datetime="2023-06-29T18:38:00" id="EntityRelationshipModel_DegreeTwoRelationships">Degree-Two Relationships</h6>
+			
+			<p datetime="2023-06-29T18:38:00">
+				Normalization results in a master Contact table with multiple details.
+				There is a one-to-many (1:N) relationship.
+			</p>
+
+			<h5 datetime="2023-06-29T19:04:00" id="EntityRelationshipModel_Cardinality">Cardinality</h5>
+			
+			<h6 datetime="2023-06-29T19:08:00" id="EntityRelationshipModel_MaximumCardinality">Maximum cardinality</h6>
+			
+			<p datetime="2023-06-29T19:12:00">
+				This is the largest number of possible occurrences on one side of a relationship.
+				There can be only one contact for each contact detail.
+			</p>
+			
+			<h6 datetime="2023-06-29T19:18:00" id="EntityRelationshipModel_MinimumCardinality">Minimum cardinality</h6>
+			
+			<p datetime="2023-06-29T19:18:00">
+				There may be no contact details for a contact.
+			</p>
+
+			<h5 datetime="2023-06-29T19:33:00" id="EntityRelationshipModel_StrengthOfEntity">Strength of Entity</h5>
+			
+			<p datetime="2023-06-29T19:33:00">
+				The contact entity is strong because it can exist on its own.
+				The weak contact details are existence-dependent on the contact entity.
+			</p>
+
+			<h6 datetime="2023-06-29T19:43:00" id="EntityRelationshipModel_IDDependentEntities">ID-dependent entities</h6>
+			
+			<p datetime="2023-06-29T19:43:00">
+				The weak contact details, primary keys include their ContactID.
+			</p>
+			
 			</q>
 			(Allen G. Taylor).
 
