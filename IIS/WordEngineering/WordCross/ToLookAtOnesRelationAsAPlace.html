@@ -2,6 +2,13 @@
 <html>
 	<!--
 		2023-07-02T21:15:00 ... 2023-07-02T21:22:00	Created.
+		2023-07-03T06:22:00	Deprecated. No input. Non-interactive.
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
 	-->
 	<head>
 		<title>To look at one's relation as a place.</title>
@@ -66,13 +73,6 @@
 							;							
 					} 
 				});
-			}
-
-			var body = document.getElementsByTagName("body")[0];
-			body.onkeydown = function (e) {
-				if (e.keyCode === 13) {  //enter key code
-					querySubmit();
-				}
 			}
 
 			window.addEventListener("load", pageLoad, false);

@@ -139,3 +139,5 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2023-06-28T1638LieutenantP
 
 git add IIS/WordEngineering/WordCross/ToLookAtOnesRelationAsAPlace.asmx
 git add IIS/WordEngineering/WordCross/ToLookAtOnesRelationAsAPlace.html
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2023-07-07NorikoYoshida_-_APersonalLetterForYou.txt

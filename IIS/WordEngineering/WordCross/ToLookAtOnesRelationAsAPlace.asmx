@@ -22,6 +22,67 @@ using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessLogic;
 using InformationInTransit.UserInterface;
 
+/*	2023-07-02
+	public const String QueryStatement =
+	@"
+		SELECT 
+			'Testament' AS Division,
+			COUNT(DISTINCT Testament) AS Count,
+			1.0 / COUNT(DISTINCT Testament) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Book' AS Division,
+			COUNT(DISTINCT BookID) AS Count,
+			1.0 / COUNT(DISTINCT BookID) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Chapter' AS Division,
+			COUNT(DISTINCT ChapterIDSequence) AS Count,
+			1.0 / COUNT(DISTINCT ChapterIDSequence) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Verse' AS Division,
+			COUNT(DISTINCT VerseIDSequence) AS Count,
+			1.0 / COUNT(DISTINCT VerseIDSequence) AS Ratio
+		FROM
+			Bible..Scripture_View
+	";
+*/
+/*	2023-07-03T05:39:00 re-worked the last 2 union select.
+		SELECT 
+			'Testament' AS Division,
+			COUNT(DISTINCT Testament) AS Count,
+			1.0 / COUNT(DISTINCT Testament) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Book' AS Division,
+			COUNT(DISTINCT BookID) AS Count,
+			1.0 / COUNT(DISTINCT BookID) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Chapter' AS Division,
+			COUNT(DISTINCT ChapterIDSequence) AS Count,
+			1.0 / COUNT(DISTINCT ChapterIDSequence) AS Ratio
+		FROM
+			Bible..Scripture_View
+		UNION
+		SELECT 
+			'Verse' AS Division,
+			COUNT(*) AS Count,
+			1.0 / COUNT(*) AS Ratio
+		FROM
+			Bible..Scripture_View
+*/	
 ///<summary>
 ///	2023-07-02T20:50:00 ... 2023-07-02T21:12:00 Created. To look at one's relation as a place. 
 ///	Bernadette. Lucy dog. South Bay Community Church.
@@ -73,8 +134,8 @@ public class ToLookAtOnesRelationAsAPlaceWebService : System.Web.Services.WebSer
 		UNION
 		SELECT 
 			'Verse' AS Division,
-			COUNT(DISTINCT VerseIDSequence) AS Count,
-			1.0 / COUNT(DISTINCT VerseIDSequence) AS Ratio
+			COUNT(*) AS Count,
+			1.0 / COUNT(*) AS Ratio
 		FROM
 			Bible..Scripture_View
 	";
