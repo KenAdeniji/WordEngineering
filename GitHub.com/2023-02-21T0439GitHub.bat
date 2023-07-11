@@ -143,3 +143,11 @@ git add IIS/WordEngineering/WordCross/ToLookAtOnesRelationAsAPlace.html
 git add IIS/WordEngineering/2018-05-03Correspondence/2023-07-07NorikoYoshida_-_APersonalLetterForYou.txt
 
 git add Java/DougLowe/
+
+git add Java/DougLowe/JavaAll-In-OneForDummies/BibleBooksCountNameOfTheLastBook.java
+
+git add Java/DougLowe/JavaAll-In-OneForDummies/EnumMajorProphet$MajorProphet.class
+git add Java/DougLowe/JavaAll-In-OneForDummies/EnumMajorProphet.class
+git add Java/DougLowe/JavaAll-In-OneForDummies/EnumMajorProphet.java
+git add Java/DougLowe/JavaAll-In-OneForDummies/JOptionPaneTestamentsCount.class
+git add Java/DougLowe/JavaAll-In-OneForDummies/JOptionPaneTestamentsCount.java
