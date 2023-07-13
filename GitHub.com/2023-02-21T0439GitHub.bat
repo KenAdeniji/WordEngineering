@@ -151,3 +151,9 @@ git add Java/DougLowe/JavaAll-In-OneForDummies/EnumMajorProphet.class
 git add Java/DougLowe/JavaAll-In-OneForDummies/EnumMajorProphet.java
 git add Java/DougLowe/JavaAll-In-OneForDummies/JOptionPaneTestamentsCount.class
 git add Java/DougLowe/JavaAll-In-OneForDummies/JOptionPaneTestamentsCount.java
+
+git add         IIS/WordEngineering/2018-05-03Correspondence/2023-07-12T1800BobJoss_-_HowDoYouJumpIntoAPlace.txt
+git add         Java/DougLowe/JavaAll-In-OneForDummies/BibleBook.class
+git add         Java/DougLowe/JavaAll-In-OneForDummies/BibleBook.java
+git add         Java/DougLowe/JavaAll-In-OneForDummies/SingletonPatternBible.class
+git add         Java/DougLowe/JavaAll-In-OneForDummies/SingletonPatternBible.java
