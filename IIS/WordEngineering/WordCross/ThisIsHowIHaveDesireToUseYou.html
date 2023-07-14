@@ -28,10 +28,10 @@ Video Tutorials
 There are 20 videos per book, comprising between 4 and 5 hours of additional tutorials based around the examples in the books. Altogether there are 80 videos containing almost 20 hours of material.
 	-->
 	<head>
-		<title>Mo mo pe Harry a mo so pe, you do well.</title>
+		<title>This is how I have desire to use you.</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Mo mo pe Harry a mo so pe, you do well."/>
-		<meta name="keywords" content="word, soundex"/>
+		<meta name="description" content="This is how I have desire to use you."/>
+		<meta name="keywords" content="Word, Soundex"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -40,8 +40,8 @@ There are 20 videos per book, comprising between 4 and 5 hours of additional tut
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="word">word:</label></td>
-					<td><input id="word" autofocus value="September twenty two" required/></td>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" required autofocus/></td>
 				</tr>	
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -71,7 +71,7 @@ There are 20 videos per book, comprising between 4 and 5 hours of additional tut
 						var wordParam = urlParams.get("word");
 						if (wordParam)
 						{
-							wordElement = wordParam;
+							wordElement.value = wordParam;
 						}	
 					
 						querySubmit();
@@ -86,6 +86,12 @@ There are 20 videos per book, comprising between 4 and 5 hours of additional tut
 
 			function querySubmit()
 			{
+				if (wordElement.value == "")
+				{
+					resultTableElement.innerHTML = "";
+					return;
+				}
+				
 				var request = {};
 		
 				request["word"] = wordElement.value;

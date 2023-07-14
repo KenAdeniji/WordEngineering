@@ -111,14 +111,14 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': OpenSS
 							);
 					}	
 				}
-				dataRow["RankImportance"] =
+				dataRow["Rank"] =
 					rankImportance /
 					hisWordWordLength
 					;
 			}	
 
 			Dictionary<string, string> dictionarySort = new Dictionary<string, string>();
-			dictionarySort.Add("RankImportance", "desc");
+			dictionarySort.Add("Rank", "desc");
 			dictionarySort.Add("HisWordID", "desc");
 			
 			resultTable.DefaultView.Sort = 
@@ -131,11 +131,10 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': OpenSS
         public const string QueryStatement = 
 		@"
 			SELECT
-				0.0 RankImportance,
+				0.0 Rank,
 				HisWordID,
 				Dated,
-				Word,
-				Commentary
+				Word
 			FROM 	WordEngineering..HisWord				
 			WHERE	Word IS NOT NULL
 			AND		TRIM(Word) <> ''
