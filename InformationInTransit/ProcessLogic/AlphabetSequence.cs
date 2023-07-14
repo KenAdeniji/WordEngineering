@@ -62,6 +62,29 @@ using InformationInTransit.ProcessCode;
 			question = question.Replace(" ", "");
 			question = question.Replace("\"", "");
 			question = question.Replace("'", "");
+
+	2023-07-13T15:59:00 ... 2023-07-1316:16:00
+		http://www.blackwasp.co.uk/soundex.aspx
+		http://www.blackwasp.co.uk/soundex_2.aspx
+
+	2023-07-14T03:27:00 ... 2023-07-14T03:37:00
+        public static string VeliciaThreeThreeFourEnd
+		(
+			string	question
+		)
+        {
+			int alphabetSequenceIndex = Id(question);
+		
+			StringBuilder sb = new StringBuilder(question);
+		
+			sb.Replace("?", "");
+			sb.Replace(".", "");
+			sb.Replace(",", "");
+			sb.Replace(";", "");
+			sb.Replace(" ", "");
+			sb.Replace("\"", "");
+			sb.Replace("'", "");
+			
 */
 namespace InformationInTransit.ProcessLogic
 {
@@ -363,13 +386,17 @@ namespace InformationInTransit.ProcessLogic
         {
 			int alphabetSequenceIndex = Id(question);
 		
-			question = question.Replace("?", "");
-			question = question.Replace(".", "");
-			question = question.Replace(",", "");
-			question = question.Replace(";", "");
-			question = question.Replace(" ", "");
-			question = question.Replace("\"", "");
-			question = question.Replace("'", "");
+			StringBuilder sb = new StringBuilder(question);
+		
+			sb.Replace("?", "");
+			sb.Replace(".", "");
+			sb.Replace(",", "");
+			sb.Replace(";", "");
+			sb.Replace(" ", "");
+			sb.Replace("\"", "");
+			sb.Replace("'", "");
+			
+			question = sb.ToString();
 			
 			Regex regularExpression = new Regex("[^a-zA-Z]");
 			string alphabetsOnly = regularExpression.Replace(question, "");
