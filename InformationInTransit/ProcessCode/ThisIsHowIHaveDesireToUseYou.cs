@@ -39,7 +39,7 @@ namespace InformationInTransit.ProcessCode
 			http://www.blackwasp.co.uk/soundex_2.aspx
 		2023-07-13T16:26:00 0.0 RankImportance	
 		2023-07-13T20:43:00 http://stackoverflow.com/questions/31077216/how-to-sort-datatable-with-multi-column-using-linq/31077345#31077345
-		2023-07-13T20:50:00 ... 2023-07-13T21:11:00 http://www.20lessons.com/
+		2023-07-13T20:50:00 ... 2023-07-13T21:18:00 http://www.20lessons.com/
 20 Lessons Book Series
 By Robin Nixon
 
@@ -63,6 +63,10 @@ Buy from Amazon and save up to 30%!
 Video Tutorials
 
 There are 20 videos per book, comprising between 4 and 5 hours of additional tutorials based around the examples in the books. Altogether there are 80 videos containing almost 20 hours of material.
+	2023-07-13T20:50:00 ... 2023-07-13T21:18:00 GitHub.com
+	2023-07-13T21:22:00 ... 2023-07-13T21:23:00 GitHub.com	
+E:\WordEngineering>git push
+fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': OpenSSL SSL_connect: Connection was reset in connection to github.com:443	
 	*/
 	public class ThisIsHowIHaveDesireToUseYou
 	{
