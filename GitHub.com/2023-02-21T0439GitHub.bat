@@ -157,3 +157,9 @@ git add         Java/DougLowe/JavaAll-In-OneForDummies/BibleBook.class
 git add         Java/DougLowe/JavaAll-In-OneForDummies/BibleBook.java
 git add         Java/DougLowe/JavaAll-In-OneForDummies/SingletonPatternBible.class
 git add         Java/DougLowe/JavaAll-In-OneForDummies/SingletonPatternBible.java
+
+git add        IIS/WordEngineering/WordCross/ThisIsHowIHaveDesireToUseYou.asmx
+git add        IIS/WordEngineering/WordCross/ThisIsHowIHaveDesireToUseYou.html
+git add        InformationInTransit/ProcessCode/SoundexUtility.cs
+git add        InformationInTransit/ProcessCode/ThisIsHowIHaveDesireToUseYou.cs
+git add        InformationInTransit/ProcessCode/ThisIsHowIHaveDesireToUseYouBuild.bat
