@@ -84,7 +84,6 @@ using InformationInTransit.ProcessCode;
 			sb.Replace(" ", "");
 			sb.Replace("\"", "");
 			sb.Replace("'", "");
-			
 */
 namespace InformationInTransit.ProcessLogic
 {
