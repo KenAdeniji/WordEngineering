@@ -163,3 +163,8 @@ git add        IIS/WordEngineering/WordCross/ThisIsHowIHaveDesireToUseYou.html
 git add        InformationInTransit/ProcessCode/SoundexUtility.cs
 git add        InformationInTransit/ProcessCode/ThisIsHowIHaveDesireToUseYou.cs
 git add        InformationInTransit/ProcessCode/ThisIsHowIHaveDesireToUseYouBuild.bat
+
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Man.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Man.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Prophet.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Prophet.java
