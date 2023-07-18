@@ -168,3 +168,8 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/Man.class
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Man.java
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Prophet.class
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Prophet.java
+
+git add		   InformationInTransit/bin/Debug/InformationInTransit.dll
+
+git add        IIS/WordEngineering/WordCross/HowWillTheDifferentStoryBeSaid.asmx
+git add        IIS/WordEngineering/WordCross/HowWillTheDifferentStoryBeSaid.html
