@@ -61,7 +61,7 @@ SELECT
 	BookID,
 	BookTitle,
 	(
-		SELECT COUNT(*) Said
+		SELECT COUNT(*)
 		FROM Bible..Scripture_View ScriptureGroup
 		WHERE ScriptureAll.BookID = ScriptureGroup.BookID 
 		AND	
@@ -75,13 +75,13 @@ SELECT
 		)
 	) Said,
 	(
-		SELECT COUNT(*) Prophecy
+		SELECT COUNT(*)
 		FROM Bible..Scripture_View ScriptureGroup
 		WHERE ScriptureAll.BookID = ScriptureGroup.BookID 
 		AND	ScriptureGroup.{0} LIKE '%Prophe%'
 	) Prophecy,
 	(
-		SELECT COUNT(*) Pray
+		SELECT COUNT(*)
 		FROM Bible..Scripture_View ScriptureGroup
 		WHERE ScriptureAll.BookID = ScriptureGroup.BookID 
 		AND	ScriptureGroup.{0} LIKE '%Pray%'
