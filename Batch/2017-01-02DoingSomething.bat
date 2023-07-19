@@ -358,19 +358,6 @@ PaulAngone.com 	Millennial generation 			2018-06-30 	16341
 2023-07-10T05:23:00
 Since 2023-07-08T23:30:00 I have not been able to login to adriel nor copy files using WinSCP.
 
-2023-07-11T11:42:00 ... 2023-07-11T11:51:00
-Google Drive Almost out of storage.
-If you run out, you can't save to Drive, send and receive email on Gmail, or back up to Google Photos.
-
-
-156154	2023-07-11 09:44:13.823	Love. Love. That is what it is.	07:04 Urine. 10:34 Urine as I apply body care lotion, wore clothes and shoes. 10:57 Urine, Yi Fang Taiwan Fruit Tea. Charter Square. 34133 Fremont Boulevard  Fremont  California (CA)  94555. 12:01 Teeth. 2023-07-11T11:42:00 ... 2023-07-11T11:51:00
-Google Drive Almost out of storage.
- If you run out, you can't save to Drive, send and receive email on Gmail, or back up to Google Photos.
- 12:04 Dizzy sleepy (O show ju) (We are proving difficult). 13:52 Urine. 14:24 Garage heater noise. 14:56 ... 14:57  Source: http://www.dummies.com/go/javaaiofd7e
- Learning Made Easy 7th Edition Java All-In-One for dummies A Wiley brand 8 books in one! Doug Lowe Wrote his first program on a computer with than 1K of memory
- Date created: 2023-07-11T16:16:00 ... 2023-07-11T16:41:00
- 2023-07-11T16:41:00 http://stackoverflow.com/questions/1104975/a-for-loop-to-iterate-over-an-enum-in-java
- pages 254 ... 255 dizzy sleepy.	NULL	NULL	NULL	NULL	NULL	NULL	NULL
-2023-07-11T14:56:00 ... 2023-07-11T11:15:04 Microsoft hotmail.com compose e-mail.
+23:45 2017-01-02DoingSomething.bat corrupt batch file archive directories folders and databases. 05:12 Dizzy sleepy.
 
 :Exit
