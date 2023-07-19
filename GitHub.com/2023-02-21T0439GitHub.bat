@@ -173,3 +173,5 @@ git add		   InformationInTransit/bin/Debug/InformationInTransit.dll
 
 git add        IIS/WordEngineering/WordCross/HowWillTheDifferentStoryBeSaid.asmx
 git add        IIS/WordEngineering/WordCross/HowWillTheDifferentStoryBeSaid.html
+
+git add		   Java/DougLowe/JavaAll-In-OneForDummies/2023-07-18T2110ManBuild.bat

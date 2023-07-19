@@ -3,11 +3,12 @@
 	Learning Made Easy 7th Edition Java All-In-One for dummies A Wiley brand 8 books in one! Doug Lowe Wrote his first program on a computer with than 1K of memory
 	Dated: 
 		2023-07-16T07:50:00 ... 2023-07-16T08:02:00 Code.
+		2023-07-16T08:02:00 speak() versus (VS) 2023-07-18T21:06:00 wordType()
 */
 
 public class Man
 {
-	public String speak()
+	public String wordType()
 	{
 		return null;
 	}	
@@ -22,7 +23,7 @@ public class Man
 		Prophet prophet = new Prophet();
 		System.out.println
 		(
-			prophet.speak()
+			prophet.wordType()
 		);
 	}
 }

@@ -7,8 +7,8 @@
 
 public class Prophet extends Man
 {
-	public String speak()
+	public String wordType()
 	{
-		return "Prophesy"; //Exodus 4
+		return "Prophecy"; //Exodus 4
 	}	
 }
