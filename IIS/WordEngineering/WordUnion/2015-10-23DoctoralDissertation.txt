@@ -75,6 +75,11 @@ Users
 
 The general operating system and compact database are the 2 types of authentication.
 " (Allen G. Taylor).
+Design Pattern
+Title 	Description 	Commentary 	Universal Resource Index (URI)
+Accessor Pattern 	Get and set attributes using properties. 	These are boundaries to property values. Readonly is achievable by disabling the set method. 	
+Delegation Pattern 	Composition substitutes for inheritance. 	The author does not inherit any class. But the author delegates by using composition to include existing services. 	BibleBook.cs
+Singleton Pattern 	Only a single instance is createable. 	At Daigaku Honyaku Center (DHC) there was a database table which is a reference and contains a single record. 	SingletonPatternBible.java
 The Bible Database
 The Scripture Table
 
