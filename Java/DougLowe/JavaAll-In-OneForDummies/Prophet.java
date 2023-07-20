@@ -7,6 +7,11 @@
 
 public class Prophet extends Man
 {
+	public Prophet(String named)
+	{
+		super(named);
+	}
+	
 	public String wordType()
 	{
 		return "Prophecy"; //Exodus 4

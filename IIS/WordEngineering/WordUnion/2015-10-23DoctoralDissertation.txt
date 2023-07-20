@@ -301,6 +301,8 @@ Signals and receptions are similar to events and handlers. A page load or close 
 Microsoft .Net supports components such as a pre-compiled dynamic link library (.dll), and compiling web forms and web services at first request. Web form matured from code-behind to code-beside.
 
 For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not impose such consistency. But the author abides by this rule.
+
+In C# version 9, a method may offer a covariant return type.
 "
 Indexing
 " (Search engine indexing)

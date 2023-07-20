@@ -8,10 +8,27 @@
 
 public class Man
 {
+	private String named;
+
+	public Man(String named)
+	{
+		setNamed(named);
+	}
+	
 	public String wordType()
 	{
 		return null;
 	}	
+	
+	public String getNamed()
+	{
+		return named;
+	}
+
+	public void setNamed(String named)
+	{
+		this.named = named;
+	}
 	
 	public static void main(String[] args)
 	{
@@ -20,7 +37,7 @@ public class Man
 	
 	public static void stub()
 	{
-		Prophet prophet = new Prophet();
+		Prophet prophet = new Prophet("Moses");
 		System.out.println
 		(
 			prophet.wordType()
