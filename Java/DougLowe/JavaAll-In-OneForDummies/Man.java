@@ -37,6 +37,12 @@ public class Man
 	
 	public static void stub()
 	{
+		Prayer prayer = new Prayer("Abraham");
+		System.out.println
+		(
+			prayer.wordType()
+		);
+		
 		Prophet prophet = new Prophet("Moses");
 		System.out.println
 		(

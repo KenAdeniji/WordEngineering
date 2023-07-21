@@ -177,3 +177,17 @@ git add        IIS/WordEngineering/WordCross/HowWillTheDifferentStoryBeSaid.html
 git add		   Java/DougLowe/JavaAll-In-OneForDummies/2023-07-18T2110ManBuild.bat
 
 git add 	   IIS/WordEngineering/2018-05-03Correspondence/2023-07-20T1000WessneJanitorialCleaningService.txt
+
+git add        Java/DougLowe/JavaAll-In-OneForDummies/2023-07-21T0400BallBuild.bat
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Ball.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Ball.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/BallFactory$1.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/BallFactory$BallSubclass.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/BallFactory.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/BallFactory.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Cricket.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Cricket.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Football.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Football.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.java
