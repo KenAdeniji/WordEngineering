@@ -26,7 +26,7 @@
 		
 */
 
-public class BibleBook
+public class BibleBook implements Cloneable
 {
 	private int bookID;
 	private String bookTitle;
@@ -57,6 +57,12 @@ public class BibleBook
 		{
 			System.out.println("These Bible books are not the same.");
 		}
+		
+		BibleBook cloned = (BibleBook) genesis.clone(); //2023-07-21T18:43:00 ... 2023-07-21T19:01:00 Shallow copy. All the fields are primitive types or immutable objects such as strings
+		cloned.setBookID(-1);
+		cloned.setBookTitle("Genesis cloned");
+		System.out.println(genesis);
+		System.out.println(cloned);
 	}
 	
 	public int getBookID()
@@ -101,7 +107,29 @@ public class BibleBook
 		this.bookID = bookID;
 		this.bookTitle = bookTitle;
 	}
-	
+
+	/*
+		BibleBook genesis = new BibleBook(1, "Genesis");
+		BibleBook cloned = (BibleBook) genesis.clone(); //2023-07-21T18:43:00 ... 2023-07-21T19:01:00 Shallow copy. All the fields are primitive types or immutable objects such as strings
+		cloned.setBookID(-1);
+		cloned.setBookTitle("Genesis cloned");
+		System.out.println(genesis);
+		System.out.println(cloned);
+	*/
+	public Object clone()
+	{
+		BibleBook bibleBook;
+		try
+		{
+			bibleBook = (BibleBook) super.clone();
+		}
+		catch(CloneNotSupportedException e)
+		{
+			return null; //Will never happen
+		}
+		return bibleBook;
+	}	
+
 	public boolean equals(Object obj)
 	{
 		//An object must equal itself
