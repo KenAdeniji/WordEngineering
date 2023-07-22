@@ -5,6 +5,25 @@
 	Accessor Pattern: 
 		2023-07-12T11:12:00	Methods for getFieldName() and setFieldName()
 		2023-07-12T11:22:00	isFieldName() getFieldName() for boolean values
+	2023-07-21T17:45:00	... 2023-07-21T18:02:00 genesis.equals(other)
+		BibleBook genesis = new BibleBook(1, "Genesis");
+		System.out.println(genesis);
+
+		BibleBook other = new BibleBook(1, "genesis");
+		System.out.println(other);
+		
+		if 
+		(
+			genesis.equals(other)
+		)
+		{
+			System.out.println("These Bible books are the same.");
+		}
+		else
+		{
+			System.out.println("These Bible books are not the same.");
+		}
+		
 */
 
 public class BibleBook
@@ -23,6 +42,21 @@ public class BibleBook
 	{
 		BibleBook genesis = new BibleBook(1, "Genesis");
 		System.out.println(genesis);
+
+		BibleBook other = new BibleBook(1, "genesis");
+		System.out.println(other);
+		
+		if 
+		(
+			genesis.equals(other)
+		)
+		{
+			System.out.println("These Bible books are the same.");
+		}
+		else
+		{
+			System.out.println("These Bible books are not the same.");
+		}
 	}
 	
 	public int getBookID()
@@ -68,8 +102,37 @@ public class BibleBook
 		this.bookTitle = bookTitle;
 	}
 	
+	public boolean equals(Object obj)
+	{
+		//An object must equal itself
+		if (this == obj)
+		{
+			return true;
+		}
+		
+		//No object equals null
+		if (obj == null)
+		{
+			return true;
+		}
+
+		//Objects of different types are nevel equal
+		if (this.getClass() != obj.getClass())
+		{
+			return false;
+		}
+		
+		//Cast to a BibleBook, then compare the fields
+		BibleBook bibleBook = (BibleBook) obj;
+		return
+		(
+				this.bookID == bibleBook.getBookID()
+			&&	this.bookTitle.equalsIgnoreCase(bibleBook.getBookTitle())
+		);
+	}
+
 	public String toString()
 	{
-		return ("ID " + bookID + " of " + instanceCount + " Title " + bookTitle);
+		return(this.getClass().getName() + " ID " + bookID + " of " + instanceCount + " Title " + bookTitle);
 	}
 }
