@@ -80,6 +80,7 @@ Title 	Description 	Commentary 	Universal Resource Index (URI)
 Accessor Pattern 	Get and set an attribute by using a property. 	The boundary to a property value. Readonly is achievable by disabling the set method. 	
 Delegation Pattern 	Composition substitutes for inheritance. 	The author does not inherit any class. But the author delegates by using composition to include existing services. 	BibleBook.cs
 Factory Pattern 	Create subclasses from one or more methods. 	At runtime, instantiate a variable object. 	BallFactory.java
+Marker interface Pattern 	The marker interface pattern is empty. It is metadata that refers to additional work. Examples in Java include Cloneable, Remote, Serializable. 	A class may implement the cloneable interface to identify support for the clone method, which may perform shallow or deep copy. 	BibleBook.java
 Singleton Pattern 	Only a single instance is createable. 	At Daigaku Honyaku Center (DHC) there was a database table which is a reference and contains a single record. 	SingletonPatternBible.java
 The Bible Database
 The Scripture Table
@@ -1160,6 +1161,8 @@ To know my part as His?
     What are you able to do now that you weren't able to do before? To recognize the following as I ( 2 Samuel 3:39 ) ?
     What is the following? List of C-family programming languages
     What I keep member of ( John 17:12 ) ?
+    What did He find as suitable for him ( Genesis 39:9, Daniel 1:12, Daniel 1:16, Genesis 1:26-27 ) ?
+    What did He find re-occurring as him? Seed of Jesse, king like David, son of David
 
 The author is linking words spoken to related verses and dictionaries.
 
