@@ -190,6 +190,6 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/Cricket.java
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Football.class
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Football.java
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.class
-git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.
+git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.java
 
 git add        IIS/WordEngineering/RegularExpression/
