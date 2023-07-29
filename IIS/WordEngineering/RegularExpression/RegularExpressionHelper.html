@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2023-07-28T18:50:00 Created. dummies.com/go/javaaiofd7e
+		2023-07-28T20:12:00 http://stackoverflow.com/questions/2712878/javascript-regex-pattern-concatenate-with-variable
+			Match completed. Which of the prophets (Acts 7:52)?
+	-->
+	<head>
+		<title>Regular Expression helper</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Regular Expression helper"/>
+		<meta name="keywords" content="Regular Expression, RegEx, string, pattern, flag"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="textString">Text string:</label></td>
+					<td><input id="textString" autofocus required value="51, 52, 53, 54"/></td>
+				</tr>
+				<tr>
+					<td><label for="pattern">Pattern:</label></td>
+					<td><input id="pattern" value="53"/></td>
+				</tr>
+				<tr>
+					<td><label for="flag">Flag, for example, gi:</label></td>
+					<td><input id="flag"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div id="resultSet" align="center"> </div>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	textStringElement = document.getElementById("textString");
+			const 	patternElement = document.getElementById("pattern");
+			const 	flagElement = document.getElementById("flag");
+						
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var textStringParam = urlParams.get("textString");
+					if (textStringParam)
+					{
+						textStringElement.value = textStringParam;
+					}
+				
+					var patternParam = urlParams.get("pattern");
+					if (patternParam)
+					{
+						patternElement.value = patternParam;
+					}
+				
+					var flagParam = urlParams.get("flag");
+					if (flagParam)
+					{
+						flagElement.value = flagParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				const regexp = new RegExp
+				(
+					patternElement.value,
+					flagElement.value
+				)
+				var matchInfo = textStringElement.value.match(regexp);
+				resultSetElement.innerHTML = matchInfo;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
