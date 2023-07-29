@@ -4,6 +4,9 @@
 		2023-07-28T18:50:00 Created. dummies.com/go/javaaiofd7e
 		2023-07-28T20:12:00 http://stackoverflow.com/questions/2712878/javascript-regex-pattern-concatenate-with-variable
 			Match completed. Which of the prophets (Acts 7:52)?
+		2023-07-28 20:37:23.287	How we tell history is part of us (Revelation 13:17).
+		2023-07-29T05:11:00 ... 2023-07-29T05:28:00 Match array concatenate.
+		2023-07-29T06:45:00 ... 2023-07-29T06:50:00 Match occurrences.
 	-->
 	<head>
 		<title>Regular Expression helper</title>
@@ -18,19 +21,23 @@
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="textString">Text string:</label></td>
+					<td><label for="textString">Text string</label></td>
 					<td><input id="textString" autofocus required value="51, 52, 53, 54"/></td>
 				</tr>
 				<tr>
-					<td><label for="pattern">Pattern:</label></td>
+					<td><label for="pattern">Pattern</label></td>
 					<td><input id="pattern" value="53"/></td>
 				</tr>
 				<tr>
-					<td><label for="flag">Flag, for example, gi:</label></td>
-					<td><input id="flag"/></td>
+					<td><label for="flag">Flag, for example, gi</label></td>
+					<td><input id="flag" value="gi"/></td>
 				</tr>	
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="matchOutput">Match</label></td>
+					<td><div id="matchOutput"></div></td>
 				</tr>	
 			</table>
 		</div>
@@ -45,6 +52,7 @@
 						
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
+			const	matchOutputElement = document.getElementById("matchOutput");
 			const	resultSetElement = document.getElementById("resultSet");
 
 			function pageLoad()
@@ -88,7 +96,21 @@
 					flagElement.value
 				)
 				var matchInfo = textStringElement.value.match(regexp);
-				resultSetElement.innerHTML = matchInfo;
+				var matchResult = `Occurrences ${matchInfo.length}<br/>`;
+				for
+				(
+					var matchIndex = 0, matchCount = matchInfo.length;
+					matchIndex < matchCount;
+					++matchIndex
+				)
+				{
+					if (matchResult)
+					{
+						matchResult += " ";
+					}
+					matchResult += matchInfo[matchIndex];
+				}
+				matchOutputElement.innerHTML = matchResult;
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
