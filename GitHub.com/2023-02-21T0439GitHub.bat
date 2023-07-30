@@ -193,3 +193,7 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.class
 git add        Java/DougLowe/JavaAll-In-OneForDummies/Prayer.java
 
 git add        IIS/WordEngineering/RegularExpression/
+
+git add        IIS/WordEngineering/WordCross/SeOLeLoLinqWithRegEx.asmx
+git add        IIS/WordEngineering/WordCross/SeOLeLoLinqWithRegEx.html
+git add        InformationInTransit/ProcessCode/SeOLeLoLinqWithRegEx.cs
