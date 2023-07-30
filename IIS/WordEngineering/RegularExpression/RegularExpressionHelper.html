@@ -8,6 +8,9 @@
 		2023-07-29T05:11:00 ... 2023-07-29T05:28:00 Match array concatenate.
 		2023-07-29T06:45:00 ... 2023-07-29T06:50:00 Match occurrences.
 		2023-07-29T07:00:00	placeholder="gi"
+		2023-07-29T17:59:00	dummies.com/go/javaaiofd7e Pattern xxx-xx-xxxx.
+			No Social Security number can begin with 779, for example.
+			\d\d\d-\d\d-\d\d\d\d
 	-->
 	<head>
 		<title>Regular Expression helper</title>
@@ -17,13 +20,23 @@
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 30vh;
+		width: 70vw;
+	}
+		</style>
 	</head>
 	<body>
 		<div align="center">
 			<table>
 				<tr>
 					<td><label for="textString">Text string</label></td>
-					<td><input id="textString" autofocus required value="51, 52, 53, 54"/></td>
+					<td><textarea id="textString" autofocus required>51, 52, 53, 54</textarea></td>
 				</tr>
 				<tr>
 					<td><label for="pattern">Pattern</label></td>
@@ -41,6 +54,33 @@
 					<td><div id="matchOutput"></div></td>
 				</tr>	
 			</table>
+			
+			<table>
+				<thead>
+					<caption>Character Classes</caption>
+					<tr><th>Regex</th><th>Matches</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>.</td><td>Any character</td></tr>
+					<tr><td>\d</td><td>Any digit (0-9)</td></tr>
+					<tr><td>\D</td><td>Any nondigit (anything other than 0-9)</td></tr>
+					<tr><td>\s</td><td>Any white-space character (space, tab, new line, return, or backspace)</td></tr>
+					<tr><td>\S</td><td>Any character other than a white-space character</td></tr>
+					<tr><td>\w</td><td>Any word character (a-z,A-Z,0-9, or an underscore)</td></tr>	
+					<tr><td>\W</td><td>Any character other than a word character</td></tr>					
+				</tbody>
+			</table>
+			
+			<table>
+				<thead>
+					<caption>Regex Patterns</caption>
+					<tr><th>Regex</th><th>Matches</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>\d\d\d-\d\d-\d\d\d\d</td><td>Social Security number</td></tr>
+				</tbody>
+			</table>
+			
 		</div>
 		<div id="resultSet" align="center"> </div>
 
