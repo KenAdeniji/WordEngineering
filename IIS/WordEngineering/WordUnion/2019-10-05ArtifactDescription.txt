@@ -597,6 +597,8 @@ The SeOKa.html will do statistics - count, minimum, maximum.
 
 The SeOLeBereAddressBukolaOrBuki.aspx will retrieve information from the HisWord and associated tables.
 
+The SeOLeLoLinqWithRegEx.html will use a dynamic Linq where clause to query the HisWord table.
+
 The SeparateTheirDesireOfTheBible.html will search for a clause, within a scripture reference.
 
 The ServingWho.html will search for a clause, within a scripture reference; group by book or chapter.

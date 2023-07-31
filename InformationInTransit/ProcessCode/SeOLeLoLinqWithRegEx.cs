@@ -62,7 +62,7 @@ var dt = dtContacts.AsEnumerable().Where(pred).CopyToDataTable();
 	{
 		public static DataTable Query
 		(
-			String whereClause
+			String whereClause //For example, Word=Se o le lo Linq with RegEx?;Location=Shower: 1st sprinkling
 		)
 		{
 			var dictConditions = whereClause
