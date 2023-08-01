@@ -82,7 +82,10 @@ var dt = dtContacts.AsEnumerable().Where(pred).CopyToDataTable();
 				.Where
 					(
 						c => 
-						dictConditions.All(kv => c.Field<string>(kv.Key) == kv.Value)
+						dictConditions.All
+						(
+							kv => c.Field<string>(kv.Key) == kv.Value
+						)
 					)
 				.CopyToDataTable();
 			

@@ -1167,6 +1167,42 @@ The author is working on variations of AlphabetSequence: These are not suitable 
     2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
     3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
 
+"
+Design Specifications
+
+Design Specifications 	Sample Specification and Categories 	Constraints 	User Specification (Demand) 	User Specification (Want)
+Function
+How it works 	The current work meets the design of an Intranet. The test environment.
+
+    Performance
+    Energy
+
+Aesthetics
+How it looks 	
+
+    Geometry ( e.g. Earlier work focused on generating Internet documents. The transition was from .html, xml/xslt, .aspx, and now AJAX. )
+
+Quality
+How well it is made 	
+
+    Materials
+    The author's work is software specific.
+    Cost
+    Open-source
+    Manufacture
+    While it is Microsoft-centric for the back-end (.asmx, Transact-SQL, SQL Server database), the front-end is industry standard (.html, .js, .css).
+
+Safety 	
+
+    Time
+    The time duration is minimal.
+    Transport
+    The work is done on one computer.
+    Ergonomics
+    The doctorate work consisted of a proof-of-concept that is easily replicable.
+
+" (DeLean Tolbert Smith).
+
 To know my part as His?
 
     ContactMaintenance.aspx is a replica copy of a Microsoft wizard master-detail example.
@@ -2182,6 +2218,7 @@ References
     Bjarne Stroustrup W3C web page; Available from http://www.stroustrup.com
     SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019); W3C web page; Available from http://google.com/books/edition/SQL_All_in_One_For_Dummies/0wGQDwAAQBAJ?hl=en
     The Twelve-Factor App W3C web page; Available from http://www.12factor.net
+    The Handy Engineering Answer Book DeLean Tolbert Smith, Debra-Ann C. Butler, Aishwary Pawar, Nicole P. Pitterson (2022-09-20) W3C web page; Available from http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1
     Data Observability: Is It Data Quality Monitoring or More? Petr Travkin, Senior Manager, Data Analytics Consulting, at EPAM Systems, Inc. (2023-02-27) W3C web page; Available from http://www.dbta.com/Editorial/Think-About-It/Data-Observability-Is-It-Data-Quality-Monitoring-or-More-157257.aspx
     Python for Data Science A Hands-On Introduction Yuli Vasiliev (2022-08-02); W3C web page; Available from http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Building Maintainable Software Ten Guidelines for Future-Proof Code Joost Visser, Pascal van Eck of Software Improvement Group, B.V. Amsterdam, Netherlands; W3C web page; Available from http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf
