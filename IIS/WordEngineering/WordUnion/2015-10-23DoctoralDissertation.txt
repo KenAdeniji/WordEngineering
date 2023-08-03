@@ -43,7 +43,7 @@ Can a parser generate this information: level of detail, relevancy? Origin of th
 Developing information Information type 	Example 	Scripture Reference 	Commentary
 Time notation 	Generation, year, month, day, hour, season, evening, morning, night 	Genesis 1:1, John 1:1 	Animals die ( Genesis 2:17 )?
 What separates ... the desire? ( Genesis 7:22, Genesis 6:5-7 )?
-Naming and meaning 	Adam, Eve, Cain, Abel, Seth 		
+Birth, naming and meaning 	Adam, Eve, Cain, Abel, Seth 		
 Vocation 	Gardener, keeper of the animals 		
 
 "
@@ -1177,6 +1177,12 @@ The author is working on variations of AlphabetSequence: These are not suitable 
     2-Words: My Condemn The first word is the BookID; the second word is the VerseID.
     3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
 
+To whose extent I know
+
+To whose extent I know. Actor 	Trait 	Scripture Reference
+Job 	Perfect and upright, and one that feared God, and eschewed evil 	Job 1-2, Job 42
+Moses 	Meek 	Numbers 12:3
+
 "
 Design Specifications
 
@@ -1234,6 +1240,21 @@ Ease of Manufacturing
 
     Large number of independent parts: Team or solo development
     Parts accessibility: Build versus (VS) buy
+
+" (DeLean Tolbert Smith). "
+Decision-screening Matrix
+
+The AJAX approach offers the following benefits in performance criterion and weight:
+
+    Ease of manufacture
+    Engineering skill needed to build
+    Robust design
+    Primary function independence
+
+The competing solution will include:
+
+    Server-side JavaScript, for example, Node
+    Front-end library and framework, for example, React
 
 " (DeLean Tolbert Smith).
 
@@ -2029,6 +2050,15 @@ Begotten Son 	John 1:18, John 3:16, John 3:18, 1 John 4:9
 Subject 	1 Corinthians 15:28
 Holy Spirit 	Luke 1:35, Acts 2, 2 Thessalonians 2:7
 Future Work
+
+The technical limitations of the current implementation include:
+
+    Unknown, prior to building?
+    Multi-user support
+    Security login
+    Content management system (CMS)
+    Single entry-point
+    Update rollback
 
 How to ... use the word? My earlier work has been to refer to the word. To look for one I deem as I? Mo fe wa productive in the word? I want to be productive in the word?
 
