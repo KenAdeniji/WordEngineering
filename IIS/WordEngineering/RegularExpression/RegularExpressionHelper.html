@@ -11,6 +11,8 @@
 		2023-07-29T17:59:00	dummies.com/go/javaaiofd7e Pattern xxx-xx-xxxx.
 			No Social Security number can begin with 779, for example.
 			\d\d\d-\d\d-\d\d\d\d
+		2023-08-03T07:50:00	|, the vertical bar is an or operator. For example, (\w\d-\w\d)|(\w-\d\w\w). The group on the left or on the right. The group on the left matches a word character, a digit, a hyphen, a word character, and another digit. The group on the right matches a word character, a hyphen, a digit, and 2 word characters. For country code, +1, telephone numbers, with or without area codes, (\d{3} |\(d{3}\) )?\d{3}-\d{4}
+			Can I reason as a god will listen?
 	-->
 	<head>
 		<title>Regular Expression helper</title>
@@ -40,7 +42,7 @@
 				</tr>
 				<tr>
 					<td><label for="pattern">Pattern</label></td>
-					<td><input id="pattern" value="53"/></td>
+					<td><input id="pattern" value="53" style="width: 70vw;"/></td>
 				</tr>
 				<tr>
 					<td><label for="flag">Flag</label></td>
@@ -81,6 +83,33 @@
 					<tr><td>b[aeiou]t</td><td>Custom classes, list all the comprising characters within a set of brackets</td></tr>
 					<tr><td>[a-zA-Z][0-9]</td><td>Custom classes, using ranges</td></tr>
 					<tr><td>b[^aeiou]t</td><td>Negation of custom classes, list all the comprising characters within a set of brackets</td></tr>					
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<caption>Regex Quantifiers, for example, Social Security number, \d{3}-\d{2}-\d{4}</caption>
+					<tr><th>Regex</th><th>Matches the Preceding Element</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>?</td><td>Zero times or one time</td></tr>
+					<tr><td>*</td><td>Zero or more times</td></tr>
+					<tr><td>+</td><td>One or more times</td></tr>
+					<tr><td>{n}</td><td>Exactly n times</td></tr>
+					<tr><td>{n,}</td><td>At least n times</td></tr>
+					<tr><td>{n,m}</td><td>At least n times but no more than m times</td></tr>
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<caption>Regex Others</caption>
+					<tr><th>Regex</th><th>Others</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>\</td><td>Escape, for example, the United States of America (USA) and Canada, country code +1, telephone numbers, \(\d{3}\) \d{3} \d{4}</td></tr>
+					<tr><td>()</td><td>Treat the characters inside the parentheses as a group.</td></tr>
+					<tr><td>|</td><td>The vertical bar is an or operator. For example, (\w\d-\w\d)|(\w-\d\w\w). The group on the left or on the right. The group on the left matches a word character, a digit, a hyphen, a word character, and another digit. The group on the right matches a word character, a hyphen, a digit, and 2 word characters. For country code, +1, telephone numbers, with or without area codes, (\d{3} |\(d{3}\) )?\d{3}-\d{4}</td></tr>
 				</tbody>
 			</table>
 			
