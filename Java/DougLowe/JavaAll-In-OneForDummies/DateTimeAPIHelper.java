@@ -22,5 +22,7 @@ public class DateTimeAPIHelper
 		System.out.println("LocalDate: " + LocalDate.now());
 		System.out.println("LocalDateTime: " + LocalDateTime.now());		
 		System.out.println("LocalTime: " + LocalTime.now());
+		System.out.println("OffsetDateTime: " + OffsetDateTime.now());
+		System.out.println("OffsetTime: " + OffsetTime.now());
 	}
 }
