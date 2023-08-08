@@ -19,10 +19,14 @@ public class DateTimeAPIHelper
 	{
 		LocalDateTime todayNow = LocalDateTime.now();
 		
+		System.out.println("Instant: " + Instant.now());
 		System.out.println("LocalDate: " + LocalDate.now());
 		System.out.println("LocalDateTime: " + LocalDateTime.now());		
 		System.out.println("LocalTime: " + LocalTime.now());
 		System.out.println("OffsetDateTime: " + OffsetDateTime.now());
 		System.out.println("OffsetTime: " + OffsetTime.now());
+		System.out.println("Year: " + Year.now());
+		System.out.println("YearMonth: " + YearMonth.now());
+		System.out.println("ZonedDateTime: " + ZonedDateTime.now());
 	}
 }
