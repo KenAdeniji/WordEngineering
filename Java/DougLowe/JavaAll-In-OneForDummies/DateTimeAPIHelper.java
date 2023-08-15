@@ -5,7 +5,7 @@
 	2023-08-03T14:31:00 ... 2023-08-03T16:24:00 import java.time.*; 
 	2023-08-03T16:43:00 Microsoft Windows start date is 1601-01-01.
 	2023-08-09T04:44:00 Methods that extract information about a date
-	2023-08-09T12:34:00 ... 2023-08-09T12:52:00
+	2023-08-09T12:34:00 ... 2023-08-09T13:12:00
 E:\WordEngineering\Java\DougLowe\JavaAll-In-OneForDummies>javac DateTimeAPIHelper.java
 DateTimeAPIHelper.java:39: error: cannot find symbol
                 System.out.println("lengthOfMonth(): " + todayNow.lengthOfMonth());

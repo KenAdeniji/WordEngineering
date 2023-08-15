@@ -202,3 +202,5 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/DateTimeAPIHelper.java
 
 git add			IIS/WordEngineering/WordUnion/BiblePercentage.html
 git add			IIS/WordEngineering/WordUnion/BibleWord.html
+
+git add			IIS/WordEngineering/JavaScript/ChrisMinnick/
