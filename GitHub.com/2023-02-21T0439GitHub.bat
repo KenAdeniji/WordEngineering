@@ -204,3 +204,6 @@ git add			IIS/WordEngineering/WordUnion/BiblePercentage.html
 git add			IIS/WordEngineering/WordUnion/BibleWord.html
 
 git add			IIS/WordEngineering/JavaScript/ChrisMinnick/
+
+git add        IIS/WordEngineering/WordCross/ComingToAManOnlyBecauseOfHelp.asmx
+git add        IIS/WordEngineering/WordCross/ComingToAManOnlyBecauseOfHelp.html
