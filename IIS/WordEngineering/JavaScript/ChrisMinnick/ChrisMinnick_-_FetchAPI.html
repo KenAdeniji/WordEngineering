@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2023-08-14T16:29:00 Created.
+		2023-08-16T13:07:00 Created.	
+		2023-08-14T16:29:00 
 Barnes & Nobles Booksellers.
 5604 Bay Street.
 At the intersectiom of Shellmound Street and Bay Street.
@@ -11,8 +12,6 @@ JavaScript ALL-IN-ONE for dummies A Wiley Brand.
 7 Books in One!
 Chris Minnick
 Author of Coding with JavaScript For Dummies
-		2023-08-14T18:50:00 Explicitly pass document, window as variable name.
-			2017-11-28 As I was going out, God said to me, He is happy, I didn't eat food.
 	-->
 	<head>
 		<title>Chris Minnick Iterating Through the Properties of an Object</title>
@@ -37,8 +36,8 @@ Author of Coding with JavaScript For Dummies
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="objects">Object(s)</label></td>
-					<td><textarea id="objects" autofocus required>document, window</textarea></td>
+					<td><label for="uri">URI</label></td>
+					<td><textarea id="uri" autofocus required>http://api.github.com/orgs/facebook</textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -50,7 +49,7 @@ Author of Coding with JavaScript For Dummies
 		<script>
 			var isPostBack = false;
 			
-			const 	objectsElement = document.getElementById("objects");
+			const 	uriElement = document.getElementById("uri");
 						
 			const 	submitQueryElement = document.getElementById("submitQuery");
 		
@@ -62,10 +61,10 @@ Author of Coding with JavaScript For Dummies
 				{
 					const urlParams = new URLSearchParams(window.location.search);
 
-					var objectsParam = urlParams.get("objects");
-					if (objectsParam)
+					var uriParam = urlParams.get("uri");
+					if (uriParam)
 					{
-						objectsElement.value = objectsParam;
+						uriElement.value = uriParam;
 					}
 				
 					querySubmit();
@@ -77,41 +76,17 @@ Author of Coding with JavaScript For Dummies
 				}
  			}
 
-			function querySubmit()
+			async function querySubmit()
 			{
-				var	globalInfo = "";
-				var tableInfo = "";
-				var objectsList = objectsElement.value.split(",");
-				for 
-				(
-					var objectsIndex = 0, objectsCount = objectsList.length, currentElement;
-					objectsIndex < objectsCount;
-					objectsIndex++
-				)
-				{
-					currentElement = objectsList[objectsIndex].trim();
-					
-					switch ( currentElement )
-					{
-						case "document":
-							tableInfo = iterateGlobalVariable(document);
-							break;
-						case "window":
-							tableInfo = iterateGlobalVariable(window);
-							break;
-						default:
-							tableInfo = "";
-							break;
-					}
-					
-					globalInfo += tableInfo;
-				}
-				resultSetElement.innerHTML = globalInfo;
+				const response = await fetch( uriElement.value );
+				const data = await response.json();
+				//resultSetElement.innerHTML = JSON.stringify(data);
+				resultSetElement.innerHTML = iterateJSON(data);
 			}
 
-			function iterateGlobalVariable(data)
+			function iterateJSON(data)
 			{
-				var tableInfo = `<table><caption>${data}</caption><tr><th>Key</th><th>Value</th>`;
+				var tableInfo = `<table><tr><th>Key</th><th>Value</th>`;
 				for (var key in data) 
 				{
 					tableInfo += `<tr><td>${key}</td><td>${data[key]}</td></tr>`;	
