@@ -369,4 +369,11 @@ Microsoft SQL Server data loss error.
 
 2023-08-17T20:30:00
 	DesigningForPerformance.com 	Designing for Performance Weighing Aesthetics and Speed By Lara Callender Hogan 			2020-09-05 	53825
+
+2023-08-17T21:36:00	
+"
+High Performance Browser Networking
+" (Ilya Grigorik)
+
+For Internet connections, the contributing factors include:
 :Exit
