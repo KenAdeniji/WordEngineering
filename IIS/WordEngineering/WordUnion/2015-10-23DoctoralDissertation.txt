@@ -17,17 +17,11 @@ Abstract
 
 Thesis Statement: This dissertation introduces AlphabetSequence ( 2 Corinthians 10:9-18 ). The AlphabetSequenceIndex is the use of a pure function to sum alphabet places AlphabetSequence.cs. The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture. The AlphabetSequenceIndexScriptureReference consists of four parts; there are two references each to particular chapters and verses. The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible. The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter. Both the backward chapter and backward verse are the corresponding, anticlockwise places.
 
-From start to finish?
-
-    Calculate the AlphabetSequenceIndex by summing the place of the alphabets.
-    In both directions of the Bible, the AlphabetSequenceIndex will determine the corresponding chapter and verse.
-    Find the dates or days from scripture.
-
 The importance of this work?
 
     Follow God, as a character.
     Taken from him, added to him ( Luke 19:26 ) .
-    To track dates and words? And, find meaning, correlation. Time manage?
+    To track dates and words? And, find meaning, correlation.
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
@@ -36,16 +30,6 @@ Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Theory
-Developing information
-
-Can a parser generate this information: level of detail, relevancy? Origin of the Bible? That is the description of man.
-
-Developing information Information type 	Example 	Scripture Reference 	Commentary
-Time notation 	Generation, year, month, day, hour, season, evening, morning, night 	Genesis 1:1, John 1:1 	Animals die ( Genesis 2:17 )?
-What separates ... the desire? ( Genesis 7:22, Genesis 6:5-7 )?
-Birth, naming and meaning 	Adam, Eve, Cain, Abel, Seth 		
-Vocation 	Gardener, keeper of the animals 		
-
 "
 Database Modeling
 Entity-Relationship (ER) Model

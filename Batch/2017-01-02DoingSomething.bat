@@ -366,4 +366,7 @@ Microsoft SQL Server data loss error.
 
 2023-08-11T18:47:00
 	howjavascriptworks.com/sample.html 	How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford 	const number_pattern = /^(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?$/; 	Regular Expression 	2022-08-05 	59399
+
+2023-08-17T20:30:00
+	DesigningForPerformance.com 	Designing for Performance Weighing Aesthetics and Speed By Lara Callender Hogan 			2020-09-05 	53825
 :Exit
