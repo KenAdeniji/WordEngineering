@@ -34,4 +34,6 @@ Published: May 7, 2019
 dowry = 14 #Service for Leah and Rachel
 cattle = 6
 years_of_service = dowry + cattle
-print(f'Years of service {years_of_service} (Genesis 31:41)')
+print(f'Years of dowry: {dowry} (Genesis 29:18, Genesis 29:20, Genesis 29:30)')
+print(f'Years for cattle: {cattle}')
+print(f'Total years of service: {years_of_service} (Genesis 31:41)')
