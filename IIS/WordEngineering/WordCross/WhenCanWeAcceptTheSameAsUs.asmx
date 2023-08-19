@@ -26,6 +26,7 @@ using InformationInTransit.UserInterface;
 ///	2023-08-19T14:04:00 ... 2023-08-19T14:19:00 Created.
 ///	2023-08-19T14:28:00 ... 2023-08-19T14:32:00 Continued.
 ///	When can we accept the same as us?
+///	2023-08-19T14:44:00 ... 2023-08-19T15:16:00 TryParse()
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -39,11 +40,30 @@ public class WhenCanWeAcceptTheSameAsUsWebService : System.Web.Services.WebServi
 		String bibleWord
 	)
     {
+		String queryStatement = null;
+		
+		String queryDefault = null;
+		DateTime queryDateTime = DateTime.MinValue;
+		Int64 queryNumber = Int64.MinValue;
+		
+		if (Int64.TryParse(bibleWord, out queryNumber)) 
+		{
+			queryStatement = QueryStatementNumber;
+		}
+		else if (DateTime.TryParse(bibleWord, out queryDateTime)) 
+		{
+			queryStatement = QueryStatementDateTime;
+		}
+		else
+		{
+			queryStatement = QueryStatementDefault;
+		}
+		
 		DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
 		(
 			String.Format
 			(
-				QueryStatement,
+				queryStatement,
 				bibleWord
 			),
 			CommandType.Text,
@@ -54,10 +74,21 @@ public class WhenCanWeAcceptTheSameAsUsWebService : System.Web.Services.WebServi
 		return json;
     }
 	
-	public const String QueryStatement =
+	public const String QueryStatementDateTime =
+	@"
+SELECT * FROM WordEngineering..HisWord_View WHERE CONVERT(date, Dated) = '{0}' ORDER BY HisWordID DESC;
+	";
+
+	public const String QueryStatementNumber =
 	@"
 SELECT TOP 1 * FROM WordEngineering..NumberSign WHERE Number = {0} ORDER BY Number;
 SELECT * FROM WordEngineering..HisWord_View WHERE AlphabetSequenceIndex = {0} ORDER BY HisWordID DESC;
 	";
+	
+	public const String QueryStatementDefault =
+	@"
+SELECT * FROM WordEngineering..HisWord_View WHERE Word LIKE '%{0}%' ORDER BY HisWordID DESC;
+	";
+
 }
 
