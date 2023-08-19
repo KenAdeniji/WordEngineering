@@ -207,3 +207,6 @@ git add			IIS/WordEngineering/JavaScript/ChrisMinnick/
 
 git add        IIS/WordEngineering/WordCross/ComingToAManOnlyBecauseOfHelp.asmx
 git add        IIS/WordEngineering/WordCross/ComingToAManOnlyBecauseOfHelp.html
+
+git add        IIS/WordEngineering/Python/PythonAll-in-OneForDummiesByJohnCShovic_AlanSimpson/
+git add        IIS/WordEngineering/React/
