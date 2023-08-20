@@ -27,6 +27,7 @@ using InformationInTransit.UserInterface;
 ///	2023-08-19T14:28:00 ... 2023-08-19T14:32:00 Continued.
 ///	When can we accept the same as us?
 ///	2023-08-19T14:44:00 ... 2023-08-19T15:16:00 TryParse()
+///	2023-08-19T16:46:00 ... 2023-08-19T17:22:00 FromUntilFirst = 
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -43,6 +44,7 @@ public class WhenCanWeAcceptTheSameAsUsWebService : System.Web.Services.WebServi
 		String queryStatement = null;
 		
 		String queryDefault = null;
+		Boolean queryBoolean = true;
 		DateTime queryDateTime = DateTime.MinValue;
 		Int64 queryNumber = Int64.MinValue;
 		
@@ -53,6 +55,11 @@ public class WhenCanWeAcceptTheSameAsUsWebService : System.Web.Services.WebServi
 		else if (DateTime.TryParse(bibleWord, out queryDateTime)) 
 		{
 			queryStatement = QueryStatementDateTime;
+		}
+		else if (Boolean.TryParse(bibleWord, out queryBoolean)) 
+		{
+			queryStatement = QueryStatementBoolean;
+			bibleWord = bibleWord.ToLower() == "true" ? "1" : "0"; 
 		}
 		else
 		{
@@ -73,6 +80,11 @@ public class WhenCanWeAcceptTheSameAsUsWebService : System.Web.Services.WebServi
 		string json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
 		return json;
     }
+
+	public const String QueryStatementBoolean =
+	@"
+SELECT * FROM WordEngineering..Remember_View WHERE FromUntilFirst = {0} ORDER BY RememberID DESC;
+	";
 	
 	public const String QueryStatementDateTime =
 	@"
