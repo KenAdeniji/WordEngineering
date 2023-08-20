@@ -27,7 +27,7 @@ using InformationInTransit.UserInterface;
 ///	2023-08-19T14:28:00 ... 2023-08-19T14:32:00 Continued.
 ///	When can we accept the same as us?
 ///	2023-08-19T14:44:00 ... 2023-08-19T15:16:00 TryParse()
-///	2023-08-19T16:46:00 ... 2023-08-19T17:22:00 FromUntilFirst = 
+///	2023-08-19T16:46:00 ... 2023-08-19T17:22:00 FromUntilFirst
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
