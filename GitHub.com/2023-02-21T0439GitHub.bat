@@ -213,3 +213,5 @@ git add        IIS/WordEngineering/React/
 
 git add        IIS/WordEngineering/WordCross/WhenCanWeAcceptTheSameAsUs.asmx
 git add        IIS/WordEngineering/WordCross/WhenCanWeAcceptTheSameAsUs.html
+
+git add			SQLScript/2023-08-20T1135ATalkOfAnniversary.sql
