@@ -16,7 +16,7 @@ Published: May 7, 2019
 	2023-08-21T16:28:00 How I demonstrate?
 	2023-08-21T16:28:00 How about myself?
 	2023-08-21T16:34:00 What does He want to know ... as Himself?
-	2023-08-21T16:40:00 To be part of I?	
+	2023-08-21T16:40:00 To be part of I?
 """
 tithe_ratio = 0.10 #Genesis 28:22
 burial_ground_cost = 400 #Genesis 23:15-16
