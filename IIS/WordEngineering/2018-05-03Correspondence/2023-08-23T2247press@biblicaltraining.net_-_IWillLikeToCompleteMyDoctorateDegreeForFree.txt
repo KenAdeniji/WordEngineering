@@ -16,3 +16,129 @@ http://kenadeniji.wordpress.com
 http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
 http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
 
+
+Undeliverable: 2023-08-23T22:47:00 ... 2023-08-23T23:13:00 I will like to complete my doctorate degree for free.
+
+Some content in this message has been blocked because the sender isn't in your Safe senders list. I trust content from postmaster@outlook.com.
+
+To send this message again, click here.
+Some content in this message has been blocked because the sender isn't in your Safe senders list.
+postmaster@outlook.com
+
+You
+
+Thu 8/24/2023 6:24 AM
+
+smtp28.gate.iad3b.rsapps.net rejected your message to the following email addresses:
+
+press@biblicaltraining.net (press@biblicaltraining.net)
+The address you sent your message to wasn't found at the destination domain. It might be misspelled or it might not exist. Try to fix the problem by doing one or more of the following:
+
+    Send the message again, but before you do, delete and retype the address. If your email program automatically suggests an address to use, don't select it.
+    Clear the recipient AutoComplete cache in your email program by following the steps in this article: Status code 5.1.1. Then resend the message, but before you do, be sure to delete and retype the address.
+    Contact the recipient by some other means (by phone, for example) to confirm you're using the right address. Ask them if they've set up an email forwarding rule that could be forwarding your message to an incorrect address.
+
+
+
+smtp28.gate.iad3b.rsapps.net gave this error:
+<press@biblicaltraining.net>: Email address could not be found, or was misspelled (G8)
+
+
+
+
+
+
+
+Diagnostic information for administrators:
+
+Generating server: MN0PR19MB6430.namprd19.prod.outlook.com
+
+press@biblicaltraining.net
+smtp28.gate.iad3b.rsapps.net
+Remote server returned '550 5.1.1 <press@biblicaltraining.net>: Email address could not be found, or was misspelled (G8)'
+
+Original message headers:
+
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=L50ARlkEJ+Vyctz45rK46hj6yArgHxfT7AoKkNsX40s2xmu2I4SylOugpe6MtKuvHruoN7E/j4VzE9puD9oTZgEVG6fFecINzLkm41tAOu4PBfpbksFEDaqbU5HS6Ufoom8nVj4bRNEfgRT8kQkYP6frpF0LKbMBaiqsAf0EMjet1IgOAtOV3M/CZSBDZ4+NruLyqyGmxh8+H7aaUcTsT3ENUpkPNEiwOiKeaH6QEde+Ffgw5yyk0Oyfz5Fpmu0XdCRlC8SpzA6T933jHyXYw3WHL8jhUCzUvQla0AANC4eWmDTzOZyOXEeo7slMEJ80mWWE9Ggy32siIcgyqp0ZUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=vaHwoPYVlmh08jUBMpt9E+GqZM8tVPn8KflGhkyxQos=;
+ b=hQMOt6xNOR7K3b7I1B33JMu6oeTfG8fehV5SJLtyTcMCvHaqZNaRjRk3FcNWlU42wLUM5il6nxvGnanGvbGkQxqmETjdeO2xI8Smx7l7OPgNVMg/b+2qij22g4sl9/0LzvVLHXUIVzLhN4SUZBCndXBMBY4BfJUn0Zjz22lzR1qzkGM+cWmw6xw6SD3oNX0TjiACJo/kOUU5i+a1qw5h7PNFePgHdplEvvGJDasf+uN0uMi6GNr7Wj0maa2iYOIVqUyv3g8nunl+QO+qg2j4I1nUBRw9asMYgEnf5N77DmC1NFWZNcIl84jyYSHOiXekgeZRMm9S4jBe80CnXXivyQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vaHwoPYVlmh08jUBMpt9E+GqZM8tVPn8KflGhkyxQos=;
+ b=FGoe+6UIY1DG7BPmKmZOVF0/DyB0cT0ff/7c5FlODe0Qo8ml07NRgjfSRlsNFkmDbomd/uUrpdcXhffZ2yh4mczSSWBfaT3IPdH937iA1ZQhuvFGoZhvjM9OIduWihvLBztC/0cBLciWcgy8HqekYd351H0UohiG1iy7UqIZsm36dx/k9YlFMV0ZaYdfvpF8/5NnIJKKaEGk6MsqshY5ZPY9lw5/BWHz1plJQPV/LMtw8t60lnYNu1w9D7HUFugcWjE40Znuez3z8Km6bXP9pdmNe8kgNbfOJSANe6/gVFSidUwZSMILO0Ga+E5elK/veTikq7Nc++oMbygxpfnWxg==
+Received: from BY5PR19MB3972.namprd19.prod.outlook.com (2603:10b6:a03:225::21)
+ by MN0PR19MB6430.namprd19.prod.outlook.com (2603:10b6:208:3c1::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6699.27; Thu, 24 Aug
+ 2023 06:24:04 +0000
+Received: from BY5PR19MB3972.namprd19.prod.outlook.com
+ ([fe80::ca82:6ccd:ff8c:67bb]) by BY5PR19MB3972.namprd19.prod.outlook.com
+ ([fe80::ca82:6ccd:ff8c:67bb%4]) with mapi id 15.20.6699.027; Thu, 24 Aug 2023
+ 06:24:04 +0000
+From: Ken Adeniji <kenadeniji@hotmail.com>
+To: "press@biblicaltraining.net" <press@biblicaltraining.net>
+Subject: 2023-08-23T22:47:00 ... 2023-08-23T23:13:00 I will like to complete
+ my doctorate degree for free.
+Thread-Topic: 2023-08-23T22:47:00 ... 2023-08-23T23:13:00 I will like to
+ complete my doctorate degree for free.
+Thread-Index: AQHZ1lHmlNGFhQQFOkWiW7jt7E2tkQ==
+Date: Thu, 24 Aug 2023 06:24:04 +0000
+Message-ID: <BY5PR19MB3972BA9D5619CA173B267316CB1DA@BY5PR19MB3972.namprd19.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+x-tmn: [DSZRKKrLC9kJ6e3mHHEGiQ6XuvJTYFvMWSbRWZqtyjs=]
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BY5PR19MB3972:EE_|MN0PR19MB6430:EE_
+x-ms-office365-filtering-correlation-id: 0c13e3d7-5a51-486d-6eef-08dba46ab6aa
+x-ms-exchange-slblob-mailprops: AnGYqLj1cVrh0M7+UpBmlqywKUWKOn9HOyS12e2Emr0ac9NBdRU2aMm6zoMltg6fgroPm7bEPv4WfOQaEcjQ1dWg5J/2RR1P+7ZDoWt149CzwtCQ0bChKfdnaI9mDRq8xq/ntp6pXvCQA4FFcQO9Dft+wOUFkc9U2Ra6/VF/uHzNfavbloO8S88O6vYLW15VoxrIZjB5bcsFF0dLjwuimCHlgLt8xx6oqh0u8tnEGn5lHpbUHx5kcwKgT9FzK05MTdR5lE6mrz7OBqXPb4ECd5CnpLQyWPpHSVthP8zvs6guIuZsYeMtnE2Pz6VslynD68BvcM1leNpToV4xSO+wkk6pHJ+X975k9OzCzOxyeZbUxZgy14okGxNxzP4SF9meMkOooBAx2rJ3DeeLDX6gNcOYsrNeHs8UBRnRGX3s1c7xRHyd9iagLWh40r0EmtEwv5SyZkFt6DzLtT0YG/+oyIFHfoRbDu+BwznO/6ZXeqQWhZTv0BUbnqwVVbba5/XFpaTII5wxA4cMuxAesIToUq0oeb7u30ZOcwwS7Q7JfZugfV1opaiRF98vf/eN7wevAfkiZMipLFmyhggoJuKyGJjQVxde2Z0H8j3Ib7bQ722cmrQibNsnwlOs6822Cb6MnifBFZncufgjwA1/uLiANB7sYCISfcr2s4Rh2tw1Ky2NYvOLlAPqQbfmEtWoJx2zeL2MJXrFri66mxdnt5Mi3+3ieyPgNw4Ux3erIqGlDCbaxQw7neWpL2ajQw0HLi8jf2YH5IfsWjOyDkCKeBF6uETn7eaWOfqQQIJpHPC83bWjA68BiIl6TGn2sE6qjYW1T2W7v1YD7VCqYahrXRv4cQR/fkyay+nI1rrxOIXf9ML5ko0mwxR7sIP4wH/gv6yPPGQtjMI7e7P17PNBgJtm99B+AYYdWYxUXTDEy4KlOeKgr1gejSgpMYvHxKChQrX2o4anh5bgCG0rMTcs6IQzrKLqdXU1eOPl
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: fw01uL7ICBdARtZ39wr4NoDtq4dV8abFp6qrJ2YIxwaLxkdgW1Zdg38pmWSjvvYy2dq+wHJtY4qdGZKb5ChJ9FPXYl7pu6gCFFhPFeu4p2q4wDAB4z+U2MtU6PJTXXuwk9W0XcpRXv9v/IANjyS8HadyU+DtAHwTFPQgxgayltpw6vzun0YHNAOR8E3xQDnZQnc1LclUwNBT2sU/ZQhWo7El//V23kRtMo+0kj7HNoDBi5zFMC9x4yE+6vK1DBOaTxrTrsPI7VKDL54OyYtfr/5XE6To7I88XHDA7sqtJgzCWCpHslOf/k6yF+dx9FMB3tE0zl6VXjJGSr1gQLlNOhlTEgEikXngtZw5bL9/KJtYyRoO8NhxDoOUCh91jywUMcHX64jaPTZDXIApJ51qpp3i/bd0LsZ1LltmBUInF3F9XMPiEQbgN0zNqmXjF9FJ6l72uN3ZkX0Ps18XDpkaGfjTBAQBLbA3A7MgQXgbIYb2u7ohGPg0FRrN4OIZn6mnfyfrGg/ihqqBl4IAYMGrAm+NOYk4iIF7IBhDzEs1KK5RJJTcSo7wVAPH1vygzmQDnxxzp/4qfCxe4ZH5Z5FCDDrayR6Y9I7qjGeLKc6o6yLgYRyZXIhvF0B+C36wGUFt
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?Windows-1252?Q?QykYXHzLxGYEMY85ewGkd5NwYlOmSk/Dec8MjtlXYaCyPVysIK8anfnG?=
+ =?Windows-1252?Q?Umubwu79FsWDn2sBrijYKuvGZUs4UXo7nKl/AKs4jUgNeWjzofPWn5cN?=
+ =?Windows-1252?Q?LEvzjvuVTFKPM2eEMCWoDFeu5zTRX3LD45hAs2iqtB3/CN2WvqhwgANL?=
+ =?Windows-1252?Q?3otFptwCx5HlTP74klFNf/r9XfFVrgEPaXNWZMYacLqqibPMvVHjk1nA?=
+ =?Windows-1252?Q?tyyQN//VE18BmUJhp/2iaRUoTybveB+zROg9O2h8rcLtEzJZfoplvTVK?=
+ =?Windows-1252?Q?07m38+cj/0BQ4PixunQ8UzRnP7Id14KS+WoGEkscMb2CneU9OiHPhKCQ?=
+ =?Windows-1252?Q?CT50Is3fkGw/eP1/2FzltrK/lxT20ZY35UGELdSMksujwiFNU9jWOFDq?=
+ =?Windows-1252?Q?d2F7hbusSCYI0Oy5FtrVissTXWxBgEshEGU2lJFIS+ETyGKuk2v7Ezkq?=
+ =?Windows-1252?Q?8jVMteSRblQjmrORJYuYyGsGJPGn4nIamhTGAzCoWObyXckcinu1Flk3?=
+ =?Windows-1252?Q?m5FmF1ICWQ/HqrTtTlo7mpjuhdoN2oCK8oY2FQHgw5Z+Jijb7HvBJu0U?=
+ =?Windows-1252?Q?DjGmw+FkyVuHUGtD+BWcvktF2LrwGmN8DPaO2wJVeTqmhVZlcxU5czsD?=
+ =?Windows-1252?Q?Hlk9djTLQ+5PbhrX9MrAxMW2SdInBLJYnMnKXGW8rL+eWAxWR9fXOL0s?=
+ =?Windows-1252?Q?pQBTB8u9R0bTrAYQGWvoeTagNlV0XxMIKYL3yYLQER46JoG3ZCg8pYTL?=
+ =?Windows-1252?Q?zdYGUn674OfgW1k0MaZ1MU0dst8OFV6surTQAp6gJCK/Tpex9hxVCJGG?=
+ =?Windows-1252?Q?a693zooE/Q6wpgtyngf1AY+AnkdoAhSz9joDBr949VdYvXUbfef/zT8C?=
+ =?Windows-1252?Q?WYjScw24qRVY7TV6CxAoRPMQjb97UG2jnVYOLDdkc6dxqbhDg8F7LzYO?=
+ =?Windows-1252?Q?dUndj0FcxYdB3kZ5NjNePKy/DMr1qRc74GF9W+Zi6WktAAf/F7R1rjg/?=
+ =?Windows-1252?Q?ovk16fiFCiMZYlLH3EHfnJg8ntC/tfPWClOPD1gn7ObB+fnwyK6hUwwL?=
+ =?Windows-1252?Q?XztHpzoqPAnoz2MM6KeiKx20Mhh5hbnFZHdJUzpg6LGo+HkMSrpXkEeW?=
+ =?Windows-1252?Q?WhcXM+q4SVlj7Sh6fm3YzmiGPWM8FcKkOxPhkXWoVZogTQSH18dDwnu9?=
+ =?Windows-1252?Q?FUb+gscXgTWD2IlvjWVGYS4NnyToH2phOCEedJKthy+kQb8aH9ka+A4I?=
+ =?Windows-1252?Q?Hs/LhUkE/lKJNbGC0wltmgFUimF2+JEHz0vVYLVm2KeeF2HnhPMB1SGl?=
+ =?Windows-1252?Q?juoEXg=3D=3D?=
+Content-Type: multipart/mixed;
+	boundary="_005_BY5PR19MB3972BA9D5619CA173B267316CB1DABY5PR19MB3972namp_"
+MIME-Version: 1.0
+X-OriginatorOrg: sct-15-20-4755-11-msonline-outlook-e7757.templateTenant
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BY5PR19MB3972.namprd19.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0c13e3d7-5a51-486d-6eef-08dba46ab6aa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Aug 2023 06:24:04.1163
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN0PR19MB6430
+
