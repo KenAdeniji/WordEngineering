@@ -219,3 +219,5 @@ git add			SQLScript/2023-08-20T1135ATalkOfAnniversary.sql
 git add			IIS/WordEngineering/2018-05-03Correspondence/2023-08-22T0306_-_ParramattaChristianChurch_-_PastorBertAndJuneBain.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2023-08-23T1344CarrieStanulov_carrie@180engineering.com_Database_OurStrengthOurNumbers_TiesAreUnchange.txt
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-23T2247press@biblicaltraining.net_-_IWillLikeToCompleteMyDoctorateDegreeForFree.txt
