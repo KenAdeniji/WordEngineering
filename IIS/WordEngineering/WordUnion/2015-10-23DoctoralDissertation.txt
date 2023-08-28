@@ -386,7 +386,7 @@ Practicing Data Science
     Empirical, find implication from the Bible?
     Theoretical, to determine a better way to doing work?
     Computational, is human labor replaceable?
-    Data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Does it involve the data in how we do our work?
+    data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Does it involve the data in how we do our work?
 
 Where to get Data
 
@@ -1035,6 +1035,12 @@ The author makes heavy use of the table semantic element for rendering tabular i
 Non-Semantic Elements
 
 The div and span elements are for rendering block and in-line information. The author uses the div as a container for the ubiquitous result set; which may contain a single or multiple tables. The span is a space for a non-block display.
+Communication of God
+
+    Audio: God first communicated with me by His Word.
+    mit-out sound (MOS): This means of communication may occur when God intends interpretation or translation by a third-party.
+    Video: This is the most resourceful use.
+
 Biblically
 What did the Jews used numbers for, as mentioned in the Bible?
 
@@ -2300,7 +2306,7 @@ References
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
     Adam Kelleher W3C web page; Available from AdamKelleher.com
     Machine Learning in Production: Developing and Optimizing Data Science Workflows and Applications (Addison-Wesley Data & Analytics Series) 1st Edition Andrew Kelleher, Adam Kelleher (2019); W3C web page; Available from https://www.google.com/books/edition/Machine_Learning_in_Production/7zuIDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
-    Designing Data-Intensive Applications Literature References Martin Kleppmann; W3C web page; Available from http://www.github.com/ept/ddia-references
+    Designing data-Intensive Applications Literature References Martin Kleppmann; W3C web page; Available from http://www.github.com/ept/ddia-references
     Koinonia House W3C web page; Available from http://www.khouse.org
     The TCP/IP Guide Charles M. Kozierok (2003-2017); W3C web page; Available from http://www.tcpipguide.com
     Cascading Style Sheets Håkon Wium Lie (2006); W3C web page; Available from http://www.wiumlie.no/2006/phd/
@@ -2310,7 +2316,7 @@ References
     Steve McConnell W3C web page; Available from http://www.stevemcconnell.com
     Stephen C. Meyer W3C web page; Available from http://www.stephencmeyer.org
     Are Religion and Science in Conflict? — Science and God Stephen C. Meyer (December 20, 2021); W3C web page; Available from http://www.youtube.com/watch?v=wb_qj7KzV1o
-    Data-Science-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Data-Science-For-Beginners
+    data-Science-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/data-Science-For-Beginners
     Web-Dev-For-Beginners Microsoft; W3C web page; Available from http://www.github.com/microsoft/Web-Dev-For-Beginners
     Writing Style Guide Microsoft; W3C web page; Available from http://docs.microsoft.com/en-us/style-guide/welcome
     DB2 Developer's Guide Craig S. Mullins (May 2000); W3C web page; Available from http://www.craigsmullins.com
@@ -2337,7 +2343,7 @@ References
     SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019); W3C web page; Available from http://google.com/books/edition/SQL_All_in_One_For_Dummies/0wGQDwAAQBAJ?hl=en
     The Twelve-Factor App W3C web page; Available from http://www.12factor.net
     The Handy Engineering Answer Book DeLean Tolbert Smith, Debra-Ann C. Butler, Aishwary Pawar, Nicole P. Pitterson (2022-09-20) W3C web page; Available from http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1
-    Data Observability: Is It Data Quality Monitoring or More? Petr Travkin, Senior Manager, Data Analytics Consulting, at EPAM Systems, Inc. (2023-02-27) W3C web page; Available from http://www.dbta.com/Editorial/Think-About-It/Data-Observability-Is-It-Data-Quality-Monitoring-or-More-157257.aspx
+    Data Observability: Is It Data Quality Monitoring or More? Petr Travkin, Senior Manager, Data Analytics Consulting, at EPAM Systems, Inc. (2023-02-27) W3C web page; Available from http://www.dbta.com/Editorial/Think-About-It/data-Observability-Is-It-data-Quality-Monitoring-or-More-157257.aspx
     Python for Data Science A Hands-On Introduction Yuli Vasiliev (2022-08-02); W3C web page; Available from http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Building Maintainable Software Ten Guidelines for Future-Proof Code Joost Visser, Pascal van Eck of Software Improvement Group, B.V. Amsterdam, Netherlands; W3C web page; Available from http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf
     Supervised Learning with Python Concepts and Practical Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page; Available from http://www.allitebooks.com/supervised-learning-with-python
