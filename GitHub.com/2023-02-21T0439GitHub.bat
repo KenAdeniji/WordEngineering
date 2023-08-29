@@ -223,3 +223,5 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2023-08-23T1344CarrieStan
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-23T2247press@biblicaltraining.net_-_IWillLikeToCompleteMyDoctorateDegreeForFree.txt
 
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-28T1719JulieKittridge_Julie@180engineering.com_IllinoisToolWorks(ITW)_DallasTexasTX.txt
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-28T2323NorikoYoshida_-_FaithAnYao.txt
