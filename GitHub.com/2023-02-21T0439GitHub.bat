@@ -227,3 +227,7 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-28T1719Juli
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2023-08-28T2323NorikoYoshida_-_FaithAnYao.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2023-08-29T0738NorikoYoshida_-_FaithAnYao_-_TheMomentIShine_TheLaterYouValue.txt
+
+git add        IIS/WordEngineering/WordCross/WhatAreHisIntentAsFavor.asmx
+git add        IIS/WordEngineering/WordCross/WhatAreHisIntentAsFavor.html
+git add        InformationInTransit/ProcessCode/WhatAreHisIntentAsFavor.cs
