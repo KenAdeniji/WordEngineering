@@ -343,4 +343,17 @@ Microsoft Windows operating system, Microsoft SQL Server Management Studio grid 
 
 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days.
 2021-07-21 Five two W.
+
+2023-09-03T23:14:00 Open single Firefox tab, multiple Firefox tabs will open.
+
+2023-09-03T23:16:00 DateAdd.aspx
+https://www.expedia.com/?locale=en_US&siteid=1&semcid=US.UB.ADMARKETPLACE.GT-C-EN.HOTEL&SEMDTL=a1219867.b115417125.g1.l1.e1C.m11693806548401000000.r1.c1.j1.k1.d1.h1.i1.n1.o1.p1.q1.s1.t1.x1.f1.u1.v1.w1&mfadid=adm
+
+2023-09-04T08:28:00
+Drive.Google.com Google Drive Almost out of storage.
+If you run out, you can't save to drive,
+send and receive email on Gmail
+or back up to Google photos
+Don't show this again
+OK Manage Storage
 :Exit
