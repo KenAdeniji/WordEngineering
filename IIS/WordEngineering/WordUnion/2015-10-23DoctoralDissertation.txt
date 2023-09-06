@@ -1199,7 +1199,15 @@ The phases are optional of the progress
     The distribution of allocation? Time, place ...
     It is one man doing ... it is many doing.
 
-SQL uses set theory, whereas most programming language clients, including LINQ, use row processing or procedural programming.
+SQL uses set theory, whereas most programming language clients, including LINQ, use row processing or procedural programming. Relational operations:
+
+    Projections: The author will use projections, select clauses, for retrieving the user-specified Bible version column.
+    Selections: The particular Bible row verse selections, where clauses, are built using dynamic SQL.
+    Joins: Normalization offers the opportunity to segment and in most cases defer from using the join clause. C# provides datasets which contains datatables and ASP.NET uses GridViews. This is visible in:
+    .aspx 	.aspx.cs
+    http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenance.aspx 	http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenancePage.aspx.cs
+    http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx 	http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx.cs
+
 What did He find ... as useful
 
 What did He find ... as useful ( Matthew 21:42, Mark 12:10, Luke 20:17 )? Technology 	Usefulness history
