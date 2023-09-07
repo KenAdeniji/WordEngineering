@@ -1211,7 +1211,7 @@ SQL uses set theory, whereas most programming language clients, including LINQ, 
 
     Projections: The author will use projections, select clauses, for retrieving the user-specified Bible version column.
     Selections: The particular Bible row verse selections, where clauses, are built using dynamic SQL.
-    Joins: Normalization offers the opportunity to segment and in most cases defer from using the join clause. C# provides datasets which contains datatables and ASP.NET uses GridViews. This is visible in:
+    Joins: Normalization offers the opportunity to segment and in most cases defer from using the join clause. The contact view joins the contact table and its subsidiaries. C# provides datasets which contains datatables and ASP.NET uses GridViews. This is visible in:
     .aspx 	.aspx.cs
     http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenance.aspx 	http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenancePage.aspx.cs
     http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx 	http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx.cs
