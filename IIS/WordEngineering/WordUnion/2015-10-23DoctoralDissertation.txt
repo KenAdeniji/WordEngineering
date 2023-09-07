@@ -1205,6 +1205,8 @@ The phases are optional of the progress
     The distribution of allocation? Time, place ...
     It is one man doing ... it is many doing.
 
+"
+
 SQL uses set theory, whereas most programming language clients, including LINQ, use row processing or procedural programming. Relational operations:
 
     Projections: The author will use projections, select clauses, for retrieving the user-specified Bible version column.
@@ -1214,6 +1216,7 @@ SQL uses set theory, whereas most programming language clients, including LINQ, 
     http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenance.aspx 	http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenancePage.aspx.cs
     http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx 	http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx.cs
 
+" (Kevin Kline, Regina O. Obe, Leo S. Hsu).
 What did He find ... as useful
 
 What did He find ... as useful ( Matthew 21:42, Mark 12:10, Luke 20:17 )? Technology 	Usefulness history
@@ -2334,6 +2337,7 @@ References
     Adam Kelleher W3C web page; Available from AdamKelleher.com
     Machine Learning in Production: Developing and Optimizing Data Science Workflows and Applications (Addison-Wesley Data & Analytics Series) 1st Edition Andrew Kelleher, Adam Kelleher (2019); W3C web page; Available from https://www.google.com/books/edition/Machine_Learning_in_Production/7zuIDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Designing data-Intensive Applications Literature References Martin Kleppmann; W3C web page; Available from http://www.github.com/ept/ddia-references
+    SQL in a Nutshell Kevin Kline, Regina O. Obe, Leo S. Hsu (June 14, 2022); W3C web page; Available from http://google.com/books/edition/SQL_in_a_Nutshell/MEZ1EAAAQBAJ?hl=en&gbpv=0
     Shoe Dog A Memoir by the Creator of Nike Philip Knight (April 26, 2016); W3C web page; Available from http://www.google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en&gbpv=0
     Koinonia House W3C web page; Available from http://www.khouse.org
     The TCP/IP Guide Charles M. Kozierok (2003-2017); W3C web page; Available from http://www.tcpipguide.com
