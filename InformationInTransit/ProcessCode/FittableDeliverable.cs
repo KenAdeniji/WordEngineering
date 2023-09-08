@@ -21,6 +21,8 @@ using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 using InformationInTransit.ProcessLogic;
 
+using ChristianNagel;	
+
 namespace InformationInTransit.ProcessCode
 {
 	/*
@@ -28,6 +30,9 @@ namespace InformationInTransit.ProcessCode
 		2023-09-07T21:30:00 Created.
 		2023-09-07T22:38:00	Code complete.
 		2023-09-08T00:21:00	... 2023-09-08T04:40:00 Debug .asmx ... .html.
+		2023-09-08T08:36:00	http://stackoverflow.com/questions/13220279/comparing-two-int-variables-with-room-margin-for-error
+		2023-09-08T08:40:00	http://stackoverflow.com/questions/4767656/most-reliable-way-of-comparing-datetimes
+		2023-09-08T08:07:00	... 2023-09-08T11:35:00 Debug .asmx ... .html. Suppress discard columns.
 	*/
 	public class FittableDeliverable
 	{
@@ -48,10 +53,20 @@ namespace InformationInTransit.ProcessCode
 				CommandType.Text,
 				DataCommand.ResultType.DataTable
 			);
-			decimal rankImportance;
+			
+			double rankImportance;
 			String[] combinedResultsWord;
 			int combinedResultsWordLength = 0;
 			SoundexUtility soundexUtility = new SoundexUtility();
+			
+			bool isDateTime = false;
+			bool isNumeric = false;
+			
+			DateTime datedFrom;
+			DateTime datedUntil;
+			
+			Int32 rememberFromUntil;
+			
 			foreach(DataRow dataRow in resultTable.Rows)
 			{
 				rankImportance = 0;
@@ -63,14 +78,31 @@ namespace InformationInTransit.ProcessCode
 						StringSplitOptions.RemoveEmptyEntries 
 					);
 					combinedResultsWordLength = combinedResultsWord.Length;
+					
 					foreach(String combinedResultsWords in combinedResultsWord)
 					{
-						rankImportance +=
-							soundexUtility.Compare
-							(
-								wordCurrent,
-								combinedResultsWords
-							);
+						rankImportance = 0;
+						isDateTime = wordCurrent.IsDateTime();
+						isNumeric = wordCurrent.IsNumeric();
+						
+						if ( isNumeric == true )
+						{
+							rememberFromUntil = (Int32) dataRow["RememberFromUntil"];
+							rankImportance += 
+								rememberFromUntil * 
+								Int32.Parse(wordCurrent) /
+								Int32.MaxValue;
+						}			
+						else
+						{	
+							rankImportance +=
+								( 1.0 / 4.0 ) *
+								soundexUtility.Compare
+								(
+									wordCurrent,
+									combinedResultsWords
+								);
+						}		
 					}	
 				}
 				
@@ -114,6 +146,7 @@ namespace InformationInTransit.ProcessCode
 				t1.FromUntil			RememberFromUntil,
 				t1.ToFro				RememberToFro,
 				t1.YearMonthWeekDay		RememberYearMonthWeekDay,
+/*				
 				t2.HisWordID			HisWordID,
 				t2.Word					HisWordWord,
 				t2.Commentary			HisWordCommentary,
@@ -123,6 +156,7 @@ namespace InformationInTransit.ProcessCode
 				t3.Email				ContactEmail,
 				t3.URI					ContactURI,
 				t3.StreetAddress		ContactStreetAddress,
+*/				
 					CONVERT( VARCHAR, t1.DatedFrom )	+ ' ' +
 					CONVERT( VARCHAR, t1.DatedUntil ) + ' ' +
 					CONVERT( VARCHAR, t1.FromUntil ) + ' ' +
@@ -139,6 +173,9 @@ namespace InformationInTransit.ProcessCode
 			FROM 	WordEngineering..Remember_View t1 
 			FULL OUTER JOIN	WordEngineering..HisWord_View t2 ON (t1.HisWordID = t2.HisWordID )
 			FULL OUTER JOIN	WordEngineering..ViewContactSet t3 ON ( t1.ContactID = t3.ContactID )
+			WHERE 
+				t1.ContactID IS NOT NULL
+			AND t1.HisWordID IS NOT NULL	
 			ORDER BY t1.RememberID DESC
 		";
 	}

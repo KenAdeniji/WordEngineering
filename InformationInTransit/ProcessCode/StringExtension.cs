@@ -11,6 +11,18 @@ namespace ChristianNagel
 		{
 		}
 		
+		public static bool IsDateTime( this String input ) 
+		{
+			DateTime placeHolder;
+			return DateTime.TryParse(input, out placeHolder);
+		}
+
+		public static bool IsNumeric( this String input ) 
+		{
+			double placeHolder;
+			return double.TryParse(input, out placeHolder);
+		}
+		
 		public static int WordCount
 		(
 			this String s

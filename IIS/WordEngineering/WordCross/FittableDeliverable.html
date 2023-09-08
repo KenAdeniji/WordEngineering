@@ -21,23 +21,24 @@
 			<table>
 				<tr>
 					<td><label for="word">Word</label></td>
-					<td><input id="word" required autofocus value="4 biblical months, 8 days"/></td>
+					<td><input id="word" required autofocus /></td>
 				</tr>
 				<tr>
 					<td><label for="displayCombinedResults">Display Combined Results:</label></td>
-					<td><input type="checkbox" id="displayCombinedResults" checked="false"></td>
+					<td><input type="checkbox" id="displayCombinedResults" checked="false" /></td>
 				</tr>	
 				<tr>
 					<td><label for="displayFormat">Display Format:</label></td>
 					<td>
 						<input type="radio" id="displayFormatForm" name="displayFormat" value="form" checked />
 						<label for=""displayFormatForm">Form</label>
+						<br/>
 						<input type="radio" id="displayFormatGrid" name="displayFormat" value="grid" />
 						<label for=""displayFormatGrid">Grid</label>
 					</td>
 				</tr>	
 				<tr>
-					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery" /></td>
 				</tr>	
 			</table>
 		</div>
@@ -45,7 +46,7 @@
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
-		<script>
+		<script> 
 			var isPostBack = false;
 			
 			const 	wordElement = document.getElementById("word");
