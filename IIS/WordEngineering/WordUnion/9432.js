@@ -91,6 +91,10 @@
 	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil. DontFeelLeftAlone.html.
 	2023-06-27T19:57:00 addTableRowClickHandlers()
 		http://stackoverflow.com/questions/1207939/adding-an-onclick-event-to-a-table-row/1207963#1207963
+	//2023-09-07T23:25:00 Created. https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button
+		getRadioButtonGroupValue: function(radioButtonGroupName) 
+	//2023-09-07T23:53:00 Created. http://stackoverflow.com/questions/9476617/how-to-set-radio-button-status-with-javascript
+		setRadioButtonGroupValue: function( radioButtonGroupName, radioButtonGroupValue	) 
 */
 
 var scriptLiteral9432 =
@@ -959,6 +963,51 @@ var scriptLiteral9432 =
 				fileType
 			);	
 		}	
+	},
+
+	//2023-09-07T23:25:00 Created. https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button
+	getRadioButtonGroupValue: function(radioButtonGroupName) 
+	{
+		var groupName = document.getElementsByName(radioButtonGroupName);
+		var groupValue;
+		for( var index = 0; index < groupName.length; index++ )
+		{
+			if(groupName[index].checked)
+			{
+				groupValue = groupName[index].value;
+				break;
+			}
+		}
+		return groupValue;
+	},
+
+	//2023-09-07T23:53:00 Created. http://stackoverflow.com/questions/9476617/how-to-set-radio-button-status-with-javascript
+	setRadioButtonGroupValue: function
+	(
+		radioButtonGroupName,
+		radioButtonGroupValue
+	) 
+	{
+		Array.from
+		(  
+			document.querySelectorAll
+			(
+				'[name="' + radioButtonGroupName + '"]'
+			)
+		).forEach
+		(
+			(element,index) =>
+			{
+				if (radioButtonGroupValue === element.value) 
+				{
+					element.checked = true;
+				} 
+				else 
+				{
+					element.checked = false;
+				}
+			}
+		);
 	},
 
 	//2022-01-31T11:28:00 Created.
