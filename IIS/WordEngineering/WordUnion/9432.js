@@ -76,6 +76,7 @@
 	2021-01-21T14:40:00	Support for limit, BibleBookGroup, include Apocalyptic Books, Pauline Epistles, General Letters.
 	2021-03-05T17:45:00	bibleBookGroups: ["Poetry", "poetry"]
 	2021-03-16T15:00:00	bibleBookGroups: ["(All)", "all"]
+	2023-09-09T02:48:00	bibleBookGroups: ["Historical"]
 	2021-06-20
 		bibleDays: [
 		"Atonement",
@@ -91,10 +92,11 @@
 	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil. DontFeelLeftAlone.html.
 	2023-06-27T19:57:00 addTableRowClickHandlers()
 		http://stackoverflow.com/questions/1207939/adding-an-onclick-event-to-a-table-row/1207963#1207963
-	//2023-09-07T23:25:00 Created. https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button
+	2023-09-07T23:25:00 Created. https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button
 		getRadioButtonGroupValue: function(radioButtonGroupName) 
-	//2023-09-07T23:53:00 Created. http://stackoverflow.com/questions/9476617/how-to-set-radio-button-status-with-javascript
+	2023-09-07T23:53:00 Created. http://stackoverflow.com/questions/9476617/how-to-set-radio-button-status-with-javascript
 		setRadioButtonGroupValue: function( radioButtonGroupName, radioButtonGroupValue	) 
+	2023-09-09T03:53:00	... 2023-09-09T04:14:00 buildSelect() now called for all input select.
 */
 
 var scriptLiteral9432 =
@@ -116,17 +118,18 @@ var scriptLiteral9432 =
 		"Pauline Epistles"
 	],
 	bibleBookGroups: [
-		["(All)", "all"],	
-		["Old Testament", "old"],
-		["New Testament", "new"],
-		["Pentateuch", "pentateuch"],
-		["Poetry", "poetry"],
-		["Major Prophets", "major prophets"],
-		["Minor Prophets", "minor prophets"],
-		["Gospel", "gospel"],
-		["Pauline Epistles", "pauline epistles"],
-		["General Epistles", "general epistles"],
-		["Apocalyptic Books", "apocalyptic books"]
+		"All",	
+		"Old Testament",
+		"New Testament",
+		"Pentateuch",
+		"Historical",
+		"Poetry",
+		"Major Prophets",
+		"Minor Prophets",
+		"Gospel",
+		"Pauline Epistles",
+		"General Epistles",
+		"Apocalyptic Books"
 	],
 	bibleDays: [
 		"Atonement",
@@ -239,19 +242,6 @@ var scriptLiteral9432 =
 		verseCount: 31102,
 		verseCountOldTestament: 23145
 	},
-	bibleBookGroups: [
-		["(All)", "all"],	
-		["Old Testament", "old"],
-		["New Testament", "new"],
-		["Pentateuch", "pentateuch"],
-		["Poetry", "poetry"],
-		["Major Prophets", "major prophets"],
-		["Minor Prophets", "minor prophets"],
-		["Gospel", "gospel"],
-		["Pauline Epistles", "pauline epistles"],
-		["General Epistles", "general epistles"],
-		["Apocalyptic Books", "apocalyptic books"]
-	],
 	calendarUnitOfMeasurement: [ //2021-11-10T12:24:00
 		"Day",
 		"Week",
@@ -1340,113 +1330,76 @@ var scriptLiteral9432 =
 
 	renderBibleBookGroupSelect: function() 
 	{
-		var select = document.getElementById("bibleBookGroup");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleBookGroups.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.bibleBookGroups[rowIndex][0];
-			option.value = scriptLiteral9432.bibleBookGroups[rowIndex][1];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"bibleBookGroup",
+			scriptLiteral9432.bibleBookGroups
+		);
 	},
 
 
 	renderBibleBookSelect: function() 
 	{
-		var select = document.getElementById("bookID");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleBooks.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.bibleBooks[rowIndex];
-			option.value = scriptLiteral9432.bibleBooks[rowIndex];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"bookID",
+			scriptLiteral9432.bibleBooks
+		);
 	},
 
 	renderBibleUnitSelect: function() 
 	{
-		var select = document.getElementById("bibleUnit");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleUnits.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.bibleUnits[rowIndex][0];
-			option.value = scriptLiteral9432.bibleUnits[rowIndex][1];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"bibleUnit",
+			scriptLiteral9432.bibleUnits
+		);
 	},
 
 	renderBibleVersionSelect: function() 
 	{
-		var select = document.getElementById("bibleVersion");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleVersions.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.bibleVersions[rowIndex][0];
-			option.value = scriptLiteral9432.bibleVersions[rowIndex][1];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"bibleVersion",
+			scriptLiteral9432.bibleVersions
+		);
 	},
 
 	renderFileTypeSelect: function(select) 
 	{
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.fileTypes.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.fileTypes[rowIndex][0];
-			option.value = scriptLiteral9432.fileTypes[rowIndex][1];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"fileType",
+			scriptLiteral9432.fileTypes
+		);
 	},
 
 	renderBibleGroupSelect: function() 
 	{
-		var select = document.getElementById("bibleGroup");
-		select.options.length = 0;
-
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.bibleGroups.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.bibleGroups[rowIndex][0];
-			option.value = scriptLiteral9432.bibleGroups[rowIndex][1];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"bibleGroup",
+			scriptLiteral9432.bibleGroups
+		);
+		
 	},
 	
 	renderGroupBySelect: function() 
 	{
-		var select = document.getElementById("groupBy");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.groupBys.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.groupBys[rowIndex];
-			option.value = scriptLiteral9432.groupBys[rowIndex];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"groupBy",
+			scriptLiteral9432.groupBys
+		);
 	},
 	
 	renderOperatorSelect: function() 
 	{
-		var select = document.getElementById("operator");
-		select.options.length = 0;
-		
-		for (var rowIndex = 0, rowCount = scriptLiteral9432.operators.length; rowIndex < rowCount; ++rowIndex)
-		{
-			var option = document.createElement("option");
-			option.text = scriptLiteral9432.operators[rowIndex];
-			select.appendChild(option);
-		}
+		scriptLiteral9432.buildSelect
+		(
+			"operator",
+			scriptLiteral9432.operators
+		);
 	},
 	
 	retrieveSelection: function(selectID, defaultSelection, separation)

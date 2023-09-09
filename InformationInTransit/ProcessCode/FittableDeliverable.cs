@@ -62,10 +62,17 @@ namespace InformationInTransit.ProcessCode
 			bool isDateTime = false;
 			bool isNumeric = false;
 			
-			DateTime datedFrom;
-			DateTime datedUntil;
+			DateTime 	dated;
+			DateTime 	datedFrom;
+			DateTime 	datedUntil;
 			
-			Int32 rememberFromUntil;
+			Int32 		fromUntil;
+			
+			Int32 		days = 0;
+			
+			double 		wordValue = 0;
+			
+			//String workCopy = ""; //2023-09-08T14:22:00
 			
 			foreach(DataRow dataRow in resultTable.Rows)
 			{
@@ -85,14 +92,34 @@ namespace InformationInTransit.ProcessCode
 						isDateTime = wordCurrent.IsDateTime();
 						isNumeric = wordCurrent.IsNumeric();
 						
-						if ( isNumeric == true )
+						if ( isDateTime == true )
 						{
-							rememberFromUntil = (Int32) dataRow["RememberFromUntil"];
-							rankImportance += 
-								rememberFromUntil * 
-								Int32.Parse(wordCurrent) /
-								Int32.MaxValue;
-						}			
+							dated = DateTime.Parse(wordCurrent);							
+				
+							datedFrom = (DateTime) dataRow["RememberDatedFrom"];
+							days = CompareDates( dated, datedFrom );
+							if ( days <= 1 )
+							{	
+								rankImportance += 1;
+							}	
+							
+							datedUntil = (DateTime) dataRow["RememberDatedUntil"];
+							days = CompareDates( dated, datedUntil );
+							if ( days <= 1 )
+							{	
+								rankImportance += 1;
+							}	
+						}
+						else if ( isNumeric == true )
+						{	
+							wordValue = Double.Parse(wordCurrent);							
+							fromUntil = (Int32) dataRow["RememberFromUntil"];
+							
+							if ( Math.Abs( wordValue - fromUntil ) <= 1 )
+							{	
+								rankImportance += 1;
+							}	
+						}		
 						else
 						{	
 							rankImportance +=
@@ -112,7 +139,7 @@ namespace InformationInTransit.ProcessCode
 				}		
 				else
 				{	
-					dataRow["Rank"] = rankImportance / combinedResultsWordLength;
+					dataRow["Rank"] = rankImportance;
 				}	
 			}	
 
@@ -134,6 +161,26 @@ namespace InformationInTransit.ProcessCode
 			resultTable = resultTable.DefaultView.ToTable();
 			
 			return resultTable;
+		}
+
+		public static Int32 CompareDates
+		(
+			DateTime	firstDate,
+			DateTime	secondDate
+		)
+		{
+			Int32 days = 0;
+
+			if ( secondDate > firstDate )
+			{
+				days = ( ( secondDate - firstDate ).Days );
+			}
+			else if ( secondDate < firstDate )
+			{
+				days = ( ( firstDate - secondDate ).Days );								
+			}
+
+			return days;				
 		}
 
         public const string QueryStatement = 
@@ -171,8 +218,8 @@ namespace InformationInTransit.ProcessCode
 					ISNULL( t3.StreetAddress, '' )
 				CombinedResults
 			FROM 	WordEngineering..Remember_View t1 
-			FULL OUTER JOIN	WordEngineering..HisWord_View t2 ON (t1.HisWordID = t2.HisWordID )
-			FULL OUTER JOIN	WordEngineering..ViewContactSet t3 ON ( t1.ContactID = t3.ContactID )
+			INNER JOIN	WordEngineering..HisWord_View t2 ON (t1.HisWordID = t2.HisWordID )
+			INNER JOIN	WordEngineering..ViewContactSet t3 ON ( t1.ContactID = t3.ContactID )
 			WHERE 
 				t1.ContactID IS NOT NULL
 			AND t1.HisWordID IS NOT NULL	
