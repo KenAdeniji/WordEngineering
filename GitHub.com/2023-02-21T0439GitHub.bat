@@ -235,3 +235,7 @@ git add        	InformationInTransit/ProcessCode/WhatAreHisIntentAsFavor.cs
 git add			IIS/WordEngineering/WordCross/FittableDeliverable.asmx
 git add	        IIS/WordEngineering/WordCross/FittableDeliverable.html
 git add	        InformationInTransit/ProcessCode/FittableDeliverable.cs
+
+REM git rm -f		InformationInTransit/ProcessCode/BibleDictionaryHelper.2018-02-04T2126cs
+REM git rm -f 		InformationInTransit/ProcessCode/BibleWordHelper.2018-03-25T1800cs
+

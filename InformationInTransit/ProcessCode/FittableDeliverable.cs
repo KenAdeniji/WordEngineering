@@ -33,6 +33,17 @@ namespace InformationInTransit.ProcessCode
 		2023-09-08T08:36:00	http://stackoverflow.com/questions/13220279/comparing-two-int-variables-with-room-margin-for-error
 		2023-09-08T08:40:00	http://stackoverflow.com/questions/4767656/most-reliable-way-of-comparing-datetimes
 		2023-09-08T08:07:00	... 2023-09-08T11:35:00 Debug .asmx ... .html. Suppress discard columns.
+		2023-09-08T17:52:00	... 2023-09-08T19:27:00
+						else if ( isNumeric == true )
+						{	
+							wordValue = Double.Parse(wordCurrent);							
+							fromUntil = (Int32) dataRow["RememberFromUntil"];
+							
+							if ( Math.Abs( wordValue - fromUntil ) <= 1 )
+							{	
+								rankImportance += 1;
+							}	
+						}		
 	*/
 	public class FittableDeliverable
 	{

@@ -1,20 +1,22 @@
 @echo off
+REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex170909.log
 :BeginAgain
-echo 1=BCP, 2=Node.js, 3=Rust, 4=SQLServerBackup, 5=SQLServerDataDefinitionLanguageDDL, 6=SQLServerDataFiles, 7=SQLServerDataManipulationLanguageDML, 8=SQLServerExport, 9=WebAssembly, 10=WinScp, 11=WordEngineering, 12=WordOfGod
+echo 1=BCP, 2=IISLog, 3=Node.js, 4=Rust, 5=SQLServerBackup, 6=SQLServerDataDefinitionLanguageDDL, 7=SQLServerDataFiles, 8=SQLServerDataManipulationLanguageDML, 9=SQLServerExport, 10=WebAssembly, 11=WinScp, 12=WordEngineering, 13=WordOfGod
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
-IF %id% == 2 GOTO Node.js
-IF %id% == 3 GOTO Rust
-IF %id% == 4 GOTO SQLServerBackup
-IF %id% == 5 GOTO SQLServerDataDefinitionLanguageDDL
-IF %id% == 6 GOTO SQLServerDataFiles
-IF %id% == 7 GOTO SQLServerDataManipulationLanguageDML
-IF %id% == 8 GOTO SQLServerExport
-IF %id% == 9 GOTO WebAssembly
-IF %id% == 10 GOTO WinScp
-IF %id% == 11 GOTO WordEngineering
-IF %id% == 12 GOTO WordOfGod
+IF %id% == 2 GOTO IISLog
+IF %id% == 3 GOTO Node.js
+IF %id% == 4 GOTO Rust
+IF %id% == 5 GOTO SQLServerBackup
+IF %id% == 6 GOTO SQLServerDataDefinitionLanguageDDL
+IF %id% == 7 GOTO SQLServerDataFiles
+IF %id% == 8 GOTO SQLServerDataManipulationLanguageDML
+IF %id% == 9 GOTO SQLServerExport
+IF %id% == 10 GOTO WebAssembly
+IF %id% == 11 GOTO WinScp
+IF %id% == 12 GOTO WordEngineering
+IF %id% == 13 GOTO WordOfGod
 GOTO Exit
 
 :BCP
@@ -24,6 +26,15 @@ xcopy e:\BCP f:\BCP /d /e /s /y
 xcopy e:\BCP \\Noor\e$\BCP /d /e /s /y
 REM xcopy e:\BCP \\Harvest\e$\BCP /d /e /s /y
 xcopy e:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
+GOTO Exit
+
+:IISLog
+xcopy c:\inetpub d:\inetpub /d /e /s /y
+xcopy c:\inetpub e:\inetpub /d /e /s /y
+xcopy c:\inetpub e:\inetpub /d /e /s /y
+xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
+xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
+xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
 GOTO Exit
 
 :Node.js

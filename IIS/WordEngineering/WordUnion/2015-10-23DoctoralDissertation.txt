@@ -1206,6 +1206,16 @@ The phases are optional of the progress
     The distribution of allocation? Time, place ...
     It is one man doing ... it is many doing.
 
+HisWord table nullable columns
+
+All of the columns in the HisWord table are either system generable (HisWordID, Dated) or nullable ( 1 Samuel 3:19 ) For 	Against
+Prudent	Disposable
+Hyperlink	Diversion
+Quality Assurance (QA)	Prone to error
+God	Man
+Word	Commentary
+Location	Scenery
+
 "
 
 SQL uses set theory, whereas most programming language clients, including LINQ, use row processing or procedural programming. Relational operations:
