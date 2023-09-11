@@ -1231,6 +1231,7 @@ SQL uses set theory, whereas most programming language clients, including LINQ, 
     .aspx 	.aspx.cs
     http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenance.aspx 	http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenancePage.aspx.cs
     http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx 	http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/Gradual/Contacts/ContactsList.aspx.cs
+    Theta join the old convention of placing columns relationships conditions in the where clause has been superseded by the ANSI/ISO join clause.
 
 " (Kevin Kline, Regina O. Obe, Leo S. Hsu).
 What did He find ... as useful
