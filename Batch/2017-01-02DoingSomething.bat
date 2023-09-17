@@ -167,7 +167,7 @@ DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17865);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
-DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 8477);
+DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18066);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
@@ -177,7 +177,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1475);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 6357);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,13325);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13464);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5074);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -355,7 +355,7 @@ Microsoft Windows operating system, Microsoft SQL Server Management Studio grid 
 The Coming Prince. 0032-04-06. The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus on March 14, 445 B.C. 0032-04-06 Meshiach Nagid. March 14, 445 B.C. and April 6, 32 A.D. 173,880 days.
 2021-07-21 Five two W.
 
-2023-09-03T23:14:00 Open single Firefox tab, multiple Firefox tabs will open.
+2023-09-03T23:14:00 Open single Mozilla Firefox browser tab, multiple Firefox tabs will open.
 
 2023-09-03T23:16:00 DateAdd.aspx
 https://www.expedia.com/?locale=en_US&siteid=1&semcid=US.UB.ADMARKETPLACE.GT-C-EN.HOTEL&SEMDTL=a1219867.b115417125.g1.l1.e1C.m11693806548401000000.r1.c1.j1.k1.d1.h1.i1.n1.o1.p1.q1.s1.t1.x1.f1.u1.v1.w1&mfadid=adm
@@ -367,4 +367,25 @@ send and receive email on Gmail
 or back up to Google photos
 Don't show this again
 OK Manage Storage
+
+2023-09-13T19:49:00
+Microsoft Windows operating system mouse error.
+
+2023-09-14T16:50:00
+	http://localhost/informationintransit/urimaintenancewebform.aspx
+	Page 10 faeces
+	Page 12 closes.
+	19:50 urimaintenancewebform.aspx tab closes. Urine. Page 18, urine.
+	20:12 urimaintenancewebform.aspx tab closes. Urine. Page 27.
+
+2023-09-15T16:38:00	
+	2017-07-23T1833ToDo.txt opens.	
+
+2023-09-16T08:11:00		
+	Microsoft hotmail.com move e-mail to Microsoft folder window pops-up.
+	
+2023-09-16T09:54:00
+	Microsoft Windows operating system mouse error.
+	
+	
 :Exit

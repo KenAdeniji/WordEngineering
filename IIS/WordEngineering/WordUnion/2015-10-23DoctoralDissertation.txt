@@ -1201,6 +1201,30 @@ The author is working on variations of AlphabetSequence: These are not suitable 
     3-Words: Who is your manager? Crazy mister Martin. Mister Martin as a good. The first word is the BookID; the second word is the ChapterID; and the third word is the VerseID.
 
 Biblical numbers for calculation. Biblical separation into Testaments, books, chapters and verses for referencing.
+
+The author is linking words spoken to related verses and dictionaries.
+
+    BibleReference uses whole numbers for representation.
+    Who, what, when, where, why?
+    Prophecy and Fulfillment: Keyword Variation
+
+What did He find ... as useful
+
+What did He find ... as useful ( Matthew 21:42, Mark 12:10, Luke 20:17 )? Technology 	Usefulness history
+Microsoft Windows Operating System	Utility
+Microsoft Notepad	Text editor, aged
+Microsoft Internet Explorer (IE)	Browser, deprecated
+Microsoft SQL Server 	Relational database. Single repository which supports:
+
+    Client/Server autonomy. Client embedded-SQL.
+        The datetime column defaults.
+        The identity column is auto-generable.
+        Computed column: What can the computer do for us?
+
+Microsoft sqlcmd	Command-line interface (CLI). Between the years 2000 ... 2005.
+Microsoft SQL Server Management Studio (SSMS)	Graphical user interface (GUI). Spreadsheet like editor.
+Mozilla Firefox	Multi-tab browser
+
 The phases are optional of the progress
 
     The distribution of allocation? Time, place ...
@@ -1235,29 +1259,6 @@ SQL uses set theory, whereas most programming language clients, including LINQ, 
     Theta join the old convention of placing columns relationships conditions in the where clause has been superseded by the ANSI/ISO join clause.
 
 " (Kevin Kline, Regina O. Obe, Leo S. Hsu).
-What did He find ... as useful
-
-What did He find ... as useful ( Matthew 21:42, Mark 12:10, Luke 20:17 )? Technology 	Usefulness history
-Microsoft Windows Operating System	Utility
-Microsoft Notepad	Text editor, aged
-Microsoft Internet Explorer (IE)	Browser, deprecated
-Microsoft SQL Server 	Relational database. Single repository which supports:
-
-    Client/Server autonomy. Client embedded-SQL.
-        The datetime column defaults.
-        The identity column is auto-generable.
-        Computed column: What can the computer do for us?
-
-Microsoft sqlcmd	Command-line interface (CLI). Between the years 2000 ... 2005.
-Microsoft SQL Server Management Studio (SSMS)	Graphical user interface (GUI). Spreadsheet like editor.
-Mozilla Firefox	Multi-tab browser
-
-The author is linking words spoken to related verses and dictionaries.
-
-    BibleReference uses whole numbers for representation.
-    Who, what, when, where, why?
-    Prophecy and Fulfillment: Keyword Variation
-
 logparser
 
 The log files for this observation are between 2017-01-02 and 2023-06-08.
@@ -2043,7 +2044,7 @@ The author separates the word of God from the supporting information:
 
     Cast which fits into the Contact ID column
     Scripture reference is the Biblical theme
-    Scenery which is the dream setting.
+    Scenery which is the dream setting
     Location which is an awake surrounding
     Language translation
 
