@@ -147,6 +147,8 @@ The WordEngineering Database
 The WordEngineering SQL Server database, mainly consists, of four tables - HisWord, Remember, APass, ActToGod.
 The HisWord Table
 
+The changes in the HisWord table: To be more specific, when we search.
+
 The HisWord table is what the author heard from the source. The entries in the HisWord table are exact and representable in alphanumeric format (Numbers 12:6-8). In following, the Bible's New Testament convention, where there are translations of Hebrew words to English which is being interpreted, (Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36); so also, there are translations of Yoruba words to English.
 
 There have been cases when the author cannot spell and fully comprehend what he heard. In such cases, and not dispose of the records, the author will partly enter what he heard. This impedance mismatch between what the speaker said and what the listener heard, rarely occurs with English words. But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases. The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets. The author requires a Yoruba dictionary and translator; a recent success is with the http://translate.google.com web page.
