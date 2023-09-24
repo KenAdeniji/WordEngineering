@@ -35,9 +35,23 @@ Theory
 "
 Business Analysis Body of Knowledge (BABOK)
 Tasks
+
+How to go about it?
 Purpose
 
 The author's original intention was to record God's word. This later led to finding the word's background and implication.
+Inputs
+
+The data input is currently being done manually, but the author looks forward to electronic automation. The identity and date are potential external inputs. The scripture reference requires Bible knowledge.
+Elements
+
+Word processing flows more naturally than data entry.
+Guidelines and tools
+
+A relational database is a substitute for text processing.
+Stakeholders
+
+I am the primary contributor and beneficiary.
 " (Ali Cox). "
 Database Modeling
 Entity-Relationship (ER) Model
