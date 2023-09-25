@@ -1235,6 +1235,10 @@ The drawback of the relational approach?
     Maintainability
     Expertise and familiarity? Isolated.
     Spontaneous versus (VS) latency? What to place in the database, what to extract from it?
+    When is capacity...full enough?
+        Databases may reside inside multiple files.
+        Although databases may store different file types. This wasn't the original intention.
+        Databases are abstractions.
 
 Numbers in themes
 
