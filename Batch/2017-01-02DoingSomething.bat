@@ -389,4 +389,7 @@ Microsoft Windows operating system mouse error.
 	
 2023-09-17T16:24:00	
 	Mozilla Firefox browser tab closes DateDifference.aspx
+
+2023-09-25T14:02:00		
+select substring( 'http://www.arandomsite.com' from '^[^:]*://(?:[^/:]*:[^/@]*@)?(?:[^/:.]*\.)+([^:/]+)' ) as tld;	
 :Exit

@@ -241,6 +241,8 @@ REM git rm -f 		InformationInTransit/ProcessCode/BibleWordHelper.2018-03-25T1800
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2023-09-12T0822HomelandSecurity_-_Ennis_2006-11-24ResidencyGrant_2012-04-12NaturalizationInterview.txt
 
-git add        IIS/WordEngineering/2018-05-03Correspondence/2023-09-22T0513WhatWeMeanToEachOther_InBetweenUs.txt
-git add        IIS/WordEngineering/CascadingStyleSheet/CSSGridLayout/
+git add        	IIS/WordEngineering/2018-05-03Correspondence/2023-09-22T0513WhatWeMeanToEachOther_InBetweenUs.txt
+git add        	IIS/WordEngineering/CascadingStyleSheet/CSSGridLayout/
 
+git add			InformationInTransit/ProcessLogic/2023-09-25T1535UrlHelperSQLCLRBuild.bat
+git add        	InformationInTransit/ProcessLogic/UrlHelper.cs
