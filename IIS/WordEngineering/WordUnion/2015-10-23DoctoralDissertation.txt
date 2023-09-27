@@ -1240,6 +1240,13 @@ The drawback of the relational approach?
         Although databases may store different file types. This wasn't the original intention.
         Databases are abstractions.
 
+Lacking expertise?
+
+    Usability: The author has limited experience with building a user-interface (UI) with Cascading Style Sheets (CSS).
+    Quality Assurance (QA): Some changes break existing code.
+    Database neutrality: The database definition language (DDL) and embedded SQL are not portable across all databases. For example, SQLCLR, is in use.
+    Adoption by emerging technology? Mobile, cloud...
+
 Numbers in themes
 
     He expressed good as how He felt ( Genesis 1:4, Genesis 1:10, Genesis 1:12, Genesis 1:18, Genesis 1:21, Genesis 1:25, Genesis 1:31, Genesis 2:9, Genesis 2:12, Genesis 2:17-18, Genesis 3:5-6, Genesis 3:22 ).
