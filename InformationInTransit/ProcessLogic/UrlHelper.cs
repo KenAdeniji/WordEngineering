@@ -6,6 +6,7 @@ using System.Text;
 /*
 	InternetCountryCodeTopLevelDomain_ccTLD(String url);	//Code 2023-09-25T15:35:00...2023-09-25T16:11:00
 	InternetCountryCodeTopLevelDomain_ccTLD(String url);	//Debug 2023-09-25T16:59:00...2023-09-25T18:00:00
+	2023-09-25T18:00:00 If they don't want you. At Charter square, 99 Ranch Market.
 */	
 //namespace InformationInTransit.ProcessLogic
 //{
