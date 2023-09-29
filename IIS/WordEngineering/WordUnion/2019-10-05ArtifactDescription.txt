@@ -493,6 +493,8 @@ The MapTime.html will draw the analog clock, and list the various times, recorde
 
 The MeetMyEndThrough.aspx will parse through the Bible, and determine the numbers, and scriptural occurrence(s).
 
+The MentioningThings.html will parse a scripture reference result set and for each word display scripture reference first and last occurrences and the count of occurrences. It is like exact.html but it allows the user to restrict the scripture reference and row at which the word occurs.
+
 The MightyMenOfDavid2Samuel23.html will sample king David's mighty men, as listed in 2 Samuel 23.
 
 The MiraculousPower.html will trace the various stages of our lives.
