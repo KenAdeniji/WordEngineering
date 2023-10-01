@@ -1254,6 +1254,26 @@ The author is linking words spoken to related verses and dictionaries.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
 
+"
+RACI matrix. RACI is an abbreviation for Responsible, Accountable, Consulted, and Informed
+Stakeholder 	Task
+Responsible 	The actual person doing the work.
+Accountable 	The person that is answerable for the correct completion of the deliverable or task. Only one person is accountable for each task or deliverable.
+Consulted 	The subject matter experts (SMEs) that participate in two-way communication.
+Informed 	The recipients of one-way progress report.
+Task 	Responsible 	Accountable 	Consulted 	Informed
+Obtain funding for project 		Executive Sponsor 		Business Analyst
+Create business case 	Executive Sponsor 	Project Manager 	Business Analyst 	
+Create requirements phase estimates 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	
+Create design phase estimates 	Business Analyst 	Project Manager 	Technical Personnel 	
+Create build phase estimates 	Technical Personnel 	Project Manager 	Usability Engineer, Regulator (Legal), Database Adminstrator (DBA) 	
+Create implementation phase estimates 	Project Manager 	Project Manager 	Business Analyst, Technical Writer, Technical Personnel 	
+Create work-breakdown structure (WBS) (Project Plan) 	Project Manager 	Project Manager 	Business Analyst, Technical Personnel 	
+Elicit business processes and requirements 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	Executive Sponsor
+Design Solution 	Business Analyst, Technical Personnel 	Project Manager 	Business Subject Matter Expert (SME), Quality Assurance (QA), Usability Engineer, Regulator (Legal), Database Adminstrator 	
+Create implementation material 	Technical Writer 	Project Manager 	Business Subject Matter Expert (SME), Technical Personnel 	
+" (Ali Cox).
+
 The drawback of the relational approach?
 
     Centralized versus (VS) distributed storage?
