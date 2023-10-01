@@ -246,3 +246,11 @@ git add        	IIS/WordEngineering/CascadingStyleSheet/CSSGridLayout/
 
 git add			InformationInTransit/ProcessLogic/2023-09-25T1535UrlHelperSQLCLRBuild.bat
 git add        	InformationInTransit/ProcessLogic/UrlHelper.cs
+
+git add	        IIS/WordEngineering/WordCross/MentioningThings.asmx
+git add 	    IIS/WordEngineering/WordCross/MentioningThings.html
+git add         IIS/WordEngineering/WordCross/WhenItIsSoEverThatIAm.asmx
+git add         IIS/WordEngineering/WordCross/WhenItIsSoEverThatIAm.html
+git add         InformationInTransit/ProcessCode/MentioningThings.cs
+git add         InformationInTransit/ProcessCode/WhenItIsSoEverThatIAm.cs
+

@@ -97,6 +97,7 @@
 	2023-09-07T23:53:00 Created. http://stackoverflow.com/questions/9476617/how-to-set-radio-button-status-with-javascript
 		setRadioButtonGroupValue: function( radioButtonGroupName, radioButtonGroupValue	) 
 	2023-09-09T03:53:00	... 2023-09-09T04:14:00 buildSelect() now called for all input select.
+	2023-09-30T22:26:00...2023-09-30T22:39:00 buildHyperlinkAddressParameterNameValue(address, parameterName, parameterValue)
 */
 
 var scriptLiteral9432 =
@@ -414,6 +415,19 @@ var scriptLiteral9432 =
 		}
 		var uri = encodeURI(prefix + address + ".html?" + address + "=" + parameter);
 		var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+		return hyperlink;
+	},
+
+	buildHyperlinkAddressParameterNameValue: function(address, parameterName, parameterValue) //2023-09-30T22:26:00
+	{
+		if (!parameterName || !parameterValue) { return ""; }
+		var prefix = "";
+		if (address.toLowerCase().indexOf("http") === -1)
+		{
+			prefix = "/WordEngineering/WordUnion/"; 
+		}
+		var uri = encodeURI(prefix + address + ".html?" + parameterName + "=" + parameterValue);
+		var hyperlink = "<a href=" + uri + ">" + parameterValue + "</a>";
 		return hyperlink;
 	},
 
@@ -1804,6 +1818,15 @@ var scriptLiteral9432 =
 				{
 					fromUntilBiblicalCalendar = scriptLiteral9432.daysDifferenceBiblicalCalendar(cellContent)
 					cellContent = `${cellContent}</td><td>${fromUntilBiblicalCalendar}`
+				}
+				else if (cellName.includes("BibleDictionary")) //2023-09-30T21:02:00
+				{
+					cellContent = scriptLiteral9432.buildHyperlinkAddressParameterNameValue
+					(
+						"bibleDictionary",
+						"bibleWord",
+						cellContent
+					);
 				}
 
 				if (rowColumn && cellContent)
