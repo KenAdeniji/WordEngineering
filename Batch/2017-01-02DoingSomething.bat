@@ -397,4 +397,6 @@ select substring( 'http://www.arandomsite.com' from '^[^:]*://(?:[^/:]*:[^/@]*@)
 
 2023-09-30T20:34:00
 	wordCount = Regex.Matches(verseText, word).Count();
+	
+	Maureen.Orphanos@acgov.org,Abibat.Ajiboye@acgov.org,Makan.Talayeh@acgov.org,webmaster@acbhcs.org,KenAdeniji@hotmail.com,Daniel_Adeniji@hotmail.com
 :Exit
