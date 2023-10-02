@@ -28,6 +28,13 @@ using InformationInTransit.ProcessLogic;
 
 namespace InformationInTransit.ProcessCode
 {
+	/*
+		2023-10-02T10:22:00...2023-10-02T10:32:00
+					filenameLike == "" ? "" : " AND Filename LIKE '%" + filenameLike + "%' ",
+					commentaryLike == "" ? "" : " AND Commentary LIKE '%" + commentaryLike + "%' ",
+					scriptureReferenceLike == "" ? "" : " AND ScriptureReference LIKE '%" + scriptureReferenceLike + "%' ",
+					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",					
+	*/
 	///<summary>
 	///	2023-10-01T14:18:00 That I aim.
 	///		
@@ -67,10 +74,10 @@ namespace InformationInTransit.ProcessCode
 					datedIntermissionEnd,
 					datedUntilBegin,
 					datedUntilEnd,
-					filenameLike,
-					commentaryLike,
-					scriptureReferenceLike,
-					uriLike,
+					filenameLike == "" ? "" : " AND Filename LIKE '%" + filenameLike + "%' ",
+					commentaryLike == "" ? "" : " AND Commentary LIKE '%" + commentaryLike + "%' ",
+					scriptureReferenceLike == "" ? "" : " AND ScriptureReference LIKE '%" + scriptureReferenceLike + "%' ",
+					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",					
 					contactIDsIn == "" ? "" : " AND ContactID IN (" + contactIDsIn + ") ",
 					hisWordIDsIn == "" ? "" : " AND HisWordID IN (" + hisWordIDsIn + ") "					
 				),
@@ -89,12 +96,12 @@ namespace InformationInTransit.ProcessCode
 			AND	DatedFrom BETWEEN '{2}' AND '{3}'
 			AND	DatedIntermission BETWEEN '{4}' AND '{5}'
 			AND	DatedUntil BETWEEN '{6}' AND '{7}'
-			AND	Filename LIKE '%{8}%'
-			AND	Commentary LIKE '%{9}%'
-			AND	ScriptureReference LIKE '%{10}%'
-			AND	URI LIKE '%{11}%'
+			{8}
+			{9}
+			{10}
+			{11}
 			{12}
-			{13}			
+			{13}
 			ORDER BY APassID DESC
 		";
 	}
