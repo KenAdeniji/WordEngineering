@@ -240,7 +240,7 @@ Functions and Methods
 
     Methods are functions that are referrable from a class. Methods support object orientation by offering encapsulation, inheritance, polymorphism. The author uses functions when placing localizable code inside the script section of a HTML file; otherwise, generalized methods are referenceable from a JavaScript library.
     JavaScript treats functions as first-class citizens, and they are passable as variables. This abstraction feature is rarely necessary.
-    JavaScript does not make use of overloading. The earlier arguments array variable and the later parameter default initialization supplements.
+    JavaScript does not support method overloading. The earlier arguments array variable and the later parameter default initialization supplements.
     The author consistently uses anonymous functions for processing the success and error returns when using jQuery to access web services.
 
 Conditions
@@ -256,7 +256,7 @@ HyperText Markup Language (HTML) Document
     The DOCTYPE is the first declaration in an HTML document, and it is the conformation standard specification.
     The html tag is the root and the container for all the other tags.
     The head tag contains the title and the meta tags for the search engine optimization (SEO). The various documents will indicate the cascading style sheet (CSS) directive.
-    The body tag contains the visible content of the document. Its resultset div will contain the particular details that the program generates.
+    The body tag contains the visible content of the document. Its resultSet or resultTable div will contain the particular details that the program generates.
 
 "
 Data Science
@@ -278,7 +278,7 @@ Practicing Data Science
     Empirical, find implication from the Bible?
     Theoretical, to determine a better way to doing work?
     Computational, is human labor replaceable?
-    data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement. Does it involve the data in how we do our work?
+    Data-Driven, constraints help us to sanitize data. Default values reduces task, are less error prone, brings arrangement.
 
 Where to get Data
 
@@ -370,7 +370,7 @@ The web service code, .asmx, file is not necessary, does not have a place, when 
 
 The Web Service Description Language (WSDL) is available, for example, by specifying the URI, AlphabetSequenceWebService.asmx?WSDL To generate a proxy code, issue the following command; wsdl.exe /language:CS /namespace:InformationInTransit.ProcessLogic /out:"AlphabetSequenceWebServiceProxy.cs" http://localhost/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx?WSDL The Web Services Discovery Utility (disco) command: disco.exe "http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/AlphabetSequenceWebService.disco" will generate the companion files; AlphabetSequenceWebService.disco, AlphabetSequenceWebService.wsdl, and results.discomap
 
-A lecture of our beginning. (Hafida Na ̈ım, 2016) The business rule is storable and processable in C#, (.cs), source files. The dynamic link library, (.dll), is callable from everywhere. GetAPage.html computes AlphabetSequence from a simple logic, which is easily representable everywhere. The AlphabetSequenceIndexScriptureReference is retrievable from the Bible, using non-complex SQL query. The Bible word and HisWord reference, requires substantive query. The Bible dictionary returns dataset from the local database. The author can not make a business decision, to go to a web service, to retrieve what is locally resideable.
+A lecture of our beginning. (Hafida Na ̈ım, 2016) The business rule is storable and processable in C#, (.cs), source files. The dynamic link library, (.dll), is callable from everywhere. GetAPage.html computes AlphabetSequence from a simple logic, which is easily representable everywhere. The AlphabetSequenceIndexScriptureReference is retrievable from the Bible, using non-complex SQL query. The BibleWord and HisWord reference, requires substantive query. The Bible dictionary returns dataset from the local database. The author can not make a business decision, to go to a web service, to retrieve what is locally resideable.
 Database Size
 
 The usp_DatabaseLogSize stored procedure is for determining the size of the databases data files; and it is available at T-SQL to find Data,Log,Size and Other Useful information -SQL 2000/2005/2008/R2.
