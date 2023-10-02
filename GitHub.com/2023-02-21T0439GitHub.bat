@@ -254,3 +254,6 @@ git add         IIS/WordEngineering/WordCross/WhenItIsSoEverThatIAm.html
 git add         InformationInTransit/ProcessCode/MentioningThings.cs
 git add         InformationInTransit/ProcessCode/WhenItIsSoEverThatIAm.cs
 
+git add         IIS/WordEngineering/WordCross/ThatIAim.asmx
+git add 		IIS/WordEngineering/WordCross/ThatIAim.html
+git add	        InformationInTransit/ProcessCode/ThatIAim.cs
