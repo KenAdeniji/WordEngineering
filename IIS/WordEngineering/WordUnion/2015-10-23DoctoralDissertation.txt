@@ -1,3 +1,4 @@
+    Title
     Abstract
     Acknowledgments
     Theory
@@ -22,7 +23,6 @@ The importance of this work?
     Follow God, as a character.
     Taken from him, added to him ( Luke 19:26 ) .
     To track dates and words? And, find meaning, correlation.
-    A certain level of relevance?
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
@@ -31,76 +31,6 @@ Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Theory
-"
-Business Analysis Body of Knowledge (BABOK)
-Tasks
-
-How to go about it?
-Purpose
-
-The author's original intention was to record God's word. This later led to finding the word's background and implication.
-Inputs
-
-The data input is currently being done manually, but the author looks forward to electronic automation. The identity and date are potential external inputs. The scripture reference requires Bible knowledge.
-Elements
-
-Word processing flows more naturally than data entry.
-Guidelines and tools
-
-A relational database is a substitute for text processing.
-Stakeholders
-
-I am the primary contributor and beneficiary.
-Outputs
-
-Outputs are created, transformed, or changed in state? The constancy of the word is what we have shown.
-" (Alison Cox). "
-Database Modeling
-Entity-Relationship (ER) Model
-Entities
-
-A relational database identifies an entity as a table. In object-oriented programming, an entity is referred to as a class. The author's specific work is in the HisWord, ActToGod, Remember, APass tables. The scripture table serves as input for scripture reference, Bible word search, and gauge for AlphabetSequence.
-Attributes
-
-The Holy Spirit informed the Word.
-Identifiers
-
-Previously, the author thought of the word as unique.
-Relationships
-
-In most cases, surrogate keys such as ContactID, HisWordID are pointers to associations.
-Degree-Two Relationships
-
-Normalization results in a master Contact table with multiple details. There is a one-to-many (1:N) relationship.
-Cardinality
-Maximum cardinality
-
-This is the largest number of possible occurrences on one side of a relationship. There can be only one contact for each contact detail.
-Minimum cardinality
-
-There may be no contact details for a contact.
-Strength of Entity
-
-The contact entity is strong because it can exist on its own. The weak contact details are existence-dependent on the contact entity.
-ID-dependent entities
-
-The weak contact details, primary keys include their ContactID.
-Relational Model
-View
-
-A view is a virtual table that does not reside permanently on a physical storage. The MyURI view is a union of all the URI tables. The ViewContactSet view is a join of the columns in the Contact and contact details tables. The HisWord_view view appends computed columns to the HisWord table.
-Users
-
-The general operating system and compact database are the 2 types of authentication.
-" (Allen G. Taylor).
-Design Pattern
-Title 	Description 	Commentary 	Universal Resource Index (URI)
-Accessor Pattern 	Get and set an attribute by using a property. 	The boundary to a property value. Readonly is achievable by disabling the set method. 	
-Delegation Pattern 	Composition substitutes for inheritance. 	The author does not inherit any class. But the author delegates by using composition to include existing services. 	BibleBook.cs
-Factory Pattern 	Create subclasses from one or more methods. 	At runtime, instantiate a variable object. 	BallFactory.java
-Immutable Pattern 	An immutable object is unchangeable after creation. 	A string object is immutable. Although behind the scenes a string object is a reference type, it is treatable like a value type. A StringBuilder object is changeable. 	
-Marker interface Pattern 	The marker interface pattern is empty. It is metadata that refers to additional work. Examples in Java include Cloneable, Remote, Serializable. 	A class may implement the cloneable interface to identify support for the clone method, which may perform shallow or deep copy. 	BibleBook.java
-Singleton Pattern 	Only a single instance is createable. 	At Daigaku Honyaku Center (DHC) there was a database table which is a reference and contains a single record. 	SingletonPatternBible.java
 The Bible Database
 The Scripture Table
 
@@ -202,22 +132,6 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
-"
-Data quality management
-
-    Data quality standards: The author is importing religious data from trusted sources. The author is following rigorous practice.
-    Data quality assessment: The author is reducing human error by automating labor. Once a process is understood, the author computerizes the work.
-    Data quality monitoring: The work has been on-going for at least the last 20 years; therefore, there is awareness of the expected results.
-    Data quality reporting: There have been spurious cases of data loss, referential integrity violation, corrupt databases, computer breakdown and hard disk not recoverable.
-    Data quality issue management: Having data facing the Internet is a risk, so there is password protection, no web access, little metadata.
-    Data quality improvement: The author educates about data safety.
-
-Data observability
-
-    Data pipeline tracking: Microsoft SQL Server offers overwhelming statistics. There is information on the duration of backup, restore and other tasks in its maintenance plan, profiler, query plan, logs.
-    Data quality assessment: Microsoft .NET limits the timeout between request and response. Data growth is manageable by size or percentage. Schema changes are done via Transact-SQL, which propagates.
-
-" (Petr Travkin).
 Database Scaling
 
     The transition to computed columns results in smaller storage requirements.
@@ -278,54 +192,6 @@ The author prescribes the steps below to begin database set-up and usage
     The SQL Server maintenance plan is for database housekeeping, for example, backup, restore, and re-arrangement.
     Stored-procedures, triggers, and functions are programmable logic.
 
-"
-Unified Modeling Language (UML)
-" (Unified Modeling Language)
-Common Structure
-
-UML composes elements and relationships as in its predecessor Entity-Relationship (ER) diagrams.
-
-A model contains elements which may have descendants for specializations. A contact may have children such as addresses. When a contact is removed, this cascades to the removal of its children.
-
-Comments do not impact programatically, they only serve as guides for readers.
-
-A directed relationship may exist between a collection of source and target.
-
-A namespace is a container separator.
-
-An import facilitates the admittance of an external namespace.
-
-Types and multiplicity restrict the units of information. For example, a scripture reference can only identify book titles, chapters and verses. For the King James Version of the Bible, the cardinality of the books is 66.
-
-A constraint represents the range of valid values that a member may have.
-
-A dependency replicates changes between the supplier/client.
-Value
-
-Lack of a value is null. A data type may place its own degree of significance on a value. For example integer versus (VS) decimal, date versus (VS) datetime.
-
-A string is a combination of alphabets, numbers and symbols. For example, as in scripture reference, when it may concatenate Bible book titles, chapters, verses, and separators.
-
-An integer is a whole number. For example, BibleReference which consists of Book ID, chapter and verse.
-
-A Boolean is either true or false and it is normally used for validation.
-
-A real is a number with decimal relevance, such as ratios and percentages.
-Classification
-
-This work is largely based on migrating from free-text to relational data. Classification serves well with scripture reference pre and post, and book titles, chapters and verses. The C# language class instantiations occur in ScriptureReferenceHelper.cs Exact.cs
-
-The author's work has not featured inheritance. There are no generalizations, parents, nor specializations, children, classes. A substitution for this is an interface, such as, IScriptable UtilitySQLServerManagementObjectsSMO.cs A child may override a parent's virtual member.
-
-In the C# language, an abstract class is static, not instantiable. A static class may contain extension methods.
-
-Signals and receptions are similar to events and handlers. A page load or close is an asynchronous signal that its subscribers handle separately. A click event is triggered and resolved internally.
-
-Microsoft .Net supports components such as a pre-compiled dynamic link library (.dll), and compiling web forms and web services at first request. Web form matured from code-behind to code-beside.
-
-For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not impose such consistency. But the author abides by this rule.
-
-In C# version 9, a method may offer a covariant return type.
 "
 Indexing
 " (Search engine indexing)
@@ -1252,26 +1118,6 @@ The author is linking words spoken to related verses and dictionaries.
     BibleReference uses whole numbers for representation.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
-
-"
-RACI matrix. RACI is an abbreviation for Responsible, Accountable, Consulted, and Informed
-Stakeholder 	Task
-Responsible 	The actual person doing the work.
-Accountable 	The person that is answerable for the correct completion of the deliverable or task. Only one person is accountable for each task or deliverable.
-Consulted 	The subject matter experts (SMEs) that participate in two-way communication.
-Informed 	The recipients of one-way progress report.
-Task 	Responsible 	Accountable 	Consulted 	Informed
-Obtain funding for project 		Executive Sponsor 		Business Analyst
-Create business case 	Executive Sponsor 	Project Manager 	Business Analyst 	
-Create requirements phase estimates 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	
-Create design phase estimates 	Business Analyst 	Project Manager 	Technical Personnel 	
-Create build phase estimates 	Technical Personnel 	Project Manager 	Usability Engineer, Regulator (Legal), Database Adminstrator (DBA) 	
-Create implementation phase estimates 	Project Manager 	Project Manager 	Business Analyst, Technical Writer, Technical Personnel 	
-Create work-breakdown structure (WBS) (Project Plan) 	Project Manager 	Project Manager 	Business Analyst, Technical Personnel 	
-Elicit business processes and requirements 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	Executive Sponsor
-Design Solution 	Business Analyst, Technical Personnel 	Project Manager 	Business Subject Matter Expert (SME), Quality Assurance (QA), Usability Engineer, Regulator (Legal), Database Adminstrator 	
-Create implementation material 	Technical Writer 	Project Manager 	Business Subject Matter Expert (SME), Technical Personnel 	
-" (Alison Cox).
 
 The drawback of the relational approach?
 
@@ -2434,6 +2280,157 @@ Web Application
 WordEngineering
     To study the Bible by using an engineering approach.
 
+"
+Business Analysis Body of Knowledge (BABOK)
+Tasks
+
+How to go about it?
+Purpose
+
+The author's original intention was to record God's word. This later led to finding the word's background and implication.
+Inputs
+
+The data input is currently being done manually, but the author looks forward to electronic automation. The identity and date are potential external inputs. The scripture reference requires Bible knowledge.
+Elements
+
+Word processing flows more naturally than data entry.
+Guidelines and tools
+
+A relational database is a substitute for text processing.
+Stakeholders
+
+I am the primary contributor and beneficiary.
+Outputs
+
+Outputs are created, transformed, or changed in state? The constancy of the word is what we have shown.
+" (Alison Cox). "
+RACI matrix. RACI is an abbreviation for Responsible, Accountable, Consulted, and Informed
+Stakeholder 	Task
+Responsible 	The actual person doing the work.
+Accountable 	The person that is answerable for the correct completion of the deliverable or task. Only one person is accountable for each task or deliverable.
+Consulted 	The subject matter experts (SMEs) that participate in two-way communication.
+Informed 	The recipients of one-way progress report.
+Task 	Responsible 	Accountable 	Consulted 	Informed
+Obtain funding for project 		Executive Sponsor 		Business Analyst
+Create business case 	Executive Sponsor 	Project Manager 	Business Analyst 	
+Create requirements phase estimates 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	
+Create design phase estimates 	Business Analyst 	Project Manager 	Technical Personnel 	
+Create build phase estimates 	Technical Personnel 	Project Manager 	Usability Engineer, Regulator (Legal), Database Adminstrator (DBA) 	
+Create implementation phase estimates 	Project Manager 	Project Manager 	Business Analyst, Technical Writer, Technical Personnel 	
+Create work-breakdown structure (WBS) (Project Plan) 	Project Manager 	Project Manager 	Business Analyst, Technical Personnel 	
+Elicit business processes and requirements 	Business Analyst 	Project Manager 	Business Subject Matter Expert (SME) 	Executive Sponsor
+Design Solution 	Business Analyst, Technical Personnel 	Project Manager 	Business Subject Matter Expert (SME), Quality Assurance (QA), Usability Engineer, Regulator (Legal), Database Adminstrator 	
+Create implementation material 	Technical Writer 	Project Manager 	Business Subject Matter Expert (SME), Technical Personnel 	
+" (Alison Cox). "
+Database Modeling
+Entity-Relationship (ER) Model
+Entities
+
+A relational database identifies an entity as a table. In object-oriented programming, an entity is referred to as a class. The author's specific work is in the HisWord, ActToGod, Remember, APass tables. The scripture table serves as input for scripture reference, Bible word search, and gauge for AlphabetSequence.
+Attributes
+
+The Holy Spirit informed the Word.
+Identifiers
+
+Previously, the author thought of the word as unique.
+Relationships
+
+In most cases, surrogate keys such as ContactID, HisWordID are pointers to associations.
+Degree-Two Relationships
+
+Normalization results in a master Contact table with multiple details. There is a one-to-many (1:N) relationship.
+Cardinality
+Maximum cardinality
+
+This is the largest number of possible occurrences on one side of a relationship. There can be only one contact for each contact detail.
+Minimum cardinality
+
+There may be no contact details for a contact.
+Strength of Entity
+
+The contact entity is strong because it can exist on its own. The weak contact details are existence-dependent on the contact entity.
+ID-dependent entities
+
+The weak contact details, primary keys include their ContactID.
+Relational Model
+View
+
+A view is a virtual table that does not reside permanently on a physical storage. The MyURI view is a union of all the URI tables. The ViewContactSet view is a join of the columns in the Contact and contact details tables. The HisWord_view view appends computed columns to the HisWord table.
+Users
+
+The general operating system and compact database are the 2 types of authentication.
+" (Allen G. Taylor).
+Design Pattern
+Title 	Description 	Commentary 	Universal Resource Index (URI)
+Accessor Pattern 	Get and set an attribute by using a property. 	The boundary to a property value. Readonly is achievable by disabling the set method. 	
+Delegation Pattern 	Composition substitutes for inheritance. 	The author does not inherit any class. But the author delegates by using composition to include existing services. 	BibleBook.cs
+Factory Pattern 	Create subclasses from one or more methods. 	At runtime, instantiate a variable object. 	BallFactory.java
+Immutable Pattern 	An immutable object is unchangeable after creation. 	A string object is immutable. Although behind the scenes a string object is a reference type, it is treatable like a value type. A StringBuilder object is changeable. 	
+Marker interface Pattern 	The marker interface pattern is empty. It is metadata that refers to additional work. Examples in Java include Cloneable, Remote, Serializable. 	A class may implement the cloneable interface to identify support for the clone method, which may perform shallow or deep copy. 	BibleBook.java
+Singleton Pattern 	Only a single instance is createable. 	At Daigaku Honyaku Center (DHC) there was a database table which is a reference and contains a single record. 	SingletonPatternBible.java
+"
+Data quality management
+
+    Data quality standards: The author is importing religious data from trusted sources. The author is following rigorous practice.
+    Data quality assessment: The author is reducing human error by automating labor. Once a process is understood, the author computerizes the work.
+    Data quality monitoring: The work has been on-going for at least the last 20 years; therefore, there is awareness of the expected results.
+    Data quality reporting: There have been spurious cases of data loss, referential integrity violation, corrupt databases, computer breakdown and hard disk not recoverable.
+    Data quality issue management: Having data facing the Internet is a risk, so there is password protection, no web access, little metadata.
+    Data quality improvement: The author educates about data safety.
+
+Data observability
+
+    Data pipeline tracking: Microsoft SQL Server offers overwhelming statistics. There is information on the duration of backup, restore and other tasks in its maintenance plan, profiler, query plan, logs.
+    Data quality assessment: Microsoft .NET limits the timeout between request and response. Data growth is manageable by size or percentage. Schema changes are done via Transact-SQL, which propagates.
+
+" (Petr Travkin). "
+Unified Modeling Language (UML)
+" (Unified Modeling Language)
+Common Structure
+
+UML composes elements and relationships as in its predecessor Entity-Relationship (ER) diagrams.
+
+A model contains elements which may have descendants for specializations. A contact may have children such as addresses. When a contact is removed, this cascades to the removal of its children.
+
+Comments do not impact programatically, they only serve as guides for readers.
+
+A directed relationship may exist between a collection of source and target.
+
+A namespace is a container separator.
+
+An import facilitates the admittance of an external namespace.
+
+Types and multiplicity restrict the units of information. For example, a scripture reference can only identify book titles, chapters and verses. For the King James Version of the Bible, the cardinality of the books is 66.
+
+A constraint represents the range of valid values that a member may have.
+
+A dependency replicates changes between the supplier/client.
+Value
+
+Lack of a value is null. A data type may place its own degree of significance on a value. For example integer versus (VS) decimal, date versus (VS) datetime.
+
+A string is a combination of alphabets, numbers and symbols. For example, as in scripture reference, when it may concatenate Bible book titles, chapters, verses, and separators.
+
+An integer is a whole number. For example, BibleReference which consists of Book ID, chapter and verse.
+
+A Boolean is either true or false and it is normally used for validation.
+
+A real is a number with decimal relevance, such as ratios and percentages.
+Classification
+
+This work is largely based on migrating from free-text to relational data. Classification serves well with scripture reference pre and post, and book titles, chapters and verses. The C# language class instantiations occur in ScriptureReferenceHelper.cs Exact.cs
+
+The author's work has not featured inheritance. There are no generalizations, parents, nor specializations, children, classes. A substitution for this is an interface, such as, IScriptable UtilitySQLServerManagementObjectsSMO.cs A child may override a parent's virtual member.
+
+In the C# language, an abstract class is static, not instantiable. A static class may contain extension methods.
+
+Signals and receptions are similar to events and handlers. A page load or close is an asynchronous signal that its subscribers handle separately. A click event is triggered and resolved internally.
+
+Microsoft .Net supports components such as a pre-compiled dynamic link library (.dll), and compiling web forms and web services at first request. Web form matured from code-behind to code-beside.
+
+For the Java language, there must be a correlation between package and directory names. Microsoft .Net does not impose such consistency. But the author abides by this rule.
+
+In C# version 9, a method may offer a covariant return type.
 References
 
     ABB (Asea Brown Boveri) W3C web page; Available from http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL Server Coding Standards (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs
