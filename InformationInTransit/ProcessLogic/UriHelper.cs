@@ -8,6 +8,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 #endregion
 
+/*
+	InternetCountryCodeTopLevelDomain_ccTLD(String url);	//2023-09-25T15:35:00...2023-09-25T16:11:00
+*/	
 namespace InformationInTransit.ProcessLogic
 {
     public static partial class UriHelper

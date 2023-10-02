@@ -362,6 +362,18 @@ namespace InformationInTransit.ProcessLogic
 					}	
 				}
 
+				if (bookGroup == "historical")
+				{
+					if (indexOfOld == -1)
+					{
+						if (sqlStatement.Length > 0)
+						{
+							sqlStatement.Append(" OR ");
+						}
+						sqlStatement.AppendFormat(" ( BookID BETWEEN 6 AND 17 ) ");
+					}	
+				}
+
 				if (bookGroup == "poetry")
 				{
 					if (indexOfOld == -1)

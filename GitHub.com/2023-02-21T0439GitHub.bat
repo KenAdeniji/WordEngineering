@@ -257,3 +257,9 @@ git add         InformationInTransit/ProcessCode/WhenItIsSoEverThatIAm.cs
 git add         IIS/WordEngineering/WordCross/ThatIAim.asmx
 git add 		IIS/WordEngineering/WordCross/ThatIAim.html
 git add	        InformationInTransit/ProcessCode/ThatIAim.cs
+
+git add			InformationInTransit/ProcessLogic/BibleWordHelper.cs
+git add			InformationInTransit/ProcessLogic/UriHelper.cs
+
+git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-10-02T0640Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Makan.Talayeh@acgov.org.txt"
+
