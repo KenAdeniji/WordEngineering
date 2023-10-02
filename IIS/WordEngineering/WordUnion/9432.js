@@ -98,6 +98,7 @@
 		setRadioButtonGroupValue: function( radioButtonGroupName, radioButtonGroupValue	) 
 	2023-09-09T03:53:00	... 2023-09-09T04:14:00 buildSelect() now called for all input select.
 	2023-09-30T22:26:00...2023-09-30T22:39:00 buildHyperlinkAddressParameterNameValue(address, parameterName, parameterValue)
+	2023-10-01T17:15:00...2023-10-01T17:35:00 Created. setCheckBoxValue: function(checkBoxID, checkBoxValue)
 */
 
 var scriptLiteral9432 =
@@ -409,11 +410,16 @@ var scriptLiteral9432 =
 	{
 		if (!parameter) { return ""; }
 		var prefix = "";
+		var uri = "";
 		if (address.toLowerCase().indexOf("http") === -1)
 		{
 			prefix = "/WordEngineering/WordUnion/"; 
+			uri = encodeURI(prefix + address + ".html?" + address + "=" + parameter);
 		}
-		var uri = encodeURI(prefix + address + ".html?" + address + "=" + parameter);
+		else
+		{
+			uri = address;
+		}		
 		var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
 		return hyperlink;
 	},
@@ -1014,6 +1020,23 @@ var scriptLiteral9432 =
 		);
 	},
 
+	//2023-10-01T17:15:00...2023-10-01T17:35:00 Created.
+	setCheckBoxValue: function
+	(
+		checkBoxID,
+		checkBoxValue
+	) 
+	{
+		if (checkBoxValue === null)
+		{
+			checkBoxValue = "";
+		}
+		var checkBoxValueCaseValue = checkBoxValue.toLowerCase();
+		var checkBoxValueChecked = (checkBoxValueCaseValue === "true") ? true : false;
+		var checkBoxElement = document.getElementById(checkBoxID);
+		checkBoxElement.checked = checkBoxValueChecked;
+	},
+	
 	//2022-01-31T11:28:00 Created.
 	indexOfMultiDimensionalArray: function(multiDimensionalArray, rank, val)
 	{ 
