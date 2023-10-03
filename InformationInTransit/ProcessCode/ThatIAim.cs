@@ -33,11 +33,21 @@ namespace InformationInTransit.ProcessCode
 					filenameLike == "" ? "" : " AND Filename LIKE '%" + filenameLike + "%' ",
 					commentaryLike == "" ? "" : " AND Commentary LIKE '%" + commentaryLike + "%' ",
 					scriptureReferenceLike == "" ? "" : " AND ScriptureReference LIKE '%" + scriptureReferenceLike + "%' ",
-					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",					
+					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",
+		2023-10-03T05:58:00 Duplicates only?
+		2023-10-03T07:35:00	http://stackoverflow.com/questions/2949858/how-to-copy-only-the-columns-in-a-datatable-to-another-datatable
+		2023-10-03T07:49:00	http://stackoverflow.com/questions/8844674/how-to-round-to-the-nearest-whole-number-in-c-sharp
+		2023-10-03T08:16:00	http://stackoverflow.com/questions/12642049/how-to-add-new-datarow-into-datatable
+		2023-10-03T07:35:00...2023-10-03T08:26:00 Duplicates only? Code complete.
+		2023-10-03T08:33:00	Replace ZniOut with ZniOet.
+		2023-10-03T08:45:00	http://stackoverflow.com/questions/12025012/simple-way-to-copy-or-clone-a-datarow
+					 duplicatesOnlyDataTable.ImportRow(dataRowCurrent);
+					 duplicatesOnlyDataTable.ImportRow(dataRowNext);
+					 2021-08-17T15:15:00 Janel Garvin, linkedin.com/in/janel-garvin-0b650 Evans Data Corporation. Santa Cruz
+		2023-10-03T07:35:00...2023-10-03T09:05:00 Duplicates only? Code complete. Debug complete.
 	*/
 	///<summary>
 	///	2023-10-01T14:18:00 That I aim.
-	///		
 	///</summary>
 	public partial class ThatIAim
 	{
@@ -58,7 +68,8 @@ namespace InformationInTransit.ProcessCode
 			string	contactIDsIn,
 			string	hisWordIDsIn,
 			bool	fromUntilFirst,
-			decimal zni
+			decimal zni,
+			bool	duplicatesOnly
 		)
 		{
 			DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
@@ -77,15 +88,52 @@ namespace InformationInTransit.ProcessCode
 					filenameLike == "" ? "" : " AND Filename LIKE '%" + filenameLike + "%' ",
 					commentaryLike == "" ? "" : " AND Commentary LIKE '%" + commentaryLike + "%' ",
 					scriptureReferenceLike == "" ? "" : " AND ScriptureReference LIKE '%" + scriptureReferenceLike + "%' ",
-					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",					
+					uriLike == "" ? "" : " AND URI LIKE '%" + uriLike + "%' ",
 					contactIDsIn == "" ? "" : " AND ContactID IN (" + contactIDsIn + ") ",
-					hisWordIDsIn == "" ? "" : " AND HisWordID IN (" + hisWordIDsIn + ") "					
+					hisWordIDsIn == "" ? "" : " AND HisWordID IN (" + hisWordIDsIn + ") ",
+					fromUntilFirst == false ? "" : " AND FromUntilFirst = 1 "
 				),
 				System.Data.CommandType.Text,
 				DataCommand.ResultType.DataTable
 			);
-				
-			return dataTable;
+			
+			if (duplicatesOnly == false)
+			{	
+				return dataTable;
+			}
+			
+			DataTable duplicatesOnlyDataTable = dataTable.Clone();
+			
+			DataRow dataRowCurrent, dataRowNext;
+			
+			int zniOetCurrent, zniOetNext;
+			
+			for
+			(
+				int dataTableRowIndex = 0,
+					dataTableRowCount = dataTable.Rows.Count
+				;
+				dataTableRowIndex < dataTableRowCount - 1;
+				dataTableRowIndex++
+			)
+			{
+				dataRowCurrent = dataTable.Rows[dataTableRowIndex];
+				if (dataTableRowIndex == 0)
+				{
+					continue;
+				}
+				dataRowNext = dataTable.Rows[dataTableRowIndex + 1];
+				zniOetCurrent = (int) ( Math.Round( (decimal) dataRowCurrent["ZniOet"], 0 ) );
+				zniOetNext = (int) ( Math.Round( (decimal) dataRowNext["ZniOet"], 0 ) );
+				if ((zniOetCurrent == zniOetNext) || (zniOetCurrent == 100 - zniOetNext))
+				{
+					 duplicatesOnlyDataTable.ImportRow(dataRowCurrent);
+					 duplicatesOnlyDataTable.ImportRow(dataRowNext);
+				}		
+			}
+			
+			return duplicatesOnlyDataTable;
+			
 		}	
 		
 		public const string QueryStatement = @"
@@ -102,6 +150,7 @@ namespace InformationInTransit.ProcessCode
 			{11}
 			{12}
 			{13}
+			{14}
 			ORDER BY APassID DESC
 		";
 	}

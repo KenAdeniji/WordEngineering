@@ -48,7 +48,8 @@ public class ThatIAimWebService : System.Web.Services.WebService
 		string	contactIDsIn,
 		string	hisWordIDsIn,
 		bool	fromUntilFirst,
-		decimal zniOut
+		decimal zniOet,
+		bool	duplicatesOnly
 	)
     {
 		DataTable resultDataTable = ThatIAim.Query
@@ -68,7 +69,8 @@ public class ThatIAimWebService : System.Web.Services.WebService
 			contactIDsIn,
 			hisWordIDsIn,
 			fromUntilFirst,
-			zniOut
+			zniOet,
+			duplicatesOnly
 		);
 		string json = JsonConvert.SerializeObject(resultDataTable, Formatting.Indented);
 		return json;

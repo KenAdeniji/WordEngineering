@@ -74,8 +74,13 @@
 				</tr>
 
 				<tr> 
-					<td><label for="zniOut">Percentage:</label></td>
-					<td colspan="2" align="left"><input type="number" ID="zniOut" value="-1"/>%</td>
+					<td><label for="zniOet">Percentage:</label></td>
+					<td colspan="2" align="left"><input type="number" ID="zniOet" value="-1"/>%</td>
+				</tr>
+
+				<tr> 
+					<td><label for="duplicatesOnly">Duplicates only:</label></td>
+					<td colspan="2" align="left"><input type="checkBox" ID="duplicatesOnly"/></td>
 				</tr>
 
 				<tr>
@@ -111,7 +116,9 @@
 
 			const 	fromUntilFirstElement = document.getElementById("fromUntilFirst");
 			
-			const 	zniOutElement = document.getElementById("zniOut");
+			const 	zniOetElement = document.getElementById("zniOet");
+			
+			const 	duplicatesOnlyElement = document.getElementById("duplicatesOnly");
 			
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const 	resultTableElement = document.getElementById("resultTable");
@@ -212,13 +219,19 @@
 							"fromUntilFirst",
 							urlParams.get("fromUntilFirst")
 						);
-							
-						var zniOutValue = urlParams.get("zniOut");
-						if (zniOutValue)
+
+						var zniOetValue = urlParams.get("zniOet");
+						if (zniOetValue)
 						{
-							zniOutElement.value = parseFloat(zniOutValue);
+							zniOetElement.value = parseFloat(zniOetValue);
 						}	
 						
+						scriptLiteral9432.setCheckBoxValue
+						(
+							"duplicatesOnly",
+							urlParams.get("duplicatesOnly")
+						);
+
 						querySubmit();
 						
 						isPostBack = true;
@@ -255,7 +268,9 @@
 				request["hisWordIDsIn"] = hisWordIDsInElement.value;
 				
 				request["fromUntilFirst"] = fromUntilFirstElement.checked;
-				request["zniOut"] = parseFloat(zniOutElement.value);
+				request["zniOet"] = parseFloat(zniOetElement.value);
+
+				request["duplicatesOnly"] = duplicatesOnlyElement.checked;
 				
 				var requestJson = JSON.stringify(request);
 				

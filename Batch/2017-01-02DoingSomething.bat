@@ -190,7 +190,7 @@ DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1782);
-DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1627);
+DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1633);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
 DBCC CHECKIDENT ('WordEngineering..WordsInTheBible', RESEED, 481);
@@ -392,4 +392,7 @@ Microsoft Windows operating system mouse error.
 
 2023-10-02T13:03:00
 	google.com/webelements/#!/custom-search
+
+2023-10-02T22:07:00	
+		google.com/books/edition/JavaScript_for_Gurus/27pIEAAAQBAJ?hl=en 	JavaScript for Gurus By Preez Ockert J. du Originally published: February 19, 2020. Publisher: PBP publication. 		JavaScript 	2022-08-26 	59427
 :Exit
