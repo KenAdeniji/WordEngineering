@@ -394,5 +394,11 @@ Microsoft Windows operating system mouse error.
 	google.com/webelements/#!/custom-search
 
 2023-10-02T22:07:00	
-		google.com/books/edition/JavaScript_for_Gurus/27pIEAAAQBAJ?hl=en 	JavaScript for Gurus By Preez Ockert J. du Originally published: February 19, 2020. Publisher: PBP publication. 		JavaScript 	2022-08-26 	59427
+	google.com/books/edition/JavaScript_for_Gurus/27pIEAAAQBAJ?hl=en 	JavaScript for Gurus By Preez Ockert J. du Originally published: February 19, 2020. Publisher: PBP publication. 		JavaScript 	2022-08-26 	59427
+
+2023-10-04T11:18:00		
+	elijahmanor.com/byte/js-locale-sort 			JavaScript, sort 	2022-04-01 	58282
+	
+2023-10-04T11:52:00
+	
 :Exit
