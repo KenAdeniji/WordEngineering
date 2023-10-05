@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<!-- 
+		2023-06-16T18:29:00 ... 2023-06-16T20:41:00 Created.
+		C# 9.0 in a Nutshell
+			by
+			Released
+			Publisher(s): O'Reilly Media, Inc.
+			ISBN: None
+
+			Read it now on the O’Reilly learning platform with a 10-day free trial.
+
+			O’Reilly members get unlimited access to books, live events, courses curated by job role, and more from O’Reilly and nearly 200 top publishers.
+			https://www.oreilly.com/library/view/c-90-in/9781098100957/
+		2023-06-16T20:41:00	http://stackoverflow.com/questions/5001554/regular-expression-for-a-list-of-items-separated-by-comma-or-by-comma-and-a-spac
+		2023-06-17T15:29:00	http://dmitripavlutin.com/javascript-array-at/		
+	-->
+	<head>
+		<title>I want to clock the joy out.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I want to clock the joy out."/>
+		<meta name="keywords" content="C#, indexers, indices, ranges"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<textarea
+				id="resourceEditor"
+				style="width: 90vw; height: 15vh;"
+			></textarea>
+			<textarea
+				id="resourceRegularExpressionPattern"
+				style="width: 90vw; height: 15vh;"
+			></textarea> 
+			<table>
+				<tr>
+					<td><label for="resourceInputIndex">Resource Input Index</label></td>
+					<td><input type="number" id="resourceInputIndex" value="0" min="0"/></td>
+				</tr>
+				<tr>
+					<td><label for="resourceInputIndice">Resource Input Indice</label></td>
+					<td><input type="number" id="resourceInputIndice" value="-1" max="-1"/></td>
+				</tr>
+				<tr>
+					<td><label for="resourceInputRangeFrom">Resource Input Range</label></td>
+					<td>
+						<input type="number" id="resourceInputRangeFrom" value="0"/>
+						<input type="number" id="resourceInputRangeUntil" value="1"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"/></td>
+				</tr>
+				<tr>
+					<td><label for="resultOutputIndex">Result Output Index</label></td>
+					<td><span id="resultOutputIndex"></span></td>
+				</tr>
+				<tr>
+					<td><label for="resultOutputIndice">Result Output Indice</label></td>
+					<td><span id="resultOutputIndice"></span></td>
+				</tr>
+				<tr>
+					<td align="left" colspan="2">
+						<div id="resultOutputRange"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			const resourceEditorElement = document.getElementById("resourceEditor");
+			const resourceRegularExpressionPatternElement = document.getElementById("resourceRegularExpressionPattern");
+
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			const resourceInputIndexElement = document.getElementById("resourceInputIndex");
+			const resultOutputIndexElement = document.getElementById("resultOutputIndex");
+			
+			const resourceInputIndiceElement = document.getElementById("resourceInputIndice");
+			const resultOutputIndiceElement = document.getElementById("resultOutputIndice");
+			
+			const resourceInputRangeFromElement = document.getElementById("resourceInputRangeFrom");
+			const resourceInputRangeUntilElement = document.getElementById("resourceInputRangeUntil");
+			const resultOutputRangeElement = document.getElementById("resultOutputRange");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					resourceEditorElement.value = resourceEditorDefault;
+					resourceRegularExpressionPatternElement.value = resourceRegularExpressionPatternDefault;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var matches = [];
+				var regularExpressionMask;
+				
+				regularExpressionMask = new RegExp
+				(
+					`${resourceRegularExpressionPatternElement.value}`,
+					'gi'
+				);
+
+				matches = resourceEditorElement.value.match
+				(
+					regularExpressionMask
+				);
+
+				resultOutputIndexElement.textContent = matches
+				[
+					parseInt(resourceInputIndexElement.value)
+				];
+
+				resultOutputIndiceElement.textContent = matches.at
+				(
+					parseInt(resourceInputIndiceElement.value)
+				);
+
+				resultOutputRange.innerHTML = matches
+					.slice
+					(
+						parseInt(resourceInputRangeFromElement.value),
+						parseInt(resourceInputRangeUntilElement.value)
+					)
+					.join("<br/>");
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+
+			const resourceRegularExpressionPatternDefault = `[^,(?!.; )]+`;
+			const resourceEditorDefault = "Hello, world. How are you?";
+		</script>
+	</body>
+</html>

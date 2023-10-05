@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-20	AlwaysCountForYou.html
+		2016-10-20	www.w3schools.com/sql/func_datepart.asp
+		2016-11-03	http://stackoverflow.com/questions/20106871/get-week-day-name-from-a-given-date-in-sql-server	select datepart(dw,getdate()) --2
+		2016-11-03	https://msdn.microsoft.com/en-us/library/ms174420.aspx
+			datepart	Abbreviations
+			year	yy, yyyy
+			quarter	qq, q
+			month	mm, m
+			dayofyear	dy, y
+			day	dd, d
+			week	wk, ww
+			weekday	dw	
+		2016-11-03	Jorn Mortensen. Return Anonymous type. Microsoft interview question, dynamic.
+		2016-11-03	http://www.w3schools.com/cssref/pr_class_display.asp
+	-->
+	<head>
+		<title>Always count for you</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will query the HisWord table based on the datepart, for example, year, quarter, month, and day"/>
+		<meta name="keywords" content="Bible, word, from (terminus a quo), to (terminus ad quem), datepart, year, quarter, month, day"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="datepartMetric">Datepart Metric</label></td>
+					<td>
+						<select id="datepartMetric">
+							<option>Year</option>
+							<option>Quarter</option>
+							<option>Month</option>
+							<option>DayOfYear</option>
+							<option>Day</option>
+							<option>Week</option>
+							<option>Weekday</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<span id="numericEntry">
+							<label for="datepartValue">Single Part Value, for example, day between 1 ... 31, month between 1..12</label>
+							<input id="datepartValue" type="Number" />
+						</span>	
+						<span id="weekdayEntry">
+							<select id="datepartWeekday"></select>
+						</span>	
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				<tr>
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+
+			const	datepartMetricElement = document.getElementById("datepartMetric");
+			
+			const	datepartValueElement = document.getElementById("datepartValue");
+			const	datepartWeekdayElement = document.getElementById("datepartWeekday");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function datepartMetricChange()
+			{
+				switch( datepartMetricElement.value )
+				{
+					case "Weekday":
+						datepartValueElement.style.display = "none";
+						datepartWeekdayElement.style.display = "inline";					
+						break;
+					default:
+						datepartValueElement.style.display = "inline";
+						datepartWeekdayElement.style.display = "none";
+						break;
+				}
+			}
+
+			function datepartMetricRetrieve()
+			{
+				var datepartMetricInfo = -1;
+				switch( datepartMetricElement.value )
+				{
+					case "Weekday":
+						datepartMetricInfo = datepartWeekdayElement.selectedIndex + 1;
+						break;
+					default:
+						datepartMetricInfo = parseInt( datepartValueElement.value );
+						break;
+				}
+				return datepartMetricInfo;
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var currentDate = scriptLiteral9432.nowTimezoneOffset();
+						var currentYear = scriptLiteral9432.datePart("yyyy", currentDate);
+						datepartValueElement.value = currentYear;
+						scriptLiteral9432.buildSelect
+						(
+							"datepartWeekday",
+							scriptLiteral9432.getWeekDays()
+						);
+						datepartMetricChange();
+						querySubmit();
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["datepartMetric"] = datepartMetricElement.value;
+				request["datepartValue"] = datepartMetricRetrieve();
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AlwaysCountForYou.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataTable
+						(
+							JSON.parse(data.d),
+							"resultSet"
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
+							;							
+					} 
+				});
+			}
+			
+			datepartMetricElement.addEventListener("change", datepartMetricChange, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

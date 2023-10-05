@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2023-08-14T16:29:00
+Barnes & Nobles Booksellers.
+5604 Bay Street.
+At the intersectiom of Shellmound Street and Bay Street.
+Emeryville, California (CA) 94608.
+Learning made easy.
+JavaScript ALL-IN-ONE for dummies A Wiley Brand.
+7 Books in One!
+Chris Minnick
+Author of Coding with JavaScript For Dummies
+		2023-08-16T12:23:00 Created.
+	-->
+	<head>
+		<title>Chris Minnick BibleBook class</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Chris Minnick BibleBook class"/>
+		<meta name="keywords" content="Chris Minnick, BibleBook class"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="left"> </div>
+
+		<script>
+			var isPostBack = false;
+			
+			const	resultSetElement = document.getElementById("resultSet");
+
+			class BibleBook
+			{
+				constructor
+				(
+					bookID,
+					bookTitle
+				)
+				{
+					this.bookID = bookID;
+					this.bookTitle = bookTitle;
+				}
+				
+				toString()
+				{
+					return `Book ID: ${this.bookID} Title: ${this.bookTitle}`
+				}	
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				const genesis = new BibleBook(1, "Genesis")
+				const exodus = new BibleBook(2, "Exodus")
+				resultSetElement.innerHTML = genesis + "<br/>" + exodus;
+			}
+
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

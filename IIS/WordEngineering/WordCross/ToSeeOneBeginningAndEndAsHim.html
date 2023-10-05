@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-06-01T23:18:00	Created.
+			2023-06-02T14:36:00	https://stackoverflow.com/questions/42279852/format-string-template-with-variables-in-javascript
+			2023-05-26	about.me/svenaelterman
+			2023-06-04	about.me/ken.adeniji
+		-->
+		<title>To see one beginning and end as Him?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="To see one beginning and end as Him?"/>
+		<meta name="keywords" content="Template literals (Template strings), place holder"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>		
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 45vh;
+		width: 90vw;
+	}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="placeHolder">Substitute:</label></td>
+					<td>
+						<input type="text" id="placeHolder" value="KenAdeniji" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="templateLiteral">Template literal:</label></td>
+					<td>
+						<textarea id="templateLiteral">
+<a target="_new" href="http://github.com/${substitute}">github.com/${substitute}</a><br/>
+<a target="_new" href="mailto:${substitute}@hotmail.com">${substitute}@hotmail.com</a><br/>
+<a target="_new" href="http://${substitute}.wordpress.com">${substitute}.wordpress.com</a><br/>
+						</textarea>
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><div id="resultSet"></div></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+	
+			const placeHolderElement = document.getElementById("placeHolder");
+			const templateLiteralElement = document.getElementById("templateLiteral");
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+						
+					var placeHolderParam = urlParams.get("placeHolder");
+					if (placeHolderParam)
+					{
+						placeHolderElement.value = placeHolderParam;
+					}
+					
+					var templateLiteralParam = urlParams.get("templateLiteral");
+					if (templateLiteralParam)
+					{
+						templateLiteralElement.value = templateLiteralParam;
+					}
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				let template = sFormat(templateLiteralElement.value);
+				var substitute = placeHolderElement.value;
+				let resultSetInfo = template({ substitute });
+				resultSetElement.innerHTML = resultSetInfo;
+			}
+
+			function sFormat(template){
+				return data => {
+					return Object.keys(data)
+								 .reduce((acc, key)=>acc.replaceAll(`\$\{${key}\}`, data[key]), template)
+				}
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2023-08-19T14:19:00 ... 2023-08-19T14:28:00 Created.
+	-->
+	<head>
+		<title>When can we accept the same as us?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="When can we accept the same as us?"/>
+		<meta name="keywords" content="Bible word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<Set>
+				<tr>
+					<td><label for="bibleWord">Word:</label></td>
+					<td><input id="bibleWord"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</Set>
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	bibleWordElement = document.getElementById("bibleWord");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
+						{
+							bibleWordElement.value = bibleWordValue;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};			
+			
+				request["bibleWord"] = bibleWordElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WhenCanWeAcceptTheSameAsUs.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						scriptLiteral9432.renderDataSet
+						(
+							JSON.parse(data.d),
+							"resultSet"
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

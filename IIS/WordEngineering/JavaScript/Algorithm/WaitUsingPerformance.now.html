@@ -1,0 +1,103 @@
+﻿<html>
+<!--
+	2023-04-03 	http://c-for-dummies.com/blog/?p=5797	Hang On a Sec, Part I
+	2023-04-03 	http://c-for-dummies.com/blog/?p=5805	Hang On a Sec, Part II
+	2023-04-04T05:55:00	Created	http://stackoverflow.com/questions/16873323/javascript-sleep-wait-before-continuing
+	2023-04-04T08:30:00	To the immediate score.
+	2023-04-04T08:30:00	To convert do you do a language translation?
+	2023-04-04T08:30:00	Microsoft Common Language Runtime (CLR)
+	2023-04-04T08:30:00	Biological mother calls it Our LORD's Supper, Easter. I refer to it as Passover.
+	2018-02-27	https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
+-->
+	<head>
+		<title>Wait using Performance.now()</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Wait using Performance.now()"/>
+		<meta name="keywords" content="Wait, delay, performance.now()"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="delayMilliSeconds">Delay (milliseconds)</label></td>
+					<td><input id="delayMilliSeconds" type="number" value="1" min="0"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input id="submitQuery" type="submit"></td>
+				</tr>
+				<tr>
+					<td><label for="fromTime">From Time</label></td>
+					<td><span id="fromTime"></span></td>
+				</tr>
+				<tr>
+					<td><label for="fromHighResolutionTimestamp">From HighResolutionTimestamp</label></td>
+					<td><span id="fromHighResolutionTimestamp"></span></td>
+				</tr>
+				<tr>
+					<td><label for="untilTime">Until Time</label></td>
+					<td><span id="untilTime"></span></td>
+				</tr>
+				<tr>
+					<td><label for="untilHighResolutionTimestamp">Until HighResolutionTimestamp</label></td>
+					<td><span id="untilHighResolutionTimestamp"></span></td>
+				</tr>
+			<table>
+		</div>
+		<script>
+			const delayMilliSecondsElement = document.getElementById("delayMilliSeconds");
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			const fromTimeElement = document.getElementById("fromTime");
+			const fromHighResolutionTimestampElement = document.getElementById("fromHighResolutionTimestamp");
+
+			const untilTimeElement = document.getElementById("untilTime");
+			const untilHighResolutionTimestampElement = document.getElementById("untilHighResolutionTimestamp");
+
+			
+			function wait()
+			{   
+				const ms = parseFloat(delayMilliSecondsElement.value);
+				const start = performance.now();
+				
+				fromTimeElement.textContent = nowTimezoneOffset();
+				fromHighResolutionTimestampElement.textContent = performance.now();
+				
+				while(performance.now() - start < ms);
+				
+				untilTimeElement.textContent = nowTimezoneOffset();
+				untilHighResolutionTimestampElement.textContent = performance.now();
+			}
+			
+			function querySubmit()
+			{
+				wait();
+			}			
+			
+			function nowTimezoneOffset(now)
+			{	
+				if (arguments.length === 0)
+				{		
+					now = new Date();
+				}	
+				var local = now;
+				local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+				var currentTime = local.toJSON();
+				return currentTime;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

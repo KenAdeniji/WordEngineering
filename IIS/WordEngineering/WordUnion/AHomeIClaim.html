@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-01	Created.
+		2023-06-09T05:19:00 ... 2023-06-09T07:23:00
+			Defined constant element.
+			Transition to 
+				new URLSearchParams(window.location.search);
+				urlParams.get("firstScriptureReferenceVerse");
+			Use Template literals (Template strings)
+				for AJAX error	
+		2023-06-10T03:50:00 ... 2023-06-10T06:16:00
+			Append difference row
+		2023-06-10T06:51:00 ... 2023-06-10T06:57:00			
+			Luke 24:47, Philippians 1:12
+	-->
+	<head>
+		<title>A Home, I Claim</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will accept a first and second scripture reference verse, and compute the difference."/>
+		<meta name="keywords" content="Scripture Reference difference, first scripture reference verse, second scripture reference verse"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<form onsubmit="">
+					<tr>
+						<td><label for="firstScriptureReferenceVerse">First Scripture Reference Verse</label></td>
+						<td><input type="text" ID="firstScriptureReferenceVerse" size="30" value="Luke 24:47"  autofocus />
+					</tr>
+					<tr>
+						<td><label for="secondScriptureReferenceVerse">Second Scripture Reference Verse</label></td>
+						<td><input type="text" ID="secondScriptureReferenceVerse" size="30" value="Philippians 1:12" />
+					</tr>
+				</form>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>	
+			</table>
+			<br/>
+			<div id="resultSet"> </div>
+			<br/>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="tsorter.min.js" type="text/javascript"></script>	
+		<script>
+			var isPostBack = false;
+			
+			const	firstScriptureReferenceVerseElement = document.getElementById("firstScriptureReferenceVerse");
+			const	secondScriptureReferenceVerseElement = document.getElementById("secondScriptureReferenceVerse");
+
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						var firstScriptureReferenceVerseValue = urlParams.get("firstScriptureReferenceVerse");
+						if (firstScriptureReferenceVerseValue)
+						{
+							firstScriptureReferenceVerseElement.value = firstScriptureReferenceVerseValue;
+						}
+
+						var secondScriptureReferenceVerseValue = urlParams.get("secondScriptureReferenceVerse");
+						if (secondScriptureReferenceVerseValue)
+						{
+							secondScriptureReferenceVerseElement.value = secondScriptureReferenceVerseValue;
+						}
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var request = {};
+
+				request["firstScriptureReferenceVerse"] = firstScriptureReferenceVerseElement.value;
+				request["secondScriptureReferenceVerse"] = secondScriptureReferenceVerseElement.value;
+				
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AHomeIClaim.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataParsed = JSON.parse(data.d);
+
+						scriptLiteral9432.renderDataTable
+						(
+							dataParsed,
+							"resultSet"
+						);
+						
+						var firstTableID = document.getElementById("resultSet0");
+						
+						scriptLiteral9432.tableRowAppend
+						(
+							firstTableID,
+							"Difference",
+							dataParsed[1]["ChapterIDSequence"] - dataParsed[0]["ChapterIDSequence"],
+							dataParsed[1]["ChapterIDSequencePercent"] - dataParsed[0]["ChapterIDSequencePercent"],
+							dataParsed[1]["VerseIDSequence"] - dataParsed[0]["VerseIDSequence"],
+							dataParsed[1]["VerseIDSequencePercent"] - dataParsed[0]["VerseIDSequencePercent"]
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
+							;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+	</script>
+</body>
+</html>
