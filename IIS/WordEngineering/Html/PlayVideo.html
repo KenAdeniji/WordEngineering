@@ -1,0 +1,78 @@
+<html>
+	<!--
+		2015-02-13 	Created. Jump Start HTML5. By Tiffany B Brown, Kerry Butters, Sandeep Panda. Publisher: SitePoint.
+		2016-07-03	http://www.w3schools.com/html/html_media.asp
+		Format 	File 	Description
+		Ogg 	.ogg 	Theora Ogg. Developed by the Xiph.Org Foundation. Supported by HTML5.
+		WebM 	.webm 	WebM. Developed by the web giants, Mozilla, Opera, Adobe, and Google. Supported by HTML5.
+		MPEG-4
+		or MP4 	.mp4 	MP4. Developed by the Moving Pictures Expert Group. Based on QuickTime. Commonly used in newer video cameras and TV hardware. Supported by all HTML5 browsers. Recommended by YouTube.		
+	-->
+	<head>
+		<title>Play Video</title>
+	</head>
+	<body>
+		Video File: 
+		<input 
+			type="text"
+			id="videoFilename"
+			onChange="playVideo();"
+			value="http://upload.wikimedia.org/wikipedia/commons/5/5c/20100209_Yolanda_Adams_-_How_Great_Thou_Art_at_the_White_House.ogv"
+			size="50"
+		>
+		<br>
+		<button id="play">Play</button>
+		<button id="pause">Pause</button>
+		<span id="currentTime"></span>
+		 of 
+		<span id="duration"></span>
+		<video id="videoControl" controls="controls" preload> </video>
+		<br>
+		<script>
+			var htmlVideo = {
+				pause: null,
+				play: null,			
+				videoControl: null,
+				videoFilename: null,
+				changeAudio: function() {
+					htmlVideo.videoFilename = document.getElementById("videoFilename");
+					htmlVideo.videoControl.src = htmlVideo.videoFilename.value;
+				},
+				clickHandler: function(event) {
+					var id = event.target.id;
+					if (id === "pause")
+					{
+						htmlVideo.videoControl.pause();
+					}
+
+					if (id === "play")
+					{
+						htmlVideo.videoControl.play();
+					}
+				},
+				timerHandler: function(event) {
+					document.getElementById("currentTime").innerHTML = event.target.currentTime;
+					document.getElementById("duration").innerHTML = event.target.duration;
+				},
+				initialize: function() {
+					htmlVideo.pause = document.getElementById("pause");
+					htmlVideo.play = document.getElementById("play");
+					htmlVideo.videoControl = document.querySelector("video");
+					
+					htmlVideo.changeAudio();
+					htmlVideo.videoFilename.addEventListener("change", this.changeAudio, false);
+					
+					htmlVideo.pause.addEventListener("click", htmlVideo.clickHandler, false);
+					htmlVideo.play.addEventListener("click", htmlVideo.clickHandler, false);
+					
+					htmlVideo.videoControl.addEventListener("durationchange", htmlVideo.timerHandler, false);
+					htmlVideo.videoControl.addEventListener("timeupdate", htmlVideo.timerHandler, false);
+					
+					document.getElementById("duration").innerHTML = htmlVideo.videoControl.duration;
+				},
+			}
+			
+			window.addEventListener("load", htmlVideo.initialize, false);
+		</script>
+	</body>	
+</html>

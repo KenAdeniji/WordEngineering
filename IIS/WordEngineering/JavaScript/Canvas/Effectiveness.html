@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-08-01	Effectiveness.hnml Created. http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTML5.html
+	2016-08-01	http://www.javascriptf1.com/tutorial/javascript-popup-window.html#
+	2016-08-01	http://www.w3schools.com/howto/howto_css_modals.asp
+	2016-08-04	http://www.chrislinford.co.uk/get-going-guides/HTML5/drawatriangleont.html Three corners
+-->
+	<head>
+		<title>Canvas Draw</title>
+		<style>
+			body { margin: 0px; padding: 0px; }
+			canvas { border: 1px solid gray; }
+			label {
+			  display: block;
+			  float: left;
+			  clear: left;
+			  text-align: right;
+			  width: 100px;
+			  margin-right: 10px;
+			}
+			div { padding: 2px; }
+
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+			
+ /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+		</style>
+	</head>
+	<body>
+		<select id="diagramControl" autofocus> </select>
+		<select id="fillStrokeControl"> </select>
+		<button id="query">Query</button>
+		Canvas width: <span id="canvasWidth"></span>
+		Canvas height: <span id="canvasHeight"></span>
+		<br/>
+		<!-- Modal content -->
+		<div class="modal-content" style="display:none;">
+		  <div class="modal-header">
+			<span class="close">×</span>
+			<h2>Modal Header</h2>
+		  </div>
+		  <div class="modal-body">
+			<fieldset id="modal-Circle">
+				<legend>Circle</legend>
+				<div><label for="circleStartX">Center X</label><input id="circleCenterX" type="text" required></div>
+				<div><label for="circleStartY">Center Y</label><input id="circleCenterY" type="text" required></div>
+				<div><label for="circleRadius">Radius</label><input id="circleRadius" type="text" required></div>		
+			</fieldset>
+			<fieldset id="modal-Clear">
+				<legend>Clear</legend>
+				<div><label for="clearTopLeftX">Top Left X</label><input id="clearTopLeftX" type="text" required></div>
+				<div><label for="clearTopLeftY">Top Left Y</label><input id="clearTopLeftY" type="text" required></div>
+				<div><label for="clearWidth">Width</label><input id="clearWidth" type="text" required></div>
+				<div><label for="clearHeight">Height</label><input id="clearHeight" type="text" required></div>		
+			</fieldset>
+			<fieldset id="modal-Image">
+				<legend>Image</legend>
+				<div>
+					<label for="imageSource">Location/Address</label>
+					<input id="imageSource" type="uri" required title="Address of Image" size="70">
+				</div>
+				<div><label for="imageStartX">Start X</label><input id="imageStartX" type="text" required></div>
+				<div><label for="imageStartY">Start Y</label><input id="imageStartY" type="text" required></div>
+			</fieldset>
+			<fieldset id="modal-Line">
+				<legend>Line</legend>
+				<div><label for="lineStartX">Start X</label><input id="lineStartX" type="text" required></div>
+				<div><label for="lineStartY">Start Y</label><input id="lineStartY" type="text" required></div>
+				<div><label for="lineEndX">End X</label><input id="lineEndX" type="text" required></div>
+				<div><label for="lineEndY">Start Y</label><input id="lineEndY" type="text" required></div>		
+			</fieldset>
+			<fieldset id="modal-Rectangle">
+				<legend>Rectangle</legend>
+				<div><label for="rectangleTopLeftX">Top Left X</label><input id="rectangleTopLeftX" type="text" required></div>
+				<div><label for="rectangleTopLeftY">Top Left Y</label><input id="rectangleTopLeftY" type="text" required></div>
+				<div><label for="rectangleWidth">Width</label><input id="rectangleWidth" type="text" required></div>
+				<div><label for="rectangleHeight">Height</label><input id="rectangleHeight" type="text" required></div>		
+			</fieldset>
+			<div id="modal-Script">
+				<pre id="script"></pre>
+			</div>
+			<fieldset id="modal-Text">
+				<legend>Text</legend>
+				<div><label for="text">Text</label><input id="text" type="text" required></div>
+				<div><label for="textStartX">Start X</label><input id="textStartX" type="text" required></div>
+				<div><label for="textStartY">Start Y</label><input id="textStartY" type="text" required></div>
+			</fieldset>
+			<fieldset id="modal-Triangle">
+				<legend>Triangle</legend>
+				<div><label for="triangleCorner1X">Corner 1 X</label><input id="triangleCorner1X" type="text" required></div>
+				<div><label for="triangleCorner1Y">Corner 1 Y</label><input id="triangleCorner1Y" type="text" required></div>
+				<div><label for="triangleCorner2X">Corner 2 X</label><input id="triangleCorner2X" type="text" required></div>
+				<div><label for="triangleCorner2Y">Corner 2 Y</label><input id="triangleCorner2Y" type="text" required></div>
+				<div><label for="triangleCorner3X">Corner 3 X</label><input id="triangleCorner3X" type="text" required></div>
+				<div><label for="triangleCorner3Y">Corner 3 Y</label><input id="triangleCorner3Y" type="text" required></div>
+			</fieldset>
+			<div><button id="diagramAction">OK</button></div>
+		  </div>
+		  <div class="modal-footer">
+			<h3>Modal Footer</h3>
+		  </div>
+		</div>
+		
+		<canvas id="canvas" height="500" width="600">Canvas is not supported.</canvas><br/>
+		<script>
+			var effectiveness = 
+			{
+				baseText: null,
+				canvas: null,
+				context: null,
+				diagramChoices: 
+				[
+					"Circle",
+					"Clear",
+					"Image",
+					"Line",
+					"Rectangle",
+					"Script",
+					"Text",
+					"Triangle"
+				],
+				fillStrokeChoices:
+				[
+					"Fill",
+					"Stroke"
+				],	
+				script: null,
+				buildSelect: function(selectControl, selectChoices)
+				{
+					var select = document.getElementById(selectControl);
+					select.options.length = 0;
+					for (var index = 0, length = selectChoices.length; index < length; ++index)
+					{
+						var option = document.createElement("option");
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+						select.appendChild(option);
+					}
+				},
+				clear: function()
+				{
+					var topLeftX = document.getElementById("clearTopLeftX").value;
+					var topLeftY = document.getElementById("clearTopLeftY").value;
+					var width = document.getElementById("clearWidth").value;
+					var height = document.getElementById("clearHeight").value;
+	
+					effectiveness.context.clearRect
+					(
+						topLeftX,
+						topLeftY,
+						width,
+						height
+					);
+					
+					var code = "context.clearRect(" + 
+						topLeftX + ", " + topLeftY + ", " + 
+						width + ", " + height + ");";
+					
+					effectiveness.script.push(code);
+					
+				},
+				closeDialog: function()
+				{
+					var modal = document.getElementsByClassName("modal-content")[0];
+					modal.style.display = "none";		
+				},
+				diagramAction: function()
+				{
+					switch(effectiveness.diagramValue())
+					{
+						case "Clear":
+							effectiveness.clear();
+							break;
+						case "Circle":
+							effectiveness.drawCircle();
+							break;
+						case "Image":
+							effectiveness.drawImage();
+							break;
+						case "Line":
+							effectiveness.drawLine();
+							break;
+						case "Rectangle":
+							effectiveness.drawRectangle();
+							break;
+						case "Text":
+							effectiveness.drawText();
+							break;
+						case "Triangle":
+							effectiveness.drawTriangle();
+							break;
+					}
+					effectiveness.closeDialog();
+				},
+				diagramValue: function()
+				{
+					return (document.getElementById("diagramControl").value);
+				},	
+				drawCircle: function()
+				{
+					effectiveness.context.beginPath();
+					
+					var circleCenterX = document.getElementById("circleCenterX").value;
+					var circleCenterY = document.getElementById("circleCenterY").value;
+					var circleRadius =  document.getElementById("circleRadius").value;
+					
+					effectiveness.context.arc
+					(
+						circleCenterX,
+						circleCenterY,
+						circleRadius,
+						0,
+						2*Math.PI
+					);
+					switch (effectiveness.fillStrokeValue())
+					{
+						case "Fill":
+							effectiveness.context.fill();
+							break;
+						case "Stroke":
+							effectiveness.context.stroke();
+							break;
+					}			
+					effectiveness.closeDialog();
+					var code = "context.beginPath();" +
+						"context.arc(" + circleCenterX + ", " +
+						circleCenterY + ", " +
+						circleRadius + 
+						", 0, 2*Math.PI);" +
+						"context." + effectiveness.fillStrokeValue() + "();";
+					effectiveness.script.push(code);
+				},
+				drawImage: function()
+				{
+					var source = document.getElementById("imageSource").value;
+					var startX = document.getElementById("imageStartX").value;
+					var startY = document.getElementById("imageStartY").value;
+					
+					image = new Image();
+					image.src = source;
+					image.onload = function(e) {
+						effectiveness.context.drawImage(image, startX, startY);
+						var code = "image = new Image(); image.src = '" + source + "';" +
+							"context.drawImage(image, " + startX + ", " + startY + ");";
+						effectiveness.script.push(code);
+					}	
+				},
+				drawLine: function()
+				{
+					effectiveness.context.beginPath();
+					effectiveness.context.moveTo
+					(
+						document.getElementById("lineStartX").value,
+						document.getElementById("lineStartY").value
+					);
+					effectiveness.context.lineTo
+					(
+						document.getElementById("lineEndX").value,
+						document.getElementById("lineEndY").value
+					);
+					effectiveness.context.stroke();
+					effectiveness.closeDialog();
+					var code = "context.beginPath();" +
+					"context.moveTo(" + document.getElementById("lineStartX").value + ", " +
+						document.getElementById("lineStartY").value + ");" +
+					"context.lineTo(" + document.getElementById("lineEndX").value + ", " +
+						document.getElementById("lineEndY").value + ");" +
+					"context.stroke();";
+					effectiveness.script.push(code);
+				},
+				drawRectangle: function()
+				{
+					var rectangleTopLeftX = document.getElementById("rectangleTopLeftX").value;
+					var rectangleTopLeftY = document.getElementById("rectangleTopLeftY").value;
+					var rectangleWidth = document.getElementById("rectangleWidth").value;
+					var rectangleHeight = document.getElementById("rectangleHeight").value;
+					
+					switch (effectiveness.fillStrokeValue())
+					{
+						case "Fill":
+							effectiveness.context.fillRect
+							(
+								rectangleTopLeftX,
+								rectangleTopLeftY,
+								rectangleWidth,
+								rectangleHeight
+							);
+							break;
+						case "Stroke":
+							effectiveness.context.strokeRect
+							(
+								rectangleTopLeftX,
+								rectangleTopLeftY,
+								rectangleWidth,
+								rectangleHeight
+							);
+							break;
+					}			
+					effectiveness.closeDialog();
+
+					var code = "context." +  
+						effectiveness.fillStrokeValue().toLowerCase() + "Rect(" +
+						rectangleTopLeftX + ", " + rectangleTopLeftY + ", " + 
+						rectangleWidth + ", " + rectangleHeight + ");";
+					
+					effectiveness.script.push(code);
+				},
+				drawText: function()
+				{
+					var text = document.getElementById("text").value;
+					var startX = document.getElementById("textStartX").value;
+					var startY = document.getElementById("textStartY").value;
+
+					effectiveness.context.font = "30px Arial";
+					effectiveness.context.fillText(text, startX, startY);
+					
+					var code = "context.fillText('" + text + "', " + startX + ", " + startY + ");";
+					effectiveness.script.push(code);
+				},
+				drawTriangle: function()
+				{
+					var corner1X = document.getElementById("triangleCorner1X").value;
+					var corner1Y = document.getElementById("triangleCorner1Y").value;
+					var corner2X = document.getElementById("triangleCorner2X").value;
+					var corner2Y = document.getElementById("triangleCorner2Y").value;
+					var corner3X = document.getElementById("triangleCorner3X").value;
+					var corner3Y = document.getElementById("triangleCorner3Y").value;
+					
+					effectiveness.context.beginPath();
+					effectiveness.context.moveTo(corner1X, corner1Y);
+					effectiveness.context.lineTo(corner2X, corner2Y);
+					effectiveness.context.lineTo(corner3X, corner3Y);
+					effectiveness.context.closePath();
+					
+					switch (effectiveness.fillStrokeValue())
+					{
+						case "Fill":
+							effectiveness.context.fill()
+							break;
+						case "Stroke":
+							effectiveness.context.stroke()
+							break;
+					}
+
+					var code = "effectiveness.context.beginPath();" +
+						"effectiveness.context.moveTo(" + corner1X + ", " + corner1Y + "); " +
+						"effectiveness.context.lineTo(" + corner2X + ", " + corner2Y + "); " +
+						"effectiveness.context.lineTo(" + corner3X + ", " + corner3Y + "); " +
+						"effectiveness.context.closePath();" +
+						"context." + effectiveness.fillStrokeValue() + "();";
+					effectiveness.script.push(code);
+				},
+				fillStrokeValue: function()
+				{
+					return (document.getElementById("fillStrokeControl").value);
+				},	
+				initialize: function()
+				{
+					effectiveness.canvas = document.getElementById('canvas');
+					effectiveness.context = effectiveness.canvas.getContext('2d');
+					effectiveness.canvas.width = window.innerWidth;
+					effectiveness.canvas.height = window.innerHeight - 20;
+					
+					effectiveness.buildSelect("diagramControl", effectiveness.diagramChoices);
+					
+					effectiveness.buildSelect("fillStrokeControl", effectiveness.fillStrokeChoices);
+					
+					document.getElementById("canvasWidth").innerHTML = effectiveness.canvas.width;
+					document.getElementById("canvasHeight").innerHTML = effectiveness.canvas.height;
+					
+					effectiveness.initializeDialog();
+				
+					effectiveness.script = new Array();
+				
+					document.getElementById("diagramAction").addEventListener("click", effectiveness.diagramAction, false);
+					document.getElementById("query").addEventListener("click", effectiveness.querySubmit, false);
+				},
+				initializeDialog: function()
+				{
+					var modal = document.getElementsByClassName("modal-content")[0];
+
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() {
+						modal.style.display = "none";
+					}
+
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+						if (event.target == modal) {
+							modal.style.display = "none";
+						}
+					}
+				},	
+				openDialog: function()
+				{
+					var modal = document.getElementsByClassName("modal-content")[0];
+					modal.style.display="block";
+					
+					document.getElementById("modal-Circle").style.display="none";
+					document.getElementById("modal-Clear").style.display="none";
+					document.getElementById("modal-Image").style.display="none";
+					document.getElementById("modal-Line").style.display="none";
+					document.getElementById("modal-Rectangle").style.display="none";
+					document.getElementById("modal-Script").style.display="none";
+					document.getElementById("modal-Text").style.display="none";
+					document.getElementById("modal-Triangle").style.display="none";
+					
+					document.getElementById("modal-" + effectiveness.diagramValue()).style.display="block";
+				},
+				querySubmit: function()
+				{
+					switch(effectiveness.diagramValue())
+					{
+						case "Clear":
+						case "Circle":
+						case "Image":
+						case "Line":
+						case "Rectangle":
+						case "Text":
+						case "Triangle":
+							effectiveness.openDialog();
+							break;
+						case "Script":
+							effectiveness.openDialog();
+							var script = effectiveness.script.join('\n');
+							document.getElementById("script").innerHTML = script;	
+					}
+				}
+			};
+
+			window.addEventListener("load", effectiveness.initialize, false);
+		</script>
+	</body>
+</html>

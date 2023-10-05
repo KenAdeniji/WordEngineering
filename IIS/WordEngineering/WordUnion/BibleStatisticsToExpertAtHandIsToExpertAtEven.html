@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-02-21	Created.
+-->
+	<body>
+		<title>Bible Statistics to expert at hand; is to expert at even</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<div align="center">
+			<select id="bibleVersion"> </select>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function buildHyperlinkBibleWord(bibleWord)
+			{
+				var uri = "<a href='BibleWord.html?bibleWord=" + bibleWord + "&" +
+					"logic=or&" + 
+					"wholeWords=true&" +
+					"bibleVersion=" + document.getElementById("bibleVersion").value +
+					"'>" +
+					bibleWord + 
+					"</a>";
+				return uri;	
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleStatisticsToExpertAtHandIsToExpertAtEven.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'>";
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Organ",
+					"Activity",					
+					"First &amp; Last Occurrence",
+					"Verse(s) Count"
+				);
+
+				info += "<tbody>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var question = null;
+				var answer = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						info += scriptLiteral9432.buildRow
+						(
+							buildHyperlinkBibleWord(dataRow["Organ"]),
+							buildHyperlinkBibleWord(dataRow["Activity"]),
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["FirstScriptureReference"] + ", " + dataRow["LastScriptureReference"]
+							),  
+							dataRow["VerseCount"]
+						);
+					}
+				}
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+
+</body>
+</html>

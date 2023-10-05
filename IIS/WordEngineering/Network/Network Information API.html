@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-01-11	Created.
+		2019-01-11	https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation
+		2019-01-11	https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object
+		2019-01-11	https://stackoverflow.com/questions/798340/testing-if-value-is-a-function
+	-->
+	<head>
+		<title>Network Information API</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table id="resultSet"></table>
+		</div>	
+
+		<script>
+			function querySubmit()
+			{
+				var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+				var tableInfo = '<tr><th>Key</th><th>Value</th>';
+				for (var key in connection) {
+					//if (connection.hasOwnProperty(key)) {
+						//console.log(key + " -> " + connection[key]);
+						if (typeof connection[key] === 'function')
+						{
+							continue;
+						}
+						tableInfo += `<tr><td>${key}</td><td>${connection[key]}</td></tr>`;	
+					//}
+				}
+				resultSet.innerHTML = tableInfo;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+	</script>
+</body>
+</html>

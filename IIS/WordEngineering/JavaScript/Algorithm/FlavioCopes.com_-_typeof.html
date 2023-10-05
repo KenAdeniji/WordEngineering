@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-05-05	Created.	https://flaviocopes.com/javascript-typeof-operator/
+	-->
+	<head>
+		<title>FlavioCopes.com_-_typeof</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center" id="resultSet"></div>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			function render()
+			{
+				var tableSet =
+					`<table id='table0'>
+						<caption>typeof</caption>
+						<thead><tr><th>Question</th><th>Answer</th></tr></thead>
+						<tbody>
+					`;	
+				var code, typeofCode;
+				for(index = 0, length = codes.length; index < length; ++index)
+				{
+					code = codes[index];
+					typeofCode = typeof code;
+					tableSet +=
+						`<tr><td>${code}</td><td>${typeofCode}</td></tr>`;
+				}
+				tableSet += '</tbody></table>';
+				document.getElementById("resultSet").innerHTML = tableSet;
+				var sorter = tsorter.create('table0');
+			}
+			
+			window.addEventListener("load", render, false);
+			
+			var codes = 
+			[
+1, //'number'
+'1', //'string'
+{name: 'Flavio'}, //'object'
+[1, 2, 3], //'object'
+true, //'boolean'
+undefined, //'undefined'
+(() => {}), //'function'
+//Symbol() //'symbol'
+			];
+		</script>
+	</body>	
+</html>

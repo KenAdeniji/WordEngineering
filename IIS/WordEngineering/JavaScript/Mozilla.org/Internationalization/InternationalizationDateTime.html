@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-09	Created.	https://hacks.mozilla.org/2014/12/introducing-the-javascript-internationalization-api/
+		2016-05-09	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+	-->
+	<head>
+		<title>Internationalization DateTime</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<table align="center">
+			<tbody>
+				<tr>
+					<td><label for="dated">DateTime:</label></td>
+					<td><input id="dated" type="datetime" size="70"></td>
+				</tr>	
+				<tr>
+					<td><label for="formats">Formats:</label></td>
+					<td><textarea id="formats" cols="70" rows="5"></textarea></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><button id="query">Query</buttton></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<table id="dates"><caption>Dates</caption></table>
+					</td>
+				</tr>
+			</tbody>	
+		</table>
+		<script>
+			var isPostBack = false;
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var dated = getParameterByName("dated");
+					if (dated == "")
+					{
+						dated = new Date();
+					}
+					document.getElementById("dated").value = dated;
+
+					var formats = getParameterByName("formats");
+					if (formats == "")
+					{
+						formats = Formats;
+					}
+					document.getElementById("formats").value = formats;
+					
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var dated = document.getElementById("dated").value.trim();
+				var options =
+				  { year: "2-digit", month: "2-digit", day: "2-digit",
+					hour: "2-digit", minute: "2-digit",
+					timeZoneName: "short" };
+					
+				var formats = document.getElementById("formats").value.trim();
+				var formatsArray = formats.split(RegexCRLFSeparator);
+
+				var currentFormat = null,
+					currentFormatDateTimeFormat = null,
+					currentFormatDateTime = null;
+
+				var datesLiteral = "";
+				
+				for
+				(
+					var formatIndex = 0, formatCount = formatsArray.length;
+					formatIndex < formatCount;
+					++formatIndex
+				)
+				{
+					currentFormat = formatsArray[formatIndex];
+					currentFormatDateTimeFormat = 
+						new Intl.DateTimeFormat(currentFormat, options).format;
+					currentFormatDateTime = currentFormatDateTimeFormat(new Date(dated));
+					datesLiteral += "<tr><td>" + currentFormat + "</td><td>" + 
+						currentFormatDateTime + "</td></tr>"
+				}	
+				document.getElementById("dates").innerHTML = datesLiteral;	
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("dated").addEventListener("change", querySubmit, false);
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var Formats = 
+`en-US
+pt-BR
+pt-PT
+de-CH
+fr-CH
+it-CH
+rm-CH
+ja-JP-u-ca-japanese
+th-TH-u-nu-thai-ca-chinese
+`
+			var RegexCRLFSeparator = /\r\n|\r|\n/g;
+		</script>
+	</body>
+</html>
+

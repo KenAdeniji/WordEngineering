@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-06-17	Created.
+		2020-06-17	https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc
+	-->
+	<head>
+		<title>Clipboard API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Clipboard API"/>
+		<meta name="keywords" content="Clipboard, copy, cut, paste"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="workArea">Work Area</label></td>
+					<td><input id="workArea" type="text" focus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="copyClipboard" value="Copy Clipboard"/>
+						<input type="submit" id="pasteClipboard" value="Paste Clipboard"/>
+					</td>
+				</tr>	
+			</table>
+		</div>
+
+		<script>
+			var workAreaElement = document.getElementById("workArea");
+			
+			function copyClipboardSubmit()
+			{
+				var data = new DataTransfer();
+				navigator.clipboard.writeText(workAreaElement.value);
+			}
+
+			function pasteClipboardSubmit()
+			{
+/*
+				navigator.clipboard.read().then(function(data) {
+					for (var i = 0; i < data.items.length; i++) {
+						if (data.items[i].type == "text/plain") {
+							workAreaElement.value = data.items[i].getAs("text/plain");
+							console.log("Your string: " + data.items[i].getAs("text/plain"))
+						} else {
+							console.error("No text/plain data on clipboard.");
+						}
+					}
+				})
+*/				
+				navigator.clipboard.readText().then(function(data) {
+					workAreaElement.value = data;
+					console.log(data);
+				})				
+			}
+
+			document.getElementById("copyClipboard").addEventListener("click", copyClipboardSubmit, false);
+			document.getElementById("pasteClipboard").addEventListener("click", pasteClipboardSubmit, false);
+	</script>
+</body>
+</html>

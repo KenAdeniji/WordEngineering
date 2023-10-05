@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-04-01	Created.	Our type at the end.
+		2017-04-02	http://stackoverflow.com/questions/14129953/how-to-encode-a-string-in-javascript-for-displaying-in-html
+	-->
+	<head>
+		<title>Our type at the end.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="question">Query</label></td>
+						<td><input id="question" type="text"></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function buildHead() 
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildHyperlink(address, parameter)
+			{
+				if (!parameter) { return ""; }	
+				var uri = encodeURI(address + ".html?" + address + "=" + parameter);
+				var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+				return hyperlink;
+			}
+			
+			function buildRow() 
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function encodeXmlCharacters(input) {
+				input = input.replace(/&/g, '&amp;');
+				input = input.replace(/</g, '&lt;');
+				input = input.replace(/>/g, '&gt;');
+				return input;
+			}				
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["question"] = document.getElementById("question").value;
+				
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/OurTypeAtTheEnd.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						console.log("querySubmit()");
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var question = getParameterByName("question");
+					if (question != "")
+					{
+						document.getElementById("question").value = question;
+					}
+
+					querySubmit();
+
+					isPostBack = true;
+				}
+			}
+			
+			function render(data) 
+			{
+				var info = "<table>";
+				for (var table in data)
+				{
+					dataTable = data[table];
+					info += buildHead
+					(
+						"ID",
+						"Dated", 
+						"Class Name",
+						"Date Name",
+						"Data Type",
+						"Actor",
+						"Sample Data",
+						"Scripture Reference",
+						"Commentary"
+					);
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+				
+						info += buildRow
+						(
+							dataRow["OurTypeAtTheEndID"],
+							dataRow["Dated"],
+							dataRow["ClassName"],
+							dataRow["DataName"],
+							encodeXmlCharacters(dataRow["DataType"]),
+							dataRow["Actor"],
+							dataRow["SampleData"],
+							buildHyperlink("scriptureReference", dataRow["ScriptureReference"]),
+							dataRow["Commentary"]
+						);
+					}
+				}
+				
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

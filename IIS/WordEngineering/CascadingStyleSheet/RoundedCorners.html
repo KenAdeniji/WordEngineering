@@ -1,0 +1,47 @@
+<div class="borderRadiusWithOneMeasurement">
+	This is a rounded corner box with one measurement.
+</div>
+
+<div class="borderRadiusWithTwoMeasurements">
+	This is a rounded corner box with two measurements.
+	The first measurement is for the top-left and bottom right corners, and the second measurement is for the top-right and bottom left corners.
+</div>
+
+<div class="borderRadiusWithThreeMeasurements">
+	This is a rounded corner box with three measurements.
+	The first measurement is for the top-left corner, the second measurement is for the top-right corner, the third measurement is for the bottom right corner. The lower left corner is the same as the second measurement.
+</div>
+
+<div class="borderRadiusWithFourMeasurements">
+	This is a rounded corner box with four measurements.
+	The first measurement is for the top-left corner, the second measurement is for the top-right corner, the third measurement is for the bottom right corner, the fourth measurement is for the lower left corner.
+</div>
+
+<style>
+div
+{    
+	border: solid thick black;
+	width: 200px;
+}
+
+.borderRadiusWithOneMeasurement 
+{    
+	border-radius: 15px;
+}
+
+.borderRadiusWithTwoMeasurements
+{    
+	border-radius: 15px 5px;
+}
+
+.borderRadiusWithThreeMeasurements
+{    
+	border-radius: 15px 5px 25px; 
+}
+
+.borderRadiusWithFourMeasurements
+{    
+	border-radius: 15px 5px 25px 0px; 
+}
+</style>	
+ 

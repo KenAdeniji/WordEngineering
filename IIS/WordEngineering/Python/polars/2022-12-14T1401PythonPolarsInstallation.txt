@@ -1,0 +1,8 @@
+https://codemag.com/Article/2212051/Using-the-Polars-DataFrame-Library
+	Install Python
+	Install polars
+		Create the directory E:\WordEngineering\Python\polars
+			MD E:\WordEngineering\Python\polars
+		Change to the directory E:\WordEngineering\Python\polars
+			CD E:\WordEngineering\Python\polars
+		pip.exe install polars

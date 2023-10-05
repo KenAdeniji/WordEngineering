@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- We declare the application as HTML5 using the <DOCTYPE html> declaration. -->
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0px; padding: 0px }
+  #map_canvas { height: 100% }
+</style>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> <!-- We include the Maps API JavaScript using a script tag. -->
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = { <!-- We create a JavaScript object literal to hold a number of map properties. -->
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); <!-- We write a JavaScript function to create a "map" object. -->
+  }
+
+</script>
+</head>
+<body onload="initialize()"> <!-- We initialize the map object from the body tag's onload event. -->
+  <div id="map_canvas" style="width:100%; height:100%"></div> <!-- We create a div element named "map_canvas" to hold the Map. -->
+</body>
+</html>

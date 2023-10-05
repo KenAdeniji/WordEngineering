@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- 
+	2018-10-29	Created.	http://www.lmpt.univ-tours.fr/~volkov/C++.pdf
+	2018-10-29	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+	2018-10-30	rowsPerSet. Multiple tables.
+-->
+	<head>
+		<title>UTF-16 code units</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			#resultSet table { float: left; }
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="minimum">Minimum</label></td>
+						<td><input id="minimum" type="number" value="32" step="1" min="1"></td>
+					</tr>
+					<tr>
+						<td><label for="maximum">Maximum</label></td>
+						<td><input id="maximum" type="number" value="255" step="1"></td>
+					</tr>
+					<tr>
+						<td><label for="rowsPerSet">Rows per Set</label></td>
+						<td><input id="rowsPerSet" type="number" value="20" step="1" min="1"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="resultSet"></div>
+		</div>	
+
+		<script>
+			function querySubmit()
+			{
+				var minimum = parseInt(document.getElementById("minimum").value);
+				var maximum = parseInt(document.getElementById("maximum").value);
+				var rowsPerSet = parseInt(document.getElementById("rowsPerSet").value);
+				var resultInfo = "";
+				var symbol;
+				for (index = minimum, rowSet = 1; index <= maximum; ++index, ++rowSet)
+				{
+					if (rowSet % rowsPerSet === 1)
+					{
+						if (resultInfo)
+						{
+							resultInfo += "</tbody></table>";
+						}
+						resultInfo += "<table><tbody>";
+					}
+					symbol = String.fromCharCode(index);
+					resultInfo += `<tr><td>${index}</td><td>${symbol}</td></tr>`;
+				}
+				resultInfo += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = resultInfo;
+			}
+
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

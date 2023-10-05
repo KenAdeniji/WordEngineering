@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Using CSS to Replace JavaScript for Your HTML Table Functionality: Increasing More Effective Maintainability and User Experience</title>
+	<style>
+		/* Locking the Header Row */
+		tbody{ max-height:50px;  overflow-y:auto; display:block}
+		
+		/* Locking the Far Left Column */
+		div { 
+            width: 600px; 
+            overflow-x:scroll;  
+            margin-left:5em; 
+            overflow-y:visible;
+            padding-bottom:1px;
+        }
+        .headcol {
+            position:absolute; 
+            width:5em; 
+            left:0;
+            top:auto;
+            border-right: 0px none black; 
+            border-top-width:3px; /*only relevant for first row*/
+            margin-top:-3px; /*compensate for top border*/
+        }
+        .headcol:before {content: 'Row ';}
+        .long { background:yellow; letter-spacing:1em; }
+		
+		/* Adding Zebra Stripes */
+		tr:nth-child(2n+1) {
+			background-color: #99ff99;
+		}
+		
+		/* Adding Row Highlights */
+		tr:hover {background-color: #FF0000}
+	</style>
+</head>
+<body>
+	<table>  
+    <thead><tr><th>Locking the Header Row</th></tr></thead>
+    <tbody>
+        <tr>
+            <td>col1</td>
+        </tr> <tr>
+            <td>col1</td>
+        </tr><tr>
+            <td>col1</td>
+        </tr><tr>
+            <td>col1</td>
+        </tr>
+    </tbody>
+	</table>
+	
+	<!-- Locking the Far Left Column -->
+	<div><table>
+        <tr><td class="headcol">1</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td></tr>
+        <tr><td class="headcol">2</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td></tr>
+        <tr><td class="headcol">3</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td></tr>
+        <tr><td class="headcol">4</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td><td class="long">QWERTYUIOPASDFGHJKLZXCVBNM</td></tr>
+	</table></div>
+	
+</body>
+</html>

@@ -1,0 +1,1 @@
+Eternal.exe /sqlQuery:"SELECT * FROM Bible..BibleBook ORDER BY bookId" /filenameXml:"2013-11-01T1120BibleBook.xml"

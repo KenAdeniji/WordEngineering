@@ -1,0 +1,107 @@
+<html>
+	<!--
+		2014-09-21 Created Fillerama by ChrisValleskey.com.
+	-->
+	<head>
+		<title>Fillerama by ChrisValleskey.com</title>
+	</head>
+	<body>
+		<div align="center">
+			<label for="show">Show:
+				<input id="show" type="text" list="shows" size="50">
+					<datalist id="shows">
+					   <option>Futurama</option>
+					   <option>Star Wars</option>
+					   <option>Dexter</option>
+					   <option>The Simpsons</option>
+					   <option>Doctor Who</option>
+					</datalist>
+				</input>	
+			</label>
+			<button id="query">Query</button>
+			<br><br>
+			
+			<div id="quoteInfo" align="left">
+			</div>
+		</div>	
+	
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			var presentationCss = [
+				"background-color:blanchedalmond; color:blue;",
+				"background-color:beige; color:black;"			
+			];
+
+			function getQuote()
+			{
+				var show = document.getElementById("show").value;
+				if (show === '')
+				{
+					show = 'futurama'; 
+				}
+				var uri = 'http://api.chrisvalleskey.com/fillerama/get.php?count=100&format=json&show=' + show;
+				$.ajax({ 
+					dataType: 'json',
+					url: uri,
+					success: function(data)	{ 
+						render(data);
+					}
+				});
+			}
+			
+			function render(data) 
+			{
+				var info = "";
+				for (quoteIndex = 0, quoteCount = data.db.length; quoteIndex < quoteCount; ++quoteIndex)
+				{
+					var recordCss = "cssRule" + (quoteIndex % presentationCss.length);
+					var record = data.db[quoteIndex];
+					var column = "";
+					var line = "";
+					for (var key in record) {
+						if (record.hasOwnProperty(key)) {
+							column = key + ": " + record[key];
+							if (line !== "")
+							{
+								line += "&nbsp;&nbsp;&nbsp;";
+							}
+							line += column;
+						}
+					}
+					var resultRecord = "<div class='" + recordCss + "'>" + line + "</div>";
+					info += resultRecord;
+				}	
+				document.getElementById("quoteInfo").innerHTML = info;
+			}
+			
+			function createCss()
+			{
+				var cssCombined = "";
+				var style = document.createElement('style');
+				style.type = 'text/css';
+				
+				for 
+				(
+					var cssIndex = 0, presentationCssLength = presentationCss.length;
+					cssIndex < presentationCssLength;
+					++cssIndex
+				)
+				{
+					cssCombined += ".cssRule" + cssIndex + " { " + presentationCss[cssIndex] + " } ";
+				}
+
+				style.innerHTML = cssCombined;
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}		
+
+			window.addEventListener("load", createCss);
+			window.addEventListener("load", getQuote);
+			
+			var query = document.getElementById("query");
+			query.addEventListener("click", getQuote);
+			
+			var show = document.getElementById("show");
+			show.addEventListener("change", getQuote);
+		</script>
+	</body>
+<html>

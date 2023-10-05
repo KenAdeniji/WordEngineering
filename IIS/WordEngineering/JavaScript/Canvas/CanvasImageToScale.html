@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+     <title>CanvasImageToScale</title>
+
+      <style>
+         body {
+            background: #dddddd;
+         }
+         #canvas {
+            margin: 10px;
+            padding: 10px;
+            background: #ffffff;
+            border: thin inset #aaaaaa;
+         }
+      </style>
+   </head>
+
+  <body>
+	<input type="checkbox" id="scaleCheckbox" onClick="draw();"> 
+	<label for="scaleCheckbox">Scale image to canvas<label>
+	<br />
+    <canvas id='canvas' width='800' height='800'>
+      Canvas not supported
+    </canvas>
+
+    <script>
+		//Global variables, we don't suggest it.
+		var scaleCheckbox = document.getElementById('scaleCheckbox'),
+		var canvas = document.getElementById('canvas'), //Use document.getElementById() to get a reference to a canvas.
+		var context = canvas.getContext('2d'); //Call getContext('2d') on the canvas to get the graphics context (note: the ‘d’ in ‘2d’ must be lowercase).
+		var image = new Image();
+
+		image.src = '../../Images/2011-07-03ChicagoBeam.JPG';
+		image.onload = function(e) {
+			context.drawImage(image, 0, 0);
+		};
+
+		function draw() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			if (scaleCheckbox.checked) {
+				context.drawImage(image, 0, 0, canvas.width, canvas.height);
+			}
+			else {
+				context.drawImage(image, 0, 0);
+			}
+		}
+	</script>
+  </body>
+</html>

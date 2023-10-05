@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-08-30	I am totally interested, in a foreign key.
+			2016-02-08	http://stackoverflow.com/questions/5180382/convert-json-data-to-a-html-table
+			2016-02-08	http://stackoverflow.com/questions/27395012/rendering-html-table-inside-div-using-javascript-function
+		-->
+		<title>I am totally interested, in a foreign key</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will list a sample of the objects in the Bible. Object for software research."/>
+		<meta name="keywords" content="Bible, actor, type, first mention, last mention"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"> </div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var _table_ = document.createElement('table'),
+				_tr_ = document.createElement('tr'),
+				_th_ = document.createElement('th'),
+				_td_ = document.createElement('td');
+
+			function buildHtmlTable(arr) {
+				 var table = _table_.cloneNode(false),
+					 columns = addAllColumnHeaders(arr, table);
+				 for (var i=0, maxi=arr.length; i < maxi; ++i) {
+					 var tr = _tr_.cloneNode(false);
+					 for (var j=0, maxj=columns.length; j < maxj ; ++j) {
+						 var td = _td_.cloneNode(false);
+							 cellValue = arr[i][columns[j]];
+						 td.appendChild(document.createTextNode(arr[i][columns[j]] || ''));
+						 tr.appendChild(td);
+					 }
+					 table.appendChild(tr);
+				 }
+				 return table;
+			}
+
+			 // Adds a header row to the table and returns the set of columns.
+			 // Need to do union of keys from all records as some records may not contain
+			 // all records
+			 function addAllColumnHeaders(arr, table)
+			 {
+				 var columnSet = [],
+					 tr = _tr_.cloneNode(false);
+				 for (var i=0, l=arr.length; i < l; i++) {
+					 for (var key in arr[i]) {
+						 if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key)===-1) {
+							 columnSet.push(key);
+							 var th = _th_.cloneNode(false);
+							 th.appendChild(document.createTextNode(key));
+							 tr.appendChild(th);
+						 }
+					 }
+				 }
+				 table.appendChild(tr);
+				 return columnSet;
+			}
+ 
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					rowStub += "<td>" + arguments[columnIndex] + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function clearView()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+			}
+			
+			function pageLoad()
+			{
+				clearView();
+				retrieveData();
+			}
+
+			function retrieveData()
+			{
+				var request = {};
+				//request["variableName"] = variableValue;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/IAmTotallyInterestedInAForeignKey.asmx/Population",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+ 						document.getElementById("resultSet").appendChild
+							(buildHtmlTable(dataSet));
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

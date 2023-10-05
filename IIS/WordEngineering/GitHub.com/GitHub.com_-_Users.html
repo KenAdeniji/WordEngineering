@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-08	Created.
+			2018-02-08	https://stackoverflow.com/questions/10341135/example-of-using-github-api-from-javascript
+			2018-02-08	https://stackoverflow.com/questions/16499804/json-in-html-with-line-breaks
+			2018-02-09	https://developer.github.com/v3/
+			2018-02-09	https://api.github.com
+			2018-02-10	https://www.w3schools.com/jsref/prop_style_display.asp
+		-->
+		<title>GitHub.com Users</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label id="requestTypeLabel" for="requestType">Request Type:</label></td>
+						<td><select id="requestType" autofocus></select></td>
+					</tr>	
+					<tr id="userQuestion">
+						<td><label id="userLabel" for="user">User:</label></td>
+						<td><input id="user" type="text"/></td>
+					</tr>	
+					<tr id="orgQuestion">
+						<td><label id="orgLabel" for="org">Organization:</label></td>
+						<td><input id="org" type="text"/></td>
+					</tr>	
+					<tr id="ownerQuestion">
+						<td><label id="ownerLabel" for="owner">Owner:</label></td>
+						<td><input id="owner" type="text"/></td>
+					</tr>	
+					<tr id="repoQuestion">
+						<td><label id="repoLabel" for="repo">Repository:</label></td>
+						<td><input id="repo" type="text"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+		</div>
+		<pre id="resultSet" align="left" style="overflow: auto"></pre>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var userDefault = "KenAdeniji";
+			var orgDefault = "Microsoft";
+			var	ownerDefault = "KenAdeniji";
+			var requestTypeDefault = "user_url";
+			var repoDefault = "WordEngineering";
+			
+			function loadDoc() 
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() 
+				{
+					if (this.readyState == 4 && this.status == 200) 
+					{
+						document.getElementById("resultSet").innerHTML = this.responseText;
+					}
+				};
+			  
+				var requestType = document.getElementById("requestType").value; 
+				
+				var user = document.getElementById("user").value; 
+				var org = document.getElementById("org").value;
+				var owner = document.getElementById("owner").value;
+				var repo = document.getElementById("repo").value; 
+				
+				var url = "";
+
+				switch(requestType)
+				{
+					case "organization_repositories_url":
+						url = `https://api.github.com/orgs/${org}/repos`;
+						break;
+					
+					case "repository_url":		
+						url = `https://api.github.com/repos/${owner}/${repo}`;
+						break;
+						
+					case "user_url":
+						url = `https://api.github.com/users/${user}`;
+						break;
+						
+					case "user_repositories_url":
+						url = `https://api.github.com/users/${user}/repos`;
+						break;
+				}
+				
+				xhttp.open
+				(
+					"GET",
+					url,
+					true
+				);
+				xhttp.send();
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect("requestType", requestTypes);
+						
+						var requestType = scriptLiteral9432.getParameterByName("requestType");
+						if (!requestType)
+						{
+							requestType = requestTypeDefault;
+						}	
+						document.getElementById("requestType").value = requestType;
+						
+						var org = scriptLiteral9432.getParameterByName("org");
+						if (!org)
+						{
+							org = orgDefault;
+						}	
+						document.getElementById("org").value = org;
+
+						var owner = scriptLiteral9432.getParameterByName("owner");
+						if (!owner)
+						{
+							owner = ownerDefault;
+						}	
+						document.getElementById("owner").value = owner;
+						
+						var repo = scriptLiteral9432.getParameterByName("repo");
+						if (!repo)
+						{
+							repo = repoDefault;
+						}	
+						document.getElementById("repo").value = repo;
+
+						var user = scriptLiteral9432.getParameterByName("user");
+						if (!user)
+						{
+							user = userDefault;
+						}	
+						document.getElementById("user").value = user;
+
+						questionaire();
+						
+						loadDoc();
+						isPostBack = true;	
+					});
+				}
+			}
+			
+			function questionaire()
+			{
+				document.getElementById("orgQuestion").style.display = "none";
+				document.getElementById("ownerQuestion").style.display = "none";
+				document.getElementById("repoQuestion").style.display = "none";
+				document.getElementById("userQuestion").style.display = "none";
+				
+				var requestType = document.getElementById("requestType").value; 
+			
+				switch(requestType)
+				{
+					case "organization_repositories_url":
+						document.getElementById("orgQuestion").style.display = "table-row";
+						break;
+					
+					case "repository_url":
+						document.getElementById("ownerQuestion").style.display = "table-row";
+						document.getElementById("repoQuestion").style.display = "table-row";
+						break;
+						
+					case "user_url":
+						document.getElementById("userQuestion").style.display = "table-row";
+						break;
+						
+					case "user_repositories_url":
+						document.getElementById("userQuestion").style.display = "table-row";
+						break;
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("requestType").addEventListener("change", questionaire, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", loadDoc, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					loadDoc();
+				}
+			}
+			
+			var requestTypes = [
+				["organization_repositories_url", "organization_repositories_url"],
+				["repository_url", "repository_url"],
+				["user_repositories_url", "user_repositories_url"],
+				["user_url", "user_url"]
+			];
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-04-05	http://html5.komplett.cc/code/chap_forms/meter_en.html
+	-->
+	<head>
+		<meta charset="utf-8">
+		<title>html5.komplett.cc DatedMeter</title>
+	</head>
+	<body>
+		<fieldset>
+			<legend>Query</legend>
+			<table>
+				<tr>
+					<td><label for="dated">Date:</label></td>
+					<td><input id="dated" type="DateTime" /></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2"><button id="query">Query</button></td>
+				<tr>
+			</table>
+		</fieldset>
+		<br/><br/>	
+	
+		<h1>What percentage of the year has already passed?</h1>
+		<h2>Text</h2>
+		<p><output id=op></output>
+		  % of the year has passed.</p>
+		<h2>The new <span>meter</span> element</h2>
+		<meter value=0 id=m></meter>
+		<h2>Nested <span>div</span> elements</h2>
+		<div id=outer style="background:lightgray;width:150px;" >
+		<div id=innerDIV>&nbsp;</div></div>
+		<h2>Google Chart API</h2>
+		<img id=google src="">
+		<p id=googleSrc class=tt></p>
+		
+		<script>
+			var isPostBack = false;
+		
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var dated = getParameterByName("dated");
+					if (dated === "")
+					{
+						var dated = new Date();
+					}
+					document.getElementById("dated").value = dated;
+					isPostBack = true;
+				}
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				var dated = new Date(document.getElementById("dated").value);
+				var m = document.getElementById("m");
+				m.min = new Date(dated.getFullYear(), 0, 1);
+				m.max = new Date(dated.getFullYear(), 11, 31);
+				// m.optimum = m.min-m.max/2;
+				m.value = dated;
+				var op = document.getElementById("op");
+				op.value = 
+				Math.round(100/(m.max-m.min)*(m.value-m.min));
+				var innerDIV = document.getElementById("innerDIV");
+				innerDIV.style.width=op.value+"%";
+				innerDIV.style.background = "green";
+				var google = document.getElementById("google");
+				google.src = "http://chart.apis.google.com/chart?chs=200x125&cht=gom&chd=t:"+op.value;
+				var gSrc = document.getElementById("googleSrc");
+				gSrc.innerHTML = google.src;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-03-07 http://beyondhtml5andcss3.com/2013/12/06/storing-arrays-in-localstorage/
+	-->
+	<head>
+		<title>Storing Arrays in LocalStorage</title>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">John Doe, Mary Smith</textarea>
+			<button id="query">Query</button>
+			<div id="response"></div>
+		</div>
+
+		<script>
+			/*
+			function getNames()
+			{
+				var names = [];
+				// collect some stuff into  the names array.
+				for(var count=0; count < 5; count++){
+				  names.push(prompt("New member name?"));
+				}
+
+				// convert the array of names into a JSON string. 
+				localStorage["names"] = JSON.stringify(names);			
+			}
+			
+			function displayNames()
+			{
+				var namesFromLocalStorage = JSON.parse(localStorage["names"]);
+				console.log(namesFromLocalStorage);
+			}
+			
+			function startUp()
+			{
+				getNames();
+				displayNames();
+			}
+
+			window.addEventListener("load", startUp, false);
+			*/
+
+			function storeInfo()
+			{
+				var dataSet = document.getElementById("request").value;
+				var names = dataSet.split(",");
+				
+				// convert the array of names into a JSON string. 
+				localStorage["names"] = JSON.stringify(names);			
+
+				var namesFromLocalStorage = JSON.parse(localStorage["names"]);
+				var feedback = "";
+				
+				for (var index = 0, count = namesFromLocalStorage.length; index < count; ++index)
+				{
+					feedback += namesFromLocalStorage[index] + "<br/>";
+					console.log(feedback, index, count);
+				}	
+				var response = document.getElementById("response");
+				response.innerHTML = feedback;
+			}
+			
+			var query = document.getElementById("query");
+			query.addEventListener("click", storeInfo, false);
+		</script>
+	</body>
+</html>

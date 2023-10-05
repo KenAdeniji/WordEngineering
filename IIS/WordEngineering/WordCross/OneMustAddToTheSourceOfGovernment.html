@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2022-06-15T23:41:00	Created.
+	-->
+	<head>
+		<title>One must add to the source of government.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="One must add to the source of government."/>
+		<meta name="keywords" content="Scripture Reference, Bible Version, Bible Word, Exact, Dave Hunt, Chuck Missler, Love, Genesis 22:2"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference</label></td>
+					<td><input id="scriptureReference" type="text" autofocus style="width: 70vw;"></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Bible Word</label></td>
+					<td><input id="bibleWord" type="text" style="width: 70vw;"></td>
+				</tr>
+				<tr>
+					<td><label for="firstOccurrenceScriptureReference">First Occurrence Scripture Reference</label></td>
+					<td><input id="firstOccurrenceScriptureReference" type="text" style="width: 70vw;"></td>
+				</tr>
+				<tr>
+					<td><label for="lastOccurrenceScriptureReference">Last Occurrence Scripture Reference</label></td>
+					<td><input id="lastOccurrenceScriptureReference" type="text" style="width: 70vw;"></td>
+				</tr>
+				<tr>
+					<td><label for="FrequencyOfOccurrence">Frequency of Occurrence</label></td>
+					<td>
+						<input id="frequencyOfOccurrenceFrom" type="number" style="width: 30vw;">
+						-
+						<input id="frequencyOfOccurrenceUntil" type="number" style="width: 30vw;">
+					</td>
+				</tr>
+				<tr>
+					<td><label for="wordID">Word ID</label></td>
+					<td>
+						<input id="wordIDFrom" type="number" style="width: 30vw;">
+						-
+						<input id="wordIDUntil" type="number" style="width: 30vw;">
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			const scriptureReferenceElement = document.getElementById("scriptureReference");
+			const bibleVersionElement = document.getElementById("bibleVersion");
+			const bibleWordElement = document.getElementById("bibleWord");
+			const firstOccurrenceScriptureReferenceElement = document.getElementById("firstOccurrenceScriptureReference");
+			const lastOccurrenceScriptureReferenceElement = document.getElementById("lastOccurrenceScriptureReference");
+			const frequencyOfOccurrenceFromElement = document.getElementById("frequencyOfOccurrenceFrom");
+			const frequencyOfOccurrenceUntilElement = document.getElementById("frequencyOfOccurrenceUntil");
+			const wordIDFromElement = document.getElementById("wordIDFrom");
+			const wordIDUntilElement = document.getElementById("wordIDUntil");
+
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptureReferenceElement.value = ScriptureReferenceDefault;
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				
+				request["bibleVersion"] = scriptLiteral9432.selectionGet("bibleVersion");
+				request["bibleWord"] = bibleWordElement.value;
+
+				request["firstOccurrenceScriptureReference"] = firstOccurrenceScriptureReferenceElement.value;
+				request["lastOccurrenceScriptureReference"] = lastOccurrenceScriptureReferenceElement.value;
+
+				request["frequencyOfOccurrenceFrom"] = 
+					frequencyOfOccurrenceFromElement.value == "" ?
+						-1 :	
+						parseInt( frequencyOfOccurrenceFromElement.value );
+
+				request["frequencyOfOccurrenceUntil"] = 
+					frequencyOfOccurrenceUntilElement.value == "" ?
+						-1 :	
+						parseInt( frequencyOfOccurrenceUntilElement.value );
+				
+				request["wordIDFrom"] = 
+					wordIDFromElement.value == "" ?
+						-1 :	
+						parseInt( wordIDFromElement.value );
+
+				request["wordIDUntil"] = 
+					wordIDUntilElement.value == "" ?
+						-1 :	
+						parseInt( wordIDUntilElement.value );
+
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/OneMustAddToTheSourceOfGovernment.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var ScriptureReferenceDefault = "Galatians 4:19, Ezekiel 37:1-14";
+	</script>
+</body>
+</html>

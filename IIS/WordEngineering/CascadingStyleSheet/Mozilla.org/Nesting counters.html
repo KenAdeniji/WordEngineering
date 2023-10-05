@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-08-20	Created.	http://tutorialzine.com/2013/10/12-awesome-css3-features-you-can-finally-use/
+								https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters
+	-->
+	<head>
+		<title>Using CSS counters</title>
+		<style>
+ol {
+  counter-reset: section;                /* Creates a new instance of the
+                                            section counter with each ol
+                                            element */
+  list-style-type: none;
+}
+li::before {
+  counter-increment: section;            /* Increments only this instance
+                                            of the section counter */
+  content: counters(section,".") " ";    /* Adds the value of all instances
+                                            of the section counter separated
+                                            by a ".". */
+                                         /* if you need to support < IE8 then
+                                            make sure there is no space after 
+                                            the ',' */
+}
+		</style>
+	</head>
+	<body>
+<ol>
+  <li>item</li>          <!-- 1     -->
+  <li>item               <!-- 2     -->
+    <ol>
+      <li>item</li>      <!-- 2.1   -->
+      <li>item</li>      <!-- 2.2   -->
+      <li>item           <!-- 2.3   -->
+        <ol>
+          <li>item</li>  <!-- 2.3.1 -->
+          <li>item</li>  <!-- 2.3.2 -->
+        </ol>
+        <ol>
+          <li>item</li>  <!-- 2.3.1 -->
+          <li>item</li>  <!-- 2.3.2 -->
+          <li>item</li>  <!-- 2.3.3 -->
+        </ol>
+      </li>
+      <li>item</li>      <!-- 2.4   -->
+    </ol>
+  </li>
+  <li>item</li>          <!-- 3     -->
+  <li>item</li>          <!-- 4     -->
+</ol>
+<ol>
+  <li>item</li>          <!-- 1     -->
+  <li>item</li>          <!-- 2     -->
+</ol>
+	</body>
+</html>

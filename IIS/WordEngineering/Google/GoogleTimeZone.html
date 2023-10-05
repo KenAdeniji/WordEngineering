@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	2014-11-08 Created https://developers.google.com/maps/documentation/timezone/
+	2014-11-08 http://stackoverflow.com/questions/14220555/google-map-timezone-api-not-working-with-ie
+	
+	https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=API_KEY
+	https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331766000&key=API_KEY
+	https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331766000&language=es&key=API_KEY
+-->	
+<script src="https://code.jquery.com/jquery-git2.min.js"></script>
+</head>
+<body>
+	<div align="center">
+		<label for='latitude'>Latitude: &nbsp; &nbsp;  <input id='latitude' type='number' value='43.653226'></label>
+		&nbsp; &nbsp; &nbsp;
+		<label for='longitude'>Longitude: &nbsp; &nbsp; <input id='longitude' type='number' value='-79.38318429999998'></label>
+		&nbsp; &nbsp; &nbsp;
+		<label for='dated'>Date: &nbsp; &nbsp; <input id='dated' type='date'></label>
+		
+		<br><br>
+		<button id="query">Query</button>
+		
+		<br><br>
+		<div id='resultSet'></div>
+	</div>	
+	<script type="text/javascript">
+
+	function initializeValues()
+	{
+		var dated = document.getElementById("dated");
+		dated.value = new Date();
+	}	
+
+	function retrieveInfo()
+	{
+		var dated = new Date(document.getElementById("dated").value);
+		var timestamp = Math.round(dated.getTime() / 1000);
+		
+		var url = 	"https://maps.googleapis.com/maps/api/timezone/json?location=43.653226,-79.38318429999998&timestamp=1331161200&sensor=true";
+					
+		var url = 	"https://maps.googleapis.com/maps/api/timezone/json?location=" + 
+					document.getElementById("latitude").value + ',' +
+					document.getElementById("longitude").value + '&' +
+					//(dated === "" ? "" : ("timestamp=" + '1331161200' + '&')) +
+					(dated === "" ? "" : ("timestamp=" + timestamp + '&')) +
+					"sensor=true";
+		$.ajax
+		({
+			type: "GET",
+			url: url,
+			cache:false,
+			success: function(data){
+				var resultSet = document.getElementById("resultSet");
+				resultSet.innerHTML = data.dstOffset;
+				var response = 	"dstOffset: " + data.dstOffset + "<br>" +
+								"rawOffset: " + data.rawOffset + "<br>" +
+								"status: " + data.status + "<br>" +
+								"timeZoneId: " + data.timeZoneId + "<br>" +
+								"timeZoneName: " + data.timeZoneName + "<br>";
+				resultSet.innerHTML = response;				
+			},
+			error:function(xhr, ajaxOptions, thrownError)
+			{
+				console.log(thrownError);
+			},
+			fail: function(){
+				console.log('ajax fail');
+			}
+		});
+	}	
+
+	window.addEventListener('load', retrieveInfo, false);
+	
+	var query = document.getElementById("query");
+	query.addEventListener('click', retrieveInfo, false);
+	
+	window.addEventListener('load', initializeValues, false);
+	</script>
+	
+</body>
+</html>

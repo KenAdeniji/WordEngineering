@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!--
+		2016-05-11	FormatSelect.html
+	-->
+		<title>FormatSelect</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div id="informationSet"></div>
+		<script>
+			function select(format, currency)
+			{
+				window.opener.passArgument(format, currency);
+				self.close();
+			}
+			
+			function pageLoad()
+			{
+				var informationSet = document.getElementById("informationSet");
+				
+				var count = FormatList.length;
+				var resultHTML = "<table id='formatList'>" +
+					"<thead><tr><th/><th>Region</th><th>Format</th><th>Currency</th></thead><tbody>";
+						
+				for (var index = 0; index < count; ++index)
+				{
+					var currentRow = FormatList[index];
+					var region = currentRow[0];
+					var format = currentRow[1];
+					var currency = currentRow[2];
+
+					resultHTML += "<tr><td><a href='#' onclick='select(\"" 
+						+ format + '","' + currency + "\"); return false;'>Select</a>"
+						+ "</td><td>" + region + "</td><td>" + format + "</td><td>" + currency 
+						+ "</td></tr>";
+				}
+				resultHTML += "</tbody></table>";
+				informationSet.innerHTML = resultHTML;
+			}
+			
+			var FormatList = [
+				["hanDecimalRMBInChina", "zh-CN-u-nu-hanidec", "CNY"],
+				["United States dollars", "en-US", "USD"],
+				["Bahraini dinars", "ar-BH", "BHD"]
+			];	
+			
+			window.addEventListener("load", pageLoad, "false");
+		</script>
+	</body>
+</html>

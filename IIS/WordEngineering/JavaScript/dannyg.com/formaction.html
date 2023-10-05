@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<TITLE>Text Object value Property</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function upperMe() {
+var field = document.forms[0].converter
+var upperCaseVersion = field.value.toUpperCase()
+field.value = upperCaseVersion
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM onSubmit="return false">
+<INPUT TYPE="text" NAME="converter" VALUE="sample" onChange="upperMe()">
+<INPUT TYPE="text" NAME="converter1" VALUE="sample222" onChange="upperMe()">
+</FORM>
+</BODY>
+</HTML>

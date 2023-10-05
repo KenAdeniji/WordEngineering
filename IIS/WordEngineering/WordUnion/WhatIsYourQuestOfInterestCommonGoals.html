@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-25	Created.	What is your quest of interest? Common goals.
+	-->
+	<head>
+		<title>What is your quest of interest? Common goals.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<label for="fromID">from</label> 
+			<input type="number" ID="fromID" size="3" step="1" maxlength="3" min="1" max="176">
+			<label for="untilID">until</label> 
+			<input type="number" ID="untilID" size="3" step="1" maxlength="3" min="1" max="176">
+		
+			<select id="choice" multiple size="3">
+				<option value="bookID" selected="selected">Book ID</option>		
+				<option value="chapterID">Chapter ID</option>
+				<option value="verseID">Verse ID</option>
+			</select>
+
+			<select id="bibleVersion"> </select>
+			
+			<input type="submit" id="submitQuery">
+ 			<br />
+			<label for="collate">Scripture reference concatenate visible:</label>		
+			<input type="checkbox" id="collate" onclick="combine();"/>
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<label for="versesCount">Verse(s) count:</label>
+			<label id="versesCount"></label>
+			<br />
+			<div id="resultSet"> </div>
+		</div>	
+		<div id="scriptureReferenceCollate" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			 
+			function combine()
+			{
+				var collate = document.getElementById('collate').checked;
+				var scriptureReferenceCollate = document.getElementById('scriptureReferenceCollate');
+				
+				var concatenate="";
+						
+				if (collate === true)
+				{
+					var table=document.getElementById("resultTable");
+					var r=0;
+					
+					while(row=table.rows[r++])
+					{
+						var scriptureReference = row.cells[0].innerHTML;
+						if (concatenate != "")
+						{
+							concatenate += ", ";
+						}
+						concatenate += scriptureReference;
+					}
+					scriptureReferenceCollate.innerHTML = concatenate;
+					scriptureReferenceCollate.style.visibility='visible';
+				}
+				else
+				{
+					scriptureReferenceCollate.innerHTML = "";
+					scriptureReferenceCollate.style.visibility='hidden';
+				}
+			}
+			
+			function determineMultipleSelect(id) {
+				var selected = [];
+				var checkboxArray = document.getElementById(id);
+				for (var i = 0; i < checkboxArray.length; i++) {
+				  if (checkboxArray.options[i].selected == true) {
+					selected.push(checkboxArray[i].value);
+				  }
+				}
+				return selected.join();
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						var fromID = scriptLiteral9432.getParameterByName("fromID");
+						if (fromID)
+						{
+							document.getElementById("fromID").value = fromID;
+						}
+
+						var untilID = scriptLiteral9432.getParameterByName("untilID");
+						if (untilID)
+						{
+							document.getElementById("untilID").value = untilID;
+						}
+						
+						if (fromID || untilID)
+						{
+							querySubmit();	
+						}
+						
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+
+				var request = {};
+
+				var fromID = document.getElementById("fromID").value;
+				if (!fromID)
+				{
+					fromID = 1;
+				}	
+				request["from"] = fromID;
+				
+				var untilID = document.getElementById("untilID").value;
+				if (!untilID)
+				{
+					untilID = fromID;
+				}	
+				request["until"] = untilID;
+
+				request["choice"] = determineMultipleSelect("choice");
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/WhatIsYourQuestOfInterestCommonGoalsWebService.asmx/CommonGoals",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var bookId = null;
+				var chapterId = null;
+				var verseId = null;
+				var verseText = null;
+				
+				var bookTitle = null;
+			
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						bookId = dataRow["bookId"];
+						bookTitle = scriptLiteral9432.bibleBooks[bookId - 1];
+						chapterId = dataRow["chapterId"];
+						verseId = dataRow["verseId"];
+						verseText = dataRow["verseText"];
+						
+						info += "<tr><td>" + bookTitle + " " + chapterId + ':' + verseId +  
+								"</td><td>" + verseText + "</td></tr>";
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+				
+				var versesCount = document.getElementById('versesCount');
+				var resultTable = document.getElementById('resultTable');
+				if (resultTable)
+				{
+					versesCount.innerHTML = resultTable.rows.length;
+				}	
+				combine();
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

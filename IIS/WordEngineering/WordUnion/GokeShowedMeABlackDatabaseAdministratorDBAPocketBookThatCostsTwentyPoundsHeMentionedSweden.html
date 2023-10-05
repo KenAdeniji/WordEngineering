@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		2018-01-20	Created.	Psalms 5:2, Psalms 6:10, Psalms 8:3
+		-->
+		<title>Goke showed me a black database administrator (DBA) pocket book that costs twenty pounds, he mentioned Sweden.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="scriptureReference">Scripture Reference:</label></td>
+						<td><input id="scriptureReference" type="text"></td>
+					</tr>	
+					<tr>
+						<td><label for="verseSpan">Verse Span:</label></td>
+						<td><input type="number" id="verseSpan" min="1"></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+			<div id="feedback"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var scriptureReferenceDefault = 'Psalms 6:10';
+			var verseSpanDefault = 20;
+			
+			function clearView()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				document.getElementById("feedback").innerHTML = "";
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var scriptureReference = scriptLiteral9432.getParameterByName("scriptureReference");
+						if (!scriptureReference)
+						{
+							scriptureReference = scriptureReferenceDefault;
+						}
+						if (scriptureReference)
+						{
+							document.getElementById("scriptureReference").value = scriptureReference;
+						}	
+
+						var verseSpan = scriptLiteral9432.getParameterByName("verseSpan");
+						if (!verseSpan)
+						{
+							verseSpan = verseSpanDefault;
+						}
+						if (verseSpan)
+						{
+							document.getElementById("verseSpan").value = verseSpan;
+						}	
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				clearView();
+				var request = {};
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+				request["verseSpan"] =  parseInt(document.getElementById("verseSpan").value);
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/GokeShowedMeABlackDatabaseAdministratorDBAPocketBookThatCostsTwentyPoundsHeMentionedSweden.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						document.getElementById("resultSet").innerHTML =
+							scriptureReferenceHyperlink(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-06-30T06:07:00	Created.
+		2021-06-30T10:48:00	https://stackoverflow.com/questions/10585029/parse-an-html-string-with-js
+		2021-06-30T11:27:00	https://stackoverflow.com/questions/842336/is-there-a-way-to-select-sibling-nodes
+	-->
+	<head>
+		<title>Ko si nothing and there will be nothing.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Ko si nothing and there will be nothing."/>
+		<meta name="keyword" content="url, node, siblings"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="url">url:</label></td>
+					<td>
+						<input 
+							id="url" 
+							type="url"
+							value="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="id">ID:</label></td>
+					<td>
+						<input 
+							id="id" 
+							type="text"
+							value="Account"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var	idElement = document.getElementById("id");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+
+			var	urlElement = document.getElementById("url");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var urlParam = urlParams.get("url");
+					if (urlParam)
+					{
+						urlElement.value = urlParam;
+					}	
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				fetch(urlElement.value)
+				.then(res => {
+					return res.text();
+				})
+				.then(data => {
+					if (idElement.value)
+					{
+						var doc = new DOMParser().parseFromString(data, "text/html");
+						var link = doc.getElementById(idElement.value);
+						var infoSet = siblings(link, link.parentNode.childNodes);
+						var infoCurrent = "";
+						for 
+						(
+							var index = 0, limit = infoSet.length;
+							index < limit;
+							++index
+						)
+						{
+							infoCurrent += infoSet[index].outerHTML;
+						}
+						resultSet.innerHTML = infoCurrent;
+					}
+				});
+			}
+			
+function prevSiblings(target) {
+   var siblings = [], n = target;
+   while(n = n.previousElementSibling) siblings.push(n);
+   return siblings;
+}
+
+function nextSiblings(target) {
+   var siblings = [], n = target;
+   while(n = n.nextElementSibling) siblings.push(n);
+   return siblings;
+}
+
+function siblings(target) {
+    var prev = prevSiblings(target) || [],
+        next = nextSiblings(target) || [];
+    return prev.concat(next);
+}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

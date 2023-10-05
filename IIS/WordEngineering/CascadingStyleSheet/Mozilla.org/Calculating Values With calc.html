@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-08-18	Created.	http://tutorialzine.com/2013/10/12-awesome-css3-features-you-can-finally-use/
+								https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+	-->
+	<head>
+		<title>Calculating Values With calc()</title>
+		<style>
+			.banner {
+			  position: absolute;
+			  left: 5%;                 /* fallback for browsers without support for calc() */
+			  left: 40px;
+			  width: 90%;               /* fallback for browsers without support for calc() */
+			  width: calc(100% - 80px);
+			  border: solid black 1px;
+			  box-shadow: 1px 2px;
+			  background-color: yellow;
+			  padding: 6px;
+			  text-align: center;
+			}
+			
+input {
+  padding: 2px;
+  display: block;
+  width: 98%;               /* fallback for browsers without support for calc() */
+  width: calc(100% - 1em);
+}
+
+#formbox {
+  width: 130px;             /* fallback for browsers without support for calc() */
+  width: calc(100% / 6);
+  border: 1px solid black;
+  padding: 4px;
+}			
+		</style>
+	</head>
+	<body>
+		<div class="banner">This is a banner!</div><br><br><br>
+<form>
+  <div id="formbox">
+  <label>Type something:</label>
+  <input type="text">
+  </div>
+</form>		
+	</body>
+</html>

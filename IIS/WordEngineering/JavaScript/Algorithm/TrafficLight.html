@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-11-11	Created.
+		2017-11-11T03:49	https://www.w3schools.com/jsref/prop_number_defaultvalue.asp
+		2017-11-11T05:14	https://www.w3schools.com/howto/howto_js_countdown.asp
+	-->
+	<head>
+		<title>Traffic Light</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+		<table>
+			<thead>
+				<tr>
+					<th>Color</th>
+					<th>Duration (Seconds)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="color: red;">
+					<td><label for="red">Red</label></td>
+					<td><input type="number" id="red" autofocus step="1" min="0"></td>
+				</tr>
+				<tr style="color: green;">
+					<td><label for="green">Green</label></td>
+					<td><input type="number" id="green" step="1" min="0"></td>
+				</tr>
+				<tr style="color: yellow;">
+					<td><label for="yellow">Yellow</label></td>
+					<td><input type="number" id="yellow" step="1" min="0"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</tfoot>
+		</table>
+		<br><br>
+		<div id="trafficLight">Traffic Light</div>
+		<script>
+			var intervalID = null;
+			
+			function trafficLightCallback
+			(
+				redDuration,
+				greenDuration,
+				yellowDuration
+			) 
+			{
+				var elementLight = document.getElementById("trafficLight");
+
+				var timeStart = new Date().getTime(); //Get the starting time
+				
+				var timeNow, timespan, seconds;
+				
+				// Update the count down every 1 second
+				var x = setInterval(function() 
+				{
+					// Get todays date and time
+					timeNow = new Date().getTime();
+
+					// Find the timespan between now and start
+					timespan = timeNow - timeStart;
+					
+					seconds = Math.floor((timespan % (1000 * 60)) / 1000);
+					
+					if (seconds < redDuration)
+					{
+						elementLight.style.background = "red";
+					}
+					else if (seconds < redDuration + greenDuration)
+					{
+						elementLight.style.background = "green";
+					}
+					else if (seconds < redDuration + greenDuration + yellowDuration)
+					{
+						elementLight.style.background = "yellow";
+					}
+					else
+					{
+						clearInterval(x); //End the current time sequence, to prepare for a new one.
+					}
+				}, 1000);
+			}
+		
+			function pageLoad()
+			{
+				document.getElementById("red").defaultValue = 10;
+				document.getElementById("green").defaultValue = 5;
+				document.getElementById("yellow").defaultValue = 2;
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				var redDuration = parseInt(document.getElementById("red").value);
+				var greenDuration = parseInt(document.getElementById("green").value);
+				var yellowDuration = parseInt(document.getElementById("yellow").value);
+				var lightDuration = redDuration + greenDuration + yellowDuration;
+				
+				if (intervalID) //If there is an existing duration, clear it.
+				{
+					window.clearInterval(intervalID);
+				}
+				
+				intervalID = window.setInterval //Set the interval for the traffic light
+				(
+					trafficLightCallback, //Callback function to call
+					lightDuration * 1000, //In milliseconds
+					redDuration, //Pass the red signal duration in seconds
+					greenDuration, //Pass the green signal duration in seconds
+					yellowDuration //Pass the yellow signal duration in seconds
+				);
+				
+				trafficLightCallback //Start the traffic light
+				(
+					redDuration, //Pass the red signal duration in seconds
+					greenDuration, //Pass the green signal duration in seconds
+					yellowDuration //Pass the yellow signal duration in seconds
+				);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-08-10	Created.
+		2017-08-10	Find this picture, on the web? I Am the magnifier of time; look on My behalf?
+		2017-08-10	http://stackoverflow.com/questions/38969567/fail-to-get-request-from-gettyimages-api
+		2017-08-10	http://javascriptexamples.info/snippet/javascript/getty-image-search-examplejs_ruffrey_javascript
+	-->
+	<head>
+		<title>Find this picture, on the web? I Am the magnifier of time; look on My behalf?</title>
+		<link rel="stylesheet" type="text/css" href="..\CascadingStyleSheet\9432.css">		
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="phrase">Phrase:</label></td>
+						<td>
+							<input type="text" ID="phrase" size="50" value="time" autofocus required/>
+						</td>
+					</tr>						
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>	
+				</table>
+			</fieldset>	
+			<img id="resultSet">
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var apiKey ="mh8k94p6c7mgfvwbzdmv5p4d";
+
+			function querySubmit()
+			{
+				var phrase = document.getElementById("phrase").value;
+				
+				var xhr = new XMLHttpRequest();
+				xhr.onload = function () {
+				  //console.log('response', JSON.parse(xhr.responseText));
+				  
+				  /*
+				  var img = document.createElement('img');
+				  img.src = JSON.parse(xhr.responseText).images[0].display_sizes[0].uri;
+				  document.getElementsByTagName('body')[0].appendChild(img);
+				  */
+				  
+				  document.getElementById("resultSet").src = 
+						JSON.parse(xhr.responseText).images[0].display_sizes[0].uri;
+						
+				};
+				xhr.onerror = function (e) { console.error(e); };
+				xhr.open('GET', 'https://api.gettyimages.com/v3/search/images?phrase=' + phrase);
+				xhr.setRequestHeader('Api-Key', apiKey);
+				xhr.send();
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+							
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+/*
+var appendApiKeyHeader = function( xhr ) {
+  xhr.setRequestHeader('Api-Key', apiKey)
+};
+
+var searchRequest = { "phrase": "dog" }
+
+
+function GetSearchResults() {
+  $.ajax({
+    type: "GET",
+    beforeSend:appendApiKeyHeader,
+    url: "https://api.gettyimages.com/v3/search/videos",
+    data: searchRequest
+  }).success(function (data, textStatus, jqXHR) { 
+
+    console.log(data);
+	
+	document.getElementById("resultSet").innerHTML = JSON.parse(data).result_count;
+	
+	//var dataSet = JSON.parse(data.d);
+	var dataSet = JSON.parse(data);
+	console.log(dataSet);
+	
+
+  }).fail(function (data, err) {
+
+    console.log(data); 
+  });
+}
+
+//GetSearchResults();
+*/			
+	</script>
+</body>
+</html>

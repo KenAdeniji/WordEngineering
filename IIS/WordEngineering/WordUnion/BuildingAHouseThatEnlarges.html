@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+	<!--
+		2016-02-25 Created. BuildingAHouseThatEnlarges.html 
+		2014-12-12 w3schools.com/tags/canvas_clearrect.asp
+	-->
+	<head>
+		<title>Building a House that Enlarges</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will display rectangles that increases in size using canvas"/>
+		<meta name="keywords" content="Bible, house, enlarge, big, large"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+		  body {
+			margin: 0px;
+			padding: 0px;
+		  }
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			
+			var occurrences = 10;
+			
+			var centerX = canvas.width / 2;
+			var centerY = canvas.height / 2;
+
+			var times = 1;
+			
+			var timerID = setInterval(function(){myTimer()}, 1000);
+			
+			function myTimer() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				
+				var startX = centerX - (centerX / occurrences) * times;
+				var endX = centerX + (centerX / occurrences) * times;
+
+				var startY = centerY - (centerY / occurrences) * times;
+				var endY = centerY + (centerY / occurrences) * times;
+				
+				context.beginPath();
+				context.rect
+				(
+					startX,
+					startY,
+					endX,
+					endY
+				);
+				context.stroke();				
+				context.fillStyle = 'green';
+				context.fill();
+				context.lineWidth = 5;
+				context.strokeStyle = '#003300';
+				context.stroke();
+				
+				++times;
+				if (times >= occurrences )
+				{
+					myStopFunction();
+				}
+			}
+
+			function myStopFunction() {
+				clearInterval(timerID);
+			}
+		</script>
+	</body>
+</html>

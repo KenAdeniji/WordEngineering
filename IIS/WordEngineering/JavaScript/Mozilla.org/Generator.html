@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<!-- 
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators?redirectlocale=en-US&redirectslug=JavaScript%2FGuide%2FIterators_and_Generators
+		-->
+		<title>Generator</title>
+	</head>
+	<body>
+	<script type="application/javascript;version=1.7">
+		function simpleGenerator(){
+			yield "first";
+			yield "second";
+			yield "third";
+			for (var i = 0; i < 3; i++)
+				yield i;
+			}
+
+			var g = simpleGenerator();
+			document.write(g.next()); // writes "first"
+			document.write(g.next()); // writes "second"
+			document.write(g.next()); // writes "third"
+			document.write(g.next()); // writes 0
+			document.write(g.next()); // writes 1
+			document.write(g.next()); // writes 2
+			//write(g.next()); // StopIteration is thrown
+	</script>
+	</body>
+</html>

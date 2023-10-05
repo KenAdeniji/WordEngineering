@@ -1,0 +1,83 @@
+﻿<html>
+<!--
+	2018-08-18 	Created.	http://goalkicker.com/JavaScriptBook
+-->
+	<head>
+		<title>Reduce</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31, 12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4, 28, 16, 24, 21, 28, 16, 16, 13, 6, 6, 4, 4, 5, 3, 6, 4, 3, 1, 13, 5, 5, 3, 5, 1, 1, 1, 22</textarea><br>
+			<input type="submit" id="submitQuery"><br>
+			<div id="response"></div>
+		</div>
+		<script>
+			var Reduce =
+			{
+				convertToFloat: function (array) {
+					var count = array.length;
+					for (n = 0; n < count; ++n)
+					{
+						array[n] = parseFloat(array[n]);
+					}
+				},
+
+				deepCopy: function( source ) {
+					var target = [];
+					for (var i = 0, j = source.length; i < j; ++i)
+					{
+						target[i] = source[i];
+					}
+					return target;	
+				}
+			}
+
+			function querySubmit()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+				Reduce.convertToFloat(requestArray);
+				var workingCopy = Reduce.deepCopy(requestArray);
+
+				var maximum = requestArray.reduce(function(a, b) {  return a > b ? a : b }, -Infinity); 
+				var minimum = requestArray.reduce(function(a, b) {  return a < b ? a : b }, Infinity); 
+				var sum = requestArray.reduce(function(a, b) {  return a + b; }); 
+				
+				var uniqueNumbers = requestArray.reduce((prev, number) => {  if(prev.indexOf(number) === -1) {    prev.push(number);  }  return prev; }, []); 
+				
+				var display = "<table border='1'>" +
+					"<caption>Statistics</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("Maximum", maximum) +
+					tabular("Minimum", minimum) +
+					tabular("Sum", sum) +
+					tabular("Unique numbers", uniqueNumbers) +
+					"</tbody></table>"
+					;
+				document.getElementById("response").innerHTML = display;		
+			}
+		
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-10-09	Created.
+		2019-10-10	I am in Ingram; how do I pronounce term plan?
+	-->
+	<head>
+		<title>The Bible times and today.</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Relate the Bible to other new sources" />
+		<meta name="keywords" content="Bible, word, time, from (terminus a quo), to (terminus ad quem), prophecy, fulfillment" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="bibleTimes">Bible Times URI</label></td>
+						<td>
+							<input type="url" id="bibleTimes" focus value="http://localhost/WordEngineering/WordUnion/SQLToHTMLTable.asmx/Query?sqlStatement=select * from Bible..Scripture&databaseConnectionString=Data Source=(local);Initial Catalog=WordEngineering;Persist Security Info=True;Integrated Security=SSPI;Connect Timeout=600;Application Name=WordEngineering;MultipleActiveResultSets=True;"/>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="today">Today URI</label></td>
+						<td><input type="url" id="today" value="https://newsapi.org/v2/top-headlines?country=us&apiKey=dbf1a14b50294acea195ee16c1747840"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			<div id="resultSet" align="left"></div>	
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			var resultSetID = document.getElementById("resultSet");
+			var bibleTimesID = document.getElementById("bibleTimes");
+			var todayID = document.getElementById("today");
+			
+			var partsOfSpeechJoined = [];
+			var bibleTimesResultSet;
+			var todayResultSet;
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						partsOfSpeechJoined = scriptLiteral9432.partsOfSpeechJoined();
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+			
+			function querySubmit()
+			{
+				queryBibleTimes();
+			}
+
+			function queryBibleTimes()
+			{
+				$.ajax
+				({
+					type: "GET",
+					contentType: "application/text; charset=utf-8",
+					url: bibleTimesID.value,
+					dataType: "json",
+					success: function(data) 
+					{
+						bibleTimesResultSet = JSON.parse(data.d);
+						queryToday();
+					},
+					error: function(xhr)
+					{ 
+						resultSetID.innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function queryToday()
+			{
+				$.ajax
+				({
+					type: "GET",
+					contentType: "application/text; charset=utf-8",
+					url: today.value,
+					dataType: "json",
+					success: function(data) 
+					{
+						todayResultSet = JSON.parse(data.d);
+						resultSetID.innerHTML = todayResultSet;
+						processData();
+					},
+					error: function(xhr)
+					{ 
+						resultSetID.innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function processData()
+			{
+			
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+			var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

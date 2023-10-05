@@ -1,0 +1,25 @@
+<!--
+	2015-09-24	Created.	http://www.javascriptsource.com/image-effects/js-search-engine.html
+-->
+
+<style>
+body {
+	background: blue;
+	color: yellow;
+}	
+</style>
+
+<body>
+	<script language="Javascript">
+		function search(){
+			if (formx.q.value <= 0) {
+				alert("Please enter a term to search for");
+			}	
+		}
+	</script>
+
+	<form name="formx" method=GET action="http://www.google.com/search">
+		<input type="text" name="q" value="" size="50" onSubmit="search()">
+		<input type="submit" name="query" onClick="search()" value="Search Google">
+	</form>
+</body>

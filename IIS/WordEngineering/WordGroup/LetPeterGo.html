@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-01-29	Created.
+		2017-05-12	brenocon@cs.umass.edu
+		2018-04-24 	https://quondam.csi.edu/ip/adc/faculty/bbennett/ps011exp.htm
+		2020-01-29	https://stackoverflow.com/questions/16576983/replace-multiple-characters-in-one-replace-call
+		2020-01-29	https://stackoverflow.com/questions/10346722/how-can-i-split-a-javascript-string-by-white-space-or-comma
+		2020-01-29	https://stackoverflow.com/questions/26951398/regular-expression-replacing-only-a-whole-word
+	-->
+	<head>
+		<title>Let Peter go.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Take the most popular phrases in the Bible, and replace the words with the name of the actors."/>
+		<meta name="keywords" content="Bible, Word, parts of speech, actor name"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input type="text" ID="word" autofocus value="Let his go"/></td>
+				</tr>	
+				<tr>
+					<td><label for="partsOfSpeech">Parts of Speech:</label></td>
+					<td>
+						<textarea id="partsOfSpeech">
+I, he, we, she, they, me, him, us, her, them, it, this, that, who, which, what,
+my, mine, his, her, hers, our, ours, their, theirs, your, yours, its, whose						
+						</textarea>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="actor">Actor:</label></td>
+					<td><input type="text" ID="actor" value="Peter"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			var wordElement = document.getElementById("word");
+			var partsOfSpeechElement = document.getElementById("partsOfSpeech");
+			var actorElement = document.getElementById("actor");
+			
+			var resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var word = urlParams.get("word");
+					if (word)
+					{
+						wordElement.value = word;
+					}	
+					
+					var partsOfSpeech = urlParams.get("partsOfSpeech");
+					if (partsOfSpeech)
+					{
+						partsOfSpeechElement.value = partsOfSpeech;
+					}	
+					
+					var actor = urlParams.get("actor");
+					if (actor)
+					{
+						actorElement.value = actor;
+					}	
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}	
+ 			}
+
+			function querySubmit()
+			{
+				var word = wordElement.value;
+				var partsOfSpeech = partsOfSpeechElement.value;
+				var actor = actorElement.value;
+				
+				var actorSplit = actor.split(/[ ,;.?]+/);
+				var actorsLength = actorSplit.length;
+				
+				var partsOfSpeechSplit = partsOfSpeech.split(/[ ,;.?]+/);
+				var partsOfSpeechLength = partsOfSpeechSplit.length;
+				
+				var wordCurrent;
+				
+				var resultSetCurrent = "<table><thead><tr><th>Word</th></tr></thead><tbody>";
+				
+				for (var actorIndex = 0; actorIndex < actorsLength; ++actorIndex)
+				{
+					wordCurrent = word;
+					for (var partsOfSpeechIndex = 0; partsOfSpeechIndex < partsOfSpeechLength; ++partsOfSpeechIndex)
+					{
+						var replace = "\\b" + partsOfSpeechSplit[partsOfSpeechIndex] + "\\b";
+						var re = new RegExp(replace,"gi");
+						wordCurrent = wordCurrent.replace(re, actorSplit[actorIndex]);
+					}
+					resultSetCurrent += `<tr><td><a href="/WordEngineering/WordUnion/GetAPage.html?word=${wordCurrent}">${wordCurrent}</a></td></tr>`;
+				}
+				resultSetCurrent += "</tbody></table";
+				resultSetElement.innerHTML = resultSetCurrent;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-12-27 	Created. WhatIsAcceptedAsAPersonIsAcceptedAsAGod.html
+			2016-12-27	Rich Dad, Poor Dad by Robert T. Kiyosaki with Sharon L. Lechter
+			2016-12-27	What is accepted as a person; is accepted as a God.
+			2016-12-27	At a participating view, one is predominant.
+			2016-12-27	https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow
+			2016-12-27	http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript
+			2016-12-27	http://stackoverflow.com/questions/7271490/delete-all-rows-in-an-html-table
+			2016-12-28	http://stackoverflow.com/questions/5656392/how-to-create-input-type-text-dynamically
+		-->
+		<title>What is accepted as a person; is accepted as a God.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+			.hidden { display: none }			
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Input:</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td><label for="playersCount">Players Count:</label></td>
+							<td><input id="playersCount" type="number" maxlength="4" size="4" step="1" min="1" autofocus/></td>
+						</tr>	
+						<tr>
+							<td><label for="bibleVersion">Bible Version:</label></td>
+							<td><select id="bibleVersion"> </select></td>
+						</tr>	
+						<tr>
+							<td><label for="gameVersion">Game Version:</label></td>
+							<td><select id="gameVersion"> </select></td>
+						</tr>	
+						<tr>
+							<td><label for="completeVersion">Complete:</label></td>
+							<td>
+								<select id="completeVersion"> </select>
+								<input id="completeValue" type="number" step="1" min="1"/>
+							</td>
+						</tr>	
+						<tr>
+							<td align="center" colspan="2"><button id="start">Start</button></td>
+						</tr>	
+					</tbody>		
+				</table>
+			</fieldset>
+			<table id="gameBoard">
+				<thead>
+					<tr>
+						<th>Round No.</th>
+						<th>Player No.</th>
+						<th>Tender</th>
+						<th>Round Score</th>
+						<th>Cummulative Score</th>
+					</tr>
+				</thead>
+
+				<!--
+				<tfoot>
+					<tr>
+						<td align="center" colspan="5"><button id="play">Play</button></td>
+					</tr>
+				</tfoot>
+				-->
+
+				<tbody>
+				</tbody>
+			</table>
+			<button id="play">Play</button>
+			<div id="resultSet"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			var gameFinish = false;
+			
+			var timeStart = new Date();
+			
+			var cellPopulation = [];
+			
+			if(!String.prototype.trim) 
+			{
+			  String.prototype.trim = function () 
+			  {
+				return this.replace(/^\s+|\s+$/g,'');
+			  };
+			}
+
+			function addCell(newRow, cellContent) 
+			{
+				// Insert a cell in the row at index 0
+				var newCell = newRow.insertCell(-1);
+
+				// Append a text node to the cell
+				var newText = document.createTextNode(cellContent);
+				newCell.appendChild(newText);
+			}
+			
+			function addCellInput(newRow) 
+			{
+				// Insert a cell in the row at index 0
+				var newCell = newRow.insertCell(-1);
+
+				// Append a input node to the cell
+				var input = document.createElement("input");
+				input.type = "text";
+				newCell.appendChild(input); // put it into the DOM				
+			}
+
+			function addRow(tableID) 
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById(tableID).getElementsByTagName('tbody')[0];
+
+				// Insert a row in the table at row index 0
+				var newRow = tableRef.insertRow(tableRef.rows.length);
+				//var newRow = tableRef.insertRow(-1);
+				return newRow;
+			}
+
+			function appendRound()
+			{
+				var playersCount = document.getElementById("playersCount").value;
+				var roundIndex = roundCount("gameBoard");
+				
+				var completeVersion = document.getElementById("completeVersion").value;
+				var completeValue = document.getElementById("completeValue").value;
+				
+				if (completeVersion == "Times" && roundIndex > completeValue)
+				{
+					gameFinish = true;
+				}	
+				
+				var timeCheck = new Date();
+				var timeElapsed = timeCheck - timeStart;
+				var timeElapsedMinutes = timeElapsed / (1000 * 60);
+				
+				if (completeVersion == "DurationElapsed" && timeElapsedMinutes > completeValue)
+				{
+					gameFinish = true;
+				}	
+				
+				if (gameFinish === true)
+				{
+					document.getElementById("resultSet").innerHTML = "Game finish.";
+					document.getElementById("play").disabled = true;
+					return;
+				}
+				
+				for (var playerIndex = 1; playerIndex <= playersCount; ++playerIndex)
+				{
+					var newRow = addRow("gameBoard");
+					addCell(newRow, roundIndex);
+					addCell(newRow, playerIndex);
+					addCellInput(newRow);
+				}
+			}
+			
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					option.text = selectChoices[index][0];
+					option.value = selectChoices[index][1];
+					select.appendChild(option);
+				}
+			}
+
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function retrieveCell(tableID, rowID, cellID) 
+			{
+				var rowInfo = retrieveRow(tableID, rowID);
+				var cellInfo = rowInfo.getElementsByTagName("td")[cellID];
+				
+				return cellInfo;
+			}
+
+			function retrieveCellsEntries() 
+			{
+				var cellsEntries = "";
+		
+				var tableRowsLength = retrieveRowsLength();
+				
+				var rowIDRoundMinimum = retrieveRowIDRoundMinimum();
+				
+				var playersCount = document.getElementById("playersCount").value;
+				
+				for 
+				(
+					var playerTableRow = rowIDRoundMinimum;
+					playerTableRow < tableRowsLength - 1;
+					++playerTableRow
+				)	
+				{
+					var cellContent = retrieveCell("gameBoard", playerTableRow, 2);
+					
+					// first item element of the childNodes list of 
+					var cellChild = cellContent.childNodes[0];
+					var cellValue = cellChild.value.trim().toUpperCase();
+					
+					cellChild.disabled = true;
+					
+					if (!cellValue || cellPopulation.indexOf(cellValue) > -1)
+					{
+						cellValue = "(Not valid entry.)";
+					}
+					else
+					{
+						cellPopulation.push(cellValue);
+					}
+					
+					if (cellsEntries)
+					{
+						cellsEntries += ", "
+					}
+					
+					cellsEntries += cellValue;
+				}	
+				return cellsEntries;
+			}
+			
+			function retrieveRow(tableID, rowID) 
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById(tableID).getElementsByTagName('tbody')[0];
+
+				var rowInfo = tableRef.getElementsByTagName("tr")[rowID];
+			
+				return rowInfo;
+			}
+
+			function retrieveRowIDRoundMinimum() 
+			{
+				var tableRowsLength = retrieveRowsLength();
+				var playersCount = document.getElementById("playersCount").value;
+				var rowIDRoundMinimum = tableRowsLength - playersCount - 1;
+				return rowIDRoundMinimum;		
+			}
+
+			function retrieveRowsLength() 
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById("gameBoard");
+
+				var tableRowsLength = tableRef.rows.length;
+				return tableRowsLength;		
+			}
+			
+			function roundCount(tableID) 
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById(tableID);
+
+				var playersCount = document.getElementById("playersCount").value;
+				
+				return ((tableRef.rows.length - 1) / playersCount) + 1;
+			}
+			
+			function startSubmit()
+			{
+				// Get a reference to the table
+				var tableRef = document.getElementById("gameBoard");
+				var rowCount = tableRef.rows.length; while(--rowCount) tableRef.deleteRow(rowCount);
+				document.getElementById("play").disabled = false;
+				document.getElementById("resultSet").innerHTML = "";
+				gameFinish = false;
+				cellPopulation = [];
+				appendRound();
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					buildSelect("bibleVersion", bibleVersions);
+					buildSelect("gameVersion", gameVersions);
+					buildSelect("completeVersion", completeVersions);
+				}
+			}
+			
+			function playSubmit()
+			{
+				var cellsEntries = retrieveCellsEntries();
+			
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				request["word"] = cellsEntries;
+				
+				var requestJson = JSON.stringify(request);
+				
+				var gameVersion = document.getElementById("gameVersion").value;
+				
+				console.log(request["bibleVersion"]);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/WhatIsAcceptedAsAPersonIsAcceptedAsAGod.asmx/" + gameVersion,
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var dataRow = null;
+				var dataTable = null;
+				
+				var roundCount = null;
+				
+				// Get a reference to the table
+				var tableRef = document.getElementById("gameBoard");
+		
+				var tableRowsLength = retrieveRowsLength();
+
+				var playersCount = document.getElementById("playersCount").value;
+				
+				var completeVersion = document.getElementById("completeVersion").value;
+				var completeValue = document.getElementById("completeValue").value;
+								
+				var rowIDMinimum = retrieveRowIDRoundMinimum(); 
+				
+				var playerIndex = 0;
+				   
+				var cellInfo = null;
+				
+				for (var table in data) 
+				{
+					dataTable = data[table];
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						roundCount = parseInt(dataRow["RoundCount"]);
+						if (!roundCount)
+						{
+							roundCount = 0;
+						}	
+	
+						var rowInfo = retrieveRow("gameBoard", rowIDMinimum + playerIndex);
+						addCell(rowInfo, roundCount);
+
+						preceedingTotal = calculateCummulativeScore(rowIDMinimum, playerIndex + 1); 
+						cummulativeTotal = preceedingTotal + roundCount;
+						addCell(rowInfo, cummulativeTotal);	
+
+						if (completeVersion == "PointPassed" && cummulativeTotal > completeValue)
+						{
+							gameFinish = true;
+						}	
+					}
+					++playerIndex;
+				}
+				appendRound();
+			}
+
+			function calculateCummulativeScore(rowIDMinimum, playerIndex) 
+			{
+				var tableRowsLength = retrieveRowsLength();
+				var playersCount = document.getElementById("playersCount").value;
+				var cellContent = null;
+				var cellChild = null;
+				var playerCurrent = null;
+
+				preceedingTotal = 0;
+				for (rowIndex = rowIDMinimum; rowIndex > 1; --rowIndex)
+				{
+					var cellContent = retrieveCell("gameBoard", rowIndex, 1);
+					var playerCurrent = parseInt(cellContent.innerHTML);
+					if (playerCurrent === playerIndex)
+					{
+						var cellContent = retrieveCell("gameBoard", rowIndex, 4);
+						
+						if (cellContent)
+						{						
+							var preceedingTotal = parseInt(cellContent.innerHTML);
+						}
+						
+						break;
+					}
+				}
+				return preceedingTotal;	
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("start").addEventListener("click", startSubmit, false);
+			document.getElementById("play").addEventListener("click", playSubmit, false);
+			
+			var bibleVersions = [
+				["King James Version", "KingJamesVersion"],
+				["American Standard Bible", "AmericanStandardBible"],
+				["Young's Literal Translation", "YoungLiteralTranslation"] 
+			];
+			
+			var completeVersions = [
+				["Play this game a number of times.", "Times"],
+				["Play this game until a point is passed.", "PointPassed"],
+				["Play this game for a certain time, in minutes.", "DurationElapsed"]
+			];
+			
+			var gameVersions = [
+				["Word - Count the number of verses that have this word.", "BibleWordQuery"],
+				["Scripture Reference - The length of this verse.", "ScriptureReferenceQuery"]
+			];
+		</script>
+	</body>
+</html>

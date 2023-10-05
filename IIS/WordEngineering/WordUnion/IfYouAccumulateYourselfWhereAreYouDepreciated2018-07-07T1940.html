@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-07-07	Created.
+	-->
+	<head>
+		<title>If you accumulate yourself; where are you depreciated?</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/w3schools.com_-_tab.css">
+	</head>
+	<body>
+		<!-- Tab links -->
+		<div class="tab">
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageURI')">URI</button>
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageFileUpload')">File Upload</button>
+		  <button class="tablinks" onclick="w3SchoolsTabPageOpen(event, 'tabPageDirectInput')">Direct Input</button>
+		</div>
+
+		<!-- Tab content -->
+		<div id="tabPageURI" class="tabcontent">
+		  <h3>URI</h3>
+		  <label for="address">
+			<input id="address" type="url"/>
+		  </label>
+		</div>
+		<div id="tabPageFileUpload" class="tabcontent">
+		  <h3>File Upload</h3>
+		  <label for="uploadFile">
+			<input id="uploadFile" type="file" multiple/>
+		  </label>
+		</div>
+		<div id="tabPageDirectInput" class="tabcontent">
+			<textarea id="directInput"></textarea>
+		</div>
+		<input type="submit" id="submitQuery"/>
+		<div id="resultSet" align="center">
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+// jquery.xdomainajax.js  ------ from padolsey
+
+jQuery.ajax = (function(_ajax){
+
+    var protocol = location.protocol,
+        hostname = location.hostname,
+        exRegex = RegExp(protocol + '//' + hostname),
+        YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
+        query = 'select * from html where url="{URL}" and xpath="*"';
+
+    function isExternal(url) {
+        return !exRegex.test(url) && /:\/\//.test(url);
+    }
+
+    return function(o) {
+
+        var url = o.url;
+
+        if ( /get/i.test(o.type) && !/json/i.test(o.dataType) && isExternal(url) ) {
+
+            // Manipulate options so that JSONP-x request is made to YQL
+
+            o.url = YQL;
+            o.dataType = 'json';
+
+            o.data = {
+                q: query.replace(
+                    '{URL}',
+                    url + (o.data ?
+                        (/\?/.test(url) ? '&' : '?') + jQuery.param(o.data)
+                    : '')
+                ),
+                format: 'xml'
+            };
+
+            // Since it's a JSONP request
+            // complete === success
+            if (!o.success && o.complete) {
+                o.success = o.complete;
+                delete o.complete;
+            }
+
+            o.success = (function(_success){
+                return function(data) {
+
+                    if (_success) {
+                        // Fake XHR callback.
+                        _success.call(this, {
+                            responseText: data.results[0]
+                                // YQL screws with <script>s
+                                // Get rid of them
+                                .replace(/<script[^>]+?\/>|<script(.|\s)*?\/script>/gi, '')
+                        }, 'success');
+                    }
+
+                };
+            })(o.success);
+
+        }
+
+        return _ajax.apply(this, arguments);
+
+    };
+
+})(jQuery.ajax);
+
+			function httpGetAjax(theUrl)
+			{
+				$.ajax({
+					url: theUrl,
+					type: 'GET',
+					success: function(res) {
+						/*
+							var text = res.responseText;
+							console.log(res.responseText);
+						*/	
+						processData(res);
+					}
+				});
+			}
+		
+			function processData(content)
+			{
+				document.getElementById("resultSet").innerHTML = content;
+				//var inputs = qAndA.getElementsByTagName("input");
+			}
+			
+			function querySubmit() {
+				var request = {};
+				var tabPageID = w3SchoolsGetTabPageCurrent();
+				var tabPageSelected = tabPageID.substring(7);
+				switch(tabPageSelected)
+				{
+					case "URI":
+						var address = document.getElementById("address").value;
+						var data = httpGetAjax(address);
+						processData(data);
+						break;
+					case "FileUpload":	
+						scriptLiteral9432.fileUploadJSON
+						(
+							"uploadFile",
+							processData
+						);	
+						break;
+					case "DirectInput":
+						var jsonEntry = document.getElementById("directInput").value;
+						var jsonParsed = JSON.parse(jsonEntry);
+						processData(jsonParsed);
+						break;
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						document.getElementById("tabPageURI").click();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+			function w3SchoolsGetTabPageCurrent() 
+			{
+				// Declare all variables
+				var i, tabcontent;
+				var styleDisplay;
+				
+				// Get all elements with class="tabcontent"
+				tabcontents = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontents.length; i++) {
+					styleDisplay = tabcontents[i].style.display;
+					if (styleDisplay === "block")
+					{
+						return tabcontents[i].id;
+					}
+				}
+			}
+
+			function w3SchoolsTabPageOpen(evt, tabPageName) 
+			{
+				//console.log(tabPageName);
+				
+				// Declare all variables
+				var i, tabcontent, tablinks;
+
+				// Get all elements with class="tabcontent" and hide them
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+
+				// Get all elements with class="tablinks" and remove the class "active"
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+
+				// Show the current tab, and add an "active" class to the button that opened the tab
+				document.getElementById(tabPageName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

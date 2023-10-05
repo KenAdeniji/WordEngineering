@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+    <head>
+		<!--
+			2014-08-08 	http://www.jsarcade.com/games/quiz/
+			2014-08-10 	Created.
+			2014-08-11 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+			2014-08-14 	Random choices. Answer? Correct or wrong.
+			2014-08-15 	findIndex. Denormalization of the Organization and ReligionDenomination tables. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+			2014-08-16 	Replace onchange function call with querySelectorAll, addEventListener. http://stackoverflow.com/questions/10073699/pad-a-number-with-leading-zeros-in-javascript
+			2014-08-16 	w3schools.com/html/html_css.asp
+			2014-08-16 	http://stackoverflow.com/questions/1720320/how-to-dynamically-create-css-class-in-javascript-and-apply
+			2014-08-17 	Replace <br> with <hr> separator.
+			2014-09-21 	Replace questionCSS with presentationCSS.
+			2015-01-04	http://www.kirupa.com/html5/all_about_nth-of-type_and_nth-child.htm
+			2015-01-04	http://www.w3schools.com/cssref/sel_nth-child.asp
+			2015-01-26	http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+			2015-01-26	var possibilities = JSON.parse(JSON.stringify(denominations)); Deep copy.
+		-->
+		<title>True Origin</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+			
+			#informationSet div:nth-of-type(1n + 0) { background-color:#b8d1f3; } 
+			#informationSet div:nth-of-type(2n + 0) { background-color:#dae5f4; } 
+		</style>
+	</head>
+    <body>
+		<div id="informationSet"> </div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			var denominations = [];
+			var optionCount = 5;
+			var organizations = [];
+
+			var	presentationCss = [
+				"#informationSet div:nth-of-type(1n + 0) { background-color:#b8d1f3; }",
+				"#informationSet div:nth-of-type(2n + 0) { background-color:#dae5f4; } "
+			];
+			
+			function Organization(id, name, denominationId) {
+				this.id = id;
+				this.name = name;
+				this.denominationId = denominationId;
+			}
+
+			function Denomination(id, name) {
+				this.id = id;
+				this.name = name;
+			}
+
+			function buildPage()
+			{
+				createCss();
+				RatingRank.trueOriginSelect();
+			}
+			
+			function checkAnswer(questionIndex, denominationLiteral)
+			{
+				var denominationId = organizations[questionIndex].denominationId;
+
+				var denominationIndex = denominations.findIndex(function(obj) {
+					return (obj.id === denominationId);
+				});
+
+				var denominationName = denominations[denominationIndex].name;
+				
+				var answerValue = "Wrong";
+				
+				if (denominationName === denominationLiteral)
+				{
+					answerValue = "Correct";
+				}
+				var answerTag = document.getElementById("answer" + questionIndex);
+				answerTag.innerHTML = answerValue;
+			}
+			
+			function createCss()
+			{
+				return;
+				var cssCombined = "";
+				var style = document.createElement('style');
+				style.type = 'text/css';
+				
+				for 
+				(
+					var cssIndex = 0, presentationCssLength = presentationCss.length;
+					cssIndex < presentationCssLength;
+					++cssIndex
+				)
+				{
+					//cssCombined += ".cssRule" + cssIndex + " { " + presentationCss[cssIndex] + " } ";
+					cssCombined += 	"#informationSet div:nth-of-type(" + (cssIndex + 1) + "n + 0)" + 
+									" { " + presentationCss[cssIndex] + " } ";
+				}
+				
+				style.innerHTML = cssCombined;
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}		
+		
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+			// Returns a random integer between min (included) and max (excluded)
+			// Using Math.round() will give you a non-uniform distribution!
+			function getRandomInt(min, max) {
+			  return Math.floor(Math.random() * (max - min)) + min;
+			}
+
+			function optionSelect(evt)
+			{
+				var choiceIndex = evt.target.id;
+				var questionIndex = parseInt(choiceIndex.substring(6));
+				denominationLiteral = choiceIndex.substring(11);
+				checkAnswer(questionIndex, denominationLiteral);
+			}
+			
+			//http://stackoverflow.com/questions/10073699/pad-a-number-with-leading-zeros-in-javascript
+			function padDigits(number, digits) {
+				return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+			}
+			
+			/**
+			 * Randomize array element order in-place.
+			 * Using Fisher-Yates shuffle algorithm.
+			 */
+			function shuffleArray(array) {
+				for (var i = array.length - 1; i > 0; i--) {
+					var j = Math.floor(Math.random() * (i + 1));
+					var temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+				return array;
+			}
+
+			var RatingRank =
+			{
+				trueOriginSelect: function()
+				{
+					$("#informationSet").html("");
+					
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/RatingRank/RatingRankWebService.asmx/DenominationSelect",
+						success: function(data) 
+						{
+							var resultSet = JSON.parse(data.d);
+							var count = resultSet.Table.length;
+							var resultTable = "";
+							
+							for (var index = 0; index < count; ++index)
+							{
+								var id = resultSet.Table[index].DenominationId;
+								var name = resultSet.Table[index].Denomination;
+
+								var denominationCurrent = new Denomination
+								(
+									id,
+									name
+								);
+								
+								denominations.push(denominationCurrent);
+							}	
+						},
+						error: function(xhr)
+						{ 
+							$("#informationSet").html
+							(
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText
+							);
+						} 
+					});
+					
+					var request = {};
+					request["limit"] = 10;
+					var requestJson = JSON.stringify(request);
+
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/RatingRank/RatingRankWebService.asmx/TrueOriginSelect",
+						data: requestJson,
+						dataType: "json",
+						success: function(data) 
+						{
+							var resultSet = JSON.parse(data.d);
+							var count = resultSet.Table.length;
+							var resultTable = "";
+							
+							for (var questionIndex = 0; questionIndex < count; ++questionIndex)
+							{
+								var organizationId = resultSet.Table[questionIndex].OrganizationId;
+								var organizationName = resultSet.Table[questionIndex].OrganizationName;
+								var denominationId = resultSet.Table[questionIndex].DenominationId;
+								
+								var questionIndexPad = padDigits(questionIndex, 4);
+								
+								var organizationCurrent = new Organization
+								(
+									organizationId,
+									organizationName,
+									denominationId
+								);
+								
+								organizations.push(organizationCurrent);
+								
+								var resultRecord = "<div>" + organizationName + "<br>";
+		
+								resultTable += resultRecord;
+								
+								var choices = [];
+							
+								var denominationIndex = denominations.findIndex(function(obj) {
+									return (obj.id === denominationId);
+								});
+								
+								var possibilities = JSON.parse(JSON.stringify(denominations));
+								possibilities.splice(denominationIndex, 1)
+								shuffleArray(possibilities);
+								choices = possibilities.slice(0, optionCount - 1);
+								
+								choices.splice
+								(
+									getRandomInt(0, choices.length),
+									0,
+									denominations[denominationIndex]
+								);
+								
+								var questionRadioButtonsGroupNameAttribute = " name='question" + questionIndex + "' ";
+								
+								for (var optionSequence = 0; optionSequence < optionCount; ++optionSequence)
+								{
+									var choicesInfo = choices[optionSequence];
+									var denominationsId = choicesInfo.id;
+									var denominationsInfo = choicesInfo.name;
+									
+									var choiceIdAttribute = "'choice" + questionIndexPad +
+										String.fromCharCode(65 + optionSequence) + denominationsInfo + "'";
+
+									var questionRadioButtonValueAttribute = " value='" + 
+										String.fromCharCode(65 + optionSequence) + "' ";
+										
+									var onChange = " onchange=\"checkAnswer(" + questionIndex + ", '" + 
+										denominationsInfo + "');\" ";
+									
+									var optionRecord = 	"<label for=" + choiceIdAttribute + "> " +
+														denominationsInfo + "</label>" +
+														"<input type='radio' " +
+														questionRadioButtonsGroupNameAttribute +
+														"id=" + choiceIdAttribute + 
+														questionRadioButtonValueAttribute +
+									//					onChange +
+														" />";
+														
+									resultTable += optionRecord + "&nbsp; &nbsp; &nbsp;";
+								}
+								
+								resultTable += "&nbsp; &nbsp; &nbsp; <label id='answer" + questionIndex + "'></label>";
+								resultTable += "<hr></div>";
+							}
+							$("#informationSet").html(resultTable);
+							
+							var radioButtons = document.querySelectorAll("input[type='radio']");
+							for (var i = 0; i < radioButtons.length; i++) {
+								radioButtons[i].addEventListener("change", optionSelect, false); 
+							}
+						},
+						error: function(xhr)
+						{ 
+							$("#informationSet").html
+							(
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText
+							);
+						} 
+					});
+				}
+			}
+			
+			window.addEventListener("load", buildPage, false);
+		</script>
+	</body>
+</html>

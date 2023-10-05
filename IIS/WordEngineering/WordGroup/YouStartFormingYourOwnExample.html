@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-27T10:46:00	Created.
+		2021-02-27T10:46:00	https://stackoverflow.com/questions/44919023/how-to-Selector-dynamic-data-attribute-element-in-jquery
+		2021-02-27T12:02:00	https://stackoverflow.com/questions/7084557/Selector-all-elements-with-a-data-xxx-attribute-without-using-jquery
+	-->
+	<head>
+		<title>You start, forming your own example.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="You start, forming your own example."/>
+		<meta name="keywords" content="Query"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<p>
+				Please enter the URI of the document to parse.
+			</p>
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="uri">URI:</label></td>
+						<td><input id="uri" type="url" size="50" autofocus/></td>
+					</tr>
+					<tr>
+						<td><label for="querySelector">Query Selector:</label></td>
+						<td><input id="querySelector" type="text"/></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>
+			<br/><br/>	
+		
+			<div id="resultSet" align="left"></div>
+			<div id="uriContent" align="left" style="display: none;"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var isPostBack = false;
+
+			var resultSetElement = document.getElementById("resultSet");
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var querySelectorElement = document.getElementById("querySelector");
+			var uriElement = document.getElementById("uri");
+			var uriContentElement = document.getElementById("uriContent");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var querySelectorParam = urlParams.get("querySelector");
+					var uriParam = urlParams.get("uri");
+
+					querySelectorElement.value = querySelectorParam ? querySelectorParam : querySelectorDefault;
+					uriElement.value = uriParam ? uriParam : "http://" + window.location.hostname + "/" + uriDefault;
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}	
+			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				var r = new XMLHttpRequest();
+					r.open('GET', uriElement.value, false);
+					r.send(null); 
+				if (r.status == 200) 
+				{ 
+					uriContentElement.innerHTML = r.responseText;
+					
+					var block = "";
+				
+					var filler = "";
+		
+					var filtered = uriContentElement.querySelectorAll(querySelector.value);
+					
+					console.log(filtered.length);
+					
+					var filler = "<table>";
+					for 
+					(
+						var index = 0, length = filtered.length;
+						index < length;
+						++index
+					)
+					{
+						block = filtered[index].innerHTML.trim();
+						if (!block)
+						{
+							continue;
+						}	
+						filler += `<tr><td><a href='http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=${block}'>${block}</a></td></tr>`;
+					}	
+					filler += "</table>";
+					resultSetElement.innerHTML = filler;
+				}	
+			}
+						
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			const	querySelectorDefault = "[data-ContactID='774']";
+			const	uriDefault = "WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html";
+		</script>		
+	</body>
+</html>

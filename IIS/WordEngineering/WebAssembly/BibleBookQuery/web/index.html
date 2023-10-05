@@ -1,0 +1,62 @@
+<html>
+<body>
+<label for="bookID">Book ID</label>
+<input id="bookID" type="number" min="1", max="66"/>
+<button class="mybutton">Run retrieveTitle</button>
+<span id="bookTitle"></span>
+<script src="gen/BibleBookQuery.js"></script>
+<script>
+/*
+	function loadWasm(fileName) { 
+		console.log(fileName);  
+		return fetch(fileName)
+		.then(response => response.arrayBuffer())
+		.then(bits => WebAssembly.compile(bits))
+		.then
+		(
+			module => 
+			{
+				return new WebAssembly.Instance(module) 
+			}
+		);
+	};
+  
+loadWasm('BibleBookQuery.wasm')
+	.then(instance => {
+	let retrieveID = instance.exports.__Z3retrieveIDaaa;
+	console.log(retrieveID("All"));
+	
+    //let retrieveTitle = instance.exports.__Z3retrieveTitlei;
+	let retrieveTitle = instance.exports.__Z3retrieveTitle;
+    console.log(retrieveTitle(1));
+    var bookTitle = retrieveTitle(1);
+	console.log(bookTitle);
+});
+*/
+ 
+	document.querySelector('.mybutton')
+		.addEventListener('click', function() {
+			var bookIDElement = document.getElementById("bookID");
+			var bookIDValue = parseInt(bookIDElement.value);
+			var bookTitleElement = document.getElementById("bookTitle");
+			
+			if (bookIDValue < 1 || bookIDValue > 66)
+			{
+				bookTitleElement.textContent = "";
+				return
+			}
+			
+			var result = Module.ccall(
+				'getTitle',	// name of C function 
+				'string',	// return type
+				["number"],	// argument types
+				[	// arguments
+					bookIDValue
+				]
+			);
+			bookTitleElement.textContent = result;
+	});
+</script>
+
+</body>
+</html>

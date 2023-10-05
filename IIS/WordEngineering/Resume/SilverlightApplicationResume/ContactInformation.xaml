@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SilverlightApplicationResume.ContactInformation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <StackPanel Orientation="Vertical" >
+        <TextBlock HorizontalAlignment="Center"><Bold>Ken Adeniji</Bold></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Text="4762 Canvasback Common" />
+        <TextBlock HorizontalAlignment="Center" Text="Fremont CA 94555" />
+        <TextBlock HorizontalAlignment="Center" Text="(510) 796-8121" />
+        <TextBlock HorizontalAlignment="Center" Text="KenAdeniji@hotmail.com" />
+        <!--
+        <TextBlock>
+            <Hyperlink NavigateUri="mailto:kenadeniji@hotmail.com">
+                KenAdeniji@hotmail.com
+            </Hyperlink>
+        </TextBlock>
+        -->
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-02-10	http://www.esqsoft.com/javascript_examples/date-to-epoch.htm
+		2015-02-10 	go4answers.webhost4life.com/Example/javascript-detect-pageisvalid-91418.aspx
+	-->
+	<head>
+		<title>Unix Epoch Date Time</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<fieldset>
+							<legend>Date</legend>
+							<table>
+								<thead>
+									<tr>
+										<th>Year</th>
+										<th>Month</th>
+										<th>Day</th>
+										<th>Hour(s)</th>
+										<th>Minute(s)</th>
+										<th>Second(s)</th>
+										<th>Milli Second(s)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input id="year" type="text" size="4"></td>
+										<td><input id="month" type="text" size="2"></td>
+										<td><input id="day" type="text" size="2"></td>
+										<td><input id="hours" type="text" size="2"></td>
+										<td><input id="minutes" type="text" size="2"></td>
+										<td><input id="seconds" type="text" size="2"></td>
+										<td><input id="milliSeconds" type="text" size="3"></td>
+									</tr>
+									<tr>
+										<td colspan="7" >
+											<button id="convertToEpoch">Convert to Epoch</button>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<fieldset>
+							<legend>Epoch time value</legend>
+							<table >
+								<tbody>
+									<tr>
+										<td><input id="epochTimeValue" type="text" size="15"></td>
+									</tr>
+									<tr>
+										<td>
+											<button id="convertToDateTime">Convert to DateTime</button>
+										</td>
+									</tr>
+								</tbody>	
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<fieldset>
+							<legend>Result Output</legend>
+							<div id="resultSet" ></div>
+						</fieldset>
+					</td>
+				</tr>
+			
+			</table>
+		</div>
+
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{ 
+				if (!isPostBack) 
+				{ 
+					var currentDate = new Date();
+					document.getElementById("year").defaultValue = currentDate.getFullYear();
+					document.getElementById("month").defaultValue = currentDate.getMonth() + 1;
+					document.getElementById("day").defaultValue = currentDate.getDate();
+					document.getElementById("hours").defaultValue = currentDate.getHours();
+					document.getElementById("minutes").defaultValue = currentDate.getMinutes();
+					document.getElementById("seconds").defaultValue = currentDate.getSeconds();
+					document.getElementById("milliSeconds").defaultValue = currentDate.getSeconds();
+					isPostBack = true; 
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var convertToEpoch = document.getElementById("convertToEpoch");
+			convertToEpoch.addEventListener("click", toEpoch, false);
+			
+			function toEpoch()
+			{
+				var utc = new Date
+				( 
+					Date.UTC
+					(
+						document.getElementById("year").value,
+						document.getElementById("month").value - 1,
+						document.getElementById("day").value,
+						document.getElementById("hours").value,
+						document.getElementById("minutes").value,
+						document.getElementById("seconds").value,
+						document.getElementById("milliSeconds").value
+					)
+				);
+				document.getElementById("resultSet").innerHTML = +utc;
+			};
+			
+			var convertToDateTime = document.getElementById("convertToDateTime");
+			convertToDateTime.addEventListener("click", toDateTime, false);
+			
+			function toDateTime()
+			{
+				var epochTimeValue = document.getElementById("epochTimeValue").value
+				var utc = new Date(epochTimeValue); //334022400000
+				document.getElementById("resultSet").innerHTML = utc;
+			};
+			
+		</script>
+	</body>
+</html>

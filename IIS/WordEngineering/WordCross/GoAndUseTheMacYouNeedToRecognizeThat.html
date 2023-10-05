@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-12-19T22:00:00 Created.
+	-->
+	<head>
+		<title>Go and use the Mac, you need to recognize that.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Go and use the Mac, you need to recognize that."/>
+		<meta name="keyword" content="mac, recognize"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				var tableInformation =
+					"<table><thead>" + 
+					"<caption>Go and use the Mac, you need to recognize that.</caption>" + 
+					"<tr><th>Title</th><th>Scripture Reference</th><th>Time</th><th>Ratio</th>" +
+					"<tbody>";
+				for 
+				(
+					var timeIndex = 0, timeLength = Times.length;
+					timeIndex < timeLength;
+					++timeIndex
+				)
+				{
+					tableInformation += "<tr><td>" + Times[timeIndex][0] + "</td>" +
+										"<td>" + Times[timeIndex][1] + "</td>" +
+										"<td>" + Times[timeIndex][2] + "</td>";
+					var timeElapsed = 0;
+					var timeSplit = Times[timeIndex][2];
+					for 
+					(
+						var timeStep = 0, timeStepLength = timeSplit.length;
+						timeStep < timeStepLength;
+						++timeStep
+					)
+					{
+						timeElapsed += parseFloat(timeSplit[timeStep]);
+					}
+					tableInformation += "<td>";
+					for 
+					(
+						var timeStep = 0, timeStepLength = timeSplit.length;
+						timeStep < timeStepLength;
+						++timeStep
+					)
+					{
+						if (timeStep > 0)
+						{
+							tableInformation += ", ";
+						}
+						tableInformation += parseFloat(timeSplit[timeStep]) / timeElapsed;
+					}
+					tableInformation += "</td>";
+				}
+				tableInformation += "</tbody></table>";
+				resultSetElement.innerHTML = tableInformation;
+ 			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var Times =
+			[
+				["Famine in Egypt", "Genesis 41, Genesis 43", [7, 2, 5]],
+				["70 Weeks", "Daniel 9:24-27", [7, 62, 1]]				
+			];
+		</script>		
+	</body>
+</html>

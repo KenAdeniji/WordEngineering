@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-06-21	Created.
+	-->
+	<head>
+		<title>ResumeAid</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="question" type="text"/><br/>
+			<input type="submit" id="submitQuery"/><br/>
+			<div id="resultSet" align="center"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+		
+			function querySubmit() {
+				var request = {};
+				request["question"] = document.getElementById("question").value;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/Resume/ResumeAid.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+		    window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+		</script>
+	</body>
+</html>

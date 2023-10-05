@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-21	Created	SternIsTheBloodyNameOfTheSin.html
+		2016-09-21	stackoverflow.com/questions/6982692/html5-input-type-date-default-value-to-today
+	-->
+	<head>
+		<title>Stern is the bloody name of the sin</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+			<table align="center">
+				<tr>
+					<td><label for="datedFrom">Dated:</label></td>
+					<td><input id="datedFrom" type="datetime" required></td>
+				</tr>	
+				<tr>
+					<td><label for="unit">Unit:</label></td>
+					<td><select id="unit"></td>
+				</tr>	
+				<tr>
+					<td><label for="quantity">Quantity:</label></td>
+					<td><input id="quantity" type="number" required></td>
+				</tr>	
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input id="word" type="text"></td>
+				</tr>	
+				<tr>
+					<td><label for="singleDay">Single Day:</label></td>
+					<td><input id="singleDay" type="checkBox"></td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</fieldset>	
+		
+		<div align="center">	
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			Date.prototype.toDateInputValue = (function() {
+				var local = new Date(this);
+				local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+				return local.toJSON().slice(0,10);
+			});
+			
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				if (!scriptureReference) return "";
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["datedFrom"] = new Date(document.getElementById("datedFrom").value);
+				request["unit"] = document.getElementById("unit").value;
+				request["quantity"] = parseInt(document.getElementById("quantity").value);
+				request["word"] = document.getElementById("word").value;
+				request["singleDay"] = document.getElementById("singleDay").checked;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/SternIsTheBloodyNameOfTheSin.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					renderUnitsSelect();
+					document.getElementById('datedFrom').value = new Date().toDateInputValue();
+					document.getElementById('quantity').value = -1;
+					isPostBack = true;
+				}
+			}
+
+			function render(data) 
+			{
+				var caption = "<caption>Stern is the bloody name, of the sin</caption>";
+				var info = 	"<table>" + caption + "<thead><tr>" + 
+					"<th>Dated</th>" +
+					"<th>Word</th>" +
+					"<th>Commentary</th>" +
+					"<th>Scripture Reference</th>" +
+					"</tr></thead><tbody>";
+
+				var dataRow = null;
+				var dataTable = null;
+
+				var commentary = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+					
+						commentary = dataRow.Commentary;
+						if (!commentary)
+						{
+							commentary = "";
+						}	
+					
+						info += "<tr>" +
+							"<td>" + dataRow.Dated + "</td>" +
+							"<td>" + dataRow.Word + "</td>" +
+							"<td>" + commentary + "</td>" +
+							"<td>" + buildHyperlinkScriptureReference(dataRow.ScriptureReference) + "</td>" +
+							"</tr>";
+					}
+				}
+				
+				info += "</tbody></table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			function renderUnitsSelect() 
+			{
+				var select = document.getElementById("unit");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = units.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = units[rowIndex];
+					select.appendChild(option);
+				}
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var units = [
+				["Days"],
+				["Biblical Months"],
+				["Biblical Years"],
+				["Weeks of Years"],				
+			]
+	</script>
+</body>
+</html>

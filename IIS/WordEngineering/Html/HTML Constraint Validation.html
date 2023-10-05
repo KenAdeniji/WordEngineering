@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-02-11	Created		http://www.w3schools.com/js/js_validation.asp
+	2015-02-11				w3schools.com/css/css_pseudo_classes.asp
+-->
+<head>
+	<style>
+		body {background: blue; color: yellow;}
+		input:invalid {background: gray; color: cyan;} /* CSS Pseudo Classes */
+	</style>
+</head>
+<body>
+
+<form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+	Name: <input type="text" name="fname">
+	<input id="id1" type="number" min="100" max="300" onchange="myFunction()">
+	<input type="submit" value="Submit">
+</form>
+
+<p id="demo"></p>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x==null || x=="") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+function myFunction() {
+    var inpObj= document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    }
+}
+
+function myFunction2() {
+    txt = "";
+    if (document.getElementById("id1").validity.rangeOverflow) {
+       txt = "Value too large";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+
+function myFunction3() {
+    txt = "";
+    if (document.getElementById("id1").validity.rangeUnderflow) {
+       txt = "Value too small";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>

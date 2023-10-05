@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-01-13	Created.
+		2019-01-13	https://stackoverflow.com/questions/142614/traceroute-and-ping-in-c-sharp
+		2019-01-13	https://stackoverflow.com/questions/142614/traceroute-and-ping-in-c-sharp/45565253#45565253
+		2019-01-13	stackoverflow.com/questions/18668617/json-net-error-getting-value-from-scopeid-on-system-net-ipaddress		
+	-->
+	<head>
+		<title>TrackRoute</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="hostNameOrAddress">Host name or address:</label></td>
+					<td><input type="text" id="hostNameOrAddress" step="1"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>			
+			<table id="resultSet"></table>
+			<div id="feedback"></div>
+		</div>	
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var isPostBack = false;
+		
+			defaultHostNameOrAddress = "Google.com";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var hostNameOrAddress = scriptLiteral9432.getParameterByName("hostNameOrAddress");
+						if (!hostNameOrAddress)
+						{
+							hostNameOrAddress = defaultHostNameOrAddress;
+						}	
+						document.getElementById("hostNameOrAddress").value = hostNameOrAddress;	
+						isPostBack = true;
+						querySubmit();
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+		
+			function querySubmit()
+			{
+				document.getElementById("feedback").innerHTML = "";
+				var request = {};
+				request["hostNameOrAddress"] = document.getElementById("hostNameOrAddress").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Network/TraceRoute.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}	
+			
+			function render(dataSet)
+			{
+				var tableInfo = '<tr><th>Address</th>';
+				for 
+				(
+					var index = 0, length = dataSet.length;
+					index < length;
+					++index
+				)	
+				{
+					tableInfo += `<tr><td>${dataSet[index]}</td></tr>`;	
+				}
+				resultSet.innerHTML = tableInfo;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("hostNameOrAddress").addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>

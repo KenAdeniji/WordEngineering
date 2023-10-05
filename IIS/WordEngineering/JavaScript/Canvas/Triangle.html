@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function square() {
+				var canvas = document.getElementById("canvas");
+				var context = canvas.getContext("2d");
+				
+				context.beginPath();
+				context.moveTo(20, 90);
+				context.lineTo(90, 20);
+				context.lineTo(90, 90);
+				context.fillStyle = "red";
+				context.strokeStyle = "black";
+				context.fill();
+				
+				context.beginPath();
+				context.moveTo(210, 20);
+				context.lineTo(210, 90);
+				context.lineTo(280, 90);
+				context.fillStyle = "green";
+				context.fill();
+
+				context.beginPath();
+				context.moveTo(210, 210);
+				context.lineTo(210, 280);
+				context.lineTo(280, 210);
+				context.fillStyle = "blue";
+				context.fill();
+				
+				context.beginPath();
+				context.moveTo(20, 210);
+				context.lineTo(90, 210);
+				context.lineTo(90, 280);
+				context.fillStyle = "gray";
+				context.fillStyle = "orange";  
+				context.fillStyle = "#FFA500";  
+				context.fillStyle = "rgb(255,165,0)";  
+				context.fillStyle = "rgba(255,165,0,1)"; 
+				context.fill();
+				
+				context.beginPath();
+				context.moveTo(90, 90);
+				context.lineTo(150, 55);
+				context.lineTo(210, 90);
+				context.fillStyle = "rgb(255, 255, 0)";
+				context.fill();
+
+				context.beginPath();
+				context.moveTo(210, 90);
+				context.lineTo(245, 150);
+				context.lineTo(210, 210);
+				context.fillStyle = "rgb(0, 255, 255)";
+				context.fill();
+				
+				context.beginPath();
+				context.moveTo(90, 210);
+				context.lineTo(150, 245);
+				context.lineTo(210, 210);
+				context.fillStyle = "rgb(255, 0, 255)";
+				context.fill();
+				
+				context.beginPath();
+				context.moveTo(55, 150);
+				context.lineTo(90, 90);
+				context.lineTo(90, 210);
+				context.fillStyle = "rgb(127, 0, 127)";
+				context.fill();				
+			}
+		</script>
+	</head>
+	<body onload="square();">
+		<canvas id="canvas" width="300" height="300"></canvas>
+	</body>
+</html>	

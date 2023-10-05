@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-04-29 	Created.
+	-->
+	<head>
+		<title>A dictate to use</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td colspan="2" align="center">
+						<input id="sqlStatement" autofocus value="SELECT TOP 10 Dated, Word FROM WordEngineering..HisWord	ORDER BY Dated DESC"/>
+					</td>	
+				</tr>
+				<tr>
+					<td><label for="databaseConnectionString">Database Connection String:</label></td>
+					<td>
+						<input type="text" ID="databaseConnectionString"/>
+					</td>
+				</tr>						
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery">
+					</td>	
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+<!--
+			<textarea id="textAreaFormat" rows="10"></textarea>
+-->			
+			<div id="htmlFormat"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var sqlStatement = document.getElementById("sqlStatement").value;
+				var statements = sqlStatement.toLowerCase().split(";");
+				
+				for (var index = 0, count = statements.length; index < count; ++index)
+				{
+					statements[index] = statements[index].trim();
+					if (statements[index].startsWith("select") === false)
+					{
+						refresh("");
+						return;
+					}	
+				}
+				
+				var request = {};
+				
+				request["sqlStatement"] = sqlStatement;
+				request["databaseConnectionString"] = document.getElementById("databaseConnectionString").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/SQLToHTMLTable.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function refresh(info)
+			{
+				document.getElementById("resultSet").value = "";
+				//document.getElementById("textAreaFormat").value = info;
+				document.getElementById("htmlFormat").innerHTML = info;
+			}
+			
+			function render(data) 
+			{
+				var dataRow = null;
+				var dataTable = null;
+				var cells = "";
+				var info = "";
+				var detailKeys = null;
+				var detailRow = null;
+				var value = null;
+				
+				for (var table in data) {
+
+					var tableID = "sqlToHTML" + table;
+					var tableStyle = "<style>" +
+						"#" + tableID + " tr:nth-child(odd){ background: #b8d1f3; }" +
+						"#" + tableID + " tr:nth-child(even){ background: #dae5f4; }" +
+						"</style>"
+				
+					info += tableStyle + "<table id='" + tableID + "'>";
+					
+					dataTable = data[table];
+					
+					dataRow = dataTable[0];
+					
+					cells = "";
+					
+					dataKeys = Object.keys(dataRow);
+					for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+					{
+						cells += "<th>" + dataKeys[dataIndex] + "</th>";
+					}
+					
+					info += "<tr>" + cells + "</tr>";
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						cells = "";
+				
+						for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+						{
+							cells += "<td>" + dataRow[dataKeys[dataIndex]] + "</td>";
+						}
+	
+						info += "<tr>" + cells + "</tr>";
+					}
+					
+					info += "</table>";
+					//info += "</br></br>"
+				}//end of table
+
+				refresh(info);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
+

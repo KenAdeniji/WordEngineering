@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-02-27	Created. Poll Scripture Reference.
+		2017-10-21	Fremont Library. Steven Holzner. Sams Teach Yourself HTML5 in 10 Minutes.
+			Element	contenteditable="true"
+			A whole document editable	designmode on or off.
+		2018-02-28	https://msdn.microsoft.com/en-us/library/w3te6wfz%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396	
+	-->
+	<head>
+		<title>When reading; this is my usual passage.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			canvas {border: 1px solid gray;}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<div align="center">
+				<fieldset>
+					<caption>Usual Passage:</caption>
+					<table cellspacing="10" cellpadding="10">
+						<tr>
+							<td><label for="dated">Dated:</label></td>		
+							<td><input type="datetime" id="dated" disabled/></td>
+						</tr>
+						<tr>
+							<td><label for="email">e-mail Address:</label></td>		
+							<td><input type="email" id="email" required focus/></td>
+						</tr>
+						<tr>
+							<td><label for="url">Web Address:</label></td>		
+							<td><input type="url" id="uri"/></td>
+						</tr>
+						<tr>
+							<td><label for="scriptureReference">Scripture Reference:</label></td>		
+							<td><input type="text" id="scriptureReference"/></td>
+						</tr>
+						<tr>
+							<td><label for="title">Title:</label></td>		
+							<td><input type="text" id="title"/></td>
+						</tr>
+						<tr>
+							<td><label for="commentary">Commentary:</label></td>		
+							<td>
+								<div 
+									id="commentary" 
+									style="border: solid black;	height:300px; width: 400px;"
+									contenteditable="true"
+								>
+								</div>
+							</td>		
+						</tr>
+						<tr>
+							<td><label for="keyword">Keyword(s):</label></td>		
+							<td><input type="text" id="keyword"/></td>
+						</tr>
+						<tr>
+							<td><label for="captchaComputerGenerate">Captcha Computer Generate:</label></td>		
+							<td>
+								<canvas id="captchaComputerGenerate">Canvas is not supported.</canvas>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="captchaUserEntry">Captcha User Entry:</label></td>		
+							<td><input type="text" id="captchaUserEntry"/></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<button type="button" id="query">Query</button> 					
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<br><br>
+			<div id="resultSet" align="left"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var captchaSecret = "";
+			var isPostBack = false;
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						document.getElementById("dated").value = scriptLiteral9432.todayTimezoneOffset();
+						var email = scriptLiteral9432.getParameterByName("email");
+						if (!email)
+						{
+							document.getElementById("email").value = email;
+						}	
+			
+						captchaSecret = scriptLiteral9432.captchaGenerate
+						(
+							"captchaComputerGenerate",
+							11
+						);
+						
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				var resultSet = document.getElementById("resultSet");
+				resultSet.innerHTML = "";
+				
+				var captchaUserEntry = document.getElementById("captchaUserEntry").value;
+				if (captchaSecret !== captchaUserEntry)
+				{
+					resultSet.innerHTML = "Please enter the correct Captcha entry.";
+					return;
+				}
+				
+				var request = {};
+				request["dated"] = document.getElementById("dated").value;
+				request["email"] = document.getElementById("email").value;
+				request["uri"] = document.getElementById("uri").value;
+				request["scriptureReference"] = document.getElementById("scriptureReference").value;
+				request["title"] = document.getElementById("title").value;
+				request["commentary"] = document.getElementById("commentary").innerHTML;
+				request["keyword"] = document.getElementById("keyword").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/UsualPassage/WhenReadingThisIsMyUsualPassage.asmx/Insert",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						//var dataSet = JSON.parse(data.d);
+					},
+					error: function(xhr)
+					{ 
+						resultSet.innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad);
+			document.getElementById("query").addEventListener("click", querySubmit);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

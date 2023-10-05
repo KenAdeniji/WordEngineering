@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<!-- 
+			http://backbonetutorials.com/what-is-a-view/
+		-->
+
+		<title>Backbone.View</title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+	
+		<script type="text/template" id="search_template">
+			<label>Search</label>
+			<input type="text" id="search_input" /> 
+			<input type="button" id="search_button" value="Search" />
+		</script> 
+	</head>
+	<body>
+		<form>
+			<div id="search_container"></div>
+		</form>
+		
+		<script>
+			SearchView = Backbone.View.extend({ 
+				initialize: function()
+				{ 
+					this.render();
+				},
+				render: function(){
+					var template = _.template( $("#search_template").html(), {} );
+					this.$el.html( template );
+				},
+				events: {
+					"click input[type=button]": "doSearch"
+				},
+				doSearch: function( event ) {
+					// Button clicked, you can access the element that was clicked with event.currentTarget
+					 alert( "Search for " + $("#search_input").val() );
+				}	 
+			});
+			var search_view = new SearchView({ el: $("search_container") });
+		</script>
+
+	</body>
+</html>

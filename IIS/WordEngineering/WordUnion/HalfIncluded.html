@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-13	Created.
+		2017-02-16	Home without a place. Occurrences: 1175
+	-->
+	<head>
+		<title>Half Included</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="left">Left</label>
+						</td>
+						<td>
+							<input id="left" type="text" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="right">Right</label>
+						</td>
+						<td>
+							<input id="right" type="text"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>	
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["left"] = document.getElementById("left").value;
+				request["right"] = document.getElementById("right").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/Exact.asmx/HalfIncluded",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var left = scriptLiteral9432.getParameterByName("left");
+						if (left)
+						{
+							document.getElementById("left").value = left;
+						}
+
+						var right = scriptLiteral9432.getParameterByName("right");
+						if (right)
+						{
+							document.getElementById("right").value = right;
+						}
+						
+						if (left || right)
+						{
+							querySubmit();
+							isPostBack = true;
+						}	
+					});
+				}
+ 			}
+
+			function render(data) 
+			{
+				var info = "<table id='halfIncludedTable'><caption>Occurrences: " + data["Table"].length + "</caption>";
+
+				info += scriptLiteral9432.buildHead
+				(
+					"SequenceOrderId",
+					"Bible Word",
+					"First Occurrence",
+					"Last Occurrence",
+					"Difference",
+					"Frequency of Occurrence",
+					"AlphabetSequenceIndex"
+				 );
+					
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						info += scriptLiteral9432.buildRow
+						(
+							dataRow["ExactID"],
+							dataRow["BibleWord"],
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["FirstOccurrence"]
+							),	
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["LastOccurrence"]
+							),	
+							dataRow["Difference"],
+							dataRow["FrequencyOfOccurrence"],
+							dataRow["AlphabetSequenceIndex"]
+						);
+					}
+				}
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-06-09	Created.
+	2016-06-10	Included verse(s) count.
+-->
+	<body>
+		<title>Bible Statistics Punctuation Marks</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<div align="center">
+			<select id="bibleVersion"> </select>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleStatisticsPunctuationMarks.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'><thead><tr>" +
+						"<th>Punctuation Mark</th><th>First &amp; Last Occurrence</th><th>Verse(s) Count</th>" +
+						"</tr></thead><tbody>";
+				var dataRow = null;
+				var dataTable = null;
+				
+				var question = null;
+				var answer = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						info += "<tr>" +
+							"<td>" + dataRow["PunctuationMark"] + "</td>" + 
+							"<td>" + 
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["FirstScriptureReference"] + ", " + dataRow["LastScriptureReference"]
+							) +							
+							"</td>" +
+							"<td>" + dataRow["VerseCount"] + "</td>" + 
+							"</tr>";
+					}
+				}
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+
+</body>
+</html>

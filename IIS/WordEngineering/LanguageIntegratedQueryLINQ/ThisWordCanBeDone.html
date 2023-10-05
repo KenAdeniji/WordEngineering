@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-12-10	Date created.	https://stackoverflow.com/questions/847066/group-by-multiple-columns
+-->
+<!--
+-->
+    <head>
+        <title>This Word Can Be Done</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Language Integrated Query (LINQ)"/>
+		<meta name="keywords" content="Language Integrated Query (LINQ)"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+		<div id="resultSet" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();	
+				}
+			}
+			
+			function querySubmit()
+			{                             
+				var request = {};
+				//request["query"] = queryID.value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/LanguageIntegratedQueryLINQ/ThisWordCanBeDone.asmx/GroupByBookSeries",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

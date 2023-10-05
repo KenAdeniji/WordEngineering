@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-26	Created		http://stackoverflow.com/questions/220231/accessing-the-web-pages-http-headers-in-javascript
+	-->
+	<head>
+		<title></title>
+		<style>
+			body {background: #737CA1}
+			#resultSet{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			#resultSet td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			#resultSet tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			#resultSet tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			#resultSet tr:nth-child(even){
+				background: #dae5f4;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<label for="url">url:</label>
+			<input type="url" ID="url" size="70"/>
+			<button id="query">Query</button>
+		</div>
+		</fieldset>	
+		<pre id="resultSet"> </pre>
+
+		<script>
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var url	= document.getElementById("url").value;
+				if (!url)
+				{
+					url = document.location;
+				}
+
+				var xhr = new XMLHttpRequest();				
+				xhr.open("POST", url, true); 
+				xhr.responseType = "blob";
+				xhr.onreadystatechange = function () { 
+					if (xhr.readyState == 4) {
+						//success(xhr.response); // the function to proccess the response
+						var headers = xhr.getAllResponseHeaders();
+						/*
+						console.log("++++++ reading headers ++++++++");
+						console.log(headers);
+						console.log("++++++ reading headers end ++++++++");
+						*/
+						document.getElementById("resultSet").innerHTML = headers;
+					}
+				};
+				xhr.send(null);
+				//console.log(xhr.getResponseHeader("Last-Modified"));	
+			}	
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

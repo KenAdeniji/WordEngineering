@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2014-11-18	A man, developed in all. Associate for today. When school ends, and starts; semesters and quarters.
+		2018-02-25	Re-written.
+	-->
+	<head>
+		<title>A man developed in all: Organization</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div align="center">
+				<fieldset>
+					<caption>Query</caption>
+					<table cellspacing="10" cellpadding="10">
+						<tr>
+							<td><label for="name">Name:</label></td>		
+							<td><input type="text" id="name" /></td>
+						</tr>
+						<tr>
+							<td><label for="uri">URI:</label></td>		
+							<td><input type="url" id="uri" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<button type="button" id="query">Query</button> 					
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<br><br>
+			<div id="resultSet" align="left"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var name = scriptLiteral9432.getParameterByName("name");
+						if (!name)
+						{
+							document.getElementById("name").value = name;
+						}	
+
+						var uri = scriptLiteral9432.getParameterByName("uri");
+						if (!uri)
+						{
+							document.getElementById("uri").value = uri;
+						}	
+						
+						querySubmit();
+						
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["organizationName"] = document.getElementById("name").value;
+				request["uri"] = document.getElementById("uri").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/AManDevelopedInAll/AManDevelopedInAll.asmx/OrganizationSelect",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var resultSet = "<table>";
+				
+				for (var resultIndex = 0; resultIndex < data.Table.length; ++resultIndex)
+				{
+					var organizationId = data.Table[resultIndex].OrganizationId;
+					var organizationName = data.Table[resultIndex].OrganizationName;
+					var uri = data.Table[resultIndex].Uri;
+					
+					var organizationFormat = organizationName;
+					
+					var term = 	"<a href='" + "Term.html?organizationId=" + organizationId + 
+								"' target=_blank>" + "Term" + "</a>";
+					
+					var uriLowerCase = "";
+					var uriWithPrefix = "";
+					var uriFormat = "";
+
+					if (uri) {
+						uriLowerCase = uri.toLowerCase(uri);
+						uriWithPrefix = uriLowerCase.startsWith("http:") ? uriLowerCase : "http://" + uriLowerCase;
+						uriFormat = "<a href='" + uriWithPrefix + "' target=_blank>" + uri + "</a>";
+						organizationFormat = "<a href='" + uriWithPrefix + "' target=_blank>" + organizationName + "</a>";
+					}
+					
+					resultSet += scriptLiteral9432.buildRow
+					(
+						organizationName,
+						uriFormat,
+						term
+					);	
+				}
+				
+				resultSet += "</table>";
+				
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+			
+			window.addEventListener("load", pageLoad);
+			document.getElementById("query").addEventListener("click", querySubmit);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html>
+	<!--
+		2019-11-23T19:00:00	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+		2019-11-23T19:35:00	https://www.geeksforgeeks.org/javascript-array-map-method/
+		2019-11-23T20:25:00	https://www.w3schools.com/js/js_json_objects.asp
+SELECT	TOP (200)
+	'{"CensusID": ' + CONVERT(VARCHAR, CensusID)
+	+ ', "Tribe": "' + Tribe + '"'
+	+ ', "FirstPopulation": ' + CONVERT(VARCHAR, FirstPopulation)
+	+ ', "FirstScriptureReference": "' + FirstScriptureReference + '"'
+	+ ', "SecondPopulation": ' + CONVERT(VARCHAR, SecondPopulation)
+	+ ', "SecondScriptureReference": "' + SecondScriptureReference + '"'
+	+ '},'
+FROM    Census
+ORDER BY CensusID
+	-->     
+	<head> 
+		<title>Census Map</title> 
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Census Map"/>
+		<meta name="keywords" content="Census, Map"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head> 
+  
+	<body> 
+		<div id="resultSet"></div> 
+		<div id="resultSum"></div> 
+		
+		<script> 
+			var resultSetID = document.getElementById("resultSet");
+			var resultSumID = document.getElementById("resultSum");
+			function pageLoad()
+			{
+				var myMap = new Map();
+
+				var keyString = 'Census Map',
+					keyObj = {},
+					keyFunc = function() {};
+
+				// setting the values
+				myMap.set(keyString, "Numbers 1, Numbers 26");
+				myMap.set(keyObj, censusMapFirstSecond);
+				myMap.set(keyFunc, censusSum);
+
+				resultSetID.innerHTML = JSON.stringify(myMap.get(keyObj));
+				//resultSumID.innerHTML = eval((myMap.get(keyFunc)()));
+				resultSumID.innerHTML = (myMap.get(keyFunc)());
+			}	
+			
+			function censusSum()
+			{
+				var firstCensus = 0, secondCensus = 0;
+				censusMapFirstSecond.forEach
+				(
+					function(element)
+					{
+						firstCensus += element.FirstPopulation;
+						secondCensus += element.SecondPopulation;
+					}
+				);
+				censusJSON = JSON.stringify({ SumFirstCensus: firstCensus, SumSecondCensus: secondCensus })				
+				return censusJSON;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var censusMapFirstSecond =
+			[
+				{"CensusID": 1, "Tribe": "Reuben", "FirstPopulation": 46500, "FirstScriptureReference": "Numbers 1:20-21", "SecondPopulation": 43730, "SecondScriptureReference": "Numbers 26:5-11"},
+				{"CensusID": 2, "Tribe": "Simeon", "FirstPopulation": 59300, "FirstScriptureReference": "Numbers 1:22-23", "SecondPopulation": 22200, "SecondScriptureReference": "Numbers 26:12-14"},
+				{"CensusID": 3, "Tribe": "Gad", "FirstPopulation": 45650, "FirstScriptureReference": "Numbers 1:24-25", "SecondPopulation": 40500, "SecondScriptureReference": "Numbers 26:15-18"},
+				{"CensusID": 4, "Tribe": "Judah", "FirstPopulation": 74600, "FirstScriptureReference": "Numbers 1:26-27", "SecondPopulation": 76500, "SecondScriptureReference": "Numbers 26:19-22"},
+				{"CensusID": 5, "Tribe": "Issachar", "FirstPopulation": 54400, "FirstScriptureReference": "Numbers 1:28-29", "SecondPopulation": 64300, "SecondScriptureReference": "Numbers 26:23-25"},
+				{"CensusID": 6, "Tribe": "Zebulun", "FirstPopulation": 57400, "FirstScriptureReference": "Numbers 1:30-31", "SecondPopulation": 60500, "SecondScriptureReference": "Numbers 26:26-27"},
+				{"CensusID": 7, "Tribe": "Ephraim", "FirstPopulation": 40500, "FirstScriptureReference": "Numbers 1:32-33", "SecondPopulation": 32500, "SecondScriptureReference": "Numbers 26:28, Numbers 26:35-37"},
+				{"CensusID": 8, "Tribe": "Manasseh", "FirstPopulation": 32200, "FirstScriptureReference": "Numbers 1:34-35", "SecondPopulation": 52700, "SecondScriptureReference": "Numbers 26:28-34"},
+				{"CensusID": 9, "Tribe": "Benjamin", "FirstPopulation": 35400, "FirstScriptureReference": "Numbers 1:36-37", "SecondPopulation": 45600, "SecondScriptureReference": "Numbers 26:38-41"},
+				{"CensusID": 10, "Tribe": "Dan", "FirstPopulation": 62700, "FirstScriptureReference": "Numbers 1:38-39", "SecondPopulation": 64400, "SecondScriptureReference": "Numbers 26:42-43"},
+				{"CensusID": 11, "Tribe": "Asher", "FirstPopulation": 41500, "FirstScriptureReference": "Numbers 1:40-41", "SecondPopulation": 53400, "SecondScriptureReference": "Numbers 26:44-47"},
+				{"CensusID": 12, "Tribe": "Naphtali", "FirstPopulation": 53400, "FirstScriptureReference": "Numbers 1:42-43", "SecondPopulation": 45400, "SecondScriptureReference": "Numbers 26:48-50"},
+			];	
+		</script> 
+	</body> 
+</html>  

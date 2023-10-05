@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-02-26	Re-written.
+		2018-02-27	InternetDictionaryProject database.
+	-->
+	<head>
+		<title>Internet Dictionary Project (IDP)</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div align="center">
+				<fieldset>
+					<caption>Query</caption>
+					<table cellspacing="10" cellpadding="10">
+						<tr>
+							<td><label for="word">Word:</label></td>		
+							<td><input type="text" id="word" focus/></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<button type="button" id="query">Query</button> 					
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<br><br>
+			<div id="resultSet" align="left"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var word = scriptLiteral9432.getParameterByword("word");
+						if (!word)
+						{
+							document.getElementById("word").value = word;
+						}	
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["word"] = document.getElementById("word").value;
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/InternetDictionaryProjectIDP/InternetDictionaryProjectIDP.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var resultSet = "";
+				
+				for (var resultIndex = 0; resultIndex < data.Table.length; ++resultIndex)
+				{
+					var english = data.Table[resultIndex].EnglishWord;
+					var french = data.Table[resultIndex].FrenchCommentary;
+					var german = data.Table[resultIndex].GermanCommentary;
+					var italian = data.Table[resultIndex].ItalianCommentary;
+					var latin = data.Table[resultIndex].LatinCommentary;
+					var portuguese = data.Table[resultIndex].PortugueseCommentary;
+					var spanish = data.Table[resultIndex].SpanishCommentary;
+					
+					resultSet += "<table><tr><td>English: " + english + "</td></tr>";
+					
+					if (french)
+					{
+						resultSet += "<tr><td>French: " + french + "</td></tr>";
+					}
+
+					if (german)
+					{
+						resultSet += "<tr><td>German: " + german + "</td></tr>";
+					}
+
+					if (italian)
+					{
+						resultSet += "<tr><td>Italian: " + italian + "</td></tr>";
+					}
+
+					if (latin)
+					{
+						resultSet += "<tr><td>Latin: " + latin + "</td></tr>";
+					}
+					
+					if (portuguese)
+					{
+						resultSet += "<tr><td>Portuguese: " + portuguese + "</td></tr>";
+					}
+					
+
+					if (spanish)
+					{
+						resultSet += "<tr><td>Spanish: " + spanish + "</td></tr>";
+					}
+				
+					resultSet += "</table>";
+				}
+				
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+			
+			window.addEventListener("load", pageLoad);
+			document.getElementById("query").addEventListener("click", querySubmit);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

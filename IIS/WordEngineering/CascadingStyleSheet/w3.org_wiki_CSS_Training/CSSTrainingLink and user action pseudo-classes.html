@@ -1,0 +1,63 @@
+<HTML>
+	<!-- 2015-03-16 http://www.w3.org/community/webed/wiki/CSS/Training/texts -->
+	<HEAD>
+		<TITLE>Selector</TITLE>
+		<style>
+			a:link {
+			 color: blue;
+			}
+
+			a:visited {
+			 color: gray;
+			}
+
+			a:hover, a:focus {
+			text-decoration: none;
+			}
+
+			a:active {
+			 font-weight: bold;
+			}
+			
+			input:focus  {
+			  border: 2px solid black;
+			  background color: lightgray;
+			}
+			
+			div:target {
+			  background: yellow; color:blue;
+			}
+
+			/*
+			input:valid {
+			  background: green;
+			}
+			*/
+			
+			input:invalid {
+			  background: red;
+			}
+			
+input[type=checkbox] + label {
+  color: #ccc;
+} 
+input[type=checkbox]:checked + label {
+  color: #f00;
+} 
+		</style>
+	</HEAD>	
+	<BODY>
+		<a href='http://christianity.com' target='_blank'>christianity.com</a>
+		<input id="good" type="text">
+		<input id="wonderful" type="text">
+		
+		<a href="#target">Click me</a>
+
+		<div id="target">Woot!</div>
+
+		<input id="required" type="text" required>
+
+		<input type="checkbox" id="checkbox"> 
+		<label for="checkbox">CSS</label> 		
+	</BODY>
+</HTML>

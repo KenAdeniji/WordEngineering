@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-04-07	Created.	BiblicalDaysCalculation.html	Eighteen colon eight. 18:8.
+		2016-04-11	placeholder="0" removed.
+		2017-07-07	CSS.
+	-->
+	<head>
+		<title>Biblical Days Calculation</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Biblical days calculation"/>
+		<meta name="keywords" content="Bible, Biblical days"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="biblicalYears">Biblical Years</label></td>
+					<td><input id="biblicalYears" type="number"></td>
+				</tr>
+				<tr>
+					<td><label for="biblicalMonths">Biblical Months</label></td>
+					<td><input id="biblicalMonths" type="number"></td>
+				</tr>
+				<tr>
+					<td><label for="days">Days</label></td>
+					<td><input id="days" type="number"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><button id="query">Query</button></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><label id="resultSet"></label></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			function querySubmit()
+			{
+				var yearsValue = 0;
+				var years = document.getElementById("biblicalYears");
+				if (years.value.length > 0) { yearsValue = parseInt(years.value); }
+
+				var monthsValue = 0;
+				var months = document.getElementById("biblicalMonths");
+				if (months.value.length > 0) { monthsValue = parseInt(months.value); }
+				
+				var daysValue = 0;
+				var days = document.getElementById("days");
+				if (days.value.length > 0) { daysValue = parseInt(days.value); }
+
+				document.getElementById("resultSet").innerHTML = 	(yearsValue * 360) +
+																	(monthsValue * 30) +
+																	daysValue;				
+			}
+		</script>
+	</body>
+</html>

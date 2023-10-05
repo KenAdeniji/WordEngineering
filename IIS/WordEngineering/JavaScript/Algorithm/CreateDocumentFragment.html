@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-05-31	Created.	DocumentObjectModelDOM.html
+			2017-05-31	http://exordio.qfb.umich.mx/archivos%20PDF%20de%20trabajo%20UMSNH/LIBROS%2014/JavaScript%20Programmers%20Reference.pdf
+		-->
+		<title>Create Document Fragment</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+			th, td{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even){
+				background: #dae5f4;
+			}
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="fragment">Fragment:</label></td>
+						<td><input id="fragment" type="text" size="50"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><button id="query">Query</button></td>
+					</tr>	
+				</table>
+			</fieldset>
+		</div>
+		<script>
+			var isPostBack = false;
+			var fragmentDefault = "Hello world.";
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var fragment = getParameterByName("fragment");
+					if (fragment === "")
+					{
+						fragment = fragmentDefault;
+					}	
+					document.getElementById("fragment").value = fragment;
+					//querySubmit();	
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var fragment = document.getElementById("fragment").value;
+				var myFrag = document.createDocumentFragment(),
+					myPar = document.createElement("p"),
+					myText = document.createTextNode(fragment);
+				myPar.appendChild(myText);         // append the text to the paragraph.
+				myFrag.appendChild(myPar);         // Append the paragraph to the document fragment.
+				document.body.appendChild(myFrag); // Append the total fragment to the end of the document body. 				
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

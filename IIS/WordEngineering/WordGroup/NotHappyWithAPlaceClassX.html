@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-22	Created.	http://www.damariscarbaugh.com/home/new-message-gods-friend
+	-->
+	<head>
+		<title>Not happy with a place, class X.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible word and number."/>
+		<meta name="keywords" content="Bible word, number, Esau, 40"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" ID="bibleWord" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="bibleWordOnly">Bible Phrase only</option>		
+							<option value="numberIncluded">Number included</option>		
+							<option value="withNumberInFigure">With number in figure</option>
+							<option value="withNumberInText">With number in text</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="bibleNumber">Bible Number:</label></td>
+					<td><input type="text" ID="bibleNumber"/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="collate">Scripture reference concatenate visible:</label></td>
+					<td><input type="checkbox" id="collate" onclick="combine();"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<br><br>
+		<div align="center">	
+			<div id="resultSet"></div>
+			<div id="scriptureReferenceCollate"></div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var bibleNumberElement = document.getElementById("bibleNumber");
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var bibleWordElement = document.getElementById("bibleWord");
+			var collateElement = document.getElementById("collate");
+			var logicElement = document.getElementById("logic");
+			var scriptureReferenceCollateElement = document.getElementById("scriptureReferenceCollate");
+			var resultSetElement = document.getElementById("resultSet");
+
+			function combine()
+			{
+				var concatenate="";
+						
+				if (collateElement.checked === true)
+				{
+					var table=document.getElementById("resultSet0");
+					
+					for(var row = 1, rowsCount = table.rows.length; row < rowsCount; ++row)
+					{
+						var scriptureReference = table.rows[row].cells[0].innerHTML;
+						if (concatenate != "")
+						{
+							concatenate += ", ";
+						}
+						concatenate += scriptureReference;
+					}
+					scriptureReferenceCollateElement.innerHTML = concatenate;
+					scriptureReferenceCollateElement.style.visibility='visible';
+				}
+				else
+				{
+					scriptureReferenceCollateElement.innerHTML = "";
+					scriptureReferenceCollateElement.style.visibility='hidden';
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+				 	$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						var bibleNumberValue = scriptLiteral9432.getParameterByName("bibleNumber");
+						if (!bibleNumberValue)
+						{
+							bibleNumberValue = bibleNumberDefault;
+						}
+						bibleNumberElement.value = bibleNumberValue;
+
+						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
+						if (!bibleWordValue)
+						{
+							bibleWordValue = bibleWordDefault;
+						}
+						bibleWordElement.value = bibleWordValue;
+						
+						var logicValue = scriptLiteral9432.getParameterByName("logic");
+						if (!logicValue)
+						{
+							logicValue = logicDefault;
+						}
+						logicElement.value = logicValue;
+
+						var bibleVersionValue = scriptLiteral9432.getParameterByName("bibleVersion");
+						if (bibleVersionValue)
+						{
+							bibleVersionElement.value = bibleVersionValue;
+						}
+						
+						if (bibleWordValue || logicValue || bibleNumberValue || bibleVersionValue)
+						{
+							querySubmit();	
+						}	
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();	
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["bibleWord"] = bibleWordElement.value;
+				request["bibleNumber"] = bibleNumberElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["logic"] = logicElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/NotHappyWithAPlaceClassX.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						combine();
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);		
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		
+			var bibleNumberDefault = 40;
+			var bibleWordDefault = "Esau";
+			var logicDefault = "withNumberInFigure";
+	</script>
+</body>
+</html>

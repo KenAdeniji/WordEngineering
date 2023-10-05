@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+/*
+body {background: blue; color: yellow;}
+*/
+</style>
+</head>
+<body>
+<script>
+document.body.style.backgroundColor = "blue"; 
+document.body.style.color = "yellow"; 
+for (var key in screen) {
+	//if (screen.hasOwnProperty(key)) 
+	{
+		document.write(key + ": " + screen[key] + "<br/>");
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<html>
+	<!--
+		2015-02-14	Created http://csharphelper.com/blog/2014/11/convert-latitudes-and-longitudes-into-distances-on-the-globe-in-c/
+		2015-02-15	http://www.geodatasource.com/developers/javascript	
+	-->
+	<head>
+		<title>SimpleMaps.com</title>
+		<style>
+			body {background: blue; color: yellow;}
+		</style>
+	</head>
+	<body>
+		<select id="sourceState"> </select>
+		<select id="sourceCityZip"> </select>
+		&nbsp;&nbsp;&nbsp;
+		Latitude: <span id="sourceLatitude"></span>
+		&nbsp;&nbsp;&nbsp;		
+		Longitude: <span id="sourceLongitude"></span>
+		<hr>
+		
+		<select id="targetState"> </select>
+		<select id="targetCityZip"> </select>
+		&nbsp;&nbsp;&nbsp;
+		Latitude: <span id="targetLatitude"></span>
+		&nbsp;&nbsp;&nbsp;		
+		Longitude: <span id="targetLongitude"></span>
+		<hr>
+		
+		<button id="requestInfo">Query</button>
+		
+		<div id="informationSet"></div>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			var SimpleMaps =
+			{
+				distance: function
+				(
+					sourceLatitude,
+					sourceLongitude,
+					targetLatitude,
+					targetLongitude
+				)
+				{
+					var radlat1 = Math.PI * sourceLatitude / 180;
+					var radlat2 = Math.PI * targetLatitude / 180;
+					var radlon1 = Math.PI * sourceLongitude / 180;
+					var radlon2 = Math.PI * targetLongitude / 180;
+					var theta = sourceLongitude - targetLongitude;
+					var radtheta = Math.PI * theta / 180;
+					var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+					dist = Math.acos(dist);
+					dist = dist * 180 / Math.PI;
+					dist = dist * 60 * 1.1515;
+					/*
+					if (unit=="K") { dist = dist * 1.609344; }
+					if (unit=="N") { dist = dist * 0.8684; }
+					*/
+					return dist;
+				},
+				buildPage: function()
+				{
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/GeoLocation/SimpleMaps.com/SimpleMaps.com.asmx/QueryStates",
+						success: function(data) 
+						{
+							var resultSet = JSON.parse(data.d);
+							var count = resultSet.Table.length;
+							var resultTable = "";
+							
+							var sourceState = document.getElementById("sourceState");
+							var targetState = document.getElementById("targetState");
+							
+							for (var index = 0; index < count; ++index)
+							{
+								var state = resultSet.Table[index].State;
+								sourceState.options.add(new Option(state));
+								targetState.options.add(new Option(state));
+							}
+
+							sourceState.selectedIndex = 0;
+							targetState.selectedIndex = 0;
+						},
+						error: function(xhr)
+						{ 
+							$("#informationSet").html
+							(
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText
+							);
+						} 
+					});
+				},
+				queryCitiesZip: function(event)
+				{
+					var id = event.target.id;
+					var value = event.target.value;
+					
+					var request = {};
+					request["state"] = value;
+					var requestJson = JSON.stringify(request);
+
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/GeoLocation/SimpleMaps.com/SimpleMaps.com.asmx/QueryCitiesZip",
+						data: requestJson,
+						dataType: "json",
+						success: function(data) 
+						{
+							var resultSet = JSON.parse(data.d);
+							var count = resultSet.Table.length;
+							var resultTable = "";
+							
+							var locationId = id.substring(0, 6) + "CityZip";
+							var locationCityZip = document.getElementById(locationId);
+							locationCityZip.length = 0;
+							
+							for (var index = 0; index < count; ++index)
+							{
+								var cityZip = resultSet.Table[index].CityZip;
+								locationCityZip.options.add(new Option(cityZip));
+							}	
+						},
+						error: function(xhr)
+						{ 
+							$("#informationSet").html
+							(
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText
+							);
+						} 
+					});
+				},
+				queryResultSet: function()
+				{
+					var request = {};
+					request["sourceState"] = document.getElementById("sourceState").value;
+					request["sourceCityZip"] = document.getElementById("sourceCityZip").value;
+					request["targetState"] = document.getElementById("targetState").value;
+					request["targetCityZip"] = document.getElementById("targetCityZip").value;
+					var requestJson = JSON.stringify(request);
+					
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/GeoLocation/SimpleMaps.com/SimpleMaps.com.asmx/QueryLocations",
+						data: requestJson,
+						dataType: "json",
+						success: function(data) 
+						{
+							var resultSet = JSON.parse(data.d);
+							
+							var sourceLatitude = resultSet.Table[0].Latitude;
+							var sourceLongitude = resultSet.Table[0].Longitude;
+							document.getElementById("sourceLatitude").innerHTML = sourceLatitude; 
+							document.getElementById("sourceLongitude").innerHTML = sourceLongitude; 
+							
+							var targetLatitude = resultSet.Table1[0].Latitude;
+							var targetLongitude = resultSet.Table1[0].Longitude;
+							document.getElementById("targetLatitude").innerHTML = targetLatitude; 
+							document.getElementById("targetLongitude").innerHTML = targetLongitude; 
+							
+							var distanceInMiles = SimpleMaps.distance
+							(
+								sourceLatitude,
+								sourceLongitude,
+								targetLatitude,
+								targetLongitude
+							);
+							
+							document.getElementById("informationSet").innerHTML = 
+								"Statute Miles: " + distanceInMiles + "<br>" +
+								"Kilometers: " + distanceInMiles * 1.609344 + "<br>" +
+								"Nautical Miles: " + distanceInMiles * 0.8684;
+						},
+						error: function(xhr)
+						{ 
+							$("#informationSet").html
+							(
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText
+							);
+						} 
+					});
+				}
+			}
+			
+			window.addEventListener("load", SimpleMaps.buildPage, false);
+			document.getElementById("sourceState").addEventListener("change", SimpleMaps.queryCitiesZip, false);
+			document.getElementById("targetState").addEventListener("change", SimpleMaps.queryCitiesZip, false);
+			document.getElementById("requestInfo").addEventListener("click", SimpleMaps.queryResultSet, false);
+		</script>
+	</body>
+</html>

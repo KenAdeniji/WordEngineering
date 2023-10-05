@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-04	A brief of ourself; is never enough of our entire self.
+		2018-12-04	https://stackoverflow.com/questions/10346722/how-can-i-split-a-javascript-string-by-white-space-or-comma
+		2018-12-04	https://stackoverflow.com/questions/7743582/trying-to-capitalize-the-first-character-in-array-of-strings-why-this-is-not-wo
+		2018-12-04	https://stackoverflow.com/questions/48678081/remove-whitespace-in-a-string-with-javascript
+	-->
+	<head>
+		<title>A brief of ourself; is never enough of our entire self.</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Format and style a text in capital, Camel and Pascal notations." />
+		<meta name="keywords" content="Case, Capitalize, Camel, Pascal" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input type="text" ID="word" required autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="capitalize">Capitalize:</label></td>
+					<td><span ID="capitalize"/></td>
+				</tr>	
+				<tr>
+					<td><label for="camel">Camel:</label></td>
+					<td><span ID="camel"/></td>
+				</tr>	
+				<tr>
+					<td><label for="pascal">Pascal:</label></td>
+					<td><span ID="pascal"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			var camelElement = document.getElementById("camel");
+			var capitalizeElement = document.getElementById("capitalize");
+			var pascalElement = document.getElementById("pascal");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var wordElement = document.getElementById("word");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();	
+				}	
+			}
+			
+			function querySubmit()
+			{
+				if (!wordElement.value) {return;}
+				
+				var re = (/[ ,;]+/);
+				var wordList = wordElement.value.split(re);
+				wordUpperCase = wordList.map( a => a.charAt(0).toUpperCase() + a.substr(1) );
+				
+				var capitalize = wordUpperCase.join(' ');
+				capitalizeElement.textContent = capitalize;
+				
+				var removeSpaces = capitalize.replace(/\s+/g,'');
+				camelElement.textContent = removeSpaces;
+				
+				var firstLetterLowerCase = removeSpaces.charAt(0).toLowerCase() + removeSpaces.substr(1)
+				pascalElement.textContent = firstLetterLowerCase;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);		
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-12-12	Actors statistics years lived, miracles.
+	2019-12-15	Date created.
+	2019-12-15	https://www.w3schools.com/js/js_json_arrays.asp
+	2019-12-15	Experience; of a man.
+-->
+    <head>
+        <title>I Am Taking You On A Journey</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Journey"/>
+		<meta name="keywords" content="Journey"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+    </head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><input type="text" ID="query" autofocus/></td>
+				</tr>	
+				<tr>
+					<td align="center" ><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="journey"> </div>
+			<div id="genealogy"> </div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			var queryID = document.getElementById("query");
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();	
+				}
+			}
+			
+			function querySubmit()
+			{    
+				scriptLiteral9432.renderDataTable(scriptLiteral9432.selectWhere(ofAMan.journey, queryID.value), "journey");
+				scriptLiteral9432.renderDataTable(scriptLiteral9432.selectWhere(ofAMan.genealogy, queryID.value), "genealogy");				
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			window.addEventListener("load", pageLoad, false);
+			
+ofAMan = {
+	"journey": [
+		{ "ActorBibleWord":"Whole earth", "DepartureBibleWord":null, "DestinationBibleWord":"Babel", "ScriptureReference":"Genesis 11:1-9"},
+		{ "ActorBibleWord":"Terah", "DepartureBibleWord":"Chaldees", "DestinationBibleWord":"Haran", "ScriptureReference":"Genesis 11:31"},	
+	],
+	"genealogy": [
+		{ "ParentBibleWord":"Shem", "ChildBibleWord":"Arpachshad", "ScriptureReference":"Genesis 11:10-11"},
+		{ "ParentBibleWord":"Arpachshad", "ChildBibleWord":"Shelah", "ScriptureReference":"Genesis 11:12-13"},
+	],
+} 	
+		</script>
+
+</body>
+</html>

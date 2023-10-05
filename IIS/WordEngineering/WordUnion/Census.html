@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-10-26	Created.
+	2015-10-26	Census.gov population.
+	2015-10-28	Charting implemented with the aid of ChartJS.org.
+-->
+    <head>
+        <title>Census</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Both Census of Numbers 1, 26 are tallied. The Census.html is a prove-of-concept of the Over clause implementation of Microsoft SQL Server. jstat offers analysis of each census, and the combined total. The Chart is from ChartJS"/>
+		<meta name="keywords" content="Bible, Census, Numbers 1, Numbers 26, jStat, ChartJS"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+    </head>
+	<body>
+		<div id="resultSet"> </div>
+		<canvas id="barChart"></canvas>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="http://cdn.jsdelivr.net/jstat/1.1.1/jstat.min.js"></script>
+		<script>
+			function drawChart
+			(
+				tribesArray,
+				firstCensusPopulationArray,
+				secondCensusPopulationArray,
+				combinedCensusPopulationArray
+			)
+			{
+				var data = {
+					labels : tribesArray,
+					datasets : [
+						{
+							fillColor : "rgba(220,220,220,0.5)",
+							strokeColor : "rgba(220,220,220,1)",
+							pointColor : "rgba(220,220,220,1)",
+							pointStrokeColor : "#fff",
+							data : firstCensusPopulationArray
+						},
+						{
+							fillColor : "rgba(151,187,205,0.5)",
+							strokeColor : "rgba(151,187,205,1)",
+							pointColor : "rgba(151,187,205,1)",
+							pointStrokeColor : "#fff",
+							data : secondCensusPopulationArray
+						},
+						{
+							fillColor : "rgba(220,220,220,0.5)",
+							strokeColor : "rgba(220,220,220,1)",
+							pointColor : "rgba(220,220,220,1)",
+							pointStrokeColor : "#fff",
+							data : combinedCensusPopulationArray
+						}
+					]
+				}
+				var ctxBar = document.getElementById("barChart").getContext("2d");
+				var barChart = new Chart(ctxBar).Bar(data);
+			}
+		
+			function pageLoad()
+			{
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/Census.asmx/Query",
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var secondHeader = "<th>Population</th><th>%</th><th>Scripture Reference</th>" + 
+					"<th>Cumulative Total</th><th>%</th>";
+
+				var footerFiller = "<td colspan='4'/>";
+				
+				var info = "<table id='resultTable'><caption>Census</caption>";
+				info += "<thead>" +
+				
+					"<tr><th>Tribe</th>" +
+					"<th colspan='5'>First (" +
+					"<a href='ScriptureReference.html?scriptureReference=Numbers 1'>Numbers 1</a>" +
+					")</th>" +
+					"<th colspan='5'>Second (" +
+					"<a href='ScriptureReference.html?scriptureReference=Numbers 26'>Numbers 26</a>" +
+					")</th>" +
+					"<th colspan='5'>Combined (" +
+					"<a href='ScriptureReference.html?scriptureReference=Numbers 1, 26'>Numbers 1, 26</a>" +
+					")</th>" +
+					"</tr>" +
+					
+					"<tr><th/>" + secondHeader + secondHeader + secondHeader + "</tr>" + 
+					
+					"</thead><tbody>";
+					
+				var dataRow = null;
+				var dataTable = null;
+				
+				var tribe = null;
+				
+				var tribesArray = [];
+				var firstCensusPopulation = null;
+				var firstCensusPopulationArray = [];
+				var firstCensusScriptureReference = null;
+				var	firstCensusCumulativeTotal = null;
+				var	firstCensusAccuracyOfHisPercentage = null;      
+				var firstCensusCumulativeTotalAverage = null;
+
+				var secondCensusPopulation = null;
+				var secondCensusPopulationArray = [];
+				var secondCensusScriptureReference = null;
+				var	secondCensusCumulativeTotal = null;
+				var	secondCensusAccuracyOfHisPercentage = null;      
+				var secondCensusCumulativeTotalAverage = null;
+				
+				var	combinedCensusPopulation = null;
+				var combinedCensusPopulationArray = [];
+				var combinedCensusScriptureReference = null;
+				var	combinedCensusCumulativeTotal = null;
+				var	combinedCensusAccuracyOfHisPercentage = null;      
+				var combinedCensusCumulativeTotalAverage = null;
+				
+				for (var table in data)
+				{
+					dataTable = data[table];
+
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						tribe = dataRow["Tribe"];
+						tribesArray.push(tribe);
+						
+						firstCensusPopulation = dataRow["FirstCensusPopulation"];
+						firstCensusPopulationArray.push(firstCensusPopulation);
+						firstCensusAccuracyOfHisPercentage = dataRow["FirstCensusAccuracyOfHisPercentage"];
+						firstCensusScriptureReference = dataRow["FirstCensusScriptureReference"];
+						firstCensusCumulativeTotal = dataRow["FirstCensusCumulativeTotal"];
+						firstCensusCumulativeTotalAverage = dataRow["FirstCensusCumulativeTotalAverage"];
+
+						secondCensusPopulation = dataRow["SecondCensusPopulation"];
+						secondCensusPopulationArray.push(secondCensusPopulation);
+						secondCensusAccuracyOfHisPercentage = dataRow["SecondCensusAccuracyOfHisPercentage"];
+						secondCensusScriptureReference = dataRow["SecondCensusScriptureReference"];
+						secondCensusCumulativeTotal = dataRow["SecondCensusCumulativeTotal"];
+						secondCensusCumulativeTotalAverage = dataRow["SecondCensusCumulativeTotalAverage"];
+						
+						combinedCensusPopulation = dataRow["CombinedCensusPopulation"];
+						combinedCensusPopulationArray.push(combinedCensusPopulation);
+						combinedCensusAccuracyOfHisPercentage = dataRow["CombinedCensusAccuracyOfHisPercentage"];
+						combinedCensusScriptureReference = dataRow["CombinedCensusScriptureReference"];
+						combinedCensusCumulativeTotal = dataRow["CombinedCensusCumulativeTotal"];
+						combinedCensusCumulativeTotalAverage = dataRow["CombinedCensusCumulativeTotalAverage"];
+						
+						info += "<tr><td>" + tribe + "</td>" +
+						
+							"<td>" + firstCensusPopulation + "</td>" + 
+							"<td>" + firstCensusAccuracyOfHisPercentage + "</td>" + 
+							"<td>" + scriptureReferenceHyperlink(firstCensusScriptureReference) + "</td>" +
+							"<td>" + firstCensusCumulativeTotal + "</td>" +
+							"<td>" + firstCensusCumulativeTotalAverage + "</td>" +
+
+							"<td>" + secondCensusPopulation + "</td>" + 
+							"<td>" + secondCensusAccuracyOfHisPercentage + "</td>" + 
+							"<td>" + scriptureReferenceHyperlink(secondCensusScriptureReference) + "</td>" +
+							"<td>" + secondCensusCumulativeTotal + "</td>" +
+							"<td>" + secondCensusCumulativeTotalAverage + "</td>" +
+							
+							"<td>" + combinedCensusPopulation + "</td>" +
+							"<td>" + combinedCensusAccuracyOfHisPercentage + "</td>" + 
+							"<td>" + scriptureReferenceHyperlink(combinedCensusScriptureReference) + "</td>" +
+							"<td>" + combinedCensusCumulativeTotal + "</td>" +
+							"<td>" + combinedCensusCumulativeTotalAverage + "</td>" +
+							
+							"</tr>";
+					}
+				}
+				
+				info += "</tbody><tfoot>"
+				
+				info += "<tr><td>Maximum</td>" + "<td>" + jStat.max(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.max(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.max(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+						
+				info += "<tr><td>Mean</td>" + "<td>" + jStat.mean(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.mean(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.mean(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Median</td>" + "<td>" + jStat.median(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.median(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.median(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Minimum</td>" + "<td>" + jStat.min(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.min(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.min(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Mode</td>" + "<td>" + jStat.mode(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.mode(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.mode(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Population Standard Deviation</td>" + "<td>" + jStat.stdev(firstCensusPopulationArray, false) + "</td>" +
+						footerFiller + "<td>" + jStat.stdev(secondCensusPopulationArray, false) + "</td>" +
+						footerFiller + "<td>" + jStat.stdev(combinedCensusPopulationArray, false) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Population Variance</td>" + "<td>" + jStat.variance(firstCensusPopulationArray, false) + "</td>" +
+						footerFiller + "<td>" + jStat.variance(secondCensusPopulationArray, false) + "</td>" +
+						footerFiller + "<td>" + jStat.variance(combinedCensusPopulationArray, false) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Range</td>" + "<td>" + jStat.range(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.range(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.range(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+						
+				info += "<tr><td>Sample Standard Deviation</td>" + "<td>" + jStat.stdev(firstCensusPopulationArray, true) + "</td>" +
+						footerFiller + "<td>" + jStat.stdev(secondCensusPopulationArray, true) + "</td>" +
+						footerFiller + "<td>" + jStat.stdev(combinedCensusPopulationArray, true) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Sample Variance</td>" + "<td>" + jStat.variance(firstCensusPopulationArray, true) + "</td>" +
+						footerFiller + "<td>" + jStat.variance(secondCensusPopulationArray, true) + "</td>" +
+						footerFiller + "<td>" + jStat.variance(combinedCensusPopulationArray, true) + "</td>" + 
+						footerFiller + "</tr>";
+
+				info += "<tr><td>Sum</td>" + "<td>" + jStat.sum(firstCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.sum(secondCensusPopulationArray) + "</td>" +
+						footerFiller + "<td>" + jStat.sum(combinedCensusPopulationArray) + "</td>" + 
+						footerFiller + "</tr>";
+				
+				info += "</tfoot></table>"
+				document.getElementById("resultSet").innerHTML = info;
+
+				drawChart
+				(
+					tribesArray,
+					firstCensusPopulationArray,
+					secondCensusPopulationArray,
+					combinedCensusPopulationArray
+				);
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+
+</body>
+</html>

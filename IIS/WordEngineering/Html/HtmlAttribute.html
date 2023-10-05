@@ -1,0 +1,67 @@
+<html>
+	<head>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+			$(document).ready(function () {
+                domReady();
+            });
+			
+			function domReady()
+			{
+				var dataPrefix = document.getElementById("dataPrefix");
+				//alert(dataPrefix.getAttribute("data-domain"));
+			}
+		</script>
+	</head>
+	<body>
+	<form>
+	<table>
+		<thead>
+			<tr>
+				<th>Attribute</th>
+				<th>Example</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>autofocus</td>
+				<td>
+					<button id="SubmitButton" autofocus>Submit</>
+				</td>
+			</tr>
+			<tr>
+				<td>contenteditable</td>
+				<td>
+					<p id="paragraph" contenteditable="true">Click here to edit this content!</p>
+				</td>
+			</tr>
+			<tr>
+				<td>data prefix</td>
+				<td>
+					<span id="dataPrefix" data-domain="programmingLanguage" data-language="C#" />
+				</td>
+			</tr>
+			<tr>
+				<td>placeholder</td>
+				<td>
+					<input type="email" id="email" placeholder="Please enter email here..."/>
+				</td>
+			</tr>
+			<tr>
+				<td>Uri (Required)</td>
+				<td>
+					<input type="uri" id="uri" required />
+				</td>
+			</tr>
+			<tr>
+				<td>Number (Minimum 10, maximum 50)</td>
+				<td>
+					<input type="number" name="minimum" min="10" max="50" required/>
+				</td>
+			</tr>
+		
+		</tbody>
+	</table>
+	</form>
+	</body>
+</html>

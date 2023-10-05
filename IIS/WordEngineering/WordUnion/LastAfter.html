@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		2018-01-25	Created.
+		-->
+		<title>Last After</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="bibleVersion">Version:</label></td>
+						<td><select id="bibleVersion"></select></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var nodeNameDefault = "a";
+			var urlDefault = "http://localhost/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.renderBibleVersionSelect();						
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/LastAfter.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

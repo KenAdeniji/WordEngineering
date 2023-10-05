@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-06-21	http://www.w3schools.com/xml/dom_intro.asp
+-->
+	<body>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<div id="bibleBooks"></div>
+		<script>
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					callback(xhttp);
+				}
+			};
+			xhttp.open("GET", "BibleBook.xml", true);
+			xhttp.send();
+
+			function callback(xml) {
+				var xmlDoc = xml.responseXML;
+				var table = "<table><caption>Bible Books</caption>" +
+					"<thead><tr><th>ID</th><th>Title</th><th>Testament</th></thead>" +
+					"<tbody>";
+				for 
+				(
+					var index = 0, length = xmlDoc.getElementsByTagName("BibleBook").length;
+					index < length;
+					++index
+				)
+				{
+					var bookID = xmlDoc.getElementsByTagName("bookId")[index].childNodes[0].nodeValue;
+					var bookTitle = xmlDoc.getElementsByTagName("bookTitle")[index].childNodes[0].nodeValue;
+					var testament = xmlDoc.getElementsByTagName("testament")[index].childNodes[0].nodeValue;
+					table += "<tr><td>" + bookID + "</td><td>" + bookTitle + "</td><td>" + testament + "</td></tr>";
+				}
+				table += "</tbody></table>";
+				document.getElementById("bibleBooks").innerHTML = table;
+			}
+		</script>
+
+	</body>
+</html>

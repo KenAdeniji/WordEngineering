@@ -1,0 +1,170 @@
+﻿<html>
+<!--
+	2015-01-05 	Created http://www.wrox.com/WileyCDA/WroxTitle/JavaScript-and-jQuery-for-Data-Analysis-and-Visualization.productCd-1118847067,descCd-DOWNLOAD.html
+	2015-01-05	https://github.com/jstat/jstat
+	2015-01-05	Psalms 20:5 We will rejoice in thy salvation, and in the name of our God we will set up our banners: the LORD fulfil all thy petitions.
+	2015-07-01	jstat.github.io/all.html
+	2016-05-11	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot
+	2016-05-11	css.
+	2022-11-07T17:55:00	My next is my sea. Twin sibling bought in 3 men to introduce themselves including one hypothetically named Ronaldo.
+	2022-11-07T19:07:00 https://en.wikipedia.org/wiki/Ronaldo_(Brazilian_footballer) Ronaldo Luís Nazário de Lima (Brazilian Portuguese: [ʁoˈnawdu ˈlwis nɐˈzaɾju dʒi ˈɫĩmɐ]; born 18 September 1976),[2] commonly known as Ronaldo or Ronaldo Nazário, is a Brazilian business owner, presiden
+	2022-11-07T19:03:00 https://en.wikipedia.org/wiki/Ronaldinho Ronaldo de Assis Moreira (born 21 March 1980), commonly known as Ronaldinho Gaúcho
+	2022-11-07T19:01:00	http://en.wikipedia.org/wiki/Cristiano_Ronaldo Cristiano Ronaldo was born on February 5, 1985, in Funchal, Madeira, Portugal
+	2022-11-07T19:37:00	https://stackoverflow.com/questions/18880766/how-to-calculate-average-time
+	2022-11-07T21:43:00	https://stackoverflow.com/questions/20169217/how-to-write-isnumber-in-javascript
+	2022-11-07T22:02:00	https://stackoverflow.com/questions/5812220/how-to-validate-a-date
+-->
+	<head>
+		<title>jStat Date</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="My next is my sea. Twin sibling bought in 3 men to introduce themselves including one hypothetically named Ronaldo."/>
+		<meta name="keywords" content="Word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<script src="http://cdn.jsdelivr.net/jstat/1.1.1/jstat.min.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">1976-09-18,1980-03-21,1985-02-05</textarea><br>
+			<input type="submit" id="submitQuery"><br><br>
+			<div id="response"></div>
+		</div>
+		<script>
+			var StatisticsLibrary =
+			{
+				convertToDatetime: function (array) {
+					var count = array.length;
+					for (n = 0; n < count; ++n)
+					{
+						//array[n] = parseFloat(array[n]);
+						array[n] = new Date(array[n]);
+					}
+				},
+
+				deepCopy: function( source ) {
+					var target = [];
+					for (var i = 0, j = source.length; i < j; ++i)
+					{
+						target[i] = source[i];
+					}
+					return target;	
+				}
+			}
+
+			function querySubmit()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+				//StatisticsLibrary.convertToDatetime(requestArray);
+				var workingCopy = StatisticsLibrary.deepCopy(requestArray);
+				StatisticsLibrary.convertToDatetime(workingCopy);
+
+				var hypot = Math.hypot.apply(Math, requestArray);
+				var	maximum = jStat.max(requestArray);
+			
+				var mean = -1;
+				
+				if (isNumber(requestArray[0])) 
+				{ 
+					mean = jStat.mean(requestArray);
+				}
+				else if (isDate_(requestArray[0])) 
+				{ 
+					mean = getAverageTime(workingCopy); 
+				}
+				var median = jStat.median(requestArray);
+				var minimum = jStat.min(requestArray);
+				var mode = jStat.mode(requestArray);
+
+				var populationStandardDeviation = jStat.stdev(requestArray, false);
+				var populationVariance = jStat.variance(requestArray, false);	
+
+				var range = jStat.range(requestArray);
+
+				var sampleVariance = jStat.variance(requestArray, true);
+				var sampleStandardDeviation = jStat.stdev(requestArray, true);
+
+				var sum = jStat.sum(requestArray);
+				
+				/*
+				var myNormal = jStat.normal( mean, populationStandardDeviation ),
+				pdf = myNormal.pdf(5),
+				cdf = myNormal.cdf(5),
+				inv = myNormal.inv(5);
+				*/
+				
+				var display = "<table border='1'>" +
+					"<caption>Statistics</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("Count", requestArray.length) +
+					tabular("Hypot", hypot) +
+					tabular("Maximum", maximum) +
+					tabular("Mean", mean) +
+					tabular("Median", median) +
+					tabular("Minimum", minimum) +
+					tabular("Mode", mode) +
+					tabular("Population Standard Deviation", populationStandardDeviation) +
+					tabular("Population Variance", populationVariance) +
+					tabular("Sample Standard Deviation", sampleStandardDeviation) +
+					tabular("Sample Variance", sampleVariance) +
+					tabular("Range", range) +
+					tabular("Sum", sum) +
+					"</tbody></table>"
+					;
+				document.getElementById("response").innerHTML = display;		
+			}
+		
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+function getAverageTime(array) {
+  let sum = 0;
+  array.map(function(d) {
+    let now = new Date(d);
+    let startDay = d.setFullYear(now.getFullYear(), now.getMonth(), now.getDate());
+    sum += startDay;
+  });
+
+  return new Date(sum / array.length);
+}
+
+var isNumber = function isNumber(value) {
+  return typeof value === 'number' && isFinite(value);
+}
+
+var isDate_ = function(input) {
+        var status = false;
+        if (!input || input.length <= 0) {
+          status = false;
+        } else {
+          var result = new Date(input);
+          if (result == 'Invalid Date') {
+            status = false;
+          } else {
+            status = true;
+          }
+        }
+        return status;
+      }
+			
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1070 @@
+http://survey.devographics.com/en-US/survey/state-of-html/2023
+2023-10-04T11:52:00...2023-10-04T13:41:00 Survey
+2023-10-04T20:56:00...2023-10-04T21:24:00 Survey
+Skip to content
+Surveys / State of HTML 2023
+Forms
+
+Form-related elements and attributes
+
+Welcome to the survey! These first couple sections are all about figuring out which features of HTML (and related APIs) you know about.
+
+By the way, if you want to learn more about any item in the survey, you can add it to your reading list by clicking its little "+" icon!
+<datalist>
+
+Method of providing a list of presets for a user to select in a form control, while still allowing custom options.
+html
+
+<input name="country" list="countries">
+<datalist id="countries">
+  <option>Afghanistan</option>
+  ...
+</datalist>
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+autocomplete attribute
+
+Provide hints about what kind of information is expected, e.g. name, honorific-prefix, tel, cc-number etc
+html
+
+<input name="address_firstline" autocomplete="billing street-address" />
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+HTML Media Capture
+
+Capture input from the user’s camera.
+html
+
+<input type="file" accept="video/*" capture>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+input.showPicker()
+
+Programmatically open the picker of form controls that have one (color pickers, date inputs etc).
+html
+
+<input id="dateInput" type="date">
+<button onclick="dateInput.showPicker()">Select date</button>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+FormData API
+
+API to more easily extract and manipulate form data values via JS
+js
+
+let fd = new FormData(form);
+let data = JSON.stringify(Object.fromEntries(fd));
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+<selectlist>
+
+Stylable, customizable dropdown control. Previously <selectmenu>.
+html
+
+<selectlist>
+	<option>Option 1</option>
+	<option>Option 2</option>
+	<option>Option 3</option>
+</selectlist>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+contenteditable="plaintext-only"
+
+Permits editing of the element's raw text, but not rich text formatting.
+html
+
+<h2 class="title" contenteditable="plaintext-only"></h2>
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+Which input types have you used?
+<input type="range">
+Tell us more:
+<input type="number">
+Tell us more:
+<input type="file">
+Tell us more:
+<input type="date">
+Tell us more:
+<input type="time">
+Tell us more:
+<input type="datetime-local">
+Tell us more:
+<input type="month">
+Tell us more:
+<input type="week">
+Tell us more:
+<input type="color">
+Tell us more:
+<input type="email">
+Tell us more:
+<input type="tel">
+Tell us more:
+<input type="url">
+Tell us more:
+🚫 None of the above
+Which of the following form validation features have you used?
+required attribute
+Tell us more:
+pattern attribute
+Tell us more:
+input.setCustomValidity()
+Tell us more:
+input.reportValidity()
+input.checkValidity()
+invalid event
+:invalid/:valid CSS pseudo-classes
+🚫 None of the above
+What are your pain points around HTML forms?
+
+Think of the various form controls (e.g. <input>, <textarea>, <select>, <button> etc.), behaviors (e.g. validation, autocomplete), handling forms via JS, editing APIs (e.g. contentEditable) etc. Anything that bothers you is fair game — browser support, missing features, styling, etc.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Interactivity
+
+APIs that enable richer user interactions.
+<dialog>
+
+For dialog boxes or other interactive components, such as a dismissible alerts, or subwindows.
+html
+
+<dialog id="confirm">
+	<form method="dialog">
+		Are you sure?
+		<button value="1">Yes</button>
+		<button value="0">No</button>
+	</form>
+</dialog>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+<details> and <summary>
+
+A disclosure widget that can be toggled to hide or show content interactively.
+html
+
+<details>
+    <summary>Details</summary>
+    Longer content
+</details>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Exclusive Accordion
+
+Group <details> elements so that only up to one in the group can be open at a time.
+html
+
+<details open name="sidebar_panel" id="main_info">
+	<summary>Main info</summary>
+	<!-- controls -->
+</details>
+<details name="sidebar_panel" id="style_settings">
+	<summary>Style</summary>
+	<!-- controls -->
+</details>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+Popover API
+
+HTML syntax and JS API facilitating popovers such as overlays, popups, menus etc.
+html
+
+<button popovertarget="foo">Toggle the popover</button>
+<div id="foo" popover>Popover content</div>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+inert attribute
+
+Attribute to make an element and its descendants non-interactive, and invisible to assistive technology.
+html
+
+<div id=app inert class=loading>
+  ...
+</div>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Which of the following DOM attribute-related methods have you used?
+element.classList
+Tell us more:
+element.toggleAttribute(name, force)
+element.getAttributeNames()
+🚫 None
+Which of the following DOM HTML string-handling features have you used?
+element.innerHTML
+Tell us more:
+element.outerHTML
+insertAdjacentHTML()
+element.insertAdjacentHTML("beforebegin", rawHTML)
+DOMParser API
+let doc = new DOMParser().parseFromString(rawHTML, "text/html")
+🚫 None
+Which of the following element-moving DOM methods have you used?
+insertAdjacentElement()
+el1.insertAdjacentElement("afterend", el2)
+parent.append(...children)
+Replaced the older parent.appendChild(child)
+el1.before(...elements)
+Replaced the older parent.insertBefore(el2, el1)
+el1.replaceWith(el2)
+Replaced the older parent.replaceChild(el2, el1) method.
+replaceChildren()
+element.replaceChildren(...newChildren)
+Document fragments
+let fragment = document.createDocumentFragment()
+🚫 None
+Which of these methods have you used to add interactivity or dynamically modify HTML?
+CSS for interactivity (toggles, tabs, etc.)
+Web Components
+JavaScript DOM libraries (jQuery, etc.)
+Tell us more:
+JavaScript frameworks (React, Vue, etc.)
+Tell us more:
+Plain JavaScript (no frameworks or libraries)
+🚫 None of the above
+What are your pain points around dynamic HTML changes?
+
+Browser incompatibilities or lack of support, missing features, and other problems you face around interactive elements and behaviors (except forms), DOM manipulation, events, and related APIs.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Content
+
+Embedding, multimedia, data, and other content-related features.
+Lazy loading
+
+Load certain resources only when needed.
+html
+
+<img src="picture.jpg" loading="lazy" />
+<iframe src="supplementary.html" loading="lazy"></iframe>
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+srcset and sizes attributes
+
+Attributes that allow providing several source images with hints to help the browser pick the right one.
+html
+
+<img
+  srcset="fairy-med.jpg 480w, fairy-large.jpg 800w"
+  sizes="(max-width: 600px) 480px, 800px"
+  src="fairy-large.jpg"
+  alt="Elva dressed as a fairy" />
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+Resource Hints
+
+Begin work on certain resources early to improve performance. Syntax: <link rel="pre* | dns-prefetch | modulepreload">.
+html
+
+<link rel="preload" href="picture.jpg" />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Content-Security Policy (CSP)
+
+An added layer of security that helps to detect and mitigate XSS and other attacks.
+http
+
+Content-Security-Policy: default-src 'self'
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+fetchpriority attribute
+
+Allows specifying a hint to help the browser prioritize fetching various resources.
+html
+
+<img src="logo.svg" fetchpriority="high" />
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+blocking="render"
+
+Specify that resources (scripts, stylesheets etc) should block rendering until loaded.
+html
+
+<script blocking="render" async src="async-script.js"></script>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+<model> for AR/VR/3D content
+
+Allows embedding 3D graphical content into HTML.
+html
+
+<model src="3d-assets/car"></model>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+controlslist attribute
+
+Prevent certain controls from appearing in the toolbar of a media element.
+html
+
+<video src="fun.mp4" controlslist="nodownload"></video>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Which of the following elements have you used?
+<math>
+<picture>
+Tell us more:
+<svg>
+<canvas>
+Tell us more:
+<object>
+<iframe>
+Tell us more:
+<audio>
+Tell us more:
+<video>
+Tell us more:
+🚫 None of the above
+Which of the following security & privacy features have you used?
+sandbox attribute on <iframe>
+Enables additional restrictions on <iframe> content.
+crossorigin attribute
+Defines how the element handles cross-origin requests
+referrerpolicy attribute
+Limit how much referrer information is included with requests.
+nonce attribute
+A cryptographic nonce used to whitelist specific elements.
+allow attribute on <iframe>
+Restrict or allow certain APIs (e.g. fullscreen, geolocation, etc.) in an <iframe>.
+integrity attribute
+A security feature to verify that fetched resources have not been tampered with.
+🚫 None of the above
+Which of the following have you used to include machine-readable data in HTML?
+<time>
+<data>
+Tell us more:
+Microdata
+Tell us more:
+itemprop, itemscope, etc.
+Microformats
+Tell us more:
+class="h-card", class="h-event", etc.
+RDFa
+property, typeof, etc.
+JSON-LD
+<script type="application/ld+json">
+🚫 None of the above
+Which of the following internationalization features have you used?
+lang attribute
+Tell us more:
+dir attribute
+<ruby> , <rp> , <rt> elements
+Intl.DateTimeFormat API
+Date/time formatting. Implicitly called by Date.prototype.toLocaleString(lang, options).
+Intl.Collator API
+String comparison. Implicitly called by String.prototype.localeCompare(lang, options).
+Intl.ListFormat API
+List formatting. Implicitly called by Array.prototype.toLocaleString(lang, options).
+Intl.NumberFormat API
+Number formatting. Implicitly called by Number.prototype.toLocaleString(lang, options).
+Intl.MessageFormat API
+Proposal for a JS API to handle localizable strings with variable interpolation. Polyfill-only.
+Intl.PluralRules API
+Facilitates languge-sensitive pluralization rules.
+Intl.RelativeTimeFormat API
+Facilitates localization of relative time offsets.
+Intl.Segmenter API
+Language-sensitive segmentation of text into graphemes, words or sentences.
+Intl.LocaleMatcher API
+Proposal for a JS API to explose and customize locale matching. Polyfill-only.
+🚫 None of the above
+What are your pain points around managing content in HTML?
+
+Think of embedding (multimedia, iframes, SVG, etc), machine-readable data, internationalization & localization, security & privacy, performance etc. Missing features, browser incompatibilities, and other problems you face are all fair game.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Web Components
+
+Making & using web components.
+<template>
+
+A mechanism for holding HTML that is not to be rendered immediately but may be utilized later via JS.
+html
+
+<template id="counter">
+	<div class="counter">Clicked {{ times }} times</div>
+</template>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Using Custom Elements
+
+Using custom elements, that you or someone else defined.
+html
+
+<sl-switch>Switch</sl-switch>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Defining Custom Elements
+
+Defining custom elements for use by others.
+js
+
+class MyElement extends HTMLElement { … }
+customElements.define("my-element", MyElement);
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Scoped Custom Element Registries
+
+Allow multiple custom element definitions for a single tag name to exist within a page.
+js
+
+const registry = new CustomElementRegistry();
+registry.define('sub-element', SubElement);
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+Shadow DOM
+
+Encapsulate elements not visible from the outside, and style them with CSS not affecting the rest of the page.
+js
+
+this.shadowRoot = this.attachShadow({mode: "open"});
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Declarative Shadow DOM
+
+Define shadow trees with HTML.
+html
+
+<host-element>
+    <template shadowrootmode="open">
+        <!-- Shadow content -->
+    </template>
+</host-element>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Named slot assigment
+
+slot="slot_name" attribute
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Imperative slot assignment
+
+A way to assign elements to slots manually via JS, so that slot assignment does not have to be managed by the component consumers.
+js
+
+this.attachShadow({mode: "open", slotAssignment: "manual" });
+this.shadowRoot.querySelector("slot[name=foo]").assign(element);
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+ElementInternals API
+
+Assign hidden semantics to custom elements, facilitating accessibility and allowing them to participate fully in forms.
+js
+
+this.#internals = this.attachInternals()
+this.#internals.ariaChecked = true;
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+DOM Parts
+
+A cacheable representation of a part of the DOM that can be updated performantly.
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+No browser support
+HTML Modules
+
+Import HTML files via JS imports and access their elements and JS exports.
+html
+
+<script type="module">
+	import { TabList } from "./tablist.html" with { type: 'html' };
+	customElements.define("tab-list", TabList);
+</script>
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+No browser support
+Which of the following web component features have you used?
+<slot> element
+Exposing component parts (part attribute)
+Expose Shadow DOM elements to be stylable by component consumers.
+CSS ::part() pseudo-element
+Shadow host CSS pseudo-classes
+:host , :host() , :host-context()
+::slotted() CSS pseudo-element
+customElements.get()
+customElements.whenDefined()
+customElements.getName()
+🚫 None of the above
+Have you used any Web Components libraries?
+Shoelace
+Spectrum Web Components
+Lightning Web Components
+FAST
+Elix
+Lion
+Material Web
+Other…
+🚫 None
+What are your biggest pain points around consuming web components?
+Using Web Components that you or others have made. Missing features, browser incompatibilities, etc.
+What are your biggest pain points around making web components?
+What prevents you from creating the amazing components you envision? Missing features, browser incompatibilities, etc.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Accessibility
+
+Making sites and apps accessible by all.
+Landmark elements
+
+<main>, <nav>, <aside>, <header>, <footer>, <section>
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+tabindex attribute
+
+Make HTML elements focusable, allow or prevent them from being sequentially focusable
+html
+
+<div role="button" tabindex="0">I’m Tabbable</div>
+
+🤷 Never heard of it
+👀 Heard of it
+🤓 Used it
+Tell us more:
+focusgroup attribute
+
+Facilitate keyboard focus navigation using the keyboard arrow keys among a set of focusable elements.
+html
+
+<div focusgroup="wrap horizontal">
+	<!-- child elements -->
+</div>
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+<search>
+
+Semantic element for wrapping search UI.
+html
+
+<search>
+  <form action="search.php">
+    <label>Find: <input name="q" type="search"></label>
+    <button>Go!</button>
+  </form>
+</search>
+
+🤷 Never heard of it
+👀 Heard of it
+Tell us more:
+🤓 Used it
+What kind of user disabilities do you account for when making websites?
+Low visionBlindness, high myopia, etc.
+Atypical color visionColor blindness
+Mobility impairmentsArthritis, carpal tunnel, etc.
+Vestibular disordersEpilepsy, vertigo, etc.
+Learning disabilitiesDyslexia, dyscalculia, etc.
+Other cognitive impairmentsAnxiety, Autism, OCD, ADHD, etc.
+Hearing impairmentsDeafness, tinnitus, etc.
+Other…
+🚫 None
+What other techniques are part of your regular accessibility strategy?
+Intuitive keyboard navigationOther than tab order.
+Descriptive alt textProviding alt text that describes the purpose or content of an image.
+Skip-to-content linkLetting users skip straight to the main content of a page.
+<fieldset> and <legend>Using <fieldset> and <legend> to group related form elements.
+Information HierarchyUsing headings (<h1> - <h6>) that correctly represent a page's information hierarchy.
+Meaningful Link TextEnsuring that link text makes sense out of context
+Form Control LabelsEnsuring every form control has a <label> (or aria-label, etc.).
+Visible Focus RingEnsuring focus ring outline is clearly visible when needed.
+Not Relying on Pointer OnlyEnsuring pointer interactions (e.g. hover) have a keyboard alternative.
+Sufficient ContrastUsing contrast checkers to ensure sufficient color contrast.
+Not Relying on Color OnlyEnsuring that no information is conveyed by color alone.
+prefers-reduced-motionProviding alternative CSS for users who prefer reduced motion.
+prefers-contrastProviding alternative CSS for users who prefer increased contrast.
+Other…
+🚫 None
+Which screen readers do you use for accessibility testing?
+VoiceOver
+JAWS
+TalkBack
+NVDA
+Other…
+🚫 None
+What tools do you use for accessibility testing?
+Assistiv Labs
+Axe
+Guidepup
+Lighthouse
+VoiceOver.js
+Other…
+🚫 None
+What are your biggest pain points around web accessibility?
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+Landmark elements
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Native-like Web Apps
+
+Authoring mobile and desktop-optimized web apps.
+File System Access API
+
+Access files and directories on the user's local device.
+js
+
+const handle = await window.showSaveFilePicker(opts);
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Badging API
+
+Set a badge on the web application’s icon to notify about updated state in a less intrusive, persistent way.
+js
+
+navigator.setAppBadge(unreadCount)
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Web Share API
+
+Exposes a mechanism for sharing content to various user-selected targets.
+js
+
+navigator.share(shareData)
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Launch Handler API
+
+Allows PWAs to control how they are launched, e.g. in a new window or tab.
+manifest.json
+
+"launch_handler": {"client_mode": "navigate-new"}
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+File Handling API
+
+Allows PWAs to register themselves as handlers for certain file types.
+manifest.json
+
+"file_handlers": [{
+    "action": "/open-file",
+    "accept": {
+      "image/svg+xml": ".svg",
+      "image/png": ".png"
+    }
+  }]
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Window Controls Overlay API
+
+Allows PWAs to display custom content over the title bar area, whose controls become an overlay.
+manifest.json
+
+"display_override": ["window-controls-overlay"]
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+Isolated Web Apps
+
+Native-like packaging, permissions and signed updates for PWAs.
+URL
+
+isolated-app://4tkr2qbhf7rlz2a3wo3rh4wqaaic/index.html
+
+🤷 Never heard of it
+Tell us more:
+👀 Heard of it
+🤓 Used it
+No browser support
+Have you used any of these tools to build native apps?
+Excluding scripts, command-line apps, server-side code, etc.
+JavaScript-based frameworks
+React Native, Ionic, Electron, etc.
+Non-JavaScript frameworks
+Tauri, Flutter, etc.
+Native technologies
+Objective-C, Swift, Kotlin, .NET, etc.
+Other…
+🚫 I haven't developed native apps
+Have you used any of the following to store data client-side?
+document.cookie
+Tell us more:
+Session Storage
+Tell us more:
+IndexedDB
+Cache Storage
+const cacheStorage = await caches.open(cacheName);
+Local Storage
+Tell us more:
+🚫 None of the above
+Have you used any of the following PWA technologies/APIs?
+App manifest
+<link rel="manifest">
+Service Workers
+Notifications API
+new Notification()
+🚫 None of the above
+What are your biggest pain points around making web apps that feel native?
+Capabilities the Web Platform doesn't yet have, browser differences in related APIs, etc.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+Landmark elements
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Other Tools & Features
+
+Other tools or features you use as part of your work.
+Which of these static or dynamic site generators do you regularly use?
+Astro
+Eleventy
+Gatsby
+Hugo
+Jekyll
+Next.js
+Nuxt
+Other…
+🚫 None
+Which of these AI tools do you regularly use to help you write code?
+ChatGPT
+Google Bard
+Copilot
+Other…
+🚫 None
+Have you ever used any of the following old-school elements?
+Blast from the past!
+<marquee>
+<isindex>
+<blink>
+<font>
+<nextid>
+<center>
+<frameset> & <frame>
+<applet>
+<plaintext>
+🚫 None of the above
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+Landmark elements
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+Usage
+
+How you use HTML.
+Which existing HTML features or browser APIs are you unable to use because of browser differences or lack of support?
+Which existing HTML features or browser APIs are you unable to use for other reasons (and why)?
+
+Good candidates might be existing HTML features that you often have to recreate or augment using JS.
+
+Please also specify the reason, such as lack of functionality, difficult styling, poor accessibility, etc.
+If you could add 3 elements to HTML, what would they be?
+Pick up to 3 items.
+Skeleton UI / Loading Placeholder
+Carousel
+Tabs
+Segmented Button
+Accordion
+Infinite Scroll
+Star Rating
+Switch / Toggle
+Image Zoom
+Data table (with sorting, filtering, etc.)
+Context Menu / Right-Click Menu
+Other…
+🚫 None
+Other than yourself, how many developers use the libraries, packages, components, APIs etc. that you create or maintain?
+
+Total, if you work on multiple projects that are used by other developers. If you’re not sure, pick the closest to your best estimate. For open source code, npm downloads might offer a useful data point.
+🚫 None (Just me)
+A few other developers (e.g. developers within a small team)
+Less than a thousand developers
+Thousands of developers
+Millions of developers
+How do you divide your time between writing HTML/CSS and JavaScript (or TypeScript) code?
+100% HTML/CSS
+2
+3
+4
+50%–50%
+6
+7
+8
+100% JS
+What do you use HTML for?
+Blogs or other text-heavy sites
+Design systems
+Desktop apps
+Emails
+Marketing sites & landing pages
+Mobile apps
+Printed documents
+Web apps
+Other…
+🚫 None
+Industry Sector
+Which industry sector(s) do you work in?
+Agriculture
+Automotive
+Construction
+Consulting & Services
+Crypto
+Cyber Security
+Ecommerce & Retail
+Education
+Energy
+Entertainment
+Finance
+Government
+Healthcare
+Hospitality
+Insurance
+Logistics
+Manufacturing
+Marketing/Sales/Analytics Tools
+News, Media, & Blogging
+Programming & Technical Tools
+Real Estate
+Social Media
+Telecommunications
+Tourism
+Transport
+Other…
+🚫 None
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+Landmark elements
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »
+
+Skip to content
+Surveys / State of HTML 2023
+About You
+
+Let's get to know the real you.
+Age
+How old are you, in years?
+Years of Experience
+How long have you been working or studying in this field, in years?
+Less than one year
+1 to 2 years
+3 to 5 years
+6 to 10 years
+11 to 20 years
+More than 20 years
+Company Size
+How many people work at your organization, including yourself?
+🚫 Not Applicable
+Just me
+2 to 5 people
+6 to 10 people
+11 to 20 people
+21 to 50 people
+51 to 100 people
+101 to 1000 people
+More than 1000 people
+Yearly Income
+Your yearly income in U.S. dollar.
+🚫 Not Applicable
+$0k-$10k
+$10k-$30k
+$30k-$50k
+$50k-$100k
+$100k-$200k
+More than $200k
+Higher Education Degree
+Do you have a higher education degree?
+No
+Yes, in a field related to my current profession
+Yes, but in a field unrelated to my current profession
+Country or Region
+Where do you currently reside?
+Gender
+Which of the following options describes you, if any? Please pick one.
+Man
+Woman
+Non-Binary or Gender Non-Conforming
+Not Listed
+While we know collecting and publishing diversity data can be a sensitive issue, we do think it's important to obtain this data to help measure and improve the survey's efforts in terms of inclusivity and representativeness.
+Race & Ethnicity
+Which of the following options describe you, if any? Please check all that apply.
+Black or of African descent
+East Asian
+Hispanic or Latino/Latina/Latinx
+Middle Eastern
+Multiracial
+Native American, Pacific Islander, or Indigenous Australian
+South Asian
+White
+South East Asian
+Other…
+While we know collecting and publishing diversity data can be a sensitive issue, we do think it's important to obtain this data to help measure and improve the survey's efforts in terms of inclusivity and representativeness.
+Disability Status
+Which of the following disabilities do you experience, if any? Please check all that apply. Note that this can include temporary disabilities or injuries.
+🚫 None
+Visual impairments (such as: blindness, color blindness, etc.)
+Hearing impairments (such as: deafness, tinnitus, etc.)
+Mobility impairments (such as: arthritis, carpal tunnel, etc.)
+Cognitive impairments (such as: anxiety, dyslexia, ADHD, etc.)
+Other…
+Which other developer surveys do you participate in?
+State of JavaScript
+State of CSS
+State of GraphQL
+JetBrains State of Developer Ecosystem
+Stack Overflow Annual Developer Survey
+CodinGame Developer Survey
+Design Tools Survey
+Postman State of the API Report
+Jamstack Community Survey
+Other…
+🚫 None
+How did you hear about this survey?
+How could we improve this survey?
+Do you want to be notified when the survey results are released?
+Yes, email me when the survey results are published
+We don't store any private data, so after your email address is sent to our mailing list provider it will be deleted from our own records.
+Reading List
+Save items here using the "+" button, and you'll get a list of links to learn more about them at the end of the survey.
+
+    template
+
+Landmark elements
+© 2023 DevographicsAccountPrivacy PolicyLeave an issueSign outHelp us translate the surveys »

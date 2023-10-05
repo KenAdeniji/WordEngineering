@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-06-19	MyCondemn.html accepts BookID and VerseID
+		2018-06-24	
+				var bookID = document.getElementById("bookID").value % 66;
+				if (bookID === 0)
+				{
+					bookID = 66;
+				}	
+				request["bookID"] = bookID;
+		2018-08-04	scriptLiteral9432.alphabetSequenceIndex()
+	-->
+	<head>
+		<title>My Condemn</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Two words, book and verse"/>
+		<meta name="keywords" content="Two words, book and verse"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+			<legend>Query</legend>
+			<div align="center">
+				<table>
+					<tr>
+						<td><label for="book">Book:</label></td>
+						<td><input type="text" ID="book"/></td>
+					</tr>	
+					<tr>
+						<td><label for="verse">Verse:</label></td>
+						<td><input type="text" ID="verse"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>	
+				</table>
+			</div>
+		</fieldset>	
+		<br><br>
+		<div align="center" id="resultSet">	</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			var	bookDefault = "My";
+			var verseDefault = "Condemn";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var book = scriptLiteral9432.getParameterByName("book");
+						if (!book)
+						{
+							book = bookDefault;
+						}	
+						document.getElementById("book").value = book;
+						
+						var verse = scriptLiteral9432.getParameterByName("verse");
+						if (!verse)
+						{
+							verse = verseDefault;
+						}	
+						document.getElementById("verse").value = verse;
+
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				var bookID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					document.getElementById("book").value
+				)
+				% 
+				66;
+				if (bookID === 0)
+				{
+					bookID = 66;
+				}	
+				
+				var verseID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					document.getElementById("verse").value
+				)
+
+				request["bookID"] = bookID;
+				request["verseID"] = verseID;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/MyCondemn.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(dataSet) 
+			{
+				scriptureReference = dataSet.scriptureReference;
+				scriptureReferenceHyperlink = scriptLiteral9432.buildHyperlink
+				(
+					"scriptureReference",
+					scriptureReference
+				);
+				document.getElementById("resultSet").innerHTML = scriptureReferenceHyperlink;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

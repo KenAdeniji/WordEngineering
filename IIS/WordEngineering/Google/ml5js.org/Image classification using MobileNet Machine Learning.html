@@ -1,0 +1,81 @@
+<html>
+<!--
+	2021-09-13T06:35:00	Created.
+	2021-09-13T17:20:00	https://p5js.org/reference/#/p5/loadImage
+-->	
+<head>
+  <meta charset="UTF-8">
+  <title>Image classification using MobileNet</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+
+<body>
+  <h1>Image classification using MobileNet</h1>
+  <label for="imageUrl">Image Url:</label>	
+  <input id="imageUrl" type="url" autofocus value="http://localhost/WordEngineering/images/bird.png">
+  <br/>
+  <img id="myImage" />
+  <label for="label">Label:</label>	
+  <label id="label"></label>  
+  <br/>
+  <label for="confidence">Confidence:</label>	
+  <label id="confidence"></label>  
+  <br/>
+  <input type="submit" id="submitQuery">
+  <script>
+const imageUrlElement = document.getElementById("imageUrl");
+const myImageElement = document.getElementById("myImage");
+const submitQueryElement = document.getElementById("submitQuery");
+
+const labelElement = document.getElementById("label");
+const confidenceElement = document.getElementById("confidence");
+
+let classifier;
+let img;
+let prediction;
+
+// When the model is loaded
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
+function pageLoad()
+{
+	// Step 1: Create an image classifier with MobileNet
+	classifier = ml5.imageClassifier("MobileNet", modelLoaded);
+
+	// Step 2: select an image
+	img = document.querySelector("#myImage");
+
+	querySubmit();
+}
+
+function querySubmit()
+{
+	myImageElement.src = imageUrlElement.value;
+	// Step 3: Make a prediction
+	prediction = classifier.predict(img, gotResults);
+}
+
+// A function to run when we get any errors and the results
+function gotResults(error, results) {
+  // Display error in the console
+  if (error) {
+    console.error(error);
+  } else {
+    // The results are in an array ordered by confidence.
+    //console.log(results);
+	labelElement.innerHTML = results[0].label;
+	confidenceElement.innerHTML = nf(results[0].confidence, 0, 2);
+	
+  }
+}
+
+window.addEventListener("load", pageLoad, false);
+submitQueryElement.addEventListener("click", querySubmit, false);
+</script>
+</body>
+
+</html>

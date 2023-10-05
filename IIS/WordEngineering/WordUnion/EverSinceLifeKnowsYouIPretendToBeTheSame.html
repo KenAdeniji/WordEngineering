@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-03-25	Created.	sqlmag.com/sql-server-2012/how-use-microsoft-sql-server-2012s-window-functions-part-1
+	2017-03-26	Ever since life knows you; I pretend to be the same.
+	2017-03-28	TribePercent, OverallPercent .toFixed(2) http://stackoverflow.com/questions/1726630/formatting-a-number-with-exactly-two-decimals-in-javascript
+-->
+    <head>
+        <title>Ever since life knows you; I pretend to be the same.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Lists the Census, and the tribes running total"/>
+		<meta name="keywords" content="Bible, Census, running total"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+    </head>
+	<body>
+		<div id="resultSet"> </div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			function buildHead() {
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildHyperlink(address, parameter)
+			{
+				if (!parameter) { return ""; }	
+				var uri = encodeURI(address + ".html?" + address + "=" + parameter);
+				var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+				return hyperlink;
+			}
+			
+			function buildRow() {
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+			
+			function pageLoad()
+			{
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/Census.asmx/EverSinceLifeKnowsYouIPretendToBeTheSame",
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table>";
+				
+				for (var table in data)
+				{
+					dataTable = data[table];
+					info += buildHead
+					(
+						"Tribe",
+						"Census Number", 
+						"Census Population",
+						"Running Population",
+						"Tribe (%)",
+						"Overall (%)",
+						"Scripture Reference",						
+					);
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+				
+						info += buildRow
+						(
+							dataRow["Tribe"],
+							dataRow["CensusNumber"],
+							dataRow["CensusPopulation"],
+							dataRow["RunningPopulation"],
+							dataRow["TribePercent"].toFixed(2),
+							dataRow["OverallPercent"].toFixed(2),
+							buildHyperlink("scriptureReference", dataRow["ScriptureReference"])
+						);
+					}
+				}
+				
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+
+</body>
+</html>

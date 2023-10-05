@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-09-21	Created.	Will accept a word and determine the vowel percentage for a scripture reference.
+	-->
+	<head>
+		<title>You don't need a hornet.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="AlphabetSequence, vowel, percentage"/>
+		<meta name="keywords" content="AlphabetSequence, vowel, percentage"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="word" type="text" autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				var word = document.getElementById("word").value.trim();
+				if (word === "")
+				{
+					return;
+				}
+				request["word"] = word;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/TheSpanishHaveQuitResemblingNow/YouDontNeedAHornet.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack == false)
+				{
+					var word = getParameterByName("word");
+					if (word !== "")
+					{
+						document.getElementById("word").value = word;
+						isPostBack = true;
+					}	
+				}
+				querySubmit();
+			}
+
+			function render(dataSet)
+			{
+				var resultSet = document.getElementById("resultSet");
+				resultSet.innerHTML = scriptureReferenceHyperlink(dataSet);
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("word").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

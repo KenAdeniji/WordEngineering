@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-08-13	Created.
+	-->
+	<head>
+		<title>However, our progress, are personal.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="However, our progress, are personal."/>
+		<meta name="keywords" content="Bible, Scripture Reference, activities, place of birth, place of death"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><input id="word" type="text" autofocus/></td>
+				</tr>	
+				<tr>
+					<td align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var wordElement = document.getElementById("word");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						//scriptLiteral9432.buildSelect("word", scriptLiteral9432.words);
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var wordParam = urlParams.get("word");
+						if (wordParam)
+						{
+							wordElement.value = wordParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["word"] = wordElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/HoweverOurProgressArePersonal.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

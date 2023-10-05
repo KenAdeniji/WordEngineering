@@ -1,0 +1,2 @@
+CSC /reference:..\Bin\CommandLineArguments.dll,..\Bin\InformationInTransit.dll YouAreThePlaces.cs 
+YouAreThePlaces.exe /sqlQuery:"SELECT Title FROM Bible..BibleBook ORDER BY BookId" /filenameCommaSeparatedValuesCSV:"YouAreThePlaces.csv"

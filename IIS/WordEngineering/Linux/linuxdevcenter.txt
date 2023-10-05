@@ -1,0 +1,8 @@
+# linuxdevcenter.com
+access [mode] [filename] #Check file access: r for read, w for write, x for execute.
+whereis [filename]
+arch #Print machine architecture type to standard output. uname -m.
+arp #TCP/IP command. Clear, add to, or dump the kernel's Address Resolution Protocol (ARP) cache (/proc/net/arp).
+at [options] time [date] #Execute commands at a specified time and optional date.
+atq [options] #List pending jobs. at -l.
+/usr/games/banner -w50 Happy Birthday! |lpr #Print banner

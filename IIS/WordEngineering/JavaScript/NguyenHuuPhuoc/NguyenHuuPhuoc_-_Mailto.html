@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2021-09-07	Nguyen Huu Phuoc	https://getfrontend.tips/add-a-subject-to-a-mailto-link.html
+			2021-09-07	https://stackoverflow.com/questions/10857590/javascript-encodeuricomponent-and-converting-spaces-to-symbols
+			2021-09-07	https://flaviocopes.com/how-to-remove-last-char-string-js/
+			2021-09-07	https://getfrontend.tips/create-an-one-time-event-handler.html
+			2021-09-07T19:22:00	https://mailtolinkgenerator.com/
+		-->
+		<title>Nguyen Huu Phuoc mailto</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Nguyen Huu Phuoc mailto syntax"/>
+		<meta name="keywords" content="mailto, subject, body, cc, bcc"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	* { width: 80vw; }
+	#body{ height: 40vh; }
+		</style>		
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><label for="to">To:</label></td><td><input id="to" type="text" autofocus/></td></tr>
+				<tr><td><label for="cc">Cc:</label></td><td><input id="cc" type="text"/></td></tr>
+				<tr><td><label for="bcc">Bcc:</label></td><td><input id="bcc" type="text"/></td></tr>
+				<tr><td><label for="subject">Subject:</label></td><td><input id="subject" type="text"/></td></tr>
+				<tr><td><label for="body">Body:</label></td><td><div id="body" contenteditable></div></td></tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+				<tr><td><label for="htmlContent">HTML:</label></td><td><div id="htmlContent"></div></td></tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var toElement = document.getElementById("to");
+			var ccElement = document.getElementById("cc");
+			var bccElement = document.getElementById("bcc");
+			var subjectElement = document.getElementById("subject");
+			var bodyElement = document.getElementById("body");
+			var htmlContentElement = document.getElementById("htmlContent");
+			
+function fixedEncodeURIComponent(str) { return encodeURIComponent(str).replace(/[!'()*]/g, function(c) { return '%' + c.charCodeAt(0).toString(16); }); }			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					querySubmit();
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var mailContent = fixedEncodeURIComponent(toElement.value) + '?'; 
+				if (ccElement.value) { mailContent += "cc=" + fixedEncodeURIComponent(ccElement.value) + '&'; }
+				if (bccElement.value) { mailContent += "bcc=" + fixedEncodeURIComponent(bccElement.value) + '&'; }
+				if (subjectElement.value) { mailContent += "subject=" + fixedEncodeURIComponent(subjectElement.value) + '&'; }
+				if (bodyElement.innerHTML) { mailContent += "body=" + fixedEncodeURIComponent(bodyElement.innerHTML) + '&'; }
+				
+				if (!mailContent) { return; }
+				
+				mailContent = mailContent.slice(0, -1);
+				
+				mailAnchor = '<a href="mailto:' + mailContent + '" target="_blank">' + "mail" + "</a>";
+				
+				htmlContentElement.innerHTML = mailAnchor;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener
+			(
+				"click",
+				querySubmit,
+				{
+					once: false
+				}
+			);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

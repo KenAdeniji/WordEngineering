@@ -1,0 +1,301 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title>The Definitive Guide to HTML5 by Adam Freeman</title> 
+<style>
+b { font-weight: bolder; }
+em { font-style: italic; }
+i { font-style: italic; }
+strong { font-weight: bolder; } 
+u { text-decoration:underline; }
+sub { vertical-align: sub; font-size: smaller; }
+code { font-family: monospace; }
+var { font-style: italic; }
+samp { font-family: monospace; }
+kbd { font-family: monospace; }
+q { display: inline; } 
+q:before { content: open-quote; } 
+q:after { content: close-quote; }
+cite { font-style: italic; }
+.fruit{ 
+border: thin solid black; 
+padding: 1px; 
+}
+mark { background-color: yellow; color: black; }
+ins { text-decoration: underline; }
+del { text-decoration: line-through; }
+div { display: block; } 
+blockquote { display: block; margin-before: 1em; margin-after: 1em; margin-start: 40px; margin-end: 40px; } 
+hr { display: block; margin-before: 0.5em; margin-after: 0.5em; margin-start: auto; margin-end: auto; border-style: inset; border-width: 1px; } 
+ol { display: block; list-style-type: decimal; margin-before: 1em; margin-after: 1em; margin-start: 0; margin-end: 0; padding-start: 40px; } 
+ul { display: block; list-style-type: disc; margin-before: 1em; margin-after: 1em; margin-start: 0; margin-end: 0; padding-start: 40px; } 
+li { display: list-item; }
+h1 { display: block; font-size: 2em; margin-before: 0.67em; margin-after: 0.67em; margin-start: 0; margin-end: 0; font-weight: bold; } 
+h2 { display: block; font-size: 1.5em; margin-before: 0.83em; margin-after: 0.83em; margin-start: 0; margin-end: 0; font-weight: bold; } 
+h3 { display: block; font-size: 1.17em; margin-before: 1em; margin-after: 1em; margin-start: 0; margin-end: 0; font-weight: bold; } 
+h4 { display: block; margin-before: 1.33em; margin-after: 1.33em; margin-start: 0; margin-end: 0; font-weight: bold; }  
+h5 { display: block; font-size: .83em; margin-before: 1.67em; margin-after: 1.67em; margin-start: 0; margin-end: 0; font-weight: bold; }
+h6 { display: block; font-size: .67em; margin-before: 2.33em; margin-after: 2.33em; margin-start: 0; margin-end: 0; font-weight: bold; } 
+aside { display: block; }
+address { display: block; font-style: italic; }
+table { display: table; border-collapse: separate; border-spacing: 2px; border-color: gray; } 
+tr { display: table-row; vertical-align: inherit; border-color: inherit;} 
+td { display: table-cell; vertical-align: inherit; }
+</style>
+</head> 
+<body> 
+<b>The b element is used to offset a span of text without indicating any extra emphasis or importance. The 
+examples given in the HTML5 specification are keywords in a document abstract and product names in 
+a review.</b><br/>
+<em>The element represents a span of text with emphatic stress.</em><br/>
+<i>The i element denotes a span of text that has a different nature from the surrounding content. This is a 
+fairly loose definition, but common examples include words from other languages, a technical or 
+scientific term, and even a person's thoughts (as opposed to speech).</i><br/>
+<s>You use the s element to denote a span of text that is no longer correct or accurate. The style convention 
+is to display the text with a line drawn through it.</s><br/>
+<strong>Strong</strong>Eating too many oranges can give you heart burn.<br/>
+<u>The element offsets a span of text from the surrounding content without implying any increased 
+importance or emphasis. This is a vague description because the element previously had a 
+presentational impact only (to underline text) and no real semantic significance. In effect, this is still a 
+presentational element and the effect it has is to underline text (although you could potentially change 
+this behavior using CSS, I don't recommend repurposing elements in this way; look at using the span
+element instead).</u><br/>
+<small>The small element denotes fine print and is often used for disclaimers and clarifications.</small><br/>
+Subscript h<sub>2</sub>O.<br/>
+Superscript x<sup>2</sup> exponential.<br/>
+Line break<br/>
+With the wbr element, the browser is able to treat the very long word as a series of smaller segments, 
+and can wrap the content more elegantly. When you use the wbr element, you are telling the browser 
+where breaking a word would be most appropriate. 
+This is a very long word: Super<wbr>califragilistic<wbr>expialidocious.<br/>
+<code>Denotes a fragment of computer code.</code><br/>
+<var>Denotes a variable in a programming context or a 
+placeholder for the reader to mentally insert a 
+specific value.</var><br/>
+<samp>Denotes output from a program or computer system.</samp><br/>
+<kbd>Denotes user input.</kbd><br/>
+The <abbr title="Florida Department of Citrus">FDOC</abbr> regulates the Florida citrus industry.<br/>
+<q cite="http://en.wikipedia.org/wiki/FIFA">
+The <dfn title="Fédération Internationale de Football Association">FIFA</dfn> definition.
+</q><br/>
+<cite>wikipedia.org</cite><br/>
+The span element has no meaning in its own right. You would use it to apply one of the global attributes 
+to a region of content.
+I like <span class="fruit">apples</span>and <span class="fruit">oranges</span>.<br/>
+Homophones are words which are pronounced the same, but have different spellings 
+and meanings.
+I would like a <mark>pair</mark> of <mark>pears</mark><br/>
+<time datetime="1984-12-7">December 7th</time>.
+<p>My favorite kind of orange is the mandarin, properly known 
+as <i>citrus reticulata</i>.</p>
+<div>
+The div element doesn't have a specific meaning. You use it to create structure and give meaning to 
+content when the other HTML elements are insufficient. You add this meaning by applying the global 
+attributes (described in Chapter 3), typically the class or id attributes.
+</div>
+<pre><code> 
+var fruits = ["apples", "oranges", "mangoes", "cherries"]; 
+for (var i = 0; i < fruits.length; i++) { 
+document.writeln("I like " + fruits[i]); 
+} 
+</code></pre>
+<blockquote cite="http://en.wikipedia.org/wiki/Apple"> 
+The apple forms a tree that is small and deciduous, reaching 3 to 12 metres 
+(9.8 to 39 ft) tall, with a broad, often densely twiggy crown. 
+The leaves are alternately arranged simple ovals 5 to 12 cm long and 3–6 
+centimetres (1.2–2.4 in) broad on a 2 to 5 centimetres (0.79 to 2.0 in) petiole 
+with an acute tip, serrated margin and a slightly downy underside. Blossoms are 
+produced in spring simultaneously with the budding of the leaves. 
+The flowers are white with a pink tinge that gradually fades, five petaled, 
+and 2.5 to 3.5 centimetres (0.98 to 1.4 in) in diameter. 
+The fruit matures in autumn, and is typically 5 to 9 centimetres ( 
+2.0 to 3.5 in) in diameter. 
+The center of the fruit contains five carpels arranged in a five-point star, 
+each carpel containing one to three seeds, called pips.</blockquote>
+<hr/>
+The hr element represents a paragraph-level thematic break. This is another oddly specified term that 
+arises from the need to separate semantics from presentation. In HTML4, the hr element represented a 
+horizontal rule (literally a line across the page). In HTML5, the hr element represents a transition to a 
+separate, but related, topic. The style convention in HTML5 is a line across the page.  
+<ol reversed> 
+<li>bananas</li> 
+<li>mangoes</li> 
+<li>cherries</li> 
+<li>plums</li> 
+<li>peaches</li> 
+<li>grapes</li> 
+</ol>
+
+Table 9-8. The Supported Values for the type Attribute of the ol Element
+Value Description  Example 
+1  Decimal numbers (default)  1., 2., 3., 4. 
+a  Lowercase Latin characters  a., b., c., d. 
+A  Uppercase Latin characters  A., B., C., D. 
+i  Lowercase Roman characters  i., ii., iii., iv. 
+I  Uppercase Roman characters  I., II., III., IV. 
+If the reversed attribute is defined, then the list is numbered in descending order. However, as I 
+write this, none of the mainstream browsers implement the reversed attribute.
+
+You use the ul element to denote unordered lists. As with the ol element, items in the ul element are 
+denoted using the li element, which is described next.
+
+The li element denotes an item in a list. You can use it with the ul, ol, and menu elements (the menu
+element is not yet supported in the main stream browsers).
+
+<ol> 
+<li>bananas</li> 
+<li value="4">mangoes</li> 
+<li>cherries</li> 
+<li value="7">plums</li> 
+<li>peaches</li> 
+<li>grapes</li> 
+</ol> 
+
+<dl> 
+<dt>Apple</dt> 
+<dd>The apple is the pomaceous fruit of the apple tree</dd> 
+<dd><i>Malus domestica</i></dd> 
+<dt>Banana</dt> 
+<dd>The banana is the parthenocarpic fruit of the banana tree</dd> 
+<dd><i>Musa acuminata</i></dd> 
+<dt>Cherry</dt> 
+<dd>The cherry is the stone fruit of the genus <i>Prunus</i></dd> 
+</dl>
+
+<hgroup> 
+<h1>Fruits I Like</h1> 
+<h2>How I Learned to Love Citrus</h2> 
+</hgroup> 
+I like apples and oranges. 
+<h2>Additional fruits</h2> 
+I also like bananas, mangoes, cherries, apricots, plums, peaches and grapes. 
+<h3>More information</h3> 
+You can see other fruits I like <a href="fruitlist.html">here</a>. 
+<h1>Activities I like</h1> 
+<p>I like to swim, cycle and run. I am in training for my first triathlon, 
+but it is hard work.</p> 
+<h2>Kinds of Triathlon</h2> 
+There are different kinds of triathlon - sprint, Olympic and so on. 
+<h3>The kind of triathlon I am aiming for</h3> 
+I am aiming for Olympic, which consists of the following: 
+<ol> 
+<li>1.5km swim</li> 
+<li>40km cycle</li> 
+<li>10km run</li> 
+</ol> 
+Section, header, footer.<br/>
+Nav.<br/>
+The article element represents a self-contained piece of content in an HTML document that could, in 
+principle, be distributed or used independently from the rest of the page (such as through an RSS feed). 
+That's not to say you have to distribute it independently, just that independence is the guidance for 
+when to use this element.<br/>
+
+The aside element denotes content that is only tangentially related to the surrounding element. This is 
+similar to a sidebar in a book or magazine. The content has something to do with the rest of the page, 
+article, or section, but it isn't part of the main flow. It could be some additional background, a set of 
+links to related articles, and so on.<br/>
+
+When the address element is a descendant of an article element, it is assumed to provide contact 
+information for that article. Otherwise, when an address element is a child of a body element (and there 
+is no article element between the body and address elements), the address is assumed to provide 
+contact information for the entire document. 
+The address element must not be used to denote addresses that are not contact information for a 
+document or article. For example, you can’t use this element to denote addresses of customers or users 
+in the content of a document. Listing 10-9 shows the address element in use.<br/>
+
+The details element creates a section of the document that the user can expand to get further details 
+about a topic.
+
+The details element usually contains a summary element, which creates a label or title for the details 
+section.
+
+Most tables are straightforward grids, where each cell occupies one position in the grid. However, to 
+represent more complicated data, you sometimes need to create irregular tables, where cells are spread 
+across multiple rows and columns. You create such tables using the colspan and rowspan attributes of 
+the td and th elements.
+
+caption { display: table-caption; text-align: center; }
+<table border="1">
+	<caption>Caption</caption>
+	<tr>
+		<td>Cell.</td>
+	</tr>
+</table>	
+
+<form>
+<p> 
+<!-- autofocus -->
+<label for="fave">Fruit: <input autofocus id="fave" name="fave"/></label> 
+</p> 
+<fieldset>
+	<legend>Vote For Your Three Favorite Fruits</legend>
+	<label for="name">Name: <input id="nameFave" name="nameFave"/></label>
+	<label for="disabled"><input id="disabledFave" type="checkbox"/>Disabled</label>
+</fieldset> 
+
+<script>
+var disabledFave = document.getElementById("disabledFave");
+disabledFave.addEventListener("change", disabledFaveToggle, false);
+
+function disabledFaveToggle()
+{
+	var nameFave = document.getElementById("nameFave");
+	nameFave.disabled = !nameFave.disabled;
+}
+</script>
+
+<button>Submit Vote</button>
+
+ 
+
+<p> 
+<label for="yourname"> 
+Name: <input placeholder="Your name" id="yourname" name="yourname"/> 
+</label> 
+</p> 
+<p> 
+<label for="yourcity"> 
+City: <input placeholder="Where you live" id="yourcity" name="yourcity"/> 
+</label> 
+</p> 
+<p> 
+<label for="yourfave"> 
+Fruit: <input list="fruitlist" id="yourfave" name="yourfave"/> 
+</label> 
+</p> 
+<button type="button">Submit Vote</button> 
+ 
+<datalist id="fruitlist"> 
+<option value="Apples" label="Lovely Apples"/> 
+<option value="Oranges">Refreshing Oranges</option> 
+<option value="Cherries"/> 
+</datalist>
+<label for="yourColor"> 
+Color: <input id="color" name="color" type="color"/> 
+</label>
+
+<progress id="myprogress" value="10" max="100"></progress> 
+<p> 
+<button type="button" value="30">30%</button> 
+<button type="button" value="60">60%</button> 
+<button type="button" value="90">90%</button> 
+</p>
+
+</form>
+ 
+<script> 
+var buttons = document.getElementsByTagName('BUTTON'); 
+var progress = document.getElementById('myprogress'); 
+for (var i = 0; i < buttons.length; i++) { 
+buttons[i].onclick = function(e) { 
+progress.value = e.target.value; 
+}; 
+} 
+</script>  
+
+<meter id="mymeter" value="90" 
+min="10" max="100" low="40" high="80" optimum="60"></meter> 
+
+</body> 
+</html>
+ 

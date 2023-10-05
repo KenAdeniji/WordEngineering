@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-06T21:40:00 https://github.com/spencermountain/spacetime
+			var d = spacetime('March 1 2012', 'America/New_York')
+			//set the time
+			d = d.time('4:20pm')
+
+			d = d.goto('America/Los_Angeles')
+			d.time()
+			//'1:20pm'
+	-->
+	<head>
+		<title>https://github.com/spencermountain/spacetime</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="https://github.com/spencermountain/spacetime"/>
+		<meta name="keywords" content="Date, timezone"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated</label></td>
+					<td>
+						<input id="dated" type="dated" value="2012-03-01" autofocus/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fromTimezone">From Timezone</label></td>
+					<td>
+						<input id="fromTimezone" type="text" value="America/New_York"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="fromTime">From Time</label></td>
+					<td>
+						<input id="fromTime" type="time" value="16:20"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="toTimezone">To Timezone</label></td>
+					<td>
+						<input id="toTimezone" type="text" value="America/Los_Angeles"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="toTime">To Time</label></td>
+					<td><span id="toTime"></span></td>
+				</tr>
+			</table>
+		</div>
+
+		<script src="https://unpkg.com/spacetime"></script>
+		<script>
+			const datedElement = document.getElementById("dated");
+			
+			const fromTimezoneElement = document.getElementById("fromTimezone");
+			const fromTimeElement = document.getElementById("fromTime");
+			
+			const toTimezoneElement = document.getElementById("toTimezone");
+			const toTimeElement = document.getElementById("toTime");
+			
+			submitQueryElement = document.getElementById("submitQuery");
+			
+			function querySubmit()
+			{
+				var datedFrom = spacetime
+				(
+					datedElement.value,
+					fromTimezoneElement.value
+				);
+
+				var datedFromTime = datedFrom.time
+				(
+					fromTimeElement.value
+				);
+
+				var datedToGoto = datedFromTime.goto
+				(
+					toTimezoneElement.value
+				);
+				
+				var datedToTime = datedToGoto.time();
+
+				toTimeElement.textContent = datedToTime;
+			}  
+			
+			window.addEventListener("load", querySubmit, "false");
+			submitQuery.addEventListener("click", querySubmit, "false");
+		</script>  
+	</body>
+</html>
+
+

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-07-04	Created.
+	-->
+	<head>
+		<title>It was two thirty three, zero three, zero eight.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="It was two thirty three, zero three, zero eight."/>
+		<meta name="keywords" content="time, percentage, Common Era"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="time">Time</label></td>
+					<td>
+						<input id="time" type="time" value="02:32:03.008" step=".001" focus required/>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+				<tr>
+					<td><label for="inSeconds">Time seconds</label></td>
+					<td>
+						<span id="inSeconds"></span>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="inSecondsRatio">Time ratio</label></td>
+					<td>
+						<span id="inSecondsRatio"></span>
+					</td>
+				</tr>
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script>
+			var 	isPostBack = false;
+
+			const 	timeElement = document.getElementById("time");
+			const	inSecondsElement = document.getElementById("inSeconds");
+			const	inSecondsRatioElement = document.getElementById("inSecondsRatio");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var timeParam = urlParams.get("time");
+					if (timeParam)
+					{
+						timeElement.value = timeParam;
+					}
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				let timedInput = new Date("1970-01-01 " + timeElement.value);
+				
+				let hours = timedInput.getHours();
+				let minutes = timedInput.getMinutes();
+				let seconds = timedInput.getSeconds();
+				let milliSeconds = timedInput.getMilliseconds();
+				
+				let timeInSeconds =
+					(hours * 60 * 60) +
+					(minutes * 60) +
+					seconds +
+					(milliSeconds / 1000.000)
+					;
+				
+				inSecondsElement.innerHTML = timeInSeconds;
+				
+				let timeInSecondsRatio = 
+					timeInSeconds / (24.000 * 60 * 60);
+				
+				inSecondsRatioElement.innerHTML = timeInSecondsRatio;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

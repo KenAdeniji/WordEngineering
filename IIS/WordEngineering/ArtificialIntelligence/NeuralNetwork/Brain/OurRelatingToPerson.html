@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-09-15	http://tutorialzine.com/2017/04/10-machine-learning-examples-in-javascript
+		2017-09-15	http://github.com/BrainJS/brain.js
+		2017-09-16	http://en.wikipedia.org/wiki/Exclusive_or
+		2017-09-16	Created.
+		2017-09-16	http://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
+		2017-09-16	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+		2017-09-17	http://stackoverflow.com/questions/12272239/javascript-function-returning-an-object
+	-->
+	<head>
+		<title>Our Relating to Person</title>
+		<link rel="stylesheet" type="text/css" href="..\..\..\WordUnion\9432.css">
+	</head>
+	<body>
+		<div id="resultSet"></div>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/brain/0.6.3/brain.min.js"></script>
+		<script>
+			var net = null;
+			
+			var	Bitwise_Operators = [ "AND", "OR", "XOR" ];
+		
+			function decimal2binary(dec)
+			{
+				return (dec >>> 0).toString(2);
+			}
+
+			function decimalToBinaryConversion(dec)
+			{
+				var binaryValue = decimal2binary(dec);
+				var binaryString = ("0" + binaryValue).slice(-2);
+				
+				var leftString = binaryString.substring(0, 1);
+				var leftDigit = parseInt(leftString);
+				
+				var rightString = binaryString.slice(-1);
+				var rightDigit = parseInt(rightString);
+				
+				var obj = {
+						leftDigit: leftDigit,
+						rightDigit: rightDigit
+				};
+
+				return obj;
+			}
+			
+			function run()
+			{
+				var tableOutput = 
+					"<table><caption>Logical Functions</caption>" +
+					"<thead><tr>" +
+					"<th colspan='2'>Input</th>" + 
+					"<th>AND</th><th>OR</th><th>XOR</th>" +
+					"</tr><thead><tbody>";
+				
+				for (var index = 0; index <= 3; ++index)
+				{
+					var binaryNumbers = decimalToBinaryConversion(index);
+					
+					var	leftDigit = binaryNumbers.leftDigit;
+					var	rightDigit = binaryNumbers.rightDigit;
+					
+					tableOutput += 
+						"<tr><td>" + leftDigit + "</td><td>" + rightDigit + "</td>" +
+						"<td>" + net.run([Bitwise_Operators.indexOf("AND"), leftDigit, rightDigit]) + "</td>" +
+						"<td>" + net.run([Bitwise_Operators.indexOf("OR"), leftDigit, rightDigit]) + "</td>" +
+						"<td>" + net.run([Bitwise_Operators.indexOf("XOR"), leftDigit, rightDigit]) + "</td>"  
+				}
+				
+				tableOutput += "</tbody></table>";
+				
+				document.getElementById("resultSet").innerHTML = tableOutput;
+			}
+		
+			function stub()
+			{
+				//Here's an example showcasing how to approximate the logical functions using brain.js:
+				//create a simple feed forward neural network with backpropagation
+				net = new brain.NeuralNetwork();
+
+				train();
+				run();
+			}	
+		
+			function train()
+			{
+				var inputSet = [];
+				
+				for (var index = 0; index <= 3; ++index)
+				{
+					var binaryNumbers = decimalToBinaryConversion(index);
+					
+					var	leftDigit = binaryNumbers.leftDigit;
+					var	rightDigit = binaryNumbers.rightDigit;
+					
+					var bitwiseAND = leftDigit & rightDigit;
+					var bitwiseOR = leftDigit | rightDigit;
+					var bitwiseXOR = leftDigit ^ rightDigit;
+					
+					inputSet.push
+					(
+						{
+							input: [Bitwise_Operators.indexOf("AND"), leftDigit, rightDigit],
+							output: [bitwiseAND]
+						}
+					);
+
+					inputSet.push
+					(
+						{
+							input: [Bitwise_Operators.indexOf("OR"), leftDigit, rightDigit],
+							output: [bitwiseOR]
+						}
+					);
+					
+					inputSet.push
+					(
+						{
+							input: [Bitwise_Operators.indexOf("XOR"), leftDigit, rightDigit],
+							output: [bitwiseXOR]
+						}
+					);
+				}
+				
+				net.train(inputSet);
+			}
+
+			window.addEventListener("load", stub, false);
+		</script>
+	</body>
+</html>

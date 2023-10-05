@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-03-22	Created.	Crossword puzzle.
+	-->
+	<head>
+		<title>Time has adjusted, as the event.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="rows">Rows:<label></td>
+					<td><input type="number" id="rows" min="1" max="100" value="30" focus/></td>
+				</tr>
+				<tr>
+					<td><label for="columns">Columns:<label></td>
+					<td><input type="number" id="columns" min="1" max="100" value="30"/></td>
+				</tr>
+				<tr>
+					<td><label for="wordCount">Word Count:<label></td>
+					<td><input type="number" id="wordCount" min="1" max="100" value="20"/></td>
+				</tr>
+				<tr>
+					<td><label for="wordLike">Word Like:<label></td>
+					<td><input type="text" id="wordLike"/></td>
+				</tr>
+				<tr>
+					<td><label for="wordLength">Word Length:<label></td>
+					<td>
+						<input type="number" id="wordLengthMinimum" min="1" max="100" value="1"/>
+						-
+						<input type="number" id="wordLengthMaximum" min="1" max="100" value="100"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="Center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="words"></div>
+			<div id="crossWordPuzzle"></div>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>			
+			var isPostBack = false;
+
+			function getRandomIntInclusive(min, max) 
+			{
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					querySubmit()
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["wordCount"] = parseInt(document.getElementById("wordCount").value);
+				request["wordLike"] = document.getElementById("wordLike").value;
+				request["wordLengthMinimum"] = parseInt(document.getElementById("wordLengthMinimum").value);
+				request["wordLengthMaximum"] = parseInt(document.getElementById("wordLengthMaximum").value);
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/TimeHasAdjustedAsTheEvent.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderDataSet(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function renderDataSet(dataSet)
+			{
+				var	dataRow = "";
+				var	dataTable = "";
+				
+				var	bibleWord;
+				var words = "";
+				var	link;
+				var	literal = [];
+				
+				for (var table in dataSet) 
+				{
+					dataTable = dataSet[table];
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						bibleWord = dataRow["BibleWord"];
+						link = 	'/WordEngineering/WordUnion/BibleWord.html?' +
+								'bibleWord=' + bibleWord;
+						if (words) { words += ' '; }
+						words += `<a href=${link}>${bibleWord}</a>`;
+						literal.push(bibleWord);
+					}
+				}
+				document.getElementById("words").innerHTML = words;
+
+				var rows = parseInt(document.getElementById("rows").value);
+				var columns = parseInt(document.getElementById("columns").value);
+				
+				var twoDimensionArray = new Array(rows);
+
+				for (var i = 0; i < twoDimensionArray.length; i++)
+				{
+					twoDimensionArray[i] = new Array(columns);
+				}
+
+				for (var y = 0; y < rows; y++)
+				{
+					for (var x = 0; x < columns; x++)
+					{
+						twoDimensionArray[y][x] = null;
+					}	
+				}
+				
+				var	direction;
+				
+				var	directionNorth = false;
+				var	directionSouth = false;
+				
+				var	directionWest = false;
+				var	directionEast = false;
+
+				var	lengthOfWord;
+				
+				var	startY, startX;
+				
+				var notAvailable;
+				
+				var currentY, currentX;
+				
+				var wordIndex = 0;
+				var wordCount = literal.length;
+				
+				while ( true )
+				{
+					bibleWord = literal[wordIndex];
+					lengthOfWord = bibleWord.length;
+
+					direction = getRandomIntInclusive(0, 7);
+					
+					directionNorth = false;
+					directionSouth = false;
+				
+					directionWest = false;
+					directionEast = false;
+					
+					startX = -1;
+					startY = -1;
+
+					switch(directions[direction])
+					{
+						case 'North West':
+							directionNorth = true;
+							directionWest = true;
+							startY = getRandomIntInclusive(0, (rows - lengthOfWord + 1));
+							startX = getRandomIntInclusive((columns - lengthOfWord + 1), columns - 1);
+							break;
+						case 'North':
+							directionNorth = true;
+							startY = getRandomIntInclusive(0, (rows - lengthOfWord + 1));
+							startX = getRandomIntInclusive(0, columns - 1);
+							break;
+						case 'North East':
+							directionNorth = true;
+							directionEast = true;
+							startY = getRandomIntInclusive(0, (rows - lengthOfWord + 1));
+							startX = getRandomIntInclusive(0, (columns - lengthOfWord));
+							break;
+						case 'West':
+							directionWest = true;
+							startY = getRandomIntInclusive(0, rows - 1);
+							startX = getRandomIntInclusive((columns - lengthOfWord + 1), columns - 1);
+							break;
+						case 'East':
+							directionEast = true;
+							startY = getRandomIntInclusive(0, rows -  1);
+							startX = getRandomIntInclusive(0, (columns - lengthOfWord - 1));
+							break;
+						case 'South West':
+							directionSouth = true;
+							directionWest = true;
+							startY = getRandomIntInclusive((rows - lengthOfWord) + 1, length);
+							startX = getRandomIntInclusive((columns - lengthOfWord + 1), columns - 1);
+							break;
+						case 'South':
+							directionSouth = true;
+							startY = getRandomIntInclusive((rows - lengthOfWord) + 1, length);
+							startX = getRandomIntInclusive(0, columns - 1);
+							break;
+						case 'South East':
+							directionSouth = true;
+							directionEast = true;
+							startY = getRandomIntInclusive(rows - 1, (rows - lengthOfWord) + 1);
+							startX = getRandomIntInclusive(0, (columns - lengthOfWord - 1));
+							break;
+					}
+					
+					notAvailable = false;
+					
+					currentY = startY;
+					currentX = startX;
+					
+					for (var position = 0; position < lengthOfWord; ++position)
+					{
+						if 
+						(
+							twoDimensionArray[currentY][currentX] &&
+							literal[wordIndex][position] !=
+								twoDimensionArray[currentY][currentX]
+						)
+						{
+							notAvailable = true;
+							break;
+						}	
+						
+						if (directionNorth)
+						{
+							++currentY;
+						}
+
+						if (directionSouth)
+						{
+							--currentY;
+						}
+						
+						if (directionWest)
+						{
+							--currentX;
+						}
+
+						if (directionEast)
+						{
+							++currentX;
+						}
+					}
+					
+					if (notAvailable)
+					{
+						continue;
+					}	
+
+					currentY = startY;
+					currentX = startX;
+
+					for (var position = 0; position < lengthOfWord; ++position)
+					{
+						twoDimensionArray[currentY][currentX] =
+							literal[wordIndex][position];
+						
+						if (directionNorth)
+						{
+							++currentY;
+						}
+
+						if (directionSouth)
+						{
+							--currentY;
+						}
+						
+						if (directionWest)
+						{
+							--currentX;
+						}
+
+						if (directionEast)
+						{
+							++currentX;
+						}
+					}
+					
+					++wordIndex;
+					if (wordIndex >= wordCount)
+					{
+						break;
+					}
+				}	
+				
+				for (var y = 0; y < rows; ++y)
+				{
+					for (var x = 0; x < columns; ++x)
+					{
+						if (!twoDimensionArray[y][x])
+						{
+							twoDimensionArray[y][x] = 
+								String.fromCharCode(getRandomIntInclusive(65, 90));
+						}	
+					}
+				}	
+
+				var crossWordPuzzleTable = "<table>";
+
+				for (var y = 0; y < rows; ++y)
+				{
+					crossWordPuzzleTable += "<tr>";
+					for (var x = 0; x < columns; ++x)
+					{
+						crossWordPuzzleTable += "<td>" + twoDimensionArray[y][x] + "</td>";
+					}
+					crossWordPuzzleTable += "</tr>";
+				}
+				
+				crossWordPuzzleTable += "</table>";
+				
+				document.getElementById("crossWordPuzzle").innerHTML = crossWordPuzzleTable;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var directions = 
+			[
+				'North', 'North West', 'North East',
+				'South', 'South West', 'South East',
+				'West', 'East'
+			];
+	</script>
+</body>
+</html>

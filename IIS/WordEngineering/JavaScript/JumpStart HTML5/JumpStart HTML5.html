@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-01-06 	Created.
+	2015-01-06	Supplementary Materials. 	http://www.sitepoint.com/store/jump-start-html5-basics/
+	2015-01-06	Source code.				https://github.com/spbooks/jshtml-basics1
+-->
+<head>
+<title>JumpStart : HTML5</title>
+<style type="text/css">
+	body { background: blue; color: yellow; } 
+	input [required], input:required { background: red; color: gray; } 
+</style>
+</head>
+<body>
+<div align="center">
+	<input type="tel" required>
+	<input type="file" multiple accept=".mp3, .ogv">
+	<button id="query">Query</button>
+	<div id="response"></div>
+</div>
+<script>
+	window.addEventListener("load", work, false);
+
+	var query = document.getElementById("query");
+	query.addEventListener("click", work, false);
+
+	function work()
+	{
+		var resultSet = document.getElementById("response");
+		resultSet.innerHTML = 
+			"OnLine: " + window.navigator.onLine + "<br/>"
+			;
+	}
+</script>
+</body>
+</html>

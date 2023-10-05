@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feeds>
+
+  <Feed>
+    <Name>ScottGu Blog</Name>
+    <Url>http://weblogs.asp.net/scottgu/rss.aspx</Url>
+  </Feed>
+
+  <Feed>
+    <Name>Weblogs.ASP.NET Main Feed</Name>
+    <Url>http://weblogs.asp.net/MainFeed.aspx</Url>
+  </Feed>
+
+  <Feed status="disabled">
+    <Name>Bozo Blog</Name>
+    <Url>http://somesite.com/bozo.rss</Url>
+  </Feed>
+
+</Feeds>
+

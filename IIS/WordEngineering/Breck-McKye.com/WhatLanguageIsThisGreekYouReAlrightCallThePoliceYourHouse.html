@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-11-06 	Created. 	http://www.breck-mckye.com/blog/2019/10/modern-javascript-features-you-may-have-missed/
+	-->
+	<head>
+		<title>What language is this? Greek. You're alright. Call the police. Your house.</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Base" />
+		<meta name="keywords" content="Base" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ken Adeniji" />
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">0b11, 0o71, 0x1237, 12, oxFF, 0o10, 0f21, 120, 0pd, 0x111</textarea><br>
+			<input type="submit" id="submitQuery"><br><br>
+			<div id="response"></div>
+		</div>
+		<script>
+			function convertToInteger(array) 
+			{
+				var count = array.length;
+				var work, prefixBase, radix;
+				for (var n = 0; n < count; ++n)
+				{
+					work = array[n].trim().toLowerCase();
+					if (work.substring(0, 1) === "0")
+					{
+						prefixBase = work.substring(1, 2);
+						switch(prefixBase)
+						{
+							case "b":
+								radix = 2;
+								break;
+							case "o":
+								radix = 8;
+								break;
+							case "x":
+								radix = 16;
+								break;
+							default:
+								radix = -1;
+								break;
+						}
+						if (radix != -1)
+						{
+							array[n] = parseInt(work.substring(2), radix);						
+						}
+					}
+				}
+			}
+
+			function querySubmit()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+				convertToInteger(requestArray);
+				document.getElementById("response").innerHTML = requestArray.join(", ");;
+			}
+		
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

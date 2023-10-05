@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2017-06-08	One of the famous website, I know; threw us by comfort; as you go to ...
+		2017-06-12	https://stackoverflow.com/questions/11526504/minimum-and-maximum-date
+	-->
+	<head>
+		<title>One of the famous website, I know; threw us by comfort; as you go to ...</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td><label for="fromUntilDays">From Until (Days):</label></td>
+						<td>
+							<input type="number" ID="fromUntilDays" min="0"/>
+						</td>
+					</tr>						
+					<tr>
+						<td><label for="contactID">ContactID:</label></td>
+						<td>
+							<input type="number" ID="contactID" min="0"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Dated From:</label></td>
+						<td>
+							<label for="datedFromBegin">Begin</label>
+							<input type="DateTime" ID="datedFromBegin"/>
+							<label for="datedFromEnd">End</label>
+							<input type="DateTime" ID="datedFromEnd"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Dated Until:</label></td>
+						<td>
+							<label for="datedUntilBegin">Begin</label>
+							<input type="DateTime" ID="datedUntilBegin"/>
+							<label for="datedUntilEnd">End</label>
+							<input type="DateTime" ID="datedUntilEnd"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td><label>Biblical Calendar:</label></td>
+						<td>
+							<label for="biblicalCalendarYears">Years(s)</label>
+							<input type="number" ID="biblicalCalendarYears" size="4" maxlength="4" min="0" max="9999"/>
+							<label for="biblicalCalendarMonths">Month(s)</label>
+							<input type="number" ID="biblicalCalendarMonths" size="2" maxlength="2" min="0" max="12"/>
+							<label for="biblicalCalendarDays">Day(s)</label>
+							<input type="number" ID="biblicalCalendarDays" size="2" maxlength="2" min="0" max="31"/>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Gregorian Calendar:</label></td>
+						<td>
+							<label for="gregorianCalendarYears">Years(s)</label>
+							<input type="number" ID="gregorianCalendarYears" size="4" maxlength="4" min="0" max="9999"/>
+							<label for="gregorianCalendarMonths">Month(s)</label>
+							<input type="number" ID="gregorianCalendarMonths" size="2" maxlength="2" min="0" max="12"/>
+							<label for="gregorianCalendarWeeks">Week(s)</label>
+							<input type="number" ID="gregorianCalendarWeeks" size="1" maxlength="1" min="0" max="4"/>
+							<label for="gregorianCalendarDays">Day(s)</label>
+							<input type="number" ID="gregorianCalendarDays" size="1" maxlength="1" min="0" max="6"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>	
+				</table>
+			</fieldset>	
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			var fromUntilDaysDefault = 0;
+			
+			var	contactIDDefault = 0;
+			
+			var maxDate = new Date(8640000000000000);
+			var minDate = new Date(-8640000000000000);
+			
+			var datedMaximum = new Date("9999-12-31");
+			var datedMinimum = new Date("1973-01-01");
+			
+			var biblicalCalendarYearsDefault = 0; 
+			var biblicalCalendarMonthsDefault = 0; 
+			var biblicalCalendarDaysDefault = 0; 
+			
+			var gregorianCalendarYearsDefault = 0; 
+			var gregorianCalendarMonthsDefault = 0; 
+			var gregorianCalendarWeeksDefault = 0; 
+			var gregorianCalendarDaysDefault = 0; 
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				if (!scriptureReference) { return ""; }
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			function buildHead()
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function buildUri(address) 
+			{
+				if (!address) { return ""; }
+				var uri = address;
+				var protocolIndex = uri.indexOf(':');
+				if (protocolIndex < 0)
+				{
+					uri = "http://" + uri;
+				}
+				var uri = encodeURI(uri);
+				var hyperlink = "<a href=" + uri + ">" + address + "</a>";
+				return hyperlink;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var fromUntilDays = getParameterByName("fromUntilDays");
+					if (!fromUntilDays)
+					{
+						fromUntilDays = fromUntilDaysDefault;
+					}	
+					document.getElementById("fromUntilDays").value = fromUntilDays;
+					
+					var contactID = getParameterByName("contactID");
+					if (!contactID)
+					{
+						contactID = contactIDDefault;
+					}	
+					document.getElementById("contactID").value = contactID;
+
+					var biblicalCalendarYears = getParameterByName("biblicalCalendarYears");
+					if (!biblicalCalendarYears)
+					{
+						biblicalCalendarYears = biblicalCalendarYearsDefault;
+					}	
+					document.getElementById("biblicalCalendarYears").value = biblicalCalendarYears;
+					
+					var biblicalCalendarMonths = getParameterByName("biblicalCalendarMonths");
+					if (!biblicalCalendarMonths)
+					{
+						biblicalCalendarMonths = biblicalCalendarMonthsDefault;
+					}	
+					document.getElementById("biblicalCalendarMonths").value = biblicalCalendarMonths;
+					
+					var biblicalCalendarDays = getParameterByName("biblicalCalendarDays");
+					if (!biblicalCalendarDays)
+					{
+						biblicalCalendarDays = biblicalCalendarDaysDefault;
+					}	
+					document.getElementById("biblicalCalendarDays").value = biblicalCalendarDays;
+
+					var gregorianCalendarYears = getParameterByName("gregorianCalendarYears");
+					if (!gregorianCalendarYears)
+					{
+						gregorianCalendarYears = gregorianCalendarYearsDefault;
+					}	
+					document.getElementById("gregorianCalendarYears").value = gregorianCalendarYears;
+					
+					var gregorianCalendarMonths = getParameterByName("gregorianCalendarMonths");
+					if (!gregorianCalendarMonths)
+					{
+						gregorianCalendarMonths = gregorianCalendarMonthsDefault;
+					}	
+					document.getElementById("gregorianCalendarMonths").value = gregorianCalendarMonths;
+					
+					var gregorianCalendarWeeks = getParameterByName("gregorianCalendarWeeks");
+					if (!gregorianCalendarWeeks)
+					{
+						gregorianCalendarWeeks = gregorianCalendarWeeksDefault;
+					}	
+					document.getElementById("gregorianCalendarWeeks").value = gregorianCalendarWeeks;
+					
+					var gregorianCalendarDays = getParameterByName("gregorianCalendarDays");
+					if (!gregorianCalendarDays)
+					{
+						gregorianCalendarDays = gregorianCalendarDaysDefault;
+					}	
+					document.getElementById("gregorianCalendarDays").value = gregorianCalendarDays;
+					
+					isPostBack = true;
+				}
+				
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["fromUntilDays"] = document.getElementById("fromUntilDays").value;
+				
+				request["contactID"] = document.getElementById("contactID").value;
+				
+				var dated = document.getElementById("datedFromBegin").value;
+				var datedFromBegin = datedMinimum;
+				if (dated)
+				{
+					datedFromBegin = new Date(dated);
+				}
+				request["datedFromBegin"] = datedFromBegin.toISOString();
+
+				dated = document.getElementById("datedFromEnd").value;
+				var datedFromEnd = datedMaximum;
+				if (dated)
+				{
+					datedFromEnd = new Date(dated);
+				}	
+				request["datedFromEnd"] = datedFromEnd.toISOString();
+				
+				var dated = document.getElementById("datedUntilBegin").value;
+				var datedUntilBegin = datedMinimum;
+				if (dated)
+				{
+					datedUntilBegin = new Date(dated);
+				}	
+				request["datedUntilBegin"] = datedUntilBegin.toISOString();
+
+				dated = document.getElementById("datedUntilEnd").value;
+				var datedUntilEnd = datedMaximum;
+				if (dated)
+				{
+					datedUntilEnd = new Date(dated);
+				}	
+				request["datedUntilEnd"] = datedUntilEnd.toISOString();
+				
+				request["biblicalCalendarYears"] = document.getElementById("biblicalCalendarYears").value;
+				request["biblicalCalendarMonths"] = document.getElementById("biblicalCalendarMonths").value;
+				request["biblicalCalendarDays"] = document.getElementById("biblicalCalendarDays").value;
+				
+				request["gregorianCalendarYears"] = document.getElementById("gregorianCalendarYears").value;
+				request["gregorianCalendarMonths"] = document.getElementById("gregorianCalendarMonths").value;
+				request["gregorianCalendarWeeks"] = document.getElementById("gregorianCalendarWeeks").value;
+				request["gregorianCalendarDays"] = document.getElementById("gregorianCalendarDays").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/OneOfTheFamousWebsiteIKnowThrewUsByComfortAsYouGoTo.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'>";
+
+				info += buildHead
+				(
+					"RememberID",
+					"DatedFrom",
+					"DatedUntil",
+					"FromUntil",
+					"ToFro",
+					"YearMonthWeekDay",
+					"Commentary",
+					"ContactId",
+					"URI",
+					"ScriptureReference",
+					"FileName"
+				);
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var bookTitle = null;
+			
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						info += buildRow
+						(
+							dataRow["RememberID"],
+							dataRow["DatedFrom"],
+							dataRow["DatedUntil"],
+							dataRow["FromUntil"],
+							dataRow["ToFro"],
+							dataRow["YearMonthWeekDay"],
+							dataRow["Commentary"],
+							dataRow["ContactId"],
+							buildUri(dataRow["URI"]),
+							buildHyperlinkScriptureReference(dataRow["ScriptureReference"]),
+							dataRow["FileName"]
+						);
+					}
+				}
+				
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			} 
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

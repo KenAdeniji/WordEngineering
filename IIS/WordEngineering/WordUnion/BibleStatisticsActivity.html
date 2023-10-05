@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-06-12	Created.	BibleStatisticsActivity.html
+-->
+	<body>
+		<title>Bible Statistics Activity</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<div align="center">
+			<select id="bibleVersion"> </select>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function bibleWordHyperlink(bibleWord)
+			{
+				var uri = "<a href='BibleWord.html?bibleWord=" + bibleWord + "&" +
+					"logic=or&" + 
+					"wholeWords=true&" +
+					"bibleVersion=" + document.getElementById("bibleVersion").value +
+					"'>" +
+					bibleWord + 
+					"</a>";
+				return uri;	
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					renderBibleVersionSelect();
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleStatisticsActivity.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'><caption>Informs on activities in the Bible.</caption><thead><tr>" +
+						"<th>Words</th><th>First &amp; Last Occurrence</th><th>Verse(s) Count</th>" +
+						"</tr></thead><tbody>";
+				var dataRow = null;
+				var dataTable = null;
+				
+				var question = null;
+				var answer = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						info += "<tr>" +
+							"<td>" + bibleWordHyperlink(dataRow["Words"]) + "</td>" + 
+							"<td>" + 
+							scriptureReferenceHyperlink
+							(
+								dataRow["FirstScriptureReference"] + ", " + dataRow["LastScriptureReference"]
+							) + 
+							"</td>" +
+							"<td>" + dataRow["VerseCount"] + "</td>" + 
+							"</tr>";
+					}
+				}
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function renderBibleVersionSelect() 
+			{
+				var select = document.getElementById("bibleVersion");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = bibleVersions.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = bibleVersions[rowIndex][0];
+					option.value = bibleVersions[rowIndex][1];;
+					select.appendChild(option);
+				}
+			}
+			
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			var bibleVersions = [
+				["King James Version", "KingJamesVersion"],
+				["American Standard Bible", "AmericanStandardBible"],
+				["Young's Literal Translation", "YoungLiteralTranslation"] 
+			]
+		</script>
+
+</body>
+</html>

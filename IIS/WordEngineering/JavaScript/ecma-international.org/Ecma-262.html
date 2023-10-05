@@ -1,0 +1,46 @@
+<!--
+	2016-09-14	Created.	http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf
+-->
+
+<script>
+	var dated = new Date(2016, 8, 14);
+	console.log(dated);
+	
+	var numberValue = 20160914.57;
+	var numberInteger = parseInt(numberValue);
+	console.log(numberInteger);
+	
+	var numberFloat = parseFloat(numberValue);
+	console.log(numberFloat);
+	
+	var stringValue = numberValue.toString();
+	console.log(stringValue);
+	
+	//http://www.w3schools.com/js/js_object_definition.asp
+	function personClass(firstName, lastName, dateOfBirth)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		
+		this.getInfo = function () {
+			return `First name: ${this.firstName} Last name: ${this.lastName} Date of Birth: ${this.dateOfBirth}`
+		};		
+	}
+	
+	var personInstance = new personClass("John", "Doe", new Date(2016, 8, 14));
+	console.log(personInstance.getInfo());
+
+	var personObject = new Object();
+	personObject.firstName = "John";
+	personObject.lastName = "Doe";
+	personObject.dateOfBirth = new Date(2016, 8, 14);
+	console.log(personObject);
+	
+	var personJSON = {
+		"firstName": "John",
+		"lastName": "Doe",
+		"dateOfBirth": new Date(2016, 8, 14)
+	};
+	console.log(personJSON);
+</script>

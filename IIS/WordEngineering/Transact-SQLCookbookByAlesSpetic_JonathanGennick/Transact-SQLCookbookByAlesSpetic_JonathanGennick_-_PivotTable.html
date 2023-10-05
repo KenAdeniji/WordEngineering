@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-05-01	Created.	http://books.google.com/books?id=PHIX-qQas5QC
+		2018-05-01	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+		2018-05-01	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
+		2018-05-01	http://www.w3schools.com/jsref/jsref_fromcharcode.asp
+		2018-05-01	http://stackoverflow.com/questions/4345045/javascript-loop-between-date-ranges
+	-->
+	<head>
+		<title>Pivot Tables</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+			th, td{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even){
+				background: #dae5f4;
+			}
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="digitsCount">Digits Count:</label></td>
+					<td><input type="number" id="digitsCount" value="2" autofocus required/></td>
+				</tr>	
+				<tr>
+					<td><label for="AsciiFrom">Ascii From:</label></td>
+					<td><input type="number" ID="AsciiFrom" value="32" /></td>
+				</tr>	
+				<tr>
+					<td><label for="AsciiUntil">Ascii Until:</label></td>
+					<td><input type="number" ID="AsciiUntil" value="127" /></td>
+				</tr>
+				<tr>
+					<td><label for="datedFrom">Dated From:</label></td>
+					<td><input type="date" ID="datedFrom"/></td>
+				</tr>	
+				<tr>
+					<td><label for="datedUntil">Dated Until:</label></td>
+					<td><input type="date" ID="datedUntil"/></td>
+				</tr>	
+				<tr>
+					<td><label for="datedStep">Dated Step:</label></td>
+					<td><input type="number" ID="datedStep" value="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<div id="resultSetPad"> </div>
+			<div id="resultSetAscii"> </div>
+			<div id="resultSetDate"> </div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						var today = scriptLiteral9432.todayTimezoneOffset();
+						document.getElementById("datedFrom").value = today;
+
+						var addWeek = scriptLiteral9432.daysAdd(today, 7);
+						document.getElementById("datedUntil").value = addWeek;
+						
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function processAscii()
+			{
+				var AsciiFrom = parseInt(document.getElementById("AsciiFrom").value);
+				var AsciiUntil = parseInt(document.getElementById("AsciiUntil").value);
+				var AsciiCurrent = "<table>" + scriptLiteral9432.buildHead("Value", "Code");
+				for 
+				(
+					var AsciiIndex = AsciiFrom;
+					AsciiIndex < AsciiUntil;
+					++AsciiIndex
+				)
+				{
+					AsciiCurrent += scriptLiteral9432.buildRow
+					(
+						AsciiIndex,	
+						String.fromCharCode(AsciiIndex)
+					);
+				}
+				AsciiCurrent += "</table>";
+				document.getElementById("resultSetAscii").innerHTML = AsciiCurrent;
+			}
+
+			function processDate()
+			{
+				var datedFrom = new Date(document.getElementById("datedFrom").value);
+				var datedUntil = new Date(document.getElementById("datedUntil").value);
+				var datedStep = parseInt(document.getElementById("datedStep").value);
+				var datedCurrent = "";
+				for (var day = datedFrom; day <= datedUntil; day.setDate(day.getDate() + datedStep))				
+				{
+					datedCurrent += day + "<br/>";
+				}
+				document.getElementById("resultSetDate").innerHTML = datedCurrent;
+			}
+			
+			function processDigitsCount()
+			{
+				var digitsCount = parseInt(document.getElementById("digitsCount").value);
+				var digitsCurrent = "";
+				for 
+				(
+					var digitsIndex = 0, digitsTotal = Math.pow(10, digitsCount);
+					digitsIndex < digitsTotal;
+					++digitsIndex
+				)
+				{
+					if (digitsCurrent)
+					{
+						digitsCurrent += ", ";
+					}
+					if (digitsIndex % 5 === 0)
+					{
+						digitsCurrent += "<br/>";
+					}
+					digitsCurrent += ("" + digitsIndex).padStart(digitsCount, "0");
+				}
+				document.getElementById("resultSetPad").innerHTML = digitsCurrent;
+			}
+
+			function querySubmit()
+			{
+				processDigitsCount();
+				processAscii();
+				processDate();
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

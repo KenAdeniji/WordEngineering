@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-10-23	Created.
+-->
+	<head>
+		<title>Bible Statistics</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="resultSet"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			function pageLoad()
+			{
+				querySubmit();
+			}
+			
+			function querySubmit()
+			{
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleStatistics.asmx/Query",
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTable'>";
+				info += "<thead><tr><th>Question</th><th>Answer</th></tr>" +
+						"</thead><tbody>";
+				var dataRow = null;
+				var dataTable = null;
+				
+				var question = null;
+				var answer = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						question = dataRow["question"];
+						answer = dataRow["answer"];
+						
+						if (question.indexOf("Duplicate Verses") >= 0)
+						{
+							info += "<tr><td>" + question + "</td><td>" + 
+								"<a href='LetMeBeTheWay.html'>" + answer + "</a></td></tr>";
+						}
+						else
+						{
+							info += "<tr><td>" + question + "</td><td>" + 
+								scriptureReferenceHyperlink(answer) + "</td></tr>";
+						}
+					}
+				}
+				info += "</tbody></table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

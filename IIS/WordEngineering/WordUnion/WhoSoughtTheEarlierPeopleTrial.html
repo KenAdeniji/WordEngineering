@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-01-13	Created. WhoSoughtTheEarlierPeopleTrial.html
+		2017-01-13	Love fears, no more.
+	-->
+	<head>
+		<title>Who sought the earlier people trial.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">		
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<label for="word">Word:</label>
+				<input id="word" type="text" autofocus/>
+				<input type="submit" id="submitQuery">
+			</fieldset>
+			<br>	
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function buildRow()
+			{
+				var rowStub = "<tr>";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					rowStub += "<td>" + arguments[columnIndex] + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				request["word"] = document.getElementById("word").value;
+				
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/WhoSoughtTheEarlierPeopleTrial",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var word = getParameterByName("word");
+					if (word != "")
+					{
+						document.getElementById("word").value = word;
+					}
+					querySubmit();
+					isPostBack = true;
+				}
+			}
+			
+			function render(data) 
+			{
+				var info = "<table>";
+				var dataRow = null;
+				
+				var scriptureReference = null;
+				var scriptureReferenceHyperlink = null;
+				
+				for (var rowIndex = 0, rowCount = data.length; rowIndex < rowCount; ++rowIndex)
+				{
+					dataRow = data[rowIndex];
+					
+					scriptureReferenceHyperlink = buildHyperlinkScriptureReference(dataRow["ScriptureReference"]);
+					
+					info += buildRow
+					(
+						rowIndex + 1,
+						dataRow["Word"],
+						dataRow["Id"],
+						scriptureReferenceHyperlink,
+						(dataRow["Id"] * 100 / data[rowCount - 1]["Id"]).toFixed(2)
+					);
+				}
+
+				info += "</table>";
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

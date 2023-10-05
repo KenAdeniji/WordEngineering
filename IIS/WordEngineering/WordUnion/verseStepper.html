@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+	body 
+	{
+		background-color: olive;
+		color: white;
+	}	
+</style>
+<button onclick="startWorker()">Start</button>
+<button onclick="pauseOrResumeWorker()" id="pauseOrResumeWorker">Pause</button>
+<button onclick="stopWorker()">Stop</button>
+<br/><br/>
+<table id="result" border="1">
+	<tbody>
+		<tr><td>Scripture Reference</td><td id="scriptureReference"></td></tr>
+		<tr><td>American Standard Bible</td><td id="americanStandardBible"></td></tr>
+		<tr><td>King James Version (KJV)</td><td id="kjv"></td></tr>
+		<tr><td>Young Literal Translation</td><td id="youngLiteralTranslation"></td></tr>
+	</tbody>
+</table>
+<script>
+var worker;
+
+function pauseOrResumeWorker()
+{
+	if(typeof(worker) == "undefined") {
+		return;
+	}	
+	var message = document.getElementById("pauseOrResumeWorker").innerHTML;
+	worker.postMessage(message);
+	message = (message === "Pause") ? "Resume" : "Pause";
+	document.getElementById("pauseOrResumeWorker").innerHTML = message;
+}
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(worker) == "undefined") {
+            worker = new Worker("verseStepper.js");
+        }
+        worker.onmessage = function(event) {
+			document.getElementById("scriptureReference").innerHTML = event.data[8];
+			document.getElementById("americanStandardBible").innerHTML = event.data[4];
+			document.getElementById("kjv").innerHTML = event.data[3];
+			document.getElementById("youngLiteralTranslation").innerHTML = event.data[5];
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+    }
+}
+
+function stopWorker() {
+    worker.terminate();
+    worker = undefined;
+}
+</script>
+
+</body>
+</html>

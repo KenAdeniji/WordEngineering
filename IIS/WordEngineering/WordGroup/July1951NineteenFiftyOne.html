@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-04-18	Created.	
+	-->
+	<head>
+		<title>July 1951 nineteen fifty one.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Using Linq; for condition and sorting."/>
+		<meta name="keywords" content="Bible, book, Linq, where, order by"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="bookIDMinimum">Book ID Minimum:</label></td>
+					<td><input type="number" id="bookIDMinimum" min="1" max="66" value="1"/></td>
+				</tr>
+				<tr>
+					<td><label for="bookIDMaximum">Book ID Maximum:</label></td>
+					<td><input type="number" id="bookIDMaximum" min="1" max="66" value="66"/></td>
+				</tr>
+				<tr>
+					<td><label for="bookTitle">Book Title:</label></td>
+					<td><input type="text" id="bookTitle"/></td>
+				</tr>
+				<tr>
+					<td><label for="sortBy">Sort By:</label></td>
+					<td><select id="sortBy"></select></td>
+				</tr>
+				<tr>
+					<td><label for="sortDirection">Sort Direction:</label></td>
+					<td><select id="sortDirection"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						scriptLiteral9432.buildSelect("sortBy", sortBys);
+						scriptLiteral9432.buildSelect("sortDirection", scriptLiteral9432.sortDirections);
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["bookIDMinimum"] = parseInt(document.getElementById("bookIDMinimum").value);
+				request["bookIDMaximum"] = parseInt(document.getElementById("bookIDMaximum").value);
+				request["bookTitle"] = document.getElementById("bookTitle").value;
+				request["sortBy"] = document.getElementById("sortBy").value;
+				request["sortDirection"] = document.getElementById("sortDirection").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/July1951NineteenFiftyOne.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var sortBys = 
+				[
+					["Id", "Id"],
+					["Title", "Title"]
+				];	
+	</script>
+</body>
+</html>

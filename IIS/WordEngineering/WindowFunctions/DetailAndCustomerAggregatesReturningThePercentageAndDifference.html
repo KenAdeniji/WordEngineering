@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-02-10	Created.	http://the-eye.eu/public/Books/IT%20Various/microsoft_sql_server_2012_high-performance_t-sql_using_window_functions.pdf
+	-->
+	<head>
+		<title>Detail and Customer Aggregates Returning the Percentage and Difference</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WindowFunctions/DetailAndCustomerAggregatesReturningThePercentageAndDifference.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					},
+					timeout: 36000
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

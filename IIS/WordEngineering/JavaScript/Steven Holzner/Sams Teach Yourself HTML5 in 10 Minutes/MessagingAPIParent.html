@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-10-21	Fremont Library. Steven Holzner. Sams Teach Yourself HTML5 in 10 Minutes.
+		Messaging API
+
+    iframe.contentWindow is a reference to the window inside the <iframe>.
+    iframe.contentDocument is a reference to the document inside the <iframe>.
+		
+-->
+	<head>
+		<title>Messaging API Parent</title>
+	</head>
+	<body>
+		<iframe
+			id="content"
+			style="border:solid black; height:300px; width:400px;"
+			src="MessagingAPIChild.html"
+		>	
+		</iframe>
+		<br>
+		<label for="message">Message to Send</label>
+		<input id="message" type="text">
+		<input id="send" type="button" value="Send">
+		
+		<script>
+			function send()
+			{
+				var message = document.getElementById("message").value;
+				var location = window.location,
+					protocol = location.protocol,
+					host = location.host;
+				
+				var iframeNode = document.getElementById("content");
+
+				iframeNode.contentWindow.postMessage
+				(
+					message,
+					protocol + "//" + host
+				);
+			}
+			
+			document.getElementById("send").addEventListener("click", send, false);
+		</script>
+	</body>
+</html>

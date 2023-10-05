@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-04-29	Created.	http://www.dannyg.com/examples/res2/resistor.htm
+		2016-04-29	https://en.wikipedia.org/wiki/Electronic_color_code#Resistor_color-coding
+		2016-04-29	A collection of our view.
+		2016-05-01	view-source:http://dannyg.com/examples/res2/resistor.htm
+	-->
+	<head>
+		<title>Resistor Color Coding</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Resistor Color Coding</legend>
+				<table border="1">
+					<tr>
+						<td>band A is the first significant <select id="bandAFirstSignificant"></select>&nbsp;&nbsp;&nbsp;</td>
+						<td>band B is the second significant <select id="bandBSecondSignificant"></select>&nbsp;&nbsp;&nbsp;</td>
+						<td>band C is the decimal multiplier <select id="bandCMultiplier"></select>&nbsp;&nbsp;&nbsp;</td>
+					</tr>
+				</table>
+				<br>
+			</fieldset>
+			Resistance: <span id="resistance"></span><br>
+			<div id="informationSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{ 
+				if (!isPostBack) 
+				{ 
+					createSelectOptions("bandAFirstSignificant");
+					createSelectOptions("bandBSecondSignificant");
+					createSelectOptions("bandCMultiplier");
+					createInformationSet();
+					isPostBack = true;
+				} 
+			}
+		
+			function calculateResistance(selectObject)
+			{
+				var bandAFirstSignificantIndex = document.getElementById("bandAFirstSignificant").value;
+				var bandAFirstSignificantValue = resistorColorCoding[bandAFirstSignificantIndex][1] * 10;
+
+				var bandBSecondSignificantIndex = document.getElementById("bandBSecondSignificant").value;
+				var bandBSecondSignificantValue = resistorColorCoding[bandBSecondSignificantIndex][1];
+
+				var bandCMultiplierIndex = document.getElementById("bandCMultiplier").value;
+				var bandCMultiplierValue = Math.pow( 10, resistorColorCoding[bandCMultiplierIndex][1]);
+				
+				var resistor = (bandAFirstSignificantValue + bandBSecondSignificantValue) * bandCMultiplierValue;
+				document.getElementById("resistance").innerHTML = unit(resistor);
+				
+				selectObject.target.style.backgroundColor = resistorColorCoding[selectObject.target.selectedIndex][0];
+			}
+			
+			function createInformationSet()
+			{
+				var table = "<table border='1'><thead><tr><th>Color</th><th>Multiplier</th><th>Tolerance</th></thead><tbody>";
+				for 
+				(
+					var index = 0, length = resistorColorCoding.length;
+					index < length;
+					++index
+				)
+				{	
+					table += 	"<tr><td style='background:" + resistorColorCoding[index][0] + "'>" + 
+								resistorColorCoding[index][0] + "</td>" +
+								"<td>" + resistorColorCoding[index][1] + "</td>" +
+								"<td>" + resistorColorCoding[index][2] + "</td></tr>"
+				}
+				table += "</tbody></table>";
+				document.getElementById("informationSet").innerHTML = table;
+			}
+			
+			function createSelectOptions(band)
+			{
+				var select = document.getElementById(band);
+				select.options.length = 0;
+
+				for 
+				(
+					var index = 0, length = resistorColorCoding.length;
+					index < length;
+					++index
+				)
+				{	
+					var option = document.createElement("option");
+					option.text = resistorColorCoding[index][0];
+					option.value = index;
+					select.appendChild(option);
+				}
+			}
+		
+			function unit(ohmage) {
+				var result = "";
+				if (ohmage >= 1e6) {
+					result = (ohmage / 1e6) + " M ohms";
+				} 
+				else if (ohmage >= 1e3) {
+					result = (ohmage / 1e3) + " K ohms";				
+				}
+				else {
+					result = ohmage  + " ohms";				
+				}
+				return result;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("bandAFirstSignificant").addEventListener("change", calculateResistance, false);
+			document.getElementById("bandBSecondSignificant").addEventListener("change", calculateResistance, false);
+			document.getElementById("bandCMultiplier").addEventListener("change", calculateResistance, false);
+			
+			var resistorColorCoding	= [
+				[ 'Black', 0, 0 ],
+				[ 'Brown', 1, 1 ],
+				[ 'Red', 2, 2 ],
+				[ 'Orange', 3, 0 ],
+				[ 'Yellow', 4, 5 ],
+				[ 'Green', 5, .5 ],
+				[ 'Blue', 6, .25 ],
+				[ 'Violet', 7, .1 ],
+				[ 'Gray', 8, .05 ],
+				[ 'White', 9, 0 ],
+				[ 'Gold', -1, 5 ],
+				[ 'Silver', -2, 10 ]
+			];
+		</script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-05-31	Created.	ClientBrowser.html
+		-->
+		<title>Client Browser</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+			th, td{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even){
+				background: #dae5f4;
+			}
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>
+		<script>
+	function buildHead() 
+	{
+		var rowStub = "<thead><tr>";
+		var columnValue = "";
+		for 
+		(
+			var columnIndex = 0, columnCount = arguments.length;
+			columnIndex < columnCount;
+			++columnIndex
+		)
+		{
+			columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+			rowStub += "<th>" + columnValue + "</th>";
+		}
+		rowStub += "</tr></thead>";
+		return rowStub;
+	}
+
+	function buildRow() 
+	{
+		var rowStub = "<tr>";
+		var columnValue = "";
+		for 
+		(
+			var columnIndex = 0, columnCount = arguments.length;
+			columnIndex < columnCount;
+			++columnIndex
+		)
+		{
+			columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+			rowStub += "<td>" + columnValue + "</td>";
+		}
+		rowStub += "</tr>";
+		return rowStub;
+	}
+
+			function pageLoad()
+			{
+				var resultSet = "<table border='1'>" +
+					"<caption>Browser</caption>" +
+					buildHead("Key", "Value") +
+					"<tbody>" + 
+					buildRow("appCodeName", navigator.appCodeName) +
+					buildRow("appName", navigator.appName) +
+					buildRow("appVersion", navigator.appVersion) +
+					buildRow("cookieEnabled", navigator.cookieEnabled) +
+					buildRow("language", navigator.language) +
+					buildRow("onLine", navigator.onLine) +
+					buildRow("platform", navigator.platform) +
+					buildRow("product", navigator.product) +
+					buildRow("userAgent", navigator.userAgent) +
+					buildRow("javaEnabled()", navigator.javaEnabled()) +
+					"</tbody></table>"
+					;
+				document.getElementById("resultSet").innerHTML = resultSet;		
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

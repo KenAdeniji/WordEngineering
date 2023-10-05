@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	2016-07-05	http://www.adobe.com/devnet/archive/html5/articles/css3-2d-and-3d-graphics-and-animation-effects.html
+-->
+	<head>  
+		<title>Hover Over the Multi-Column Text</title>  
+		<style>
+			/* animation effects */
+			#columns:hover, #line1:hover {
+				transition: transform 3.0s ease;
+				transform : scale(0.5) skew(-20deg, -30deg) rotate(45deg);
+			}
+
+			#line1:hover {
+				background-image: -gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#00f));
+				border-radius: 8px;
+			}
+
+			#columns {
+				column-count : 3;
+				column-gap : 80px;
+				column-rule : 1px solid rgb(255,255,255);
+			}
+
+			#line1 {
+				width:100%;
+				height:20px;
+				color: red;
+				font-size: 24px;
+				background-image: -gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f00));
+				border-radius: 4px;
+			}
+		</style>  
+	</head>
+
+	<body>
+		<header>
+			<h1>Hover Over the Multi-Column Text:</h1>
+		</header>
+
+		<div id="outer">
+			<p id="line1"></p>
+			<article>
+				<div id="columns">
+					<p>The first five books of Moses - the Law.</p>
+					<p>The major prophets are Isaiah, Jeremiah, Ezekiel, and Daniel.</p> 
+					<p>The four book that make-up the Gospel are ... Matthew, Mark, Luke, and John.</p> 
+				</div>
+			</article>
+		</div>
+	</body>
+</html>

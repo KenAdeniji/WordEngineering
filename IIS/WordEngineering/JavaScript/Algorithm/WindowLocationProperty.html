@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-07T08:15:00 ... 2021-02-07T09:23:00 https://dev.to/samanthaming/window-location-cheatsheet-4edl
+		2021-02-07T08:15:00	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+	-->
+	<head>
+		<title>Window Location Property</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Window Location Property"/>
+		<meta name="keywords" content="window.location"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script>
+			var obj = window.location;
+			document.write(`<table>`);
+			var propertyValue;
+			for (const prop in obj) {
+				propertyValue = obj[prop];
+				if
+				(
+					obj.hasOwnProperty(prop) && propertyValue.indexOf("function") < 0
+				) 
+				{
+					document.write
+					(
+						`<tr><td>obj.${prop}</td><td>${propertyValue}</td></tr>`
+					);
+				}
+			}
+			document.write(`</table>`);
+		</script>
+	</body>
+</html>
+

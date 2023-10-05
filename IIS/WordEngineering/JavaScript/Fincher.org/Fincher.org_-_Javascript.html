@@ -1,0 +1,28 @@
+<p>blah, blah, blah, blah, blah.</p>
+<script type="text/javascript" >
+    document.write("Last Updated:" + 
+            document.lastModified);
+            document.close();
+</script>
+<p>yada, yada, yada.</p>
+
+<script type="text/javascript">
+function movie(title, director) {
+   this.title = title;
+   this.director = director;
+   this.toString = function movieToString() {
+         return("title: "+this.title+"  director: "+this.director);
+      }
+   }
+   var narnia = new movie("Narni","Andrew Adamson");
+   document.write(narnia.toString());
+   
+var officeSpace = new movie("OfficeSpace");
+var narnia = new movie("Narnia","Andrew Adamson");
+movie.prototype.isComedy = false; //add a field to the movie's prototype
+document.write(narnia.toString());
+document.write("<br />Narnia a comedy? "+narnia.isComedy);
+officeSpace.isComedy = true; //override the default just for this object
+document.write("<br />Office Space a comedy? "+officeSpace.isComedy);   
+</script>
+

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-08-14	PhraseTwoOrMoreWordsThatReOccur.html
+	-->
+	<head>
+		<title>Phrase Two or More Words that Re-Occur</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="biblePhrase">Phrase</label></td>
+					<td colspan="2"><input type="text" ID="biblePhrase" size="60"/>
+				</tr>
+				<tr>
+					<td><label for="firstOccurrence">First Occurrence</label></td>
+					<td colspan="2"><input type="text" ID="firstOccurrence" size="30"/>
+				</tr>
+				<tr>
+					<td><label for="lastOccurrence">Last Occurrence</label></td>
+					<td colspan="2"><input type="text" ID="lastOccurrence" size="30"/>
+				</tr>
+				<tr>
+					<td><label for="frequencyOfOccurrenceFrom">Frequency of Occurrence</label></td>
+					<td><input type="number" ID="frequencyOfOccurrenceFrom" size="30"/>
+					<td><input type="number" ID="frequencyOfOccurrenceUntil" size="30"/>
+				</tr>
+				<tr>
+					<td><label for="phraseTwoOrMoreWordsThatReOccurIDFrom">ID</label></td>
+					<td><input type="number" ID="phraseTwoOrMoreWordsThatReOccurIDFrom" size="30"/>
+					<td><input type="number" ID="phraseTwoOrMoreWordsThatReOccurIDUntil" size="30"/>
+				</tr>
+				<tr>
+					<td><label for="alphabetSequenceIndexFrom">Alphabet Sequence Index</label></td>
+					<td><input type="number" ID="alphabetSequenceIndexFrom" size="30"/>
+					<td><input type="number" ID="alphabetSequenceIndexUntil" size="30"/>
+				</tr>
+				<tr><td colspan="3" align="center"><input type="submit" id="submitQuery"></td></tr>	
+			</table>
+		</div>
+		</fieldset>
+		<br><br>
+		<div align="center">	
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function buildHyperlinkBibleWord(bibleWord, logic, wholeWords)
+			{
+				var uri = encodeURI
+				(
+					'BibleWord.html?bibleWord=' + bibleWord + 
+					"&logic=" + logic +
+					"&wholeWords=" + wholeWords 
+				);
+				var bibleWordHyperlink = "<a href=" + uri + ">" + bibleWord + "</a>";
+				return bibleWordHyperlink;
+			}
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var biblePhrase = getParameterByName("biblePhrase");
+					document.getElementById("biblePhrase").value = biblePhrase;
+					
+					if (biblePhrase)
+					{
+						querySubmit();	
+						isPostBack = true;
+					}
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+
+				request["biblePhrase"] = document.getElementById("biblePhrase").value;
+				request["firstOccurrence"] = document.getElementById("firstOccurrence").value;
+				request["lastOccurrence"] = document.getElementById("lastOccurrence").value;
+/*
+				request["frequencyOfOccurrenceUntil"] = document.getElementById("frequencyOfOccurrenceUntil").value;
+				request["frequencyOfOccurrenceUntil"] = document.getElementById("frequencyOfOccurrenceUntil").value;
+				request["phraseTwoOrMoreWordsThatReOccurIDUntil"] = document.getElementById("phraseTwoOrMoreWordsThatReOccurIDUntil").value;
+				request["phraseTwoOrMoreWordsThatReOccurIDUntil"] = document.getElementById("phraseTwoOrMoreWordsThatReOccurIDUntil").value;
+				request["alphabetSequenceIndexUntil"] = document.getElementById("alphabetSequenceIndexUntil").value;
+				request["alphabetSequenceIndexUntil"] = document.getElementById("alphabetSequenceIndexUntil").value;
+*/				
+				var frequencyOfOccurrenceFrom = document.getElementById("frequencyOfOccurrenceFrom").value;
+				if (frequencyOfOccurrenceFrom)
+				{
+					 frequencyOfOccurrenceFrom = parseInt(frequencyOfOccurrenceFrom);
+				}
+				else
+				{
+					frequencyOfOccurrenceFrom = -1;
+				}
+				request["frequencyOfOccurrenceFrom"] = frequencyOfOccurrenceFrom;
+
+
+				var frequencyOfOccurrenceUntil = document.getElementById("frequencyOfOccurrenceUntil").value;
+				if (frequencyOfOccurrenceUntil)
+				{
+					 frequencyOfOccurrenceUntil = parseInt(frequencyOfOccurrenceUntil);
+				}
+				else
+				{
+					frequencyOfOccurrenceUntil = -1;
+				}
+				request["frequencyOfOccurrenceUntil"] = frequencyOfOccurrenceUntil;
+				
+				var phraseTwoOrMoreWordsThatReOccurIDFrom = document.getElementById("phraseTwoOrMoreWordsThatReOccurIDFrom").value;
+				if (phraseTwoOrMoreWordsThatReOccurIDFrom)
+				{
+					 phraseTwoOrMoreWordsThatReOccurIDFrom = parseInt(phraseTwoOrMoreWordsThatReOccurIDFrom);
+				}
+				else
+				{
+					phraseTwoOrMoreWordsThatReOccurIDFrom = -1;
+				}
+				request["phraseTwoOrMoreWordsThatReOccurIDFrom"] = phraseTwoOrMoreWordsThatReOccurIDFrom;
+
+
+				var phraseTwoOrMoreWordsThatReOccurIDUntil = document.getElementById("phraseTwoOrMoreWordsThatReOccurIDUntil").value;
+				if (phraseTwoOrMoreWordsThatReOccurIDUntil)
+				{
+					 phraseTwoOrMoreWordsThatReOccurIDUntil = parseInt(phraseTwoOrMoreWordsThatReOccurIDUntil);
+				}
+				else
+				{
+					phraseTwoOrMoreWordsThatReOccurIDUntil = -1;
+				}
+				request["phraseTwoOrMoreWordsThatReOccurIDUntil"] = phraseTwoOrMoreWordsThatReOccurIDUntil;
+
+				var alphabetSequenceIndexFrom = document.getElementById("alphabetSequenceIndexFrom").value;
+				if (alphabetSequenceIndexFrom)
+				{
+					 alphabetSequenceIndexFrom = parseInt(alphabetSequenceIndexFrom);
+				}
+				else
+				{
+					alphabetSequenceIndexFrom = -1;
+				}
+				request["alphabetSequenceIndexFrom"] = alphabetSequenceIndexFrom;
+
+
+				var alphabetSequenceIndexUntil = document.getElementById("alphabetSequenceIndexUntil").value;
+				if (alphabetSequenceIndexUntil)
+				{
+					 alphabetSequenceIndexUntil = parseInt(alphabetSequenceIndexUntil);
+				}
+				else
+				{
+					alphabetSequenceIndexUntil = -1;
+				}
+				request["alphabetSequenceIndexUntil"] = alphabetSequenceIndexUntil;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/PhraseTwoOrMoreWordsThatReOccur.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var occurrences = data["Table"].length;
+				var caption = "<caption>Phrase Two or More Words that Re-Occur - (Occurrences: " +
+					occurrences + ") </caption>";
+				var info = 	"<table>" + caption + "<thead><tr><th>ID</th><th>Bible Phrase</th>" + 
+					"<th>First Occurrence</th>" +
+					"<th>Last Occurrence</th>" +	
+					"<th>Difference</th>" +	
+					"<th>Frequency of Occurrence</th>" +
+					"<th>Alphabet Sequence Index</th>"
+					+ "</thead>";
+				var dataRow = null;
+				var dataTable = null;
+
+				
+				 
+				var lastOccurrence;
+				var difference;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						
+						
+						var lastOccurrence = dataRow.LastOccurrence;
+						if (!lastOccurrence)
+						{
+							lastOccurrence = "";
+						}	
+
+						var difference = dataRow.Difference;
+						if (!difference)
+						{
+							difference = "";
+						}	
+						
+						info += "<tr>" +
+							"<td>" + dataRow.phraseTwoOrMoreWordsThatReOccurID + "</td>" +
+							"<td>" + buildHyperlinkBibleWord(dataRow.BiblePhrase, 'phrase', true) + "</td>" +
+							"<td>" + buildHyperlinkScriptureReference(dataRow.FirstOccurrence) + "</td>" +
+							"<td>" + 
+								(lastOccurrence ? buildHyperlinkScriptureReference(lastOccurrence) : "") +
+							"</td>" +	
+							"<td>" + difference + "</td>" +	
+							"<td>" + dataRow.FrequencyOfOccurrence + "</td>" +
+							"<td>" + dataRow.AlphabetSequenceIndex + "</td>" +
+							"</tr>";
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

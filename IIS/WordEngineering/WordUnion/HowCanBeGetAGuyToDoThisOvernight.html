@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-10-01  Created		HowCanBeGetAGuyToDoThisOvernight.html
+			2016-07-06	Style.
+		-->
+		<title>How can be get a guy to do this overnight?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Day occurrences"/>
+		<meta name="keywords" content="Bible, day occurrences"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="response" align="center"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+		    var isPostBack = false;
+			var request = {};
+			request["storedProcedure"] = "usp_HowCanBeGetAGuyToDoThisOvernight";
+			var requestJson = JSON.stringify(request);
+	
+		    function querySubmit() {
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/AppreciateTheRestWebService.asmx/Query",
+					data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        render( JSON.parse(data.d) );
+				    },
+				    error: function (xhr) {
+				        document.getElementById("response").innerHTML = 
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						;
+				    }
+				});
+		    }
+
+		    function render(data) {
+		        var info = "<table border=1><caption>Frequency of Occurrence - Day</caption>";
+
+		        var dataRow = null;
+		        var dataTable = null;
+
+		        var dayName = null;
+		        var dayCount = null;
+
+		        info += "<tr><th>Name</th><th>Count</th></tr>";
+		        for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+		                dayName = dataRow["DayName"];
+		                dayCount = dataRow["DayCount"];
+
+		                info += "<tr><td>" + dayName + "</td><td>" + dayCount + "</td></tr>";
+		            }
+		        }
+		        info += "</table>"
+		        document.getElementById("response").innerHTML = info;
+		    }
+
+		    window.addEventListener("load", querySubmit, false);
+		</script>
+	</body>
+</html>

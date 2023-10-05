@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-11-08	Created.
+				As an Asian male, older, walked eastward, at Union City BART Station; there was a Marina Food shopping cart further East.
+	-->
+	<head>
+		<title>This paper, will argue; the sum of cost</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="response"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='ScriptureReference.html?scriptureReference=" + 
+				 	scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+		
+		    function querySubmit() {
+		        var request = {};
+
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/ThisPaperWillArgueTheSumOfCost.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        render(informationSet);
+				    },
+				    error: function (xhr) {
+				        $("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+		    }
+
+		    function render(data) {
+		        var info = "<table id='resultSet' border=1>";
+
+		        var dataRow = null;
+		        var dataTable = null;
+
+				var currency, amount, payee, payer, merchandise, scriptureReference, commentary;
+
+		        info += "<tr><th>Currency</th><th>Amount</th><th>Payee</th><th>Payer</th>" +
+						"<th>Merchandise</th><th>Scripture Reference</th><th>Commentary</th></tr>";
+		        for (var table in data) {
+		            dataTable = data[table];
+
+		            for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex) {
+		                dataRow = dataTable[rowIndex];
+
+		                currency = dataRow["Currency"];
+						amount = dataRow["Amount"];
+						payee = dataRow["Payee"];
+		                payer = dataRow["Payer"];
+						merchandise = dataRow["Merchandise"];
+						scriptureReference = dataRow["ScriptureReference"];
+						commentary = dataRow["Commentary"];
+						if (commentary == null)
+						{
+							commentary = "";
+						}	
+						
+		                info += "<tr><td>" + currency + "</td><td>" + amount + "</td><td>" +
+                                payee + "</td><td>" + payer + "</td><td>" + 
+								merchandise + "</td><td>" + 
+								scriptureReferenceHyperlink(scriptureReference) + 
+								"</td><td>" + commentary + "</td></tr>";
+						console.log(info);		
+		            }
+		        }
+		        info += "</table>"
+		        document.getElementById("response").innerHTML = info;
+		    }
+
+			function pageLoad()
+			{
+	            querySubmit();
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

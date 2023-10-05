@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-05-30	Created.
+	-->
+	<head>
+		<title>When do we dwarf our privilege?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="When do we dwarf our privilege?"/>
+		<meta name="keywords" content="Bible, Scripture Reference, row aggregate"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input type="text" id="scriptureReference" value="Malachi - Romans"/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="biblePartition">Bible Partitions:</label></td>
+					<td><select id="biblePartition"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var scriptureReferenceElement = document.getElementById("scriptureReference");
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var biblePartitionElement = document.getElementById("biblePartition");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect("bibleVersion");
+						scriptLiteral9432.buildSelect("biblePartition", scriptLiteral9432.biblePartitions);
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var scriptureReferenceParam = urlParams.get("scriptureReference");
+						if (scriptureReferenceParam)
+						{
+							scriptureReferenceElement.value = scriptureReferenceParam;
+						}
+
+						var bibleVersionParam = urlParams.get("bibleVersion");
+						if (bibleVersionParam)
+						{
+							bibleVersionElement.value = bibleVersionParam;
+						}
+
+						var biblePartitionParam = urlParams.get("biblePartition");
+						if (biblePartitionParam)
+						{
+							biblePartitionElement.value = biblePartitionParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["biblePartition"] = biblePartitionElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/WhenDoWeDwarfOurPrivilege.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

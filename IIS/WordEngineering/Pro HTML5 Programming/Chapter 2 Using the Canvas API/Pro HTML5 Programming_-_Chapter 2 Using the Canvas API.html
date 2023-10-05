@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-02-08	http://apress.jensimmons.com/v5/pro-html5-programming/ch2.html
+	-->
+	<head>
+		<title>Pro HTML5 Programming_-_Chapter 2 Using the Canvas API</title>
+	</head>
+	<body>
+		<canvas id="diagonal" style="border: 1px solid;" width="200" height="200">
+			Update your browser to enjoy canvas!
+		</canvas>
+		<div id="browserSupportCanvas"></div>
+		<script>
+			function checkingForBrowserSupportCanvas()
+			{
+				try {
+				  document.createElement("canvas").getContext("2d");
+				  document.getElementById("browserSupportCanvas").innerHTML =
+					"HTML5 Canvas is supported in your browser.";
+				  } catch (e) {
+				  document.getElementById("browserSupportCanvas").innerHTML = 
+					"HTML5 Canvas is not supported in your browser.";
+				}				
+			}
+
+			function drawDiagonal() {
+				// Get the canvas element and its drawing context
+				var canvas = document.getElementById('diagonal');
+				var context = canvas.getContext('2d');
+
+				// Create a path in absolute coordinates
+				context.beginPath();
+				context.moveTo(70, 140);
+				context.lineTo(140, 70);
+
+				// Stroke the line onto the canvas
+				context.stroke();
+			}
+			
+			function pageLoad()
+			{
+				checkingForBrowserSupportCanvas();
+				drawDiagonal();
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

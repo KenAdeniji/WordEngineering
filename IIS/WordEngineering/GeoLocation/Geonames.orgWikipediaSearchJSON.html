@@ -1,0 +1,87 @@
+<html>
+	<!--
+		2015-06-14 	Created http://www.geonames.org/export/wikipedia-webservice.html
+		2015-06-14	http://stackoverflow.com/questions/4191165/wikipedia-api-for-geolocations
+		2015-06-15	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+		2015-06-15	http://stackoverflow.com/questions/9277311/horizontally-aligning-divs
+	-->
+	<head>
+		<title>Geonames.org Wikipedia Search</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div>
+			<div align="center">
+				<label for="q">Query:&nbsp;&nbsp;&nbsp;<input id="q"></label>
+				&nbsp;&nbsp;&nbsp;<button id="query">Query</button><br><br>
+			</div>	
+			
+			<div id="info"></div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function retrieveContent(q) {
+				jQuery(function($) {
+				$.getJSON
+				(
+					'http://api.geonames.org/wikipediaSearchJSON?q='+q+'&username=WordEngineering',
+					function(json){
+						renderInfo(json);
+					}); 
+				}); 
+			}
+
+			function startUp()
+			{
+				var q = "London";
+				document.getElementById("q").value = q;
+				retrieveContent(q)
+			}
+			
+			function querySubmit()
+			{
+				retrieveContent(document.getElementById("q").value);
+			}
+			
+			function renderInfo(json)
+			{
+				var resultSet = "<table>";
+				for(var rowIndex = 0, rowLength = json.geonames.length; rowIndex < rowLength; rowIndex++) {
+					resultSet += "<tr><td>";
+					var jsonData = json.geonames[rowIndex];
+					var keyInfo = Object.keys(jsonData);
+					for (var keyInfoIndex = 0, keyInfoLength = keyInfo.length; keyInfoIndex < keyInfoLength; keyInfoIndex++) {
+						var keyName = keyInfo[keyInfoIndex];
+						var keyNameValue = keyName + ": " + jsonData[keyName] + "<br>";
+						if (keyName.indexOf("Img") > 0)
+						{
+							resultSet += "<img src='" + jsonData[keyName] + "'/><br>";
+						}
+						else if (keyName.indexOf("Url") > 0)
+						{
+							resultSet += "<a href='http://" + jsonData[keyName] + "'>" + jsonData[keyName] + "</a><br>";
+						}
+						else
+						{
+							resultSet += keyNameValue;
+						}
+					}
+					resultSet += "</td></tr>";
+				}
+				resultSet += "</table>";
+				document.getElementById("info").innerHTML = resultSet; 
+			}
+		
+			window.addEventListener("load", startUp);
+			document.getElementById("query").addEventListener("click", querySubmit);
+			//document.getElementById("q").addEventListener("change", querySubmit);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+<html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-02-27	github.com/vakata/jstree
+	2016-04-01	Equal as people.
+-->
+	<head>
+		<title>Equal as people</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is for displaying the father of a set of people."/>
+		<meta name="keywords" content="Bible, father, paternal, progenitor"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+  
+		<!-- 2 load the theme CSS file -->
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/themes/default/style.min.css" />
+	</head>
+	<body>
+	  <!-- 3 setup a container element -->
+	  <div id="jstreeContainer"> </div>
+		
+	  <!-- 4 include the jQuery library -->
+	  <script src="http://code.jquery.com/jquery-latest.js"></script>
+	  <!-- 5 include the minified jstree source -->
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.0.9/jstree.min.js"></script>
+	  
+		<script>
+		  $(function () {
+				var request = {};
+				//request[""] = document.getElementById("").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/EqualAsPeopleWebService.asmx/FamilyTree",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataParsed = JSON.parse(data.d);
+						$('#jstreeContainer').jstree
+						({
+							'core' : 
+							{
+								'data' : dataParsed
+							}
+						});
+					},
+					error: function (xhr) {
+						$("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

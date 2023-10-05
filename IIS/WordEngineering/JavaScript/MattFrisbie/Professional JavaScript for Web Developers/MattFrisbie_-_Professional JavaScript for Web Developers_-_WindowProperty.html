@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-11-26	Created.
+	-->
+	<head>
+		<title>Window Property</title>
+		<meta name="description" content="Window Property"/>
+		<meta name="keywords" content="Window Property"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			function pageLoad()
+			{
+				var information = "<table id='tableProperty'>";
+				information += "<caption>Window Property</caption>";
+				information += "<thead><tr><th>Name</th><th>Value</th></tr></thead>";
+				information += "<tbody>";
+				for (const propertyName in window)
+				{
+					information += "<tr><td>" + propertyName +
+						"</td><td>" + window[propertyName] +
+						"</td</tr>";
+				}
+				information += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = information;
+				tsorter.create("tableProperty");
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

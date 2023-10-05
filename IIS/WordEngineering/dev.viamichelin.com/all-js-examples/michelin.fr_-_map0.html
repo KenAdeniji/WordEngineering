@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2015-09-26	Created.	http://dev.viamichelin.com/all-js-examples
+	-->
+	<head>
+		<title>ViaMichelin JavaScript API V2 - Hello World!</title>
+		<style type="text/css">
+			#map_container{ width: 800px; height: 600px;font-family:Arial }
+		</style>
+	</head>
+	<body>	
+		<div id="map_container"></div>
+		<script src="http://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20070201173627379646361061$165321&lang=eng" type="text/javascript"></script>
+		<script type="text/javascript">
+			function fGetCurrentPosition() {
+				var position = {coords : { lon: 8.53, lat: 47.38 } };
+				if ( navigator.geolocation ) {
+					position = ViaMichelin.Api.Constants.Map.FROM_GEOLOCATION;	
+				}
+				return position;
+			};
+			
+			function fLoadMap(){
+				var mapContainer = document.getElementById("map_container");
+				VMLaunch(
+					"ViaMichelin.Api.Map",{//Service parameters
+						container: mapContainer,
+						center : fGetCurrentPosition(),
+						zoom : 11
+					},
+					{
+						onInitError: function(){
+							mapContainer.innerHTML = 'Whoops Map cannot be loaded!';
+						}
+					}
+				);
+			};
+			
+			window.addEventListener("load", fLoadMap, false);
+		</script>
+	</body>
+</html>

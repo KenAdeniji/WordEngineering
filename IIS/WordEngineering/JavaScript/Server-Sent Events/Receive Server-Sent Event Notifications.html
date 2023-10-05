@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-07-04 	Created.	http://www.w3schools.com/html/html5_serversentevents.asp
+		2016-07-04	http://stackoverflow.com/questions/35631938/server-sent-events-eventsource-with-standard-asp-net-mvc-causing-error
+	-->
+	<head>
+		<title>Receive Server-Sent Event Notifications</title>
+	</head>
+	<body>
+		<div align="center">
+			<label for="serverDateTime">Server Date and Time:</label>
+			<label id="serverDateTime"></label>
+		</div>
+		<script>
+			function serverSideEvent()
+			{
+				if(typeof(EventSource) !== "undefined") {
+					console.log("Yes! Server-sent events support!");
+				} else {
+					console.log("Sorry! No Server-sent events support!");
+					return;
+				} 		
+		
+				var source = new EventSource("/WordEngineering/JavaScript/Server-Sent Events/Server-Side Code Example.asp");
+				
+				source.onmessage = function(event) {
+					document.getElementById("serverDateTime").innerHTML += event.data + "<br>";
+				}
+				
+				source.onerror = function (e) {
+					console.log(e);
+				};				
+				
+				source.onopen = function (event) {
+					console.log(event);
+				};				
+			}
+			
+			window.addEventListener("load", serverSideEvent, false);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!--
+	2015-05-13	Created	https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
+-->
+<script>
+var myArray = [1, 7, 3];
+var words = ["John", "James", "Smith", "Larry", "Joseph", "Mary", "Jane", "Joe", "Larry"];
+
+for (var index = 0; index < myArray.length; index++) {
+  console.log(myArray[index]);
+}
+
+/*
+This is a little shorter, but there is one minor drawback: you can’t break out of this loop using a break statement or return from the enclosing function using a return statement.
+*/
+myArray.forEach(function (value) {
+  console.log(value);
+});
+
+for (var value of myArray) {
+  console.log(value);
+}
+
+for (var chr of "173") {
+  console.log(chr);
+}
+
+// make a set from an array of words
+var uniqueWords = new Set(words);
+
+for (var value of uniqueWords) {
+  console.log(value);
+}
+
+</script>

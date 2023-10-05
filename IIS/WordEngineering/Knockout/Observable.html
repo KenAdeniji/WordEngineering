@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Observable</title>
+	<script src="../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+	<script src="../Scripts/knockout-2.0.0.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		var myViewModel = {
+			firstName: ko.observable('John'),
+			lastName: ko.observable('Doe')
+		};
+		$(document).ready(function () {
+			ko.applyBindings(myViewModel);
+			
+			myViewModel.firstName.subscribe(function(newValue) {
+				alert("The person's first name is " + newValue);
+			});
+			
+			var firstName = myViewModel.firstName();  //Reading observable
+			myViewModel.lastName('Joe') //Writing observable
+			
+			myViewModel.firstName('Nancy').lastName('Missler');  //To write values to multiple observable properties on a model object, you can use chaining syntax.
+			
+			//The subscribe function is how many parts of KO work internally. You can also terminate a subscription if you wish: first capture it as a variable, then you can call its dispose function, e.g.:
+			var subscription = myViewModel.firstName.subscribe(function(newValue) { /* do stuff */ });
+			// ...then later...
+			subscription.dispose(); // I no longer want notifications
+		});	
+	</script>
+	
+</head>
+<body>
+The first name is <span data-bind="text: firstName"></span>
+<br />
+The last name is <span data-bind="text: lastName"></span>
+</body>
+</html>

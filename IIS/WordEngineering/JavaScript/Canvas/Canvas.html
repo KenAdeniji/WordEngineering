@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas.html</title>
+        <style type="text/css">
+			body { background: white; color: blue; }
+		</style>
+        <script type="text/javascript">
+            window.onload = function () {
+                var canvas = document.getElementById("rectangle");
+                /*
+                Setting the height or width of a canvas, will erase the canvas
+                and reset the properties of the context to their default values.
+                */
+                canvas.width = canvas.width;
+                rectangle();
+                grid();
+
+                var canvas = document.getElementById("image");
+                var context = canvas.getContext("2d");
+                var image = new Image();
+                image.src = "../Images/Akhenatenw.JPG";
+
+                image.onload = function () {
+                    context.drawImage(image, 0, 0, 175, 175);
+                };
+
+            };
+
+            function grid() {
+                var canvas = document.getElementById("grid");
+                var context = canvas.getContext("2d");
+
+                var height = canvas.height, width = canvas.width;
+                var xOffset = 20; yOffset = 20;
+                var xRange = 100, yRange = 100;
+                var xPoints = 10; yPoints = 10;
+
+                //Draw vertical lines.
+                for (var x = xOffset + 0.5; x < width - xOffset; x += 10) {
+                    context.moveTo(x, yOffset);
+                    context.lineTo(x, height - yOffset);
+                }
+
+                //Draw horizontal lines.
+                for (var y = yOffset + 0.5; y < height - yOffset; y += 10) {
+                    context.moveTo(xOffset, y);
+                    context.lineTo(width - xOffset, y);
+                }
+
+                context.strokeStyle = "#eee";
+                context.stroke();
+
+                //Draw the vertical arrow, with a difference color ink; therefore, start a new path.
+                context.beginPath();
+                context.moveTo(xOffset, yOffset);
+                context.lineTo(xOffset, height - yOffset);
+                context.strokeStyle = "#000";
+                context.stroke();
+
+                //Draw the horizontal arrow.
+                context.moveTo(xOffset, height - yOffset);
+                context.lineTo(width - xOffset, height - yOffset);
+                context.stroke();
+
+                //Draw the points along the vertical axis.
+                context.font = "bold 8px sans-serif";
+                for
+                (
+                    var y = 0,
+                        yCoordinate = height - yOffset, yStep = (height - (2 * yOffset)) / yPoints,
+                        longitude = 0, yScale = yRange / yPoints;
+                    y <= yPoints;
+                    ++y, yCoordinate -= yStep, longitude += yScale
+                )
+                {
+                    context.fillText
+                    (
+                        longitude,
+                        0,
+                        yCoordinate
+                    );
+                }
+                context.stroke();
+
+                //Draw the points along the horizontal axis.
+                for
+                (
+                    var x = 0,
+                        xCoordinate = xOffset, xStep = (width - (2 * xOffset)) / xPoints,
+                        latitude = 0, xScale = xRange / xPoints;
+                    x <= xPoints;
+                    ++x, xCoordinate += xStep, latitude += xScale
+                ) {
+                    context.fillText
+                    (
+                        latitude,
+                        xCoordinate,
+                        height
+                    );
+                }
+                context.stroke();
+            }
+
+            function rectangle() {
+                var canvas = document.getElementById("rectangle");
+                var context = canvas.getContext("2d");
+                var height = canvas.height, width = canvas.width;
+                var xOffset = 20, yOffset = 20;
+                context.fillStyle = "blue";
+                context.fillRect(xOffset, yOffset, width - (xOffset * 2), height - (yOffset * 2));
+                context.strokeRect(0, 0, width, height);
+            }
+        </script>
+    </head>
+	<body>
+        <div>
+            <canvas id="rectangle" width="200" height="200" />
+        </div>
+        <div>
+            <canvas id="grid" width="200" height="200" />
+        </div>
+        <div>
+            <canvas id="image" width="200" height="200" />
+        </div>
+	</body>
+</html>

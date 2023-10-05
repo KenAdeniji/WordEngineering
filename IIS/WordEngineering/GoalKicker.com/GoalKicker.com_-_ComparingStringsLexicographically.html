@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-08-18	Created.	http://goalkicker.com/JavaScriptBook
+	-->
+	<head>
+		<title>Comparing Strings Lexicographically</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+			<legend>Query</legend>
+			<div align="center">
+				<table>
+					<tr>
+						<td><label for="firstEntry">First Entry:</label></td>
+						<td><input type="text" id="firstEntry" require focus/></td>
+					</tr>	
+					<tr>
+						<td><label for="secondEntry">Second Entry:</label></td>
+						<td><input type="text" id="secondEntry" require/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><span align="center" id="resultSet"></span></td>
+					</tr>	
+				</table>
+			</div>
+		</fieldset>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "../WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						$.getScript( "GoalKicker.com_-_Javascript.js", function( data, textStatus, jqxhr ) 
+						{
+							var firstEntry = scriptLiteral9432.getParameterByName("firstEntry");
+							if (!firstEntry)
+							{
+								firstEntry = "First";
+							}	
+							document.getElementById("firstEntry").value = firstEntry;
+							
+							var secondEntry = scriptLiteral9432.getParameterByName("secondEntry");
+							if (!secondEntry)
+							{
+								secondEntry = "Second";
+							}	
+							document.getElementById("secondEntry").value = secondEntry;
+
+							querySubmit();	
+							isPostBack = true;
+						});	
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				var firstEntry = document.getElementById("firstEntry").value;
+				var secondEntry = document.getElementById("secondEntry").value;
+				document.getElementById("resultSet").textContent = 
+					firstEntry.localeCompare(secondEntry);
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

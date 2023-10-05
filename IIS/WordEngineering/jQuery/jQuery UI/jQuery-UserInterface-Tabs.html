@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>
+	<!--
+		2017-10-12	http://javascriptbook.com/code/c09/jqui-tabs.html
+	-->
+	<head>
+		<title>jQuery UI Tabs: Bible Groups</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+	</head>
+	<body> 
+		<header><h1>jQuery UI Tabs: Bible Groups</h1></header>
+		<h2>Groups</h2>
+		<div id="resultSet"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				var bookIDs;
+				var bookTitles;
+				var	groups = null;
+				var	info = "";
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit()
+						isPostBack = true;
+					});
+				}
+				if (isPostBack)
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				//request["question"] = document.getElementById("question").value;				
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleBookGroups.asmx/QueryDatabase",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						renderDatabase(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function renderDatabase(data) 
+			{
+				var bookIDs;
+				var bookTitles;
+				var	dataRow;
+				var	dataTable;
+				var	groups = null;
+				var info = "";
+				var infoDiv = "";
+				var	infoUL = "";
+
+				document.getElementById("resultSet").innerHTML = "";
+
+				for (var table in data) 
+				{
+					dataTable = data[table];
+					
+					for 
+					(
+						var rowIndex = 0, length = dataTable.length;
+						rowIndex < length;
+						++rowIndex
+					)
+					{
+						dataRow = dataTable[rowIndex];
+						bookIDs = dataRow["Commentary"].split(/,|;/);
+						bookTitles = "";
+						
+						for 
+						(
+							var bookIDIndex = 0, bookIDLength = bookIDs.length;
+							bookIDIndex < bookIDLength;
+							++bookIDIndex
+						)
+						{
+							if (bookTitles)
+							{
+								bookTitles += ", ";
+							}
+							bookTitles += scriptLiteral9432.bibleBooks[bookIDs[bookIDIndex] - 1];
+						}
+						infoUL += "<li><a href='#tab-" + rowIndex + "'>" + dataRow["Minor"] + "</a></li>";
+						infoDiv += "<div id='tab-" + rowIndex + "'><p>" + bookTitles + "</p></div>";
+					}	
+				}
+
+				info = "<ul>" + infoUL + "</ul>" + infoDiv;
+				document.getElementById("resultSet").innerHTML = info;
+				$('#resultSet').tabs();
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

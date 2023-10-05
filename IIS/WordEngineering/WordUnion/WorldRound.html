@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>World round</title>
+		<style>
+			body { background: blue; color: white; }
+		</style>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.4.min.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function(){
+				$('#word').bind('change', function(){
+					var word = $(this).val();
+
+					$.ajax({
+						type: "POST",
+						url: "WorldRound.asmx/Index",
+						cache: false,
+						contentType: "application/json; charset=utf-8",
+						data: "{word:'" + word + "'}",
+						dataType: "json",
+						success: index,
+						error: ajaxFailed
+					});
+					
+					$.ajax({
+						type: "POST",
+						url: "WorldRound.asmx/ScriptureReference",
+						cache: false,
+						contentType: "application/json; charset=utf-8",
+						data: "{word:'" + word + "'}",
+						dataType: "json",
+						success: scriptureReference,
+						error: ajaxFailed
+					});
+
+				});
+			});	
+
+			function index(data, status) {
+				$('#index').text(data.d);
+			}
+			
+			function scriptureReference(data, status) {
+				$('#scriptureReference').text(data.d);
+			}
+
+			function handleHtml(data, status) {
+			/*
+				alert(data['d']['ScriptureReference']);
+				alert(data['d'].length);
+				alert(data.d.Index); //msg['d']['Index']
+			*/
+			}
+
+			function ajaxFailed(xmlRequest) {
+				alert(xmlRequest.status + ' \n\r ' + 
+					  xmlRequest.statusText + '\n\r' + 
+					  xmlRequest.responseText);
+			}
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<input id="word" type="text" columns="50" /> <br/> 
+			<input type="submit" value="Submit" /> <br/>
+			<div id="index"> </div> <br/>
+			<div id="scriptureReference"> </div>
+		</div>
+	</body>
+</html>

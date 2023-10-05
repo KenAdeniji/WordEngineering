@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2022-09-13T09:25:00	I have tried as God, that I may seem as men.
+		2022-09-14T04:55:00	Programming.
+		2022-09-15T09:48:00	Mentions the most?
+	-->
+	<head>
+		<title>I have tried as God, that I may seem as men.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I have tried as God, that I may seem as men."/>
+		<meta name="keywords" content="BibleWord, ScriptureReference, occurrences, South"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" ID="bibleWord" autofocus required value="South"/></td>
+				</tr>
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="and">And</option>		
+							<option value="or">Or</option>
+							<option value="phrase">Phrase</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="wholeWords">Whole Words</label></td>
+					<td><input type="checkbox" id="wholeWords" checked/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleBookGroup">Bible Book Group:</label></td>
+					<td><select id="bibleBookGroup" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="biblePartition">Bible Partition:</label></td>
+					<td><select id="biblePartition" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	bibleVersionElement = document.getElementById("bibleVersion");
+			const 	bibleWordElement = document.getElementById("bibleWord");
+			const 	bibleBookGroupElement = document.getElementById("bibleBookGroup");
+			const 	biblePartitionElement = document.getElementById("biblePartition");
+		
+			const 	logicElement = document.getElementById("logic");
+			const	wholeWordsElement = document.getElementById("wholeWords");
+		
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultTableElement = document.getElementById("resultTable");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						scriptLiteral9432.renderBibleBookGroupSelect();
+						scriptLiteral9432.renderBibleVersionSelect();
+						scriptLiteral9432.buildSelect
+						(
+							"biblePartition",
+							scriptLiteral9432.biblePartitions
+						);
+						
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
+						{
+							bibleWordElement.value = bibleWordValue;
+						}	
+						
+						var bibleVersionValue = urlParams.get("bibleVersion");
+						if (bibleVersionValue)
+						{
+							bibleVersionElement.value = bibleVersionValue;
+						}	
+						
+						var bibleBookGroupValue = urlParams.get("bibleBookGroup");
+						if (bibleBookGroupValue)
+						{
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
+						}	
+
+						var biblePartitionValue = urlParams.get("biblePartition");
+						if (biblePartitionValue)
+						{
+							scriptLiteral9432.selectionSet("biblePartition", [biblePartitionValue]);
+						}	
+
+						var logicValue = urlParams.get("logic");
+						if (logicValue)
+						{
+							logicElement.value = logicValue;
+						}	
+
+						var wholeWordsValue = urlParams.get("wholeWords");
+						if (wholeWordsValue === null)
+						{
+							wholeWordsValue = "";
+						}
+						var wholeWordsLowerCaseValue = wholeWordsValue.toLowerCase();
+						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
+						wholeWordsElement.checked = wholeWordsChecked;
+					
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
+				
+				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
+				request["question"] = bibleWordElement.value;
+				request["wholeWords"] = wholeWordsElement.checked;
+				request["bibleVersion"] = bibleVersionElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleWordWebService.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var info = "<table id='resultTableInfo'><thead><tr><th>Bible Word</th><th>Scripture Reference</th><th>Verse Text</th><th>Occurrences</th></tr></th><tbody>";
+				
+				var dataRow = null;
+				var dataTable = null;
+				
+				var bookID = null;
+				var chapterID = null;
+				var verseID = null;
+				var verseText = null;
+				
+				var wordSet = (bibleWordElement.value).split(/[\s,]+/);
+				var wordCurrent = null;
+
+				var bibleWordHyperlink = null;
+
+				var scriptureReferenceVerse = null;
+				var scriptureReferenceHyperlinkVerse = null;
+
+				var scriptureReferenceChapter = null;
+				var scriptureReferenceHyperlinkChapter = null;
+
+				var scriptureReferenceBook = null;
+				var scriptureReferenceHyperlinkBook = null;
+				
+				var bookTitle = null;
+				
+				var verseOccurrences = 0;
+				var chapterOccurrences = 0;
+				var bookOccurrences = 0;
+				
+				var biblePartitionsSelected = scriptLiteral9432.selectionGet("biblePartition");
+				
+				var bookIDCurrent = -1;
+				var chapterIDCurrent = -1;
+			
+				var firstRow = false;
+				
+				for 
+				(
+					var wordIndex = 0, wordCount = wordSet.length;
+					wordIndex < wordCount;
+					++wordIndex
+				)
+				{
+					wordCurrent = wordSet[wordIndex];
+
+					bibleWordHyperlink = scriptLiteral9432.buildHyperlink
+					(
+						"bibleWord",
+						wordCurrent
+					);	
+
+					//info += `<tr><td>${bibleWordHyperlink}</td></tr>`;
+
+					for (var table in data) 
+					{
+						dataTable = data[table];
+						
+						firstRow = false;
+						
+						for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+						{
+							dataRow = dataTable[rowIndex];
+							
+							bookID = dataRow["BookID"];
+							bookTitle = scriptLiteral9432.bibleBooks[bookID - 1];
+							chapterID = dataRow["ChapterID"];
+							verseID = dataRow["VerseID"];
+							verseText = dataRow["VerseText"];
+
+							if ( firstRow === false )
+							{
+								chapterIDCurrent = chapterID;
+								bookIDCurrent = bookID;
+
+								verseOccurrences = 0;
+								chapterOccurrences = 0;
+								bookOccurrences = 0;
+
+								firstRow = true;
+							}
+
+							if ( chapterOccurrences > 0 && chapterID != chapterIDCurrent )
+							{
+								scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+								scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+								(
+									"scriptureReference",
+									scriptureReferenceChapter
+								);	
+								info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+								chapterIDCurrent = chapterID;
+								chapterOccurrences = 0;
+							}
+
+							if ( bookOccurrences > 0 && bookID != bookIDCurrent )
+							{
+								scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
+								scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+								(
+									"scriptureReference",
+									scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
+								);	
+								info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+								bookIDCurrent = bookID;
+								bookOccurrences = 0;
+							}
+
+							scriptureReferenceVerse = bookTitle + " " + chapterID + ":" + verseID;
+							scriptureReferenceHyperlinkVerse = scriptLiteral9432.buildHyperlink
+							(
+								"scriptureReference",
+								scriptureReferenceVerse
+							);	
+
+							verseOccurrences = verseText.toLowerCase().split(wordCurrent.toLowerCase()).length - 1;
+							
+							if ( verseOccurrences > 0 )
+							{
+								if ( biblePartitionsSelected.indexOf("VerseID") > -1 )
+								{
+									info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkVerse}</td><td>${verseText}</td><td>${verseOccurrences}</td></tr>`;
+								}	
+								if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
+								{
+									chapterOccurrences += verseOccurrences;
+								}	
+								if ( biblePartitionsSelected.indexOf("BookID") > -1 )
+								{
+									bookOccurrences += verseOccurrences;
+								}	
+							}		
+						}
+					}
+					
+					if ( biblePartitionsSelected.indexOf("ChapterID") > -1 )
+					{
+						scriptureReferenceChapter = scriptLiteral9432.bibleBooks[bookIDCurrent - 1] + " " + chapterIDCurrent;
+						scriptureReferenceHyperlinkChapter = scriptLiteral9432.buildHyperlink
+						(
+							"scriptureReference",
+							scriptureReferenceChapter
+						);	
+						info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkChapter}</td><td/><td>${chapterOccurrences}</td></tr>`;
+					}
+
+					if ( biblePartitionsSelected.indexOf("BookID") > -1 )
+					{
+						scriptureReferenceBook = scriptLiteral9432.bibleBooks[bookIDCurrent - 1];
+						scriptureReferenceHyperlinkBook = scriptLiteral9432.buildHyperlink
+						(
+							"scriptureReference",
+							scriptLiteral9432.bibleBooks[bookIDCurrent - 1]
+						);	
+						info += `<tr><td>${bibleWordHyperlink}</td><td>${scriptureReferenceHyperlinkBook}</td><td/><td>${bookOccurrences}</td></tr>`;
+					}
+				}
+				
+				info += "</tbody></table>"
+				resultTableElement.innerHTML = info;
+				tsorter.create("resultTableInfo");
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-12-25	Created.	
+		2018-10-11	https://stackoverflow.com/questions/43348729/html-table-with-250-000-rows-a-better-way
+		2018-10-12	http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/alasql.org/AlaSQL.js_-_OnlyRefuseSubstainTheLine.html
+		2018-10-12	https://stackoverflow.com/questions/52787978/datatable-jquery-plug-in-dynamic-table-creation-and-data
+					I am using Ajax to retrieve the entire Bible from the database. 
+					I am using AlaSql.js to extract the sacred text for each scripture reference.
+					I will like to use DataTables.net to display the sacred text for each scripture reference.
+	-->
+	<head>
+		<title>What are the steps, you go through, in a job interview?</title>
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="query">Query</td>
+					<td>
+						<input 
+							id="query"
+							type="text"
+							focus
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input id="submitQuery" type="submit">
+					</td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>	
+		<script src="//cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
+		
+<link href="https://unpkg.com/tabulator-tables@4.0.4/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.0.4/dist/js/tabulator.min.js"></script>		
+		<script>
+			var isPostBack = false;
+			var queryID = document.getElementById("query");
+			var resultSetID = document.getElementById("resultSet");
+					
+			function process(dataTable)
+			{
+				var resultDiv = document.createElement("div");
+				resultDiv.id = "resultDiv";
+				document.getElementById("resultSet").appendChild(resultDiv);
+				var table = new Tabulator("#" + resultDiv.id, {
+					height:400, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+					//layout:"fitColumns", //fit columns to width of table (optional)
+					columns:[ //Define Table Columns
+						{title:"ID", field:"WhatAreTheStepsYouGoThroughInAJobInterviewID", sorter:"number"},
+						{title:"Dated", field:"Dated"},
+						{title:"Organization", field:"Organization"},
+						{title:"FirstnameInitiator", field:"FirstnameInitiator"},
+						{title:"LastnameInitiator", field:"LastnameInitiator"},
+						{title:"FirstnameRecipient", field:"FirstnameRecipient"},		
+						{title:"LastnameRecipient", field:"LastnameRecipient"},
+						{title:"Steps", field:"Steps"},
+						{title:"Commentary", field:"Commentary"},
+						{title:"URI", field:"Uri"},
+						{title:"Email", field:"Email"},
+						{title:"Address", field:"Address"},
+						{title:"Telephone", field:"Telephone"},
+						{title:"ContactId", field:"ContactId", sorter:"number"},
+						{title:"ScriptureReference", field:"ScriptureReference"},
+					],
+					rowClick:function(e, row){ //trigger an alert message when the row is clicked
+						//alert("Row " + row.getData().id + " Clicked!!!!");
+					},
+				});
+				table.setData(dataTable);
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["query"] = queryID.value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Resume/WhatAreTheStepsYouGoThroughInAJobInterview.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						dataTable = JSON.parse(data.d);
+						process(dataTable);
+					},
+					error: function(xhr)
+					{ 
+						resultSetID.innerHTML = 
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;	
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

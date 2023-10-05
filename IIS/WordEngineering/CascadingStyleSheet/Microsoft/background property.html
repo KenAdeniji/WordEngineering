@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-10-01 	Created.	background property.html
+		2016-10-01	https://msdn.microsoft.com/en-us/library/ms531209%28v=vs.85%29.aspx
+		2016-10-01	https://msdn.microsoft.com/en-us/library/ms530722%28v=vs.85%29.aspx
+	-->
+	<head>
+		<title>background property</title>
+		<style>
+div {
+   width: 150px;
+   height: 150px;
+   float: left;
+   margin-right: 10px;
+}
+.circle {
+   background: aqua url(circle.png) no-repeat 90% 50%;
+   /* This is equivalent to the following individual settings:
+   background-color: aqua;
+   background-image: url(circle.png);
+   background-repeat: no-repeat;
+   background-position: 90% 50%;*/
+}
+.square {
+   background: aquamarine url(square.png) no-repeat scroll left bottom;
+   /* This is equivalent to the following individual settings:
+   background-color: aquamarine;
+   background-image: url(square.png);
+   background-repeat: no-repeat;
+   background-attachment: scroll;
+   background-position: left bottom;*/
+}
+.triangle {
+   background: bisque url(triangle.png) no-repeat local 50px 50px;
+   /* This is equivalent to the following individual settings:
+   background-color: bisque;
+   background-image: url(triangle.png);
+   background-repeat: no-repeat;
+   background-attachment: local;
+   background-position: 50px 50px;*/
+}
+		</style>	
+	</head>
+	<body>
+		<div class="circle"></div>
+		<div class="square"></div>
+		<div class="triangle"></div>	
+	</body>
+</html>
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-17T21:02:00	play.google.com/store/books/details?id=SJ1eDwAAQBAJ&gl=us&hl=en-US&source=productsearch&utm_source=HA_Desktop_US&utm_medium=SEM&utm_campaign=PLA&pcampaignid=MKT-FDR-na-us-1000189-Med-pla-bk-Evergreen-Jul1520-PLA-eBooks_Computers&gclid=CjwKCAiAmrOBBhA0EiwArn3mfLr7zHQJ6lOesfiaC9wHH0O2qmUXifmh4f09MnCNPKBN3sKMRDXOURoCFr0QAvD_BwE&gclsrc=aw.ds
+		2021-02-17T21:50:00 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map		
+	-->
+	<head>
+		<title>Bible Book Map</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible Book Map"/>
+		<meta name="keywords" content="Map"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<script>
+			const mapBibleBooksGroups = new Map();
+
+			mapBibleBooksGroups.set
+			(
+				"Pentateuch",
+				"Genesis, Exodus, Leviticus, Numbers, Deuteronomy"
+			);	
+
+			mapBibleBooksGroups.set
+			(
+				"Gospel",
+				"Matthew, Mark, Luke, John"
+			);	
+
+			mapBibleBooksGroups.set
+			(
+				"Major Prophets",
+				"Isaiah, Jeremiah, Ezekiel, Daniel"
+			);	
+			
+			mapBibleBooksGroups.set
+			(
+				"Apocalyptic",
+				"Daniel, Revelation"
+			);	
+			
+			printCollection(mapBibleBooksGroups);
+			
+			const arrayBibleBooksAuthors =
+			[
+				["Genesis", "Moses"],
+				["Lamentations", "Jeremiah"],
+				["Acts of the Apostles", "Luke"],
+				["Revelation", "John"]
+			];
+
+			mapBibleBooksAuthors = new Map(arrayBibleBooksAuthors)
+
+			printCollection(mapBibleBooksAuthors);
+			
+			function printCollection(map)
+			{
+				
+				document.write("<table>");
+				document.write("<tr><th>Key</th><th>Value</th></tr>");
+				for (const [key, value] of map) 
+				{
+					document.write
+					(
+						`<tr><td>${key}</td><td>${value}</td></tr>`
+					);
+				}
+				document.write("</table>");
+			}	
+		</script>
+	</body>
+</html>

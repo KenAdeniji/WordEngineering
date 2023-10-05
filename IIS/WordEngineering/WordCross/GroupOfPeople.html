@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-11-10T18:48:00	Created.
+	-->
+	<head>
+		<title>Group of People</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Group of People"/>
+		<meta name="keywords" content="Apostles, pray, faith"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSetChildOfJacob" align="center"> </div>
+		<div id="resultSetApostle" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						queryGroup();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					queryGroup();
+				}
+ 			}
+
+			function queryGroup()
+			{
+				querySubmit("ChildOfJacob");
+				querySubmit("Apostle");
+			}
+			
+			function querySubmit(groupCurrent)
+			{
+				var request = {};
+				//request["typeName"] = groupCurrent;
+				
+				var requestJson = JSON.stringify(request);
+				var resultSetElement = document.getElementById("resultSet" + groupCurrent);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/GroupOfPeople.asmx/Query" + groupCurrent,
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet" + groupCurrent);
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

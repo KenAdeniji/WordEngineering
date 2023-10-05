@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2023-01-27T15:03:00	Created.
+		2023-01-27T15:03:00	http://stackoverflow.com/questions/30716829/how-to-remove-repeated-entries-from-an-array-while-preserving-non-consecutive-du
+	-->
+	<head>
+		<title>uniq</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Unix uniq command"/>
+		<meta name="keywords" content="UNIX, Linux, uniq command"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 85vh;
+		width: 90vw;
+	}
+		</style>		
+	</head>
+	<body>
+		<div align="center">
+			<textarea id="consoleInput" autofocus>
+Crockett
+Tubs
+Emanuel
+Fred
+Lucy
+Ralph
+Tubs</textarea><br/>
+			<input type="submit" id="submitQuery">
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			const consoleInputElement = document.getElementById("consoleInput");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var lines = consoleInputElement.value.split(/\n/);
+			
+				var uniqueLinesConsecutiveOccurringLines = lines.filter(function(item, pos, arr){
+				  // Always keep the 0th element as there is nothing before it
+				  // Then check if each element is different than the one before it
+				  return pos === 0 || item !== arr[pos-1];
+				});
+				
+				resultSetElement.innerHTML = uniqueLinesConsecutiveOccurringLines.join("<br/>");
+			}
+
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

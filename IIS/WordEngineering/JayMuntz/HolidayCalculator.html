@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-10	Created.	https://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator
+		-->
+		<title>Jay Muntz: Holiday Calculator</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="dated">dated:</label></td>
+						<td><input id="dated" type="date"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var dated = scriptLiteral9432.getParameterByName("dated");
+						if (!dated)
+						{
+							dated = scriptLiteral9432.todayTimezoneOffset();
+						}	
+						document.getElementById("dated").value = dated;
+					
+						querySubmit();
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["dated"] = document.getElementById("dated").value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/JayMuntz/HolidayCalculator.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+			
+			function render(dataTable)
+			{
+				var info = "<table id='holidayCalculatorTable'><caption>" +
+					" Occurrences: " + dataTable.length + "</caption>";
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Date",
+					"Name"
+				);
+					
+				for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+				{
+					dataRow = dataTable[rowIndex];
+					info += scriptLiteral9432.buildRow
+					(
+						dataRow["Date"].substring(0, 10),
+						dataRow["Name"]
+					);
+				}
+				
+				info += "</table>";
+				
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					loadDoc();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2015-06-10	Created.	ToMostExtentOfTalent.aspx.cs
+			2015-09-14	Created.	NotOnlyMeIWillBeAsSome.cs
+			2015-09-19	Created. 	NotOnlyMeIWillBeAsSome.html
+			2015-09-19	http://stackoverflow.com/questions/1876485/get-property-names-in-json-objects
+			2015-09-19	http://stackoverflow.com/questions/17929356/html-datalist-values-from-array-in-javascript
+		-->
+		<title>Not only Me, I will be as some.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+			datalist { display: block; } 			
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<input
+				id="question"
+				type="text"
+				size="50"
+				autofocus
+				list="scriptureReferences"
+			/> <br/><br/>
+			<input type="submit" id="submitQuery"> <br/><br/>
+			
+			<div id="response"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+		    var isPostBack = false;
+
+			function CreateTable(obj, cols) {
+				var table = $('<table></table>');
+				var th = $('<tr></tr>');
+				for (var i = 0; i < cols.length; i++) {
+					th.append('<th>' + cols[i] + '</th>');
+				}
+				table.append(th);
+
+				for (var j = 0; j < obj.Table1.length; j++) {
+					var tableRow = obj.Table1[j];
+					var tr = $('<tr></tr>');
+					for (var k = 0; k < cols.length; k++) {
+						var columnName = cols[k];
+						tr.append('<td>' + tableRow[columnName] + '</td>');
+					}
+					table.append(tr);
+				}
+				return table;
+			}
+
+			function GetHeaders(obj) {
+				var cols = new Array();
+				var p = obj.Table1[0];
+				for (var key in p) {
+					//alert(' name=' + key + ' value=' + p[key]);
+					cols.push(key);
+				}
+				return cols;
+			}
+
+			function queryDataList() {
+		        var request = {};
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/NotOnlyMeIWillBeAsSome.asmx/NotOnlyMeIWillBeAsSomeSelect",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var resultSet = JSON.parse(data.d);
+				        renderDataList(resultSet);
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+		    }
+			
+			function querySubmit() {
+		        var request = {};
+		        request["question"] = document.getElementById("question").value;
+				request["frequencyOfOccurrenceLimit"] = 50;
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/NotOnlyMeIWillBeAsSome.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var resultSet = JSON.parse(data.d);
+				        render(resultSet);
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+		    }
+
+			function render(obj) {
+				var cols = GetHeaders(obj); 
+				$('#response').html(CreateTable(obj, cols));
+			}
+
+			function renderDataList(obj) {
+				var option = "";
+				var options = '';
+				var scriptureReferenceList = obj.Table;
+				for(var i = 0, length = scriptureReferenceList.length; i < length; i++) {
+					option = scriptureReferenceList[i].ScriptureReference;
+					options += '<option value="' + option + '" />';
+				}
+				document.getElementById('scriptureReferences').innerHTML = options;
+				console.log(options);
+			}
+
+		    function pageLoad() { 
+		        if (!isPostBack) { 
+		            document.getElementById("question").value = "Psalms 118:22, Matthew 21:42, Mark 12:10, Luke 20:17, Acts 4:11";
+		            isPostBack = true;
+					queryDataList();
+		            querySubmit();
+		        }
+		    }
+
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		    document.getElementById("question").addEventListener("change", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

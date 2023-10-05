@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<a href="#">Hi</a>
+
+<script>
+
+//is <a> a ELEMENT_NODE?
+console.log(document.querySelector('a').nodeType === 1); //logs true, <a> is an Element node
+
+//or use Node.ELEMENT_NODE which is a property containg the numerice value of 1
+console.log(document.querySelector('a').nodeType === Node.ELEMENT_NODE); //logs true, <a> is an Element node
+
+</script>
+</body> 
+</html>

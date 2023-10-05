@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+	2021-08-17T20:00:00 Created.
+-->
+	<head>
+		<title>Airbnb JavaScript Style Guide</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Airbnb JavaScript Style Guide"/>
+		<meta name="keywords" content="Airbnb, JavaScript Style Guide"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+	<body>
+		<script>
+//Use computed property names when creating objects with dynamic property names.
+function getKey(k) {
+  return `a key named ${k}`;
+}
+
+// good
+const firstBookOfTheBible = {
+  id: 1,
+  title: 'Genesis',
+  [getKey('enabled')]: true,
+  getTitle() { 
+    return(this.title);
+  },  
+};
+
+console.log
+(
+	firstBookOfTheBible[getKey('enabled')],
+	firstBookOfTheBible.getTitle()
+);
+
+const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
+console.log("has.call(firstBookOfTheBible, 'id'):", has.call(firstBookOfTheBible, 'id'));
+console.log("has.call(firstBookOfTheBible, 'ids'):", has.call(firstBookOfTheBible, 'ids'));	
+
+const testaments = [];
+testaments.push('Old');
+testaments.push('New');
+console.log(testaments.join(', '));
+
+const iterableObject = document.querySelectorAll('*');
+const nodes = [...iterableObject]; //To convert an iterable object to an array, use spreads ... instead of Array.from.
+
+const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+
+// good
+const arr = Array.from(arrLike);
+
+console.log(JSON.stringify(arrLike), JSON.stringify(arr));
+		</script>
+	</body>
+</html>

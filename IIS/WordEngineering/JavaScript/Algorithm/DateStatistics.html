@@ -1,0 +1,60 @@
+﻿<html>
+<!--
+	2018-12-19 	Created.
+	2018-12-19	https://stackoverflow.com/questions/7143399/min-max-of-dates-in-an-array
+	2018-12-19	Let time; depend itself.
+-->
+	<head>
+		<title>Date Statistics</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<textarea rows="4" cols="50" id="request">2018-12-19,1960-01-01,1967-10-15,1999-01-18,2008-08-08</textarea><br>
+			<input type="submit" id="submitQuery"><br><br>
+			<div id="response"></div>
+		</div>
+		<script>
+			function querySubmit()
+			{
+				var dataSet = document.getElementById("request").value;
+				var requestArray = dataSet.split(",");
+
+				var count = requestArray.length;
+				var maximum = requestArray.reduce(function (a, b) { return a > b ? a : b; });
+				var minimum = requestArray.reduce(function (a, b) { return a < b ? a : b; });
+				
+				var display = "<table border='1'>" +
+					"<caption>Statistics</caption>" +
+					"<thead><tr><th>Label</th><th>Value</th></tr></thead>" +
+					"<tbody>" + 
+					tabular("Count", count) +
+					tabular("Maximum", maximum) +
+					tabular("Minimum", minimum) +
+					"</tbody></table>"
+					;
+				document.getElementById("response").innerHTML = display;		
+			}
+		
+			function tabular(label, value)
+			{
+				var formatted = "<tr>" + 
+								"<td>" + label + "</td>" + 
+								"<td>" + value + "</td>" +
+								"</tr>";
+				return formatted;
+			}
+			
+			window.addEventListener("load", querySubmit, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}			
+		</script>
+	</body>
+</html>

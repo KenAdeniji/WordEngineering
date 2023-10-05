@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	2019-01-31	http://alistapart.com/article/taming-data-with-javascript
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title>Bible Reduce Filter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Bible Book ID, Title"/>
+		<meta name="keywords" content="Bible Book ID, Title"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Bible Reduce Filter</h1>
+			<h2>An example of how to filter and aggregate data in JavaScript</h2>
+				<form>
+					<div class="form-group">
+						<label for="bookTitle">Book Title</label>
+						<input type="text" class="form-control" id="bookTitle" placeholder="Book Title">
+					</div>
+					<div class="form-group">
+						<label for="bookID">Book ID</label>
+						<input type="text" class="form-control" id="bookID" placeholder="Book ID">
+					</div>
+					<button type="submit" class="btn btn-primary" id="submitBtn">Get the data</button>
+				</form>
+		</div>
+		<div class="container">
+			<div id="output"> </div>
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+		var isPostBack = false;
+		var	jsonData;
+
+		function AJAX()
+		{
+			var request = {};
+			//request["question"] = document.getElementById("question").value;
+			var requestJson = JSON.stringify(request);
+			
+			$.ajax
+			({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: "/WordEngineering/WordGroup/BibleBooksReduceFilter.asmx/Query",
+				data: requestJson,
+				dataType: "json",
+				success: function(data) 
+				{
+					jsonData = JSON.parse(data.d).Table;
+				},
+				error: function(xhr)
+				{ 
+					document.getElementById("resultSet").innerHTML =
+						'Status: ' + xhr.status + " | " + 
+						'StatusText: ' + xhr.statusText + " | " +
+						'ResponseText: ' + xhr.responseText;
+				} 
+			});
+		}
+		
+		function filterData(bookID, bookTitle)
+		{
+			if (bookID == "All")
+			{
+				let chapters = jsonData.filter(data => data.BookTitle==bookTitle)
+				.reduce((accumulator, currentValue) => {
+					return accumulator + currentValue.Chapters;
+				}, 0);
+				let verses = jsonData.filter(data => data.BookTitle==bookTitle)
+				.reduce((accumulator, currentValue) => {
+					return accumulator + currentValue.Verses;
+				}, 0);
+				return [{'BookID': 'All', 'BookTitle': bookTitle, 'Chapters': chapters, 'Verses': verses}];
+			}
+			if (bookTitle == "All")
+			{
+				let chapters = jsonData.filter(data => data.BookID==bookID)
+				.reduce((accumulator, currentValue) => {
+					return accumulator + currentValue.Chapters;
+				}, 0);
+				let verses = jsonData.filter(data => data.BookID==bookID)
+				.reduce((accumulator, currentValue) => {
+					return accumulator + currentValue.Verses;
+				}, 0);
+				return [{'BookID': bookID, 'BookTitle': 'All', 'Chapters': chapters, 'Verses': verses}];
+			}
+			let subset = jsonData.filter(data => data.BookID == bookID)
+				.filter(data => data.BookTitle == bookTitle);
+			return subset;
+		}
+
+		function pageLoad()
+		{
+			if (isPostBack === false)
+			{
+				AJAX();
+				isPostBack = true;
+			}
+		}
+
+		function querySubmit(e)
+		{
+			e.preventDefault();
+			let bookID = document.getElementById("bookID").value || "All"
+			let bookTitle = document.getElementById("bookTitle").value || "All"
+			let subset = filterData(bookID, bookTitle);
+			if (subset.length == 0  )
+			{	
+				subset.push({'BookID': 'N/A', 'BookTitle': 'N/A', 'Chapters': 'N/A', 'Verses': 'N/A'})
+			}
+			
+			var tableInfo = "<table class='table'><thead><tr><th scope='col'>ID</th><th scope='col'>Title</th><th scope='col'>Chapters</th><th scope='col'>Verses</th></tr></thead>";
+			tableInfo += 	"<tbody><tr>" +
+							"<td>" + subset[0].BookID + "</td>" +
+							"<td>" + subset[0].BookTitle + "</td>" +
+							"<td>" + subset[0].Chapters + "</td>" +
+							"<td>" + subset[0].Verses + "</td>" +							
+							"</tr></tbody>" +
+							"</table>"
+				;
+			
+			document.getElementById("output").innerHTML = tableInfo;
+		}
+		
+		window.addEventListener("load", pageLoad, false);
+		document.getElementById("submitBtn").addEventListener("click", querySubmit, false);
+	</script>
+</html>

@@ -1,0 +1,6 @@
+REM https://stackoverflow.com/questions/17917254/how-to-install-flask-on-windows
+E:
+cd E:\WordEngineering\Python\flask.pocoo.org
+REM pip install Flask
+python hello.py
+REM http://127.0.0.1:5000/

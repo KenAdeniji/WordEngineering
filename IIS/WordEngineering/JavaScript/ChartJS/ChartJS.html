@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 2014-05-29 http://www.chartjs.org/docs/ -->
+<head>
+<title>ChartJS</title>
+</head>
+<body onload="drawChart();">
+<canvas id="lineChart" width="400" height="400"></canvas>
+<canvas id="barChart" width="400" height="400"></canvas>
+<canvas id="radarChart" width="400" height="400"></canvas>
+<canvas id="polarAreaChart" width="400" height="400"></canvas>
+<canvas id="pieChart" width="400" height="400"></canvas>
+<canvas id="doughnutChart" width="400" height="400"></canvas>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+<script type="text/javascript">
+
+function drawChart()
+{
+	var data = {
+		labels : ["January","February","March","April","May","June","July"],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : [65,59,90,81,56,55,40]
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				pointColor : "rgba(151,187,205,1)",
+				pointStrokeColor : "#fff",
+				data : [28,48,40,19,96,27,100]
+			}
+		]
+	}
+	
+	var data2 = [
+	{
+		value : 30,
+		color: "#D97041"
+	},
+	{
+		value : 90,
+		color: "#C7604C"
+	},
+	{
+		value : 24,
+		color: "#21323D"
+	},
+	{
+		value : 58,
+		color: "#9D9B7F"
+	},
+	{
+		value : 82,
+		color: "#7D4F6D"
+	},
+	{
+		value : 8,
+		color: "#584A5E"
+	}
+];
+	
+	var ctxLine = document.getElementById("lineChart").getContext("2d");
+	var lineChart = new Chart(ctxLine).Line(data);
+	
+	var ctxBar = document.getElementById("barChart").getContext("2d");
+	var barChart = new Chart(ctxBar).Bar(data);
+	
+	var ctxRadar = document.getElementById("radarChart").getContext("2d");
+	var radarChart = new Chart(ctxRadar).Radar(data);
+	
+	var ctxPolarArea = document.getElementById("polarAreaChart").getContext("2d");
+	var polarAreaChart = new Chart(ctxPolarArea).PolarArea(data2);
+
+	var ctxPie = document.getElementById("pieChart").getContext("2d");
+	var pieChart = new Chart(ctxPie).Pie(data2);
+	
+	var ctxDoughnut = document.getElementById("doughnutChart").getContext("2d");
+	var doughnut = new Chart(ctxDoughnut).Doughnut(data2);
+}
+</script>
+
+</body></html>

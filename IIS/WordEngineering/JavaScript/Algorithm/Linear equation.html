@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-07	Created.
+		2016-05-07	http://stackoverflow.com/questions/1155678/javascript-string-newline-character
+		2016-05-07	http://stackoverflow.com/questions/18689045/split-equation-string-by-multiple-delimiters-in-javascript-and-keep-delimiters-t
+		2016-05-08	http://stackoverflow.com/questions/966225/how-can-i-create-a-two-dimensional-array-in-javascript/966938#966938
+		2016-05-08	http://www.javascripter.net/faq/convert2.htm
+		2915-05-08	http://www.asciitable.com/
+	-->
+	<head>
+		<title>Linear equation</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			} 
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Linear equation</legend>
+				<textarea id="question" rows="5" cols="80"></textarea><br>
+				<button id="query">Query</buttton><br>
+				<div id="answer">Work in progress.</div>
+			</fieldset>
+		</div>
+		<script>
+			function querySubmit()
+			{
+				var question = document.getElementById("question").value.toLowerCase();
+				var lines = question.split(RegexCRLFSeparator);
+				var xyz = new Array();
+				for (var index = 0; index < LetterBound; ++index) {
+					xyz[index] = [];
+				}
+				
+				var considerLetter = new Array(LetterBound);
+				for 
+				(
+					var letterIndex = 0, letterCount = considerLetter.length;
+					letterIndex < letterCount;
+					++letterIndex
+				)
+				{
+					considerLetter[letterIndex] = false;
+				}
+				
+				for 
+				(
+					var lineIndex = 0, lineCount = lines.length;
+					lineIndex < lineCount;
+					++lineIndex
+				)
+				{
+					var figures = lines[lineIndex].split(RegexExpressionSeparator);
+					
+					for 
+					(
+						var figureIndex = 0, figureCount = figures.length;
+						figureIndex < figureCount;
+						++figureIndex
+					)
+					{
+						var figureCurrent = figures[figureIndex].trim();
+						var figureLength = figureCurrent.length;
+						var figureLastCharacter = figureCurrent[figureLength - 1]
+						var figureAscii = figureLastCharacter.charCodeAt(0);
+						var figurePosition = -1;
+						if (figureAscii >= 97 && figureAscii <= 122)
+						{
+							figurePosition = figureAscii - 97;
+						}
+						else
+						{
+							figurePosition = 26;
+						}
+						xyz[lineIndex][figurePosition] = Number.parseFloat(figures[figureIndex]);
+						considerLetter[figurePosition] = true;
+						console.log(lineIndex, figurePosition, xyz[lineIndex][figurePosition], considerLetter[figurePosition]);
+					}
+				}
+				
+				for 
+				(
+					var figureIndex = 0;
+					figureIndex < LetterBound;
+					++figureIndex
+				)
+				{
+					if (considerLetter[figureIndex] === true)
+					{
+						for 
+						(
+							var lineIndex = 0, lineCount = lines.length;
+							lineIndex < lineCount - 1;
+							++lineIndex
+						)
+						{
+							xyz[lineIndex + 1][figureIndex + 1] *= xyz[lineIndex][figureIndex];
+							console.log(lineIndex + 1, figureIndex + 1, xyz[lineIndex + 1][figureIndex + 1]);
+						}
+					}
+				}
+			}
+
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var RegexCRLFSeparator = /\r\n|\r|\n/g;
+			var RegexExpressionSeparator = /([\+\-\=\/])/;
+			
+			var LetterBound = 27;
+		</script>
+	</body>
+</html>

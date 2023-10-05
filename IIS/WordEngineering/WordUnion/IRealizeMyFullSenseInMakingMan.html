@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-03-05	To associate the full value of the help.
+		2017-03-05	I realize My full sense in making man.
+		2017-03-05	Created.
+		2017-03-05	http://stackoverflow.com/questions/17929356/html-datalist-values-from-array-in-javascript
+		2017-03-05	By making man, my way.
+		2019-10-12	Will list the scripture references that mentions a person, body part, or activity
+	-->
+	<head>
+		<title>I realize My full sense in making man</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will list the scripture references that mentions a person, body part, or activity"/>
+		<meta name="keywords" content="Bible, word, person, body part, activity"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="who">Who</label>
+							</td>
+							<td>
+								<input type="text" id="who" list="whoList" autofocus/>
+								<datalist id="whoList"></datalist>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="bodyPart">Body part</label>
+							</td>
+							<td>
+								<input type="text" id="bodyPart" list="bodyPartList"/>
+								<datalist id="bodyPartList"></datalist>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="activity">Activity</label>
+							</td>
+							<td>
+								<input type="text" id="activity" list="activityList"/>
+								<datalist id="activityList"></datalist>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="bibleVersion">Bible Version</label>
+							</td>
+							<td>
+								<select id="bibleVersion"> </select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			function querySubmit() {
+				var request = {};
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				request["who"] = document.getElementById("who").value.trim();
+				request["bodyPart"] = document.getElementById("bodyPart").value.trim();
+				request["activity"] = document.getElementById("activity").value.trim();
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/IRealizeMyFullSenseInMakingMan.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        render(informationSet);
+				    },
+				    error: function (xhr) {
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+		    function render(data) 
+			{
+				var occurrences = data["Table"].length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1>" + caption;
+				
+		        var dataRow = null;
+		        var dataTable = null;
+				
+				var scriptureReference,
+					scriptureReferenceURI;
+
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+
+						scriptureReference = Books[dataRow["bookId"] - 1] + " " +
+							dataRow["chapterId"] + ":" +
+							dataRow["verseId"];
+						
+						scriptureReferenceURI = scriptLiteral9432.buildHyperlink
+						(
+							"scriptureReference",
+							scriptureReference
+						);
+						
+						info += scriptLiteral9432.buildRow
+						(
+							scriptureReferenceURI,
+							dataRow["verseText"]
+						);	
+					}
+				}
+
+				info += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = info;
+		    }
+
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildDatalist("whoList", whos);
+						scriptLiteral9432.buildDatalist("bodyPartList", bodyParts);
+						scriptLiteral9432.buildDatalist("activityList", activities);
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+
+		    window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+
+			var activities = [
+				"Close, closed, closing",
+				"Eat, ate, eating",
+				"Open, opened, opening",
+				"Weep, wept, weeping"
+			];
+			
+			var bodyParts = [
+				"Ear, ears",
+				"Eye, eyes",
+				"Hair",
+				"Nose"
+			];
+			
+			var whos = [
+				"God",
+				"Adam",
+				"Eve",
+				"Seth",
+				"Noah",
+				"Abram, Abraham",
+				"Sarai, Sarah",
+				"Isaac",
+				"Jacob, Israel",
+				"Judah",
+				"Joseph",
+				"Moses",
+				"Jesus"
+			];
+			
+			var Books = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"];
+		</script>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-01-18	Created.
+	-->
+	<head>
+		<title>A Perhaps Compare</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="A Perhaps Compare"/>
+		<meta name="keywords" content="Bible, Word, Occurrences"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input type="text" ID="scriptureReference" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" ID="bibleWord"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+
+			var scriptureReferenceElement = document.getElementById("scriptureReference");
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var bibleWordElement = document.getElementById("bibleWord");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+					
+						var scriptureReference = scriptLiteral9432.getParameterByName("scriptureReference");
+						if (scriptureReference)
+						{
+							scriptureReferenceElement.value = scriptureReference;
+						}	
+						
+						var bibleVersion = scriptLiteral9432.getParameterByName("bibleVersion");
+						if (bibleVersion)
+						{
+							bibleVersionElement.value = bibleVersion;
+						}	
+						
+						var bibleWord = scriptLiteral9432.getParameterByName("bibleWord");
+						if (bibleWord)
+						{
+							bibleWordElement.value = bibleWord;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["bibleWord"] = bibleWordElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/APerhapsCompare.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+   				        var dataTable = JSON.parse(data.d);
+				        scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+						//console.log(dataTable);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<script>
+/*
+	2015-07-21	Created.	http://javascript.info/tutorial/object-conversion
+*/
+var user = {
+	firstName: 'John',
+	toString: function() {
+		return 'User ' + this.firstName 
+	}
+}
+
+console.log(" " + user);
+
+console.log( new Date() ) // The date in human-readable form
+console.log( +new Date() ) // Microseconds till 1 Jan 1970
+
+var room = { 
+	num: 777,
+	valueOf: function() {
+		return this.num
+	}
+}
+console.log( +room )  // 777
+</script>
+

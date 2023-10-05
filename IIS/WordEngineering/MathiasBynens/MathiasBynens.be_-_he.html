@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2019-03-16	Mathias Bynens he.js HTML entity encoder/decoder
+	2019-03-16	https://stackoverflow.com/questions/15775236/re-size-text-area-based-on-window-size
+-->
+	<head>
+		<title>Mathias Bynens HTML entity encoder/decoder (he.js)</title>
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
+		<style>
+			textarea {width:100%;height:40%}
+		</style>
+	</head>
+	<body>
+		<label for="decode">Decode</label><br/>
+		<textarea id="decode" autofocus>foo © bar ≠ baz 𝌆 qux</textarea><br/>
+		<label for="encode">Encode</label><br/>
+		<textarea id="encode"></textarea><br/>
+		<input type="button" id="encoder" value="Encoder"/>
+		<input type="button" id="decoder" value="Decoder"/>
+		<script src="MathiasBynens.be_-_he.js"></script>
+		<script>
+			function decoderRequest()
+			{
+				document.getElementById("decode").value = 
+					he.decode(document.getElementById("encode").value);
+			}
+		
+			function encoderRequest()
+			{
+				document.getElementById("encode").value = 
+					he.encode(document.getElementById("decode").value);
+			}
+
+			window.addEventListener("load", encoderRequest, false);
+			
+			document.getElementById("decoder").addEventListener("click", decoderRequest, false);
+			document.getElementById("decode").addEventListener("change", encoderRequest, false);
+			
+			document.getElementById("encoder").addEventListener("click", encoderRequest, false);
+			document.getElementById("encode").addEventListener("change", decoderRequest, false);
+		</script>
+	</body>	
+</html>

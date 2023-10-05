@@ -1,0 +1,58 @@
+﻿<html>
+<!--
+	2014-11-02 	Created.
+	2014-11-02	http://chimera.labs.oreilly.com/books/1234000001681/ch01.html#introduction-id00001
+	2014-11-02	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+-->
+<head>
+	<title>String Methods</title>
+	<style type="text/css">
+		body { background: blue; color: yellow; } 
+	</style>
+</head>
+<body>
+	<div style="{text-align: center;}" align="center">
+		<input cols="50" id="first" value="First">
+		<input cols="50" id="second" value="Second">
+		<button id="query">Query</button>
+		<div id="response">
+		</div>
+	</div>
+<script>
+window.addEventListener("load", eStats, false);
+
+var query = document.getElementById("query");
+query.addEventListener("click", eStats, false);
+
+if (!('contains' in String.prototype)) {
+  String.prototype.contains = function(str, startIndex) {
+    return ''.indexOf.call(this, str, startIndex) !== -1;
+  };
+}
+
+if (!('includes' in String.prototype)) {
+  String.prototype.includes = function(str, startIndex) {
+    return ''.indexOf.call(this, str, startIndex) !== -1;
+  };
+}
+
+function eStats()
+{
+	var first = document.getElementById("first").value;
+	var second = document.getElementById("second").value;
+	var response = document.getElementById("response");
+	response.innerHTML = 
+		"== " + (first == second) + "<br/>" +	
+		"concat(): " + first.concat(second) + "<br/>" + //"Concatenate: " + first + second + "<br/>" +
+		"endsWith(): " + first.endsWith(second) + "<br/>" +
+		"includes: " + first.includes(second) + "<br/>" +
+		"indexOf: " + first.indexOf(second) + "<br/>" +
+		"lastIndexOf(): " + first.lastIndexOf(second) + "<br/>" +
+		"startsWith(): " + first.startsWith(second) + "<br/>" +
+		"toLowerCase: " + (first + second).toLowerCase() + "<br/>" +
+		"toUpperCase: " + (first + second).toUpperCase() + "<br/>"
+		;
+}
+</script>
+</body>
+</html>

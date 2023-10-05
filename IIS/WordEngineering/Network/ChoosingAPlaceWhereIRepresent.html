@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-10-01	Created.	Essential SNMP. O'Reilly. Douglas R. Mauro and Kevin S. Schmidt ping host. ipconfig. arp -a. netstat - rn. traceroute versus tracert. nslookup versus dig. whois versus jwhois. Ethereal.com.
+		2019-10-01	https://stackoverflow.com/questions/19159075/how-to-append-div-in-existing-div
+		2019-10-01 18:13:48.367	Where I belong; is where I am from.
+	-->
+	<head>
+		<title>Choosing a place, where I represent.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="host">Host</label></td>
+						<td><input type="text" id="host" value="Yahoo.com" focus></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			<div id="resultSet" align="center"></div>	
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			var hostID = document.getElementById("host");
+			var resultSetID = document.getElementById("resultSet");
+			var networkRequests = 
+			[
+				["Ping"],
+				["TraceRoute"],
+				["WhoIs"],
+				//["ipConfig"]
+			];
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();
+						isPostBack = true;
+					});
+				}	
+ 			}
+			
+			function querySubmit()
+			{
+				resultSetID.innerHTML = "";
+				
+				networkRequests.forEach(function(item){
+					var request = {};
+					
+					request["command"] = item[0];
+					request["host"] = hostID.value;
+					
+					var requestJson = JSON.stringify(request);
+					
+					$.ajax
+					({
+						type: "POST",
+						contentType: "application/json; charset=utf-8",
+						url: "/WordEngineering/Network/ChoosingAPlaceWhereIRepresent.asmx/Query",
+						data: requestJson,
+						dataType: "json",
+						success: function(data) 
+						{
+							var div = document.createElement("div");
+							div.innerHTML = scriptLiteral9432.renderJsonObject(JSON.parse(data.d), item[0]);
+							resultSetID.appendChild(div);
+						},
+						error: function(xhr)
+						{ 
+							var div = document.createElement("div");
+							div.innerHTML = 
+								'Status: ' + xhr.status + " | " + 
+								'StatusText: ' + xhr.statusText + " | " +
+								'ResponseText: ' + xhr.responseText;
+							resultSetID.appendChild(div);
+						} 
+					});
+				});	
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+			var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

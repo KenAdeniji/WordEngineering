@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-07-29T13:30:00	Created.
+		-->
+		<title>Two eighteen, two nineteen, and for long cast.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Two eighteen, two nineteen, and for long cast."/>
+		<meta name="keywords" content="Scripture Reference, BookID, ChapterID, VerseID"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookIDFrom">Book ID</label></td>
+					<td>
+						<input id="bookIDFrom" type="number" autofocus/>
+						<input id="bookIDUntil" type="number"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="chapterIDFrom">Chapter ID</label></td>
+					<td>
+						<input id="chapterIDFrom" type="number"/>
+						<input id="chapterIDUntil" type="number"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="verseIDFrom">Value ID</label></td>
+					<td>
+						<input id="verseIDFrom" type="number"/>
+						<input id="verseIDUntil" type="number"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="bibleVersion">Version</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+			<div id="scriptureReferenceConcatenate"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	bookIDFromElement		=	document.getElementById("bookIDFrom");
+			const	bookIDUntilElement 		=	document.getElementById("bookIDUntil");
+			const	chapterIDFromElement	=	document.getElementById("chapterIDFrom");
+			const	chapterIDUntilElement 	=	document.getElementById("chapterIDUntil");
+			const	verseIDFromElement		=	document.getElementById("verseIDFrom");
+			const	verseIDUntilElement 	=	document.getElementById("verseIDUntil");
+			
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			const	resultTableElement = document.getElementById("resultTable");
+			const	scriptureReferenceConcatenateElement = document.getElementById("scriptureReferenceConcatenate");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var bookIDFromParameter = urlParams.get("bookIDFrom");
+						if (bookIDFromParameter)
+						{
+							bookIDFromElement.value = bookIDFromParameter;
+						}
+
+						var bookIDUntilParameter = urlParams.get("bookIDUntil");
+						if (bookIDUntilParameter)
+						{
+							bookIDUntilElement.value = bookIDUntilParameter;
+						}
+						
+						var chapterIDFromParameter = urlParams.get("chapterIDFrom");
+						if (chapterIDFromParameter)
+						{
+							chapterIDFromElement.value = chapterIDFromParameter;
+						}
+
+						var chapterIDUntilParameter = urlParams.get("chapterIDUntil");
+						if (chapterIDUntilParameter)
+						{
+							chapterIDUntilElement.value = chapterIDUntilParameter;
+						}
+						
+						var verseIDFromParameter = urlParams.get("verseIDFrom");
+						if (verseIDFromParameter)
+						{
+							verseIDFromElement.value = verseIDFromParameter;
+						}
+
+						var verseIDUntilParameter = urlParams.get("verseIDUntil");
+						if (verseIDUntilParameter)
+						{
+							verseIDUntilElement.value = verseIDUntilParameter;
+						}
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				var bookIDFromValue = bookIDFromElement.value;
+				if ( !isNaN( parseFloat( bookIDFromValue ) ) )
+				{
+					bookIDFromValue = Number.parseInt(bookIDFromValue);
+				}
+				else
+				{
+					bookIDFromValue = -1;
+				}	
+
+				var bookIDUntilValue = bookIDUntilElement.value;
+				if ( !isNaN( parseFloat( bookIDUntilValue ) ) )
+				{
+					bookIDUntilValue = Number.parseInt(bookIDUntilValue);
+				}
+				else
+				{
+					bookIDUntilValue = -1;
+				}	
+
+				var chapterIDFromValue = chapterIDFromElement.value;
+				if ( !isNaN( parseFloat( chapterIDFromValue ) ) )
+				{
+					chapterIDFromValue = Number.parseInt(chapterIDFromValue);
+				}
+				else
+				{
+					chapterIDFromValue = -1;
+				}	
+
+				var chapterIDUntilValue = chapterIDUntilElement.value;
+				if ( !isNaN( parseFloat( chapterIDUntilValue ) ) )
+				{
+					chapterIDUntilValue = Number.parseInt(chapterIDUntilValue);
+				}
+				else
+				{
+					chapterIDUntilValue = -1;
+				}	
+
+				var verseIDFromValue = document.getElementById("verseIDFrom").value;
+				if ( !isNaN( parseFloat( verseIDFromValue) ) )
+				{
+					verseIDFromValue = Number.parseInt(verseIDFromValue);
+				}
+				else
+				{
+					verseIDFromValue = -1;
+				}	
+
+				var verseIDUntilValue = document.getElementById("verseIDUntil").value;
+				if ( !isNaN( parseFloat( verseIDUntilValue) ) )
+				{
+					verseIDUntilValue = Number.parseInt(verseIDUntilValue);
+				}
+				else
+				{
+					verseIDUntilValue = -1;
+				}	
+
+				request["bookIDFrom"] = bookIDFromValue;
+				request["bookIDUntil"] = bookIDUntilValue;
+				
+				request["chapterIDFrom"] = chapterIDFromValue;
+				request["chapterIDUntil"] = chapterIDUntilValue;
+				
+				request["verseIDFrom"] = verseIDFromValue;
+				request["verseIDUntil"] = verseIDUntilValue;
+				
+				request["bibleVersion"] = bibleVersionElement.value;
+				
+				var requestJson = JSON.stringify(request);
+
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/TwoEighteenTwoNineteenAndForLongCast.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						let concatenate = scriptLiteral9432.scriptureReferenceConcatenate
+						(
+							resultTableElement.getElementsByTagName("Table")[0],
+							0
+						);	
+						scriptureReferenceConcatenateElement.innerHTML = 
+							scriptLiteral9432.buildHyperlink("scriptureReference", concatenate);
+
+					},
+					error: function (xhr) {
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+					}
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2016-05-20	Created. All My talking, is one absolute truth; that I befall you, as I beneath you.
+			It is word associative, finding the next or previous word. This is an example, and it is hoped that it will lead to greater exploration, of how words are relevant to one another; what provokes or precedes one word. 
+	-->
+	<head>
+		<title>Associative Words</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<meta charset="UTF-8"/>
+		<meta name="description" content="It is word associative, finding the next or previous word. This is an example, and it is hoped that it will lead to greater exploration, of how words are relevant to one another; what provokes or precedes one word. "/>
+		<meta name="keywords" content="Bible, word, associative, before, after, beside"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<input type="text" ID="bibleWord" size="50"/>
+			<select id="logic" size="1">
+				<option value="-1">Before</option>
+				<option value="0" selected="selected">Beside</option>		
+				<option value="1">After</option>
+			</select>
+			<label for="wordsCount">Words Count</label>
+			<input type="number" ID="wordsCount" size="3"/>
+			<select id="bibleVersion"> </select>
+			<input type="submit" id="submitQuery">
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<div id="resultSet"> </div>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			 
+			function getParameterByName(name)  {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var bibleWord = getParameterByName("bibleWord");
+					if (bibleWord)
+					{
+						document.getElementById("bibleWord").value = bibleWord;
+					}	
+
+					var wordsCount = getParameterByName("wordsCount");
+					if (!wordsCount)
+					{
+						wordsCount = "1";
+					}	
+					document.getElementById("wordsCount").value = wordsCount;
+					
+					renderBibleVersionSelect();
+					isPostBack = true;
+				}
+				if (isPostBack)
+				{
+					querySubmit();	
+				}
+			}
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				request["question"] = document.getElementById("bibleWord").value;
+				request["logic"] = document.getElementById("logic").value;
+				request["wordsCount"] = document.getElementById("wordsCount").value;
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/BibleWordWebService.asmx/AssociativeWords",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var occurrences = data["Table"].length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				var info = "<table border=1>" + caption + 
+					"<thead><tr><th>Words</th><th>Occurrences</th></thead><tbody>";
+
+				var dataRow = null;
+				var dataTable = null;
+				
+				var words = null;
+				var occurrences = null;
+			
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						words = dataRow["Words"];
+						occurrences = dataRow["Occurrences"];
+						
+						info += "<tr><td>" + words + "</td><td>" + occurrences + "</td></tr>";
+					}
+				}
+				info += "</tbody></table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function renderBibleVersionSelect() 
+			{
+				var select = document.getElementById("bibleVersion");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = bibleVersions.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = bibleVersions[rowIndex][0];
+					option.value = bibleVersions[rowIndex][1];;
+					select.appendChild(option);
+				}
+			}
+			
+			function selectOption(id, value)
+			{    
+				document.getElementById(id).value = value;
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			var bibleVersions = [
+				["King James Version", "KingJamesVersion"],
+				["American Standard Bible", "AmericanStandardBible"],
+				["Young's Literal Translation", "YoungLiteralTranslation"] 
+			]
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

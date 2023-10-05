@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2018-03-12	https://reactjs.org/docs/hello-world.html
+-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<style>
+		.greeting {background: #b8d1f3;}
+		.greetingAlternate {background: #dae5f4;}
+	</style>	
+  </head>
+  <body>
+    <div id="root"></div>
+	<div id="fullName"></div>
+	<div id="avatarUrl"></div>
+	<div id="elementClassNameJSX"></div>
+	<div id="elementClassNameReactCreateElement"></div>
+    <script type="text/babel">
+
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('root')
+      );
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      To set up a production-ready React build environment, follow these instructions:
+      * https://reactjs.org/docs/add-react-to-a-new-app.html
+      * https://reactjs.org/docs/add-react-to-an-existing-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      * https://reactjs.org/docs/react-without-jsx.html
+      * https://reactjs.org/docs/cdn-links.html
+    -->
+	
+    <script type="text/babel">
+
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+
+const element = (
+  <h1>
+    Hello, {formatName(user)}!
+  </h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('fullName')
+);
+    </script>
+
+	<script type="text/babel">
+		var avatarUrl = "https://www.gstatic.com/webp/gallery3/1.sm.png"
+		const element = <img src={avatarUrl}></img>;
+		
+ReactDOM.render(
+  element,
+  document.getElementById('avatarUrl')
+);
+	</script>
+	
+	<script type="text/babel">	
+const elementClassNameJSX = (
+  <h1 className="greeting">
+    Greeting
+  </h1>
+);
+ReactDOM.render(
+  elementClassNameJSX,
+  document.getElementById('elementClassNameJSX')
+);
+
+const elementClassNameReactCreateElement = React.createElement(
+  'h1',
+  {className: 'greetingAlternate'},
+  'Greeting alternate classname'
+);
+
+
+ReactDOM.render(
+  elementClassNameReactCreateElement,
+  document.getElementById('elementClassNameReactCreateElement')
+);
+
+	</script>
+	
+  </body>
+</html>

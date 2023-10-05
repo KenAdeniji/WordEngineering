@@ -1,0 +1,101 @@
+﻿<html>
+<!--
+	2014-12-22 Created. Ten, five, or two.
+	2013-12-22 http://stackoverflow.com/questions/16505559/how-can-i-use-modulo-operator-in-javascript
+-->
+<head>
+<title>Ten, five, or two.</title>
+<style type="text/css">
+	body { background: blue; color: yellow; } 
+</style>
+</head>
+<body>
+<div align="center">
+	<label for="denomination">Denomination: <textarea rows="4" cols="50" id="denomination">10, 5, 2</textarea></label>
+	<br>
+	<label for="change">Change: <input type="text" id="change" value="356"></label>
+	<br>
+	<label for="suppressZeroes">Suppress zeroes: <input type="checkbox" id="suppressZeroes"></label>
+	<br>
+	<button id="query">Query</button>
+	<br><br>
+	<div id="resultSet"></div>
+</div>
+<script>
+var tenFiveOrTwo =
+{
+	convertToFloat: function (array) {
+		var count = array.length;
+		for (n = 0; n < count; ++n)
+		{
+			array[n] = parseFloat(array[n]);
+		}
+	},
+
+	deepCopy: function( source ) {
+		var target = [];
+		for (var i = 0, j = source.length; i < j; ++i)
+		{
+			target[i] = source[i];
+		}
+		return target;	
+	},
+
+	subDivision: function(denomination, change, suppressZeroes) {
+		var count = denomination.length - 1;
+		var currency = "";
+		var index = 0;
+		
+		console.log(suppressZeroes);
+		
+		while (change > 0 && index <= count)
+		{
+			var remainder = change % denomination[index];
+			var whole = Math.floor( change / denomination[index] );
+
+			change -= denomination[index] * whole;
+			
+			if 
+			(
+				( suppressZeroes === true )
+				&& 
+				( remainder <= denomination[index] && whole === 0)
+			)	
+			{
+				++index;
+				continue;
+			}
+			
+			currency += denomination[index] + "'s " + whole + '. ';
+		
+			++index;
+		}
+		return currency;
+	}
+}
+
+window.addEventListener("load", eStats, false);
+
+var query = document.getElementById("query");
+query.addEventListener("click", eStats, false);
+
+function eStats()
+{
+	var denomination = document.getElementById("denomination").value;
+	var denominationArray = denomination.split(",");
+	tenFiveOrTwo.convertToFloat(denominationArray);
+	
+	var workingCopy = tenFiveOrTwo.deepCopy(denominationArray);
+	workingCopy.sort( function(a,b){return b-a;} );
+
+	var change = parseFloat( document.getElementById("change").value );
+
+	var suppressZeroes = document.getElementById("suppressZeroes").checked;
+	
+	var currency = tenFiveOrTwo.subDivision(workingCopy, change, suppressZeroes);
+	var resultSet = document.getElementById("resultSet");
+	resultSet.innerHTML = "Currency: " + currency + "<br/>";
+}
+</script>
+</body>
+</html>

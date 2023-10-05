@@ -1,0 +1,99 @@
+﻿body 
+{
+    background-color: #5c87b2;
+    color: white;
+}
+
+.block {
+    clear: left;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    padding: 5px;
+    float: left;
+    border-width: 1px;
+    border-color: #7f7f7f;
+    border-style: dashed;
+}
+
+.border_radius {
+    border-radius: 5px;
+}
+        
+.border_radius_separately 
+{
+    border-top-left-radius: 10em;
+    border-bottom-right-radius: 5em;
+    border-bottom-left-radius: 2em;
+}
+
+.border_radius_separately_alternative
+{
+    border-radius: 10em 0 5em 2em;
+}
+        
+.border_radius_with_ellipses
+{
+    border-top-left-radius: 50px 25px;
+    border-top-right-radius: 50px 25px;
+    border-bottom-left-radius: 15px 30px;
+    border-bottom-right-radius: 15px 30px;
+}
+        
+/* border-radius: ulx urx lrx llx / uly ury lry lly; */
+.border_radius_with_ellipses_xy
+{
+    border-radius: 50px 50px 0 0 / 25px 25px 0 0;
+}                        
+
+/*
+    box-shadow: hoff voff bd sd color inset;
+    hoff Horizontal offset. Negative value means left, positive value means right.
+    voff Vertical offset. Negative value means top, positive value means bottom.
+    bd Blur distance. Indicates how blurred the shadow edge is.
+    sd Spread distance. How far the shadow extends in all directions.
+*/
+.box_shadow_hoff_voff
+{
+    box-shadow: -20px -20px;
+}
+
+.box_shadow_hoff_voff_bd
+{
+    box-shadow: 20px 20px 30px;
+}
+
+.box_shadow_hoff_voff_bd_sd
+{
+    box-shadow: 20px 20px 30px 30px;
+}
+
+.box_shadow_hoff_voff_bd_sd_color
+{
+    box-shadow: 20px 20px 30px 30px gray;
+}
+
+.box_shadow_hoff_voff_bd_sd_color_inset
+{
+    box-shadow: 20px 20px 30px 30px gray inset;
+}
+
+.product_orderinfo a {
+    color: white;
+    background: #000099 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAYAAACd+7GKAAAAJklEQVQIW2P4//+/NxMDA8N/JgYGhn+oLDQu7Vk/GP4zMXDQx3IA0To1YWcEwtQAAAAASUVORK5CYII=") repeat-x;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin: 3px;
+}
+
+.product_orderinfo a:hover {
+    background: #663300 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAYAAACd+7GKAAAAJklEQVQIW2P4//+/NxMDA8N/JgYGhn+oLDQu7Vk/GP4zMXDQx3IA0To1YWcEwtQAAAAASUVORK5CYII=") repeat-x;
+}

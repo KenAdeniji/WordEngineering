@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-08-31	Created.
+	-->
+	<head>
+		<title>Countrycode.org</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Countrycode.org"/>
+		<meta name="keywords" content="Country code, telephone calling code, ISO Code 2-Digit, ISO Code 3-Digit, population, Area KM Square	GDP"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet"></div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function querySubmit()
+			{
+				document.getElementById("resultSet").innerHTML = "";
+				var request = {};
+				//request[""] = document.getElementById("").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/Countrycode.org.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					}
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

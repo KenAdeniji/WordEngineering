@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-07-13 	Created.	MeISupposeInTime.html	Takes a number, and find words with the same length.
+		-->
+		<title>Me, I suppose, in time.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<label for="checker">Number</label>
+				<input type="number" id="checker" autofocus>
+				<select id="bibleVersion"> </select>
+				<input type="submit" id="submitQuery">
+			</fieldset>			
+			<div id="resultSet"> </div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function buildHyperlinkBibleWord(bibleWord, logic)
+			{
+				var uri = encodeURI('BibleWord.html?bibleWord=' + bibleWord + "&logic=" + logic);
+				var bibleWordHyperlink = "<a href=" + uri + ">" + bibleWord + "</a>";
+				return bibleWordHyperlink;
+			}
+
+			function buildHyperlinkScriptureReference(scriptureReference)
+			{
+				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var scriptureReferenceHyperlink = "<a href=" + uri + ">" + scriptureReference + "</a>";
+				return scriptureReferenceHyperlink;
+			}
+
+			function querySubmit() {
+				document.getElementById("resultSet").innerHTML = "";
+				var checker = document.getElementById("checker").value;
+				if (!checker)
+				{
+					document.getElementById("checker").value = 65;
+				}
+				var request = {};
+				request["checker"] = document.getElementById("checker").value;
+				request["bibleVersion"] = document.getElementById("bibleVersion").value;
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/MeISupposeInTime.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function (data) {
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function (xhr) {
+						document.getElementById("resultSet").innerHTML = 
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					}
+				});
+			}
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					renderBibleVersionSelect();
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function render(data) 
+			{
+				var occurrences = data["workTable"].length;
+				var caption = "<caption>Word Length - (Occurrences: " + occurrences + ") </caption>";
+				var info = 	"<table>" + caption + "<thead><tr><th>Word</th><th>Scripture Reference</th></thead>";
+				var dataRow = null;
+				var dataTable = null;
+				
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+					
+						info += "<tr><td>" + buildHyperlinkBibleWord(dataRow.Word) + "</td>" + 
+							"<td>" + buildHyperlinkScriptureReference(dataRow.ScriptureReference) + "</td>" +
+							"</tr>";
+					}
+				}
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+
+			function renderBibleVersionSelect() 
+			{
+				var select = document.getElementById("bibleVersion");
+				select.options.length = 0;
+				
+				for (var rowIndex = 0, rowCount = bibleVersions.length; rowIndex < rowCount; ++rowIndex)
+				{
+					var option = document.createElement("option");
+					option.text = bibleVersions[rowIndex][0];
+					option.value = bibleVersions[rowIndex][1];;
+					select.appendChild(option);
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}	
+
+			var bibleVersions = [
+				["King James Version", "KingJamesVersion"],
+				["American Standard Bible", "AmericanStandardBible"],
+				["Young's Literal Translation", "YoungLiteralTranslation"] 
+			]			
+		</script>
+	</body>
+</html>

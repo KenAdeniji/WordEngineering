@@ -1,0 +1,73 @@
+﻿<html>
+<!-- 
+	2014-10-20 	Created. http://xue.unalmed.edu.co/~caalvare/poli/doc/Oreilly.JavaScript.The.Definitive.Guide.6th.Edition.Apr.2011.pdf
+	2014-10-20 	w3schools.com/tags/att_input_min.asp
+	2017-07-19	function memfactorial(n) ftp://ftp.micronet-rostov.ru/linux-support/books/programming/JavaScript/[O%60Reilly]%20-%20High%20Performance%20JavaScript%20-%20[Zakas].pdf
+-->
+<head>
+<title>Factorial</title>
+<style type="text/css">
+	body { background: blue; color: yellow; }
+</style>
+</head>
+<body>
+<div align="center">
+	<label for="n">n:</label>
+	<input id="n" cols="10" value="10" type="number" min="1">
+	<br>
+	<button id="query">Query</button>
+	<br>
+	<div id="response"></div>
+</div>	
+
+<script>
+	function calculate() {
+		var n = parseFloat(document.getElementById("n").value);
+		
+		document.getElementById("response").innerHTML = factorial(n);
+	}
+
+	function factorial(n) { // A recursive function
+		if (n <= 1) return 1;
+		return n * factorial(n - 1);
+	}
+
+	function memfactorial(n){
+		if (!memfactorial.cache){
+			memfactorial.cache = {
+				"0": 1,
+				"1": 1
+			};
+		}
+		if (!memfactorial.cache.hasOwnProperty(n)){
+			memfactorial.cache[n] = n * memfactorial (n-1);
+		}
+		return memfactorial.cache[n];
+	}
+
+	function memoize(fundamental, cache){
+		cache = cache || {};
+		var shell = function(arg){
+			if (!cache.hasOwnProperty(arg)){
+				cache[arg] = fundamental(arg);
+			}
+			return cache[arg];
+		};
+		return shell;
+	}
+
+	//memoize the factorial function
+	var memfactorial = memoize(factorial, { "0": 1, "1": 1 });
+	//call the new function
+	var fact6 = memfactorial(6);
+	var fact5 = memfactorial(5);
+	var fact4 = memfactorial(4);
+	
+	window.addEventListener("load", calculate, false);
+
+	var query = document.getElementById("query");
+	query.addEventListener("click", calculate, false);
+</script>
+
+</body>
+</html>

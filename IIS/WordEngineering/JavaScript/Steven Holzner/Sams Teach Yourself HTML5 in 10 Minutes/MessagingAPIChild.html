@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2017-10-21	Fremont Library. Steven Holzner. Sams Teach Yourself HTML5 in 10 Minutes.
+		Messaging API
+-->
+	<head>
+		<title>Messaging API Child</title>
+	</head>
+	<body>
+		<div
+			id="message"
+			style="height:300px; width:400px;"
+		>	
+		</div>
+		
+		<script>
+			function pageLoad(event)
+			{
+				document.getElementById("message").innerHTML = event.data;
+				
+				if (event.origin !== "http://example.org:8080")
+					return;				
+			}
+			
+			window.addEventListener("message", pageLoad, false);
+		</script>
+	</body>
+</html>

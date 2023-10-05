@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2020-06-16	Created.
+SELECT ScriptureReference, {1} AS VerseText 
+FROM Bible..Scripture
+WHERE SOUNDEX('{0}') IN (SELECT SOUNDEX(value) FROM STRING_SPLIT({1}, ' '))  
+ORDER BY VerseIDSequence
+
+SELECT KingJamesVersion, ScriptureReference
+FROM Bible..Scripture
+WHERE SOUNDEX('Abraham') IN (SELECT SOUNDEX(value) FROM STRING_SPLIT(KingJamesVersion, ' '))  
+ORDER BY VerseIDSequence
+	-->
+	<head>
+		<title>I know, as doing.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I know, as doing."/>
+		<meta name="keywords" content="Bible, Scripture Reference, soundex, difference, STRING_SPLIT"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" value="Abraham" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var wordElement = document.getElementById("word");
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect("bibleVersion");
+						scriptLiteral9432.buildSelect("word", scriptLiteral9432.words);
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var wordParam = urlParams.get("word");
+						if (wordParam)
+						{
+							wordElement.value = wordParam;
+						}
+
+						var bibleVersionParam = urlParams.get("bibleVersion");
+						if (bibleVersionParam)
+						{
+							bibleVersionElement.value = bibleVersionParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["word"] = wordElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/IKnowAsDoing.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

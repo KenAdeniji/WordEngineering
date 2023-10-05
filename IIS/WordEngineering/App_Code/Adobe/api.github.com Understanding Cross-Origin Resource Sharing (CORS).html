@@ -1,0 +1,67 @@
+<html>
+<!--
+	2016-07-05	http://www.adobe.com/devnet/archive/html5/articles/understanding-cross-origin-resource-sharing-cors.html
+	2016-07-05	http://www.w3.org/TR/cors/
+	2016-07-05	http://enable-cors.org/
+-->
+	<head>
+	   <title>api.github.com Understanding Cross-Origin Resource Sharing (CORS)</title>
+	</head>
+	<body>
+		<div align="center">
+			<label for="word">Keyword:</label>
+			<input type="text" id="word" focus>
+			<button id="query">Query</button>
+			<br>
+			<div id="allRepos" align="left"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					document.getElementById("word").value = "JavaScript";
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+				
+			function querySubmit() {
+				
+				var xhr = new XMLHttpRequest();
+				var uri = "https://api.github.com/legacy/repos/search/" + 
+						document.getElementById("word").value;
+				xhr.open('GET', uri, true);
+				// Response handlers.
+				xhr.onload = function () {
+					var repos = JSON.parse(xhr.response), i, reposHTML = "";
+					for (i = 0; i < repos.repositories.length; i++) {
+					reposHTML += "<p><a href='" + repos.repositories[i].url
+								 + "'>" + repos.repositories[i].name + "</a><br>"
+								 + repos.repositories[i].description + "</p>";
+					}
+					document.getElementById("allRepos").innerHTML = reposHTML;
+				};
+
+				xhr.onerror = function () {
+					alert('error making the request.');
+				};
+
+				xhr.send();
+			}
+		
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}	
+
+			window.addEventListener("load", pageLoad, false);			
+		</script>
+	</body>
+</html>

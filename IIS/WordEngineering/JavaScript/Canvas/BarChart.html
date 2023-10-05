@@ -1,0 +1,126 @@
+<html> 
+	<head>
+		<title>Bar Chart</title>
+		<style type="text/css">
+			body { background: blue; color: yellow; }
+			textarea { background: gray }
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script> 
+			var ChartLibrary =
+			{
+				convertToFloat: function (array) {
+					var count = array.length;
+					for (n = 0; n < count; ++n)
+					{
+						array[n] = parseFloat(array[n]);
+					}
+				},
+
+				highest: function () {
+					return Math.max.apply( Math, arguments ); 
+				},
+
+				largest: function (array) {
+					return Math.max.apply( Math, array ); 
+				},
+
+				lowest: function () {
+					return Math.min.apply( Math, arguments ); 
+				},
+
+				smallest: function (array) {
+					return Math.min.apply( Math, array ); 
+				},
+			}
+			
+			$(document).ready(function () {
+				domReady();
+			});
+
+			function domReady() {
+				$("#query").click(function() {
+      				drawChart();
+				});
+				drawChart();	
+			}
+
+			function drawChart()
+			{
+				var canvasHeight = $('#canvas').attr('height');
+				var canvasWidth = $('#canvas').attr('width');
+
+				var requestXText = $("#requestX").val();
+				var requestXArray = requestXText.split(",");
+
+				var requestYText = $("#requestY").val();
+				var requestYArray = requestYText.split(",");
+				ChartLibrary.convertToFloat(requestYArray);
+				var count = requestYArray.length;
+				var largest = ChartLibrary.largest(requestYArray);
+				var smallest = ChartLibrary.smallest(requestYArray);
+				var span = 0;
+				var zeroPoint = 0;
+				var scale = 0;
+				
+				if (smallest <= 0 && largest >= 0)
+				{
+					span = largest - smallest;
+					zeroPoint = canvasHeight * largest / span;
+				}
+				else if (largest < 0)
+				{
+					span = smallest;
+					zeroPoint = 0;
+				}
+				else
+				{
+					span = largest;
+					zeroPoint = canvasHeight;
+				}	
+
+				scale = canvasHeight / span;
+				
+				//get a reference to the canvas 
+				var canvas = document.getElementById('canvas');
+				//get a reference to the drawing context 
+				var c = canvas.getContext('2d');
+				//draw 
+				c.fillStyle = "blue";
+				c.fillRect(0, 0, canvasWidth, canvasHeight);
+
+				for (var n = 0, dataPoint = 0, chartPoint = 0; n < count; ++n)
+				{
+					dataPoint = requestYArray[n];
+					chartPoint = zeroPoint - (dataPoint * scale);
+					crossPoint = Math.abs(chartPoint - zeroPoint);
+					
+					console.log(dataPoint, zeroPoint, chartPoint, crossPoint);
+					
+					c.fillStyle = "gray";
+					if (dataPoint >= 0)
+					{
+						c.fillRect(25 + n*100, chartPoint, 50, crossPoint);
+					}
+					else
+					{
+						c.fillRect(25 + n*100, zeroPoint, 50, crossPoint);
+					}
+					
+					c.fillStyle = "black";
+					c.fillText(requestXArray[n], 25 + n*100, zeroPoint);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<canvas width="500" height="500" id="canvas"></canvas><br/>
+			<label for="x">X:</label>
+			<textarea rows="4" cols="50" id="requestX">Monday, Tuesday, Wednesday</textarea>
+			<label for="y">Y:</label>
+			<textarea rows="4" cols="50" id="requestY">7, 3, 7</textarea>
+			<button id="query">Query</button>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-09-30	Created.	https://html.spec.whatwg.org/multipage/web-messaging.html#web-messaging
+			2018-09-30	http://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+		-->
+		<title>Cross-document messaging Target</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="message">Message:</label></td>
+					<td><span id="message"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			window.addEventListener('message', receiver, false);
+			
+			function receiver(e) {
+				console.log(e.origin, e.data);
+				message.textContent = e.data;
+			  if (e.origin == window.location.hostname) {
+				if (e.data == 'Hello world') {
+				  e.source.postMessage('Hello', e.origin);
+				} else {
+				  message.textContent = e.data;
+				}
+			  }
+			}
+		</script>
+	</body>
+</html>

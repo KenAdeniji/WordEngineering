@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<!--
+	2014-04-26 https://docs.angularjs.org/guide/concepts
+-->
+	<head>
+		<title>Temperature Conversion</title>
+	</head>
+	<body>
+		<div ng-app="temperatureConversion" ng-controller="TemperatureController as converter">
+			<div>
+				Temperature: <input type="number" ng-model="converter.temperature" required >
+				<select ng-model="converter.inMeasurementUnit">
+					<option ng-repeat="c in converter.currencies">{{c}}</option>
+				</select>
+			</div>
+			<div>
+				<b>Conversion:</b>
+					<span ng-repeat="c in converter.currencies">
+					{{converter.total(c) | currency:c}}
+				</span>
+				<button class="btn" ng-click="converter.windowClose()">Close</button>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+		<script>
+			angular.module('temperatureConversion', [])
+			.controller('TemperatureController', function() {
+				this.temperature = 0;
+				this.inMeasurementUnit = 'Celsuis';
+				this.currencies = ['Celsuis', 'Fahrenheit', 'Kelvin'];
+		 
+				this.total = function total(outMeasurementUnit) {
+					var reading = 0;
+					switch (outMeasurementUnit) {
+						case "Celsuis":
+							switch(this.inMeasurementUnit) {
+								case "Celsuis":
+									reading = this.temperature;
+									break;
+								case "Fahrenheit":
+									reading = (this.temperature - 32) * 5 / 9;	
+									break;
+								case "Kelvin":
+									reading = this.temperature - 273.15;
+									break;
+							}
+							break;
+						case "Fahrenheit":
+							switch(this.inMeasurementUnit) {
+								case "Celsuis":
+									reading = (this.temperature * 9 / 5) + 32;
+									break;
+								case "Fahrenheit":
+									reading = this.temperature;
+									break;
+								case "Kelvin":
+									reading = (9 / 5 * (this.temperature - 273.15)) + 32;
+									break;
+							}
+							break;
+						case "Kelvin":
+							switch(this.inMeasurementUnit) {
+								case "Celsuis":
+									reading = this.temperature + 273.15;
+									break;
+								case "Fahrenheit":
+									reading = ((this.temperature - 32) * 5 / 9) + 273.15;
+									break;
+								case "Kelvin":
+									reading = this.temperature;
+									break;
+							}
+							break;
+					}
+					return reading;
+				};
+				
+				this.windowClose = function windowClose() {
+					close();
+				};
+			});
+		</script>
+	</body>
+</html>

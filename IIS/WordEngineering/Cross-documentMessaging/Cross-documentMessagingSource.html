@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-09-30	Created.	https://html.spec.whatwg.org/multipage/web-messaging.html#web-messaging
+			2018-09-30	http://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+		-->
+		<title>Cross-document messaging Source</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="message">Message:</label></td>
+					<td><input id="message" type="text" focus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<table id="resultSet"></table>
+			<iframe id="target" src="Cross-documentMessagingTarget.html"></iframe>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				resultSet.innerHTML = "";
+				if (isPostBack === false)
+				{
+					querySubmit()
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var o = document.getElementsByTagName('iframe')[0];
+				o.contentWindow.postMessage(message.value, "*"); //window.location.hostname;
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

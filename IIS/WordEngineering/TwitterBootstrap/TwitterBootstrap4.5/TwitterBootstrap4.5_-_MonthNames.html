@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!--
+			2020-08-12 	Created.
+			2020-08-12T10:08:00 ... 2020-08-12T10:26:00 Error.
+			2020-08-12	https://stackoverflow.com/questions/1643320/get-month-name-from-date
+		-->	
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+		<title>Month Names</title>
+	</head>
+	<body>
+		<div class="container" id="monthNames"></div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  
+
+		<script>
+			var monthNameElement = document.getElementById("monthNames");
+			function pageLoad()
+			{
+				var monthNameStub = "";
+				for (var monthIndex = 0; monthIndex < 12; ++monthIndex)
+				{
+					const date = new Date(2020, monthIndex, 1);
+					const monthName = date.toLocaleString('default', { month: 'long' });
+					monthNameStub += `<div class="col-sm-1">${monthName}</div>`
+				}
+				monthNameElement.innerHTML = 
+					`<div class="container"><div class="row">${monthNameStub}</div></div>`;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

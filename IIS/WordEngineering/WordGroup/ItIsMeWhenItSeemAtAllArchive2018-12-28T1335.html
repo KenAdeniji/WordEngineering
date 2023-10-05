@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2018-12-28	Created.
+	-->
+	<head>
+		<title>It is me, when it seem, at all.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<div>	
+				<div id="resultSet"> </div>
+			</div>	
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						isPostBack = true;
+						querySubmit();
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var dataSet = 
+				[
+					{
+						"BibleWord": "Hour"
+					},
+					{
+						"BibleWord": "Day"
+					},
+					{
+						"BibleWord": "Week"
+					},
+					{
+						"BibleWord": "Month"
+					},
+					{
+						"BibleWord": "Year"
+					},
+					{
+						"BibleWord": "Generation"
+					},
+				];
+				document.getElementById("resultSet").innerHTML =
+					scriptLiteral9432.renderData(dataSet, 0);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

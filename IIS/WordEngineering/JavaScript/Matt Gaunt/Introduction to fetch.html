@@ -1,0 +1,36 @@
+<script>
+function reqListener() {  
+  var data = JSON.parse(this.responseText);  
+  console.log(data);  
+}
+
+function reqError(err) {  
+  console.log('Fetch Error :-S', err);  
+}
+
+var oReq = new XMLHttpRequest();  
+oReq.onload = reqListener;  
+oReq.onerror = reqError;  
+oReq.open('get', 'HelloWorld.txt', true);  
+oReq.send();
+
+fetch('HelloWorld.txt')  
+  .then(  
+    function(response) { 
+      if (response.status !== 200) {  
+        console.log('Looks like there was a problem. Status Code: ' +  
+          response.status);  
+        return;  
+      }
+
+      // Examine the text in the response  
+      response.json().then(function(data) {  
+        console.log(data);  
+      });  
+    }  
+  )  
+  .catch(function(err) {  
+    console.log('Fetch Error :-S', err);  
+  });
+
+</script>

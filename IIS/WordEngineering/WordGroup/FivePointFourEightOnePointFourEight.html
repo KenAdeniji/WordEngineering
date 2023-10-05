@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-04-16	Created.	We were told that our car is parked at Fremont Hub.
+My accounts manager needs you to add that 1 year of React experience to your resume. It will help keep the integrity of your resume for the hiring manager when he looks at it.
+
+Can you send me an updated resume with a single line of text added to your current position, just talking a little about your React experience?
+
+Thanks,
+
+-- 
+Stephen Hyland
+Technical Recruiter
+Smart Synergies, Inc.
+steve@smart-synergies.com
+703-881-8306
+	-->
+	<head>
+		<title>Five point four eight, one point four eight.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Five point four eight, one point four eight."/>
+		<meta name="keywords" content="Bible word, soundex"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" id="bibleWord" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="soundexCode">Soundex Code:</label></td>
+					<td><input type="text" id="soundexCode"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["bibleWord"] = document.getElementById("bibleWord").value;
+				request["soundexCode"] = document.getElementById("soundexCode").value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/FivePointFourEightOnePointFourEight.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>

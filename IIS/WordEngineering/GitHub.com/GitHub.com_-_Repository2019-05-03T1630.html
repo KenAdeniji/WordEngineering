@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-05-03	Created.	https://css-tricks.com/using-fetch/
+			
+let content = {some: 'content'};
+
+// The actual fetch request
+fetch('some-url', {
+  method: 'post',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(content)
+})
+// .then()..			
+		-->
+		<title>GitHub.com Users</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<table>
+					<tr>
+						<td><label for="uri">URI:</label></td>
+						<td><input id="uri" type="uri" value="https://api.github.com/users/kenadeniji/repos" autofocus></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</table>
+			</fieldset>
+			<div id="resultSet"></div>
+		</div>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			function querySubmit()
+			{
+				fetch(document.getElementById("uri").value)
+					/*
+					.then(
+						response => response.json()) //If you're requesting an XML file, then you should call response.text. If you're requesting an image, you call response.blob.
+					*/
+					.then(response => {
+					  let contentType = response.headers.get('content-type')
+					  console.log(contentType);
+					  if (contentType.includes('application/json')) {
+						return response.json()
+						// ...
+					  }
+					  else if (contentType.includes('text/html')) {
+						return response.text()
+						// ...
+					  }
+					  else {
+						// Handle other responses accordingly...
+					  }
+					})					
+					.then(data => {
+						document.getElementById("resultSet").innerHTML = renderData(data, "table0");
+						tsorter.create("table0");
+					})
+					.catch(error => document.getElementById("resultSet").innerHTML = error)
+					;
+			}
+	
+			function renderData(data, dataID)
+			{
+				var dataRow = null;
+				var dataTable = null;
+				var cellContent = null;
+				var cellName = null;
+				var cells = "";
+				var info = "";
+				var detailKeys = null;
+				var detailRow = null;
+				var value = null;
+				
+				var	repositoryURI, repositoryFullname, repositoryName;
+				
+				info += "<table id='" + dataID + "'>";
+
+				var occurrences = data.length;
+				var caption = "<caption>Occurrences: " + occurrences + "</caption>";
+				
+				info += caption;
+				
+				dataTable = data;
+				
+				if (dataTable.length < 1)
+				{
+					return "";
+				}	
+
+				dataRow = dataTable[0];
+				
+				dataKeys = Object.keys(dataRow);
+				
+				info += "<thead><tr><th>URI</th></tr></thead>";
+				
+				for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+				{
+					dataRow = dataTable[rowIndex];
+					repositoryFullname = dataRow["full_name"];
+					repositoryName = dataRow["name"];
+					repositoryURI = "<a href='http://github.com/" + 
+									repositoryFullname + "'" +
+									"target='_blank'>" + repositoryName + "</a>";
+					info += "<tr><td>" + repositoryURI + "</td></tr>";
+				}
+					
+				info += "</table>"
+			
+				return info;
+			}
+	
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

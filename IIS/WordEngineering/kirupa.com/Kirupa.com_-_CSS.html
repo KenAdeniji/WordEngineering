@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2015-01-03 Created.	http://www.kirupa.com/html5/
+--> 
+<head>
+<title>Cascading Style Sheet (CSS)</title>
+<style>
+/* 
+	A rule is made up of two components - the selector and the declaration.
+*/
+#mainContent {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: #CC0000;
+    /* The first measurement is for the top-left and bottom right corners, and the second measurement is for the top-right and bottom left corners. */
+	border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+p {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #FFFF00;
+}
+
+input[required] {
+	border-color: #3399FF;
+} 
+
+label {
+  width: 110px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+}
+
+
+[contentEditable=false] {
+background-color: #FF0000;
+}
+
+[contentEditable=true] {
+background-color: #00FF00;
+}
+
+a[href*="w3.org"] {
+background-color: #FFCC00;
+color: #CC0000;
+}
+
+ul {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    width: 250px;
+    padding: 0px;
+    margin: 0px;
+}
+ul li {
+    background-color: #E6E6E6;
+    background-image: url("http://www.kirupa.com/images/gray_smiley.png");
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    color: #666;
+    list-style: none outside none;
+    padding-left: 29px;
+}
+
+ul li:nth-of-type(1) {
+    background-color: #A4BBFF;
+    background-image: url("http://www.kirupa.com/images/blue_tongue_icon.png");
+    color: #003366;
+}
+
+ul li:nth-of-type(even) {
+    background-color: #A4BBFF;
+    background-image: url("http://www.kirupa.com/images/blue_tongue_icon.png");
+    color: #003366;
+}
+
+ul li:nth-of-type(odd) {
+    background-color: #A4BBFF;
+    background-image: url("http://www.kirupa.com/images/blue_tongue_icon.png");
+    color: #003366;
+}
+
+tr:nth-child(even) {background: #FF0} 
+tr:nth-child(odd) {background: #CCC} 
+</style>
+</head>
+ 
+<body>
+<div id="mainContent">
+<p>How are you</p>
+</div>
+ 
+ 
+<form novalidate>
+<label for=name contentEditable=true>Name</label>
+<input id="name" type="text" required>
+<br>
+<br>
+<label for=email contentEditable=false>E-mail Address</label>
+<input id="email" type="email" required>
+<br>
+<br>
+<label for=zipCode>Zip Code</label>
+<input id="zipCode" type="text">
+</form>
+
+<a href="http://www.w3.org" target="_blank">w3.org</a>
+
+<ul>
+    <li>
+        <p>Blah</p>
+    </li>
+    <li>
+        <p>Foo</p>
+    </li>
+    <li>
+        <p>Bar</p>
+    </li>
+    <li>
+        <p>Zorb</p>
+    </li>
+    <li>
+        <p>Blarg</p>
+    </li>
+</ul>
+
+</body>
+</html>

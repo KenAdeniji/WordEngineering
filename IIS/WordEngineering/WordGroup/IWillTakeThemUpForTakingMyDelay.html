@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-09-25	Created.
+	-->
+	<head>
+		<title>I will take them up, for taking my delay.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Will sort scripture reference"/>
+		<meta name="keywords" content="Scripture reference, sort, order"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<input id="scriptureReference" type="text" value="John 1, Matthew 1, Revelation 3:2, Joshua 5, Genesis 22, Daniel 12" autofocus>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				var scriptureReference = document.getElementById("scriptureReference").value.trim();
+				if (scriptureReference === "")
+				{
+					return;
+				}
+				request["scriptureReference"] = scriptureReference;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/IWillTakeThemUpForTakingMyDelay.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					var scriptureReference = getParameterByName("scriptureReference");
+					if (!scriptureReference)
+					{
+						scriptureReference = document.getElementById("scriptureReference").value;
+					}	
+					if (scriptureReference)
+					{
+						querySubmit();
+						isPostBack = true;
+					}
+				}
+				else
+				{
+					querySubmit();
+				}	
+			}
+
+			function render(dataSet)
+			{
+				var resultSet = document.getElementById("resultSet");
+				resultSet.innerHTML = scriptureReferenceHyperlink(dataSet.scriptureReference);
+			}
+
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("scriptureReference").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<!--
+			2015-08-31	Created.	http://www.geodatasource.com/developers/javascript
+		-->
+		<title>Latitude Longitude Distance</title>
+		<style>
+			body {background: blue; color: yellow;}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Input</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td colspan="4" align="center">
+								<input type="radio" name="inputUnit" id="inputDegree" value="Degree">Degrees
+								&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="inputUnit" id="inputRadian" value="Radian">Radians
+							</td>
+						</tr>			
+						<tr>
+							<td><label for="x1">x1 Latitude</label></td>
+							<td><input type="number" id="x1" step=".000001"></td>
+							<td><label for="y1">y1 Longitude</label></td>
+							<td><input type="number" id="y1" step=".000001"></td>
+						</tr>
+						<tr>
+							<td><label for="x2">x2 Latitude</label></td>
+							<td><input type="number" id="x2" step=".000001"></td>
+							<td><label for="y2">y2 Longitude</label></td>
+							<td><input type="number" id="y2" step=".000001"></td>
+						</tr>
+						<tr>
+							<td colspan="4" align="center"><button id="query">Query</button></td>
+						</tr>
+				</table>
+			</fieldset>
+		</div>
+		<fieldset>
+			<legend>Distance</legend>
+			<div id="response"></div>
+		</fieldset>
+		<script>
+			function querySubmit()
+			{
+				var inputUnit = "Degree";
+				
+				var inputRadianChecked = document.getElementById("inputRadian").checked;
+				if (inputRadianChecked)
+				{
+					inputUnit = "Radian";
+				}
+				
+				var unitMeasurement = 1;
+				
+				if (inputUnit === "Degree")
+				{
+					unitMeasurement = Math.PI / 180;
+				}
+
+				var x1 = document.getElementById("x1").value;
+				var y1 = document.getElementById("y1").value;
+				var x2 = document.getElementById("x2").value;
+				var y2 = document.getElementById("y2").value;
+				
+				var x1AdjustUnit = x1 * unitMeasurement;
+				var y1AdjustUnit = y1 * unitMeasurement;
+				var x2AdjustUnit = x2 * unitMeasurement;
+				var y2AdjustUnit = y2 * unitMeasurement;
+				
+				var theta = y1 - y2;
+				var radtheta = Math.PI * theta / 180;
+				var dist = Math.sin(x1AdjustUnit) * Math.sin(x2AdjustUnit) + Math.cos(x1AdjustUnit) * Math.cos(x2AdjustUnit) * Math.cos(radtheta);
+				dist = Math.acos(dist)
+				dist = dist * 180/Math.PI
+				dist = dist * 60 * 1.1515
+				
+				var distanceStatuteMiles = dist;
+				var distanceKilometers = dist * 1.609344;
+				var distanceNauticalMiles = dist * 0.8684;
+				
+				var result = "Statute Miles: " + distanceStatuteMiles + "<br>" +
+					"Kilometers: " + distanceKilometers + "<br>" +
+					"Nautical Miles: " + distanceNauticalMiles;
+				
+				document.getElementById("response").innerHTML = result;
+			}
+			
+			function startUp()
+			{
+				document.getElementById("inputDegree").checked = true;
+			}
+			
+			window.addEventListener("load", startUp, false);
+			document.getElementById("query").addEventListener("click", querySubmit, "false");
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

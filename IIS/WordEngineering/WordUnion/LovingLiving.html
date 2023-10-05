@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2016-08-12	LovingLiving.html
+		2016-08-12	http://gostats.com/resources/css-div-tutorial.html
+		2016-08-17	http://www.htmlandcssbook.com/code-samples/chapter-13/
+	-->
+	<head>
+		<title>Loving Living</title>
+		<style>
+			body {
+				font-size: 80%;
+				letter-spacing: 0.15em;
+				background-color: #efefef;
+			}
+
+			#page {
+				max-width; 940px;
+				min-width: 720px;
+				margin: 10px auto 10px auto;
+				padding: 20px;
+				border: 4px double #000;
+				background-color: #ffffff;
+				border-radius: 25px;
+			}
+
+			p {
+				text-align: center;
+				width: 600px;
+				margin: 20px auto 20px auto;
+				font-weight: normal;
+			}	
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<p id="resultSet"> </p>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			function querySubmit()
+			{
+				var request = {};
+				//request["scriptureReference"] = document.getElementById("scriptureReference").value;
+
+				//var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/LovingLiving.asmx/Query",
+					//data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						document.getElementById("resultSet").innerHTML = data.d;
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+
+			window.addEventListener("load", querySubmit, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-02-04T19:00:00 Created.
+		https://www.codemag.com/Article/2101071/Understanding-and-Using-Web-Workers
+		https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+	-->
+	<head>
+		<title>WebWorker</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="WebWorker"/>
+		<meta name="keywords" content="WebWorker"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><label for="first">First:</label></td><td><input id="first" type="text"/></td></tr>
+				<tr><td><label for="second">Second:</label></td><td><input id="second" type="text"/></td></tr>
+				<tr><td colspan="2"><label id="result"></label></td></tr>
+			</table>
+		</div>	
+
+		<script>
+			var isPostBack = false;
+			
+			var firstElement = document.getElementById("first");
+			var secondElement = document.getElementById("second");
+			
+			var resultElement = document.getElementById("result");
+
+			var myWorker = new Worker("MiguelCastro_-_WebWorker.js");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					if (window.Worker)
+					{
+
+					}
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				myWorker.postMessage
+				(
+					[
+						firstElement.value,
+						secondElement.value
+					]	
+				);
+			}
+			
+			myWorker.onmessage = function(e) {
+			  resultElement.textContent = e.data;
+			  console.log('Message received from worker');
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			firstElement.addEventListener("change", querySubmit, false);
+			secondElement.addEventListener("change", querySubmit, false);
+	</script>
+</body>
+</html>

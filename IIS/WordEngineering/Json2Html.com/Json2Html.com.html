@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-06-22T22:21:00		Created.	json2html.com
+		-->
+		<title>json2html.com</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ /* Viewport */
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td colspan="2" align="left">
+						<textarea id="jsonText" autofocus></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="jsonTemplate">JSON Template</label></td>
+					<td><input id="jsonTemplate" type="text"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="left"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.json2html/1.2.0/jquery.json2html.min.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var jsonText = document.getElementById("jsonText");
+			var jsonTemplate = document.getElementById("jsonTemplate");
+			var	resultSet = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					jsonTemplate.value = JSON.stringify({'<>':'div','html':'${bookId} ${bookTitle}'});
+					
+					$.getJSON("/WordEngineering/WordUnion/BibleBook.Json.txt", function(data, status, xhr) {
+						if (status == "success"){
+							data = JSON.stringify(data);
+							jsonText.value = data;
+							querySubmit();
+							isPostBack = true;
+						}else if (status == "timeout"){
+							alert("Something is wrong with the connection");
+						}else if (status == "error" || status == "parsererror" ){
+							alert("An error occured");
+						}else{
+							alert("datatosend did not change");
+						}         
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				data = jsonText.value;
+				if (data[0] === "{") //An object
+				{
+					var position = data.indexOf(":");
+					data = data.substring(position + 1);
+					data = data.substring(0, data.length - 1);
+				}
+				resultSet.innerHTML = json2html.transform
+				(
+					JSON.parse(data),
+					JSON.parse(jsonTemplate.value)
+				);
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

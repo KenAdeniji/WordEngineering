@@ -1,0 +1,24 @@
+<HTML>
+  <TITLE>Selector</TITLE>
+	<BODY>
+		<STYLE TYPE="text/css">
+			p{font-size: 12px;}
+			.red{color: red;}
+			.blue{color: blue;}
+			#small{font-size: 9px;}
+			h1 em{color: red; font-size: 12px;} /* "A B" represents an element B that is an arbitrary descendant of some ancestor element A. */
+			h2, h3, h4{color: red; font-size: 12px;} /* A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. */
+			p#key{ color: red; }
+			p#val{ color: #ff0000; }		
+		</STYLE>
+		<p class="red">This is a paragraph</p>
+		<p class="blue">This is a paragraph</p>
+		<p class="red" id="small">This is a paragraph</p>
+		<h1>This is a <em>header</em></h1>
+		<h2>This is a heading</h2>
+		<h3>This is a heading</h3>
+		<h4>This is a heading</h4>
+		<p id="key">This is a paragraph(red)</p>
+		<p id="val">This is a paragraph(#ff0000)</p>
+	</BODY>
+</HTML>

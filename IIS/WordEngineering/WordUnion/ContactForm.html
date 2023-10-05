@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2016-07-30	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+	2016-07-30	http://www.w3schools.com/canvas/canvas_text.asp
+-->
+	<head>
+		<title>Contact Form</title>
+		<style>
+			body {
+			  font-family: "helvetica", arial, helvetica;
+			}
+			label {
+			  display: block;
+			  float: left;
+			  clear: left;
+			  text-align: right;
+			  width: 100px;
+			  margin-right: 10px;
+			}
+
+			div { padding: 2px; }
+
+			fieldset { border: 1px solid #ccc; margin-bottom: 20px; }
+			
+			canvas {border: 1px solid gray;}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<legend>Contact Form</legend>
+			<div><label for=name">Name</label><input id="name" type="text" required autofocus></div>
+			<div><label for="email">E-mail</label><input id="email" type="email" required></div>
+			<div><label for="subject">Subject</label><input id="subject" type="text" required></div>
+			<div><label for="message">Message</label><textarea id="message" rows="5" cols="50" required></textarea></div>
+			<div><label for="captchaEntry">Captcha Entry</label><input id="captchaEntry" type="text"><div>
+			<div><button id="query">Send</button></div>
+			<div id="feedback"> </div>
+		</fieldset>
+		
+		<canvas id="captchaCanvas" height="100" width="500">Canvas is not supported.</canvas><br/>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			function getRandomIntInclusive(min, max) {
+			  return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			var captcha = 
+			{
+				id: "",
+				length: 11,
+				generate: function()
+				{
+					captcha.id = "";
+					for (var captchaIndex = 0; captchaIndex < captcha.length; ++captchaIndex)
+					{
+						captcha.id += String.fromCharCode(getRandomIntInclusive(33, 126));
+					}
+					var canvas = document.getElementById("captchaCanvas");
+					var ctx = canvas.getContext("2d");
+					ctx.font = "30px Arial";
+					ctx.fillText(captcha.id, 10, 50);
+				},
+				verify: function()
+				{
+					var captchaEntry = document.getElementById("captchaEntry").value;
+					if (captchaEntry !== captcha.id)
+					{
+						document.getElementById("feedback").innerHTML = "Please fill-in the correct captcha value. ";
+						return false;
+					}
+					return true;
+				}
+			};
+			
+			function querySubmit()
+			{
+				var request = {};
+			
+				document.getElementById("feedback").innerHTML = "";
+				
+				var name = document.getElementById("name").value.trim();
+				var email = document.getElementById("email").value.trim();
+				var subject = document.getElementById("subject").value.trim();
+				var message = document.getElementById("message").value.trim();
+				
+				if (captcha.verify() == false)
+				{
+					return;
+				}	
+				
+				if (name === "" || email === "" || subject === "" || message === "")
+				{
+					document.getElementById("feedback").innerHTML = "Please complete the entire form.";
+					return;
+				}
+				
+				request["name"] = document.getElementById("name").value;
+				request["email"] = document.getElementById("email").value;
+				request["subject"] = document.getElementById("subject").value;
+				request["message"] = document.getElementById("message").value;
+				
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/ContactForm.asmx/Insert",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						document.getElementById("feedback").innerHTML = "Success.";
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("feedback").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+			
+			function pageLoad()
+			{
+				captcha.generate();
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("query").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

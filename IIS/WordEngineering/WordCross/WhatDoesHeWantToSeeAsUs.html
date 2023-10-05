@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2022-01-03 23:38:22.360 What does He want to see, as us?
+		2022-01-04T12:25:00 Created. Son occurs in the book of Matthew? 2022-01-04T12:14:00 54 Occurrences.
+	-->
+	<head>
+		<title>What does He want to see, as us?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What does He want to see, as us? Bible Book word occurrences."/>
+		<meta name="keywords" content="Son, Book of Matthew"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookID">Bible Book:</label></td>
+					<td><select id="bookID" multiple autofocus> </select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version:</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Word:</label></td>
+					<td><input type="text" id="bibleWord" value="Son" autofocus/></td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	bibleVersionElement = document.getElementById("bibleVersion");
+			var	bibleWordElement = document.getElementById("bibleWord");
+			var	bookIDElement = document.getElementById("bookID");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleBookSelect();
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["bibleWord"] = bibleWordElement.value;
+
+				var bibleBookIDs = scriptLiteral9432.retrieveSelectionIndex("bookID", 1, ",");
+				request["bookIDs"] = bibleBookIDs;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WhatDoesHeWantToSeeAsUs.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

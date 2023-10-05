@@ -1,0 +1,11 @@
+https://www.logilab.org/blogentry/6883
+
+pip install pylint 
+
+REM pip install Graphviz
+https://graphviz.gitlab.io/_pages/Download/Download_windows.html
+
+Install https://graphviz.gitlab.io/_pages/Download/Download_windows.html
+	graphviz-2.38.msi
+Add to PATH "e:\Program Files (x86)\Graphviz2.38\bin\dot"
+pyreverse -o png -p Pyreverse AlphabetSequence.py

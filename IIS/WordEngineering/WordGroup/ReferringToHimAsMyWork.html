@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-11-17	Created.
+	-->
+	<head>
+		<title>Referring to Him, as my work.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Referring to Him, as my work."/>
+		<meta name="keywords" content="Bible words, exact, letters, alphabets, fiery, ile ife"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<label for="alphabets">Alphabets</label>
+						</td>
+						<td>
+							<input type="text" id="alphabets" autofocus/>
+						</td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" id="submitQuery">
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			<br><br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+		
+			var alphabetsElement = document.getElementById("alphabets");
+		
+			function querySubmit() {
+				var request = {};
+		        request["alphabets"] = alphabetsElement.value;
+				
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordGroup/ReferringToHimAsMyWork.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultSet");
+				    },
+				    error: function (xhr) {
+						resultSetElement.innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var alphabetsParameter = scriptLiteral9432.getParameterByName("alphabets");
+						if (!alphabetsParameter)
+						{
+							alphabetsParameter = alphabetsDefault;
+						}	
+						alphabetsElement.value = alphabetsParameter;
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+			
+			var alphabetsDefault = "fiery";
+		</script>
+	</body>
+</html>

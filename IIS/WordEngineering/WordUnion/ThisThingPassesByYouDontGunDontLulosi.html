@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-02-15	Created.	ThisThingPassesByYouDontGunDontLulosi.html
+		2017-02-15	http://papaparse.com	Between CSV and Array
+		2017-02-15	http://stackoverflow.com/questions/36929478/xml-string-to-json-javascript
+		2017-02-15	https://github.com/metatribal/xmlToJSON/blob/master/lib/xmlToJSON.js
+		2017-02-15	https://github.com/abdmob/x2js
+	-->
+	<head>
+		<title>This thing, passes by you; don't gun, don't lulosi.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<script src="papaparse.js"></script>
+		<script src="X2JS.js"></script>
+		<script src="xmlToJSON.js"></script>
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<textarea id="source" rows="10" cols="50"> </textarea><br/>
+				<select id="from"></select>
+				<select id="until"></select>
+				<input type="submit" id="submitQuery">
+				<br/>
+			</fieldset>	
+			<textarea id="resultSet" align="left" rows="10" cols="50"> </textarea>
+		</div>
+		<script>
+			var isPostBack = false;
+
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+			function querySubmit()
+			{
+				var source = document.getElementById("source");
+				var resultSet = document.getElementById("resultSet");
+				
+				var from = document.getElementById("from").value;
+				var until = document.getElementById("until").value;
+				
+				resultSet.innerHTML = "";
+								
+				if (from === until)
+				{
+					resultSet.innerHTML = source.value;
+					return;
+				}
+				
+				switch(from)
+				{
+					case "CSV":
+						switch(until)
+						{
+							case "JSON":
+								resultSet.innerHTML = JSON.stringify(Papa.parse(source.value));
+								break;
+						}
+						break;
+					case "JSON":
+						switch(until)
+						{
+							case "CSV":
+								resultSet.innerHTML = JSON.stringify(Papa.unparse(source.value));
+								break;
+							case "XML":
+								var x2js = new X2JS();
+								resultSet.innerHTML = JSON.stringify(x2js.json2xml_str( source.value ));
+								break;	
+						}
+						break;
+					case "XML":
+						switch(until)
+						{
+							case "JSON":
+								resultSet.innerHTML = JSON.stringify(xmlToJSON.parseString(source.value));
+								break;
+						}
+						break;
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					SelectOption();
+					var source = getParameterByName("source");
+					if (source)
+					{
+						document.getElementById("source").value = source;
+					}
+
+					var from = getParameterByName("from");
+					if (from)
+					{
+						document.getElementById("from").value = from;
+					}
+
+					var until = getParameterByName("until");
+					if (until)
+					{
+						document.getElementById("until").value = until;
+					}
+					
+					if (source || from || until)
+					{
+						querySubmit();
+						isPostBack = true;
+					}
+				}
+ 			}
+
+			function SelectOption()
+			{
+				var from = document.getElementById("from");
+				var until = document.getElementById("until");
+				
+				from.options.length = 0;
+				until.options.length = 0;
+				
+				for (index = 0, formatLength = format.length; index < formatLength; ++index)
+				{
+					var option = document.createElement("option");
+					option.text = format[index][0];
+					option.value = format[index][1];
+					from.appendChild(option);
+					
+					var option = document.createElement("option");
+					option.text = format[index][0];
+					option.value = format[index][1];
+					until.appendChild(option);
+				}	
+			}
+	
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var format = [
+			//	["Array", "Array"],			
+				["Comma Separated Value (CSV)", "CSV"],
+				["eXtensible Markup Language (XML)", "XML"],
+				["Javascript Object Notation (JSON)", "JSON"]
+			];
+			
+			//CSV
+			/*
+Format,Abbreviation
+Comma Separated Value (CSV),CSV
+eXtensible Markup Language (XML),XML
+Javascript Object Notation (JSON),JSON
+			*/
+			//JSON
+			/*
+{"data":[
+	["Format","Abbreviation"],
+	["Comma Separated Value (CSV)","CSV"],
+	["eXtensible Markup Language (XML)","XML"],
+	["Javascript Object Notation (JSON)","JSON"]
+]
+}
+			*/
+			//JSON
+			/*
+{"world":[{"sea":[{"_text":"Indian"}],"land":[{"_text":"Good"}]}]}
+			*/
+			//XML
+			/*
+<world>
+  <sea>Indian</sea>
+  <land>Good</land>
+</world>
+			*/
+		</script>		
+	</body>
+</html>

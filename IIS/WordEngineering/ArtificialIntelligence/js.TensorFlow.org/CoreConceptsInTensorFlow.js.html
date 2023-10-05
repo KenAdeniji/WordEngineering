@@ -1,0 +1,63 @@
+<html>
+	<!--
+		2018-09-15	Created.	https://js.tensorflow.org/tutorials/core-concepts.html
+		2018-09-15	https://stackoverflow.com/questions/34971189/create-a-js-multidimensional-array-from-string
+	-->	
+	<head>
+		<title>Core Concepts in TensorFlow.js</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td for="firstOperand">First:</td>
+					<td><textarea id="firstOperand">[[1.0, 2.0], [3.0, 4.0]]</textarea></td>
+				</tr>	
+				<tr>
+					<td for="secondOperand">Second:</td>
+					<td><textarea id="secondOperand">[[5.0, 6.0], [7.0, 8.0]]</textarea></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td for="add">Add:</td>
+					<td><div id="add"></div></td>
+				</tr>	
+				<tr>
+					<td for="subtract">Subtract:</td>
+					<td><div id="subtract"></div></td>
+				</tr>	
+				<tr>
+					<td for="multiply">Multiply:</td>
+					<td><div id="multiply"></div></td>
+				</tr>	
+			</table>
+		</div>
+		<!-- Load TensorFlow.js -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.0"> </script>
+
+		<script>
+			function querySubmit()
+			{
+				var firstSet = tf.tensor2d(JSON.parse(firstOperand.value));
+				var secondSet = tf.tensor2d(JSON.parse(secondOperand.value));
+
+				document.getElementById("add").innerHTML = firstSet.add(secondSet);
+				document.getElementById("subtract").innerHTML = firstSet.sub(secondSet);
+				document.getElementById("multiply").innerHTML = firstSet.mul(secondSet);
+			}
+
+			window.addEventListener("load", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+				
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>  
+	</body>
+</html>   

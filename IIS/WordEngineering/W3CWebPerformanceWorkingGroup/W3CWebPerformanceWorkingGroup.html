@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-07-26	Created.
+		2018-07-26	https://alistapart.com/column/performance-matters
+		2018-07-28	https://stackoverflow.com/questions/19389200/javascript-sleep-delay-wait-function
+	-->
+	<head>
+		<title>W3C Web Performance Working Group</title>
+		<div id="resultSet"> </div>
+		<div id="userTiming"> </div>
+		
+		<script type="text/javascript">
+			var pageLoadTime = 0;
+
+			function onLoad() 
+			{
+				var now = new Date().getTime();
+				pageLoadTime = now - performance.timing.navigationStart;
+				document.getElementById("resultSet").innerHTML = 
+					"<table border='1'>" +
+						"<caption>Navigation Timing</caption>" +
+						"<thead><tr><th>Unit</th><th>Value</th></tr></thead>" +
+						"<tbody>" +
+						"<tr><td>Page Load</td><td>" + pageLoadTime + "</td></tr>" +
+					"</tbody></table>"
+			}
+			
+			function measurePerf() 
+			{
+				var result = 
+					"<table border='1'>" +
+					"<caption>User Timing</caption>" +
+					"<thead><tr>" +
+					"<th>Name</th><th>Entry Type</th><th>Start Time</th><th>Duration</th></tr></thead>" +
+					"<tbody>";
+
+				var perfEntries = performance.getEntriesByType("mark");
+				for (var i = 0; i < perfEntries.length; i++)
+				{
+					result += 	`<tr><td>${perfEntries[i].name}</td><td>${perfEntries[i].entryType}</td>` +
+								`<td>${perfEntries[i].startTime}</td><td>${perfEntries[i].duration}</td></tr>`;
+				}
+				
+				result += "</tbody></table>";
+			
+				document.getElementById("userTiming").innerHTML = result;
+			}
+
+			function wait(time) {
+				return new Promise(resolve => {
+					setTimeout(() => {
+						resolve();
+					}, time);
+				});
+			}			
+
+			async function work() 
+			{
+                performance.mark("startTask1");
+                await wait(5000);
+                performance.mark("endTask1");
+                
+                performance.mark("startTask2");
+                await wait(10000);
+                performance.mark("endTask2");
+
+                measurePerf();
+			}
+			
+			window.addEventListener("load", onLoad, false);
+			window.addEventListener("load", work, false);
+		</script>
+		
+	</head>
+</html>

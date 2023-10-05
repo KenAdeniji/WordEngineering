@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Audio Element</title>
+	</head>
+	<body>
+		<audio 
+			src="http://upload.wikimedia.org/wikipedia/commons/a/a9/Tromboon-sample.ogg" 
+			controls="controls"
+		>
+		</audio>
+		
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				
+				var audio = document.createElement("audio");
+				if (audio != null && audio.canPlayType && audio.canPlayType("audio/ogg"))
+				{
+					audio.src = "http://upload.wikimedia.org/wikipedia/en/0/04/Rayman_2_music_sample.ogg";
+					audio.play();
+				}
+            });
+		</script>
+	</body>	
+</html>

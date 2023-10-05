@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2021-12-18T12:20:00 Created.
+		2021-12-18T12:35:00 Match e-mail.
+		2021-12-18T12:56:00 http://stackoverflow.com/questions/42407785/regex-extract-email-from-strings
+		2021-12-19T03:51:00	email addresses
+	-->
+	<head>
+		<title>Parse a file and generate the hyperlink?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Parse a file and generate the hyperlink?"/>
+		<meta name="keyword" content="Search Engine, Google, Bing"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 55vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input 
+							id="sourceAddress"
+							type="url"
+							style="width: 55vw;"
+							value="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="sourceContent">Source Content:</label></td>
+					<td>
+						<textarea id="sourceContent"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="emailAddress">e-mail address:</label></td>
+					<td>
+						<a id="emailAddress"></a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="fetchContent">Fetch Content</button>
+						<input type="submit" id="submitQuery"/>
+					</td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			var	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			var	sourceContentElement = document.getElementById("sourceContent");
+			var sourceHTMLElement = document.getElementById("sourceHTML");
+
+			var	emailAddressElement = document.getElementById("emailAddress");
+
+			var fetchContentElement = document.getElementById("fetchContent");
+			var submitQueryElement = document.getElementById("submitQuery");
+
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						contentFetch();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function contentFetch()
+			{
+				fetch(sourceAddressElement.value).then(response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							sourceContentElement.value = JSON.stringify(data);
+						});
+					}
+					else if (contentType && contentType.indexOf("text/xml") !== -1) {
+						return response.text().then(data => {
+							// process your XML data further
+							let parser = new DOMParser();
+							let xml = parser.parseFromString(data, "application/xml");
+							sourceContentElement.value = data;
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							sourceContentElement.value = text;
+						});
+					};
+				});
+			}
+			
+			function querySubmit()
+			{
+				var emailAddresses = sourceContentElement.value.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+				emailAddressElement.text = emailAddresses.join();
+				emailAddressElement.href = "mailto:" + emailAddresses.join();
+			}
+
+			fetchContentElement.addEventListener("click", contentFetch, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

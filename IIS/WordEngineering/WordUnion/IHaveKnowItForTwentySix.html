@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-04-04	I have know it, for twenty six.	A stoop, bended woman, walks. 2016-12-31 ... 2017-04-04, 94 days, 94 / 365 = 0.25753424657534246575342465753425. 2017-04-04T23:26:00 26% of the year.
+		2017-04-05	Barnes & Noble, statistics, Statistics in a Nutshell: A Desktop Quick Reference by Sarah Boslaugh	
+		2017-04-05	Created.
+		2017-04-05	http://stackoverflow.com/questions/9980416/how-can-i-insert-new-line-carriage-returns-into-an-element-textcontent
+		2017-04-05	http://stackoverflow.com/questions/2877660/composite-key-dictionary
+		2017-04-06	http://stackoverflow.com/questions/1042618/how-to-create-a-datatable-in-c-sharp-and-how-to-add-rows
+	-->
+	<head>
+		<title>I have know it, for twenty six</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Parses URI searching for words in parentheses, assuming they are scripture references"/>
+		<meta name="keywords" content="URI, Parentheses, Scripture reference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<p>
+				Please enter the URI of the document to parse, by extracting the information inside the parenthesis, these are assumed to be scripture references.
+			</p>
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="uri">URI:</label>
+							<!--
+							<textarea id="uri" rows="5" cols="70"></textarea>
+							-->
+						</td>
+						<td>
+							<input id="uri" type="url" size="50" autofocus/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					<tr>
+				</table>
+			</fieldset>
+			<br/><br/>	
+		
+			<div id="resultSet"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		
+		<script>
+			var defaultAddress = 
+				"http://localhost/WordEngineering/WordUnion/2017-04-06T1010ScriptureReferenceSample.html" + String.fromCharCode(13, 10) +
+				"http://localhost/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html" + String.fromCharCode(13, 10) +
+				"http://localhost/WordEngineering/WordUnion/2014-01-26T0145LeadBy.html";
+			var defaultAddress = 
+				"http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html";
+
+			var isPostBack = false;
+		
+			function buildHead() 
+			{
+				var rowStub = "<thead><tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<th>" + columnValue + "</th>";
+				}
+				rowStub += "</tr></thead>";
+				return rowStub;
+			}
+
+			function buildHyperlink(address, parameter)
+			{
+				if (!parameter) { return ""; }	
+				var uri = encodeURI(address + ".html?" + address + "=" + parameter);
+				var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+				return hyperlink;
+			}
+			
+			function buildRow() 
+			{
+				var rowStub = "<tr>";
+				var columnValue = "";
+				for 
+				(
+					var columnIndex = 0, columnCount = arguments.length;
+					columnIndex < columnCount;
+					++columnIndex
+				)
+				{
+					columnValue = arguments[columnIndex] ? arguments[columnIndex] : "";
+					rowStub += "<td>" + columnValue + "</td>";
+				}
+				rowStub += "</tr>";
+				return rowStub;
+			}
+
+			function buildUri(address)
+			{
+				var uri = encodeURI(address);
+				var hyperlink = "<a href=" + uri + ">" + uri + "</a>";
+				return hyperlink;
+			}
+			
+			function getParameterByName(name) 
+			{
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var uri = getParameterByName("uri");
+					if (uri === "")
+					{
+						var uri = defaultAddress;
+					}
+					document.getElementById("uri").value = uri;
+					isPostBack = true;
+				}
+				querySubmit();
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				var uri = document.getElementById("uri").value;
+				request["uri"] = uri;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/IHaveKnowItForTwentySix.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						$("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+					} 
+				});
+			}
+			
+			function render(data) 
+			{
+				var info = "<table>";
+				for (var table in data)
+				{
+					dataTable = data[table];
+					info += buildHead
+					(
+						//"URI",
+						"Scripture Reference",
+						"Occurrence"
+					);
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+				
+						info += buildRow
+						(
+							//buildUri(dataRow["Uri"]),
+							buildHyperlink("scriptureReference", dataRow["ScriptureReference"]),
+							dataRow["Occurrence"]
+						);
+					}
+				}
+				
+				info += "</table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

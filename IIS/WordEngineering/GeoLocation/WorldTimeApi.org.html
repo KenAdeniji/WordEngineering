@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2022-03-25T17:00:00	Date created. http://worldtimeapi.org/pages/examples	
+-->
+    <head>
+        <title>worldtimeapi.org</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="worldtimeapi.org"/>
+		<meta name="keywords" content="worldtimeapi.org, api, fetch, json"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+		</style>		
+    </head>
+	<body>
+	<body>
+		<div align="center">
+			<label for="request">timezone/Europe/London or ip</label><br/> 
+			<input id="request" type="text" value="timezone/America/Argentina/Salta" autofocus style="width: 90vw;"/><br/> 
+			<input type="submit" id="submitQuery">
+			<div id="resultSet"></div>
+		</div>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>	
+		<script>
+		    var isPostBack = false;
+
+			var requestElement = document.getElementById("request");
+			var resultSetElement = document.getElementById("resultSet");
+
+		    function querySubmit() 
+			{
+				var uri = "http://worldtimeapi.org/api/";
+				if (requestElement.value)
+				{
+					uri += requestElement.value;
+				}
+				fetch(uri)
+					.then(response => {
+					const contentType = response.headers.get("content-type");
+					console.log(uri, contentType);
+					if (contentType && contentType.indexOf("application/json") !== -1) {
+						return response.json().then(data => {
+							// process your JSON data further
+							var resultInfo = `<table id="${tableID}"><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
+							for (var key in data)
+							{		
+								resultInfo += `<tr><td>${key}</td><td>${data[key]}</td></tr>`;
+							}	
+							resultInfo += "</tbody></table>";
+							resultSetElement.innerHTML = resultInfo;
+							tsorter.create(tableID);
+						});
+					}
+					else {
+						return response.text().then(text => {
+							// this is text, do something with it
+							resultSetElement.innerHTML = text;
+						});
+					};
+				});
+					
+		    }
+
+		    function pageLoad() 
+			{ 
+		        if (!isPostBack) { 
+					querySubmit();
+					isPostBack = true;
+		        }
+				else
+				{
+					querySubmit();
+				}
+		    }
+			
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			const tableID = "tableWorldTimeApi";
+		</script>
+	</body>
+</html>

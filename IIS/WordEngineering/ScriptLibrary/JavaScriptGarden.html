@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>JavaScript</title>
+		<script type="javascript">
+			var foo = {}; // a new empty object
+
+			// a new object with a property called 'test' with value 12
+			var bar = {test: 12};
+
+			var foo = {name: 'Kitten'}
+			foo.name; // kitten
+			foo['name']; // kitten
+
+			var get = 'name';
+			foo[get]; // kitten
+
+			//foo.1234; // SyntaxError
+			foo['1234']; // works
+			
+			var obj = {
+				bar: 1,
+				foo: 2,
+				baz: 3
+			};
+			obj.bar = undefined;
+			obj.foo = null;
+			delete obj.baz;
+
+			for(var i in obj) {
+				if (obj.hasOwnProperty(i)) {
+					console.log(i, '' + obj[i]);
+				}
+			}
+			
+			// Poisoning Object.prototype
+			Object.prototype.bar = 1; 
+			var foo = {goo: undefined};
+
+			foo.bar; // 1
+			'bar' in foo; // true
+
+			foo.hasOwnProperty('bar'); // false
+			foo.hasOwnProperty('goo'); // true
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
+ 

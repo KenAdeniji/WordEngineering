@@ -1,0 +1,3 @@
+mkdir bin #Create the bin directory
+cd bin $Change to the bin directory
+vi ~/.bashrc

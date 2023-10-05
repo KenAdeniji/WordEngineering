@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2017-12-04	Created.
+		2017-12-04
+			From: 	Brett Lockspeiser. brett@sefaria.org
+			CC:		Lev Israel.	lev@sefaria.org
+			CC:		hello@sefaria.org
+			Here's a simple example that grabs text from our Texts API:
+
+			$.getJSON("https://www.sefaria.org/api/texts/Genesis.1", function(data) { console.log(data) }); 
+			Thanks,
+
+			Brett
+	-->
+	<head>
+		<title>Sefaria.org_-_Texts API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Sacred Text"/>
+		<meta name="keywords" content="Sacred Text"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookTitle">Book Title:</label></td>
+					<td><input type="text" ID="bookTitle" /></td>
+				</tr>	
+				<tr>
+					<td><label for="chapterID">Chapter ID:</label></td>
+					<td><input type="number" ID="chapterID" min="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<br><br>
+		<div id="resultSet"></div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					document.getElementById("bookTitle").value = "Genesis";
+					document.getElementById("chapterID").value = 1;
+					querySubmit();	
+					isPostBack = true;
+				}
+			}
+			
+			function querySubmit()
+			{
+				var	bookTitle = document.getElementById("bookTitle").value;
+				var	chapterID = document.getElementById("chapterID").value;
+			
+				var apiUri = "https://www.sefaria.org/api/texts/" + bookTitle + "." + chapterID;
+			
+				$.getJSON
+				(
+					apiUri,
+					function(data) 
+					{ 
+						console.log(data);
+						var dataKeys = Object.keys(data.text);
+						
+						var	textualInformation = "";
+						
+						for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
+						{
+							var	textName = dataKeys[dataIndex];
+							var	textContent = data.text[textName];
+							
+							var textID = 1 + dataIndex;
+							
+							textualInformation += textID + ": " + textContent + "<br>";
+						}
+
+						var	sefariaInformation	= 	data.heSectionRef + "<br>" +
+													textualInformation + "<br>" +
+													"<a href='" + data.versionSource + "' target='_blank'>" + data.versionSource + "</a><br>" +
+													data.heTitle + "<br>";
+						
+						document.getElementById("resultSet").innerHTML = sefariaInformation;
+					}
+				); 
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2016-01-04	Maximiliano Firtman. MobileXWeb.com. isNotNumeric, isOverflow.
+		-->
+		<title>InputType.html</title>
+        <style type="text/css">
+			body { background: white; color: blue; }
+			input:invalid {border: 1px solid red;}
+			input:valid {border: 1px solid green;}
+		</style>
+    </head>
+	<body>
+        <div>
+            <table>
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <label for="color">Color</label>
+                        </td>
+                        <td>
+                            <input type="color" id="color" autofocus required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="datalist">Datalist</label>
+                        </td>
+                        <td>
+                            <input type="text" name="datalist" list="cityname">
+                            <datalist id="cityname">
+                                <option value="Atlanta">
+                                <option value="Los Angeles">
+                             </datalist>
+                        </td>
+                    </tr>
+                  
+                    <tr>
+                        <td>
+                            <label for="date">Date</label>
+                        </td>
+                        <td>
+                            <input type="date" id="date" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="datetime">DateTime</label>
+                        </td>
+                        <td>
+                            <input type="datetime" id="datetime" />
+							<input type="datetime-local" id="dateTimeLocal" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>
+                            <input type="email" id="email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="file">File</label>
+                        </td>
+                        <td>
+                            <input type="file" id="file" multiple />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="month">Month</label>
+                        </td>
+                        <td>
+                            <input type="month" id="month" />
+                        </td>
+                    </tr>
+                    <tr>
+						<td>
+                            <label for="number">Number</label>
+                        </td>
+                        <td>
+                            <input type="number" id="number" min="0" max="10" step="1" value="5" />
+							isNotNumeric <input type="checkBox" id="isNotNumeric">
+							isOverflow <input type="checkBox" id="isOverflow">
+                        </td>
+						<script>
+							function numberInputChanged()
+							{
+								var numberInput = document.getElementById("number");
+
+								var isNotNumeric = numberInput.validity.typeMismatch;
+								document.getElementById("isNotNumeric").checked = isNotNumeric;
+								
+								var isOverflow = numberInput.validity.rangeOverflow;
+								document.getElementById("isOverflow").checked = isOverflow;
+							}
+							document.getElementById("number").addEventListener("change", numberInputChanged, false);
+						</script>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="range">Range</label>
+                        </td>
+                        <td>
+                            <input type="range" id="range" min="0" max="10" step="1" value="5" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="telephone">Telephone</label>
+                        </td>
+                        <td>
+                            <input type="tel" id="telephone" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="time">Time</label>
+                        </td>
+                        <td>
+                            <input type="time" id="time" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="week">Week</label>
+                        </td>
+                        <td>
+                            <input type="week" id="week" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="url">Url</label>
+                        </td>
+                        <td>
+                            <input type="url" id="url" />
+                        </td>
+                    </tr>
+				</tbody>
+            </table>
+        </div>
+
+<!--<menu type="toolbar">
+  <command type="radio" radiogroup="alignment" checked="checked"
+          label="Left" icon="icons/alL.png" onclick="setAlign('left')">
+  <command type="radio" radiogroup="alignment"
+          label="Center" icon="icons/alC.png" onclick="setAlign('center')">
+  <command type="radio" radiogroup="alignment"
+          label="Right" icon="icons/alR.png" onclick="setAlign('right')">
+  <hr>
+  <command type="command" disabled="disabled"
+          label="Publish" icon="icons/pub.png" onclick="publish()">
+</menu>
+-->
+		<div>
+            <audio
+                id="audio" 
+			    src="http://upload.wikimedia.org/wikipedia/commons/0/03/En-Creative-Commons.ogg"
+				controls="controls"
+            >
+			    HTML 5 audio tag.
+            </audio>
+			<button id="play">Play</button>
+			<button id="pause">Pause</button>
+			<button id="duration">Show duration</button>
+			<div id="duration-log"></div>
+			<script>
+				var song = document.getElementById('audio');
+				document.getElementById('play').addEventListener('click', function() { song.play(); }, false);
+				document.getElementById('pause').addEventListener('click', function() { song.pause(); }, false);
+				document.getElementById('duration').addEventListener('click', function() { document.querySelector('#duration-log').textContent = song.duration; }, false);
+			</script>
+        </div>
+        <div>
+            <video 
+                id="video"
+                src="http://a44.video2.blip.tv/5840001990950/Commonscreative-WannaWorkTogether315.ogv"
+                controls="controls"
+            >
+                HTML 5 video tag.
+            </video>
+        </div>
+	</body>
+</html>

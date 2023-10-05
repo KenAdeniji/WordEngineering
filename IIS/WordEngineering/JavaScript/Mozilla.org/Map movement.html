@@ -1,0 +1,19 @@
+<script>
+//2017-01-09	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections
+var sayings = new Map();
+sayings.set("bird", "fly");
+sayings.set("fish", "swim");
+sayings.set("man", "walk");
+sayings.size; // 3
+sayings.get("fox"); // undefined
+sayings.has("bird"); // true
+sayings.delete("fish");
+sayings.has("fish"); // false
+
+for (var [key, value] of sayings) {
+  console.log(key + " goes " + value);
+}
+
+sayings.clear();
+sayings.size; // 0
+</script>

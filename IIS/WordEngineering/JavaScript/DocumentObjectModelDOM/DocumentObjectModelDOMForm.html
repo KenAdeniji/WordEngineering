@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form name="my">
+	  <input name="one" value="1">
+	  <input name="two" value="2">
+	</form>
+
+	<script>
+	var form = document.forms.my // also document.forms[0]
+
+	var elem = form.elements.one  // also form.elements[0]
+
+	console.log(elem.value) // "one"
+	</script>
+</body>
+</html>

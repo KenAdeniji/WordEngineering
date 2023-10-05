@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-07-15	Created.
+	-->
+	<head>
+		<title>Without a side, where is possible?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Without a side, where is possible?"/>
+		<meta name="keywords" content="Locality, re-occurrence, date, unit, weekday, previous, next"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input type="date" ID="dated" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="unit">Unit:</label></td>
+					<td><select id="unit"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="amount">Amount:</label></td>
+					<td><input type="number" ID="amount" min="1" value="7"/></td>
+				</tr>	
+				<tr>
+					<td><label for="direction">direction:</label></td>
+					<td><select id="direction"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<div id="resultSet"> </div>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+
+		<script>
+			var isPostBack = false;
+
+			const datedElement = document.getElementById("dated");
+			const unitElement = document.getElementById("unit");
+			const amountElement = document.getElementById("amount");
+			const directionElement = document.getElementById("direction");
+			
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						
+						scriptLiteral9432.buildSelect("unit", units);
+						scriptLiteral9432.buildSelect("direction", directions);
+						
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var datedParam = urlParams.get("dated");
+
+						datedElement.value = datedParam ? datedParam : scriptLiteral9432.todayTimezoneOffset();
+
+						var unitParam = urlParams.get("unit");
+						if (unitParam)
+						{
+							unitElement.value = unitParam;
+						}	
+
+						var amountParam = urlParams.get("amount");
+						if (amountParam)
+						{
+							directionElement.value = amountParam;
+						}	
+
+						var directionParam = urlParams.get("direction");
+						if (directionParam)
+						{
+							directionElement.value = directionParam;
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var amountValue = unitElement.value * amountElement.value;
+				var todayDate = datedElement.value, previousDate, nextDate;
+				var dateTableID = "dateTableID";
+				var dateTable = `<table id='${dateTableID}'><thead><tr>`;
+				
+				if (directionElement.value != 1)
+				{
+					dateTable += "<th>Previous Weekday</th>";
+					dateTable += "<th>Previous YYYYMMDD</th>";
+				}
+				if (directionElement.value != -1)
+				{
+					dateTable += "<th>Next Weekday</th>";
+					dateTable += "<th>Next YYYYMMDD</th>";
+				}
+				
+				dateTable += "</tr></thead><tbody>";
+				
+				for 
+				(
+					var amountIndex = 1; amountIndex <= amountValue; ++amountIndex
+				)
+				{
+					dateTable += `<tr>`;
+
+					if (directionElement.value != 1)
+					{
+						previousDate = scriptLiteral9432.daysAdd(todayDate, - amountIndex + 1);
+						dateTable += `<td>${previousDate.toLocaleDateString(undefined, optionsWeekday)}</td>`;
+						dateTable += `<td>${previousDate.toLocaleDateString(undefined, optionsYYYYMMDD)}</td>`;
+					}
+
+					if (directionElement.value != -1)
+					{
+						nextDate = scriptLiteral9432.daysAdd(todayDate, amountIndex + 1);
+						dateTable += `<td>${nextDate.toLocaleDateString(undefined, optionsWeekday)}</td>`;
+						dateTable += `<td>${nextDate.toLocaleDateString(undefined, optionsYYYYMMDD)}</td>`;
+					}
+
+					dateTable += `</tr>`;
+				}
+				
+				dateTable += "</tbody></table>";
+				
+				resultSetElement.innerHTML = dateTable;
+				tsorter.create(dateTableID);
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const units = [
+				["Days", 1],	
+				["Weeks", 7]
+			];
+
+			const directions = [
+				["Both", 0],
+				["Previous Only", -1],
+				["Next Only", 1]
+			];
+			
+			const optionsWeekday = { weekday: 'long' };
+			const optionsYYYYMMDD = { year: 'numeric', month: 'long', day: 'numeric' };
+	</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-11-24	Created.	https://github.com/mozilla/pdf.js/tree/master/examples/learning
+		2018-11-24	http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>'Previous/Next' example</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<h1>'Previous/Next' example</h1>
+		<input 
+			id="pdfUri"
+			type="url"
+			value="http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf"
+		/>
+		<input type="submit" id="submitQuery"><br/>	
+		<div>
+			<button id="prev">Previous</button>
+			<button id="next">Next</button>
+			&nbsp; &nbsp;
+			<span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+			&nbsp; &nbsp;
+			<input id="pageTogo" type="number" min="1" step="1"/>
+			<button id="gotoPage">Go to page</button>
+		</div>
+		<div>
+			<canvas id="the-canvas" style="border:1px solid black"></canvas>
+		</div>
+		<script src="pdf.js"></script>
+		<script id="script">
+		
+			var pdfDoc = null,
+				pageNum = 1,
+				pageRendering = false,
+				pageNumPending = null,
+				scale = 0.8,
+				canvas = document.getElementById('the-canvas'),
+				ctx = canvas.getContext('2d');
+			/**
+			* Get page info from document, resize canvas accordingly, and render page.
+			* @param num Page number.
+			*/
+			function renderPage(num) 
+			{
+				pageRendering = true;
+				// Using promise to fetch the page
+				pdfDoc.getPage(num).then(function(page) 
+				{
+					var viewport = page.getViewport(scale);
+					canvas.height = viewport.height;
+					canvas.width = viewport.width;
+					// Render PDF page into canvas context
+					var renderContext = {
+						canvasContext: ctx,
+						viewport: viewport
+					};
+					var renderTask = page.render(renderContext);
+					// Wait for rendering to finish
+					renderTask.promise.then(function () 
+					{
+						pageRendering = false;
+						if (pageNumPending !== null) {
+						  // New page rendering is pending
+						  renderPage(pageNumPending);
+						  pageNumPending = null;
+						}
+					});
+				});
+				// Update page counters
+				document.getElementById('page_num').textContent = num;
+			}
+			/**
+			* If another page rendering in progress, waits until the rendering is
+			* finised. Otherwise, executes rendering immediately.
+			*/
+			function queueRenderPage(num) 
+			{
+				if (pageRendering) 
+				{
+					pageNumPending = num;
+				} 
+				else 
+				{
+					renderPage(num);
+				}
+			}
+			/**
+			* Displays previous page.
+			*/
+			function onPrevPage() 
+			{
+				if (pageNum <= 1) 
+				{
+					return;
+				}
+				pageNum--;
+				queueRenderPage(pageNum);
+			}
+			/**
+			* Displays next page.
+			*/
+			function onNextPage() 
+			{
+				if (pageNum >= pdfDoc.numPages) 
+				{
+					return;
+				}
+				pageNum++;
+				queueRenderPage(pageNum);
+			}
+			function onGotoPage() 
+			{
+				var pageTogo = parseInt(document.getElementById("pageTogo").value);
+				if (pageTogo < 1 || pageTogo > pdfDoc.numPages) 
+				{
+					return;
+				}
+				pageNum = pageTogo;
+				queueRenderPage(pageNum);
+			}
+			function pageLoad()
+			{
+				querySubmit();
+			}
+			function querySubmit()
+			{
+				/**
+				* Asynchronously downloads PDF.
+				*/
+				var loadingTask = pdfjsLib.getDocument(pdfUri.value);
+				loadingTask.promise.then(function(pdfDoc_) {
+					pdfDoc = pdfDoc_;
+					document.getElementById('page_count').textContent = pdfDoc.numPages;
+					// Initial/first page rendering
+					renderPage(pageNum);
+				});
+			}	
+  			window.addEventListener("load", pageLoad, false);
+			document.getElementById("pdfUri").addEventListener("change", querySubmit, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			document.getElementById('next').addEventListener('click', onNextPage);
+			document.getElementById('prev').addEventListener('click', onPrevPage);
+			document.getElementById('gotoPage').addEventListener('click', onGotoPage);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-02-19	Created.	Exact.html
+		2021-08-07	render(informationSet); versus scriptLiteral9432.renderDataSet(informationSet, "resultSet");
+	-->
+	<head>
+		<title>Exact</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<label for="bibleWord">Word</label>
+							</td>
+							<td>
+								<input type="text" id="bibleWord" autofocus/>
+							</td>
+						</tr>	
+						<tr>
+							<td>
+								<label for="firstOccurrenceScriptureReference">First Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="firstOccurrenceScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="lastOccurrenceScriptureReference">Last Scripture Reference Occurrence</label>
+							</td>
+							<td>
+								<input type="text" id="lastOccurrenceScriptureReference"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="frequencyOfOccurrenceFrom">Frequency of Occurrence</label>
+							</td>
+							<td>
+								<input type="number" id="frequencyOfOccurrenceFrom"/>
+								-
+								<input type="number" id="frequencyOfOccurrenceUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="exactIDFrom">Exact ID</label>
+							</td>
+							<td>
+								<input type="number" id="exactIDFrom"/>
+								-
+								<input type="number" id="exactIDUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="alphabetSequenceIndexFrom">Alphabet Sequence Index</label>
+							</td>
+							<td>
+								<input type="number" id="alphabetSequenceIndexFrom"/>
+								-
+								<input type="number" id="alphabetSequenceIndexUntil"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+			</fieldset>
+			<br><br>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="tsorter.min.js" type="text/javascript"></script>	
+		<script>
+			var isPostBack = false;
+
+			const bibleWordElement = document.getElementById("bibleWord");
+			const firstOccurrenceScriptureReferenceElement = document.getElementById("firstOccurrenceScriptureReference");
+			const lastOccurrenceScriptureReferenceElement = document.getElementById("lastOccurrenceScriptureReference");
+			const frequencyOfOccurrenceFromElement = document.getElementById("frequencyOfOccurrenceFrom");
+			const frequencyOfOccurrenceUntilElement = document.getElementById("frequencyOfOccurrenceUntil");
+			const exactIDFromElement = document.getElementById("exactIDFrom");
+			const exactIDUntilElement = document.getElementById("exactIDUntil");
+			const alphabetSequenceIndexFromElement = document.getElementById("alphabetSequenceIndexFrom");
+			const alphabetSequenceIndexUntilElement = document.getElementById("alphabetSequenceIndexUntil");
+
+			function querySubmit() {
+				var request = {};
+		        request["bibleWord"] = bibleWordElement.value;
+				request["firstOccurrenceScriptureReference"] = firstOccurrenceScriptureReferenceElement.value;
+				request["lastOccurrenceScriptureReference"] = lastOccurrenceScriptureReferenceElement.value;
+				
+				var parameter = frequencyOfOccurrenceFromElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["frequencyOfOccurrenceFrom"] = parameter;
+
+				var parameter = frequencyOfOccurrenceUntilElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["frequencyOfOccurrenceUntil"] = parameter;
+
+				var parameter = exactIDFromElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDFrom"] = parameter;
+
+				var parameter = exactIDUntilElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["exactIDUntil"] = parameter;
+				
+				var parameter = alphabetSequenceIndexFromElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexFrom"] = parameter;
+
+				var parameter = alphabetSequenceIndexUntilElement.value;
+				parameter = parameter ? parseInt(parameter) : -1;
+				request["alphabetSequenceIndexUntil"] = parameter;
+				
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/WordUnion/Exact.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(informationSet, "resultSet");
+				    },
+				    error: function (xhr) {
+				        $("#resultSet").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'resultSetText: ' + xhr.resultSetText
+						);
+				    }
+				});
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
+						{
+							bibleWordElement.value = bibleWordValue;
+						}	
+
+						var firstOccurrenceScriptureReferenceValue = urlParams.get("firstOccurrenceScriptureReference");
+						if (firstOccurrenceScriptureReferenceValue)
+						{
+							firstOccurrenceScriptureReferenceElement.value = firstOccurrenceScriptureReferenceValue;
+						}	
+
+						var lastOccurrenceScriptureReferenceValue = urlParams.get("lastOccurrenceScriptureReference");
+						if (lastOccurrenceScriptureReferenceValue)
+						{
+							lastOccurrenceScriptureReferenceElement.value = lastOccurrenceScriptureReferenceValue;
+						}	
+
+						var frequencyOfOccurrenceFromValue = urlParams.get("frequencyOfOccurrenceFrom");
+						if ( Number.isInteger( +frequencyOfOccurrenceFromValue ) )
+						{
+							frequencyOfOccurrenceFromElement.value = parseInt( frequencyOfOccurrenceFromValue, 10 );
+						}	
+
+						var frequencyOfOccurrenceUntilValue = urlParams.get("frequencyOfOccurrenceUntil");
+						if ( Number.isInteger( +frequencyOfOccurrenceUntilValue ) )
+						{
+							frequencyOfOccurrenceUntilElement.value = parseInt( frequencyOfOccurrenceUntilValue, 10 );
+						}	
+
+						var exactIDFromValue = urlParams.get("exactIDFrom");
+						if ( Number.isInteger( +exactIDFromValue ) )
+						{
+							exactIDFromElement.value = parseInt( exactIDFromValue, 10 );
+						}	
+
+						var exactIDUntilValue = urlParams.get("exactIDUntil");
+						if ( Number.isInteger( +exactIDUntilValue ) )
+						{
+							exactIDUntilElement.value = parseInt( exactIDUntilValue, 10 );
+						}	
+
+						var alphabetSequenceIndexFromValue = urlParams.get("alphabetSequenceIndexFrom");
+						if ( Number.isInteger( +alphabetSequenceIndexFromValue ) )
+						{
+							alphabetSequenceIndexFromElement.value = parseInt( alphabetSequenceIndexFromValue, 10 );
+						}	
+
+						var alphabetSequenceIndexUntilValue = urlParams.get("alphabetSequenceIndexUntil");
+						if ( Number.isInteger( +alphabetSequenceIndexUntilValue ) )
+						{
+							alphabetSequenceIndexUntilElement.value = parseInt( alphabetSequenceIndexUntilValue, 10 );
+						}	
+						
+						isPostBack = true;						
+						querySubmit();
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+		    window.addEventListener("load", pageLoad, false);
+		    document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+
+		    var body = document.getElementsByTagName('body')[0];
+		    body.onkeydown = function (e) {
+		        if (e.keyCode === 13) {  //enter key code
+		            querySubmit();
+		        }
+		    }
+		</script>
+	</body>
+</html>

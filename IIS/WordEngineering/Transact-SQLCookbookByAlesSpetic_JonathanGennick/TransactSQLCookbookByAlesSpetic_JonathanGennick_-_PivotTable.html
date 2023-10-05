@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-05-01	Created.
+	-->
+	<head>
+		<title>Pivot Table</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="digitsLength">Digits Length:</label></td>
+					<td><input type="number" id="digitsLength" value="3" autofocus required/></td>
+				</tr>	
+				<tr>
+					<td><label for="asciiFrom">Ascii</label></td>
+					<td>
+						<input type="number" ID="asciiFrom" value="32" />
+						...
+						<input type="number" ID="asciiUntil" value="127" />
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="dateAddFrom">Date Add:</label></td>
+					<td>
+						<input type="number" ID="dateAddFrom" value="0" min=1 />
+						...
+						<input type="number" ID="dateAddUntil" value="6" min=1 />
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="dateAddStep">Date Add Step:</label></td>
+					<td><input type="number" ID="dateAddStep" value="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<pre id="resultSetSQLStatement"> </pre>
+		<div align="center">
+			<div id="resultSetAscii"> </div>
+			<div id="resultSetDate"> </div>
+			<div id="resultSetDigits"> </div>
+		</div>	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit() 
+			{
+				var request = {};
+				request["digitsLength"] = parseInt(document.getElementById("digitsLength").value);
+				request["asciiFrom"] = parseInt(document.getElementById("asciiFrom").value);
+				request["asciiUntil"] = parseInt(document.getElementById("asciiUntil").value);
+				request["dateAddFrom"] = parseInt(document.getElementById("dateAddFrom").value);
+				request["dateAddUntil"] = parseInt(document.getElementById("dateAddUntil").value);
+				request["dateAddStep"] = parseInt(document.getElementById("dateAddStep").value);
+
+		        var requestJson = JSON.stringify(request);
+		        $.ajax
+				({
+				    type: "POST",
+				    contentType: "application/json; charset=utf-8",
+				    url: "/WordEngineering/Transact-SQLCookbookByAlesSpetic_JonathanGennick/TransactSQLCookbookByAlesSpetic_JonathanGennick_PivotTable.asmx/Query",
+				    data: requestJson,
+				    dataType: "json",
+				    success: function (data) {
+				        var informationSet = JSON.parse(data.d);
+				        render(informationSet);
+				    },
+				    error: function (xhr) {
+				        $("#response").html
+						(
+							'Status: ' + xhr.status + " | " +
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText
+						);
+				    }
+				});
+			}
+
+			function render(informationSet)
+			{
+				renderAscii(informationSet["Table1"]);
+				renderDate(informationSet["Table2"]);
+				renderDigitsLength(informationSet["Table"]);
+				document.getElementById("resultSetSQLStatement").innerHTML =
+					informationSet["SQLStatementLog"][0]["SQLStatement"];
+			}
+			
+			function renderAscii(informationTable)
+			{
+				var ascii_Code = "";
+				var ascii_Char = "";
+				
+				var	limit = informationTable.length;
+
+				var resultSet = "<table><caption>Occurrences: " + informationTable.length + "</caption>";
+				resultSet += scriptLiteral9432.buildHead("Code", "Char");
+				for 
+				(
+					var	asciiIndex = 0;
+					asciiIndex < limit;
+					++asciiIndex
+				)
+				{
+					ascii_Code = informationTable[asciiIndex]["Ascii_Code"];
+					ascii_Char = informationTable[asciiIndex]["Ascii_Char"];
+					resultSet += scriptLiteral9432.buildRow
+					(
+						ascii_Code,
+						ascii_Char
+					);
+				}
+				resultSet += "</table>";
+				document.getElementById("resultSetAscii").innerHTML = resultSet;
+			}
+
+			function renderDate(informationTable)
+			{
+				var date = "";
+				var day = "";
+				
+				var	limit = informationTable.length;
+
+				var resultSet = "<table><caption>Occurrences: " + informationTable.length + "</caption>";
+				resultSet += scriptLiteral9432.buildHead("Date", "Day");
+				for 
+				(
+					var	DateIndex = 0;
+					DateIndex < limit;
+					++DateIndex
+				)
+				{
+					date = informationTable[DateIndex]["Date"];
+					day = informationTable[DateIndex]["Day"];
+					resultSet += scriptLiteral9432.buildRow
+					(
+						date,
+						day
+					);
+				}
+				resultSet += "</table>";
+				document.getElementById("resultSetDate").innerHTML = resultSet;
+			}
+			
+			function renderDigitsLength(informationTable)
+			{
+				for 
+				(
+					var digitsIndex = 0,
+					digitsLength = parseInt(document.getElementById("digitsLength").value),
+					resultSet = ""
+					;
+					digitsIndex < informationTable.length;
+					++digitsIndex
+				)
+				{
+					var pivotValue = informationTable[digitsIndex]["i"];
+					if (resultSet)
+					{
+						resultSet += ", ";
+					}
+					if (digitsIndex % 5 === 0)
+					{
+						resultSet += "<br/>";
+					}
+					resultSet += ("" + pivotValue).padStart(digitsLength, "0");
+				}
+				document.getElementById("resultSetDigits").innerHTML = resultSet;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

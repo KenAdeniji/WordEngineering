@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-10-08	Created.
+	-->
+	<head>
+		<title>Metric Conversion</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<table align="center">
+			<thead>
+				<tr>
+					<th>From</th>
+					<th>To</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><select id="fromMetric"></select></td>
+					<td><select id="toMetric"></select></td>
+				</tr>
+				<tr>
+					<td><input id="fromValue" type="number"></td>
+					<td><span id="toValue"></span></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input id="submitQuery" type="submit"></td>
+				</tr>
+			</tbody>
+		</table>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+			var metricConversionSelection = [
+				["Fahrenheit"],
+				["Celsuis"],
+				["Kilogram"],
+				["Pound"],
+				["Meter"],
+				["Mile"]
+			];
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.buildSelect("fromMetric", metricConversionSelection);
+						scriptLiteral9432.buildSelect("toMetric", metricConversionSelection);
+						isPostBack = true;
+					});
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var fromMetric = document.getElementById("fromMetric").value;
+				var toMetric = document.getElementById("toMetric").value;
+				var fromValue = parseFloat(document.getElementById("fromValue").value); 
+				var toValue = "";
+				
+				if (fromMetric === "Fahrenheit" && toMetric === "Celsuis")
+				{
+					toValue = (fromValue - 32) * 5.0 / 9.0;
+				}
+				else if (fromMetric === "Celsuis" && toMetric === "Fahrenheit")
+				{
+					toValue = (fromValue * 9.0 / 5.0) + 32;
+				}
+
+				if (fromMetric === "Kilogram" && toMetric === "Pound")
+				{
+					toValue = fromValue * 2.21;
+				}
+
+				if (fromMetric === "Pound" && toMetric === "Kilogram")
+				{
+					toValue = fromValue / 2.21;
+				}
+
+				if (fromMetric === "Meter" && toMetric === "Mile")
+				{
+					toValue = fromValue / 1609.0;
+				}
+
+				if (fromMetric === "Mile" && toMetric === "Meter")
+				{
+					toValue = fromValue * 1609.0;
+				}
+				
+				document.getElementById("toValue").textContent = toValue;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-03-27	Created.
+		2019-03-28	https://stackoverflow.com/questions/8312459/iterate-through-object-properties
+		2019-03-29	People can look into these events; and when they fulfill it, in their lives.
+		2019-03-29	https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+	-->
+	<head>
+		<title>The closeness to confirmation</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="event">Event:<label></td>
+					<td><input type="text" id="event"/></td>
+				</tr>
+				<tr>
+					<td><label for="place">Place:<label></td>
+					<td><input type="text" id="place"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="Center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.js"></script>
+		<script>
+			var isPostBack = false;
+			var prophecySet = [];
+			
+			class Prophecy
+			{
+				constructor(event, place, scriptureReference) //time
+				{
+					this.event = event;
+					this.place = place;
+					this.scriptureReference = scriptureReference;
+					prophecySet.push(this);
+				}	
+			}
+			
+			function initialization() 
+			{
+				//var treeOfTheKnowledgeOfGoodAndEvil = new Prophecy("Forbidden fruit", "Garden of Eden", "Genesis 2:17, Genesis 3");
+				var seedOfTheWoman = new Prophecy("The Fall of Man", "Garden of Eden", "Genesis 3:15");
+				var outOfEgypt = new Prophecy("Out of Egypt, have I called, My Son", "Egypt", "Hosea 11:1, Matthew 2:15");
+				var resurrectionOfChrist = new Prophecy("Resurrection of Christ", "Hell", "Psalms 16:10, Acts 2:27, Acts 13:35"); //2019-03-28
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					initialization();
+					querySubmit();
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+			
+			function querySubmit()
+			{
+				var event = document.getElementById("event").value;
+				var place = document.getElementById("place").value;
+				
+				var regularExpressionEvent = new RegExp(event, "gi");
+				var regularExpressionPlace = new RegExp(place, "gi");
+				var regularExpressionScriptureReference = new RegExp("ScriptureReference", "gi");
+
+				var queryResult = Enumerable.From(prophecySet)
+					.Where
+					(
+						function(x) 
+						{ 
+							return x.event.match(regularExpressionEvent) &&	x.place.match(regularExpressionPlace); 	
+						}
+					)
+					.OrderBy(function (x) { return x.event; })
+					.Select(function (x) { return x; })
+					.ToArray();		
+	
+				var resultSet = "<table>";
+				var currentRecord;
+				var	keyValue = "";
+				var	formatting = "";
+				var	propertyCapitalize;
+				
+				for(var index = 0, length = queryResult.length; index < length; ++index)
+				{
+					currentRecord = queryResult[index];
+					resultSet += "<tr><td><table>";
+					for (var property in currentRecord) {
+						if (currentRecord.hasOwnProperty(property)) {
+							keyValue = currentRecord[property];
+							if (!keyValue)
+							{
+								continue;
+							}	
+							if (property.match(regularExpressionScriptureReference))
+							{
+								formatting = `<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=${keyValue}'>${keyValue}</a>`;
+							}	
+							else
+							{
+								formatting = keyValue;
+							}
+							propertyCapitalize = property.charAt(0).toUpperCase() + property.slice(1);
+							resultSet += `<tr><td>${propertyCapitalize}</td><td>${formatting}</td></tr>`;
+						}
+					}
+					resultSet += "</table></td></tr>";
+				}
+	
+				resultSet += "</table>";
+				
+				document.getElementById("resultSet").innerHTML = resultSet;
+			}
+		
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

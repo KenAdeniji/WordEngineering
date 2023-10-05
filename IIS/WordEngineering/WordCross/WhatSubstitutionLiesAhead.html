@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2021-11-09	Created.
+	-->
+	<head>
+		<title>What substitution lies ahead?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What substitution lies ahead?"/>
+		<meta name="keywords" content="Bible Word, Scripture Reference, PowerShell, Verb"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input type="text" ID="scriptureReference" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><textarea type="text" ID="bibleWord"></textarea></td>
+				</tr>	
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="and">And</option>		
+							<option value="or">Or</option>
+							<option value="phrase">Phrase</option>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="wholeWords">Whole Words</label></td>
+					<td><input type=checkbox id="wholeWords" checked/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleBookGroup">bibleBookGroup:</label></td>
+					<td><select id="bibleBookGroup" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="collate">Scripture Reference Concatenate Display:</label></td>
+					<td><input type="checkbox" id="collate" onclick="combine();"/></td>
+				</tr>
+				<tr>
+					<td><label for="join">Scripture Reference Join Display:</label></td>
+					<td>
+						<input type="checkbox" id="joined" onclick="together();" checked/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div align="center">	
+			<table>
+				<tr>
+					<td align="center">
+						<label for="versesCount">Verse(s) count:</label>
+						<label id="versesCount"></label>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<div id="resultSet"> </div>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<div id="scriptureReferenceCollate" align="center"> </div>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<div id="scriptureReferenceJoin" align="center"> </div>
+					</td>
+				</tr>	
+			</table>
+		</div>	
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			var bibleBookGroupElement = document.getElementById("bibleBookGroup");
+			var bibleVersionElement = document.getElementById("bibleVersion");
+			var bibleWordElement = document.getElementById("bibleWord");
+			var collateElement = document.getElementById("collate");
+			var logicElement = document.getElementById("logic");
+			var joinedElement = document.getElementById("joined");
+			var	scriptureReferenceElement = document.getElementById("scriptureReference");
+			var	wholeWordsElement = document.getElementById("wholeWords");
+			
+			var submitQueryElement = document.getElementById("submitQuery");
+			
+			var	resultSetElement = document.getElementById("resultSet");
+			var scriptureReferenceCollateElement = document.getElementById("scriptureReferenceCollate");
+			var scriptureReferenceJoinElement = document.getElementById("scriptureReferenceJoin");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						scriptLiteral9432.renderBibleBookGroupSelect();
+						scriptLiteral9432.renderBibleVersionSelect();
+
+						var bibleWordValue = urlParams.get("bibleWord");
+						if (bibleWordValue)
+						{
+							bibleWordElement.value = bibleWordValue;
+						}	
+						else
+						{
+							queryVerb();
+						}	
+						
+						var logicValue = urlParams.get("logic");
+						if (logicValue)
+						{
+							logicElement.value = logicValue;
+						}	
+						else
+						{
+							value="or"
+						}	
+
+						var wholeWordsValue = urlParams.get("wholeWords");
+						var wholeWordsLowerCaseValue =  wholeWordsValue.toLowerCase();
+						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
+						wholeWordsElement.checked = wholeWordsChecked;
+
+						var bibleVersionValue = urlParams.get("bibleVersion");
+						if (bibleVersionValue)
+						{
+							bibleVersionElement.value = bibleVersionValue;
+						}	
+						
+						var bibleBookGroupValue = urlParams.get("bibleBookGroup");
+						if (bibleBookGroupValue)
+						{
+							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
+						}	
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function queryVerb()
+			{
+				var request = {};
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WhatSubstitutionLiesAhead.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						bibleWordElement.value = data.d;
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
+				request["bibleVersion"] = scriptLiteral9432.selectionGet("bibleVersion");
+				request["bibleWord"] = bibleWordElement.value;
+				request["logic"] = logicElement.options[logicElement.selectedIndex].value;
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["wholeWords"] = wholeWordsElement.checked;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/SeparateTheirDesireOfTheBible.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						//resultSetElement.innerHTML = data.d;
+						//return;
+						
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

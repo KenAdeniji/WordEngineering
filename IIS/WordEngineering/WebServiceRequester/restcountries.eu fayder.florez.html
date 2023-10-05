@@ -1,0 +1,79 @@
+<html>
+	<!--
+		2015-07-15	Created.	http://www.programmableweb.com/api/rest-countries
+		2015-07-15	http://restcountries.eu	fayder.florez
+	-->
+	<head>
+		<title>restcountries.eu fayder.florez</title>
+		<style>
+			body {background-color: blue; color: yellow;}
+		</style>
+	</head>
+	<body>
+		<div text-align="center">
+			<div id="countriesInfo"></div>
+		</div>	
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function retrieveToursInfo()
+			{
+				uri = "https://restcountries.eu/rest/v1/all";
+				
+				$.ajax({ 
+					dataType: 'json',
+					url: uri,
+					success: function(data)	{ 
+						console.log(data);
+						render(data);
+					},
+					error: function(XHR, textStatus, errorThrown) {
+						console.log("XHR", XHR);
+						console.log("textStatus", textStatus);
+						console.log("errorThrown", errorThrown);
+					}					
+				});
+			}
+			
+			function render(data) 
+			{
+				var info = "";
+				var column = "";
+				var record = null;
+				var value = "";
+				var valueInner = "";
+				
+				for (var countryIndex = 0, countryCount = data.length; countryIndex < countryCount; ++countryIndex)
+				{
+					record = data[countryIndex];
+					for (var key in record) {
+						if (record.hasOwnProperty(key)) {
+							value = record[key];
+							if (value != null && value != "")
+							{
+								if( (typeof value === "object") && (value !== null) )
+								{
+									valueInner = "";
+									for (var keyInner in value) {
+										if (value.hasOwnProperty(keyInner)) {
+											valueInner += value[keyInner] + "&nbsp;";
+										}
+									}
+									column = key + ": " + valueInner + "<br>";
+								}
+								else
+								{
+									column = key + ": " + value + "<br>";
+								}	
+								info += column;
+							}	
+						}
+					}
+					info += "<hr>";
+				}
+				document.getElementById("countriesInfo").innerHTML = info;
+			}
+			
+			window.addEventListener("load", retrieveToursInfo, false);
+		</script>
+	</body>
+<html>

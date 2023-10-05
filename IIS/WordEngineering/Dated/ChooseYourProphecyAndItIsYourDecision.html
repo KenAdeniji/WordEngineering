@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2018-08-12	Created.
+		2018-08-12	http://stackoverflow.com/questions/5645058/how-to-add-months-to-a-date-in-javascript
+	-->
+	<head>
+		<title>Choose your prophecy, and it is your decision.</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<!--
+			<fieldset>
+				<legend>Choose your prophecy, and it is your decision.</legend>
+			-->	
+				<table>
+					<tr>
+						<td><label for="dated">Dated:</label></td>
+						<td><input id="dated" type="date" autofocus required/></td>
+					</tr>	
+					<tr>
+						<td><label for="calendar">Calendar:</label></td>
+						<td>
+							<select id="calendar">
+								<option>Biblical</option>
+								<option>Gregorian</option>
+							</select>
+						</td>
+					</tr>	
+					<tr>
+						<td><label for="year">Year(s):</label></td>
+						<td><input id="year" type="number" min="0"/></td>
+					</tr>	
+					<tr>
+						<td><label for="month">Month(s):</label></td>
+						<td><input id="month" type="number" min="0"/></td>
+					</tr>	
+					<tr>
+						<td><label for="week">Week(s):</label></td>
+						<td><input id="week" type="number" min="0"/></td>
+					</tr>	
+					<tr>
+						<td><label for="day">Day(s):</label></td>
+						<td><input id="day" type="number" min="0"/></td>
+					</tr>	
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+					</tr>
+					<tr>
+						<td><label for="resultBefore">Before:</label></td>
+						<td ><span id="resultBefore"></span></td>
+					</tr>
+					<tr>
+						<td><label for="resultAfter">After:</label></td>
+						<td ><span id="resultAfter"></span></td>
+					</tr>
+				</table>
+			<!--	
+			</fieldset>
+			-->
+		</div>	
+		<script>
+			function querySubmit()
+			{
+				const dated = new Date(document.getElementById("dated").value);
+				const year = Number.parseFloat(document.getElementById("year").value);
+				const month = Number.parseFloat(document.getElementById("month").value);
+				const week = Number.parseFloat(document.getElementById("week").value);
+				const day = Number.parseFloat(document.getElementById("day").value);
+				
+				const calendar = document.getElementById("calendar").value;
+				
+				var resultBefore = dated;
+				var resultAfter = dated;
+				
+				switch (calendar)
+				{
+					case "Biblical":
+						var days = (year * 360) + (month * 30) + (week * 7) + day;
+						resultBefore.setDate(resultBefore.getDate() - days);
+						resultAfter.setDate(resultAfter.getDate() + days);
+						break;
+						
+					case "Gregorian":
+						resultBefore.setFullYear(resultBefore.getFullYear() - year);
+						resultBefore.setMonth(resultBefore.getMonth() - month);
+						resultBefore.setDate(resultBefore.getDate() - (week * 7));
+						resultBefore.setDate(resultBefore.getDate() - day);
+
+						resultAfter.setFullYear(resultAfter.getFullYear() + year);
+						resultAfter.setMonth(resultAfter.getMonth() + month);
+						resultAfter.setDate(resultBefore.getDate() + (week * 7));
+						resultAfter.setDate(resultBefore.getDate() + day);
+						break;
+				}
+				
+				document.getElementById("resultBefore").innerText = new Date(resultBefore).toISOString();
+				document.getElementById("resultAfter").innerText = new Date(resultAfter).toISOString();
+			}
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2017-05-22	Created.
+		-->
+		<title>Life's normancy.</title>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<fieldset>
+				<legend>Query:</legend>
+				<label for="word">word:</label>
+				<input id="word" type="text" size="3" pattern="[A-Za-z]" maxlength="3" autofocus>
+				<input type="submit" id="submitQuery">
+			</fieldset>
+			<br/><br/>
+			<div id="resultSet"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			var isPostBack = false;
+			var wordDefault = "NCY";
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var word = scriptLiteral9432.getParameterByName("word");
+						if (word === "")
+						{
+							word = wordDefault;
+						}	
+						document.getElementById("word").value = word;
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				determineScriptureReference();
+			}
+
+			function determineScriptureReference()
+			{
+				var word = document.getElementById("word").value.trim().toUpperCase();
+		
+				var request = {};
+			
+				if (word === "" || isNaN(word) === false)
+				{
+					return;
+				}
+				request["word"] = word;
+				
+				var requestJson = JSON.stringify(request);
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/LifesNormancy.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataSet = JSON.parse(data.d);
+						var scriptureReference = dataSet.scriptureReference;
+						document.getElementById("resultSet").innerHTML = 
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								scriptureReference
+							);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var word = document.getElementById("word");
+			word.addEventListener("change", querySubmit, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

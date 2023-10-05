@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ProCSharp10WithNET6WebAPI.props" />
+</Project>

@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2019-02-02	Created.
+	-->
+	<head>
+		<title>To Most Expect My Name</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible query using Book, Chapter, Verse"/>
+		<meta name="keywords" content="Bible query using Book, Chapter, Verse"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<fieldset>
+		<legend>Query</legend>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bookID">Book ID:</label></td>
+					<td><input type="text" ID="bookID" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="chapterID">Chapter ID:</label></td>
+					<td><input type="text" ID="chapterID"/></td>
+				</tr>	
+				<tr>
+					<td><label for="verseID">Verse ID:</label></td>
+					<td><input type="text" ID="verseID"/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="collate">Scripture reference concatenate visible:</label></td>
+					<td><input type="checkbox" id="collate" onclick="combine();"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		</fieldset>	
+		<div align="center">	
+			<div id="resultTable"> </div>
+		</div>	
+		<div id="scriptureReferenceCollate" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+
+		<script>
+			var isPostBack = false;
+
+			function combine()
+			{
+				var collate = document.getElementById('collate').checked;
+				var scriptureReferenceCollate = document.getElementById('scriptureReferenceCollate');
+				
+				var concatenate="";
+						
+				if (collate === true)
+				{
+					var table=document.getElementById("resultTable0");
+					
+					for(var row = 1, rowsCount = table.rows.length; row < rowsCount; ++row)
+					{
+						var scriptureReference = table.rows[row].cells[0].innerHTML;
+						if (concatenate != "")
+						{
+							concatenate += ", ";
+						}
+						concatenate += scriptureReference;
+					}
+					scriptureReferenceCollate.innerHTML = concatenate;
+					scriptureReferenceCollate.style.visibility='visible';
+				}
+				else
+				{
+					scriptureReferenceCollate.innerHTML = "";
+					scriptureReferenceCollate.style.visibility='hidden';
+				}
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						var bookID = scriptLiteral9432.getParameterByName("bookID");
+						if (bookID)
+						{
+							document.getElementById("bookID").value = bookID;
+						}	
+						var chapterID = scriptLiteral9432.getParameterByName("chapterID");
+						if (chapterID)
+						{
+							document.getElementById("chapterID").value = chapterID;
+						}	
+						var verseID = scriptLiteral9432.getParameterByName("verseID");
+						if (verseID)
+						{
+							document.getElementById("verseID").value = verseID;
+						}	
+						var bibleVersion = scriptLiteral9432.getParameterByName("bibleVersion");
+						if (bibleVersion)
+						{
+							document.getElementById("bibleVersion").value = bibleVersion;
+						}	
+					
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["bibleVersion"] = scriptLiteral9432.selectionGet("bibleVersion");
+				request["bookID"] = document.getElementById("bookID").value || -1;
+				request["chapterID"] = document.getElementById("chapterID").value || -1;
+				request["verseID"] = document.getElementById("verseID").value || -1;
+			
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordGroup/ToMostExpectMyName.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						combine();
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultTable").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

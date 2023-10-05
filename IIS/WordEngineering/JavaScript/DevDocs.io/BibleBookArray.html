@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-30 	Created.	BibleBookLinq.js.html
+		2016-09-30	http://devdocs.io/javascript/global_objects/array
+		2016-09-30	http://stackoverflow.com/questions/14446511/what-is-the-most-efficient-method-to-groupby-on-a-javascript-array-of-objects
+		2016-09-30	http://stackoverflow.com/questions/28197166/linq-js-group-by-with-count
+		2916-09-30	http://stackoverflow.com/questions/10767815/remove-everything-before-the-last-occurrence-of-a-character
+	-->
+	<head>
+		<title>BibleBookArray.html</title>
+		<style>
+			body {background: #737CA1}
+			/*
+			table{
+				width:100%; 
+				border-collapse:collapse; 
+			}
+			*/
+			table td{ 
+				padding:7px; border:#4e95f4 1px solid;
+			}
+			/* provide some minimal visual accomodation for IE8 and below */
+			table tr{
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the ODD background rows  */
+			table tr:nth-child(odd){ 
+				background: #b8d1f3;
+			}
+			/*  Define the background color for all the EVEN background rows  */
+			table tr:nth-child(even){
+				background: #dae5f4;
+			}
+			
+			/* div inside a div, border. */
+			div > div {
+				border: 1px solid #ccc;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+<!--		
+			<table>
+				<caption>Bible Books</caption>
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Title</th>
+					</tr>
+				</thead>
+				<tbody id="tableBodyBibleBooks">
+				</tbody>
+			</table>
+-->			
+			<table>
+				<caption>Bible Title Groups</caption>
+				<thead>
+					<tr>
+						<th>Group No.</th>
+						<th>Group Title</th>
+						<th>Group Count</th>
+					</tr>
+				</thead>
+				<tbody id="tableBodyBibleBooksGroups">
+				</tbody>
+			</table>
+			
+		</div>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"> </script>
+		<script>
+			var BibleBookArray =
+			{
+				books: ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi","Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"],
+				pageLoad: function() {
+					//BibleBookArray.renderTitles("tableBodyBibleBooks", BibleBookArray.books);
+					BibleBookArray.groupByTitle()
+				},
+				groupByTitle: function() {
+				 	//var query = Enumerable.From(BibleBookArray.books).GroupBy().ToArray();
+									
+					var query = Enumerable.From(BibleBookArray.books)	
+						.GroupBy( function(item) { return item.substring(item.lastIndexOf(" ") + 1); } )
+						.Select( function(x){
+							return {
+								BookGroup: x.Key(),
+								GroupCount: x.Count()
+							}
+						})	
+						.ToArray();
+			
+					console.log(query);
+					
+					BibleBookArray.renderGroups("tableBodyBibleBooksGroups", query);
+				},
+				renderGroups: function(output, data){
+					var content = "";
+					data.forEach(function (item, index, array) {
+					  content += `<tr><td>${index+1}</td><td>${item.BookGroup}</td><td>${item.GroupCount}</td></tr>`;
+					});
+					document.getElementById(output).innerHTML = content;
+				},
+				renderTitles: function(output, data){
+					var content = "";
+					data.forEach(function (item, index, array) {
+					  content += `<tr><td>${index+1}</td><td>${item}</td></tr>`;
+					});
+					document.getElementById(output).innerHTML = content;
+				}
+			}
+
+			window.addEventListener("load", BibleBookArray.pageLoad, false);
+		</script>
+	</body>
+</html>
+

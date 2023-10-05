@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2016-09-11	Created.
+	-->
+	<head>
+		<title>I Think in Africa Water Dry</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Duplicate verse text, occurring more than once"/>
+		<meta name="keywords" content="Bible, word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
+					{
+						querySubmit();	
+						isPostBack = true;
+					});
+				}
+			}
+			
+			function querySubmit()
+			{
+				var request = {};
+				//request["maximum"] = maximum;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordUnion/IThinkInAfricaWaterDry.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						
+						var dataSet = JSON.parse(data.d);
+						render(dataSet);
+					},
+					error: function(xhr)
+					{ 
+						document.getElementById("resultSet").innerHTML =
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.responseText;
+					} 
+				});
+			}
+
+			function render(data) 
+			{
+				var caption = "<caption>I Think in Africa Water Dry</caption>";
+				var info = 	"<table>" + caption;
+
+				info += scriptLiteral9432.buildHead
+				(
+					"Verse Text",
+					"Scripture Reference",
+					"Occurrences"
+				);	
+					
+				info += "<tbody>"	
+				var dataRow = null;
+				var dataTable = null;
+				 
+				for (var table in data) {
+					dataTable = data[table];
+					
+					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+					{
+						dataRow = dataTable[rowIndex];
+						
+						info += scriptLiteral9432.buildRow
+						(
+							dataRow["verseText"],
+							scriptLiteral9432.buildHyperlink
+							(
+								'scriptureReference',
+								dataRow["Columns"]
+							),
+							dataRow["Occurrences"]
+						);	
+					}
+				}
+				
+				info += "</tbody></table>"
+				document.getElementById("resultSet").innerHTML = info;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

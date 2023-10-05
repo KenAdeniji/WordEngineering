@@ -1,0 +1,15 @@
+#2019-10-23 http://opentechschool.github.io/python-beginners/en/simple_drawing.html
+import turtle
+turtle.reset() #turtle.undo()
+#turtle.color("violet")
+turtle.colormode(255)
+turtle.color(215, 100, 170)
+turtle.shape("turtle")
+turtle.forward(100)
+turtle.left(90)
+turtle.backward(100)
+turtle.left(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.backward(100)
+turtle.exitonclick()

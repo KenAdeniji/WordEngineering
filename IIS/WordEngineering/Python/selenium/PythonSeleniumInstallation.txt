@@ -1,0 +1,20 @@
+http://selenium-python.readthedocs.io/installation.html
+	Install Python
+	Install Selenium
+		Create the E:\WordEngineering\Python\selenium directory
+			MD E:\WordEngineering\Python\selenium
+		Change to the E:\WordEngineering\Python\selenium directory
+			CD E:\WordEngineering\Python\selenium
+		pip.exe install selenium
+	Install Selenium requires a driver to interface with the chosen browser.
+		Firefox, for example, requires geckodriver, which needs to be installed before the below examples can be run.
+		Make sure it’s in your PATH, e. g., place it in /usr/bin or /usr/local/bin.
+		http://github.com/mozilla/geckodriver/releases/tag/v0.31.0	
+			geckodriver.exe
+		Make sure that the geckodriver.exe is in the path setting.
+			Temporarily copy into the directory E:\Software\Mozilla\Firefox\geckodriver-v0.31.0-win64
+	Downloading Selenium server
+
+http://selenium-python.readthedocs.io/getting-started.html
+	python python_org_search.py
+

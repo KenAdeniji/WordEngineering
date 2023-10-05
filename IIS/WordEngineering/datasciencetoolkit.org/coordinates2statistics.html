@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<!--
+			2014-09-22  Created.				http://www.datasciencetoolkit.org/developerdocs#street2coordinates
+			2014-09-21	uri = encodeURI(uri);	http://www.w3schools.com/jsref/jsref_encodeuri.asp
+		-->
+		<title>datasciencetoolkit.org coordinates2politics</title>
+	</head>
+	<body style="background-color:gray; color:lightblue">
+		<div align="center">
+			<label for="text">Latitude, Longitude Co-ordinates:
+				<input id="latitudeLongitudeCoordinates" type="text" size="50" placeholder="37.769456,-122.429128">
+			</label><br>
+			
+			<label for="statistic">Statistics:
+			<select id="statistic">
+					<option>elevation</option>
+					<option>land_cover</option>
+					<option>mean_temperature</option>
+					<option>population_density</option>
+					<option>precipitation</option>
+				</select>
+			</label><br>
+
+			<button id="query">Query</button>
+			<br><br>
+			
+			<div id="response" align="left">
+			</div>
+		</div>	
+
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			var record = "";
+			
+			function initialize() {
+				document.getElementById("latitudeLongitudeCoordinates").selectedIndex = 0;
+				request();
+			}
+			
+			function isObject(val) {
+				if (val === null) { return false;}
+				return ( (typeof val === 'function') || (typeof val === 'object') );
+			}
+
+			function request()
+			{
+				var latitudeLongitudeCoordinates = document.getElementById("latitudeLongitudeCoordinates").value;
+				if (latitudeLongitudeCoordinates === "")
+				{
+					latitudeLongitudeCoordinates = document.getElementById("latitudeLongitudeCoordinates").placeholder;
+				}
+
+				var uri = 	"http://www.datasciencetoolkit.org/coordinates2statistics/37.769456,-122.429128?statistics=population_density";
+				var uri =	"http://www.datasciencetoolkit.org/coordinates2statistics/" + latitudeLongitudeCoordinates +
+							"?statistics=" + statistic.value;
+
+				uri = encodeURI(uri);
+
+				$.ajax({ 
+					dataType: 'jsonp',
+					url: uri,
+					success: function(data)	{ 
+						record = "";
+						var result = parse(data);
+						document.getElementById("response").innerHTML = result;
+					}
+				});
+			}
+			
+			function parse(data) 
+			{
+				for (var key in data) {
+					if (data.hasOwnProperty(key)) {
+						if (isObject(data[key]) === true)
+						{
+							parse(data[key]);
+							continue;
+						}
+						var column = key + ": " + data[key] + "<br>";
+						record += column;
+					}
+				}
+				return record;
+			}
+			
+			window.addEventListener("load", initialize, false);
+			
+			var query = document.getElementById("query");
+			query.addEventListener("click", request);
+		</script>
+	</body>
+</html>

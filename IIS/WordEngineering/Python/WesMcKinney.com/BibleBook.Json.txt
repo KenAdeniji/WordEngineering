@@ -1,0 +1,598 @@
+{
+  "Table": [
+    {
+      "bookId": 1,
+      "bookTitle": "Genesis",
+      "chapters": 50,
+      "chapterLastVerseLast": 26,
+      "verseIdSequenceFirst": 1,
+      "verseIdSequenceLast": 1533,
+      "testament": "Old"
+    },
+    {
+      "bookId": 2,
+      "bookTitle": "Exodus",
+      "chapters": 40,
+      "chapterLastVerseLast": 38,
+      "verseIdSequenceFirst": 1534,
+      "verseIdSequenceLast": 2746,
+      "testament": "Old"
+    },
+    {
+      "bookId": 3,
+      "bookTitle": "Leviticus",
+      "chapters": 27,
+      "chapterLastVerseLast": 34,
+      "verseIdSequenceFirst": 2747,
+      "verseIdSequenceLast": 3605,
+      "testament": "Old"
+    },
+    {
+      "bookId": 4,
+      "bookTitle": "Numbers",
+      "chapters": 36,
+      "chapterLastVerseLast": 13,
+      "verseIdSequenceFirst": 3606,
+      "verseIdSequenceLast": 4893,
+      "testament": "Old"
+    },
+    {
+      "bookId": 5,
+      "bookTitle": "Deuteronomy",
+      "chapters": 34,
+      "chapterLastVerseLast": 12,
+      "verseIdSequenceFirst": 4894,
+      "verseIdSequenceLast": 5852,
+      "testament": "Old"
+    },
+    {
+      "bookId": 6,
+      "bookTitle": "Joshua",
+      "chapters": 24,
+      "chapterLastVerseLast": 33,
+      "verseIdSequenceFirst": 5853,
+      "verseIdSequenceLast": 6510,
+      "testament": "Old"
+    },
+    {
+      "bookId": 7,
+      "bookTitle": "Judges",
+      "chapters": 21,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 6511,
+      "verseIdSequenceLast": 7128,
+      "testament": "Old"
+    },
+    {
+      "bookId": 8,
+      "bookTitle": "Ruth",
+      "chapters": 4,
+      "chapterLastVerseLast": 22,
+      "verseIdSequenceFirst": 7129,
+      "verseIdSequenceLast": 7213,
+      "testament": "Old"
+    },
+    {
+      "bookId": 9,
+      "bookTitle": "1 Samuel",
+      "chapters": 31,
+      "chapterLastVerseLast": 13,
+      "verseIdSequenceFirst": 7214,
+      "verseIdSequenceLast": 8023,
+      "testament": "Old"
+    },
+    {
+      "bookId": 10,
+      "bookTitle": "2 Samuel",
+      "chapters": 24,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 8024,
+      "verseIdSequenceLast": 8718,
+      "testament": "Old"
+    },
+    {
+      "bookId": 11,
+      "bookTitle": "1 Kings",
+      "chapters": 22,
+      "chapterLastVerseLast": 53,
+      "verseIdSequenceFirst": 8719,
+      "verseIdSequenceLast": 9534,
+      "testament": "Old"
+    },
+    {
+      "bookId": 12,
+      "bookTitle": "2 Kings",
+      "chapters": 25,
+      "chapterLastVerseLast": 30,
+      "verseIdSequenceFirst": 9535,
+      "verseIdSequenceLast": 10253,
+      "testament": "Old"
+    },
+    {
+      "bookId": 13,
+      "bookTitle": "1 Chronicles",
+      "chapters": 29,
+      "chapterLastVerseLast": 30,
+      "verseIdSequenceFirst": 10254,
+      "verseIdSequenceLast": 11195,
+      "testament": "Old"
+    },
+    {
+      "bookId": 14,
+      "bookTitle": "2 Chronicles",
+      "chapters": 36,
+      "chapterLastVerseLast": 23,
+      "verseIdSequenceFirst": 11196,
+      "verseIdSequenceLast": 12017,
+      "testament": "Old"
+    },
+    {
+      "bookId": 15,
+      "bookTitle": "Ezra",
+      "chapters": 10,
+      "chapterLastVerseLast": 44,
+      "verseIdSequenceFirst": 12018,
+      "verseIdSequenceLast": 12297,
+      "testament": "Old"
+    },
+    {
+      "bookId": 16,
+      "bookTitle": "Nehemiah",
+      "chapters": 13,
+      "chapterLastVerseLast": 31,
+      "verseIdSequenceFirst": 12298,
+      "verseIdSequenceLast": 12703,
+      "testament": "Old"
+    },
+    {
+      "bookId": 17,
+      "bookTitle": "Esther",
+      "chapters": 10,
+      "chapterLastVerseLast": 3,
+      "verseIdSequenceFirst": 12704,
+      "verseIdSequenceLast": 12870,
+      "testament": "Old"
+    },
+    {
+      "bookId": 18,
+      "bookTitle": "Job",
+      "chapters": 42,
+      "chapterLastVerseLast": 17,
+      "verseIdSequenceFirst": 12871,
+      "verseIdSequenceLast": 13940,
+      "testament": "Old"
+    },
+    {
+      "bookId": 19,
+      "bookTitle": "Psalms",
+      "chapters": 150,
+      "chapterLastVerseLast": 6,
+      "verseIdSequenceFirst": 13941,
+      "verseIdSequenceLast": 16401,
+      "testament": "Old"
+    },
+    {
+      "bookId": 20,
+      "bookTitle": "Proverbs",
+      "chapters": 31,
+      "chapterLastVerseLast": 31,
+      "verseIdSequenceFirst": 16402,
+      "verseIdSequenceLast": 17316,
+      "testament": "Old"
+    },
+    {
+      "bookId": 21,
+      "bookTitle": "Ecclesiastes",
+      "chapters": 12,
+      "chapterLastVerseLast": 14,
+      "verseIdSequenceFirst": 17317,
+      "verseIdSequenceLast": 17538,
+      "testament": "Old"
+    },
+    {
+      "bookId": 22,
+      "bookTitle": "Song of Solomon",
+      "chapters": 8,
+      "chapterLastVerseLast": 14,
+      "verseIdSequenceFirst": 17539,
+      "verseIdSequenceLast": 17655,
+      "testament": "Old"
+    },
+    {
+      "bookId": 23,
+      "bookTitle": "Isaiah",
+      "chapters": 66,
+      "chapterLastVerseLast": 24,
+      "verseIdSequenceFirst": 17656,
+      "verseIdSequenceLast": 18947,
+      "testament": "Old"
+    },
+    {
+      "bookId": 24,
+      "bookTitle": "Jeremiah",
+      "chapters": 52,
+      "chapterLastVerseLast": 34,
+      "verseIdSequenceFirst": 18948,
+      "verseIdSequenceLast": 20311,
+      "testament": "Old"
+    },
+    {
+      "bookId": 25,
+      "bookTitle": "Lamentations",
+      "chapters": 5,
+      "chapterLastVerseLast": 22,
+      "verseIdSequenceFirst": 20312,
+      "verseIdSequenceLast": 20465,
+      "testament": "Old"
+    },
+    {
+      "bookId": 26,
+      "bookTitle": "Ezekiel",
+      "chapters": 48,
+      "chapterLastVerseLast": 35,
+      "verseIdSequenceFirst": 20466,
+      "verseIdSequenceLast": 21738,
+      "testament": "Old"
+    },
+    {
+      "bookId": 27,
+      "bookTitle": "Daniel",
+      "chapters": 12,
+      "chapterLastVerseLast": 13,
+      "verseIdSequenceFirst": 21739,
+      "verseIdSequenceLast": 22095,
+      "testament": "Old"
+    },
+    {
+      "bookId": 28,
+      "bookTitle": "Hosea",
+      "chapters": 14,
+      "chapterLastVerseLast": 9,
+      "verseIdSequenceFirst": 22096,
+      "verseIdSequenceLast": 22292,
+      "testament": "Old"
+    },
+    {
+      "bookId": 29,
+      "bookTitle": "Joel",
+      "chapters": 3,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 22293,
+      "verseIdSequenceLast": 22365,
+      "testament": "Old"
+    },
+    {
+      "bookId": 30,
+      "bookTitle": "Amos",
+      "chapters": 9,
+      "chapterLastVerseLast": 15,
+      "verseIdSequenceFirst": 22366,
+      "verseIdSequenceLast": 22511,
+      "testament": "Old"
+    },
+    {
+      "bookId": 31,
+      "bookTitle": "Obadiah",
+      "chapters": 1,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 22512,
+      "verseIdSequenceLast": 22532,
+      "testament": "Old"
+    },
+    {
+      "bookId": 32,
+      "bookTitle": "Jonah",
+      "chapters": 4,
+      "chapterLastVerseLast": 11,
+      "verseIdSequenceFirst": 22533,
+      "verseIdSequenceLast": 22580,
+      "testament": "Old"
+    },
+    {
+      "bookId": 33,
+      "bookTitle": "Micah",
+      "chapters": 7,
+      "chapterLastVerseLast": 20,
+      "verseIdSequenceFirst": 22581,
+      "verseIdSequenceLast": 22685,
+      "testament": "Old"
+    },
+    {
+      "bookId": 34,
+      "bookTitle": "Nahum",
+      "chapters": 3,
+      "chapterLastVerseLast": 19,
+      "verseIdSequenceFirst": 22686,
+      "verseIdSequenceLast": 22732,
+      "testament": "Old"
+    },
+    {
+      "bookId": 35,
+      "bookTitle": "Habakkuk",
+      "chapters": 3,
+      "chapterLastVerseLast": 19,
+      "verseIdSequenceFirst": 22733,
+      "verseIdSequenceLast": 22788,
+      "testament": "Old"
+    },
+    {
+      "bookId": 36,
+      "bookTitle": "Zephaniah",
+      "chapters": 3,
+      "chapterLastVerseLast": 20,
+      "verseIdSequenceFirst": 22789,
+      "verseIdSequenceLast": 22841,
+      "testament": "Old"
+    },
+    {
+      "bookId": 37,
+      "bookTitle": "Haggai",
+      "chapters": 2,
+      "chapterLastVerseLast": 23,
+      "verseIdSequenceFirst": 22842,
+      "verseIdSequenceLast": 22879,
+      "testament": "Old"
+    },
+    {
+      "bookId": 38,
+      "bookTitle": "Zechariah",
+      "chapters": 14,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 22880,
+      "verseIdSequenceLast": 23090,
+      "testament": "Old"
+    },
+    {
+      "bookId": 39,
+      "bookTitle": "Malachi",
+      "chapters": 4,
+      "chapterLastVerseLast": 6,
+      "verseIdSequenceFirst": 23091,
+      "verseIdSequenceLast": 23145,
+      "testament": "Old"
+    },
+    {
+      "bookId": 40,
+      "bookTitle": "Matthew",
+      "chapters": 28,
+      "chapterLastVerseLast": 20,
+      "verseIdSequenceFirst": 23146,
+      "verseIdSequenceLast": 24216,
+      "testament": "New"
+    },
+    {
+      "bookId": 41,
+      "bookTitle": "Mark",
+      "chapters": 16,
+      "chapterLastVerseLast": 20,
+      "verseIdSequenceFirst": 24217,
+      "verseIdSequenceLast": 24894,
+      "testament": "New"
+    },
+    {
+      "bookId": 42,
+      "bookTitle": "Luke",
+      "chapters": 24,
+      "chapterLastVerseLast": 53,
+      "verseIdSequenceFirst": 24895,
+      "verseIdSequenceLast": 26045,
+      "testament": "New"
+    },
+    {
+      "bookId": 43,
+      "bookTitle": "John",
+      "chapters": 21,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 26046,
+      "verseIdSequenceLast": 26924,
+      "testament": "New"
+    },
+    {
+      "bookId": 44,
+      "bookTitle": "Acts",
+      "chapters": 28,
+      "chapterLastVerseLast": 31,
+      "verseIdSequenceFirst": 26925,
+      "verseIdSequenceLast": 27931,
+      "testament": "New"
+    },
+    {
+      "bookId": 45,
+      "bookTitle": "Romans",
+      "chapters": 16,
+      "chapterLastVerseLast": 27,
+      "verseIdSequenceFirst": 27932,
+      "verseIdSequenceLast": 28364,
+      "testament": "New"
+    },
+    {
+      "bookId": 46,
+      "bookTitle": "1 Corinthians",
+      "chapters": 16,
+      "chapterLastVerseLast": 24,
+      "verseIdSequenceFirst": 28365,
+      "verseIdSequenceLast": 28801,
+      "testament": "New"
+    },
+    {
+      "bookId": 47,
+      "bookTitle": "2 Corinthians",
+      "chapters": 13,
+      "chapterLastVerseLast": 14,
+      "verseIdSequenceFirst": 28802,
+      "verseIdSequenceLast": 29058,
+      "testament": "New"
+    },
+    {
+      "bookId": 48,
+      "bookTitle": "Galatians",
+      "chapters": 6,
+      "chapterLastVerseLast": 18,
+      "verseIdSequenceFirst": 29059,
+      "verseIdSequenceLast": 29207,
+      "testament": "New"
+    },
+    {
+      "bookId": 49,
+      "bookTitle": "Ephesians",
+      "chapters": 6,
+      "chapterLastVerseLast": 24,
+      "verseIdSequenceFirst": 29208,
+      "verseIdSequenceLast": 29362,
+      "testament": "New"
+    },
+    {
+      "bookId": 50,
+      "bookTitle": "Philippians",
+      "chapters": 4,
+      "chapterLastVerseLast": 23,
+      "verseIdSequenceFirst": 29363,
+      "verseIdSequenceLast": 29466,
+      "testament": "New"
+    },
+    {
+      "bookId": 51,
+      "bookTitle": "Colossians",
+      "chapters": 4,
+      "chapterLastVerseLast": 18,
+      "verseIdSequenceFirst": 29467,
+      "verseIdSequenceLast": 29561,
+      "testament": "New"
+    },
+    {
+      "bookId": 52,
+      "bookTitle": "1 Thessalonians",
+      "chapters": 5,
+      "chapterLastVerseLast": 28,
+      "verseIdSequenceFirst": 29562,
+      "verseIdSequenceLast": 29650,
+      "testament": "New"
+    },
+    {
+      "bookId": 53,
+      "bookTitle": "2 Thessalonians",
+      "chapters": 3,
+      "chapterLastVerseLast": 18,
+      "verseIdSequenceFirst": 29651,
+      "verseIdSequenceLast": 29697,
+      "testament": "New"
+    },
+    {
+      "bookId": 54,
+      "bookTitle": "1 Timothy",
+      "chapters": 6,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 29698,
+      "verseIdSequenceLast": 29810,
+      "testament": "New"
+    },
+    {
+      "bookId": 55,
+      "bookTitle": "2 Timothy",
+      "chapters": 4,
+      "chapterLastVerseLast": 22,
+      "verseIdSequenceFirst": 29811,
+      "verseIdSequenceLast": 29893,
+      "testament": "New"
+    },
+    {
+      "bookId": 56,
+      "bookTitle": "Titus",
+      "chapters": 3,
+      "chapterLastVerseLast": 15,
+      "verseIdSequenceFirst": 29894,
+      "verseIdSequenceLast": 29939,
+      "testament": "New"
+    },
+    {
+      "bookId": 57,
+      "bookTitle": "Philemon",
+      "chapters": 1,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 29940,
+      "verseIdSequenceLast": 29964,
+      "testament": "New"
+    },
+    {
+      "bookId": 58,
+      "bookTitle": "Hebrews",
+      "chapters": 13,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 29965,
+      "verseIdSequenceLast": 30267,
+      "testament": "New"
+    },
+    {
+      "bookId": 59,
+      "bookTitle": "James",
+      "chapters": 5,
+      "chapterLastVerseLast": 20,
+      "verseIdSequenceFirst": 30268,
+      "verseIdSequenceLast": 30375,
+      "testament": "New"
+    },
+    {
+      "bookId": 60,
+      "bookTitle": "1 Peter",
+      "chapters": 5,
+      "chapterLastVerseLast": 14,
+      "verseIdSequenceFirst": 30376,
+      "verseIdSequenceLast": 30480,
+      "testament": "New"
+    },
+    {
+      "bookId": 61,
+      "bookTitle": "2 Peter",
+      "chapters": 3,
+      "chapterLastVerseLast": 18,
+      "verseIdSequenceFirst": 30481,
+      "verseIdSequenceLast": 30541,
+      "testament": "New"
+    },
+    {
+      "bookId": 62,
+      "bookTitle": "1 John",
+      "chapters": 5,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 30542,
+      "verseIdSequenceLast": 30646,
+      "testament": "New"
+    },
+    {
+      "bookId": 63,
+      "bookTitle": "2 John",
+      "chapters": 1,
+      "chapterLastVerseLast": 13,
+      "verseIdSequenceFirst": 30647,
+      "verseIdSequenceLast": 30659,
+      "testament": "New"
+    },
+    {
+      "bookId": 64,
+      "bookTitle": "3 John",
+      "chapters": 1,
+      "chapterLastVerseLast": 14,
+      "verseIdSequenceFirst": 30660,
+      "verseIdSequenceLast": 30673,
+      "testament": "New"
+    },
+    {
+      "bookId": 65,
+      "bookTitle": "Jude",
+      "chapters": 1,
+      "chapterLastVerseLast": 25,
+      "verseIdSequenceFirst": 30674,
+      "verseIdSequenceLast": 30698,
+      "testament": "New"
+    },
+    {
+      "bookId": 66,
+      "bookTitle": "Revelation",
+      "chapters": 22,
+      "chapterLastVerseLast": 21,
+      "verseIdSequenceFirst": 30699,
+      "verseIdSequenceLast": 31102,
+      "testament": "New"
+    }
+  ]
+}

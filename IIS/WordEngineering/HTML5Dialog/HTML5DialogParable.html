@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2019-06-20	Created.	https://keithjgrant.com/posts/2018/01/meet-the-new-dialog-element/
+			2019-06-20	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+			2019-06-20	http://jesuschristsavior.net/Parable.html
+		-->
+		<title>HTML5 Dialog Parable</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<!-- Simple pop-up dialog box containing a form -->
+		<dialog id="favoriteDialog">
+		  <form method="dialog">
+			<p><label>Favorite parable:
+			  <select id="selection">
+				<option></option>
+				<option>The Lamp (Matthew 5:14-16, Mark 4:21-25, Luke 8:16-18)</option>
+				<option>The Speck and The Log (Matthew 7:1-5, Luke 6:37-42)</option>
+				<option>New Cloth on Old Garment (Matthew 9:16-17, Mark 2:21-22, Luke 5:36-39)</option>
+				<option>The Divided Kingdom (Matthew 12:24-30, Mark 3:23-27, Luke 11:14-23)</option>
+				<option>The Sower (Matthew 13:1-23, Mark 4:1-20, Luke 8:4-15)</option>
+				<option>The Growing Seed (Mark 4:26-29)</option>
+				<option>The Good Samaritan (Luke 10:29-37)</option>
+				<option>The Friend at Midnight (Luke 11:5-13)</option>
+				<option>The Rich Fool (Luke 12:13-21)</option>
+				<option>The Barren Fig Tree (Luke 13:6-9)</option>
+				<option>The Weeds Among the Wheat (Matthew 13:24-30)</option>
+				<option>The Mustard Seed (Matthew 13:31-32, Mark 4:30-34, Luke 13:18-19)</option>
+				<option>The Leaven (Matthew 13:33-34, Luke 13:20-21)</option>
+				<option>Hidden Treasure (Matthew 13:44)</option>
+				<option>Pearl of Great Price (Matthew 13:45-46)</option>
+				<option>The Net (Matthew 13:47-50)</option>
+				<option>The Invited Guests (Luke 14:7-14)</option>
+				<option>The Heart of Man (Matthew 15:10-20, Mark 7:14-23)</option>
+				<option>The Lost Sheep (Matthew 18:10-14, Luke 15:1-7)</option>
+				<option>The Lost Coin (Luke 15:8-10)</option>
+				<option>The Prodigal Son (Luke 15:11-32)</option>
+				<option>The Rich Man and Lazarus (Luke 16:19-31)</option>
+				<option>The Persistent Widow (Luke 18:1-8)</option>
+				<option>The Pharisee and The Tax Collector (Luke 18:9-14)</option>
+				<option>The Unforgiving Servant (Matthew 18:23-35)</option>
+				<option>Laborers in the Vineyard (Matthew 20:1-16)</option>
+				<option>The Two Sons (Matthew 21:28-32)</option>
+				<option>The Tenant Farmers (Matthew 21:33-45, Mark 12:1-12, Luke 20:9-19)</option>
+				<option>Marriage Feast or Great Banquet (Matthew 22:1-14, Luke 14:15-24)</option>
+				<option>The Budding Fig Tree (Matthew 24:32-35, Mark 13:28-33, Luke 21:29-33)</option>
+				<option>The Faithful versus The Wicked Servant (Matthew 24:45-51, Mark 13:34-37, Luke 12:35-48)</option>
+				<option>The Ten Virgins (Matthew 25:1-13)</option>
+				<option>Ten Talents or Gold Coins (Matthew 25:14-30, Luke 19:11-27)</option>
+			  </select>
+			</label></p>
+			<menu>
+			  <button value="cancel">Cancel</button>
+			  <button id="confirmation" value="default">Confirm</button>
+			</menu>
+		  </form>
+		</dialog>
+
+		<menu>
+		  <button id="menu">Menu</button>
+		</menu>
+
+		<output id="choice"></output>
+		
+		<script>
+			var menu = document.getElementById("menu");
+			var favoriteDialog = document.getElementById("favoriteDialog");
+			var choice = document.getElementById("choice");
+			var selection = document.getElementById("selection");
+			var confirmation = document.getElementById("confirmation");
+
+			function openDialog()
+			{
+				if (typeof favoriteDialog.showModal === "function") {
+					favoriteDialog.showModal();
+				} else {
+					alert("The dialog API is not supported by this browser");
+				}
+			}
+
+			function selectionFavorite(e)
+			{
+				confirmation.value = selection.value;
+			}
+
+			function updateChoice()
+			{
+				choice.value = favoriteDialog.returnValue + " dialog closed - " + (new Date()).toString();
+			}
+
+			favoriteDialog.addEventListener("close", updateChoice, false);
+			menu.addEventListener("click", openDialog, false);
+			selection.addEventListener("change", selectionFavorite, false);
+		</script>
+	</body>
+</html>

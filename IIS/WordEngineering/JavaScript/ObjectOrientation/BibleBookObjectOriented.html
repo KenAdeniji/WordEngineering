@@ -1,0 +1,34 @@
+<html>
+	<!--
+		2013-04-24 killdream.github.io/blog/2011/10/understanding-javascript-oop
+		2014-06-12 File created.
+	-->
+	<head>
+		<title>Bible Book Object Oriented</title>
+	</head>
+	<body>
+		<script>
+			function BibleBook(id, title) {
+				this.id = id;
+				this.title = title
+				this.testament = this.id <= 40 ? 'Old' : 'New';
+				
+				bibleBooks.push(this);
+			}
+			  
+			BibleBook.prototype.oldOrNew = function()
+			{
+				return this.id <= 40 ? 'Old' : 'New';
+			}
+			
+			var bibleBooks = new Array();
+			var genesis = new BibleBook(1, 'Genesis');
+			var exodus = new BibleBook(2, 'Exodus');
+			//console.log(bibleBooks);
+			bibleBooks.forEach(console.log)
+			
+			console.log(genesis.oldOrNew());
+		</script>
+	</body>
+</html>
+

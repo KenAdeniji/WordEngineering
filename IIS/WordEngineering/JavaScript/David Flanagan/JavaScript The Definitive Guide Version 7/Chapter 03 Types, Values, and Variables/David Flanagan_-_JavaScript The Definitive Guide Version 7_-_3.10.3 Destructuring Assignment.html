@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2020-06-24	https://github.com/davidflanagan/jstdg7/blob/master/ch03/destructuring.js	
+	-->
+	<head>
+		<title>David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.10.3 Destructuring Assignment</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.10.3 Destructuring Assignment"/>
+		<meta name="keywords" content="David Flanagan, JavaScript The Definitive Guide, version 7, chapter 3, 3.10.3 Destructuring Assignment, x, y, Cartesian coordinates, r, theta, Polar coordinates"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="x">x</label></td>
+					<td><input id="x" type="number" focus/></td>
+				</tr>
+				<tr>
+					<td><label for="y">y</label></td>
+					<td><input id="y" type="number"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="fromCartesianToPolarQuery" value="From Cartesian to Polar"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="fromCartesianToPolar"></div>
+		</div>
+
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="r">r</label></td>
+					<td><input id="r" type="number" focus/></td>
+				</tr>
+				<tr>
+					<td><label for="theta">theta</label></td>
+					<td><input id="theta" type="number"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="fromPolarToCartesianQuery" value="From Polar to Cartesian"/>
+					</td>
+				</tr>	
+			</table>
+			<div id="fromPolarToCartesian"></div>
+		</div>
+
+		<script>
+			var xElement = document.getElementById("x");
+			var yElement = document.getElementById("y");
+			
+			var	fromCartesianToPolarElement = document.getElementById("fromCartesianToPolar");
+
+			var rElement = document.getElementById("r");
+			var thetaElement = document.getElementById("theta");
+			
+			var	fromPolarToCartesianElement = document.getElementById("fromPolarToCartesian");
+
+			// Convert [x,y] coordinates to [r,theta] polar coordinates
+			function fromCartesianToPolar(x, y) {
+				return [Math.sqrt(x*x+y*y), Math.atan2(y,x)];
+			}
+
+			// Convert polar to Cartesian coordinates
+			function fromPolarToCartesian(r, theta) {
+				return [r*Math.cos(theta), r*Math.sin(theta)];
+			}
+			
+			function queryFromCartesianToPolar()
+			{
+				let [r,theta] = fromCartesianToPolar
+				(
+					Number.parseFloat(xElement.value), Number.parseFloat(yElement.value)
+				);
+				fromCartesianToPolarElement.innerHTML = r + ", " + theta;
+			}
+
+			function queryFromPolarToCartesian()
+			{
+				let [x,y] = fromCartesianToPolar
+				(
+					Number.parseFloat(rElement.value), Number.parseFloat(thetaElement.value)
+				);
+				fromPolarToCartesianElement.innerHTML = x + ", " + y;
+			}
+
+			document.getElementById("fromCartesianToPolarQuery").
+				addEventListener("click", queryFromCartesianToPolar, false);
+
+			document.getElementById("fromPolarToCartesianQuery").
+				addEventListener("click", queryFromPolarToCartesian, false);
+		</script>
+	</body>
+</html>

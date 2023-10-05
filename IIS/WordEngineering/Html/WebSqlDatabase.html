@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <body style="font: 75% Lucida Grande, Trebuchet MS">
+    <div id="content"></div>
+    <p id="log" style="color: gray"></p>
+    <script>
+      document.getElementById('content').innerHTML =
+        '<ul id="results"></ul>'+
+        '<button onclick="newRecord()">new record</button>';
+      var db;
+      var log = document.getElementById('log');
+	  var maxSize = 1024*1024; // = 1MB
+      db = openDatabase("WordEngineering", "1.0", "WordEngineering", maxSize);
+	  createTable();
+      showRecords();
+      document.getElementById('results').addEventListener('click', function(e) { e.preventDefault(); }, false);
+      
+      function onError(tx, error) {
+        log.innerHTML += '<p>' + error.message + '</p>';
+      }
+      
+      // select all records and display them
+      function showRecords() {
+        document.getElementById('results').innerHTML = '';
+        db.transaction(function(tx) {
+          tx.executeSql("SELECT * FROM ToDoList", [], function(tx, result) {
+            for (var i = 0, item = null; i < result.rows.length; i++) {
+              item = result.rows.item(i);
+              document.getElementById('results').innerHTML +=
+                  '<li><span contenteditable="true" onkeyup="updateRecord('+item['id']+', this)">'+
+                  item['text'] + '</span> <a href="#" onclick="deleteRecord('+item['id']+')">x</a></li>';
+            }
+          });
+        });
+      }
+      
+      function createTable() {
+        db.transaction(function(tx) {
+          tx.executeSql("CREATE TABLE ToDoList (id REAL UNIQUE, text TEXT)", [],
+              function(tx) { log.innerHTML = 'ToDoList created' },
+              onError);
+        });
+      }
+      
+      // add record with random values
+      function newRecord() {
+        var num = Math.round(Math.random() * 10000); // random data
+        db.transaction(function(tx) {
+          tx.executeSql("INSERT INTO ToDoList (id, text) VALUES (?, ?)", [num, 'Modify text...'],
+              function(tx, result) {
+                log.innerHTML = 'record added';
+                showRecords();
+              },
+              onError);
+        });
+      }
+      
+      function updateRecord(id, textEl) {
+        db.transaction(function(tx) {
+          tx.executeSql("UPDATE ToDoList SET text = ? WHERE id = ?", [textEl.innerHTML, id], null, onError);
+        });
+      }
+      
+      function deleteRecord(id) {
+        db.transaction(function(tx) {
+          tx.executeSql("DELETE FROM ToDoList WHERE id=?", [id],
+              function(tx, result) { showRecords() },
+              onError);
+        });
+      }
+      
+      // delete table from db
+      function dropTable() {
+        db.transaction(function(tx) {
+          tx.executeSql("DROP TABLE ToDoList", [],
+              function(tx) { showRecords() },
+              onError);
+        });
+      }
+    </script>
+  </body>
+</html>
