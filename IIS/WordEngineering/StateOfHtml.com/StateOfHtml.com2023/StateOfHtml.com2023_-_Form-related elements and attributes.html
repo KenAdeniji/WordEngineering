@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-10-05T08:54:00...2023-10-05T09:02:00 Created.
+		-->
+		<title>Surveys / State of HTML 2023. Forms. Form-related elements and attributes</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Surveys / State of HTML 2023. Forms. Form-related elements and attributes"/>
+		<meta name="keywords" content="Survey, State of HTML 2023, form, element, attribute"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<form id="inputForm">
+			<p>
+				<label for="apocalypticBook">Apocalyptic book</label><br/>
+				<input id="apocalypticBook" list="apocalypticBooks">
+				<datalist id="apocalypticBooks">
+				  <option>Daniel</option>
+				  <option>Revelation</option>
+				</datalist>
+			</p>
+			<p>
+				<label for="address_firstline">Billing street-address</label><br/>
+				<input name="address_firstline" autocomplete="billing street-address" />
+			</p>
+
+			<input type="submit" id="submitQuery"><br/>
+			<div id="resultTable"></div>
+		</form>	
+		<script>
+			var isPostBack = false;
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var aPassIDBeginValue = urlParams.get("aPassIDBegin");
+						
+					isPostBack = true;	
+				}
+				else
+				{
+				}
+			}
+			
+			
+			function querySubmit()
+			{
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
