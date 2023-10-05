@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<discovery xmlns="http://schemas.xmlsoap.org/disco/">
-   <contractRef 
-      ref="http://localhost/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx?WSDL" 
-      docRef="http://localhost/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx" 
-      xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-</discovery>

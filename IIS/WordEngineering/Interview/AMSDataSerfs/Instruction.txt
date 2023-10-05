@@ -1,4 +1,0 @@
-1630592861 createFile "c:\file.txt"
-1630592861 deleteFile "c:\File.txt"
-1630592862 moveFile "C:\File.txt D:\NewFolder\File.txt"
-1630592863 ListenToPort "Port:3334 Timeout:100"
