@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-10-06T03:35:00...2023-10-06T03:35:00 Created.
+			2023-10-04T11:52:00	http://raymondcamden.com/2023/10/01/links-for-you
+			2023-10-04T11:52:00	http://survey.devographics.com/en-US/survey/state-of-html/2023
+				2023-10-04T11:52:00...2023-10-04T13:41:00 Survey
+				2023-10-04T20:56:00...2023-10-04T21:24:00 Survey
+		-->
+		<title>Surveys / State of HTML 2023. APIs that enable richer user interactions.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Surveys / State of HTML 2023. Forms. Form-related elements and attributes"/>
+		<meta name="keywords" content="Survey, State of HTML 2023, form, dialog"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<form id="inputForm" action="#">
+			<h6>HTML element: dialog.</h6>
+			<dialog id="confirm">
+				<form method="dialog">
+					Are you sure?
+					<button value="1">Yes</button>
+					<button value="0">No</button>
+				</form>
+			</dialog>
+			
+			<p>
+				<input type="submit" id="submitQuery">
+			</p>
+
+			<div id="resultSet"></div>
+		</form>	
+		<script>
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function querySubmit()
+			{
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

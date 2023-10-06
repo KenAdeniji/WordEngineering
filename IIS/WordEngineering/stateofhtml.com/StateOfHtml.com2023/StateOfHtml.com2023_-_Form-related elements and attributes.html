@@ -7,6 +7,14 @@
 			2023-10-04T11:52:00	http://survey.devographics.com/en-US/survey/state-of-html/2023
 				2023-10-04T11:52:00...2023-10-04T13:41:00 Survey
 				2023-10-04T20:56:00...2023-10-04T21:24:00 Survey
+			2023-10-05T14:50:00	http://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+			2023-10-05T15:40:00...2023-10-05T15:57:00	http://stackoverflow.com/questions/1131781/is-it-a-good-practice-to-use-an-empty-url-for-a-html-forms-action-attribute-a
+				<form id="inputForm" action="#">
+			2023-10-05T19:22:00...2023-10-05T19:54:00
+				<h6>HTML attribute: contenteditable="plaintext-only"</h6>
+				<p contenteditable>HTML attribute: contenteditable</p>
+			2023-10-06T03:00:00...2023-10-06T03:26:00		
+				http://stackoverflow.com/questions/53728335/how-do-i-properly-use-reportvalidity-when-i-want-to-show-an-error-bubble-for-j/53741193#53741193
 		-->
 		<title>Surveys / State of HTML 2023. Forms. Form-related elements and attributes</title>
 		<meta charset="UTF-8"/>
@@ -17,8 +25,8 @@
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<form id="inputForm">
-			<h6>Element: datalist. Attribute: list.</h6>
+		<form id="inputForm" action="#">
+			<h6>HTML element: datalist. HTML attribute: list</h6>
 			<p>
 				<label for="apocalypticBook">Apocalyptic book</label><br/>
 				<input id="apocalypticBook" list="apocalypticBooks">
@@ -27,41 +35,93 @@
 				  <option>Revelation</option>
 				</datalist>
 			</p>
+			
+			<h6>HTML attribute: autocomplete</h6>
 			<p>
 				<label for="address_firstline">Billing street-address</label><br/>
 				<input name="address_firstline" autocomplete="billing street-address" />
 			</p>
 
-			<input type="submit" id="submitQuery"><br/>
-			<div id="resultTable"></div>
+			<h6>HTML media capture</h6>
+			<p>
+				<label for="mediaCapture">Media capture</label><br/>
+				<input type="file" accept="video/*" capture>
+			</p>
+
+			<h6>HTMLInputElement: showPicker() method</h6>
+			<p>
+				<input id="dateInput" type="date">
+				<button onclick="dateInput.showPicker()">Select date</button>
+			</p>
+
+			<h6>HTML element: selectlist</h6>
+			<p>
+				<selectlist id="selectListOption">
+					<option>Option 1</option>
+					<option>Option 2</option>
+					<option>Option 3</option>
+				</selectlist>
+			</p>
+
+			<h6>HTML attribute: contenteditable="plaintext-only"</h6>
+			<p contenteditable>HTML attribute: contenteditable</p>
+			
+			<h6>HTML element: input. HTML type attribute: url</h6>
+			<input
+				id="referenceURL"
+				type="url"
+				value="http://survey.devographics.com/en-US/survey/state-of-html/2023"
+				size="55"
+				required
+			>
+			
+			<p>
+				<input type="submit" id="submitQuery">
+				<button id="formDataAPIQuery">Form Data API</button>
+				<button id="formValidationQuery">Form Validation</button>
+				<button id="formReportValidityQuery">Report Validity</button>
+			</p>
+
+			<div id="resultSet"></div>
 		</form>	
 		<script>
 			var isPostBack = false;
 			
+			const	referenceURLElement = document.getElementById("referenceURL");
 			const 	submitQueryElement = document.getElementById("submitQuery");
-			const 	resultTableElement = document.getElementById("resultTable");
-			
-			function pageLoad()
-			{
-				if (isPostBack === false)
-				{
-					const urlParams = new URLSearchParams(window.location.search);
-					
-					var aPassIDBeginValue = urlParams.get("aPassIDBegin");
-						
-					isPostBack = true;	
-				}
-				else
-				{
-				}
-			}
-			
+			const 	formDataAPIQueryElement = document.getElementById("formDataAPIQuery");
+			const	formValidationElement = document.getElementById("formValidationQuery");
+			const	formReportValidityElement = document.getElementById("formReportValidityQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
 			
 			function querySubmit()
 			{
 			}
+
+			function queryFormDataAPI()
+			{
+				let fd = new FormData(inputForm);
+				let data = JSON.stringify(Object.fromEntries(fd));
+				resultSetElement.innerHTML = data;
+			}
+			
+			function queryFormValidation()
+			{
+				if (referenceURLElement.checkValidity() === false) 
+				{
+					resultSetElement.innerHTML = referenceURLElement.validationMessage;
+				}			
+			}
+
+			function queryFormReportValidity()
+			{
+				inputForm.reportValidity();
+			}
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
+			formDataAPIQueryElement.addEventListener("click", queryFormDataAPI, false);
+			formValidationQueryElement.addEventListener("click", queryFormValidation, false);
+			formReportValidityQueryElement.addEventListener("click", queryFormReportValidity, false);
 			
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
@@ -69,8 +129,6 @@
 					querySubmit();
 				}
 			}
-
-			window.addEventListener("load", pageLoad, false);
 		</script>
 	</body>
 </html>

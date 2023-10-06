@@ -264,3 +264,8 @@ git add			InformationInTransit/ProcessLogic/UriHelper.cs
 git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-10-02T0640Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Makan.Talayeh@acgov.org.txt"
 
 git add			IIS/WordEngineering/WordCross/SignupForm.html
+
+git add         "IIS/WordEngineering/stateofhtml.com/StateOfHtml.com2023/StateOfHtml.com2023_-_Form-related elements and attributes.html"
+git add	        "IIS/WordEngineering/stateofhtml.com/StateOfHtml.com2023/StateOfHtml.com2023_-_APIs that enable richer user interactions.html"
+
+		
