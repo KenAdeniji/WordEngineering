@@ -268,4 +268,4 @@ git add			IIS/WordEngineering/WordCross/SignupForm.html
 git add         "IIS/WordEngineering/stateofhtml.com/StateOfHtml.com2023/StateOfHtml.com2023_-_Form-related elements and attributes.html"
 git add	        "IIS/WordEngineering/stateofhtml.com/StateOfHtml.com2023/StateOfHtml.com2023_-_APIs that enable richer user interactions.html"
 
-git rm -f		"E:\WordEngineering\IIS\WordEngineering\stateofhtml.com\2023-10-04T115200StateOfHtml.com.txt"
+REM git rm -f		"E:\WordEngineering\IIS\WordEngineering\stateofhtml.com\2023-10-04T115200StateOfHtml.com.txt"

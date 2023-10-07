@@ -10,6 +10,7 @@
 			2023-10-06 dialog element
 				http://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 			2023-10-07T02:50:00...2023-10-07T03:31:00 dialog .showModal(), .show()
+			2023-10-07T15:21:00	http://jkorpela.fi/math
 		-->
 		<title>Surveys / State of HTML 2023. APIs that enable richer user interactions.</title>
 		<meta charset="UTF-8"/>
@@ -37,8 +38,36 @@
 			</p>
 
 			<div id="resultSet"></div>
+			
+<details>
+    <summary>Details</summary>
+    Longer content
+	A disclosure widget that can be toggled to hide or show content interactively.
+</details>
+
+<details open name="sidebar_panel_ExclusiveAccordion" id="main_info">
+	<summary>Main info</summary>
+	<!-- controls -->
+	sidebar_panel_ExclusiveAccordion
+</details>
+<details name="sidebar_panel_ExclusiveAccordion" id="style_settings">
+	<summary>Style</summary>
+	<!-- controls -->
+	sidebar_panel_ExclusiveAccordion
+</details>
+<!--
+	UNIX Epoch: 127851930.2028571
+	GMT: Saturday, January 19, 1974 6:25:30.202 PM
+-->
+<math id="mathExpression">3.142 * (6378.1 * 6378.1)</math>=<span id="mathResult"></span>
+
 		</form>	
 		<script>
+			var 	isPostBack = false;
+			
+			const	mathExpressionElement = document.getElementById("mathExpression");
+			const	mathResultElement = document.getElementById("mathResult");
+			
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const 	resultSetElement = document.getElementById("resultSet");
 			
@@ -48,6 +77,15 @@
 			
 			const 	showConfirmDialogQueryElement = document.getElementById("showConfirmDialogQuery");
 			const 	closeConfirmDialogQueryElement = document.getElementById("closeConfirmDialogQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					mathCalculation();
+					isPostBack = true;
+				}
+			}
 			
 			function querySubmit()
 			{
@@ -79,6 +117,15 @@
 				confirmDialog.close(confirmDialogNoElement.value);
 			}
 
+			function mathCalculation()
+			{
+				mathResultElement.textContent = 
+				eval
+				(
+					mathExpression.innerHTML
+				);	
+			}
+
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			showConfirmDialogQueryElement.addEventListener("click", queryShowConfirmDialog, false);
 			closeConfirmDialogQueryElement.addEventListener("click", queryCloseConfirmDialog, false);
@@ -86,13 +133,15 @@
 			confirmDialogElement.addEventListener("close", queryConfirmDialogClose, false);
 			confirmDialogYesElement.addEventListener("click", queryConfirmDialogYesClick, false);
 			confirmDialogNoElement.addEventListener("click", queryConfirmDialogNoClick, false);
-						
+
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
 				if (e.keyCode === 13) {  //enter key code
 					querySubmit();
 				}
 			}
+			
+			window.addEventListener("load", pageLoad, false);
 		</script>
 	</body>
 </html>
