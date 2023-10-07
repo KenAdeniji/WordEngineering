@@ -7,6 +7,9 @@
 			2023-10-04T11:52:00	http://survey.devographics.com/en-US/survey/state-of-html/2023
 				2023-10-04T11:52:00...2023-10-04T13:41:00 Survey
 				2023-10-04T20:56:00...2023-10-04T21:24:00 Survey
+			2023-10-06 dialog element
+				http://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+			2023-10-07T02:50:00...2023-10-07T03:31:00 dialog .showModal(), .show()
 		-->
 		<title>Surveys / State of HTML 2023. APIs that enable richer user interactions.</title>
 		<meta charset="UTF-8"/>
@@ -19,7 +22,7 @@
 	<body>
 		<form id="inputForm" action="#">
 			<h6>HTML element: dialog.</h6>
-			<dialog id="confirm">
+			<dialog id="confirm" open>
 				<form method="dialog">
 					Are you sure?
 					<button value="1">Yes</button>
@@ -29,6 +32,8 @@
 			
 			<p>
 				<input type="submit" id="submitQuery">
+				<button id="showDialogQuery">Show dialog</button>
+				<button id="closeDialogQuery">Close dialog</button>
 			</p>
 
 			<div id="resultSet"></div>
@@ -37,12 +42,28 @@
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const 	resultSetElement = document.getElementById("resultSet");
 			
+			const 	confirmElement = document.querySelector("dialog");
+			const 	showDialogQueryElement = document.getElementById("showDialogQuery");
+			const 	closeDialogQueryElement = document.getElementById("closeDialogQuery");
+			
 			function querySubmit()
 			{
 			}
 
+			function queryShowDialog()
+			{
+				confirmElement.show();
+			}
+
+			function queryCloseDialog()
+			{
+				confirmElement.close();
+			}
+
 			submitQueryElement.addEventListener("click", querySubmit, false);
-			
+			showDialogQueryElement.addEventListener("click", queryShowDialog, false);
+			closeDialogQueryElement.addEventListener("click", queryCloseDialog, false);
+						
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
 				if (e.keyCode === 13) {  //enter key code
