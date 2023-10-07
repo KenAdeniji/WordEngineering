@@ -22,18 +22,18 @@
 	<body>
 		<form id="inputForm" action="#">
 			<h6>HTML element: dialog.</h6>
-			<dialog id="confirm" open>
+			<dialog id="confirmDialog" open>
 				<form method="dialog">
 					Are you sure?
-					<button value="1">Yes</button>
-					<button value="0">No</button>
+					<button value="1" id="confirmDialogYes">Yes</button>
+					<button value="0" id="confirmDialogNo">No</button>
 				</form>
 			</dialog>
 			
 			<p>
 				<input type="submit" id="submitQuery">
-				<button id="showDialogQuery">Show dialog</button>
-				<button id="closeDialogQuery">Close dialog</button>
+				<button id="showConfirmDialogQuery">Show dialog</button>
+				<button id="closeConfirmDialogQuery">Close dialog</button>
 			</p>
 
 			<div id="resultSet"></div>
@@ -42,27 +42,50 @@
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const 	resultSetElement = document.getElementById("resultSet");
 			
-			const 	confirmElement = document.querySelector("dialog");
-			const 	showDialogQueryElement = document.getElementById("showDialogQuery");
-			const 	closeDialogQueryElement = document.getElementById("closeDialogQuery");
+			const 	confirmDialogElement = document.getElementById("confirmDialog");
+			const 	confirmDialogYesElement = document.getElementById("confirmDialogYes");
+			const 	confirmDialogNoElement = document.getElementById("confirmDialogNo");
+			
+			const 	showConfirmDialogQueryElement = document.getElementById("showConfirmDialogQuery");
+			const 	closeConfirmDialogQueryElement = document.getElementById("closeConfirmDialogQuery");
 			
 			function querySubmit()
 			{
 			}
 
-			function queryShowDialog()
+			function queryShowConfirmDialog()
 			{
-				confirmElement.show();
+				confirmDialogElement.show();
 			}
 
-			function queryCloseDialog()
+			function queryCloseConfirmDialog()
 			{
-				confirmElement.close();
+				confirmDialogElement.close();
+			}
+
+			function queryConfirmDialogClose()
+			{
+				var confirmDialogReturnValue = confirmDialogElement.returnValue;
+				resultSetElement.innerHTML = confirmDialogReturnValue;
+			}
+
+			function queryConfirmDialogYesClick()
+			{
+				confirmDialog.close(confirmDialogYesElement.value);
+			}
+
+			function queryConfirmDialogNoClick()
+			{
+				confirmDialog.close(confirmDialogNoElement.value);
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
-			showDialogQueryElement.addEventListener("click", queryShowDialog, false);
-			closeDialogQueryElement.addEventListener("click", queryCloseDialog, false);
+			showConfirmDialogQueryElement.addEventListener("click", queryShowConfirmDialog, false);
+			closeConfirmDialogQueryElement.addEventListener("click", queryCloseConfirmDialog, false);
+			
+			confirmDialogElement.addEventListener("close", queryConfirmDialogClose, false);
+			confirmDialogYesElement.addEventListener("click", queryConfirmDialogYesClick, false);
+			confirmDialogNoElement.addEventListener("click", queryConfirmDialogNoClick, false);
 						
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
