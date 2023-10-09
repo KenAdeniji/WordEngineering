@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			http://phuoc.ng/collection/1-loc/generate-an-array-of-alphabet-characters/
+			2023-10-09T08:56:00	Created.
+			2023-10-09T09:21:00	javascriptCodeElement.value
+			http://developer.mozilla.org/en-US/docs/Web/CSS/::before
+			http://stackoverflow.com/questions/20498409/adding-text-to-beginning-of-each-array-element
+				var alphabetsArrayWrapper = alphabetsArray.map(i => "'" + i + "'");
+				2023-10-09T09:30:00	I have used by copying but I have never really learnt to apply it.
+		-->
+		<title>phuoc.ng_-_PhuocNguyen_-_Generate an array of alphabet characters.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="phuoc.ng_-_PhuocNguyen_-_Generate an array of alphabet characters.html"/>
+		<meta name="keywords" content="phuoc.ng, Phuoc Nguyen, array of alphabet characters"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<textarea id="alphabets">abcdefghijklmnopqrstuvwxyz</textarea>		
+			<input type="submit" id="submitQuery">
+			<textarea id="javascriptCode"></textarea>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	alphabetsElement = document.getElementById("alphabets");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	javascriptCodeElement = document.getElementById("javascriptCode");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var alphabetsValue = urlParams.get("alphabets");
+					if (alphabetsValue)
+					{
+						alphabetsElement.value = alphabetsValue;
+					}	
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var alphabetsArray = alphabetsElement.value.split('');
+				var alphabetsArrayWrapper = alphabetsArray.map(i => "'" + i + "'");
+				var	alphabetsArrayWrapperArrayStatement = 
+					`var alphabetsArray = [${alphabetsArrayWrapper}];`
+				javascriptCodeElement.value = alphabetsArrayWrapperArrayStatement;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

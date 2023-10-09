@@ -390,15 +390,7 @@ Microsoft Windows operating system mouse error.
 2023-09-17T16:24:00	
 	Mozilla Firefox browser tab closes DateDifference.aspx
 
-2023-10-02T13:03:00
-	google.com/webelements/#!/custom-search
-
-2023-10-02T22:07:00	
-	google.com/books/edition/JavaScript_for_Gurus/27pIEAAAQBAJ?hl=en 	JavaScript for Gurus By Preez Ockert J. du Originally published: February 19, 2020. Publisher: PBP publication. 		JavaScript 	2022-08-26 	59427
-
-2023-10-04T11:18:00		
-	elijahmanor.com/byte/js-locale-sort 			JavaScript, sort 	2022-04-01 	58282
-	
-2023-10-04T11:52:00
+URIMaintenanceWebForm.aspx
+	github.com/dmitry-merzlyakov/nledger 	.Net Ledger: Double-Entry Accounting System 		Accounting 	2021-08-30 	57076
 	
 :Exit
