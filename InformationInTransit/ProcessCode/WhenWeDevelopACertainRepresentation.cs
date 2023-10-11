@@ -30,10 +30,13 @@ namespace InformationInTransit.ProcessCode
 {
 	///<summary>
 	///	2023-10-11T09:39:00 WhenWeDevelopACertainRepresentation.cs
+	/// Hitachi
+	///		http://www.json.org/json-en.html 
 	///	Composite class. Inner class.
 	/// 2023-10-11T11:10:00	http://stackoverflow.com/questions/42875765/how-to-access-nested-class-from-instance-of-a-class
 	///	2023-10-11T09:39:00...2023-10-11T11:46:00 WhenWeDevelopACertainRepresentation.cs	
 	///	2023-10-11T11:56:00...2023-10-11T12:32:00 AlphabetSequence AlphabetSequenceInstance { get; set; }
+	///	2023-10-11T14:18:00...2023-10-11T14:31:00 whenWeDevelopACertainRepresentation.Word = word;
 	///</summary>
 	public partial class WhenWeDevelopACertainRepresentation
 	{
@@ -53,6 +56,7 @@ namespace InformationInTransit.ProcessCode
 						word
 					);
 
+			whenWeDevelopACertainRepresentation.Word = word;
 			whenWeDevelopACertainRepresentation.AlphabetSequenceInstance =
 				alphabetSequence;
 
@@ -83,7 +87,8 @@ namespace InformationInTransit.ProcessCode
 			public int AlphabetSequenceIndex { get; set; }
 			public String AlphabetSequenceIndexScriptureReference { get; set; }
 		}	
-		
+
+		public String Word { get; set; }		
 		public AlphabetSequence AlphabetSequenceInstance { get; set; }
 	}
 }

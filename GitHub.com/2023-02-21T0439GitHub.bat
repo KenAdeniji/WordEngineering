@@ -273,4 +273,5 @@ REM git rm -f		"E:\WordEngineering\IIS\WordEngineering\stateofhtml.com\2023-10-0
 git add        "IIS/WordEngineering/JavaScript/NguyenHuuPhuoc/phuoc.ng_-_PhuocNguyen_-_Generate an array of alphabet characters.html"
 
 git add        IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.asmx
+git add        IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.html
 git add        InformationInTransit/ProcessCode/WhenWeDevelopACertainRepresentation.cs
