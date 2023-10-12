@@ -270,8 +270,10 @@ git add	        "IIS/WordEngineering/stateofhtml.com/StateOfHtml.com2023/StateOf
 
 REM git rm -f		"E:\WordEngineering\IIS\WordEngineering\stateofhtml.com\2023-10-04T115200StateOfHtml.com.txt"
 
-git add        "IIS/WordEngineering/JavaScript/NguyenHuuPhuoc/phuoc.ng_-_PhuocNguyen_-_Generate an array of alphabet characters.html"
+git add        	"IIS/WordEngineering/JavaScript/NguyenHuuPhuoc/phuoc.ng_-_PhuocNguyen_-_Generate an array of alphabet characters.html"
 
-git add        IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.asmx
-git add        IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.html
-git add        InformationInTransit/ProcessCode/WhenWeDevelopACertainRepresentation.cs
+git add        	IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.asmx
+git add        	IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentation.html
+git add        	InformationInTransit/ProcessCode/WhenWeDevelopACertainRepresentation.cs
+
+git add			InformationInTransit/UnifiedModelingLanguage/
