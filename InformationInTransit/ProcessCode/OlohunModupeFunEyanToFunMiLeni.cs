@@ -31,9 +31,13 @@ namespace InformationInTransit.ProcessCode
 	///<summary>
 	///	2023-10-12 Olohun modupe...fun eyan to fun mi, leni.
 	///	At the intersection of Paseo Padre Parkway and Blackstone Way, South East.
-	///		Separate the number and the rank.
+	///		Separate the rank from the number.
 	///	2023-10-12T20:32:00...2023-10-12T20:54:00 Code.
-	///	2023-10-12T20:54:00...2023-10-12T21:13:00 Compile.	
+	///	2023-10-12T20:54:00...2023-10-12T21:13:00 Compile.
+	///	2023-10-12T22:16:00 Linus Benedict Torvalds.
+	///		Distributed version control system Git.
+	///		Ki eyan ti move pass ibi ta won wa, unto the next level.
+	///	2023-10-13T05:38:00	http://byjus.com/maths/ordinal-numbers/
 	///</summary>
 	public class OlohunModupeFunEyanToFunMiLeni
 	{
@@ -42,8 +46,8 @@ namespace InformationInTransit.ProcessCode
 			string 	scriptureReference,
 			string 	bibleVersion,
 			string	word,
-			bool	includeRanks,
-			bool	includeNumerals
+			bool	includeOrdinalNumbers,
+			bool	includeCardinalNumbers
 		)
 		{
 			String[] scriptureReferenceSubset = null;
@@ -121,9 +125,9 @@ namespace InformationInTransit.ProcessCode
 					{
 						if 
 						(
-							( includeRanks && Ranks.Contains( verseWord ) )
+							( includeOrdinalNumbers && OrdinalNumbers.Contains( verseWord ) )
 							||
-							( includeNumerals && Numerals.Contains( verseWord ) )
+							( includeCardinalNumbers && CardinalNumbers.Contains( verseWord ) )
 						)
 						{		
 							resultDataRow = resultDataTable.Rows.Find
@@ -154,12 +158,14 @@ namespace InformationInTransit.ProcessCode
 			resultDataTable.AcceptChanges();
 			return resultDataTable;
 		}	
-		public static readonly string[] Ranks =
+		public static readonly string[] OrdinalNumbers =
 		{
-			"first", "second", "third", "fourth", "fifth", "sixth", 
-			"seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"
+			"first", "second", "third", "fourth", "fifth", 
+			"sixth", "seventh", "eighth", "ninth", "tenth",
+			"eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth",
+			"sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth"
 		};	
-		public static readonly string[] Numerals =
+		public static readonly string[] CardinalNumbers =
 		{
 			"one", "two", "three", "four", "five",
 			"six", "seven", "eight", "nine", "ten",

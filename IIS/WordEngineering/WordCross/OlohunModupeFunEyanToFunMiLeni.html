@@ -3,6 +3,18 @@
 	<head>
 		<!--
 			2023-10-12T21:23:00...2023-10-12T21:41:00 Created.
+			2023-10-13T05:56:00
+				if 
+				(
+					includeOrdinalNumbersElement.checked === false
+					&&
+					includeCardinalNumbersElement.checked === false
+				)
+				{
+					resultTableElement.innerHTML =
+						"Please choose the numbers to include.";
+					return;
+				}	
 		-->
 		<title>Olohun modupe...fun eyan to fun mi, leni.</title>
 		<meta charset="UTF-8"/>
@@ -28,12 +40,12 @@
 					<td><input type="text" ID="bibleWord" value="David"/></td>
 				</tr>
 				<tr> 
-					<td><label for="includeRanks">Include Ranks:</label></td>
-					<td><input type="checkBox" ID="includeRanks" checked/></td>
+					<td><label for="includeOrdinalNumbers">Include Ordinal Numbers:</label></td>
+					<td><input type="checkBox" ID="includeOrdinalNumbers" checked/></td>
 				</tr>
 				<tr> 
-					<td><label for="includeNumerals">Include Numerals:</label></td>
-					<td><input type="checkBox" ID="includeNumerals" checked/></td>
+					<td><label for="includeCardinalNumbers">Include Cardinal Numbers:</label></td>
+					<td><input type="checkBox" ID="includeCardinalNumbers" checked/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -51,8 +63,8 @@
 			const 	scriptureReferenceElement = document.getElementById("scriptureReference");
 			const 	bibleVersionElement = document.getElementById("bibleVersion");
 			const 	bibleWordElement = document.getElementById("bibleWord");
-			const 	includeRanksElement = document.getElementById("includeRanks");
-			const 	includeNumeralsElement = document.getElementById("includeNumerals");
+			const 	includeOrdinalNumbersElement = document.getElementById("includeOrdinalNumbers");
+			const 	includeCardinalNumbersElement = document.getElementById("includeCardinalNumbers");
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const	resultTableElement = document.getElementById("resultTable");
 
@@ -84,14 +96,14 @@
 						
 						scriptLiteral9432.setCheckBoxValue
 						(
-							"includeRanks",
-							urlParams.get("includeRanks")
+							"includeOrdinalNumbers",
+							urlParams.get("includeOrdinalNumbers")
 						);
 
 						scriptLiteral9432.setCheckBoxValue
 						(
-							"includeNumerals",
-							urlParams.get("includeNumerals")
+							"includeCardinalNumbers",
+							urlParams.get("includeCardinalNumbers")
 						);
 						
 						isPostBack = true;
@@ -107,11 +119,23 @@
 			{
 				var request = {};
 				
+				if 
+				(
+					includeOrdinalNumbersElement.checked === false
+					&&
+					includeCardinalNumbersElement.checked === false
+				)
+				{
+					resultTableElement.innerHTML =
+						"Please choose the numbers to include.";
+					return;
+				}	
+					
 				request["scriptureReference"] = scriptureReferenceElement.value;
 				request["bibleVersion"] = bibleVersionElement.value;
 				request["bibleWord"] = bibleWordElement.value;
-				request["includeRanks"] = includeRanksElement.checked;
-				request["includeNumerals"] = includeNumeralsElement.checked;
+				request["includeOrdinalNumbers"] = includeOrdinalNumbersElement.checked;
+				request["includeCardinalNumbers"] = includeCardinalNumbersElement.checked;
 												
 				var requestJson = JSON.stringify(request);
 				

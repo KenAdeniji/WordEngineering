@@ -36,8 +36,8 @@ public class OlohunModupeFunEyanToFunMiLeniWebService : System.Web.Services.WebS
 		string 	scriptureReference,
 		string 	bibleVersion,
 		string	bibleWord,	
-		bool	includeRanks,
-		bool	includeNumerals
+		bool	includeOrdinalNumbers,
+		bool	includeCardinalNumbers
 	)
     {
 		DataTable resultDataTable = OlohunModupeFunEyanToFunMiLeni.Query
@@ -45,8 +45,8 @@ public class OlohunModupeFunEyanToFunMiLeniWebService : System.Web.Services.WebS
 			scriptureReference,
 			bibleVersion,
 			bibleWord,
-			includeRanks,
-			includeNumerals
+			includeOrdinalNumbers,
+			includeCardinalNumbers
 		);
 		string json = JsonConvert.SerializeObject(resultDataTable, Formatting.Indented);
 		return json;
