@@ -277,3 +277,7 @@ git add        	IIS/WordEngineering/WordCross/WhenWeDevelopACertainRepresentatio
 git add        	InformationInTransit/ProcessCode/WhenWeDevelopACertainRepresentation.cs
 
 git add			InformationInTransit/UnifiedModelingLanguage/
+
+git add	        IIS/WordEngineering/WordCross/OlohunModupeFunEyanToFunMiLeni.asmx
+git add	        IIS/WordEngineering/WordCross/OlohunModupeFunEyanToFunMiLeni.html
+git add	        InformationInTransit/ProcessCode/OlohunModupeFunEyanToFunMiLeni.cs
