@@ -37,7 +37,7 @@ namespace InformationInTransit.ProcessCode
 	///	2023-10-12T22:16:00 Linus Benedict Torvalds.
 	///		Distributed version control system Git.
 	///		Ki eyan ti move pass ibi ta won wa, unto the next level.
-	///	2023-10-13T05:38:00	http://byjus.com/maths/ordinal-numbers/
+	///	2023-10-13T05:38:00	http://byjus.com/maths/ordinal-numbers
 	///</summary>
 	public class OlohunModupeFunEyanToFunMiLeni
 	{
