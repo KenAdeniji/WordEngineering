@@ -1,1 +1,1 @@
-[{"ID": 1, "Title": "Genesis"}, {"ID": 2, "Title": "Exodus"}]
+[{"id": 1, "title": "Genesis", "author": "Moses", "chapters": 50}, {"id": 2, "title": "Exodus", "author": "Moses", "chapters": 40}, {"id": 3, "title": "Leviticus", "author": "Moses", "chapters": 27}]

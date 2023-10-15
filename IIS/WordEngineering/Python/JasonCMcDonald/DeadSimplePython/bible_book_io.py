@@ -4,27 +4,21 @@
 2023-10-13T21:29:00	It separates the serialization from the file write.
 	json_string = json.dumps([ob.__dict__ for ob in list_bible_book])
 	path_JSON_file = Path("BibleBook.json");
-2023-10-13T06:11:00...2023-10-13T07:36:00 google.com +python object list html table site:stackoverflow.com 
+2023-10-13T06:11:00...2023-10-13T07:36:00 google.com +python object list html table site:stackoverflow.com
 2023-10-13T07:36:00 Urine
-2023-10-13T07:36:00...2023-10-13T07:56:00 html table while iteration.	
+2023-10-13T07:36:00...2023-10-13T07:56:00 html table while iteration.
 """
 import sys
 from pathlib import Path
 import json
 
-class Bible_Book():
-    # Initializer / Instance Attributes
-    def __init__(self, ID, Title):
-        self.ID = ID
-        self.Title = Title
+from bible_book import BibleBook
 
-    def __str__(self): #2019-06-11  https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf
-        return "Bible_Book ID: {} Title: {}".format(self.ID, self.Title())
-		
 if __name__ == '__main__':
 	list_bible_book = []
-	list_bible_book.append(Bible_Book(1, "Genesis"))
-	list_bible_book.append(Bible_Book(2, "Exodus"))
+	list_bible_book.append(BibleBook(1, "Genesis", "Moses", 50))
+	list_bible_book.append(BibleBook(2, "Exodus", "Moses", 40))
+	list_bible_book.append(BibleBook(3, "Leviticus", "Moses", 27))
 	
 	json_string = json.dumps([ob.__dict__ for ob in list_bible_book])
 	path_JSON_file = Path("BibleBook.json");
@@ -33,9 +27,9 @@ if __name__ == '__main__':
 
 	index = 0
 	length = len(list_bible_book)
-	html_string = "<table><thead><tr><th>ID</th><th>Title</th></tr></thead><tbody>";
+	html_string = "<table><thead><tr><th>ID</th><th>Title</th><th>Author</th><th>Chapters</th></tr></thead><tbody>";
 	while index < length:
-		html_string += f"<tr><td>{list_bible_book[index].ID}</td><td>{list_bible_book[index].Title}</td></tr>"
+		html_string += f"<tr><td>{list_bible_book[index].id}</td><td>{list_bible_book[index].title}</td><td>{list_bible_book[index].author}</td><td>{list_bible_book[index].chapters}</td></tr>"
 		index += 1
 	html_string += "</tbody></table>"	
 	path_HTML_file = Path("BibleBook.html");
