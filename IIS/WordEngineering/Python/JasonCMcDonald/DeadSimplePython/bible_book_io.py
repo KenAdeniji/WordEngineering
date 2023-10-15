@@ -4,9 +4,9 @@
 2023-10-13T21:29:00	It separates the serialization from the file write.
 	json_string = json.dumps([ob.__dict__ for ob in list_bible_book])
 	path_JSON_file = Path("BibleBook.json");
-	2023-10-13T06:11:00...2023-10-13T07:36:00 google.com +python object list html table site:stackoverflow.com 
-	2023-10-13T07:36:00 Urine
-	2023-10-13T07:36:00...2023-10-13T07:56:00 html table while iteration.	
+2023-10-13T06:11:00...2023-10-13T07:36:00 google.com +python object list html table site:stackoverflow.com 
+2023-10-13T07:36:00 Urine
+2023-10-13T07:36:00...2023-10-13T07:56:00 html table while iteration.	
 """
 import sys
 from pathlib import Path
