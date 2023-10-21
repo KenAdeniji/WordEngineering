@@ -250,7 +250,7 @@ var scriptLiteral9432 =
 		"Biblical Month",
 		"Gregorian Month",
 		"Biblical Year",
-		"Gregorian Year"		
+		"Gregorian Year"
 	],
 	calendarTypes: [ //2022-01-28
 		"Biblical",

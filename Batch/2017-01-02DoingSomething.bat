@@ -393,4 +393,21 @@ Microsoft Windows operating system mouse error.
 URIMaintenanceWebForm.aspx
 	github.com/dmitry-merzlyakov/nledger 	.Net Ledger: Double-Entry Accounting System 		Accounting 	2021-08-30 	57076
 	
+DateTime birth = DateTime.Parse("1.1.2000");
+DateTime today = DateTime.Today;     //we usually don't care about birth time
+TimeSpan age = today - birth;        //.NET FCL should guarantee this as precise
+double ageInDays = age.TotalDays;    //total number of days ... also precise
+double daysInYear = 365.2425;        //statistical value for 400 years
+double ageInYears = ageInDays / daysInYear;  //can be shifted ... not so precise
+
+TimeSpan diff = DateTime.Now - birthdayDateTime;
+string age = String.Format("{0:%y} years, {0:%M} months, {0:%d}, days old", diff);
+
+http://nodatime.org
+
+2023-10-20T13:27:00	
+	http://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.dateandtime.datediff?view=net-7.0
+
+	
+	
 :Exit
