@@ -22,8 +22,6 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Threading;
 
-using Microsoft.VisualBasic;
-
 using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 using InformationInTransit.ProcessLogic;

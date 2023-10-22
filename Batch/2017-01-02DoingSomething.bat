@@ -408,6 +408,10 @@ http://nodatime.org
 2023-10-20T13:27:00	
 	http://learn.microsoft.com/en-us/dotnet/api/microsoft.visualbasic.dateandtime.datediff?view=net-7.0
 
+2023-10-21T11:53:00...2023-10-21T12:50:00
 	
-	
+SELECT        TOP (515) HisWordID, Dated, Word, Commentary, Uri, ContactId, ScriptureReference, Filename, EnglishTranslation, Location, Scene
+FROM            HisWord
+WHERE        (CONVERT(date, Dated) = '2023-09-21')
+ORDER BY HisWordID DESC	
 :Exit
