@@ -290,4 +290,7 @@ git add	        IIS/WordEngineering/WordCross/AgedDate.asmx
 git add	        IIS/WordEngineering/WordCross/AgedDate.html
 git add	        InformationInTransit/ProcessCode/AgedDate.cs
 
-git add IIS/WordEngineering/WordUnion/9432.html
+git add 		IIS/WordEngineering/WordUnion/9432.html
+
+git add	        IIS/WordEngineering/WhatWillInvolveLifeAsOurPart/
+git add	        InformationInTransit/WhatWillInvolveLifeAsOurPart/

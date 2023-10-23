@@ -2,15 +2,12 @@
 <html>
 	<head>
 		<!--
-			2023-09-30T21:21:00 Created.
-			2023-09-30T18:48:00 When it is so ever...that I Am?
-				Boba Queen. 34420A Fremont Boulevard. Fremont, California (CA) 94555, walking northward. 2 lesbian females were sitting down and kissing.
-			2023-09-30T20:01:00 ... 2023-09-30T20:15:00 On Paseo Padre Parkway between Blackstone Way and Siward Drive. Select 1 FROM BibleDictionary..WordDictionary WHERE BibleWord = @BibleWord. Orange fruit seed hanging off the branch of a tree. Light blue face mask on the ground.  Walking southward. 19:34 Urine. 19:44 Urine. 20:11 Microsoft Windows operating system no response error, mouse error, keyboard error, clipboard error.
+			2023-10-22T23:19:00 Created.
 		-->
-		<title>When it is so ever...that I Am?</title>
+		<title>What will involve life as our part?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="When it is so ever...that I Am?"/>
-		<meta name="keywords" content="When it is so ever...that I Am?, Exact, Bible Word, occurrences"/>
+		<meta name="description" content="What will involve life as our part?"/>
+		<meta name="keywords" content=""/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
@@ -20,15 +17,11 @@
 			<table>
 				<tr>
 					<td><label for="scriptureReference">Scripture Reference:</label></td>
-					<td><input type="text" ID="scriptureReference" value="John 1" autofocus required/></td>
+					<td><input type="text" ID="scriptureReference" value="Genesis 1-4" autofocus required/></td>
 				</tr>	
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
 					<td><select id="bibleVersion"></select></td>
-				</tr>	
-				<tr>
-					<td><label for="bibleWord">Bible Word:</label></td>
-					<td><input type="text" ID="bibleWord" value="Word"/></td>
 				</tr>	
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -45,7 +38,6 @@
 			
 			const 	scriptureReferenceElement = document.getElementById("scriptureReference");
 			const 	bibleVersionElement = document.getElementById("bibleVersion");
-			const 	bibleWordElement = document.getElementById("bibleWord");
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const	resultTableElement = document.getElementById("resultTable");
 
@@ -69,14 +61,8 @@
 							bibleVersionElement.value = bibleVersionValue;
 						}
 
-						var bibleWordValue = urlParams.get("bibleWord");
-						if (bibleWordValue)
-						{
-							bibleWordElement.value = bibleWordValue;
-						}
-						
 						querySubmit();
-						
+
 						isPostBack = true;
 					});
 				}
@@ -92,7 +78,6 @@
 				
 				request["scriptureReference"] = scriptureReferenceElement.value;
 				request["bibleVersion"] = bibleVersionElement.value;
-				request["bibleWord"] = bibleWordElement.value;
 												
 				var requestJson = JSON.stringify(request);
 				
@@ -100,7 +85,7 @@
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordCross/WhenItIsSoEverThatIAm.asmx/Query",
+					url: "/WordEngineering/WhatWillInvolveLifeAsOurPart/WhatWillInvolveLifeAsOurPart.asmx/Query",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
