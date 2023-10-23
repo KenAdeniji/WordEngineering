@@ -38,6 +38,15 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 				
 			";
 		2023-10-22T21:46:00	WordType could be an actor, place.
+		2023-10-23T12:21:00...2023-10-23T12:58:00 Activity table.
+		2023-10-23T10:45:56
+			Where did He differ from the original?
+				There are 2 entities, Actor and Activity.
+					Observation
+					Timing or order
+					Grade
+					Interruption after evening and day...then the Sabbath
+					2023-10-23T13:16:00 Looking at things...as us being the same?
 	*/
 	public class WhatWillInvolveLifeAsOurPartHelper
 	{
@@ -65,7 +74,7 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 			DataTable resultDataTable = new DataTable();
 
 			resultDataTable.Columns.Add("BibleWord", typeof(string));
-			resultDataTable.Columns.Add("WordType", typeof(string));			
+			resultDataTable.Columns.Add("Typed", typeof(string));			
 			resultDataTable.Columns.Add("FirstOccurrenceScriptureReference", typeof(string));
 			resultDataTable.Columns.Add("LastOccurrenceScriptureReference", typeof(string));
 			resultDataTable.Columns.Add("Occurrences", typeof(long));
@@ -81,7 +90,7 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 			String workScriptureReference = null;
 
 			Object scalarResult = null;
-			String wordType = null;
+			String typed = null;
 
 			for
 			(
@@ -130,7 +139,7 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 							continue;
 						}
 						
-						wordType = (String) scalarResult;
+						typed = (String) scalarResult;
 						
 						resultDataRow = resultDataTable.Rows.Find
 						(
@@ -144,7 +153,7 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 						{
 							resultDataRow = resultDataTable.NewRow(); 
 							resultDataRow["BibleWord"] = verseWord;
-							resultDataRow["WordType"] = wordType;
+							resultDataRow["Typed"] = typed;
 							resultDataRow["FirstOccurrenceScriptureReference"] = workScriptureReference;
 							resultDataRow["Occurrences"] = 1;
 							resultDataTable.Rows.Add(resultDataRow);		
@@ -162,9 +171,13 @@ namespace InformationInTransit.WhatWillInvolveLifeAsOurPart
 		}	
 		
 		public const string WordExists = @"
-			SELECT TOP 1 'Actor' WordExists
+			SELECT TOP 1 Typed WordExists
 			FROM WhatWillInvolveLifeAsOurPart..Actor
-			WHERE Named = '{0}'
+			WHERE BibleWord = '{0}'
+			UNION
+			SELECT TOP 1 Typed WordExists
+			FROM WhatWillInvolveLifeAsOurPart..Activity
+			WHERE BibleWord = '{0}'
 		";
 	}
 }
