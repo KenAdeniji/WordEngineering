@@ -413,5 +413,8 @@ http://nodatime.org
 SELECT        TOP (515) HisWordID, Dated, Word, Commentary, Uri, ContactId, ScriptureReference, Filename, EnglishTranslation, Location, Scene
 FROM            HisWord
 WHERE        (CONVERT(date, Dated) = '2023-09-21')
-ORDER BY HisWordID DESC	
+ORDER BY HisWordID DESC
+
+2023-10-25T14:07:00
+14:07 WinSCP SQLServerBackup copy error.	
 :Exit
