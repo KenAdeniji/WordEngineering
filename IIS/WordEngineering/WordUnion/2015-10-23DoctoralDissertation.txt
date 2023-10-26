@@ -1121,14 +1121,18 @@ There are minute uses of global variables. The author discourages this, because 
 Naming Conventions
 
 JavaScript relaxes variable declarations. Variables do not need explicit declaration, and these declarations are redefinable. In spite of this, the author is judicious about variables. The data- attribute is user customizable.
-" The author acknowledges positive bias in his work. Sometimes the author collaborates with what is said to him. The author may add reinforcement to his word. The author values the population average over the sampling average. For example, the Bible is complete, but the work of the author is on-going. " (Andrew Kelleher). " Causation versus (VS) Correlation? Let the involvement of a personal self; resemble the involvement of a useful self. " (Adam Kelleher). " Bias? Being the other? " (Adam Kelleher).
+" The author acknowledges positive bias in his work. Sometimes the author collaborates with what is said to him. The author may add reinforcement to his word. The author values the population average over the sampling average. For example, the Bible is complete, but the work of the author is on-going. " (Andrew Kelleher). " Causation versus (VS) Correlation? Let the involvement of a personal self; resemble the involvement of a useful self. " (Adam Kelleher). " Bias? Being the other? " (Adam Kelleher). "
 Search engine optimization (SEO)
 Elements
 
 It is only recently that the author has become aware of HTML composition.
 Element 	Commentary
-Title tag 	The title tag, which is text only, is shown on the browser's title bar or page's tab.
+Title tag 	The maximum length of the title tag is 60 characters and it is shown on the browser's title bar or page's tab.
+Meta Description tag 	This may be upto 155 characters and it indicates the page's content.
+Meta tags 	The other meta names are keywords, robots and author.
+Heading tags 	H1...H6
 
+" (Bruce Clay).
 Literature Review
 
 Reading improvement? The literature review and bibliography sections are scanty and brief. The justification of the author is that in the Internet age the references and content are available on-line, and putting into words other people's work is not the author's core strength. When the author recounts non-original thoughts, the author mentions this.
@@ -1178,6 +1182,12 @@ AlphabetSequence concerns include:
     To complete the life of pleasing God, as I chose men.
 
 To co-operate as we are. Robert Estienne English Alphabet
+To each resemblance
+
+    Where His word, expected mine? When I get a word from God I could do the following?
+        Write the word in my notepad, and never refer to it again.
+        Record the word in the WordEngineering database, HisWord table, word column, and associate the accompanying columns.
+        Produce an artifact based on the word.
 
 The drawback of the relational approach?
 
@@ -2497,6 +2507,7 @@ References
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
     RESTful or RESTless –Current State of Today’s Top Web APIs Frederik B ̈ulthoff, Maria Maleshkova AIFB, Karlsruhe Institute of Technology (KIT), Germany frederik.buelthoff@student.kit.edu, maria.maleshkova@kit.edu; W3C web page; Available from http://arxiv.org/pdf/1902.10514.pdf
     HTML5 and CSS3, Seventh Edition: Visual Quick Start Guide Elizabeth Castro and Bruce Hyslop; W3C web page; Available from http://bruceontheloose.com/htmlcss
+    Search Engine Optimization All-in-One for Dummies 9 books in 1 Bruce Clay and Kristopher B. Jones; W3C web page; Available from http://BruceClay.com
     Learning Made Easy. 2nd Edition. Business Analysis for Dummies. A Wiley Brand. Ali (Alison) Cox. Lead Expert in Business Analysis & Agile for Netmind; ISBN: 978-1-119-91249-1. http://linkedin.com/in/aliorrcox
     Department of Computer Science at the University of Cape Town MSc-IT Study Material W3C web page; Available from http://www.cs.uct.ac.za/mit_notes/web_programming/pdfs/chp01.pdf
     The Bible Code Michael Drosnin (1997); W3C web page; Available from http://en.wikipedia.org/wiki/Bible_code
