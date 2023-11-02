@@ -1,6 +1,7 @@
 /*
 	2023-11-01T07:50:00	Created.
 	2016-02-11	http://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/			
+	2023-11-02T08:16:00 Access modifier, friend, private, protected, public.
 */
 #include <cassert>
 #include <string>
@@ -18,27 +19,14 @@ namespace InformationInTransit
 		class AlphabetSequence
 		{
 			private:
-			public:
-				char* Word;
+				char *Word;
 				long Index;
-		 
-			public:
-				AlphabetSequence
-				(
-					char*
-				);
-			 
-				friend ostream& operator <<(ostream& outputStream, const AlphabetSequence& alphabetSequence);
-			 
+
+			protected:
 				void setAlphabetSequence
 				(
 					char*
 				);
-		/*
-				long getIndex
-				(
-				);
-		*/	
 
 				void setIndex
 				(
@@ -47,8 +35,20 @@ namespace InformationInTransit
 
 				long calcAlphabetSequenceIndex
 				(
-					char*
+					char *
 				);
+				
+			public:
+				AlphabetSequence
+				(
+					char *
+				);
+			 
+				//ostream & operator <<(ostream &outputStream, const AlphabetSequence &alphabetSequence);
+				
+				long getIndex();
+
+				char * getWord();
 		};
 	}
 }	

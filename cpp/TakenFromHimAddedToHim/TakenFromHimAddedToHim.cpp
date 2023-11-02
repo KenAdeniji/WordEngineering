@@ -13,8 +13,8 @@ int main( int argc, char *argv[] )
     {
 		AlphabetSequence* alphabetSequence = new AlphabetSequence(argv[index]);
 		cout << "[" << index << " of " << argc << "]: " 
-			<< alphabetSequence->Word << " "
-			<< alphabetSequence->Index
+			<< " Word: " << alphabetSequence->getWord() << " "
+			<< " Index: " << alphabetSequence->getIndex()
 			<< endl;
 		//free(alphabetSequence->Word); 
 		delete alphabetSequence;

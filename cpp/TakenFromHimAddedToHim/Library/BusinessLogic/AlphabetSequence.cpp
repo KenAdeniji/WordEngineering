@@ -23,6 +23,7 @@ namespace InformationInTransit
 			setAlphabetSequence(word);
 		}
 
+/*
 		ostream& operator <<(ostream& outputStream, AlphabetSequence& alphabetSequence)
 		{
 			return
@@ -30,6 +31,13 @@ namespace InformationInTransit
 				<< "Word=" //<< alphabetSequence.Word
 				;
 		}		
+*/
+
+		std::ostream& operator<<(std::ostream &strm, AlphabetSequence& alphabetSequence) 
+		{
+			//return strm << "AlphabetSequence(" << alphabetSequence.getIndex() << ")";
+			return strm;
+		}
 		 
 		void AlphabetSequence::setAlphabetSequence
 		(
@@ -39,6 +47,11 @@ namespace InformationInTransit
 			UtilityHelper::copySample(word, Word);
 			AlphabetSequence::setIndex(word);
 		}
+
+		long AlphabetSequence::getIndex()
+		{
+			return Index;
+		};
 
 		void AlphabetSequence::setIndex
 		(
@@ -50,6 +63,12 @@ namespace InformationInTransit
 				atoll(word) : 
 				calcAlphabetSequenceIndex(word);
 		}
+
+		char * AlphabetSequence::getWord()
+		{
+			return Word;
+		};
+
 		
 		long AlphabetSequence::calcAlphabetSequenceIndex
 		(
