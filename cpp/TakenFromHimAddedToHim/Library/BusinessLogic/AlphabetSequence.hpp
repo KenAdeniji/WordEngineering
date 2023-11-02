@@ -8,20 +8,19 @@
 
 using namespace std;
 
-#ifndef WordEngineering_TakenFromHimAddedToHim_HPP
-#define WordEngineering_TakenFromHimAddedToHim_HPP
+#ifndef WordEngineering_AlphabetSequence_HPP
+#define WordEngineering_AlphabetSequence_HPP
 
-/*
-namespace WordEngineering
+namespace InformationInTransit
 {
-	namespace TakenFromHimAddedToHim
+	namespace BusinessLogic
 	{
-*/		
 		class AlphabetSequence
 		{
 			private:
 			public:
 				char* Word;
+				long Index;
 		 
 			public:
 				AlphabetSequence
@@ -36,16 +35,22 @@ namespace WordEngineering
 					char*
 				);
 		/*
-				int unsigned getIndex
+				long getIndex
 				(
 				);
-		*/				
+		*/	
+
+				void setIndex
+				(
+					char *
+				);
+
+				long calcAlphabetSequenceIndex
+				(
+					char*
+				);
 		};
-/*
 	}
 }	
-*/
-
-//namespace NamespaceAlias = WordEngineering::TakenFromHimAddedToHim;
 
 #endif
