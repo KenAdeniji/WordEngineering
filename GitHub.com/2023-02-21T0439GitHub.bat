@@ -294,3 +294,10 @@ git add 		IIS/WordEngineering/WordUnion/9432.html
 
 git add	        IIS/WordEngineering/WhatWillInvolveLifeAsOurPart/
 git add	        InformationInTransit/WhatWillInvolveLifeAsOurPart/
+
+git add			IIS/WordEngineering/WordCross/MichaelPatterson_SanFranciscoConservatoryOfMusic.html
+git add	        cpp/TakenFromHimAddedToHim/
+
+
+
+

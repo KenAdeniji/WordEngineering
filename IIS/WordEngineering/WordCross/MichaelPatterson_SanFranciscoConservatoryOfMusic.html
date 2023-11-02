@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-10-31T11:11:00...2023-10-31T11:46:00 Created.
+		-->
+		<title>Complete the form</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Complete the form"/>
+		<meta name="keywords" content="Regular expression, RegEx, match numbers"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 80vw;
+	}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td>
+						<textarea ID="word">100000 120000</textarea>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<label for="resultNumbers">Numbers:</label><span id="resultNumbers"></span>
+		</div>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	wordElement = document.getElementById("word");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	resultNumbersElement = document.getElementById("resultNumbers");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+				
+					var wordValue = urlParams.get("word");
+					if (wordValue)
+					{
+						wordElement.value = wordValue;
+					}
+					
+					querySubmit();
+		
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var numberPattern = /\d+/g;
+				var numbers = wordElement.value.match(numberPattern);
+				resultNumbersElement.textContent = numbers.join();
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -415,7 +415,10 @@ FROM            HisWord
 WHERE        (CONVERT(date, Dated) = '2023-09-21')
 ORDER BY HisWordID DESC
 
-2023-10-25T14:07:00 14:07 WinSCP SQLServerBackup copy error.
+2023-10-25T14:07:00 14:07 WinSCP copy error.
 2023-10-26T08:40:00 http://en.wikipedia.org/wiki/Japan
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
+2023-10-30T19:43:00	http://craigslist.org
+
+https://stackoverflow.com/questions/4036191/sources-from-subdirectories-in-makefile
 :Exit
