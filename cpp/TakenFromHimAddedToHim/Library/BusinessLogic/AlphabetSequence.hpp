@@ -44,8 +44,7 @@ namespace InformationInTransit
 					char *
 				);
 			 
-				//ostream & operator <<(ostream &outputStream, const AlphabetSequence &alphabetSequence);
-				
+				friend ostream& operator <<(ostream&, const AlphabetSequence&);		
 				long getIndex();
 
 				char * getWord();

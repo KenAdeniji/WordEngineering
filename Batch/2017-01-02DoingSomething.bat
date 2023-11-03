@@ -421,4 +421,9 @@ ORDER BY HisWordID DESC
 2023-10-30T19:43:00	http://craigslist.org
 
 https://stackoverflow.com/questions/4036191/sources-from-subdirectories-in-makefile
+
+2023-10-30T12:34:00 Install Qt
+cd e:\WordEngineering\cpp\TakenFromHimAddedToHim\Qt
+TakenFromHimAddedToHim_QTBuild.bat
+set include=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;c:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;
 :Exit

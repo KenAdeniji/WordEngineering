@@ -33,12 +33,16 @@ namespace InformationInTransit
 		}		
 */
 
-		std::ostream& operator<<(std::ostream &strm, AlphabetSequence& alphabetSequence) 
+		std::ostream& operator <<(ostream& outputStream, const AlphabetSequence& alphabetSequence)
 		{
-			//return strm << "AlphabetSequence(" << alphabetSequence.getIndex() << ")";
-			return strm;
-		}
-		 
+			outputStream
+				//<< " Word = " << alphabetSequence.Word
+				<< " Index = " << alphabetSequence.Index
+				;
+				
+			return outputStream;
+		}		
+	 
 		void AlphabetSequence::setAlphabetSequence
 		(
 			char *word 

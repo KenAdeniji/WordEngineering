@@ -12,7 +12,8 @@ int main( int argc, char *argv[] )
     for ( int index = 1; index < argc; index++ )
     {
 		AlphabetSequence* alphabetSequence = new AlphabetSequence(argv[index]);
-		cout << "[" << index << " of " << argc << "]: " 
+		cout 
+			<< "[" << index << " of " << argc << "]" 
 			<< " Word: " << alphabetSequence->getWord() << " "
 			<< " Index: " << alphabetSequence->getIndex()
 			<< endl;
