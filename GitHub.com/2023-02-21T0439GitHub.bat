@@ -298,6 +298,8 @@ git add	        InformationInTransit/WhatWillInvolveLifeAsOurPart/
 git add			IIS/WordEngineering/WordCross/MichaelPatterson_SanFranciscoConservatoryOfMusic.html
 git add	        cpp/TakenFromHimAddedToHim/
 
-
-
-
+git add			IIS/WordEngineering/WordCross/SignOccurrence.asmx
+git add	        IIS/WordEngineering/WordCross/SignOccurrence.html
+git add	        InformationInTransit/ProcessCode/NumberExtension.cs
+git add	        InformationInTransit/ProcessCode/NumberToWords.cs
+git add	        InformationInTransit/ProcessCode/SignOccurrence.cs

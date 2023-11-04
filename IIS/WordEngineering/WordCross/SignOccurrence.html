@@ -2,24 +2,38 @@
 <html>
 	<head>
 		<!--
-			2023-10-12T21:23:00...2023-10-12T21:41:00 Created.
-			2023-10-13T05:56:00
-				if 
-				(
-					includeOrdinalNumbersElement.checked === false
-					&&
-					includeCardinalNumbersElement.checked === false
-				)
-				{
-					resultTableElement.innerHTML =
-						"Please choose the numbers to include.";
-					return;
-				}	
+			2023-11-04T08:16:00...2023-10-12T21:41:00 Created.
+		2023-11-03T08:10:00 
+			Mo tun fi se border.
+			I made it border, again.
+			07:02 Urine. I am at 99 Ranch Market and doing wordprocessing.
+				I printed some copies of my work on paper, but I will have to find my pages.
+				Out of the 3 1/2 floppy disks I sought for a document storage.
+				I found out that Tony of Albertsons Lucky is being carried eastward into 99 Ranch Market and he is pronounced dead.
+				Joyce Sherman drove us to the intersection of Paseo Padre Parkway and Siward Drive.
+				08:38 When is my work done? Buki asked father figure on the 3rd occasion for 400 to repair his vehicle. 
+				08:41 Dizzy sleepy. During the night dream I remembered that 2 male siblings and fighting. 	
+				SELECT 
+					ScriptureReference,
+					KingJamesVersion
+				FROM
+					Bible..Scripture_View
+				WHERE
+						KingJamesVersion like '%third day%'
+					OR	KingJamesVersion like '%third week%'
+					OR	KingJamesVersion like '%third month%'
+					OR	KingJamesVersion like '%third year%'
+					OR	KingJamesVersion like '%third time%'
+				ORDER BY
+					VerseIDSequence ASC
+			DayTime? 
+			09:10 SignOccurrence? 
+			Some of the destination... that have witness Jewish diaspora...do not want this experience, again. convert integer to ordinal, cardinal?			
 		-->
-		<title>Olohun modupe...fun eyan to fun mi, leni.</title>
+		<title>Sign occurrence</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Olohun modupe...fun eyan to fun mi, leni."/>
-		<meta name="keywords" content="Exact, Bible Word, occurrences, rank, number"/>
+		<meta name="description" content="Sign Occurrence"/>
+		<meta name="keywords" content="Bible Word, sign occurrence"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -34,37 +48,24 @@
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="scriptureReference">Scripture Reference:</label></td>
-					<td><input type="text" ID="scriptureReference" value="1 Samuel - 2 Chronicles" autofocus required/></td>
-				</tr>	
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td><input type="text" ID="bibleWord" value="3"/></td>
+				</tr>
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
 					<td><select id="bibleVersion"></select></td>
 				</tr>	
 				<tr>
-					<td><label for="bibleWord">Bible Word:</label></td>
-					<td><input type="text" ID="bibleWord" value="David"/></td>
-				</tr>
-				<tr> 
-					<td><label for="includeOrdinalNumbers">Include Ordinal Numbers:</label></td>
-					<td><input type="checkBox" ID="includeOrdinalNumbers" checked/></td>
-				</tr>
-				<tr> 
-					<td><label for="includeCardinalNumbers">Include Cardinal Numbers:</label></td>
-					<td><input type="checkBox" ID="includeCardinalNumbers" checked/></td>
-				</tr>
-				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
-			<div id="resultTable">
+			<div id="resultTable"></div>
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
 		<script>
 			var isPostBack = false;
 			
-			const 	scriptureReferenceElement = document.getElementById("scriptureReference");
 			const 	bibleVersionElement = document.getElementById("bibleVersion");
 			const 	bibleWordElement = document.getElementById("bibleWord");
 			const 	includeOrdinalNumbersElement = document.getElementById("includeOrdinalNumbers");
@@ -80,12 +81,6 @@
 						scriptLiteral9432.renderBibleVersionSelect();
 						const urlParams = new URLSearchParams(window.location.search);
 					
-						var scriptureReferenceValue = urlParams.get("scriptureReference");
-						if (scriptureReferenceValue)
-						{
-							scriptureReferenceElement.value = scriptureReferenceValue;
-						}	
-						
 						var bibleVersionValue = urlParams.get("bibleVersion");
 						if (bibleVersionValue)
 						{
@@ -97,18 +92,6 @@
 						{
 							bibleWordElement.value = bibleWordValue;
 						}
-						
-						scriptLiteral9432.setCheckBoxValue
-						(
-							"includeOrdinalNumbers",
-							urlParams.get("includeOrdinalNumbers")
-						);
-
-						scriptLiteral9432.setCheckBoxValue
-						(
-							"includeCardinalNumbers",
-							urlParams.get("includeCardinalNumbers")
-						);
 						
 						querySubmit();
 						isPostBack = true;
@@ -124,23 +107,8 @@
 			{
 				var request = {};
 				
-				if 
-				(
-					includeOrdinalNumbersElement.checked === false
-					&&
-					includeCardinalNumbersElement.checked === false
-				)
-				{
-					resultTableElement.innerHTML =
-						"Please choose the numbers to include.";
-					return;
-				}	
-					
-				request["scriptureReference"] = scriptureReferenceElement.value;
-				request["bibleVersion"] = bibleVersionElement.value;
 				request["bibleWord"] = bibleWordElement.value;
-				request["includeOrdinalNumbers"] = includeOrdinalNumbersElement.checked;
-				request["includeCardinalNumbers"] = includeCardinalNumbersElement.checked;
+				request["bibleVersion"] = bibleVersionElement.value;				
 												
 				var requestJson = JSON.stringify(request);
 				
@@ -148,7 +116,7 @@
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordCross/OlohunModupeFunEyanToFunMiLeni.asmx/Query",
+					url: "/WordEngineering/WordCross/SignOccurrence.asmx/Query",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 

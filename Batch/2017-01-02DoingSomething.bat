@@ -422,8 +422,6 @@ ORDER BY HisWordID DESC
 
 https://stackoverflow.com/questions/4036191/sources-from-subdirectories-in-makefile
 
-2023-10-30T12:34:00 Install Qt
-cd e:\WordEngineering\cpp\TakenFromHimAddedToHim\Qt
-TakenFromHimAddedToHim_QTBuild.bat
-set include=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;c:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;
+2023-11-03T08:10:00 http://stackoverflow.com/questions/20156/is-there-an-easy-way-to-create-ordinals-in-c
+2023-11-04T05:52:00	http://stackoverflow.com/questions/48966570/integer-to-long-ordinal-string-in-c-net
 :Exit
