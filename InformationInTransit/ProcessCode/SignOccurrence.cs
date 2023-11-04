@@ -61,7 +61,9 @@ namespace InformationInTransit.ProcessCode
 		public static DataTable Query
 		(
 			string	bibleWord,
-			string	bibleVersion
+			string	bibleVersion,
+			bool	includeOrdinalNumbers,
+			bool	includeCardinalNumbers
 		)
 		{
 			StringBuilder sb = new StringBuilder();
@@ -94,25 +96,34 @@ namespace InformationInTransit.ProcessCode
 				);
 				foreach(string currentSignUnit in SignUnits)
 				{
-					if (sb.Length > 0)
-					{
-						sb.Append(" OR ");
-					}
-					sb.AppendFormat
-					(	
-						"{0} LIKE '%{1} {2}%' ",
-						bibleVersion,
-						bibleNumberOrdinal,
-						currentSignUnit
-					);
-					sb.Append(" OR ");
-					sb.AppendFormat
-					(	
-						"{0} LIKE '%{1} {2}%' ",
-						bibleVersion,
-						bibleNumberCardinal,
-						currentSignUnit
-					);
+					if ( includeOrdinalNumbers )
+					{	
+						if ( sb.Length > 0 && sb.ToString().EndsWith("OR") == false )
+						{
+							sb.Append(" OR ");
+						}
+						sb.AppendFormat
+						(	
+							"{0} LIKE '%{1} {2}%' ",
+							bibleVersion,
+							bibleNumberOrdinal,
+							currentSignUnit
+						);
+					}	
+					if ( includeCardinalNumbers )
+					{	
+						if ( sb.Length > 0 && sb.ToString().EndsWith("OR") == false )
+						{
+							sb.Append(" OR ");
+						}
+						sb.AppendFormat
+						(	
+							"{0} LIKE '%{1} {2}%' ",
+							bibleVersion,
+							bibleNumberCardinal,
+							currentSignUnit
+						);
+					}	
 				}	
 			}				
 

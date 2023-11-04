@@ -61,13 +61,17 @@ public class SignOccurrenceWebService : System.Web.Services.WebService
 	public String Query
 	(
 		string	bibleWord,
-		string	bibleVersion
+		string	bibleVersion,
+		bool	includeOrdinalNumbers,
+		bool	includeCardinalNumbers
 	)
     {
 		DataTable dataTable = SignOccurrence.Query
 		(
 			bibleWord,
-			bibleVersion
+			bibleVersion,
+			includeOrdinalNumbers,
+			includeCardinalNumbers
 		);
 
 		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);

@@ -54,7 +54,15 @@
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
 					<td><select id="bibleVersion"></select></td>
-				</tr>	
+				</tr>
+				<tr> 
+					<td><label for="includeOrdinalNumbers">Include Ordinal Numbers:</label></td>
+					<td><input type="checkBox" ID="includeOrdinalNumbers" checked/></td>
+				</tr>
+				<tr> 
+					<td><label for="includeCardinalNumbers">Include Cardinal Numbers:</label></td>
+					<td><input type="checkBox" ID="includeCardinalNumbers" checked/></td>
+				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
@@ -93,6 +101,18 @@
 							bibleWordElement.value = bibleWordValue;
 						}
 						
+						scriptLiteral9432.setCheckBoxValue
+						(
+							"includeOrdinalNumbers",
+							urlParams.get("includeOrdinalNumbers")
+						);
+
+						scriptLiteral9432.setCheckBoxValue
+						(
+							"includeCardinalNumbers",
+							urlParams.get("includeCardinalNumbers")
+						);
+						
 						querySubmit();
 						isPostBack = true;
 					});
@@ -107,9 +127,22 @@
 			{
 				var request = {};
 				
+				if 
+				(
+					includeOrdinalNumbersElement.checked === false
+					&&
+					includeCardinalNumbersElement.checked === false
+				)
+				{
+					resultTableElement.innerHTML =
+						"Please choose the numbers to include.";
+					return;
+				}	
+					
+				request["bibleVersion"] = bibleVersionElement.value;
 				request["bibleWord"] = bibleWordElement.value;
-				request["bibleVersion"] = bibleVersionElement.value;				
-												
+				request["includeOrdinalNumbers"] = includeOrdinalNumbersElement.checked;
+				request["includeCardinalNumbers"] = includeCardinalNumbersElement.checked;												
 				var requestJson = JSON.stringify(request);
 				
 				$.ajax
