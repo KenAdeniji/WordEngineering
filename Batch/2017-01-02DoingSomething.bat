@@ -1,5 +1,7 @@
 @echo off
 REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex170909.log
+REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-directory-6007-rc.html
+REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
 :BeginAgain
 echo 1=BCP, 2=IISLog, 3=Node.js, 4=Rust, 5=SQLServerBackup, 6=SQLServerDataDefinitionLanguageDDL, 7=SQLServerDataFiles, 8=SQLServerDataManipulationLanguageDML, 9=SQLServerExport, 10=WebAssembly, 11=WinScp, 12=WordEngineering, 13=WordOfGod
 set /p id=Enter Choice: 
@@ -422,6 +424,6 @@ ORDER BY HisWordID DESC
 
 https://stackoverflow.com/questions/4036191/sources-from-subdirectories-in-makefile
 
-2023-11-03T08:10:00 http://stackoverflow.com/questions/20156/is-there-an-easy-way-to-create-ordinals-in-c
-2023-11-04T05:52:00	http://stackoverflow.com/questions/48966570/integer-to-long-ordinal-string-in-c-net
+2023-11-05T18:52:00 URIMaintenanceWebForm.aspx
+google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en&gbpv=0 	Shoe Dog A Memoir by the Creator of Nike By Phil Knight · 2016 	Originally published: April 26, 2016. 1962-09-07 Got on the highway. Thanksgiivng day 1962, left Hawaii for Japan. Father knew people at Tokyo, United Press International (UPI). Onitsuka at Kobe met 4 men including Ken Miyazaki. Bowed a gesture of kei to an American tycoon derived from the Japanese word taikun meaning warlord. 16:54 Should we follow the dream? Noriko Yoshida on Saturdays. Pauline Beshay visited on Thursdays. Faith Yao. How I learnt ... my personnel in use? 		2023-08-29 	62769
 :Exit
