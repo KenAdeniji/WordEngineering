@@ -99,6 +99,7 @@
 	2023-09-09T03:53:00	... 2023-09-09T04:14:00 buildSelect() now called for all input select.
 	2023-09-30T22:26:00...2023-09-30T22:39:00 buildHyperlinkAddressParameterNameValue(address, parameterName, parameterValue)
 	2023-10-01T17:15:00...2023-10-01T17:35:00 Created. setCheckBoxValue: function(checkBoxID, checkBoxValue)
+	2023-11-08T19:58:00	Element attribute, for example, table contenteditable.
 */
 
 var scriptLiteral9432 =
@@ -1759,7 +1760,7 @@ var scriptLiteral9432 =
 
 		var fromUntilBiblicalCalendar = "";
 		
-		info += "<table id='" + dataID + "'>";
+		info += "<table id='" + dataID + "' contenteditable >";
 
 		var occurrences = data.length;
 		var caption = "<caption>Occurrences: " + occurrences + "</caption>";
