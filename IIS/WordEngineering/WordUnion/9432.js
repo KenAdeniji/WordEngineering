@@ -100,8 +100,9 @@
 	2023-09-30T22:26:00...2023-09-30T22:39:00 buildHyperlinkAddressParameterNameValue(address, parameterName, parameterValue)
 	2023-10-01T17:15:00...2023-10-01T17:35:00 Created. setCheckBoxValue: function(checkBoxID, checkBoxValue)
 	2023-11-08T19:58:00	Element attribute, for example, table contenteditable.
-*/
-
+		2017-10-21 Steven Holzner. contenteditable, designmode, Fremont Main Library
+			legacy.com/obituaries/theithacajournal/obituary.aspx?pid=166940912
+*/			
 var scriptLiteral9432 =
 {
 	alphabetSequenceScriptureReferenceSelection: [
