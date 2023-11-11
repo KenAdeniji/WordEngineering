@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-11-11T08:33:00 Created.
+		-->
+		<title>Is this generation the same?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Generate SQL"/>
+		<meta name="keywords" content="SQL"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>
+		<form id="inputForm" action="#">
+		<div align="center">
+			<textarea type="text" ID="question" autofocus>2023-11-11T13:19:26.246Z</textarea>
+			<table>
+				<tr> 
+					<td><label for="fillInTheBlanks">Fill-in the blanks:</label></td>
+					<td><input type="checkBox" ID="fillInTheBlanks" checked></td>
+				</tr>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input type="text" ID="dated"></td>
+				</tr>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input type="text" ID="word"/></td>
+				</tr>
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<!--
+							<input type="submit" id="submitQuery">
+						-->
+						<button type="button" id="submitQuery">Submit Query</button>
+						<button type="button" id="resetQuery">Reset information</button>
+					</td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+		</div>
+		</form>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+
+			const 	questionElement = document.getElementById("question");
+			const 	fillInTheBlanksElement = document.getElementById("fillInTheBlanks");
+			const 	datedElement = document.getElementById("dated");
+			const 	wordElement = document.getElementById("word");
+			const 	bibleVersionElement = document.getElementById("bibleVersion");
+			const 	resetQueryElement = document.getElementById("resetQuery");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	resultTableElement = document.getElementById("resultTable");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						const urlParams = new URLSearchParams(window.location.search);
+					
+						var questionValue = urlParams.get("question");
+						if (questionValue)
+						{
+							questionElement.value = questionValue;
+						}
+
+						var datedValue = urlParams.get("dated");
+						if (datedValue)
+						{
+							datedElement.value = datedValue;
+						}
+						else
+						{
+							//datedElement.value = scriptLiteral9432.nowTimezoneOffset();
+						}
+
+						var wordValue = urlParams.get("word");
+						if (wordValue)
+						{
+							wordElement.value = wordValue;
+						}
+
+						var bibleVersionValue = urlParams.get("bibleVersion");
+						if (bibleVersionValue)
+						{
+							bibleVersionElement.value = bibleVersionValue;
+						}
+						
+						scriptLiteral9432.setCheckBoxValue
+						(
+							"fillInTheBlanks",
+							urlParams.get("fillInTheBlanks")
+						);
+						
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+
+				var regularExpressionMatchesDateTime = questionElement.value.match(RegularExpressionPatternDateTime);
+
+				if 
+				(
+					regularExpressionMatchesDateTime.length > 0 
+				)
+				{
+					datedElement.value = regularExpressionMatchesDateTime[0];
+				}	
+			}
+
+			function clearForm()
+			{
+				if
+				(
+					confirm("Are you sure you want to reset the form?")
+				) 
+				{
+					inputForm.reset();
+				}			
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			resetQueryElement.addEventListener("click", clearForm, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			//const	RegularExpressionPatternDateTime = /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)$/;
+			const	RegularExpressionPatternDateTime = /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g;
+		</script>
+	</body>
+</html>
