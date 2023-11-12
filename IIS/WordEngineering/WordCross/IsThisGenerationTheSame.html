@@ -3,6 +3,8 @@
 	<head>
 		<!--
 			2023-11-11T08:33:00 Created.
+			2023-11-11	http://stackoverflow.com/questions/67969651/regex-to-check-the-format-yyyy-mm-ddthhmmss-000-javascript
+			2023-11-11T17:16:00	http://stackoverflow.com/questions/147626/regexp-matching-of-list-of-quotes-strings-unquoted
 		-->
 		<title>Is this generation the same?</title>
 		<meta charset="UTF-8"/>
@@ -31,7 +33,14 @@
 		</style>
 		<form id="inputForm" action="#">
 		<div align="center">
-			<textarea type="text" ID="question" autofocus>2023-11-11T13:19:26.246Z</textarea>
+			<textarea type="text" ID="question" autofocus>
+"How are you?"
+2023-11-11T13:19:26.246Z
+"I hope that you are fine?"
+boolean
+2023-11-11T13:19:26.246Z
+"I am okay myself?"
+</textarea>
 			<table>
 				<tr> 
 					<td><label for="fillInTheBlanks">Fill-in the blanks:</label></td>
@@ -42,8 +51,9 @@
 					<td><input type="text" ID="dated"></td>
 				</tr>
 				<tr>
-					<td><label for="word">Word:</label></td>
-					<td><input type="text" ID="word"/></td>
+					<td colspan="2"><label for="word">Word:</label><br/>
+						<textarea type="text" ID="word"></textarea>
+					</td>
 				</tr>
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
@@ -140,6 +150,9 @@
 				{
 					datedElement.value = regularExpressionMatchesDateTime[0];
 				}	
+				
+				var regularExpressionMatchesDoubleQuote = questionElement.value.match(RegularExpressionPatternDoubleQuote);
+				wordElement.value = regularExpressionMatchesDoubleQuote.join(' ').replaceAll('"', '');
 			}
 
 			function clearForm()
@@ -167,6 +180,8 @@
 
 			//const	RegularExpressionPatternDateTime = /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)$/;
 			const	RegularExpressionPatternDateTime = /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g;
+			
+			const	RegularExpressionPatternDoubleQuote = /".*?"/g
 		</script>
 	</body>
 </html>

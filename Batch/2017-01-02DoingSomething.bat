@@ -439,4 +439,10 @@ Where will I find...a use?
 Where will task...prevail? Clinton, you want to go war, and your banker says don't go.
 	What is He calling me to use?
 		gENESIS 22 12:08
+"How are you?"
+2023-11-11T13:19:26.246Z
+"I hope that you are fine?"
+boolean
+2023-11-11T13:19:26.246Z
+"I am okay myself?"		
 :Exit
