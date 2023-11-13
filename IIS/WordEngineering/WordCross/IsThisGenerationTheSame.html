@@ -8,8 +8,8 @@
 		-->
 		<title>Is this generation the same?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Generate SQL"/>
-		<meta name="keywords" content="SQL, persistence, word-to-database mapping"/>
+		<meta name="description" content="Is this generation the same?"/>
+		<meta name="keywords" content="SQL, persistence, word-to-database mapping, regular expression pattern"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -48,7 +48,7 @@ boolean
 				</tr>
 				<tr>
 					<td><label for="dated">Dated:</label></td>
-					<td><input type="text" ID="dated"></td>
+					<td><input type="datetime-local" ID="dated"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><label for="word">Word:</label><br/>
@@ -141,7 +141,10 @@ boolean
 			function querySubmit()
 			{
 
-				var regularExpressionMatchesDateTime = questionElement.value.match(RegularExpressionPatternDateTime);
+				var regularExpressionMatchesDateTime = questionElement.value.match
+				(
+					scriptLiteral9432.regularExpressionPatterns.datetime
+				);
 
 				if 
 				(
@@ -151,7 +154,10 @@ boolean
 					datedElement.value = regularExpressionMatchesDateTime[0];
 				}	
 				
-				var regularExpressionMatchesDoubleQuote = questionElement.value.match(RegularExpressionPatternDoubleQuote);
+				var regularExpressionMatchesDoubleQuote = questionElement.value.match
+				(
+					scriptLiteral9432.regularExpressionPatterns.doublequotes
+				);
 				wordElement.value = regularExpressionMatchesDoubleQuote.join(' ').replaceAll('"', '');
 			}
 

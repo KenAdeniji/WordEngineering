@@ -102,6 +102,12 @@
 	2023-11-08T19:58:00	Element attribute, for example, table contenteditable.
 		2017-10-21 Steven Holzner. contenteditable, designmode, Fremont Main Library
 			legacy.com/obituaries/theithacajournal/obituary.aspx?pid=166940912
+	2023-11-13T04:20:00	http://stackoverflow.com/questions/1144705/best-way-to-store-a-key-value-array-in-javascript
+	regularExpressionPatterns: { 
+		datetime: /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g, //2023-11-11T08:33:00
+		doublequotes: /".*?"/g, //2023-11-11T08:33:00
+		number: /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g //2022-08-05T12:42:00 How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford http://howjavascriptworks.com/sample.html
+	},
 */			
 var scriptLiteral9432 =
 {
@@ -262,6 +268,12 @@ var scriptLiteral9432 =
 		"And",
 		"Or"
 	],
+	//2023-11-13T04:20:00	http://stackoverflow.com/questions/1144705/best-way-to-store-a-key-value-array-in-javascript
+	regularExpressionPatterns: { 
+		datetime: /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g, //2023-11-11T08:33:00
+		doublequotes: /".*?"/g, //2023-11-11T08:33:00
+		number: /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g //2022-08-05T12:42:00 How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford http://howjavascriptworks.com/sample.html
+	},
 	//2019-02-13 https://stackoverflow.com/questions/24657463/how-to-add-http-to-url-if-no-protocol-is-defined-in-javascript
 	addhttp: function(url)
 	{
