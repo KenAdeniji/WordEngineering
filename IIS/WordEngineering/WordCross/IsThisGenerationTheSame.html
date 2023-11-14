@@ -56,10 +56,6 @@ boolean
 					</td>
 				</tr>
 				<tr>
-					<td><label for="bibleVersion">Version:</label></td>
-					<td><select id="bibleVersion"></select></td>
-				</tr>
-				<tr>
 					<td colspan="2" align="center">
 						<!--
 							<input type="submit" id="submitQuery">
@@ -68,6 +64,11 @@ boolean
 						<button type="button" id="resetQuery">Reset information</button>
 					</td>
 				</tr>	
+				<tr>
+					<td colspan="2"><label for="sqlDml">Structured Query Language (SQL) Data Manipulation Language (DML):</label><br/>
+						<textarea type="text" ID="sqlDml"></textarea>
+					</td>
+				</tr>
 			</table>
 			<div id="resultTable"></div>
 		</div>
@@ -81,7 +82,6 @@ boolean
 			const 	fillInTheBlanksElement = document.getElementById("fillInTheBlanks");
 			const 	datedElement = document.getElementById("dated");
 			const 	wordElement = document.getElementById("word");
-			const 	bibleVersionElement = document.getElementById("bibleVersion");
 			const 	resetQueryElement = document.getElementById("resetQuery");
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			const	resultTableElement = document.getElementById("resultTable");
@@ -116,12 +116,6 @@ boolean
 							wordElement.value = wordValue;
 						}
 
-						var bibleVersionValue = urlParams.get("bibleVersion");
-						if (bibleVersionValue)
-						{
-							bibleVersionElement.value = bibleVersionValue;
-						}
-						
 						scriptLiteral9432.setCheckBoxValue
 						(
 							"fillInTheBlanks",
@@ -140,25 +134,40 @@ boolean
 
 			function querySubmit()
 			{
-
-				var regularExpressionMatchesDateTime = questionElement.value.match
-				(
-					scriptLiteral9432.regularExpressionPatterns.datetime
-				);
-
-				if 
-				(
-					regularExpressionMatchesDateTime.length > 0 
-				)
+				if (fillInTheBlanksElement.checked)
 				{
-					datedElement.value = regularExpressionMatchesDateTime[0];
-				}	
-				
-				var regularExpressionMatchesDoubleQuote = questionElement.value.match
-				(
-					scriptLiteral9432.regularExpressionPatterns.doublequotes
-				);
-				wordElement.value = regularExpressionMatchesDoubleQuote.join(' ').replaceAll('"', '');
+					var regularExpressionMatchesDateTime = questionElement.value.match
+					(
+						scriptLiteral9432.regularExpressionPatterns.datetime
+					);
+					if 
+					(
+						regularExpressionMatchesDateTime.length > 0 
+					)
+					{
+						datedElement.value = regularExpressionMatchesDateTime[0];
+					}	
+					
+					var regularExpressionMatchesDoubleQuote = questionElement.value.match
+					(
+						scriptLiteral9432.regularExpressionPatterns.doublequotes
+					);
+					wordElement.value = regularExpressionMatchesDoubleQuote.join(' ').replaceAll('"', '');
+				}
+				sqlDml.value = `
+	INSERT INTO HisWord
+	(
+		Dated,
+		Word,
+		Commentary
+	)
+	VALUES
+	(
+		'${datedElement.value}'
+		'${wordElement.value}'
+		'${questionElement.value}'
+	)	
+`;
 			}
 
 			function clearForm()
@@ -183,11 +192,6 @@ boolean
 			}
 
 			window.addEventListener("load", pageLoad, false);
-
-			//const	RegularExpressionPatternDateTime = /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)$/;
-			const	RegularExpressionPatternDateTime = /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g;
-			
-			const	RegularExpressionPatternDoubleQuote = /".*?"/g
 		</script>
 	</body>
 </html>
