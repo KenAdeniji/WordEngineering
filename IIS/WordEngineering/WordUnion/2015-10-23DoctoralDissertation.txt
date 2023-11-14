@@ -569,7 +569,7 @@ Application Programming Interface (API)
 
 The exact-match query is to search for a single Bible book, chapter, or verse. In the case of a verse, the top 1 clause is appropriate to efficiently return a single record. The range query is to search for information within a boundary.
 
-The Remember table's FromUntilFirst bit column is a rare Boolean datatype. It is for documentation purposes and it says the FromUntil period is known and it is used to determine either the FromDated or UntilDated column.
+The Remember table's ResultOutputFirst bit column is a rare Boolean datatype. It is for documentation purposes and it says the FromUntil period is known and it is used to determine either the FromDated or UntilDated column.
 
 An identity column is a specialization of the integer data type, in that the database issues the next sequence. Most of the tables make use of the identity column as a surrogate primary key.
 
