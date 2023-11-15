@@ -50,7 +50,8 @@ namespace InformationInTransit.ProcessLogic
 						 return Regex.Split(s, @"\W+");
 					}
 		2021-01-21	Apocalyptic Books
-		2021-03-05T18:30:00	bibleBookGroups: ["Poetry", "poetry"]		
+		2021-03-05T18:30:00	bibleBookGroups: ["Poetry", "poetry"]
+		2023-11-14T16:03:00...2023-11-14T17:18:00	bibleBookGroup = bibleBookGroup.ToLower();
 	*/
 	public static partial class BibleWordHelper
 	{
@@ -252,7 +253,8 @@ namespace InformationInTransit.ProcessLogic
 			StringBuilder sqlWhereClause = new StringBuilder();
 			String[] keywords = null;
 
-            StringBuilder sqlbibleBookGroup = ParseBibleBookGroup(bibleBookGroup);		
+            StringBuilder sqlbibleBookGroup = ParseBibleBookGroup(bibleBookGroup);
+			
 			StringBuilder sqlWord = PrepareSqlStatement
             (
                 logic,
@@ -319,6 +321,8 @@ namespace InformationInTransit.ProcessLogic
 		public static StringBuilder ParseBibleBookGroup(string bibleBookGroup)
 		{
 			StringBuilder sqlStatement = new StringBuilder();
+			
+			bibleBookGroup = bibleBookGroup.ToLower();
 			
 			string[] bookGroups = bibleBookGroup.Split(',');
 			
