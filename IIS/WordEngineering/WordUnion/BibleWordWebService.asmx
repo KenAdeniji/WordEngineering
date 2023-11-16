@@ -76,6 +76,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	)
     {
 		DataSet result = null;
+
 		result = BibleWordHelper.OccurrenceOfTheMotion
 		(
 			logic,
@@ -84,6 +85,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 			wholeWords,
 			bibleVersion
 		);
+
 		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
 		return json;
     }
@@ -147,8 +149,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	)
     {
 		String[] scriptureReferenceSubset = null;
-		DataSet result = null;
-		result = BibleWordHelper.Query
+		DataSet result = BibleWordHelper.Query
 		(
 			logic,
 			bibleBookGroup,
@@ -181,7 +182,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 		);
 
 		String resultSet = (dataSet == null) ? "" : ScriptureReferenceHelper.StoryOutOfLine(dataSet).ToString();
-		
+
 		return resultSet;
 		
     }
@@ -200,6 +201,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 	)
     {
 		string json = null;
+
 		DataSet bibleWordDataSet = BibleWordHelper.Query
 		(
 			logic,
@@ -223,6 +225,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 			);
 			json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
 		}
+
 		return json;
     }
 	

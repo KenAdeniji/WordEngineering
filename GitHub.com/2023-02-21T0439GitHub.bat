@@ -312,3 +312,5 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2023-11-07T0303Commonweal
 
 git add			Batch/2023-11-05T1930Microsoft_-_IISLog_XCopyCommand_-_httpswww.ubackup.comarticlesxcopy-unable-to-create-directory-6007-rc.html.txt
 git add			IIS/WordEngineering/WordCross/IsThisGenerationTheSame.html
+
+git add			IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
