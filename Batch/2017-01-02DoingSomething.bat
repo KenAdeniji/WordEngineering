@@ -173,10 +173,10 @@ DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18066);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62606);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1554);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 6357);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 6846);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13593);
@@ -452,4 +452,6 @@ boolean
 	Password Required - Mozilla Firefox
 		Please enter your primary password
 			Sign in Cancel
+			
+2023-11-16T18:59:00...2023-11-16T19:03:00 Microsoft hotmail.com move image button not enabled, after selecting all the e-mail messages.
 :Exit
