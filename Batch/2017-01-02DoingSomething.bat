@@ -179,7 +179,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1554);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 6846);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 16629);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13593);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 13607);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5074);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -213,9 +213,10 @@ pscp -pw LinuxPassword e:\SQLServerBackup\WordEngineering\WordEngineering_2020-0
 :SQLScript
 
 :ErrorMessage
-http://kenadeniji.wordpress.com
-http://kenadeniji.wordpress.com/2015/11/20/ken-adenijis-resume
-http://kenadeniji.wordpress.com/2015/12/06/2015-10-23doctoraldissertation
+http://www.jesusinthelamb.com/2015/11/20/ken-adenijis-resume
+http://www.jesusinthelamb.com/2015/12/06/2015-10-23doctoraldissertation
+http://www.jesusinthelamb.com/2019/10/14/2019-10-05artifactdescription
+http://www.jesusinthelamb.com
 E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 C:\Users\kadeniji\OneDrive\WordEngineering\IIS\WordEngineering\WordUnion
@@ -422,29 +423,9 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-https://stackoverflow.com/questions/4036191/sources-from-subdirectories-in-makefile
-
-2023-11-06T06:31:00
-The conclusion is that an English suburb, Worthington, will teach using the Linux operating system. 04:11 Urine. 04:56 Urine. 05:09 Odour, thick smell, urine. 05:14 Worthington, Leicestershire Postcode district LE65. 
-Dialling code 01530. 05:17 Dizzy sleepy. 06:08 Urine teeth (We are proving difficult) 06:10 Faeces. 06:02...06:18 Peter Hallam ex-Microsoft Command Line Argument Parser by Peter Hallam Google.com search wait error. 06:24 Urine. 06:29 Urine. 06:30 Teeth.
-
-2023-11-05T18:52:00 URIMaintenanceWebForm.aspx
-google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en&gbpv=0 	Shoe Dog A Memoir by the Creator of Nike By Phil Knight · 2016 	Originally published: April 26, 2016. 1962-09-07 Got on the highway. Thanksgiivng day 1962, left Hawaii for Japan. Father knew people at Tokyo, United Press International (UPI). Onitsuka at Kobe met 4 men including Ken Miyazaki. Bowed a gesture of kei to an American tycoon derived from the Japanese word taikun meaning warlord. 16:54 Should we follow the dream? Noriko Yoshida on Saturdays. Pauline Beshay visited on Thursdays. Faith Yao. How I learnt ... my personnel in use? 		2023-08-29 	62769
-Page 30
-How do you...secondary yourself?
-How do you learning...as eventually you may need Him?
-Who sets us apart...as ours? Job
-What does He mean...as ours?
-Where will I find...a use?
-Where will task...prevail? Clinton, you want to go war, and your banker says don't go.
-	What is He calling me to use?
-		gENESIS 22 12:08
-"How are you?"
-2023-11-11T13:19:26.246Z
-"I hope that you are fine?"
-boolean
-2023-11-11T13:19:26.246Z
-"I am okay myself?"
+2023-11-19T18:45:00 URIMaintenanceWebForm.aspx
+	Raganwald.com/assets/javascriptallongesix.pdf 	JavaScript Allongé by Reginald Braithwaite 		JavaScript book 	2023-08-11 	62746
+Page 12
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
@@ -454,4 +435,6 @@ boolean
 			Sign in Cancel
 			
 2023-11-16T18:59:00...2023-11-16T19:03:00 Microsoft hotmail.com move image button not enabled, after selecting all the e-mail messages.
+
+2023-11-20T02:07:00...2023-11-20T02:18:00 WinSCP mouse right click paste error, North West upload.
 :Exit
