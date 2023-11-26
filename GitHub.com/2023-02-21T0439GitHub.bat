@@ -316,3 +316,5 @@ git add			IIS/WordEngineering/WordCross/IsThisGenerationTheSame.html
 git add			IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
 
 git add			IIS/WordEngineering/CommonwealthBankOfAustralia/
+
+git add			IIS/WordEngineering/JavaScript/Algorithm/Navigator.html

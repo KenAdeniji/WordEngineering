@@ -213,10 +213,10 @@ pscp -pw LinuxPassword e:\SQLServerBackup\WordEngineering\WordEngineering_2020-0
 :SQLScript
 
 :ErrorMessage
-http://www.jesusinthelamb.com/2015/11/20/ken-adenijis-resume
-http://www.jesusinthelamb.com/2015/12/06/2015-10-23doctoraldissertation
-http://www.jesusinthelamb.com/2019/10/14/2019-10-05artifactdescription
-http://www.jesusinthelamb.com
+http://KenAdeniji.WordPress.com/2015/11/20/ken-adenijis-resume
+http://KenAdeniji.WordPress.com/2015/12/06/2015-10-23doctoraldissertation
+http://KenAdeniji.WordPress.com/2019/10/14/2019-10-05artifactdescription
+http://KenAdeniji.WordPress.com
 E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
 E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 C:\Users\kadeniji\OneDrive\WordEngineering\IIS\WordEngineering\WordUnion
@@ -423,9 +423,9 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-11-19T18:45:00 URIMaintenanceWebForm.aspx
-	Raganwald.com/assets/javascriptallongesix.pdf 	JavaScript Allongé by Reginald Braithwaite 		JavaScript book 	2023-08-11 	62746
-Page 12
+2023-11-26T08:0:00 URIMaintenanceWebForm.aspx
+nwn.blogs.com 	New World Notes. The world's longest-running metaverse news and culture site. By Wagner James Au, author of "Making a Metaverse that Matters" 			2023-07-01 	62731
+Page 14
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
