@@ -16,7 +16,23 @@
 				The ‘print’ and ‘screen’ media types are defined in HTML4.
 				The complete list of media types in HTML4 is: ‘aural’, ‘braille’, ‘handheld’, ‘print’, ‘projection’, ‘screen’, ‘tty’, ‘tv’.
 				CSS2 defines the same list, deprecates ‘aural’ and adds ‘embossed’ and ‘speech’. 
-				Also, ‘all’ is used to indicate that the style sheet applies to all media types. 			
+				Also, ‘all’ is used to indicate that the style sheet applies to all media types.
+			2023-11-27T16:40:00	
+				3perf.com/talks/web-perf-101
+				3perf.com/blog/link-rels
+				preload – when you’re going to need a resource in a few seconds
+				prefetch – when you need a resource for the next page
+				preconnect – when you know you’ll need a resource soon, but you don’t know its full url yet
+				dns-prefetch – when you know you’ll need a resource soon, but you don’t know its full url yet (for older browsers)
+				prerender – when you’re certain most users will navigate to a specific page, and you want to speed it up
+				modulepreload – when you’re going to need an ES module script soon
+				http://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/
+					function preconnectTo(url) {
+						var hint = document.createElement("link");
+						hint.rel = "preconnect";
+						hint.href = url;
+						document.head.appendChild(hint);
+					}			
 		-->
 		<title>9432.html</title>
 		<meta charset="UTF-8"/>
@@ -24,6 +40,11 @@
 		<meta name="keywords" content="9432.html, 9432.css"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
+		<link rel="dns-prefetch" href="//example.com"> <!-- instructs the browser to make a DNS request for a server’s IP address in advance. This is useful for CDNs, Google Fonts, and for other cases when you know you’ll need a resource in a short time, know the domain it’s hosted at, but don’t know its exact path. In this case, resolving the server’s IP address in advance would save you from 50 to 300 ms. -->
+		<link rel="preconnect" href="//example.com"> <!-- instructs the browser to perform the connection to a server in advance. It’s useful in the same cases when dns-prefetch is useful, but sets up a full connection and saves more time. The drawback here is that opening a new connection is pretty resource-intensive, so you don’t want to overuse this optimization. -->
+		<link rel="prefetch" href="/style.css" as="style"> <!-- preloads and caches a resource in background with a low priority. This is useful e.g. to preload a JS bundle for the next page of an app. -->
+		<link rel="preload" href="/style.css" as="style"> <!-- preloads a resource in background with a high priority. This is useful to preload a resource you’ll need in several seconds – e.g., a non-critical CSS file. -->
+		<link rel="prerender" href="http://example.com/about"> <!-- preloads the specified page in the background and renders it in an invisible tab. Later, when a visitor clicks to a link leading to the prerendered page, the page displays immediately. This is what Google uses to preload its first search result. -->		
 	</head>
 	<body>
 		<script>

@@ -423,9 +423,9 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-11-26T08:0:00 URIMaintenanceWebForm.aspx
-nwn.blogs.com 	New World Notes. The world's longest-running metaverse news and culture site. By Wagner James Au, author of "Making a Metaverse that Matters" 			2023-07-01 	62731
-Page 14
+2023-11-27T20:52:00 URIMaintenanceWebForm.aspx
+google.com/books/edition/The_Pragmatic_Programmer/LhOlDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover 	The Pragmatic Programmer Your Journey to Mastery, 20th Anniversary Edition By David Thomas, Andrew Hunt Originally published: July 30, 2019 	2023-11-27T20:46:00 ppbook@pragprog.com 		2022-08-15 	59408
+Page 32
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
@@ -435,6 +435,10 @@ Page 14
 			Sign in Cancel
 			
 2023-11-16T18:59:00...2023-11-16T19:03:00 Microsoft hotmail.com move image button not enabled, after selecting all the e-mail messages.
+
+2023-11-28T01:28:00 Microsoft windows operating system clipboard copy paste, dizzy sleepy.
+
+2023-11-28T02:50:00 Sagging trouser sport lifestyle black color.
 
 2023-11-20T02:07:00...2023-11-20T02:18:00 WinSCP mouse right click paste error, North West upload.
 :Exit
