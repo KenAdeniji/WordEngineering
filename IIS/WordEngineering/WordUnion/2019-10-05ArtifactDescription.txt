@@ -878,6 +878,8 @@ The WordGroup.html will reverse engineer the databases, and display the schema o
 
 The WordMeaning.html are the words and their interpretations.
 
+The WordsMan.html are personal data.
+
 The WordSearch uses Christian Heilmann's SongSearch as an example, and it accesses a CSV file.
 
 The WornAsWellAsIMade.html will accept a scripture reference and a word, and find the closest text.

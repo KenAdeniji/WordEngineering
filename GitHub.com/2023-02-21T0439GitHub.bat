@@ -323,3 +323,5 @@ git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-Ci
 
 git add        IIS/WordEngineering/WordCross/WordsMan.asmx
 git add        IIS/WordEngineering/WordCross/WordsMan.html
+
+git add			IIS/WordEngineering/Dated/MondaySeventeenth.html
