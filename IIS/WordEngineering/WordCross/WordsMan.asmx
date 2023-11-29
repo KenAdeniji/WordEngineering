@@ -22,13 +22,36 @@ using InformationInTransit.UserInterface;
 using Newtonsoft.Json;
 
 ///<summary>
-///	2023-11-28T16:58:00 Created.
+///	2023-11-28T16:58:00...2023-11-28T19:33:00 Created.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 [ScriptService]
 public class WordsManWebService : System.Web.Services.WebService
 {
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public string Query
+	(
+	)
+    {
+		DataTable resultTable = (DataTable) DataCommand.DatabaseCommand
+		(
+			QueryStatement,
+			CommandType.Text,
+			DataCommand.ResultType.DataTable
+		);
+		
+		object[] fullNames = DataTableHelper.ConvertDataTableToArray
+		(
+			resultTable,
+			"FullName"
+		);
+		
+		string json = JsonConvert.SerializeObject(fullNames, Formatting.Indented);
+		return json;
+    }
+
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String QueryByName
@@ -40,7 +63,7 @@ public class WordsManWebService : System.Web.Services.WebService
 		(
 			String.Format
 			( 
-				QueryStatement,
+				QueryByNameStatement,
 				bibleWord
 			),	
 			CommandType.Text,
@@ -52,6 +75,13 @@ public class WordsManWebService : System.Web.Services.WebService
     }
 	
 	public const string QueryStatement = 
+	@"
+		SELECT 		FullName
+		FROM 		WordEngineering.dbo.WordsManName()
+		ORDER BY	FullName
+	";
+
+	public const string QueryByNameStatement = 
 	@"
 		SELECT TOP 1 FullTable.*
 		FROM 	WordEngineering.dbo.WordsManName() CriteriaTable

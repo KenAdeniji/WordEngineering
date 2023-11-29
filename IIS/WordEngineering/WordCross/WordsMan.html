@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<!--
-			2023-10-12T21:23:00...2023-10-12T21:41:00 Created.
+			2023-11-28T19:33:00...2023-11-28T19:33:00 Created.
 		-->
 		<title>WordsMan</title>
 		<meta charset="UTF-8"/>
@@ -20,7 +20,8 @@
 			);
 		</script>
 		<div align="center">
-			<input type="text" ID="bibleWord" value="Jesus Christ" autofocus/>
+			<input type="text" ID="bibleWord" value="Jesus Christ" list="bibleWords" autofocus/>
+			<datalist id="bibleWords"></datalist>
 			<input type="submit" id="submitQuery">
 			<div id="resultTable">
 		</div>
@@ -48,16 +49,53 @@
 						}
 						
 						querySubmit();
+						
+						querySubmitName();
 						isPostBack = true;
 					});
 				}
 				else
 				{
-					querySubmit();
+					querySubmitName();
 				}
  			}
 
 			function querySubmit()
+			{
+				var request = {};
+				
+				//request["bibleWord"] = bibleWordElement.value;
+												
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/WordsMan.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+
+						scriptLiteral9432.buildDatalist
+						(
+							"bibleWords",
+							dataTable
+						);
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			function querySubmitName()
 			{
 				var request = {};
 				
@@ -87,7 +125,7 @@
 				});
 			}
 
-			submitQueryElement.addEventListener("click", querySubmit, false);
+			submitQueryElement.addEventListener("click", querySubmitName, false);
 			
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
