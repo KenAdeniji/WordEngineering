@@ -327,3 +327,5 @@ git add        IIS/WordEngineering/WordCross/WordsMan.html
 git add			IIS/WordEngineering/Dated/MondaySeventeenth.html
 
 git add			PowerShell/dbatools.io/
+
+git add			IIS/WordEngineering/Resume/BriceMartinez_-_TacticalEngineeringInterviewQuestionnaire.pdf
