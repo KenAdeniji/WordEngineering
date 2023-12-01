@@ -199,6 +199,12 @@ var scriptLiteral9432 =
 		["Text", ".txt"],
 		["JavaScript Object Notation (JSON)", ".json"]
 	],
+	dateParts: [
+		"year",
+		"month",
+		"week",
+		"day"
+	],
 	daysInMonth: [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ],
 	fileTypes: [
 		["Comma Separated Value (CSV)", ".csv"],
