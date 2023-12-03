@@ -133,10 +133,17 @@ ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 "
+Database Management System (DBMS)
+
+There are 2 types of DBMS. These are:
+
+    Shared file-based: For example, Microsoft Access
+    Client/Server: For example, Oracle, SQL Server, MySQL
+
 SQL Usage
 SQL Statement
 Statement 	Commentary
-Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries. You must still get directive from God...as making you?
+Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
 Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
 " (Ben Forta, 2017)
 Database Scaling
