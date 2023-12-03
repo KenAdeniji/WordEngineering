@@ -108,6 +108,9 @@
 		doublequotes: /".*?"/g, //2023-11-11T08:33:00
 		number: /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g //2022-08-05T12:42:00 How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford http://howjavascriptworks.com/sample.html
 	},
+	2023-12-01T18:07:00	Comment documentation.
+		http://learnjavascript.online/app.html
+		alphabetSequenceIndex: function(word)
 */			
 var scriptLiteral9432 =
 {
@@ -314,6 +317,13 @@ var scriptLiteral9432 =
 		}	
 	},
 	
+	/*
+		2023-12-01T18:07:00	Comment documentation.
+			http://learnjavascript.online/app.html
+	*/	
+	/**
+	 * @param {string} word
+	*/
 	alphabetSequenceIndex: function(word)
 	{
 		var alphabetSequence = 0;

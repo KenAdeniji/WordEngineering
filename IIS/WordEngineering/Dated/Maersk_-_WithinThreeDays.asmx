@@ -109,6 +109,7 @@ public class MaerskWithinThreeDaysWebService : System.Web.Services.WebService
 				)
 			)
 			<= {4}	
+		ORDER BY {3} DESC	
 		;
 	";
 }

@@ -132,6 +132,13 @@ First, inside and last dates.
 ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
+"
+SQL Usage
+SQL Statement
+Statement 	Commentary
+Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
+Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
+" (Ben Forta, 2017)
 Database Scaling
 
     The transition to computed columns results in smaller storage requirements.
@@ -2599,6 +2606,7 @@ References
     Department of Computer Science at the University of Cape Town MSc-IT Study Material W3C web page; Available from http://www.cs.uct.ac.za/mit_notes/web_programming/pdfs/chp01.pdf
     The Bible Code Michael Drosnin (1997); W3C web page; Available from http://en.wikipedia.org/wiki/Bible_code
     The Art of Storytelling in Academic Writing: 5 Steps to a Better Research Paper W3C web page; Available from http://www.edit911.com/the-art-of-storytelling-in-academic-writing-5-steps-to-a-better-research-paper
+    Sams Teach Yourself Microsoft SQL Server T-SQL in 10 Minutes Ben Forta (2017); W3C web page; Available from
     SQL Server Execution Plans Third Edition For SQL Server 2008 through to 2017 and Azure SQL Database Grant Fritchey (2018); W3C web page; Available from http://assets.red-gate.com/community/books/sql-server-execution-plans-3rd-edition.pdf
     Deep Learning Ian Goodfellow and Yoshua Bengio and Aaron Courville (2016); W3C web page; Available from http://www.deeplearningbook.org
     Resilient, Declarative, Contextual Keith J. Grant (2018-06-08); W3C web page; Available from http://keithjgrant.com/posts/2018/06/resilient-declarative-contextual
