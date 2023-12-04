@@ -23,7 +23,6 @@ The importance of this work?
     Follow God, as a character.
     Taken from him, added to him ( Luke 19:26 ) .
     To track dates and words? And, find meaning, correlation.
-    What did He obtain as perfection ( Hebrews 12:24 ) ?
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
@@ -152,6 +151,9 @@ SQL Statement
 Statement 	Commentary
 Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
 Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
+Where Clause Operators
+Operator 	Commentary
+=, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use.
 " (Ben Forta, 2017)
 Database Scaling
 
@@ -2385,6 +2387,8 @@ Outstanding Work
 The source code and schema are available at Github.com. This means that the public can review and make updates to the original work of the author. This aged work is not up-to-date with the industry trend, such as cloud computing, mobile applications, decentralized ledger, nosql. Part of the justification for this immaturity; is the need to maintain a low entry point and capture a wide audience for its adoption.
 
 WhoIs for social networking sites like WordPress, Github, Twitter, LinkedIn, Facebook, etc. When nothing without Me; is sufficient without Me. Where I retain.
+
+I use grammarcheck.net. I am proposing a specialization to correct scripture reference. For example, there are many questions and answers, but a further development is to automate the task of correction ( Luke 3:23, Matthew 22:41-46, Matthew 22:28, Mark 7, Genesis 38 ). They are not one another.
 
 When does He say a word, when does He put a thought ( Daniel 5:25-28 )? Ability to say.
 
