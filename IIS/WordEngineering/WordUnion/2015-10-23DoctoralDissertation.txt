@@ -23,6 +23,7 @@ The importance of this work?
     Follow God, as a character.
     Taken from him, added to him ( Luke 19:26 ) .
     To track dates and words? And, find meaning, correlation.
+    What did He obtain as perfection ( Hebrews 12:24 ) ?
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
@@ -141,6 +142,12 @@ There are 2 types of DBMS. These are:
     Client/Server: For example, Oracle, SQL Server, MySQL
 
 SQL Usage
+Database Information
+Statement 	Commentary
+sp_server_info 	The database version is Microsoft SQL Server 2019 - 15.0.2104.1
+sp_databases 	The sole work of the author, the WordEngineering database size, is currently 33317504 bytes.
+sp_spaceused 	The WordEngineering database currently uses 32536.63 MB.
+sp_statistics HisWord 	The cardinality of the HisWord table is 114243.
 SQL Statement
 Statement 	Commentary
 Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
@@ -153,6 +160,10 @@ Database Scaling
     Normalization, object-to-relational mapping, is light load.
 
 Database Exclusivity
+Row Limit
+Title 	Commentary
+TOP 	Set a limit of the number of rows returned or a percentage of the rows from the source.
+SET ROWCOUNT 	The database will retrieve all the rows, but if there are excessive rows it will later limit to required rows.
 Where Clause
 Title 	Commentary
 Like wildcard 	Preceding or following restriction '%%'
