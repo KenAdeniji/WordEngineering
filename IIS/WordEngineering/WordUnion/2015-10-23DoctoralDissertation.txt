@@ -152,8 +152,10 @@ Statement 	Commentary
 Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
 Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
 Where Clause Operators
-Operator 	Commentary
-=, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use.
+Check 	Commentary
+=, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use. Querying for a date or number will search for particular types.
+BETWEEN 	This is a range check that accepts a beginning and ending value. It is not highly used.
+NULL 	No value
 " (Ben Forta, 2017)
 Database Scaling
 
@@ -1162,6 +1164,14 @@ The author is linking words spoken to related verses and dictionaries.
     BibleReference uses whole numbers for representation.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
+
+When did Israel...seek no region...as its own ( Acts 1:6 )?
+
+    The prophets
+    New Testament
+        The Gospels: King of the Jews, the disciples
+        Pauline Epistles, General Epistles
+        Revelation, starting with the letters to the 7 churches in Asia Minor
 
 We now fold our task
 
