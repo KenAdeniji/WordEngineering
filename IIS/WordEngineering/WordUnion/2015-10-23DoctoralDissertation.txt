@@ -152,10 +152,12 @@ Statement 	Commentary
 Select 	The select statement for data retrieval is the most popular statement. Most select applies to Bible..Scripture_View. Using the select statement is safe, but it may impact performance. An alternate replication target repository may serve queries.
 Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
 Where Clause Operators
-Check 	Commentary
+Operator 	Commentary
 =, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use. Querying for a date or number will search for particular types.
 BETWEEN 	This is a range check that accepts a beginning and ending value. It is not highly used.
 NULL 	No value
+IN 	A comma-delimited list of valid options within parenthesis.
+LIKE 	Wildcard filtering
 " (Ben Forta, 2017)
 Database Scaling
 
@@ -1165,6 +1167,10 @@ The author is linking words spoken to related verses and dictionaries.
     Who, what, when, where, why?
     Prophecy and Fulfillment: Keyword Variation
 
+Effect of the Progress ( Luke 1:1-4, Daniel 9:22-23 )?
+
+    1...many ( Genesis 1:16, Genesis 1:26-2:4, Daniel 9:2 )
+
 When did Israel...seek no region...as its own ( Acts 1:6 )?
 
     The prophets
@@ -1904,6 +1910,7 @@ Lessons Learnt
 
     Esteem word: Leading up-to 2008-03-07, I was not fully recording the word of the LORD ( Job 23:12 ).
     I used to ask God for a word? To realize where my opinion lies?
+    Familiarization with data.
     You previously stored your work in a database. You worked on a text in .html files. 2022-10-23 You chose to return to database content. Who is this work intended for? Can somebody else take on the responsibility for specialization, localization, processing of your original work? Draw intelligence from your work ( Joshua 22:11 )? One of Myself offering as many as I use?
     Words heard between waking up and walking outside are written in the author's backpack's notebook for meditation. Note the earlier words from night to morning are stored in the author's bedside notebook. What I provided for other? Is how I needed Him. Putting Him into words.
     My time away from the family, United States of America (USA), may have helped me gain independence.
