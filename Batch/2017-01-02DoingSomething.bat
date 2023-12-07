@@ -423,9 +423,9 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-11-27T20:52:00 URIMaintenanceWebForm.aspx
-google.com/books/edition/The_Pragmatic_Programmer/LhOlDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover 	The Pragmatic Programmer Your Journey to Mastery, 20th Anniversary Edition By David Thomas, Andrew Hunt Originally published: July 30, 2019 	2023-11-27T20:46:00 ppbook@pragprog.com 		2022-08-15 	59408
-Page 32
+2023-12-06T17:52:00 URIMaintenanceWebForm.aspx
+elijahmanor.com/byte/js-locale-sort 			JavaScript, sort 	2022-04-01 	58282
+Page 42
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
