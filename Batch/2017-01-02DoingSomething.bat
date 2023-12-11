@@ -423,9 +423,9 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-12-06T17:52:00 URIMaintenanceWebForm.aspx
-elijahmanor.com/byte/js-locale-sort 			JavaScript, sort 	2022-04-01 	58282
-Page 42
+2023-12-10T10:26:00 URIMaintenanceWebForm.aspx
+AngusCroll.com 	If Hemingway Wrote JavaScript by Angus Croll 		JavaScript 	2021-02-07 	54932
+Page 61
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au

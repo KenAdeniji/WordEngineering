@@ -154,7 +154,7 @@ Select 	The select statement for data retrieval is the most popular statement. M
 Insert, Update, Delete 	The insert, update and delete statements are for data maintenance.
 Where Clause Operators
 Operator 	Commentary
-=, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use. Querying for a date or number will search for particular types.
+=, <>, !=, <, <=, !<, >, >= !> 	The operators listed will check for a single value. The operators that consist of !, will check for non-matches. In most cases, rarely is this in use. !< or/and !>. This is the first time...he is becoming aware...of these expressions. This is the first time...he is becoming aware...of these operators. Querying for a date or number will search for particular types.
 BETWEEN 	This is a range check that accepts a beginning and ending value. It is not highly used.
 NULL 	No value
 IN 	A comma-delimited list of valid options within parenthesis.
