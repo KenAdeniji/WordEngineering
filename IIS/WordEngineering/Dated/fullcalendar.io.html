@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2023-12-10 Created. http://javascriptweekly.com/link/148463/web
+			2023-12-11T11:47:00...2023-12-11T18:03:00 Created.
+			2023-12-11T15:41:00	http://stackoverflow.com/questions/27920314/fullcalendar-add-events-dynamically
+			2023-12-11T18:06:00	http://stackoverflow.com/questions/26252938/fullcalendar-typeerror-fullcalendar-is-not-a-function
+			2023-12-11T18:08:00	http://stackoverflow.com/questions/18498079/how-to-update-an-event-in-fullcalendar/18498338#18498338
+			2023-12-11T19:33:00	
+				events: dataSet.Table
+				2023-08-27T05:39:12 I saw Tony of Albertsons Lucky, Charter Square, at Pegasus Center, South West. I later saw Tony at Albertsons Lucky, Charter Square, North East, shopping cart station. Tony was carrying food and drink. At Milk & Honey Cafe the cashier ordered a meal dinner for me which included fried rice, prawns and beef. From the white plastic transparent takeaway bag I took out the spoon and plastic meal container and I returned the fork and paper towels. I ate the meal on my way to 99 Ranch Market. David Cai asked where I got the meal from? I said, Pegasus Center, Milk & Honey Cafe. David Cai said, it is a Taiwanese restaurant.
+				2023-12-10T19:46:51	Milk & Honey Cafe waitress in white trouser.	
+		-->
+		<title>fullcalendar.io</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="fullcalendar.io"/>
+		<meta name="keywords" content="fullcalendar.io"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 20vh;
+				width: 80vw;
+			}
+		</style>	
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="datedFrom">Dated From:</label></td>
+					<td><input ID="datedFrom" type="date" value="2023-12-03"></td>
+				</tr>
+				<tr>
+					<td><label for="datedUntil">Dated Until:</label></td>
+					<td><input ID="datedUntil" type="date" value="2023-12-10"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label for="tableName">Table:</label><br/>
+						<textarea ID="tableName">WordEngineering..CaseBasedReasoning</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="datedColumnName">Dated Column:</label></td>
+					<td><input type="text" ID="datedColumnName" value="Dated"></td>
+				</tr>
+				<tr>
+					<td><label for="eventColumnName">Event Column:</label></td>
+					<td><input type="text" ID="eventColumnName" value="Commentary"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" id="submitQuery">
+					</td>
+				</tr>	
+			</table>
+			<div id="calendar"></div>
+			<div id="resultSet"></div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+		
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		
+		<script src="http://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+
+		<script>
+			var isPostBack = false;
+
+			const 	datedFromElement = document.getElementById("datedFrom");
+			const 	datedUntilElement = document.getElementById("datedUntil");
+			const 	tableNameElement = document.getElementById("tableName");
+			const 	datedColumnNameElement = document.getElementById("datedColumnName");
+			const 	eventColumnNameElement = document.getElementById("eventColumnName");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	calendarElement = document.getElementById("calendar");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var datedFromValue = urlParams.get("datedFrom");
+						if (datedFromValue)
+						{
+							datedFromElement.value = datedFromValue;
+						}
+
+						var datedUntilValue = urlParams.get("datedUntil");
+						if (datedUntilValue)
+						{
+							datedUntilElement.value = datedUntilValue;
+						}
+						
+						querySubmit();
+						
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+
+				request["datedFrom"] = datedFromElement.value;
+				request["datedUntil"] = datedUntilElement.value;
+				request["tableName"] = tableNameElement.value;
+				request["datedColumnName"] = datedColumnNameElement.value;
+				request["eventColumnName"] = eventColumnNameElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Dated/fullcalendar.io.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						
+						var dataSet = JSON.parse(data.d);
+
+						scriptLiteral9432.renderDataSet
+						(
+							dataSet,
+							"resultSet"
+						);
+
+						var calendarInstance = new FullCalendar.Calendar
+						(
+							calendarElement, 
+							{
+								initialView: "timeGrid", //"dayGridMonth",
+								initialDate: datedFromElement.value,
+								visibleRange: 
+								{
+									start: datedFromElement.value,
+									end: datedUntilElement.value
+								},
+								//allDaySlot: false,
+								events: dataSet.Table
+							}
+						);
+
+						calendarInstance.render();
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
