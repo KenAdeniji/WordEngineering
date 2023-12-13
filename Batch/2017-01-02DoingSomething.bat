@@ -166,6 +166,7 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RES
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 12588);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
+DBCC CHECKIDENT ('URI..UriBingNews', RESEED, 93);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17865);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
