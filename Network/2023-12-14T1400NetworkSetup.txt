@@ -1,0 +1,32 @@
+2023-12-14T13:41:00 Domain Name System (DNS)
+
+	Forward Lookup Zones
+		ephraimtech.com
+			Name		Type				Data
+			comfort		Host(A)				10.0.4.105
+			
+	Reverse Lookup Zones
+		10.0.4.x Subnet
+			Name		Type				Data
+			10.0.4.105	Pointer (PTR)		comfort.ephraimtech.com
+
+2023-12-15T07:45:00 http://www.cloudflare.com/learning/dns/what-is-dns
+
+	DNS translates domain names to IP addresses so browsers can load Internet resources.
+	
+	There are 4 DNS servers involved in loading a webpage:
+	
+		DNS recursor - 
+			The DNS recursor will receive queries from applications, such as, web browsers that are running on client machines.
+			Each DNS query request is passable.
+			
+		Root nameserver - 
+			The root server is the first point, location, for translating host names into IP addresses.
+
+		TLD nameserver - 
+			The top level domain server (TLD) stores the last portion of a hostname, for example, .com, org, .gov, .edu.
+
+		Authoritative nameserver -
+			This is the final nameserver in which a specific name is translateable into its definition.
+			The Authoritative nameserver will return the IP address for the requested hostname to the DNS Recursor 
+				that made the initial request.

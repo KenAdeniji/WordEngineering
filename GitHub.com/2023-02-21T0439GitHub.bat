@@ -330,8 +330,10 @@ git add			PowerShell/dbatools.io/
 
 git add			IIS/WordEngineering/Resume/BriceMartinez_-_TacticalEngineeringInterviewQuestionnaire.pdf
 
-git add        IIS/WordEngineering/Dated/Maersk_-_WithinThreeDays.asmx
-git add        IIS/WordEngineering/Dated/Maersk_-_WithinThreeDays.html
+git add 		IIS/WordEngineering/Dated/Maersk_-_WithinThreeDays.asmx
+git add        	IIS/WordEngineering/Dated/Maersk_-_WithinThreeDays.html
 
 git add			IIS/WordEngineering/Dated/fullcalendar.io.asmx
 git add	        IIS/WordEngineering/Dated/fullcalendar.io.html
+
+git add			Network/2023-12-14T1400NetworkSetup.txt
