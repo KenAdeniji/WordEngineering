@@ -30,3 +30,6 @@
 			This is the final nameserver in which a specific name is translateable into its definition.
 			The Authoritative nameserver will return the IP address for the requested hostname to the DNS Recursor 
 				that made the initial request.
+			Where the query is for a subdomain, for example, KenAdeniji.WordPress.com,
+				an additional nameserver will be added to the sequence after the authoritative nameserver,
+				which is responsible for storing the subdomain's CNAME record.			
