@@ -186,7 +186,7 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 158770);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 161299);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 161671);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 606);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
@@ -424,9 +424,8 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-12-10T10:26:00 URIMaintenanceWebForm.aspx
-AngusCroll.com 	If Hemingway Wrote JavaScript by Angus Croll 		JavaScript 	2021-02-07 	54932
-Page 61
+2023-12-17T11:29:00 URIMaintenanceWebForm.aspx
+javascriptweekly.com/issues 	JavaScript Weekly 		JavaScript 	2021-02-06 	54919
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
