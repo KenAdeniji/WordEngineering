@@ -337,3 +337,7 @@ git add			IIS/WordEngineering/Dated/fullcalendar.io.asmx
 git add	        IIS/WordEngineering/Dated/fullcalendar.io.html
 
 git add			Network/2023-12-14T1400NetworkSetup.txt
+
+git add	        IIS/WordEngineering/WordCross/WhatDidIFitIntoAPlace.asmx
+git add 	    IIS/WordEngineering/WordCross/WhatDidIFitIntoAPlace.html
+
