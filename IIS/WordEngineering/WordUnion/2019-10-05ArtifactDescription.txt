@@ -291,6 +291,8 @@ The Full-TextSearch.html uses Full-Text search to query the Bible.
 
 The Full-TextSearchHisWord.html uses Full-Text search to query the HisWord table.
 
+fullcalendar.io.html
+
 The FullPosition.html determines the next and previous scripture reference.
 
 The Gatherance.html will query documents by using filters.
@@ -506,6 +508,8 @@ The MiraculousPower.html will trace the various stages of our lives.
 The MissingItSimpleHeDid.html will allow the user to enter Bible citations, and enter the words that appear, in these Bible citations.
 
 The MondayFifteenthNineteenSeventyThree.html find the months when the dates occurs on the day of the week.
+
+The MondaySeventeenth.html find the occurrences of the week day, and the day of the month.
 
 The MoFeMaLoleMoNiyawoLe.html will allow the user to enter a scripture reference, and it will output the distinct count of books, chapters, and verses.
 
@@ -770,6 +774,8 @@ The WhatAreTheRegularFactorInfluencingYourPerception.html will list the various 
 The WhatDoYouUseAsYourTime.html will count ContactIDs and Dates occurrences.
 
 The WhatDidGokeSayINL.html will accept initials, and determine the scripture reference.
+
+WhatDidIFitIntoAPlace.html Arrange these words in appearance?
 
 The WhatDivideTheConcern.html will construct a where clause according to range and percentage.
 

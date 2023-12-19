@@ -2,7 +2,6 @@
 
 using System;
 using System.Data;
-using System.Numerics;
 using System.Web;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,9 +10,7 @@ using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Web.Script.Services;
 
-using System.Data;
 using System.Data.SqlClient;
-
 using System.Text;	
 
 using InformationInTransit.DataAccess;
@@ -26,6 +23,7 @@ using Newtonsoft.Json;
 ///<summary>
 ///	2023-12-18T19:59:00...2023-12-18T20:30:00 Created.
 ///	bibleWord, for example, Ark, Temple, Jerusalem, Judah, Israel
+///	Arrange these words in appearance?
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
