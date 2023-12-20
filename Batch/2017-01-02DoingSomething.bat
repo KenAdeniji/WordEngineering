@@ -424,8 +424,8 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-12-17T11:29:00 URIMaintenanceWebForm.aspx
-LearnDapper.com 	Welcome To Learn Dapper This site is for developers who want to learn how to use Dapper - the micro ORM produced by the people behind Stackoverflow. What is Dapper? link Dapper is a popular simple object mapping tool. It is designed primarily to be used in scenarios where you want to work with data in a strongly typed fashion - as business objects in a .NET application, but don't want to spend hours writing code to map query results from ADO.NET data readers to instances of those objects. Dapper is an open source project under the Apache license. It is available as a Nuget package and has been downloaded over 16 million times. Is Dapper an ORM? link Dapper falls into a family of tools known as micro-ORMs. These tools perform only a subset of the functionality of full-blown Object Relations Mappers, such as Entity Framework Core. Features vary by product. The following table provides a general idea of the capabilities that you can expect to find in a micro ORM compared to an ORM: 		Twin sibling 	2021-01-21 	54900
+2023-12-19T20:19:00 URIMaintenanceWebForm.aspx
+	ResilientWebDesign.com 	Resilient Web Design By Jeremy Keith (HTML) 			2019-12-29 	52605
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
