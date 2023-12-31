@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 158770);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 161671);
-DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 606);
+DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 628);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
@@ -424,8 +424,8 @@ ORDER BY HisWordID DESC
 2023-10-26T11:56:00	http://www.grammarcheck.net/editor
 2023-10-30T19:43:00	http://craigslist.org
 
-2023-12-19T20:19:00 URIMaintenanceWebForm.aspx
-	ResilientWebDesign.com 	Resilient Web Design By Jeremy Keith (HTML) 			2019-12-29 	52605
+2023-12-25T07:19:00 URIMaintenanceWebForm.aspx
+	keithjgrant.com/posts/2018/06/resilient-declarative-contextual 	Resilient, Declarative, Contextual 08 Jun 2018 		CSS, progressive enhancement 	2019-06-21
 
 2023-11-16T14:59:00...2023-11-16T16:42:00
 	http://www.commbank.com.au
