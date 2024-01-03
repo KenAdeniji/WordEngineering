@@ -124,13 +124,21 @@
 				).
 				The AlphabetSequenceIndex is the
 				<span datetime="2020-09-09T00:00:00">result of a pure function to sum alphabet places</span>
-				<a href="http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs">AlphabetSequence.cs</a>.
-				<span datetime="2020-09-14T00:00:00">The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture.</span>
+				<a 
+					href="http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs"
+				>
+					AlphabetSequence.cs
+				</a>.
+				<span datetime="2020-09-14T00:00:00">
+					The AlphabetSequenceIndexScriptureReference are the offsets from the beginning and the ending of the Scripture.
+				</span>
 				<span datetime="2020-09-15T00:00:00">
 					The AlphabetSequenceIndexScriptureReference consists of four parts;
 					there are two references each to particular chapters and verses.
-					The first mention is the forward verse, which the author calculates by determining the AlphabetSequenceIndex verse in the Bible.
-					The second mention is the forward chapter, and this the author calculates as before, but by substituting the verse with the chapter.
+					The first mention is the forward verse, 
+					which the author calculates by determining the AlphabetSequenceIndex verse in the Bible.
+					The second mention is the forward chapter, 
+					and this the author calculates as before, but by substituting the verse with the chapter.
 					Both the backward chapter and backward verse are the corresponding, anticlockwise places.
 				</span>
 			</p>
@@ -154,7 +162,9 @@
 					<li datetime="2021-12-04T12:28:00">
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Taken%20from%20him,%20added%20to%20him."
-							datetime="2020-08-16T00:00:00" data-HisWordID="135462" data-ContactID="10721"						
+							datetime="2020-08-16T00:00:00"
+							data-HisWordID="135462"
+							data-ContactID="10721"						
 						>
 							Taken from him, added to him
 						</a>
@@ -168,6 +178,17 @@
 							</a>
 						)
 						.
+					</li>
+					<li datetime="2023-12-31T09:23:00">
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20take%20a%20part%20of%20Him%20as%20ours."
+							data-HisWordID="159161"
+							data-ContactID="10715"
+							data-Location="Yun opens the water tap at the South West of the hot stove."
+							data-Commentary="Albertsons Lucky, Charter Square. Two-Bite vanilla cupcakes 10oz (284grams)."
+						>
+							To take a part of Him as ours.
+						</a>
 					</li>
 					<li>
 						<a 
@@ -228,30 +249,12 @@
 				The content of the Bible SQL Server database is principally the Scripture table.
 				
 				The Scripture table has a 
-				<a href="http://weblogs.sqlteam.com/jeffs/archive/2007/08/23/composite_primary_keys.aspx">composite primary key</a>,
+				<a 
+					href="http://weblogs.sqlteam.com/jeffs/archive/2007/08/23/composite_primary_keys.aspx"
+				>
+					composite primary key
+				</a>,
 				which consists of three columns; the BookID, ChapterID, and VerseID columns.
-				
-				There are varchar(MAX) columns which has the text for each Bible version.
-			</p>	
-			<p>	
-				The author proposes creating a non-unique index,
-				IDX_Scripture_ChapterIDSequence,
-				on the ChapterIDSequence column.
-				The author is undecided, if this index will be clustered or non-clustered.
-			</p>
-			
-			<h5 id="ScriptureTableBookIDColumn">The Scripture Table's BookID Column</h5>
-
-			<p>
-				Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66;
-				starting from Genesis and ending at Revelation.
-
-				The SQL statement 
-				<code>ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)</code>
-				will set the range restriction.
-
-				The BookID participates in the natural primary key; 
-				and it is part of the composite index with the ChapterID and VerseID columns.
 
 				The SQL statement 
 				<code>
@@ -263,6 +266,28 @@
 				)
 				</code>
 				is for setting the primary key.
+			</p>	
+			
+			<p>	
+				The author proposes creating a non-unique index,
+				IDX_Scripture_ChapterIDSequence,
+				on the ChapterIDSequence column.
+				The author is undecided, if this index will be clustered or non-clustered.
+			</p>
+
+			<p>	
+				There are varchar(MAX) columns which has the text for each Bible version.
+			</p>
+			
+			<h5 id="ScriptureTableBookIDColumn">The Scripture Table's BookID Column</h5>
+
+			<p>
+				Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66;
+				starting from Genesis and ending at Revelation.
+
+				The SQL statement 
+				<code>ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)</code>
+				will set the range restriction.
 			</p>
 
 			<h5 id="ScriptureTableChapterIDColumn">The Scripture Table's ChapterID Column</h5>
