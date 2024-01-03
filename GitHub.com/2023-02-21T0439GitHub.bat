@@ -341,3 +341,6 @@ git add			Network/2023-12-14T1400NetworkSetup.txt
 git add	        IIS/WordEngineering/WordCross/WhatDidIFitIntoAPlace.asmx
 git add 	    IIS/WordEngineering/WordCross/WhatDidIFitIntoAPlace.html
 
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-01-03T1239NorikoYoshida_-_OnceEnteringIRealizeYou_WeAllCorrespondWhoWeAre.txt
+
+		
