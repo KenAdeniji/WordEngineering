@@ -1,0 +1,1 @@
+cl AreaRectangle.cpp /EHsc

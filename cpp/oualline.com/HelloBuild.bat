@@ -1,0 +1,1 @@
+cl Hello.cpp /EHsc
