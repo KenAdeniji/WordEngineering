@@ -29,6 +29,7 @@ using InformationInTransit.ProcessLogic;
 namespace InformationInTransit.ProcessCode
 {
 	///<summary>
+	///	2024-01-19T09:14:00 Is for querying exact occurrences based on word entered.
 	///	2024-01-19T06:24:00...2024-01-19T08:16:00 Code.
 	///	2024-01-16 05:14:20.463	Looking at me as a reflection of you.
 	///	Location: On Paseo Padre Parkway overhead bridge between Blackstone Way and Siward Drive, North East, walking towards the South East. I knelt on my right knee on a black plastic bag.	

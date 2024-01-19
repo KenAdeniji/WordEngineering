@@ -479,9 +479,11 @@ The LifesNormancy.html will accept initial or abbreviation, and determine the sc
 
 The ListCount.html will count generations.
 
-The LivedBeyondTheWilderness.html is for querying based on the BooK ID, Chapter ID, Verse ID.
+The LivedBeyondTheWilderness.html is for querying based on the Book ID, Chapter ID, Verse ID.
 
 The LivesOnWord.html will create or alter a URI, and solicit response.
+
+LookingAtMeAsAReflectionOfYou.html 2024-01-19T09:14:00 Is for querying exact occurrences based on word entered.
 
 LovingLiving.html Knowing to be kind; I realize my view.
 
@@ -956,4 +958,6 @@ alphabetSequence = function(word)
 	return (alphabetSequenceIndex)
 }
 print(alphabetSequence("the"))
-dir() #list directory
+dir() #list directory	
+			
+
