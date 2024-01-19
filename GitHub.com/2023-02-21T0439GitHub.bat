@@ -345,4 +345,9 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-01-03T1239NorikoYosh
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-01-07T1844FaithAnYao_-_ThereWeBegin.txt
 		
-git add			cpp/oualline.com/		
+git add			cpp/oualline.com/
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-01-17T1852SeKinMaBo_KinToTouchEOTiLate_KoLoTouchEOTiLate.txt
+git add 	    IIS/WordEngineering/WordCross/LookingAtMeAsAReflectionOfYou.asmx
+git add         IIS/WordEngineering/WordCross/LookingAtMeAsAReflectionOfYou.html
+git add         InformationInTransit/ProcessCode/LookingAtMeAsAReflectionOfYou.cs

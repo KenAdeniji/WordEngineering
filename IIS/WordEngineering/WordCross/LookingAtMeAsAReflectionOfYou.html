@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-01-19T07:16:00...2024-01-19T08:16:00 Code.
+		2024-01-16 05:14:20.463	Looking at me as a reflection of you.
+		Location: On Paseo Padre Parkway overhead bridge between Blackstone Way and Siward Drive, North East, walking towards the South East. I knelt on my right knee on a black plastic bag.	
+		Commentary: At Creekwood Terrace, I stood, stopped, at the Center of the road. Divider, 2 entrances to the North, and 2 entrances to the South. How I surround myself...in fact. At the Charter Square entrance to Enea Court, between  	Taqueria El Mex-Cal and Liquor store. I have lived this love...to pass it. Mo ti pray...then I listen. I have pray...then I listen. On Paseo Padre Parkway overhead bridge between Blackstone Way and Siward Drive, North East, walking towards the South East. To accept Me...as nobody will try Me. The 3 words phrases written down on the paper and data entry, entered, into the database are separateable into 3 words and 5 words. The 1st entry, record, is for 4 lanes, roads paths into the Creekwood Terrace and there are 4 beasts, 4 kingdoms, in Daniel 7. Isaiah 53? Yesterday, 2024-01-15 you saw a vehicle with Panther written on it, pass Highway 880 North, towards. TIFF...Kowe? Computer. Must move beyond the part...to the normal. Signature verification? Yoruba alphabets distinction from English alphabets. Sun and Moon, sign? When did He get exact? As He approach? Sir Robert Anderson in his book, The Coming Prince? Prophet Daniel's accuracy.. 06:15 Whose intelligence...I use? 06:16 What did He rely on...to be the same? 06:16 What did He rely on...to be same? 06:18 With us...meeting our match?
+		http://www.robertrubin.com/the-yellow-pad
+		BibleWord,
+		FirstOccurrenceScriptureReference,
+		LastOccurrenceScriptureReference,
+		Occurrences
+		Exact.
+	-->
+	<head>
+		<title>Looking at me as a reflection of you.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Looking at me as a reflection of you."/>
+		<meta name="keywords" content="BibleWord, FirstOccurrenceScriptureReference, LastOccurrenceScriptureReference, Occurrences, Exact"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word:</label></td>
+					<td><input type="text" id="word" value="Looking at me as a reflection of you." autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Bible Version:</label></td>
+					<td><select id="bibleVersion"> </select></td>
+				</tr>	
+				<tr>
+					<td><label for="scriptureReference">Scripture Reference:</label></td>
+					<td><input id="scriptureReference" type="text" value="Daniel"/></td>
+				</tr>	
+				<tr>
+					<td><label for="wholeWords">Whole Word:</label></td>
+					<td><input type="checkbox" id="wholeWords" checked/></td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultTable"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	bibleVersionElement = document.getElementById("bibleVersion");
+			var	scriptureReferenceElement = document.getElementById("scriptureReference");
+			var	wholeWordsElement = document.getElementById("wholeWords");
+			var	wordElement = document.getElementById("word");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						scriptLiteral9432.renderBibleVersionSelect();
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["word"] = wordElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["wholeWords"] = wholeWordsElement.checked;
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/LookingAtMeAsAReflectionOfYou.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
