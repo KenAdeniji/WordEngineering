@@ -1803,7 +1803,10 @@ var scriptLiteral9432 =
 				j++
 			)
 			{
-				rowData[ headers[j] ] = tableRow.cells[j].innerHTML.replaceAll("%20", " ");
+				rowData[ headers[j] ] = tableRow.cells[j].innerHTML
+					.replaceAll("%20", " ")
+					.replaceAll("'", "''")
+					;
 				if ( rowSQLTableColumnsValues !== "" )
 				{
 					rowSQLTableColumnsValues += ", "; 
