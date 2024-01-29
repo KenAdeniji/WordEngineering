@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-01-28 Convert HTML table to SQL DML.
+			http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
+		2024-01-28T16:31:00...2024-01-28T16:50:00	Code.	
+	-->
+	<head>
+		<title>Convert HTML table to SQL DML.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Convert HTML table to SQL DML."/>
+		<meta name="keywords" content="Convert, HTML table, SQL DML"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<textarea id="htmlTable">
+				<table>
+					<tr><td>1</td><td>Genesis</td></tr>
+					<tr><td>2</td><td>Exodus</td></tr>
+					<tr><td>3</td><td>Leviticus</td></tr>
+					<tr><td>4</td><td>Numbers</td></tr>
+					<tr><td>5</td><td>Deuteronomy</td></tr>
+				</table>
+			</textarea><br/>
+			<input type="submit" id="submitQuery"/><br/>
+			<textarea id="sqlTable"></textarea><br/>
+			<div id="hiddenTable" style="display:none"></div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	htmlTableElement = document.getElementById("htmlTable");
+			var	sqlTableElement = document.getElementById("sqlTable");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	hiddenTableElement = document.getElementById("hiddenTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var output = [];
+				var temp;
+				var cellValues;
+				hiddenTableElement.innerHTML = htmlTableElement.value;
+				$('tr').each(function () {
+					temp = "INSERT INTO mytable VALUES (";
+					cellValues = [];
+					$(this).children().each(function () {
+						cellValues.push
+						(
+							'"' +
+							$(this).text().replaceAll("\r", "\n")
+							+ '"'
+						); // <-- you may need to do escaping here
+					});
+					temp += cellValues.join(", ") + ");";
+					output.push(temp);
+				});
+
+				sqlTableElement.value = output.join("\n");
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

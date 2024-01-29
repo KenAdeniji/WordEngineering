@@ -351,3 +351,5 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-01-17T1852SeKi
 git add 	    IIS/WordEngineering/WordCross/LookingAtMeAsAReflectionOfYou.asmx
 git add         IIS/WordEngineering/WordCross/LookingAtMeAsAReflectionOfYou.html
 git add         InformationInTransit/ProcessCode/LookingAtMeAsAReflectionOfYou.cs
+
+git add			IIS/WordEngineering/WordCross/2024-01-28T1000ConvertHTMLTableToSQLDML.html
