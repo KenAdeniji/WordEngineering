@@ -117,6 +117,8 @@
 			jsdoc 9432.js
 				Generate html in the out directory.
 					9432.js.html
+	2024-01-28...2024-01-29T05:58:00 exportTableToSQL()
+		http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
 */			
 var scriptLiteral9432 =
 {
@@ -1756,6 +1758,70 @@ var scriptLiteral9432 =
 		return data;
 	},
 
+	exportTableToSQL: function(tablename) //2024-01-28...2024-01-29T05:58:00
+	{
+		var table = document.getElementById(tablename);
+		var tableInsertSQL = "";
+		var rowSQLTableColumnsNames = "";
+		var rowSQLTableColumnsValues = "";
+		
+		// first row needs to be headers
+		var headers = [];
+		for 
+		(
+			var i = 0, columnsCount = table.rows[0].cells.length;
+			i < columnsCount;
+			i++
+		)
+		{
+			headers[i] = table.rows[0].cells[i].innerHTML;
+			if ( rowSQLTableColumnsNames !== "" )
+			{
+				rowSQLTableColumnsNames += ", "; 
+			}
+			rowSQLTableColumnsNames += headers[i];
+		}
+		
+		// go through cells
+		for 
+		(
+			var i = 1, rowsCount = table.rows.length;
+			i < rowsCount;
+			i++
+		)
+		{
+
+			var tableRow = table.rows[i];
+			var rowData = {};
+
+			rowSQLTableColumnsValues = "";
+			
+			for 
+			(
+				var j = 0, columnsCount = tableRow.cells.length;
+				j < columnsCount;
+				j++
+			)
+			{
+				rowData[ headers[j] ] = tableRow.cells[j].innerHTML.replaceAll("%20", " ");
+				if ( rowSQLTableColumnsValues !== "" )
+				{
+					rowSQLTableColumnsValues += ", "; 
+				}
+				rowSQLTableColumnsValues += 
+					"'" + 
+					rowData[ headers[j] ] +
+					"'";
+			}
+			
+			tableInsertSQL += ` INSERT INTO ${tablename} ( ${rowSQLTableColumnsNames} ) VALUES ( ${rowSQLTableColumnsValues} ) \n`;
+		}
+
+		scriptLiteral9432.downloadFile(tableInsertSQL, tablename, "sql");
+
+		return tableInsertSQL;
+	},
+
 	exportTableToXML: function(tablename) 
 	{
 		var xml = '<?xml version="1.0" encoding="UTF-8"?><Root>';
@@ -1911,6 +1977,8 @@ var scriptLiteral9432 =
 		info += `<button onclick="scriptLiteral9432.exportTableToCSV('${dataID}')">Export to CSV</button>`
 	
 		info += `<button onclick="scriptLiteral9432.exportTableToJSON('${dataID}')">Export to JSON</button>`
+
+		info += `<button onclick="scriptLiteral9432.exportTableToSQL('${dataID}')">Export to SQL</button>`
 
 		info += `<button onclick="scriptLiteral9432.exportTableToXML('${dataID}')">Export to XML</button>`
 	
