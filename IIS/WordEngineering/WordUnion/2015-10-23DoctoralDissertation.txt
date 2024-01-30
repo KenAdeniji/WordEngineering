@@ -1,3 +1,5 @@
+	
+
     Title
     Abstract
     Acknowledgments
@@ -136,7 +138,8 @@ This is subjective work; the author applys intelligence to find patterns and res
 "
 Database Performance
 
-    Query optimization: Server-side database processing offers the best performance scenario. The use of stored procedures and functions is recommended. Prepared statements are fast, resource lenient, cached, and they prevent SQL injection attacks. The author falls back on dynamic SQL for complex queries.
+    Query optimization: Server-side database processing offers the best performance scenario. The use of stored procedures and functions is recommended. The hold backs are their deployments and SQL variances. Prepared statements are fast, resource lenient, cached, and they prevent SQL injection attacks. The author falls back on dynamic SQL for complex queries.
+    Indexing: The author is well aware of the pros of indexing, but its cons include additional space and effort. The less performant productive database objects are keys and constraints.
 
 " "
 Database Management System (DBMS)
