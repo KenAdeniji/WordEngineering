@@ -134,6 +134,11 @@ ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 "
+Database Performance
+
+    Query optimization: Server-side database processing offers the best performance scenario. The use of stored procedures and functions is recommended. Prepared statements are fast, resource lenient, cached, and they prevent SQL injection attacks. The author falls back on dynamic SQL for complex queries.
+
+" "
 Database Management System (DBMS)
 
 There are 2 types of DBMS. These are:
