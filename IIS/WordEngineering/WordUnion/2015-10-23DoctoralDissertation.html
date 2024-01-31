@@ -854,6 +854,28 @@
 					The author is well aware of the pros of indexing, but its cons include additional space and effort. 
 					<span datetime="2024-01-30T08:23:00">The less performant productive database objects are keys and constraints.</span>
 				</li>
+				<li datetime="2024-01-30T19:28:00">
+					Data Modeling:
+					Normalization
+					<ol>
+						<li>
+							First Normal Form (1NF):
+								A relation meets this rule when each attribute has only one value.
+								Another condition is that all the attribute values are atomic and non-composite.
+								In the HisWord table there may be multiple contacts, but only the most prominent contact is recorded.
+								A contact must be first created in the Contact table, prior to its referencing, to satisfy its referential integrity constraint.
+								The author does abide with 1NF in the HisWord table.
+								The URI column may contain multiple e-mail addresses.
+								The scripture reference column may not be a unit.
+						</li>
+						<li datetime="2024-01-30T20:21:00">
+							Second Normal Form (2NF):
+								The ActToGod table does not comply with this rule, 
+								since its Minor column is functionally dependent on its Major column.
+								<span datetime="2024-01-30T20:25:00">Computed columns minimize the potential for this.</span>
+						</li>
+					</ol>
+				</li>
 			</ul>
 			
 			</q>
@@ -12929,6 +12951,18 @@ Execution time:     84.46 seconds (00:01:24.46)
 					Available from
 					<a href="http://furrypants.com/loope/index.htm">http://furrypants.com/loope/index.htm</a>
 				</li>
+				<li id="bibliographyDavidKarlins2012" datetime="2023-09-22T10:50:00">
+					<cite>Building Websites All-In-One for Dummies</cite>
+					David Karlins, Doug Sahlin (2012);
+					ISBN: 978-1-118-27003-5
+					W3C web page;
+					Available from
+					<a 
+						href="http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en"
+					>
+						http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en
+					</a>
+				</li>
 				<li id="bibliographyAdamKelleher">
 					<cite>Adam Kelleher</cite>
 					W3C web page;
@@ -12969,7 +13003,17 @@ Execution time:     84.46 seconds (00:01:24.46)
 					Available from
 					<a href="http://www.khouse.org">http://www.khouse.org</a>
 				</li>
-
+				<li id="bibliographyAgnieszkaKozubek20201201" datetime="2024-01-30T20:52:00">
+					<cite>Normalization in Relational Databases: First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF)</cite>
+					Agnieszka Kozubek (December 1, 2020);
+					W3C web page;
+					Available from
+					<a 
+						href="http://www.vertabelo.com/blog/normalization-1nf-2nf-3nf"
+					>
+						http://www.vertabelo.com/blog/normalization-1nf-2nf-3nf
+					</a>
+				</li>
 				<li id="bibliographyCharlesMKozierok2003-2017">
 					<cite>The TCP/IP Guide</cite>
 					Charles M. Kozierok (2003-2017);
@@ -13004,18 +13048,6 @@ Execution time:     84.46 seconds (00:01:24.46)
 					W3C web page;
 					Available from
 					<a href="http://www.webstyleguide.com">http://www.webstyleguide.com</a>
-				</li>
-				<li id="bibliographyDavidKarlins2012" datetime="2023-09-22T10:50:00">
-					<cite>Building Websites All-In-One for Dummies</cite>
-					David Karlins, Doug Sahlin (2012);
-					ISBN: 978-1-118-27003-5
-					W3C web page;
-					Available from
-					<a 
-						href="http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en"
-					>
-						http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en
-					</a>
 				</li>
 				<li id="bibliographyJo˜aoDeMacedo" datetime="2023-12-13T03:21:00">
 					<cite>

@@ -1,5 +1,3 @@
-	
-
     Title
     Abstract
     Acknowledgments
@@ -140,6 +138,9 @@ Database Performance
 
     Query optimization: Server-side database processing offers the best performance scenario. The use of stored procedures and functions is recommended. The hold backs are their deployments and SQL variances. Prepared statements are fast, resource lenient, cached, and they prevent SQL injection attacks. The author falls back on dynamic SQL for complex queries.
     Indexing: The author is well aware of the pros of indexing, but its cons include additional space and effort. The less performant productive database objects are keys and constraints.
+    Data Modeling: Normalization
+        First Normal Form (1NF): A relation meets this rule when each attribute has only one value. Another condition is that all the attribute values are atomic and non-composite. In the HisWord table there may be multiple contacts, but only the most prominent contact is recorded. A contact must be first created in the Contact table, prior to its referencing, to satisfy its referential integrity constraint. The author does abide with 1NF in the HisWord table. The URI column may contain multiple e-mail addresses. The scripture reference column may not be a unit.
+        Second Normal Form (2NF): The ActToGod table does not comply with this rule, since its Minor column is functionally dependent on its Major column. Computed columns minimize the potential for this.
 
 " "
 Database Management System (DBMS)
@@ -2750,18 +2751,19 @@ References
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
+    Building Websites All-In-One for Dummies David Karlins, Doug Sahlin (2012); ISBN: 978-1-118-27003-5 W3C web page; Available from http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en
     Adam Kelleher W3C web page; Available from AdamKelleher.com
     Machine Learning in Production: Developing and Optimizing Data Science Workflows and Applications (Addison-Wesley Data & Analytics Series) 1st Edition Andrew Kelleher, Adam Kelleher (2019); W3C web page; Available from https://www.google.com/books/edition/Machine_Learning_in_Production/7zuIDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
     Designing data-Intensive Applications Literature References Martin Kleppmann; W3C web page; Available from http://www.github.com/ept/ddia-references
     SQL in a Nutshell Kevin Kline, Regina O. Obe, Leo S. Hsu (June 14, 2022); W3C web page; Available from http://google.com/books/edition/SQL_in_a_Nutshell/MEZ1EAAAQBAJ?hl=en&gbpv=0
     Shoe Dog A Memoir by the Creator of Nike Philip Knight (April 26, 2016); W3C web page; Available from http://www.google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en&gbpv=0
     Koinonia House W3C web page; Available from http://www.khouse.org
+    Normalization in Relational Databases: First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF) Agnieszka Kozubek (December 1, 2020); W3C web page; Available from http://www.vertabelo.com/blog/normalization-1nf-2nf-3nf
     The TCP/IP Guide Charles M. Kozierok (2003-2017); W3C web page; Available from http://www.tcpipguide.com
     Cascading Style Sheets Håkon Wium Lie (2006); W3C web page; Available from http://www.wiumlie.no/2006/phd/
     Learning Made Easy 7th Edition Java All-In-One for dummies A Wiley brand 8 books in one! Doug Lowe (2023); W3C web page; Available from http://www.dummies.com/go/javaaiofd7e
     Righting Software Juval Löwy of IDesign (2019-11-27); W3C web page; Available from http://books.google.com/books?id=Q3jADwAAQBAJ&printsec=frontcover
     Web Style Guide Patrick J. Lynch and Sarah Horton; W3C web page; Available from http://www.webstyleguide.com
-    Building Websites All-In-One for Dummies David Karlins, Doug Sahlin (2012); ISBN: 978-1-118-27003-5 W3C web page; Available from http://www.google.com/books/edition/Building_Web_Sites_All_in_One_Desk_Refer/cfDRYLDyKcoC?hl=en
     WebAssembly versus JavaScript: Energy and Runtime Performance Jo˜ao De Macedo∗†, Rui Abreu‡, Rui Pereira†, Jo˜ao Saraiva∗† University of Minho †HASLab/INESC Tec ‡Faculty of Engineering of University of Porto & INESC-ID a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di.uminho.pt W3C web page; Available from http://repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content
     Steve McConnell W3C web page; Available from http://www.stevemcconnell.com
     Stephen C. Meyer W3C web page; Available from http://www.stephencmeyer.org
