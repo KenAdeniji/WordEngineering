@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2024-01-31	http://viz.bible/app
+			2024-01-31T23:59:00	To regulate who He has been?
+				Timespan in the Bible?
+				Luke 1:24, Luke 1:26, Luke 1:36, Luke 1:56, Luke 4:25, John 4:35
+			2024-02-01T00:39:00	
+				https://en.wikipedia.org/wiki/Genesis_creation_narrative
+				I have found out that when God puts a thought in my mind, I can Google...	
+		-->
+		<title>To regulate who He has been?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="To regulate who He has been?"/>
+		<meta name="keywords" content="Timespan in the Bible"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="datedFrom">Date From (terminus a quo):</label></td>
+					<td><select id="datedFrom"></select></td>
+				</tr>
+				<tr>
+					<td><label for="datedTo">Date To (terminus ad quem):</label></td>
+					<td><select id="datedTo"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="daysDifference">Days Difference:</label></td>
+					<td><span id="daysDifference"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const datedFromElement = document.getElementById("datedFrom");
+			const datedToElement = document.getElementById("datedTo");
+			
+			const daysDifferenceElement = document.getElementById("daysDifference");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						scriptLiteral9432.buildSelect("datedFrom", EstimatedDates);
+						scriptLiteral9432.buildSelect("datedTo", EstimatedDates);
+
+						const urlParams = new URLSearchParams(window.location.search);
+						
+						var datedFromParam = urlParams.get("datedFrom");
+						if (datedFromParam)
+						{
+							datedFromElement.value = datedFromParam;
+						}
+					
+						var datedToParam = urlParams.get("datedTo");
+						if (datedToParam)
+						{
+							datedToElement.value = datedToParam;
+						}
+
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var daysDifferenceComputed = scriptLiteral9432.daysDifference
+				(
+					new Date(datedFromElement.value), 
+					new Date(datedToElement.value)
+				);
+
+				daysDifferenceElement.textContent = daysDifferenceComputed;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const EstimatedDates =
+			[
+				["Sun, stand still upon Gibeon", "October 30, -1207"],
+				["The commandment to restore and build Jerusalem was given by Artaxerxes Longimanus", "March 14, -0445"],
+				["Jesus Christ - Date of Birth", "January 1, 0001"],
+				["Jesus Christ - Date of Death", "0032-04-06"], 
+				["First day of Pentecost", "0032-05-26"]
+			];
+		</script>
+	</body>
+</html>
