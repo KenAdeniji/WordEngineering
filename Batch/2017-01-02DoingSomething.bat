@@ -163,7 +163,7 @@ BACKUP DATABASE AManDevelopedInAll TO DISK = 'e:\SQLServerBackup\AManDevelopedIn
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 24539);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..EmailAddress', RESEED, 22139);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 24539);
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 12588);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 14777);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
 DBCC CHECKIDENT ('URI..UriBingNews', RESEED, 115);
@@ -455,4 +455,14 @@ ORDER BY HisWordID DESC
 2024-01-31T19:47:00	"bible" "model" site:stakoverflow.com
 2024-01-31T19:53:00	http://viz.bible robert@viz.bible
 2024-01-31T20:51:00	http://rolisz.com/analyzing-the-bible-with-bert-models
+2024-02-02T09:21:00	http://stackoverflow.com/questions/8257319/retrieving-table-schema-information-using-c-sharp
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'YourTable'
+
+SqlConnection con=new SqlConnection("connString");
+con.Open();
+SqlCommand cmd= new SqlCommand("select top 0 * from Person.Address",con);
+DataTable table = cmd.ExecuteReader().GetTableSchema();
+
 :Exit
