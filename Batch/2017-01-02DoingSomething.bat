@@ -3,7 +3,7 @@ REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex1709
 REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-directory-6007-rc.html
 REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
 :BeginAgain
-echo 1=BCP, 2=IISLog, 3=Node.js, 4=Rust, 5=SQLServerBackup, 6=SQLServerDataDefinitionLanguageDDL, 7=SQLServerDataFiles, 8=SQLServerDataManipulationLanguageDML, 9=SQLServerExport, 10=WebAssembly, 11=WinScp, 12=WordEngineering, 13=WordOfGod
+echo 1=BCP, 2=IISLog, 3=Node.js, 4=Rust, 5=SQLServerBackup, 6=SQLServerDataDefinitionLanguageDDL, 7=SQLServerDataFiles, 8=SQLServerDataManipulationLanguageDML, 9=SQLServerExport, 10=WebAssembly, 11=WinScp, 12=WordEngineering, 13=WordOfGod, 14=WorkDone
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
@@ -19,6 +19,7 @@ IF %id% == 10 GOTO WebAssembly
 IF %id% == 11 GOTO WinScp
 IF %id% == 12 GOTO WordEngineering
 IF %id% == 13 GOTO WordOfGod
+IF %id% == 14 GOTO WorkDone
 GOTO Exit
 
 :BCP
@@ -135,6 +136,13 @@ xcopy e:\WordOfGod f:\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
 xcopy e:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
+GOTO Exit
+
+:WorkDone
+xcopy e:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
+xcopy e:\2024-02-02T2020WorkDone d:\2024-02-02T2020WorkDone /d /e /s /y
+xcopy e:\2024-02-02T2020WorkDone f:\2024-02-02T2020WorkDone /d /e /s /y
+xcopy e:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
 GOTO Exit
 
 :Backup

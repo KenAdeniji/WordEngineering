@@ -45,21 +45,30 @@ public class NowWhoWereWithYouWhenYouWereWithMeWebService : System.Web.Services.
 		System.Collections.Generic.Dictionary<string, string> tables =
 			NowWhoWereWithYouWhenYouWereWithMe.Tables
 		(
-			DatabaseConnectionString
+			String.Format
+			(
+				DatabaseConnectionStringFormat,
+				DatabaseName
+			)	
 		);
 		
 		foreach(KeyValuePair<string, string> entry in tables)
 		{
 			tableOrViewName = String.Format
 			(
-				"RobertRouseVizBible.{0}.{1}",
+				"{0}.{1}.{2}",
+				DatabaseName,
 				entry.Value,
 				entry.Key.ToString()
 			);	
 
 			tableOrViewSchema = NowWhoWereWithYouWhenYouWereWithMe.TableSchema
 			(
-				DatabaseConnectionString,
+				String.Format
+				(
+					DatabaseConnectionStringFormat,
+					DatabaseName
+				),	
 				tableOrViewName
 			);
 
@@ -92,7 +101,7 @@ public class NowWhoWereWithYouWhenYouWereWithMeWebService : System.Web.Services.
 		return json;
     }
 	
-	const String DatabaseConnectionString = "Data Source=(local);Database=RobertRouseVizBible;Integrated Security=true;";
-	
+	const String DatabaseName = "RobertRouseVizBible";
+	const String DatabaseConnectionStringFormat = "Data Source=(local);Database={0};Integrated Security=true;";
 	const String QueryFormat = " SELECT * FROM {0} {1}; ";
 }
