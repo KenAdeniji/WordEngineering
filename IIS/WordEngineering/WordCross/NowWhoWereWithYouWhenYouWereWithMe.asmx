@@ -23,6 +23,7 @@ using Newtonsoft.Json;
 ///<summary>
 ///	2024-01-31T20:33:09 Robert Rouse. Minister of Data. viz.bible
 ///	2024-02-02T12:15:00 Created.
+///	HisWord table. 159455	2024-02-03 11:10:39.553	He chose to do it...base on activity.	11:35 Headache. 11:59 Urine. 12:10 Urine. 12:32 NowWhoWereWithYouWhenYouWereWithMe.html word input now...king. 13:07 Urine. 2024-02-02...2024-02-03T14:12:00 microsoft windows operating system, mozilla firefox browser NowWhoWereWithYouWhenYouWereWithMe.html word=king no response error, freeze, wait error. 13:49 Pegasus Center, 34245 Fremont Boulevard, State Farm, Christina Zeng agent. 13:49 Urine Wienerschnitzel 99 Ranch Market (Ofe ke?) (A mo pe ko da be). 14:19 Thirst (We are proving difficult) (A mo pe ko da be).	NULL	NULL	NULL	NULL	NULL	NULL	NULL
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]

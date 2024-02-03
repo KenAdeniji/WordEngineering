@@ -34,6 +34,8 @@ namespace InformationInTransit.ProcessCode
 	///	2024-02-02T11:45:00	Created.
 	///		http://stackoverflow.com/questions/8257319/retrieving-table-schema-information-using-c-sharp
 	///		http://stackoverflow.com/questions/3005095/can-i-get-the-names-of-all-the-tables-of-a-sql-server-database-in-a-c-sharp-appl
+	///	2024-02-03T12:11:00	Reign of Ahaziah
+	///	HisWord table. 159455	2024-02-03 11:10:39.553	He chose to do it...base on activity.	11:35 Headache. 11:59 Urine. 12:10 Urine. 12:32 NowWhoWereWithYouWhenYouWereWithMe.html word input now...king. 13:07 Urine. 2024-02-02...2024-02-03T14:12:00 microsoft windows operating system, mozilla firefox browser NowWhoWereWithYouWhenYouWereWithMe.html word=king no response error, freeze, wait error. 13:49 Pegasus Center, 34245 Fremont Boulevard, State Farm, Christina Zeng agent. 13:49 Urine Wienerschnitzel 99 Ranch Market (Ofe ke?) (A mo pe ko da be). 14:19 Thirst (We are proving difficult) (A mo pe ko da be).	NULL	NULL	NULL	NULL	NULL	NULL	NULL
 	///</summary>
 	public partial class NowWhoWereWithYouWhenYouWereWithMe
 	{
@@ -106,6 +108,11 @@ namespace InformationInTransit.ProcessCode
 			String columnCondition;
 			
 			StringBuilder sb = new StringBuilder();
+			
+			bool isDateTime;
+			DateTime dateTimeValue;
+			
+			isDateTime = DateTime.TryParse(word, out dateTimeValue);
 			
 			foreach(DataRow dataRow in tableOrViewSchema.Rows)
 			{
