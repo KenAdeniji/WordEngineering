@@ -21,6 +21,7 @@ using InformationInTransit.UserInterface;
 using Newtonsoft.Json;
 
 ///<summary>
+///	2024-01-31T20:33:09 Robert Rouse. Minister of Data. viz.bible
 ///	2024-02-02T12:15:00 Created.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
@@ -32,26 +33,66 @@ public class NowWhoWereWithYouWhenYouWereWithMeWebService : System.Web.Services.
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public string Query
 	(
-		string	word
+		string	word,
+		bool	wholeWords
 	)
     {
-		DataTable tableOrViewSchema = NowWhoWereWithYouWhenYouWereWithMe.QuerySchema
+		String tableOrViewName;
+		DataTable tableOrViewSchema;
+		StringBuilder whereClause;
+		StringBuilder queryStatement = new StringBuilder();
+
+		System.Collections.Generic.Dictionary<string, string> tables =
+			NowWhoWereWithYouWhenYouWereWithMe.Tables
 		(
-			DatabaseConnectionString,
-			"RobertRouseVizBible..People"
+			DatabaseConnectionString
 		);
 		
-		StringBuilder whereClause = NowWhoWereWithYouWhenYouWereWithMe.WhereClause
+		foreach(KeyValuePair<string, string> entry in tables)
+		{
+			tableOrViewName = String.Format
+			(
+				"RobertRouseVizBible.{0}.{1}",
+				entry.Value,
+				entry.Key.ToString()
+			);	
+
+			tableOrViewSchema = NowWhoWereWithYouWhenYouWereWithMe.TableSchema
+			(
+				DatabaseConnectionString,
+				tableOrViewName
+			);
+
+			whereClause = NowWhoWereWithYouWhenYouWereWithMe.WhereClause
+			(
+				tableOrViewSchema,
+				word,
+				wholeWords
+			);
+		
+			queryStatement.Append
+			(
+				String.Format
+				(
+					QueryFormat,
+					tableOrViewName,
+					whereClause
+				)
+			);
+		}
+		
+		DataSet resultSet = (DataSet) DataCommand.DatabaseCommand
 		(
-			tableOrViewSchema,
-			word
+			queryStatement.ToString(),
+			CommandType.Text,
+			DataCommand.ResultType.DataSet
 		);
 		
-		return whereClause.ToString();
-		
-		//string json = JsonConvert.SerializeObject(resultTable, Formatting.Indented);
-		//return json;
+		string json = JsonConvert.SerializeObject(resultSet, Formatting.Indented);
+		return json;
     }
 	
 	const String DatabaseConnectionString = "Data Source=(local);Database=RobertRouseVizBible;Integrated Security=true;";
+	
+	const String QueryFormat = " SELECT * FROM {0} {1}; ";
 }

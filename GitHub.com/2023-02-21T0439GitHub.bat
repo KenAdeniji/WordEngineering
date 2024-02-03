@@ -357,4 +357,8 @@ git add			IIS/WordEngineering/WordCross/2024-01-28T1000ConvertHTMLTableToSQLDML.
 git add			IIS/WordEngineering/Dated/2024-01-31T2359ToRegulateWhoHeHasBeen.html
 
 git add			IIS/WordEngineering/WordCross/NowWhoWereWithYouWhenYouWereWithMe.asmx
+git add			IIS/WordEngineering/WordCross/NowWhoWereWithYouWhenYouWereWithMe.html
 git add			InformationInTransit/ProcessCode/NowWhoWereWithYouWhenYouWereWithMe.cs
+
+git add			IIS/WordEngineering/Dated/DateRatio.html
+

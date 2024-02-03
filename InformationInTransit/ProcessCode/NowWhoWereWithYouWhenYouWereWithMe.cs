@@ -29,13 +29,49 @@ using InformationInTransit.ProcessLogic;
 namespace InformationInTransit.ProcessCode
 {
 	///<summary>
+	///	2024-01-31T20:33:09 Robert Rouse. Minister of Data. viz.bible
 	///	2024-02-02	Now, who were with you, when you were with me?
 	///	2024-02-02T11:45:00	Created.
 	///		http://stackoverflow.com/questions/8257319/retrieving-table-schema-information-using-c-sharp
+	///		http://stackoverflow.com/questions/3005095/can-i-get-the-names-of-all-the-tables-of-a-sql-server-database-in-a-c-sharp-appl
 	///</summary>
 	public partial class NowWhoWereWithYouWhenYouWereWithMe
 	{
-        public static DataTable QuerySchema
+		public static System.Collections.Generic.Dictionary<string, string> Tables
+		(
+			string connectionString
+		)
+		{
+			SqlConnection sqlConnection = new SqlConnection(connectionString);
+			sqlConnection.Open();
+
+			System.Data.DataTable dataTable = sqlConnection.GetSchema("Tables");
+			System.Collections.Generic.Dictionary<string, string> tables
+				= new System.Collections.Generic.Dictionary<string, string>();
+
+			foreach (System.Data.DataRow dataRow in dataTable.Rows)
+			{
+				if 
+				(
+					dataRow[3].ToString().Equals
+					(
+						"BASE TABLE",
+						StringComparison.OrdinalIgnoreCase
+					)
+				)
+				{
+					string schema = dataRow[1].ToString();
+					string tableName = dataRow[2].ToString();
+					tables.Add(tableName, schema);
+				}
+			}
+
+			sqlConnection.Close();
+
+			return tables;
+		}
+
+        public static DataTable TableSchema
         (
             string connectionString,
             string tableOrViewName
@@ -53,13 +89,15 @@ namespace InformationInTransit.ProcessCode
 				sqlConnection
 			);
 			DataTable tableOrViewSchema = sqlCommand.ExecuteReader().GetSchemaTable();
+			sqlConnection.Close();
 			return tableOrViewSchema;
         }
 		
 		public static StringBuilder WhereClause
 		(
 			DataTable tableOrViewSchema,
-			string	word
+			string word,
+			bool wholeWords
 		)
 		{
 			String columnName;
@@ -85,7 +123,11 @@ namespace InformationInTransit.ProcessCode
 				{	
 					columnCondition = String.Format
 					(
-						" {0} LIKE '%{1}%' ",
+						(
+							!wholeWords 
+							? PartialWordsQueryFormat 
+							: WholeWordsWildCardSearchQueryFormat
+						),	
 						columnName,
 						word
 					);
@@ -109,5 +151,8 @@ namespace InformationInTransit.ProcessCode
 			
 			return ( sb );
 		}
+		
+		public const string PartialWordsQueryFormat = " ( {0} LIKE '%{1}%' ) ";
+		public const string WholeWordsWildCardSearchQueryFormat = " ( {0} LIKE '%[^a-z]{1}[^a-z]%' ) ";
 	}
 }
