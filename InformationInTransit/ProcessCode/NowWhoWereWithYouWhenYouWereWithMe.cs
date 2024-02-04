@@ -36,6 +36,7 @@ namespace InformationInTransit.ProcessCode
 	///		http://stackoverflow.com/questions/3005095/can-i-get-the-names-of-all-the-tables-of-a-sql-server-database-in-a-c-sharp-appl
 	///	2024-02-03T12:11:00	Reign of Ahaziah
 	///	HisWord table. 159455	2024-02-03 11:10:39.553	He chose to do it...base on activity.	11:35 Headache. 11:59 Urine. 12:10 Urine. 12:32 NowWhoWereWithYouWhenYouWereWithMe.html word input now...king. 13:07 Urine. 2024-02-02...2024-02-03T14:12:00 microsoft windows operating system, mozilla firefox browser NowWhoWereWithYouWhenYouWereWithMe.html word=king no response error, freeze, wait error. 13:49 Pegasus Center, 34245 Fremont Boulevard, State Farm, Christina Zeng agent. 13:49 Urine Wienerschnitzel 99 Ranch Market (Ofe ke?) (A mo pe ko da be). 14:19 Thirst (We are proving difficult) (A mo pe ko da be).	NULL	NULL	NULL	NULL	NULL	NULL	NULL
+	///	2024-02-03T15:23:00	http://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings
 	///</summary>
 	public partial class NowWhoWereWithYouWhenYouWereWithMe
 	{
@@ -111,13 +112,84 @@ namespace InformationInTransit.ProcessCode
 			
 			bool isDateTime;
 			DateTime dateTimeValue;
+
+			bool isNumeric;
+			decimal numericValue;
 			
 			isDateTime = DateTime.TryParse(word, out dateTimeValue);
+			isNumeric = Decimal.TryParse(word, out numericValue);
 			
 			foreach(DataRow dataRow in tableOrViewSchema.Rows)
 			{
 				columnName = (string) dataRow["ColumnName"];
 				dataTypeName = (string) dataRow["DataTypeName"];
+				
+				columnCondition = null;
+				
+				if 
+				(	
+					isDateTime	
+					&&
+					( 
+						String.Compare(dataTypeName, "datetime") == 0 
+						||
+						String.Compare(dataTypeName, "datetime2") == 0 
+						||
+						String.Compare(dataTypeName, "smalldatetime") == 0 
+					)
+				)
+				{	
+					columnCondition = String.Format
+					(
+						DateTimeQueryFormat,	
+						columnName,
+						dateTimeValue
+					);
+				}	
+				else if 
+				(	
+					isNumeric
+					&&
+					( 
+						String.Compare(dataTypeName, "bigint") == 0 
+						||
+						String.Compare(dataTypeName, "decimal") == 0 
+						||
+						String.Compare(dataTypeName, "float") == 0 
+						||
+						String.Compare(dataTypeName, "int") == 0 
+						||
+						String.Compare(dataTypeName, "money") == 0 
+						||
+						String.Compare(dataTypeName, "numeric") == 0 
+						||
+						String.Compare(dataTypeName, "real") == 0 
+						||
+						String.Compare(dataTypeName, "smallint") == 0 
+						||
+						String.Compare(dataTypeName, "smallmoney") == 0 
+						||
+						String.Compare(dataTypeName, "tinyint") == 0 
+					)
+				)
+				{	
+					columnCondition = String.Format
+					(
+						NumericQueryFormat,	
+						columnName,
+						numericValue
+					);
+				}	
+
+				if (sb.Length > 0 && !String.IsNullOrEmpty(columnCondition))
+				{
+					sb.Append(" OR ");
+				}		
+				
+				if (!String.IsNullOrEmpty(columnCondition))
+				{
+					sb.Append(columnCondition);
+				}		
 				
 				columnCondition = null;
 				
@@ -161,5 +233,8 @@ namespace InformationInTransit.ProcessCode
 		
 		public const string PartialWordsQueryFormat = " ( {0} LIKE '%{1}%' ) ";
 		public const string WholeWordsWildCardSearchQueryFormat = " ( {0} LIKE '%[^a-z]{1}[^a-z]%' ) ";
+		
+		public const string DateTimeQueryFormat = " ( CONVERT(DATE, {0}) = '{1}' ) ";
+		public const string NumericQueryFormat = " ( CONVERT(DECIMAL, {0}) = '{1}' ) ";
 	}
 }
