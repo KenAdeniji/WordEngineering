@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-02-04T14:04:00 
+			http://slev.life/sae-belgrade-facebook-lessons
+			http://docs.google.com/presentation/d/10CRv6pVnJdbkF1r_hVhITdXaYelC_Lc30Q_O4tDnW-c/edit#slide=id.gf17df2622c_0_111
+	-->
+	<head>
+		<title>Steven Levithan: Regular Expressions (RegEx) for Temperature Conversions</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Steven Levithan: Regular Expressions (RegEx) for Temperature Conversions"/>
+		<meta name="keywords" content="Steven Levithan, Regular Expressions, RegEx, temperature conversions, Fahrenheit, Celsius"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td>
+						<textarea type="text" id="word" autofocus>May 9 high is 40F and low is 21F</textarea>
+					</td>
+				</tr>	
+				<tr>
+					<td align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultSet"> </div>
+		</div>
+		
+		<script>
+			var isPostBack = false;
+
+			var	wordElement = document.getElementById("word");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function fahrenheit2Celsius (str)
+			{
+				const regex = /(-?\d+(\.\d+)?)F\b/g;
+				return str.replace(regex, (match, num) => {
+					return Math.round((num - 32) * 5.0/9.0) + 'C';
+				});
+			}
+
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = fahrenheit2Celsius(wordElement.value);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -473,4 +473,20 @@ con.Open();
 SqlCommand cmd= new SqlCommand("select top 0 * from Person.Address",con);
 DataTable table = cmd.ExecuteReader().GetTableSchema();
 
+function f2c (str) {
+  const regex = /(-?\d+(\.\d+)?)F\b/g;
+  return str.replace(regex, (match, num) => {
+    return Math.round((num - 32) * 5/9) + 'C';
+  });
+}
+
+f2c('98.6F'); // -> '37C'
+f2c('May 9 high is 40F and low is 21F'); // -> 'May 9 high is 4C and low is -6C'
+Notes:
+Replaces all temperatures in an entire string in one shot.
+Numbers not followed by ‘F’ are not modified.
+
+Haacked.com 	Phil Haack 		Microsoft, GitHub 	2012-03-28 	3135
+2024-02-04T12:42:00...2024-02-04T13:00:00 shutsdown, exits, ends, stops, aborts, fails, dies. microsoft sql server management studio.
+
 :Exit

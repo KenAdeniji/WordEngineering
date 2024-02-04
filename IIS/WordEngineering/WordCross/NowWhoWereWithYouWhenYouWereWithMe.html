@@ -47,7 +47,7 @@
 			var	wholeWordsElement = document.getElementById("wholeWords");
 			var	wordElement = document.getElementById("word");
 			var submitQueryElement = document.getElementById("submitQuery");
-			var	resultTableElement = document.getElementById("resultTable");
+			var	resultSetElement = document.getElementById("resultSet");
 			
 			function pageLoad()
 			{
@@ -87,7 +87,7 @@
 					},
 					error: function(xhr)
 					{ 
-						resultTableElement.innerHTML =
+						resultSetElement.innerHTML =
 							"Status: " + xhr.status + " | " + 
 							"StatusText: " + xhr.statusText + " | " +
 							"ResponseText: " + xhr.responseText;
