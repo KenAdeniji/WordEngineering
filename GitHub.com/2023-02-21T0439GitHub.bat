@@ -364,4 +364,6 @@ git add			IIS/WordEngineering/Dated/DateRatio.html
 
 git add         "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2024-02-03T1439Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Makan.Talayeh@acgov.org.txt"
 
+REM git rm -f -r	"IIS/WordEngineering/RegularExpression/StevenLevithan/"
+
 git add			IIS/WordEngineering/RegularExpression/StevenLevithan/
