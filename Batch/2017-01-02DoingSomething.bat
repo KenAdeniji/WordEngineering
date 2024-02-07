@@ -486,7 +486,8 @@ Notes:
 Replaces all temperatures in an entire string in one shot.
 Numbers not followed by ‘F’ are not modified.
 
-Haacked.com 	Phil Haack 		Microsoft, GitHub 	2012-03-28 	3135
-2024-02-04T12:42:00...2024-02-04T13:00:00 shutsdown, exits, ends, stops, aborts, fails, dies. microsoft sql server management studio.
+ponyfoo.com/articles/javascript-developer-survey-results 	Nicolás Bevacqua 		Argentina 	2016-05-24 	36105
+
+2024-02-04T12:42:00...2024-02-04T13:00:00 shutdown, exits, ends, stops, aborts, fails, dies. microsoft sql server management studio.
 
 :Exit
