@@ -134,6 +134,12 @@ ActToGod
 
 This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 "
+Hitachi Modern Data Infrastructure Dynamics Drowning in Data: A Guide to Surviving the Data-Driven Decade Ahead
+
+    Microsoft SQL Server offers the capability to cut off the size of the result set. The GetAPage.html gets minute data from the various database tables and views. The user may be given the opportunity to customize which results to retrieve, for example, AlphabetSequence, BibleWord, HisWord, or Dictionary. A literate person may not need as much data. Setting this restriction will be concise queries.
+    An approach is to offload computing to the local host.
+
+" "
 Database Performance
 
     Query optimization: Server-side database processing offers the best performance scenario. The use of stored procedures and functions is recommended. The hold backs are their deployments and SQL variances. Prepared statements are fast, resource lenient, cached, and they prevent SQL injection attacks. The author falls back on dynamic SQL for complex queries.
@@ -2744,6 +2750,7 @@ References
     Resilient, Declarative, Contextual Keith J. Grant (2018-06-08); W3C web page; Available from http://keithjgrant.com/posts/2018/06/resilient-declarative-contextual
     High Performance Browser Networking Ilya Grigorik (2013); W3C web page; Available from http://hpbn.co
     Deciding which bugs to fix Ian Hickson (2023); W3C web page; Available from http://ln.hixie.ch/?start=1674863881&count=1
+    Modern Data Infrastructure Dynamics Drowning in Data: A Guide to Surviving the Data-Driven Decade Ahead Hitachi (2023); W3C web page; Available from http://hitachivantara.com/en-us/pdfd/analyst-content/modern-data-infrastructure-dynamics-report.pdf
     Designing for Performance Weighing Aesthetics and Speed Lara Callender Hogan (2014); W3C web page; Available from http://designingforperformance.com
     Hyperpiler Brian Holt; W3C web page; Available from http://patents.google.com/patent/US10942709B2/en
     Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
