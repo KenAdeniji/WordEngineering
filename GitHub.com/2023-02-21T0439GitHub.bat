@@ -367,3 +367,6 @@ git add         "IIS/WordEngineering/Alameda County Health Agency Care Services 
 REM git rm -f -r	"IIS/WordEngineering/RegularExpression/StevenLevithan/"
 
 git add			IIS/WordEngineering/RegularExpression/StevenLevithan/
+
+git add			IIS/WordEngineering/Dated/2024-02-05IAmEnteringAsAPersonalHow.html
+git add			IIS/WordEngineering/JayMuntz/HolidayCalculator.asmx

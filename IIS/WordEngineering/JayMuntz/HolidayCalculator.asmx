@@ -28,13 +28,6 @@ using JayMuntzCom;
 [ScriptService]
 public class HolidayCalculatorWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query(DateTime dated)

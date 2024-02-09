@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2024-02-05	I Am entering as a personal how?
+			2024-02-09T03:01:00	Created.
+			2024-02-09T03:35:00 http://github.com/martinjw/Holiday
+				How we reliant...on Google?
+					As opposed to Microsoft API? Proprietary.
+			2024-02-09T03:45:00
+				http://www.codeproject.com/Articles/11666/Dynamic-Holiday-Date-Calculator
+					Dynamic Holiday Date Calculator
+					Jay Muntz
+					4 Jan 2006
+					A class to calculate what date the configured holidays fall on in different years.
+			2024-02-09T04:05:00
+				I know...I have written this not too long ago. And, I don't want to duplicate my code.
+			2024-02-09T05:28:00 eventHolidayDated completed.
+				Web services?
+					Do our exterior...meet others?
+		-->
+		<title>I Am entering as a personal how?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I Am entering as a personal how?"/>
+		<meta name="keywords" content="When-is event, holiday, calendar"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="holidayDatedBeginning">Holiday Date Beginning</label></td>
+					<td><input id="holidayDatedBeginning" type="date"></td>
+				</tr>
+				<tr>
+					<td><label for="holidayTitle">Holiday Title</label></td>
+					<td><select id="holidayTitle"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="holidayDated">Holiday Date:</label></td>
+					<td><span id="holidayDated"></span></td>
+				</tr>
+			</table>
+			<div id="errorFeedback"></div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			var isPostBack = false;
+	
+			const holidayDatedBeginningElement = document.getElementById("holidayDatedBeginning");
+			const holidayTitleElement = document.getElementById("holidayTitle");
+			const holidayDatedElement = document.getElementById("holidayDated");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			const errorFeedbackElement = document.getElementById("errorFeedback");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						const urlParams = new URLSearchParams(window.location.search);
+
+						var holidayDatedBeginningValue = scriptLiteral9432.getParameterByName
+						(
+							"holidayDatedBeginning"
+						);
+						if (!holidayDatedBeginningValue)
+						{
+							holidayDatedBeginningValue = scriptLiteral9432.todayTimezoneOffset();
+						}	
+						holidayDatedBeginningElement.value = holidayDatedBeginningValue;
+
+						buildHolidaysSelect();
+
+						var holidayTitleValue = scriptLiteral9432.getParameterByName
+						(
+							"holidayTitle"
+						);
+						if (holidayTitleValue)
+						{
+							holidayTitleElement.value = holidayTitleValue;	
+						}	
+						
+						querySubmit();
+						
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				holidayDatedElement.textContent = holidayTitleElement.value;
+			}
+
+			function buildHolidaysSelect()
+			{
+				var request = {};
+				request["dated"] = holidayDatedBeginningElement.value;
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/JayMuntz/HolidayCalculator.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataHolidays = JSON.parse(data.d);
+						renderHolidaysSelect(dataHolidays);
+					},
+					error: function(xhr)
+					{ 
+						errorFeedbackElement.innerHTML = 
+						(
+							'Status: ' + xhr.status + " | " + 
+							'StatusText: ' + xhr.statusText + " | " +
+							'ResponseText: ' + xhr.resultSetText
+						);
+					} 
+				});
+			}
+			
+			function renderHolidaysSelect(dataTable)
+			{
+				
+				var holidayTitle = "";
+				var holidayDate = "";
+				
+				var option;
+				
+				holidayTitleElement.length = 0;
+				
+				for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
+				{
+					dataRow = dataTable[rowIndex];
+					holidayTitle = dataRow["Name"];
+					holidayDate = dataRow["Date"].substring(0, 10);
+					
+					option = document.createElement("option");
+					
+					option.text = holidayTitle;
+					option.value = holidayDate;
+					
+					holidayTitleElement.appendChild(option);
+				}		
+			}	
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
