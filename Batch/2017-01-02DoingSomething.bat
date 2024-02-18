@@ -486,13 +486,16 @@ Notes:
 Replaces all temperatures in an entire string in one shot.
 Numbers not followed by ‘F’ are not modified.
 
-ponyfoo.com/articles/javascript-developer-survey-results 	Nicolás Bevacqua 		Argentina 	2016-05-24 	36105
+en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2003-07-08) [1949]. The Intelligent Investor. Warren E. Buffett (collaborator) (2003 ed.). HarperCollins. front cover. ISBN 0-06-055566-1. 			2023-08-29 	62770
 
 2024-02-04T12:42:00...2024-02-04T13:00:00 shutdown, exits, ends, stops, aborts, fails, dies. microsoft sql server management studio.
 
-2024-02-16T04:44:00 microsoft windows operating system keyboard error.
+2024-02-16T04:44:00 microsoft windows operating system keyboard error
 
 2024-02-16T04:34:00...2024-02-16T04:43:00 microsoft hotmail.com This message can't be sent right now. Please try again later.
 	...08:29...09:17...
+
+2024-02-17T07:21:00
+The AnAccurateMeasureOfThePresentIsHowFarIAdvanceIt.html is for reverse-engineering the items in the HisWord table. When you enter a number, it will list the words that have this AlphabetSequenceIndex.
 
 :Exit
