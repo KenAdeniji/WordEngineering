@@ -958,6 +958,4 @@ alphabetSequence = function(word)
 	return (alphabetSequenceIndex)
 }
 print(alphabetSequence("the"))
-dir() #list directory	
-			
-
+dir() #list directory
