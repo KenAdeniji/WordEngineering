@@ -495,7 +495,7 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 2024-02-16T04:34:00...2024-02-16T04:43:00 microsoft hotmail.com This message can't be sent right now. Please try again later.
 	...08:29...09:17...
 
-2024-02-17T07:21:00
-The AnAccurateMeasureOfThePresentIsHowFarIAdvanceIt.html is for reverse-engineering the items in the HisWord table. When you enter a number, it will list the words that have this AlphabetSequenceIndex.
+2024-02-19T06:30:00
+The BodyParts.html will do statistics on body parts. 
 
 :Exit
