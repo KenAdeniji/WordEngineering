@@ -370,3 +370,6 @@ git add			IIS/WordEngineering/RegularExpression/StevenLevithan/
 
 git add			IIS/WordEngineering/Dated/2024-02-05IAmEnteringAsAPersonalHow.html
 git add			IIS/WordEngineering/JayMuntz/HolidayCalculator.asmx
+
+git add	        IIS/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.asmx
+git add	        IIS/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.html

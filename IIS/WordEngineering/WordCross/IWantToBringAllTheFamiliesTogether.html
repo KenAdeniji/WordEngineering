@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-02-22T10:04:00 Created.
+			We tried three approaches, before getting here?
+				Transact-SQL where clause?
+				DataTable, DataView select filter?
+				Language Integrated Query (Linq)?
+	-->
+	<head>
+		<title>I want to bring all the families together</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I want to bring all the families together"/>
+		<meta name="keywords" content="Words count"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="wordsCountMinimum">Words count minimum:</label></td>
+					<td><input type="number" id="wordsCountMinimum" value="8" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="wordsCountMaximum">Words count maximum:</label></td>
+					<td><input type="number" id="wordsCountMaximum" value="8" autofocus/></td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2"><input type="submit" id="submitQuery"/></td>
+				</tr>	
+			</table>
+			<div id="resultTable"> </div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	wordsCountMinimumElement = document.getElementById("wordsCountMinimum");
+			var	wordsCountMaximumElement = document.getElementById("wordsCountMaximum");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				request["wordsCountMinimum"] = Number(wordsCountMinimumElement.value);
+				request["wordsCountMaximum"] = Number(wordsCountMaximumElement.value);
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					},
+					error: function(xhr)
+					{ 
+						resultSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
