@@ -498,4 +498,6 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 2024-02-19T06:30:00
 The BodyParts.html will do statistics on body parts. 
 
+2024-02-26T03:12:00
+http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleStatisticsPunctuationMarks.html
 :Exit

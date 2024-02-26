@@ -159,7 +159,7 @@ namespace InformationInTransit.ProcessLogic
 
 			DataTable dataTableExact = (DataTable) DataCommand.DatabaseCommand
 			(
-				"SELECT * FROM Bible..Exact",
+				"SELECT * FROM Bible..Exact_View",
 				CommandType.Text,
 				DataCommand.ResultType.DataTable
 			);

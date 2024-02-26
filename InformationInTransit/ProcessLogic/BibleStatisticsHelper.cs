@@ -112,9 +112,9 @@ namespace InformationInTransit.ProcessLogic
         public const string BibleStatisticsQueryFormat = "SELECT '{1}' AS	PunctuationMark, " +
     "ScriptureReference		AS	FirstScriptureReference, " +
     "(SELECT scriptureReference FROM Bible..Scripture_View WHERE verseIdSequence = (SELECT MAX(VerseIDSequence) FROM Bible..Scripture WHERE {0} LIKE '%{1}%' )) AS LastScriptureReference, " +
-    "(SELECT COUNT (*) FROM Bible..Scripture WHERE {0} LIKE '%{1}%' ) AS VerseCount " +
-    "FROM Bible..Scripture " +
-    "WHERE verseIdSequence = ( SELECT MIN(VerseIDSequence) FROM Bible..Scripture WHERE {0} LIKE '%{1}%' )";
+    "(SELECT COUNT (*) FROM Bible..Scripture_View WHERE {0} LIKE '%{1}%' ) AS VerseCount " +
+    "FROM Bible..Scripture_View " +
+    "WHERE verseIdSequence = ( SELECT MIN(VerseIDSequence) FROM Bible..Scripture_View WHERE {0} LIKE '%{1}%' )";
 
         public const string BibleVersionDefault = "KingJamesVersion";
 
@@ -122,7 +122,7 @@ namespace InformationInTransit.ProcessLogic
 		@"
 			SELECT 
 				STUFF((SELECT ' ' + {0}
-					FROM Bible..Scripture
+					FROM Bible..Scripture_View
 					FOR XML PATH('')) ,1,1,'') AS VerseText
 		";
 		

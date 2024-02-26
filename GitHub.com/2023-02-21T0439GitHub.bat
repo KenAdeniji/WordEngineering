@@ -373,3 +373,6 @@ git add			IIS/WordEngineering/JayMuntz/HolidayCalculator.asmx
 
 git add	        IIS/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.asmx
 git add	        IIS/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.html
+
+git add			InformationInTransit/ProcessLogic/BibleStatisticsHelper.cs
+git add			InformationInTransit/ProcessLogic/ScriptureReferenceHelper.cs
