@@ -42,7 +42,7 @@ public class AlfredAdenijiWebService : System.Web.Services.WebService
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
 			QueryStatement,
-			CommandType.StoredProcedure,
+			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
 		
@@ -65,7 +65,7 @@ public class AlfredAdenijiWebService : System.Web.Services.WebService
 			) TimeSpanInDays,
 			LAG(Dated, 1, 0) OVER (ORDER BY HisWordID) DatedFrom,
 			Dated DatedUntil
-		FROM		WordEngineering..HisWord
+		FROM		WordEngineering..HisWord_View
 		WHERE Scene IS NOT NULL
 		ORDER BY TimeSpanInDays DESC, DatedFrom DESC, DatedUntil DESC
 	";	
