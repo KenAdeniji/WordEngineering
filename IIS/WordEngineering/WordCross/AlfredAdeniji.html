@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		Alfred@Adeniji
+		Albert Burton plans to travel with the family to Nigeria using the malformed email address, Alfred@Adeniji. It is missing a domain suffix. There is home renovation work to be done. Albert Burton will need native Yoruba dress, traveling document, and identity cards.
+		11:10...11:11 microsoft windows operating system hourglass. On Dyer Street between Alvarado Boulevard and Alvarado-Niles Road, East side of the road.
+	2024-02-25	As I saw a pronounced in 4 words or 8 words. I have noticed that my dreams 16:29 do not pinpoint specific scenery? Chuck Missler and McAlavany introduced me to trend analysis. Datawarehous...Data science? 16:31 Don McAlvany?
+		McAlvany.com
+	2024-02-26T19:48:00...2024-02-26T20:43:00 SQL.
+	2024-02-26T20:43:00...2024-02-26T21:19:00 Files creation: .asmx, .html
+	-->
+	<head>
+		<title>Alfred@Adeniji</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Albert Burton plans to travel with the family to Nigeria using the malformed email address, Alfred@Adeniji. It is missing a domain suffix. There is home renovation work to be done. Albert Burton will need native Yoruba dress, traveling document, and identity cards."/>
+		<meta name="keywords" content="Scenery, lead, lag"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center" id="resultTable"></div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+			var	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				//request["wordsCountMaximum"] = Number(wordsCountMaximumElement.value);
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/WordCross/AlfredAdeniji.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			//submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

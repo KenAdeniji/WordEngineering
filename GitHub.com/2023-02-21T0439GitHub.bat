@@ -376,3 +376,8 @@ git add	        IIS/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether
 
 git add			InformationInTransit/ProcessLogic/BibleStatisticsHelper.cs
 git add			InformationInTransit/ProcessLogic/ScriptureReferenceHelper.cs
+
+git add        	IIS/WordEngineering/WordUnion/NaturalOccurringSequenceWebService.asmx
+
+git add        	IIS/WordEngineering/WordCross/AlfredAdeniji.asmx
+git add        	IIS/WordEngineering/WordCross/AlfredAdeniji.html
