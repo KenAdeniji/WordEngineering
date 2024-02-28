@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		http://www.dk.com/us/book/9781465451774-dk-eyewitness-books-judaism
+		I am getting informed of the procedure of seeking employment.
+		I was notified that the prospective employee has to build a webpage that may include using a textarea HTML element.
+		Being a member of the Commonwealth of Nations 01:56 may add to your employment chance.
+		Epoch timestamp: 1709078400 
+	-->
+	<head>
+		<title>TextArea Commonwealth</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I am getting informed of the procedure of seeking employment. I was notified that the prospective employee has to build a webpage that may include using a textarea HTML element. Being a member of the Commonwealth of Nations 01:56 may add to your employment chance. Epoch timestamp: 1709078400"/>
+		<meta name="keywords" content="Remeber_View timespan days"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center" id="resultTable"></div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+			var	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var request = {};
+				
+				//request["wordsCountMaximum"] = Number(wordsCountMaximumElement.value);
+
+				var requestJson = JSON.stringify(request);
+				
+				$.ajax
+				({
+					type: "POST",
+					contentType: "application/json; charset=utf-8",
+					url: "/WordEngineering/Dated/HTMLElementTextAreaCommonwealth.asmx/Query",
+					data: requestJson,
+					dataType: "json",
+					success: function(data) 
+					{
+						var dataTable = JSON.parse(data.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					},
+					error: function(xhr)
+					{ 
+						resultTableElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
+					} 
+				});
+			}
+
+			//submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
