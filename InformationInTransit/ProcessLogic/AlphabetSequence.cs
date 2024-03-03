@@ -351,6 +351,37 @@ namespace InformationInTransit.ProcessLogic
 			return scriptureReferenceWhereClause;
 		}
 
+		/*
+			2024-03-02T22:30:00...2024-03-02T23:16:00
+			https://stackoverflow.com/questions/13025744/need-regex-to-extract-only-alphabets-from-string
+		*/	
+        public static int StartFromZ(string question)
+        {
+            int alphabetSequence = 0;
+			
+			bool isNumerical = int.TryParse(question, out alphabetSequence);
+			
+			if (isNumerical)
+			{
+				return alphabetSequence;
+			}	
+			
+			question = question.ToUpperInvariant();
+			question = String.Join("", question.Where(c => Char.IsLetter(c)));
+			
+            int ascii = 0;
+            int index = 0;
+
+            foreach (char q in question)
+            {
+                ascii = (int) q;
+				index = 91 - ascii;
+                alphabetSequence += index;
+            }
+
+            return alphabetSequence;
+        }
+
         public static string TwoField
 		(
 			int 	bookID,

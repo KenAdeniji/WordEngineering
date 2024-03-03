@@ -175,6 +175,23 @@ public class AlphabetSequenceWebService : System.Web.Services.WebService
 	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String StartFromZ(string word)
+    {
+		int id = AlphabetSequence.StartFromZ(word);
+		string scriptureReference = AlphabetSequence.ScriptureReference(id);
+		
+		string json = String.Format
+		(
+			JsonFormat,
+			id,
+			scriptureReference
+		);
+
+		return json;
+	}
+	
+	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String TwoField
 	(
 		int 	bookID,

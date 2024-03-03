@@ -63,6 +63,7 @@
 					question = question.Replace(" ", "");
 					question = question.Replace("\"", "");
 					question = question.Replace("'", "");
+			2024-03-02T23:34:00...2024-03-03T00:33:00 StartFromZ
 		-->
 		<title>Get A Page</title>
 		<meta charset="UTF-8"/>
@@ -84,6 +85,8 @@
 				<div id="scriptureReference"></div>
 				<div id="alphabetSequenceIndexPercentage"></div>
 				<div id="alphabetSequenceIndexPercentageScriptureReference"></div>
+				<div id="alphabetSequenceIndexStartFromZ"></div>
+				<div id="alphabetSequenceIndexStartFromZScriptureReference"></div>
 				<div id="sacredText"></div>
 				<div id="bibleWord"></div>
 				<div id="hisWord"></div>
@@ -175,6 +178,8 @@
 				{
 					return false;
 				}
+
+				retrieveStartFromZ();
 
 				retrieveVeliciaThreeThreeFourEnd();
 
@@ -366,6 +371,17 @@
 				document.getElementById("myCondemn").innerHTML = myCondemnAnchor;
 			}
 
+			function renderStartFromZ(data)
+			{
+				console.log(data.d);
+				var dataSet = JSON.parse(data.d);
+				document.getElementById("alphabetSequenceIndexStartFromZ").innerHTML = 
+					"AlphabetSequenceIndexStartFromZ: " + dataSet.id;
+				document.getElementById("alphabetSequenceIndexStartFromZScriptureReference").innerHTML = 
+					"AlphabetSequenceIndexStartFromZScriptureReference: " + 
+					scriptureReferenceHyperlink(dataSet.scriptureReference);
+			}
+
 			function renderWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood(dataSet) 
 			{
 				var data = JSON.parse(dataSet.d);
@@ -500,7 +516,6 @@
 				);
 				domHighResTimeStampRecord("AlphabetSequence", terminusAQuo, performance.now());
 			}
-
 				
 			function retrieveBibleDictionary()
 			{
@@ -602,6 +617,22 @@
 					requestJson,
 					renderMyCondemn,
 					"myCondemn"
+				);
+			}
+
+			function retrieveStartFromZ()
+			{
+				var request = {};
+
+				request["word"] = wordElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/StartFromZ",
+					requestJson,
+					renderStartFromZ,
+					"startFromZ"
 				);
 			}
 
