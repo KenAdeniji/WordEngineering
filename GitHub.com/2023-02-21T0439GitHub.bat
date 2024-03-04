@@ -384,3 +384,6 @@ git add        	IIS/WordEngineering/WordCross/AlfredAdeniji.html
 
 git add	        IIS/WordEngineering/Dated/HTMLElementTextAreaCommonwealth.asmx
 git add 	    IIS/WordEngineering/Dated/HTMLElementTextAreaCommonwealth.html
+
+git add	        IIS/WordEngineering/WordCross/YouDontHaveVersusYouHave_Contraction.asmx
+git add	        IIS/WordEngineering/WordCross/YouDontHaveVersusYouHave_Contraction.html
