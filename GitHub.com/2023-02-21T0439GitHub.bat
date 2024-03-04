@@ -387,3 +387,6 @@ git add 	    IIS/WordEngineering/Dated/HTMLElementTextAreaCommonwealth.html
 
 git add	        IIS/WordEngineering/WordCross/YouDontHaveVersusYouHave_Contraction.asmx
 git add	        IIS/WordEngineering/WordCross/YouDontHaveVersusYouHave_Contraction.html
+
+git add 		IIS/WordEngineering/WordCross/TheWayYouHaveGentlyRevealedReceivedMyWord.asmx
+git add	        IIS/WordEngineering/WordCross/TheWayYouHaveGentlyRevealedReceivedMyWord.html
