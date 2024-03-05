@@ -390,3 +390,6 @@ git add	        IIS/WordEngineering/WordCross/YouDontHaveVersusYouHave_Contracti
 
 git add 		IIS/WordEngineering/WordCross/TheWayYouHaveGentlyRevealedReceivedMyWord.asmx
 git add	        IIS/WordEngineering/WordCross/TheWayYouHaveGentlyRevealedReceivedMyWord.html
+
+git add 		IIS/WordEngineering/WordCross/HowLifeBoundsMe.asmx
+git add	        IIS/WordEngineering/WordCross/HowLifeBoundsMe.html
