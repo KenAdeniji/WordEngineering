@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-03-05T20:52:00	http://www.guitarland.com/MusicTheoryWithToneJS/PlayNote.html
+		Frequencies from wholetones.com
+			396Hz, 417Hz, 444Hz, 528Hz, 639Hz, 741Hz, 852Hz
+	-->
+	<head>
+		<title>Tone.js</title>
+		<script src="http://tonejs.github.io/build/Tone.js"></script>
+		<script src="StartAudioContext.js"></script>
+	</head>
+	<body>
+		<form name="myForm">
+			<table>
+				<tr>
+					<td><label for="note">Note</label></td>
+					<td>
+						<input type="text" id="note" value="A4" list="frequency" autofocus/>
+						<datalist id="frequency"></datalist>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="beatsPerMinuteBPM">Beats per Minute (BPM)</label></td>
+					<td><select id="beatsPerMinuteBPM"></select></td>
+				</tr>
+				<tr>
+					<td><label for="duration">Duration</label></td>
+					<td><select id="duration"></select></td>
+				</tr>
+				<tr>
+					<td><label for="volume">Volume</label></td>
+					<td><select id="volume"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2">
+						<input type="button" value="Start playing note" id="startPlayingNote"/>
+						<input type="button" value="Stop playing note" id="stopPlayingNote"/>
+					</td>
+				</tr>	
+			</table>
+		</form>
+		<script>
+			var isPostBack = false;
+			
+			var	beatsPerMinuteBPMElement = document.getElementById("beatsPerMinuteBPM");
+			var	durationElement = document.getElementById("duration");
+			var	frequencyElement = document.getElementById("frequency");
+			var	noteElement = document.getElementById("note");
+			var	volumeElement = document.getElementById("volume");
+			
+			var	startPlayingNoteElement = document.getElementById("startPlayingNote");
+			var	stopPlayingNoteElement = document.getElementById("stopPlayingNote");
+			
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
+			}
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					buildSelect("duration", durations);
+					buildSelect("frequency", frequencies);
+					
+					var beatsPerMinuteBPMs = [];
+					
+					for 
+					(
+						var beatsPerMinuteBPMsIndex = 60;
+						beatsPerMinuteBPMsIndex <= 200;
+						beatsPerMinuteBPMsIndex += 10
+					)
+					{
+						beatsPerMinuteBPMs.push( beatsPerMinuteBPMsIndex );
+					}
+					buildSelect("beatsPerMinuteBPM", beatsPerMinuteBPMs);
+					
+					var volumes = [-Infinity];
+					
+					for (var volumeIndex = -30; volumeIndex <= 0; volumeIndex += 5)
+					{
+						volumes.push( volumeIndex );
+					}
+					buildSelect("volume", volumes);
+					
+					isPostBack = true;
+				}
+ 			}
+		
+			function playAudio() 
+			{
+				//        var player = new Tone.Player({	"url" : "./path/to/sample.mp3", "autostart" : false, }).toMaster();
+						var player = new Tone.Player({	"url" : "./path/to/sample.mp3", "autostart" : false, }).toDestination();
+						// any setup?
+						
+						// play the file
+						player.start()
+			}
+			
+			function startPlayingNoteSubmit()
+			{
+			   var osc = new Tone.OmniOscillator().toDestination();
+			   osc.frequency.value = noteElement.value;
+			   osc.volume.value = volumeElement.value;
+			   Tone.Transport.bpm.value = beatsPerMinuteBPMElement.value;   
+			   osc.start().stop("+"+durationElement.value);
+			}
+
+			function stopPlayingNoteSubmit()
+			{
+				Tone.Transport.stop();
+				Tone.Transport.cancel(0);
+			}
+			
+			function beatsPerMinuteBPMChange()
+			{
+				Tone.Transport.bpm.value = beatsPerMinuteBPMElement.value;
+			}
+	
+ 			startPlayingNoteElement.addEventListener("click", startPlayingNoteSubmit, false);
+			stopPlayingNoteElement.addEventListener("click", stopPlayingNoteSubmit, false);
+					
+			beatsPerMinuteBPMElement.addEventListener
+			(
+				"change", beatsPerMinuteBPMChange, false
+			);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					startPlayingNoteSubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			var durations = [
+				["whole note", "1n"],
+				["half note", "2n"],
+				["quarter note", "4n"],
+				["eighth note", "8n"],
+				["sixteenth note", "16n"]
+			];
+
+			//Hertz (Hz)
+			var frequencies = [
+				"396",
+				"417",
+				"444",
+				"528",				
+				"639",
+				"741",
+				"852"
+			];
+		</script>
+	</body>
+</html>

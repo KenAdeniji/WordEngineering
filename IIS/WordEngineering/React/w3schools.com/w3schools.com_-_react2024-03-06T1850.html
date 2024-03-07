@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<!--
+		2024-03-06T19:50:00	http://www.w3schools.com/whatis/whatis_react.asp
+	-->
+<title>Test React</title>
+
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<body>
+	<div id="helloReact">Hello World!</div>
+	
+	<div id="helloJohnDoe">Hello World!</div>
+
+	<div id="rootWelcome"></div>
+	
+	<div id="rootTick"></div>
+	
+	<div id="rootCurrentURL"></div>
+	
+	<script type="text/babel">
+		ReactDOM.render
+		(
+			<h1>Hello React!</h1>,
+			document.getElementById("helloReact")
+		);
+		
+		const name = "John Doe";
+		ReactDOM.render
+		(
+			<h1>Hello {name}!</h1>,
+			document.getElementById("helloJohnDoe")
+		);
+		
+		const elementWelcome = <h1>Welcome</h1>
+		ReactDOM.render
+		(
+			elementWelcome,
+			document.getElementById("rootWelcome")
+		);
+		
+		function tick() 
+		{
+			const element = (<h1>{new Date().toLocaleTimeString()}</h1>);
+			ReactDOM.render(element, document.getElementById("rootTick"));
+		}
+		setInterval(tick, 1000);
+
+		function CurrentURL() {
+			return <h1>{window.location.href}</h1>;
+		}
+		ReactDOM.render(<CurrentURL />, document.getElementById('rootCurrentURL')); 
+	</script> 
+</body>
+</html>

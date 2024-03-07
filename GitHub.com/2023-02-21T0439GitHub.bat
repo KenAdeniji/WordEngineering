@@ -393,3 +393,10 @@ git add	        IIS/WordEngineering/WordCross/TheWayYouHaveGentlyRevealedReceive
 
 git add 		IIS/WordEngineering/WordCross/HowLifeBoundsMe.asmx
 git add	        IIS/WordEngineering/WordCross/HowLifeBoundsMe.html
+
+git add			IIS/WordEngineering/JavaScript/Tone.js/
+git add	        IIS/WordEngineering/React/w3schools.com/
+git add	        IIS/WordEngineering/WordUnion/TheWayYouHaveGentlyRevealedReceivedMyWord.asmx
+git add	        IIS/WordEngineering/WordUnion/TheWayYouHaveGentlyRevealedReceivedMyWord.html
+git add	        IIS/WordEngineering/WordUnion/YouDontHaveVersusYouHave_Contraction.asmx
+git add	        IIS/WordEngineering/WordUnion/YouDontHaveVersusYouHave_Contraction.html
