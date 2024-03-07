@@ -194,13 +194,13 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 158770);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 163886);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 164022);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 3595);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
-DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 1782);
+DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2050);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 1633);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
@@ -495,9 +495,8 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 2024-02-16T04:34:00...2024-02-16T04:43:00 microsoft hotmail.com This message can't be sent right now. Please try again later.
 	...08:29...09:17...
 
-2024-02-19T06:30:00
-The BodyParts.html will do statistics on body parts. 
+2024-03-05T05:04:00 microsoft windows operating system hourglass.
 
-2024-03-04T13:33:00 http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/Countrycode.org.html
-
+2024-03-05T03:58:00 http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/HoweverOurProgressArePersonal.html
+2024-03-05T04:26:00	http://en.wikipedia.org/wiki/Injera
 :Exit

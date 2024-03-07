@@ -49,7 +49,7 @@
 			var	wordsCountMinimumElement = document.getElementById("wordsCountMinimum");
 			var	wordsCountMaximumElement = document.getElementById("wordsCountMaximum");
 			var submitQueryElement = document.getElementById("submitQuery");
-			var	resultSetElement = document.getElementById("resultSet");
+			var	resultTableElement = document.getElementById("resultTable");
 			
 			function pageLoad()
 			{
@@ -89,7 +89,7 @@
 					},
 					error: function(xhr)
 					{ 
-						resultSetElement.innerHTML =
+						resultTableElement.innerHTML =
 							"Status: " + xhr.status + " | " + 
 							"StatusText: " + xhr.statusText + " | " +
 							"ResponseText: " + xhr.responseText;
