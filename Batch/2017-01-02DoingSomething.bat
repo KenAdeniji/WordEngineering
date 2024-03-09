@@ -497,6 +497,6 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 
 2024-03-05T05:04:00 microsoft windows operating system hourglass.
 
-2024-03-05T03:58:00 http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/HoweverOurProgressArePersonal.html
-2024-03-05T04:26:00	http://en.wikipedia.org/wiki/Injera
+2024-03-09T01:44:00 http://e-comfort.ephraimtech.com/WordEngineering/WordCross/HoweverWeAreThatIsWhereWeAre.html
+
 :Exit

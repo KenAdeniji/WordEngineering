@@ -5,6 +5,30 @@
 			2015-07-07 	Created.	https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Canvas
 				Is for listing the volumes and areas defined in the Bible.
 				Discret.
+			2024-03-08	
+				http://actransit.org/customer/customer-feedback/report
+				Incident #509562 has been created successfully AC Transit
+				route 210 bus. Pegasus Center, Fremont Boulevard and Enea Court. 
+				Hindi bus driver. 
+				I politely asked the bus driver to ride to the next bus stop.
+				The bus driver asked me not ask for a favor, again. 
+				I said, I spoke to him politely and that he is being rude.
+				He asked me to get off the bus.
+				He confronted me and called law enforcement.
+				To avoid trespass charges I got off and vacated the bus.
+			2024-03-09T02:03:00...2024-03-09T06:49:00
+				microsoft sql server table lost error HowWeWouldLearnToSay.
+				HowWeWouldLearnToSay computer columns fraudulently corrected.
+				Re-create table.
+					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+					06:51 Dizzy sleepy. 
+				06:53 Hackers or Class Associates?
+			2024-03-09T07:28:00...2024-03-09T08:03:00
+				Relational database hacker?
+				Missing? Exact as how?
+				How we reflect our past?
+				How do I know...I am authorize?
+				Whose observance?
 		-->
 		<title>How we would learn to say?</title>
 		<meta charset="UTF-8"/>
@@ -12,12 +36,43 @@
 		<meta name="keywords" content="Bible, volume, area, length, breadth, height"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
+		<!--
 		<link rel="stylesheet" type="text/css" href="9432.css">
+		-->
 	</head>
 	<body>
-		<div id="resultSet" align="center"> </div>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div id="resultSet" align="center"> </div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
 			function buildHyperlinkBibleWord(bibleWord, logic)
 			{
 				var uri = encodeURI('BibleWord.html?bibleWord=' + bibleWord + "&logic=" + logic);
@@ -74,7 +129,8 @@
 					dataType: "json",
 					success: function (data) {
 						var dataSet = JSON.parse(data.d);
-						render(dataSet);
+						//render(dataSet);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 					},
 					error: function (xhr) {
 						document.getElementById("resultSet").innerHTML = 
@@ -189,7 +245,7 @@
 			];
 
 			//window.addEventListener("load", dump, false);
-			window.addEventListener("load", querySubmit, false);
+			window.addEventListener("load", pageLoad, false);
 		</script>
 	</body>
 </html>

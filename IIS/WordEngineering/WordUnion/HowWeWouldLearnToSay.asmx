@@ -26,13 +26,6 @@ using InformationInTransit.DataAccess;
 [ScriptService]
 public class HowWeWouldLearnToSayWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query()
@@ -40,7 +33,7 @@ public class HowWeWouldLearnToSayWebService : System.Web.Services.WebService
 		DataSet dataSet = null;
 		dataSet = (DataSet)DataCommand.DatabaseCommand
 		(
-			"SELECT * FROM WordEngineering..HowWeWouldLearnToSay_View ORDER BY HowWeWouldLearnToSayID",
+			QueryStatement,
 			CommandType.Text,
 			DataCommand.ResultType.DataSet
 		);
@@ -48,4 +41,10 @@ public class HowWeWouldLearnToSayWebService : System.Web.Services.WebService
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 		return json;
 	}
+	public const String QueryStatement = @"
+		SELECT Title, Length, Breadth, Height, Unit, ScriptureReference, Area, Volume
+		FROM WordEngineering..HowWeWouldLearnToSay_View
+		ORDER BY HowWeWouldLearnToSayID
+	";
+
 }

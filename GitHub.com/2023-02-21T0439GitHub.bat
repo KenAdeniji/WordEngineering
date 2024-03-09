@@ -402,3 +402,6 @@ git add	        IIS/WordEngineering/WordUnion/YouDontHaveVersusYouHave_Contracti
 git add	        IIS/WordEngineering/WordUnion/YouDontHaveVersusYouHave_Contraction.html
 
 git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2024-03-08T1028Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Makan.Talayeh@acgov.org.txt"
+
+git add			IIS/WordEngineering/WordUnion/HowWeWouldLearnToSay.asmx
+git add			IIS/WordEngineering/WordUnion/HowWeWouldLearnToSay.html

@@ -62,5 +62,9 @@ public class IWantToBringAllTheFamiliesTogetherWebService : System.Web.Services.
 		return json;
     }
 	
-	public const String QueryStatement = "SELECT Dated, HisWordID, Word, Commentary FROM WordEngineering..HisWord WHERE Word IS NOT NULL";
+	public const String QueryStatement = @"
+		SELECT Dated, HisWordID, Word, Commentary 
+		FROM WordEngineering..HisWord 
+		WHERE Word IS NOT NULL
+	";
 }
