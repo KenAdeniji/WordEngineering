@@ -407,3 +407,6 @@ git add			IIS/WordEngineering/WordUnion/HowWeWouldLearnToSay.asmx
 git add			IIS/WordEngineering/WordUnion/HowWeWouldLearnToSay.html
 
 git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2024-03-10T0130Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Makan.Talayeh@acgov.org.txt"
+
+git add	        "IIS/WordEngineering/2018-05-03Correspondence/2024-03-10T0352support@exchangerate-api.com_-_CaptchaPreventedThis.txt"
+ 
