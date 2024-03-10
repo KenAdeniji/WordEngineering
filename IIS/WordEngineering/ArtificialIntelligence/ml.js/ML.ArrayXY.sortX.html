@@ -1,0 +1,56 @@
+<html>
+	<!--
+		2024-03-10T04:36:00...2024-03-10T06:03:00 Created. http://github.com/mljs/ml
+	-->	
+	<head>
+		<title>ML.ArrayXY.sortX</title>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td for="dataSet">Dataset:</td>
+					<td><textarea id="dataSet">{ "x": [2, 3, 1], "y": [4, 6, 2] }</textarea></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><div id="resultSet"></div></td>
+				</tr>	
+			</table>
+		</div>
+
+		<script src="http://www.lactame.com/lib/ml/6.0.0/ml.min.js"></script>
+		<script>
+			const dataSetElement = document.getElementById("dataSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			
+			function querySubmit()
+			{
+				resultSetElement.innerHTML = JSON.stringify
+				(
+					ML.ArrayXY.sortX
+					(
+						JSON.parse
+						(
+							dataSetElement.value
+						)
+					)
+				);
+			}
+
+			window.addEventListener("load", querySubmit, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+				
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>  
+	</body>
+</html>   
