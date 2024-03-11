@@ -8,6 +8,11 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+using System.Data.Odbc;
+
+using System.Collections;
+using System.Collections.ObjectModel;
+
 using InformationInTransit.DataAccess;
 using InformationInTransit.UserInterface;
 
@@ -97,20 +102,20 @@ public partial class IntegratedLicense : System.Web.UI.Page
 	
  	protected void Submit_Click(object sender, EventArgs e)
     {
-		List<SqlParameter> sqlParameterCollection = new List<SqlParameter>();
+		Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
 
-		sqlParameterCollection.Add(new SqlParameter("@source", DropDownListSource));
-		sqlParameterCollection.Add(new SqlParameter("@commentary", commentary.Text));
-		sqlParameterCollection.Add(new SqlParameter("@datedFrom", DatedFrom));
-		sqlParameterCollection.Add(new SqlParameter("@datedUntil", DatedUntil));		
-		sqlParameterCollection.Add(new SqlParameter("@contactId", ContactId));
+		odbcParameterCollection.Add(new OdbcParameter("@source", DropDownListSource));
+		odbcParameterCollection.Add(new OdbcParameter("@commentary", commentary.Text));
+		odbcParameterCollection.Add(new OdbcParameter("@datedFrom", DatedFrom));
+		odbcParameterCollection.Add(new OdbcParameter("@datedUntil", DatedUntil));		
+		odbcParameterCollection.Add(new OdbcParameter("@contactId", ContactId));
 
-		DataTable dataTable = (DataTable) Repository.DatabaseCommand
+		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			"usp_IntegratedLicenseSelect",
+			"WordEngineering..usp_IntegratedLicenseSelect",
 			CommandType.StoredProcedure,
-			Repository.ResultSet.DataTable,
-			sqlParameterCollection
+			DataCommand.ResultType.DataTable,
+			odbcParameterCollection
 		);
 		
 		ViewState["gridViewSource"] = dataTable;
