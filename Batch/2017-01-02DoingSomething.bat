@@ -497,6 +497,32 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 
 2024-03-05T05:04:00 microsoft windows operating system hourglass.
 
-2024-03-09T01:44:00 http://e-comfort.ephraimtech.com/WordEngineering/WordCross/HoweverWeAreThatIsWhereWeAre.html
+2024-03-10T20:18:00
+
+TITLE: Microsoft SQL Server Management Studio
+------------------------------
+
+Attempt to retrieve data for object failed for Server 'Comfort'.  (Microsoft.SqlServer.Smo)
+
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft+SQL+Server&ProdVer=16.100.46041.41+(SMO-master-A)&EvtSrc=Microsoft.SqlServer.Management.Smo.ExceptionTemplates.FailedOperationExceptionText&EvtID=Attempt+to+retrieve+data+for+object+Server&LinkId=20476
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Failed to connect to server Comfort. (Microsoft.SqlServer.ConnectionInfo)
+
+------------------------------
+
+Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached. (System.Data)
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+2024-03-10T19:40:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IntegratedLicense.aspx
+
+2024-03-10T20:33:00	http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/InYourKindnessYouHaveNotExcludedMe.html
 
 :Exit
