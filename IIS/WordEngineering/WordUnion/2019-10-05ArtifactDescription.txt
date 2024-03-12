@@ -159,7 +159,7 @@ The BiblicalNumbers.html retrieves a sample of the various numbers in the Bible,
 
 The BibleBookInfo.html is the first implementation of the R Language in SQL Server.
 
-The BibleWord.html is for finding the instances of words in the Bible. The types of search conditions supported are "or", "and", or "phrase". The search manifestation may be for whole word or partial. The search may also be restricted to either the Old or New Testament, or a set of books.
+The BibleWord.html is for finding the instances of words in the Bible. The types of search conditions supported are "or", "and", or "phrase". The search manifestation may be for whole word or partial. The search may also be restricted to either the Old or New Testament, or a group of books.
 
 The BigInteger.html will work with the BigInteger.
 
@@ -311,13 +311,13 @@ The GregHoffman_-_Nike_-_ToAcceptWhenThereAreNoOther.html will list counts of Bi
 
 The GroupOfPeople.html will list a group of people and their request(s).
 
+The HadBeenWrittenToTheChurches.html will list non-unique verses.
+
 The HalfIncluded.html will use wildcard; front of word, left; search back, right.
 
 The HeActedHisWillOut.html will find the statistics of the words in a scripture reference.
 
 The HeFinallyShowedItToMe.html uses the HTML Agility Pack to query documents.
-
-The HadBeenWrittenToTheChurches.html will list non-unique verses.
 
 The HeIsHalfGone.html will generate header source codes, templates, skeletons, in programming languages.
 
