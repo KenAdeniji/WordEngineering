@@ -417,3 +417,5 @@ git add			"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-Ci
 git add			IIS/WordEngineering/WordUnion/IntegratedLicense.aspx.cs
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-03-11T1041FremontPolice_FremontBoulevardAndPaseoPadreParkway_AfricanAmericanMaleAndFemaleAttack.txt
+
+git add			IIS/WordEngineering/WordCross/WordInterpretation.asmx

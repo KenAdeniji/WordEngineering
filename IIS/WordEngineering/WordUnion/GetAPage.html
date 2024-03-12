@@ -64,6 +64,8 @@
 					question = question.Replace("\"", "");
 					question = question.Replace("'", "");
 			2024-03-02T23:34:00...2024-03-03T00:33:00 StartFromZ
+			2024-03-07 16:21:37.170 HisWordID 160844. ContactID 5080 Dulhan Grocery.
+			2024-03-11T20:07:00...2024-03-11T21:09:00 WordInterpretation.asmx
 		-->
 		<title>Get A Page</title>
 		<meta charset="UTF-8"/>
@@ -91,6 +93,7 @@
 				<div id="bibleWord"></div>
 				<div id="hisWord"></div>
 				<div id="bibleDictionary"></div>
+				<div id="wordInterpretation"></div>
 				<div id="numberSign"></div>
 				<div id="wordToNumber"></div>
 				<div id="meISupposeInTime"></div>
@@ -190,6 +193,7 @@
 				retrieveMeISupposeInTime();
 				retrieveWordToNumber();
 				retrieveBibleDictionary();
+				retrieveWordInterpretation();
 			}
 
 			function renderAlphabetSequence(data)
@@ -252,6 +256,15 @@
 				document.getElementById("bibleDictionary").innerHTML = info;
 			}
 
+			function renderWordInterpretation(data) 
+			{
+				scriptLiteral9432.renderDataTable
+				(
+					JSON.parse(data.d),
+					"wordInterpretation"
+				);
+			}
+			
 			function renderBibleWord(data) 
 			{
 				var data = JSON.parse(data.d);
@@ -528,6 +541,20 @@
 					requestJson,
 					renderBibleDictionary,
 					"bibleDictionary"
+				);
+			}
+			
+			function retrieveWordInterpretation()
+			{
+				var request = {};
+				request["word"] = document.getElementById("word").value;
+				var requestJson = JSON.stringify(request);
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordCross/WordInterpretation.asmx/Query",
+					requestJson,
+					renderWordInterpretation,
+					"wordInterpretation"
 				);
 			}
 			
