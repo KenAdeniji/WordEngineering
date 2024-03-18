@@ -419,3 +419,6 @@ git add			IIS/WordEngineering/WordUnion/IntegratedLicense.aspx.cs
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-03-11T1041FremontPolice_FremontBoulevardAndPaseoPadreParkway_AfricanAmericanMaleAndFemaleAttack.txt
 
 git add			IIS/WordEngineering/WordCross/WordInterpretation.asmx
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-03-17T1933NorikoYoshida_-_SimplyRemindedOfYou.txt
+git add	        PowerShell/LeeHolmes.com/

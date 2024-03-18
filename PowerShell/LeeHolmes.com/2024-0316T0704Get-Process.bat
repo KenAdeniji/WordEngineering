@@ -1,0 +1,1 @@
+Powershell.exe -executionpolicy remotesigned -File e:\WordEngineering\PowerShell\LeeHolmes.com\2024-0316T0704Get-Process.ps1
