@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-03-18T14:20:00 Created.	http://github.com/mozilla/readability
+	-->
+	<head>
+		<title>Mozilla Readability</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Mozilla Readability"/>
+		<meta name="keywords" content="Mozilla Readability"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 15vh;
+				width: 70vw;
+			}
+	</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="uri">URI</label></td>
+					<td><textarea id="uri" autofocus required>/WordEngineering/Resume/KenAdenijiResume.html</textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+    <label for="articleTitle">Title:</label> <span id="articleTitle" align="left"> </span><br/>
+    content: <span id="articleContent" align="left"> </span><br/>
+    textContent: <span id="articleTextContent" align="left"> </span><br/>
+    <label for="articleTitle">Length of an article, in characters;</label> <span id="articleLength" align="left"> </span><br/>
+    excerpt: <span id="articleExcerpt" align="left"> </span><br/>
+    <label for="articleMetadata">Author metadata:</label><span id="articleByline" align="left"> </span><br/>
+    <label for="articleDir">Content direction:</label><span id="articleDir" align="left"> </span><br/>
+    <label for="articleSiteName">Name of the site:</label><span id="articleSiteName" align="left"> </span><br/>
+    <label for="articleLang">Content language:</label><span id="articleLang" align="left"> </span><br/>
+    <label for="articlePublishedTime:">Published time:</label><span id="articlePublishedTime" align="left"> </span><br/>
+
+		<iframe id="myframe" style="display:none;"></iframe>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/readability/0.5.0/Readability.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	uriElement = document.getElementById("uri");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	myframeElement = document.getElementById("myframe");
+
+			const	articleTitleElement = document.getElementById("articleTitle");
+			const	articleContentElement = document.getElementById("articleContent");
+			const	articleTextContentElement = document.getElementById("articleTextContent");
+			const	articleLengthElement = document.getElementById("articleLength");
+			const	articleExcerptElement = document.getElementById("articleExcerpt");
+			const	articleBylineElement = document.getElementById("articleByline");
+			const	articleDirElement = document.getElementById("articleDir");
+			const	articleSiteNameElement = document.getElementById("articleSiteName");
+			const	articleLangElement = document.getElementById("articleLang");
+			const	articlePublishedTimeElement = document.getElementById("articlePublishedTime");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var uriParam = urlParams.get("uri");
+					if (uriParam)
+					{
+						uriElement.value = uriParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				myframeElement.src = uriElement.value;
+				var article = new Readability
+				(
+					myframeElement.contentWindow.document
+				).parse();
+
+				articleTitleElement.innerText = article.title;
+				articleContentElement.innerText = article.content;
+				articleTextContentElement.innerText = article.textContent;
+				articleLengthElement.innerText = article.length;
+				articleExcerptElement.innerText = article.excerpt;
+				articleBylineElement.innerText = article.byline;
+				articleDirElement.innerText = article.dir;
+				articleSiteNameElement.innerText = article.siteName;
+				articleLangElement.innerText = article.lang;
+				articlePublishedTime.innerText = article.publishedTime;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

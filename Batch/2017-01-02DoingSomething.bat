@@ -525,4 +525,12 @@ OK
 
 2024-03-11T07:39:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IRealizeMyFullSenseInMakingMan.html
 
+2024-03-18T14:27:00
+http://github.com/mozilla/readability
+To parse a document, you must create a new Readability object from a DOM document object, and then call the parse() method. Here's an example:
+
+var article = new Readability(document).parse();
+
+If you use Readability in a web browser, you will likely be able to use a document reference from elsewhere (e.g. fetched via XMLHttpRequest, in a same-origin <iframe> you have access to, etc.). In Node.js, you can use an external DOM library.
+
 :Exit
