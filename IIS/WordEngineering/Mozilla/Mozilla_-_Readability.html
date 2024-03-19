@@ -34,17 +34,16 @@
 				</tr>	
 			</table>
 		</div>
-    <label for="articleTitle">Title:</label> <span id="articleTitle" align="left"> </span><br/>
-    content: <span id="articleContent" align="left"> </span><br/>
-    textContent: <span id="articleTextContent" align="left"> </span><br/>
-    <label for="articleTitle">Length of an article, in characters;</label> <span id="articleLength" align="left"> </span><br/>
-    excerpt: <span id="articleExcerpt" align="left"> </span><br/>
-    <label for="articleMetadata">Author metadata:</label><span id="articleByline" align="left"> </span><br/>
-    <label for="articleDir">Content direction:</label><span id="articleDir" align="left"> </span><br/>
-    <label for="articleSiteName">Name of the site:</label><span id="articleSiteName" align="left"> </span><br/>
-    <label for="articleLang">Content language:</label><span id="articleLang" align="left"> </span><br/>
-    <label for="articlePublishedTime:">Published time:</label><span id="articlePublishedTime" align="left"> </span><br/>
-
+		<label for="articleTitle">Title:</label> <span id="articleTitle" align="left"> </span><br/>
+		<label for="articleContent">Content:</label> <span id="articleContent" align="left"> </span><br/>
+		<label for="articleTextContent">Text Content:</label> <span id="articleTextContent" align="left"> </span><br/>
+		<label for="articleLength">Length of an article, in characters:</label> <span id="articleLength" align="left"> </span><br/>
+		<label for="articleExcerpt">Excerpt:</label> <span id="articleExcerpt" align="left"> </span><br/>
+		<label for="articleBylineAuthorMetadata">Byline Author metadata:</label><span id="articleBylineAuthorMetadata" align="left"> </span><br/>
+		<label for="articleDir">Content direction:</label><span id="articleDir" align="left"> </span><br/>
+		<label for="articleSiteName">Name of the site:</label><span id="articleSiteName" align="left"> </span><br/>
+		<label for="articleLang">Content language:</label><span id="articleLang" align="left"> </span><br/>
+		<label for="articlePublishedTime:">Published time:</label><span id="articlePublishedTime" align="left"> </span><br/>
 		<iframe id="myframe" style="display:none;"></iframe>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/readability/0.5.0/Readability.js"></script>
 		<script>
@@ -59,7 +58,7 @@
 			const	articleTextContentElement = document.getElementById("articleTextContent");
 			const	articleLengthElement = document.getElementById("articleLength");
 			const	articleExcerptElement = document.getElementById("articleExcerpt");
-			const	articleBylineElement = document.getElementById("articleByline");
+			const	articleBylineAuthorMetadataElement = document.getElementById("articleBylineAuthorMetadata");
 			const	articleDirElement = document.getElementById("articleDir");
 			const	articleSiteNameElement = document.getElementById("articleSiteName");
 			const	articleLangElement = document.getElementById("articleLang");
@@ -99,7 +98,7 @@
 				articleTextContentElement.innerText = article.textContent;
 				articleLengthElement.innerText = article.length;
 				articleExcerptElement.innerText = article.excerpt;
-				articleBylineElement.innerText = article.byline;
+				articleBylineAuthorMetadataElement.innerText = article.byline;
 				articleDirElement.innerText = article.dir;
 				articleSiteNameElement.innerText = article.siteName;
 				articleLangElement.innerText = article.lang;

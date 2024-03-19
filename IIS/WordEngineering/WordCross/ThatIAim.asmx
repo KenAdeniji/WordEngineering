@@ -22,7 +22,8 @@ using InformationInTransit.UserInterface;
 using Newtonsoft.Json;
 
 ///<summary>
-///	2023-10-01T02:58:00 Created. APass. NaturalOccurringSequence.
+///	2023-10-01T02:58:00 Created. APass.
+///	Ben Forta. Forta.com. Lead and Lag. NaturalOccurringSequence.
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
