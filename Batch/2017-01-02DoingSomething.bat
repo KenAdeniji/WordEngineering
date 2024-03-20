@@ -521,6 +521,8 @@ BUTTONS:
 OK
 ------------------------------
 
+2024-03-20T14:05:00...2024-03-20T14:15:00 I met Abdul-Azeez Alli in 2005-April when Wale Soyinka re-located to Canada...what day of the month was this? copyrightYear <script> Notepad++ versus (VS) microsoft notepad microsoft windows operating system clipboard select copy paste windows menu north west.
+
 2024-03-10T19:40:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IntegratedLicense.aspx
 
 2024-03-11T07:39:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IRealizeMyFullSenseInMakingMan.html
@@ -533,4 +535,7 @@ var article = new Readability(document).parse();
 
 If you use Readability in a web browser, you will likely be able to use a document reference from elsewhere (e.g. fetched via XMLHttpRequest, in a same-origin <iframe> you have access to, etc.). In Node.js, you can use an external DOM library.
 
+2024-03-20T03:43:00 AnthonyDeBarros.com 	Practical SQL 			2024-01-18 	64907
+
+14:05 I met Abdul-Azeez Alli in 2005-April when Wale Soyinka re-located to Canada...what day of the month was this? copyrightYear <script> Notepad++ versus (VS) microsoft notepad microsoft windows operating system clipboard select copy paste windows menu north west.
 :Exit

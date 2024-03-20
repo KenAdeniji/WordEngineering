@@ -11,6 +11,9 @@
 				img loading="lazy"
 		2021-08-20T19:00:00	http://htmldom.dev/change-the-website-favicon/
 		2022-10-01 Encode URI ? as %3F
+		2024-03-20
+			<span id="documentLastModified"><span><br/>
+			Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br/>
 	-->
 	<head>
 		<meta charset="UTF-8" />
@@ -14535,16 +14538,33 @@ a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di
 			
 			<q>
 			
+			<footer>
+				<span id="documentLastModified"><span><br/>
+				Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br/>
+				<address>
+					Ken Adeniji
+					<a href="mailto:KenAdeniji@hotmail.com">
+						KenAdeniji@hotmail.com
+					</a>	
+				</address>
+			</footer>
+			
+			<script>
+				var isPostBack = false;
+				
+				const documentLastModifiedElement = document.getElementById("documentLastModified"); 
+				const copyrightYearElement = document.getElementById("copyrightYear"); 
+				
+				function pageLoad()
+				{
+					documentLastModifiedElement.innerText = "Last modified: " + document.lastModified;				
+					copyrightYearElement.innerText = (new Date()).getFullYear();
+					isPostBack = true;
+				}
+				
+				window.addEventListener("load", pageLoad, false);
+			</script>
+		
 		</section>
-
-		<footer>
-			Copyright © 2015
-			<address>
-				Ken Adeniji
-				<a href="mailto:KenAdeniji@hotmail.com">
-					KenAdeniji@hotmail.com
-				</a>	
-			</address>
-		</footer>
 	</body>
 </html>
