@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2024-03-27T10:00:00...2024-03-27T14:47:00 Created. Ko need.
+			2024-03-27T10:38:00	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy
+			2024-03-27T11:48:00	http://stackoverflow.com/questions/42336494/how-can-i-get-the-data-in-my-array-object-to-my-jstree
+			2024-03-27T13:22:00	http://www.jstree.com/docs/html/
+		-->
+		<title>Ko need</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Ko need."/>
+		<meta name="keywords" content="Name, rank, JSON array"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+	</head>
+	<body>
+		<div align="center" id="resultTable"></div>
+		<div id="jstree_div_list"></div>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.16/jstree.min.js"></script>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	resultTableElement = document.getElementById("resultTable");
+			
+			const	jstree_div_listElement = document.getElementById("jstree_div_list");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				scriptLiteral9432.renderDataTable(KoNeed, "resultTable");
+				const dataParsed = Object.groupBy(KoNeed, ({ Word }) => Word);
+
+				var currentWord = "";
+				var lastWord = "";
+				var jstreeStub = "<ul>";
+				
+				for 
+				(
+					koNeedIndex = 0, koNeedLength = KoNeed.length;
+					koNeedIndex < koNeedLength;
+					++koNeedIndex
+				)
+				{
+					currentWord = KoNeed[koNeedIndex]["Word"];
+					if ( currentWord !== lastWord )
+					{
+						if ( lastWord !== "" )
+						{
+							jstreeStub += "</ul>";
+						}
+						jstreeStub += `<li>${currentWord}</li><ul>`;
+						lastWord = currentWord;
+					}
+					
+					jstreeStub += `<li>${KoNeed[koNeedIndex]["Named"]} ( ${KoNeed[koNeedIndex]["ScriptureReference"]} )</li>`;
+				}	
+
+				jstreeStub += "</ul></ul>";
+
+				//console.log(jstreeStub);
+
+				jstree_div_listElement.innerHTML = jstreeStub;
+
+				$('#jstree_div_list').jstree();
+			}
+	
+			window.addEventListener("load", pageLoad, false);
+
+			const KoNeed =
+			[ 
+				{ "Word": "Day", "Named": "First day", "ScriptureReference": "Genesis 1:3-5" }, 
+				{ "Word": "Day", "Named": "Seventh day", "ScriptureReference": "Genesis 2:2-3" },
+				{ "Word": "Light", "Named": "Greater light", "ScriptureReference": "Genesis 2:14" }, 
+				{ "Word": "Light", "Named": "Lesser light", "ScriptureReference": "Genesis 2:14" }				
+			];	
+		</script>
+	</body>
+</html>
