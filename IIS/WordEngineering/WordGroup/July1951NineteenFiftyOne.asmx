@@ -41,8 +41,8 @@ public class July1951NineteenFiftyOne : System.Web.Services.WebService
 			(
 				from BibleBook bibleBook in BibleBook.BibleBooks
 				where 
-					bibleBook.Id >= bookIDMinimum && 
-					bibleBook.Id <= bookIDMaximum &&
+					bibleBook.ID >= bookIDMinimum && 
+					bibleBook.ID <= bookIDMaximum &&
 					bibleBook.Title.IndexOf(bookTitle, StringComparison.InvariantCultureIgnoreCase) > -1
 				select bibleBook
 			).ToList();

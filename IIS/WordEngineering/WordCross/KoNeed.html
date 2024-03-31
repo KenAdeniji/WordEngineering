@@ -18,6 +18,7 @@
 	</head>
 	<body>
 		<div align="center" id="resultTable"></div>
+		<div id="div_list"></div>
 		<div id="jstree_div_list"></div>
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>	
@@ -27,7 +28,7 @@
 			var isPostBack = false;
 			
 			const 	resultTableElement = document.getElementById("resultTable");
-			
+			const	div_listElement = document.getElementById("div_list");
 			const	jstree_div_listElement = document.getElementById("jstree_div_list");
 			
 			function pageLoad()
@@ -77,7 +78,7 @@
 
 				jstreeStub += "</ul></ul>";
 
-				//console.log(jstreeStub);
+				div_listElement.innerHTML = jstreeStub;
 
 				jstree_div_listElement.innerHTML = jstreeStub;
 

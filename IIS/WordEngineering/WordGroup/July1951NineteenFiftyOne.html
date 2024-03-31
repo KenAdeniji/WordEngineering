@@ -52,9 +52,9 @@
 				if (isPostBack === false)
 				{
 					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
-						querySubmit();	
-						scriptLiteral9432.buildSelect("sortBy", sortBys);
+						scriptLiteral9432.buildSelect("sortBy", SortBy);
 						scriptLiteral9432.buildSelect("sortDirection", scriptLiteral9432.sortDirections);
+						querySubmit();
 						isPostBack = true;
 					});
 				}
@@ -108,10 +108,10 @@
 				}
 			}
 			
-			var sortBys = 
+			var SortBy = 
 				[
-					["Id", "Id"],
-					["Title", "Title"]
+					"ID",
+					"Title"
 				];	
 	</script>
 </body>

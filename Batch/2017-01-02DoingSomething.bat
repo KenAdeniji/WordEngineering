@@ -527,6 +527,12 @@ OK
 
 2024-03-11T07:39:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IRealizeMyFullSenseInMakingMan.html
 
+2024-03-29T04:58:00 http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IWantToBringAllTheFamiliesTogether.html
+
+2024-03-29T14:16:00 http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IWontBringWhereIAmToSeeWhereIAmYours.html?scriptureReference=Genesis%2022:2,%20Revelation%2022:21,%20Hebrews%2011:25
+
+2024-03-30T19:05:00 http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/July1951NineteenFiftyOne.html
+
 2024-03-18T14:27:00
 http://github.com/mozilla/readability
 To parse a document, you must create a new Readability object from a DOM document object, and then call the parse() method. Here's an example:
