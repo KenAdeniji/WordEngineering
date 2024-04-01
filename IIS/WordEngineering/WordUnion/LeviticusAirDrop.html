@@ -2,43 +2,115 @@
 <html>
 	<head>
 		<!--
-			2017-12-14	Created.
+			2015-11-15	Get a page.
+			2015-12-10	clearView().
+			2015-12-13	http://stackoverflow.com/questions/7776337/reading-c-sharp-dictionary-in-javascript
+			2015-12-14	retrieveWordToNumber(); renderWordToNumber();
+			2015-12-16	Added link to the separate pages; for example, AlphabetSequence.html, bibleDictionary.html, bibleWord.html, scriptureReference.html (2 Kings 13:18, 2 Kings 13:19).
+			2016-01-28	A pairing of our sum. BibleWord versus HisWord?
+			2016-07-13	MeISupposeInTime.html	takes a number, and find words with the same length.
+						2016-07-16	Added to page. Implemented. Five zero nine three. 5093. Let's get off it.
+						WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
+						Occurrences - 262. Meshiach Nagid. April 6, 0032 A.D.
+						Occurrences: 15. Meshiach Nagid. March 14, -0445 B.C.
+						IsNaN(word.value).
+			2016-09-17	http://stackoverflow.com/questions/6756104/get-size-of-json-object 
+						Object.keys(myObject).length;
+			2016-09-26	data["Table"].length
+			2017-02-20	For BibleDictionary changed word to bibleWord
+			2017-05-14	getWord()
+			2017-11-11	renderBibleWord() scriptLiteral9432.bibleBooks[dataRow["bookId"] - 1]
+							scriptLiteral9432.bibleBooks[dataRow["bookId"] - 1] + " " + 
+							dataRow["chapterId"] + ':' + dataRow["verseId"], 
+							dataRow["verseText"]
+			2018-08-01	Support for word, numeric. Odun. It is sweet. A friend shared the wafers he purchased at $1.50 from 99 Ranch Market, when the wafers were first introduced they cost less, but when people started buying them, the price was brought higher.
+			2018-09-02	scriptLiteral9432.ajax(). 510 After placing the Ajax code in 9432.js lines of code, previously 631 lines of code.
+			2018-10-22	The AlphabetSequenceIndexScriptureReference is the chapters and verses separation in the scripture.
+			2019-12-06	MyCondemn.
+			2019-12-12	scriptLiteral9432.splitDelimiters(document.getElementById("word").value);
+			2020-05-19T12:24:00	https://people.cs.clemson.edu/~dhouse/courses/405/papers/optimize.pdf
+			2020-05-19T12:24:00	https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
+			2020-05-19T12:24:00	We recognize Ahmdal's Law in GetAPage.html, by performing multiple tasks with Web Services and measuring with performance.now(). 
+			2020-09-07T12:26:00	Non-AlphaNumeric.
+			2023-06-17T18:05:00	Velicia ... three three ... four end.
+						Uncle Jimi walked out of a Center room eastward. Homosexual sex involved. He said Velicia Kim lives on a dignitary street. 1963-04-24 smell (Gbo enu) (We are proving difficult). (We are proving difficult). Alexander III of Macedon (Ancient Greek: ????a?d???, romanized: Alexandros; 20/21 July 356 BC – 10/11 June 323 BC), commonly known as Alexander the Great,[a] was a king of the ancient Greek kingdom of Macedon. Duration	
+						http://en.wikipedia.org/wiki/Alexander_the_Great
+						Revelation 5:9, Revelation 10, Genesis 13, Genesis 12:14
+						At 99 Ranch Market Filipinos ... Hindi wife and husband
+						I walked at the Center lane and I exited at South West.
+						Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
+						Between 2023-06-17 ... 2023-06-18 twin sibling kept on urinating on the South West toilet bowl seat,
+							I went to urinate at North Center on a few occasions,
+							I later undressed my trouser and I pulled my shirt up.
+						Alphabet Sequence
+						256
+						Genesis 10:21, 1 Samuel 20, Matthew 4, Revelation 9:5
+						AlphabetSequenceIndexPercentage 41.02564102564103%
+						AlphabetSequenceIndexPercentageScriptureReference Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
+						http://stackoverflow.com/questions/3210393/how-do-i-remove-all-non-alphanumeric-characters-from-a-string-except-dash
+			2023-06-18T11:05:00 ... 2023-06-18T11:44:00
+				public static string VeliciaThreeThreeFourEnd
+				(
+					string	question
+				)
+				{
+					int alphabetSequenceIndex = Id(question);
+				
+					question = question.Replace("?", "");
+					question = question.Replace(".", "");
+					question = question.Replace(",", "");
+					question = question.Replace(";", "");
+					question = question.Replace(" ", "");
+					question = question.Replace("\"", "");
+					question = question.Replace("'", "");
+			2024-03-02T23:34:00...2024-03-03T00:33:00 StartFromZ
+			2024-03-07 16:21:37.170 HisWordID 160844. ContactID 5080 Dulhan Grocery.
+			2024-03-11T20:07:00...2024-03-11T21:09:00 WordInterpretation.asmx
 		-->
-		<title>Leviticus Air Drop</title>
+		<title>Get A Page</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is a conglomerate of information, such as the AlphabetSequence, SacredText, and BibleWord. Showing example."/>
+		<meta name="keywords" content="Bible, word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
 		<link rel="stylesheet" type="text/css" href="9432.css">
 	</head>
 	<body>
 		<div align="center">
-			<table>
-				<tr>
-					<td for="word">Word:</td>
-					<td><input id="word" type="text" autofocus></td>
-				</tr>	
-				<tr>
-					<td for="bookIDs">Book IDs:</td>
-					<td><input id="bookIDs" type="text"></td>
-				</tr>	
-				<tr>
-					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
-				</tr>	
-			</table>
+			<input id="word" type="text" size="50" autofocus>
+			<input id="bookID" type="number" value="3">
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+				<div id="myCondemn"></div>
+				<div id="whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood"></div>
 				<div id="alphabetSequence"></div>
+				<div id="scriptureReference"></div>
+				<div id="alphabetSequenceIndexPercentage"></div>
+				<div id="alphabetSequenceIndexPercentageScriptureReference"></div>
+				<div id="alphabetSequenceIndexStartFromZ"></div>
+				<div id="alphabetSequenceIndexStartFromZScriptureReference"></div>
 				<div id="sacredText"></div>
 				<div id="bibleWord"></div>
 				<div id="hisWord"></div>
 				<div id="bibleDictionary"></div>
+				<div id="wordInterpretation"></div>
 				<div id="numberSign"></div>
 				<div id="wordToNumber"></div>
 				<div id="meISupposeInTime"></div>
 				<div id="feedback"></div>
+				<div id="performanceNow"></div>
+			</div>	
 		</div>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script>
 			var isPostBack = false;
+			var alphabetSequenceIndexScriptureReference = "";
+			var	wordElement = document.getElementById("word");
+			var	bookIDElement = document.getElementById("bookID");
 			
-			var	bookIDsDefault = "3";
-			var	wordDefault = "Air drop.";
-
+			var	performanceNowElement = document.getElementById("performanceNow");
+			
 			function appendCommentary(source, word, commentary)
 			{
 				var combined = "";
@@ -51,21 +123,25 @@
 		
 			function clearView()
 			{
-				document.getElementById("alphabetSequence").innerHTML = "";
-				document.getElementById("hisWord").innerHTML = "";
-				document.getElementById("sacredText").innerHTML = "";
-				document.getElementById("bibleWord").innerHTML = "";
-				document.getElementById("bibleDictionary").innerHTML = "";
-				document.getElementById("meISupposeInTime").innerHTML = "";
-				document.getElementById("numberSign").innerHTML = "";
-				document.getElementById("wordToNumber").innerHTML = "";
-				document.getElementById("feedback").innerHTML = "";
+				var resultSetDiv = document.getElementById("resultSet");
+				var resultSetDivInners = resultSetDiv.getElementsByTagName("div");
+				for (var index = 0, count = resultSetDivInners.length; index < count; index++) {
+					resultSetDivInners[index].innerHTML = "";
+				} 
 			}
 			
-			function getWord()
+			function domHighResTimeStampTerminusAQuo()
 			{
-				return document.getElementById("word").value;//.trim();
-			}	
+				performanceNowElement.innerHTML = "<table><thead><tr><th>Category</th><th>Start (ms)</th><th>End (ms)</th><th>Interval (ms)</th></thead>";
+			}
+			
+			function domHighResTimeStampRecord(category, start, end)
+			{
+				//console.log(category, start, end);
+				//performanceNowElement.innerHTML += `<tr><td>${category}</td><td>${start}</td><td>${end}</td><td>${end-start}</td></tr>`;
+				performanceNowElement.innerHTML = "<table><tr><td>" + category + "</td><td>" + start + "</td><td>" + end + "</td><td>" + (end - start) + "</td></tr></table>";
+				//console.log(category, start, end);
+			}
 			
 			function pageLoad()
 			{
@@ -73,44 +149,73 @@
 				{
 					$.getScript( "9432.js", function( data, textStatus, jqxhr ) 
 					{
-						var bookIDs = scriptLiteral9432.getParameterByName("bookIDs");
-						if (!bookIDs)
-						{
-							bookIDs = bookIDsDefault;
-						}
-						document.getElementById("bookIDs").value = bookIDs;
-						
 						var word = scriptLiteral9432.getParameterByName("word");
-						if (!word)
+						if (word)
 						{
-							word = wordDefault;
+							document.getElementById("word").value = word;
 						}
-						document.getElementById("word").value = word;
-
-						if (bookIDs && word)
+						if (document.getElementById("word").value)
 						{
 							querySubmit();
 						}
-											
 						isPostBack = true;		
 					});
+				}
+				else
+				{
+					querySubmit();
 				}
 			}
 
 			function querySubmit()
 			{
 				clearView();
+				
+				//domHighResTimeStampTerminusAQuo();
+				
 				retrieveAlphabetSequence();
+				
+				retrieveWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood()
+				retrieveMyCondemn();
+
+				const pattern = /[^-\w .\,]/;
+				if (pattern.test(wordElement.value)) 
+				{
+					return false;
+				}
+
+				retrieveStartFromZ();
+
+				retrieveVeliciaThreeThreeFourEnd();
+
+				retrieveBibleWord();
+
 				retrieveBibleWord();
 				retrieveHisWord();
 				retrieveMeISupposeInTime();
 				retrieveWordToNumber();
 				retrieveBibleDictionary();
+				retrieveWordInterpretation();
 			}
 
+			function renderAlphabetSequence(data)
+			{
+				var dataSet = JSON.parse(data.d);
+				var alphabetSequenceURI = encodeURI('AlphabetSequence.html?word=' + wordElement.value);
+				var alphabetSequenceAnchor = '<a href="' + alphabetSequenceURI + '">Alphabet Sequence</a>';
+				document.getElementById("alphabetSequence").innerHTML = 
+					alphabetSequenceAnchor + '<br>' + dataSet.id;
+				alphabetSequenceIndexScriptureReference = dataSet.scriptureReference;
+				document.getElementById("scriptureReference").innerHTML = 
+					scriptureReferenceHyperlink(alphabetSequenceIndexScriptureReference);
+				retrieveSacredText(alphabetSequenceIndexScriptureReference);
+				retrieveNumberSign(alphabetSequenceIndexScriptureReference);
+			}
+			
 			function renderBibleDictionary(data) 
 			{
-				var word = getWord();
+				var data = JSON.parse(data.d);
+				var word = document.getElementById("word").value;
 				var uri = encodeURI('bibleDictionary.html?bibleWord=' + word);
 				var bibleDictionaryHyperlink = '<a href=' + uri + '>Bible Dictionary</a><br>'
 				var info = "<table id='bibleDictionaryTable'><caption>" + bibleDictionaryHyperlink + 
@@ -153,9 +258,19 @@
 				document.getElementById("bibleDictionary").innerHTML = info;
 			}
 
+			function renderWordInterpretation(data) 
+			{
+				scriptLiteral9432.renderDataTable
+				(
+					JSON.parse(data.d),
+					"wordInterpretation"
+				);
+			}
+			
 			function renderBibleWord(data) 
 			{
-				var word = getWord();
+				var data = JSON.parse(data.d);
+				var word = document.getElementById("word").value;
 				var uri = encodeURI('bibleWord.html?bibleWord=' + word);
 				var bibleWordHyperlink = '<a href=' + uri + '>Bible Word</a><br>'
 				var info = "<table id='bibleWordTable'><caption>" + bibleWordHyperlink + 
@@ -165,9 +280,9 @@
 				var dataRow = null;
 				var dataTable = null;
 				
-				var bookId = null;
-				var chapterId = null;
-				var verseId = null;
+				var bookID = null;
+				var chapterID = null;
+				var verseID = null;
 				var verseText = null;
 				
 				var bookTitle = null;
@@ -180,9 +295,9 @@
 						dataRow = dataTable[rowIndex];
 						info += scriptLiteral9432.buildRow
 						(
-							scriptLiteral9432.bibleBooks[dataRow["bookID"] - 1] + " " + 
-							dataRow["chapterID"] + ':' + dataRow["verseID"], 
-							dataRow["verseText"]
+							scriptLiteral9432.bibleBooks[dataRow["BookID"] - 1] + " " + 
+							dataRow["ChapterID"] + ':' + dataRow["VerseID"], 
+							dataRow["VerseText"]
 						);
 					}
 				}
@@ -192,7 +307,8 @@
 			
 			function renderHisWord(data) 
 			{
-				var word = getWord();
+				var data = JSON.parse(data.d);
+				var word = document.getElementById("word").value;
 				var uri = encodeURI('HisWord.aspx?word=' + word);
 				var hisWordHyperlink = '<a href=' + uri + '>His Word</a><br>'
 				var info = "<table id='hisWordTable'><caption>" + hisWordHyperlink + 
@@ -225,8 +341,9 @@
 			
 			function renderMeISupposeInTime(data) 
 			{
+				var data = JSON.parse(data.d);
 				var occurrences = data["workTable"].length;
-				var caption = "<caption>Word Length - (Occurrences: " + occurrences + ") </caption>";
+				var caption = "<caption>Me I suppose in time. Word Length - (Occurrences: " + occurrences + ") </caption>";
 				var info = 	"<table>" + caption + "<thead><tr><th>Word</th><th>Scripture Reference</th></thead>";
 				var dataRow = null;
 				var dataTable = null;
@@ -256,9 +373,45 @@
 				info += "</table>"
 				document.getElementById("meISupposeInTime").innerHTML = info;
 			}
+
+			function renderMyCondemn(dataSet) 
+			{
+				var data = JSON.parse(dataSet.d);
+				scriptureReference = data.scriptureReference;
+				
+				var myCondemnURI = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var myCondemnAnchor = 'MyCondemn (<a href="' + myCondemnURI + '">' + 
+					scriptureReference + ")</a><br/>"
+				
+				document.getElementById("myCondemn").innerHTML = myCondemnAnchor;
+			}
+
+			function renderStartFromZ(data)
+			{
+				console.log(data.d);
+				var dataSet = JSON.parse(data.d);
+				document.getElementById("alphabetSequenceIndexStartFromZ").innerHTML = 
+					"AlphabetSequenceIndexStartFromZ: " + dataSet.id;
+				document.getElementById("alphabetSequenceIndexStartFromZScriptureReference").innerHTML = 
+					"AlphabetSequenceIndexStartFromZScriptureReference: " + 
+					scriptureReferenceHyperlink(dataSet.scriptureReference);
+			}
+
+			function renderWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood(dataSet) 
+			{
+				var data = JSON.parse(dataSet.d);
+				scriptureReference = data.scriptureReference;
+				
+				var whoIsYourManagerCrazyMisterMartinMisterMartinAsAGoodURI = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
+				var whoIsYourManagerCrazyMisterMartinMisterMartinAsAGoodAnchor = 'Who is your manager? Crazy mister Martin. Mister Martin as a good (<a href="' + whoIsYourManagerCrazyMisterMartinMisterMartinAsAGoodURI + '">' + 
+					scriptureReference + ")</a><br/>"
+				
+				document.getElementById("whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood").innerHTML = whoIsYourManagerCrazyMisterMartinMisterMartinAsAGoodAnchor;
+			}
 			
 			function renderNumberSign(data) 
 			{
+				var data = JSON.parse(data.d);
 				var info = "<table id='numberSignTable'><caption>Number Sign" +
 					" - Occurrences: " + data["Table"].length + 
 					"</caption>";
@@ -281,17 +434,19 @@
 				document.getElementById("numberSign").innerHTML = info;
 			}
 			
-			function renderScripture(data, scriptureReference) 
+			function renderSacredText(data) 
 			{
+				var data = JSON.parse(data.d);
+				var scriptureReference = alphabetSequenceIndexScriptureReference;
 				var uri = encodeURI('scriptureReference.html?scriptureReference=' + scriptureReference);
 				var sacredTextHyperlink = '<a href=' + uri + '>Sacred Text</a><br>'
 				var info = "<table id='sacredTextTable'><caption>" + sacredTextHyperlink + "</caption>";
 				var dataRow = null;
 				var dataTable = null;
 				
-				var bookId = null;
-				var chapterId = null;
-				var verseId = null;
+				var bookID = null;
+				var chapterID = null;
+				var verseID = null;
 				var verseText = null;
 				
 				var subsetIndex = 0;
@@ -307,29 +462,29 @@
 							scriptureReferenceSubset[subsetIndex++] + 
 							"</th></tr>";
 					
-					var existingBookId = -1;
-					var existingChapterId = -1;
+					var existingBookID = -1;
+					var existingChapterID = -1;
 
 					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
 					{
 						dataRow = dataTable[rowIndex];
 						
-						bookId = dataRow["bookID"];
-						chapterId = dataRow["chapterID"];
-						verseId = dataRow["verseID"];
+						bookID = dataRow["bookID"];
+						chapterID = dataRow["chapterID"];
+						verseID = dataRow["verseID"];
 						verseText = dataRow["verseText"];
 						
-						if (bookId != existingBookId || chapterId != existingChapterId)
+						if (bookID != existingBookID || chapterID != existingChapterID)
 						{
-							bookTitle = scriptLiteral9432.bibleBooks[bookId - 1];
+							bookTitle = scriptLiteral9432.bibleBooks[bookID - 1];
 							info += "<tr><th align=left colspan=2>" + 
-									bookTitle + " " + chapterId +
+									bookTitle + " " + chapterID +
 									"</th></tr>";
-							existingBookId = bookId;
-							existingChapterId = chapterId;
+							existingBookID = bookID;
+							existingChapterID = chapterID;
 						}
 			
-						info += "<tr><td>" + chapterId + ':' + verseId +  
+						info += "<tr><td>" + chapterID + ':' + verseID +  
 								"</td><td>" + verseText + "</td></tr>";
 					}
 				}
@@ -337,280 +492,294 @@
 				document.getElementById("sacredText").innerHTML = info;
 			}
 
+			function renderWordToNumber(data)
+			{
+				var dataSet = JSON.parse(data.d);
+				if (dataSet.number > 0)
+				{
+					document.getElementById("wordToNumber").innerHTML = 
+						dataSet.number + "<br>" + 
+						scriptureReferenceHyperlink(dataSet.scriptureReference);
+				}
+			}
+			
 			function retrieveAlphabetSequence()
 			{
+				var terminusAQuo = performance.now();
 				var request = {};
-			
-				var word = getWord();
-				if (word === "" || isNaN(word) === false)
+
+				var words = scriptLiteral9432.splitDelimiters(wordElement.value);
+		
+				if (words.length === 1)
 				{
-					return;
+					words = scriptLiteral9432.alphabetSequenceIndex(words[0]);
 				}
-				request["word"] = word;
-				request["bookIDs"] = document.getElementById("bookIDs").value;
+				else
+				{
+					words = wordElement.value;
+				}
+
+				request["word"] = words;
+				request["bookID"] = parseInt(bookIDElement.value);
 				
 				var requestJson = JSON.stringify(request);
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
+				scriptLiteral9432.ajax
+				(
 					url: "/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/LeviticusAirDrop",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						var alphabetSequenceURI = encodeURI('AlphabetSequence.html?word=' + word);
-						var alphabetSequenceAnchor = '<a href="' + alphabetSequenceURI + '">Alphabet Sequence</a>';
-						document.getElementById("alphabetSequence").innerHTML = alphabetSequenceAnchor + 
-							'<br>' + dataSet.id + "<br>" + 
-							scriptureReferenceHyperlink(dataSet.scriptureReference);
-						retrieveScripture(dataSet.scriptureReference);
-						retrieveNumberSign(dataSet.scriptureReference);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("alphabetSequence").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+					requestJson,
+					renderAlphabetSequence,
+					"alphabetSequence"
+				);
+				domHighResTimeStampRecord("AlphabetSequence", terminusAQuo, performance.now());
 			}
-
+				
 			function retrieveBibleDictionary()
 			{
 				var request = {};
-				
-				var word = getWord();
-				if (word === "" || isNaN(word) === false)
-				{
-					return;
-				}
-				request["question"] = word;
-				
+				request["question"] = document.getElementById("word").value;
 				var requestJson = JSON.stringify(request);
-
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/BibleDictionaryWebService.asmx/GetAPage",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						renderBibleDictionary(dataSet);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("bibleDictionary").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/BibleDictionaryWebService.asmx/GetAPage",
+					requestJson,
+					renderBibleDictionary,
+					"bibleDictionary"
+				);
+			}
+			
+			function retrieveWordInterpretation()
+			{
+				var request = {};
+				request["word"] = document.getElementById("word").value;
+				var requestJson = JSON.stringify(request);
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordCross/WordInterpretation.asmx/Query",
+					requestJson,
+					renderWordInterpretation,
+					"wordInterpretation"
+				);
 			}
 			
 			function retrieveBibleWord()
 			{
 				var request = {};
-				
-				var word = getWord();
-				if (word === "" || isNaN(word) === false)
-				{
-					return;
-				}
-				request["question"] = word;
-
-				request["bibleVersion"] = "KJV";
-				
+				request["question"] = document.getElementById("word").value;
+				request["bibleVersion"] = "KingJamesVersion";
 				var requestJson = JSON.stringify(request);
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/BibleWordWebService.asmx/GetAPage",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						renderBibleWord(dataSet);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("bibleWord").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/BibleWordWebService.asmx/GetAPage",
+					requestJson,
+					renderBibleWord,
+					"bibleWord"
+				);
 			}
 
 			function retrieveHisWord()
 			{
 				var request = {};
-				var word = getWord();
-
-				if (word === "" || isNaN(word) === false)
-				{
-					return;
-				}
-				request["word"] = word;
-				
+				request["word"] = document.getElementById("word").value;
 				var requestJson = JSON.stringify(request);
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/HisWord.asmx/APairingOfOurSum",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						renderHisWord(dataSet);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("hisWord").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/HisWord.asmx/APairingOfOurSum",
+					requestJson,
+					renderHisWord,
+					"hisWord"
+				);
 			}
 
 			function retrieveMeISupposeInTime()
 			{
-				var request = {};
-				var checker = getWord();
+				var checker = document.getElementById("word").value;
 				if (isNaN(checker) === true)
 				{
-					document.getElementById("meISupposeInTime").innerHTML = "";
+					return;
+				}	
+				var request = {};
+				request["bibleVersion"] = "KingJamesVersion";
+				request["checker"] = checker;
+				var requestJson = JSON.stringify(request);
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/MeISupposeInTime.asmx/Query",
+					requestJson,
+					renderMeISupposeInTime,
+					"meISupposeInTime"
+				);
+			}
+		
+			function retrieveMyCondemn()
+			{
+				var words = scriptLiteral9432.splitDelimiters(document.getElementById("word").value);
+		
+				if (words.length != 2)
+				{
 					return;
 				}	
 				
-				request["bibleVersion"] = "KJV";
-				request["checker"] = checker;
-				var requestJson = JSON.stringify(request);
+				var request = {};
+				var bookID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					words[0]
+				)
+				% 
+				66;
+				if (bookID === 0)
+				{
+					bookID = 66;
+				}	
 				
+				var verseID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					words[1]
+				)
+
+				request["bookID"] = bookID;
+				request["verseID"] = verseID;
+
+				var requestJson = JSON.stringify(request);
+
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/MyCondemn.asmx/Query",
+					requestJson,
+					renderMyCondemn,
+					"myCondemn"
+				);
+			}
+
+			function retrieveStartFromZ()
+			{
+				var request = {};
+
+				request["word"] = wordElement.value;
+				
+				var requestJson = JSON.stringify(request);
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/StartFromZ",
+					requestJson,
+					renderStartFromZ,
+					"startFromZ"
+				);
+			}
+
+			function retrieveVeliciaThreeThreeFourEnd()
+			{
+				var alphabetSequenceIndexPercentageElement = document.getElementById("alphabetSequenceIndexPercentage");
+				var alphabetSequenceIndexPercentageScriptureReferenceElement = document.getElementById("alphabetSequenceIndexPercentageScriptureReference");
+				
+				var request = {};
+				request["word"] = document.getElementById("word").value;
+				
+				var requestJson = JSON.stringify(request);
 				$.ajax
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/MeISupposeInTime.asmx/Query",
+					url: "/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/VeliciaThreeThreeFourEnd",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
 					{
-						var dataSet = JSON.parse(data.d);
-						renderMeISupposeInTime(dataSet);
+						var infoSet =	JSON.parse(data.d);
+						alphabetSequenceIndexPercentageElement.innerHTML =
+							`AlphabetSequenceIndexPercentage ${infoSet.alphabetSequenceIndexPercentage}%`
+						alphabetSequenceIndexPercentageScriptureReferenceElement.innerHTML =
+							"AlphabetSequenceIndexPercentageScriptureReference <a href='ScriptureReference.html?scriptureReference=" + 
+								infoSet.alphabetSequenceIndexPercentageScriptureReference + "'>" + 
+								infoSet.alphabetSequenceIndexPercentageScriptureReference + "</a>";
 					},
 					error: function(xhr)
 					{ 
-						document.getElementById("numberSign").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
+						resultSetElement.innerHTML =
+							`Status: ${xhr.status} StatusText: ${xhr.statusText} ResponseText: ${xhr.responseText}`
+							;							
 					} 
 				});
 			}
-			
+
+			function retrieveWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood()
+			{
+				var words = scriptLiteral9432.splitDelimiters(document.getElementById("word").value);
+		
+				if (words.length != 3)
+				{
+					return;
+				}	
+				
+				var request = {};
+				var bookID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					words[0]
+				)
+				var chapterID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					words[1]
+				)
+				var verseID = scriptLiteral9432.alphabetSequenceIndex
+				(
+					words[2]
+				)
+
+				request["bookID"] = bookID;
+				request["chapterID"] = chapterID;
+				request["verseID"] = verseID;
+
+				var requestJson = JSON.stringify(request);
+
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordGroup/WhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood.asmx/Query",
+					requestJson,
+					renderWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood,
+					"whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood"
+				);
+			}
+
 			function retrieveNumberSign(scriptureReference)
 			{
 				var request = {};
 				request["scriptureReference"] = scriptureReference;
 				var requestJson = JSON.stringify(request);
-				
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/NumberSignWebService.asmx/TalentBonding",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						renderNumberSign(dataSet);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("numberSign").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/NumberSignWebService.asmx/TalentBonding",
+					requestJson,
+					renderNumberSign,
+					"numberSign"
+				);
 			}
 			
-			function retrieveScripture(scriptureReference)
+			function retrieveSacredText(scriptureReference)
 			{
 				var request = {};
 				request["scriptureReference"] = scriptureReference;
 				request["bibleVersion"] = "KingJamesVersion";
 				var requestJson = JSON.stringify(request);
-				
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						renderScripture(dataSet, scriptureReference);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("sacredText").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query",
+					requestJson,
+					renderSacredText,
+					"sacredText"
+				);
 			}
 			
 			function retrieveWordToNumber()
 			{
 				var request = {};
-				var word = getWord();
-				if (word === "")
-				{
-					return;
-				}
-				request["word"] = word;
+				request["word"] = document.getElementById("word").value;
 				var requestJson = JSON.stringify(request);
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/WordToNumberWebService.asmx/RetrieveScriptureReference",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						if (dataSet.number > 0)
-						{
-							document.getElementById("wordToNumber").innerHTML = 
-								dataSet.number + "<br>" + 
-								scriptureReferenceHyperlink(dataSet.scriptureReference);
-						}		
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("wordToNumber").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/WordToNumberWebService.asmx/RetrieveScriptureReference",
+					requestJson,
+					renderWordToNumber,
+					"wordToNumber"
+				);
 			}
 
 			function scriptureReferenceHyperlink(scriptureReference)

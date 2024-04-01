@@ -437,3 +437,9 @@ git add			IIS/WordEngineering/WordGroup/July1951NineteenFiftyOne.html
 git add			IIS/WordEngineering/WordUnion/LastAfter.html
 git add			IIS/WordEngineering/WordUnion/LetMeBeTheWay.html
 git add			IIS/WordEngineering/WordUnion/labs.bible.orgNETBibleWebService.html
+
+git add         IIS/WordEngineering/WordGroup/LetPeterGo.html
+git add			IIS/WordEngineering/WordUnion/LeviticusAirDrop.html
+
+git add			IIS/WordEngineering/WordCross/ToKnowAPeriodAsYou.asmx
+git add	        IIS/WordEngineering/WordCross/ToKnowAPeriodAsYou.html
