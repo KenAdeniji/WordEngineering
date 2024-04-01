@@ -433,3 +433,7 @@ git add			IIS/WordEngineering/WordCross/KoNeed.html
 
 git add			IIS/WordEngineering/WordGroup/July1951NineteenFiftyOne.asmx
 git add			IIS/WordEngineering/WordGroup/July1951NineteenFiftyOne.html
+
+git add			IIS/WordEngineering/WordUnion/LastAfter.html
+git add			IIS/WordEngineering/WordUnion/LetMeBeTheWay.html
+git add			IIS/WordEngineering/WordUnion/labs.bible.orgNETBibleWebService.html

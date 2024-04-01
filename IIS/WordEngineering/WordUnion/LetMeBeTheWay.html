@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html>
+	<!--
+		2016-03-04
+	-->
 	<head>
-		<!--
-			2016-03-04	LetMeBeTheWay.
-		-->
-		<title>Let Me, be the way</title>
-		<link rel="stylesheet" type="text/css" href="9432.css">
+		<title>Let me the way</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Let me the way"/>
+		<meta name="keywords" content="Sacred Text"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
 	</head>
 	<body>
-		<div id="informationSet" align="center"></div>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 		<script>
-			function renderLetMeBeTheWay(data) 
-			{
-				var info = "<table id='letMeBeTheWayTable'><caption>Let Me Be The Way</caption>";
-				info += "<thead><tr><th>Verse Text</th><th>Scripture Reference</th><th>Count</th></tr></thead><tbody>";
-				
-				var dataRow = null;
-				var dataTable = null;
-			
-				var verseText = null;
-				var	scriptureReferences = null;
-				var verseTextCount = null;
-				
-				for (var table in data) {
-					dataTable = data[table];
-					
-					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
-					{
-						dataRow = dataTable[rowIndex];
-						
-						verseText = dataRow["KingJamesVersion"];
-						scriptureReferences = dataRow["ScriptureReferences"];
-						verseTextCount = dataRow["KingJamesVersionCount"];
-						
-						info += "<tr>";
-						info += "<td>" + verseText + "</td>";
-						info += "<td>" + scriptureReferenceHyperlink(scriptureReferences) + "</td>";
-						info += "<td>" + verseTextCount + "</td>";
-						info += "</tr>";
-					}
-				}
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center" id="resultDataSet">
 
-				info += "</tbody>"
-				info += "</table>"
-				document.getElementById("informationSet").innerHTML = info;
-			}
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var isPostBack = false;
+
+			var	resultDataSetElement = document.getElementById("resultDataSet");
 			
-			function retrieveLetMeBeTheWay()
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
+						querySubmit();
+						isPostBack = true;
+					});
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
 			{
 				var request = {};
 				//request[""] = document.getElementById("").value;
@@ -62,26 +59,20 @@
 					dataType: "json",
 					success: function(data) 
 					{
-						var dataSet = JSON.parse(data.d);
-						renderLetMeBeTheWay(dataSet);
+						var dataDataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataDataSet, "resultDataSet");
 					},
 					error: function(xhr)
 					{ 
-						document.getElementById("informationSet").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
+						resultDataSetElement.innerHTML =
+							"Status: " + xhr.status + " | " + 
+							"StatusText: " + xhr.statusText + " | " +
+							"ResponseText: " + xhr.responseText;
 					} 
 				});
 			}
-			
-			function scriptureReferenceHyperlink(scriptureReference)
-			{
-				return "<a href='ScriptureReference.html?scriptureReference=" + 
-					scriptureReference + "'>" + scriptureReference + "</a>";
-			}
 
-			window.addEventListener("load", retrieveLetMeBeTheWay, false);
-		</script>
-	</body>
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
 </html>

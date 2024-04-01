@@ -5,38 +5,16 @@
 	-->	
 	<head>
 		<title>labs.bible.orgNET Bible Web Service</title>
-		<style>
-			body {background: #737CA1}
-			/*
-			table{
-				width:100%; 
-				border-collapse:collapse; 
-			}
-			*/
-			table td{ 
-				padding:7px; border:#4e95f4 1px solid;
-			}
-			/* provide some minimal visual accomodation for IE8 and below */
-			table tr{
-				background: #b8d1f3;
-			}
-			/*  Define the background color for all the ODD background rows  */
-			table tr:nth-child(odd){ 
-				background: #b8d1f3;
-			}
-			/*  Define the background color for all the EVEN background rows  */
-			table tr:nth-child(even){
-				background: #dae5f4;
-			}
-			
-			/* div inside a div, border. */
-			div > div {
-				border: 1px solid #ccc;
-			} 
-		</style>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 	</head>
 	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
 		<div>
 			<label for="scriptureReference">
 				Scripture Reference (for example, votd, random):	

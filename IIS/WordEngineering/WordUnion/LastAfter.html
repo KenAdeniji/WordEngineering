@@ -5,9 +5,15 @@
 		2018-01-25	Created.
 		-->
 		<title>Last After</title>
-		<link rel="stylesheet" type="text/css" href="9432.css">
 	</head>
 	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
 		<div align="center">
 			<fieldset>
 				<legend>Query:</legend>
@@ -66,12 +72,10 @@
 					},
 					error: function(xhr)
 					{ 
-						$("#resultSet").html
-						(
+						document.getElementById("resultSet").innerHTML =
 							'Status: ' + xhr.status + " | " + 
 							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.resultSetText
-						);
+							'ResponseText: ' + xhr.responseText;
 					} 
 				});
 			}
