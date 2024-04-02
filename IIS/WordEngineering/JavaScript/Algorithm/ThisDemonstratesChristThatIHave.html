@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-04-01T20:37:00 Created.	
+	-->
+	<head>
+		<title>This demonstrates Christ that I have.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="This demonstrates Christ that I have."/>
+		<meta name="keywords" content="Scripture reference"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="initial">Initial:</label></td>
+					<td><input id="initial" type="text" autofocus/></td>
+				</tr>	
+				<tr>
+					<td><label for="extra">Extra:</label></td>
+					<td><input id="extra" type="text"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="setQuery" type="button">Set</button>
+						<button id="appendQuery" type="button">Append</button>
+					</td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script>
+			var isPostBack = false;
+			
+			const	initialElement = document.getElementById("initial");
+			const	extraElement = document.getElementById("extra");
+			
+			const	setQueryElement = document.getElementById("setQuery");
+			const	appendQueryElement = document.getElementById("appendQuery");
+
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+				}
+			}
+
+			function setSubmit()
+			{
+				resultSetElement.innerHTML = initialElement.value;
+			}
+
+			function appendSubmit()
+			{
+				resultSetElement.innerHTML += extraElement.value;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			setQueryElement.addEventListener("click", setSubmit, false);
+			appendQueryElement.addEventListener("click", appendSubmit, false);
+	</script>
+</body>
+</html>

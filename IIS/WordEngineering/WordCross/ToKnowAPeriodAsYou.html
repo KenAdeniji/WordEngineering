@@ -10,18 +10,29 @@
 		<meta name="keywords" content="Bible, BookID, ChapterID"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
 		<div>
 			<table align="center">
 				<tr>
 					<td><label for="bibleVersion">Version:</label></td>
-					<td><select id="bibleVersion"></select></td>
+					<td><select id="bibleVersion" autofocus></select></td>
 				</tr>	
 				<tr>
 					<td><label for="bookID">Book ID:</label></td>
-					<td><input type="number" id="bookID" min="1" max="66" value="6"/></td>
+					<td>
+						<!--
+							<input type="number" id="bookID" min="1" max="66" value="6"/>
+						-->	
+						<select id="bookID"</select>
+					</td>
 				</tr>
 				<tr>
 					<td><label for="chapterID">Chapter ID:</label></td>
@@ -53,6 +64,7 @@
 				{
 					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
 						scriptLiteral9432.renderBibleVersionSelect();
+						scriptLiteral9432.renderBibleBookSelect();
 						querySubmit();
 						isPostBack = true;
 					});
@@ -68,7 +80,7 @@
 				var request = {};
 
 				request["bibleVersion"] = bibleVersionElement.value;
-				request["bookID"] = parseInt(bookIDElement.value);
+				request["bookID"] = bookIDElement.selectedIndex + 1;
 				request["chapterID"] = parseInt(chapterIDElement.value);
 				
 				var requestJson = JSON.stringify(request);
