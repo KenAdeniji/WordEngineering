@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<!--
+		2024-03-28 15:11:46.273 word.
 		2024-04-01T20:37:00 Created.	
 	-->
 	<head>
@@ -39,9 +40,11 @@
 			<div align="center" id="resultSet"></div>
 		</div>
 		
+		<script src="ThisDemonstratesChristThatIHave.js"></script>
+		
 		<script>
 			var isPostBack = false;
-			
+		
 			const	initialElement = document.getElementById("initial");
 			const	extraElement = document.getElementById("extra");
 			
@@ -50,22 +53,27 @@
 
 			const	resultSetElement = document.getElementById("resultSet");
 			
+			var scriptureReference;
+			
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
+					setSubmit();
 					isPostBack = true;
 				}
 			}
 
 			function setSubmit()
 			{
-				resultSetElement.innerHTML = initialElement.value;
+				scriptureReference = new ScriptureReference( initialElement.value );
+				resultSetElement.innerHTML = scriptureReference.literal;
 			}
 
 			function appendSubmit()
 			{
-				resultSetElement.innerHTML += extraElement.value;
+				scriptureReference.append( extraElement.value );
+				resultSetElement.innerHTML = scriptureReference.literal;
 			}
 
 			window.addEventListener("load", pageLoad, false);
