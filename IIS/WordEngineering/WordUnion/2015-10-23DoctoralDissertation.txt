@@ -1241,6 +1241,13 @@ Influence
 This data...where does it exist?
 
 Legacy storage of some data types is unnecessary, since this data is computable. For example, concordances are automatically determinable. Dictionaries that contain the meaning of words are available on-line. Computers provide up-to-date versions and translations.
+
+How-to display the data? After determining the AlphabetSequenceIndexScriptureReference the author currently retrieves and displays in particular the King James Version (KJV) Bible text, and the author provides a hyperlink to a scripture reference page for displaying other Bible versions. This practice follows Google's display of a Wikipedia's sidebar and providing a hyperlink to the particular Wikipedia url. For Bible literates, this regurgitation may be redundant. What programming skills are in demand?
+
+    Issuing a SQL select, and using a cursor to loop through a tabular or variable output, and building an HTML fragment
+    Simply creating a HTML anchor to a source url
+    Fetching, parsing, and building the results of a web service
+
 Talent and reward?
 
     What is the cost of entry? There is no monetary investment. The author started when he was unemployed.
@@ -3100,5 +3107,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/02/2024 23:40:35
+Last modified: 04/03/2024 17:28:05
 ""
