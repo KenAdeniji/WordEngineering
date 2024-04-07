@@ -15,6 +15,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
+using InformationInTransit.ProcessCode;
 using InformationInTransit.ProcessLogic;
 
 /*
@@ -49,6 +50,7 @@ using InformationInTransit.ProcessLogic;
 			question = question.Replace(" ", "");
 			question = question.Replace("\"", "");
 			question = question.Replace("'", "");
+	2024-04-06T10:29:00...2024-04-06T11:53:00 ToInitiateAllBring			
 */
 ///<summary>
 ///	2015-11-05	Created.	AlphabetSequenceWebService.asmx
@@ -69,13 +71,6 @@ using InformationInTransit.ProcessLogic;
 [ScriptService]
 public class AlphabetSequenceWebService : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public int ID(string word)
@@ -188,6 +183,14 @@ public class AlphabetSequenceWebService : System.Web.Services.WebService
 		);
 
 		return json;
+	}
+
+	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String ToInitiateAllBring(string word)
+    {
+		string scriptureReference = InformationInTransit.ProcessCode.ToInitiateAllBring.Query(word);
+		return scriptureReference;
 	}
 	
 	[WebMethod]

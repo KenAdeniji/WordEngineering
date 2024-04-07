@@ -66,6 +66,7 @@
 			2024-03-02T23:34:00...2024-03-03T00:33:00 StartFromZ
 			2024-03-07 16:21:37.170 HisWordID 160844. ContactID 5080 Dulhan Grocery.
 			2024-03-11T20:07:00...2024-03-11T21:09:00 WordInterpretation.asmx
+			2024-04-06T10:29:00...2024-04-06T11:53:00 ToInitiateAllBring
 		-->
 		<title>Get A Page</title>
 		<meta charset="UTF-8"/>
@@ -81,10 +82,11 @@
 			<input type="submit" id="submitQuery">
 			<br>
 			<div id="resultSet">
-				<div id="myCondemn"></div>
-				<div id="whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood"></div>
 				<div id="alphabetSequence"></div>
 				<div id="scriptureReference"></div>
+				<div id="myCondemn"></div>
+				<div id="whoIsYourManagerCrazyMisterMartinMisterMartinAsAGood"></div>
+				<div id="toInitiateAllBring"></div>
 				<div id="alphabetSequenceIndexPercentage"></div>
 				<div id="alphabetSequenceIndexPercentageScriptureReference"></div>
 				<div id="alphabetSequenceIndexStartFromZ"></div>
@@ -175,6 +177,7 @@
 				
 				retrieveWhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood()
 				retrieveMyCondemn();
+				retrieveToInitiateAllBring();
 
 				const pattern = /[^-\w .\,]/;
 				if (pattern.test(wordElement.value)) 
@@ -490,6 +493,22 @@
 				document.getElementById("sacredText").innerHTML = info;
 			}
 
+			function renderToInitiateAllBring(data) 
+			{
+				var resultScriptureReference = data.d;
+				var myToInitiateAllBringURI = encodeURI
+				(
+					'scriptureReference.html?scriptureReference=' + resultScriptureReference
+				);
+				var myToInitiateAllBringAnchor = 'ToInitiateAllBring (<a href="' + 
+					myToInitiateAllBringURI + 
+					'">' + 
+					resultScriptureReference + 
+					")</a><br/>";
+				
+				document.getElementById("toInitiateAllBring").innerHTML = myToInitiateAllBringAnchor;
+			}
+
 			function renderWordToNumber(data)
 			{
 				var dataSet = JSON.parse(data.d);
@@ -660,6 +679,30 @@
 					requestJson,
 					renderStartFromZ,
 					"startFromZ"
+				);
+			}
+
+			function retrieveToInitiateAllBring()
+			{
+				var words = scriptLiteral9432.splitDelimiters(wordElement.value);
+		
+				if (words.length != 3)
+				{
+					return;
+				}	
+				
+				var request = {};
+
+				request["word"] = wordElement.value;
+
+				var requestJson = JSON.stringify(request);
+
+				scriptLiteral9432.ajax
+				(
+					"/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/ToInitiateAllBring",
+					requestJson,
+					renderToInitiateAllBring,
+					"toInitiateAllBring"
 				);
 			}
 
