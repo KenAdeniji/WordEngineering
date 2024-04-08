@@ -454,3 +454,7 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-04-04T0917NorikoYosh
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-04-04T1840Press@CoinBase.com_DaveWasmer_-_github.com_-_davewasmer_-_Biblejs.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-04-06T1824EwenChan.txt
+
+git add         InformationInTransit/DaveWasmer/
+git add	        InformationInTransit/ProcessCode/ToInitiateAllBring.cs
+git add	        SQLScript/2024-04-06T0726udf_ToInitiateAllBring.sql
