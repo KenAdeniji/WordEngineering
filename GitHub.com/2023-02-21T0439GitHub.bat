@@ -458,3 +458,7 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-04-06T1824EwenChan.t
 git add         InformationInTransit/DaveWasmer/
 git add	        InformationInTransit/ProcessCode/ToInitiateAllBring.cs
 git add	        SQLScript/2024-04-06T0726udf_ToInitiateAllBring.sql
+
+git add	        InformationInTransit/DaveWasmer/BibleJs/books.js
+git add 	    InformationInTransit/DaveWasmer/BibleJs/range.js
+git add         InformationInTransit/DaveWasmer/BibleJs/reference.js
