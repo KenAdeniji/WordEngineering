@@ -1,0 +1,10 @@
+apiVersion: jesusinthelamb.com/v1alpha1
+kind: Resource
+metadata:
+  name: wordengineering-db
+  description: Stores the word spoken to the author
+spec:
+  type: database
+  owner: team-a
+  system: word
+  

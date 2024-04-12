@@ -185,7 +185,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1686);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7437);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7449);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  14905);
@@ -220,6 +220,18 @@ pscp -pw LinuxPassword e:\SQLServerBackup\URI\URI_2020-02-17.bak kadeniji@10.0.4
 pscp -pw LinuxPassword e:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/WordEngineering/WordEngineering_2020-02-18.bak
 
 :SQLScript
+
+:URI
+http://localhost/InformationInTransit/contactmaintenance.aspx
+http://localhost/Informationintransit/urimaintenancewebform.aspx
+http://localhost/WordEngineering/WordUnion/GetAPage.html
+http://localhost/WordEngineering/Dated/DateDifference.aspx
+http://localhost/WordEngineering/Dated/DateAdd.aspx
+http://localhost/WordEngineering/WordUnion/ScriptureReference.html
+http://localhost/WordEngineering/WordUnion/BibleWord.html
+http://localhost/WordEngineering/WordUnion/BiblePercentage.html
+http://localhost/Gradual/Contacts/ContactsList.aspx
+http://localhost/WordEngineering/Resume/KenAdenijiResume.html
 
 :ErrorMessage
 http://KenAdeniji.WordPress.com/2015/11/20/ken-adenijis-resume
@@ -535,23 +547,8 @@ OK
 
 2024-03-31T17:04:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/LetMeBeTheWay.html
 
-2024-03-18T14:27:00
-http://github.com/mozilla/readability
-To parse a document, you must create a new Readability object from a DOM document object, and then call the parse() method. Here's an example:
+2024-04-09T18:32:00	itbook.store/files/9781593279790/chapter2.pdf 	Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity by Randall Hyde 		Assembly expert 	2023-04-05 	62650
 
-var article = new Readability(document).parse();
+2024-04-10T13:36:00 techcommunity.microsoft.com 				2022-12-09 	60518
 
-If you use Readability in a web browser, you will likely be able to use a document reference from elsewhere (e.g. fetched via XMLHttpRequest, in a same-origin <iframe> you have access to, etc.). In Node.js, you can use an external DOM library.
-
-2024-03-20T03:43:00 AnthonyDeBarros.com 	Practical SQL 			2024-01-18 	64907
-
-14:05 I met Abdul-Azeez Alli in 2005-April when Wale Soyinka re-located to Canada...what day of the month was this? copyrightYear <script> Notepad++ versus (VS) microsoft notepad microsoft windows operating system clipboard select copy paste windows menu north west.
-
-2024-03-21T07:32:00	microsoft sql server management studio hourglass.
-
-2024-03-21T07:49:00	microsoft sql server management studio hourglass.
-
-2024-03-21T07:52:00	microsoft windows operating system Notepad++ freeze.
-
-2024-03-21T20:18:00	google.com/books/edition/The_Joy_of_Search/aGquDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover 2023-05-31 62691
 :Exit

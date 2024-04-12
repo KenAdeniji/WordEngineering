@@ -1,0 +1,10 @@
+apiVersion: jesusinthelamb.com/v1alpha1
+kind: Resource
+metadata:
+  name: IHaveDecidedToWorkOnAGradualImprovingSystem-db
+  description: Stores the recruiters details
+spec:
+  type: database
+  owner: team-a
+  system: recruiters
+  

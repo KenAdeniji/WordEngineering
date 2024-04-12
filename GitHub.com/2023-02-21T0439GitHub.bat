@@ -462,3 +462,5 @@ git add	        SQLScript/2024-04-06T0726udf_ToInitiateAllBring.sql
 git add	        InformationInTransit/DaveWasmer/BibleJs/books.js
 git add 	    InformationInTransit/DaveWasmer/BibleJs/range.js
 git add         InformationInTransit/DaveWasmer/BibleJs/reference.js
+
+git add         packages
