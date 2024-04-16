@@ -57,6 +57,9 @@ xcopy e:\Rust \\Harvest\e$\Rust /d /e /s /y
 xcopy e:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
+:ScriptDB
+scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
+
 :SQLServerBackup
 xcopy e:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
 xcopy e:\SQLServerBackup d:\SQLServerBackup /d /e /s /y
@@ -227,6 +230,7 @@ http://localhost/Informationintransit/urimaintenancewebform.aspx
 http://localhost/WordEngineering/WordUnion/GetAPage.html
 http://localhost/WordEngineering/Dated/DateDifference.aspx
 http://localhost/WordEngineering/Dated/DateAdd.aspx
+http://localhost/WordEngineering/Dated/DateRatio.html
 http://localhost/WordEngineering/WordUnion/ScriptureReference.html
 http://localhost/WordEngineering/WordUnion/BibleWord.html
 http://localhost/WordEngineering/WordUnion/BiblePercentage.html
@@ -549,6 +553,8 @@ OK
 
 2024-04-09T18:32:00	itbook.store/files/9781593279790/chapter2.pdf 	Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity by Randall Hyde 		Assembly expert 	2023-04-05 	62650
 
-2024-04-10T13:36:00 techcommunity.microsoft.com 				2022-12-09 	60518
+python-3-for-scientists.readthedocs.io/en/latest 	Python 3 for scientists 		Python 	2022-08-12 	59404
+
+sitepoint.com/javascript-window-object 				2022-06-16 	59350
 
 :Exit
