@@ -32,12 +32,6 @@ Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Theory
-"
-Structured Query Language (SQL)
-Set Theory
-
-The set we will mostly deal with is the HisWord table. Is in order of occurrence.
-" (Itzik Ben-Gan, 7/3/2023).
 The Bible Database
 The Scripture Table
 
@@ -262,6 +256,12 @@ The author manually indexes according to the following progression:
     The Exact table is an index of the words in the King James Version (KJV) of the Bible.
     The source of information is in the bibliography section.
 
+"
+Structured Query Language (SQL)
+Set Theory
+
+The set we will mostly deal with is the HisWord table. Is in order of occurrence.
+" (Itzik Ben-Gan, 7/3/2023).
 The Author Uses the Git Code Repository Key 	Value 	Commentary
 Universal Resource Identifier (URI) 	github.com/KenAdeniji 	This is the home page for storing the repositories.
 Date Created 	2013-04-27 	This is the date of creating the github.com account.
@@ -3123,5 +3123,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/18/2024 19:29:27
+Last modified: 04/18/2024 21:00:26
 ""
