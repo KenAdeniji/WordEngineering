@@ -32,6 +32,12 @@ Chuck Missler of Koinonia House (KHouse) is worthy of note, faith (Hebrews 11).
 
 There is indebtedness of the author to Ury Schecow, his Masters degree supervisor, at the University of Technology, Sydney (UTS), 15 Broadway Ultimo (NSW), 2007, Australia. The author is grateful to Tom Osborne, his Artificial Intelligence instructor; and Brian Henderson-Sellers, his Object Oriented Technology instructor; both also at UTS. The author makes mention of his colleagues at UTS; Decler Mendez, Cesar Orcando, Ricardo Lamas and Peter Milne. The author stretches his open hand to Robyn A. Lindley, his Doctorate supervisor at the University of Wollongong (UOW), NSW 2522, Australia.
 Theory
+"
+Structured Query Language (SQL)
+Set Theory
+
+The set we will mostly deal with is the HisWord table. Is in order of occurrence.
+" (Itzik Ben-Gan, 7/3/2023).
 The Bible Database
 The Scripture Table
 
@@ -2838,6 +2844,7 @@ References
     ABB (Asea Brown Boveri) W3C web page; Available from http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL Server Coding Standards (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs
     Dive into Deep Learning W3C web page; Available from d2l.ai
     The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
+    T-SQL Fundamentals Itzik Ben-Gan; W3C web page; Available from http://www.microsoftpressstore.com/articles/article.aspx?p=3178897
     Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
     RESTful or RESTless –Current State of Today’s Top Web APIs Frederik B ̈ulthoff, Maria Maleshkova AIFB, Karlsruhe Institute of Technology (KIT), Germany frederik.buelthoff@student.kit.edu, maria.maleshkova@kit.edu; W3C web page; Available from http://arxiv.org/pdf/1902.10514.pdf
@@ -3116,5 +3123,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/16/2024 15:57:15
+Last modified: 04/18/2024 19:29:27
 ""

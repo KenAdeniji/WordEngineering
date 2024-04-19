@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  14905);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5074);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164167);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162257);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 164022);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
@@ -556,5 +556,11 @@ OK
 python-3-for-scientists.readthedocs.io/en/latest 	Python 3 for scientists 		Python 	2022-08-12 	59404
 
 sitepoint.com/javascript-window-object 				2022-06-16 	59350
+
+	en.wikipedia.org/wiki/Jim_Hugunin 	Jim Hugunin is a software programmer who created the Python programming language extension Numeric (ancestor to NumPy), and later created Python implementations for the Java Platform (Jython) and for Microsoft .NET platform (IronPython); he has also co-designed the AspectJ extension for the Java programming language. He worked for Microsoft from 2004 to 2010, mainly on IronPython and Dynamic Language Runtime. 		Python 	2022-05-08 	58310
+
+WesMcKinney.com/book 	Python for Data Analysis. Creator of Panda. 	John D. Hunter was an American neurobiologist and the original author of Matplotlib. Wikipedia Born: August 1, 1968, Dyersburg, TN Died: August 28, 2012, Chicago, IL 	Python, Panda 	2022-03-26 	58273
+
+dickinson.edu/johnmaccormick 	Search engine indexing. PageRank. Public-key cryptography. Forward error correction. Pattern recognition. Data compression. Database. Digital signature. 	2021-12-25T14:49:00 Be yourself. Could you recount the memory of surprising you. To be among someone else, as yourself. 	Search engine, matching, ranking, Google, John MacCormick 	2021-12-24 	57181
 
 :Exit
