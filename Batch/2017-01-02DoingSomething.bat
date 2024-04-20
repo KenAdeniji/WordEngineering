@@ -539,6 +539,8 @@ OK
 
 2024-03-20T14:05:00...2024-03-20T14:15:00 I met Abdul-Azeez Alli in 2005-April when Wale Soyinka re-located to Canada...what day of the month was this? copyrightYear <script> Notepad++ versus (VS) microsoft notepad microsoft windows operating system clipboard select copy paste windows menu north west.
 
+2024-04-19T16:15:00...2024-04-19T16:22:00 microsoft windows operating system. file explorer. windows can't find 'e:\SQLServerDataManipulationLanguageDML\WordEngineering' check the spelling and try again. 
+
 2024-03-10T19:40:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IntegratedLicense.aspx
 
 2024-03-11T07:39:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/IRealizeMyFullSenseInMakingMan.html
