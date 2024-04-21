@@ -1210,8 +1210,10 @@ Software Engineer versus (VS) Database Administrator
 Keyword 	Software Engineer 	Database Administrator
 Programming language 	Instruction set: keyword, syntax, Application Programming Interface (API) 	Structured Query Language (SQL)
 Focus language 	Predominantly English 	American Standard Code for Information Interchange (ASCII)...Unicode culture
-Time frame 	Development lifecycle - limited by budget 	Eternal - periodic operational cost
+Time frame 	Development life cycle - limited by budget. Deprecated code. Automated jobs and events. How much data are we working with? What is the longevity? Asynchronous multitasking 	Eternal - periodic operational cost. Expired data? Scheduled tasks and activities? Backup, housekeeping, sending e-mail, creating files and additional space.
 Remember human versus reference identities? For example, Bible word versus (VS) scripture reference 	Context-sensitive help 	Auto-completion
+Location 	Read only memory (ROM), Random Access Memory (RAM), hard disk paging. Github.com version control. E-mail body, attachment. Internet front-end files (.html, .js. .css). 	Hard disk. Transaction log, backup files. Back-end data is accessible via web services. Separated into records and columns, tables, views, indexes, stored procedures, user-defined functions.
+Threat? For example, virus 	Memory, program file 	Data file
 Customization standard 	Strict 	Flexible
 Law versus (VS) tradition practice 	Sacrifice 	Mercy
 Compatibility 	Legacy? Backward compatible...re-engineering. New, creativity. Framework. 	Progressive
@@ -3141,5 +3143,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/21/2024 04:42:44
+Last modified: 04/21/2024 06:57:13
 ""
