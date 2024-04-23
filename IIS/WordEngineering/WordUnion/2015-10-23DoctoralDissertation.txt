@@ -1215,7 +1215,7 @@ Remember human versus reference identities? For example, Bible word versus (VS) 
 Location 	Read only memory (ROM), Random Access Memory (RAM), hard disk paging. Github.com version control. E-mail body, attachment. Internet front-end files (.html, .js. .css). 	Hard disk. Transaction log, backup files. Back-end data is accessible via web services. Separated into records and columns, tables, views, indexes, stored procedures, user-defined functions.
 Threat? For example, virus 	Memory, program file 	Data file
 Customization standard 	Strict 	Flexible
-Law versus (VS) tradition practice 	Sacrifice 	Mercy
+Law versus (VS) traditional practice 	Sacrifice 	Mercy
 Compatibility 	Legacy? Backward compatible...re-engineering. New, creativity. Framework. 	Progressive
 
 " (Itzik Ben-Gan, 7/3/2023).
@@ -2864,6 +2864,7 @@ References
     ABB (Asea Brown Boveri) W3C web page; Available from http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL Server Coding Standards (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs
     Dive into Deep Learning W3C web page; Available from d2l.ai
     The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
+    Musings on the C charter Aaron Ballman, 2023-12-29; W3C web page; Available from http://blog.aaronballman.com/2023/12/musings-on-the-c-charter
     T-SQL Fundamentals Itzik Ben-Gan; W3C web page; Available from http://www.microsoftpressstore.com/articles/article.aspx?p=3178897
     Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
@@ -3143,5 +3144,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/21/2024 06:57:13
+Last modified: 04/22/2024 18:08:42
 ""
