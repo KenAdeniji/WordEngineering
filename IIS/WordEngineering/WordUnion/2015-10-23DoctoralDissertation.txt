@@ -24,6 +24,7 @@ The importance of this work?
     Follow God, as a character.
     To track dates and words? And, find meaning, correlation.
     To touch...numeric. Miracles of turning water into wine, feeding with fish and bread, resurrection after 3 days.
+    How do you associate goodness with kindness ( Exodus 6:7 )?
 
 Where does the Bible list? Creation days, genealogies, allies, plagues, tribes, journey, commandments, reigns, kingdoms, disciples, fruit of the Holy Spirit, churches.
 Acknowledgments
@@ -1208,7 +1209,7 @@ How-to verify the work of the spirit?
 Software Engineer versus (VS) Database Administrator
 
 Keyword 	Software Engineer 	Database Administrator
-Programming language 	Instruction set: keyword, syntax, Application Programming Interface (API) 	Structured Query Language (SQL)
+Programming language 	Instruction set: keyword, syntax, Application Programming Interface (API) 	Structured Query Language (SQL) a data sublanguage
 Focus language 	Predominantly English 	American Standard Code for Information Interchange (ASCII)...Unicode culture
 Time frame 	Development life cycle - limited by budget. Deprecated code. Automated jobs and events. How much data are we working with? What is the longevity? Asynchronous multitasking 	Eternal - periodic operational cost. Expired data? Scheduled tasks and activities? Backup, housekeeping, sending e-mail, creating files and additional space.
 Remember human versus reference identities? For example, Bible word versus (VS) scripture reference 	Context-sensitive help 	Auto-completion
@@ -1225,6 +1226,22 @@ What is remembrance...associate?
     The 2 Transact-SQL functions that the author uses are DateDiff() and DateAdd() with the day metric unit.
     The author's source, Wikipedia.org, places dates in high visibility locations.
     For the most reliable date computations, the author depends on the Biblical calendar.
+
+"
+Volume, Velocity, Variety
+
+Keyword 	Commentary
+Volume 	
+sp_spaceused @objname = 'HisWord' Keyword 	Value
+Rows 	115689
+Reserved 	28296 KB
+Data 	17104 KB
+Index_Size 	9648 KB
+Unused 	1544 KB
+Velocity 	The author does manual data entry.
+Variety 	At the beginning, the author parsed XML files into textual relational tables.
+
+" (Jack Hyman, March 2024).
 
 Time for?
 
@@ -2888,6 +2905,7 @@ References
     Hyperpiler Brian Holt; W3C web page; Available from http://patents.google.com/patent/US10942709B2/en
     Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
     Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity Randall Hyde; W3C web page; Available from http://RandallHyde.com
+    Learning Made Easy. Data Analytics & Visualization. A Wiley Brand. Jack A. Hyman, Luca Massaron, Paul McFedries, John Paul Mueller, Lillian Pierson, Jonathan Reichental, Joseph Schmuller, Alan R. Simon, Allen G. Taylor ISBN: 978-1-394-24409-6. http://www.wiley.com/en-us/Data+Analytics+%26+Visualization+All+in+One+For+Dummies-p-9781394244102
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
@@ -3144,5 +3162,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/22/2024 18:08:42
+Last modified: 04/24/2024 11:25:44
 ""

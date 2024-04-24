@@ -557,16 +557,8 @@ OK
 
 2024-03-31T17:04:00	http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/LetMeBeTheWay.html
 
-2024-04-09T18:32:00	itbook.store/files/9781593279790/chapter2.pdf 	Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity by Randall Hyde 		Assembly expert 	2023-04-05 	62650
-
-python-3-for-scientists.readthedocs.io/en/latest 	Python 3 for scientists 		Python 	2022-08-12 	59404
-
-sitepoint.com/javascript-window-object 				2022-06-16 	59350
-
-	en.wikipedia.org/wiki/Jim_Hugunin 	Jim Hugunin is a software programmer who created the Python programming language extension Numeric (ancestor to NumPy), and later created Python implementations for the Java Platform (Jython) and for Microsoft .NET platform (IronPython); he has also co-designed the AspectJ extension for the Java programming language. He worked for Microsoft from 2004 to 2010, mainly on IronPython and Dynamic Language Runtime. 		Python 	2022-05-08 	58310
-
-WesMcKinney.com/book 	Python for Data Analysis. Creator of Panda. 	John D. Hunter was an American neurobiologist and the original author of Matplotlib. Wikipedia Born: August 1, 1968, Dyersburg, TN Died: August 28, 2012, Chicago, IL 	Python, Panda 	2022-03-26 	58273
-
-dickinson.edu/johnmaccormick 	Search engine indexing. PageRank. Public-key cryptography. Forward error correction. Pattern recognition. Data compression. Database. Digital signature. 	2021-12-25T14:49:00 Be yourself. Could you recount the memory of surprising you. To be among someone else, as yourself. 	Search engine, matching, ranking, Google, John MacCormick 	2021-12-24 	57181
+sawmac.com 	Missing Manuals by Dave McFarland 	2023-02-19T23:00:00 Restored. 		2021-08-15 	57064
+	
+LearnDapper.com 	Welcome To Learn Dapper This site is for developers who want to learn how to use Dapper - the micro ORM produced by the people behind Stackoverflow. What is Dapper? link Dapper is a popular simple object mapping tool. It is designed primarily to be used in scenarios where you want to work with data in a strongly typed fashion - as business objects in a .NET application, but don't want to spend hours writing code to map query results from ADO.NET data readers to instances of those objects. Dapper is an open source project under the Apache license. It is available as a Nuget package and has been downloaded over 16 million times. Is Dapper an ORM? link Dapper falls into a family of tools known as micro-ORMs. These tools perform only a subset of the functionality of full-blown Object Relations Mappers, such as Entity Framework Core. Features vary by product. The following table provides a general idea of the capabilities that you can expect to find in a micro ORM compared to an ORM: 		Twin sibling 	2021-01-21 	54900	
 
 :Exit
