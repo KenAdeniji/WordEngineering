@@ -1248,6 +1248,29 @@ Unused 	1544 KB
 Velocity 	The author does manual data entry.
 Variety 	At the beginning, the author parsed XML files into textual relational tables.
 
+" (Jack Hyman, March 2024). "
+Data Type
+
+HisWord table
+Qualitative (categorical) non-numerical/discriptive - nominal (non-ordered), ordinal (orderly)
+or
+Quantitative (numerical) uses numbers - discrete (countable), continuous (measurable) Column name 	Column type
+HisWordID	Discrete (countable)
+Dated	Continuous (measurable)
+Word	Nominal (non-ordered)
+Commentary	Nominal (non-ordered)
+Uri	Nominal (non-ordered)
+ContactID	Discrete (countable)
+ScriptureReference	Nominal (non-ordered)
+Filename	Nominal (non-ordered)
+EnglishTranslation	Nominal (non-ordered)
+Location	Nominal (non-ordered)
+Scene	Nominal (non-ordered)
+Data type 	Column type
+Nominal (non-ordered)	Varchar
+Discrete (countable)	Identity and integer
+Continuous (measurable)	Datetime
+
 " (Jack Hyman, March 2024).
 
 Time for?
@@ -2378,7 +2401,7 @@ From...Until AlphabetSequence
 " The author will not break each experience into sequences. At this late stage of the research, the author is content, with his original table design, and will elaborate, when it is appropriate, to newer suggestions. " (John Whalen).
 What do you want to use it for?
 
-It is firstly, a database work. That is the author records God's word. What the author hears, he relates to the Bible and the other scriptural sources. These information are all in database tables, giving the author the luxury of using relational technology. The benefit includes storage and archive, that is, the work is usable in tabular format. There is a copy of the information running Microsoft SQL Server on a Linux operating system; which the author switches to, by changing the database connection string of one node in the web.config. When the user decides to stabilize and admit no further changes; then there is no need to do additional database update work. As with such work, the database schema remains consistent, since the beginning. The choice of word, meets today's expectations. The addition of the ActToGod table, demonstrates the maturity of the author.
+It is firstly, a database work. That is the author records God's word. What the author hears, he relates to the Bible and the other scriptural sources. These information are all in database tables, giving the author the luxury of using relational technology. The benefit includes storage and archive, that is, the work is usable in tabular format. There is a copy of the information running Microsoft SQL Server on a Linux operating system; which the author switches to, by changing the database connection string of one node in the web.config. When the user decides to stabilize and admit no further changes; then there is no need to do additional database update work. As with such work, the database schema remains consistent, since the beginning. The choice of word, meets today's expectations. The addition of the ActToGod table, demonstrates the maturity of the author, since it advances from data to information.
 
 The author, first wrote his history, in multiple stand-alone files .HTML, .XML. (Acts 7:22). This documentation didn't allow for enough dating, to track creation and change, nor easy querying. Therefore, the decision to move to a relational database; that will augment this fact.
 
@@ -3169,5 +3192,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/25/2024 07:21:20
+Last modified: 04/25/2024 18:03:07
 ""
