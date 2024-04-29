@@ -192,7 +192,7 @@ DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7449);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  14905);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 5074);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6478);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162273);
@@ -560,5 +560,26 @@ OK
 sawmac.com 	Missing Manuals by Dave McFarland 	2023-02-19T23:00:00 Restored. 		2021-08-15 	57064
 	
 LearnDapper.com 	Welcome To Learn Dapper This site is for developers who want to learn how to use Dapper - the micro ORM produced by the people behind Stackoverflow. What is Dapper? link Dapper is a popular simple object mapping tool. It is designed primarily to be used in scenarios where you want to work with data in a strongly typed fashion - as business objects in a .NET application, but don't want to spend hours writing code to map query results from ADO.NET data readers to instances of those objects. Dapper is an open source project under the Apache license. It is available as a Nuget package and has been downloaded over 16 million times. Is Dapper an ORM? link Dapper falls into a family of tools known as micro-ORMs. These tools perform only a subset of the functionality of full-blown Object Relations Mappers, such as Entity Framework Core. Features vary by product. The following table provides a general idea of the capabilities that you can expect to find in a micro ORM compared to an ORM: 		Twin sibling 	2021-01-21 	54900	
+
+	tompeters.com/wp-content/uploads/2020/07/Shareholder-Value-Maximization.0805.19.pdf 	MAXIMIZING SHAREHOLDER VALUE 1970-???:THE MORALLYBANKRUPT,INCOMPARABLYDESTRUCTIVE(NOT LEGALLY REQUIRED)ECONOMIC IDEATHAT DECAPITATEDMODERN BUSINESSAND IS SPURRING SOCIAL INSTABILITYTom Peters05 April2019 			2020-08-21 	53811
+	
+	alistapart.com/article/designing-for-conversions 	Designing for Conversions by Brandon Gregory · February 14, 2019 			2019-03-07 	52192
+	
+	
+	csharpindepth.com 				2019-12-07 	52565
+	
+ry@tinyclouds.org 	Ryan Dahl 			2017-12-04 	47542
+
+deming.org/theman/theories/fourteenpoints 	Out of the Crisis by W. Edwards Deming 		Japan, Chevron, twin sibling, management, measure, metric 	2016-05-28 	38119	
+
+2024-04-29T06:20:00...2024-04-29T06:29:00
+microsoft sql server managment studio
+data has changed since the results pane was last retrieved.
+do you want to save your changes now?
+(optimistic concurrency control error)
+click yes to commit your changes to database anyway.
+click no to discard your change and retrieve the current data for this row.
+click cancel to continue editing.
+yes no cancel help
 
 :Exit
