@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-04-30T05:47:00...2024-04-30T06:49:00 Created.	
+	-->
+	<head>
+		<title>Jesus as also awoke. 5:07</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Jesus as also awoke. 5:07"/>
+		<meta name="keywords" content="24-hour clock"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="twentyFourHourFormat">24-hour Format:</label></td>
+					<td><input type="time" id="twentyFourHourFormat" value="5:07"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+				<tr>
+					<td><label for="totalMinutes">Total minutes:</label></td>
+					<td><span type="time" id="totalMinutes"></span></td>
+				</tr>
+				<tr>
+					<td><label for="timePercentage">Time percentage:</label></td>
+					<td><span type="time" id="timePercentage"></span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<script>
+			var isPostBack = false;
+			
+			const	twentyFourHourFormatElement = document.getElementById("twentyFourHourFormat");
+			
+			const	totalMinutesElement = document.getElementById("totalMinutes");
+			const	timePercentageElement = document.getElementById("timePercentage");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				let [hours, minutes] = twentyFourHourFormatElement.value.split(":");
+				let totalMinutesValue = ( parseInt( hours ) * 60 ) + parseInt( minutes );
+				let timePercentageValue = ( totalMinutesValue * 100 ) / ( 24 * 60 );
+				totalMinutesElement.textContent = totalMinutesValue;
+				timePercentage.textContent = timePercentageValue;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>

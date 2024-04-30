@@ -181,7 +181,7 @@ DBCC CHECKIDENT ('URI..UriBingNews', RESEED, 151);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17865);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
-DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18066);
+DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18105);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);	
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
@@ -582,4 +582,5 @@ click no to discard your change and retrieve the current data for this row.
 click cancel to continue editing.
 yes no cancel help
 
+2024-04-30T01:20:00 Jesus as also awoke. 5:07.
 :Exit
