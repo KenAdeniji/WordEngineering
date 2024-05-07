@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 	<!--
-		2024-04-19T12:46:00 Created.	
+		2024-05-07T11:19:00 Created.	
 	-->
 	<head>
-		<title>One eight nine. Thirty three.</title>
+		<title>What I do with my time is how I...let it use?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="One eight nine. Thirty three."/>
-		<meta name="keywords" content="ChapterID, VerseID"/>
+		<meta name="description" content="What I do with my time is how I...let it use?"/>
+		<meta name="keywords" content="Dated from, dated until, occurrences"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -22,12 +22,12 @@
 		<div>
 			<table align="center">
 				<tr>
-					<td><label for="chapterID">Chapter ID:</label></td>
-					<td><input type="number" id="chapterID" min="1" value="189"/></td>
+					<td><label for="datedFrom">Dated from:</label></td>
+					<td><input type="date" id="datedFrom" value="2024-05-01"/></td>
 				</tr>
 				<tr>
-					<td><label for="verseID">Verse ID:</label></td>
-					<td><input type="number" id="verseID" min="1" value="33"/></td>
+					<td><label for="datedUntil">Dated until:</label></td>
+					<td><input type="date" id="datedUntil" value="2024-05-07"/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -41,8 +41,8 @@
 		<script>
 			var isPostBack = false;
 			
-			const	chapterIDElement = document.getElementById("chapterID");
-			const	verseIDElement = document.getElementById("verseID");
+			const	datedFromElement = document.getElementById("datedFrom");
+			const	datedUntilElement = document.getElementById("datedUntil");
 			
 			const	resultSetElement = document.getElementById("resultSet");
 			
@@ -67,8 +67,8 @@
 			{
 				var request = {};
 
-				request["chapterID"] = parseInt(chapterIDElement.value);
-				request["verseID"] = parseInt(verseIDElement.value);
+				request["datedFrom"] = new Date(datedFromElement.value);
+				request["datedUntil"] = new Date(datedUntilElement.value);
 				
 				var requestJson = JSON.stringify(request);
 				
@@ -76,12 +76,13 @@
 				({
 					type: "POST",
 					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordCross/OneEightNine_ThirtyThree.asmx/Query",
+					url: "/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx/Query",
 					data: requestJson,
 					dataType: "json",
 					success: function(data) 
 					{
-						document.getElementById("resultSet").innerHTML = scriptureReferenceHyperlink(data.d);
+						var dataSet = JSON.parse(data.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
 					},
 					error: function(xhr)
 					{ 
@@ -91,12 +92,6 @@
 							'ResponseText: ' + xhr.responseText;
 					} 
 				});
-			}
-
-			function scriptureReferenceHyperlink(scriptureReference)
-			{
-				return "<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
-					scriptureReference + "'>" + scriptureReference + "</a>";
 			}
 
 			window.addEventListener("load", pageLoad, false);

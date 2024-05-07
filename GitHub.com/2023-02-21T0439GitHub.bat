@@ -475,3 +475,6 @@ git add	        IIS/WordEngineering/WordCross/OneEightNine_ThirtyThree.html
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-04-29T1124info@songtime.com_-_DoctorJohnDeBrine.txt
 
 git add			IIS/WordEngineering/Dated/JesusAsAlsoAwoke5hours07minutes.html
+
+git add			IIS/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx
+git add	        IIS/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.html

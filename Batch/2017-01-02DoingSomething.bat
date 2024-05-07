@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1686);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1705);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7449);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  14905);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6478);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162273);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162424);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 165072);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
@@ -582,5 +582,25 @@ click no to discard your change and retrieve the current data for this row.
 click cancel to continue editing.
 yes no cancel help
 
-2024-04-30T01:20:00 Jesus as also awoke. 5:07.
+chabad.org/library/article_cdo/aid/538797/jewish/When-is-the-next-Sabbatical-year.htm 	Jewish Practice Learning & Values Community & Family Inspiration & Entertainment Jewish Holidays Shemitah Shemitah Q&A When is the next Sabbatical year? By Baruch S. Davidson The year 5789 on the Jewish calendar (Sept. 20, 2028–Sept. 9, 2029) will be the next Sabbatical year. The year following the destruction of the second Holy Temple (3829 from creation, equivalent to 68–69 CE) was the first year of the seven-year Sabbatical cycle. We continue counting sevens from then. Most of the Sabbatical year’s observances are agricultural in nature, and are relevant only in Israel. For those in the Diaspora, the Sabbatical year has two practical ramifications: a) Produce which is imported from Israel must have rabbinical certification, and is also subject to certain laws and restrictions due their sanctity. b) The laws of debt absolution are in effect in all locations. Click here for a method which will allow you to collect debts even during the Sabbatical year. Needless to say, the spiritual and hallowed nature of this special year is applicable and pertinent worldwide. Click here for more on this subject. See also When is the next Jubilee year? Best wishes, Rabbi Baruch S. Davidson By Baruch S. Davidson Rabbi Baruch S. Davidson serves as shliach and rabbi of the Shul Community at Chabad of the Main Line and is the writer of Lightpoints, a collection of insights on the Torah, adapted from the works of the Rebbe. Together with his wife and children, he lives in Lower Merion, in the Philadelphia suburbs. More from Baruch S. Davidson | RSS 		Sabbatical year 	2023-07-10 	19987
+
+youtube.com/watch?v=t70MKzmn2d8 	Brennan Redvers:- Testimonial YouTube – Channel – The Way Satan offered me a deal (Testimony) Videos Video #1 Channel:- The Way Date Published:- 2023-January-14th Date Added:- 2023-February-26th 		Twin sibling 	2023-02-26 	18898
+
+	near-death.com 				2023-01-10 	17876
+	
+	youtube.com/watch?v=0LKsjjD0zRg 	Burning Cities, Sulfur Balls: Excavating Sodom & Gomorrah (with Joel Kramer) by Dr. Sean McDowell 	Premiered Jun 21, 2022 How strong is the archaeological evidence for the destruction of Sodom and Gomorrah? Have we discovered the sulfur balls God used as the means of judgment? Sean interviews Joel Kramer, an archaeologist and author who lives in Jordan, about his personal journey to visit the remains of Sodom and Gomorrah 	Chemical 	2022-07-17	
+	
+ChristianJobs.com	
+
+2024-05-03T17:22:00
+https://www.marketingresearchresources.com/mrIWeb/mrIWeb.dll
+Foreign Affairs
+ForeignAffairs.com
+
+2024-05-03T17:44:00
+mtoi.org 	Messianic Torah Observant Israel with rabbi Steve Berkson 		Twin sibling, Messianic Jew 	2021-05-12 	17685
+pittsburgh.cbslocal.com/2014/09/25/calf-with-7-on-its-head-named-after-big-ben 	Calf With ‘7’ On Its Head Named After Big Ben By Dave Crawley September 25, 2014 at 9:26 am Filed Under:Baby Ben, Ben Roethlisberger, Cambria County, Cow, Dave Crawley, Little Ben, Loretto, No. 7, Pittsburgh Steelers, Vale Wood Farms 			2021-05-07 	17684
+
+2024-05-05T07:27:00
+rcsouthwark.co.uk/paul_home.htm 	An Invitation from Pope Benedict XVI to celebrate the Jubilee Year of Saint Paul. And for this very reason I am pleased to announce officially that we shall be dedicating a special Jubilee Year to the Apostle Paul from 28 June 2008 to 29 June 2009, on the occasion of the bimillennium of his birth, which historians have placed between the years 7 and 10 A.D. 			2020-11-06 	17654
 :Exit

@@ -103,8 +103,6 @@ The WordEngineering Database
 The WordEngineering SQL Server database, mainly consists, of four tables - HisWord, Remember, APass, ActToGod.
 The HisWord Table
 
-The changes in the HisWord table: To be more specific, when we search.
-
 The HisWord table is what the author heard from the source. The entries in the HisWord table are exact and representable in alphanumeric format (Numbers 12:6-8). In following, the Bible's New Testament convention, where there are translations of Hebrew words to English which is being interpreted, (Matthew 1:23, Mark 5:41, Mark 15:22, Mark 15:34, John 1:38, John 1:41, Acts 4:36); so also, there are translations of Yoruba words to English.
 
 There have been cases when the author cannot spell and fully comprehend what he heard. In such cases, and not dispose of the records, the author will partly enter what he heard. This impedance mismatch between what the speaker said and what the listener heard, rarely occurs with English words. But it is likely, in the author's native language, Yoruba, which exploits word combinations and phrases. The alphabets differ slightly between the English and Yoruba languages; Yoruba contains diacritic alphabets. The author requires a Yoruba dictionary and translator; a recent success is with the http://translate.google.com web page.
@@ -129,7 +127,7 @@ The Remember Table
 
 The Remember table tries to correlate the period between a prophecy and its fulfillment. " The terminus a quo DatedFrom is when the prophecy begins, and it marks the the date of issue or establishing of the prophecy. The terminus ad quem DatedUntil is when a prophecy partially or entirely comes to pass. " (Koinonia House). DateDifference.aspx is for calculating the difference between terminus a quo, versus terminus ad quem; the results are in days; biblical years, months, days; the Common Era. The inspiration for adding the Common Era comes from wikipedia.org by Jimmy Wales.
 
-To determine the HisWord and Remember entries? The author chooses to separate the particular and prompted inputs ( Luke 4:19 ). From today and henceforth.
+To determine the HisWord and Remember entries? The author chooses to separate the particular and prompted inputs ( Luke 4:19 ).
 APass
 
 First, inside and last dates.
@@ -1267,9 +1265,9 @@ EnglishTranslation	Nominal (non-ordered)
 Location	Nominal (non-ordered)
 Scene	Nominal (non-ordered)
 Data type 	Column type
-Nominal (non-ordered)	Varchar
-Discrete (countable)	Identity and integer
-Continuous (measurable)	Datetime
+Nominal (non-ordered)	Text
+Discrete (countable)	Numerical
+Continuous (measurable)	Date
 
 " (Jack Hyman, March 2024).
 
@@ -2953,7 +2951,7 @@ References
     Righting Software Juval Löwy of IDesign (2019-11-27); W3C web page; Available from http://books.google.com/books?id=Q3jADwAAQBAJ&printsec=frontcover
     Web Style Guide Patrick J. Lynch and Sarah Horton; W3C web page; Available from http://www.webstyleguide.com
     WebAssembly versus JavaScript: Energy and Runtime Performance Jo˜ao De Macedo∗†, Rui Abreu‡, Rui Pereira†, Jo˜ao Saraiva∗† University of Minho †HASLab/INESC Tec ‡Faculty of Engineering of University of Porto & INESC-ID a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di.uminho.pt W3C web page; Available from http://repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content
-    The 16 Undeniable Laws of Communication John Calvin Maxwell W3C web page; Available from http://www.MaxwellLeadership.com
+    The 16 Undeniable Laws of Communication John Calvin Maxwell (March 28, 2023) W3C web page; Available from http://www.google.com/books/edition/The_16_Undeniable_Laws_of_Communication/XSqdEAAAQBAJ?hl=en
     Steve McConnell W3C web page; Available from http://www.stevemcconnell.com
     Stephen C. Meyer W3C web page; Available from http://www.stephencmeyer.org
     Are Religion and Science in Conflict? — Science and God Stephen C. Meyer (December 20, 2021); W3C web page; Available from http://www.youtube.com/watch?v=wb_qj7KzV1o
@@ -3192,5 +3190,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 04/25/2024 18:03:07
+Last modified: 05/03/2024 09:40:41
 ""
