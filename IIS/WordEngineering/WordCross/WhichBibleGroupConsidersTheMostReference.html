@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 	<!--
-		2024-05-07T11:19:00 Created. http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript
+		2024-05-08T09:08:00 Created.
 	-->
 	<head>
-		<title>What I do with my time is how I...let it use?</title>
+		<title>Which Bible group considers the most reference?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="What I do with my time is how I...let it use?"/>
-		<meta name="keywords" content="Dated from, dated until, occurrences"/>
+		<meta name="description" content="Which Bible group considers the most reference?"/>
+		<meta name="keywords" content="BibleWord occurrences"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -22,12 +22,8 @@
 		<div>
 			<table align="center">
 				<tr>
-					<td><label for="datedFrom">Dated from:</label></td>
-					<td><input type="date" id="datedFrom" value="2024-05-01" autofocus/></td>
-				</tr>
-				<tr>
-					<td><label for="datedUntil">Dated until:</label></td>
-					<td><input type="date" id="datedUntil" value="2024-05-07"/></td>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion" autofocus></select></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -46,8 +42,7 @@
 		<script>
 			var isPostBack = false;
 			
-			const	datedFromElement = document.getElementById("datedFrom");
-			const	datedUntilElement = document.getElementById("datedUntil");
+			const	bibleVersionElement = document.getElementById("bibleVersion");
 			
 			const	resultSetElement = document.getElementById("resultSet");
 			
@@ -57,6 +52,7 @@
 			{
 				if (isPostBack === false)
 				{
+					scriptLiteral9432.renderBibleVersionSelect();
 					querySubmit();
 					isPostBack = true;
 				}
@@ -70,8 +66,7 @@
 			{
 				var request = {};
 
-				request["datedFrom"] = new Date(datedFromElement.value);
-				request["datedUntil"] = new Date(datedUntilElement.value);
+				request["bibleVersion"] = bibleVersionElement.value;
 				
 				const PostData = {
 					method: 'POST',
@@ -83,7 +78,7 @@
 					credentials: 'include'
 				}
 				PostData.body = JSON.stringify(request);
-				url = "/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx/Query";
+				url = "/WordEngineering/WordCross/WhichBibleGroupConsidersTheMostReference.asmx/Query";
 				try {
 					const response = await fetch(url, PostData)
 					.then(response => {

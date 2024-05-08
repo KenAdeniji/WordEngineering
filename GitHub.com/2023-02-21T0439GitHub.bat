@@ -478,3 +478,7 @@ git add			IIS/WordEngineering/Dated/JesusAsAlsoAwoke5hours07minutes.html
 
 git add			IIS/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx
 git add	        IIS/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.html
+
+git add			IIS/WordEngineering/WordCross/WhichBibleGroupConsidersTheMostReference.asmx
+git add			IIS/WordEngineering/WordCross/WhichBibleGroupConsidersTheMostReference.html
+
