@@ -481,6 +481,28 @@ var scriptLiteral9432 =
 		return hyperlink;
 	},
 
+	buildHyperlinkBookID: function(address, parameter) 
+	{
+		if (!parameter) { return ""; }
+		var prefix = "";
+		var uri = "";
+		if (address.toLowerCase().indexOf("http") === -1)
+		{
+			prefix = "/WordEngineering/WordUnion/"; 
+			uri = encodeURI
+			(
+				prefix + address + ".html?" + address + "=" + 
+				scriptLiteral9432.bibleBooks[parameter]
+			);
+		}
+		else
+		{
+			uri = address;
+		}		
+		var hyperlink = "<a href=" + uri + ">" + parameter + "</a>";
+		return hyperlink;
+	},
+
 	buildHyperlinkJSON: function(address, parameter) 
 	{
 		parameter = JSON.parse(parameter);
@@ -1962,7 +1984,18 @@ var scriptLiteral9432 =
 						cellContent
 					);
 				}
-
+				else if (cellName.includes("BookTitle")) //2024-05-08T11:59:00
+				{
+					cellContent = scriptLiteral9432.buildHyperlink("scriptureReference", cellContent);
+				}		
+				else if (cellName.includes("BookID")) //2024-05-08T11:59:00
+				{
+					cellContent = scriptLiteral9432.buildHyperlinkBookID
+					(
+						"scriptureReference",
+						cellContent
+					);
+				}		
 				if (rowColumn && cellContent)
 				{	
 					cells += `<tr><td>${cellName}</td><td>${cellContent}</td></tr>`;
@@ -1970,7 +2003,8 @@ var scriptLiteral9432 =
 				else
 				{	
 					cells += "<td>" + cellContent + "</td>";
-				}	
+				}
+					
 			}
 
 			info += "<tr>" + cells + "</tr>";
