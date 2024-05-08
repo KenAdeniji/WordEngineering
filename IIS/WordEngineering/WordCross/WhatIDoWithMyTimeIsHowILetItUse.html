@@ -63,37 +63,39 @@
 				}
 			}
 
-			function querySubmit()
+			async function querySubmit()
 			{
 				var request = {};
 
 				request["datedFrom"] = new Date(datedFromElement.value);
 				request["datedUntil"] = new Date(datedUntilElement.value);
 				
-				var requestJson = JSON.stringify(request);
-				
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx/Query",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
 					},
-					error: function(xhr)
-					{ 
-						resultSetElement.innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+					console.log(e);
+				};
 			}
-
+			
 			window.addEventListener("load", pageLoad, false);
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			
