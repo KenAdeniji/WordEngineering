@@ -119,6 +119,7 @@
 					9432.js.html
 	2024-01-28...2024-01-29T05:58:00 exportTableToSQL()
 		http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
+	2024-05-07	http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
 */			
 var scriptLiteral9432 =
 {

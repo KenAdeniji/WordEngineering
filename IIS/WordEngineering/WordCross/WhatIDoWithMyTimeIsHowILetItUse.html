@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 	<!--
-		2024-05-07T11:19:00 Created.	
+		2024-05-07T11:19:00 Created. http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript
 	-->
 	<head>
 		<title>What I do with my time is how I...let it use?</title>
@@ -36,7 +36,12 @@
 			<div align="center" id="resultSet"></div>
 		</div>
 		
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		
 		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
 		<script>
 			var isPostBack = false;
@@ -52,10 +57,8 @@
 			{
 				if (isPostBack === false)
 				{
-					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
-						querySubmit();
-						isPostBack = true;
-					});
+					querySubmit();
+					isPostBack = true;
 				}
 				else
 				{
