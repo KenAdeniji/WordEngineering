@@ -1,0 +1,42 @@
+2024-05-15T07:09:00...2024-05-15T09:07:00
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2024-05-15T0709...2024-05-15T0835TheJudgeGroup_-_MartinJudge3rd_-_MEJudge@judge.com.txt
+
+SELECT  
+	ROW_NUMBER() OVER(ORDER BY Dated ASC) AS Row#,
+	Dated,
+	WorkEmail
+FROM  EmailAddress
+WHERE workemail like '%Judge.com%'
+ORDER BY dated ASC
+
+Row#                 Dated                   WorkEmail
+-------------------- ----------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1                    2011-05-25 12:09:06.727 mglinter@judge.com
+2                    2021-12-28 10:10:19.677 JOsunaSola@judge.com
+3                    2022-01-18 13:31:28.947 DLAdsitt@judge.com
+4                    2023-06-21 16:05:29.443 MVassillion@judge.com
+5                    2024-01-11 10:07:20.390 jbraden@judge.com
+6                    2024-01-17 10:32:23.660 cfuessinger@judge.com
+7                    2024-02-22 18:44:05.637 msahoo@judge.com
+8                    2024-03-21 13:54:29.597 NFernandez01@judge.com
+9                    2024-05-15 07:17:21.797 AKumar06@judge.com
+10                   2024-05-15 08:12:53.313 MEJudge@judge.com
+11                   2024-05-15 08:29:53.573 HShermer@Judge.com
+
+(11 rows affected)
+
+
+Completion time: 2024-05-15T08:51:12.5552226-07:00
+
+2024-05-15T07:58:00 The receptionist, Joanne Hoag, initially said the first name of the head is Marty, but the correct spelling is Martin.
+
+e-mail:MEJudge@judge.com,AKumar06@judge.com,HShermer@Judge.com
+
+Please no more spam mail.
+
+Amit Kumar
+Company	The Judge Group
+Work e-mail	AKumar06@judge.com
+Work phone	(610) 890-3115
+Work address	151 South Warner Road, Suite 100, Wayne, Pennsylvania (PA) 19087, United States of America (USA)
+Other phone	(610) 667-7700
