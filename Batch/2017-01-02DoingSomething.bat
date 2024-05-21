@@ -188,7 +188,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1705);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7449);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7589);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15024);
@@ -570,6 +570,12 @@ yes no cancel help
 2024-05-13T15:07:00 overwrite existing file?
 
 2024-05-15T07:33:00 microsoft windows operating system mouse click versus doubleclick?
+
+2024-05-16T14:28:00
+<h3 datetime="2024-03-13T15:01:00" id="LocationOfContent">Location of content</h3>
+
+2024-05-19T09:48:00
+id="WhatExactlyCanWeExpectOutOfTheBible"
 
 2024-05-13T20:58:00
 WebToolsWeekly.com 				2024-03-08 	64965
