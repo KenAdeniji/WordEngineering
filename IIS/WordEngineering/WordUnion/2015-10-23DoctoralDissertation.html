@@ -12315,6 +12315,19 @@ Execution time:     84.46 seconds (00:01:24.46)
 			
 			<h3 id="FutureWork">Future Work</h3>
 
+			<p datetime="2024-05-22T14:48:00">
+				As of 2024-05-22T14:48:00 
+				Microsoft SQL Server does not support sql:2003 Assertion.
+				Microsoft SQL Server does not yet implement 
+					CREATE ASSERTION assertion-name CHECK (constraint)
+					<a 
+						href="http://stackoverflow.com/questions/4130039/does-sql-server-2008-support-the-create-assertion-syntax"
+					>
+						http://stackoverflow.com/questions/4130039/does-sql-server-2008-support-the-create-assertion-syntax
+					</a>
+				2024-05-22T15:28:00	Potential fallback? CHECK CONSTRAINT or trigger.
+			</p>
+
 			<p datetime="2023-08-02T15:01:00">
 				The technical limitations of the current implementation include:
 				<ol>

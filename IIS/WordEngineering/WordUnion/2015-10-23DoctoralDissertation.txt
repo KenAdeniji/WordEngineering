@@ -2565,6 +2565,8 @@ Subject 	1 Corinthians 15:28
 Holy Spirit 	Luke 1:35, Acts 2, 2 Thessalonians 2:7
 Future Work
 
+As of 2024-05-22T14:48:00 Microsoft SQL Server does not support sql:2003 Assertion. Microsoft SQL Server does not yet implement CREATE ASSERTION assertion-name CHECK (constraint) http://stackoverflow.com/questions/4130039/does-sql-server-2008-support-the-create-assertion-syntax 2024-05-22T15:28:00 Potential fallback? CHECK CONSTRAINT or trigger.
+
 The technical limitations of the current implementation include:
 
     Unknown, prior to building?
@@ -3192,5 +3194,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 05/21/2024 06:18:47
+Last modified: 05/22/2024 15:34:33
 ""
