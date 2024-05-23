@@ -485,3 +485,5 @@ git add			IIS/WordEngineering/WordCross/WhichBibleGroupConsidersTheMostReference
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-05-15T0709...2024-05-15T0835TheJudgeGroup_-_MartinJudge3rd_-_MEJudge@judge.com.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-05-15T2225RaziSyed_-_TheFatherOfNainaEyes_-_WhatExactlyHaveWeChosen.txt
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-05-22T1609BarnesAndNobleBN.com_-_BrickAndMortal...Internet_-_Intermittent.txt
