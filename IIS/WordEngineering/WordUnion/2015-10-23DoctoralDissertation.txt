@@ -1205,6 +1205,14 @@ How-to verify the work of the spirit?
 
 Is this a link ( Genesis 41:32, 1 Corinthians 15:45, Acts 9:3, Genesis 5:3 )?
 "
+Relational Model
+
+    The author progressed from authoring disparate HTML files to recording information in a relational database.
+    This transition offers an opportunity to analyze tables, columns and rows.
+    Functional dependencies of relationships between columns are determined.
+    The Word column in the HisWord table is a determinant but, it is not always unique; therefore, it is not its primary key.
+
+" (Allen G. Taylor, 2019). "
 Software Engineer versus (VS) Database Administrator
 
 Keyword 	Software Engineer 	Database Administrator
@@ -3194,5 +3202,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 05/22/2024 15:34:33
+Last modified: 05/24/2024 05:30:51
 ""
