@@ -2,119 +2,76 @@
 <html>
 <!--
 	2016-06-12	Created.
+	2024-05-24T19:29:00...20:28 Uncaught (in promise) TypeError: NetworkError when attempting to fetch resource.
 -->
 	<body>
 		<title>Bible Statistics Opposite</title>
-		<link rel="stylesheet" type="text/css" href="9432.css">
-		<div align="center">
-			<select id="bibleVersion"> </select>
-			<input type="submit" id="submitQuery">
-			<br>
-			<div id="resultSet">
-		</div>
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion" autofocus></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+
 		<script>
 			var isPostBack = false;
 			
-			function bibleWordHyperlink(bibleWord)
-			{
-				var uri = "<a href='BibleWord.html?bibleWord=" + bibleWord + "&" +
-					"logic=or&" + 
-					"wholeWords=true&" +
-					"bibleVersion=" + document.getElementById("bibleVersion").value +
-					"'>" +
-					bibleWord + 
-					"</a>";
-				return uri;	
-			}
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
 			
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "9432.js", function( data, textStatus, jqxhr ) {
-						scriptLiteral9432.renderBibleVersionSelect();
-						querySubmit();	
-						isPostBack = true;
-					});
+					scriptLiteral9432.renderBibleVersionSelect();
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
 				}
 			}
 			
-			function querySubmit()
+			async function querySubmit()
 			{
-				document.getElementById("resultSet").innerHTML = "";
 				var request = {};
-				request["bibleVersion"] = document.getElementById("bibleVersion").value;
-				var requestJson = JSON.stringify(request);
-				
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordUnion/BibleStatisticsOpposite.asmx/Query",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						render(dataSet);
-					},
-					error: function(xhr)
-					{ 
-						document.getElementById("resultSet").innerHTML =
-							'Status: ' + xhr.status + " | " + 
-							'StatusText: ' + xhr.statusText + " | " +
-							'ResponseText: ' + xhr.responseText;
-					} 
-				});
+				request["bibleVersion"] = bibleVersionElement.value;
+				scriptLiteral9432.fetchRender
+				(
+					"/WordEngineering/WordUnion/BibleStatisticsOpposite.asmx/Query",
+					request,
+					scriptLiteral9432.renderDataSet,
+					"resultSet"
+				);
 			}
-
-			function render(data) 
-			{
-				var info = "<table id='resultTable'><caption>Informs on opposites in the Bible.</caption><thead><tr>" +
-						"<th>Words</th><th>Occurrence</th><th>Word First &amp; Last Occurrence</th><th>Word Verse(s) Count</th>" +
-						"<th>Opposite First &amp; Last Occurrence</th><th>Opposite Verse(s) Count</th></tr></thead><tbody>";
-				var dataRow = null;
-				var dataTable = null;
-				
-				var question = null;
-				var answer = null;
-				
-				for (var table in data) {
-					dataTable = data[table];
-					
-					for (var rowIndex = 0, rowCount = dataTable.length; rowIndex < rowCount; ++rowIndex)
-					{
-						dataRow = dataTable[rowIndex];
-						info += "<tr>" +
-							"<td>" + bibleWordHyperlink(dataRow["Words"]) + "</td>" + 
-							"<td>" + dataRow["VerseCount"] + "</td>" + 							
-							"<td>" + 
-							scriptLiteral9432.buildHyperlink
-							(
-								'scriptureReference',
-								dataRow["WordFirstScriptureReference"] + ", " + dataRow["WordLastScriptureReference"]
-							) + 
-							"</td>" +
-							"<td>" + dataRow["WordVerseCount"] + "</td>" + 
-							"<td>" + 
-							scriptLiteral9432.buildHyperlink
-							(
-								'scriptureReference',
-								dataRow["OppositeFirstScriptureReference"] + ", " + dataRow["OppositeLastScriptureReference"]
-							) + 
-							"</td>" +
-							"<td>" + dataRow["OppositeVerseCount"] + "</td>" + 
-							"</tr>";
-					}
-				}
-				info += "</tbody></table>";
-				document.getElementById("resultSet").innerHTML = info;
-			}
-
+			
 			window.addEventListener("load", pageLoad, false);
-			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
 			
 			var body = document.getElementsByTagName('body')[0];
 			body.onkeydown = function (e) {

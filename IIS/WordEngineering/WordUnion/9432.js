@@ -120,6 +120,7 @@
 	2024-01-28...2024-01-29T05:58:00 exportTableToSQL()
 		http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
 	2024-05-07	http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
+	2024-05-26T22:00:00 fetchRender()
 */			
 var scriptLiteral9432 =
 {
@@ -956,6 +957,44 @@ var scriptLiteral9432 =
 	{
 		date = new Date(date);
 		return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
+	},
+
+	fetchRender: async function
+	(
+		fetchUri,
+		fetchRequest,
+		callback,
+		uiDisplay,
+		rowColumn
+	)
+	{
+		const PostData = {
+			method: 'POST',
+			headers: {
+				"Accept": "application/json",
+				'Content-Type': 'application/json; charset=utf-8'
+			},
+			dataType: 'json',
+			credentials: 'include'
+		}
+		PostData.body = JSON.stringify(fetchRequest);
+		try {
+			const response = await fetch
+			(
+				fetchUri,
+				PostData
+			)
+			.then(response => {
+				return response.json();
+			})
+			.then(responseJSON => {
+				var dataSet = JSON.parse(responseJSON.d);
+				callback(dataSet, uiDisplay, rowColumn);
+			})	
+			} catch (e) {
+			uiDisplay.innerHTML = e;
+		};
+		
 	},
 	
 	fetchUri: function(uri, callback)

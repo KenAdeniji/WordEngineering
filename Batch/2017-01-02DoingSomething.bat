@@ -191,8 +191,8 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1705);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7589);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15047);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6478);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162424);
@@ -580,4 +580,31 @@ id="WhatExactlyCanWeExpectOutOfTheBible"
 2024-05-13T20:58:00
 WebToolsWeekly.com 				2024-03-08 	64965
 WebAssembly.org 			Jest · Delightful JavaScript Testing 	2024-02-14 	64925
+
+2024-05-24T16:38:00...2024-05-24T16:52:00
+Msg 1911, Level 16, State 1, Line 13
+Column name 'Years, Months, Days' does not exist in the target table or view.
+Msg 1750, Level 16, State 0, Line 13
+Could not create constraint or index. See previous errors.
+Msg 4902, Level 16, State 1, Line 34
+Cannot find the object "dbo.TerminusAQuo_TerminusAdQuem" because it does not exist or you do not have permissions.
+
+Completion time: 2024-05-24T16:50:54.3467783-07:00
+
+2024-05-24T19:15:00...2024-05-24T19:21:00
+http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleStatisticsActivity.html
+
+http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleStatisticsExact.html
+
+2024-05-24T19:29:00
+http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleStatisticsOpposite.html
+
+2024-05-21T18:54:00
+Testing e-mails.
+My twin sibling deleted the Microsoft hotmail.com folders:
+Junk Email
+Sent Items
+
+2024-05-24T19:47:00 Notepad++ closes, exits, ends, aborts, terminates. Faeces.
+
 :Exit

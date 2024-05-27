@@ -27,13 +27,6 @@ using InformationInTransit.ProcessLogic;
 [ScriptService]
 public class BibleStatisticsOpposite : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-	
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query(string bibleVersion)
