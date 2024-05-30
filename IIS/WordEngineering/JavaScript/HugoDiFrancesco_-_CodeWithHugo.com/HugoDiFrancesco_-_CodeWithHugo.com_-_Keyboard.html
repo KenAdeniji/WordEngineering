@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-04-22T19:05:00 Created. http://codewithhugo.com/detect-ctrl-click-js-react-vue/
+	-->
+	<head>
+		<title>HugoDiFrancesco_-_CodeWithHugo.com_-_Keyboard.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="HugoDiFrancesco_-_CodeWithHugo.com_-_Keyboard.html"/>
+		<meta name="keywords" content="HugoDiFrancesco, CodeWithHugo.com, keyboard"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link typs="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
+		<div align="center" id="resultSet"></div>
+		
+		<script>
+			const resultSetElement = document.getElementById("resultSet");
+		
+			function querySubmit(e)
+			{
+				if ( resultSetElement.innerHTML !== "" )
+				{
+					resultSetElement.innerHTML += "<br>";
+				}
+				var keyPressed = "";
+				if ( e.altKey )
+				{
+					keyPressed += " altKey ";
+				}
+				if ( e.shiftKey )
+				{
+					keyPressed += " shiftKey ";
+				}
+				if ( e.ctrlKey )
+				{
+					keyPressed += " ctrlKey ";
+				}
+				if ( keyPressed !== "" )
+				{
+					resultSetElement.innerHTML += keyPressed;
+				}
+			}
+
+			document.addEventListener
+			(
+				'click',
+				function (e) 
+				{
+					querySubmit(e);
+				}
+			);
+		</script>
+	</body>
+</html>

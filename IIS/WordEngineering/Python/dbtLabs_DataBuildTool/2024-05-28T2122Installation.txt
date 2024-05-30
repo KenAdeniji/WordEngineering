@@ -1,0 +1,12 @@
+http://docs.getdbt.com/docs/core/connect-data-platform/mssql-setup
+	python -m pip install dbt-core dbt-sqlserver
+	
+http://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15
+
+dbt init WordEngineering
+dbt debug
+dbt run
+
+python -m pip uninstall -y dbt-adapters
+python -m pip install --upgrade dbt-core dbt-common dbt-sqlserver
+dbt --version

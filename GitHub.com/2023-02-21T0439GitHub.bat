@@ -492,3 +492,6 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-05-22T1609BarnesAndN
 
 git add			IIS/WordEngineering/WordUnion/BibleStatisticsOpposite.html
 git add			IIS/WordEngineering/WordUnion/BibleStatisticsOpposite.asmx
+
+git add	        IIS/WordEngineering/JavaScript/HugoDiFrancesco_-_CodeWithHugo.com
+git add	        IIS/WordEngineering/Python/dbtLabs_DataBuildTool
