@@ -1,13 +1,13 @@
-WordEngineering: #http://docs.getdbt.com/docs/core/connect-data-platform/mssql-setup
-  target: dev
+jaffle_shop:    #http://docs.getdbt.com/docs/core/connect-data-platform/mssql-setup
+  target: dev   #http://dbt-msft.github.io/dbt-msft-docs/docs/training/
   outputs:
     dev:
       type: sqlserver
       driver: 'ODBC Driver 18 for SQL Server' # (The ODBC Driver installed on your system)
       server: comfort
       port: 1433
-      database: WordEngineering
-      schema: dbo
+      database: dbtLabs_DataBuildTool
+      schema: KAA
       windows_login: True
       encrypt: false
       trust_cert: True

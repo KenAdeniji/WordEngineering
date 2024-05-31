@@ -3040,3 +3040,1486 @@ USE [WordEngineering];
 [0m05:50:05.945743 [debug] [MainThread]: Command `dbt run` succeeded at 05:50:05.944743 after 140.03 seconds
 [0m05:50:05.948745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025FD63A94B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025FD1F28D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025FD9856F80>]}
 [0m05:50:05.951747 [debug] [MainThread]: Flushing usage events
+[0m06:36:57.071610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4749A830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E46529750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E465281C0>]}
+
+
+============================== 06:36:57.126608 | 166ac1d5-57f9-4651-8230-122aa751af44 ==============================
+[0m06:36:57.126608 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:36:57.159612 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'debug': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m06:37:00.801420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4A528190>]}
+[0m06:37:00.983410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E498ECBB0>]}
+[0m06:37:00.985415 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:37:01.031411 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:37:01.259397 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m06:37:01.261403 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m06:37:01.263399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4A60DBD0>]}
+[0m06:37:06.607130 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.staging
+[0m06:37:06.621127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AAA80D0>]}
+[0m06:37:06.827117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AAAB2B0>]}
+[0m06:37:06.830120 [info ] [MainThread]: Found 1 model, 3 seeds, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:37:06.834119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4A669AB0>]}
+[0m06:37:06.843116 [info ] [MainThread]: 
+[0m06:37:06.849111 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:37:06.855116 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:37:06.891113 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:37:06.892111 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:37:06.893114 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:37:06.895113 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:08.897012 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:09.163993 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:37:10.655918 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:37:10.724915 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbtLabs_DataBuildTool, now create_dbtLabs_DataBuildTool_KAA)
+[0m06:37:10.729916 [debug] [ThreadPool]: Creating schema "database: "dbtLabs_DataBuildTool"
+schema: "KAA"
+"
+[0m06:37:10.754912 [debug] [ThreadPool]: Using sqlserver connection "create_dbtLabs_DataBuildTool_KAA"
+[0m06:37:10.756915 [debug] [ThreadPool]: On create_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "create_dbtLabs_DataBuildTool_KAA"} */
+USE [dbtLabs_DataBuildTool];
+    IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'KAA')
+    BEGIN
+    EXEC('CREATE SCHEMA [KAA]')
+    END
+  
+[0m06:37:10.758911 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:37:10.761914 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:10.863906 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:11.256885 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m06:37:11.422879 [debug] [ThreadPool]: On create_dbtLabs_DataBuildTool_KAA: COMMIT
+[0m06:37:11.424881 [debug] [ThreadPool]: On create_dbtLabs_DataBuildTool_KAA: Close
+[0m06:37:11.529881 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:37:11.552876 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:37:11.554877 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:37:11.556873 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:37:11.557870 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:11.721862 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:12.239837 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:37:12.406829 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:37:12.464824 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:37:12.516825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AAE9C60>]}
+[0m06:37:12.519825 [debug] [MainThread]: On master: COMMIT
+[0m06:37:12.523821 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:37:12.528829 [info ] [MainThread]: 
+[0m06:37:12.605821 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_customers
+[0m06:37:12.609821 [info ] [Thread-1 (]: 1 of 3 START seed file KAA.raw_customers ....................................... [RUN]
+[0m06:37:12.615819 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'seed.jaffle_shop.raw_customers'
+[0m06:37:12.618820 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_customers
+[0m06:37:12.621819 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_customers (compile): 06:37:12.619820 => 06:37:12.619820
+[0m06:37:12.624823 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_customers
+[0m06:37:12.712812 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_customers"
+[0m06:37:12.714814 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_customers"} */
+
+    create table "dbtLabs_DataBuildTool"."KAA"."raw_customers" ("id" int,"first_name" varchar(16),"last_name" varchar(16))
+  
+[0m06:37:12.715814 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:37:12.716811 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:12.798807 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:12.956799 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:37:13.244787 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:37:13.484772 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_customers"
+[0m06:37:13.485772 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_customers" ("id", "first_name", "last_name") values
+          (?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),...
+[0m06:37:25.770144 [debug] [Thread-1 (]: SQL status: OK in 12.0 seconds
+[0m06:37:25.883139 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_customers"
+[0m06:37:25.955137 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: COMMIT
+[0m06:37:25.958136 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_customers (execute): 06:37:12.626819 => 06:37:25.957140
+[0m06:37:25.959134 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: Close
+[0m06:37:26.046130 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AB0FF70>]}
+[0m06:37:26.049132 [info ] [Thread-1 (]: 1 of 3 OK loaded seed file KAA.raw_customers ................................... [[32mINSERT 100[0m in 13.43s]
+[0m06:37:26.055133 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_customers
+[0m06:37:26.058130 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_orders
+[0m06:37:26.061135 [info ] [Thread-1 (]: 2 of 3 START seed file KAA.raw_orders .......................................... [RUN]
+[0m06:37:26.069134 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.jaffle_shop.raw_customers, now seed.jaffle_shop.raw_orders)
+[0m06:37:26.072134 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_orders
+[0m06:37:26.076132 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_orders (compile): 06:37:26.074132 => 06:37:26.074132
+[0m06:37:26.078132 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_orders
+[0m06:37:26.107126 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_orders"
+[0m06:37:26.109129 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_orders"} */
+
+    create table "dbtLabs_DataBuildTool"."KAA"."raw_orders" ("id" int,"user_id" int,"order_date" date,"status" varchar(16))
+  
+[0m06:37:26.110126 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:37:26.112129 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:26.375115 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:26.753094 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:37:27.000082 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:37:27.322067 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_orders"
+[0m06:37:27.324069 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_orders" ("id", "user_id", "order_date", "status") values
+          (?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,...
+[0m06:37:43.600235 [debug] [Thread-1 (]: SQL status: OK in 16.0 seconds
+[0m06:37:43.669229 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_orders"
+[0m06:37:43.683235 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: COMMIT
+[0m06:37:43.689236 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_orders (execute): 06:37:26.081137 => 06:37:43.687236
+[0m06:37:43.692232 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: Close
+[0m06:37:43.815223 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AAEB700>]}
+[0m06:37:43.818223 [info ] [Thread-1 (]: 2 of 3 OK loaded seed file KAA.raw_orders ...................................... [[32mINSERT 99[0m in 17.75s]
+[0m06:37:43.825221 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_orders
+[0m06:37:43.828225 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_payments
+[0m06:37:43.831226 [info ] [Thread-1 (]: 3 of 3 START seed file KAA.raw_payments ........................................ [RUN]
+[0m06:37:43.839226 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.jaffle_shop.raw_orders, now seed.jaffle_shop.raw_payments)
+[0m06:37:43.842230 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_payments
+[0m06:37:43.846224 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_payments (compile): 06:37:43.844224 => 06:37:43.844224
+[0m06:37:43.848225 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_payments
+[0m06:37:43.870220 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_payments"
+[0m06:37:43.871219 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_payments"} */
+
+    create table "dbtLabs_DataBuildTool"."KAA"."raw_payments" ("id" int,"order_id" int,"payment_method" varchar(16),"amount" int)
+  
+[0m06:37:43.873222 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:37:43.874221 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:37:44.058212 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:37:44.291198 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:37:44.435193 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:37:44.794171 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_payments"
+[0m06:37:44.796177 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_payments" ("id", "order_id", "payment_method", "amount") values
+          (?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),...
+[0m06:38:06.946040 [debug] [Thread-1 (]: SQL status: OK in 22.0 seconds
+[0m06:38:07.018036 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_payments"
+[0m06:38:07.044035 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: COMMIT
+[0m06:38:07.050035 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_payments (execute): 06:37:43.851226 => 06:38:07.048036
+[0m06:38:07.052038 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: Close
+[0m06:38:07.142036 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '166ac1d5-57f9-4651-8230-122aa751af44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AB071C0>]}
+[0m06:38:07.145036 [info ] [Thread-1 (]: 3 of 3 OK loaded seed file KAA.raw_payments .................................... [[32mINSERT 113[0m in 23.30s]
+[0m06:38:07.151035 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_payments
+[0m06:38:07.158033 [debug] [MainThread]: On master: COMMIT
+[0m06:38:07.161033 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:38:07.162032 [debug] [MainThread]: Connection 'create_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:38:07.164034 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:38:07.165033 [debug] [MainThread]: Connection 'seed.jaffle_shop.raw_payments' was properly closed.
+[0m06:38:07.167033 [info ] [MainThread]: 
+[0m06:38:07.172033 [info ] [MainThread]: Finished running 3 seeds in 0 hours 1 minutes and 0.32 seconds (60.32s).
+[0m06:38:07.177029 [debug] [MainThread]: Command end result
+[0m06:38:07.205033 [info ] [MainThread]: 
+[0m06:38:07.210031 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:38:07.212031 [info ] [MainThread]: 
+[0m06:38:07.214031 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m06:38:07.218032 [debug] [MainThread]: Command `dbt seed` succeeded at 06:38:07.217035 after 70.37 seconds
+[0m06:38:07.220037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4749A830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AAFFDF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4AA3F310>]}
+[0m06:38:07.222030 [debug] [MainThread]: Flushing usage events
+[0m06:39:18.603818 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E333599F00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E332628A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E332628160>]}
+
+
+============================== 06:39:18.612819 | be252525-3fde-40e9-acf9-c9338b95f783 ==============================
+[0m06:39:18.612819 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:39:18.615824 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'debug': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt seed', 'send_anonymous_usage_stats': 'True'}
+[0m06:39:19.420785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E336627E50>]}
+[0m06:39:19.580777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3359ECB80>]}
+[0m06:39:19.582777 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:39:19.615772 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:39:19.830762 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:39:19.832766 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:39:19.834765 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.staging
+[0m06:39:19.849761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3369480D0>]}
+[0m06:39:19.879766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3368FF280>]}
+[0m06:39:19.881769 [info ] [MainThread]: Found 1 model, 3 seeds, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:39:19.886768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3367E4A00>]}
+[0m06:39:19.891764 [info ] [MainThread]: 
+[0m06:39:19.894765 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:39:19.899764 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:39:19.933758 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:39:19.934758 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:39:19.936761 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:39:19.938762 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:39:21.485692 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:39:21.720679 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:39:23.118623 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:39:23.207622 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:39:23.237617 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:39:23.239615 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:39:23.240612 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:39:23.241615 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:39:23.342607 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:39:23.867584 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:39:24.813544 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:39:24.846542 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:39:24.956541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3369898A0>]}
+[0m06:39:24.959543 [debug] [MainThread]: On master: COMMIT
+[0m06:39:24.963540 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:39:24.968541 [info ] [MainThread]: 
+[0m06:39:24.980540 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_customers
+[0m06:39:24.984541 [info ] [Thread-1 (]: 1 of 3 START seed file KAA.raw_customers ....................................... [RUN]
+[0m06:39:24.990536 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'seed.jaffle_shop.raw_customers'
+[0m06:39:24.993540 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_customers
+[0m06:39:24.996535 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_customers (compile): 06:39:24.995538 => 06:39:24.995538
+[0m06:39:24.999538 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_customers
+[0m06:39:25.079530 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_customers"
+[0m06:39:25.081533 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_customers"} */
+truncate table "dbtLabs_DataBuildTool"."KAA"."raw_customers"
+[0m06:39:25.082533 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:39:25.083532 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:39:25.185530 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:39:25.393520 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:39:25.656506 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:39:25.993493 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_customers"
+[0m06:39:25.994493 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_customers" ("id", "first_name", "last_name") values
+          (?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),(?,?,?),...
+[0m06:39:38.422946 [debug] [Thread-1 (]: SQL status: OK in 12.0 seconds
+[0m06:39:38.518942 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_customers"
+[0m06:39:38.568936 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: COMMIT
+[0m06:39:38.571935 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_customers (execute): 06:39:25.002538 => 06:39:38.570939
+[0m06:39:38.572936 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_customers: Close
+[0m06:39:38.699934 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3367E4970>]}
+[0m06:39:38.703935 [info ] [Thread-1 (]: 1 of 3 OK loaded seed file KAA.raw_customers ................................... [[32mINSERT 100[0m in 13.71s]
+[0m06:39:38.710930 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_customers
+[0m06:39:38.713933 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_orders
+[0m06:39:38.716933 [info ] [Thread-1 (]: 2 of 3 START seed file KAA.raw_orders .......................................... [RUN]
+[0m06:39:38.721931 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.jaffle_shop.raw_customers, now seed.jaffle_shop.raw_orders)
+[0m06:39:38.725937 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_orders
+[0m06:39:38.729935 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_orders (compile): 06:39:38.728936 => 06:39:38.728936
+[0m06:39:38.732936 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_orders
+[0m06:39:38.764928 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_orders"
+[0m06:39:38.766931 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_orders"} */
+truncate table "dbtLabs_DataBuildTool"."KAA"."raw_orders"
+[0m06:39:38.767929 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:39:38.768929 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:39:38.905925 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:39:39.388903 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:39:39.527898 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:39:39.847878 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_orders"
+[0m06:39:39.849882 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_orders" ("id", "user_id", "order_date", "status") values
+          (?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,...
+[0m06:39:57.067123 [debug] [Thread-1 (]: SQL status: OK in 17.0 seconds
+[0m06:39:57.151123 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_orders"
+[0m06:39:57.157123 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: COMMIT
+[0m06:39:57.161121 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_orders (execute): 06:39:38.734932 => 06:39:57.160124
+[0m06:39:57.162119 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_orders: Close
+[0m06:39:57.234120 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3369D7310>]}
+[0m06:39:57.236120 [info ] [Thread-1 (]: 2 of 3 OK loaded seed file KAA.raw_orders ...................................... [[32mINSERT 99[0m in 18.51s]
+[0m06:39:57.240120 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_orders
+[0m06:39:57.242117 [debug] [Thread-1 (]: Began running node seed.jaffle_shop.raw_payments
+[0m06:39:57.244120 [info ] [Thread-1 (]: 3 of 3 START seed file KAA.raw_payments ........................................ [RUN]
+[0m06:39:57.248120 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.jaffle_shop.raw_orders, now seed.jaffle_shop.raw_payments)
+[0m06:39:57.250119 [debug] [Thread-1 (]: Began compiling node seed.jaffle_shop.raw_payments
+[0m06:39:57.252116 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_payments (compile): 06:39:57.251117 => 06:39:57.251117
+[0m06:39:57.254119 [debug] [Thread-1 (]: Began executing node seed.jaffle_shop.raw_payments
+[0m06:39:57.276114 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_payments"
+[0m06:39:57.278115 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "seed.jaffle_shop.raw_payments"} */
+truncate table "dbtLabs_DataBuildTool"."KAA"."raw_payments"
+[0m06:39:57.280116 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:39:57.281114 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:39:57.416105 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:39:57.625097 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:39:57.761096 [debug] [Thread-1 (]: Inserting batches of 400 records
+[0m06:39:58.165074 [debug] [Thread-1 (]: Using sqlserver connection "seed.jaffle_shop.raw_payments"
+[0m06:39:58.167077 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: 
+          insert into "dbtLabs_DataBuildTool"."KAA"."raw_payments" ("id", "order_id", "payment_method", "amount") values
+          (?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),(?,?,?,?),...
+[0m06:40:17.620218 [debug] [Thread-1 (]: SQL status: OK in 19.0 seconds
+[0m06:40:17.717216 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_shop.raw_payments"
+[0m06:40:17.730216 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: COMMIT
+[0m06:40:17.737214 [debug] [Thread-1 (]: Timing info for seed.jaffle_shop.raw_payments (execute): 06:39:57.255118 => 06:40:17.735218
+[0m06:40:17.740214 [debug] [Thread-1 (]: On seed.jaffle_shop.raw_payments: Close
+[0m06:40:17.843209 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'be252525-3fde-40e9-acf9-c9338b95f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33698A3E0>]}
+[0m06:40:17.845208 [info ] [Thread-1 (]: 3 of 3 OK loaded seed file KAA.raw_payments .................................... [[32mINSERT 113[0m in 20.60s]
+[0m06:40:17.850211 [debug] [Thread-1 (]: Finished running node seed.jaffle_shop.raw_payments
+[0m06:40:17.854211 [debug] [MainThread]: On master: COMMIT
+[0m06:40:17.858212 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:40:17.860213 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:40:17.862213 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:40:17.863207 [debug] [MainThread]: Connection 'seed.jaffle_shop.raw_payments' was properly closed.
+[0m06:40:17.866209 [info ] [MainThread]: 
+[0m06:40:17.870207 [info ] [MainThread]: Finished running 3 seeds in 0 hours 0 minutes and 57.97 seconds (57.97s).
+[0m06:40:17.876214 [debug] [MainThread]: Command end result
+[0m06:40:17.913210 [info ] [MainThread]: 
+[0m06:40:17.918211 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:40:17.922209 [info ] [MainThread]: 
+[0m06:40:17.927209 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m06:40:17.932203 [debug] [MainThread]: Command `dbt seed` succeeded at 06:40:17.932203 after 59.50 seconds
+[0m06:40:17.934205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E333599F00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3359ECB80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3367E4A60>]}
+[0m06:40:17.937208 [debug] [MainThread]: Flushing usage events
+[0m06:51:15.417103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D063B694B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D062BFB220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D062BF9A80>]}
+
+
+============================== 06:51:15.425100 | ac1d2746-ebb3-4ec9-a376-2ba1bddd223b ==============================
+[0m06:51:15.425100 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:51:15.428103 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --model stg_customers', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m06:51:16.229073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D066BE0190>]}
+[0m06:51:16.390068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D065FBCBE0>]}
+[0m06:51:16.392071 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:51:16.426069 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:51:16.687057 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 9 files added, 0 files changed.
+[0m06:51:16.689061 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\customers.sql
+[0m06:51:16.690061 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\overview.md
+[0m06:51:16.692060 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\staging\stg_orders.sql
+[0m06:51:16.693061 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\schema.yml
+[0m06:51:16.695059 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\docs.md
+[0m06:51:16.696058 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\staging\stg_customers.sql
+[0m06:51:16.698060 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\staging\schema.yml
+[0m06:51:16.699057 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\staging\stg_payments.sql
+[0m06:51:16.701059 [debug] [MainThread]: Partial parsing: added file: jaffle_shop://models\orders.sql
+[0m06:51:16.702056 [debug] [MainThread]: Partial parsing: deleted file: jaffle_shop://models\dbtLabs_DataBuildTool_HisWord_20240528.sql
+[0m06:51:17.790019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D067234550>]}
+[0m06:51:17.830026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D066EE8160>]}
+[0m06:51:17.832024 [info ] [MainThread]: Found 3 seeds, 5 models, 20 tests, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:51:17.834028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D062BF9000>]}
+[0m06:51:17.840018 [info ] [MainThread]: 
+[0m06:51:17.843021 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:51:17.846023 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:51:17.878020 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:51:17.880021 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:51:17.881020 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:51:17.882022 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:51:19.306977 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:51:19.573965 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:51:21.048915 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:51:21.123915 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:51:21.144909 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:51:21.145909 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:51:21.147912 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:51:21.148912 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:51:21.281904 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:51:21.918885 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:51:22.852854 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:51:22.893852 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:51:22.974854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D066EE8430>]}
+[0m06:51:22.976852 [debug] [MainThread]: On master: COMMIT
+[0m06:51:22.981854 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:51:22.985857 [info ] [MainThread]: 
+[0m06:51:23.002853 [debug] [Thread-1 (]: Began running node model.jaffle_shop.stg_customers
+[0m06:51:23.004852 [info ] [Thread-1 (]: 1 of 1 START sql view model KAA.stg_customers .................................. [RUN]
+[0m06:51:23.008855 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'model.jaffle_shop.stg_customers'
+[0m06:51:23.009850 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.stg_customers
+[0m06:51:23.029850 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.stg_customers"
+[0m06:51:23.043852 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_customers (compile): 06:51:23.010850 => 06:51:23.043852
+[0m06:51:23.045852 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.stg_customers
+[0m06:51:23.127848 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:23.128847 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_customers__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:51:23.130847 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:51:23.131845 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:51:23.277843 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:51:23.718830 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:51:24.394807 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:24.397808 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_customers__dbt_backup";');
+
+[0m06:51:24.694796 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:51:24.874791 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:24.876787 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+    and table_name like 'stg_customers'
+  
+[0m06:51:25.802758 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:51:26.041753 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.stg_customers"
+[0m06:51:26.046755 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:26.048752 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+USE [dbtLabs_DataBuildTool];
+    
+    
+
+    EXEC('create view "KAA"."stg_customers" as with source as (
+    select * from "dbtLabs_DataBuildTool"."KAA"."raw_customers"
+
+),
+
+renamed as (
+
+    select
+        id as customer_id,
+        first_name,
+        last_name
+
+    from source
+
+)
+
+select * from renamed;');
+
+
+
+[0m06:51:26.328741 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:51:26.555729 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: COMMIT
+[0m06:51:26.564729 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:26.565735 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_customers__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:51:27.044718 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:51:27.691699 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_customers"
+[0m06:51:27.694699 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_customers"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_customers__dbt_backup";');
+
+[0m06:51:28.028686 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:51:28.249684 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_customers (execute): 06:51:23.046855 => 06:51:28.248682
+[0m06:51:28.251681 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: ROLLBACK
+[0m06:51:28.336678 [debug] [Thread-1 (]: On model.jaffle_shop.stg_customers: Close
+[0m06:51:28.437670 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ac1d2746-ebb3-4ec9-a376-2ba1bddd223b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0671EF8E0>]}
+[0m06:51:28.439672 [info ] [Thread-1 (]: 1 of 1 OK created sql view model KAA.stg_customers ............................. [[32mOK[0m in 5.43s]
+[0m06:51:28.442674 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.stg_customers
+[0m06:51:28.446672 [debug] [MainThread]: On master: COMMIT
+[0m06:51:28.448671 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:51:28.449668 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:51:28.451672 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:51:28.453672 [debug] [MainThread]: Connection 'model.jaffle_shop.stg_customers' was properly closed.
+[0m06:51:28.454669 [info ] [MainThread]: 
+[0m06:51:28.456673 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 10.61 seconds (10.61s).
+[0m06:51:28.460682 [debug] [MainThread]: Command end result
+[0m06:51:28.487676 [info ] [MainThread]: 
+[0m06:51:28.492675 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:51:28.495670 [info ] [MainThread]: 
+[0m06:51:28.497672 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m06:51:28.501672 [debug] [MainThread]: Command `dbt run` succeeded at 06:51:28.501672 after 13.25 seconds
+[0m06:51:28.503673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D063B694B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0671A8490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0671016C0>]}
+[0m06:51:28.505670 [debug] [MainThread]: Flushing usage events
+[0m06:52:06.622411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435C289F00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435B31D750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435B31C1C0>]}
+
+
+============================== 06:52:06.630410 | 4ace9e41-ef32-4afb-aad0-de34a04b66d1 ==============================
+[0m06:52:06.630410 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:52:06.634414 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'fail_fast': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --model stg_orders', 'send_anonymous_usage_stats': 'True'}
+[0m06:52:07.417383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F330190>]}
+[0m06:52:07.577377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435E6DCB80>]}
+[0m06:52:07.579380 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:52:07.614379 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:52:07.811371 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:52:07.812369 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:52:07.828368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F68C5E0>]}
+[0m06:52:07.867373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F508B80>]}
+[0m06:52:07.869372 [info ] [MainThread]: Found 3 seeds, 5 models, 20 tests, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:52:07.874372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F509720>]}
+[0m06:52:07.878367 [info ] [MainThread]: 
+[0m06:52:07.881370 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:52:07.885371 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:52:07.917369 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:52:07.918368 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:52:07.920368 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:52:07.921365 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:09.653309 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:09.907305 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:52:11.499254 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:52:11.588251 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:52:11.607251 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:52:11.609247 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:52:11.610246 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:52:11.611244 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:11.740240 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:12.315220 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:52:13.616179 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:52:13.657176 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:52:13.768177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F6436A0>]}
+[0m06:52:13.771179 [debug] [MainThread]: On master: COMMIT
+[0m06:52:13.775176 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:52:13.779180 [info ] [MainThread]: 
+[0m06:52:13.790174 [debug] [Thread-1 (]: Began running node model.jaffle_shop.stg_orders
+[0m06:52:13.792175 [info ] [Thread-1 (]: 1 of 1 START sql view model KAA.stg_orders ..................................... [RUN]
+[0m06:52:13.796176 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'model.jaffle_shop.stg_orders'
+[0m06:52:13.798189 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.stg_orders
+[0m06:52:13.818172 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.stg_orders"
+[0m06:52:13.821179 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_orders (compile): 06:52:13.799176 => 06:52:13.820176
+[0m06:52:13.823177 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.stg_orders
+[0m06:52:14.000164 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:14.002171 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_orders__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:52:14.004167 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:52:14.005166 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:14.133165 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:14.554152 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:52:15.509120 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:15.512120 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_orders__dbt_backup";');
+
+[0m06:52:16.133099 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:52:16.312093 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:16.315093 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+    and table_name like 'stg_orders'
+  
+[0m06:52:17.055069 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:52:17.302059 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.stg_orders"
+[0m06:52:17.315063 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:17.316060 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+USE [dbtLabs_DataBuildTool];
+    
+    
+
+    EXEC('create view "KAA"."stg_orders" as with source as (
+    select * from "dbtLabs_DataBuildTool"."KAA"."raw_orders"
+
+),
+
+renamed as (
+
+    select
+        id as order_id,
+        user_id as customer_id,
+        order_date,
+        status
+
+    from source
+
+)
+
+select * from renamed;');
+
+
+
+[0m06:52:17.642050 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:52:17.862042 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: COMMIT
+[0m06:52:17.870040 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:17.872040 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_orders__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:52:18.263029 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:52:18.884009 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_orders"
+[0m06:52:18.888004 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_orders"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_orders__dbt_backup";');
+
+[0m06:52:19.183998 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:52:19.352993 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_orders (execute): 06:52:13.824178 => 06:52:19.351993
+[0m06:52:19.356995 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: ROLLBACK
+[0m06:52:19.399989 [debug] [Thread-1 (]: On model.jaffle_shop.stg_orders: Close
+[0m06:52:19.484989 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4ace9e41-ef32-4afb-aad0-de34a04b66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F7529E0>]}
+[0m06:52:19.488988 [info ] [Thread-1 (]: 1 of 1 OK created sql view model KAA.stg_orders ................................ [[32mOK[0m in 5.69s]
+[0m06:52:19.494988 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.stg_orders
+[0m06:52:19.501987 [debug] [MainThread]: On master: COMMIT
+[0m06:52:19.505987 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:52:19.508988 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:52:19.510986 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:52:19.513988 [debug] [MainThread]: Connection 'model.jaffle_shop.stg_orders' was properly closed.
+[0m06:52:19.515986 [info ] [MainThread]: 
+[0m06:52:19.517994 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 11.64 seconds (11.64s).
+[0m06:52:19.522986 [debug] [MainThread]: Command end result
+[0m06:52:19.549988 [info ] [MainThread]: 
+[0m06:52:19.554990 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:52:19.557990 [info ] [MainThread]: 
+[0m06:52:19.559985 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m06:52:19.564981 [debug] [MainThread]: Command `dbt run` succeeded at 06:52:19.564981 after 13.11 seconds
+[0m06:52:19.566984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435C289F00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F679540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002435F705FF0>]}
+[0m06:52:19.567985 [debug] [MainThread]: Flushing usage events
+[0m06:52:50.148975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F3099D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F212D6C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F212DF90>]}
+
+
+============================== 06:52:50.156975 | aff8794f-fa1d-417e-8125-da1228b78cc5 ==============================
+[0m06:52:50.156975 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:52:50.159978 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'version_check': 'True', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run --model stg_payments', 'send_anonymous_usage_stats': 'True'}
+[0m06:52:50.947945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F212CBB0>]}
+[0m06:52:51.109940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F54EC8E0>]}
+[0m06:52:51.111946 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:52:51.145942 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:52:51.327933 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:52:51.328936 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:52:51.344932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F648C550>]}
+[0m06:52:51.383933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F6308AF0>]}
+[0m06:52:51.385938 [info ] [MainThread]: Found 3 seeds, 5 models, 20 tests, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:52:51.390938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F6309690>]}
+[0m06:52:51.394932 [info ] [MainThread]: 
+[0m06:52:51.399939 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:52:51.402934 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:52:51.433935 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:52:51.435933 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:52:51.436932 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:52:51.437932 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:53.031879 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:53.519865 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:52:55.057814 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:52:55.147814 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:52:55.177811 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:52:55.179811 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:52:55.182812 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:52:55.184809 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:55.307802 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:55.882783 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:52:57.267740 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:52:57.340735 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:52:57.431737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F6443610>]}
+[0m06:52:57.434733 [debug] [MainThread]: On master: COMMIT
+[0m06:52:57.438734 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:52:57.441738 [info ] [MainThread]: 
+[0m06:52:57.455736 [debug] [Thread-1 (]: Began running node model.jaffle_shop.stg_payments
+[0m06:52:57.458736 [info ] [Thread-1 (]: 1 of 1 START sql view model KAA.stg_payments ................................... [RUN]
+[0m06:52:57.464737 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'model.jaffle_shop.stg_payments'
+[0m06:52:57.467739 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.stg_payments
+[0m06:52:57.487729 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.stg_payments"
+[0m06:52:57.490738 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_payments (compile): 06:52:57.468735 => 06:52:57.489735
+[0m06:52:57.492737 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.stg_payments
+[0m06:52:57.670728 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:52:57.672729 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_payments__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:52:57.673727 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:52:57.675728 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:52:57.803721 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:52:58.312707 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:52:58.938689 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:52:58.941685 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_payments__dbt_backup";');
+
+[0m06:52:59.224676 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:52:59.395671 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:52:59.398672 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+    and table_name like 'stg_payments'
+  
+[0m06:53:00.182641 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:53:00.404637 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.stg_payments"
+[0m06:53:00.408641 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:53:00.409639 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+USE [dbtLabs_DataBuildTool];
+    
+    
+
+    EXEC('create view "KAA"."stg_payments" as with source as (
+    select * from "dbtLabs_DataBuildTool"."KAA"."raw_payments"
+
+),
+
+renamed as (
+
+    select
+        id as payment_id,
+        order_id,
+        payment_method,
+
+        -- `amount` is currently stored in cents, so we convert it to dollars
+        amount / 100 as amount
+
+    from source
+
+)
+
+select * from renamed;');
+
+
+
+[0m06:53:00.691627 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:53:00.903620 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: COMMIT
+[0m06:53:00.912619 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:53:00.914620 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'stg_payments__dbt_backup'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:53:01.174610 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:53:01.708595 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.stg_payments"
+[0m06:53:01.711596 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.stg_payments"} */
+
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."stg_payments__dbt_backup";');
+
+[0m06:53:01.998583 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:53:02.194579 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.stg_payments (execute): 06:52:57.493739 => 06:53:02.193578
+[0m06:53:02.198577 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: ROLLBACK
+[0m06:53:02.241576 [debug] [Thread-1 (]: On model.jaffle_shop.stg_payments: Close
+[0m06:53:02.309575 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'aff8794f-fa1d-417e-8125-da1228b78cc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F651D6F0>]}
+[0m06:53:02.313575 [info ] [Thread-1 (]: 1 of 1 OK created sql view model KAA.stg_payments .............................. [[32mOK[0m in 4.85s]
+[0m06:53:02.319574 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.stg_payments
+[0m06:53:02.325575 [debug] [MainThread]: On master: COMMIT
+[0m06:53:02.329574 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:53:02.332576 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:53:02.334574 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:53:02.337575 [debug] [MainThread]: Connection 'model.jaffle_shop.stg_payments' was properly closed.
+[0m06:53:02.339575 [info ] [MainThread]: 
+[0m06:53:02.343587 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 10.94 seconds (10.94s).
+[0m06:53:02.349577 [debug] [MainThread]: Command end result
+[0m06:53:02.379575 [info ] [MainThread]: 
+[0m06:53:02.384575 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:53:02.387576 [info ] [MainThread]: 
+[0m06:53:02.389576 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m06:53:02.393572 [debug] [MainThread]: Command `dbt run` succeeded at 06:53:02.393572 after 12.41 seconds
+[0m06:53:02.395571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F3099D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F651D6F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262F650A110>]}
+[0m06:53:02.396567 [debug] [MainThread]: Flushing usage events
+[0m06:57:44.526443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAEFF794B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAEF00B220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAEF009A80>]}
+
+
+============================== 06:57:44.534439 | 0aa2de0d-9472-4563-bfc1-535cf710fdd8 ==============================
+[0m06:57:44.534439 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:57:44.537446 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --model customers', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m06:57:45.346420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF2FF0190>]}
+[0m06:57:45.505411 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF23CCBE0>]}
+[0m06:57:45.507414 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:57:45.541414 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:57:45.726405 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:57:45.728410 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:57:45.744409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF336C640>]}
+[0m06:57:45.784410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF31E8BE0>]}
+[0m06:57:45.786409 [info ] [MainThread]: Found 3 seeds, 5 models, 20 tests, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:57:45.790409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF31E9780>]}
+[0m06:57:45.795403 [info ] [MainThread]: 
+[0m06:57:45.798407 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:57:45.802407 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:57:45.834407 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:57:45.835404 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:57:45.836406 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:57:45.838405 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:57:47.235366 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:57:47.518357 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:57:48.669326 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:57:48.781322 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:57:48.810320 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:57:48.813321 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:57:48.816322 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:57:48.817318 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:57:49.010312 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:57:49.585296 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:57:51.011254 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:57:51.043253 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:57:51.118254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF33237C0>]}
+[0m06:57:51.121255 [debug] [MainThread]: On master: COMMIT
+[0m06:57:51.126257 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:57:51.130265 [info ] [MainThread]: 
+[0m06:57:51.143257 [debug] [Thread-1 (]: Began running node model.jaffle_shop.customers
+[0m06:57:51.147252 [info ] [Thread-1 (]: 1 of 1 START sql table model KAA.customers ..................................... [RUN]
+[0m06:57:51.153250 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'model.jaffle_shop.customers'
+[0m06:57:51.156253 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.customers
+[0m06:57:51.178253 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m06:57:51.181258 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.customers (compile): 06:57:51.157250 => 06:57:51.180252
+[0m06:57:51.183258 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.customers
+[0m06:57:51.350249 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:51.351247 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+      
+      
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP table IF EXISTS "KAA"."customers__dbt_backup";');
+
+[0m06:57:51.353247 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:57:51.354247 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:57:51.460243 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:57:51.752236 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:51.898229 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:51.901232 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+    and table_name like 'customers'
+  
+[0m06:57:52.394218 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:52.621207 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:52.622211 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'customers_temp_view'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:57:52.919202 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:53.429189 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:53.432190 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+    
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."customers_temp_view";');
+
+  
+[0m06:57:53.702180 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:53.912179 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:53.914178 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'customers_temp_view'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:57:54.194170 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:54.694150 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m06:57:54.714157 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:54.717153 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+   
+
+    USE [dbtLabs_DataBuildTool];
+    
+    
+
+    EXEC('create view "KAA"."customers_temp_view" as with customers as (
+
+    select * from "dbtLabs_DataBuildTool"."KAA"."stg_customers"
+
+),
+
+orders as (
+
+    select * from "dbtLabs_DataBuildTool"."KAA"."stg_orders"
+
+),
+
+payments as (
+
+    select * from "dbtLabs_DataBuildTool"."KAA"."stg_payments"
+
+),
+
+customer_orders as (
+
+        select
+        customer_id,
+
+        min(order_date) as first_order,
+        max(order_date) as most_recent_order,
+        count(order_id) as number_of_orders
+    from orders
+
+    group by customer_id
+
+),
+
+customer_payments as (
+
+    select
+        orders.customer_id,
+        sum(amount) as total_amount
+
+    from payments
+
+    left join orders on
+         payments.order_id = orders.order_id
+
+    group by orders.customer_id
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order,
+        customer_orders.most_recent_order,
+        customer_orders.number_of_orders,
+        customer_payments.total_amount as customer_lifetime_value
+
+    from customers
+
+    left join customer_orders
+        on customers.customer_id = customer_orders.customer_id
+
+    left join customer_payments
+        on  customers.customer_id = customer_payments.customer_id
+
+)
+
+select * from final;');
+
+
+
+    
+      EXEC('SELECT * INTO [dbtLabs_DataBuildTool].[KAA].[customers] FROM [dbtLabs_DataBuildTool].[KAA].[customers_temp_view];');
+    
+
+    
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."customers_temp_view";');
+
+
+
+  
+[0m06:57:55.236138 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m06:57:55.879119 [debug] [Thread-1 (]: On model.jaffle_shop.customers: COMMIT
+[0m06:57:55.889114 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:55.891120 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+      USE [dbtLabs_DataBuildTool];
+      SELECT  obj.name AS FK_NAME,
+      sch.name AS [schema_name],
+      tab1.name AS [table],
+      col1.name AS [column],
+      tab2.name AS [referenced_table],
+      col2.name AS [referenced_column]
+      FROM sys.foreign_key_columns fkc
+      INNER JOIN sys.objects obj
+          ON obj.object_id = fkc.constraint_object_id
+      INNER JOIN sys.tables tab1
+          ON tab1.object_id = fkc.parent_object_id
+      INNER JOIN sys.schemas sch
+          ON tab1.schema_id = sch.schema_id
+      INNER JOIN sys.columns col1
+          ON col1.column_id = parent_column_id AND col1.object_id = tab1.object_id
+      INNER JOIN sys.tables tab2
+          ON tab2.object_id = fkc.referenced_object_id
+      INNER JOIN sys.columns col2
+          ON col2.column_id = referenced_column_id AND col2.object_id = tab2.object_id
+      WHERE sch.name = 'KAA' and tab2.name = 'customers__dbt_backup'
+  
+[0m06:57:56.294105 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:57.416075 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.customers"
+[0m06:57:57.419076 [debug] [Thread-1 (]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.customers"} */
+
+      
+      
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP table IF EXISTS "KAA"."customers__dbt_backup";');
+
+[0m06:57:57.653069 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:57:57.802064 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.customers (execute): 06:57:51.184259 => 06:57:57.801063
+[0m06:57:57.805065 [debug] [Thread-1 (]: On model.jaffle_shop.customers: ROLLBACK
+[0m06:57:57.836060 [debug] [Thread-1 (]: On model.jaffle_shop.customers: Close
+[0m06:57:57.921061 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0aa2de0d-9472-4563-bfc1-535cf710fdd8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF2FF2E00>]}
+[0m06:57:57.925060 [info ] [Thread-1 (]: 1 of 1 OK created sql table model KAA.customers ................................ [[32mOK[0m in 6.77s]
+[0m06:57:57.931062 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.customers
+[0m06:57:57.938056 [debug] [MainThread]: On master: COMMIT
+[0m06:57:57.942060 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:57:57.944061 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:57:57.947062 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:57:57.950057 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m06:57:57.952058 [info ] [MainThread]: 
+[0m06:57:57.956069 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 12.15 seconds (12.15s).
+[0m06:57:57.962063 [debug] [MainThread]: Command end result
+[0m06:57:57.995061 [info ] [MainThread]: 
+[0m06:57:58.002060 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:57:58.004058 [info ] [MainThread]: 
+[0m06:57:58.010063 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m06:57:58.016060 [debug] [MainThread]: Command `dbt run` succeeded at 06:57:58.016060 after 13.66 seconds
+[0m06:57:58.019063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAEFF794B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF3409C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CAF2FF2E00>]}
+[0m06:57:58.021058 [debug] [MainThread]: Flushing usage events
+[0m06:58:31.510155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC174B9570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1654D6C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1654DAB0>]}
+
+
+============================== 06:58:31.519157 | 41fa5f88-d352-445b-b4f8-19cdf07c2217 ==============================
+[0m06:58:31.519157 [info ] [MainThread]: Running with dbt=1.7.15
+[0m06:58:31.522159 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool\\logs', 'fail_fast': 'False', 'profiles_dir': 'E:\\WordEngineering\\IIS\\WordEngineering\\Python\\dbtLabs_DataBuildTool', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --model orders', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m06:58:32.310135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A5554B0>]}
+[0m06:58:32.471128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1990CAC0>]}
+[0m06:58:32.473132 [info ] [MainThread]: Registered adapter: sqlserver=1.7.4
+[0m06:58:32.507131 [debug] [MainThread]: checksum: e4cfa841c1cf2b310128daf3fe81590497b767fe3788aa75c7f0bcc4959f94d1, vars: {}, profile: , target: , version: 1.7.15
+[0m06:58:32.689127 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:58:32.690127 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:58:32.706126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A8AC520>]}
+[0m06:58:32.746129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A728AC0>]}
+[0m06:58:32.747130 [info ] [MainThread]: Found 3 seeds, 5 models, 20 tests, 0 sources, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m06:58:32.752131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A729660>]}
+[0m06:58:32.756121 [info ] [MainThread]: 
+[0m06:58:32.760139 [debug] [MainThread]: Acquiring new sqlserver connection 'master'
+[0m06:58:32.763127 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool'
+[0m06:58:32.795121 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool"
+[0m06:58:32.797124 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool"} */
+select  name as [schema]
+    from sys.schemas 
+  
+[0m06:58:32.798124 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:58:32.799125 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:58:34.123092 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:58:34.423086 [debug] [ThreadPool]: SQL status: OK in 2.0 seconds
+[0m06:58:35.623055 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool: Close
+[0m06:58:35.696054 [debug] [ThreadPool]: Acquiring new sqlserver connection 'list_dbtLabs_DataBuildTool_KAA'
+[0m06:58:35.712055 [debug] [ThreadPool]: Using sqlserver connection "list_dbtLabs_DataBuildTool_KAA"
+[0m06:58:35.713054 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "connection_name": "list_dbtLabs_DataBuildTool_KAA"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+  
+[0m06:58:35.715054 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:58:35.716053 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:58:35.814048 [debug] [ThreadPool]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:58:36.506029 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m06:58:38.433982 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: ROLLBACK
+[0m06:58:38.539979 [debug] [ThreadPool]: On list_dbtLabs_DataBuildTool_KAA: Close
+[0m06:58:38.665979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A8635E0>]}
+[0m06:58:38.668981 [debug] [MainThread]: On master: COMMIT
+[0m06:58:38.673981 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:58:38.676980 [info ] [MainThread]: 
+[0m06:58:38.699980 [debug] [Thread-1 (]: Began running node model.jaffle_shop.orders
+[0m06:58:38.703979 [info ] [Thread-1 (]: 1 of 1 START sql table model KAA.orders ........................................ [RUN]
+[0m06:58:38.708979 [debug] [Thread-1 (]: Acquiring new sqlserver connection 'model.jaffle_shop.orders'
+[0m06:58:38.709978 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop.orders
+[0m06:58:38.735985 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop.orders"
+[0m06:58:38.738980 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.orders (compile): 06:58:38.710978 => 06:58:38.737979
+[0m06:58:38.740977 [debug] [Thread-1 (]: Began executing node model.jaffle_shop.orders
+[0m06:58:38.914973 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:38.916973 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+      
+      
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP table IF EXISTS "KAA"."orders__dbt_backup";');
+
+[0m06:58:38.917972 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m06:58:38.919973 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=comfort;Database=dbtLabs_DataBuildTool;trusted_connection=Yes;encrypt=No;TrustServerCertificate=Yes;APP=dbt-sqlserver/1.7.4;ConnectRetryCount=1
+[0m06:58:39.022967 [debug] [Thread-1 (]: fabric adapter: Connected to db: dbtLabs_DataBuildTool
+[0m06:58:39.256966 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:39.477960 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:39.480961 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+select
+      table_catalog as [database],
+      table_name as [name],
+      table_schema as [schema],
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+
+    from INFORMATION_SCHEMA.TABLES 
+    where table_schema like 'KAA'
+    and table_name like 'orders'
+  
+[0m06:58:39.956947 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:40.215941 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:40.216940 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'orders_temp_view'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:58:40.498934 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:41.034917 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:41.036920 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+    
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."orders_temp_view";');
+
+  
+[0m06:58:41.273914 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:41.534908 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:41.537909 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+      USE [dbtLabs_DataBuildTool];
+      select
+          sch.name as schema_name,
+          obj.name as view_name
+      from sys.sql_expression_dependencies refs
+      inner join sys.objects obj
+      on refs.referencing_id = obj.object_id
+      inner join sys.schemas sch
+      on obj.schema_id = sch.schema_id
+      where refs.referenced_database_name = 'dbtLabs_DataBuildTool'
+      and refs.referenced_schema_name = 'KAA'
+      and refs.referenced_entity_name = 'orders_temp_view'
+      and refs.referencing_class = 1
+      and obj.type = 'V'
+      
+[0m06:58:41.773901 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:42.299889 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop.orders"
+[0m06:58:42.303891 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:42.307888 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+  
+    
+
+   
+
+    USE [dbtLabs_DataBuildTool];
+    
+    
+
+    EXEC('create view "KAA"."orders_temp_view" as 
+
+with orders as (
+
+    select * from "dbtLabs_DataBuildTool"."KAA"."stg_orders"
+
+),
+
+payments as (
+
+    select * from "dbtLabs_DataBuildTool"."KAA"."stg_payments"
+
+),
+
+order_payments as (
+
+    select
+        order_id,
+
+        sum(case when payment_method = ''credit_card'' then amount else 0 end) as credit_card_amount,
+        sum(case when payment_method = ''coupon'' then amount else 0 end) as coupon_amount,
+        sum(case when payment_method = ''bank_transfer'' then amount else 0 end) as bank_transfer_amount,
+        sum(case when payment_method = ''gift_card'' then amount else 0 end) as gift_card_amount,
+        sum(amount) as total_amount
+
+    from payments
+
+    group by order_id
+
+),
+
+final as (
+
+    select
+        orders.order_id,
+        orders.customer_id,
+        orders.order_date,
+        orders.status,
+
+        order_payments.credit_card_amount,
+
+        order_payments.coupon_amount,
+
+        order_payments.bank_transfer_amount,
+
+        order_payments.gift_card_amount,
+
+        order_payments.total_amount as amount
+
+    from orders
+
+
+    left join order_payments
+        on orders.order_id = order_payments.order_id
+
+)
+
+select * from final;');
+
+
+
+    
+      EXEC('SELECT * INTO [dbtLabs_DataBuildTool].[KAA].[orders] FROM [dbtLabs_DataBuildTool].[KAA].[orders_temp_view];');
+    
+
+    
+      
+      
+    
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP view IF EXISTS "KAA"."orders_temp_view";');
+
+
+
+  
+[0m06:58:42.598879 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:43.488855 [debug] [Thread-1 (]: On model.jaffle_shop.orders: COMMIT
+[0m06:58:43.498854 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:43.499855 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+      USE [dbtLabs_DataBuildTool];
+      SELECT  obj.name AS FK_NAME,
+      sch.name AS [schema_name],
+      tab1.name AS [table],
+      col1.name AS [column],
+      tab2.name AS [referenced_table],
+      col2.name AS [referenced_column]
+      FROM sys.foreign_key_columns fkc
+      INNER JOIN sys.objects obj
+          ON obj.object_id = fkc.constraint_object_id
+      INNER JOIN sys.tables tab1
+          ON tab1.object_id = fkc.parent_object_id
+      INNER JOIN sys.schemas sch
+          ON tab1.schema_id = sch.schema_id
+      INNER JOIN sys.columns col1
+          ON col1.column_id = parent_column_id AND col1.object_id = tab1.object_id
+      INNER JOIN sys.tables tab2
+          ON tab2.object_id = fkc.referenced_object_id
+      INNER JOIN sys.columns col2
+          ON col2.column_id = referenced_column_id AND col2.object_id = tab2.object_id
+      WHERE sch.name = 'KAA' and tab2.name = 'orders__dbt_backup'
+  
+[0m06:58:43.915848 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:44.703829 [debug] [Thread-1 (]: Using sqlserver connection "model.jaffle_shop.orders"
+[0m06:58:44.706830 [debug] [Thread-1 (]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.7.15", "profile_name": "jaffle_shop", "target_name": "dev", "node_id": "model.jaffle_shop.orders"} */
+
+      
+      
+    USE [dbtLabs_DataBuildTool];
+    EXEC('DROP table IF EXISTS "KAA"."orders__dbt_backup";');
+
+[0m06:58:44.999822 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m06:58:45.148817 [debug] [Thread-1 (]: Timing info for model.jaffle_shop.orders (execute): 06:58:38.741978 => 06:58:45.147818
+[0m06:58:45.151819 [debug] [Thread-1 (]: On model.jaffle_shop.orders: ROLLBACK
+[0m06:58:45.182814 [debug] [Thread-1 (]: On model.jaffle_shop.orders: Close
+[0m06:58:45.309815 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '41fa5f88-d352-445b-b4f8-19cdf07c2217', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A93DA20>]}
+[0m06:58:45.312815 [info ] [Thread-1 (]: 1 of 1 OK created sql table model KAA.orders ................................... [[32mOK[0m in 6.60s]
+[0m06:58:45.318816 [debug] [Thread-1 (]: Finished running node model.jaffle_shop.orders
+[0m06:58:45.325814 [debug] [MainThread]: On master: COMMIT
+[0m06:58:45.329813 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:58:45.331813 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool' was properly closed.
+[0m06:58:45.334814 [debug] [MainThread]: Connection 'list_dbtLabs_DataBuildTool_KAA' was properly closed.
+[0m06:58:45.335813 [debug] [MainThread]: Connection 'model.jaffle_shop.orders' was properly closed.
+[0m06:58:45.336814 [info ] [MainThread]: 
+[0m06:58:45.340826 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 12.58 seconds (12.58s).
+[0m06:58:45.343814 [debug] [MainThread]: Command end result
+[0m06:58:45.370814 [info ] [MainThread]: 
+[0m06:58:45.390816 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:58:45.392813 [info ] [MainThread]: 
+[0m06:58:45.395813 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m06:58:45.398809 [debug] [MainThread]: Command `dbt run` succeeded at 06:58:45.398809 after 14.05 seconds
+[0m06:58:45.400813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC174B9570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A933FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC1A90BBB0>]}
+[0m06:58:45.402810 [debug] [MainThread]: Flushing usage events

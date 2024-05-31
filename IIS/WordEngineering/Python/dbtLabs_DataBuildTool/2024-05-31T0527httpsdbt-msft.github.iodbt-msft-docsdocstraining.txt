@@ -1,0 +1,220 @@
+http://dbt-msft.github.io/dbt-msft-docs/docs/training/
+Skip to main content
+dbt Logo
+dbt-msft-docs
+dbt-sqlserver
+dbt-synapse
+GitHub
+
+    dbt and MSFT - Better Together
+    dbt Training Crash Course
+    dbt-sqlserver
+    Getting Started Guides
+    dbt-synapse
+    Azure DevOps Pipelines Example
+    Nested CTES in TSQL, a treatise
+    Contributing to dbt-msft-docs
+
+dbt-sqlserver: an introduction
+
+Below is a guide made originally by @chaerinlee1 while she was still an intern in order to train teams internally. We thought it also could serve others as well. If you encounter any issues please open an issue on dbt-msft-docs and we'll be happy to assist.
+Create (or choose) a database#
+
+If you don't already have access to a database, I highly recommend the free tier of Azure SQL database. If you sign up for Visual Studio Dev Essentials, it provides an Azure subscription with $50 of credits.
+
+Follow the instruction in this tutorial and be sure to note down the server address and database name.
+
+As far as how you authenticate to the database, the SQL Admin username and password would be easiest, but this tutorial makes use of Azure Active Directory authentication via the Azure CLI. To enable this, be sure to set yourself as the Azure Active Directory Admin of the Azure SQL Server that you've created.
+
+One caveat with this free tier is that it does not support clusterd columnstore indexes. To work around this, you'll have to add the following snippet to your dbt_project.yml
+
+models:  jaffle_shop:    +as_columnstore: false 
+
+Set Up Local Environment#
+note
+
+please see our new, comprehensive guide for setting up VSCode. It simplifies this set up somewhat
+
+This is the biggest hurdle to using dbt right now. IMHO, it isn't that big. Fishtown Analytics has a web-based IDE tool that you'll see being used in the training course. The advantage is that you can write dbt models and run them in the same window.
+
+There may be an issue where your terminal can't find Git or Anaconda, in which case we made need to add to your system environment's PATH variable.
+
+Here we'll be using a version of the same repo that Fishtown uses for their training.
+Download & Install Software#
+
+Ahead of the call if you could please download and install the following (if you haven’t already):
+
+    Anaconda
+    Microsoft ODBC Driver 17
+    VSCode
+    Azure Data Studio and/or SQL Server Management Studio
+    Azure CLI
+
+Set up VSCode#
+
+    After cloning, you should be prompted to install some extensions -- you should! Click on the 5th icon from the top in the left window pane. Or use the shortcut (CTRL + SHIFT + X). Type in the following extensions in the search bar and install:
+        python extension
+        better jinja
+        vscode-dbt
+        rainbow csv
+
+    Create your conda environment and install the necessary packages. The good thing is that you can reuse this environment for future dbt work and this is only a one-time process.
+        Open a new terminal with the shortcut CTRL + SHIFT + `.
+        Click "Allow" when a pop up appears asking if you allow the workspace to modify your terminal shell.
+            If you see "PS" next to your current directory on the command line, that means you're using powershell and we don't want to use that. The fix: open a new terminal again and you should now be using cmd.
+        Since you already installed Anaconda, you should see conda activate base run automatically and (base) should be next to your current directory.
+        Create a new, empty environment by running conda create -n dbtenv python=3.7.9. The name of your environment is dbtenv and we are using Python version 3.7.9. Type y then Enter when the command line asks to proceed.
+        Run conda activate dbtenv in the command line to activate your new environment.
+        Install the following packages:
+            Run pip install dbt-sqlserver
+            Run pip install azure-cli==2.21.0
+
+Clone demo repo#
+
+    Clone this repo in VSCode
+        Open VSCode and type (CTRL + Shift + P) to access the command palette located at the top.
+        Type git: clone and select the option.
+        Paste the git URL: https://github.com/dbt-labs/jaffle_shop.git and hit enter.
+        Choose which folder you want your code to go in and click "Select Repository Location". I typically have all my repositories in C:\Code.
+        A pop up message should appear on the lower right of VSCode asking if you would like to open the cloned repository. Click "Open".
+        Go to the dbt_crash_course branch by clicking on the bottom left button on the window (it should say main or master) and choosing the dbt_crash_course branch.
+
+    Create a new branch from the main branch by clicking on the bottom left button on the blue ribbon of VSCode (it should probably say "main"). Then click on "Create new branch from...". Name your branch (maybe to your initials e.g. "cl_dbttraining") and hit Enter. Click on "origin/main".
+
+    Now we need to set up profiles.yml to connect to our database.
+        Create new directory called .dbt under your user folder (C:\Users\your_user_folder).
+        Add the .dbt folder to your workspace in VSCode by clicking on File -> Add Folder to Workspace... -> your new .dbt folder -> Add.
+        Create a new file into the new folder by right clicking the folder and clicking on New File. Name the file profiles.yml.DF
+        Go to the new file and paste the following code below. Edit the schema field to your initials or anything that serves as an identifier for your work. Then save your changes! (CTRL + S)
+    profiles.yml
+
+    jaffle_shop:        target: dev        outputs:            dev:            type: sqlserver            driver: "ODBC Driver 17 for SQL Server"            schema: cl            host: its-data-mart-dev-server.database.windows.net            database: Marketing_Dev            authentication: CLI
+
+Connect to database#
+
+    Log into Azure. We want to connect to the database via Azure CLI.
+        Run az login
+        In the window that popped up, sign in with your Avanade credentials. Once signed, in you can close out of that window. If the window says that an error occurred and is directing you to a localhost url, you can try logging in using az login --use-device-code. This will provide you instructions to go to a general url and paste in the code provided on the command line.
+        If you belong to multiple subscriptions, you must specify the subscription by running az account set --subscription ff2e23ae-7d7c-4cbd-99b8-116bb94dca6e. This is the ID for AzureCloud.
+    Let's verify that we can connect to the database successfully.
+        Run dbt debug. This command tries to connect to the database using the parameters from profiles.yml and dbt_project.yml.
+            You connected successfully if you see all green and no error messages!
+
+Set up Azure Data Studio or SSMS#
+
+    Last step in the set-up is to log in to the database. Below are instructions for Azure Data Studio, but if you're receving an error message you can try on SQL Server Management Studio (SSMS) too. Instructions are very similar!
+        Open Azure Data Studio and click on the first icon on the left side panel called "Connections".
+        Click "Add Connection" and paste in the connection info below in the relevant fields. This info can also be found in profiles.yml
+            Server: <MY-SERVER-NAME>.database.windows.net
+            Authentication type: Azure Active Directory
+            Account: Click the drop down menu, if you don't see your Azure tenant email then click "Add an account" and sign in like before
+            Azure AD tenant: <MY-AZURE-TENANT>
+            Database: <MY-DATABASE>
+        Click Connect
+            You are now connected to the database!
+                Note that there are tables in the database already. These are other people's tables that they created using their schema name. Yours will start to show up as you start creating your dbt models.
+    If you are not familiar with Azure Data Studio/SSMS, here are some pro tips that might be useful when going through the exercises. Otherwise, you can start on the exercises in the next section below!
+        The server you are connected to as well as the Tables and Views folders are both located on the left side of the page
+            To quickly query a table or view: Go into the relevant folder, right click the name, and click "Select Top 1000".
+            To write a new query: Right click the server, and click "New Query"
+        If you're wondering why you're not seeing your tables/views show up after running dbt commands in VSCode, you can right click on the Tables or Views folder and click "Refresh".
+            You can also do this to the server itself as well, but this might take longer.
+
+Tutorial#
+
+Here's a walk-through tutorial of using dbt below as well as some exercises for you to try on your own. There are also additional resources found at the end of this section. Happy modeling!
+Get your raw tables in the database#
+
+Usually when building a data warehouse, you would connect to an external data source where the raw tables live and bring those tables into the dbt workspace to do your transormations. For the purpose of a (hopefully) simpler tutorial on understanding the basic dbt commands and framework, we will be using seeds.
+
+These seeds are located under jaffle_shop\data. You might be wondering: What are seeds? They are CSV files that contain static data meaning they change infrequently. A typical use-case for seeds is a list of mappings of country codes to country names. This is why you would normally connect to an external data source for raw files that get updated often, but that can be a dbt crash course session for some other time 😃.
+
+    Let's load the CSV files into our data warehouse. Run dbt seed in the command line.
+        Once you've gotten the green "Completed Successfully" message, you can view the tables you just materialized in Azure Data Studio or SSMS. They are generated as Tables and can be found in the Tables folder with your schema in the name. You should see 3 tables get generated: raw_customers, raw_orders, and raw_payments
+
+Create models#
+
+There are 3 different checkpoints for models in the dbt framework, listed below. To read more on how dbt projects are structured, check out this article by Claire Carroll, dbt Community Manager.
+
+    Sources - raw data, i.e. the tables we created in the previous step
+    Staging Models - used for renaming columns, recasting, or any other transformations needed in order for the model to be in a consistent format; created from sources and have a 1:1 relationship with their respective source table
+    Marts Models - contains all necessary business logic with more complex transformations (joins, window functions, etc); created from staging models
+
+Let's make some dbt models! The following steps will show the journey line of how customers and orders, two marts models, get created and transformed from their raw data sources.
+
+    Create the Staging Models layer: The SQL files that create these tables are located in models\staging. Take a quick look at the code or each of the files to understand the transformations being done. You'll notice that the transformations are mostly just renaming and conversions. This is important to maintain consistency and clarity since these tables will serve as the building blocks of more complex tables. Additionally, it is common to see multiple staging layers in a dbt project if there is a more complex business need, however in this example only 1 layer is necessary. In the command line, individually run:
+        dbt run --model stg_customers
+        dbt run --model stg_orders
+        dbt run --model stg_payments
+        Do "Select Top 1000" for each of the tables you just created in Azure Data Studio or SSMS and take a look at these tables. These can be found under Views as your_schema_name.stg_customers and so on.
+        Take a look at the compiled SQL code for each of these tables in target\compiled\jaffle_shop\models\staging. This is the SQL code that's being done in the background of our dbt commands, i.e. this is the code that materializes our models in Azure Data Studio or SSMS. When you come across an error, it's helpful to paste and run the compiled code in Azure Data Studio or SSMS to help you debug any issues in your code quicker.
+    Create the Marts Models layer: The SQL code for these tables can be found in the models directory as customers.sql and orders.sql.
+        Run dbt run --model customers
+            Take a look at the code in the file and try to understand the transformations happening and the tables being used to create this table. You can paste and run parts of the compiled code, located in target\compiled\jaffle_shop\models, in Azure Data Studio or SSMS to understand the code piece by piece. You'll notice that there are several CTE's in this file, each serving a different purpose, with more complex functions and joins.
+        Run dbt run --model orders
+            Follow the same steps as the previous model. You will notice some Jinja code in this fiile. Jinja is a web template engine for Python and allows you to do for loops, like in this example, which is helpful to shorten repetitive code that can take up several lines in your code base - pretty powerful stuff! Alieu will go more in depth on Jinja in a later session!
+        Do "Select Top 1000" on the customers and orders tables in Azure Data Studio or SSMS under Tables and take a look at these tables.
+        Note: If you're wondering what dictates whether a dbt model gets turned into a table or view, check out dbt_project.yml. You can see on lines 21-27 that we can choose which which SQL files will get materialized to a table or view at the model level. In our case, we set all the files in the staging folder to be views, and the rest as tables.
+    Congrats! You finished creating your first dbt project! 🎉
+        Run dbt run. Without the model parameter like in previous examples, this allows all the SQL files under the models folder to get materialized in SQL Server. Now, customers and orders are both materialized with one command, along with their parent tables.
+
+Exercises#
+
+Now that you have a basic understanding of how to create models, lets make some on your own while flexing your SQL muscles!
+
+Create models that solve each of the following scenarios. For each of the models, create a new SQL file by right clicking the models directory and giving each a relevant name.
+
+    Which payment method was the most popular in March 2018, and who are those people that used that payment method during that time?
+    Seed to marts model exercise:
+        I made a CSV file that contains the item of each transaction made at the Jaffle Shop. Take the CSV file from the chat or here and drag it into the data directory, where all the other seeds are. Load the seed file into the dbt project like we did previously.
+        For the staging table, rename the "id" column to "item_id" and make the "jaffle_type" column all lower case.
+        Create a model that shows what the most popular jaffle was in each month.
+    The customers table contains quite a few CTEs. Can you break up that file into multiple files so that there is 1 CTE containing transformations per file? I'm picturing 3 total files. For more information on the use of CTE's in dbt projects, check out this section of the dbt best practices page.
+    What were the most recent dates of each order status? Order the results by date.
+    On average, how much does each customer spend per order? Please show the first name and last name initial in one column and order it by that column alphabetically.
+
+Additional Resources#
+
+    Claire's classic text + video walkthrough - check this out if you want to learn how to set up and deploy a dbt project using BigQuery (flip through the modules under "Getting Started" on the left)
+    Kyle's amazing course - this course shows you how to use dbt cloud and goes over some fundamental concepts around dbt
+    thorough docs worth going through - these are great overviews about modeling, testing, documentation, sources, and other additional topics we did not cover (flip through the topics under "Building a dbt Project" on the left)
+    dbt-msft's better together pitch
+    deploying dbt with Azure DevOps Pipelines
+    the dbt viewpoint
+    dbt-utils
+    production workflow
+
+Edit this page
+Previous
+« dbt and MSFT - Better Together
+Next
+Overview »
+
+    Create (or choose) a database
+    Set Up Local Environment
+        Download & Install Software
+        Set up VSCode
+        Clone demo repo
+        Connect to database
+        Set up Azure Data Studio or SSMS
+    Tutorial
+        Get your raw tables in the database
+        Create models
+    Exercises
+    Additional Resources
+
+Docs
+
+    dbt-sqlserver
+    dbt-synapse
+
+Community
+
+    dbt
+
+More
+
+    dbt-sqlserver GitHub
+
+dbt-synapse GitHub
+Copyright © 2021 dbt-msft. Built with Docusaurus.

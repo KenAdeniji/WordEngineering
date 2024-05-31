@@ -10,3 +10,30 @@ dbt run
 python -m pip uninstall -y dbt-adapters
 python -m pip install --upgrade dbt-core dbt-common dbt-sqlserver
 dbt --version
+
+2024-05-31T06:01:00 Create database
+2024-05-31T06:10:00	E:
+2024-05-31T06:10:00	CD E:\WordEngineering\IIS\WordEngineering\Python
+2024-05-31T06:10:00	MD dbt-labs
+2024-05-31T06:10:00	CD dbt-labs
+2024-05-31T06:10:00 git clone https://github.com/dbt-labs/jaffle_shop.git
+
+2024-05-31T06:10:00	CD E:\WordEngineering\IIS\WordEngineering\Python\dbtLabs_DataBuildTool
+2024-05-31T06:27:00	Create the dbt_project.yml file
+2024-05-31T06:30:00	Create the profiles.yml file
+2024-05-31T06:36:00 Run dbt seed
+
+2024-05-31T06:47:00
+    Create the Staging Models layer: The SQL files that create these tables are located in models\staging. Take a quick look at the code or each of the files to understand the transformations being done. You'll notice that the transformations are mostly just renaming and conversions. This is important to maintain consistency and clarity since these tables will serve as the building blocks of more complex tables. Additionally, it is common to see multiple staging layers in a dbt project if there is a more complex business need, however in this example only 1 layer is necessary. In the command line, individually run:
+        dbt run --model stg_customers
+        dbt run --model stg_orders
+        dbt run --model stg_payments
+
+2024-05-31T06:56:00
+    Create the Marts Models layer: The SQL code for these tables can be found in the models directory as customers.sql and orders.sql.
+        Run dbt run --model customers
+            Take a look at the code in the file and try to understand the transformations happening and the tables being used to create this table. You can paste and run parts of the compiled code, located in target\compiled\jaffle_shop\models, in Azure Data Studio or SSMS to understand the code piece by piece. You'll notice that there are several CTE's in this file, each serving a different purpose, with more complex functions and joins.
+        Run dbt run --model orders
+            Follow the same steps as the previous model. You will notice some Jinja code in this fiile. Jinja is a web template engine for Python and allows you to do for loops, like in this example, which is helpful to shorten repetitive code that can take up several lines in your code base - pretty powerful stuff! Alieu will go more in depth on Jinja in a later session!
+        Do "Select Top 1000" on the customers and orders tables in Azure Data Studio or SSMS under Tables and take a look at these tables.
+        Note: If you're wondering what dictates whether a dbt model gets turned into a table or view, check out dbt_project.yml. You can see on lines 21-27 that we can choose which which SQL files will get materialized to a table or view at the model level. In our case, we set all the files in the staging folder to be views, and the rest as tables.
