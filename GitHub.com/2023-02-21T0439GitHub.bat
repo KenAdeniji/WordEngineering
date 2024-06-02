@@ -499,3 +499,6 @@ git add	        IIS/WordEngineering/Python/dbtLabs_DataBuildTool
 git add			IIS/WordEngineering/WordCross/ContributionMetric.asmx
 git add	        IIS/WordEngineering/WordCross/ContributionMetric.html
 git add			IIS/WordEngineering/WordCross/ContributionMetric.sql
+
+git add 	    IIS/WordEngineering/Python/2023-07-16PythonAll-in-OneForDummiesByJohnC.Shovic_AlanSimpson2019/
+git add	        IIS/WordEngineering/WordCross/FundamelizationIsTheNationWell_YouSayNo_RealizationIsTheNationWell.html
