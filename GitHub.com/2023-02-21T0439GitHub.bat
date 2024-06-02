@@ -495,3 +495,7 @@ git add			IIS/WordEngineering/WordUnion/BibleStatisticsOpposite.asmx
 
 git add	        IIS/WordEngineering/JavaScript/HugoDiFrancesco_-_CodeWithHugo.com
 git add	        IIS/WordEngineering/Python/dbtLabs_DataBuildTool
+
+git add			IIS/WordEngineering/WordCross/ContributionMetric.asmx
+git add	        IIS/WordEngineering/WordCross/ContributionMetric.html
+git add			IIS/WordEngineering/WordCross/ContributionMetric.sql
