@@ -502,3 +502,6 @@ git add			IIS/WordEngineering/WordCross/ContributionMetric.sql
 
 git add 	    IIS/WordEngineering/Python/2023-07-16PythonAll-in-OneForDummiesByJohnC.Shovic_AlanSimpson2019/
 git add	        IIS/WordEngineering/WordCross/FundamelizationIsTheNationWell_YouSayNo_RealizationIsTheNationWell.html
+
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-05T1238Dreamed2024-06-05T1301DataEntry_712mgr@savemart.com_MikeTewksbury30thMayAnnualReward.txt
