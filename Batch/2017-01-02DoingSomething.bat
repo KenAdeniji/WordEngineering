@@ -616,4 +616,12 @@ Sent Items
 2024-06-07T03:06:00 microsoft sql server management studio hourglass.
 
 2024-06-07T14:42:00	AndrewNewberg.com 	Andrew Newberg, M.D. 		Jew 	2017-09-05 	16078
+
+http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?
+scriptureReference
+bibleVersion
+
+http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=King James Version
+
+http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=KingJamesVersion
 :Exit

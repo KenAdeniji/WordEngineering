@@ -505,3 +505,8 @@ git add	        IIS/WordEngineering/WordCross/FundamelizationIsTheNationWell_You
 
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-05T1238Dreamed2024-06-05T1301DataEntry_712mgr@savemart.com_MikeTewksbury30thMayAnnualReward.txt
+
+git rm 			IIS/WordEngineering/PowerBI/BankRate.com
+git rm 			IIS/WordEngineering/PowerBI/BibleBook.pbix
+
+git add 		IIS/WordEngineering/Microsoft/
