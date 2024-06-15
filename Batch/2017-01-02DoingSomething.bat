@@ -624,4 +624,8 @@ bibleVersion
 http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=King James Version
 
 http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=KingJamesVersion
+
+Let me turn on the light.
+
+You have not ask me to give you this... You have given this to use as You.
 :Exit

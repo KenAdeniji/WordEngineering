@@ -1236,7 +1236,12 @@ Customization standard 	Strict 	Flexible
 Law versus (VS) traditional practice 	Sacrifice 	Mercy
 Compatibility 	Legacy? Backward compatible...re-engineering. New, creativity. Framework. 	Progressive
 
-" (Itzik Ben-Gan, 7/3/2023).
+" (Itzik Ben-Gan, 7/3/2023). "
+Codd's 12 rules
+
+    The foundation rule: Since 2002, the author has adopted the relational model for storing his data. The author structures his data and queries his data by using the Structured Query Language (SQL).
+
+" (Edgar F. Codd, 1970).
 A conversion page
 
 Customize the content of an url? This is how the web page implements this technology. This is how-to implement it in your preferred technology. Keyword 	Find what 	Replace with 	Scripture Reference
@@ -2945,6 +2950,7 @@ References
     RESTful or RESTless –Current State of Today’s Top Web APIs Frederik B ̈ulthoff, Maria Maleshkova AIFB, Karlsruhe Institute of Technology (KIT), Germany frederik.buelthoff@student.kit.edu, maria.maleshkova@kit.edu; W3C web page; Available from http://arxiv.org/pdf/1902.10514.pdf
     HTML5 and CSS3, Seventh Edition: Visual Quick Start Guide Elizabeth Castro and Bruce Hyslop; W3C web page; Available from http://bruceontheloose.com/htmlcss
     Search Engine Optimization All-in-One for Dummies 9 books in 1 Bruce Clay and Kristopher B. Jones; W3C web page; Available from http://BruceClay.com
+    Codd's twelve rules Edgar Frank "Ted" Codd W3C web page; Available from http://en.wikipedia.org/wiki/Codd%27s_12_rules
     Learning Made Easy. 2nd Edition. Business Analysis for Dummies. A Wiley Brand. Ali (Alison) Cox. Lead Expert in Business Analysis & Agile for Netmind; ISBN: 978-1-119-91249-1. http://linkedin.com/in/aliorrcox
     Department of Computer Science at the University of Cape Town MSc-IT Study Material W3C web page; Available from http://www.cs.uct.ac.za/mit_notes/web_programming/pdfs/chp01.pdf
     Separation of concerns Edsger W. Dijkstra W3C web page; Available from http://en.wikipedia.org/wiki/Separation_of_concerns
@@ -3220,5 +3226,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/10/2024 04:28:18
+Last modified: 06/15/2024 09:32:59
 ""
