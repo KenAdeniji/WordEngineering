@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162424);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162937);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 165072);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
