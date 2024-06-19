@@ -1247,6 +1247,11 @@ Focusing on the Word.
     Prior to this word coming, I uploaded the 3 file formats of the dissertation files (.html, .txt, .pdf) from the Windows operating system computer to the UNIX operating system computer Linux variety. I also read the counter-style of each file.
     The guaranteed access rule: Specifying the primary key restriction in the where clause makes each datum reachable.
     2024-06-16T16:30:00 To who... I exchange... my good?
+    Systematic treatment of null values:
+    2024-06-18T21:49:00 Unknown or inappropriate.
+        Identity columns cannot be null
+        DateTime type columns will default to the system's datetime
+        The columns that are part of a primary key cannot be null 
 
 " (Edgar F. Codd, 1970).
 A conversion page
@@ -3234,5 +3239,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/16/2024 20:32:52
+Last modified: 06/18/2024 22:19:10
 ""
