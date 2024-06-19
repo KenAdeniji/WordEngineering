@@ -1252,6 +1252,8 @@ Focusing on the Word.
         Identity columns cannot be null
         DateTime type columns will default to the system's datetime
         The columns that are part of a primary key cannot be null 
+    Dynamic online catalog based on the relational model:
+    INFORMATION_SCHEMA offers metadata, and it is questioned via SQL.
 
 " (Edgar F. Codd, 1970).
 A conversion page
@@ -3239,5 +3241,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/18/2024 22:44:22
+Last modified: 06/19/2024 15:48:51
 ""
