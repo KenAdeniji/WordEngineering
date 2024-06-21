@@ -4965,6 +4965,62 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 						<br/>
 						INFORMATION_SCHEMA offers metadata, and it is questioned via SQL.
 					</li>
+					<li datetime="2024-06-20T16:23:00">
+						The comprehensive data sublanguage rule:
+						<table>
+							<caption>Structured Query Language (SQL) sublanguage</caption>
+							<thead>
+								<tr>
+									<th>Sublanguage</th>
+									<th>Command</th>
+									<th>Usage</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Data query language (DQL)</td>
+									<td>Select</td>
+									<td>
+										Is the most popular and non-risky.
+										Except it may affect performance and bandwidth load consumption.
+									</td>
+								</tr>
+								<tr>
+									<td>Data definition language (DDL)</td>
+									<td>Create or alter or drop schema objects</td>
+									<td>
+										The create statement is used once for each new object. 
+										The alter statement is mainly for an existing object.
+									</td>
+								</tr>
+								<tr>
+									<td>Data manipulation language (DML)</td>
+									<td>Insert, Update, Delete, Truncate</td>
+									<td>
+										Manipulation may fail in the following cases:
+										<ul>
+											<li>Primary key or unique index duplication. A primary key column may not be null.</li>
+											<li>Invalid datatype or extra large data size or out-of-range</li>
+											<li>
+												Constraint rule violation - entity, foreign key.
+												The author rarely imposes constraints, like for example in DatedFrom versus (VS) DatedUntil, which may result in negative date differences.
+												The Max datasize will truncate extra data, but SQL Server primary key indexes impose a size limit of 900 bytes.
+												Wherease VARCHAR(MAX) is typically 8000 bytes.
+											</li>
+										</ul>	
+									</td>
+								</tr>
+								<tr>
+									<td>Data control language (DCL)</td>
+									<td>Grant, Deny, Revoke</td>
+								</tr>
+								<tr>
+									<td>Transaction control language (TCL)</td>
+									<td>Begin, Commit, Rollback transaction</td>
+								</tr>	
+							</tbody>
+						</table>
+					</li>
 				</ol>
 			</p>
 			</q> (Edgar F. Codd, 1970).

@@ -1254,6 +1254,16 @@ Focusing on the Word.
         The columns that are part of a primary key cannot be null 
     Dynamic online catalog based on the relational model:
     INFORMATION_SCHEMA offers metadata, and it is questioned via SQL.
+    The comprehensive data sublanguage rule:
+    Structured Query Language (SQL) sublanguage Sublanguage 	Command 	Usage
+    Data query language (DQL) 	Select 	Is the most popular and non-risky. Except it may affect performance and bandwidth load consumption.
+    Data definition language (DDL) 	Create or alter or drop schema objects 	The create statement is used once for each new object. The alter statement is mainly for an existing object.
+    Data manipulation language (DML) 	Insert, Update, Delete, Truncate 	Manipulation may fail in the following cases:
+        Primary key or unique index duplication. A primary key column may not be null.
+        Invalid datatype or extra large data size or out-of-range
+        Constraint rule violation - entity, foreign key. The author rarely imposes constraints, like for example in DatedFrom versus (VS) DatedUntil, which may result in negative date differences. The Max datasize will truncate extra data, but SQL Server primary key indexes impose a size limit of 900 bytes. Wherease VARCHAR(MAX) is typically 8000 bytes.
+    Data control language (DCL) 	Grant, Deny, Revoke
+    Transaction control language (TCL) 	Begin, Commit, Rollback transaction
 
 " (Edgar F. Codd, 1970).
 A conversion page
@@ -3241,5 +3251,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/19/2024 15:48:51
+Last modified: 06/20/2024 18:12:49
 ""
