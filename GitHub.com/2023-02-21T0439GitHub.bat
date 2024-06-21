@@ -510,3 +510,6 @@ git rm 			IIS/WordEngineering/PowerBI/BankRate.com
 git rm 			IIS/WordEngineering/PowerBI/BibleBook.pbix
 
 git add 		IIS/WordEngineering/Microsoft/
+
+git add			IIS/WordEngineering/WordCross/YouHaveNotGrantedTheSameAsI_YouHaveGrantedSimilarAsI.asmx
+git add			IIS/WordEngineering/WordCross/YouHaveNotGrantedTheSameAsI_YouHaveGrantedSimilarAsI.html

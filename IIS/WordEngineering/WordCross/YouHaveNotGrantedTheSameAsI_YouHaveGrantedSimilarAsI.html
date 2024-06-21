@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+	2024-06-19T08:04:00 You have not granted the same as I... You have granted similar as I.
+		Rate URIs by soundex, like, Internet Country Code Top Level Domain (ccTLD), domain name, directory or file extension, argument? Issue a select query and compare the 1st column, URI.
+	2024-06-21T13:54:00	Created.
+	-->
+	<head>
+		<title>You have not granted the same as I... You have granted similar as I.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="You have not granted the same as I... You have granted similar as I."/>
+		<meta name="keywords" content="url"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input type="url" id="word" value="Gates" autofocus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="resultTable"></div>
+		</div>
+		
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	wordElement = document.getElementById("word");
+			
+			const	resultTableElement = document.getElementById("resultTable");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["word"] = wordElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/YouHaveNotGrantedTheSameAsI_YouHaveGrantedSimilarAsI.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>
