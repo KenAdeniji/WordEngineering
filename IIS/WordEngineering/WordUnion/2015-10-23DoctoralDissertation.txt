@@ -1275,6 +1275,12 @@ Focusing on the Word.
     2024-06-22T15:36:00 What part of yourself... do I desire as My future?
     Logical data independence:
     2024-06-22T17:02:00 The opinion of someone else... is beside me.
+    Integrity independence:
+    The author is not implementing constraints.
+    Distribution independence:
+    The user is not aware that the data and log are in separate files. Replication and mirroring are other means of ensuring redundancies.
+    The nonsubversion rule:
+    Row processing such as cursor must abide by integrity rules and constraints like set processing.
 
 " (Edgar F. Codd, 1970).
 A conversion page
@@ -3262,5 +3268,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/22/2024 17:14:22
+Last modified: 06/22/2024 22:09:31
 ""
