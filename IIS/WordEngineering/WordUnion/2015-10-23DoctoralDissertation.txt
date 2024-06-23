@@ -1265,6 +1265,16 @@ Focusing on the Word.
         Constraint rule violation - entity, foreign key. The author rarely imposes constraints, like for example in DatedFrom versus (VS) DatedUntil, which may result in negative date differences. The Max datasize will truncate extra data, but SQL Server primary key indexes impose a size limit of 900 bytes. Wherease VARCHAR(MAX) is typically 8000 bytes.
     Data control language (DCL) 	Grant, Deny, Revoke
     Transaction control language (TCL) 	Begin, Commit, Rollback transaction
+    The view updating rule:
+    Only computed columns cannot be updated.
+    A single operation must support select, insert, update, and delete:
+    A base or derived relationship should comply with an operation to select, insert, update, and delete.
+    Physical data independence:
+    Batch and end-user operations are not impaired when changes are made to physical storage or access method.
+    2024-06-22T15:13:00...2024-06-22T15:15:00 There is no deterioration in data... when there is a restore, import, or bulk copy.
+    2024-06-22T15:36:00 What part of yourself... do I desire as My future?
+    Logical data independence:
+    2024-06-22T17:02:00 The opinion of someone else... is beside me.
 
 " (Edgar F. Codd, 1970).
 A conversion page
@@ -3252,5 +3262,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/20/2024 19:11:11
+Last modified: 06/22/2024 17:14:22
 ""

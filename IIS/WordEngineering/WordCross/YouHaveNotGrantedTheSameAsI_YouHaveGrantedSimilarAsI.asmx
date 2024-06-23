@@ -58,16 +58,14 @@ public class YouHaveNotGrantedTheSameAsI_YouHaveGrantedSimilarAsIWebService : Sy
 	public const string QueryStatement = @"
 	SELECT
 		URI,
-		DIFFERENCE('{0}', URI) / 4 SoundexDifference,
+		DIFFERENCE('{0}', URI) * 1.00 / 4 SoundexDifference,
 		IIF(CHARINDEX('{0}', URI) = 0, 0, 1) CHARINDEXComparison,
-		DIFFERENCE('{0}', URI) / 4 
-		+	IIF(CHARINDEX('{0}', URI) = 0, 0, 1)
-		Ranked
+		DIFFERENCE('{0}', URI) * 1.00 / 4 + IIF(CHARINDEX('{0}', URI) = 0, 0, 1) Ranked
 	FROM
 		URI..MyURI
 	WHERE
 	(		
-		DIFFERENCE('{0}', URI) / 4 
+		DIFFERENCE('{0}', URI) * 1.00 / 4 
 		+	IIF(CHARINDEX('{0}', URI) = 0, 0, 1)
 	) >	0
 	ORDER BY
