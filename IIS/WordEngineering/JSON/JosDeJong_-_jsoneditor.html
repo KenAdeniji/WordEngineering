@@ -1,34 +1,84 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <!-- when using the mode "code", it's important to specify charset utf-8 -->
-    <meta charset="utf-8">
+	<head>
+		<!-- when using the mode "code", it's important to specify charset utf-8 -->
+		<meta charset="utf-8">
 
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.1.0/jsoneditor.css" rel="stylesheet" type="text/css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.1.0/jsoneditor.min.js"></script>
-</head>
-<body>
-    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.1.0/jsoneditor.css" rel="stylesheet" type="text/css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.1.0/jsoneditor.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<table align="center">
+				<tr align="center">
+					<td colspan="3" align="center">
+						<div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+					</td>
+				</tr>
+				<tr align="center">
+					<td><span>Mode</span></td>
+					<td>
+						<input type="radio" id="modeTree" name="mode" value="tree" checked />
+						<label for="modeTree">Tree</label>
+						
+						<input type="radio" id="modeCode" name="mode" value="code" />
+						<label for="modeCode">Code</label>
 
-    <script>
-        // create the editor
-        const container = document.getElementById("jsoneditor")
-        const options = {}
-        const editor = new JSONEditor(container, options)
+						<input type="radio" id="modeView" name="mode" value="view" />
+						<label for="modeView">View</label>
 
-        // set json
-        const initialJson = {
-            "Array": [1, 2, 3],
-            "Boolean": true,
-            "Null": null,
-            "Number": 123,
-            "Object": {"a": "b", "c": "d"},
-            "String": "Hello World"
-        }
-        editor.set(initialJson)
+						<input type="radio" id="modeText" name="mode" value="text" />
+						<label for="modeText">Text</label>
+					</td>
+					<td>
+						<button type="button" id="activateMode">Activate mode</button>
+					</td>
+				</tr>
+			</table>
+		</div>
 
-        // get json
-        const updatedJson = editor.get()
+		<script>
+			var isPostBack = false;
+			
+			const activateModeElement = document.getElementById("activateMode");
+			
+			// create the editor
+			const container = document.getElementById("jsoneditor");
+			const options = {};
+			const editor = new JSONEditor(container, options);
+
+			// set json
+			const initialJson = {
+				"Array": [1, 2, 3],
+				"Boolean": true,
+				"Null": null,
+				"Number": 123,
+				"Object": {"a": "b", "c": "d"},
+				"String": "Hello World"
+			}
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+					editor.set(initialJson)
+
+					// get json
+					// const updatedJson = editor.get()
+				}
+			}
+
+			function activateModeSubmit()
+			{
+				editor.setMode
+				(
+					document.querySelector("input[name='mode']:checked").value
+				);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			activateModeElement.addEventListener("click", activateModeSubmit, false);
     </script>
 </body>
 </html>
