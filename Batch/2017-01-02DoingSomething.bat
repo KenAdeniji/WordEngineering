@@ -607,25 +607,5 @@ Sent Items
 
 2024-05-24T19:47:00 Notepad++ closes, exits, ends, aborts, terminates.
 
-2024-06-03T05:33:00 2015-10-23DoctoralDissertation.html What is remembrance...associate?
-
-2024-06-04T05:38:00 james.newtonking.com/pages/json-net.aspx 				2012-08-09 	3214
-
-2024-06-04T08:28:00	AlexisGo.com 	Alexis Goldstein 			2017-11-14 	45523
-
-2024-06-07T03:06:00 microsoft sql server management studio hourglass.
-
-2024-06-07T14:42:00	AndrewNewberg.com 	Andrew Newberg, M.D. 		Jew 	2017-09-05 	16078
-
-http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?
-scriptureReference
-bibleVersion
-
-http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=King James Version
-
-http://localhost/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query?scriptureReference=Genesis 1&bibleVersion=KingJamesVersion
-
-Let me turn on the light.
-
-You have not ask me to give you this... You have given this to use as You.
+2024-06-23T21:43:00...2024-06-23T22:09:00 2015-10-23DoctoralDissertation.html
 :Exit

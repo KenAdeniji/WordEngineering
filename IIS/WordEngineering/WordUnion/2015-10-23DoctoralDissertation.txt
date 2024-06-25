@@ -22,7 +22,8 @@ Thesis Statement: This dissertation introduces AlphabetSequence ( 2 Corinthians 
 The importance of this work?
 
     Follow God, as a character.
-    If you are a follower of Me or if you are a follower of the book? How we cannot... disassociate.
+    If you are a follower of Me or if you are a follower of the book?
+    How we cannot... disassociate.
     To track dates and words? And, find meaning, correlation.
     To touch...numeric. Miracles of turning water into wine, feeding with fish and bread, resurrection after 3 days.
     How do you associate goodness with kindness ( Exodus 6:7 )?
@@ -116,7 +117,7 @@ The HisWord's table, commentary column, contains implicit information. This comm
 
 As such, from the creation account, on the first day, there is a commandment, and there may be an action/response. The commandment is in the word column God created light ( Genesis 1:3, 5 ). The action is in the commentary column; God separated the light from the darkness (Genesis 1:1-2, 4).
 
-SQL Server generates sequential numbers for the HisWordID identity column. The goodness of this technique is that it is a candidate primary key, data loss is trackable, and it provides a sort key. The HisWordID column may serve as the primary and/or foreign key, the backbone of the Referential Integrity Constraint.
+Microsoft SQL Server generates sequential numbers for the HisWordID identity column. The goodness of this technique is that it is a candidate primary key, data loss is trackable, and it provides a sort key. The HisWordID column may serve as the primary and/or foreign key, the backbone of the Referential Integrity Constraint.
 
 The Dated column is of the DateTime type. If an insert statement does not explicitly specify a value for the dated column, then it defaults to the current date and time of the (UTC-08:00) Pacific Time (US & Canada) time zone. There is a preference for the Coordinated Universal Time (UTC)	format.
 
@@ -2986,6 +2987,7 @@ References
     Dive into Deep Learning W3C web page; Available from d2l.ai
     The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
     Musings on the C charter Aaron Ballman, 2023-12-29; W3C web page; Available from http://blog.aaronballman.com/2023/12/musings-on-the-c-charter
+    The Skill Code How to Save Human Ability in an Age of Intelligent Machines Matt Beane, 2024; W3C web page; Available from http://google.com/books/edition/The_Skill_Code/t8DWEAAAQBAJ?hl=en
     T-SQL Fundamentals Itzik Ben-Gan; W3C web page; Available from http://www.microsoftpressstore.com/articles/article.aspx?p=3178897
     Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
@@ -3268,5 +3270,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/22/2024 22:09:31
+Last modified: 06/24/2024 19:28:33
 ""
