@@ -515,3 +515,5 @@ git add			IIS/WordEngineering/WordCross/YouHaveNotGrantedTheSameAsI_YouHaveGrant
 git add			IIS/WordEngineering/WordCross/YouHaveNotGrantedTheSameAsI_YouHaveGrantedSimilarAsI.html
 
 git add			IIS/WordEngineering/JSON/JosDeJong_-_jsoneditor.html
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-25T1641GuarantyTrustBank_-_SegunAgbaje_-_WhereMyHopeLies...IsWhereIAmNotApart.txt
