@@ -615,4 +615,6 @@ JavaScript Basics: Data Types
 
 2024-06-25T08:44:00 microsoft operating system, mozilla firefox browser, fiona blond picture, rita busitill friend, usbank... joe biden, emmanuel macron, albanese.
 
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2024-06-25T2034MicrosoftOperatingSystem_MozillaFirefoxBrowser_FionaBlondPicture_RitaBusitillFriend_USbank_JoeBiden_EmmanuelMacron_Albanese.txt
+
 :Exit
