@@ -192,6 +192,7 @@ DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7589);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
+DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -608,7 +609,7 @@ Sent Items
 2024-05-24T19:47:00 Notepad++ closes, exits, ends, aborts, terminates.
 
 2024-06-23T21:43:00...2024-06-23T22:09:00 2015-10-23DoctoralDissertation.html
-High Performance Browser Networking
+Data Structures and Algorithm Analysis
 
 2024-06-25T07:07:00 live query statistics.
 
