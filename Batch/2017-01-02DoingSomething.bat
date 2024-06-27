@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 162937);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163060);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 165072);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
@@ -608,8 +608,7 @@ Sent Items
 2024-05-24T19:47:00 Notepad++ closes, exits, ends, aborts, terminates.
 
 2024-06-23T21:43:00...2024-06-23T22:09:00 2015-10-23DoctoralDissertation.html
-The Author Programs in the Following Tiers and Languages
-JavaScript Basics: Data Types
+High Performance Browser Networking
 
 2024-06-25T07:07:00 live query statistics.
 

@@ -474,7 +474,7 @@ Indexes
 
 Naming Conventions
 
-    Overall consistency encourages lowercase keywords. Keywords in lowercase are mandatory in C# and JavaScript but not in SQL.
+    Overall, consistency encourages lowercase keywords. Keywords in lowercase are mandatory in case-sensitive programming languages like C# and JavaScript, but not in SQL.
     Use Pascal casing for naming literals, such as, tables, columns, stored procedures and functions.
     Use Camel casing for naming parameters and local variables.
 
@@ -2987,7 +2987,7 @@ References
     Dive into Deep Learning W3C web page; Available from d2l.ai
     The Coming Prince Sir Robert Anderson; W3C web page; Available from http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html
     Musings on the C charter Aaron Ballman, 2023-12-29; W3C web page; Available from http://blog.aaronballman.com/2023/12/musings-on-the-c-charter
-    The Skill Code How to Save Human Ability in an Age of Intelligent Machines Matt Beane, 2024; W3C web page; Available from http://google.com/books/edition/The_Skill_Code/t8DWEAAAQBAJ?hl=en
+    The Skill Code How to Save Human Ability in an Age of Intelligent Machines Matt Beane, 2024-06-11; W3C web page; Available from http://google.com/books/edition/The_Skill_Code/t8DWEAAAQBAJ?hl=en
     T-SQL Fundamentals Itzik Ben-Gan; W3C web page; Available from http://www.microsoftpressstore.com/articles/article.aspx?p=3178897
     Deep Learning with JavaScript: Neural networks in TensorFlow.js Stanley Bileschi, Eric Nielsen, Shanqing Cai; Simon and Schuster, Jan 24, 2020; W3C web page; Available from http://books.google.com/books?id=-DozEAAAQBAJ
     Practical Statistics for Data Scientists Peter Bruce & Andrew Bruce; W3C web page; Available from http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf
@@ -3270,5 +3270,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 06/24/2024 19:28:33
+Last modified: 06/26/2024 06:39:56
 ""
