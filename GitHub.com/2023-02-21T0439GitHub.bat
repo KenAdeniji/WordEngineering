@@ -521,3 +521,5 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-25T1641GuarantyTr
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-25T2034MicrosoftOperatingSystem_MozillaFirefoxBrowser_FionaBlondPicture_RitaBusitillFriend_USbank_JoeBiden_EmmanuelMacron_Albanese.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-26T1754ResurrectionLutheranChurch_510-444-5382_RLCOakland@GMail.com_2024-06-26T1822WhoIsInRight...OfTheOther.txt
+
+git add			Batch/JackMcLarney/
