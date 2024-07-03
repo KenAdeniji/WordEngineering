@@ -525,3 +525,5 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-06-26T1754Resurrecti
 git add			Batch/JackMcLarney/
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-02T1721DanielJackson_-_MassachusettsInstituteOfTechnology(MIT)_-_EssenceOfSoftware.com_-_YouAreOnTheRightTrack...WeAreNotAskingForADifferentOpinion_-_Genesis40v16.txt
+
+git rm			IIS/WordEngineering/2018-05-03Correspondence/2024-07-02T1721DanielJackson_-_MassachusettsInstituteOfTechnology(MIT)_-_EssenceOfSoftware.com_-_YouAreOnTheRightTrack...WeAreNotAskingForADifferentOpinion.txt
