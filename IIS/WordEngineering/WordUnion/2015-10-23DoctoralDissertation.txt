@@ -1285,7 +1285,18 @@ Focusing on the Word.
     The nonsubversion rule:
     Row processing such as cursor must abide by integrity rules and constraints like set processing.
 
-" (Edgar F. Codd, 1970).
+" (Edgar F. Codd, 1970). "
+Concept: GetAPage.html
+
+    User-facing: At this url, a user enters a received word, and there are a set of tabular responses.
+    Functional: This is a Single Page Application (SPA) that depends on AJAX, and it may call multiple web-services.
+    Behavioral: There are associations between the word and the Bible and the dictionaries object-oriented classes and entities.
+    Independent: This is a composite of previous stand-alone work.
+    Purposive: Based on user input the system retrieves Biblical data, while also allowing further query.
+    Reusable: The idea is to retrieve information from a set of sources and send the results to various destinations.
+    Valuable: The data is free and the work is non-complex.
+
+" (Daniel Jackson, 2023-06-26).
 A conversion page
 
 Customize the content of an url? This is how the web page implements this technology. This is how-to implement it in your preferred technology. Keyword 	Find what 	Replace with 	Scripture Reference
@@ -3018,6 +3029,7 @@ References
     Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity Randall Hyde; W3C web page; Available from http://RandallHyde.com
     Learning Made Easy. Data Analytics & Visualization. A Wiley Brand. Jack A. Hyman, Luca Massaron, Paul McFedries, John Paul Mueller, Lillian Pierson, Jonathan Reichental, Joseph Schmuller, Alan R. Simon, Allen G. Taylor ISBN: 978-1-394-24409-6. http://www.wiley.com/en-us/Data+Analytics+%26+Visualization+All+in+One+For+Dummies-p-9781394244102
     The Essence of Software Why Concepts Matter for Great Design Daniel Jackson (November 16, 2021); W3C web page; Available from http://EssenceOfSoftware.com
+    A Concept Experiment at Palantir Lessons learned from deploying concepts at scale Daniel Jackson (June 26, 2023); W3C web page; Available from http://EssenceOfSoftware.com/posts/palantir
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
@@ -3275,5 +3287,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 07/02/2024 17:19:24
+Last modified: 07/02/2024 22:39:36
 ""
