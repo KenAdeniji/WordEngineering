@@ -978,8 +978,10 @@ There is unity between the development and production team, environment, and tim
 The author has experience, reporting web server logs, using WebTrends. The author relies on Event Viewer for logging and monitoring exceptions. The SQL Server Management Studio offers the Error Log, for viewing the database activities.
 
 The SQL Server Maintenance Plan is for scheduling full database and transaction log backup, periodically.
+"
 
-" To reduce database load, the author considers the selection operation - where clause, distinct and top; projection operation - specify the column list, and not use the universal *, for all columns. Rarely does the author join tables, minimizing the work and resultset, in a set-level language. " (DB2 Developer's Guide).
+To reduce database load, the author considers the selection operation - where clause, distinct and top; projection operation - specify the column list, and not use the universal *, for all columns. Rarely does the author join tables, minimizing the work and resultset, in a set-level language.
+" (DB2 Developer's Guide).
 HTML5
 Semantic Elements
 
@@ -3015,6 +3017,7 @@ References
     Consumer-Centric API Design Thomas Hunter II (2014-08-09); W3C web page; Available from http://thomashunter.name/posts/2014-08-09-consumer-centric-api-design-a-creative-commons-book
     Write Great Code: Volume 3 Engineering Software Chapter 2 Productivity Randall Hyde; W3C web page; Available from http://RandallHyde.com
     Learning Made Easy. Data Analytics & Visualization. A Wiley Brand. Jack A. Hyman, Luca Massaron, Paul McFedries, John Paul Mueller, Lillian Pierson, Jonathan Reichental, Joseph Schmuller, Alan R. Simon, Allen G. Taylor ISBN: 978-1-394-24409-6. http://www.wiley.com/en-us/Data+Analytics+%26+Visualization+All+in+One+For+Dummies-p-9781394244102
+    The Essence of Software Why Concepts Matter for Great Design Daniel Jackson (November 16, 2021); W3C web page; Available from http://EssenceOfSoftware.com
     Improving Software Development Productivity: Effective Leadership and Quantitative Methods in Software Management Randall W. Jensen (2014); W3C web page; Available from http://books.google.com/books/about/Improving_Software_Development_Productiv.html?id=LnVTBAAAQBAJ
     The Definitive Guide to SQL Server Performance Don Jones (2002); W3C web page; Available from http://content.marketingsherpa.com/heap/realtp/1a.pdf
     LOOPE Lingo Object Oriented Programming Environment Irv Kalb (2000-2004); W3C web page; Available from http://furrypants.com/loope/index.htm
@@ -3272,5 +3275,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed? "
-Last modified: 07/01/2024 22:19:49
+Last modified: 07/02/2024 17:19:24
 ""
