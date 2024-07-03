@@ -1289,14 +1289,15 @@ Focusing on the Word.
 " (Edgar F. Codd, 1970). "
 Concept: GetAPage.html
 
-    User-facing: At this url, a user enters a received word, and there are a set of tabular responses.
-    Functional: This is a Single Page Application (SPA) that depends on AJAX, and it may call multiple web-services.
-    Behavioral: There are associations between the word and the Bible and the dictionaries object-oriented classes and entities.
+    User-facing: A user enters a received word, and there is a set of tabular responses.
+    Functional: This is a Single Page Application (SPA) that depends on AJAX, and it calls multiple web-services.
+    Behavioral: There are associations between the word and the Bible and the dictionaries' object-oriented classes and entities.
     Independent: This is a composite of previous stand-alone work.
-    Purposive: Based on user input the system retrieves Biblical data, while also allowing further query.
+    Purposive: Based on user input, the system retrieves data, while also allowing further queries.
     Reusable: The idea is to retrieve information from a set of sources and send the results to various destinations.
-    Valuable: The data is free and the work is non-complex.
+    Valuable: The data is free, and the work is non-complex.
 
+The user-interface (UI) supports queries, and not database maintenance. The author builds an interface for each additional work that is customizable by the end-user, and independent of his environment.
 " (Daniel Jackson, 2023-06-26).
 A conversion page
 
@@ -3288,5 +3289,5 @@ How do your questions fit into the broader intellectual tradition?
 The book, The Bible Code by Michael Drosnin, is the sole source for this religious work.
 How will you answer your questions?
 If love is not spent, where is it needed?
-Last modified: 07/03/2024 05:40:27
+Last modified: 07/03/2024 09:29:42
 "
