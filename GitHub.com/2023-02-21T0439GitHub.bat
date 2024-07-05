@@ -2,7 +2,7 @@ git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.docx
 git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
 git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.pdf
 git add   	IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.txt
-git add		2024-07-04T2033JohnMacFarlane_-_Pandoc_-_2015-10-23DoctoralDissertation.bat
+git add		IIS/WordEngineering/WordUnion/2024-07-04T2033JohnMacFarlane_-_Pandoc_-_2015-10-23DoctoralDissertation.bat
 
 git add	IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
 git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
@@ -72,7 +72,7 @@ git add IIS/WordEngineering/Resume/KenAdenijiResume.html
 git add IIS/WordEngineering/Resume/KenAdenijiResume.pdf
 git add IIS/WordEngineering/Resume/KenAdenijiResume.txt
 
-git add	2024-07-04T2055JohnMacFarlane_-_Pandoc_-_KenAdenijiResume.bat
+git add	IIS/WordEngineering/Resume/2024-07-04T2055JohnMacFarlane_-_Pandoc_-_KenAdenijiResume.bat
 
 git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-03-20T1720Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Atef.Shaikh@acgov.org.txt"
 git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-03-20T1730Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Atef.Shaikh@acgov.org.txt"
