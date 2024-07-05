@@ -618,4 +618,7 @@ Data Structures and Algorithm Analysis
 
 http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2024-06-25T2034MicrosoftOperatingSystem_MozillaFirefoxBrowser_FionaBlondPicture_RitaBusitillFriend_USbank_JoeBiden_EmmanuelMacron_Albanese.txt
 
+
+2024-07-04T08:16:00 https://essenceofsoftware.com/tutorials/design-general/levels-of-design/
+
 :Exit
