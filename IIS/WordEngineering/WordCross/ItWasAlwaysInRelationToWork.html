@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-07-07T12:52:00 Created.
+		2024-07-07T12:52:00...2024-07-07T13:16:00 thead, tfoot.
+		2024-07-07T13:30:00	tbody	
+	-->
+	<head>
+		<title>It was... always in relation to work.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="It was... always in relation to work."/>
+		<meta name="keywords" content="AlphabetSequenceIndex percentage"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td colspan="2" align="center">
+						<textarea id="word" autofocus>It was / always in relation to work.</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	wordElement = document.getElementById("word");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				var htmlTableHead = 
+				`
+					<table id='alphabetSequenceTable'>
+					<caption>AlphabetSequence</caption>
+					<thead><tr><th>Identity<\th><th>Word<\th><th>AlphabetSequenceIndex<\th><th>Percentage (%)<\th></tr></thead>
+				`;	
+				var wordAlphabetSequenceIndexSum = scriptLiteral9432.alphabetSequenceIndex(wordElement.value);
+
+				var htmlTableFoot =
+				`
+					<tfoot><tr>
+						<td/>
+						<td>${wordElement.value}<\td>
+						<td>${wordAlphabetSequenceIndexSum}<\td>
+						<th>100<\td>
+					</tr></tfoot>
+				`;	
+				
+				var htmlTableBody = "<tbody>";
+				var words = wordElement.value.split(/[/]/)
+				
+				var wordCurrent;
+				var wordCurrentAlphabetSequenceIndex;
+				var wordCurrentAlphabetSequenceIndexPercentage;
+				
+				for (rowIndex = 0, rowsLength = words.length; rowIndex < rowsLength; rowIndex++)
+				{
+					wordCurrent = words[rowIndex];
+					wordCurrentAlphabetSequenceIndex = scriptLiteral9432.alphabetSequenceIndex(wordCurrent);
+					wordCurrentAlphabetSequenceIndexPercentage = wordCurrentAlphabetSequenceIndex * 100 / wordAlphabetSequenceIndexSum;
+					htmlTableBody +=
+					`
+						<tr>
+							<td>${rowIndex}<\td>
+							<td>${wordCurrent}<\td>
+							<td>${wordCurrentAlphabetSequenceIndex}<\td>
+							<td>${wordCurrentAlphabetSequenceIndexPercentage}<\td>
+						</tr>
+					`	
+				}
+				
+				htmlTableBody += "</tbody>";
+				
+				resultSetElement.innerHTML = htmlTableHead + htmlTableBody + htmlTableFoot;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>

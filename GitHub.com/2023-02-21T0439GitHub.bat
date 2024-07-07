@@ -542,3 +542,5 @@ git add	        IIS/WordEngineering/WordCross/HowDidHeLetHimToChoose_LedHim.html
 git add	        InformationInTransit/ProcessCode/FiveWs.cs
 
 git add			IIS/WordEngineering/JavaScript/Algorithm/codewithhugo.com_-_JavaScriptDataTypeCheck.html
+
+git add	        IIS/WordEngineering/WordCross/ItWasAlwaysInRelationToWork.html
