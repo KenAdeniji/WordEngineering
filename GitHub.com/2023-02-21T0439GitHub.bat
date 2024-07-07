@@ -534,3 +534,7 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-02T1721DanielJack
 
 git rm			IIS/WordEngineering/2018-05-03Correspondence/2024-07-02T1721DanielJackson_-_MassachusettsInstituteOfTechnology(MIT)_-_EssenceOfSoftware.com_-_YouAreOnTheRightTrack...WeAreNotAskingForADifferentOpinion.txt
 
+git add			IIS/WordEngineering/WordCross/2024-07-06T1332HowDidHeLetHimToChoose_LedHim.sql
+git add	        IIS/WordEngineering/WordCross/HowDidHeLetHimToChoose_LedHim.asmx
+git add	        IIS/WordEngineering/WordCross/HowDidHeLetHimToChoose_LedHim.html
+git add	        InformationInTransit/ProcessCode/FiveWs.cs

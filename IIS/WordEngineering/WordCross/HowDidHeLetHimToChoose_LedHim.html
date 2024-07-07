@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-07-06T14:07:00...2024-07-06T14:28:00 Created.
+	-->
+	<head>
+		<title>How did He let Him to choose? Led him.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="How did He let Him to choose? Led him."/>
+		<meta name="keywords" content="Exact, Bible word statistics, category"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="bibleVersion">Bible version</label></td>
+					<td><select id="bibleVersion" autofocus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.renderBibleVersionSelect();
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["bibleVersion"] = bibleVersionElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/HowDidHeLetHimToChoose_LedHim.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>
