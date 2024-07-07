@@ -621,4 +621,6 @@ http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-
 
 2024-07-04T08:16:00 https://essenceofsoftware.com/tutorials/design-general/levels-of-design/
 
+EssenceOfSoftware.com 	Daniel Jackson of Massachusetts Institute of Technology (MIT) 			2024-05-04 	66007
+
 :Exit

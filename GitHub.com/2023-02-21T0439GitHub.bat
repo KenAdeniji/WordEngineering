@@ -7,7 +7,9 @@ git add		IIS/WordEngineering/WordUnion/2024-07-04T2033JohnMacFarlane_-_Pandoc_-_
 git add	IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.html
 git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.pdf
 git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.txt
-
+git add IIS/WordEngineering/WordUnion/2019-10-05ArtifactDescription.docx
+git add IIS/WordEngineering/WordUnion/2024-07-06T1948JohnMacFarlane_-_Pandoc_-_2019-10-05ArtifactDescription.bat
+		
 git add GitHub.com/2023-02-21T0439GitHub.bat
 git add IIS/WordEngineering/WordCross/IwoKanSebe.asmx
 git add IIS/WordEngineering/WordCross/IwoKanSebe.html
