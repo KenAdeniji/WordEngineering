@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-07-06T20:24:00 Created. http://codewithhugo.com/javascript-data-type-check-cheatsheet/	
+		2024-07-06T21:22:00	http://stackoverflow.com/questions/28814585/how-to-check-if-type-is-boolean
+	-->
+	<head>
+		<title>codewithhugo.com_-_JavaScript Data Type Check</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="codewithhugo.com_-_JavaScript Data Type Check"/>
+		<meta name="keywords" content="type"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="question">Question</label></td>
+					<td>
+						<input id="question" type="text" value="2024-07-06T20:37:00" autofocus/>
+					</td>
+				</tr>	
+				<tr>
+					<td align="center" colspan="2">
+						<input type="submit" id="submitQuery">
+					</td>
+				</tr>
+			</table>
+			<table align="center" id="resultSet">
+				<thead>
+					<tr><th>Type</th><th>Is</th></tr>	
+				</thead>
+				<tbody>
+					<tr><td>Boolean</td><td id="isBoolean"></td></tr>	
+					<tr><td>Date</td><td id="isDate"></td></tr>	
+					<tr><td>Number</td><td id="isNumber"></td></tr>	
+				</tbody>
+			</table>
+		</div>
+		
+		<script>
+			var isPostBack = false;
+		
+			const	questionElement = document.getElementById("question");
+			const	submitQueryElement = document.getElementById("submitQuery");
+
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	isBooleanElement = document.getElementById("isBoolean");
+			const	isDateElement = document.getElementById("isDate");
+			const	isNumberElement = document.getElementById("isNumber");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+			}
+
+			function querySubmit()
+			{
+				var booleanType = "false";
+				if(["true", "yes", "1"].includes(questionElement.value)) {
+					booleanType = true;   
+				}
+				else if(["false", "no", "0"].includes(questionElement.value)) {
+					booleanType = true;
+				}
+				isBooleanElement.innerHTML = booleanType;
+				isDateElement.innerHTML = !Number.isNaN(Number(new Date(questionElement.value)));
+				isNumberElement.innerHTML = !isNaN(questionElement.value);
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+	</script>
+</body>
+</html>
