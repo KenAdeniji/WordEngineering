@@ -623,4 +623,6 @@ http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-
 
 EssenceOfSoftware.com 	Daniel Jackson of Massachusetts Institute of Technology (MIT) 			2024-05-04 	66007
 
+2024-07-10T10:29:00 http://modern-sql.com
+qtrac.eu 	Mark Summerfield 		C++, Python, qt 	2023-05-26
 :Exit
