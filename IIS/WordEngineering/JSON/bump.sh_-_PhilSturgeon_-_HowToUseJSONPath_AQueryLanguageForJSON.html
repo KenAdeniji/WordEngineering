@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<!--
+		2024-07-10T16:50:00	Created.
+			http://bump.sh/blog/how-to-use-json-path?utm_source=tldrwebdev
+			
+		2024-07-10T19:13:00
+			sh is the Internet country code top-level domain (ccTLD) for the British Overseas Territory of Saint Helena, Ascension and Tristan da Cunha, although it is primarily used in Saint Helena (Ascension Island has its own ccTLD, . ac).
+	-->
+	<head>
+		<title>How to use JSON Path. A query language for JSON.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="How to use JSON Path. A query language for JSON."/>
+		<meta name="keywords" content="JSONPath"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 25vh;
+				width: 90vw;
+			}
+		</style>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jsonpath/1.1.1/jsonpath.min.js"></script>
+		<div>
+			<table align="center">
+				<tr>
+					<td colspan="2" align="center">
+						<textarea id="question" autofocus></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<textarea id="JSONPathQuery">$.store.book[*].price</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>
+			</table>
+			<div align="center" id="resultSet"></div>
+		</div>
+
+		<script>
+			var isPostBack = false;
+			
+			var	questionElement = document.getElementById("question");
+			var	JSONPathQueryElement = document.getElementById("JSONPathQuery");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					questionElement.value = JSON.stringify(initialJson);
+					querySubmit();
+					isPostBack = true;
+				}
+			}
+
+			async function querySubmit()
+			{
+				var result = jsonpath.query
+				(
+					JSON.parse(questionElement.value),
+					JSONPathQuery.value //"$.store.book[?@.price < 10].title"
+				);
+				
+				resultSetElement.innerHTML = JSON.stringify(result);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			// set json
+			const initialJson = 
+{
+  "store": {
+    "book": [
+      {
+        "category": "reference",
+        "author": "Nigel Rees",
+        "title": "Sayings of the Century",
+        "price": 8.95
+      },
+      {
+        "category": "fiction",
+        "author": "Evelyn Waugh",
+        "title": "Sword of Honour",
+        "price": 12.99
+      },
+      {
+        "category": "fiction",
+        "author": "Herman Melville",
+        "title": "Moby Dick",
+        "isbn": "0-553-21311-3",
+        "price": 8.99
+      },
+      {
+        "category": "fiction",
+        "author": "J. R. R. Tolkien",
+        "title": "The Lord of the Rings",
+        "isbn": "0-395-19395-8",
+        "price": 22.99
+      }
+    ],
+    "bicycle": {
+      "color": "red",
+      "price": 399
+    }
+  }
+};			
+		</script>
+	</body>
+</html>

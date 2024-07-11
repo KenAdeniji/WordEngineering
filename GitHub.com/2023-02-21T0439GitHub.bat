@@ -546,3 +546,5 @@ git add			IIS/WordEngineering/JavaScript/Algorithm/codewithhugo.com_-_JavaScript
 git add	        IIS/WordEngineering/WordCross/ItWasAlwaysInRelationToWork.html
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-08T1757DavidFugate.David@LaunchBooks.comTelephone(760)944-9909.txt
+
+git add			IIS/WordEngineering/JSON/bump.sh_-_PhilSturgeon_-_HowToUseJSONPath_AQueryLanguageForJSON.html
