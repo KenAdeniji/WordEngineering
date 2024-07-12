@@ -627,4 +627,6 @@ EssenceOfSoftware.com 	Daniel Jackson of Massachusetts Institute of Technology (
 qtrac.eu 	Mark Summerfield 		C++, Python, qt 	2023-05-26
 
 2024-04-19T19:18:00 To touch...numeric. Miracles of turning water into wine, feeding with fish and bread, resurrection after 3 days. 99 Ranch Market, I was inside the men's restroom, and I was urinating, when I raised up my hand it touched a metal piece. This metal is on a wall to the West.
+
+2024-07-11T19:50:00	WesMcKinney.com/book 	Python for Data Analysis. Creator of Panda. 	John D. Hunter was an American neurobiologist and the original author of Matplotlib. Wikipedia Born: August 1, 1968, Dyersburg, TN Died: August 28, 2012, Chicago, IL 	Python, Panda 	2022-03-26 	58273
 :Exit
