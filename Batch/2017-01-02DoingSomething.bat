@@ -629,4 +629,36 @@ qtrac.eu 	Mark Summerfield 		C++, Python, qt 	2023-05-26
 2024-04-19T19:18:00 To touch...numeric. Miracles of turning water into wine, feeding with fish and bread, resurrection after 3 days. 99 Ranch Market, I was inside the men's restroom, and I was urinating, when I raised up my hand it touched a metal piece. This metal is on a wall to the West.
 
 2024-07-11T19:50:00	WesMcKinney.com/book 	Python for Data Analysis. Creator of Panda. 	John D. Hunter was an American neurobiologist and the original author of Matplotlib. Wikipedia Born: August 1, 1968, Dyersburg, TN Died: August 28, 2012, Chicago, IL 	Python, Panda 	2022-03-26 	58273
+
+2024-07-13 17:09:19.420...2024-07-15T01:07:00 E:\WordEngineering>git push
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+The RSA host key for github.com has changed,
+and the key for the corresponding IP address 140.82.116.3
+is unknown. This could either mean that
+DNS SPOOFING is happening or the IP address for the host
+and its host key have changed at the same time.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s.
+Please contact your system administrator.
+Add correct host key in /c/Users/kadeniji/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /c/Users/kadeniji/.ssh/known_hosts:1
+RSA host key for github.com has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+07:04...07:14 wake-up, urine, faeces, running stomach. 07:15 dizzy, sleepy. 07:32 dizzy, sleepy. 07:40 dizzy, sleepy.
+2024-07-15T07:04:00 They are trying to use AI and people's survey.
+github.com/KenAdeniji/WordEngineering
+
 :Exit
