@@ -550,3 +550,9 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-08T1757DavidFugat
 git add			IIS/WordEngineering/JSON/bump.sh_-_PhilSturgeon_-_HowToUseJSONPath_AQueryLanguageForJSON.html
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-11T1927dbta.com_-_databaseTrendsAndApplications_-_June...July2024.txt
+
+git add         IIS/WordEngineering/Resume/2024-07-14T0849JohnMacFarlane_-_Pandoc_-_2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.pdf.bat
+git add         IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.docx
+git add         IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.html
+git add 	    IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.pdf
+git add	        IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.txt

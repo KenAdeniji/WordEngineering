@@ -1,0 +1,2 @@
+pandoc -o 2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.docx 2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.html
+pandoc -o 2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.txt 2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.html
