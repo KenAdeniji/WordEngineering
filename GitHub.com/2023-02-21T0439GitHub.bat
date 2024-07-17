@@ -74,6 +74,8 @@ git add IIS/WordEngineering/Resume/KenAdenijiResume.html
 git add IIS/WordEngineering/Resume/KenAdenijiResume.pdf
 git add IIS/WordEngineering/Resume/KenAdenijiResume.txt
 
+git add IIS/WordEngineering/Resume/Contact.html
+
 git add	IIS/WordEngineering/Resume/2024-07-04T2055JohnMacFarlane_-_Pandoc_-_KenAdenijiResume.bat
 
 git add "IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2023-03-20T1720Maureen.Orphanos@acgov.org_Abibat.Ajiboye@acgov.org_Atef.Shaikh@acgov.org.txt"
