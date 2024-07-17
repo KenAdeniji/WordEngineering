@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-07-16T22:18:00...2024-07-17T02:57:00	Created.
+			http://www.themoviedb.org/settings/api
+			http://developer.themoviedb.org/docs/search-and-query-for-details
+		2024-07-17T00:41:00	
+			http://api.themoviedb.org/3/search/movie?api_key=5ad26b1066542c74eba5242a56c96224&query=Batman
+		2024-07-17T02:15:00	
+			http://stackoverflow.com/questions/73289933/unable-to-fetch-data-from-tmdb-javascript			
+	-->
+	<head>
+		<title>TheMovieDB.org</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="TheMovieDB.org"/>
+		<meta name="keywords" content="fetch, promise"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="query">Query</label></td>
+					<td><input type="text" id="query" value="Batman" autofocus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<ul id="results"></ul>
+			<div align="center" id="resultSet"></div>
+		</div>
+		<script>
+			const BASE_URL = "https://api.themoviedb.org/3/";
+			const API_KEY = "api_key=5ad26b1066542c74eba5242a56c96224";
+			let SEARCH_URL = BASE_URL + "search/movie?" + API_KEY + "&sort_by=popularity.desc&query=";
+		
+			var isPostBack = false;
+			
+			const	queryElement = document.getElementById("query");
+			
+			const	resultsElement = document.getElementById("results");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					fetchPromise();
+					isPostBack = true;
+				}
+				else
+				{
+					fetchPromise();
+				}
+			}
+
+			function getMovies(my_api) {
+			  return fetch(my_api, {
+				  method: 'GET',
+				  cache: "no-cache",
+				})
+				.then(res => res.json())
+				.catch(err => {
+				  console.log(err.message);
+				});
+			}
+
+			function renderMovies(res) {
+				var resultsString = "<ol>";				
+				res.results.forEach(result => {
+					resultsString += `<li><ul><li>Title: ${result.title}</li><li>Overview: ${result.overview}</li></ul></li>`;
+			  });
+			  resultsString += "</ol>";
+			  resultsElement.innerHTML = resultsString;
+			}
+
+			//The fetch call returns a promise, so you shouldn't set innerHTML to that. Instead, use the promise to wait for the fetch to complete, then update the dom with the result.
+			function fetchPromise()
+			{
+				let query = SEARCH_URL + queryElement.value;
+				getMovies(query).then(renderMovies);
+			}	
+	
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", fetchPromise, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					fetchPromise();
+				}
+			}
+	</script>
+</body>
+</html>
