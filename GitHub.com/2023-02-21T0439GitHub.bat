@@ -563,4 +563,6 @@ git add	        IIS/WordEngineering/WebServiceRequester/TheMovieDB.org.html
 
 git mv -f  		Java/JavaInANutshell/JavaInANutshel8thEditionBenjaminJEvans_JasonClark_DavidFlanagan Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan
 
+git mv -f  		Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan/2024-07-18T1612JavaInANutshel8thEditionBenjaminJEvans_JasonClark_DavidFlanagan.txt Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan/2024-07-18T1612JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan.txt
+
 git add			Java/JavaInANutshell
