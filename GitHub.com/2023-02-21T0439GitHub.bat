@@ -561,4 +561,6 @@ git add	        IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAde
 
 git add	        IIS/WordEngineering/WebServiceRequester/TheMovieDB.org.html
 
+git mv -f  		Java/JavaInANutshell/JavaInANutshel8thEditionBenjaminJEvans_JasonClark_DavidFlanagan Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan
+
 git add			Java/JavaInANutshell
