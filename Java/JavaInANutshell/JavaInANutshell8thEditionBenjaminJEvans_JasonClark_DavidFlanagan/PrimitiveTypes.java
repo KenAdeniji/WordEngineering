@@ -1,3 +1,4 @@
+//http://developers.redhat.com/e-books/java-nutshell-guide
 public class PrimitiveTypes
 {
 	public static final float AvogadroNumber = 6.02e23f;
