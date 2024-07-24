@@ -663,4 +663,7 @@ github.com/KenAdeniji/WordEngineering
 
 2024-07-23T14:58:00 en.wikipedia.org/wiki/Joe_Biden
 https://www.google.com/search?channel=fenc&client=firefox-b-1-d&q=eai+education#ip=1
+
+2024-07-24T03:10:00...2024-07-24T03:16:00 deleted:    Ohlone.edu/2011Fall/CS173-01 (049857) J2EE and EJB/CS 173 J2EE and EJB Midterm Exam 1.txt
+
 :Exit
