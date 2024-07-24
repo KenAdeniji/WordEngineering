@@ -566,3 +566,5 @@ git mv -f  		Java/JavaInANutshell/JavaInANutshel8thEditionBenjaminJEvans_JasonCl
 git mv -f  		Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan/2024-07-18T1612JavaInANutshel8thEditionBenjaminJEvans_JasonClark_DavidFlanagan.txt Java/JavaInANutshell/JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan/2024-07-18T1612JavaInANutshell8thEditionBenjaminJEvans_JasonClark_DavidFlanagan.txt
 
 git add			Java/JavaInANutshell
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-24T0213JohnN.Galardi_Wienerschnitzel_34480FremontBoulevard_Fremont_California_94555.txt
