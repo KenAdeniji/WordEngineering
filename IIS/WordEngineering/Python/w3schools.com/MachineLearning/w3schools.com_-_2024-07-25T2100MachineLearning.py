@@ -18,8 +18,22 @@
 					http://youtube.com/watch?v=9uTXz9VHLXw
 '''
 import numpy
+from scipy import stats #pip install scipy
 import sys
 
 commandlinearguments = [float(x) for x in sys.argv[1:]]
+
 numpy_commandlinearguments_mean = numpy.mean(commandlinearguments)
 print("Mean: ", numpy_commandlinearguments_mean)
+
+numpy_commandlinearguments_median = numpy.median(commandlinearguments)
+print("Median: ", numpy_commandlinearguments_median)
+
+scipy_commandlinearguments_mode = stats.mode(commandlinearguments)
+print("Mode: ", scipy_commandlinearguments_mode)
+
+numpy_commandlinearguments_standard_deviation = numpy.std(commandlinearguments)
+print("Standard deviation: ", numpy_commandlinearguments_standard_deviation)
+
+numpy_commandlinearguments_variance = numpy.var(commandlinearguments)
+print("Variance: ", numpy_commandlinearguments_variance)
