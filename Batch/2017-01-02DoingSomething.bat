@@ -667,4 +667,12 @@ https://www.google.com/search?channel=fenc&client=firefox-b-1-d&q=eai+education#
 2024-07-24T03:10:00...2024-07-24T03:16:00 deleted:    Ohlone.edu/2011Fall/CS173-01 (049857) J2EE and EJB/CS 173 J2EE and EJB Midterm Exam 1.txt
 
 2024-07-24T22:15:00 2015-10-23DoctoralDissertation.html What is time in Him?
+
+2024-07-27T05:39:00 http://www.w3schools.com/python/python_mysql_create_db.asp
+http://cnn.com/2021/02/02/us/fbi-sunrise-florida-shooting
+2021-01-28T11:25:00 linkedin.com/in/tyler-mirabella-36086716a
+
+2021-07-28T15:43:00		technet.microsoft.com/en-us/library/ms190766(v=sql.105).aspx 	Using Common Table Expressions 		Twin sibling 	2016-12-08 	41234
+RemySharp.com 				2017-02-21 	42280
+
 :Exit

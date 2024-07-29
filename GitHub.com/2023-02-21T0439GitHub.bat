@@ -570,3 +570,8 @@ git add			Java/JavaInANutshell
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-24T0213JohnN.Galardi_Wienerschnitzel_34480FremontBoulevard_Fremont_California_94555.txt
 
 git add			IIS/WordEngineering/Python/w3schools.com/MachineLearning/
+
+git add	        IIS/WordEngineering/ConversionTable/
+git add	        IIS/WordEngineering/Python/w3schools.com/MachineLearning/w3schools.com_-_2024-07-27T0840MachineLearning_-_MultipleRegression.py
+git add	        IIS/WordEngineering/Python/w3schools.com/MachineLearning/w3schools.com_-_2024-07-27T0840MachineLearning_Data.csv
+git add	        IIS/WordEngineering/wikibooks.org/

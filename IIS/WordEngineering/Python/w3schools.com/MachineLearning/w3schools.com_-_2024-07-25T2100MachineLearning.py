@@ -16,10 +16,14 @@
 				Dizzy sleepy. Urine.
 				2024-07-25T22:17:00	Koinonia House Published on Jul 17, 2017. Chuck Missler. Akedah.
 					http://youtube.com/watch?v=9uTXz9VHLXw
+				2024-07-26T23:59:00	
+					print(numpy.version.version)
 '''
-import numpy
-from scipy import stats #pip install scipy
 import sys
+import numpy #pip install numpy
+from scipy import stats #pip install scipy
+
+#import matplotlib.pyplot as plt #pip install matplotlib
 
 commandlinearguments = [float(x) for x in sys.argv[1:]]
 
@@ -37,3 +41,10 @@ print("Standard deviation: ", numpy_commandlinearguments_standard_deviation)
 
 numpy_commandlinearguments_variance = numpy.var(commandlinearguments)
 print("Variance: ", numpy_commandlinearguments_variance)
+
+numpy_random_numbers = numpy.random.uniform(0.0, 5.0, 250)
+print("Random numbers: ", numpy_random_numbers)
+
+#plt.hist(numpy_random_numbers, 5); plt.show() 
+
+numpy_random_numbers_normal = numpy.random.normal(5.0, 1.0, 100000)

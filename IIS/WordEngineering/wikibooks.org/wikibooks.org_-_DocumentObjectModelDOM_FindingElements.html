@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2024-07-27T17:10:00	Created.	https://en.wikibooks.org/wiki/JavaScript/Finding_elements
+			2024-07-27T17:27:00	urine.
+			2024-07-27T17:35:00	tongue.
+			2024-07-27T22:25:00	urine.
+			2024-07-27T22:47:00	The Han Twins, Jeen and Sunny. Irvine, California (CA).
+			2024-07-28T00:43:00	urine.
+		-->
+		<title>wikibooks.org_-_DocumentObjectModelDOM_FindingElements</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="wikibooks.org_-_DocumentObjectModelDOM_FindingElements"/>
+		<meta name="keywords" content="Document Object Model (DOM), selector"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%; 
+			}
+			textarea{ //viewport
+				height: 65vh;
+				width: 50vw;
+			}
+		</style>	
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="../WordUnion/9432.css">`
+			);
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="selector">Element(s) selector:</label></td>
+					<td>
+						<textarea id="selector" autofocus>style, label</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet" align="center"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+	
+			const selectorElement = document.getElementById("selector");
+			
+			const resultSetElement = document.getElementById("resultSet");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+						
+					var selectorParam = urlParams.get("selector");
+					if (selectorParam)
+					{
+						selectorElement.value = selectorParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				let elemArray = document.querySelectorAll
+				(
+					selectorElement.value
+				);
+				
+				var resultStub = "";  
+
+				for (let i = 0; i < elemArray.length; i++) 
+				{
+					if (i > 0)	
+					{
+						resultStub += "<br>";
+					}
+					resultStub += elemArray[i].innerText;
+				}
+
+				resultSetElement.innerHTML = resultStub;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
+
