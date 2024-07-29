@@ -572,6 +572,7 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-24T0213JohnN.Gala
 git add			IIS/WordEngineering/Python/w3schools.com/MachineLearning/
 
 git rm -f  		IIS/WordEngineering/ConversionTable/ConversionTableTemperature.csv
+git rm -f  		IIS/WordEngineering/ConversionTable/ConversionTableTemperatureCommaSeparatedValue.csv
 
 git add	        IIS/WordEngineering/ConversionTable/
 git add	        IIS/WordEngineering/Python/w3schools.com/MachineLearning/w3schools.com_-_2024-07-27T0840MachineLearning_-_MultipleRegression.py
