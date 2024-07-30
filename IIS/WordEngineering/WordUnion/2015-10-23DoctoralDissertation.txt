@@ -2991,34 +2991,115 @@ The author is linking words spoken to related verses and dictionaries.
     Variation](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/ToObtainTheLastYouNeedToFavorTheFirst.html){hiswordid="144539"
     contactid="2821"}
 
-Word
+### Relational Database Versus (VS) Artificial Intelligence (AI). Microsoft SQL Server Versus (VS) Machine Learning (ML) Scikit-learn. That is what they based the truth on. {#RelationalDatabaseVersusArtificialIntelligence datetime="2024-07-29T21:21:00" hiswordid="163362" contactid="15240" url="w3schools.com/python/python_ml_multiple_regression.asp"}
 
-Bible Versions
++-----------------+-----------------+-----------------+-----------------+
+| Word            | Microsoft SQL   | Scikit-learn by | Commentary      |
+|                 | Server          | David           |                 |
+|                 |                 | Cournapeau      |                 |
++=================+=================+=================+=================+
+| Author\'s       | The author\'s   | The author      | [The            |
+| experience      | experience with | solely designed | traditional     |
+|                 | relational      | and developed   | architecture is |
+|                 | database        | his 1st         | cl              |
+|                 | commenced in    | Scikit-learn    | ient/server.]{d |
+|                 | 1988. The       | application     | atetime="2024-0 |
+|                 | author          | between         | 7-29T23:32:00"} |
+|                 | installed       | 2024-07-29T06   |                 |
+|                 | Sybase in 1995. | :53:00\...2024- |                 |
+|                 | The author      | 07-29T07:31:00. |                 |
+|                 | started work as | [Co             |                 |
+|                 | a Microsoft SQL | nversionTableTe |                 |
+|                 | Server database | mperatureMachin |                 |
+|                 | adminstrator    | eLearning.py](h |                 |
+|                 | (DBA) in 1998.  | ttp://github.co |                 |
+|                 |                 | m/KenAdeniji/Wo |                 |
+|                 |                 | rdEngineering/b |                 |
+|                 |                 | lob/main/IIS/Wo |                 |
+|                 |                 | rdEngineering/C |                 |
+|                 |                 | onversionTable/ |                 |
+|                 |                 | ConversionTable |                 |
+|                 |                 | TemperatureMach |                 |
+|                 |                 | ineLearning.py) |                 |
++-----------------+-----------------+-----------------+-----------------+
+| Software        | 1.  [Microsoft  | 1.  [Python]    | [How            |
+| requirement     |     SQL         | (http://en.wiki | proprietary is  |
+|                 |                 | pedia.org/wiki/ | the             |
+|                 |   Server](http: | Python_(program | a               |
+|                 | //en.wikipedia. | ming_language)) | rchitecture?]{d |
+|                 | org/wiki/Micros | 2.  [Machine    | atetime="2024-0 |
+|                 | oft_SQL_Server) |     learning    | 7-29T23:17:00"} |
+|                 | 2.  [SQL Server |     library,    | [What is the    |
+|                 |     Management  |     for         | portability of  |
+|                 |     Studio      |     example,    | the             |
+|                 | ](http://en.wik |     Scikit-l    | code?]{d        |
+|                 | ipedia.org/wiki | earn](http://sc | atetime="2024-0 |
+|                 | /SQL_Server_Man | ikit-learn.org) | 7-29T23:19:00"} |
+|                 | agement_Studio) | 3.  Generate    |                 |
+|                 | 3.  Author\'s   |     training    |                 |
+|                 |     HisWord     |     data        |                 |
+|                 |     database    |     [C          |                 |
+|                 |     table that  | onversionTableT |                 |
+|                 |     relates to  | emperatureComma |                 |
+|                 |     the Bible   | SeparatedValueC |                 |
+|                 |     database    | SV.cs](http://g |                 |
+|                 |     table for   | ithub.com/KenAd |                 |
+|                 |     Bible       | eniji/WordEngin |                 |
+|                 |     versions,   | eering/blob/mai |                 |
+|                 |     and         | n/IIS/WordEngin |                 |
+|                 |                 | eering/Conversi |                 |
+|                 |   dictionaries. | onTable/Convers |                 |
+|                 |     These       | ionTableTempera |                 |
+|                 |     currently   | tureCommaSepara |                 |
+|                 |     include:    | tedValueCSV.cs) |                 |
+|                 |     -   Views   | 4.  Training    |                 |
+|                 |     -   User    |     data which  |                 |
+|                 |         defined |     is storable |                 |
+|                 |                 |     in a .csv   |                 |
+|                 |       functions |     file.       |                 |
+|                 |         (UDF)   |     [Conv       |                 |
+|                 |     -   Stored  | ersionTableTemp |                 |
+|                 |                 | erature.csv](ht |                 |
+|                 |      procedures | tp://github.com |                 |
+|                 | 4.  Application | /KenAdeniji/Wor |                 |
+|                 |     code layer: | dEngineering/bl |                 |
+|                 |     -   .asmx   | ob/main/IIS/Wor |                 |
+|                 |                 | dEngineering/Co |                 |
+|                 |    -   Business | nversionTable/C |                 |
+|                 |         and     | onversionTableT |                 |
+|                 |                 | emperature.csv) |                 |
+|                 |        database | 5.  Predictive  |                 |
+|                 |         access  |     data        |                 |
+|                 |         code    |     analysis    |                 |
+|                 | 5.              |     [Co         |                 |
+|                 |  User-interface | nversionTableTe |                 |
+|                 |     (UI) layer: | mperatureMachin |                 |
+|                 |                 | eLearning.py](h |                 |
+|                 |    1.  Browsers | ttp://github.co |                 |
+|                 |     2.  .html,  | m/KenAdeniji/Wo |                 |
+|                 |         .js,    | rdEngineering/b |                 |
+|                 |         and     | lob/main/IIS/Wo |                 |
+|                 |         .css    | rdEngineering/C |                 |
+|                 |         files   | onversionTable/ |                 |
+|                 |                 | ConversionTable |                 |
+|                 |                 | TemperatureMach |                 |
+|                 |                 | ineLearning.py) |                 |
++-----------------+-----------------+-----------------+-----------------+
 
-Dictionaries
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Word              Bible Versions    Dictionaries      Commentaries
+  ----------------- ----------------- ----------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Primary Key       Scripture         The Bible word    Disparate scripture references which are inconsistent and non-standardized in commentaries. Not aligned with AlphabetSequence.\
+                    reference         has a place in    2024-07-13T17:01:00 [Where does he see
+                                      the author\'s     growth?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20does%20he%20see%20growth%3F){datetime="2024-07-13T17:01:00"
+                                      terminology,      hisword="163215"}
+                                      usage, retention. 
 
-Commentaries
-
-Primary Key
-
-Scripture reference
-
-The Bible word has a place in the author\'s terminology, usage,
-retention.
-
-Disparate scripture references which are inconsistent and
-non-standardized in commentaries. Not aligned with AlphabetSequence.\
-2024-07-13T17:01:00 [Where does he see
-growth?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20does%20he%20see%20growth%3F){datetime="2024-07-13T17:01:00"
-hisword="163215"}
-
-Proliferate
-
-Bible publishers, versioning and language translation
-
-Hebrew translation
-
-Commentators
+  Proliferate       Bible publishers, Hebrew            Commentators
+                    versioning and    translation       
+                    language                            
+                    translation                         
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2024-07-21T19:07:21 President Joe Biden [Where I feel\... we have
 opportunity?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20I%20feel...%20we%20have%20opportunity%3F){contactid="2443"
