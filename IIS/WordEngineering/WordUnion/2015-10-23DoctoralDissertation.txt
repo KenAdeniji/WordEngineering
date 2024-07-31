@@ -3035,42 +3035,42 @@ The author is linking words spoken to related verses and dictionaries.
 |                 | ](http://en.wik |     Scikit-l    | code?]{d        |
 |                 | ipedia.org/wiki | earn](http://sc | atetime="2024-0 |
 |                 | /SQL_Server_Man | ikit-learn.org) | 7-29T23:19:00"} |
-|                 | agement_Studio) | 3.  Generate    |                 |
-|                 | 3.  Author\'s   |     training    |                 |
-|                 |     HisWord     |     data        |                 |
-|                 |     database    |     [C          |                 |
-|                 |     table that  | onversionTableT |                 |
-|                 |     relates to  | emperatureComma |                 |
-|                 |     the Bible   | SeparatedValueC |                 |
-|                 |     database    | SV.cs](http://g |                 |
-|                 |     table for   | ithub.com/KenAd |                 |
-|                 |     Bible       | eniji/WordEngin |                 |
-|                 |     versions,   | eering/blob/mai |                 |
-|                 |     and         | n/IIS/WordEngin |                 |
-|                 |                 | eering/Conversi |                 |
-|                 |   dictionaries. | onTable/Convers |                 |
-|                 |     These       | ionTableTempera |                 |
-|                 |     currently   | tureCommaSepara |                 |
-|                 |     include:    | tedValueCSV.cs) |                 |
-|                 |     -   Views   | 4.  Training    |                 |
-|                 |     -   User    |     data which  |                 |
-|                 |         defined |     is storable |                 |
-|                 |                 |     in a .csv   |                 |
-|                 |       functions |     file.       |                 |
-|                 |         (UDF)   |     [Conv       |                 |
-|                 |     -   Stored  | ersionTableTemp |                 |
-|                 |                 | erature.csv](ht |                 |
-|                 |      procedures | tp://github.com |                 |
-|                 | 4.  Application | /KenAdeniji/Wor |                 |
-|                 |     code layer: | dEngineering/bl |                 |
-|                 |     -   .asmx   | ob/main/IIS/Wor |                 |
-|                 |                 | dEngineering/Co |                 |
-|                 |    -   Business | nversionTable/C |                 |
-|                 |         and     | onversionTableT |                 |
-|                 |                 | emperature.csv) |                 |
-|                 |        database | 5.  Predictive  |                 |
-|                 |         access  |     data        |                 |
-|                 |         code    |     analysis    |                 |
+|                 | agement_Studio) | 3.  Generate    | [Shift away\... |
+|                 | 3.  Author\'s   |     training    | from server to  |
+|                 |     HisWord     |     data        | client.]{d      |
+|                 |     database    |     [C          | atetime="2024-0 |
+|                 |     table that  | onversionTableT | 7-30T00:22:00"} |
+|                 |     relates to  | emperatureComma | [The world has  |
+|                 |     the Bible   | SeparatedValueC | moved away      |
+|                 |     database    | SV.cs](http://g | from\...        |
+|                 |     table for   | ithub.com/KenAd | packaged        |
+|                 |     Bible       | eniji/WordEngin | software to     |
+|                 |     versions,   | eering/blob/mai | distributed     |
+|                 |     and         | n/IIS/WordEngin | softwa          |
+|                 |                 | eering/Conversi | re.](http://e-c |
+|                 |   dictionaries. | onTable/Convers | omfort.ephraimt |
+|                 |     These       | ionTableTempera | ech.com/WordEng |
+|                 |     currently   | tureCommaSepara | ineering/WordUn |
+|                 |     include:    | tedValueCSV.cs) | ion/GetAPage.ht |
+|                 |     -   Views   | 4.  Training    | ml?word=The%20w |
+|                 |     -   User    |     data which  | orld%20has%20mo |
+|                 |         defined |     is storable | ved%20away%20fr |
+|                 |                 |     in a .csv   | om...%20package |
+|                 |       functions |     file.       | d%20software%20 |
+|                 |         (UDF)   |     [Conv       | to%20distribute |
+|                 |     -   Stored  | ersionTableTemp | d%20software.){ |
+|                 |                 | erature.csv](ht | datetime="2024- |
+|                 |      procedures | tp://github.com | 07-30T16:54:00" |
+|                 | 4.  Application | /KenAdeniji/Wor | his             |
+|                 |     code layer: | dEngineering/bl | wordid="163373" |
+|                 |     -   .asmx   | ob/main/IIS/Wor | locatio         |
+|                 |                 | dEngineering/Co | n="Upstairs, ce |
+|                 |    -   Business | nversionTable/C | nter bathroom,  |
+|                 |         and     | onversionTableT | when cleaning m |
+|                 |                 | emperature.csv) | y asshole with  |
+|                 |        database | 5.  Predictive  | left palm, fing |
+|                 |         access  |     data        | ers and water,  |
+|                 |         code    |     analysis    | after faeces."} |
 |                 | 5.              |     [Co         |                 |
 |                 |  User-interface | nversionTableTe |                 |
 |                 |     (UI) layer: | mperatureMachin |                 |

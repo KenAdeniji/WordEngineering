@@ -3,8 +3,9 @@ using System.IO;
 using System.Text;
 
 /*
-	http://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
+	2024-07-23	http://convert-me.com
 	Created: 2024-07-29T06:19:00...2024-07-29T06:47:00
+	http://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
 */
 public class ConversionTableTemperatureCommaSeparatedValueCSV
 {
