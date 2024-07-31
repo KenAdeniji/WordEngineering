@@ -7,7 +7,7 @@ using System.IO;
 using Newtonsoft.Json;
 
 /*
-	2024-07-30T21:50:00	Created.
+	2024-07-30T21:50:00...2024-07-30T23:34:00	Created. JSON support.
 */
     public class ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelfArguments
     {
@@ -87,7 +87,7 @@ using Newtonsoft.Json;
 				parsedArgs.DatabaseConnectionString
 			);	
 			
-			if ( !String.IsNullOrEmpty(parsedArgs.JSON))
+			if ( !String.IsNullOrEmpty(parsedArgs.JSON) )
 			{
 				string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 				File.WriteAllText(parsedArgs.JSON, json);

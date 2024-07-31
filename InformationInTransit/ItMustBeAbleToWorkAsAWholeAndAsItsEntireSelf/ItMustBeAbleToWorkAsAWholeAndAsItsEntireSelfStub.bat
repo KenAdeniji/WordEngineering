@@ -1,4 +1,4 @@
-ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf /SQL:"Select top 10 * from WordEngineering..HisWord" /JSON:ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf.json
+ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf /SQL:"SELECT TOP 10 * from WordEngineering..HisWord; SELECT TOP 10 * from WordEngineering..Contact;" /JSON:ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf.json
 
 
 
