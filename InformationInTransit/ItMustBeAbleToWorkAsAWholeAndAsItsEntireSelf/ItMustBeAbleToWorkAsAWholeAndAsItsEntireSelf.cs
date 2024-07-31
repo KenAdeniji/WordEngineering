@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 /*
 	2024-07-30T21:50:00...2024-07-30T23:34:00	Created. JSON support.
+	2024-07-31T15:18:00...2024-07-31T15:25:00	Upgraded and added file XML support.
 */
     public class ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelfArguments
     {
@@ -19,6 +20,9 @@ using Newtonsoft.Json;
 
 		[Argument(ArgumentType.AtMostOnce, HelpText="If there is no query, ignore.")]
         public String SQL = "";
+
+		[Argument(ArgumentType.AtMostOnce, HelpText="If there is no XML, ignore.")]
+        public String XML = "";
     }
 	
 	public partial class ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf
@@ -33,12 +37,20 @@ using Newtonsoft.Json;
 				return;
 			}
 			
-			Query(parsedArgs);
-			
-			return;
+			DataSet dataSet = DatabaseQuery
+			(
+				parsedArgs.SQL,
+				parsedArgs.DatabaseConnectionString
+			);	
+
+			FileWrite
+			( 
+				dataSet,
+				parsedArgs
+			);
 		}
 		
-        public static DataSet DatabaseCommand
+        public static DataSet DatabaseQuery
         (
             string cmdText,
             string connectionString
@@ -79,18 +91,21 @@ using Newtonsoft.Json;
             return (dataSet);
         }
 		
-		public static void Query(ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelfArguments parsedArgs)
+		public static void FileWrite
+		(
+			DataSet dataSet,
+			ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelfArguments parsedArgs
+		)
 		{
-			DataSet dataSet = DatabaseCommand
-			(
-				parsedArgs.SQL,
-				parsedArgs.DatabaseConnectionString
-			);	
-			
-			if ( !String.IsNullOrEmpty(parsedArgs.JSON) )
+			if ( !String.IsNullOrEmpty( parsedArgs.JSON ) )
 			{
 				string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 				File.WriteAllText(parsedArgs.JSON, json);
+			}
+
+			if ( !String.IsNullOrEmpty( parsedArgs.XML ) )
+			{
+				dataSet.WriteXml(parsedArgs.XML);
 			}
 		}	
 		
