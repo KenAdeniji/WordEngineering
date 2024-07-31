@@ -580,3 +580,4 @@ git add	        IIS/WordEngineering/Python/w3schools.com/MachineLearning/w3schoo
 git add	        IIS/WordEngineering/Python/w3schools.com/MachineLearning/w3schools.com_-_2024-07-27T0840MachineLearning_Data.csv
 git add	        IIS/WordEngineering/wikibooks.org/
 
+git add	        InformationInTransit/ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf

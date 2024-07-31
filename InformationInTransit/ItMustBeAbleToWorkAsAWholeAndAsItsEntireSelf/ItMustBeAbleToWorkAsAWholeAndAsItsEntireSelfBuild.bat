@@ -1,0 +1,1 @@
+csc /main:ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf /reference:mscorlib.dll,System.Core.dll,Newtonsoft.Json.dll ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf.cs CommandLineArguments.cs
