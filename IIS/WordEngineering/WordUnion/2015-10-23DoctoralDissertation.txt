@@ -3030,68 +3030,71 @@ The author is linking words spoken to related verses and dictionaries.
 |                 |                 | TemperatureMach |                 |
 |                 |                 | ineLearning.py) |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| Software        | 1.  [Microsoft  | 1.  [Python]    | [How            |
-| requirement     |     SQL         | (http://en.wiki | proprietary is  |
-|                 |                 | pedia.org/wiki/ | the             |
-|                 |   Server](http: | Python_(program | a               |
-|                 | //en.wikipedia. | ming_language)) | rchitecture?]{d |
-|                 | org/wiki/Micros | 2.  [Machine    | atetime="2024-0 |
-|                 | oft_SQL_Server) |     learning    | 7-29T23:17:00"} |
-|                 | 2.  [SQL Server |     library,    | [What is the    |
-|                 |     Management  |     for         | portability of  |
-|                 |     Studio      |     example,    | the             |
-|                 | ](http://en.wik |     Scikit-l    | code?]{d        |
-|                 | ipedia.org/wiki | earn](http://sc | atetime="2024-0 |
-|                 | /SQL_Server_Man | ikit-learn.org) | 7-29T23:19:00"} |
-|                 | agement_Studio) | 3.  Generate    | [Shift away\... |
-|                 | 3.  Author\'s   |     training    | from server to  |
-|                 |     HisWord     |     data        | client.]{d      |
-|                 |     database    |     [C          | atetime="2024-0 |
-|                 |     table that  | onversionTableT | 7-30T00:22:00"} |
-|                 |     relates to  | emperatureComma | [The world has  |
-|                 |     the Bible   | SeparatedValueC | moved away      |
-|                 |     database    | SV.cs](http://g | from\...        |
-|                 |     table for   | ithub.com/KenAd | packaged        |
-|                 |     Bible       | eniji/WordEngin | software to     |
-|                 |     versions,   | eering/blob/mai | distributed     |
-|                 |     and         | n/IIS/WordEngin | softwa          |
-|                 |                 | eering/Conversi | re.](http://e-c |
-|                 |   dictionaries. | onTable/Convers | omfort.ephraimt |
-|                 |     These       | ionTableTempera | ech.com/WordEng |
-|                 |     currently   | tureCommaSepara | ineering/WordUn |
-|                 |     include:    | tedValueCSV.cs) | ion/GetAPage.ht |
-|                 |     -   Views   | 4.  Training    | ml?word=The%20w |
-|                 |     -   User    |     data which  | orld%20has%20mo |
-|                 |         defined |     is storable | ved%20away%20fr |
-|                 |                 |     in a .csv   | om...%20package |
-|                 |       functions |     file.       | d%20software%20 |
-|                 |         (UDF)   |     [Conv       | to%20distribute |
-|                 |     -   Stored  | ersionTableTemp | d%20software.){ |
-|                 |                 | erature.csv](ht | datetime="2024- |
-|                 |      procedures | tp://github.com | 07-30T16:54:00" |
-|                 | 4.  Application | /KenAdeniji/Wor | his             |
-|                 |     code layer: | dEngineering/bl | wordid="163373" |
-|                 |     -   .asmx   | ob/main/IIS/Wor | locatio         |
-|                 |                 | dEngineering/Co | n="Upstairs, ce |
-|                 |    -   Business | nversionTable/C | nter bathroom,  |
-|                 |         and     | onversionTableT | when cleaning m |
-|                 |                 | emperature.csv) | y asshole with  |
-|                 |        database | 5.  Predictive  | left palm, fing |
-|                 |         access  |     data        | ers and water,  |
-|                 |         code    |     analysis    | after faeces."} |
-|                 | 5.              |     [Co         |                 |
-|                 |  User-interface | nversionTableTe |                 |
-|                 |     (UI) layer: | mperatureMachin |                 |
-|                 |                 | eLearning.py](h |                 |
-|                 |    1.  Browsers | ttp://github.co |                 |
-|                 |     2.  .html,  | m/KenAdeniji/Wo |                 |
-|                 |         .js,    | rdEngineering/b |                 |
-|                 |         and     | lob/main/IIS/Wo |                 |
-|                 |         .css    | rdEngineering/C |                 |
-|                 |         files   | onversionTable/ |                 |
-|                 |                 | ConversionTable |                 |
+| Software        | 1.  [Microsoft  | 1.  [Python]    | -   How         |
+| requirement     |     SQL         | (http://en.wiki |     proprietary |
+|                 |                 | pedia.org/wiki/ |     is the      |
+|                 |   Server](http: | Python_(program |                 |
+|                 | //en.wikipedia. | ming_language)) |   architecture? |
+|                 | org/wiki/Micros | 2.  [Machine    | -   What is the |
+|                 | oft_SQL_Server) |     learning    |     portability |
+|                 | 2.  [SQL Server |     library,    |     of the      |
+|                 |     Management  |     for         |     code?       |
+|                 |     Studio      |     example,    | -   Shift       |
+|                 | ](http://en.wik |     Scikit-l    |     away\...    |
+|                 | ipedia.org/wiki | earn](http://sc |     from server |
+|                 | /SQL_Server_Man | ikit-learn.org) |     to client.  |
+|                 | agement_Studio) | 3.  Generate    | -   [The world  |
+|                 | 3.  Author\'s   |     training    |     has moved   |
+|                 |     HisWord     |     data        |     away        |
+|                 |     database    |     [C          |     from\...    |
+|                 |     table that  | onversionTableT |     packaged    |
+|                 |     relates to  | emperatureComma |     software to |
+|                 |     the Bible   | SeparatedValueC |     distributed |
+|                 |     database    | SV.cs](http://g |     softwa      |
+|                 |     table for   | ithub.com/KenAd | re.](http://e-c |
+|                 |     Bible       | eniji/WordEngin | omfort.ephraimt |
+|                 |     versions,   | eering/blob/mai | ech.com/WordEng |
+|                 |     and         | n/IIS/WordEngin | ineering/WordUn |
+|                 |                 | eering/Conversi | ion/GetAPage.ht |
+|                 |   dictionaries. | onTable/Convers | ml?word=The%20w |
+|                 |     These       | ionTableTempera | orld%20has%20mo |
+|                 |     currently   | tureCommaSepara | ved%20away%20fr |
+|                 |     include:    | tedValueCSV.cs) | om...%20package |
+|                 |     -   Views   | 4.  Training    | d%20software%20 |
+|                 |     -   User    |     data which  | to%20distribute |
+|                 |         defined |     is storable | d%20software.){ |
+|                 |                 |     in a .csv   | datetime="2024- |
+|                 |       functions |     file.       | 07-30T16:54:00" |
+|                 |         (UDF)   |     [Conv       |     his         |
+|                 |     -   Stored  | ersionTableTemp | wordid="163373" |
+|                 |                 | erature.csv](ht |     locatio     |
+|                 |      procedures | tp://github.com | n="Upstairs, ce |
+|                 | 4.  Application | /KenAdeniji/Wor | nter bathroom,  |
+|                 |     code layer: | dEngineering/bl | when cleaning m |
+|                 |     -   .asmx   | ob/main/IIS/Wor | y asshole with  |
+|                 |                 | dEngineering/Co | left palm, fing |
+|                 |    -   Business | nversionTable/C | ers and water,  |
+|                 |         and     | onversionTableT | after faeces."} |
+|                 |                 | emperature.csv) | -   [Offer only |
+|                 |        database | 5.  Predictive  |     one         |
+|                 |         access  |     data        |     functionali |
+|                 |         code    |     analysis    | ty.](http://e-c |
+|                 | 5.              |     [Co         | omfort.ephraimt |
+|                 |  User-interface | nversionTableTe | ech.com/WordEng |
+|                 |     (UI) layer: | mperatureMachin | ineering/WordUn |
+|                 |                 | eLearning.py](h | ion/GetAPage.ht |
+|                 |    1.  Browsers | ttp://github.co | ml?word=Offer%2 |
+|                 |     2.  .html,  | m/KenAdeniji/Wo | 0only%20one%20f |
+|                 |         .js,    | rdEngineering/b | unctionality.){ |
+|                 |         and     | lob/main/IIS/Wo | datetime="2024- |
+|                 |         .css    | rdEngineering/C | 07-31T15:49:00" |
+|                 |         files   | onversionTable/ |     his         |
+|                 |                 | ConversionTable | wordid="163385" |
 |                 |                 | TemperatureMach |                 |
-|                 |                 | ineLearning.py) |                 |
+|                 |                 | ineLearning.py) |  filename="ItMu |
+|                 |                 |                 | stBeAbleToWorkA |
+|                 |                 |                 | sAWholeAndAsIts |
+|                 |                 |                 | EntireSelf.cs"} |
 +-----------------+-----------------+-----------------+-----------------+
 
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

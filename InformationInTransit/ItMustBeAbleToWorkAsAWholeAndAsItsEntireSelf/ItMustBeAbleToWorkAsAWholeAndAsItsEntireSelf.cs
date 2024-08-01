@@ -7,8 +7,12 @@ using System.IO;
 using Newtonsoft.Json;
 
 /*
-	2024-07-30T21:50:00...2024-07-30T23:34:00	Created. JSON support.
-	2024-07-31T15:18:00...2024-07-31T15:25:00	Upgraded and added file XML support.
+	2024-07-30T21:50:00...2024-07-30T23:34:00	Created. JSON file export.
+	2024-07-31T15:18:00...2024-07-31T15:25:00	Coding.
+	2024-07-31T15:47:00...2024-07-31T15:49:00	Documentation.
+		2024-07-31T15:47:00						Each method, now only does one thing. 
+												Upgraded and added XML file export.
+		2024-07-31T15:49:00						Offer only one functionality.
 */
     public class ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelfArguments
     {
