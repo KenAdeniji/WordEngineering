@@ -582,4 +582,6 @@ git add	        IIS/WordEngineering/wikibooks.org/
 
 git add	        InformationInTransit/ItMustBeAbleToWorkAsAWholeAndAsItsEntireSelf
 
+git rm -f		IIS/WordEngineering/2018-05-03Correspondence/2024-07-31T2239DulhanGrocery_CharterSquare_34139FremontBoulevard_34163FremontBoulevard_Fremont_California_94555_Patel_Taruben_Ayesha.txt
+
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-31T2239DulhanGrocery_CharterSquare_34139FremontBoulevard_34163FremontBoulevard_Fremont_California_94555_Patel_Taruben_Ayesha_Acts18v21.txt
