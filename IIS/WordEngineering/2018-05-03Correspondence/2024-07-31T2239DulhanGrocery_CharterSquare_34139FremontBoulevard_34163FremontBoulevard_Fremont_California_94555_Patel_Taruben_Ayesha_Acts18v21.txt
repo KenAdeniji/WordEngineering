@@ -60,3 +60,14 @@ Processed 2 pages for database 'WordEngineering', file 'WordEngineering_Log' on 
 BACKUP DATABASE successfully processed 25626 pages in 4.214 seconds (47.508 MB/sec).
 
 Completion time: 2024-08-02T18:56:07.3555031-07:00
+
+Msg 3201, Level 16, State 1, Line 1
+Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2024-08-01.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+Msg 3201, Level 16, State 1, Line 2
+Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2024-08-02.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Line 2
+BACKUP DATABASE is terminating abnormally.
+
+Completion time: 2024-08-02T19:28:30.2308560-07:00
