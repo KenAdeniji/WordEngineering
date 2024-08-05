@@ -37,16 +37,6 @@
 		<meta name="keywords" content="David Flanagan, JavaScript The Definitive Guide, version 7, chapter 3, Arithmetic, Math methods"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<style>
-	html, body{
-	  height: 100%;
-	  width: 100%;
-	}
-	textarea{ //viewport
-		height: 65vh;
-		width: 90vw;
-	}
-		</style>
 	</head>
 	<body>
 		<script>
@@ -87,7 +77,7 @@
 
 			function querySubmit()
 			{
-				var resultSetStub = "";
+				var resultSetStub = "<table><caption>Math class functions</caption><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody>";
 				var currentMathMethod = "";
 				var currentMathMethodStub = "";
 				
@@ -110,9 +100,9 @@
 				{
 					currentMathMethod = mathFunctions[mathFunctionsIndex];
 					currentMathMethodStub = (Math[currentMathMethod](parseFloat(numberInputElement.value)));
-					resultSetStub += `${currentMathMethod} = ${currentMathMethodStub} <br>`;
+					resultSetStub += `<tr><td>${currentMathMethod}</td><td>${currentMathMethodStub}</td></tr>`;
 				}
-				
+				resultSetStub += `</tbody></table>`;
 				resultSetElement.innerHTML = resultSetStub;
 			}
 			
