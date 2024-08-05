@@ -37,13 +37,30 @@
 		<meta name="keywords" content="David Flanagan, JavaScript The Definitive Guide, version 7, chapter 3, Arithmetic, Math methods"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>
 	</head>
 	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
 		<div align="center">
 			<table>
 				<tr><td><textarea id="numberInput">3.2.3</textarea></td></tr>
-				<tr><td><input type="submit" id="submitQuery"/></td></tr>	
+				<tr><td align="center"><input type="submit" id="submitQuery"/></td></tr>	
 			</table>
 			<div id="resultSet"></div>
 		</div>
