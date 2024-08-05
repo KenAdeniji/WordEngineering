@@ -587,3 +587,5 @@ REM git rm -f		IIS/WordEngineering/2018-05-03Correspondence/2024-07-31T2239Dulha
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-07-31T2239DulhanGrocery_CharterSquare_34139FremontBoulevard_34163FremontBoulevard_Fremont_California_94555_Patel_Taruben_Ayesha_Acts18v21.txt
 
 git add			IIS/WordEngineering/Web.config
+
+git add			"IIS/WordEngineering/JavaScript/David Flanagan/JavaScript The Definitive Guide Version 7/Chapter 03 Types, Values, and Variables/David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.2.3 Arithmetic in JavaScript.html"

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-04T17:57:00	Date created.
+		2021-08-03T21:34:00
+			http://stackoverflow.com/questions/74284643/call-math-functions-without-writing-math-every-time
+				// Import all Math numbers and functions to the current (global) scope.
+				for (let name of Object.getOwnPropertyNames(Math))
+				  globalThis[name] = Math[name]
+
+				console.log(  exp(cos(PI/2))  )  // = 1
+
+		2021-08-03T21:52:00
+			http://stackoverflow.com/questions/2257993/how-to-display-all-methods-of-an-object
+				You can use Object.getOwnPropertyNames() to get all properties that belong to an object, whether enumerable or not. For example:
+
+				console.log(Object.getOwnPropertyNames(Math));
+				//-> ["E", "LN10", "LN2", "LOG2E", "LOG10E", "PI", ...etc ]
+
+				You can then use filter() to obtain only the methods:
+
+				console.log(Object.getOwnPropertyNames(Math).filter(function (p) {
+					return typeof Math[p] === 'function';
+				}));
+				//-> ["random", "abs", "acos", "asin", "atan", "ceil", "cos", "exp", ...etc ]
+
+		2021-08-04T17:50:00
+			http://stackoverflow.com/questions/9854995/javascript-dynamically-invoke-object-method-from-string
+			
+		2021-08-04T18:31:00	
+			http://www.w3schools.com/jsref/jsref_filter.asp
+	-->
+	<head>
+		<title>David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.2.3 Arithmetic in JavaScript</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.2.3 Arithmetic in JavaScript"/>
+		<meta name="keywords" content="David Flanagan, JavaScript The Definitive Guide, version 7, chapter 3, Arithmetic, Math methods"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><textarea id="numberInput">3.2.3</textarea></td></tr>
+				<tr><td><input type="submit" id="submitQuery"/></td></tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			var numberInputElement = document.getElementById("numberInput");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var resultSetStub = "";
+				var currentMathMethod = "";
+				var currentMathMethodStub = "";
+				
+				var numberInputElementValue = parseFloat(numberInputElement.value);
+
+				var mathFunctions = Object.getOwnPropertyNames(Math).filter
+				(
+					function (p) 
+					{
+						return typeof Math[p] === "function";
+					}
+				);
+				
+				for
+				(
+					var mathFunctionsIndex = 0, mathFunctionsLength = mathFunctions.length;
+					mathFunctionsIndex < mathFunctionsLength;
+					++mathFunctionsIndex
+				)	
+				{
+					currentMathMethod = mathFunctions[mathFunctionsIndex];
+					currentMathMethodStub = (Math[currentMathMethod](parseFloat(numberInputElement.value)));
+					resultSetStub += `${currentMathMethod} = ${currentMathMethodStub} <br>`;
+				}
+				
+				resultSetElement.innerHTML = resultSetStub;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -200,7 +200,7 @@ DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163143);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 166205);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
-DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4208);
+DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4218);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
@@ -675,4 +675,32 @@ http://cnn.com/2021/02/02/us/fbi-sunrise-florida-shooting
 2021-07-28T15:43:00		technet.microsoft.com/en-us/library/ms190766(v=sql.105).aspx 	Using Common Table Expressions 		Twin sibling 	2016-12-08 	41234
 RemySharp.com 				2017-02-21 	42280
 
+2021-08-03T03:23:00...2021-08-03T03:24:00 microsoft windows operating system, microsoft sql server management studio hourglass.
+2021-08-03T04:05:00 microsoft sql server managment studio Remember grid falls down to the next row.
+
+2021-08-03T21:34:00
+https://stackoverflow.com/questions/74284643/call-math-functions-without-writing-math-every-time
+// Import all Math numbers and functions to the current (global) scope.
+for (let name of Object.getOwnPropertyNames(Math))
+  globalThis[name] = Math[name]
+
+console.log(  exp(cos(PI/2))  )  // = 1
+
+2021-08-03T21:52:00
+https://stackoverflow.com/questions/2257993/how-to-display-all-methods-of-an-object
+
+You can use Object.getOwnPropertyNames() to get all properties that belong to an object, whether enumerable or not. For example:
+
+console.log(Object.getOwnPropertyNames(Math));
+//-> ["E", "LN10", "LN2", "LOG2E", "LOG10E", "PI", ...etc ]
+
+You can then use filter() to obtain only the methods:
+
+console.log(Object.getOwnPropertyNames(Math).filter(function (p) {
+    return typeof Math[p] === 'function';
+}));
+//-> ["random", "abs", "acos", "asin", "atan", "ceil", "cos", "exp", ...etc ]
+
+2021-08-04T17:50:00
+http://stackoverflow.com/questions/9854995/javascript-dynamically-invoke-object-method-from-string
 :Exit
