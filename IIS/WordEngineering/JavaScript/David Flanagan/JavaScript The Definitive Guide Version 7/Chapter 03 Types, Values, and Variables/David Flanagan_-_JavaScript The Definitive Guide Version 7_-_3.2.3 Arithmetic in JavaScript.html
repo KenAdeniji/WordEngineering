@@ -49,7 +49,7 @@
 
 		<div align="center">
 			<table>
-				<tr><td><textarea id="numberInput">3.2.3</textarea></td></tr>
+				<tr><td><input type="number" id="numberInput" value="3"/></td></tr>
 				<tr><td align="center"><input type="submit" id="submitQuery"/></td></tr>	
 			</table>
 			<div id="resultSet"></div>
@@ -99,7 +99,7 @@
 				)	
 				{
 					currentMathMethod = mathFunctions[mathFunctionsIndex];
-					currentMathMethodStub = (Math[currentMathMethod](parseFloat(numberInputElement.value)));
+					currentMathMethodStub = (Math[currentMathMethod](Number(numberInputElement.value)));
 					resultSetStub += `<tr><td>${currentMathMethod}</td><td>${currentMathMethodStub}</td></tr>`;
 				}
 				resultSetStub += `</tbody></table>`;
