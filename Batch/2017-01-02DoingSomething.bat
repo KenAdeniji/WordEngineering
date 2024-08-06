@@ -703,4 +703,10 @@ console.log(Object.getOwnPropertyNames(Math).filter(function (p) {
 
 2021-08-04T17:50:00
 http://stackoverflow.com/questions/9854995/javascript-dynamically-invoke-object-method-from-string
+
+2021-08-05T13:48:00
+	travel.nationalgeographic.com/travel/countries/egypt-photos 				2013-05-02 	3677
+	
+2021-08-06T02:05:00	
+	gallery.technet.microsoft.com/Transact-SQL-by-TechNet-b3efc27e 	Transact-SQL by TechNet Wiki Community 		Hierarchical Table Sorting with a Parent-Child Relation 	2014-09-07 	19735	
 :Exit
