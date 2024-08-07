@@ -2990,14 +2990,16 @@ Biblical generation - 40 Biblical years
 
 ### [What is best believable](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20best%20believable%3F){datetime="2024-08-07T13:14:00" hiswordid="163457" url="hbarnett@eStaffllc.com"} ( [Deuteronomy 13:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2013:3){datetime="2024-08-07T13:19:00" hiswordid="163457" url="hbarnett@eStaffllc.com"} )? {#WhatIsBestBelievable datetime="2024-08-07T13:14:00" hiswordid="163457" url="hbarnett@eStaffllc.com"}
 
--   1.  In the HisWord table, the order of belief is:
-        1.  Scenery
-        2.  Commentary
-        3.  Word
-        4.  System generated: DateTime and identity columns
-        5.  Association columns: ScriptureReference, ContactID, URI
+-   In the HisWord table, the order of belief is:
+    1.  Scenery
+    2.  Commentary
+    3.  Word
+    4.  System generated: DateTime and identity columns
+    5.  Association columns: ScriptureReference, ContactID, URI
 
-        The author is an authority on the HisWord table.
+    The author is an authority on the HisWord table.
+-   SQL script generation, .sql, is better than Microsoft SQL Server
+    backup, .bak. Text is more factual than video.
 
 [What true identity lies
 apart?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20true%20identity%20lies%20apart%3F){datetime="2024-08-02T16:56:00"
