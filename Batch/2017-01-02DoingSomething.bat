@@ -709,4 +709,24 @@ http://stackoverflow.com/questions/9854995/javascript-dynamically-invoke-object-
 	
 2021-08-06T02:05:00	
 	gallery.technet.microsoft.com/Transact-SQL-by-TechNet-b3efc27e 	Transact-SQL by TechNet Wiki Community 		Hierarchical Table Sorting with a Parent-Child Relation 	2014-09-07 	19735	
+	
+2021-08-07T10:05:00...2021-08-07T10:13:00
+	microsoft windows message box.
+	restart to maintain your device security.
+	your version of windows 10 has reached the end of service.
+	restart to install a newer version.
+	pick a time. restart tonight. restart now.
+2021-08-07T10:18:00...2021-08-07T10:26:00	
+	faeces. running stomach.
+	differences among people are manner...
+
+2021-08-07T10:44:00	
+Msg 3201, Level 16, State 1, Line 1
+Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2024-08-07.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+
+Completion time: 2024-08-07T10:44:19.2783587-07:00
+	
+
 :Exit
