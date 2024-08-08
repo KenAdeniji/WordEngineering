@@ -727,6 +727,11 @@ Msg 3013, Level 16, State 1, Line 1
 BACKUP DATABASE is terminating abnormally.
 
 Completion time: 2024-08-07T10:44:19.2783587-07:00
-	
+
+2021-08-08T08:09:00 Comfort computer login screen.
+
+2021-08-08T08:13:00	IncrediBuild Agent
+	IncrediBuild Agent service is not running.
+	Please start the service and run the application again.
 
 :Exit
