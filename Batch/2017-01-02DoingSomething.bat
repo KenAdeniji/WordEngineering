@@ -188,7 +188,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1812);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7722);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7881);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
@@ -734,4 +734,9 @@ Completion time: 2024-08-07T10:44:19.2783587-07:00
 	IncrediBuild Agent service is not running.
 	Please start the service and run the application again.
 
+2021-08-08T20:01:00
+http://www.ccs.neu.edu/home/dherman/ 	Dave Herman Principal Researcher and Director of Strategy Mozilla Research San Francisco, CA PhD, 2010 Advisor: Mitchell Wand Programming Research Laboratory College of Computer and Information Science Northeastern University Email: dherman@ccs.neu.edu Web: http://calculist.org Twitter: @littlecalculist My research interests include programming language design and specification, hybrid and multi-paradigm languages, hygienic macro systems, embedded and domain-specific languages, advanced control constructs, program analysis, and expressive programs with expressible proofs. I am a member of Ecma TC39, the technical committee specifying and standardizing the next version of ECMAScript, better known as JavaScript. 			2017-05-16 	44390
+
+2021-08-08T20:49:00
+	tutorialzine.com/2017/04/10-machine-learning-examples-in-javascript 				2017-09-15 	45483
 :Exit
