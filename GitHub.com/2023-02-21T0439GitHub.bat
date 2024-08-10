@@ -591,3 +591,5 @@ git add			IIS/WordEngineering/Web.config
 git add			"IIS/WordEngineering/JavaScript/David Flanagan/JavaScript The Definitive Guide Version 7/Chapter 03 Types, Values, and Variables/David Flanagan_-_JavaScript The Definitive Guide Version 7_-_3.2.3 Arithmetic in JavaScript.html"
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-06T0508DavidCournapeau_-_Scikit-learn_-_WhatInterruptionStaysTheSame.txt
+
+git add IIS/WordEngineering/JavaScript/Algorithm/SortRotate.html

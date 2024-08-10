@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-10T02:50:00 Sort rotate.
+		2021-08-10T03:25:00	http://stackoverflow.com/questions/1985260/rotate-the-elements-in-an-array-in-javascript
+		2024-08-10T03:59:00...2024-08-10T04:30:00 Code.
+		2024-08-10T03:59:00...2024-08-10T06:42:00 Debug.
+	-->
+	<head>
+		<title>Sort? Rotate?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Sort? Rotate?"/>
+		<meta name="keywords" content="Sort, rotate"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>		
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
+		<div align="center">
+			<table>
+				<tr><td colspan="2"><textarea id="word">TwoThousandAndTwentyFour,eight,ten</textarea></td></tr>
+				<tr>
+					<td><label for="toSort">Sort</label></td>
+					<td><input type="checkbox" id="toSort" checked/></td>
+				</tr>
+				<tr>
+					<td><label for="toRotate">Rotate</label></td>
+					<td><input type="checkbox" id="toRotate" checked/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			var wordElement = document.getElementById("word");
+			var toSortElement = document.getElementById("toSort");
+			var toRotateElement = document.getElementById("toRotate");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var wordSplit = wordElement.value.split(/[\s,]+/);
+				if (toSortElement.checked)
+				{
+					wordSplit.sort();
+				}
+				var wordJoin = wordSplit.join(",");
+				if (toRotateElement.checked)
+				{
+					/*
+					for 
+					(
+						var index = 1, indexed = wordSplit.length;
+						index < indexed;
+						++index
+					)
+					{		
+						wordJoin += wordSplit.rotateRight(index).join(",") + "<br>";
+					}	
+					*/
+					wordJoin = wordSplit.rotateRight(wordSplit.length - 1).join(",") + "<br>";
+				}
+				resultSetElement.innerHTML = wordJoin;
+			}
+			
+Array.prototype.rotateRight = function( n ) {
+  this.unshift.apply( this, this.splice( n, this.length ) );
+  return this;
+}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

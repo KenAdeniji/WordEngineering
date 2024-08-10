@@ -739,4 +739,13 @@ http://www.ccs.neu.edu/home/dherman/ 	Dave Herman Principal Researcher and Direc
 
 2021-08-08T20:49:00
 	tutorialzine.com/2017/04/10-machine-learning-examples-in-javascript 				2017-09-15 	45483
+
+2024-08-10T02:50:00
+2021-08-10T03:39:00	
+http://stackoverflow.com/questions/1985260/rotate-the-elements-in-an-array-in-javascript
+function arrayRotate(arr, count) {
+  const len = arr.length
+  arr.push(...arr.splice(0, (-count % len + len) % len))
+  return arr
+}
 :Exit
