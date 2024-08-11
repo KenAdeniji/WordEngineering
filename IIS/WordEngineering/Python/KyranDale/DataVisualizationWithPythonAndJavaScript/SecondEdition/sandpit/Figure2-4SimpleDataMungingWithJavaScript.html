@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		PyJsDataViz@KyranDale.com
+		KyranDale.com/viz/nobel_viz_v2
+		2021-08-11T14:39:00	Figure2-4SimpleDataMungingWithJavaScript.html
+		2021-08-11T15:51:00...2021-08-11T16:10:00
+							Changed from if to switch...
+								Plan to use switch equal.
+		2021-08-11T16:35:00	foreach loop in C#, changes to collection not allowed.
+	-->
+	<head>
+		<title>Figure2-4SimpleDataMungingWithJavaScript.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Figure2-4 Simple Data Munging With JavaScript"/>
+		<meta name="keywords" content="Student data"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>		
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
+		<div align="center">
+			<table>
+				<tr><td><textarea id="inputSet"></textarea></td></tr>
+				<tr><td align="center"><input type="submit" id="submitQuery"/></td></tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			var inputSetElement = document.getElementById("inputSet");
+			var	submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					inputSetElement.value = JSON.stringify(studentsData);
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				let inputData = structuredClone(JSON.parse(inputSetElement.value)); 
+				processStudentData(inputData);
+				resultSetElement.innerHTML = JSON.stringify(inputData);
+			}
+			
+			function processStudentData(data, passThreshold, meritThreshold)
+			{
+				passThreshold = 
+					typeof passThreshold !== 'undefined'
+					? passThreshold
+					: PassThreshold
+					;
+					
+				meritThreshold = 
+					typeof meritThreshold !== 'undefined'
+					? meritThreshold
+					: MeritThreshold
+					;
+					
+				data.forEach
+				(
+					function
+					(
+						sdata
+					)
+					{
+						let averageScore = sdata.scores.reduce
+						(
+							function
+							(
+								previousScore,
+								currentScore
+							)
+							{
+								return previousScore + currentScore;
+							},
+							0
+						)
+						/
+						sdata.scores.length
+						;
+
+						sdata.averageScore = averageScore;
+
+						switch(true) 
+						{
+							case averageScore > meritThreshold:
+								sdata.assessment = "Passed with merit";
+								break;
+							case averageScore > passThreshold:
+								sdata.assessment = "Passed";
+								break;
+							default:
+								sdata.assessment = "Failed";
+								break;
+						}								
+					}
+				);	
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+const studentsData = [
+	{name: 'Bob', id:0, 'scores':[68, 75, 76, 81]},
+	{name: 'Alice', id:1, 'scores':[75, 90, 64, 88]},
+	{name: 'Carol', id:2, 'scores':[59, 74, 71, 68]},
+	{name: 'Dan', id:3, 'scores':[64, 58, 53, 62]}
+];			
+
+			const PassThreshold = 60;
+			const MeritThreshold = 75;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<!--
+		Created:	2024-08-10T08:43:00
+	-->
+	<head>
+		<title>d3.org range</title>
+	</head>
+<body>
+	<div id="d3Range"></div>
+	<script type="text/javascript" src="http://d3js.org/d3.v7.min.js"></script>
+	<script>
+		const d3RangeElement = document.getElementById("d3Range");
+		let r = d3.range(0, 10, 2);
+		d3RangeElement.innerHTML = r.join(", ");
+	</script>
+</body>
+

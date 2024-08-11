@@ -748,4 +748,10 @@ function arrayRotate(arr, count) {
   arr.push(...arr.splice(0, (-count % len + len) % len))
   return arr
 }
+
+2021-08-11T08:07:00	
+http://codewithhugo.com/javascript-data-type-check-cheatsheet
+
+Benitoluwa, medicine, surgery, robot, artificial intelligence (AI)
+
 :Exit
