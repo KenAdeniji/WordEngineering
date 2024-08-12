@@ -39,14 +39,29 @@
 
 		<div align="center">
 			<table>
-				<tr><td><textarea id="inputSet"></textarea></td></tr>
-				<tr><td align="center"><input type="submit" id="submitQuery"/></td></tr>	
+				<tr><td colspan="2"><textarea id="inputSet"></textarea></td></tr>
+				<tr>
+					<td><label for="inputParameters">Input parameters:</label></td>
+					<td><input id="inputParameters" type="text" value="values"/></td>
+				</tr>
+				<tr>
+					<td><label for="passThreshold">Pass threshold:</label></td>
+					<td><input id="passThreshold" type="number" value="60"/></td>
+				</tr>
+				<tr>
+					<td><label for="meritThreshold">Merit threshold:</label></td>
+					<td><input id="meritThreshold" type="number" value="75"/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>	
 			</table>
 			<div id="resultSet"></div>
 		</div>
 
 		<script>
 			var inputSetElement = document.getElementById("inputSet");
+			var inputParametersElement = document.getElementById("inputParameters");
+			var passThresholdElement = document.getElementById("passThreshold");
+			var meritThresholdElement = document.getElementById("meritThreshold");
 			var	submitQueryElement = document.getElementById("submitQuery");
 			var	resultSetElement = document.getElementById("resultSet");
 
@@ -68,64 +83,57 @@
 
 			function querySubmit()
 			{
-				let inputData = structuredClone(JSON.parse(inputSetElement.value)); 
-				processStudentData(inputData);
-				resultSetElement.innerHTML = JSON.stringify(inputData);
+				let statisticsData = processStudentData();
+				resultSetElement.innerHTML = JSON.stringify(statisticsData);
 			}
 			
-			function processStudentData(data, passThreshold, meritThreshold)
+			function processStudentData()
 			{
-				passThreshold = 
-					typeof passThreshold !== 'undefined'
-					? passThreshold
-					: PassThreshold
-					;
-					
-				meritThreshold = 
-					typeof meritThreshold !== 'undefined'
-					? meritThreshold
-					: MeritThreshold
-					;
-					
-				data.forEach
+				let inputData = structuredClone(JSON.parse(inputSetElement.value)); 
+				const inputParametersElementValue = inputParametersElement.value;
+				inputData.forEach
 				(
 					function
 					(
 						sdata
 					)
 					{
-						let averageScore = sdata.scores.reduce
+						let averageValue = sdata[inputParametersElementValue].reduce
 						(
 							function
 							(
-								previousScore,
-								currentScore
+								previousValue,
+								currentValue
 							)
 							{
-								return previousScore + currentScore;
+								return previousValue + currentValue;
 							},
 							0
 						)
 						/
-						sdata.scores.length
+						sdata[inputParametersElementValue].length
 						;
-
-						sdata.averageScore = averageScore;
+						
+						sdata.average = averageValue;
 
 						switch(true) 
 						{
-							case averageScore > meritThreshold:
+							case averageValue > parseFloat(meritThresholdElement.value):
 								sdata.assessment = "Passed with merit";
 								break;
-							case averageScore > passThreshold:
+							case averageValue > parseFloat(passThresholdElement.value):
 								sdata.assessment = "Passed";
 								break;
 							default:
 								sdata.assessment = "Failed";
 								break;
-						}								
+						}
+
+						sdata.mininum = Math.min(...sdata[inputParametersElementValue]);
+						sdata.maximum = Math.max(...sdata[inputParametersElementValue]);
 					}
-				);	
+				);
+				return inputData;
 			}
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
@@ -139,15 +147,12 @@
 
 			window.addEventListener("load", pageLoad, false);
 
-const studentsData = [
-	{name: 'Bob', id:0, 'scores':[68, 75, 76, 81]},
-	{name: 'Alice', id:1, 'scores':[75, 90, 64, 88]},
-	{name: 'Carol', id:2, 'scores':[59, 74, 71, 68]},
-	{name: 'Dan', id:3, 'scores':[64, 58, 53, 62]}
-];			
-
-			const PassThreshold = 60;
-			const MeritThreshold = 75;
+			const studentsData = [
+				{name: 'Bob', id:0, 'values':[68, 75, 76, 81]},
+				{name: 'Alice', id:1, 'values':[75, 90, 64, 88]},
+				{name: 'Carol', id:2, 'values':[59, 74, 71, 68]},
+				{name: 'Dan', id:3, 'values':[64, 58, 53, 62]}
+			];			
 		</script>
 	</body>
 </html>
