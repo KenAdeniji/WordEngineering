@@ -29,4 +29,9 @@ bible_books = [
 with open("BibleBook.csv", "w") as f:
 	fieldnames = bible_books[0].keys()
 	fieldnames = sorted(fieldnames)
-	writer = csv.DictWriter(f, 
+	writer = csv.DictWriter(f, fieldnames=fieldnames)
+	writer.writeheader()
+	for w in bible_books()
+		writer.writerow(w)
+		
+	

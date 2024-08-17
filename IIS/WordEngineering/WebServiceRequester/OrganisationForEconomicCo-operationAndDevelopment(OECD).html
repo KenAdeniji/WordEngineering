@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-16T17:57:00...2024-08-16T22:09:00	Created.
+			http://data.oecd.org/api/sdmx-json-documentation
+			url = "http://stats.oecd.org/sdmx-json/data/QNA/all/all";
+			url = "http://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD/?format=jsondata"
+	-->
+	<head>
+		<title>Organisation for Economic Co-operation and Development (OECD)</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Organisation for Economic Co-operation and Development (OECD)"/>
+		<meta name="keywords" content="Organisation for Economic Co-operation and Development (OECD)"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<div align="center" id="resultSet"></div>
+		</div>
+		
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+
+		<script>
+			var isPostBack = false;
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					queryInfo();
+					isPostBack = true;
+				}
+				else
+				{
+					queryInfo();
+				}
+			}
+
+			function queryInfo()
+			{
+				uri = "http://stats.oecd.org/sdmx-json/data/QNA/all/all";
+				//uri = "http://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD/?format=jsondata"
+				
+				$.ajax({ 
+					dataType: 'jsonp',
+					url: uri,
+					success: function(data)	{ 
+						resultSetElement.innerHTML = data;
+					},
+					error: function(XHR, textStatus, errorThrown) {
+						console.log("XHR", XHR);
+						console.log("textStatus", textStatus);
+						console.log("errorThrown", errorThrown);
+					}					
+				});
+			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["startTime"] = "2009-Q1";
+				request["endTime"] = "2011-Q4";
+				request["callback"] = "jsonpCallback";
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8",
+			'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+
+					},
+					dataType: 'jsonp',
+					credentials: 'include',
+					mode: 'cors'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "http://stats.oecd.org/sdmx-json/data/QNA/all/all";
+				url = "http://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD/?format=jsondata"
+				try {
+					const response = fetch(url, PostData)
+					/*
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						//jsonpCallback(responseJSON);
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataSet, "resultSet");
+					})
+					*/		
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			function jsonpCallback(data)
+			{
+				resultSetElement.innerHTML = data;
+				console.log(data);
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>
