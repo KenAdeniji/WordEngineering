@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-17T18:38:00...2024-08-17T18:38:00	Created. 
+			http://www.raymondcamden.com/2024/07/13/links-for-you
+			http://frontendmasters.com/blog/live-demos-of-stand-alone-web-components/#toc-1
+	-->
+	<head>
+		<title>clipboard-copy by GitHub</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="clipboard-copy by GitHub"/>
+		<meta name="keywords" content="web components"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+clipboard-copy {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  padding: 0.4em 0.6em;
+  font: 0.9rem system-ui, sans-serif;
+  display: inline-block;
+  cursor: default;
+  color: rgb(36, 41, 47);
+  background: rgb(246, 248, 250);
+  border-radius: 6px;
+  border: 1px solid rgba(31, 35, 40, 0.15);
+  box-shadow: rgba(31, 35, 40, 0.04) 0 1px 0 0,
+    rgba(255, 255, 255, 0.25) 0 1 0 0 inset;
+}
+
+.to-copy {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.notice {
+  &::before {
+    content: "(";
+  }
+  &::after {
+    content: ")";
+  }
+}		
+		</style>
+		<script type="module" src="https://esm.sh/@github/clipboard-copy-element"></script>
+	<body>
+<div>
+  <div aria-live="polite" id="announce" aria-label=""></div>
+
+  <clipboard-copy for="element-to-copy">
+    Copy Text
+    <span class="notice" hidden="">Copied!</span>
+  </clipboard-copy>
+
+  <div id="element-to-copy" class="to-copy">Some text!</div>
+</div>
+	<script>
+document.addEventListener("clipboard-copy", function (event) {
+  const notice = event.target.querySelector(".notice");
+  announce.setAttribute("aria-label", "Copied");
+  notice.hidden = false;
+  setTimeout(function () {
+    announce.setAttribute("aria-label", "");
+    notice.hidden = true;
+  }, 1000);
+});	
+	</script>
+	</body>
+</html>

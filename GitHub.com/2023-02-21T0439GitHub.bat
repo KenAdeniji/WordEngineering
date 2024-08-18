@@ -601,3 +601,6 @@ git add			IIS/WordEngineering/Python/KyranDale
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-15T1748WillTellEverybody.WhichIsInGyro_-_ADaughterOfHakeemOlajuwon_-_ElevatorOrLift.txt
 
 git add			IIS/WordEngineering/WebServiceRequester/OrganisationForEconomicCo-operationAndDevelopment(OECD).html
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-08-17T2121HowAmIAnotherPerson_-_MahmaduWestAfrica_-_AyeshaPatelOfDulhanGrocery_-_ClassAssociates_-_ZohlShokor.txt
+git add	        IIS/WordEngineering/WebComponents/

@@ -196,7 +196,7 @@ DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163143);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163554);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 166205);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
@@ -764,4 +764,6 @@ Please check your network connection and try again later.
 2024-08-16T17:57:00...2024-08-16T18:33:00
 To retrieve all (unfiltered) observations of the dataset, use the following: http://stats.oecd.org/sdmx-json/data/QNA/all/all?startTime=2009-Q1&endTime=2011-Q4
 
+2024-08-17T21:19:00
+https://codemag.com/Article/2405061/Stages-of-Data-The-DNA-of-a-Database-Developer-Part-1
 :Exit

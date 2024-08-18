@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-17T18:47:00...2024-08-17T18:47:00	Created. 
+			http://www.raymondcamden.com/2024/07/13/links-for-you
+			http://frontendmasters.com/blog/live-demos-of-stand-alone-web-components/#toc-1
+	-->
+	<head>
+		<title>use-html by Mayank</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="use-html by Mayank"/>
+		<meta name="keywords" content="web components"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	<body>
+<template id="my-component">
+  <style>
+    :host {
+      display: block;
+      border: solid;
+      margin: 1rem;
+      padding: 1rem;
+    }
+  </style>
+  <p>(╯°□°)╯︵ ┻━┻</p>
+  <slot></slot>
+</template>
+
+<some-component>
+  <use-html href="#my-component"></use-html>
+</some-component>
+
+<div>
+  <use-html href="#my-component"></use-html>
+  <p>I can play too.</p>
+</div>
+	<script>
+customElements.define(
+  "use-html",
+  class extends HTMLElement {
+    connectedCallback() {
+      const href = this.getAttribute("href");
+      const template = this.ownerDocument.querySelector(href);
+      if (!(template instanceof HTMLTemplateElement)) throw "oop";
+
+      const mode = this.getAttribute("mode") || "open";
+      const shadow = this.parentElement.attachShadow({ mode });
+      shadow?.appendChild(template.content.cloneNode(true));
+
+      this.remove();
+    }
+  }
+);
+	</script>
+	</body>
+</html>

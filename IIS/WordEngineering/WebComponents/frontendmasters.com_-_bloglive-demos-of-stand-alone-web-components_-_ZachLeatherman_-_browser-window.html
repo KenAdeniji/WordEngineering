@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-17T11:04:00...2024-08-17T11:36:00	Created. 
+			http://www.raymondcamden.com/2024/07/13/links-for-you
+			http://frontendmasters.com/blog/live-demos-of-stand-alone-web-components/#toc-1
+	-->
+	<head>
+		<title>browser-window by Zach Leatherman</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="browser-window by Zach Leatherman"/>
+		<meta name="keywords" content="web components"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<script type="module" src="https://esm.sh/@zachleat/browser-window"></script>
+		<style>
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font: 100% system-ui;
+}
+
+browser-window {
+  display: block;
+  width: 75vw;
+  margin: 1rem;
+}		
+</style>
+	</head>
+	<body>
+		<div>
+		  <browser-window>
+			This is a test.
+		  </browser-window>
+
+		  <browser-window url="https://frontendmasters.com/" mode="dark">
+			This one has a URL bar.
+		  </browser-window>
+		</div>
+	</body>
+</html>

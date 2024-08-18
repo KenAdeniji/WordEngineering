@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-17T12:09:00...2024-08-17T12:09:00	Created. 
+			http://www.raymondcamden.com/2024/07/13/links-for-you
+			http://frontendmasters.com/blog/live-demos-of-stand-alone-web-components/#toc-1
+	-->
+	<head>
+		<title>link-peek by David Darnes</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="link-peek by David Darnes"/>
+		<meta name="keywords" content="web components"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<script type="module" src="https://www.unpkg.com/@daviddarnes/link-peek@1.1.0/link-peek.js"></script>
+		<style>
+:root {
+  font-family: system-ui;
+}
+
+link-peek:defined figure {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 0;
+  figcaption {
+    display: flex;
+    gap: 0.25rem;
+  }
+}
+
+link-peek:defined a:not([data-key]) {
+  display: none;
+}
+
+link-peek img[data-key="data.logo.url"] {
+  inline-size: 1.4em;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+link-peek a[data-key]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+		</style>
+	</head>
+	<body>
+<template id="link-peek-template">
+  <figure>
+    <p data-key="data.description"></p>
+    <figcaption>
+      <img data-key="data.logo.url" />
+      <small data-key="data.publisher"></small>
+    </figcaption>
+  </figure>
+</template>
+
+<link-peek api="https://api.microlink.io/?url=${link}">
+  <a href="https://darn.es">David Darnes</a>
+</link-peek>
+	</body>
+</html>

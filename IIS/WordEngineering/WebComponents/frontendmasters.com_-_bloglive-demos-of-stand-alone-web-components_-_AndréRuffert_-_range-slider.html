@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-08-17T17:36:00...2024-08-17T17:55:00	Created. 
+			http://www.raymondcamden.com/2024/07/13/links-for-you
+			http://frontendmasters.com/blog/live-demos-of-stand-alone-web-components/#toc-1
+	-->
+	<head>
+		<title>range-slider by André Ruffert</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="range-slider by André Ruffert"/>
+		<meta name="keywords" content="web components"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+output {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.value-display {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="62" fill="none"><path fill="currentColor" d="M27.3 27.3C25 29.6 17 35.8 17 43v3c0 3 2.5 5 3.2 5.8a6 6 0 1 1-8.5 0C12.6 51 15 49 15 46v-3c0-7.2-8-13.4-10.3-15.7A16 16 0 0 1 16 0a16 16 0 0 1 11.3 27.3z"/><circle cx="16" cy="56" r="1" fill="%235D509E"/></svg>')
+    top center no-repeat;
+  position: absolute;
+  box-sizing: border-box;
+  left: var(--value-percent, 0%);
+  bottom: calc(var(--element-height) / 2 - var(--thumb-size) / 2);
+  width: 32px;
+  height: 62px;
+  text-align: center;
+  padding: 8px 3px 0;
+  margin: 0 0 0 -16px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+  transform-origin: 50% 90%;
+  opacity: 0.0001;
+  transform: scale(0.2);
+  color: #fff;
+  font: inherit;
+  font-size: calc(100% - var(--value-width, 3) / 5 * 0.2em);
+  text-overflow: clip;
+  text-shadow: 0 -0.5px 0 rgba(0, 0, 0, 0.4);
+  transition: all 200ms ease;
+  transition-property: opacity, transform;
+  will-change: transform;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+range-slider.touch-active .thumb-wrapper .value-display {
+  opacity: 1;
+  transform: scale(1);
+}
+		</style>
+	<body>
+		<range-slider min="0" max="100" step="1"></range-slider>
+		<script>
+const elements = document.querySelectorAll(["range-slider", "input"]);
+
+console.log(elements);
+
+elements.forEach((element) => {
+  element.insertAdjacentHTML(
+    "afterend",
+    `
+          <output>${element.value}</output>
+        `
+  );
+});
+
+document.addEventListener("input", (e) => {
+  const input = e.target;
+  const output = input.nextElementSibling;
+  const valueDisplay = input.querySelector(".value-display");
+  if (output) {
+    output.textContent = input.value;
+  }
+  if (valueDisplay) {
+    valueDisplay.textContent = input.value;
+    input.style.setProperty("--value-width", "" + input.value.length);
+  }
+});
+		</script>
+	</body>
+</html>
