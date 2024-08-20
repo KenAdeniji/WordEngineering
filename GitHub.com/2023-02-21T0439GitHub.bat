@@ -608,3 +608,5 @@ git add	        IIS/WordEngineering/WebComponents/
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-08-19T1121BrazilianBornNurseMigrateToCamdenHospital_-_NewSouthWalesNSW2570_-_Australian-Fan.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-19T2022WhatInstanceOfTimeDidHePermitAsHisUse.txt
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T0921JohnN.Galardi_Wienerschnitzel_34480FremontBoulevard_Fremont_California_94555.txt
