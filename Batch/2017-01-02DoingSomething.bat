@@ -766,4 +766,15 @@ To retrieve all (unfiltered) observations of the dataset, use the following: htt
 
 2024-08-17T21:19:00
 https://codemag.com/Article/2405061/Stages-of-Data-The-DNA-of-a-Database-Developer-Part-1
+
+2024-08-19T16:51:00
+http://www.microsoftpressstore.com/articles/?n=1cbd305f-d503-49fa-9699-8b2c06c9c520&sorttype=3&dir=1&page=11
+
+205.
+
+Working with Site Data in Node.js
+
+    Apr 1, 2015
+    In this chapter from Node.js for .NET Developers, David Gaynes explains how to work with data from URLs, data from users, and data from external sources in node.js.
+	
 :Exit
