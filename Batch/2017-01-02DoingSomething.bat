@@ -776,5 +776,7 @@ Working with Site Data in Node.js
 
     Apr 1, 2015
     In this chapter from Node.js for .NET Developers, David Gaynes explains how to work with data from URLs, data from users, and data from external sources in node.js.
-	
+
+https://www.google.com/search?channel=fenc&client=firefox-b-1-d&q=eai+education#ip=1
+https://blog.stevenlevithan.com/	
 :Exit

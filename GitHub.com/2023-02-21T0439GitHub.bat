@@ -610,3 +610,5 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-08-19T1121Braz
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-19T2022WhatInstanceOfTimeDidHePermitAsHisUse.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T0921JohnN.Galardi_Wienerschnitzel_34480FremontBoulevard_Fremont_California_94555.txt
+
+git add         IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T2118Katherine.Lennon@santacruzcountyca.gov_-_EmploymentServicesDivisionCountyOfSantaCruz_-_ITApplicationDevelopmentAndSupportAnalystII#24-DD2-01Application.txt
