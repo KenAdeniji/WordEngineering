@@ -479,10 +479,12 @@ and resemblances in the Bible.
     Word\
     [When informed of others, this is my personal
     need.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=When%20informed%20of%20others,%20this%20is%20my%20personal%20need.){datetime="2024-08-21T16:08:00"
-    url="info@domainlistings.directory" contactid="15115"}
+    url="info@domainlistings.directory" contactid="15115"
+    hiswordid="163585"}
 2.  Check Assumptions\
     -   This whole thing started with keeping [a work
-        reference.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=a%20work%20reference.){datetime="2024-08-21T16:41:00"}
+        reference.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=a%20work%20reference.){datetime="2024-08-21T16:41:00"
+        hiswordid="163586"}
     -   Even though Yoruba is the native language of the author, he
         still and invariably relies on translate.google.com.
     -   The author depends on a typing assistant.
@@ -3448,7 +3450,20 @@ period? This table was explicitly created on 2024-06-10T03:13:00.
 4.  The Word column in the HisWord table is a determinant but, it is not
     always unique; therefore, it is not its primary key.
 
-(Allen G. Taylor, 2019).
+#### View {#RelationalModel_View datetime="2023-06-29T20:22:00"}
+
+A view is a virtual table that does not reside permanently on a physical
+storage. The MyURI view is a union of all the URI tables. The
+ViewContactSet view is a join of the columns in the Contact and contact
+details tables. The HisWord_view view appends computed columns to the
+HisWord table.
+
+#### Users {#RelationalModel_Users datetime="2023-06-30T03:16:00"}
+
+The general operating system and compact database are the 2 types of
+authentication.
+
+(Allen G. Taylor). (Allen G. Taylor, 2019).
 "[]{cite="#bibliographyItzikBen-GanT-SQLFundamentals"}"
 
 ### Software Engineer versus (VS) Database Administrator {#SoftwareEngineerVersusDatabaseAdministrator datetime="2024-04-21T02:59:00"}
@@ -3882,7 +3897,7 @@ location="Albertsons Lucky, Charter Square, South West"}
 
 "[]{cite="#bibliographyJohnCalvinMaxwell"}"
 
-### Laws of Communication {#Influence datetime="2024-03-16T19:22:00"}
+### Laws of Communication {#LawsOfCommunication datetime="2024-03-16T19:22:00"}
 
 -   The Law of Credibility:
     1.  HisWord table Word Column: As much as God spoke it
@@ -5911,7 +5926,7 @@ Bethlehem ( [Matthew 2:1-18, Luke 2:1-20, John
     of 4770 Canvasback Common. Country citizenship for Jews and
     Palestines?
 
-### Influence {#Influence datetime="2023-08-06T16:01:00"}
+### Associated culture {#AssociatedCulture datetime="2023-08-06T16:01:00"}
 
 1.  Associated culture ( [Acts 7:22, Matthew 15:2, Mark 7:3, Mark 7:5,
     Daniel
@@ -8108,23 +8123,6 @@ contact details are existence-dependent on the contact entity.
 ###### ID-dependent entities {#EntityRelationshipModel_IDDependentEntities datetime="2023-06-29T19:43:00"}
 
 The weak contact details, primary keys include their ContactID.
-
-### Relational Model {#RelationalModel datetime="2023-06-29T20:22:00"}
-
-#### View {#RelationalModel_View datetime="2023-06-29T20:22:00"}
-
-A view is a virtual table that does not reside permanently on a physical
-storage. The MyURI view is a union of all the URI tables. The
-ViewContactSet view is a join of the columns in the Contact and contact
-details tables. The HisWord_view view appends computed columns to the
-HisWord table.
-
-#### Users {#RelationalModel_Users datetime="2023-06-30T03:16:00"}
-
-The general operating system and compact database are the 2 types of
-authentication.
-
-(Allen G. Taylor).
 
 ### Design Pattern {#DesignPattern datetime="2023-07-19T08:01:00"}
 
