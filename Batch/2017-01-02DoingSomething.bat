@@ -3,23 +3,25 @@ REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex1709
 REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-directory-6007-rc.html
 REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
 :BeginAgain
-echo 1=BCP, 2=IISLog, 3=Node.js, 4=Rust, 5=SQLServerBackup, 6=SQLServerDataDefinitionLanguageDDL, 7=SQLServerDataFiles, 8=SQLServerDataManipulationLanguageDML, 9=SQLServerExport, 10=WebAssembly, 11=WinScp, 12=WordEngineering, 13=WordOfGod, 14=WorkDone
+echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=SQLServerDataDefinitionLanguageDDL, 8=SQLServerDataFiles, 9=SQLServerDataManipulationLanguageDML, 10=SQLServerExport, 11=WebAssembly, 12=WinScp, 13=WordEngineering, 14=WordOfGod, 15=WorkDone
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
 IF %id% == 2 GOTO IISLog
-IF %id% == 3 GOTO Node.js
-IF %id% == 4 GOTO Rust
-IF %id% == 5 GOTO SQLServerBackup
-IF %id% == 6 GOTO SQLServerDataDefinitionLanguageDDL
-IF %id% == 7 GOTO SQLServerDataFiles
-IF %id% == 8 GOTO SQLServerDataManipulationLanguageDML
-IF %id% == 9 GOTO SQLServerExport
-IF %id% == 10 GOTO WebAssembly
-IF %id% == 11 GOTO WinScp
-IF %id% == 12 GOTO WordEngineering
-IF %id% == 13 GOTO WordOfGod
-IF %id% == 14 GOTO WorkDone
+
+IF %id% == 3 GOTO mssqlscripter
+IF %id% == 4 GOTO Node.js
+IF %id% == 5 GOTO Rust
+IF %id% == 6 GOTO SQLServerBackup
+IF %id% == 7 GOTO SQLServerDataDefinitionLanguageDDL
+IF %id% == 8 GOTO SQLServerDataFiles
+IF %id% == 9 GOTO SQLServerDataManipulationLanguageDML
+IF %id% == 10 GOTO SQLServerExport
+IF %id% == 11 GOTO WebAssembly
+IF %id% == 12 GOTO WinScp
+IF %id% == 13 GOTO WordEngineering
+IF %id% == 14 GOTO WordOfGod
+IF %id% == 15 GOTO WorkDone
 GOTO Exit
 
 :BCP
@@ -38,6 +40,11 @@ xcopy c:\inetpub e:\inetpub /d /e /s /y
 xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
 xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
 xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
+GOTO Exit
+
+:mssqlscripter
+REM mssql-scripter -S localhost -d WordEngineering -U sa ––schema-and-data -f E:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
+REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;Trusted_Connection=Yes;" --schema-and-data -f E:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
 GOTO Exit
 
 :Node.js
