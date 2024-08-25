@@ -196,7 +196,7 @@ DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1812);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7911);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 159389);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160176);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15052);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
@@ -205,7 +205,7 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163554);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 166205);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 167319);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 631);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4218);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
