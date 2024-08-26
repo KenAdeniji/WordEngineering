@@ -534,6 +534,16 @@ and resemblances in the Bible.
     -   Nullable
     -   Primary key and unique index
     -   Foreign key
+9.  Weigh the Pros and Cons\
+    -   Data import\...data input: Initially, the author created an XML
+        file and imported it into database tables via a C# program
+        application. When this process malfunctioned, the author
+        suspended his work. The author resumed work by doing data input
+        via Microsoft SQL Server Management Studio grids. This diversion
+        did not require database changes, achieving separation of
+        concerns.
+    -   The use of non-supported beautifying css is responsive web
+        design.
 
 (Humberto Cervantes, Rick Kazman June 2, 2024).
 "[]{cite="#bibliographyHitachi20230928"}"
