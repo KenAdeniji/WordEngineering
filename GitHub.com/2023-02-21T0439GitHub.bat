@@ -614,3 +614,7 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T0921JohnN.Gala
 REM git rm -f   IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T2118Katherine.Lennon@santacruzcountyca.gov_-_EmploymentServicesDivisionCountyOfSantaCruz_-_ITApplicationDevelopmentAndSupportAnalystII#24-DD2-01Application.txt
 
 git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T2118Katherine.Lennon@santacruzcountyca.gov_-_EmploymentServicesDivisionCountyOfSantaCruz_-_ITApplicationDevelopmentSupportAnalyst.txt
+
+git add         IIS/WordEngineering/2018-05-03Correspondence/2024-08-26T1122JapanMotor_-_AmericanCrystalSugarCompany(ACS)SoftwareEngineerQuestionaire_-_DavidMills_-_KenAdeniji.rtf
+
+git add         IIS/WordEngineering/2018-05-03Correspondence/2024-08-26T1924Encorps_-_katrina.jefferson@encorps.org_-_ashley.sejour@encorps.org_-_WeValueYourInput.pdf
