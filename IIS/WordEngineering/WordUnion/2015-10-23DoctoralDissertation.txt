@@ -7640,6 +7640,8 @@ Deuteronomy
 
 Microsoft SQL Server limitations include:
 
+-   [Microsoft SQL Server database connection string
+    ApplicationIntent=ReadOnly](http://techcommunity.microsoft.com/t5/azure-database-support-blog/lesson-learned-172-applicationintent-readonly-in-general-purpose/ba-p/2375941){datetime="2024-08-31T13:16:00"}
 -   On the referencing side, it can only relate to a single referenced
     entry.
 -   Varchar columns have maximum sizes.
