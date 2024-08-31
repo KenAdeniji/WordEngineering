@@ -19,6 +19,10 @@ Write-Host "Number of insert statements..: $($stats.IduCount)"
 Write-Host "Number of select statements..: $($stats.SelectCount)"
 Write-Host "Total execution time.........: $($stats.ExecutionTime)ms"
 #>
+TYPE "E:\WordEngineering\PowerShell\HisWordToday.rpt"
+Invoke-Sqlcmd -InputFile "E:\WordEngineering\PowerShell\HisWordToday.sql" `
+	-ServerInstance localhost -Database WordEngineering `
+	| Out-File -FilePath "E:\WordEngineering\PowerShell\HisWordToday.rpt"
 # 2024-08-31T10:47:00 http://techcommunity.microsoft.com/t5/azure-database-support-blog/lesson-learned-172-applicationintent-readonly-in-general-purpose/ba-p/2375941
 Invoke-Sqlcmd -Query "SELECT COUNT(*) AS Count FROM HisWord" `
 	-ConnectionString "Data Source=(local);Initial Catalog=WordEngineering;Integrated Security=True;ApplicationIntent=ReadOnly"
