@@ -618,3 +618,8 @@ git add			IIS/WordEngineering/2018-05-03Correspondence/2024-08-20T2118Katherine.
 git add         IIS/WordEngineering/2018-05-03Correspondence/2024-08-26T1122JapanMotor_-_AmericanCrystalSugarCompany(ACS)SoftwareEngineerQuestionaire_-_DavidMills_-_KenAdeniji.rtf
 
 git add         IIS/WordEngineering/2018-05-03Correspondence/2024-08-26T1924Encorps_-_katrina.jefferson@encorps.org_-_ashley.sejour@encorps.org_-_WeValueYourInput.pdf
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-08-29T2214AllowingOtherPeopleToRead.ThePossibility_-_JoshuaLeifer.com_-_TabletsShattered.txt
+git add	        PowerShell/HisWordTop10Query.bat
+git add         PowerShell/HisWordTop10Query.ps1
+git add	        SQLScript/2024-08-28T1902CaseBasedReasoningDuplicateCaseBasedReasoningID.sql

@@ -1,0 +1,1 @@
+PowerShell -command "& { . E:\WordEngineering\PowerShell\HisWordTop10Query.ps1; }" 
