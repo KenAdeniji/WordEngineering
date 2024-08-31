@@ -623,3 +623,5 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-08-29T2214Allo
 git add	        PowerShell/HisWordTop10Query.bat
 git add         PowerShell/HisWordTop10Query.ps1
 git add	        SQLScript/2024-08-28T1902CaseBasedReasoningDuplicateCaseBasedReasoningID.sql
+git add	        PowerShell/HisWordToday.rpt
+git add	        PowerShell/HisWordToday.sql
