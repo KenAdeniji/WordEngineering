@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2024-08-31T21:41:00	Created.
+		2024-08-31T21:41:00...2024-09-01T00:50:00	Created.
+		http://javascriptweekly.com/link/159127/web
+		http://viewer.textea.io
 	-->
 	<head>
 		<title>viewer.textea.io</title>
@@ -12,18 +14,10 @@
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
 	<body>
-		<script>
-			document.head.insertAdjacentHTML
-			(
-				"beforeend",
-				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
-			);
-		</script>
 		<div id="json-viewer"></div>
 		<div id="resultSet"></div>
 		<script src="https://cdn.jsdelivr.net/npm/@textea/json-viewer@3"></script>	
- 
-		<script>
+ 		<script>
 			var isPostBack = false;
 			
 			const resultSetElement = document.getElementById("resultSet");
@@ -43,54 +37,30 @@
 
 			async function querySubmit()
 			{
-      new JsonViewer({
-        value: {
-						"root":
-						{
-							"string": "this is a string",
-							"number": 1,
-							"float": 114.514,
-							"bigint": 10086n,
-							"object":
-							{
-								"a": undefined
-							},
-							"map":
-							{
-								"ohno": "NULL",
-								"birth": "Sun, Dec 17, 1995, 03:24 AM"
-							}
-						}
-
-        }
-      }).render('#json-viewer')
-	  
-				return;
-				
-				var jsonViewer = new JsonViewer();
-				jsonViewer.value = rootStub;
-				jsonViewer.render("#json-viewer");
-
 				var request = {};
 
 				const PostData = {
-					method: 'GET',
+					method: "GET",
 					headers: {
 						"Accept": "application/json",
-						'Content-Type': 'application/json; charset=utf-8'
+						"Content-Type": "application/json; charset=utf-8"
 					},
-					dataType: 'json',
-					credentials: 'include'
+					dataType: "json",
+					credentials: "include"
 				}
 				//PostData.body = JSON.stringify(request);
-				url = "/WordEngineering/WordUnion/Bible.Json";
+				var url = "/WordEngineering/WordUnion/GodTitle.json";
 				try {
 					const response = await fetch(url, PostData)
 					.then(response => {
 						return response.json();
 					})
 					.then(responseJSON => {
-						resultSetElement.innerHTML = JSON.stringify(responseJSON);
+						new JsonViewer({
+							value: { 
+								responseJSON
+							}
+						}).render('#json-viewer');
 					})
 					} catch (e) {
 					resultSetElement.innerHTML = e;
@@ -98,25 +68,6 @@
 			}
 			
 			window.addEventListener("load", pageLoad, false);
-			const rootStub = {
-"root":
-{
-"string": "this is a string",
-"number": 1,
-"float": 114.514,
-"bigint": 10086n,
-"object":
-{
-"a": undefined
-},
-"map":
-{
-"ohno": "NULL",
-"birth": "Sun, Dec 17, 1995, 03:24 AM"
-}
-}
-}
-;			
 	</script>
 </body>
 </html>

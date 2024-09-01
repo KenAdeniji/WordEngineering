@@ -625,3 +625,5 @@ git add         PowerShell/HisWordTop10Query.ps1
 git add	        SQLScript/2024-08-28T1902CaseBasedReasoningDuplicateCaseBasedReasoningID.sql
 git add	        PowerShell/HisWordToday.rpt
 git add	        PowerShell/HisWordToday.sql
+
+git add			IIS/WordEngineering/JSON/viewer.textea.io.html
