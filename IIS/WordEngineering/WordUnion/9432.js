@@ -121,7 +121,7 @@
 		http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
 	2024-05-07	http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
 	2024-05-26T22:00:00 fetchRender()
-	2024-09-02T07:27:00...2024-09-02T09:22:00 For sorting... for table sorting.
+	2024-09-02T07:27:00...2024-09-02T09:54:00 For sorting... for table sorting.
 		Table header data column, datatype.
 		Shower: In the bedroom, apply lotion.
 		http://terrill.ca/sorting/#handling_data_types
@@ -1975,7 +1975,7 @@ var scriptLiteral9432 =
 				cellType = typeof cellContent;
 				dataTsorter = "";
 				dataTsorting = "";
-				if (cellType === "Number" || cellType === "BigInt")
+				if (cellType === "number" || cellType === "bigint")
 				{
 					dataTsorter = "numeric";
 				}		
@@ -1993,7 +1993,7 @@ var scriptLiteral9432 =
 				{
 					dataTsorter = "link";
 				}		
-				dataTsorting = dataTsorter === "" ? "" : ` data-tsorter="{dataTsorter}"`;
+				dataTsorting = dataTsorter === "" ? "" : ` data-tsorter="${dataTsorter}"`;
 				cells += `<th${dataTsorting}>${cellName}</th>`;
 				if ( cellName === "FromUntil" )
 				{
