@@ -121,6 +121,19 @@
 		http://stackoverflow.com/questions/4423234/simple-way-to-save-html-table-to-sql-file
 	2024-05-07	http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
 	2024-05-26T22:00:00 fetchRender()
+	2024-09-02T07:27:00...2024-09-02T09:22:00 For sorting... for table sorting.
+		Table header data column, datatype.
+		Shower: In the bedroom, apply lotion.
+		http://terrill.ca/sorting/#handling_data_types
+		http://github.com/terrilldent/tsorter
+			Handling Different Data Types
+
+			It's common to have numbers, text, links, or even inputs inside table cells. The script can handle sorting a number of built-in data types. Here are the defaults that come with it:
+			numeric	For sorting integers or floats
+			input-text	For sorting <input> tags by value
+			link	For sorting <a> tags by their textContent value
+
+			Specify the data type for each column by putting a data-tsorter attribute on each <th> element.
 */			
 var scriptLiteral9432 =
 {
@@ -1924,7 +1937,10 @@ var scriptLiteral9432 =
 		var cellName = null;
 		var cells = "";
 		var cellHeader = "";
+		var cellType = "";
 		var info = "";
+		var dataTsorter = "";
+		var dataTsorting = "";
 		var detailKeys = null;
 		var detailRow = null;
 		var value = null;
@@ -1951,11 +1967,35 @@ var scriptLiteral9432 =
 		
 		if ( !rowColumn )
 		{
+			
 			for (var dataIndex = 0, dataCount = dataKeys.length; dataIndex < dataCount; ++dataIndex)
 			{
-				cellHeader = dataKeys[dataIndex];
-				cells += "<th>" + cellHeader + "</th>";
-				if ( cellHeader === "FromUntil" )
+				cellName = dataKeys[dataIndex];
+				cellContent = dataRow[cellName];
+				cellType = typeof cellContent;
+				dataTsorter = "";
+				dataTsorting = "";
+				if (cellType === "Number" || cellType === "BigInt")
+				{
+					dataTsorter = "numeric";
+				}		
+				if 
+				(
+						cellName.includes("Actor")
+					||	cellName.includes("BibleDictionary")						
+					|| 	cellName.includes("BibleWord")
+					|| 	cellName.includes("BookID")
+					|| 	cellName.includes("BookTitle")
+					||	cellName.includes("BibleDictionary")
+					||	cellName.includes("ScriptureReference")
+					||	cellName.includes("URI")
+				)	
+				{
+					dataTsorter = "link";
+				}		
+				dataTsorting = dataTsorter === "" ? "" : ` data-tsorter="{dataTsorter}"`;
+				cells += `<th${dataTsorting}>${cellName}</th>`;
+				if ( cellName === "FromUntil" )
 				{
 					cells += "<th>BiblicalCalendar</th>";
 				}			

@@ -14,12 +14,25 @@
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
 	<body>
-		<div id="json-viewer"></div>
-		<div id="resultSet"></div>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="jsonUrl">JSON url</label></td>
+					<td>
+						<input type="type" id="jsonUrl" value="../WordUnion/GodTitle.json"/>
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+			<div id="resultSet"></div>
+			<div id="json-viewer" align="left"></div>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/@textea/json-viewer@3"></script>	
  		<script>
 			var isPostBack = false;
 			
+			const jsonUrlElement = document.getElementById("jsonUrl");
+			const submitQueryElement = document.getElementById("submitQuery");
 			const resultSetElement = document.getElementById("resultSet");
 			
 			function pageLoad()
@@ -37,9 +50,10 @@
 
 			async function querySubmit()
 			{
+				resultSetElement.innerHTML = "";
 				var request = {};
 
-				const PostData = {
+				const FetchHeaders = {
 					method: "GET",
 					headers: {
 						"Accept": "application/json",
@@ -48,10 +62,13 @@
 					dataType: "json",
 					credentials: "include"
 				}
-				//PostData.body = JSON.stringify(request);
-				var url = "/WordEngineering/WordUnion/GodTitle.json";
+				//FetchHeaders.body = JSON.stringify(request);
 				try {
-					const response = await fetch(url, PostData)
+					const response = await fetch
+					(
+						jsonUrlElement.value,
+						FetchHeaders
+					)
 					.then(response => {
 						return response.json();
 					})
@@ -66,7 +83,16 @@
 					resultSetElement.innerHTML = e;
 				};
 			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
 			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		
 			window.addEventListener("load", pageLoad, false);
 	</script>
 </body>
