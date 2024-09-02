@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-09-02T11:20:00...2024-09-02T13:53:00 Created.
+		http://javascriptweekly.com/issues/699
+		http://json-to-csv-export.vercel.app
+	-->
+	<head>
+		<title>json-to-csv-export.vercel.app</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="json-to-csv-export.vercel.app"/>
+		<meta name="keywords" content="JSON, CSV"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 70vh;
+				width: 90vw;
+			}
+		</style>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="jsonUrl">JSON url</label></td>
+					<td>
+						<input type="type" id="jsonUrl" value="../WordUnion/GodTitle.json"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"/></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+			<textarea id="jsonFormat"></textarea>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/json-to-csv-export"></script>
+ 		<script>
+			//import jsonToCsvExport from "json-to-csv-export";
+
+			var isPostBack = false;
+			
+			const jsonUrlElement = document.getElementById("jsonUrl");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			const jsonFormatElement = document.getElementById("jsonFormat");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				var request = {};
+
+				const FetchHeaders = {
+					method: "GET",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+				//FetchHeaders.body = JSON.stringify(request);
+				try {
+					const response = await fetch
+					(
+						jsonUrlElement.value,
+						FetchHeaders
+					)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						jsonFormatElement.value = JSON.stringify(responseJSON);
+
+						jsonToCsvExport
+						(
+							{ 
+								data: responseJSON
+							}
+						);
+
+					})
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
