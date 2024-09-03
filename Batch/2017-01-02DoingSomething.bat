@@ -189,7 +189,7 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 17865);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18105);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 24711);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 25788);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
@@ -792,4 +792,8 @@ HowTheyGotThere.com
 
 2024-08-21T12:28:00...2024-08-21T12:31:00
 about.me/svenaelterman 			Profile, Microsoft 	2023-06-04 	62693
+
+JSDatav.is/visuals.html 	Data Visualization with JavaScript by Stephen A. Thomas User Experience & Usability The Art and Science of Design 	2015-04-12 http://jsdatav.is/chap01.html flotr2 2021-02-03 humblesoftware.com/flotr2 	Chart 	2020-11-11 	53872
+
+web.stanford.edu/~hastie/ElemStatLearn 	The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Trevor Hastie Robert Tibshirani Jerome Friedman 			2020-02-03 	52671
 :Exit
