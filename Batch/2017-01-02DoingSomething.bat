@@ -796,4 +796,20 @@ about.me/svenaelterman 			Profile, Microsoft 	2023-06-04 	62693
 JSDatav.is/visuals.html 	Data Visualization with JavaScript by Stephen A. Thomas User Experience & Usability The Art and Science of Design 	2015-04-12 http://jsdatav.is/chap01.html flotr2 2021-02-03 humblesoftware.com/flotr2 	Chart 	2020-11-11 	53872
 
 web.stanford.edu/~hastie/ElemStatLearn 	The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Trevor Hastie Robert Tibshirani Jerome Friedman 			2020-02-03 	52671
+
+2024-09-07T16:43:00
+http://www.aspsnippets.com/questions/106967/Solved-Change-OK-Cancel-Text-of-JavaScript-Confirmation-Box/answers
+
+2024-09-08T02:22:00...2024-09-08T02:39:00
+microsoft sqlserver management studio
+no row was updated.
+The data in row 1 was not committed.
+error source: framework microsoft sqlclient data provider.
+error message: execution timeout expired. the timeout
+period expired prior to completion of the operation or the
+server is not responding
+operation cancelled by user.
+correct the errors and retry or press esc to cancel
+the changes.
+ok help
 :Exit
