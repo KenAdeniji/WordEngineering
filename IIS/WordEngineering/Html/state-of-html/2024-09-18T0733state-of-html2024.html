@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+		2024-09-18T07:33:00	Created. https://survey.devographics.com/en-US/survey/state-of-html/2024?source=announcement_email
+		2024-09-19T04:56:00	http://stackoverflow.com/questions/1818249/form-with-no-action-and-where-enter-does-not-reload-page
+		2024-09-19T04:06:00...2024-09-19T05:08:00 state-of-html 2024 survey
+	-->
+	<head>
+		<meta charset="UTF-8" />
+		<title>state-of-html 2024</title>
+		<meta name="description" content="state-of-html 2024"/>
+		<meta name="keywords" content="state-of-html"/>
+		<meta name="robots" content="index, nofollow" />
+		<meta name="author" content="Ken Adeniji" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<form id="form" name="form" action="javascript:void(0);">
+			<label for="country">country</label>
+			<input id="country" name="country" list="countries" autofocus>
+			<datalist id="countries">
+				<option>Afghanistan</option>
+				<option>China</option>
+				<option>Germany</option>
+				<option>India</option>
+				<option>Iran</option>
+				<option>Philippines</option>
+				<option>Taiwan</option>
+				<option>United States of America (USA)</option>
+			</datalist>	
+			<br/>
+			
+			autocomplete attribute
+			Provide hints about what kind of information is expected, e.g. name, honorific-prefix, tel, cc-number etc
+			on or off
+			<br/>
+			<label for="name">name</label>
+			<input id="name" name="name" autocomplete="name" />
+			<br/>
+			
+			<input id="dateInput" type="date">
+			<button onclick="dateInput.showPicker()">Select date</button>
+			
+			<div id="formDataAPIResultSet"></div>
+			<button id="formDataAPI">FormData API</button>
+
+			<br/>
+			2024-09-19T19:13:00...2024-09-19T19:20:00
+			I have used the contenteditable attribute, but I have not set its value to plaintext-only.
+			<h2 class="title" contenteditable="plaintext-only">contenteditable="plaintext-only"</h2>
+
+			<br/>
+			2024-09-19T19:23:00...2024-09-19T20:08:00 
+			For canvas elements I have used the filltext method.
+			<div id="divCanvasEditContext"></div>
+			
+			<br/>	
+What are your pain points around HTML forms?
+Think of the various form controls (e.g. input, textarea, select, button etc.), behaviors (e.g. validation, autocomplete), handling forms via JS, editing APIs (e.g. contentEditable) etc. Anything that bothers you is fair game — browser support, missing features, styling, etc.
+			<br/>
+			<ol>
+				<li>	
+			2024-09-19T20:14:00...2024-09-19T20:23:00 I started web development using Microsoft's ASP.NET which obscures and extends a facade on html.
+				</li>
+				<li>
+			2024-09-19T20:23:00 HTML is not independent of CSS and JavaScript.
+				</li>
+			</ol>
+			<br/>	
+			
+			<button id="showDialog">Show dialog</button>
+			<button id="closeDialog">Close dialog</button>
+			<dialog id="confirmDialog">
+				<form method="dialog">
+					Are you sure?
+					<button value="1">Yes</button>
+					<button value="0">No</button>
+				</form>
+			</dialog>
+			<br/>
+			
+		</form>
+		
+		<script>
+			var isPostBack = false;
+
+			var	formDataAPIElement = document.getElementById("formDataAPI");
+			var	formDataAPIResultSetElement = document.getElementById("formDataAPIResultSet");
+			var	divCanvasEditContextElement = document.getElementById("divCanvasEditContext");
+			
+			var	confirmDialogElement = document.getElementById("confirmDialog");
+			var	showDialogElement = document.getElementById("showDialog");
+			var	closeDialogElement = document.getElementById("closeDialog");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					canvasEditContext();
+					isPostBack = true;
+				}
+				else
+				{
+					
+				}
+ 			}
+		
+			function formDataAPIHandler()
+			{
+				let fd = new FormData(form);
+				let data = JSON.stringify(Object.fromEntries(fd));
+				formDataAPIResultSetElement.innerHTML = data;
+			}
+
+			function canvasEditContext()
+			{
+				const canvas = document.createElement("canvas");
+				canvas.width = 50;
+				canvas.height = 50;
+				
+				/*
+				const editContext = new EditContext();
+				canvas.editContext = editContext;
+				*/
+				
+				divCanvasEditContextElement.appendChild(canvas);
+				
+				var context = canvas.getContext('2d');
+				
+				context.beginPath();
+				context.rect(0, 0, 50, 50);
+				context.stroke();				
+				context.fillStyle = 'green';
+				context.fill();
+				context.lineWidth = 5;
+				context.strokeStyle = '#003300';
+				context.stroke();
+				
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			formDataAPIElement.addEventListener("click", formDataAPIHandler, false);
+			
+			showDialogElement.addEventListener("click", () => {
+				confirmDialogElement.showModal();
+			});
+		
+			closeDialogElement.addEventListener("click", () => {
+				confirmDialogElement.close();
+			});
+		
+		</script>
+	</body>
+</html>
