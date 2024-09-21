@@ -639,3 +639,7 @@ git add			IIS/WordEngineering/Resume/2024-09-16KenAdenijiResume.mp4
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-18T0606NorikoYoshida_-_IHaveSharedAllIHaveYouHaveGivenAllYouDesire.txt
 
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-18ValleyTransportAuthorityVTA.org_-_Citibank_-_WhatIIntendedForYou_-_SanJose1_-_2024-09-19JeKinSoKinaFunETheseArePeopleWhoThoughtTheyAreJesus.txt
+
+git add			IIS/WordEngineering/Html/state-of-html
+
+git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-20T1531...2024-09-201654Google.com_-_JobsNearMe.txt
