@@ -643,3 +643,7 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-18ValleyTra
 git add			IIS/WordEngineering/Html/state-of-html
 
 git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-20T1531...2024-09-201654Google.com_-_JobsNearMe.txt
+
+git add	        IIS/WordEngineering/Resume/2024-09-20T1900KenAdenijiResume_-_InspiredBy_-_AlvaroMontoro.com_-_Files_-_Resume-Modern.html
+
+git add	        IIS/WordEngineering/Resume/2024-09-20T1900AlvaroMontoro.com_-_Files_-_Resume-Modern.html
