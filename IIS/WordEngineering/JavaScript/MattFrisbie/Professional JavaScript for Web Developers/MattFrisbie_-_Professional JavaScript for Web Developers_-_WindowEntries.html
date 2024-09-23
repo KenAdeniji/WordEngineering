@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-09-22	Created.
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+	-->
+	<head>
+		<title>Window Property</title>
+		<meta name="description" content="Window Property"/>
+		<meta name="keywords" content="Window Property"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>	
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			function pageLoad()
+			{
+				var information = "<table id='tableProperty'>";
+				information += "<caption>Window Property</caption>";
+				information += "<thead><tr><th>Name</th><th>Value</th></tr></thead>";
+				information += "<tbody>";
+
+				var typeOfProperty;
+				for (const [key, value] of Object.entries(window)) 
+				{
+					typeOfProperty = typeof value;	
+					if (typeOfProperty === "number" || typeOfProperty === 'string') 
+					{
+						information += "<tr><td>" + key +
+							"</td><td>" + value +
+							"</td</tr>";
+					}		
+				}
+
+				information += "</tbody></table>";
+				document.getElementById("resultSet").innerHTML = information;
+				tsorter.create("tableProperty");
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -647,3 +647,8 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/2024-09-20T1531...2
 git add	        IIS/WordEngineering/Resume/2024-09-20T1900KenAdenijiResume_-_InspiredBy_-_AlvaroMontoro.com_-_Files_-_Resume-Modern.html
 
 git add	        IIS/WordEngineering/Resume/2024-09-20T1900AlvaroMontoro.com_-_Files_-_Resume-Modern.html
+
+git add			IIS/WordEngineering/CascadingStyleSheet/AlvaroMontoro.com/
+git add			"IIS/WordEngineering/JavaScript/MattFrisbie/Professional JavaScript for Web Developers/MattFrisbie_-_Professional JavaScript for Web Developers_-_WindowEntries.html"
+git add			IIS/WordEngineering/Mozilla/Mozilla_-_Cryptography_-_EncryptionDecryption/
+git add	        IIS/WordEngineering/Python/bpesquet.fr/
