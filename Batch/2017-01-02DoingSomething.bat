@@ -188,8 +188,9 @@ DBCC CHECKIDENT ('URI..UriBingNews', RESEED, 151);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 21351);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
-DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED,  18105);
+DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 25788);
+DBCC CHECKIDENT ('URI..UriPocket', RESEED, 22);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
@@ -815,5 +816,6 @@ ok help
 
 2024-09-16T03:26:00 microsoft windows operating system mouse cursor falls short, under, lower, ground, off.
 2024-09-18T04:04:00 microsoft windows operating system, mozilla firefox browser, inspector.
-
+2024-09-23T10:24:00
+apnews.com/article/congress-government-shutdown-trump-johnson-budget-deal-d51de0cd895db687a6f5b35fc0dab13e?utm_source=pocket-newtab-en-us
 :Exit
