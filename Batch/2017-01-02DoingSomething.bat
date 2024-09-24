@@ -91,7 +91,7 @@ set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
 xcopy E:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
-xcopy E:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
+REM xcopy E:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
 xcopy E:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
