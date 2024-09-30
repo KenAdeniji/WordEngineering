@@ -19,19 +19,38 @@ using InformationInTransit.DataAccess;
 								At 99 Ranch Market Filipinos ... Hindi wife and husband
 								I walked at the Center lane and I exited at South West.
 								Bavarian Motor Works (BMW) at the intersection of Fremont Boulevard and Paseo Padre Parkway, North East.
-								alphabetSequenceIndexPercentage 
+								BiblePercentageIndexPercentage 
 									41%
-								alphabetSequenceIndexPercentageScriptureReference
+								BiblePercentageIndexPercentageScriptureReference
 									Esther 3:4, Psalms 10, Isaiah 23, Isaiah 36:20
 			public static string Query(decimal percentage)
 			{
 				return Query(percentage, "All");
 			}
+2024-09-30T07:52:00	public static void Main(string[] argv)
 */
 namespace InformationInTransit.ProcessLogic
 {
-	public static partial class BiblePercentage
+	public partial class BiblePercentage
 	{
+		public static void Main(string[] argv)
+		{
+			decimal percentage = Convert.ToDecimal(argv[0]);
+			String limit = "All";
+			if (argv.Length > 1) 
+			{
+				limit = argv[1];
+			}
+			System.Console.WriteLine
+			(
+				Query
+				(
+					percentage,
+					limit
+				)	
+			);
+		}
+		
 		public static string Query(decimal percentage)
 		{
 			return Query(percentage, "All");
