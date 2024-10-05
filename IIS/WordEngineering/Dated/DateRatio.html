@@ -9,6 +9,7 @@
 			There may be struggle in their marriage.
 			Toyin Oyeduntan has gone somewhere.
 			Pegasus Center. Be careful, what remain. Sardis, fifth, 5th, of seven letters (Revelation 3:2).
+			2024-10-05T05:54:00...2024-10-05T06:31:00 9432.js no longer dependent.
 		-->
 		<title>Date Ratio</title>
 		<meta charset="UTF-8"/>
@@ -16,7 +17,7 @@
 		<meta name="keywords" content="Date ratio, Sardis, fifth, 5th, of seven letters, Revelation 3:2"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+		<link rel="stylesheet" type="text/css" href="../WordUnion/9432.css">
 	</head>
 	<body>
 		<div align="center">
@@ -58,7 +59,6 @@
 				</tr>
 			</table>
 		</div>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
 			var isPostBack = false;
 	
@@ -79,37 +79,34 @@
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
-					{
-						const urlParams = new URLSearchParams(window.location.search);
-						
-						var datedFromParam = urlParams.get("datedFrom");
-						if (datedFromParam)
-						{
-							datedFromElement.value = datedFromParam;
-						}
+					const urlParams = new URLSearchParams(window.location.search);
 					
-						var datedUntilParam = urlParams.get("datedUntil");
-						if (datedUntilParam)
-						{
-							datedUntilElement.value = datedUntilParam;
-						}
+					var datedFromParam = urlParams.get("datedFrom");
+					if (datedFromParam)
+					{
+						datedFromElement.value = datedFromParam;
+					}
+				
+					var datedUntilParam = urlParams.get("datedUntil");
+					if (datedUntilParam)
+					{
+						datedUntilElement.value = datedUntilParam;
+					}
 
-						var numeratorParam = urlParams.get("numerator");
-						if (numeratorParam)
-						{
-							numeratorElement.value = numeratorParam;
-						}
+					var numeratorParam = urlParams.get("numerator");
+					if (numeratorParam)
+					{
+						numeratorElement.value = numeratorParam;
+					}
 
-						var denominatorParam = urlParams.get("denominator");
-						if (denominatorParam)
-						{
-							denominatorElement.value = denominatorParam;
-						}
+					var denominatorParam = urlParams.get("denominator");
+					if (denominatorParam)
+					{
+						denominatorElement.value = denominatorParam;
+					}
 
-						querySubmit();
-						isPostBack = true;
-					});
+					querySubmit();
+					isPostBack = true;
 				}
 				else
 				{
@@ -119,11 +116,15 @@
 
 			function querySubmit()
 			{
-				var dateDifferenceComputed = scriptLiteral9432.daysDifference
+				var dateDifferenceComputed = Math.round
 				(
-					new Date(datedFromElement.value), 
-					new Date(datedUntilElement.value), 
-				);
+					(
+						new Date(datedFromElement.value), 
+						new Date(datedUntilElement.value) 
+					)
+					/
+					(1000*60*60*24))
+				;
 				dateDifferenceElement.textContent = dateDifferenceComputed;
 				
 				var ratioComputed = parseFloat(numeratorElement.value) 
@@ -135,11 +136,9 @@
 				var intervalComputed = dateDifferenceComputed * ratioComputed;
 				intervalElement.textContent = intervalComputed;
 				
-				datedComputedElement.textContent = scriptLiteral9432.daysAdd
-				(
-					new Date(datedFromElement.value), 
-					intervalComputed
-				);
+				var result = new Date(datedFromElement.value);
+				result.setDate(result.getDate() + intervalComputed);
+				datedComputedElement.textContent = result;
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
