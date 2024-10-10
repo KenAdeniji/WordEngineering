@@ -10,6 +10,7 @@
 			Toyin Oyeduntan has gone somewhere.
 			Pegasus Center. Be careful, what remain. Sardis, fifth, 5th, of seven letters (Revelation 3:2).
 			2024-10-05T05:54:00...2024-10-05T06:31:00 9432.js no longer dependent.
+			2024-10-09T16:55:00...2024-10-09T20:55:00 querySubmit()	
 		-->
 		<title>Date Ratio</title>
 		<meta charset="UTF-8"/>
@@ -116,15 +117,19 @@
 
 			function querySubmit()
 			{
-				var dateDifferenceComputed = Math.round
-				(
-					(
-						new Date(datedFromElement.value), 
-						new Date(datedUntilElement.value) 
-					)
-					/
-					(1000*60*60*24))
-				;
+				// The number of milliseconds in one day
+				var ONE_DAY = 1000 * 60 * 60 * 24
+
+				// Convert both dates to milliseconds
+				var date1_ms = new Date( datedFromElement.value ).getTime()
+				var date2_ms = new Date( datedUntilElement.value ).getTime()
+
+				// Calculate the difference in milliseconds
+				var difference_ms = Math.abs(date1_ms - date2_ms)
+
+				// Convert back to days and return
+				dateDifferenceComputed = Math.round(difference_ms/ONE_DAY)
+				
 				dateDifferenceElement.textContent = dateDifferenceComputed;
 				
 				var ratioComputed = parseFloat(numeratorElement.value) 
