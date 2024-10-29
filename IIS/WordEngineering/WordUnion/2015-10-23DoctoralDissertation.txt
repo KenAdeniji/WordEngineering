@@ -470,6 +470,22 @@ First, inside and last dates.
 This is subjective work; the author applys intelligence to find patterns
 and resemblances in the Bible.
 
+  Part                                           Example          Commentary
+  ---------------------------------------------- ---------------- -------------------------------------------------------------
+  Sub-domain                                     www              A sub-domain defaults to www.
+  Domain                                         JesusInTheLamb   
+  Unique country code top-level domain (ccTLD)   .com             An abbreviation for commercial. A default domain extension.
+  Directory and filename                         index.html       
+  Fragment                                                        
+
+  : www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
+
+The issuing of this domain name may be related to commencing writing the
+book titled Ocean Senior. There has not been a follow-up on future
+artifacts. But when one reads the Bible, the book of Revelation, which
+starts with the letters to the 7 churches in Asia Minor, does not
+instigate future alteration.
+
 "[]{cite="#bibliographyHumbertoCervantes_RickKazman20240602"}"
 
 ### Designing Software Architectures: A Practical Approach Making Design Decisions {#DesigningSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions datetime="2024-08-21T14:34:00"}
@@ -1070,8 +1086,9 @@ birthday and relative age. To keep up with the privacy and sensitivity
 of this personal information, the author is not sharing this highly
 confidential data.
 
-The relationship between a contact and its related information is one to
-many; that is a contact may have multiple addresses.
+The relationship between a contact and its related information is
+one-to-many; that is a contact may have multiple addresses. The other 2
+types of relationships are one-to-one, and many-to-many.
 
 A URI is a link to a web resource that will add to the audience\'s
 knowledge. The author notes the address and the date, when the author
