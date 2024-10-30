@@ -470,13 +470,16 @@ First, inside and last dates.
 This is subjective work; the author applys intelligence to find patterns
 and resemblances in the Bible.
 
-  Part                                    Example          Commentary
-  --------------------------------------- ---------------- -------------------------------------------------------------
-  Sub-domain                              www              A sub-domain defaults to www.
-  Domain                                  JesusInTheLamb   
-  Country code top-level domain (ccTLD)   .com             An abbreviation for commercial. A default domain extension.
-  Directory and filename                  index.html       
-  Fragment                                                 
+  Part                                                                    Example          Commentary
+  ----------------------------------------------------------------------- ---------------- -------------------------------------------------------------
+  Sub-domain                                                              www              A sub-domain defaults to www.
+  Domain                                                                  JesusInTheLamb   
+  Country code top-level domain (ccTLD)                                   .com             An abbreviation for commercial. A default domain extension.
+  Directory and filename                                                  index.html       
+  Fragment                                                                                 
+  It is not an e-mail address, since it does not include an at sign, @.                    
+  It defaults to port 80.                                                                  
+  It defaults to the homepage.                                                             
 
   : www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
 
