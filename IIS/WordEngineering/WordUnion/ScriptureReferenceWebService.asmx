@@ -225,4 +225,28 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
 		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
 		return json;
     }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String WhatChildrenOurGroom
+	(
+		String 	scriptureReference,
+		String 	bibleVersion,
+		bool	combinedResult
+	)
+    {
+		String[] scriptureReferenceSubset = null;
+		DataSet result = null;
+		var exactWords = ScriptureReferenceHelper.WhatChildrenOurGroom
+		(
+				scriptureReference,
+			ref	scriptureReferenceSubset,
+			ref result,
+				bibleVersion,
+				combinedResult
+		);
+		
+		string json = JsonConvert.SerializeObject(exactWords, Formatting.Indented);
+		return json;
+    }
 }
