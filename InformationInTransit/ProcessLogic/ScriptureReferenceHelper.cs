@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Configuration;
 using System.Data;
+using System.Data.DataSetExtensions;
+using System.Data.Linq;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -1118,6 +1120,90 @@ namespace InformationInTransit.ProcessLogic
 			);
 			System.Console.WriteLine(sql);
 			return dataSet;
+		}
+
+		public static DataSet WhatChildrenOurGroom
+		(
+			string 			scriptureReference,
+			ref String[] 	scriptureReferenceSubset,
+			ref DataSet 	result,
+			string			bibleVersion,
+			bool			combinedResult
+		)
+		{
+			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+			CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+		
+			Process
+            (
+                scriptureReference,
+                ref scriptureReferenceSubset,
+                ref result,
+                ScriptureReferenceHelper.ExactQueryFormat,
+                bibleVersion
+            );
+
+			StringBuilder sbSplitResultSQL = new StringBuilder();
+			
+			StringBuilder sbJoinResultWord = new StringBuilder();
+
+			StringCollection stringCollection;
+			
+			String exactLiteral;
+
+			String exactLiteralQuote;
+
+			foreach(DataTable tableResult in result.Tables)
+			{
+				stringCollection = DataTableHelper.DataTableColumnSplitStringCollection
+				(
+					tableResult,
+					"verseText"
+				);	
+				
+				exactLiteral = string.Join(", ", stringCollection.Cast<string>());
+				
+				exactLiteral = exactLiteral.Replace("'", "''");
+				
+				exactLiteralQuote = string.Join(",", exactLiteral.Split(',').Select(x => string.Format("'{0}'", x)));
+
+				if ( !combinedResult )
+				{
+					sbSplitResultSQL.AppendFormat
+					(
+						"SELECT * FROM Bible..Exact_View WHERE BibleWord IN ({0});",
+						exactLiteralQuote
+					);	
+				}	
+				else
+				{
+					if ( sbJoinResultWord.Length > 0 )
+					{
+						sbJoinResultWord.Append(", ");
+					}	
+					sbJoinResultWord.Append
+					(
+						exactLiteralQuote
+					);
+				}
+			}	
+			
+			String sqlStatement = combinedResult == false ? 
+				sbSplitResultSQL.ToString() :
+				String.Format
+				(
+					"SELECT * FROM Bible..Exact_View WHERE BibleWord IN ({0});",
+					sbJoinResultWord
+				);
+			
+			DataSet exactWords = (DataSet) DataCommand.DatabaseCommand
+			(
+				sqlStatement,
+				CommandType.Text,
+				DataCommand.ResultType.DataSet
+			);
+			
+			return exactWords;
 		}
 		
 		static ScriptureReferenceHelper()

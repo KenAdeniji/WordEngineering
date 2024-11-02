@@ -354,8 +354,6 @@ namespace InformationInTransit.ProcessLogic
 		/*
 			2024-03-02T22:30:00...2024-03-02T23:16:00
 			https://stackoverflow.com/questions/13025744/need-regex-to-extract-only-alphabets-from-string
-			01:29...01:37 post-dated http://www.khouse.org/articles/2001/369/ google.com data not found error.
-				Racism is bad...Anti-Semitism worse of all, the Bible was written by Jews.
 		*/	
         public static int StartFromZ(string question)
         {
