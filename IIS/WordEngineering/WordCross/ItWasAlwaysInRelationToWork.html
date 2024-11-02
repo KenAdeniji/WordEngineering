@@ -78,7 +78,7 @@
 			{
 				var htmlTableHead = 
 				`
-					<table id='tableAlphabetSequence'>
+					<table id='alphabetSequenceTable'>
 					<caption>AlphabetSequence</caption>
 					<thead><tr><th>Identity<\th><th>Word<\th><th>AlphabetSequenceIndex<\th><th>Percentage (%)<\th></tr></thead>
 				`;	
@@ -90,7 +90,7 @@
 						<td/>
 						<td>${wordElement.value}<\td>
 						<td>${wordAlphabetSequenceIndexSum}<\td>
-						<td>100<\td>
+						<th>100<\td>
 					</tr></tfoot>
 				`;	
 				
@@ -109,7 +109,7 @@
 					htmlTableBody +=
 					`
 						<tr>
-							<td>${rowIndex + 1}<\td>
+							<td>${rowIndex}<\td>
 							<td>${wordCurrent}<\td>
 							<td>${wordCurrentAlphabetSequenceIndex}<\td>
 							<td>${wordCurrentAlphabetSequenceIndexPercentage}<\td>
@@ -120,8 +120,6 @@
 				htmlTableBody += "</tbody>";
 				
 				resultSetElement.innerHTML = htmlTableHead + htmlTableBody + htmlTableFoot;
-				
-				tsorter.create("tableAlphabetSequence");
 			}
 			
 			window.addEventListener("load", pageLoad, false);

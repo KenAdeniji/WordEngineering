@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<!--
-		2024-05-07T11:19:00 Created. http://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript
+		2024-11-01	Created.
 	-->
 	<head>
-		<title>What I do with my time is how I...let it use?</title>
+		<title>What children... our groom?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="What I do with my time is how I...let it use?"/>
-		<meta name="keywords" content="Dated from, dated until, occurrences"/>
+		<meta name="description" content="What children... our groom?"/>
+		<meta name="keywords" content="Scripture reference, exact, Bible word"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -22,12 +22,16 @@
 		<div>
 			<table align="center">
 				<tr>
-					<td><label for="datedFrom">Dated from:</label></td>
-					<td><input type="date" id="datedFrom" value="2024-05-01" autofocus/></td>
+					<td><label for="scriptureReference">Scripture reference</label></td>
+					<td><input id="scriptureReference" type="text" value="Genesis 22, Daniel 9, John 17" autofocus/></td>
 				</tr>
 				<tr>
-					<td><label for="datedUntil">Dated until:</label></td>
-					<td><input type="date" id="datedUntil" value="2024-05-07"/></td>
+					<td><label for="bibleVersion">Bible version</label></td>
+					<td><select id="bibleVersion"/></td>
+				</tr>
+				<tr>
+					<td><label for="combinedResult">Combined result</label></td>
+					<td><input type="checkbox" id="combinedResult" checked/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -46,8 +50,9 @@
 		<script>
 			var isPostBack = false;
 			
-			const	datedFromElement = document.getElementById("datedFrom");
-			const	datedUntilElement = document.getElementById("datedUntil");
+			const	scriptureReferenceElement = document.getElementById("scriptureReference");
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			const	combinedResultElement = document.getElementById("combinedResult");
 			
 			const	resultSetElement = document.getElementById("resultSet");
 			
@@ -57,6 +62,7 @@
 			{
 				if (isPostBack === false)
 				{
+					scriptLiteral9432.renderBibleVersionSelect();
 					querySubmit();
 					isPostBack = true;
 				}
@@ -70,8 +76,9 @@
 			{
 				var request = {};
 
-				request["datedFrom"] = new Date(datedFromElement.value);
-				request["datedUntil"] = new Date(datedUntilElement.value);
+				request["scriptureReference"] = scriptureReferenceElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				request["combinedResult"] = combinedResultElement.checked;
 				
 				const PostData = {
 					method: 'POST',
@@ -83,7 +90,7 @@
 					credentials: 'include'
 				}
 				PostData.body = JSON.stringify(request);
-				url = "/WordEngineering/WordCross/WhatIDoWithMyTimeIsHowILetItUse.asmx/Query";
+				url = "/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/WhatChildrenOurGroom";
 				try {
 					const response = await fetch(url, PostData)
 					.then(response => {
@@ -95,7 +102,6 @@
 					})	
 					} catch (e) {
 					resultSetElement.innerHTML = e;
-					console.log(e);
 				};
 			}
 			
