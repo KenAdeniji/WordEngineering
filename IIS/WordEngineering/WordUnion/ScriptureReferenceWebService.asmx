@@ -26,6 +26,7 @@ using InformationInTransit.UserInterface;
 ///				Danny, got out of Wienerschnitzel, exit westward.
 /// 2017-12-16	IAmAfraidOfTheMarkHelper.cs Created.
 /// 2022-01-15  SequenceQuery added.
+///	2024-11-04T02:01:00...2024-11-04T02:25:00 ScriptureReference_JoseGalera_MarinaFood_OneFiveNine20241104
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -210,6 +211,43 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
 
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String ScriptureReference_JoseGalera_MarinaFood_OneFiveNine20241104
+	(
+		int bookID,
+		int chapterID,
+		int verseID
+	)
+    {
+		String scriptureReference = (String) DataCommand.DatabaseCommand
+		(
+            String.Format
+			(
+				@"SELECT WordEngineering.dbo.udf_ScriptureReference_JoseGalera_MarinaFood_OneFiveNine20241104
+				(
+					{0},
+					{1},
+					{2}
+				)
+				",
+				bookID,
+				chapterID,
+				verseID
+			),
+            CommandType.Text,
+            InformationInTransit.DataAccess.DataCommand.ResultType.Scalar
+        );
+
+		string json = String.Format
+		(
+			"{{\"scriptureReference\": \"{0}\"}}",
+			scriptureReference
+		);
+
+		return json;
+    }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String SequenceQuery(String scriptureReference, string bibleVersion)
     {
 		String[] scriptureReferenceSubset = null;
@@ -237,13 +275,15 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
     {
 		String[] scriptureReferenceSubset = null;
 		DataSet result = null;
+		String sqlStatement = null;
 		var exactWords = ScriptureReferenceHelper.WhatChildrenOurGroom
 		(
 				scriptureReference,
 			ref	scriptureReferenceSubset,
 			ref result,
 				bibleVersion,
-				combinedResult
+				combinedResult,
+			ref	sqlStatement	
 		);
 		
 		string json = JsonConvert.SerializeObject(exactWords, Formatting.Indented);
