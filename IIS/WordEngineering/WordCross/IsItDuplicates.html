@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-11-08T15:47:00	Created.
+		2024-11-08T16:02:00	http://stackoverflow.com/questions/36631762/returning-html-with-fetch
+	-->
+	<head>
+		<title>Is it duplicates?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is it duplicates?"/>
+		<meta name="keywords" content="Statistics, data science"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<table align="center">
+				<tr>
+					<td><label for="URI">URI</label></td>
+					<td><input id="URI" type="uri" value="https://api.github.com/users/KenAdeniji" autofocus/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div align="center" id="statisticsResult"></div>
+			<div align="center" id="resultSet"></div>
+			<div align="center" id="dateResult"></div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/jstat/1.1.1/jstat.min.js"></script>
+		<script>
+			var 	isPostBack = false;
+			
+			const	URIElement = document.getElementById("URI");
+			
+			const	dateResultElement = Element = document.getElementById("dateResult");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	statisticsResultElement = Element = document.getElementById("statisticsResult");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				fetch(URIElement.value)
+				.then(response => {
+					// When the page is loaded convert it to text
+					return response.text();
+				})
+				.then(html => {
+					resultSetElement.innerHTML = html;
+					
+					var regularExpressionMatchesDateTime = html.match
+					(
+						RegularExpressionPatterns.datetime
+					);
+
+					dateResultElement.innerHTML = regularExpressionMatchesDateTime.join();
+					
+					for 
+					(
+						var index = 0, count = regularExpressionMatchesDateTime.length;
+						index < count;
+						++index
+					)
+					{
+						regularExpressionMatchesDateTime[index] = new Date(regularExpressionMatchesDateTime[index]);
+					}
+				
+					const 	dateTable = `
+							<table>
+								<caption>Date</caption>
+								<thead><tr><th>Key</th><th>Value</th></tr></thead>
+								<tbody>
+									<tr><td>Count</td><td>${regularExpressionMatchesDateTime.length}</td></tr>
+									<tr><td>Maximum</td><td>${jStat.max(regularExpressionMatchesDateTime)}</td></tr>
+									<tr><td>Minimum</td><td>${jStat.min(regularExpressionMatchesDateTime)}</td></tr>
+									<tr><td>Range</td><td>${jStat.range(regularExpressionMatchesDateTime)}</td></tr>
+								</tbody>
+							</table>
+					`;
+					statisticsResultElement.innerHTML = dateTable;
+
+				})
+				.catch(error => {
+					console.error("Failed to fetch page: ", error);
+					resultSetElement.innerHTML = error;
+				})
+  			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			const RegularExpressionPatterns = { 
+				datetime: /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})/g, //2023-11-11T08:33:00
+				doublequotes: /".*?"/g, //2023-11-11T08:33:00
+				number: /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g //2022-08-05T12:42:00 How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford http://howjavascriptworks.com/sample.html
+			};
+	</script>
+</body>
+</html>
