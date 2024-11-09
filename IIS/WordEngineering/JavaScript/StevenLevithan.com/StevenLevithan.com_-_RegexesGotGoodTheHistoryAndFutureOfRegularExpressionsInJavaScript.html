@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-11-09T07:23:00	Created.
+			http://www.smashingmagazine.com/2024/08/history-future-regular-expressions-javascript
+			Steven Levithan
+			2024-08-20
+			Regexes Got Good: The History And Future Of Regular Expressions In JavaScript
+		2024-11-09T07:23:00...2024-11-09T09:34:00 escape slashes, /
+			Literal constant versus (VS) variable
+var record = 'Admitted: 2024-01-01\nReleased: 2024-01-03';
+var re = /^Admitted: (?<admitted>\d{4}-\d{2}-\d{2})\nReleased: (?<released>\d{4}-\d{2}-\d{2})$/;
+			...
+			^DateOfBirth: (?<dateOfBirth>\d{4}-\d{2}-\d{2}) DateOfRelocation: (?<dateOfRelocation>\d{4}-\d{2}-\d{2})$
+		2024-11-09T09:40:00
+			This thing is not good that thou hast done. As the LORD liveth, ye are worthy to die, because ye have not kept your master, the LORD's anointed. And now see where the king's spear is, and the cruse of water that was at his bolster.
+			1 Samuel 26:16
+From: 2023-10-07 	
+Until: 	2024-11-09
+Numerator: 	25.4710308
+Denominator: 	100
+Date Difference: 	399
+Ratio: 	0.254710308
+Interval: 	101.629412892
+DateTime Computed: 	Tue Jan 16 2024 00:00:00 GMT-0800 (Pacific Standard
+Time)
+		2024-11-09T10:00:00	
+			Regular Expression match() return a dynamic value.
+				It is not type.
+	-->
+	<head>
+		<title>StevenLevithan.com_-_RegexesGotGoodTheHistoryAndFutureOfRegularExpressionsInJavaScript</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="StevenLevithan.com_-_RegexesGotGoodTheHistoryAndFutureOfRegularExpressionsInJavaScript"/>
+		<meta name="keywords" content="Steven Levithan, Jew, Facebook, Regular Expressions (RegEx)"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 90vw;
+	}
+		</style>
+		<div>
+				<label for="namedCaptureInput">Named Capture</label>
+				<br/>
+				<textarea id="namedCaptureInput" autofocus>DateOfBirth: 1967-10-15 DateOfRelocation: 1999-01-18</textarea>
+				<br/>
+				
+				<label for="namedCaptureRegularExpression">Named Capture Regular Expression</label>
+				<br/>
+				<textarea id="namedCaptureRegularExpression">^DateOfBirth: (?<dateOfBirth>\d{4}-\d{2}-\d{2}) DateOfRelocation: (?<dateOfRelocation>\d{4}-\d{2}-\d{2})$</textarea>
+				<br/>
+				
+				<label for="namedCaptureResult">Named Capture Result</label>
+				<br/>
+				<div id="namedCaptureResult"/></div>
+				<br/>
+
+				<input type="submit" id="submitQuery" align="center">
+				<br/>
+				<div align="center" id="resultSet"></div>
+		</div>
+		<script>
+			var 	isPostBack = false;
+			
+			const	namedCaptureInputElement = document.getElementById("namedCaptureInput");
+			const	namedCaptureRegularExpressionElement = document.getElementById("namedCaptureRegularExpression");
+			const	namedCaptureResultElement = document.getElementById("namedCaptureResult");
+		
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+var record = 'Admitted: 2024-01-01\nReleased: 2024-01-03';
+var re = /^Admitted: (?<admitted>\d{4}-\d{2}-\d{2})\nReleased: (?<released>\d{4}-\d{2}-\d{2})$/;
+var match = record.match(re);
+console.log(match.groups);
+/* → {
+  admitted: '2024-01-01',
+  released: '2024-01-03'
+} */
+
+
+				var regex = new RegExp( namedCaptureRegularExpressionElement.value );
+				var namedCaptureMatches = namedCaptureInputElement.value.match
+				(
+					regex
+				);
+				namedCaptureResultElement.innerHTML = namedCaptureMatches;
+
+  			}
+			
+			window.addEventListener("load", pageLoad, false);
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+	</script>
+</body>
+</html>
