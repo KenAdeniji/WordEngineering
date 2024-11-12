@@ -231,7 +231,7 @@
 			<h2 id="Theory">Theory</h2>
 			
 			<h3 id="BibleDatabase">The Bible Database</h3>
-				
+
 			<h4 id="ScriptureTable">The Scripture Table</h4>
 			<p>
 				The content of the Bible SQL Server database is principally the Scripture table.
@@ -856,6 +856,47 @@
 				This is subjective work; the author applys intelligence to find patterns and resemblances in the Bible.
 			</p>
 
+			<q cite="#bibliographyAllenGTaylor2024" datetime="2024-11-05T07:32:00">
+
+			<table id="FunctionalDependencies" datetime="2024-11-05T07:32:00">
+				<caption datetime="2024-11-05T07:33:00">Functional Dependencies</caption>
+				<thead>
+					<tr>
+						<th>Determinant</th>
+						<th>Functionally Dependent</th>
+						<th>Implementation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Bible.Scripture.BookID</td>
+						<td>Bible.Scripture_View.BookTitle</td>
+						<td>Bible.udf_BibleBookIDTitle()</td>
+					</tr>
+					<tr>
+						<td>Bible.Scripture.BookID, Bible.Scripture.ChapterID, Bible.Scripture.VerseID</td>
+						<td>Bible.Scripture_View.ScriptureReference</td>
+						<td>Bible.udf_ScriptureReference()</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Determination is achieved through computed columns.</th>
+					</tr>
+				</tfoot>
+			</table>			
+		
+			<h3 id="RelationalDatabaseHierarchy" datetime="2024-11-05T08:11:00">Relational Database Hierarchy</h4>
+			
+			<ol datetime="2024-11-05T08:18:00">
+				<li>Catalog: Is a collection of databases, for example, Bible, WordEngineering, URI.</li>
+				<li>Schema: Is a collection of objects, which may include tables, views, indexes, stored procedures, triggers.</li>
+				<li>Table: Is 2-dimensional with horizontal rows and vertical columns.</li>
+				<li>Column: It is a physical actualized attribute.</li>
+			</ol>
+			
+			</q> (Allen G. Taylor, 2024).
+			
 			<table datetime="2024-10-28T17:50:00" id="www.JesusInTheLamb.com">
 				<caption datetime="2024-10-28T18:11:00">www.JesusInTheLamb.com</caption>
 				<thead>
@@ -14498,12 +14539,54 @@ Execution time:     84.46 seconds (00:01:24.46)
 			<h3 id="FutureWork">Future Work</h3>
 
 			<p datetime="2024-09-06T23:57:00">
-				2024-09-06T23:57:00 Unedited... column
 				<ul>
+					<li 
+						datetime="2024-11-12T01:57:00"
+						data-url="en.wikipedia.org/wiki/Muhammad_al-Mahdi"
+						data-Commentary="Occultation"
+					>
+						2024-11-12T01:57:00
+						<ul>
+							<li>The National Basketball Association (NBA) released the profile of an NBA player.</li>
+							<li 
+								data-ContactID="1363"
+								data-Commentary="In the center, there were law enforcement agents, but I was not arrested. When I said he, I am referring to myself."
+							>
+								My twin sibling said he received a religious video, and he doesn't want to go to work.
+								There were arrests, but he was excluded.
+							</li>
+						</ul>
+						<br/>
+						2024-11-12T02:08:00
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=You%20are%20release.%20Once,%20you%20fail%20a%20test."
+							datetime="2024-11-12T02:08:00"
+							data-HisWordID="164421"
+							data-ContactID="3586"
+							data-url="backtothebible.org"
+						>
+							You are release. Once, you fail a test.
+						</a>
+						<br/>
+						2024-11-12T02:11:00
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20am%20I%20transparent%3F"
+							datetime="2024-11-12T02:11:00"
+							data-HisWordID="164422"
+							data-ContactID="3586"
+							data-url="backtothebible.org"
+						>
+							How am I transparent?
+						</a>
+						<br/>
+						I no longer... take further input.
+					</li>
 					<li 
 						datetime="2024-09-07T00:20:00"
 						data-url="en.wikipedia.org/wiki/Tears_in_Heaven"
 					>
+					2024-09-06T23:57:00 Unedited... column.
+					<br/>
 The general format of the Bible is to place the book titles on the top, repeat the book titles and chapter numbers at the beginning of each chapter, and place the verse number beside its text.
 In so doing, there are alphanumeric book titles, and numeric chapters and verses. For the work of the author there are tables with rows and columns.
 					</li>
@@ -14577,6 +14660,52 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 							Implementation detail?
 						</a>
 						<span datetime="2024-10-27T20:13:00" data-Commentary="Modeling was what I brought... to the table.">Modeling.</span>
+					</li>
+					<li 
+						datetime="2024-11-07T11:30:00"
+						data-HisWordID="164389"
+						data-Filename="URIMaintenancePage.aspx.cs"
+					>
+						2024-11-07T11:30:00 Only update
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=columns%20with%20values."
+							datetime="2024-11-07T11:30:00"
+							data-HisWordID="164389"
+							data-Filename="URIMaintenancePage.aspx.cs"
+						>
+							columns with values.
+						</a>
+						2024-11-07T11:39:00 XML and JSON
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=may%20have%20placeholders."
+							datetime="2024-11-07T11:39:00"
+							data-HisWordID="164390"
+							data-Filename="URIMaintenancePage.aspx.cs"
+							data-ContactID="1307"
+						>
+							may have placeholders.
+						</a>
+						As with the SQL Update statement.
+						<br/>
+						Dynamic SQL may lead to SQL injection.
+						Parameterized query which is attainable by first reading the 
+						column values, and setting the values of the columns to refresh
+						is a viable alternative.
+						
+						What is the current row content, what columns need updating?
+						
+						2024-11-07T12:26:00
+						<a 
+							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Why%20are%20we%20not%20the%20same"
+							datetime="2024-11-07T12:26:00"
+							data-HisWordID="164391"
+							data-Filename="URIMaintenancePage.aspx.cs"
+							data-ContactID="5080"
+							data-url="csharpdeveloper.wordpress.com/2019/08/18/sql-servers-sp_executesql-does-not-protect-you-from-sql-injection"
+							data-ScriptureReference="Matthew 5:17"
+						>
+							Why are we not the same?
+						</a>
 					</li>
 					<li 
 						datetime="2024-11-02T19:55:00"

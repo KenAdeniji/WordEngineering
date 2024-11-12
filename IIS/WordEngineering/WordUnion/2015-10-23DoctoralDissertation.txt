@@ -470,6 +470,27 @@ First, inside and last dates.
 This is subjective work; the author applys intelligence to find patterns
 and resemblances in the Bible.
 
+"[]{cite="#bibliographyAllenGTaylor2024"}"
+
+  Determinant                                                                  Functionally Dependent                    Implementation
+  ---------------------------------------------------------------------------- ----------------------------------------- --------------------------------
+  Bible.Scripture.BookID                                                       Bible.Scripture_View.BookTitle            Bible.udf_BibleBookIDTitle()
+  Bible.Scripture.BookID, Bible.Scripture.ChapterID, Bible.Scripture.VerseID   Bible.Scripture_View.ScriptureReference   Bible.udf_ScriptureReference()
+  Determination is achieved through computed columns.                                                                    
+
+  : Functional Dependencies {#FunctionalDependencies}
+
+Relational Database Hierarchy
+
+1.  Catalog: Is a collection of databases, for example, Bible,
+    WordEngineering, URI.
+2.  Schema: Is a collection of objects, which may include tables, views,
+    indexes, stored procedures, triggers.
+3.  Table: Is 2-dimensional with horizontal rows and vertical columns.
+4.  Column: It is a physical actualized attribute.
+
+(Allen G. Taylor, 2024).
+
   Part                                                                    Example          Commentary
   ----------------------------------------------------------------------- ---------------- -------------------------------------------------------------
   Sub-domain                                                              www              A sub-domain defaults to www.
@@ -7819,9 +7840,23 @@ Deuteronomy
 
 ### Future Work {#FutureWork}
 
-2024-09-06T23:57:00 Unedited\... column
+-   2024-11-12T01:57:00
+    -   The National Basketball Association (NBA) released the profile
+        of an NBA player.
+    -   My twin sibling said he received a religious video, and he
+        doesn\'t want to go to work. There were arrests, but he was
+        excluded.
 
--   The general format of the Bible is to place the book titles on the
+    \
+    2024-11-12T02:08:00 [You are release. Once, you fail a
+    test.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=You%20are%20release.%20Once,%20you%20fail%20a%20test.){datetime="2024-11-12T02:08:00"
+    hiswordid="164421" contactid="3586" url="backtothebible.org"}\
+    2024-11-12T02:11:00 [How am I
+    transparent?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20am%20I%20transparent%3F){datetime="2024-11-12T02:11:00"
+    hiswordid="164422" contactid="3586" url="backtothebible.org"}\
+    I no longer\... take further input.
+-   2024-09-06T23:57:00 Unedited\... column.\
+    The general format of the Bible is to place the book titles on the
     top, repeat the book titles and chapter numbers at the beginning of
     each chapter, and place the verse number beside its text. In so
     doing, there are alphanumeric book titles, and numeric chapters and
@@ -7857,6 +7892,23 @@ Deuteronomy
     scripturereference="Genesis 18:19"}
     [Modeling.]{datetime="2024-10-27T20:13:00"
     commentary="Modeling was what I brought... to the table."}
+-   2024-11-07T11:30:00 Only update [columns with
+    values.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=columns%20with%20values.){datetime="2024-11-07T11:30:00"
+    hiswordid="164389" filename="URIMaintenancePage.aspx.cs"}
+    2024-11-07T11:39:00 XML and JSON [may have
+    placeholders.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=may%20have%20placeholders.){datetime="2024-11-07T11:39:00"
+    hiswordid="164390" filename="URIMaintenancePage.aspx.cs"
+    contactid="1307"} As with the SQL Update statement.\
+    Dynamic SQL may lead to SQL injection. Parameterized query which is
+    attainable by first reading the column values, and setting the
+    values of the columns to refresh is a viable alternative. What is
+    the current row content, what columns need updating?
+    2024-11-07T12:26:00 [Why are we not the
+    same?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Why%20are%20we%20not%20the%20same){datetime="2024-11-07T12:26:00"
+    hiswordid="164391" filename="URIMaintenancePage.aspx.cs"
+    contactid="5080"
+    url="csharpdeveloper.wordpress.com/2019/08/18/sql-servers-sp_executesql-does-not-protect-you-from-sql-injection"
+    scripturereference="Matthew 5:17"}
 -   2024-11-02T19:55:00 [What do we build? And, how do we build
     it?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20do%20we%20build%3F%20And,%20how%20do%20we%20build%20it%3F){datetime="2024-11-02T19:55:00"
     hiswordid="164328" contactid="2765"
