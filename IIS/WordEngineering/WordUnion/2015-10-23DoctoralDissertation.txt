@@ -7855,6 +7855,30 @@ Deuteronomy
     transparent?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20am%20I%20transparent%3F){datetime="2024-11-12T02:11:00"
     hiswordid="164422" contactid="3586" url="backtothebible.org"}\
     I no longer\... take further input.
+-   2024-11-12T08:07:00 [How do I accommodate\... the future\... as
+    Myself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20do%20I%20accommodate...%20the%20future...%20as%20Myself%3F){datetime="2024-11-12T08:07:00"
+    hiswordid="164426" url="james@xphealth.co"}\
+    The 2 upgrades to-date of the primary keys and/or unique indexes
+    have been:
+    1.  IHaveDecidedToWorkOnAGradualImprovingSystem database Contact
+        table: Add the organization name to the unique composite index.
+
+            CREATE UNIQUE NONCLUSTERED INDEX [IX_Contact_Names] ON [dbo].[Contact]
+            (
+                [FirstName] ASC,
+                [MiddleName] ASC,
+                [LastName] ASC,
+                [NickName] ASC,
+                [OrganizationName] ASC
+            )
+
+    2.  WordEngineering database HisWord table: Make the HisWordID
+        column the primary key, and add the content of the dream table
+        to make a foreign key.\
+        2024-11-12T08:51:00 [We are not where we want to be\... where we
+        are set to
+        be.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=We%20are%20not%20where%20we%20want%20to%20be...%20where%20we%20are%20set%20to%20be.){datetime="2024-11-12T08:51:00"
+        hiswordid="164427" url="james@xphealth.co"}
 -   2024-09-06T23:57:00 Unedited\... column.\
     The general format of the Bible is to place the book titles on the
     top, repeat the book titles and chapter numbers at the beginning of
