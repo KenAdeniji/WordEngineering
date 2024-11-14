@@ -1,0 +1,41 @@
+Server Error in '/WordEngineering' Application.
+The connection name 'URI' was not found in the applications configuration or the connection string is empty.
+Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+Exception Details: System.InvalidOperationException: The connection name 'URI' was not found in the applications configuration or the connection string is empty.
+
+Source Error:
+
+
+Line 284:			<tr align="center">
+Line 285:				<td colspan="2">
+Line 286:					<asp:SqlDataSource
+Line 287:						ID="SqlDataSourceTable" 
+Line 288:						Runat="server"
+
+
+Source File: d:\WordEngineering\IIS\WordEngineering\WordOfGod\URIMaintenanceWebForm.aspx    Line: 286
+
+Stack Trace:
+
+
+[InvalidOperationException: The connection name 'URI' was not found in the applications configuration or the connection string is empty.]
+   System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionString(String connectionStringName) +1933825
+   ASP.wordofgod_urimaintenancewebform_aspx.__BuildControlSqlDataSourceTable() in d:\WordEngineering\IIS\WordEngineering\WordOfGod\URIMaintenanceWebForm.aspx:286
+   ASP.wordofgod_urimaintenancewebform_aspx.__BuildControlformURI() in d:\WordEngineering\IIS\WordEngineering\WordOfGod\URIMaintenanceWebForm.aspx:12
+   ASP.wordofgod_urimaintenancewebform_aspx.__BuildControlTree(wordofgod_urimaintenancewebform_aspx __ctrl) in d:\WordEngineering\IIS\WordEngineering\WordOfGod\URIMaintenanceWebForm.aspx:1
+   ASP.wordofgod_urimaintenancewebform_aspx.FrameworkInitialize() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\wordengineering\218b4261\a1e2bc03\App_Web_h5yitrga.1.cs:0
+   System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +52
+   System.Web.UI.Page.ProcessRequest() +79
+   System.Web.UI.Page.ProcessRequest(HttpContext context) +74
+   ASP.wordofgod_urimaintenancewebform_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\wordengineering\218b4261\a1e2bc03\App_Web_h5yitrga.1.cs:0
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +537
+   System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step) +172
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +93
+
+
+Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.9282.0 
+
+2024-11-08T08:00:00
+http://localhost/Wordengineering/WordOfGod/URIMaintenanceWebForm.aspx
+System.Exception: Cannot insert the value NULL into column 'Dated', table 'URI.dbo.URIWordEngineering'; column does not allow nulls. INSERT fails. The statement has been terminated. 

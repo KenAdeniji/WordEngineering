@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2024-10-31T00:18:00	Created.
+			2024-10-29T07:42:00
+Immediate Interview :: Power BI Developer - Onsite - Long Beach, CA
+Sai Charan Rama sid.s@rsrit.com
+​You​
+Hi,
+Hope you’re doing great!!
+This is Charan from Reliable Software. We have a position with one of our clients. Below are a few details pertaining to the job. Please take a look at it and let me know if you would like to be considered for the opportunity. Please share with me your updated resume.
+                                                                 Power BI Developer
+Onsite
+Location: Long Beach, CA
+Skills:
+Strong Power BI and SQL Server (writing/troubleshooting very complex queries and stored procedures are must) knowledge with excellent written and verbal communication skill. 
+Best Regards,
+Sai Charan
+IT Talent Acquisition
+Sid.s@rsrit.com
+To unsubscribe from future emails or to update your email preferences click here 
+			2024-10-31T06:12:00
+				http://localhost/wordengineering/WordCross/HowDidHeLetHimToChoose_LedHim.asmx/Query?bibleVersion=KingJamesVersion
+			2024-10-31T06:12:00 http://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams	
+		-->
+		<title>I want to do a reporting service that give me this ability... or do I want to continue to do Client/Server?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I want to do a reporting service that give me this ability... or do I want to continue to do Client/Server?"/>
+		<meta name="keywords" content="Web services requester, Reporting Services, Power BI"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="../WordUnion/9432.css">`
+			);
+		</script>
+		<form method="post" id="formed" action="javascript:void(0);">
+			<div align="center">
+				<label for="webServiceURL" align="left">Web service URL: </label>
+				<input 
+					type="url"
+					id="webServiceURL"
+					size="50"
+					align="left"
+					value="http://localhost/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx/Query?word=Get a page"
+				/>
+				<br/>
+				<div id="inputSet"></div>
+				<input type="submit" id="submitQuery">
+				<div id="outputSet"></div>
+			</div>
+		</form>
+		<script>
+			const formedElement = document.getElementById("formed");
+
+			const webServiceURLElement = document.getElementById("webServiceURL");
+		
+			const inputSetElement = document.getElementById("inputSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const outputSetElement = document.getElementById("outputSet");
+			
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var urlParams = new URLSearchParams(window.location.search);
+					
+					var webServiceURLValue = urlParams.get("webServiceURL");
+					if (webServiceURLValue)
+					{
+						webServiceURLElement.value = webServiceURLValue;
+					}	
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				const url = new URL(webServiceURLElement.value);
+				const urlSearch = url.search;
+				const searchParams = new URLSearchParams(url.search);
+
+				let path = webServiceURLElement.value.split("?")[0];
+
+				var request = {};
+		
+				searchParams.forEach((value, key) => {
+					request[key] = value;
+				});
+				
+				var requestJson = JSON.stringify(request);		
+				
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+
+				PostData.body = requestJson; //JSON.stringify(searchParams);
+
+				try {
+					const response = await fetch(path, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						outputSetElement.innerHTML = responseJSON.d;
+					})	
+					} catch (e) {
+					outputSetElement.innerHTML = e;
+				};
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
