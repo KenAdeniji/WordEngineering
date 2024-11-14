@@ -25,64 +25,58 @@ IF %id% == 15 GOTO WorkDone
 GOTO Exit
 
 :BCP
-xcopy e:\BCP c:\BCP /d /e /s /y
-xcopy e:\BCP d:\BCP /d /e /s /y
-xcopy e:\BCP f:\BCP /d /e /s /y
-xcopy e:\BCP \\Noor\e$\BCP /d /e /s /y
-REM xcopy e:\BCP \\Harvest\e$\BCP /d /e /s /y
-xcopy e:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
+xcopy d:\BCP c:\BCP /d /e /s /y
+xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
+xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
+REM xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
+xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :IISLog
-xcopy c:\inetpub d:\inetpub /d /e /s /y
-xcopy c:\inetpub e:\inetpub /d /e /s /y
-xcopy c:\inetpub e:\inetpub /d /e /s /y
+xcopy d:\inetpub c:\inetpub /d /e /s /y
+xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
 xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
 xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
 xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
 GOTO Exit
 
 :mssqlscripter
-REM mssql-scripter -S localhost -d WordEngineering -U sa ––schema-and-data -f E:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
-REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;Trusted_Connection=Yes;" --schema-and-data -f E:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
+REM mssql-scripter -S localhost -d WordEngineering -U sa ––schema-and-data -f d:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
+REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;Trusted_Connection=Yes;" --schema-and-data -f d:\SQLServerDataManipulationLanguageDML\WordEngineering\2024-08-21WordEngineering_SchemaData.sql
 GOTO Exit
 
 :Node.js
-xcopy e:\Node.js c:\Node.js /d /e /s /y
-xcopy e:\Node.js d:\Node.js /d /e /s /y
-xcopy e:\Node.js f:\Node.js /d /e /s /y
-xcopy e:\Node.js \\Noor\e$\Node.js /d /e /s /y
-REM xcopy e:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
+xcopy d:\Node.js c:\Node.js /d /e /s /y
+xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
+xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
+REM xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
-xcopy e:\Rust c:\Rust /d /e /s /y
-xcopy e:\Rust d:\Rust /d /e /s /y
-xcopy e:\Rust f:\Rust /d /e /s /y
-xcopy e:\Rust \\Noor\e$\Rust /d /e /s /y
-xcopy e:\Rust \\Harvest\e$\Rust /d /e /s /y
-xcopy e:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
+xcopy d:\Rust c:\Rust /d /e /s /y
+xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
+xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
+xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
+xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
 :ScriptDB
 scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
 
 :SQLServerBackup
-xcopy e:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
-xcopy e:\SQLServerBackup d:\SQLServerBackup /d /e /s /y
-xcopy e:\SQLServerBackup f:\SQLServerBackup /d /e /s /y
-xcopy e:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
-xcopy e:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
-xcopy e:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
 GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
-xcopy e:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy e:\SQLServerDataDefinitionLanguageDDL d:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy e:\SQLServerDataDefinitionLanguageDDL f:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy e:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy e:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy e:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 GOTO Exit
 
 :SQLServerDataFiles
@@ -90,40 +84,37 @@ setlocal
 set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
-xcopy E:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
-REM xcopy E:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
-xcopy E:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
-xcopy E:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
-xcopy E:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
+REM xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
 rem  net continue %_service% 
 net start  %_service% /y
 endlocal
 GOTO Exit
 
 :SQLServerDataManipulationLanguageDML
-xcopy e:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy e:\SQLServerDataManipulationLanguageDML d:\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy e:\SQLServerDataManipulationLanguageDML f:\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy e:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy e:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy e:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
 GOTO Exit
 
 :SQLServerExport
-xcopy e:\SQLServerExport c:\SQLServerExport /d /e /s /y
-xcopy e:\SQLServerExport d:\SQLServerExport /d /e /s /y
-xcopy e:\SQLServerExport f:\SQLServerExport /d /e /s /y
-xcopy e:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
-xcopy e:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
-xcopy e:\WebAssembly c:\WebAssembly /d /e /s /y
-xcopy e:\WebAssembly d:\WebAssembly /d /e /s /y
-xcopy e:\WebAssembly f:\WebAssembly /d /e /s /y
-xcopy e:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
-xcopy e:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
-xcopy e:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
 GOTO Exit
 
 :WinScp
@@ -131,56 +122,53 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
-xcopy e:\WordEngineering c:\WordEngineering /d /e /s /y
-xcopy e:\WordEngineering d:\WordEngineering /d /e /s /y
-xcopy e:\WordEngineering f:\WordEngineering /d /e /s /y
-xcopy e:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
-xcopy e:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
-xcopy e:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
 GOTO Exit
 
 :WordOfGod
-xcopy e:\WordOfGod c:\WordOfGod /d /e /s /y
-xcopy e:\WordOfGod d:\WordOfGod /d /e /s /y
-xcopy e:\WordOfGod f:\WordOfGod /d /e /s /y
-xcopy e:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
-xcopy e:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
-xcopy e:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
 GOTO Exit
 
 :WorkDone
-xcopy e:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
-xcopy e:\2024-02-02T2020WorkDone d:\2024-02-02T2020WorkDone /d /e /s /y
-xcopy e:\2024-02-02T2020WorkDone f:\2024-02-02T2020WorkDone /d /e /s /y
-xcopy e:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
+xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
+xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
 GOTO Exit
 
 :Backup
-BACKUP DATABASE Account TO DISK = 'e:\SQLServerBackup\Account\Account_2018-04-30.bak' WITH INIT
-BACKUP DATABASE ASPNetDB TO DISK = 'e:\SQLServerBackup\ASPNetDB\ASPNetDB_2017-11-03.bak' WITH INI
-BACKUP DATABASE Bible TO DISK = 'e:\SQLServerBackup\Bible\Bible_2020-03-23.bak' WITH INIT
-BACKUP DATABASE BibleDictionary TO DISK = 'e:\SQLServerBackup\BibleDictionary\BibleDictionary_2017-03-02T1518.bak' WITH INIT
-BACKUP DATABASE CodingSample TO DISK = 'e:\SQLServerBackup\CodingSample\CodingSample_2019-06-23.bak' WITH INIT
-BACKUP DATABASE ElectronicCopy TO DISK = 'e:\SQLServerBackup\ElectronicCopy\ElectronicCopy_2017-11-02T2114.bak' WITH INIT
-BACKUP DATABASE HomeAbroad TO DISK = 'e:\SQLServerBackup\HomeAbroad\HomeAbroa2018-06-25.bak' WITH INIT
-BACKUP DATABASE IHaveDecidedToWorkOnAGradualImprovingSystem TO DISK = 'e:\SQLServerBackup\IHaveDecidedToWorkOnAGradualImprovingSystem\IHaveDecidedToWorkOnAGradualImprovingSystem_2019-04-12.bak' WITH INIT
-BACKUP DATABASE IShallBeTheirInheritance TO DISK = 'e:\SQLServerBackup\IShallBeTheirInheritance\IShallBeTheirInheritance_2019-08-17.bak' WITH INIT
-BACKUP DATABASE Nortdwind TO DISK = 'e:\SQLServerBackup\Nortdwind\Northwin2018-01-01.bak' WITH INIT
-BACKUP DATABASE RatingRank TO DISK = 'e:\SQLServerBackup\RatingRank\RatingRank_2018-01-01.bak' WITH INIT
-BACKUP DATABASE SQLSharp TO DISK = 'e:\SQLServerBackup\SQLSharp\SQLSharp_2020-05-08.bak' WITH INIT
-BACKUP DATABASE URI TO DISK = 'e:\SQLServerBackup\URI\URI_2019-04-12.bak' WITH INIT
-BACKUP DATABASE WordEngineering TO DISK = 'e:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak' WITH INIT
+BACKUP DATABASE Account TO DISK = 'd:\SQLServerBackup\Account\Account_2018-04-30.bak' WITH INIT
+BACKUP DATABASE ASPNetDB TO DISK = 'd:\SQLServerBackup\ASPNetDB\ASPNetDB_2017-11-03.bak' WITH INI
+BACKUP DATABASE Bible TO DISK = 'd:\SQLServerBackup\Bible\Bible_2020-03-23.bak' WITH INIT
+BACKUP DATABASE BibleDictionary TO DISK = 'd:\SQLServerBackup\BibleDictionary\BibleDictionary_2017-03-02T1518.bak' WITH INIT
+BACKUP DATABASE CodingSample TO DISK = 'd:\SQLServerBackup\CodingSample\CodingSample_2019-06-23.bak' WITH INIT
+BACKUP DATABASE ElectronicCopy TO DISK = 'd:\SQLServerBackup\ElectronicCopy\ElectronicCopy_2017-11-02T2114.bak' WITH INIT
+BACKUP DATABASE HomeAbroad TO DISK = 'd:\SQLServerBackup\HomeAbroad\HomeAbroa2018-06-25.bak' WITH INIT
+BACKUP DATABASE IHaveDecidedToWorkOnAGradualImprovingSystem TO DISK = 'd:\SQLServerBackup\IHaveDecidedToWorkOnAGradualImprovingSystem\IHaveDecidedToWorkOnAGradualImprovingSystem_2019-04-12.bak' WITH INIT
+BACKUP DATABASE IShallBeTheirInheritance TO DISK = 'd:\SQLServerBackup\IShallBeTheirInheritance\IShallBeTheirInheritance_2019-08-17.bak' WITH INIT
+BACKUP DATABASE Nortdwind TO DISK = 'd:\SQLServerBackup\Nortdwind\Northwin2018-01-01.bak' WITH INIT
+BACKUP DATABASE RatingRank TO DISK = 'd:\SQLServerBackup\RatingRank\RatingRank_2018-01-01.bak' WITH INIT
+BACKUP DATABASE SQLSharp TO DISK = 'd:\SQLServerBackup\SQLSharp\SQLSharp_2020-05-08.bak' WITH INIT
+BACKUP DATABASE URI TO DISK = 'd:\SQLServerBackup\URI\URI_2019-04-12.bak' WITH INIT
+BACKUP DATABASE WordEngineering TO DISK = 'd:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak' WITH INIT
 
-BACKUP DATABASE Master TO DISK = 'e:\SQLServerBackup\Master\Master_2017-01-02.bak' WITH INIT
-BACKUP DATABASE Model TO DISK = 'e:\SQLServerBackup\Model\Model_2017-01-02.bak' WITH INIT
-BACKUP DATABASE Msdb TO DISK = 'e:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WITH INIT
+BACKUP DATABASE Master TO DISK = 'd:\SQLServerBackup\Master\Master_2017-01-02.bak' WITH INIT
+BACKUP DATABASE Model TO DISK = 'd:\SQLServerBackup\Model\Model_2017-01-02.bak' WITH INIT
+BACKUP DATABASE Msdb TO DISK = 'd:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WITH INIT
 
-BACKUP DATABASE AManDevelopedInAll TO DISK = 'e:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
+BACKUP DATABASE AManDevelopedInAll TO DISK = 'd:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
 
 :DbccCheckIdent
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 24539);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..EmailAddress', RESEED, 22139);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 24539);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..StreetAddress', RESEED, 21982);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 14777);
 
 DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
@@ -193,23 +181,23 @@ DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 25788);
 DBCC CHECKIDENT ('URI..UriPocket', RESEED, 22);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 62859);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1812);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 7911);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160176);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160437);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15352);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15411);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6501);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6700);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 163814);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 167319);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 168265);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 662);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4218);
-DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 4517);
+DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5036);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2050);
@@ -224,12 +212,12 @@ INSERT URI.[dbo].[URIWordEngineering] ([SequenceOrderId], [Dated], [Title], [URI
 SET IDENTITY_INSERT URI..URIWordEngineering OFF
 
 :Restore
-RESTORE DATABASE [AManDevelopedInAll] FROM  DISK = N'E:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak'
+RESTORE DATABASE [AManDevelopedInAll] FROM  DISK = N'd:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak'
 
 :WindowsToCentOS
-pscp -pw LinuxPassword e:\SQLServerBackup\IHaveDecidedToWorkOnAGradualImprovingSystem\IHaveDecidedToWorkOnAGradualImprovingSystem_2020-02-13.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/IHaveDecidedToWorkOnAGradualImprovingSystem/IHaveDecidedToWorkOnAGradualImprovingSystem_2020-02-13.bak
-pscp -pw LinuxPassword e:\SQLServerBackup\URI\URI_2020-02-17.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/URI/URI_2020-02-17.bak
-pscp -pw LinuxPassword e:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/WordEngineering/WordEngineering_2020-02-18.bak
+pscp -pw LinuxPassword d:\SQLServerBackup\IHaveDecidedToWorkOnAGradualImprovingSystem\IHaveDecidedToWorkOnAGradualImprovingSystem_2020-02-13.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/IHaveDecidedToWorkOnAGradualImprovingSystem/IHaveDecidedToWorkOnAGradualImprovingSystem_2020-02-13.bak
+pscp -pw LinuxPassword d:\SQLServerBackup\URI\URI_2020-02-17.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/URI/URI_2020-02-17.bak
+pscp -pw LinuxPassword d:\SQLServerBackup\WordEngineering\WordEngineering_2020-02-18.bak kadeniji@10.0.4.101:/home/kadeniji/SQLServerBackup/WordEngineering/WordEngineering_2020-02-18.bak
 
 :SQLScript
 
@@ -251,8 +239,8 @@ http://KenAdeniji.WordPress.com/2015/11/20/ken-adenijis-resume
 http://KenAdeniji.WordPress.com/2015/12/06/2015-10-23doctoraldissertation
 http://KenAdeniji.WordPress.com/2019/10/14/2019-10-05artifactdescription
 http://KenAdeniji.WordPress.com
-E:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
-E:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
+d:\WordEngineering\IIS\WordEngineering\Resume\KenAdenijiResume.pdf
+d:\WordEngineering\IIS\WordEngineering\WordUnion\2015-10-23DoctoralDissertation.pdf
 C:\Users\kadeniji\OneDrive\WordEngineering\IIS\WordEngineering\WordUnion
 KenAdeniji@hotmail.com
 
@@ -262,7 +250,7 @@ KenAdeniji@hotmail.com
 Microsoft SQL Server Management Studio
 No row was updated.
 The data in row 1 was not committed.
-Error Source: .NET SQL Client Data Provider.
+Error Sourcd: .NET SQL Client Data Provider.
 Error Message Execution Timeout Expired:
 The timeout perior elapsed prior to completion
 of the operation or the server is not responding.
@@ -286,7 +274,7 @@ For the dates columns to be accurate, the author has to be consistent with time.
 Microsoft SQL Server Management Studio
 No row was updated.
 The data in row 1 was not committed.
-Error Source: .NET SQL Client Data Provider.
+Error Sourcd: .NET SQL Client Data Provider.
 Error Message Execution Timeout Expired:
 The timeout perior elapsed prior to completion
 of the operation or the server is not responding.
@@ -299,20 +287,20 @@ joshclose.github.io/CsvHelper 				2019-04-12 	52237
 19:39 EthanMarcotte Responsive Design
 
 Server Error in '/InformationInTransit' Application.
-Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Error: 8645, Severity: 17, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
 
-Exception Details: System.Data.SqlClient.SqlException: Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Exception Details: System.Data.SqlClient.SqlException: Error: 8645, Severity: 17, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 
 
 Source Error:
 
 An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.
 
-Stack Trace:
+Stack Tracd:
 
 
-[SqlException (0x80131904): Error: 8645, Severity: 17, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+[SqlException (0x80131904): Error: 8645, Severity: 17, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 ]
    System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +3331072
    System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose) +334
@@ -341,13 +329,13 @@ Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version
 
 Server Error in '/InformationInTransit' Application.
 There is insufficient system memory in resource pool 'internal' to run this query.
-Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Error: 596, Severity: 21, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 
 A severe error occurred on the current command.  The results, if any, should be discarded.
 Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
 
 Exception Details: System.Data.SqlClient.SqlException: There is insufficient system memory in resource pool 'internal' to run this query.
-Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Error: 596, Severity: 21, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 
 A severe error occurred on the current command.  The results, if any, should be discarded.
 
@@ -355,11 +343,11 @@ Source Error:
 
 An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.
 
-Stack Trace:
+Stack Tracd:
 
 
 [SqlException (0x80131904): There is insufficient system memory in resource pool 'internal' to run this query.
-Error: 596, Severity: 21, State: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
+Error: 596, Severity: 21, Statd: 1. (Params:). The error is printed in terse mode because there was error during formatting. Tracing, ETW, notifications etc are skipped.
 
 A severe error occurred on the current command.  The results, if any, should be discarded.]
    System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +3331072
@@ -484,8 +472,8 @@ ORDER BY HisWordID DESC
 2024-01-08T17:53:00	Love baba ti won.
 2024-01-12T04:48:00	WinScp, SFTP, FTP, WebDav, S3, and SCP client is not responding. If you close the program, you might lose information. Close the program. Wait for the program to respond.
 2024-01-25T09:25:00 microsoft windows operating system user interface (UI) error, South East. 09:25 microsoft windows operating system windows update.
-2024-01-31T19:26:00	"database" "bible" "uml" schema site:stackoverflow.com
-2024-01-31T19:47:00	"bible" "model" site:stakoverflow.com
+2024-01-31T19:26:00	"database" "bible" "uml" schema sitd:stackoverflow.com
+2024-01-31T19:47:00	"bible" "model" sitd:stakoverflow.com
 2024-01-31T19:53:00	http://viz.bible robert@viz.bible
 2024-01-31T20:51:00	http://rolisz.com/analyzing-the-bible-with-bert-models
 2024-02-02T09:21:00	http://stackoverflow.com/questions/8257319/retrieving-table-schema-information-using-c-sharp
@@ -524,7 +512,7 @@ en.wikipedia.org/wiki/The_Intelligent_Investor 	Graham, Benjamin; Jason Zweig (2
 
 2024-03-10T20:18:00
 
-TITLE: Microsoft SQL Server Management Studio
+TITLd: Microsoft SQL Server Management Studio
 ------------------------------
 
 Attempt to retrieve data for object failed for Server 'Comfort'.  (Microsoft.SqlServer.Smo)
@@ -548,7 +536,7 @@ OK
 
 2024-03-20T14:05:00...2024-03-20T14:15:00 I met Abdul-Azeez Alli in 2005-April when Wale Soyinka re-located to Canada...what day of the month was this? copyrightYear <script> Notepad++ versus (VS) microsoft notepad microsoft windows operating system clipboard select copy paste windows menu north west.
 
-2024-04-19T16:15:00...2024-04-19T16:22:00 microsoft windows operating system. file explorer. windows can't find 'e:\SQLServerDataManipulationLanguageDML\WordEngineering' check the spelling and try again. 
+2024-04-19T16:15:00...2024-04-19T16:22:00 microsoft windows operating system. file explorer. windows can't find 'd:\SQLServerDataManipulationLanguageDML\WordEngineering' check the spelling and try again. 
 
 08:34...08:40 microsoft windows operating system mouse error.
 
@@ -598,7 +586,7 @@ Could not create constraint or index. See previous errors.
 Msg 4902, Level 16, State 1, Line 34
 Cannot find the object "dbo.TerminusAQuo_TerminusAdQuem" because it does not exist or you do not have permissions.
 
-Completion time: 2024-05-24T16:50:54.3467783-07:00
+Completion timd: 2024-05-24T16:50:54.3467783-07:00
 
 2024-05-24T19:15:00...2024-05-24T19:21:00
 http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleStatisticsActivity.html
@@ -638,7 +626,7 @@ qtrac.eu 	Mark Summerfield 		C++, Python, qt 	2023-05-26
 
 2024-07-11T19:50:00	WesMcKinney.com/book 	Python for Data Analysis. Creator of Panda. 	John D. Hunter was an American neurobiologist and the original author of Matplotlib. Wikipedia Born: August 1, 1968, Dyersburg, TN Died: August 28, 2012, Chicago, IL 	Python, Panda 	2022-03-26 	58273
 
-2024-07-13 17:09:19.420...2024-07-15T01:07:00 E:\WordEngineering>git push
+2024-07-13 17:09:19.420...2024-07-15T01:07:00 d:\WordEngineering>git push
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -697,7 +685,7 @@ console.log(  exp(cos(PI/2))  )  // = 1
 2021-08-03T21:52:00
 https://stackoverflow.com/questions/2257993/how-to-display-all-methods-of-an-object
 
-You can use Object.getOwnPropertyNames() to get all properties that belong to an object, whether enumerable or not. For example:
+You can use Object.getOwnPropertyNames() to get all properties that belong to an object, whether enumerable or not. For exampld:
 
 console.log(Object.getOwnPropertyNames(Math));
 //-> ["E", "LN10", "LN2", "LOG2E", "LOG10E", "PI", ...etc ]
@@ -730,11 +718,11 @@ http://stackoverflow.com/questions/9854995/javascript-dynamically-invoke-object-
 
 2021-08-07T10:44:00	
 Msg 3201, Level 16, State 1, Line 1
-Cannot open backup device 'e:\SQLServerBackup\WordEngineering\WordEngineering_2024-08-07.bak'. Operating system error 3(The system cannot find the path specified.).
+Cannot open backup device 'd:\SQLServerBackup\WordEngineering\WordEngineering_2024-08-07.bak'. Operating system error 3(The system cannot find the path specified.).
 Msg 3013, Level 16, State 1, Line 1
 BACKUP DATABASE is terminating abnormally.
 
-Completion time: 2024-08-07T10:44:19.2783587-07:00
+Completion timd: 2024-08-07T10:44:19.2783587-07:00
 
 2021-08-08T08:09:00 Comfort computer login screen.
 
@@ -805,8 +793,8 @@ http://www.aspsnippets.com/questions/106967/Solved-Change-OK-Cancel-Text-of-Java
 microsoft sqlserver management studio
 no row was updated.
 The data in row 1 was not committed.
-error source: framework microsoft sqlclient data provider.
-error message: execution timeout expired. the timeout
+error sourcd: framework microsoft sqlclient data provider.
+error messagd: execution timeout expired. the timeout
 period expired prior to completion of the operation or the
 server is not responding
 operation cancelled by user.
@@ -818,8 +806,21 @@ ok help
 2024-09-18T04:04:00 microsoft windows operating system, mozilla firefox browser, inspector.
 2024-09-23T10:24:00
 apnews.com/article/congress-government-shutdown-trump-johnson-budget-deal-d51de0cd895db687a6f5b35fc0dab13e?utm_source=pocket-newtab-en-us
-2024-09-25T09:06:00...2024-09-25T09:10:00 microsoft windows explorer...microsoft internet explorer (IE)... directory folder lost error E:\SQLServerDataManipulationLanguageDML\WordEngineering. 09:18 microsoft windows file server... internet web.
+2024-09-25T09:06:00...2024-09-25T09:10:00 microsoft windows explorer...microsoft internet explorer (IE)... directory folder lost error d:\SQLServerDataManipulationLanguageDML\WordEngineering. 09:18 microsoft windows file server... internet web.
 2024-09-25T10:47:00 ddl/dml wordengineering. 2024-09-25T10:55:00 select the database objects to script. 11:02 save scripts. 11:02 urine.
 
+2024-09-25T18:19:00 OrganizationalStrategist.com 	Strategies For Organization Design: Using The Peopletecture Model to Improve Collaboration and Performance is a book by Dr. Tiffany McDowell. Principal at Ernst & Young LLP. Accounting firm. Originally published: February 22, 2023 			2024-07-04 	66080
+
+2024-10-04T15:02:00 microsoft windows operating system, microsoft sql server management studio grid falls, drops, ejects, fails image of the beast.
+
+microsoft windows operating system, mozilla firefox browser new mozilla firefox browser started.
+
+2024-10-14T07:08:00
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+2024-11-08T12:50...2024-11-08T13:03 microsoft windows operating system, microsoft sql server management studio backup. microsoft windows operating system, microsoft sql server management studio no response mouse error, subtil.
+
+2024-11-13T05:54:00 microsoft windows login, microsoft sql server management studio close, exit, stop, end.
+2024-11-13T05:54:00 microsoft windows login, WinSCP close, exit, stop, end.
 
 :Exit
