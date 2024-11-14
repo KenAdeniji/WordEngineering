@@ -1128,7 +1128,8 @@ namespace InformationInTransit.ProcessLogic
 			ref String[] 	scriptureReferenceSubset,
 			ref DataSet 	result,
 			string			bibleVersion,
-			bool			combinedResult
+			bool			combinedResult,
+			ref String 		sqlStatement
 		)
 		{
 			//CultureInfo cultureInfo = CultureInfo.CurrentCulture;
@@ -1188,7 +1189,7 @@ namespace InformationInTransit.ProcessLogic
 				}
 			}	
 			
-			String sqlStatement = combinedResult == false ? 
+			sqlStatement = combinedResult == false ? 
 				sbSplitResultSQL.ToString() :
 				String.Format
 				(
