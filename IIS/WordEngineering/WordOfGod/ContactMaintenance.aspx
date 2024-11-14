@@ -13,6 +13,8 @@
 	2016-04-14	ContactBuild.bat
 	2016-04-14	ContactBuild.mak
 	2017-08-13	Convert sequenceOrderID to tableName ID.
+	2024-07-30T22:13:00	TextBoxFormViewCaseBasedReasoningInsertItemTemplateCommentary TextMode=MultiLine
+	2024-10-21T19:21:00 Formerly UtilityProtocol.cs not changed, but corrected to ProtocolHelper.cs
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
@@ -71,7 +73,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceContact"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE Contact WHERE ContactID = @ContactID"
          InsertCommand="EXEC uspContactInsert @ContactID, @dated, @title, @firstName, @lastName, @otherName, @company, @commentary"
 		 
@@ -92,7 +94,7 @@
           <asp:parameter name="commentary" ConvertEmptyStringToNull=true Type="string" />
          </insertparameters>
          <selectparameters>
-			<asp:controlparameter name="query" controlid="TextBoxQuery" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "|" />
+			<asp:controlparameter name="query" controlid="TextBoxQuery" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "" />
          </selectparameters>
 
 		</asp:SqlDataSource>
@@ -373,7 +375,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceContactEmail"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE ContactEmail WHERE ContactEmailID = @ContactEmailID"
          InsertCommand="EXEC uspContactEmailInsert @ContactEmailID, @dated, @ContactID, @emailAddress"
          SelectCommand="SELECT ContactEmailID, dated, emailAddress FROM ContactEmail WHERE ContactID = @ContactID ORDER BY Dated DESC, ContactEmailID DESC"
@@ -612,7 +614,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceContactURI"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE ContactURI WHERE ContactURIID = @ContactURIID"
          InsertCommand="EXEC uspContactURIInsert @ContactURIID, @dated, @ContactID, @internetAddress"
          SelectCommand="SELECT ContactURIID, dated, internetAddress FROM ContactURI WHERE ContactID = @ContactID ORDER BY Dated DESC, ContactURIID DESC"
@@ -664,7 +666,7 @@
             <asp:HyperLink
              Runat="Server"
              id="HyperLinkGridViewContactURIItemTemplateInternetAddress" 
-             NavigateUrl='<%# Eval("InternetAddress").ToString() %>'
+             NavigateUrl='<%# WordEngineering.ProtocolHelper.PrefixProtocol( Eval("InternetAddress").ToString() ) %>'
              Text='<%# Eval("InternetAddress") %>'
              Target="_blank"
             />
@@ -850,7 +852,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceTelephone"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE Telephone WHERE telephoneID = @telephoneID"
          InsertCommand="EXEC uspTelephoneInsert @telephoneID, @dated, @ContactID, @telephoneNo, @telephoneLocation"
          SelectCommand="SELECT telephoneID, dated, telephoneNo, telephoneLocation FROM Telephone WHERE ContactID = @ContactID ORDER BY Dated DESC, telephoneID DESC"
@@ -1123,7 +1125,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceStreetAddress"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE StreetAddress WHERE streetAddressID = @streetAddressID"
          InsertCommand="EXEC uspStreetAddressInsert @streetAddressID, @dated, @ContactID, @addressLine1, @city, @state, @zipCode, @country"
          SelectCommand="SELECT streetAddressID, dated, addressLine1, city, state, zipCode, country FROM StreetAddress WHERE ContactID = @ContactID ORDER BY Dated DESC, streetAddressID DESC "
@@ -1504,7 +1506,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceContactRelated"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE ContactRelated WHERE contactRelatedID = @contactRelatedID"
          InsertCommand="EXEC uspContactRelatedInsert @contactRelatedID, @dated, @contactId, @relatedId, @relationship, @commentary"
          SelectCommand="SELECT contactRelatedID, dated, contactId, relatedId, relationship, commentary FROM ContactRelated WHERE contactId = @contactId ORDER BY Dated DESC, contactRelatedID DESC "
@@ -1813,7 +1815,7 @@
         <asp:SqlDataSource
          ID="SqlDataSourceCaseBasedReasoning"
          Runat="server"
-         ConnectionString="<%$ ConnectionStrings:WordOfGod %>"
+         ConnectionString="<%$ ConnectionStrings:WordEngineering_WordOfGod %>"
          DeleteCommand="DELETE CaseBasedReasoning WHERE caseBasedReasoningID = @caseBasedReasoningID"
          InsertCommand="EXEC uspCaseBasedReasoningInsert @caseBasedReasoningID, @dated, @ContactID, @commentary, @expense, @income"
          SelectCommand="SELECT caseBasedReasoningID, dated, commentary, expense, income FROM CaseBasedReasoning WHERE ContactID = @ContactID ORDER BY Dated DESC, caseBasedReasoningID DESC"
@@ -2057,6 +2059,7 @@
                  runat="server"
                  id="TextBoxFormViewCaseBasedReasoningInsertItemTemplateCommentary" 
                  Text='<%# Bind("Commentary") %>'
+				 TextMode="MultiLine"
                 />
                </td>
                <td>

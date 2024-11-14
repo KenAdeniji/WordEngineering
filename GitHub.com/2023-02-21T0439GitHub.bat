@@ -965,3 +965,10 @@ git add	        IIS/WordEngineering/2018-05-03Correspondence/
         git add IIS/WordEngineering/bin/UtilityPostback.dll
         git add IIS/WordEngineering/bin/UtilityWebControl.dll
 		
+git add IIS/WordEngineering/WordOfGod/ContactMaintenance.aspx
+git add	InformationInTransit/InformationInTransitBuild.bat
+
+git add	IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City Community Support Center Behavioral Health Care Services/2024-10-25T0947VocationalProgramReferralForm2024_-_MakanTalayeh_-_Desiree.pdf
+
+git add	IIS/WordEngineering/WordOfGod/UtilityIISLog.cs
+git add	IIS/WordEngineering/WordOfGod/UtilityIISLogArchive.cs
