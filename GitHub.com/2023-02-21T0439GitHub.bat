@@ -978,12 +978,14 @@ rem git mv  InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs Informatio
 rem git mv  InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.csRelease2024-11-13T1922
 rem git mv	InformationInTransit/ProcessLogic/EnvironmentHelper.cs InformationInTransit/ProcessLogic/EnvironmentHelper.csRelease2024-11-13T1922
 
-        git rm    InformationInTransit/MSTest/PrimeService.cs
-        git rm    InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs
-        git rm    InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs
-        git rm    InformationInTransit/ProcessLogic/EnvironmentHelper.cs
+rem        git rm    InformationInTransit/MSTest/PrimeService.cs
+rem 	   git rm    InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs
+rem        git rm    InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs
+rem        git rm    InformationInTransit/ProcessLogic/EnvironmentHelper.cs
 
-git add        InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
-git add        InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
-git add        InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.Release2024-11-13T1922cs
-git add        InformationInTransit/ProcessLogic/EnvironmentHelper.Release2024-11-13T1922cs
+git add     InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
+git add     InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
+git add     InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.Release2024-11-13T1922cs
+git add     InformationInTransit/ProcessLogic/EnvironmentHelper.Release2024-11-13T1922cs
+
+git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-14T0354AmanSharma_-_IfYouHaveSomethingPlanned...otherwiseForYourself._-_YouCanEitherPassHistoryOrExcludeIt._-_ExcludingTheFuture...IsNotRemainingAnyOne.txt
