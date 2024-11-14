@@ -973,8 +973,17 @@ git add	"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City
 git add	IIS/WordEngineering/WordOfGod/UtilityIISLog.cs
 git add	IIS/WordEngineering/WordOfGod/UtilityIISLogArchive.cs
 
-git mv	InformationInTransit/MSTest/PrimeService.cs InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
-git mv  InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
-git mv  InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.csRelease2024-11-13T1922
-git mv	InformationInTransit/ProcessLogic/EnvironmentHelper.cs InformationInTransit/ProcessLogic/EnvironmentHelper.csRelease2024-11-13T1922
+rem git mv	InformationInTransit/MSTest/PrimeService.cs InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
+rem git mv  InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
+rem git mv  InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.csRelease2024-11-13T1922
+rem git mv	InformationInTransit/ProcessLogic/EnvironmentHelper.cs InformationInTransit/ProcessLogic/EnvironmentHelper.csRelease2024-11-13T1922
 
+        git rm    InformationInTransit/MSTest/PrimeService.cs
+        git rm    InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs
+        git rm    InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs
+        git rm    InformationInTransit/ProcessLogic/EnvironmentHelper.cs
+
+git add        InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
+git add        InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
+git add        InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.Release2024-11-13T1922cs
+git add        InformationInTransit/ProcessLogic/EnvironmentHelper.Release2024-11-13T1922cs
