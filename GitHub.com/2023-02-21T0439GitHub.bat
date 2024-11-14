@@ -972,3 +972,9 @@ git add	"IIS/WordEngineering/Alameda County Health Agency Care Services Tri-City
 
 git add	IIS/WordEngineering/WordOfGod/UtilityIISLog.cs
 git add	IIS/WordEngineering/WordOfGod/UtilityIISLogArchive.cs
+
+git mv	InformationInTransit/MSTest/PrimeService.cs InformationInTransit/MSTest/PrimeService.csRelease2024-11-13T1922
+git mv  InformationInTransit/MSTest/PrimeService_IsPrimeShould.cs InformationInTransit/MSTest/PrimeService_IsPrimeShould.csRelease2024-11-13T1922
+git mv  InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.cs InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper.csRelease2024-11-13T1922
+git mv	InformationInTransit/ProcessLogic/EnvironmentHelper.cs InformationInTransit/ProcessLogic/EnvironmentHelper.csRelease2024-11-13T1922
+
