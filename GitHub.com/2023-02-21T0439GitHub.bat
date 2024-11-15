@@ -989,3 +989,5 @@ git add     InformationInTransit/ProcessCode/SQLServerManagementObjectsSMOHelper
 git add     InformationInTransit/ProcessLogic/EnvironmentHelper.Release2024-11-13T1922cs
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-14T0354AmanSharma_-_IfYouHaveSomethingPlanned...otherwiseForYourself._-_YouCanEitherPassHistoryOrExcludeIt._-_ExcludingTheFuture...IsNotRemainingAnyOne.txt
+
+git add 	IIS/WordEngineering/2018-05-03Correspondence/2024-11-14T0900JamesWong_-_XPHealthInc_-_james@xphealth.co_-_(206)839-6960_-_SanCarlos_-_California(CA)_-_AntonioErmirio_deMoraes_Neto.txt
