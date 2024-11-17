@@ -823,4 +823,8 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319
 2024-11-13T05:54:00 microsoft windows login, microsoft sql server management studio close, exit, stop, end.
 2024-11-13T05:54:00 microsoft windows login, WinSCP close, exit, stop, end.
 
+2024-11-16T08:19:00...2024-11-16T08:24:00 	ddl/dml script wordengineering microsoft windows operating system, microsoft sql server management studio wait error.
+
+2024-11-16T09:02:00...2024-11-16T09:11:00	ddl/dml script wordengineering microsoft windows operating system, microsoft sql server management studio save script generation failed. Click on help for known solution.
+
 :Exit
