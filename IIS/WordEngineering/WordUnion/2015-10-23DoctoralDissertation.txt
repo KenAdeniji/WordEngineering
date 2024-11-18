@@ -50,10 +50,6 @@ The importance of this work?
 -   [Follow God, as a
     character.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Follow%20God,%20as%20a%20character.){datetime="2021-05-20T17:26:00"
     contactid="11332" hiswordid="140808" url="JulieZhuo.com"}
--   [He seem to characterize Himself as
-    ours.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=He%20seem%20to%20characterize%20Himself%20as%20ours.){datetime="2024-11-14T14:43:00"
-    contactid="12950" hiswordid="164455"
-    url="en.wikipedia.org/wiki/Robert_L._Joss"}
 -   [To track dates and words? And, find meaning,
     correlation.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20track%20dates%20and%20words%3F%20And,%20find%20meaning,%20correlation.){datetime="2022-11-29T12:53:00"
     contactid="13320" hiswordid="155044" url="wykesmith.com"
@@ -484,7 +480,16 @@ and resemblances in the Bible.
 
   : Functional Dependencies {#FunctionalDependencies}
 
-Relational Database Hierarchy
+### Index Query Type {#IndexQueryType datetime="2024-11-15T15:53:00"}
+
+-   [Point query: Returns only 1 record, and it includes an equality
+    condition. The query is restricted by the primary key or unique
+    index.]{#PointQuery}
+-   [Multipoint query: The query is restricted by an evenly spread out
+    value. The query condition may include part of a composite
+    index.]{#MultipointQuery}
+
+### Relational Database Hierarchy {#RelationalDatabaseHierarchy datetime="2024-11-05T08:11:00"}
 
 1.  Catalog: Is a collection of databases, for example, Bible,
     WordEngineering, URI.
@@ -7877,7 +7882,8 @@ Deuteronomy
     I no longer\... take further input.
 -   2024-11-12T08:07:00 [How do I accommodate\... the future\... as
     Myself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20do%20I%20accommodate...%20the%20future...%20as%20Myself%3F){datetime="2024-11-12T08:07:00"
-    hiswordid="164426" url="james@xphealth.co"}\
+    hiswordid="164426" url="james@xphealth.co"
+    commentary="2024-11-15T14:55:00 All keys are determinants, but not all determinants are keys. SQL All-In-One for dummies, 4th Edition Allen G. Taylor with Richard Blum (2024). google.com/books/edition/SQL_All_in_One_For_Dummies/y3_9EAAAQBAJ?hl=en"}\
     The 2 upgrades to-date of the primary keys and/or unique indexes
     have been:
     1.  IHaveDecidedToWorkOnAGradualImprovingSystem database Contact
