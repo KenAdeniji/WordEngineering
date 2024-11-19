@@ -50,10 +50,6 @@ The importance of this work?
 -   [Follow God, as a
     character.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Follow%20God,%20as%20a%20character.){datetime="2021-05-20T17:26:00"
     contactid="11332" hiswordid="140808" url="JulieZhuo.com"}
--   [He seem to characterize Himself as
-    ours.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=He%20seem%20to%20characterize%20Himself%20as%20ours.){datetime="2024-11-14T14:43:00"
-    contactid="12950" hiswordid="164455"
-    url="en.wikipedia.org/wiki/Robert_L._Joss"}
 -   [To track dates and words? And, find meaning,
     correlation.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20track%20dates%20and%20words%3F%20And,%20find%20meaning,%20correlation.){datetime="2022-11-29T12:53:00"
     contactid="13320" hiswordid="155044" url="wykesmith.com"
@@ -82,6 +78,25 @@ the [University of Wollongong](http://www.uow.edu.au) (UOW), NSW 2522,
 Australia.
 
 ## Theory {#Theory}
+
+  Part                                                                    Example          Commentary
+  ----------------------------------------------------------------------- ---------------- -------------------------------------------------------------
+  Sub-domain                                                              www              A sub-domain defaults to www.
+  Domain                                                                  JesusInTheLamb   
+  Country code top-level domain (ccTLD)                                   .com             An abbreviation for commercial. A default domain extension.
+  Directory and filename                                                  index.html       
+  Fragment                                                                                 
+  It is not an e-mail address, since it does not include an at sign, @.                    
+  It defaults to port 80.                                                                  
+  It defaults to the homepage.                                                             
+
+  : www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
+
+The issuing of this domain name may be related to commencing writing the
+book titled Ocean Senior. There has not been a follow-up on future
+artifacts. But when one reads the Bible, the book of Revelation, which
+starts with the letters to the 7 churches in Asia Minor, does not
+instigate future alteration.
 
 ### The Bible Database {#BibleDatabase}
 
@@ -474,6 +489,15 @@ First, inside and last dates.
 This is subjective work; the author applys intelligence to find patterns
 and resemblances in the Bible.
 
+### Relational Database Hierarchy {#RelationalDatabaseHierarchy datetime="2024-11-05T08:11:00"}
+
+1.  Catalog: Is a collection of databases, for example, Bible,
+    WordEngineering, URI.
+2.  Schema: Is a collection of objects, which may include tables, views,
+    indexes, stored procedures, triggers.
+3.  Table: Is 2-dimensional with horizontal rows and vertical columns.
+4.  Column: It is a physical actualized attribute.
+
 "[]{cite="#bibliographyAllenGTaylor2024"}"
 
   Determinant                                                                  Functionally Dependent                    Implementation
@@ -484,35 +508,34 @@ and resemblances in the Bible.
 
   : Functional Dependencies {#FunctionalDependencies}
 
-Relational Database Hierarchy
+(Allen G. Taylor, 2024). "[]{cite="#bibliographyAllenGTaylor2024"}"
 
-1.  Catalog: Is a collection of databases, for example, Bible,
-    WordEngineering, URI.
-2.  Schema: Is a collection of objects, which may include tables, views,
-    indexes, stored procedures, triggers.
-3.  Table: Is 2-dimensional with horizontal rows and vertical columns.
-4.  Column: It is a physical actualized attribute.
+### Index Query Type {#IndexQueryType datetime="2024-11-15T15:53:00"}
+
++-----------------------+-----------------------+-----------------------+
+| Query Type            | Commentary            | Structured Query      |
+|                       |                       | Language (SQL)        |
++=======================+=======================+=======================+
+| Point query           | It will return only 1 | ``` {20               |
+|                       | record, and it is     | 24-11-18t15:51:00=""} |
+|                       | restricted by an      | SELECT *              |
+|                       | equality condition on | FROM                  |
+|                       | the primary key or    | Bible..Scripture_View |
+|                       | unique index.         | WHER                  |
+|                       |                       | E VerseIDSequence = 1 |
+|                       |                       | ```                   |
++-----------------------+-----------------------+-----------------------+
+| Multipoint query      | It may return more    | ``` {20               |
+|                       | than 1 record, as     | 24-11-18t15:51:00=""} |
+|                       | there may be multiple | SELECT *              |
+|                       | records. It is        | FROM                  |
+|                       | restricted by an      | Bible..Scripture_View |
+|                       | equality condition on | WHERE                 |
+|                       | part of a potential   | ChapterIDSequence = 1 |
+|                       | composite key.        | ```                   |
++-----------------------+-----------------------+-----------------------+
 
 (Allen G. Taylor, 2024).
-
-  Part                                                                    Example          Commentary
-  ----------------------------------------------------------------------- ---------------- -------------------------------------------------------------
-  Sub-domain                                                              www              A sub-domain defaults to www.
-  Domain                                                                  JesusInTheLamb   
-  Country code top-level domain (ccTLD)                                   .com             An abbreviation for commercial. A default domain extension.
-  Directory and filename                                                  index.html       
-  Fragment                                                                                 
-  It is not an e-mail address, since it does not include an at sign, @.                    
-  It defaults to port 80.                                                                  
-  It defaults to the homepage.                                                             
-
-  : www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
-
-The issuing of this domain name may be related to commencing writing the
-book titled Ocean Senior. There has not been a follow-up on future
-artifacts. But when one reads the Bible, the book of Revelation, which
-starts with the letters to the 7 churches in Asia Minor, does not
-instigate future alteration.
 
 "[]{cite="#bibliographyHumbertoCervantes_RickKazman20240602"}"
 
@@ -7877,7 +7900,8 @@ Deuteronomy
     I no longer\... take further input.
 -   2024-11-12T08:07:00 [How do I accommodate\... the future\... as
     Myself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20do%20I%20accommodate...%20the%20future...%20as%20Myself%3F){datetime="2024-11-12T08:07:00"
-    hiswordid="164426" url="james@xphealth.co"}\
+    hiswordid="164426" url="james@xphealth.co"
+    commentary="2024-11-15T14:55:00 All keys are determinants, but not all determinants are keys. SQL All-In-One for dummies, 4th Edition Allen G. Taylor with Richard Blum (2024). google.com/books/edition/SQL_All_in_One_For_Dummies/y3_9EAAAQBAJ?hl=en"}\
     The 2 upgrades to-date of the primary keys and/or unique indexes
     have been:
     1.  IHaveDecidedToWorkOnAGradualImprovingSystem database Contact
