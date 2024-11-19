@@ -508,7 +508,20 @@ and resemblances in the Bible.
 
   : Functional Dependencies {#FunctionalDependencies}
 
+<<<<<<< HEAD
 (Allen G. Taylor, 2024). "[]{cite="#bibliographyAllenGTaylor2024"}"
+=======
+### Index Query Type {#IndexQueryType datetime="2024-11-15T15:53:00"}
+
+-   [Point query: Returns only 1 record, and it includes an equality
+    condition. The query is restricted by the primary key or unique
+    index.]{#PointQuery}
+-   [Multipoint query: The query is restricted by an evenly spread out
+    value. The query condition may include part of a composite
+    index.]{#MultipointQuery}
+
+### Relational Database Hierarchy {#RelationalDatabaseHierarchy datetime="2024-11-05T08:11:00"}
+>>>>>>> ca91f37cabf3e9e1fc060760db0467da86a29ada
 
 ### Index Query Type {#IndexQueryType datetime="2024-11-15T15:53:00"}
 
