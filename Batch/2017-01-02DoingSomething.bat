@@ -189,7 +189,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160437);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15411);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6700);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6736);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
@@ -826,5 +826,7 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319
 2024-11-16T08:19:00...2024-11-16T08:24:00 	ddl/dml script wordengineering microsoft windows operating system, microsoft sql server management studio wait error.
 
 2024-11-16T09:02:00...2024-11-16T09:11:00	ddl/dml script wordengineering microsoft windows operating system, microsoft sql server management studio save script generation failed. Click on help for known solution.
+
+2024-11-19T14:00:00 microsoft windows operating system, microsoft sql server management studio grid falls, drops, ejects, fails.
 
 :Exit
