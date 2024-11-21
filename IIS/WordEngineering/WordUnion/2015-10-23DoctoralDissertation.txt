@@ -512,43 +512,62 @@ and resemblances in the Bible.
 
 ### Index Query Type {#IndexQueryType datetime="2024-11-15T15:53:00"}
 
-+-----------------------+-----------------------+-----------------------+
-| Query Type            | Commentary            | Structured Query      |
-|                       |                       | Language (SQL)        |
-+=======================+=======================+=======================+
-| Point query           | It will return only 1 | ``` {20               |
-|                       | record, and it is     | 24-11-18t15:51:00=""} |
-|                       | restricted by an      | SELECT *              |
-|                       | equality condition on | FROM                  |
-|                       | the primary key or    | Bible..Scripture_View |
-|                       | unique index.         | WHER                  |
-|                       |                       | E VerseIDSequence = 1 |
-|                       |                       | ```                   |
-+-----------------------+-----------------------+-----------------------+
-| Multipoint query      | It may return more    | ``` {20               |
-|                       | than 1 record, as     | 24-11-18t15:51:00=""} |
-|                       | there may be multiple | SELECT *              |
-|                       | records. It is        | FROM                  |
-|                       | restricted by an      | Bible..Scripture_View |
-|                       | equality condition on | WHERE                 |
-|                       | part of a potential   | ChapterIDSequence = 1 |
-|                       | composite key.        | ```                   |
-+-----------------------+-----------------------+-----------------------+
-| Range query           | It returns a set of   | ``` {20               |
-|                       | records whose values  | 24-11-19t23:47:00=""} |
-|                       | are within an         | SELECT *              |
-|                       | interval or half      | FROM                  |
-|                       | interval. If it is    | Bible..Scripture_View |
-|                       | restricted by both    | WHERE VerseIDSequ     |
-|                       | lower and upper       | ence BETWEEN 1 AND 10 |
-|                       | bounds, then there is | ;                     |
-|                       | an interval. It is a  | SELECT *              |
-|                       | half interval, if it  | FROM                  |
-|                       | specifies only one    | Bible..Scripture_View |
-|                       | bound.                | WHERE                 |
-|                       |                       |  VerseIDSequence <= 5 |
-|                       |                       | ```                   |
-+-----------------------+-----------------------+-----------------------+
+Query Type
+:::
+
+Commentary
+
+Example
+
+Structured Query Language (SQL)
+
+Point query
+
+It will return only 1 record, and it is restricted by an equality
+condition on the primary key or unique index.
+
+Useful for searching for a particular verse.
+
+``` {2024-11-18t15:51:00=""}
+    SELECT *
+    FROM Bible..Scripture_View
+    WHERE VerseIDSequence = 1
+    
+```
+
+Multipoint query
+
+It may return more than 1 record, as there may be multiple records. It
+is restricted by an equality condition on part of a potential composite
+key.
+
+Useful for searching for a particular chapter or book.
+
+``` {2024-11-18t15:51:00=""}
+    SELECT *
+    FROM Bible..Scripture_View
+    WHERE ChapterIDSequence = 1
+    
+```
+
+Range query
+
+It returns a set of records whose values are within an interval or half
+interval. If it is restricted by both lower and upper bounds, then there
+is an interval. It is a half interval, if it specifies only one bound.
+
+Useful for searching for consecutive verses, chapters or books.
+
+``` {2024-11-19t23:47:00=""}
+    SELECT *
+    FROM Bible..Scripture_View
+    WHERE VerseIDSequence BETWEEN 1 AND 10
+    ;
+    SELECT *
+    FROM Bible..Scripture_View
+    WHERE VerseIDSequence <= 5
+    
+```
 
 (Allen G. Taylor, 2024).
 
@@ -861,7 +880,6 @@ datatype limits.
 The Author Uses the Git Code Repository
 
 Key
-:::
 
 Value
 
@@ -3165,6 +3183,20 @@ Biblical generation - 40 Biblical years
 -   2021\...2024 Common Era - the biological mother of the author is 80
     years old: the word recorded by the author is time relevance
     specific.
+
+[When I am doing
+this?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=When%20I%20am%20doing%20this%3F){datetime="2024-11-20T09:27:00"
+commentary="When I am doing this? What do I become?" location="Shower"}
+
+-   Pre-condition ( [Genesis
+    3:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%203:15)
+    )
+-   Assertion ( [Hebrews 5:8, John
+    20:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%205:8,%20John%2020:17)
+    )
+-   Post-condition ( [Genesis 49:9, Revelation
+    5:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2049:9,%20Revelation%205:5)
+    )
 
 "[]{cite="#bibliographyTimWildsmith2024"}"
 
