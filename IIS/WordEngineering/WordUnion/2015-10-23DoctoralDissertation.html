@@ -1008,7 +1008,25 @@
 	</pre>	
 						</td>
 					</tr>
-				</tbody>		
+					<tr id="Prefixmatchquery" datetime="2024-11-21T03:30:00">
+						<td>Prefix match query</td>
+						<td>The set is the match of an attribute.</td>
+						<td>The author is unfamiliar with any use-case where only the first part of the wildcard is searched. The first part of the scripture reference is similar. For the BibleWord searches, the author uses like for match queries.</td>
+						<td>
+	<pre 2024-11-21T03:52:00>
+SELECT *
+FROM Bible..Scripture_View
+WHERE KingJamesVersion LIKE
+(
+	SELECT TOP 1 KingJamesVersion
+	FROM Bible..Scripture_View
+	GROUP BY KingJamesVersion
+	ORDER BY COUNT(KingJamesVersion) DESC
+)
+	</pre>	
+						</td>
+					</tr>
+				</tbody>
 			</table>
 			
 			</q> (Allen G. Taylor, 2024).

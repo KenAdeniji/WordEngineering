@@ -569,6 +569,28 @@ Useful for searching for consecutive verses, chapters or books.
     
 ```
 
+Prefix match query
+
+The set is the match of an attribute.
+
+The author is unfamiliar with any use-case where only the first part of
+the wildcard is searched. The first part of the scripture reference is
+similar. For the BibleWord searches, the author uses like for match
+queries.
+
+``` {2024-11-21t03:52:00=""}
+SELECT *
+FROM Bible..Scripture_View
+WHERE KingJamesVersion LIKE
+(
+    SELECT TOP 1 KingJamesVersion
+    FROM Bible..Scripture_View
+    GROUP BY KingJamesVersion
+    ORDER BY COUNT(KingJamesVersion) DESC
+)
+    
+```
+
 (Allen G. Taylor, 2024).
 
 "[]{cite="#bibliographyHumbertoCervantes_RickKazman20240602"}"
