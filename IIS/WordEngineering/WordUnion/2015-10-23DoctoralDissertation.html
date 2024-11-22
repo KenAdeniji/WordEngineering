@@ -959,7 +959,7 @@
 			<h3 id="IndexQueryType" datetime="2024-11-15T15:53:00">Index Query Type</h3>
 			
 			<table datetime="2024-11-15T15:54:00">
-				<thead>
+				<thead datetime="2024-11-21T02:46:00">
 					<tr>
 						<th>Query Type</th>
 						<th>Commentary</th>
@@ -967,7 +967,7 @@
 						<th>Structured Query Language (SQL)</th>
 					</tr>
 				<thead>
-				<tbody>
+				<tbody datetime="2024-11-21T02:46:00">
 					<tr id="Pointquery" datetime="2024-11-15T15:56:00">
 						<td>Point query</td>
 						<td>It will return only 1 record, and it is restricted by an equality condition on the primary key or unique index.</td>
@@ -1025,6 +1025,53 @@ WHERE KingJamesVersion LIKE
 )
 	</pre>	
 						</td>
+					</tr>
+					<tr id="Extremalquery" datetime="2024-11-21T17:42:00">
+						<td>Extremal query</td>
+						<td>It returns either the minimum or maximum extreme.</td>
+						<td>Statistics</td>
+						<td>
+	<pre 2024-11-21T17:46:00>
+SELECT *
+FROM Bible..Scripture_View
+WHERE VerseIDSequence =
+(
+	SELECT MAX( VerseIDSequence )
+	FROM Bible..Scripture_View
+)
+	</pre>	
+						</td>
+					</tr>
+					<tr id="Orderingquery" datetime="2024-11-21T17:58:00">
+						<td>Ordering query</td>
+						<td>The records returned are sorted.</td>
+						<td>The results of the author are normally in ascending order.</td>
+						<td>
+	<pre 2024-11-21T18:02:00>
+SELECT TOP 10 *
+FROM Bible..Scripture_View
+ORDER BY VerseIDSequence DESC
+	</pre>	
+						</td>
+					</tr>
+					<tr id="Groupingquery" datetime="2024-11-21T18:09:00">
+						<td>Grouping query</td>
+						<td>The records returned are grouped.</td>
+						<td>Rarely does the author group rows by issuing the group by clause.</td>
+						<td>
+	<pre 2024-11-21T18:09:00>
+SELECT BookGroup, COUNT(BookGroup ) BookGroupVersesCount
+FROM Bible..Scripture_View
+GROUP BY BookGroup
+ORDER BY BookGroup
+	</pre>	
+						</td>
+					</tr>
+					<tr id="EquiJoinquery" datetime="2024-11-21T18:24:00">
+						<td>Equi-join query</td>
+						<td>The records are retrieved from multiple sources.</td>
+						<td>The author uses views for table joins.</td>
+						<td/>
 					</tr>
 				</tbody>
 			</table>
