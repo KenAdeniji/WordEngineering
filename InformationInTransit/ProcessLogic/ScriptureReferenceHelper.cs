@@ -67,6 +67,9 @@ namespace InformationInTransit.ProcessLogic
 	///	2020-09-11	BibleGroupSubstitute variable definition, and BibleGroupSubstituteReplace implementation.
 	///	2022-01-15	BibleSequenceQueryFormat added.
 	/// 2022-11-26	IKeepOnFindingWhereIAmThatIMayChooseWhereIBelong added.
+	///	2024-11-23T17:38:00	SELECT ANY_VALUE(ScriptureReference) FROM Bible..Scripture_View
+	///	2024-11-23T18:12:00	SELECT LISTAGG(BookTitle, ', ') WITHIN GROUP(ORDER BY Category) BookCategory FROM Bible..BibleBook
+	///	2024-11-23T18:19:00	SELECT STRING_AGG(BookTitle, ', ') WITHIN GROUP(ORDER BY Category) BookCategory FROM Bible..BibleBook
 	///</summary>
 	public class ScriptureReferenceHelper
 	{

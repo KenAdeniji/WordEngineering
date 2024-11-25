@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-11-25T08:12:00	Created. https://www.raymondcamden.com/2024/11/20/counting-words-with-intlsegmenter
+		2024-11-25T08:12:00	http://stackoverflow.com/questions/77850833/how-do-i-break-a-string-into-words-and-track-the-index-of-each-word-within-the
+interface SegmentData {
+    /** A string containing the segment extracted from the original input string. */
+    segment: string;
+    /** The code unit index in the original input string at which the segment begins. */
+    index: number;
+    /** The complete input string that was segmented. */
+    input: string;
+    /**
+     * A boolean value only if granularity is "word"; otherwise, undefined.
+     * If granularity is "word", then isWordLike is true when the segment is word-like (i.e., consists of letters/numbers/ideographs/etc.); otherwise, false.
+     */
+    isWordLike?: boolean;
+}
+		2024-11-25T10:04:00 Code complete.
+	-->	
+	<head>
+		<title>Counting Words with Intl.Segmenter</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Counting Words with Intl.Segmenter"/>
+		<meta name="keyword" content="Intl.Segmenter, language"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="wordInput">Input</label></td>
+					<td><input id="wordInput" type="text" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="wordLanguage">Language</label></td>
+					<td><input id="wordLanguage" type="text"/></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+			Word count: <span id="resultWordCount"></span>
+			<br>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	wordInputElement = document.getElementById("wordInput");
+			const 	wordLanguageElement = document.getElementById("wordLanguage");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			const	resultWordCountElement = document.getElementById("resultWordCount");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					wordInputElement.value = `
+This is my input. There are many like it, but this one is mine. 
+My input is my best friend. It is my life.
+`;
+					wordLanguageElement.value = navigator.language;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				let segmenter = new Intl.Segmenter
+				(
+					wordLanguageElement.value, 
+					{ 
+						granularity: "word"
+					}
+				);
+
+				let segments = segmenter.segment(wordInputElement.value);
+				
+				var segmentInfo = "";
+				var segmentIndex = 0;
+				for (const segment of segments)
+				{
+					if ( segment.isWordLike )
+					{
+						segmentInfo += "[" + segmentIndex + "] " + segment.index + " " + segment.segment + "<br>";
+						++segmentIndex;
+					}	
+				}
+				resultSetElement.innerHTML = segmentInfo;
+				
+				resultWordCountElement.textContent = Array.from
+				(
+					segmenter.segment
+					(
+						wordInputElement.value
+					)
+				)
+				.reduce
+				(
+					(
+						total,
+						v
+					) => 
+					{
+						if(v.isWordLike)
+						{
+							total++;
+						}	
+							return total;
+					}
+					,
+					0
+				);
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

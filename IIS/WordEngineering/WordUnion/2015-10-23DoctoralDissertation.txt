@@ -3150,7 +3150,7 @@ GetAPage.html is Bible specific.
 GetAPage.html contains the HTML5 directive, head, and body sections. The
 head section contains the title and meta tags for search-engine
 optimization (SEO). The 3 languages that make up a web page are in the
-following order: CSS, HTML, JavaScript.
+following ascending order: CSS, HTML, JavaScript.
 
 HTML is an element\'s nodes. There are only single instances of the
 input and submit elements. There are multiple div containers for the
