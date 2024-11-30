@@ -1001,3 +1001,6 @@ git add		IIS/WordEngineering/JavaScript/RaymondCamden.com/RaymondCamden.com_-_in
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-26OrangeBlueTruckStevensCreekSanTomasElizabethWarren_FremontBoulevardDecotoRoad_MikeTewksbury_SpamEmail_CaribbeanCommon4004_IncludingSuccessIsOneYouBelieve.txt
 
+git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-27T1615help@joinallofus.org.txt
+        
+git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-29T1743AlbertsonsLucky_-_Store_CustomersPurchases_-_TheBereanCall.org_-_AWomanRidesTheBeast_-_GetAPage.txt

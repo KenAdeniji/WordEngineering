@@ -185,9 +185,9 @@ DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1939);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8181);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160437);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160518);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED,  15411);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15510);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2878);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6753);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -834,5 +834,10 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319
 2024-11-25T16:18:00 Please do not send me any more spam e-mail...unsubscribe.
 
 2024-11-26T11:32:00 ... 2024-11-26T11:43:00 Please kindly share your contact details. These will include your name, telephone number, e-mail address, and social media details.
+
+2024-11-27T20:21:00
+http://www.30secondsofcode.org/js/s/string-is-valid-json
+
+2024-11-22URI_SchemaData.sql
 
 :Exit
