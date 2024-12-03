@@ -183,8 +183,8 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1939);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8181);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1960);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8264);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160518);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15510);
@@ -194,7 +194,7 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 168265);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 170523);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 662);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4218);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5036);
@@ -839,5 +839,7 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319
 http://www.30secondsofcode.org/js/s/string-is-valid-json
 
 2024-11-22URI_SchemaData.sql
+
+2024-11-30T16:13:00 In Australia, you did not learn Java applet nor JavaScript... you thought somebody would teach you. David Salas served as a coach, mentor, for step-by-step Microsoft SQL Server database replication, but you built on it... saving his foundation. This is operations work. Programming creativity? Design artistic skills? Apocalyptic beloved, completed... Referring... no guesses?
 
 :Exit
