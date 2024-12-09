@@ -1006,3 +1006,6 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-27T1615help@joinal
 rem git rm		IIS/WordEngineering/2018-05-03Correspondence/2024-11-29T1743AlbertsonsLucky_-_Store_CustomersPurchases_-_TheBereanCall.org_-_AWomanRidesTheBeast_-_GetAPage.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-29T1743AlbertsonsLucky_-_Store_CustomersPurchases_-_TheBereanCall.org_-_AWomanRidesTheBeast_-_GetAPage.html_-_UIError_-_MariaEhrlich.txt
+
+git add		IIS/WordEngineering/SQLServer/MicrosoftSQLServer_-_WindowFunctions.asmx
+git add     IIS/WordEngineering/SQLServer/MicrosoftSQLServer_-_WindowFunctions.html

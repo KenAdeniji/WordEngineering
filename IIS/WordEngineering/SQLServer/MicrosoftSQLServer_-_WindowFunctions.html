@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-08T22:33:00	Created. http://www.sqlservertutorial.net/sql-server-window-functions
+	-->	
+	<head>
+		<title>Microsoft SQL Server Window Functions</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Microsoft SQL Server Window Functions"/>
+		<meta name="keyword" content="Microsoft, SQL Server Window Functions"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 15vh;
+		width: 80vw;
+	}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="windowFunction">Window function</label></td>
+					<td><select id="windowFunction" autofocus></select></td>
+				</tr>
+				<tr>
+					<td><label for="selectQueryStatement">Select query statement</label></td>
+					<td><textarea id="selectQueryStatement"></textarea></td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	windowFunctionElement = document.getElementById("windowFunction");
+			const 	selectQueryStatementElement = document.getElementById("selectQueryStatement");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.buildSelect("windowFunction", StructuredQueryLanguageSQLTemplate);
+					selectQueryStatementElement.value = StructuredQueryLanguageSQLTemplate[0][1];
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["selectQueryStatement"] = selectQueryStatementElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/SQLServer/MicrosoftSQLServer_-_WindowFunctions.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			function windowFunctionClick_Handler(e)
+			{
+				selectQueryStatementElement.value = e.target.value;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			windowFunctionElement.addEventListener("click", windowFunctionClick_Handler, false);
+			
+			StructuredQueryLanguageSQLTemplate =
+			[
+				[
+					"ROW_Number", 
+`SELECT TOP 10
+	ROW_NUMBER() OVER (
+		PARTITION BY CONVERT(DATE, Dated)
+		ORDER BY HisWordID
+	) row_num,
+	*
+	FROM 
+	WordEngineering..HisWord
+	ORDER BY Dated DESC`
+				],
+			];
+		</script>		
+	</body>
+</html>
