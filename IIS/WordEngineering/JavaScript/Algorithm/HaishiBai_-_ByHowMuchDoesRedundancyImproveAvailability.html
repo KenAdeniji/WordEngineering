@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-11T18:20:00	Created. http://www.google.com/books/edition/Zen_of_Cloud/uuiYDwAAQBAJ?hl=en&gbpv=1
+		2024-12-11T18:58:00	http://stackoverflow.com/questions/10346722/how-to-split-a-string-by-white-space-or-comma
+		2024-12-11T19:21:00	http://stackoverflow.com/questions/3559883/javascript-split-regex-question/3560051#3560051
+		2024-12-11T19:21:00...2024-12-11T21:39:00 Code complete.	
+	-->	
+	<head>
+		<title>Haishi Bai: By how much does redundancy improve availability?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Haishi Bai By how much does redundancy improve availability?"/>
+		<meta name="keyword" content="Microsoft Azure, Haishi Bai, redundancy, availability"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 15vh;
+				width: 90vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<div align="left">	
+				<label for="availability">Availability</label>
+				<br/>
+				<div align="center">
+					<textarea id="availability">90%,90%,90%</textarea>
+				</div>	
+			</div>
+			<input type="submit" id="submitQuery"/>
+			<br/>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	availabilityElement = document.getElementById("availability");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				const regexp = /[,;/%/n]/g;
+				var rawElements = [...availabilityElement.value.split(regexp)];
+				var elements = rawElements.map(element => element.trim());
+				elements = elements.filter(function(e){return e})
+				length = elements.length;
+				if (length == 0)
+				{
+					return;
+				}
+				var index = 0;
+				for 
+				(
+					index = 0;
+					index < length;
+					index++
+				)
+				{		
+					elements[index] = 1.0000 * parseFloat(elements[index]) / 100.0 ;
+				}
+				var finalAvailability = elements[0];
+				for 
+				(
+					index = 1;
+					index < length;
+					index++
+				)
+				{		
+					finalAvailability = finalAvailability + ( elements[index] * ( 1 - finalAvailability ) );
+				}
+				resultSetElement.innerHTML = (finalAvailability * 100) + "%";
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

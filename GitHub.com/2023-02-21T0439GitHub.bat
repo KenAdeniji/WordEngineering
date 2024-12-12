@@ -1009,3 +1009,5 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2024-11-29T1743AlbertsonsL
 
 git add		IIS/WordEngineering/SQLServer/MicrosoftSQLServer_-_WindowFunctions.asmx
 git add     IIS/WordEngineering/SQLServer/MicrosoftSQLServer_-_WindowFunctions.html
+
+git add		IIS/WordEngineering/JavaScript/Algorithm/HaishiBai_-_ByHowMuchDoesRedundancyImproveAvailability.html
