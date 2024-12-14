@@ -184,7 +184,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1960);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8264);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8299);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160518);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15510);
@@ -848,5 +848,53 @@ http://www.30secondsofcode.org/js/s/string-is-valid-json
 apnews.com/article/syria-insurgents-algolani-hts-aab4c8894238904a4e351076726499fb?utm_source=firefox-newtab-en-us 
 apnews.com/article/russia-ukraine-war-trump-ceasefire-e00a18db202ef74b38e009bb2a5381cf?utm_source=RecoReel&utm_medium=articlePage&utm_id=Taboola
 microsoft windows operating system, mozilla firefox browser tab...window falls, drops, ejects, fails.
+
+2024-12-13T05:39:00
+===================================
+
+Exception has been thrown by the target of an invocation. (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.RunDialog(Form form)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at Microsoft.SqlServer.Management.SqlMgmt.RunningFormsTable.RunningFormsTableImpl.ThreadStarter.StartThread()
+
+===================================
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (mscorlib)
+
+------------------------------
+Program Location:
+
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.UpdateActionStatus(Int32 actionId, String action, ResultType result, Exception exception)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.GeneratePublishPage.worker_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(RunWorkerCompletedEventArgs e)
+   at System.ComponentModel.BackgroundWorker.AsyncOperationCompleted(Object arg)
+
 
 :Exit
