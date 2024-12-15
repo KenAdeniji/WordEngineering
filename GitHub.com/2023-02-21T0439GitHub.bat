@@ -1014,6 +1014,6 @@ git add		IIS/WordEngineering/JavaScript/Algorithm/HaishiBai_-_ByHowMuchDoesRedun
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-12T0245Joshua6v26_LJHookerCampsie_FrancoisVasiliades_3-7SeventhAvenueCampsieNewSouthWales2194Australia_197BeamishStreet.txt
 
-git rm -f	IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_SunShan_Deniss_Yinhuan_Kyle_Mimi_-_DavidCai_-_TheIdeaOfTheAuthorIsNot...ComprehensiveOfPeople.txt
+REM git rm -f	IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_SunShan_Deniss_Yinhuan_Kyle_Mimi_-_DavidCai_-_TheIdeaOfTheAuthorIsNot...ComprehensiveOfPeople.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_SunShan_Deniss_Yinhuan_Kyle_Mimi_-_DavidCai_-_HowCanWeProveYouWrong...WeAreRight.txt
