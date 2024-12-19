@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-11-27T19:30:00	Created. http://www.30secondsofcode.org/js/s/value-as-number/
+		.valueAsNumber
+		.valueAsDate
+	-->	
+	<head>
+		<title>30secondsofcode.org_-_valueAsType</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="30secondsofcode.org_-_valueAsType"/>
+		<meta name="keyword" content="input type, date, number"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Date</label></td>
+					<td>
+						<input id="dated" type="date" autofocus/>
+						<span id="quantityInputDate"></span>
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"/></td></tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	datedElement = document.getElementById("dated");
+			const	quantityInputDateElement = document.getElementById("quantityInputDate");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				quantityInputDateElement.textContent = datedElement.valueAsDate;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

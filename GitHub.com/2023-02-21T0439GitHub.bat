@@ -1017,3 +1017,14 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-12T0245Joshua6v26_
 REM git rm -f	IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_SunShan_Deniss_Yinhuan_Kyle_Mimi_-_DavidCai_-_TheIdeaOfTheAuthorIsNot...ComprehensiveOfPeople.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_SunShan_Deniss_Yinhuan_Kyle_Mimi_-_DavidCai_-_HowCanWeProveYouWrong...WeAreRight.txt
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2024-12-18T2044ElectronicDataSystemsEDS_Westpac_RobertLawJoss_BobJoss_WhatDoesHeWantToStayTheSameAsI.txt
+git add        IIS/WordEngineering/JavaScript/30secondsofcode.org/
+git add
+git add        IIS/WordEngineering/WordCross/MetricScalability.asmx
+git add        IIS/WordEngineering/WordCross/MetricScalability.html
+git add        InformationInTransit/ProcessLogic/Exact.Release2024-12-16T1000cs
+git add 	   Microsoft/DataAPIBuilder/
+git add        SQLScript/2024-11-18T1456Index.sql
+git add        SQLScript/2024-11-18T1551PointQuery.sql
+git add        SQLScript/2024-11-18T1626MultipointQuery.sql

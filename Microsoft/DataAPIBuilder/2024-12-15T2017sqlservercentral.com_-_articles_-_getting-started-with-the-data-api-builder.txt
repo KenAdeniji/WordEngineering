@@ -1,0 +1,30 @@
+http://www.sqlservercentral.com/articles/getting-started-with-the-data-api-builder
+http://learn.microsoft.com/en-us/dotnet/core/install/windows#net-installer
+http://www.postman.com/downloads
+
+dotnet tool install --global Microsoft.DataApiBuilder
+
+dab --version
+
+dab init --database-type "mssql" --host-mode "Development" --connection-string "Server=localhost,1433;TrustedConnection=True;Database=Bible;TrustServerCertificate=True;Encrypt=True;"
+
+	Information: Microsoft.DataApiBuilder 1.3.19
+	Information: Generating default config file: D:\WordEngineering\Microsoft\DataAPIBuilder\dab-config.json
+	Information: Config file generated.
+	Information: SUGGESTION: Use 'dab add [entity-name] [options]' to add new entities in your config.
+
+dab add BibleBook --source "dbo.BibleBook" --permissions "anonymous:*"
+
+	Information: Microsoft.DataApiBuilder 1.3.19
+	Information: Config not provided. Trying to get default config based on DAB_ENVIRONMENT...
+	Information: Environment variable DAB_ENVIRONMENT is (null)
+	Loading config file from D:\WordEngineering\Microsoft\DataAPIBuilder\dab-config.json.
+	Information: Added new entity: BibleBook with source: dbo.BibleBook and permissions: anonymous:*.
+	Information: SUGGESTION: Use 'dab update [entity-name] [options]' to update any entities in your config.
+
+dab-config
+	"connection-string": "Server=localhost,1433;User ID=DataAPIBuilder;Password=DataAPIBuilder;Database=Bible;TrustServerCertificate=True;Encrypt=True;",
+
+dab start
+
+
