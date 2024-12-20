@@ -31,6 +31,8 @@ var module20241219 =	//2024-12-19T09:30:00
 	//2024-12-19T17:28:00	We are coming to a time... after ourself.
 	//2024-12-19T10:00:00 	phoebe.hsukeim@promab.com My daughter is Jewish.
 	//businessinsider.com/bill-gates-internet-predictions-2015-12#content-created-for-the-internet-would-be-just-as-big-a-moneymaker-as-tv-1 On January 3, 1996, Microsoft CEO Bill Gates wrote an essay titled "Content is King" in which he made a number of bold predictions for what the internet would look like in the future.
+	//2024-12-19T17:50:00	I could make it a variable... but then it clutters the screen... is it a user, or developer?
+	//	Benitoluwa said if Kunle Arifalo and Dotun choose to re-locate to the United States of America (USA) from Lagos, Nigeria... they will be doing it for their children.
 	replaceAllInstancesOfAString: function
 	(
 		original,
