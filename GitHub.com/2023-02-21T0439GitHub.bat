@@ -1028,4 +1028,5 @@ git add        SQLScript/2024-11-18T1456Index.sql
 git add        SQLScript/2024-11-18T1551PointQuery.sql
 git add        SQLScript/2024-11-18T1626MultipointQuery.sql
 
-git add        IIS/WordEngineering/JavaScript/stateofjs.com/
+git add     IIS/WordEngineering/JavaScript/stateofjs.com/2024.stateofjs.com.html
+git rm		IIS/WordEngineering/JavaScript/stateofjs.com/2024.stateofjs.com.js

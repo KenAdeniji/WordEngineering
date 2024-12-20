@@ -2,6 +2,12 @@
 <html>
 	<!--
 		2024-12-19T07:31:00	Created. 2024.stateofjs.com
+		2024-12-19T20:14:00	dynamic code
+			Operation: code
+			data
+			url	
+		2024-12-19T20:14:00	How do you build a function?
+		2024-12-19T20:40:00	Variable code?
 	-->	
 	<head>
 		<title>2024.stateofjs.com</title>
@@ -50,81 +56,69 @@ tr:nth-child(even) {
 		<script>
 			const resultSetElement = document.getElementById("resultSet");
 
-			function pageLoad()
-			{
-				resultSetElement.innerHTML = 
+			let dataRow;
+			let codeResult;
+			let codeURL;
+			let	resultSetStub = 
 				`
 					<table border="1">
 						<thead>
 							<tr>
 								<th>Name</th>
 								<th>Example</th>
-								<th>Usage</th>
 								<th>Value</th>
 								<th>Commentary</th>
 								<th>URI</th>								
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Nullish Coalescing</td>
-								<td>
-	nullishCoalescing: function(first, second)
-	{
-		return first ?? second;
-	}								
-								</td>
-								<td>module20241219.nullishCoalescing(1, 2)</td>
-								<td>${module20241219.nullishCoalescing(1, 2)}</td>
-								<td>Return first value, or second value if first value is null or undefined.</th>
-							</tr>
-							<tr>
-								<td>Logical Assignment</td>
-								<td>
-	logicalAssignment: function
-	(
-		willTargetTuesdayDecemberThirtyFirst
-	)
-	{
-		willTargetTuesdayDecemberThirtyFirst ||= new Date(2024, 11, 31);
-		return willTargetTuesdayDecemberThirtyFirst;
-	}	
-								</td>
-								<td>module20241219.logicalAssignment(null)</td>								
-								<td>${module20241219.logicalAssignment(null)}</td>
-								<td>Operators to assign a value to a variable based on its own truthy/falsy status.</th>
-							</tr>
-							<tr id="replaceAll">
-								<td>Replace All</td>
-								<td>
-	replaceAllInstancesOfAString: function
-	(
-		original,
-		pattern,
-		replacement
-	)
-	{
-		return original.replaceAll(pattern, replacement);
-	}
-								</td>
-								<td>module20241219.replaceAllInstancesOfAString("foo_bar_baz", "_", "-")</td>
-								<td>${module20241219.replaceAllInstancesOfAString("foo_bar_baz", "_", "-")}</td>
-								<td>Replace all instance of a string.</th>
-								<td>
-									<a 
-										href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"
-										target="_blank"
-									>	
-										developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
-									</a>
-								</th>
-							</tr>
-						</tbody>
-					</table>	
 				`;
+				
+			function pageLoad()
+			{
+				for (var rowIndex = 0, rowCount = dataJSON.length; rowIndex < rowCount; ++rowIndex)
+				{
+					dataRow = dataJSON[rowIndex];
+					codeResult = eval(dataRow["valued"]);
+					codeURL = dataRow.hasOwnProperty("url") ?
+						`<a href=${dataRow["url"]} target="_blank">${dataRow["url"]}</a>` :
+						"";
+					resultSetStub +=
+						`
+							<tr>
+								<td>${dataRow["named"]}</td>
+								<td>${dataRow["valued"]}</td>
+								<td>${codeResult}</td>
+								<td>${dataRow["commentary"]}</td>
+								<td>${codeURL}</td>
+							</tr>	
+						`;
+				}
+				resultSetStub += "<tbody></table>";
+				resultSetElement.innerHTML = resultSetStub;
 			}
 			
 			window.addEventListener("load", pageLoad, false);
+
+			const dataJSON =
+[
+	{
+		named: "Nullish Coalescing",
+		valued: "1 ?? 2",
+		commentary: "Return first value, or second value if first value is null or undefined."
+	},
+	{
+		named: "Logical Assignment",
+		valued: "willTargetTuesdayDecemberThirtyFirst = null; willTargetTuesdayDecemberThirtyFirst ||= new Date(2024, 11, 31);",
+		commentary: "Operators to assign a value to a variable based on its own truthy/falsy status."
+	},
+	{
+		named: "replaceAll",
+		valued: "'foo_bar_baz'.replaceAll('_', '-')",
+		commentary: "Replace all instance of a string.",
+		url: "http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"
+	},
+];			
 		</script>
 	</body>
 </html>
