@@ -1020,7 +1020,6 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-14_-_99RanchMarket
 
 git add        IIS/WordEngineering/2018-05-03Correspondence/2024-12-18T2044ElectronicDataSystemsEDS_Westpac_RobertLawJoss_BobJoss_WhatDoesHeWantToStayTheSameAsI.txt
 git add        IIS/WordEngineering/JavaScript/30secondsofcode.org/
-git add
 git add        IIS/WordEngineering/WordCross/MetricScalability.asmx
 git add        IIS/WordEngineering/WordCross/MetricScalability.html
 git add        InformationInTransit/ProcessLogic/Exact.Release2024-12-16T1000cs
@@ -1028,3 +1027,5 @@ git add 	   Microsoft/DataAPIBuilder/
 git add        SQLScript/2024-11-18T1456Index.sql
 git add        SQLScript/2024-11-18T1551PointQuery.sql
 git add        SQLScript/2024-11-18T1626MultipointQuery.sql
+
+git add        IIS/WordEngineering/JavaScript/stateofjs.com/

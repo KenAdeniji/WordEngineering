@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-19T07:31:00	Created. 2024.stateofjs.com
+	-->	
+	<head>
+		<title>2024.stateofjs.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2024.stateofjs.com"/>
+		<meta name="keyword" content="2024.stateofjs.com, JavaScript"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+	</head>
+	<body>
+
+		<div id="resultSet" align="center"></div>
+
+		<script src="2024.stateofjs.com.js"></script>
+
+		<script>
+			const resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				resultSetElement.innerHTML = 
+				`
+					<table border="1">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Example</th>
+								<th>Usage</th>
+								<th>Value</th>
+								<th>Commentary</th>
+								<th>URI</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Nullish Coalescing</td>
+								<td>
+	nullishCoalescing: function(first, second)
+	{
+		return first ?? second;
+	}								
+								</td>
+								<td>module20241219.nullishCoalescing(1, 2)</td>
+								<td>${module20241219.nullishCoalescing(1, 2)}</td>
+								<td>Return first value, or second value if first value is null or undefined.</th>
+							</tr>
+							<tr>
+								<td>Logical Assignment</td>
+								<td>
+	logicalAssignment: function
+	(
+		willTargetTuesdayDecemberThirtyFirst
+	)
+	{
+		willTargetTuesdayDecemberThirtyFirst ||= new Date(2024, 11, 31);
+		return willTargetTuesdayDecemberThirtyFirst;
+	}	
+								</td>
+								<td>module20241219.logicalAssignment(null)</td>								
+								<td>${module20241219.logicalAssignment(null)}</td>
+								<td>Operators to assign a value to a variable based on its own truthy/falsy status.</th>
+							</tr>
+							<tr id="replaceAll">
+								<td>Replace All</td>
+								<td>
+	replaceAllInstancesOfAString: function
+	(
+		original,
+		pattern,
+		replacement
+	)
+	{
+		return original.replaceAll(pattern, replacement);
+	}
+								</td>
+								<td>module20241219.replaceAllInstancesOfAString("foo_bar_baz", "_", "-")</td>
+								<td>${module20241219.replaceAllInstancesOfAString("foo_bar_baz", "_", "-")}</td>
+								<td>Replace all instance of a string.</th>
+								<td>
+									<a 
+										href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"
+										target="_blank"
+									>	
+										developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+									</a>
+								</th>
+							</tr>
+						</tbody>
+					</table>	
+				`;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
