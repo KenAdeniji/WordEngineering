@@ -260,8 +260,17 @@ namespace InformationInTransit.DataAccess
                     foreach (OdbcParameter odbcParameter in odbcParameterCollection)
                     {
                         OdbcCommand.Parameters.Add(odbcParameter);
+/*
+						System.Console.WriteLine
+						(
+							"Name: {0} | Value: {1}",
+							odbcParameter.ParameterName,
+							odbcParameter.Value
+						);
+*/				
                     }
                 }
+				
                 switch (resultType)
                 {
                     case ResultType.DataSet:

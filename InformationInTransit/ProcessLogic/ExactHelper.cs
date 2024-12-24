@@ -47,7 +47,7 @@ namespace InformationInTransit.ProcessLogic
 			return dataSet;
 		}
 		
-		public const string SQLStatementOurFixationOnNumberFormat = "SELECT * FROM Bible..Exact WHERE 1 = 1 {0} ORDER BY BibleWord";
+		public const string SQLStatementOurFixationOnNumberFormat = "SELECT * FROM Bible..Exact_View WHERE 1 = 1 {0} ORDER BY BibleWord";
 		public const string SQLStatementOurFixationOnNumberWhereAndFormat = " AND BibleWord LIKE '%{0}%' ";
     }
 }

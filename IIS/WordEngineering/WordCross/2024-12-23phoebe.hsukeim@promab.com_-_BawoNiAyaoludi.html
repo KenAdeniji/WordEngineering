@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-24T00:22:00 Created.
+		2024-12-24T01:21:00	http://api.github.com/users/KenAdeniji
+	-->
+	<head>
+		<title>Bawo ni ayaoludi?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bawo ni ayaoludi?"/>
+		<meta name="keywords" content=""/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<form method="post" id="formed" action="javascript:void(0);">
+			<div align="center">
+				<label for="webServiceURL" align="left">Web service URL: </label>
+				<input 
+					type="url"
+					id="webServiceURL"
+					size="50"
+					align="left"
+					value="http://api.github.com/users/KenAdeniji"
+				/>
+				<br/>
+				<input type="submit" id="submitQuery">
+				<div id="outputSet"></div>
+			</div>
+		</form>
+		<script>
+			const formedElement = document.getElementById("formed");
+
+			const webServiceURLElement = document.getElementById("webServiceURL");
+		
+			const inputSetElement = document.getElementById("inputSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const outputSetElement = document.getElementById("outputSet");
+			
+			var isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					var urlParams = new URLSearchParams(window.location.search);
+					
+					var webServiceURLValue = urlParams.get("webServiceURL");
+					if (webServiceURLValue)
+					{
+						webServiceURLElement.value = webServiceURLValue;
+					}	
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				try 
+				{
+					let response = await fetch(webServiceURLElement.value); // Gets a promise
+					outputSetElement.innerHTML = await response.text(); // Replaces body with response
+				} 
+				catch (err) 
+				{
+					outputSetElement.innerHTML = err;
+					console.log(err); // Error handling
+				}
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

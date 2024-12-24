@@ -14,6 +14,7 @@ using InformationInTransit.DataAccess;
 2013-09-20 udf_exactly. udf_inclusive.
 2013-10-11 Difference column.
 2015-03-16 adjust = char.ToUpper(adjust[0]) + adjust.Substring(1);
+2024-12-16T10:24:00 Difference computed column.
 */
 namespace InformationInTransit.ProcessLogic
 {
@@ -33,6 +34,7 @@ namespace InformationInTransit.ProcessLogic
 			
 			DataTable dataTable = ReadBible();
 			int row = 1;
+			
 			foreach(DataRow dataRow in dataTable.Rows)
 			{
 				verseText = (string) dataRow["KingJamesVersion"];
@@ -40,10 +42,11 @@ namespace InformationInTransit.ProcessLogic
 				foreach(string word in words)
 				{
 					adjust = word.Trim();
-					if (adjust == String.Empty)
+					if (string.IsNullOrEmpty(adjust)) 						
 					{
 						continue;
 					}
+					adjust = adjust.Replace("'", "''");
 					adjust = char.ToUpper(adjust[0]) + adjust.Substring(1);
 					scriptureReference = (string) dataRow["scriptureReference"];
 					//found = uniqueWords.ContainsKey(adjust);
@@ -53,7 +56,8 @@ namespace InformationInTransit.ProcessLogic
 						participation = new Participation
 						{
 							FirstOccurrenceScriptureReference = scriptureReference,
-							FirstOccurrencePosition = row,
+							FirstOccurrenceVerseIDSequence = row,
+							LastOccurrenceVerseIDSequence = 1,
 							FrequencyOfOccurrence = 1
 						};
 						uniqueWords.Add(adjust, participation);
@@ -61,7 +65,7 @@ namespace InformationInTransit.ProcessLogic
 					else
 					{
 						participation.LastOccurrenceScriptureReference = scriptureReference;
-						participation.LastOccurrencePosition = row;
+						participation.LastOccurrenceVerseIDSequence = row;
 						++participation.FrequencyOfOccurrence;
 					}
 				}
@@ -77,27 +81,34 @@ namespace InformationInTransit.ProcessLogic
 			
 			foreach(KeyValuePair<string, Participation> kvp in uniqueWords)
 			{
+				/*
 				Collection<OdbcParameter> odbcParameterCollection = new Collection<OdbcParameter>();
+
+				//Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+
 				odbcParameterCollection.Add(new OdbcParameter("@bibleWord", kvp.Key));
+		
 				odbcParameterCollection.Add(new OdbcParameter("@firstOccurrenceScriptureReference", kvp.Value.FirstOccurrenceScriptureReference));
 				
-				OdbcParameter lastOccurrence = new OdbcParameter("@lastOccurrenceScriptureReference", SqlDbType.VarChar);
-				lastOccurrence.IsNullable = true;
-				lastOccurrence.Value = DBNull.Value;
+				OdbcParameter lastOccurrenceScriptureReference = new OdbcParameter("@lastOccurrenceScriptureReference", SqlDbType.VarChar);
+				lastOccurrenceScriptureReference.IsNullable = true;
+				lastOccurrenceScriptureReference.Value = DBNull.Value;
+
+				odbcParameterCollection.Add(lastOccurrenceScriptureReference);
+
+				odbcParameterCollection.Add(new OdbcParameter("@firstOccurrenceVerseIDSequence", kvp.Value.FirstOccurrenceVerseIDSequence));
 				
-				OdbcParameter difference = new OdbcParameter("@difference", SqlDbType.Int);
-				difference.IsNullable = true;
-				difference.Value = DBNull.Value;
+				OdbcParameter lastOccurrenceVerseIDSequence = new OdbcParameter("@lastOccurrenceVerseIDSequence", SqlDbType.Int);
+				lastOccurrenceVerseIDSequence.IsNullable = true;
+				lastOccurrenceVerseIDSequence.Value = DBNull.Value;
 				
 				if (!String.IsNullOrEmpty(kvp.Value.FirstOccurrenceScriptureReference))
 				{
-					lastOccurrence.Value = kvp.Value.LastOccurrenceScriptureReference;
-					difference.Value = kvp.Value.LastOccurrencePosition - kvp.Value.FirstOccurrencePosition;
+					lastOccurrenceScriptureReference.Value = kvp.Value.LastOccurrenceScriptureReference;
+					lastOccurrenceVerseIDSequence.Value = kvp.Value.LastOccurrenceVerseIDSequence;
 				}
+								odbcParameterCollection.Add(lastOccurrenceVerseIDSequence);
 				
-				odbcParameterCollection.Add(lastOccurrence);
-				odbcParameterCollection.Add(difference);
-					
 				odbcParameterCollection.Add(new OdbcParameter("@frequencyOfOccurrence", kvp.Value.FrequencyOfOccurrence));
 				
 				DataCommand.DatabaseCommand
@@ -105,8 +116,28 @@ namespace InformationInTransit.ProcessLogic
 					"Bible..usp_ExactInsert",
 					CommandType.StoredProcedure,
 					DataCommand.ResultType.NonQuery,
-					odbcParameterCollection
+					odbcParameterollection
 				);
+				*/
+				
+				String sqlInsert = String.Format
+				(
+					SQLStatementExactInsert,
+					kvp.Key,
+					kvp.Value.FirstOccurrenceScriptureReference,
+					kvp.Value.LastOccurrenceScriptureReference,
+					kvp.Value.FirstOccurrenceVerseIDSequence,
+					kvp.Value.LastOccurrenceVerseIDSequence,
+					kvp.Value.FrequencyOfOccurrence
+				);	
+
+				DataCommand.DatabaseCommand
+				(
+					sqlInsert,
+					CommandType.Text,
+					DataCommand.ResultType.NonQuery
+				);
+		
 			}
 		}
 		
@@ -114,15 +145,36 @@ namespace InformationInTransit.ProcessLogic
 		{
 			DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 			(
-				"SELECT * FROM Bible..Scripture ORDER BY bookId, chapterId, verseId",
+				"SELECT * FROM Bible..Scripture_View ORDER BY bookId, chapterId, verseId",
 				CommandType.Text,
 				DataCommand.ResultType.DataTable
 			);
 			return dataTable;
 		}
 		
-		public static readonly char[] SplitSeparator = new Char [] {' ', ',', '.', ':', ';', '(', ')', '?', '!'};
+		public static readonly char[] SplitSeparator = new Char [] {' ', ',', '.', ':', ';', '(', ')', '?', '!', '"'};
 
+		public const string SQLStatementExactInsert = @"
+	INSERT INTO Bible..Exact 
+	(
+		BibleWord,
+		FirstOccurrenceScriptureReference, 
+		LastOccurrenceScriptureReference,
+		FirstOccurrenceVerseIDSequence,
+		LastOccurrenceVerseIDSequence,
+		FrequencyOfOccurrence
+	)
+	VALUES
+	(
+		'{0}',
+		'{1}', 
+		'{2}',
+		{3},
+		{4},
+		{5}
+	)
+		";
+		
         public class SameWordComparer : EqualityComparer<string>
         {
             public override bool Equals(string s1, string s2)
@@ -140,10 +192,9 @@ namespace InformationInTransit.ProcessLogic
         {
             public string FirstOccurrenceScriptureReference { get; set; }
             public string LastOccurrenceScriptureReference { get; set; }
-            public int FirstOccurrencePosition { get; set; }
-            public int? LastOccurrencePosition { get; set; }
+            public int FirstOccurrenceVerseIDSequence { get; set; }
+            public int LastOccurrenceVerseIDSequence { get; set; }
             public int FrequencyOfOccurrence { get; set; }
         }	
-
     }
 }

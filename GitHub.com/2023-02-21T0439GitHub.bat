@@ -1031,3 +1031,9 @@ git add        SQLScript/2024-11-18T1626MultipointQuery.sql
 git add     IIS/WordEngineering/JavaScript/stateofjs.com/2024.stateofjs.com.html
 REM git rm		IIS/WordEngineering/JavaScript/stateofjs.com/2024.stateofjs.com.js
 
+git rm	    IIS/WordEngineering/WordUnion/KenAdenijiResume.pdf
+git add		InformationInTransit/DataAccess/DataCommand.cs
+git add		InformationInTransit/ProcessLogic/Exact.cs
+git add		InformationInTransit/ProcessLogic/Exact.exe
+git add		InformationInTransit/ProcessLogic/ExactHelper.cs
+git add		IIS/WordEngineering/WordCross/2024-12-23phoebe.hsukeim@promab.com_-_BawoNiAyaoludi.html
