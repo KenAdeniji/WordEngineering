@@ -1042,3 +1042,6 @@ git add		Batch/2024-12-22T0414IfeRestore.bat
 git add		IIS/WordEngineering/WordCross/2024-12-23phoebe.hsukeim@promab.com_-_BawoNiAyaoludi.html
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-24_-_99RanchMarket_hr@tawa.com_(510)487-8899_34444FremontBoulevard_RogerH.Chen_YulinZhou_-_YouRelateAsAPeople...IAsMember.txt
+
+git add     IIS/WordEngineering/WordCross/2024-12-26T2035TrafficConeColor.asmx
+git add     IIS/WordEngineering/WordCross/2024-12-26T2035TrafficConeColor.html
