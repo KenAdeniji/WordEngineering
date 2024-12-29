@@ -9,4 +9,4 @@ goto Exit
 		2024-08-21	http://www.informit.com/articles/article.aspx?p=3197432
 			Designing Software Architectures: A Practical Approach, 2nd Edition By Humberto Cervantes, Rick Kazman Published Jun 2, 2024 by Addison-Wesley Professional. Part of the SEI Series in Software Engineering series. Making Design Decisions Aug 5, 2024
 		2024-07-04	pandoc.org 	Pandoc a universal document converter 		HTML, PDF, TXT, Microsoft Word docx 	2024-07-04
-Exit:
+:Exit

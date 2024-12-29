@@ -1045,3 +1045,6 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-24_-_99RanchMarket
 
 git add     IIS/WordEngineering/WordCross/2024-12-26T2035TrafficConeColor.asmx
 git add     IIS/WordEngineering/WordCross/2024-12-26T2035TrafficConeColor.html
+
+git add     IIS/WordEngineering/JavaScript/RaymondCamden.com/2024-12-28T1736RaymondCamden.com_-_AddingPDFsToYourWebpageWithoutJavaScript_-_TheSimpleSolution.html
+git add     IIS/WordEngineering/JavaScript/RaymondCamden.com/2024-12-28T1831RaymondCamden.com_-_AddingPDFsToYourWebpageWithoutJavaScript_-_APDFViewer.html
