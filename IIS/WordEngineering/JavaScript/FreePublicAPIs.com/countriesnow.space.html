@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-29T21:15:00	Created.	countriesnow.space
+	-->	
+	<head>
+		<title>countriesnow.space</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="countriesnow.space"/>
+		<meta name="keyword" content="Country, city"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div id="resultSet" align="center"></div>
+		<script>
+			const	resultSetElement = document.getElementById("resultSet");
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["iso2"] = "NG";
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include',
+					mode: 'no-cors',
+				}
+				PostData.body = JSON.stringify(request);
+				//PostData.body = '"city": "lagos"';
+				url = "https://countriesnow.space/api/v0.1/countries/population/cities";
+				url = "https://countriesnow.space/api/v0.1/countries/positions";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						resultSetElement.innerHTML = responseJSON;
+					})	
+					} catch (e) {
+						resultSetElement.innerHTML = e;
+				};
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-29T19:26:00	Created.	http://www.freepublicapis.com/ipify-api
+		2024-12-29T19:38:00	http://www.ipify.org/?ref=freepublicapis.com
+	-->	
+	<head>
+		<title>ipify.org</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="ipify.org"/>
+		<meta name="keyword" content="IP address"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
+		<script type="application/javascript">
+			function getIP(json) 
+			{
+				document.write("My public IP address (IPv4) is: ", json.ip, "<br>");
+			}
+			function getIPv6(json) 
+			{
+				document.write("My public IP address IPv4(v6) is: ", json.ip, "<br>");
+			}
+		</script>
+
+		<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+		
+		<script type="application/javascript" src="https://api64.ipify.org?format=jsonp&callback=getIPv6"></script>
+
+	</body>
+</html>

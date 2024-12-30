@@ -194,10 +194,10 @@ DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 170523);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 171275);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 662);
-DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4244);
-DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5036);
+DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
+DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5094);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7197); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2050);
@@ -899,4 +899,8 @@ Program Location:
 2024-12-26T20:35:00	http://trdsf.com/blogs/news/types-of-traffic-cones
 	orange
 
+2024-12-29T19:18:00
+http://localhost/Wordengineering/WordOfGod/URIMaintenanceWebForm.aspx
+	Page 12
+http://www.freepublicapis.com
 :Exit

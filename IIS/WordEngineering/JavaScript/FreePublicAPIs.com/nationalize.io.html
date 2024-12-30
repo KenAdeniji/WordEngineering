@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-29T23:24:00	Created.	freepublicapis.com/nationalize-api
+		2024-12-29T23:24:00	nationalize.io
+Demografix ApS
+Eriksvej 30, 4000 Roskilde
+Denmark
+DK40697179
+info@genderize.io
+	-->	
+	<head>
+		<title>nationalize.io</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="nationalize.io"/>
+		<meta name="keyword" content="nationality of a single name"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%;
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="post" id="formed" action="javascript:void(0);">
+			<div align="center">
+				<label for="name" align="left">Name: </label>
+				<input align="center" id="name" type="text" value="Adeniji" size="50" autofocus required/>
+				<br><br>
+				<input type="submit" id="submitQuery">
+				<br><br>
+				<div id="resultSet" align="center"></div>
+
+				<div id="statisticsSet" align="center">
+					<label for="statisticsCount" align="left">Count: </label><span id="statisticsCount"></span>
+					<br>
+					<label for="statisticsName" align="left">Name: </label><span id="statisticsName"></span>
+				</div>
+
+				<br><br>
+
+				<div id="tableSet" align="center"></div>
+			</div>
+		</form>
+
+		<script>
+			const	nameElement = document.getElementById("name");
+			const	formedElement = document.getElementById("formed");
+			const	resultSetElement = document.getElementById("resultSet");
+			const	statisticsCountElement = document.getElementById("statisticsCount");
+			const	statisticsNameElement = document.getElementById("statisticsName");
+			const	tableSetElement = document.getElementById("tableSet");
+			const	submitQueryElement = document.getElementById("submitQuery");
+						
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			async function fetchQuery()
+			{
+				try 
+				{
+					url = `https://api.nationalize.io?name=${nameElement.value}`;
+					let response = await fetch(url); // Gets a promise
+					let jsonInfo = await response.json();
+					return jsonInfo;
+				} 
+				catch (err) 
+				{
+					resultSetElement.value = err;
+					console.log(err); // Error handling
+				}
+			}
+
+			async function querySubmit()
+			{
+				let jsonInfo = await fetchQuery();
+
+				resultSetElement.innerHTML = JSON.stringify(jsonInfo);
+				
+				statisticsCountElement.textContent = jsonInfo.count;
+				
+				statisticsNameElement.textContent = jsonInfo.name;
+				
+				let tableInfo =
+					`<table id='tableTable'><caption>Country</caption>
+						<thead><tr><th>ID</th><th>Probability</th></tr></thead>
+						<tbody>
+					`
+				
+				for (var country of jsonInfo.country) 
+				{
+					tableInfo += `<tr><td>${country.country_id}</td><td>${country.probability}</td></tr>`;
+				}
+				
+				tableInfo += "</tbody></table>";
+				
+				tableSetElement.innerHTML = tableInfo;
+				
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
