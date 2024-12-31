@@ -1050,3 +1050,9 @@ git add     IIS/WordEngineering/JavaScript/RaymondCamden.com/2024-12-28T1736Raym
 git add     IIS/WordEngineering/JavaScript/RaymondCamden.com/2024-12-28T1831RaymondCamden.com_-_AddingPDFsToYourWebpageWithoutJavaScript_-_APDFViewer.html
 
 git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com
+
+git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/nationalize.io.html
+git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/jobicy.com.html
+
+git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/throwaway.cloud.html
+	

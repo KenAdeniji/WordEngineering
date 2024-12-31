@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-30T06:12:00	Created.	http://www.freepublicapis.com/remote-jobs-api-rss-feed
+		2024-12-30T06:19:00	jobicy.com
+		2024-12-30T07:23:00	http://jobicy.com/api/v2/remote-jobs?get=industries
+		2024-12-30T07:41:00	"Invalid 'industry' value. This value must contain the predefined 'industrySlug'. See here: https://jobi.cy/veq2t"
+		2024-12-30T08:02:00	President Jimmy Carter, El Cerrito Plaza, Barnes & Noble (BN) teaches Bible studies at his Baptist church.
+id	111788
+url	https://jobicy.com/jobs/111788-product-marketing-manager-2		
+
+		2024-12-30T09:43:00
+ "id": Unique Job ID,
+ "url": Job link,
+ "jobTitle": Job title,
+ "companyName": Company name,
+ "companyLogo": Company logo link,
+ "jobIndustry": Job function (industry),
+ "jobType": Job type (full-time, contract, part-time or internship)
+ "jobGeo": Geographic restriction for employment (or Anywhere if not applicable), 
+ "jobLevel": Seniority level (or Any if not applicable), 
+ "jobExcerpt": Excerpt job description (max 55 characters), 
+ "jobDescription": Full job description (HTML), 
+ "pubDate": Publication date and time (UTC+00:00),
+ "annualSalaryMin": Annual min salary (if applicable),
+ "annualSalaryMax": Annual max salary (if applicable),
+ "salaryCurrency": ISO 4217 salary currency code (if applicable)
+
+	-->	
+	<head>
+		<title>jobicy.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="jobicy.com"/>
+		<meta name="keyword" content="remote jobs"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%;
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="post" id="formed" action="javascript:void(0);">
+			<div align="center">
+				<table>
+					<tr>
+						<td><label for="count" align="left">Count</label></td>
+						<td><input align="left" id="count" type="number" value="50" min="1" max="50" autofocus required/></td>
+					</tr>
+					<tr>
+						<td><label for="geo" align="left">Geo</label></td>
+						<td><select id="geo"></select></td>
+					</tr>
+					<tr>
+						<td><label for="industry" align="left">Industry</label></td>
+						<td><select id="industry"></select></td>
+					</tr>
+					<tr>
+						<td><label for="tag" align="left">Tag</label></td>
+						<td><input align="left" id="tag" type="text" size="50"/></td>
+					</tr>
+					<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+				</table>
+				<div id="resultSet" align="left"></div>
+			</div>
+		</form>
+
+		<script>
+			const	formedElement = document.getElementById("formed");
+			
+			const	countElement = document.getElementById("count");
+			const	geoElement = document.getElementById("geo");
+			const	industryElement = document.getElementById("industry");
+			const	tagElement = document.getElementById("tag");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			let isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					buildSelect("geo", Geos);
+					buildSelect("industry", Industries);
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
+			}
+	
+			async function fetchQuery()
+			{
+				try 
+				{
+					let url = "https://jobicy.com/api/v2/remote-jobs?count=20&geo=usa&industry=marketing&tag=seo";
+					
+					url = `https://jobicy.com/api/v2/remote-jobs?count=${Number(countElement.value)}`;
+					
+					if (geoElement.selectedIndex > 0)	
+					{
+						let geoLocation = geoElement.value.toLocaleLowerCase();
+						geoLocation = geoLocation.replaceAll(" ", "-"); 
+						url += `&geo=${geoLocation}`;
+					}
+
+					if (industryElement.selectedIndex > 0)	
+					{
+						url += `&industry=${industryElement.value}`;
+					}
+
+					if (tagElement.value)
+					{
+						url += `&tag=${tagElement.value}`;
+					}
+
+					resultSetElement.innerHTML = url;
+
+					let response = await fetch(url); // Gets a promise
+					let jsonInfo = await response.json();
+					return jsonInfo;
+				} 
+				catch (err) 
+				{
+					resultSetElement.value = err;
+					console.log(err); // Error handling
+				}
+			}
+
+			async function querySubmit()
+			{
+				let jsonInfo = await fetchQuery();
+				
+				let outputInfo = "<ol>";
+				
+				for (var job of jsonInfo.jobs) 
+				{
+					outputInfo += 
+						`<li><ul>
+							<li>id: ${job.id}</li>
+							<li>url: <a href="${job.url}" target="_blank">${job.url}</a></li>
+							<li>jobTitle: ${job.jobTitle}</li>
+							<li>companyName: ${job.companyName}</li>
+							<li>
+								companyLogo:
+									<a href="${job.companyLogo}" target="_blank">${job.companyLogo}</a><br>
+									<img src="${job.companyLogo}" alt="${job.companyLogo}"/>
+							</li>
+							<li>jobIndustry: ${job.jobIndustry}</li>
+							<li>jobType: ${job.jobType}</li>
+							<li>jobGeo: ${job.jobGeo}</li>
+							<li>jobLevel: ${job.jobLevel}</li>
+							<li>jobExcerpt: ${job.jobExcerpt}</li>
+							<li>jobDescription: ${job.jobDescription}</li>
+							<li>pubDate (UTC+00:00): ${job.pubDate}</li>
+							<li>annualSalaryMin: ${job.annualSalaryMin}</li>
+							<li>annualSalaryMax: ${job.annualSalaryMax}</li>
+							<li>salaryCurrency (ISO 4217 salary currency code): ${job.salaryCurrency}</li>
+						</ul></li>
+						`
+						;
+				}
+				
+				outputInfo += "</ol>";
+				
+				resultSetElement.innerHTML = outputInfo;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const Geos = 
+			[
+				["Anywhere", "all regions"],
+				"APAC",
+				"Australia",
+				"China",
+				"Japan",
+				"New Zealand",
+				"Philippines",
+				"Singapore",
+				"South Korea",
+				"Thailand",
+				"Vietnam",
+				"EMEA",
+				"Europe",
+				"Austria",
+				"Belgium",
+				"Bulgaria",
+				"Croatia",
+				"Cyprus",
+				"Czechia",
+				"Denmark",
+				"Estonia",
+				"Finland",
+				"France",
+				"Germany",
+				"Greece",
+				"Hungary",
+				"Ireland",
+				"Italy",
+				"Latvia",
+				"Lithuania",
+				"Netherlands",
+				"Norway",
+				"Poland",
+				"Portugal",
+				"Romania",
+				"Slovakia",
+				"Slovenia",
+				"Spain",
+				"Sweden",
+				"Switzerland",
+				"UK",
+				"Israel",
+				"Türkiye",
+				"United Arab Emirates",
+				"LATAM",
+				"Argentina",
+				"Brazil",
+				"Costa Rica",
+				"Mexico",
+				"Canada",
+				"USA"
+			];
+			
+			const Industries = 
+			[
+				["Any category", "all categories"],
+				["Business Development", "business"],
+				["Content & Editorial", "copywriting"],
+				["Creative & Design", "design-multimedia"],
+				["Customer Success", "supporting"],
+				["Data Science & Analytics", "data-science"],
+				["DevOps & Infrastructure", "admin"],
+				["Finance & Accounting", "accounting-finance"],
+				["HR & Recruiting", "hr"],
+				["Legal & Compliance", "legal"],
+				["Marketing & Sales", "marketing"],
+				["Product & Operations", "management"],
+				["Programming", "dev"],
+				["Sales", "seller"],
+				["SEO", "seo"],
+				["Social Media Marketing", "smm"],
+				["Software Engineering", "engineering"],
+				["Technical Support", "technical-support"],
+				["Web & App Design", "web-app-design"],
+			];
+			
+		</script>
+	</body>
+</html>

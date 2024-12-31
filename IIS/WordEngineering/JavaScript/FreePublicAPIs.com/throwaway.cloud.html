@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2024-12-30T15:38:00	Created.	http://www.freepublicapis.com/throwaway-email-api
+		2024-12-30T15:43:00	http://throwaway.cloud/api/?ref=freepublicapis.com#/schemas/Domain
+	-->	
+	<head>
+		<title>throwaway.cloud</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="throwaway.cloud"/>
+		<meta name="keyword" content="remote jobs"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%;
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="post" id="formed" action="javascript:void(0);">
+			<div align="center">
+				<table>
+					<tr>
+						<td><label for="subject" align="left">Subject</label></td>
+						<td><input align="left" id="subject" type="text" value="example.com" size="40" autofocus required/></td>
+					</tr>
+					<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+				</table>
+				<div id="resultSet" align="center"></div>
+			</div>
+		</form>
+
+		<script>
+			const	formedElement = document.getElementById("formed");
+			
+			const	subjectElement = document.getElementById("subject");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			async function fetchQuery()
+			{
+				try 
+				{
+					let url = `https://throwaway.cloud/api/v2/${subjectElement.value}`;
+
+					resultSetElement.innerHTML = url;
+
+					let response = await fetch(url); // Gets a promise
+					let jsonInfo = await response.json();
+					return jsonInfo;
+				} 
+				catch (err) 
+				{
+					resultSetElement.value = err;
+					console.log(err); // Error handling
+				}
+			}
+
+			async function querySubmit()
+			{
+				let jsonInfo = await fetchQuery();
+				resultSetElement.innerHTML = JSON.stringify(jsonInfo);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>
