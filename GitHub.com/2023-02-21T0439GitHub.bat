@@ -1056,3 +1056,5 @@ git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/jobicy.com.html
 
 git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/throwaway.cloud.html
 	
+git add		IIS/WordEngineering/AlphabetSequence
+	

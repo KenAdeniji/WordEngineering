@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-01-01	Who do I choose as one of me... who do I seek as one of you?
+			2025-01-02T07:45:00	http://stackoverflow.com/questions/26825786/count-the-occurrence-of-each-word-in-a-phrase-using-javascript
+function count(str) {
+  var obj = {};
+  
+  str.split(" ").forEach(function(el, i, arr) {
+    obj[el] = obj[el] ? ++obj[el] : 1;
+  });
+  
+  return obj;
+}
+
+console.log(count("olly olly in come free"));
+			2025-01-03T07:51:00	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+const a = new Set([1, 2, 3]);
+const b = new Map([
+  [1, "one"],
+  [2, "two"],
+  [4, "four"],
+]);
+console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
+		
+		-->
+		<title>Who do I choose as one of me... who do I seek as one of you?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Is a conglomerate of information, such as the AlphabetSequence, SacredText, and BibleWord. Showing example."/>
+		<meta name="keywords" content="Bible, word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="entry">Entry</label></td>
+					<td><input id="entry" type="text" size="50" autofocus value="Who do I choose as one of me... who do I seek as one of you?"></td>
+				</tr>
+				<tr>
+					<td><label for="setSeparator">Set separator</label></td>
+					<td><input id="setSeparator" type="text" size="50" value="..."></td>
+				</tr>
+				<tr>
+					<td><label for="setOperation">Set operation</label></td>
+					<td><select id="setOperation"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" size="50" disabled="true"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="resultSet"></div>	
+
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script>
+			const	entryElement = document.getElementById("entry");
+			const	setOperationElement = document.getElementById("setOperation");
+			const	setSeparatorElement = document.getElementById("setSeparator");
+			const	wordElement = document.getElementById("word");
+			const	submitQueryElement = document.getElementById("submitQuery");
+
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.buildSelect("setOperation", scriptLiteral9432.setCompositionMethodsVennDiagram);
+					querySubmit();
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				let entries = entryElement.value.toLocaleLowerCase();
+				entries = entries.split(setSeparatorElement.value);
+				if (entries.length != 2)
+				{
+					wordElement.value = "There must be 2 sets.";
+					return;
+				}
+				entries[0] = entries[0].trim();
+				entries[1] = entries[1].trim();
+				let set1 = new Set(entries[0].split(/[ ,;.]+/));
+				let set2 = new Set(entries[1].split(/[ ,;.]+/));
+
+				/*
+				let setAlgorithmQuestion = set1 + "." + setOperationElement.value + "(" + set2 + ");";
+				let setAlgorithmAnswer = eval( setAlgorithmQuestion );
+				*/
+				
+				let setAlgorithmAnswer;
+				
+				switch( setOperationElement.value )
+				{
+					case "difference":
+						setAlgorithmAnswer = set1.difference(set2);
+						break;
+					case "intersection":
+						setAlgorithmAnswer = set1.intersection(set2);
+						break;
+					case "symmetricDifference":
+						setAlgorithmAnswer = set1.symmetricDifference(set2);
+						break;
+					case "union":
+						setAlgorithmAnswer = set1.union(set2);
+						break;
+				}
+				
+				wordElement.value = Array.from(setAlgorithmAnswer).join(" ");
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

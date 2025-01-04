@@ -292,13 +292,17 @@ var scriptLiteral9432 =
 		"Biblical Year",
 		"Gregorian Year"
 	],
-	calendarTypes: [ //2022-01-28
-		"Biblical",
-		"Gregorian"		
-	],
 	logicAndOr: [ //2022-05-15T12:11:00
 		"And",
 		"Or"
+	],
+	setCompositionMethodsVennDiagram: 
+	[ 
+		/*  2025-01-03T08:09:00 http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set Where do you place man? That is absolutely up-to You. Sometimes I read... I refer to later. */	
+		["The difference of A and B is the part of A that is not overlapping B.", "difference"],
+		["The intersection of A and B is the part where they overlap.", "intersection"],
+		["The symmetric difference of A and B is the region contained by either circle but not both.", "symmetricDifference"],
+		["The union of A and B is the region contained by either or both circles.", "union"]
 	],
 	//2023-11-13T04:20:00	http://stackoverflow.com/questions/1144705/best-way-to-store-a-key-value-array-in-javascript
 	regularExpressionPatterns: { 
@@ -2416,27 +2420,37 @@ Date.prototype.toDateInputValue = (function() {
 });
 
 //	2020-01-08	https://stackoverflow.com/questions/2140627/how-to-do-case-insensitive-string-comparison
-String.equal = function (s1, s2, ignoreCase, useLocale) {
+String.equal = function (s1, s2, ignoreCase, useLocale) 
+{
     if (s1 == null || s2 == null)
+	{	
         return false;
-
-    if (!ignoreCase) {
+	}
+    if (!ignoreCase) 
+	{
         if (s1.length !== s2.length)
+		{	
             return false;
-
+		}
         return s1 === s2;
     }
-
-    if (useLocale) {
+    if (useLocale) 
+	{
         if (useLocale.length)
-            return s1.toLocaleLowerCase(useLocale) === s2.toLocaleLowerCase(useLocale)
+		{	
+            return s1.toLocaleLowerCase(useLocale) === s2.toLocaleLowerCase(useLocale);
+		}	
         else
-            return s1.toLocaleLowerCase() === s2.toLocaleLowerCase()
+		{	
+            return s1.toLocaleLowerCase() === s2.toLocaleLowerCase();
+		}	
     }
-    else {
+    else 
+	{
         if (s1.length !== s2.length)
+		{	
             return false;
-
+		}
         return s1.toLowerCase() === s2.toLowerCase();
     }
 }

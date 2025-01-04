@@ -907,4 +907,19 @@ http://www.freepublicapis.com
 2024-12-31T08:51:00
 http://stackoverflow.az1.qualtrics.com/jfe/form/SV_b14eaLcRaiLlZMF?Code=ANO
 I have found Stack Overflow... extremely useful in my work.
+
+			2025-01-01	Who do I choose as one of me... who do I seek as one of you?
+			2025-01-02T07:45:00	http://stackoverflow.com/questions/26825786/count-the-occurrence-of-each-word-in-a-phrase-using-javascript
+function count(str) {
+  var obj = {};
+  
+  str.split(" ").forEach(function(el, i, arr) {
+    obj[el] = obj[el] ? ++obj[el] : 1;
+  });
+  
+  return obj;
+}
+
+console.log(count("olly olly in come free"));
+
 :Exit
