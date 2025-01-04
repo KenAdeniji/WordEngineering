@@ -23,28 +23,64 @@ const b = new Map([
   [4, "four"],
 ]);
 console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
-		
 		-->
 		<title>Who do I choose as one of me... who do I seek as one of you?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="Is a conglomerate of information, such as the AlphabetSequence, SacredText, and BibleWord. Showing example."/>
-		<meta name="keywords" content="Bible, word"/>
+		<meta name="description" content="Who do I choose as one of me... who do I seek as one of you?"/>
+		<meta name="keywords" content="Word, set"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<script>
-			document.head.insertAdjacentHTML
-			(
-				"beforeend",
-				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
-			);
-		</script>
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%;
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+		</style>
 	</head>
 	<body>
 		<div align="center">
 			<table>
 				<tr>
-					<td><label for="entry">Entry</label></td>
-					<td><input id="entry" type="text" size="50" autofocus value="Who do I choose as one of me... who do I seek as one of you?"></td>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" size="50" autofocus value="Who do I choose as one of me... who do I seek as one of you?"></td>
 				</tr>
 				<tr>
 					<td><label for="setSeparator">Set separator</label></td>
@@ -57,34 +93,24 @@ console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>
-				<tr>
-					<td><label for="word">Word</label></td>
-					<td><input id="word" type="text" size="50" disabled="true"></td>
-				</tr>
 			</table>
+			<div id="resultSet"></div>
 		</div>
-		<div id="resultSet"></div>	
 
 		<script>
-			let scriptElement = document.createElement("script");
-			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
-			document.body.appendChild(scriptElement);
-		</script>
-
-		<script>
-			const	entryElement = document.getElementById("entry");
+			const	wordElement = document.getElementById("word");
 			const	setOperationElement = document.getElementById("setOperation");
 			const	setSeparatorElement = document.getElementById("setSeparator");
-			const	wordElement = document.getElementById("word");
 			const	submitQueryElement = document.getElementById("submitQuery");
-
+			const	resultSetElement = document.getElementById("resultSet");
+	
 			var 	isPostBack = false;
 
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
-					scriptLiteral9432.buildSelect("setOperation", scriptLiteral9432.setCompositionMethodsVennDiagram);
+					buildSelect("setOperation", SetCompositionMethodsVennDiagram);
 					querySubmit();
 					isPostBack = true;		
 				}
@@ -96,17 +122,17 @@ console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 
 			function querySubmit()
 			{
-				let entries = entryElement.value.toLocaleLowerCase();
-				entries = entries.split(setSeparatorElement.value);
-				if (entries.length != 2)
+				let words = wordElement.value.toLocaleLowerCase();
+				words = words.split(setSeparatorElement.value);
+				if (words.length != 2)
 				{
-					wordElement.value = "There must be 2 sets.";
+					resultSetElement.innerHTML = "There must be 2 sets.";
 					return;
 				}
-				entries[0] = entries[0].trim();
-				entries[1] = entries[1].trim();
-				let set1 = new Set(entries[0].split(/[ ,;.]+/));
-				let set2 = new Set(entries[1].split(/[ ,;.]+/));
+				words[0] = words[0].trim();
+				words[1] = words[1].trim();
+				let set1 = new Set(words[0].split(/[ ,;.]+/));
+				let set2 = new Set(words[1].split(/[ ,;.]+/));
 
 				/*
 				let setAlgorithmQuestion = set1 + "." + setOperationElement.value + "(" + set2 + ");";
@@ -131,7 +157,41 @@ console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 						break;
 				}
 				
-				wordElement.value = Array.from(setAlgorithmAnswer).join(" ");
+				resultSetElement.innerHTML = Array.from(setAlgorithmAnswer).join(" ");
+			}
+			
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
 			}
 			
 			window.addEventListener("load", pageLoad, false);
@@ -144,6 +204,15 @@ console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 					querySubmit();
 				}
 			}
+			
+			/*  2025-01-03T08:09:00 http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set Where do you place man? That is absolutely up-to You. Sometimes I read... I refer to later. */	
+			SetCompositionMethodsVennDiagram = 
+			[ 
+				["The difference of A and B is the part of A that is not overlapping B.", "difference"],
+				["The intersection of A and B is the part where they overlap.", "intersection"],
+				["The symmetric difference of A and B is the region contained by either circle but not both.", "symmetricDifference"],
+				["The union of A and B is the region contained by either or both circles.", "union"]
+			];
 		</script>
 	</body>
 </html>
