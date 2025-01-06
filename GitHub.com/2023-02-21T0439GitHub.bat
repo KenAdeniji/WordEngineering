@@ -1058,3 +1058,4 @@ git add		IIS/WordEngineering/JavaScript/FreePublicAPIs.com/throwaway.cloud.html
 	
 git add		IIS/WordEngineering/AlphabetSequence
 	
+git add		"IIS/WordEngineering/JavaScript/MarijnHaverbeke.nl/Eloquent JavaScript/2025-01-05T1804MarijnHaverbeke_-_EloquentJavaScript_-_RegularExpression.html"
