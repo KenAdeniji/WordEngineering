@@ -144,9 +144,9 @@ will set the range restriction.
 ##### The Scripture Table\'s KingJamesVersion Column {#ScriptureTableKingJamesVersionColumn}
 
 The author would have considered placing an index on the
-KingJamesVersion column, but the author found out during his research,
-that the KingJamesVersion is not unique, and indexes are not applicable
-to like query expressions with leading wildcards.
+KingJamesVersion column, but the author found out during his research
+that the verses in the KingJamesVersion are not unique nor distinct, and
+indexes are not applicable to like expressions with leading wildcards.
 
 ##### The Scripture View\'s Testament Column {#Scripture_ViewTestamentColumn}
 
@@ -171,7 +171,11 @@ exceptions, but the author does not know the side effect nor full
 ramification. Instead of writing and determining the BookTitle using C#,
 an alternative is to use a database table. A table with two columns,
 BookID and BookTitle, will store and make
-[extractable]{datetime="2021-03-17T19:11:00"} the sixty-six books.
+[extractable]{datetime="2021-03-17T19:11:00"} the sixty-six books. [ For
+example the beginning book of the New Testament, the 40th book, spelling
+is Matthew or Mathew, double tt versus single t. An improvement on the
+current implementation is to use soundex to decipher the book title and
+the corresponding BookID. ]{datetime="2020-10-06T15:05:00"}
 
 ##### The Scripture Table\'s ScriptureReference Column {#ScriptureTableScriptureReferenceColumn}
 
@@ -183,11 +187,7 @@ Integrity](http://en.wikipedia.org/wiki/Entity_integrity); if it were
 not; the SQL statement
 `ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)`
 will set its entity integrity. The distinction between raw data versus
-computed columns is performance, space. [ For example the beginning book
-of the New Testament, the 40th book, spelling is Matthew or Mathew,
-double tt versus single t. An improvement on the current implementation
-is to use soundex to decipher the book title and the corresponding
-BookID. ]{datetime="2020-10-06T15:05:00"}
+computed columns is performance, space.
 
 ##### The Scripture Table\'s ChapterIDSequence Column {#ScriptureTableChapterIDSequenceColumn}
 
@@ -3287,7 +3287,22 @@ commentary="When I am doing this? What do I become?" location="Shower"}
     Yoruba.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20author's%20first%20program%20is%20translation%20of%20English%20to%20Yoruba.){datetime="2024-11-15T14:06:00"
     hiswordid="164470" filename="Kowe.c"}]{#Translator}
 
-(Tim Wildsmith, 2024).
+(Tim Wildsmith, 2024). "[]{cite="#DmitryPilugin"}"
+
+### 2025-01-11T18:41:00 Database optimization {#DatabaseOptimization}
+
+1.  2025-01-11T18:41:00 [Join Estimation Internals - Cardinality
+    Estimator
+    (CE)](http://www.sqlshack.com/join-estimation-internals){datetime="2025-01-11T18:41:00"}
+    : [It was built with transport model\... in
+    question?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Mediate%20between%20me%20and%20my%20people.){datetime="2025-01-11T18:41:00"
+    hiswordid="165021" url="sqlshack.com/join-estimation-internals"}
+    Extensible Markup Language (XML)\... JSON (JavaScript Object
+    Notation).
+    [ContactMaintenance.aspx](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordOfGod/ContactMaintenance.aspx){datetime="2025-01-11T18:41:00"}
+    joins contact information, but it is in a master-detail hierarchy.
+
+(Dmitry Pilugin).
 
 ### 2024-12-27T08:08:00 [Mediate between me and my people](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Mediate%20between%20me%20and%20my%20people.){datetime="2024-12-27T08:08:00" hiswordid="164866" location="Shower: 1st sprinkling of water"} {#MediateBetweenMeAndMyPeople}
 
@@ -9468,37 +9483,39 @@ In C# version 9, a method may offer a covariant return type.
 72. [Refactoring Object-Oriented Frameworks William F. Opdyke (1992);
     W3C web page; Available from
     <http://laputan.org/pub/papers/opdyke-thesis.pdf>]{#bibliographyWilliamFOpdyke1992}
-73. [How To Write A Dissertation or Bedtime Reading For People Who Do
+73. [Dmitry Pilugin\'s Notes Dmitry Pilugin; W3C web page; Available
+    from <http://www.queryprocessor.com>]{#bibliographyDmitryPilugin}
+74. [How To Write A Dissertation or Bedtime Reading For People Who Do
     Not Have Time To Sleep W3C web page; Available from
     [https://www.cs.purdue.edu/homes/dec/essay.dissertation.html](http://www.cs.purdue.edu/homes/dec/essay.dissertation.html)]{#bibliographyPurdue}
-74. [Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P.,
+75. [Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P.,
     Gallelli, C., Silverstein, A. T.; (2015) ISBN-13: 978-0672337291
     ISBN-10: 0672337290]{#bibliographyRankins2015}
-75. [The Staff Engineer\'s Path Tanya Reilly (September 20, 2022); W3C
+76. [The Staff Engineer\'s Path Tanya Reilly (September 20, 2022); W3C
     web page; Available from
     <http://noidea.dog>]{#bibliographyReillyTanya2022}
-76. [An Analysis of the Dynamic Behavior of JavaScript Programs Gregor
+77. [An Analysis of the Dynamic Behavior of JavaScript Programs Gregor
     Richards, Sylvain Lebresne, Brian Burg, Jan Vitek (2010); W3C web
     page; Available from
     <http://brrian.org/papers/pldi2010-dynamics-of-JavaScript.pdf>]{#bibliographyRichardsGregor2010}
-77. [The Yellow Pad Making Better Decisions in an Uncertain World Rubin,
+78. [The Yellow Pad Making Better Decisions in an Uncertain World Rubin,
     Robert Edward (May 16, 2023); W3C web page; Available from
     [robertrubin.com/the-yellow-pad](http://robertrubin.com/the-yellow-pad)]{#bibliographyRubinRobertEdward2023}
-78. [The Joy of Search: A Google Insider\'s Guide to Going Beyond the
+79. [The Joy of Search: A Google Insider\'s Guide to Going Beyond the
     Basics Russell, Daniel M. (September 6, 2019); W3C web page;
     Available from
     <http://google.com/books/edition/The_Joy_of_Search/aGquDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyRussellDanielM2019}
-79. [Home Page & Site Dan Russell W3C web page; Available from
+80. [Home Page & Site Dan Russell W3C web page; Available from
     <http://sites.google.com/site/dmrussell>]{#bibliographyRussellDanielM}
-80. [SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN:
+81. [SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN:
     978-1-59059-980-8 W3C web page; Available from
     <http://www.apress.com/us/book/9781590599808?token=cyberweek18&utm_campaign=3_fjp8312_Apress_US_PLA_cyberweek18#otherversion=9781430206255>]{#bibliographyJosephSack2008}
-81. [Search engine indexing W3C web page; Available from
+82. [Search engine indexing W3C web page; Available from
     <http://en.wikipedia.org/wiki/Search_engine_indexing>]{#bibliographySearchEngineIndexing}
-82. [Option B: Facing Adversity, Building Resilience, and Finding Joy
+83. [Option B: Facing Adversity, Building Resilience, and Finding Joy
     Sheryl Sandberg and Adam Grant (2017); W3C web page; Available from
     <http://www.optionb.org/book>]{#bibliographySherylSandberg2017}
-83. [Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave
+84. [Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave
     Taylor Linda S. Sanford with Dave Taylor (2006); ISBN: 0-13-148208-4
     W3C web page; Available from [Let Go To Grow: Escaping the Commodity
     Trap. Linda S. Sanford, Dave Taylor Pearson Education, Dec 12,
@@ -9506,72 +9523,72 @@ In C# version 9, a method may offer a covariant return type.
     senior executive Linda Sanford and long-time entrepreneur Dave
     Taylor show exactly how to do
     that.](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj7us_gpbXtAhXOvJ4KHffmCNcQmhMwEHoECCEQAg&url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fabout%2FLet_Go_To_Grow.html%3Fid%3Dqjef9A0m0EgC%26source%3Dkp_book_description&usg=AOvVaw2EYWKFyPP5aIgOrbNDiB1E)]{#bibliographyLindaSSanford2006}
-84. [Performance Issues and Optimizations in JavaScript: An Empirical
+85. [Performance Issues and Optimizations in JavaScript: An Empirical
     Study Marija Selakovic and Michael Pradel (October 2015); W3C web
     page; Available from
     <http://mp.binaervarianz.de/JS_perf_study_TR_Oct2015.pdf>]{#bibliographyMarijaSelakovic2015}
-85. [A Practical Introduction to Data Structures and Algorithm Analysis
+86. [A Practical Introduction to Data Structures and Algorithm Analysis
     Clifford A. Shaffer; W3C web page; Available from
     <http://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf>]{#bibliographyCliffordAShaffer}
-86. [Jonathan Snook W3C web page; Available from
+87. [Jonathan Snook W3C web page; Available from
     <http://www.smacss.com>]{#bibliographyJonathanSnook}
-87. [Stoyan Stefanov W3C web page; Available from
+88. [Stoyan Stefanov W3C web page; Available from
     <http://www.BookOfSpeed.com>]{#bibliographyStoyanStefanov}
-88. [Bjarne Stroustrup W3C web page; Available from
+89. [Bjarne Stroustrup W3C web page; Available from
     <http://www.stroustrup.com>]{#bibliographyBjarneStroustrup}
-89. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019); W3C
+90. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019); W3C
     web page; Available from
     <http://google.com/books/edition/SQL_All_in_One_For_Dummies/0wGQDwAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2019}
-90. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
+91. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
     Richard Blum (2024); W3C web page; Available from
     <http://google.com/books/edition/SQL_All_in_One_For_Dummies/y3_9EAAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2024}
-91. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
+92. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
     page; Available from
     <http://www.DennisTenen.com/think.stack/research-proposal-guide>]{#bibliographyDennisTenen20210701}
-92. [The Twelve-Factor App W3C web page; Available from
+93. [The Twelve-Factor App W3C web page; Available from
     <http://www.12factor.net>]{#bibliographyTheTwelve-FactorApp}
-93. [The Handy Engineering Answer Book DeLean Tolbert Smith,
+94. [The Handy Engineering Answer Book DeLean Tolbert Smith,
     Debra-Ann C. Butler, Aishwary Pawar, Nicole P. Pitterson
     (2022-09-20) W3C web page; Available from
     <http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1>]{#bibliographyDeLeanTolbertSmith2022}
-94. [Data Observability: Is It Data Quality Monitoring or More? Petr
+95. [Data Observability: Is It Data Quality Monitoring or More? Petr
     Travkin, Senior Manager, Data Analytics Consulting, at EPAM Systems,
     Inc. (2023-02-27) W3C web page; Available from
     <http://www.dbta.com/Editorial/Think-About-It/data-Observability-Is-It-data-Quality-Monitoring-or-More-157257.aspx>]{#bibliographyPetrTravkin2023-02-27}
-95. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
+96. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
     (2022-08-02); W3C web page; Available from
     <http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyYuliVasiliev2022}
-96. [Building Maintainable Software Ten Guidelines for Future-Proof Code
+97. [Building Maintainable Software Ten Guidelines for Future-Proof Code
     Joost Visser, Pascal van Eck of Software Improvement Group, B.V.
     Amsterdam, Netherlands; W3C web page; Available from
     <http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf>]{#bibliographyJoostVisser}
-97. [Supervised Learning with Python Concepts and Practical
+98. [Supervised Learning with Python Concepts and Practical
     Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page;
     Available from
     <http://www.allitebooks.com/supervised-learning-with-python>]{#bibliographyVaibhavVerdhan}
-98. [Design for How People Think: Using Brain Science to Build Better
+99. [Design for How People Think: Using Brain Science to Build Better
     Products Book John Whalen, PhD; W3C web page; Available from
     <https://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyJohnWhalen}
-99. [Wikipedia W3C web page; Available from
-    <http://www.wikipedia.org>]{#bibliographyWikipedia}
-100. [Urim and Thummim Wikipedia W3C web page; Available from
+100. [Wikipedia W3C web page; Available from
+     <http://www.wikipedia.org>]{#bibliographyWikipedia}
+101. [Urim and Thummim Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/Urim_and_Thummim>]{#bibliographyUrimAndThummim}
-101. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
+102. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
      W3C web page; Available from
      [https://benv.ca/blog/posts/the-story-of-third-party-javascript](http://benv.ca/blog/posts/the-story-of-third-party-javascript)]{#bibliographyBenVinegarMarch2013}
-102. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
+103. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
      Right for you. Foreword by Amanda Bible Williams, co-founder of She
      Reads Truth Tim Wildsmith (2024-11-19) W3C web page; Available from
      <http://www.google.com/books/edition/Bible_Translations_for_Everyone/8en8EAAAQBAJ?hl=en>]{#bibliographyTimWildsmith2014}
-103. [Microservice Eberhard Wolff; W3C web page; Available from
+104. [Microservice Eberhard Wolff; W3C web page; Available from
      <http://www.microservices-book.com>]{#bibliographyEberhardWolff}
-104. [Mobile First Luke Wroblewski W3C web page; Available from
+105. [Mobile First Luke Wroblewski W3C web page; Available from
      [http://mobile-first.abookapart.com](http://mobile-first.abookapart.com){datetime="2023-12-30T21:26:00"
      word="ToDuplicate Where IAnalyze?" contactid="3171"
      hiswordid="159150"
      commentary="At the intersection of Paseo Padre Parkway and Hall Way, North East. Orange fruits to the East, across the fence. Spot of water to the West, dark."
      scripturereference="Matthew 10:29, Luke 12:6"}]{#bibliographyLukeWroblewski}
-105. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
+106. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
      from <http://WykeSmith.com>]{#bibliographyWyke-SmithCharles}
 
 ## Appendices {#Appendices}

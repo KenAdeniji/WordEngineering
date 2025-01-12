@@ -177,14 +177,14 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 21351);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 25788);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
 DBCC CHECKIDENT ('URI..UriPocket', RESEED, 22);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1960);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8299);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8386);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160518);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15510);

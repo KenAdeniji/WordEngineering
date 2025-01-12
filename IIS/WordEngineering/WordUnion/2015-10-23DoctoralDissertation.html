@@ -370,10 +370,10 @@
 			<h5 id="ScriptureTableKingJamesVersionColumn">The Scripture Table's KingJamesVersion Column</h5>
 
 			<p>
-				The author would have considered placing an index
-				on the KingJamesVersion column, but the author found out during his research, 
-				that the KingJamesVersion is not unique, and indexes
-				are not applicable to like query expressions with leading wildcards.
+				The author would have considered placing an index on the KingJamesVersion column,
+				but the author found out during his research that the verses in the KingJamesVersion 
+				are not unique nor distinct, and indexes are not applicable to like expressions 
+				with leading wildcards.
 			</p>	
 
 			<h5 id="Scripture_ViewTestamentColumn">The Scripture View's Testament Column</h5>
@@ -413,6 +413,10 @@
 				will store and make
 				<span datetime="2021-03-17T19:11:00">extractable</span>
 				the sixty-six books.
+				<span datetime="2020-10-06T15:05:00">
+					For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t.
+					An improvement on the current implementation is to use soundex to decipher the book title and the corresponding BookID.
+				</span>
 			</p>	
 			
 			<h5 id="ScriptureTableScriptureReferenceColumn">The Scripture Table's ScriptureReference Column</h5>
@@ -428,10 +432,6 @@
 				<code>ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)</code> 
 				will set its entity integrity.
 				The distinction between raw data versus computed columns is performance, space.
-				<span datetime="2020-10-06T15:05:00">
-				For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t.
-				An improvement on the current implementation is to use soundex to decipher the book title and the corresponding BookID.
-				</span>
 			</p>	
 
 			<h5 id="ScriptureTableChapterIDSequenceColumn">The Scripture Table's ChapterIDSequence Column</h5>
@@ -5223,6 +5223,41 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 			</ol>
 		
 			</q> (Tim Wildsmith, 2024).
+
+			<q cite="#DmitryPilugin" datetime="2025-01-11T18:41:00">
+
+			<h3 id="DatabaseOptimization">2025-01-11T18:41:00 Database optimization</h3>
+
+			<ol>
+				<li datetime="2025-01-11T18:41:00">
+					2025-01-11T18:41:00
+					<a 
+						href="http://www.sqlshack.com/join-estimation-internals"
+						datetime="2025-01-11T18:41:00"
+					>
+						Join Estimation Internals - Cardinality Estimator (CE)
+					</a>
+					:
+					<a 
+						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Mediate%20between%20me%20and%20my%20people."
+						datetime="2025-01-11T18:41:00"
+						data-HisWordID="165021"
+						data-url="sqlshack.com/join-estimation-internals"
+					>
+						It was built with transport model... in question?
+					</a>
+					Extensible Markup Language (XML)... JSON (JavaScript Object Notation).
+					<a 
+						href="http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordOfGod/ContactMaintenance.aspx"
+						datetime="2025-01-11T18:41:00"
+					>
+						ContactMaintenance.aspx
+					</a>
+					joins contact information, but it is in a master-detail hierarchy.
+				</li>
+			</ol>
+
+			</q> (Dmitry Pilugin).
 
 			<h3 id="MediateBetweenMeAndMyPeople">
 				2024-12-27T08:08:00
@@ -17908,6 +17943,13 @@ a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di
 					W3C web page;
 					Available from
 					<a href="http://laputan.org/pub/papers/opdyke-thesis.pdf">http://laputan.org/pub/papers/opdyke-thesis.pdf</a>
+				</li>
+				<li id="bibliographyDmitryPilugin" datetime="2025-01-11T18:41:00">
+					<cite>Dmitry Pilugin's Notes</cite>
+					Dmitry Pilugin;
+					W3C web page;
+					Available from
+					<a href="http://www.queryprocessor.com">http://www.queryprocessor.com</a>
 				</li>
 				<li id="bibliographyPurdue">
 					<cite>How To Write A Dissertation or Bedtime Reading For People Who Do Not Have Time To Sleep</cite>
