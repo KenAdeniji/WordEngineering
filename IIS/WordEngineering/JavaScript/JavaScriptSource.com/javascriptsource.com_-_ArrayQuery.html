@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-01-21T19:45:00	http://javascriptsource.com/3-ways-to-find-an-object-by-id-in-a-javascript-array
+			2025-01-21T20:58:00...2025-01-21T21:10:00 http://stackoverflow.com/questions/22844560/check-if-object-value-exists-within-a-javascript-array-of-objects-and-if-not-add
+This small snippets works for me..
+
+const arrayOfObject = [{ id: 1, name: 'john' }, {id: 2, name: 'max'}];
+
+const checkUsername = obj => obj.name === 'max';
+
+console.log(arrayOfObject.some(checkUsername))
+
+if you have array of elements like ['john','marsh'] then we can do some thing like this
+
+const checkUsername = element => element == 'john';
+    
+console.log(arrayOfObject.some(checkUsername))
+
+Share
+Improve this answer
+Follow
+edited Dec 10, 2021 at 8:29
+Guruprasad's user avatar
+Guruprasad
+78377 silver badges2424 bronze badges
+answered Jun 18, 2018 at 12:49
+Sagar's user avatar
+Sagar
+4,95733 gold badges3434 silver badges41
+			2025-01-21T21:10:00...2025-01-21T22:53:00 debug.
+		-->
+		<title>javascriptsource.com_-_ArrayQuery</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="javascriptsource.com_-_ArrayQuery"/>
+		<meta name="keywords" content="array, every, filter, find, findIndex, findLast(), findLastIndex, some"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+				height: 100%;
+				width: 100%;
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+			
+			textarea{ //viewport
+				height: 65vh;
+				width: 90vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr><td><textarea id="bibleBooks" autofocus></textarea></td></tr>
+				<tr><td><textarea id="condition"></textarea></td></tr>
+				<tr><td align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			const	bibleBooksElement = document.getElementById("bibleBooks");
+			const	conditionElement = document.getElementById("condition");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+	
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					bibleBooksElement.value = JSON.stringify(BibleBooks);
+					conditionElement.value = Condition;
+					querySubmit();
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				const bibleBooksParsed = JSON.parse(bibleBooksElement.value);
+				const conditionEvaluate = eval(conditionElement.value);
+
+				let resultSetLiteral = "<table><thead><tr><th>Test</th><th>Commentary</th><th>Result</th></tr></thead><tbody>";
+
+				let queryExpression = "", queryEvaluate = "", queryJSON = "";
+
+				for( let queryIndex = 0, queryCount = QueryMethod.length; queryIndex < queryCount; ++queryIndex)
+				{
+					queryExpression = "bibleBooksParsed." + QueryMethod[queryIndex][0] + "(" + conditionEvaluate + ")";
+					queryEvaluate = eval(queryExpression);
+					queryJSON = JSON.stringify(queryEvaluate);
+					resultSetLiteral += `<tr><td>${QueryMethod[queryIndex][0]}</td><td>${QueryMethod[queryIndex][1]}</td><td>${queryJSON}</td></tr>`;
+				}
+
+				resultSetElement.innerHTML = resultSetLiteral;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			BibleBooks = 
+			[ 
+				{"bookID": 1, "bookTitle": "Genesis"},
+				{"bookID": 27, "bookTitle": "Daniel"},
+				{"bookID": 66, "bookTitle": "Revelation"}
+			];
+			
+			Condition = "bibleBook => bibleBook.bookTitle === 'Daniel'";
+			
+			QueryMethod =
+			[
+				["every", "The every() method of Array instances tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value."],
+				["filter", "The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function."],
+				["find", "The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned."],
+				["findIndex", "The findIndex() method of Array instances returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned."],
+				["findLast", "The findLast() method of Array instances iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function. If no elements satisfy the testing function, undefined is returned."],
+				["findLastIndex", "The findLastIndex() method of Array instances iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned."],
+				["some", "The some() method of Array instances tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array."],				
+			];
+		</script>
+	</body>
+</html>

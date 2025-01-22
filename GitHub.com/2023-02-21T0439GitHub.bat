@@ -1069,3 +1069,5 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2025-01-17T2057AdeyemoAdew
 git add		IIS/WordEngineering/2018-05-03Correspondence/2024-12-21T2231AlbertsonsLucky_CharterSquareShoppingCenter_MikeTewksbury_ShaneSampson_TonyHeadClerk_ThisTalk...AreNormal...OfMyReflection_1Of2TallHindiMales_Harrass_DoYouWantToStartTrouble.txt
 
 git add		IIS/WordEngineering/JavaScript/Canvas/BenFhala
+
+git add		IIS/WordEngineering/JavaScript/JavaScriptSource.com/javascriptsource.com_-_ArrayQuery.html
