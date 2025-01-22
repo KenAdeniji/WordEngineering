@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-01-21T10:07:00	google.com/books/edition/Html5_Graphing_and_Data_Visualization_Co/ajGDEiGZpkwC
+			2025-01-21T11:08:00...2025-01-21T11:57:00 debug
+			2025-01-21T18:07:00...2025-01-21T18:14:00 google.com <canvas id="myCanvas">Canvas not supported.</canvas> 18:14 dizzy, sleepy. 18:19 urine.
+		-->
+		<title>Ben Fhala. HTML 5 Graphics & Data Visualization Cookbook. Chapter 1. Drawing shapes in canvas. Graphics with 2D Canvas</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Ben Fhala. HTML 5 Graphics & Data Visualization Cookbook. Chapter 1. Drawing shapes in canvas. Graphics with 2D Canvas"/>
+		<meta name="keywords" content="canvas"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body style="margin:0px">
+		<canvas id="myCanvas">Canvas not supported.</canvas>
+		<div id="resultSet"></div>
+		<script>
+			const	myCanvasElement = document.getElementById("myCanvas");
+			const	resultSetElement = document.getElementById("resultSet");
+	
+			var 	isPostBack = false;
+
+			function init()
+			{
+				if (isPostBack === false)
+				{
+					updateCanvas();
+					isPostBack = true;		
+				}
+				else
+				{
+					updateCanvas();
+				}
+			}
+
+			function updateCanvas()
+			{
+				const height = 100;
+				const width = window.innerWidth;
+				myCanvasElement.height = height;
+				myCanvasElement.width = width;
+				
+				const context = myCanvasElement.getContext("2d");
+				
+				context.fillStyle = "#FCEAB8";
+				context.fillRect(0, 0, width, height);
+				
+				const circleSize = 10;
+				const gaps = circleSize + 10;
+				
+				const heightCount = Math.round(height / gaps);
+				const widthCount = Math.round(width / gaps);
+				
+				for (let x = 0; x < widthCount; x++)
+				{
+					for (let y = 0; y < heightCount; y++)
+					{
+						context.fillStyle = CircleColors
+						[
+							Math.round
+							(
+								Math.random() * CircleColorsLength
+							)	
+						];
+						context.beginPath();
+						/*
+							The arc is given a x-coordinate, a y-coordinate, and a radius.
+							To make a full circle, the arc begins at an angle of 0 radians (0°), and ends at an angle of 2π radians (360°).
+							The x-coordinate and y-coordinate range from (0, 10, 20...), increasing by 10, and its radius is 10.
+						*/
+						context.arc
+						(
+							( gaps * x ) + circleSize,
+							( gaps * y ) + circleSize,
+							circleSize,
+							0,
+							Math.PI * 2,
+							true
+						);
+						context.closePath();
+						context.fill();
+					}
+				}	
+			}
+			
+			window.addEventListener("load", init, false);
+			
+			const CircleColors =
+			[
+				"#43A9D1",
+				"#EFA63B",
+				"#EF7625",
+				"#5E4130"
+			];
+			
+			const CircleColorsLength = CircleColors.length;
+		</script>
+	</body>
+</html>
