@@ -298,7 +298,19 @@
 			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00">Validation? Chronologically?</h3>
 			
 			<ul datetime="2025-01-25T10:26:00">
-				<li datetime="2025-01-23 11:23:11.163">2025-01-23 11:23:11.163 Compare the identity column and date column order?</li>
+				<li datetime="2025-01-23 11:23:11.163">
+					2025-01-23 11:23:11.163 Compare the identity column and date column order, and highlight when the date column is out of sequence?
+<pre datetime="2025-01-25T10:26:00">
+SELECT * FROM WordEngineering..HisWord HisWordLead
+WHERE Dated >
+(
+	SELECT TOP 1 Dated
+	FROM WordEngineering..HisWord HisWordLag
+	WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+)
+ORDER BY HisWordID
+</pre>					
+				</li>
 				<li datetime="2025-01-25T10:26:00">
 					2025-01-25T10:26:00 Mighty men of David? Arranged according to accomplishment? Men killed
 					(

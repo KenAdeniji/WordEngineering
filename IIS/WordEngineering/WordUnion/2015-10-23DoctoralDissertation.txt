@@ -102,7 +102,19 @@ instigate future alteration.
 ### Validation? Chronologically? {#ValidationChronologically url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00"}
 
 -   2025-01-23 11:23:11.163 Compare the identity column and date column
-    order?
+    order, and highlight when the date column is out of sequence?
+
+    ``` {datetime="2025-01-25T10:26:00"}
+    SELECT * FROM WordEngineering..HisWord HisWordLead
+    WHERE Dated >
+    (
+        SELECT TOP 1 Dated
+        FROM WordEngineering..HisWord HisWordLag
+        WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+    )
+    ORDER BY HisWordID
+    ```
+
 -   2025-01-25T10:26:00 Mighty men of David? Arranged according to
     accomplishment? Men killed ( [2 Samuel
     23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023)
