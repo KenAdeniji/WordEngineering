@@ -307,8 +307,9 @@ WHERE Dated >
 	SELECT TOP 1 Dated
 	FROM WordEngineering..HisWord HisWordLag
 	WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+	ORDER BY HisWordLead.HisWordID 
 )
-ORDER BY HisWordID
+ORDER BY HisWordID DESC
 </pre>					
 				</li>
 				<li datetime="2025-01-25T10:26:00">
