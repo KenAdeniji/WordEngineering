@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2022-01-28	Created. Dates Computation, for instance, add to a date, a percentage of its from until.
+			2022-01-31T22:23:00	
+				const QuantityPattern =  /[+-]?\d+(\.\d+)?/g;
+				const UnitPattern = /\D+/g;
+			2022-01-31T19:19:00	... 2022-01-31T22:43:00 Regular Expression match signed float.
+			2022-08-05T12:42:00
+				How JavaScript Works From the author of JavaScript: The Good Parts THE SHOCKING BLOCKBUSTER THAT DARES TO RIP THE LID OFF OF BEHIND THE SCENES! The latest book by Douglas Crockford
+				http://howjavascriptworks.com/sample.html
+				const number_pattern = /^(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?$/;
+			2025-02-01T1007Luke1v1_ForAsMany...AsTakingItTo_99RanchMarket_DeChen_UnitOfMeasurement_Sign.html
+			2025-02-01T11:54:00 Is there any value... from breaking away from the filesystem, database, web server?
+				The only place a Jew will only feel safe is in Isreal, Jerusalem. President Joe Biden.
+			2025-02-01T11:58:00	I can breakaway from jQuery... I didn't spend time in learning jQuery.
+				British writer... know that you know jQuery... web developer, frontend?
+			2025-02-01 19:41:07.6066667	Vietnam 2nd cousin Rebecca not same grandpa Junior	Stacy. Albertsons Lucky. Junior boyfriend of maternal cousin. Oreo probably 6 in a pack for $3. Peter Gow, Kaz Parramatta lookalike.
+				Festival.
+				Age of service.
+		-->
+		<title>Luke 1:1 For as many... as taking it to.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Dates Computation will add date units."/>
+		<meta name="keywords" content="Dates Computation"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 10vh;
+		width: 80vw;
+	}
+		</style>	
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dated">Dated:</label></td>
+					<td><input id="dated" type="datetime-local" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="calendarType">Calendar:</label></td>
+					<td><select id="calendarType"></select></td>
+				</tr>
+				<tr>
+					<td><label for="unitOfMeasurementSign">Unit of measurement - sign</label></td>
+					<td><textarea id="unitOfMeasurementSign">6 Days</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="scriptureReference">Scripture reference</label></td>
+					<td><textarea id="scriptureReference"></textarea></td>
+				</tr>
+				<tr>
+					<td><label for="sacredText">Sacred text</label></td>
+					<td><textarea id="sacredText"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="interval">Interval:</label></td>
+					<td><span id="interval"></span></td>
+				</tr>
+				<tr>
+					<td><label for="datedComputed">DateTime Computed:</label></td>
+					<td><span id="datedComputed"></span></td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+	
+			const unitOfMeasurementSignElement = document.getElementById("unitOfMeasurementSign");
+			const calendarTypeElement = document.getElementById("calendarType");
+			
+			const datedElement = document.getElementById("dated");
+			
+			const datedFromElement = document.getElementById("datedFrom");
+			const datedUntilElement = document.getElementById("datedUntil");
+			
+			const intervalElement = document.getElementById("interval");
+			
+			const datedComputedElement = document.getElementById("datedComputed");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.buildSelect("calendarType", scriptLiteral9432.calendarTypes);
+					datedElement.value = scriptLiteral9432.nowTimezoneOffset().substring(0, 19);
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var unitOfMeasurementSignElementValued = unitOfMeasurementSignElement.value.toLowerCase();
+				
+				var extractQuantities = unitOfMeasurementSignElementValued.match( QuantityPattern );
+				var extractUnits = unitOfMeasurementSignElementValued.match( UnitPattern );
+				
+				var
+					metricSum = 0,
+					metricQuantity = 0,
+					metricUnit = "",
+					daysBetween = 0,
+					foundIndex = -1
+					;
+					
+				var
+					datedGregorian = datedElement.value;
+			
+				for
+				(
+					var metricIndex = 0, metricCount = extractQuantities.length;
+					metricIndex < metricCount;
+					metricIndex++
+				)
+				{
+					metricQuantity = parseFloat(extractQuantities[metricIndex].trim());
+					metricUnit = extractUnits[metricIndex].trim();
+					if (metricUnit === "fromuntil")
+					{
+						daysBetween = scriptLiteral9432.daysBetween
+						(
+							new Date(datedUntilElement.value), 
+							new Date(datedFromElement.value)
+						);
+						if (calendarTypeElement.value === "Biblical")
+						{
+							metricSum += (daysBetween * metricQuantity);
+						}
+						else if (calendarTypeElement.value === "Gregorian")
+						{
+							datedGregorian = scriptLiteral9432.daysAdd
+							(
+								datedGregorian,
+								(daysBetween * metricQuantity)
+							);		
+						}
+					}
+					else
+					{
+						foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
+						(
+							scriptLiteral9432.biblicalCalendarDays,
+							0,
+							metricUnit
+						);
+						if (foundIndex === -1)
+						{
+							foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
+							(
+								scriptLiteral9432.biblicalCalendarDays,
+								1,
+								metricUnit
+							);
+						}	
+						if (foundIndex > -1)
+						{
+							if (calendarTypeElement.value === "Biblical")
+							{
+								metricSum += metricQuantity * 
+									scriptLiteral9432.biblicalCalendarDays[foundIndex][2];
+							}
+							else if (calendarTypeElement.value === "Gregorian")
+							{
+								if (foundIndex <= 1) //Days and weeks
+								{
+									datedGregorian = scriptLiteral9432.daysAdd
+									(
+										datedGregorian,
+										metricQuantity * 
+											scriptLiteral9432.biblicalCalendarDays[foundIndex][2]
+									);		
+								}
+								else if (foundIndex === 2) //Months
+								{
+									datedGregorian = scriptLiteral9432.monthsAdd
+									(
+										datedGregorian,
+										metricQuantity
+									);		
+								}	
+								else if (foundIndex === 3) //Years
+								{
+									datedGregorian = scriptLiteral9432.yearsAdd
+									(
+										datedGregorian,
+										metricQuantity
+									);		
+								}	
+							}
+						}
+					}
+				}
+				if (calendarTypeElement.value === "Biblical")
+				{
+					intervalElement.textContent = metricSum;
+					datedComputedElement.textContent = scriptLiteral9432.daysAdd
+					(
+						datedElement.value, 
+						metricSum
+					);
+				}	
+				else if (calendarTypeElement.value === "Gregorian")
+				{
+					datedComputedElement.textContent = datedGregorian;
+					metricSum = scriptLiteral9432.daysDifference
+					(
+						new Date(datedElement.value), 
+						datedGregorian
+					);
+					intervalElement.textContent = metricSum;
+				}	
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			//const QuantityPattern = /[+-]?\d+(\.\d+)?/g;
+			const QuantityPattern = /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g;
+			//const UnitPattern = /\D+/g;
+			const UnitPattern = /[a-z]+/g;
+		</script>
+	</body>
+</html>
