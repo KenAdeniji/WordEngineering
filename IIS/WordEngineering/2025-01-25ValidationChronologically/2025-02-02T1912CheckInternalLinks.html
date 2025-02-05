@@ -151,23 +151,24 @@ export function isInternalLink(urlString: string): boolean | {
 			{
 				var frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
 				var links;
-				links = frameHTMLDocument.querySelectorAll("*");
+				//links = frameHTMLDocument.querySelectorAll("*");
 				links = frameHTMLDocument.getElementsByTagName("a");
 				var idLink, idElement, resultSetStub = "";
-				resultSetElement.value = links.length;
-				for (var linksIndex = 0, linksLength = links.length; linksIndex < linksLength; linksIndex++) 
+				var linksIndex = 0, linksLength = links.length;
+
+				for (; linksIndex < linksLength; linksIndex++) 
 				{
 					idLink = links[linksIndex].id;
 					if ( isInternalLink(idLink) )
 					{
 						idElement = document.getElementById(idLink);
-						if(!idElement) 
+						if(idElement) 
 						{
 							if ( resultSetStub )
 							{
 								resultSetStub += " ";
 							}
-							resultSetStub += idLink;	
+							resultSetStub += idLink;
 						}
 					}
 				}
@@ -185,6 +186,7 @@ export function isInternalLink(urlString: string): boolean | {
 			}
 			
 			window.addEventListener("load", pageLoad, false);
+			
 		</script>		
 	</body>
 </html>
