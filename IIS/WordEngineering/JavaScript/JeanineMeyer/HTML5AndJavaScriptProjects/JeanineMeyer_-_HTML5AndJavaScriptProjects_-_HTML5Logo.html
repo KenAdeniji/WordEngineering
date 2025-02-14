@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<!--
+	2025-02-07T19:28:00	http://ommolketab.ir/aaf-lib/kr1cgbxox9ut10n6vgsxna17yl2cb8.pdf
+		var fontfamily = "65px 'Gill Sans Ultra Bold', sans-serif";
+		ctx.font = fontfamily;
+		ctx.fillText("HTML", 31, 60);
+		2025-02-07T19:28:00...2025-02-08T03:37:00 ctx.fillText("HTML", 31, 60)...ctx.strokeText("HTML", 31, 60)	
+About the Author
+■Jeanine Meyer is a full professor at Purchase College/State University of New
+York. She teaches courses for students majoring in mathematics/computer
+science and new media. She developed and teaches a course on understanding
+quantitative information for humanities students. The web site for her academic
+activities is http://faculty.purchase.edu/jeanine.meyer. Before coming to
+academia, she was a research staff member and manager at IBM Research,
+focusing on robotics and manufacturing research, and she later worked as a
+research consultant at IBM for educational grant programs.
+After having a great time in 2010 developing The Essential Guide to HTML5:
+Using Games to Learn HTML5 and JavaScript, Jeanine looked forward to a
+similar experience doing this book, and her expectations were met. She also
+needed to be occupied while awaiting the birth of her granddaughter (see
+Chapter 2). Family members also are documented in Chapters 3, 5, and 8. She
+continues to enjoy doing crossword puzzles and ken ken, knitting and
+crocheting, reading novels and history, gardening, eating Aviva’s extraordinary cooking, listening to her
+mother on piano, and playing the flute. She still and again is an active volunteer and letter-to-the-editor
+writer for progressive causes and candidates.
+
+About the Technical Reviewer
+■Andrew Zack is the CEO of ZTMC (http://ztmc.com), specializing in search engine optimization (SEO)
+and Internet marketing strategies. His project background includes almost 20 years of site development
+and project management experience and over 15 years as an SEO and Internet marketing expert.
+Andrew has also been very active in the publishing industry, having coauthored Flash 5 Studio
+(Apress, 2001) and served as a technical reviewer on over ten books and industry publications.
+-->
+	<head>
+		<title>HTML 5 Logo</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="400">
+			Your browser does not support the canvas element.
+		</canvas>
+		<script>
+			const canvasElement = document.getElementById("canvas");
+			
+			function init()
+			{
+				var ctx = canvasElement.getContext("2d");
+				
+				ctx.fillStyle = "#E34C26";
+				ctx.beginPath();
+				ctx.moveTo(39, 250);	//x and y coordinates. 2025-02-09T18:49:00 x south border.
+				ctx.lineTo(17, 0);
+				ctx.lineTo(262, 0);
+				ctx.lineTo(239, 250);
+				ctx.lineTo(139, 278);
+				ctx.closePath();
+				ctx.fill();
+/*
+With the font and color set, the methods for drawing text require a string and a position: x and y
+coordinates. The statement in this project to draw the letters is
+*/				
+				var fontfamily = "65px 'Gill Sans Ultra Bold', sans-serif";
+				ctx.font = fontfamily;
+				ctx.strokeText("HTML", 31, 60);
+			}
+			
+			window.addEventListener("load", init, false);
+		</script>
+	</body>
+</html>

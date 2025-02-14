@@ -1085,3 +1085,10 @@ git add		IIS/WordEngineering/Dated/2025-02-01T1007Luke1v1_ForAsMany...AsTakingIt
 git add		IIS/WordEngineering/2025-01-25ValidationChronologically/2025-02-02T1912CheckInternalLinks.html
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-02-05T0206SharynFields_ChicoUnifiedSchoolDistrictSFields@chicousd.org_(530)891-3000extension20120_Room3Of1163East7thStreetChicoCalifornia2025-02-05T0738NameForJesusIsSaid.txt
+
+git add     Google/Google.com_-_JobsNearMe/
+git add     IIS/WordEngineering/Account/2025-01-23T0823MicrosoftSpamMail_KenAdeniji@hotmail.com/
+git add     IIS/WordEngineering/JavaScript/JeanineMeyer/
+git add     IIS/WordEngineering/Python/InEasySteps/
+git add     IIS/WordEngineering/WebServiceRequester/icanhazdadjoke.com.html
+git add     Java/dev.java/

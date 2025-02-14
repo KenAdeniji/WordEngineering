@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-02-12T16:21:00	Created.	http://www.raymondcamden.com/2025/02/11/introducing-boxlang-scripting-for-the-jvm
+		2025-02-12T16:21:00	http://wesbos.com/javascript/13-ajax-and-fetching-data/76-dad-jokes
+	-->	
+	<head>
+		<title>icanhazdadjoke.com</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="icanhazdadjoke.com"/>
+		<meta name="keyword" content="web service requester"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<span id="joke" align="center"></span>
+		<script>
+			var 	isPostBack = false;
+			const	url = "http://icanhazdadjoke.com";
+			
+			const 	jokeElement = document.getElementById("joke");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				try 
+				{
+					const response = await fetch
+					(
+						url,
+						{
+							//method: 'GET',      
+							credentials: 'same-origin',
+							headers: 
+							{
+								Accept: "text/plain" //Accept: "application/json"
+							}
+						}	
+					);
+				
+					if (!response.ok) 
+					{
+					  throw new Error(`Response status: ${response.status}`);
+					}
+
+					const text = response.text(); //response.json();
+					jokeElement.textContent = text;
+				} 	
+				catch (e) 
+				{
+					console.error(e);
+					jokeElement.textContent = e;
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
