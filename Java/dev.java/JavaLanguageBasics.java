@@ -21,7 +21,7 @@ public class JavaLanguageBasics
 				(
 					MessageFormat.format
 					(
-						"Index Book of Moses [{0}]: ",
+						IndexBookOfMoses,
 						Genesis_1stBookOfMoses + 1
 					)	
 				); 
@@ -41,7 +41,7 @@ public class JavaLanguageBasics
 				(
 					MessageFormat.format
 					(
-						"Index Book of Moses [{0}]: ",
+						IndexBookOfMoses,
 						Deuteronomy_5thAndLastBookOfMoses + 1
 					)	
 				); 
@@ -49,15 +49,20 @@ public class JavaLanguageBasics
 			System.out.println(s); 
 		}
     }
-	static String[] Pentateuch_5BooksOfMoses = {
+
+	final static int Genesis_1stBookOfMoses = 0;	
+	final static int Deuteronomy_5thAndLastBookOfMoses = 4;	
+
+	final static String[] Pentateuch_5BooksOfMoses = 
+	{
 		"Genesis",
 		"Exodus",
 		"Leviticus",
 		"Numbers",
 		"Deuteronomy"
 	};
-	static int Genesis_1stBookOfMoses = 0;	
-	static int Deuteronomy_5thAndLastBookOfMoses = 4;	
+
+	final static String IndexBookOfMoses = "Index Book of Moses [{0}]: ";
 }
 
 
