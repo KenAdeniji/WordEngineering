@@ -144,6 +144,19 @@ tr:nth-child(even) {
 			
 			const	submitQueryElement = document.getElementById("submitQuery");
 
+			/*
+				2018-05-01	http://stackoverflow.com/questions/5741632/javascript-date-7-days?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+			*/
+			function daysAdd(myDate, days) 
+			{
+				//return new Date(myDate.getTime() + days*24*60*60*1000);
+				//return new Date(myDate.setDate(myDate.getDate() + days));
+				//2020-12-03T19:50:00
+				var result = new Date(myDate);
+				result.setDate(result.getDate() + days);
+				return result;
+			};
+
 			function daysBetween(date1, date2) 
 			{
 				// The number of milliseconds in one day
@@ -218,8 +231,8 @@ tr:nth-child(even) {
 					);
 				}
 				
-				datedComputedFromElement.textContent = new Date( datedTime.getTime() - (daysSum / datesCount) * 86400000 );
-				datedComputedUntilElement.textContent = new Date( datedTime.getTime() + (daysSum / datesCount) * 86400000 );
+				datedComputedFromElement.textContent = daysAdd( datedTime, - ( daysSum / datesCount ) );
+				datedComputedUntilElement.textContent = daysAdd( datedTime, ( daysSum / datesCount ) );
 			}
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
