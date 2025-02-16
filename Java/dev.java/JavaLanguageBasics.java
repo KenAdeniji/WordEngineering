@@ -64,5 +64,3 @@ public class JavaLanguageBasics
 
 	final static String IndexBookOfMoses = "Index Book of Moses [{0}]: ";
 }
-
-
