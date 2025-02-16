@@ -51,8 +51,60 @@
 		height: 65vh;
 		width: 50vw;
 	}
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
 		</style>	
-		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
 		<div align="center">
@@ -92,43 +144,149 @@
 				</tr>
 			</table>
 		</div>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
 		<script>
-			var isPostBack = false;
+			var		isPostBack = false;
 	
-			const yearMonthDayElement = document.getElementById("yearMonthDay");
-			const calendarTypeElement = document.getElementById("calendarType");
+			const 	yearMonthDayElement = document.getElementById("yearMonthDay");
+			const	calendarTypeElement = document.getElementById("calendarType");
 			
-			const datedElement = document.getElementById("dated");
+			const 	datedElement = document.getElementById("dated");
 			
-			const datedFromElement = document.getElementById("datedFrom");
-			const datedUntilElement = document.getElementById("datedUntil");
+			const 	datedFromElement = document.getElementById("datedFrom");
+			const 	datedUntilElement = document.getElementById("datedUntil");
 			
-			const intervalElement = document.getElementById("interval");
+			const 	intervalElement = document.getElementById("interval");
 			
-			const datedComputedElement = document.getElementById("datedComputed");
+			const 	datedComputedElement = document.getElementById("datedComputed");
 			
-			const submitQueryElement = document.getElementById("submitQuery");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
+			}
+
+			/*
+				2018-05-01	http://stackoverflow.com/questions/5741632/javascript-date-7-days?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+			*/
+			function daysAdd(myDate, days) 
+			{
+				//return new Date(myDate.getTime() + days*24*60*60*1000);
+				//return new Date(myDate.setDate(myDate.getDate() + days));
+				//2020-12-03T19:50:00
+				var result = new Date(myDate);
+				result.setDate(result.getDate() + days);
+				return result;
+			};
+			
+			/// 2022-01-31T15:03:00 https://stackoverflow.com/questions/5645058/how-to-add-months-to-a-date-in-javascript
+			function monthsAdd(myDate, months) 
+			{
+				var result = new Date(myDate);
+				result.setMonth(result.getMonth() + months);
+				return result;
+			};
+
+			/// 2022-01-31T15:07:00 https://stackoverflow.com/questions/5645058/how-to-add-months-to-a-date-in-javascript
+			function yearsAdd(myDate, years) 
+			{
+				var result = new Date(myDate);
+				result.setFullYear(result.getFullYear() + years);
+				return result;
+			};
+
+			function daysBetween(date1, date2) 
+			{
+				// The number of milliseconds in one day
+				var ONE_DAY = 1000 * 60 * 60 * 24
+
+				// Convert both dates to milliseconds
+				var date1_ms = date1.getTime()
+				var date2_ms = date2.getTime()
+
+				// Calculate the difference in milliseconds
+				var difference_ms = Math.abs(date1_ms - date2_ms)
+
+				// Convert back to days and return
+				return Math.round(difference_ms/ONE_DAY)
+			}
+
+			//2022-01-31T11:28:00 Created.
+			function indexOfMultiDimensionalArray(multiDimensionalArray, rank, val)
+			{ 
+				for 
+				(
+					var index = 0, occurrences = multiDimensionalArray.length;
+					index < occurrences;
+					++index
+				)
+				{
+					if (multiDimensionalArray[index][rank] === val)
+					{
+						return index;
+					}
+				}
+				return -1;			
+			}
+			
+			//2018-02-27	https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
+			function nowTimezoneOffset(now)
+			{	
+				if (arguments.length === 0)
+				{		
+					now = new Date();
+				}	
+				var local = now;
+				local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+				var currentTime = local.toJSON();
+				return currentTime;
+			}
 			
 			function pageLoad()
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
-					{
-						scriptLiteral9432.buildSelect("calendarType", scriptLiteral9432.calendarTypes);					
-						const urlParams = new URLSearchParams(window.location.search);
-						
-						var datedParam = urlParams.get("dated");
-						if (!datedParam)
-						{
-							datedParam = scriptLiteral9432.nowTimezoneOffset().substring(0, 19);
-						}
-						datedElement.value = datedParam;
+					buildSelect("calendarType", CalendarTypes);
+					const urlParams = new URLSearchParams(window.location.search);
 					
-						querySubmit();
-						isPostBack = true;
-					});
+					var datedParam = urlParams.get("dated");
+					if (!datedParam)
+					{
+						datedParam = nowTimezoneOffset().substring(0, 19);
+					}
+					datedElement.value = datedParam;
+				
+					querySubmit();
+					isPostBack = true;
 				}
 				else
 				{
@@ -165,7 +323,7 @@
 					metricUnit = extractUnits[metricIndex].trim();
 					if (metricUnit === "fromuntil")
 					{
-						daysBetween = scriptLiteral9432.daysBetween
+						daysBetween = daysBetween
 						(
 							new Date(datedUntilElement.value), 
 							new Date(datedFromElement.value)
@@ -176,26 +334,22 @@
 						}
 						else if (calendarTypeElement.value === "Gregorian")
 						{
-							datedGregorian = scriptLiteral9432.daysAdd
-							(
-								datedGregorian,
-								(daysBetween * metricQuantity)
-							);		
+							datedGregorian = datedGregorian.getTime() + (daysBetween * metricQuantity);
 						}
 					}
 					else
 					{
-						foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
+						foundIndex = indexOfMultiDimensionalArray
 						(
-							scriptLiteral9432.biblicalCalendarDays,
+							biblicalCalendarDays,
 							0,
 							metricUnit
 						);
 						if (foundIndex === -1)
 						{
-							foundIndex = scriptLiteral9432.indexOfMultiDimensionalArray
+							foundIndex = indexOfMultiDimensionalArray
 							(
-								scriptLiteral9432.biblicalCalendarDays,
+								biblicalCalendarDays,
 								1,
 								metricUnit
 							);
@@ -204,23 +358,21 @@
 						{
 							if (calendarTypeElement.value === "Biblical")
 							{
-								metricSum += metricQuantity * 
-									scriptLiteral9432.biblicalCalendarDays[foundIndex][2];
+								metricSum += metricQuantity * biblicalCalendarDays[foundIndex][2];
 							}
 							else if (calendarTypeElement.value === "Gregorian")
 							{
 								if (foundIndex <= 1) //Days and weeks
 								{
-									datedGregorian = scriptLiteral9432.daysAdd
+									datedGregorian = daysAdd
 									(
 										datedGregorian,
-										metricQuantity * 
-											scriptLiteral9432.biblicalCalendarDays[foundIndex][2]
+										metricQuantity * biblicalCalendarDays[foundIndex][2]
 									);		
 								}
 								else if (foundIndex === 2) //Months
 								{
-									datedGregorian = scriptLiteral9432.monthsAdd
+									datedGregorian = monthsAdd
 									(
 										datedGregorian,
 										metricQuantity
@@ -228,7 +380,7 @@
 								}	
 								else if (foundIndex === 3) //Years
 								{
-									datedGregorian = scriptLiteral9432.yearsAdd
+									datedGregorian = yearsAdd
 									(
 										datedGregorian,
 										metricQuantity
@@ -241,7 +393,7 @@
 				if (calendarTypeElement.value === "Biblical")
 				{
 					intervalElement.textContent = metricSum;
-					datedComputedElement.textContent = scriptLiteral9432.daysAdd
+					datedComputedElement.textContent = daysAdd
 					(
 						datedElement.value, 
 						metricSum
@@ -250,7 +402,7 @@
 				else if (calendarTypeElement.value === "Gregorian")
 				{
 					datedComputedElement.textContent = datedGregorian;
-					metricSum = scriptLiteral9432.daysDifference
+					metricSum = daysDifference
 					(
 						new Date(datedElement.value), 
 						datedGregorian
@@ -262,13 +414,28 @@
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			
 			var body = document.getElementsByTagName("body")[0];
-			body.onkeydown = function (e) {
+			body.onkeydown = function (e) 
+			{
 				if (e.keyCode === 13) {  //enter key code
 					querySubmit();
 				}
 			}
 
 			window.addEventListener("load", pageLoad, false);
+
+			const biblicalCalendarDays = //2022-01-31T10:45:00
+			[
+				["day", "days", 1],
+				["week", "weeks", 7],		
+				["month", "months", 30],
+				["year", "years", 360],		
+			]
+			
+			const CalendarTypes =
+			[
+				"Biblical",
+				"Gregorian"
+			];
 			
 			//const QuantityPattern = /[+-]?\d+(\.\d+)?/g;
 			const QuantityPattern = /(-?\d+)(?:\.(\d*))?(?:[eE]([+\-]?\d+))?/g;
