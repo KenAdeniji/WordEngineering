@@ -33,7 +33,7 @@ xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :IISLog
-xcopy d:\inetpub c:\inetpub /d /e /s /y
+xcopy c:\inetpub d:\inetpub /d /e /s /y
 xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
 xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
 xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
@@ -923,5 +923,9 @@ function count(str) {
 console.log(count("olly olly in come free"));
 
 2025-01-13T08:18:00 microsoft windows operating system, microsoft sql server management studio grid falls, drops, ejects, fails.
+
+2025-01-17T17:52:00	http://dzone.com/articles/reorganize-and-rebuild-indexes-in-ms-sql
+
+2025-01-18T19:14:00...2025-01-18T19:47:00	microsoft sql server management studio ddl/dml script generation error.
 
 :Exit
