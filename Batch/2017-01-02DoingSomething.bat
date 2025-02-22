@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1960);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8386);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160908);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15770);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15794);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6839);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -928,4 +928,5 @@ console.log(count("olly olly in come free"));
 
 2025-01-18T19:14:00...2025-01-18T19:47:00	microsoft sql server management studio ddl/dml script generation error.
 
+2025-01-21T15:00:00 when was barley harvest in israel in 2024 passover
 :Exit
