@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 1960);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8386);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 160908);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15794);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 15818);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 6839);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -926,7 +926,10 @@ console.log(count("olly olly in come free"));
 
 2025-01-17T17:52:00	http://dzone.com/articles/reorganize-and-rebuild-indexes-in-ms-sql
 
-2025-01-18T19:14:00...2025-01-18T19:47:00	microsoft sql server management studio ddl/dml script generation error.
+2025-02-28T11:57:00...2025-02-28T13:59:00	microsoft sql server management studio ddl/dml script generation error.
 
-2025-01-21T15:00:00 when was barley harvest in israel in 2024 passover
+2025-01-21T15:00:00 when was barley harvest in israel in 2024 passover?
+
+2025-02-26T23:43:00 right hand stroke.
+
 :Exit
