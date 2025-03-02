@@ -1,0 +1,3 @@
+@ECHO OFF
+REM javac --source 23 --enable-preview AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.java
+javac AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.java

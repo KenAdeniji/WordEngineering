@@ -1116,3 +1116,9 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2025-02-230526DontSendMeAn
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-02-21T1122AlbertsonsLucky_CharterSquare_MikeTewksbury_ShaneSampson_TheMusicSangYouHaveBeenWarned_IAdaptToTheSame_CaucasianMaleWearingLightBlueShirt2NecklaceBeads.txt
 
 git add		IIS/WordEngineering/modern-sql.com/
+
+git add        IIS/WordEngineering/Word/
+git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies$1.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.class
+git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.java
+git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummiesBuild.bat
