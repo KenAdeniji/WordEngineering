@@ -1122,3 +1122,5 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_
 git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.class
 git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies.java
 git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummiesBuild.bat
+
+git add		IIS/WordEngineering/Statistics/	

@@ -62,7 +62,7 @@ public class AlphabetSequence_DougLowe_7thEditionJavaAllInOneForDummies
 	
 	public String toString()
 	{
-		return ("word " + word + " dated " + dated);
+		return ("Word: " + word + " Dated: " + dated + " AlphabetSequenceIndex: " + alphabetSequenceIndex);
 	}
 
 	public void ComputeAlphabetSequenceIndex()
