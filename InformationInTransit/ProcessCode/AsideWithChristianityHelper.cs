@@ -22,7 +22,8 @@ namespace InformationInTransit.ProcessCode
 		public static void Main(string[] argv)
 		{
 			//Query(38, 60, 155, "KingJamesVersion");
-			Query(284, 98, 120, "KingJamesVersion");
+			//Query(284, 98, 120, "KingJamesVersion");
+			Query(1, 2, 3, "KingJamesVersion");
 		}
 	
 		public static String Query
@@ -130,7 +131,7 @@ namespace InformationInTransit.ProcessCode
 					++verseIDSequenceForward;
 					continue;
 				}		
-				wordForward = words[verseID - wordsCounter];
+				wordForward = words[verseID - wordsCounter - 1];
 				scriptureReferenceForward = (String) DataCommand.DatabaseCommand
 				(
 					String.Format
@@ -250,7 +251,7 @@ namespace InformationInTransit.ProcessCode
 					--verseIDSequenceBackward;
 					continue;
 				}		
-				wordBackward = words[verseID - wordsCounter];
+				wordBackward = words[verseID - wordsCounter - 1];
 				scriptureReferenceBackward = (String) DataCommand.DatabaseCommand
 				(
 					String.Format
@@ -284,13 +285,13 @@ namespace InformationInTransit.ProcessCode
 		}
 		
 		public const string SQLStatementChapterIDForwardFormat = "SELECT TOP 1 ChapterIDSequence FROM Bible..Scripture_View WHERE BookID = {0} % 66 ORDER BY VerseIDSequence";
-		public const string SQLStatementVerseIDForwardFormat = "SELECT TOP 1 VerseIDSequence FROM Bible..Scripture_View WHERE ChapterIDSequence = (SELECT distinct TOP 1 ChapterIDSequence WHERE ChapterIDSequence = {0} - 1 + {1})";
+		public const string SQLStatementVerseIDForwardFormat = "SELECT TOP 1 VerseIDSequence FROM Bible..Scripture_View WHERE ChapterIDSequence = (SELECT distinct TOP 1 ChapterIDSequence FROM Bible..Scripture_View Scripture_View2 WHERE Scripture_View2.ChapterIDSequence = {0} - 1 + {1})";
 		public const string SQLStatementVerseTextForwardFormat = "SELECT TOP 1 {1} VerseText FROM Bible..Scripture_View WHERE VerseIDSequence = {0} ORDER BY VerseIDSequence";
 		public const string SQLStatementScriptureReferenceForwardFormat = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE VerseIDSequence = {0} ORDER BY VerseIDSequence";
 
-		public const string SQLStatementChapterIDBackwardFormat = "SELECT TOP 1 ChapterIDSequence FROM Bible..Scripture_View WHERE BookID = 66 - {0} % 66 ORDER BY VerseIDSequence";
-		public const string SQLStatementVerseIDBackwardFormat = "SELECT TOP 1 VerseIDSequence FROM Bible..Scripture_View WHERE ChapterIDSequence = (SELECT distinct TOP 1 ChapterIDSequence WHERE ChapterIDSequence = {0} + 1 - {1})";
-		public const string SQLStatementVerseTextBackwardFormat = "SELECT TOP 1 {1} VerseText FROM Bible..Scripture_View WHERE VerseIDSequence = {0} ORDER BY VerseIDSequence";
+		public const string SQLStatementChapterIDBackwardFormat = "SELECT TOP 1 ChapterIDSequence FROM Bible..Scripture_View WHERE BookID = 67 - {0} % 66 ORDER BY VerseIDSequence DESC";
+		public const string SQLStatementVerseIDBackwardFormat = "SELECT TOP 1 VerseIDSequence FROM Bible..Scripture_View WHERE ChapterIDSequence = (SELECT TOP 1 ChapterIDSequence FROM Bible..Scripture_View Scripture_View2 WHERE Scripture_View2.ChapterIDSequence = {0} - {1} GROUP BY Scripture_View2.ChapterIDSequence ORDER BY Scripture_View2.ChapterIDSequence DESC)";
+		public const string SQLStatementVerseTextBackwardFormat = "SELECT TOP 1 {1} VerseText FROM Bible..Scripture_View WHERE VerseIDSequence = {0} ORDER BY VerseIDSequence DESC";
 		public const string SQLStatementScriptureReferenceBackwardFormat = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE VerseIDSequence = {0} ORDER BY VerseIDSequence";
 
 		public const string	JsonFormatUniDirection = "{{\"verseIDSequence\": {0}, \"scriptureReference\": \"{1}\", \"verseText\": \"{2}\", \"verseWord\": \"{3}\"}}";
