@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-03-10T16:36:00...2025-03-10T17:32:00	Aside with Christianity.
+		-->
+		<title>Aside with Christianity</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Aside with Christianity"/>
+		<meta name="keywords" content="Word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="firstWord">First word</label></td>
+					<td><input id="firstWord" type="text" size="50" value="ASide" autofocus></td>
+				</tr>
+				<tr>
+					<td><label for="secondWord">Second word</label></td>
+					<td><input id="secondWord" type="text" size="50" value="with"></td>
+				</tr>
+				<tr>
+					<td><label for="thirdWord">Third word</label></td>
+					<td><input id="thirdWord" type="text" size="50" value="Christianity"></td>
+				</tr>
+				<tr>
+					<td><label for="bibleVersion">Bible version</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script>
+			const	firstWordElement = document.getElementById("firstWord");
+			const	secondWordElement = document.getElementById("secondWord");
+			const	thirdWordElement = document.getElementById("thirdWord");
+			
+			const	bibleVersionElement = document.getElementById("bibleVersion");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+	
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.buildSelect("bibleVersion", scriptLiteral9432.bibleVersions);
+					querySubmit();
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["firstWord"] = firstWordElement.value;
+				request["secondWord"] = secondWordElement.value;
+				request["thirdWord"] = thirdWordElement.value;
+				request["bibleVersion"] = bibleVersionElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/AlphabetSequence/AsideWithChristianity.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						//var jsonData = JSON.parse(responseJSON.d);
+						resultSetElement.innerHTML = responseJSON.d;
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

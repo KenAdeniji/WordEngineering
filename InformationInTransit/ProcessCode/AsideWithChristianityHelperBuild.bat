@@ -1,0 +1,1 @@
+csc /main:InformationInTransit.ProcessCode.AsideWithChristianityHelper /reference:mscorlib.dll,System.Core.dll AsideWithChristianityHelper.cs ..\DataAccess\DataCommand.cs 

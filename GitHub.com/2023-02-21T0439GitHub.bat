@@ -1128,3 +1128,9 @@ git add		IIS/WordEngineering/Statistics/
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-03T0345PaulineBeshayIAmGoingOver.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-05T0251_MikeTewksbury_GrayWithYellow-circledShoppingBagsAlbertsonsLuckySouthDoorTrain.txt
+
+git add        IIS/WordEngineering/AlphabetSequence/AsideWithChristianity.asmx
+git add        IIS/WordEngineering/AlphabetSequence/AsideWithChristianity.html
+git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.cs
+git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.exe
+git add        InformationInTransit/ProcessCode/AsideWithChristianityHelperBuild.bat
