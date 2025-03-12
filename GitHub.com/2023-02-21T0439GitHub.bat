@@ -1135,5 +1135,14 @@ git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.cs
 git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.exe
 git add        InformationInTransit/ProcessCode/AsideWithChristianityHelperBuild.bat
 
-git add        IIS/WordEngineering/Dated/Hour4Minute44.asmx
-git add        IIS/WordEngineering/Dated/Hour4Minute44.html
+rem git add        IIS/WordEngineering/Dated/Hour4Minute44.asmx
+rem git add        IIS/WordEngineering/Dated/Hour4Minute44.html
+
+rem git mv -f  IIS/WordEngineering/Dated/Hour4Minute44.asmx IIS/WordEngineering/Dated/TimeHour4Minute44.asmx
+rem git mv -f  IIS/WordEngineering/Dated/Hour4Minute44.html IIS/WordEngineering/Dated/TimeHour4Minute44.html
+
+git add        IIS/WordEngineering/Dated/TimeHour4Minute44.asmx
+git add        IIS/WordEngineering/Dated/TimeHour4Minute44.html
+
+git add        IIS/WordEngineering/Dated/DateYear2010Month09Day09.asmx
+git add        IIS/WordEngineering/Dated/DateYear2010Month09Day09.html
