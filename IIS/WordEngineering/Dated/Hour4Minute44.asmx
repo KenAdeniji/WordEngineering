@@ -61,7 +61,7 @@ public class Hour4Minute44WebService : System.Web.Services.WebService
 				row => Regex.IsMatch
 				(
 					row["Word"].ToString(),
-					TimePatternFull
+					TimePatternFullMatch
 				)
 			)
 			.CopyToDataTable();	
@@ -71,6 +71,6 @@ public class Hour4Minute44WebService : System.Web.Services.WebService
     }
 
 	public const String SQLSelectStatement = @"SELECT * FROM WordEngineering..HisWord ORDER BY HisWordID DESC";
-	public const String TimePatternFull = @"^\d{1,2}\:\d{1,2}$";
-	public const String TimePatternPartial = @"\d{1,2}\:\d{1,2}";	
+	public const String TimePatternFullMatch = @"^\d{1,2}\:\d{1,2}$";
+	public const String TimePatternPartialMatch = @"\d{1,2}\:\d{1,2}";	
 }
