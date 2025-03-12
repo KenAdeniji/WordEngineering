@@ -1134,3 +1134,6 @@ git add        IIS/WordEngineering/AlphabetSequence/AsideWithChristianity.html
 git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.cs
 git add        InformationInTransit/ProcessCode/AsideWithChristianityHelper.exe
 git add        InformationInTransit/ProcessCode/AsideWithChristianityHelperBuild.bat
+
+git add        IIS/WordEngineering/Dated/Hour4Minute44.asmx
+git add        IIS/WordEngineering/Dated/Hour4Minute44.html
