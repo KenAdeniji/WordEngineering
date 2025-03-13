@@ -2,12 +2,19 @@
 <html>
 	<!--
 		2025-03-11T12:01:00	Created.
+		2025-03-13T06:25:00...2025-03-13T06:39:00 Code for either partial match or full match?
+		2025-03-13T06:39:00...2025-03-13T06:48:00 Debug for either partial match or full match?
+		2025-03-13T07:04:00	isMatch? Boolean, flag, condition, true or false?
+		2025-03-13T07:08:00	DataType... data validation... data cleansing of the WordEngineering database, HisWord table, Word column?
+		2025-03-13T07:14:00	This support... programmatic may automate WordEngineering database, ActToGod table, records of data types?
+		2025-03-13T07:34:00	Regular expression... is the only variable... we underline? 
+		2025-03-13T07:39:00    SELECT statement? Microsoft SQL Server support Regular Expression (RegEx)? Business case. Language Integrated Query (LINQ) in C#. 07:45 of versus (VS) for?
 	-->	
 	<head>
 		<title>4:44</title>
 		<meta charset="UTF-8"/>
 		<meta name="description" content="4:44"/>
-		<meta name="keyword" content="Hour, minute"/>
+		<meta name="keyword" content="Time, hour, minute"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 	</head>
@@ -19,7 +26,12 @@
 				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
 			);
 		</script>
-		<div id="resultTable" align="center"></div>
+		<div align="center">
+			<label for="partialMatch">Partial match</label>
+			<input type="checkbox" id="partialMatch"/>
+			<input type="submit" id="submitQuery"/>
+			<div id="resultTable" align="center">
+		</div>
 		<script>
 			let scriptElement = document.createElement("script");
 			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
@@ -27,16 +39,39 @@
 		</script>
 		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
 		<script>
+			var 	isPostBack = false;
+			
+			const 	partialMatchElement = document.getElementById("partialMatch");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
 			function pageLoad()
 			{
-				querySubmit();
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var partialMatchValue = urlParams.get("partialMatch");
+					if (partialMatchValue === null)
+					{
+						partialMatchValue = "";
+					}
+					var partialMatchLowerCaseValue = partialMatchValue.toLowerCase();
+					var partialMatchChecked = (partialMatchLowerCaseValue === "true") ? true : false;
+					partialMatchElement.checked = partialMatchChecked;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}	
  			}
 
 			async function querySubmit()
 			{
 				var request = {};
 
-				//request["selectQueryStatement"] = selectQueryStatementElement.value;
+				request["partialMatch"] = partialMatchElement.checked
 				
 				const PostData = {
 					method: 'POST',
@@ -48,7 +83,7 @@
 					credentials: 'include'
 				}
 				PostData.body = JSON.stringify(request);
-				url = "/WordEngineering/Dated/Hour4Minute44.asmx/Query";
+				url = "/WordEngineering/Dated/TimeHour4Minute44.asmx/Query";
 				try {
 					const response = await fetch(url, PostData)
 					.then(response => {
@@ -61,6 +96,15 @@
 					} catch (e) {
 					resultSetElement.innerHTML = e;
 				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
 			}
 
 			window.addEventListener("load", pageLoad, false);

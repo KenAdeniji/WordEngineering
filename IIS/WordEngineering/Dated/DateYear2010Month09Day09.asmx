@@ -45,7 +45,10 @@ public class DateYear2010Month09Day09WebService : System.Web.Services.WebService
 {
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-	public string Query()
+	public string Query
+	(
+		bool	partialMatch
+	)
     {
 		DataTable selectTable = (DataTable) DataCommand.DatabaseCommand
 		(
@@ -61,7 +64,7 @@ public class DateYear2010Month09Day09WebService : System.Web.Services.WebService
 				row => Regex.IsMatch
 				(
 					row["Word"].ToString(),
-					DatePatternFullMatch
+					partialMatch ? DatePatternPartialMatch : DatePatternFullMatch
 				)
 			)
 			.CopyToDataTable();	

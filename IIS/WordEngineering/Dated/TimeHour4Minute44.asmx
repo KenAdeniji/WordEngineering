@@ -1,4 +1,4 @@
-<%@ WebService Language="C#" Class="Hour4Minute44WebService" %>
+<%@ WebService Language="C#" Class="TimeHour4Minute44WebService" %>
 
 using System;
 using System.Data;
@@ -41,11 +41,14 @@ var matches =
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 [ScriptService]
-public class Hour4Minute44WebService : System.Web.Services.WebService
+public class TimeHour4Minute44WebService : System.Web.Services.WebService
 {
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-	public string Query()
+	public string Query
+	(
+		bool partialMatch
+	)
     {
 		DataTable selectTable = (DataTable) DataCommand.DatabaseCommand
 		(
@@ -61,7 +64,7 @@ public class Hour4Minute44WebService : System.Web.Services.WebService
 				row => Regex.IsMatch
 				(
 					row["Word"].ToString(),
-					TimePatternFullMatch
+					partialMatch ? TimePatternPartialMatch : TimePatternFullMatch
 				)
 			)
 			.CopyToDataTable();	
