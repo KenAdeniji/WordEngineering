@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-03-15T23:29:00 I am seventy percent, 70%, Sheol of Amdahl a fit.
+		2025-03-16T18:58:00...2025-03-16T19:00:00 Created.
+	-->	
+	<head>
+		<title>I am seventy percent, 70%, Sheol of Amdahl a fit.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="I am seventy percent, 70%, Sheol of Amdahl a fit."/>
+		<meta name="keyword" content="Percent"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<label for="partialMatch">Partial match</label>
+			<input type="checkbox" id="partialMatch"/>
+			<input type="submit" id="submitQuery"/>
+			<div id="resultTable" align="center">
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var 	isPostBack = false;
+			
+			const 	partialMatchElement = document.getElementById("partialMatch");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var partialMatchValue = urlParams.get("partialMatch");
+					if (partialMatchValue === null)
+					{
+						partialMatchValue = "";
+					}
+					var partialMatchLowerCaseValue = partialMatchValue.toLowerCase();
+					var partialMatchChecked = (partialMatchLowerCaseValue === "true") ? true : false;
+					partialMatchElement.checked = partialMatchChecked;
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}	
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["partialMatch"] = partialMatchElement.checked
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

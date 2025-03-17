@@ -1149,3 +1149,6 @@ git add        IIS/WordEngineering/Dated/DateYear2010Month09Day09.html
 
 git add		IIS/WordEngineering/Dated/Number15431.asmx
 git add		IIS/WordEngineering/Dated/Number15431.html
+
+git add        IIS/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.asmx
+git add        IIS/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.html
