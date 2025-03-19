@@ -99,28 +99,6 @@ artifacts. But when one reads the Bible, the book of Revelation, which
 starts with the letters to the 7 churches in Asia Minor, does not
 instigate future alteration.
 
-### Validation? Chronologically? {#ValidationChronologically url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00"}
-
--   2025-01-23 11:23:11.163 Compare the identity column and date column
-    order, and highlight when the date column is out of sequence?
-
-    ``` {datetime="2025-01-25T10:26:00"}
-    SELECT * FROM WordEngineering..HisWord HisWordLead
-    WHERE Dated >
-    (
-        SELECT TOP 1 Dated
-        FROM WordEngineering..HisWord HisWordLag
-        WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
-        ORDER BY HisWordLead.HisWordID 
-    )
-    ORDER BY HisWordID DESC
-    ```
-
--   2025-01-25T10:26:00 Mighty men of David? Arranged according to
-    accomplishment? Men killed ( [2 Samuel
-    23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023)
-    )?
-
 ### The Bible Database {#BibleDatabase}
 
 #### The Scripture Table {#ScriptureTable}
@@ -338,7 +316,7 @@ it being a query item. Future implementation, may issue the SQL
 statement
 `CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)`
 `SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact`{datetime="2020-12-14T16:51:00"}
-is 789631; this is the sum of the words in the KJV Bible.
+is 789631; this is the count of the words in the KJV Bible.
 
 ##### The Exact Table\'s BibleWord Column {#ExactTableBibleWordColumn}
 
@@ -429,7 +407,11 @@ rare. When redundancies do occur, we may append the sequence to the
 word, to generate a unique word. We do this manually, but an [insert
 trigger](http://www.tutorialspoint.com/plsql/plsql_triggers.htm), will
 offer automation, and will cut the risk of primary key violation, which
-leads to gaps in the identity column.
+leads to gaps in the identity column [and, loss of
+data.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=and,%20loss%20of%20data.){datetime="2025-03-18T18:08:00"
+hiswordid="165614" contactid="15889"
+url="npr.org/2025/03/18/g-s1-54493/judge-boasberg-trump-deportation-flights?utm_source=firefox-newtab-en-us"
+commentary="2025-03-18T18:08:00 urine."}
 
 The HisWord\'s table, commentary column, contains implicit information.
 This communication is most likely non-verbal, and it is information such
@@ -3310,6 +3292,28 @@ commentary="When I am doing this? What do I become?" location="Shower"}
     hiswordid="164470" filename="Kowe.c"}]{#Translator}
 
 (Tim Wildsmith, 2024).
+
+### Validation? Chronologically? {#ValidationChronologically url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00"}
+
+-   2025-01-23 11:23:11.163 Compare the identity column and date column
+    order, and highlight when the date column is out of sequence?
+
+    ``` {datetime="2025-01-25T10:26:00"}
+    SELECT * FROM WordEngineering..HisWord HisWordLead
+    WHERE Dated >
+    (
+        SELECT TOP 1 Dated
+        FROM WordEngineering..HisWord HisWordLag
+        WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+        ORDER BY HisWordLead.HisWordID 
+    )
+    ORDER BY HisWordID DESC
+    ```
+
+-   2025-01-25T10:26:00 Mighty men of David? Arranged according to
+    accomplishment? Men killed ( [2 Samuel
+    23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023)
+    )?
 
 ### 2025-03-11T08:20:00 DataType {#DataType datetime="2025-03-11T08:20:00"}
 

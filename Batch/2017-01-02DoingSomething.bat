@@ -181,7 +181,7 @@ DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
 DBCC CHECKIDENT ('URI..UriPocket', RESEED, 22);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71295);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71445);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2104);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8386);
@@ -941,4 +941,5 @@ console.log(count("olly olly in come free"));
 
 2025-03-10T11:50:00	2013-03-13...2012-01-09...2025-03-10=-9.794520547945
 
+2025-03-18T13:13:00	e-mail of the beast.
 :Exit

@@ -328,31 +328,6 @@
 				But when one reads the Bible, the book of Revelation, which starts with the letters to the 7 churches in Asia Minor, does not instigate future alteration.
 			</p>
 			
-			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00">Validation? Chronologically?</h3>
-			
-			<ul datetime="2025-01-25T10:26:00">
-				<li datetime="2025-01-23 11:23:11.163">
-					2025-01-23 11:23:11.163 Compare the identity column and date column order, and highlight when the date column is out of sequence?
-<pre datetime="2025-01-25T10:26:00">
-SELECT * FROM WordEngineering..HisWord HisWordLead
-WHERE Dated >
-(
-	SELECT TOP 1 Dated
-	FROM WordEngineering..HisWord HisWordLag
-	WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
-	ORDER BY HisWordLead.HisWordID 
-)
-ORDER BY HisWordID DESC
-</pre>					
-				</li>
-				<li datetime="2025-01-25T10:26:00">
-					2025-01-25T10:26:00 Mighty men of David? Arranged according to accomplishment? Men killed
-					(
-						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023">2 Samuel 23</a>
-					)?
-				</li>
-			</ul>
-						
 			<h3 id="BibleDatabase">The Bible Database</h3>
 
 			<h4 id="ScriptureTable">The Scripture Table</h4>
@@ -717,7 +692,7 @@ ORDER BY HisWordID DESC
 				<code>CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)</code>
 				
 				<code datetime="2020-12-14T16:51:00">SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact</code>
-				is 789631; this is the sum of the words in the KJV Bible.
+				is 789631; this is the count of the words in the KJV Bible.
 			</p>
 			
 			<h5 id="ExactTableBibleWordColumn">The Exact Table's BibleWord Column</h5>
@@ -851,7 +826,17 @@ ORDER BY HisWordID DESC
 				We do this manually, but an 
 				<a href="http://www.tutorialspoint.com/plsql/plsql_triggers.htm">insert trigger</a>,
 				will offer automation, and will cut the risk of primary key violation,
-				which leads to gaps in the identity column.
+				which leads to gaps in the identity column
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=and,%20loss%20of%20data."
+					datetime="2025-03-18T18:08:00"
+					data-HisWordID="165614"
+					data-ContactID="15889"
+					data-url="npr.org/2025/03/18/g-s1-54493/judge-boasberg-trump-deportation-flights?utm_source=firefox-newtab-en-us"
+					data-Commentary="2025-03-18T18:08:00 urine."
+				>
+					and, loss of data.
+				</a>
 			</p>
 
 			<p>
@@ -5281,6 +5266,31 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 			</ol>
 		
 			</q> (Tim Wildsmith, 2024).
+
+			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" datetime="2025-01-25T10:26:00">Validation? Chronologically?</h3>
+			
+			<ul datetime="2025-01-25T10:26:00">
+				<li datetime="2025-01-23 11:23:11.163">
+					2025-01-23 11:23:11.163 Compare the identity column and date column order, and highlight when the date column is out of sequence?
+<pre datetime="2025-01-25T10:26:00">
+SELECT * FROM WordEngineering..HisWord HisWordLead
+WHERE Dated >
+(
+	SELECT TOP 1 Dated
+	FROM WordEngineering..HisWord HisWordLag
+	WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+	ORDER BY HisWordLead.HisWordID 
+)
+ORDER BY HisWordID DESC
+</pre>					
+				</li>
+				<li datetime="2025-01-25T10:26:00">
+					2025-01-25T10:26:00 Mighty men of David? Arranged according to accomplishment? Men killed
+					(
+						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023">2 Samuel 23</a>
+					)?
+				</li>
+			</ul>
 
 			<h3 id="DataType" datetime="2025-03-11T08:20:00">2025-03-11T08:20:00 DataType</h3>
 			
