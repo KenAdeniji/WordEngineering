@@ -1150,5 +1150,8 @@ git add        IIS/WordEngineering/Dated/DateYear2010Month09Day09.html
 git add		IIS/WordEngineering/Dated/Number15431.asmx
 git add		IIS/WordEngineering/Dated/Number15431.html
 
-git add        IIS/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.asmx
+c       IIS/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.asmx
 git add        IIS/WordEngineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.html
+
+git add        IIS/WordEngineering/2018-05-03Correspondence/2025-03-19T0149StanfordShouldNotSendSpamE-mails.RobertLawJoss.1996-02-14MarkBoelensSaidYouAreAFraud.IfYouAreAnyGoodAConsultantYouShouldBeAbleToGetAnotherContract.txt
+		
