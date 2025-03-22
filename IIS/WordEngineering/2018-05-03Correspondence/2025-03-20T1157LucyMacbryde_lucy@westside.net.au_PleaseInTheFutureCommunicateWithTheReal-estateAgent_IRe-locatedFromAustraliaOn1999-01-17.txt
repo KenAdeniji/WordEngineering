@@ -1,3 +1,33 @@
+2025-03-21T09:57:00 What have I diminish... as part of God?
+	The question we are dealing with... is how SQL Server implements constraints or indexes?
+	http://npr.org/2025/03/18/g-s1-54493/judge-boasberg-trump-deportation-flights?utm_source=firefox-newtab-en-us
+
+USE [WordEngineering]
+GO
+
+/****** Object:  Index [IDX_Remember_DatedFrom_DatedUntil_ContactID_HisWordID]    Script Date: 3/21/2025 10:24:47 AM ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Remember_DatedFrom_DatedUntil_ContactID_HisWordID] ON [dbo].[Remember]
+(
+	[DatedFrom] ASC,
+	[DatedUntil] ASC,
+	[ContactID] ASC,
+	[HisWordID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+USE [WordEngineering]
+GO
+
+/****** Object:  Index [CK_Remember_DatedFrom_DatedUntil_ContactID_HisWordID]    Script Date: 3/21/2025 10:22:25 AM ******/
+ALTER TABLE [dbo].[Remember] ADD  CONSTRAINT [CK_Remember_DatedFrom_DatedUntil_ContactID_HisWordID] UNIQUE NONCLUSTERED 
+(
+	[DatedFrom] ASC,
+	[DatedUntil] ASC,
+	[ContactID] ASC,
+	[HisWordID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
 2025-03-21T07:55:00...2025-03-21T08:22:00
 
 mailto:lucy@westside.net.au
