@@ -3371,6 +3371,16 @@ and so-called required columns.
     a nullable column is set to null, then an outer join is required to
     retrieve foreign-related rows.
 
+### Data Attribute {#DataAttribute datetime="2025-03-23T20:34:00"}
+
+-   data-webservice: An invocable web service to provide supporting
+    information. [Via a web address,
+    url]{datetime="2025-03-23T20:38:00"} and query string.
+-   data-code: With the option of running the code? XML or JSON format,
+    with language extensions that enforce compatibility and
+    interoperability.
+-   data-ssn: For example, Representation State Transfer (REST).
+
 ### Pros and Cons {#ProsAndCons datetime="2025-03-01T05:05:00" hiswordid="165465"}
 
 -   English is our colonial language; Yoruba is my native language (
