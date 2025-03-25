@@ -5444,7 +5444,42 @@ Saudi Arabia and Egypt propose the development of Gaza.
 			
 			<ul>
 				<li datetime="2025-03-22T17:52:00">data-webservice: An invocable web service to provide supporting information. <span datetime="2025-03-23T20:38:00">Via a web address, url</span> and query string.</li>
-				<li datetime="2025-03-23T20:34:00">data-code: With the option of running the code? XML or JSON format, with language extensions that enforce compatibility and interoperability.</li>
+				<li datetime="2025-03-23T20:34:00">
+					data-code: With the option of running the code? XML or JSON format, with language extensions that enforce compatibility and interoperability.
+					2025-03-24T12:42:00 For example:
+					<pre datetime="2025-03-24T12:42:00">
+SELECT	'Alpha' AS InfoType, COUNT(*) CountInfo, 
+(
+	Count(*) * 100.0 / (SELECT COUNT(*) FROM WordEngineering..HisWord)
+) PercentageOfTotal
+FROM WordEngineering..HisWord WHERE Word NOT LIKE '%[0-9]%'
+UNION
+SELECT	'Numeric' AS InfoType, COUNT(*) CountInfo, 
+(
+	Count(*) * 100.0 / (SELECT COUNT(*) FROM WordEngineering..HisWord)
+) PercentageOfTotal
+FROM WordEngineering..HisWord WHERE Word LIKE '%[0-9]%'
+UNION
+SELECT	'NULL' AS InfoType, COUNT(*) CountInfo, 
+(
+	Count(*) * 100.0 / (SELECT COUNT(*) FROM WordEngineering..HisWord)
+) PercentageOfTotal
+FROM WordEngineering..HisWord WHERE Word IS NULL
+UNION
+SELECT	'Total' AS InfoType, COUNT(*) CountInfo, 
+(
+	Count(*) * 100.0 / (SELECT COUNT(*) FROM WordEngineering..HisWord)
+) PercentageOfTotal
+FROM WordEngineering..HisWord
+					</pre>
+					<pre>
+InfoType   CountInfo   PercentageOfTotal
+Alpha      111590      93.740811989146
+Numeric    851         0.714879747313
+NULL       6600        5.544308263539
+Total      119041      100
+					</pre>
+				</li>
 				<li datetime="2025-03-23T20:44:00">data-ssn: For example, Representation State Transfer (REST).</li>
 			</ul>
 			
