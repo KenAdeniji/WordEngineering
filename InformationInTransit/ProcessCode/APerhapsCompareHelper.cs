@@ -90,7 +90,7 @@ namespace InformationInTransit.ProcessCode
 						participation = new Exact.Participation
 						{
 							FirstOccurrenceScriptureReference = scriptureReference,
-							FirstOccurrencePosition = row,
+							FirstOccurrenceVerseIDSequence = row,
 							FrequencyOfOccurrence = 1
 						};
 						uniqueWords.Add(adjust, participation);
@@ -98,7 +98,7 @@ namespace InformationInTransit.ProcessCode
 					else
 					{
 						participation.LastOccurrenceScriptureReference = scriptureReference;
-						participation.LastOccurrencePosition = row;
+						participation.LastOccurrenceVerseIDSequence = row;
 						++participation.FrequencyOfOccurrence;
 					}
 				}
