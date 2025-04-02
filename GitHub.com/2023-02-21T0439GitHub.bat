@@ -1125,7 +1125,7 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_
 
 git add		IIS/WordEngineering/Statistics/	
 
-git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-03T0345PaulineBeshayIAmGoingOver.txt
+git rm		IIS/WordEngineering/2018-05-03Correspondence/2025-03-03T0345PaulineBeshayIAmGoingOver.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-05T0251_MikeTewksbury_GrayWithYellow-circledShoppingBagsAlbertsonsLuckySouthDoorTrain.txt
 
