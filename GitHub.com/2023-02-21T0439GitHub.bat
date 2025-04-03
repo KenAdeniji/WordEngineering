@@ -1125,8 +1125,6 @@ git add        Java/DougLowe/JavaAll-In-OneForDummies/AlphabetSequence_DougLowe_
 
 git add		IIS/WordEngineering/Statistics/	
 
-git rm		IIS/WordEngineering/2018-05-03Correspondence/2025-03-03T0345PaulineBeshayIAmGoingOver.txt
-
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-05T0251_MikeTewksbury_GrayWithYellow-circledShoppingBagsAlbertsonsLuckySouthDoorTrain.txt
 
 git add        IIS/WordEngineering/AlphabetSequence/AsideWithChristianity.asmx
@@ -1173,3 +1171,5 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-27T1841SpamEMail_i
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-29WhatDoYouDoOnTheNationalLevelWithSpam_info@joinallofus.org_help@joinallofus.org_oipa@bart.gov_allofus@ucsf.edu.txt_Erika.Watts@acgov.org
 
 git add		IIS/WordEngineering/Resume/2025-03-29T1852jobs@docspot.com_-_DocSpotOperationsAssociate.html
+
+git add		IIS/WordEngineering/JavaScript/Algorithm/NavigatorProperty.html
