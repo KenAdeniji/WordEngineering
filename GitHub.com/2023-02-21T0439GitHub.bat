@@ -1173,3 +1173,5 @@ git add		IIS/WordEngineering/2018-05-03Correspondence/2025-03-29WhatDoYouDoOnThe
 git add		IIS/WordEngineering/Resume/2025-03-29T1852jobs@docspot.com_-_DocSpotOperationsAssociate.html
 
 git add		IIS/WordEngineering/JavaScript/Algorithm/NavigatorProperty.html
+
+git add		IIS/WordEngineering/2018-05-03Correspondence/2025-04-04ErikaOlson(chargedaffaires)_GodIsInThePeople...MakingAPlace_AGeneralityToConclusion.txt
