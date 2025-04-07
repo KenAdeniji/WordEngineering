@@ -953,4 +953,8 @@ SELECT COUNT(*) FROM WordEngineering..HisWord WHERE Word LIKE '%[0-9]%'
 
 2025-04-01T10:33:00...2025-04-01T10:38:00 microsoft windows operating system, microsoft sql server management studio, backup.
 
+2025-04-07T11:46:00	http://localhost/Wordengineering/WordUnion/2015-10-23DoctoralDissertation.html#ResultsAndDiscussion
+2025-04-07T11:58:00	
+http://localhost/Wordengineering/WordUnion/2015-10-23DoctoralDissertation.html#WhatHeFoundOutWithout
+
 :Exit
