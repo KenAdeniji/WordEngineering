@@ -173,8 +173,8 @@
 						<asp:Label
 							runat="server"       
 							id="LabelScriptureReference"
-							Text="Scr<u>i</u>pture Reference"
-							AccessKey="I"
+							Text="Scri<u>p</u>ture Reference"
+							AccessKey="P"
 							AssociatedControlId="TextBoxScriptureReference"
 						/>
 					</td>
