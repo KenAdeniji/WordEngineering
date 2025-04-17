@@ -575,7 +575,216 @@ namespace WordEngineering
 						SqlDataSourceURIGridView.InsertParameters["commentary"].DefaultValue    		=  commentary;
 						if ( contactID > 0 )
 						{
-							SqlDataSourceURIGridView.InsertParameters["contactID"].DefaultValue 		=  System.Convert.ToString( contactID );
+							SqlDataSourceURIGridView.InsertParameters["contactID"].DefaultValue 		=      Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William MinerSystem.Convert.ToString( contactID );
 						}
 						if ( dated != DateTime.MinValue )
 						{
@@ -691,13 +900,13 @@ namespace WordEngineering
 				SqlDataSourceURIGridView.UpdateParameters["commentary"].DefaultValue = commentary;
 				SqlDataSourceURIGridView.UpdateParameters["uriReferrer"].DefaultValue = uriReferrer;
 				SqlDataSourceURIGridView.UpdateParameters["referrer"].DefaultValue = referrer;
-				SqlDataSourceURIGridView.UpdateParameters["contactID"].DefaultValue = contactID.ToString();
+				SqlDataSourceURIGridView.UpdateParameters["contactID"].DefaultValue = contactID;
 				SqlDataSourceURIGridView.UpdateParameters["scriptureReference"].DefaultValue = scriptureReference;
 				if ( dated != DateTime.MinValue )
 				{
-					SqlDataSourceURIGridView.UpdateParameters["dated"].DefaultValue = dated.ToString();
+					SqlDataSourceURIGridView.UpdateParameters["dated"].DefaultValue = dated;
 				} 
-				SqlDataSourceURIGridView.UpdateParameters["original_SequenceOrderID"].DefaultValue = sequenceOrderID.ToString();
+				SqlDataSourceURIGridView.UpdateParameters["original_SequenceOrderID"].DefaultValue = sequenceOrderID;
 								
 				SqlDataSourceURIGridView.Update();
 			}

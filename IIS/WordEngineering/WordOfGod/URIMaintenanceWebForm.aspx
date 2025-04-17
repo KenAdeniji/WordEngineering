@@ -120,50 +120,6 @@
 				<tr align="center">
 					<td align="left">
 						<asp:Label
-						 runat="server"       
-						 id="LabelDated"
-						 Text="<u>D</u>ated:"
-						 AccessKey="D"
-						 AssociatedControlId="TextBoxDatedFrom"
-						/>
-					</td>
-					<td align="left">        
-						<asp:TextBox
-						 ID="TextBoxDatedFrom"
-						 runat="Server"
-						/>
-						-
-						<asp:TextBox
-						 ID="TextBoxDatedUntil"
-						 runat="Server"
-						/>
-					</td>
-				</tr>
-				<tr align="center">
-					<td align="left">
-						<asp:Label
-						 runat="server"       
-						 id="LabelSequenceOrderId"
-						 Text="<u>S</u>equence Order Id:"
-						 AccessKey="D"
-						 AssociatedControlId="TextBoxSequenceOrderIDFrom"
-						/>
-					</td> 
-					<td align="left">        
-						<asp:TextBox
-							ID="TextBoxSequenceOrderIDFrom"
-							runat="Server"
-						/>
-						-
-						<asp:TextBox
-							ID="TextBoxSequenceOrderIDTo"
-							runat="Server"
-					/>
-					</td>
-				</tr>
-				<tr align="center">
-					<td align="left">
-						<asp:Label
 							 runat="server"       
 							 id="LabelInternetCountryCodeTopLevelDomain_ccTLD"
 							 Text="<u>I</u>nternet Country Code Top Level Domain (ccTLD):"
@@ -183,8 +139,8 @@
 						<asp:Label
 							runat="server"       
 							id="LabelURIReferrer"
-							Text="URI Ref<u>e</u>rrer:"
-							AccessKey="I"
+							Text="URI Re<u>f</u>errer:"
+							AccessKey="F"
 							AssociatedControlId="TextBoxURIReferrer"
 						/>
 					</td>
@@ -216,23 +172,6 @@
 					<td align="left">
 						<asp:Label
 							runat="server"       
-							id="LabelContactID"
-							Text="<u>C</u>ontact ID"
-							AccessKey="C"
-							AssociatedControlId="TextBoxContactID"
-						/>
-					</td>
-					<td align="left">       
-						<asp:TextBox
-							 ID="TextBoxContactID"
-							 runat="Server"
-						/>        
-					</td>
-				</tr>
-				<tr align="center">
-					<td align="left">
-						<asp:Label
-							runat="server"       
 							id="LabelScriptureReference"
 							Text="Scr<u>i</u>pture Reference"
 							AccessKey="I"
@@ -244,6 +183,94 @@
 							 ID="TextBoxScriptureReference"
 							 runat="Server"
 						/>        
+					</td>
+				</tr>
+				<tr align="center">
+					<td align="left">
+						<asp:Label
+							runat="server"
+							id="LabelContactID"
+							Text="C<u>o</u>ntact ID"
+							AccessKey="O"
+							AssociatedControlId="TextBoxContactIDFrom"
+						/>
+					</td>
+					<td align="left">       
+						<asp:TextBox
+							 ID="TextBoxContactIDFrom"
+							 runat="Server"
+						/>        
+						-
+						<asp:TextBox
+							 ID="TextBoxContactIDUntil"
+							 runat="Server"
+						/>        
+					</td>
+				</tr>
+				<tr align="center">
+					<td align="left">
+						<asp:Label
+						 runat="server"       
+						 id="LabelDated"
+						 Text="<u>D</u>ated:"
+						 AccessKey="D"
+						 AssociatedControlId="TextBoxDatedFrom"
+						/>
+					</td>
+					<td align="left">        
+						<asp:TextBox
+						 ID="TextBoxDatedFrom"
+						 runat="Server"
+						/>
+						-
+						<asp:TextBox
+						 ID="TextBoxDatedUntil"
+						 runat="Server"
+						/>
+					</td>
+				</tr>
+				<tr align="center">
+					<td align="left">
+						<asp:Label
+						 runat="server"       
+						 id="LabelEventDateFrom"
+						 Text="<u>E</u>vent Dated:"
+						 AccessKey="E"
+						 AssociatedControlId="TextBoxEventDateFrom"
+						/>
+					</td>
+					<td align="left">        
+						<asp:TextBox
+						 ID="TextBoxEventDateFrom"
+						 runat="Server"
+						/>
+						-
+						<asp:TextBox
+						 ID="TextBoxEventDateUntil"
+						 runat="Server"
+						/>
+					</td>
+				</tr>
+				<tr align="center">
+					<td align="left">
+						<asp:Label
+						 runat="server"       
+						 id="LabelSequenceOrderID"
+						 Text="<u>S</u>equence Order ID:"
+						 AccessKey="D"
+						 AssociatedControlId="TextBoxSequenceOrderIDFrom"
+						/>
+					</td> 
+					<td align="left">        
+						<asp:TextBox
+							ID="TextBoxSequenceOrderIDFrom"
+							runat="Server"
+						/>
+						-
+						<asp:TextBox
+							ID="TextBoxSequenceOrderIDUntil"
+							runat="Server"
+						/>
 					</td>
 				</tr>
 				<tr align="center">
@@ -316,17 +343,20 @@
 						<asp:controlparameter name="tableName" controlid="DropDownListTableName" propertyname="SelectedValue" ConvertEmptyStringToNull=true Type="string" />
 						<asp:controlparameter name="uri" controlid="TextBoxURI" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "|" />
 						<asp:controlparameter name="title" controlid="TextBoxTitle" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input"  DefaultValue = "|" />
-						<asp:controlparameter name="keyword" controlid="TextBoxKeyword" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "|" />
 						<asp:controlparameter name="commentary" controlid="TextBoxCommentary" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input"  DefaultValue = "|" />
+						<asp:controlparameter name="keyword" controlid="TextBoxKeyword" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "|" />
 						<asp:controlparameter name="internetCountryCodeTopLevelDomain_ccTLD" controlid="TextBoxInternetCountryCodeTopLevelDomain_ccTLD" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" DefaultValue = "|" />
 						<asp:controlparameter name="uriReferrer" controlid="TextBoxUriReferrer" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input"  DefaultValue = "|" />						
 						<asp:controlparameter name="referrer" controlid="TextBoxReferrer" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input"  DefaultValue = "|" />
-						<asp:controlparameter name="contactID" controlid="TextBoxContactID" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input"  DefaultValue = "-1" />
-						<asp:controlparameter name="scriptureReference" controlid="TextBoxScriptureReference" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" Defaultvalue="|" />					
+						<asp:controlparameter name="scriptureReference" controlid="TextBoxScriptureReference" PropertyName="Text" ConvertEmptyStringToNull=true Type="string" Direction="Input" Defaultvalue="|"/>					
+						<asp:controlparameter name="contactIDFrom" controlid="TextBoxContactIDFrom" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input"  DefaultValue = "-1" />
+						<asp:controlparameter name="contactIDUntil" controlid="TextBoxContactIDUntil" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input"  DefaultValue = "2147483647" />
 						<asp:controlparameter name="datedFrom" controlid="TextBoxDatedFrom" PropertyName="Text" ConvertEmptyStringToNull=true Type="DateTime" Direction="Input" DefaultValue = "1/1/1753" />
 						<asp:controlparameter name="datedUntil" controlid="TextBoxDatedUntil" PropertyName="Text" ConvertEmptyStringToNull=true Type="DateTime" Direction="Input" DefaultValue = "12/31/9999" />
 						<asp:controlparameter name="sequenceOrderIDFrom" controlid="TextBoxSequenceOrderIDFrom" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input" Defaultvalue="-1" />
-						<asp:controlparameter name="sequenceOrderIDTo" controlid="TextBoxSequenceOrderIDTo" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input" Defaultvalue="2147483647" />
+						<asp:controlparameter name="sequenceOrderIDUntil" controlid="TextBoxSequenceOrderIDUntil" PropertyName="Text" ConvertEmptyStringToNull=true Type="Int32" Direction="Input" Defaultvalue="2147483647" />
+						<asp:controlparameter name="eventDateFrom" controlid="TextBoxEventDateFrom" PropertyName="Text" ConvertEmptyStringToNull=true Type="DateTime" Direction="Input" DefaultValue = "1/1/1753" />
+						<asp:controlparameter name="eventDateUntil" controlid="TextBoxEventDateUntil" PropertyName="Text" ConvertEmptyStringToNull=true Type="DateTime" Direction="Input" DefaultValue = "12/31/9999" />
 					</selectparameters>
 					<updateparameters>
 						<asp:controlparameter name="tableName" controlid="DropDownListTableName" propertyname="SelectedValue" ConvertEmptyStringToNull=true Type="string" />
@@ -553,7 +583,7 @@
 							</FooterTemplate>
 						</asp:TemplateField>
 						<asp:TemplateField HeaderText="Dated" SortExpression="Dated">
-							<ItemTemplate>
+						<ItemTemplate>
 								<asp:Label
 									Runat="Server"
 									id="LabelGridViewURIItemTemplateDated" 
