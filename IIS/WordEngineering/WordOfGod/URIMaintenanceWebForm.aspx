@@ -234,7 +234,7 @@
 						<asp:Label
 						 runat="server"       
 						 id="LabelEventDateFrom"
-						 Text="<u>E</u>vent Dated:"
+						 Text="<u>E</u>vent Date:"
 						 AccessKey="E"
 						 AssociatedControlId="TextBoxEventDateFrom"
 						/>
@@ -317,10 +317,10 @@
 						Runat="server"
 						ConnectionString="<%$ ConnectionStrings:URI %>"
 						DeleteCommand="EXEC usp_URIDelete @tableName, @sequenceOrderID"
-						InsertCommand="EXEC usp_URIInsert @tableName, @uri, @title, @keyword, @commentary, @uriReferrer, @referrer, @contactID, @scriptureReference, @dated, @sequenceOrderID"
+						InsertCommand="EXEC usp_URIInsert @tableName, @uri, @title, @keyword, @commentary, @uriReferrer, @referrer, @contactID, @scriptureReference, @dated, @sequenceOrderID, @eventDate"
 						SelectCommandType="StoredProcedure"
 						SelectCommand="dbo.usp_URISelect"
-						UpdateCommand="EXEC usp_URIUpdate @tableName, @uri, @title, @keyword, @commentary, @uriReferrer, @referrer, @contactID, @scriptureReference, @dated, @sequenceOrderID"
+						UpdateCommand="EXEC usp_URIUpdate @tableName, @uri, @title, @keyword, @commentary, @uriReferrer, @referrer, @contactID, @scriptureReference, @dated, @sequenceOrderID, @eventDate"
 					>
 					<deleteparameters>
 						<asp:controlparameter name="tableName" controlid="DropDownListTableName" propertyname="SelectedValue" ConvertEmptyStringToNull=true Type="string" />
@@ -338,6 +338,7 @@
 						<asp:parameter name="scriptureReference" ConvertEmptyStringToNull=true Type="string" />
 						<asp:parameter name="dated" ConvertEmptyStringToNull=true Type="DateTime" />
 						<asp:parameter name="sequenceOrderID" ConvertEmptyStringToNull=true Type="Int32" />
+						<asp:parameter name="eventDate" ConvertEmptyStringToNull=true Type="DateTime" />
 					</insertparameters>
 					<selectparameters>
 						<asp:controlparameter name="tableName" controlid="DropDownListTableName" propertyname="SelectedValue" ConvertEmptyStringToNull=true Type="string" />
@@ -370,6 +371,7 @@
 						<asp:parameter name="scriptureReference" ConvertEmptyStringToNull=true Type="string" />
 						<asp:parameter name="dated" ConvertEmptyStringToNull=true Type="DateTime" />
 						<asp:parameter name="sequenceOrderID" ConvertEmptyStringToNull=true Type="Int32" />
+						<asp:parameter name="eventDate" ConvertEmptyStringToNull=true Type="DateTime" />
 					</updateparameters>
 				</asp:SqlDataSource>
 				<br/>
@@ -444,29 +446,6 @@
 								/>
 							</FooterTemplate>
 						</asp:TemplateField>
-						<asp:TemplateField HeaderText="Keyword" SortExpression="Keyword">
-							<ItemTemplate>
-								<asp:Label
-								Runat="Server"
-								id="LabelGridViewURIItemTemplateKeyword" 
-								Text='<%# Eval("Keyword") %>'
-								/>
-							</ItemTemplate>
-							<EditItemTemplate>
-								<asp:TextBox 
-									Runat="Server"
-									id="TextBoxGridViewURIEditItemTemplateKeyword" 
-									Text='<%# Bind("Keyword") %>'
-								/>
-							</EditItemTemplate>
-							<FooterTemplate>
-								<asp:TextBox 
-									Runat="Server"
-									id="TextBoxGridViewURIFooterTemplateKeyword"
-									Text='<%# Bind("Keyword") %>'
-								/>
-							</FooterTemplate>
-						</asp:TemplateField>
 						<asp:TemplateField HeaderText="Commentary" SortExpression="Commentary">
 							<ItemTemplate>
 								<asp:Label
@@ -487,6 +466,29 @@
 								Runat="Server"
 								id="TextBoxGridViewURIFooterTemplateCommentary"
 								Text='<%# Bind("Commentary") %>'
+								/>
+							</FooterTemplate>
+						</asp:TemplateField>
+						<asp:TemplateField HeaderText="Keyword" SortExpression="Keyword">
+							<ItemTemplate>
+								<asp:Label
+								Runat="Server"
+								id="LabelGridViewURIItemTemplateKeyword" 
+								Text='<%# Eval("Keyword") %>'
+								/>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:TextBox 
+									Runat="Server"
+									id="TextBoxGridViewURIEditItemTemplateKeyword" 
+									Text='<%# Bind("Keyword") %>'
+								/>
+							</EditItemTemplate>
+							<FooterTemplate>
+								<asp:TextBox 
+									Runat="Server"
+									id="TextBoxGridViewURIFooterTemplateKeyword"
+									Text='<%# Bind("Keyword") %>'
 								/>
 							</FooterTemplate>
 						</asp:TemplateField>
@@ -624,6 +626,29 @@
 									ID="ButtonGridViewURIFooterTemplateAdd"
 									CommandName="ButtonGridViewURIFooterTemplateAdd" 
 									Text="Add"
+								/>
+							</FooterTemplate>
+						</asp:TemplateField>
+						<asp:TemplateField HeaderText="EventDate" SortExpression="EventDate">
+							<ItemTemplate>
+								<asp:Label
+									Runat="Server"
+									id="LabelGridViewURIItemTemplateEventDate" 
+									Text='<%# Eval("EventDate", "{0:yyyy-MM-dd}") %>'
+								/>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:TextBox 
+									Runat="Server"
+									id="TextBoxGridViewURIEditItemTemplateEventDate" 
+									Text='<%# Bind("EventDate") %>'
+								/>
+							</EditItemTemplate>
+							<FooterTemplate>
+								<asp:TextBox 
+									Runat="Server"
+									id="TextBoxGridViewURIFooterTemplateEventDate"
+									Text='<%# Bind("EventDate") %>'
 								/>
 							</FooterTemplate>
 						</asp:TemplateField>

@@ -452,6 +452,7 @@ namespace WordEngineering
 		{
 			int       sequenceOrderID   =  -1;
 			DateTime  dated             =  DateTime.MinValue;
+			DateTime  eventDated        =  DateTime.MinValue;
 			string    exceptionMessage  =  null;
 			string    commentary        =  null;
 			string    keyword           =  null;
@@ -484,6 +485,10 @@ namespace WordEngineering
 				if ( dated != DateTime.MinValue )
 				{
 					SqlDataSourceURIDetailsView.InsertParameters["Dated"].DefaultValue            =  System.Convert.ToString( dated );
+				}
+				if ( eventDated != DateTime.MinValue )
+				{
+					SqlDataSourceURIDetailsView.InsertParameters["Dated"].DefaultValue            =  System.Convert.ToString( eventDated );
 				}
 				if ( detailsViewInsertEventArgs.Values["Dated"] != null )
 				{
@@ -548,6 +553,7 @@ namespace WordEngineering
 			string    	commentary        		=  	null;
 			int			contactID				=	-1;
 			DateTime  	dated;
+			DateTime  	eventDate;
 			string    	keyword           		=  	null;
 			string		referrer				=	null;
 			string		scriptureReference		=	null;
@@ -564,6 +570,7 @@ namespace WordEngineering
 						commentary = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateCommentary")).Text;
 						Int32.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateContactID")).Text, out contactID );
 						DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateDated")).Text, out dated );
+						DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateEventDate")).Text, out eventDate );
 						keyword  = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateKeyword")).Text;
 						referrer = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateReferrer")).Text;
 						scriptureReference = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateScriptureReference")).Text;
@@ -790,6 +797,10 @@ William MinerSystem.Convert.ToString( contactID );
 						{
 							SqlDataSourceURIGridView.InsertParameters["dated"].DefaultValue           	=  System.Convert.ToString( dated );
 						}
+						if ( eventDate != DateTime.MinValue )
+						{
+							SqlDataSourceURIGridView.InsertParameters["eventDate"].DefaultValue         =  System.Convert.ToString( eventDate );
+						}
 						SqlDataSourceURIGridView.InsertParameters["keyword"].DefaultValue       	    =  keyword;
 						SqlDataSourceURIGridView.InsertParameters["referrer"].DefaultValue       	    =  referrer;
 						SqlDataSourceURIGridView.InsertParameters["scriptureReference"].DefaultValue    =  scriptureReference;
@@ -886,6 +897,7 @@ William MinerSystem.Convert.ToString( contactID );
 				commentary  = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateCommentary")).Text;
 				Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateContactID")).Text, out contactID );
 				DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateDated")).Text, out dated );
+				DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateEventDate")).Text, out eventDate );
 				keyword = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateKeyword")).Text;
 				referrer = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateReferrer")).Text;
 				scriptureReference = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateScriptureReference")).Text;

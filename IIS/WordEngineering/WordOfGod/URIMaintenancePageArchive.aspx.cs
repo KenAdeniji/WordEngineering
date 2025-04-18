@@ -17,781 +17,943 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 
+/*
+	2016-11-11	URIMaintenancePage.aspx.cs Added the commentary column.
+	2024-11-06T02:04:00	Schema columns re-arrangement, and column additions.
+CREATE TABLE URIWordEngineering
+(
+	[URI] [nvarchar](450) NOT NULL,
+	[Title] [nvarchar](4000) NULL,
+	[Keyword] [nvarchar](4000) NULL,
+	[Commentary] [nvarchar](max) NULL,
+	[URIReferrer] [nvarchar](450) NULL,
+	[Referrer] [nvarchar](max) NULL,
+	[ContactID] [int] NULL,
+	[ScriptureReference] [nvarchar](max) NULL,	
+	[Dated] [datetime] NOT NULL,
+	[SequenceOrderID] [int] IDENTITY(1,1) NOT NULL,
+	CONSTRAINT [PK_URIWordEngineering] PRIMARY KEY CLUSTERED 
+	(
+		[URI] ASC
+	)
+)
+	2024-11-06T16:54:00 Credit to the source. Columns added URIReferrer, Referrer, ContactID.
+	2024-11-06T17:13:00 Changed name DatedTo... DatedUntil.
+	2024-11-07T00:24:00	You are no longer working for me.
+		We are driving and we return southward. The word came out. 
+		04:59 The driver, passengers were not identified, but the direction (Daniel 9).
+		05:01 When the president make a statement... who should fulfill it? President Joe Biden goes to the Middle East, Africa Summit. Means of movement? 
+		05:09 With my adopted father he would listen to the budget and critic the plan.
+		05:11 With me, I understand the word of God 05:11 and the relevance to our life.
+	2024-11-07T05:14:00	aljazeera.com/news/2024/11/7/biden-rushing-billions-in-aid-to-ukraine-as-trump-win-fuels-uncertainty
+		2024-11-07T05:35:00	microsoft windows operating system, mozilla firefox, microsoft sql server management studio mouse error, user-interface (UI) error.
+	2024-11-07T05:18:00 And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren. Genesis 13:8.
+	2024-11-07T05:05:35 How do we personally be the same?
+	2024-11-07T05:05:35	What are resemblance of thing?
+	2024-11-07T01:57:00	The stimulus and trigger for these changes:
+		Referrer
+		Data entry clockwise
+	2024-11-07T05:52:00	What perhaps... I have grown as?
+*/
 namespace WordEngineering
 {
- /// <summary>URIMaintenancePage</summary>
- public class URIMaintenancePage : Page
- {
-  /// <summary>ColumnName</summary>
-  public String[] ColumnNameURI                = UtilityURI.ColumnNameURI;
+	public class URIMaintenancePage : Page
+	{
+		public String[] ColumnNameURI                = UtilityURI.ColumnNameURI;
+		public String DatabaseConnectionString       = "Provider=SQLOLEDB;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=URI;";
+		public String FilenameConfigurationXml       = @"WordEngineering.config";
+		public string FilenameStylesheet             = UtilityURI.FilenameStylesheet;
+		public String ServerMapPath                  = null;
+		public String[] TableNameURI                = UtilityURI.TableNameURI;
+		public string   TableNameURIDefault         = UtilityURI.TableNameURIDefault;
+		protected System.Web.UI.HtmlControls.HtmlInputFile         HtmlInputFileURI;
+		protected System.Web.UI.WebControls.Button                 ButtonFileOpen;
+		protected System.Web.UI.WebControls.Button                 ButtonFileSave;
+		protected System.Web.UI.WebControls.Button                 ButtonReset;
+		protected System.Web.UI.WebControls.Button                 ButtonSubmit;
+		protected System.Web.UI.WebControls.DropDownList           DropDownListTableName;
+		protected System.Web.UI.WebControls.DetailsView            DetailsViewURI;
+		protected System.Web.UI.WebControls.GridView               GridViewURI;
+		protected System.Web.UI.WebControls.Literal                LiteralFeedback;
+		protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceURIDetailsView;
+		protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceURIGridView;
+		protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceTable;
+		protected System.Web.UI.WebControls.TextBox                TextBoxCommentary;
+		protected System.Web.UI.WebControls.TextBox                TextBoxContactID;
+		protected System.Web.UI.WebControls.TextBox                TextBoxDatedFrom;
+		protected System.Web.UI.WebControls.TextBox                TextBoxDatedUntil;
+		protected System.Web.UI.WebControls.TextBox                TextBoxInternetCountryCodeTopLevelDomain_ccTLD;
+		protected System.Web.UI.WebControls.TextBox                TextBoxKeyword;
+		protected System.Web.UI.WebControls.TextBox                TextBoxReferrer;
+		protected System.Web.UI.WebControls.TextBox                TextBoxSequenceOrderIDFrom;
+		protected System.Web.UI.WebControls.TextBox                TextBoxSequenceOrderIDTo;
+		protected System.Web.UI.WebControls.TextBox                TextBoxTitle;
+		protected System.Web.UI.WebControls.TextBox                TextBoxURI;
+		protected System.Web.UI.WebControls.TextBox                TextBoxURIReferrer;
 
-  /// <summary>The database connection String.</summary>
-  public String DatabaseConnectionString       = "Provider=SQLOLEDB;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=URI;";
+		public void Page_Load
+		(
+			object     sender, 
+			EventArgs  e
+		) 
+		{
+			String  exceptionMessage  =  null;
+			ServerMapPath = this.MapPath("");
 
-  /// <summary>The configuration XML filename.</summary>
-  public String FilenameConfigurationXml       = @"WordEngineering.config";
+			if ( !Page.IsPostBack )
+			{
+				//FilenameConfigurationXml = Server.MapPath( FilenameConfigurationXml );
 
-  /// <summary>FilenameStylesheet</summary>
-  public string FilenameStylesheet             = UtilityURI.FilenameStylesheet;
+				try
+				{
+					if ( ServerMapPath != null)
+					{
+						FilenameConfigurationXml = ServerMapPath + @"\" + FilenameConfigurationXml;
+					}
 
-  /// <summary>The server map path.</summary>
-  public String ServerMapPath                  = null;
+					UtilityURI.ConfigurationXml
+					(
+							FilenameConfigurationXml,
+						ref exceptionMessage,         
+						ref DatabaseConnectionString,
+						ref FilenameStylesheet,
+						ref ColumnNameURI,
+						ref TableNameURI,
+						ref TableNameURIDefault
+					);
+		
+					if ( exceptionMessage != null )
+					{
+						LiteralFeedback.Text = exceptionMessage;
+						return;
+					}
 
-  /// <summary>TableName</summary>
-  public String[] TableNameURI                = UtilityURI.TableNameURI;
+					GridViewURI.Focus();
+					Page.SetFocus( GridViewURI );
+					DetailsViewURI.Attributes.Add("autocomplete", "on");
+					GridViewURI.Attributes.Add("autocomplete", "on");
+				}
+				catch (Exception ex)
+				{
+					LiteralFeedback.Text = ex.Message;
+				}	
+			}
+   		}
 
-  /// <summary>TableNameDefault</summary>
-  public string   TableNameURIDefault         = UtilityURI.TableNameURIDefault;
+		public void DropDownListTableName_PreRender
+		(
+			object     sender, 
+			EventArgs  e
+		) 
+		{
+			if ( !Page.IsPostBack )
+			{
+				if ( DropDownListTableName.Items.Count < 1 )
+				{
+					DropDownListTableName.DataSourceID    =  null;
+					DropDownListTableName.DataTextField   =  null;
+					DropDownListTableName.DataValueField  =  null;
+					DropDownListTableName.DataSource      =  TableNameURI;
+					DropDownListTableName.DataBind();
+				}
+				UtilityWebControl.SelectItem
+				( 
+					DropDownListTableName,
+					TableNameURIDefault
+				);
+			}
+		}
 
-  /// <summary>HtmlInputFileURI</summary>  
-  protected System.Web.UI.HtmlControls.HtmlInputFile         HtmlInputFileURI;
+		public String DatedFrom
+		{
+			get
+			{
+				return ( TextBoxDatedFrom.Text );
+			} 
+			set
+			{
+				TextBoxDatedFrom.Text = value;
+			}
+		}
 
-  /// <summary>ButtonFileOpen</summary>  
-  protected System.Web.UI.WebControls.Button                 ButtonFileOpen;
+		public String DatedUntil
+		{
+			get
+			{
+				return ( TextBoxDatedUntil.Text );
+			} 
+			set
+			{
+				TextBoxDatedUntil.Text = value;
+			}
+		}
 
-  /// <summary>ButtonFileSave</summary>  
-  protected System.Web.UI.WebControls.Button                 ButtonFileSave;
+		public String Feedback
+		{
+			get
+			{
+				return ( LiteralFeedback.Text );
+			} 
+			set
+			{
+				LiteralFeedback.Text = value;
+			}
+		}
 
-  /// <summary>ButtonReset</summary>  
-  protected System.Web.UI.WebControls.Button                 ButtonReset;
+		public String FilenameURI
+		{
+			get
+			{
+				return ( HtmlInputFileURI.PostedFile.FileName  );
+			} 
+		}
 
-  /// <summary>ButtonSubmit</summary>  
-  protected System.Web.UI.WebControls.Button                 ButtonSubmit;
+		public String InternetCountryCodeTopLevelDomain_ccTLD
+		{
+			get
+			{
+				return ( TextBoxInternetCountryCodeTopLevelDomain_ccTLD.Text );
+			} 
+			set
+			{
+				TextBoxInternetCountryCodeTopLevelDomain_ccTLD.Text = value;
+			}
+		}
 
-  /// <summary>DropDownListTableName</summary>
-  protected System.Web.UI.WebControls.DropDownList           DropDownListTableName;
+		public String Keyword
+		{
+			get
+			{
+				return ( TextBoxKeyword.Text );
+			} 
+			set
+			{
+				TextBoxKeyword.Text = value;
+			}
+		}
 
-  /// <summary>DetailsViewURI</summary>
-  protected System.Web.UI.WebControls.DetailsView            DetailsViewURI;
+		public String SequenceOrderIDFrom
+		{
+			get
+			{
+				return ( TextBoxSequenceOrderIDFrom.Text );
+			} 
+			set
+			{
+				TextBoxSequenceOrderIDFrom.Text = value;
+			}
+		}
 
-  /// <summary>GridViewURI</summary>
-  protected System.Web.UI.WebControls.GridView               GridViewURI;
+		public String SequenceOrderIDTo
+		{
+			get
+			{
+				return ( TextBoxSequenceOrderIDTo.Text );
+			} 
+			set
+			{
+				TextBoxSequenceOrderIDTo.Text = value;
+			}
+		}
 
-  /// <summary>LiteralFeedback</summary>
-  protected System.Web.UI.WebControls.Literal                LiteralFeedback;
+		public String URICommentary
+		{
+			get
+			{
+				return ( TextBoxCommentary.Text );
+			} 
+			set
+			{
+				TextBoxCommentary.Text = value;
+			}
+		}
 
-  /// <summary>SqlDataSourceURIDetailsView</summary>
-  protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceURIDetailsView;
+		public String URITitle
+		{
+			get
+			{
+			return ( TextBoxTitle.Text );
+			} 
+		set
+			{
+			TextBoxTitle.Text = value;
+			}
+		}
+
+		public String URI  
+		{
+			get
+			{
+				return ( TextBoxURI.Text );
+			} 
+			set
+			{
+				TextBoxURI.Text = value;
+			}
+		}
+
+		public void ButtonFileOpen_Click
+		(
+			Object sender, 
+			EventArgs e
+		)
+		{
+			string     exceptionMessage  =  null;
+			string     filenameXml       =  null;
+			DataSet    dataSet           =  null;
+
+			try
+			{
+				if ( string.IsNullOrEmpty( FilenameURI ) )
+				{
+					return;
+				}
+				filenameXml = FilenameURI;
+				UtilityURI.ReadXml
+				(
+					 ref filenameXml,
+					 ref dataSet,
+					 ref exceptionMessage,
+					 ref ColumnNameURI
+				);
+				if ( exceptionMessage != null )
+				{
+					Feedback = exceptionMessage;
+					return;
+				}     	 
+				if ( dataSet != null )
+				{
+					 ViewState["URIMaintenancePage_DataSet"] = dataSet;
+					 GridViewURI.AllowPaging   =  false;
+					 GridViewURI.AllowSorting  =  false;     
+					 GridViewURI.DataSourceID  =  null;
+					 GridViewURI.DataSource    =  dataSet;
+					 GridViewURI.DataBind();
+				}
+			}
+			catch ( Exception exception )
+			{
+				exceptionMessage = "Exception: " + exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+			}
+		}
+
+		public void ButtonFileSave_Click
+		(
+			Object sender, 
+			EventArgs e
+		)
+		{
+			string   exceptionMessage  =  null;
+			string   filenameXml       =  null;
+			DataSet  dataSet           =  null;
+
+			try
+			{
+				if ( string.IsNullOrEmpty( FilenameURI ) )
+				{
+					return;
+				}
+				filenameXml     =  FilenameURI;
+				dataSet = ( DataSet ) ViewState["URIMaintenancePage_DataSet"];
+				if ( dataSet == null )
+				{
+					return;
+				}
+				UtilityXml.WriteXml
+				(
+						dataSet,
+					ref exceptionMessage,
+					ref filenameXml,
+					ref FilenameStylesheet
+				);
+				if ( exceptionMessage != null )
+				{
+					Feedback = exceptionMessage;
+					return;
+				}     	 
+			}
+				catch ( Exception exception )
+			{
+				exceptionMessage = "Exception: " + exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+			}
+		}
   
-  /// <summary>SqlDataSourceURIGridView</summary>
-  protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceURIGridView;
+		public void ButtonSubmit_Click
+		(
+			Object sender, 
+			EventArgs e
+		)
+		{
+			GridViewURI.DataBind();
+		}
 
-  /// <summary>SqlDataSourceTable</summary>
-  protected System.Web.UI.WebControls.SqlDataSource          SqlDataSourceTable;
+		public void ButtonReset_Click
+		(
+			Object sender, 
+			EventArgs e
+		)
+		{
+			Feedback             =  null;
+			DatedFrom            =  null;
+			DatedUntil              =  null;
+			Keyword              =  null;
+			SequenceOrderIDFrom  =  null;
+			SequenceOrderIDTo    =  null;
+			URI                  =  null;
+			URITitle             =  null;
 
-  /// <summary>TextBoxDatedFrom</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxDatedFrom;
+			UtilityJavaScript.SetFocus
+			( 
+				this,
+				DropDownListTableName
+			);
+		}
 
-  /// <summary>TextBoxDatedTo</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxDatedTo;
+		public void DetailsViewURI_ItemInserted
+		(
+			Object                        sender, 
+			DetailsViewInsertedEventArgs  detailsViewInsertedEventArgs
+		)
+		{
+			// Use the Exception property to determine whether an exception
+			// occurred during the insert operation.
+			if ( detailsViewInsertedEventArgs.Exception != null )
+			{
+				// Insert the code to handle the exception.
+				Feedback = detailsViewInsertedEventArgs.Exception.Message;
 
-  /// <summary>TextBoxKeyword</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxKeyword;
+				// Use the ExceptionHandled property to indicate that the 
+				// exception is already handled.
+				detailsViewInsertedEventArgs.ExceptionHandled = true;
 
-  /// <summary>TextBoxSequenceOrderIdFrom</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxSequenceOrderIdFrom;
+				// When an exception occurs, keep the DetailsView
+				// control in insert mode.
+				detailsViewInsertedEventArgs.KeepInInsertMode = true;
+			}
+			else
+			{
+			GridViewURI.DataBind();
+			}
+		}
 
-  /// <summary>TextBoxSequenceOrderIdTo</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxSequenceOrderIdTo;
+		public void DetailsViewURI_ItemInserting
+		(
+			Object                      sender, 
+			DetailsViewInsertEventArgs  detailsViewInsertEventArgs
+		)
+		{
+			int       sequenceOrderID   =  -1;
+			DateTime  dated             =  DateTime.MinValue;
+			DateTime  eventDated        =  DateTime.MinValue;
+			string    exceptionMessage  =  null;
+			string    commentary        =  null;
+			string    keyword           =  null;
+			string    title             =  null;
+			string    uri               =  null;
 
-  /// <summary>TextBoxTitle</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxTitle;
+			IOrderedDictionary  iOrderedDictionary;     
+			try
+			{
+				if ( detailsViewInsertEventArgs.Values["URI"] != null )
+				{
+					uri = detailsViewInsertEventArgs.Values["URI"].ToString();
+				}
+				if ( detailsViewInsertEventArgs.Values["Title"] != null )
+				{
+					title = detailsViewInsertEventArgs.Values["Title"].ToString();
+				} 
+				if ( detailsViewInsertEventArgs.Values["Commentary"] != null )
+				{
+					commentary = detailsViewInsertEventArgs.Values["Commentary"].ToString();
+				} 
+				if ( detailsViewInsertEventArgs.Values["Keyword"] != null )
+				{
+					keyword = detailsViewInsertEventArgs.Values["Keyword"].ToString();
+				}
+				if ( sequenceOrderID > 0 )
+				{
+					SqlDataSourceURIDetailsView.InsertParameters["SequenceOrderID"].DefaultValue  =  System.Convert.ToString( sequenceOrderID );
+				}
+				if ( dated != DateTime.MinValue )
+				{
+					SqlDataSourceURIDetailsView.InsertParameters["Dated"].DefaultValue            =  System.Convert.ToString( dated );
+				}
+				if ( eventDated != DateTime.MinValue )
+				{
+					SqlDataSourceURIDetailsView.InsertParameters["Dated"].DefaultValue            =  System.Convert.ToString( eventDated );
+				}
+				if ( detailsViewInsertEventArgs.Values["Dated"] != null )
+				{
+					DateTime.TryParse( detailsViewInsertEventArgs.Values["Dated"].ToString(), out dated );
+				}
+				if ( detailsViewInsertEventArgs.Values["SequenceOrderID"] != null )
+				{
+					Int32.TryParse( detailsViewInsertEventArgs.Values["SequenceOrderID"].ToString(), out sequenceOrderID );
+				} 
+				SqlDataSourceURIDetailsView.InsertParameters["commentary"].DefaultValue        =  commentary;
+				SqlDataSourceURIDetailsView.InsertParameters["keyword"].DefaultValue           =  keyword;
+				SqlDataSourceURIDetailsView.InsertParameters["title"].DefaultValue             =  title;
+				SqlDataSourceURIDetailsView.InsertParameters["uri"].DefaultValue               =  uri;
+				SqlDataSourceURIDetailsView.Insert();
+			}
+			catch ( Exception exception )
+			{
+				exceptionMessage = exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+				return;
+			}
+		}
 
-  /// <summary>TextBoxURI</summary>
-  protected System.Web.UI.WebControls.TextBox                TextBoxURI;
+		public void DetailsViewURI_ItemUpdated
+		(
+			Object                        sender, 
+			DetailsViewUpdatedEventArgs   detailsViewUpdatedEventArgs
+		)
+		{
+			// Use the Exception property to determine whether an exception
+			// occurred during the insert operation.
+			if ( detailsViewUpdatedEventArgs.Exception != null )
+			{
+				// Insert the code to handle the exception.
+				Feedback = detailsViewUpdatedEventArgs.Exception.Message;
 
-  /// <summary>Page Load.</summary>
-  public void Page_Load
-  (
-   object     sender, 
-   EventArgs  e
-  ) 
-  {
+				// Use the ExceptionHandled property to indicate that the 
+				// exception is already handled.
+				detailsViewUpdatedEventArgs.ExceptionHandled = true;
 
-   String  exceptionMessage  =  null;
+				// When an exception occurs, keep the DetailsView
+				// control in edit mode.
+				detailsViewUpdatedEventArgs.KeepInEditMode = true;
+			}
+			else
+			{
+				GridViewURI.DataBind();
+			}
+		}
 
-   ServerMapPath = this.MapPath("");
+		public void GridViewURI_RowCommand
+		(
+			Object                    sender, 
+			GridViewCommandEventArgs  gridViewCommandEventArgs
+		)
+		{ 
+			string    	exceptionMessage  		=  	null;
 
-   if ( !Page.IsPostBack )
-   {
-    /* 
-    FilenameConfigurationXml = Server.MapPath( FilenameConfigurationXml );
-    */
+			string    	commentary        		=  	null;
+			int			contactID				=	-1;
+			DateTime  	dated;
+			DateTime  	eventDate;
+			string    	keyword           		=  	null;
+			string		referrer				=	null;
+			string		scriptureReference		=	null;
+			int			sequenceOrderID			=	-1;
+			string    	title            		=	null;
+			string    	uri               		=  	null;
+			string		uriReferrer				=	null;
 
-    if ( ServerMapPath != null)
-    {
-     FilenameConfigurationXml = ServerMapPath + @"\" + FilenameConfigurationXml;
-    }//if ( ServerMapPath != null)
+			try
+			{
+				switch ( gridViewCommandEventArgs.CommandName  )
+				{
+					case "ButtonGridViewURIFooterTemplateAdd":
+						commentary = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateCommentary")).Text;
+						Int32.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateContactID")).Text, out contactID );
+						DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateDated")).Text, out dated );
+						DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateEventDate")).Text, out eventDate );
+						keyword  = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateKeyword")).Text;
+						referrer = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateReferrer")).Text;
+						scriptureReference = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateScriptureReference")).Text;
+						Int32.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateSequenceOrderID")).Text, out sequenceOrderID );
+						title = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateTitle")).Text;
+						uri = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateURI")).Text;
+						uriReferrer = ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateURIReferrer")).Text;
 
-    UtilityURI.ConfigurationXml
-    (
-         FilenameConfigurationXml,
-     ref exceptionMessage,         
-     ref DatabaseConnectionString,
-     ref FilenameStylesheet,
-     ref ColumnNameURI,
-     ref TableNameURI,
-     ref TableNameURIDefault
-    );
-    if ( exceptionMessage != null )
-    {
-     Feedback = exceptionMessage;
-     return;
-    }//if ( exceptionMessage != null )
+						SqlDataSourceURIGridView.InsertParameters["commentary"].DefaultValue    		=  commentary;
+						if ( contactID > 0 )
+						{
+							SqlDataSourceURIGridView.InsertParameters["contactID"].DefaultValue 		=      Report
 
-    GridViewURI.Focus();
-    Page.SetFocus( GridViewURI );
-    DetailsViewURI.Attributes.Add("autocomplete", "on");
-    GridViewURI.Attributes.Add("autocomplete", "on");
-   }//if ( !Page.IsPostBack )
-   	
-  }//Page_Load
+|
+March 26, 2025
 
-  /// <summary>DropDownListTableName_PreRender</summary>
-  public void DropDownListTableName_PreRender
-  (
-   object     sender, 
-   EventArgs  e
-  ) 
-  {
-   if ( !Page.IsPostBack )
-   {
-    if ( DropDownListTableName.Items.Count < 1 )
-    {
-     DropDownListTableName.DataSourceID    =  null;
-     DropDownListTableName.DataTextField   =  null;
-     DropDownListTableName.DataValueField  =  null;
-     DropDownListTableName.DataSource      =  TableNameURI;
-     DropDownListTableName.DataBind();
-    }//if ( DropDownListTableName.Items.Count < 1 )
-    UtilityWebControl.SelectItem
-    ( 
-     DropDownListTableName,
-     TableNameURIDefault
-    );
-   }//if ( !Page.IsPostBack ) 
-  }//public void DropDownListTableName_PreRender()
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>Feedback.</summary>
-  public String Feedback
-  {
-   get
-   {
-    return ( LiteralFeedback.Text);
-   } 
-   set
-   {
-    LiteralFeedback.Text = value;
-   }
-  }//public String public String Feedback
+    WhatsApp
 
-  /// <summary>FilenameURI</summary>
-  public String FilenameURI
-  {
-   get
-   {
-    return ( HtmlInputFileURI.PostedFile.FileName  );
-   } 
-  }//public String FilenameURI
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-  /// <summary>DatedFrom</summary>
-  public String DatedFrom
-  {
-   get
-   {
-    return ( TextBoxDatedFrom.Text );
-   } 
-   set
-   {
-    TextBoxDatedFrom.Text = value;
-   }
-  }//public String DatedFrom
+|
+March 26, 2025
 
-  /// <summary>DatedTo</summary>
-  public String DatedTo
-  {
-   get
-   {
-    return ( TextBoxDatedTo.Text );
-   } 
-   set
-   {
-    TextBoxDatedTo.Text = value;
-   }
-  }//public String DatedTo
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>Keyword</summary>
-  public String Keyword
-  {
-   get
-   {
-    return ( TextBoxKeyword.Text );
-   } 
-   set
-   {
-    TextBoxKeyword.Text = value;
-   }
-  }//public String Keyword
+    WhatsApp
 
-  /// <summary>SequenceOrderIdFrom</summary>
-  public String SequenceOrderIdFrom
-  {
-   get
-   {
-    return ( TextBoxSequenceOrderIdFrom.Text );
-   } 
-   set
-   {
-    TextBoxSequenceOrderIdFrom.Text = value;
-   }
-  }//public String SequenceOrderIdFrom
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-  /// <summary>SequenceOrderIdTo</summary>
-  public String SequenceOrderIdTo
-  {
-   get
-   {
-    return ( TextBoxSequenceOrderIdTo.Text );
-   } 
-   set
-   {
-    TextBoxSequenceOrderIdTo.Text = value;
-   }
-  }//public String SequenceOrderIdTo
+|
+March 26, 2025
 
-  /// <summary>URITitle</summary>
-  public String URITitle
-  {
-   get
-   {
-    return ( TextBoxTitle.Text );
-   } 
-   set
-   {
-    TextBoxTitle.Text = value;
-   }
-  }//public String URITitle
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>URI</summary>
-  public String URI  
-  {
-   get
-   {
-    return ( TextBoxURI.Text );
-   } 
-   set
-   {
-    TextBoxURI.Text = value;
-   }
-  }//public String URI
+    WhatsApp
 
-  /// <summary>ButtonFileOpen_Click().</summary>
-  public void ButtonFileOpen_Click
-  (
-   Object sender, 
-   EventArgs e
-  )
-  {
-   /*
-   XmlDataSourceURIGridView.DataFile = FilenameURI;
-   GridViewURI.AllowPaging=false;
-   GridViewURI.DataKeyNames=null;
-   GridViewURI.DataSourceID = XmlDataSourceURIGridView.ID;
-   GridViewURI.DataBind();
-   */
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-   string     exceptionMessage  =  null;
-   string     filenameXml       =  null;
-   DataSet    dataSet           =  null;
-   
-   try
-   {
-    filenameXml                =  FilenameURI;
-    if ( string.IsNullOrEmpty( filenameXml ) )
-    {
-     return;
-    }
-    UtilityURI.ReadXml
-    (
-     ref filenameXml,
-     ref dataSet,
-     ref exceptionMessage,
-     ref ColumnNameURI
-    );
-    if ( exceptionMessage != null )
-    {
-     Feedback = exceptionMessage;
-     return;
-    }     	 
-    if ( dataSet != null )
-    {
-     ViewState["URIMaintenancePage_DataSet"] = dataSet;
-     GridViewURI.AllowPaging   =  false;
-     GridViewURI.AllowSorting  =  false;     
-     GridViewURI.DataSourceID  =  null;
-     GridViewURI.DataSource    =  dataSet;
-     GridViewURI.DataBind();
-    }
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = "Exception: " + exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-   	Feedback = exceptionMessage;
-   }
-  }//public void ButtonFileOpen_Click()
+|
+March 26, 2025
 
-  /// <summary>ButtonFileSaveRelease20050830_Click()</summary>
-  public void ButtonFileSaveRelease20050830_Click
-  (
-   Object sender, 
-   EventArgs e
-  )
-  {
-   string     exceptionMessage      =  null;
-   string     filenameXml           =  null;
-   string     typeDataSourceString  =  null;
-   object     dataSource            =  null;
-   DataSet    dataSet               =  null;
-   Type       typeDataSource        =  null;
-   
-   try
-   {
-    filenameXml     =  FilenameURI;
-    if ( string.IsNullOrEmpty( filenameXml ) )
-    {
-     return;
-    }
-    if ( string.IsNullOrEmpty( GridViewURI.DataSourceID ) )
-    {
-     dataSource      =  GridViewURI.DataSource;
-     if ( dataSource == null )
-     {
-      return;
-     }           	
-     typeDataSource  =  dataSource.GetType();
-     if ( typeDataSource == null )
-     {
-      return;
-     }      	     
-     typeDataSourceString = typeDataSource.ToString();
-     if ( typeDataSourceString != "System.Data.DataSet")
-     {
-      return;
-     }      	
-     dataSet = dataSource as DataSet;
-     dataSet = ( DataSet ) dataSource;
-     if ( dataSet == null )
-     {
-      return;
-     }
-     UtilityXml.WriteXml
-     (
-          dataSet,
-      ref exceptionMessage,
-      ref filenameXml,
-      ref FilenameStylesheet
-     );
-     if ( exceptionMessage != null )
-     {
-      Feedback = exceptionMessage;
-      return;
-     }     	 
-    }//if ( GridViewURI.DataSourceID == null && GridViewURI.DataSource != null )
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = "Exception: " + exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-   	Feedback = exceptionMessage;
-   }
-  }//public void ButtonFileSaveRelease20050830_Click()
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>ButtonFileSave_Click()</summary>
-  public void ButtonFileSave_Click
-  (
-   Object sender, 
-   EventArgs e
-  )
-  {
-   string   exceptionMessage  =  null;
-   string   filenameXml       =  null;
-   DataSet  dataSet           =  null;
-   
-   try
-   {
-    filenameXml     =  FilenameURI;
-    if ( string.IsNullOrEmpty( filenameXml ) )
-    {
-     return;
-    }
-    dataSet = ( DataSet ) ViewState["URIMaintenancePage_DataSet"];
-    if ( dataSet == null )
-    {
-     return;
-    }
-    UtilityXml.WriteXml
-    (
-         dataSet,
-     ref exceptionMessage,
-     ref filenameXml,
-     ref FilenameStylesheet
-    );
-    if ( exceptionMessage != null )
-    {
-     Feedback = exceptionMessage;
-     return;
-    }     	 
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = "Exception: " + exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-   	Feedback = exceptionMessage;
-   }
-  }//public void ButtonFileSave_Click()
-  
-  /// <summary>ButtonSubmit_Click().</summary>
-  public void ButtonSubmit_Click
-  (
-   Object sender, 
-   EventArgs e
-  )
-  {
-   GridViewURI.DataBind();
-  }//public void ButtonSubmit_Click()
+    WhatsApp
 
-  /// <summary>ButtonReset_Click().</summary>
-  public void ButtonReset_Click
-  (
-   Object sender, 
-   EventArgs e
-  )
-  {
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-   Feedback             =  null;
-   DatedFrom            =  null;
-   DatedTo              =  null;
-   Keyword              =  null;
-   SequenceOrderIdFrom  =  null;
-   SequenceOrderIdTo    =  null;
-   URI                  =  null;
-   URITitle             =  null;
-   
-   UtilityJavaScript.SetFocus
-   ( 
-    this,
-    DropDownListTableName
-   );
+|
+March 26, 2025
 
-  }//public void ButtonReset_Click()
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>DetailsViewURI_ItemInserted</summary>
-  public void DetailsViewURI_ItemInserted
-  (
-   Object                        sender, 
-   DetailsViewInsertedEventArgs  detailsViewInsertedEventArgs
-  )
-  {
-   // Use the Exception property to determine whether an exception
-   // occurred during the insert operation.
-   if ( detailsViewInsertedEventArgs.Exception != null )
-   {
-    // Insert the code to handle the exception.
-    Feedback = detailsViewInsertedEventArgs.Exception.Message;
+    WhatsApp
 
-    // Use the ExceptionHandled property to indicate that the 
-    // exception is already handled.
-    detailsViewInsertedEventArgs.ExceptionHandled = true;
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-    // When an exception occurs, keep the DetailsView
-    // control in insert mode.
-    detailsViewInsertedEventArgs.KeepInInsertMode = true;
-   }//if ( detailsViewInsertedEventArgs.Exception != null )
-   else
-   {
-    GridViewURI.DataBind();
-   }
-  }//public void DetailsViewURI_ItemInserted
+|
+March 26, 2025
 
-  /// <summary>DetailsViewURI_ItemInserting</summary>
-  public void DetailsViewURI_ItemInserting
-  (
-   Object                      sender, 
-   DetailsViewInsertEventArgs  detailsViewInsertEventArgs
-  )
-  {
-   int       sequenceOrderId   =  -1;
-   DateTime  dated             =  DateTime.MinValue;
-   string    exceptionMessage  =  null;
-   string    keyword           =  null;
-   string    title             =  null;
-   string    uri               =  null;
-   
-   IOrderedDictionary  iOrderedDictionary;     
-   try
-   {
-    /*
-    iOrderedDictionary = detailsViewInsertEventArgs.Values;
-    feedback = "";
-    foreach ( DictionaryEntry dictionaryEntry in iOrderedDictionary )
-    {
-     feedback += dictionaryEntry.Key;
-     if ( dictionaryEntry.Value != null )
-     {
-      feedback += " = " + dictionaryEntry.Value + " | ";
-     }//if ( dictionaryEntry.Value != null )
-    }//foreach ( DictionaryEntry dictionaryEntry in iOrderedDictionary )
-    return;
-    */
+X
+Facebook
+Threads
+LinkedIn
 
-    if ( detailsViewInsertEventArgs.Values["Dated"] != null )
-    {
-     DateTime.TryParse( detailsViewInsertEventArgs.Values["Dated"].ToString(), out dated );
-    }
-    if ( detailsViewInsertEventArgs.Values["SequenceOrderId"] != null )
-    {
-     Int32.TryParse( detailsViewInsertEventArgs.Values["SequenceOrderId"].ToString(), out sequenceOrderId );
-    } 
-    if ( detailsViewInsertEventArgs.Values["URI"] != null )
-    {
-     uri = detailsViewInsertEventArgs.Values["URI"].ToString();
-    }
-    if ( detailsViewInsertEventArgs.Values["Title"] != null )
-    {
-     title = detailsViewInsertEventArgs.Values["Title"].ToString();
-    } 
-    if ( detailsViewInsertEventArgs.Values["Keyword"] != null )
-    {
-     keyword = detailsViewInsertEventArgs.Values["Keyword"].ToString();
-    }
-    if ( sequenceOrderId > 0 )
-    {
-     SqlDataSourceURIDetailsView.InsertParameters["sequenceOrderId"].DefaultValue  =  System.Convert.ToString( sequenceOrderId );
-    }
-    if ( dated != DateTime.MinValue )
-    {
-     SqlDataSourceURIDetailsView.InsertParameters["dated"].DefaultValue            =  System.Convert.ToString( dated );
-    }
-    SqlDataSourceURIDetailsView.InsertParameters["keyword"].DefaultValue           =  keyword;
-    SqlDataSourceURIDetailsView.InsertParameters["title"].DefaultValue             =  title;
-    SqlDataSourceURIDetailsView.InsertParameters["uri"].DefaultValue               =  uri;
-    SqlDataSourceURIDetailsView.Insert();
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-    Feedback = exceptionMessage;
-    return;
-   }
-  }//void DetailsViewURI_ItemInserting()
+    WhatsApp
 
-  /// <summary>DetailsViewURI_ItemUpdated</summary>
-  public void DetailsViewURI_ItemUpdated
-  (
-   Object                        sender, 
-   DetailsViewUpdatedEventArgs   detailsViewUpdatedEventArgs
-  )
-  {
-   // Use the Exception property to determine whether an exception
-   // occurred during the insert operation.
-   if ( detailsViewUpdatedEventArgs.Exception != null )
-   {
-    // Insert the code to handle the exception.
-    Feedback = detailsViewUpdatedEventArgs.Exception.Message;
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-    // Use the ExceptionHandled property to indicate that the 
-    // exception is already handled.
-    detailsViewUpdatedEventArgs.ExceptionHandled = true;
+|
+March 26, 2025
 
-    // When an exception occurs, keep the DetailsView
-    // control in edit mode.
-    detailsViewUpdatedEventArgs.KeepInEditMode = true;
-   }//if ( detailsViewUpdatedEventArgs.Exception != null )
-   else
-   {
-    GridViewURI.DataBind();
-   }
-  }//public void DetailsViewURI_ItemUpdated
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>GridViewURI_RowCommand</summary>
-  public void GridViewURI_RowCommand
-  (
-   Object                    sender, 
-   GridViewCommandEventArgs  gridViewCommandEventArgs
-  )
-  { 
-   int       sequenceOrderId   =  -1;
-   DateTime  dated;
-   string    exceptionMessage  =  null;
-   string    keyword           =  null;
-   string    title             =  null;
-   string    uri               =  null;
-   
-   try
-   {
-    switch ( gridViewCommandEventArgs.CommandName  )
-    {
-   	 case "ButtonGridViewURIFooterTemplateAdd":
-      DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateDated")).Text, out dated );
-      Int32.TryParse( ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateSequenceOrderId")).Text, out sequenceOrderId );
-      keyword  =  ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateKeyword")).Text;
-      title    =  ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateTitle")).Text;
-      uri      =  ( ( System.Web.UI.WebControls.TextBox ) GridViewURI.FooterRow.FindControl("TextBoxGridViewURIFooterTemplateURI")).Text;
-      
-      if ( sequenceOrderId > 0 )
-      {
-       SqlDataSourceURIGridView.InsertParameters["sequenceOrderId"].DefaultValue  =  System.Convert.ToString( sequenceOrderId );
-      }
-      if ( dated != DateTime.MinValue )
-      {
-       SqlDataSourceURIGridView.InsertParameters["dated"].DefaultValue            =  System.Convert.ToString( dated );
-      }
-      SqlDataSourceURIGridView.InsertParameters["keyword"].DefaultValue           =  keyword;
-      SqlDataSourceURIGridView.InsertParameters["title"].DefaultValue             =  title;
-      SqlDataSourceURIGridView.InsertParameters["uri"].DefaultValue               =  uri;
-      SqlDataSourceURIGridView.Insert();
-      
-      break;
-    }//switch ( gridViewCommandEventArgs.CommandName  )
-   }//try
-   catch ( System.Exception exception )
-   {
-    exceptionMessage = "System.Exception: " + exception.Message;
-   }//catch ( System.Exception exception )
-   if ( exceptionMessage != null )
-   {
-   	Feedback = exceptionMessage;
-   	return;
-   }//if ( exceptionMessage != null )
-   GridViewURI.DataBind();
-  }//public void GridViewURI_RowCommand()
+    WhatsApp
 
-  /// <summary>GridViewURI_RowDeleting</summary>
-  public void GridViewURI_RowDeleting
-  (
-   Object                    sender, 
-   GridViewDeleteEventArgs   gridViewDeleteEventArgs
-  )
-  {
-   int          sequenceOrderId   =  -1;
-   string       exceptionMessage  =  null;
-   GridViewRow  gridViewRow       =  null;
-   
-   try
-   {  	
-    gridViewRow = GridViewURI.Rows[ gridViewDeleteEventArgs.RowIndex ];
-    if ( gridViewRow == null )
-    {
-     return;
-    }     	
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-    Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("LabelGridViewURIItemTemplateSequenceOrderId")).Text, out sequenceOrderId );
+|
+March 26, 2025
 
-    SqlDataSourceURIGridView.DeleteParameters["original_sequenceOrderId"].DefaultValue = sequenceOrderId.ToString();
-	SqlDataSourceURIGridView.Delete();
-	
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-    Feedback = exceptionMessage;
-    return;
-   }    	
-  }//public void GridViewURI_RowDeleting()
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>GridViewURI_RowUpdating</summary>
-  /// <details>
-  ///  http://fredrik.nsquared2.com/viewpost.aspx?PostID=173&amp;showfeedback=true Get a control or value from a GridView row.
-  ///  http://www.chrisfrazier.net/blog/archive/category/1014.aspx
-  /// </details>  
-  public void GridViewURI_RowUpdating
-  (
-   Object                    sender, 
-   GridViewUpdateEventArgs   gridViewUpdateEventArgs
-  )
-  {
-   int          sequenceOrderId   =  -1;
-   DateTime     dated;
+    WhatsApp
 
-   string       exceptionMessage  =  null;
-   string       keyword           =  null;
-   string       title             =  null;
-   string       uri               =  null;
-   
-   GridViewRow  gridViewRow       =  null;
-   
-   try
-   {  	
-    gridViewRow = GridViewURI.Rows[ gridViewUpdateEventArgs.RowIndex ];
-    if ( gridViewRow == null )
-    {
-     return;
-    }     	
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-    Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("LabelGridViewURIItemTemplateSequenceOrderId")).Text, out sequenceOrderId );
-	DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateDated")).Text, out dated );
-    uri = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateURI")).Text;
-    title = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateTitle")).Text;
-    keyword = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateKeyword")).Text;
+|
+March 26, 2025
 
-    SqlDataSourceURIGridView.UpdateParameters["original_sequenceOrderId"].DefaultValue = sequenceOrderId.ToString();
-    if ( dated != DateTime.MinValue )
-    {
-  	 SqlDataSourceURIGridView.UpdateParameters["dated"].DefaultValue = dated.ToString();
-  	} 
-  	SqlDataSourceURIGridView.UpdateParameters["uri"].DefaultValue = uri;
-  	SqlDataSourceURIGridView.UpdateParameters["title"].DefaultValue = title;
-  	SqlDataSourceURIGridView.UpdateParameters["keyword"].DefaultValue = keyword;
-	SqlDataSourceURIGridView.Update();
-	
-   }//try
-   catch ( Exception exception )
-   {
-   	exceptionMessage = exception.Message;
-   }
-   if ( exceptionMessage != null )
-   {
-    Feedback = exceptionMessage;
-    return;
-   }
-  }//public void GridViewURI_RowUpdating()
+X
+Facebook
+Threads
+LinkedIn
 
-  /// <summary>GridViewURI_RowUpdated</summary>
-  public void GridViewURI_RowUpdated
-  (
-   Object                    sender, 
-   GridViewUpdatedEventArgs  gridViewUpdatedEventArgs
-  )
-  {
-   // Use the Exception property to determine whether an exception
-   // occurred during the insert operation.
-   if ( gridViewUpdatedEventArgs.Exception != null )
-   {
-    // Insert the code to handle the exception.
-    Feedback = gridViewUpdatedEventArgs.Exception.Message;
+    WhatsApp
 
-    // Use the ExceptionHandled property to indicate that the 
-    // exception is already handled.
-    gridViewUpdatedEventArgs.ExceptionHandled = true;
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
 
-    // When an exception occurs, keep the GridView
-    // control in edit mode.
-    gridViewUpdatedEventArgs.KeepInEditMode = true;
-   }//if ( GridViewUpdatedEventArgs.Exception != null )
-  }//public void GridViewURI_ItemUpdated
+|
+March 26, 2025
 
- }//URIMaintenancePage class.
-}//WordEngineering namespace.
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William Miner    Report
+
+|
+March 26, 2025
+
+X
+Facebook
+Threads
+LinkedIn
+
+    WhatsApp
+
+Around the World, Many People Are Leaving Their Childhood Religions
+Surveys in 36 countries find that Christianity and Buddhism have the biggest losses from ‘religious switching’
+By
+Kirsten Lesage
+,
+Kelsey Jo Starr
+and
+William MinerSystem.Convert.ToString( contactID );
+						}
+						if ( dated != DateTime.MinValue )
+						{
+							SqlDataSourceURIGridView.InsertParameters["dated"].DefaultValue           	=  System.Convert.ToString( dated );
+						}
+						if ( eventDate != DateTime.MinValue )
+						{
+							SqlDataSourceURIGridView.InsertParameters["eventDate"].DefaultValue         =  System.Convert.ToString( eventDate );
+						}
+						SqlDataSourceURIGridView.InsertParameters["keyword"].DefaultValue       	    =  keyword;
+						SqlDataSourceURIGridView.InsertParameters["referrer"].DefaultValue       	    =  referrer;
+						SqlDataSourceURIGridView.InsertParameters["scriptureReference"].DefaultValue    =  scriptureReference;
+						if ( sequenceOrderID > 0 )
+						{
+							SqlDataSourceURIGridView.InsertParameters["sequenceOrderID"].DefaultValue 	=  System.Convert.ToString( sequenceOrderID );
+						}
+						SqlDataSourceURIGridView.InsertParameters["title"].DefaultValue  				=  title;
+						SqlDataSourceURIGridView.InsertParameters["uriReferrer"].DefaultValue          	=  uriReferrer;
+						SqlDataSourceURIGridView.InsertParameters["uri"].DefaultValue               	=  uri;
+						SqlDataSourceURIGridView.Insert();
+
+						break;
+				}
+			}
+			catch ( System.Exception exception )
+			{
+				exceptionMessage = "System.Exception: " + exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+				return;
+			}
+			GridViewURI.DataBind();
+		}
+
+		public void GridViewURI_RowDeleting
+		(
+			Object                    sender, 
+			GridViewDeleteEventArgs   gridViewDeleteEventArgs
+		)
+		{
+			int          sequenceOrderID   =  -1;
+			string       exceptionMessage  =  null;
+			GridViewRow  gridViewRow       =  null;
+
+			try
+			{  	
+				gridViewRow = GridViewURI.Rows[ gridViewDeleteEventArgs.RowIndex ];
+				if ( gridViewRow == null )
+				{
+					return;
+				}     	
+				Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("LabelGridViewURIItemTemplateSequenceOrderID")).Text, out sequenceOrderID );
+				SqlDataSourceURIGridView.DeleteParameters["original_SequenceOrderID"].DefaultValue = sequenceOrderID.ToString();
+				SqlDataSourceURIGridView.Delete();
+			}
+			catch ( Exception exception )
+			{
+				exceptionMessage = exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+				return;
+			}
+		}
+
+		/// <summary>GridViewURI_RowUpdating</summary>
+		/// <details>
+		///  http://fredrik.nsquared2.com/viewpost.aspx?PostID=173&amp;showfeedback=true Get a control or value from a GridView row.
+		///  http://www.chrisfrazier.net/blog/archive/category/1014.aspx
+		/// </details>  
+		public void GridViewURI_RowUpdating
+		(
+			Object                    sender, 
+			GridViewUpdateEventArgs   gridViewUpdateEventArgs
+		)
+		{
+			GridViewRow  	gridViewRow       =  null;
+
+			string			exceptionMessage  		=  	null;
+
+			string    		commentary        		=  	null;
+			int				contactID				=	-1;
+			DateTime  		dated;
+			string    		keyword           		=  	null;
+			string			referrer				=	null;
+			string			scriptureReference		=	null;
+			int				sequenceOrderID			=	-1;
+			string    		title            		=	null;
+			string    		uri               		=  	null;
+			string			uriReferrer				=	null;
+
+			try
+			{  	
+				gridViewRow = GridViewURI.Rows[ gridViewUpdateEventArgs.RowIndex ];
+				if ( gridViewRow == null )
+				{
+					return;
+				}     	
+
+				commentary  = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateCommentary")).Text;
+				Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateContactID")).Text, out contactID );
+				DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateDated")).Text, out dated );
+				DateTime.TryParse( ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateEventDate")).Text, out eventDate );
+				keyword = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateKeyword")).Text;
+				referrer = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateReferrer")).Text;
+				scriptureReference = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateScriptureReference")).Text;
+				Int32.TryParse( ( ( System.Web.UI.WebControls.Label ) gridViewRow.FindControl("LabelGridViewURIItemTemplateSequenceOrderID")).Text, out sequenceOrderID );
+				uri = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateURI")).Text;
+				title = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateTitle")).Text;
+				uriReferrer = ( ( System.Web.UI.WebControls.TextBox ) gridViewRow.FindControl("TextBoxGridViewURIEditItemTemplateURIReferrer")).Text;
+				
+				SqlDataSourceURIGridView.UpdateParameters["uri"].DefaultValue = uri;
+				SqlDataSourceURIGridView.UpdateParameters["title"].DefaultValue = title;
+				SqlDataSourceURIGridView.UpdateParameters["keyword"].DefaultValue = keyword;				
+				SqlDataSourceURIGridView.UpdateParameters["commentary"].DefaultValue = commentary;
+				SqlDataSourceURIGridView.UpdateParameters["uriReferrer"].DefaultValue = uriReferrer;
+				SqlDataSourceURIGridView.UpdateParameters["referrer"].DefaultValue = referrer;
+				SqlDataSourceURIGridView.UpdateParameters["contactID"].DefaultValue = contactID;
+				SqlDataSourceURIGridView.UpdateParameters["scriptureReference"].DefaultValue = scriptureReference;
+				if ( dated != DateTime.MinValue )
+				{
+					SqlDataSourceURIGridView.UpdateParameters["dated"].DefaultValue = dated;
+				} 
+				SqlDataSourceURIGridView.UpdateParameters["original_SequenceOrderID"].DefaultValue = sequenceOrderID;
+								
+				SqlDataSourceURIGridView.Update();
+			}
+			catch ( Exception exception )
+			{
+				exceptionMessage = exception.Message;
+			}
+			if ( exceptionMessage != null )
+			{
+				Feedback = exceptionMessage;
+				return;
+			}
+		}
+
+		public void GridViewURI_RowUpdated
+		(
+			Object                    sender, 
+			GridViewUpdatedEventArgs  gridViewUpdatedEventArgs
+		)
+		{
+			// Use the Exception property to determine whether an exception
+			// occurred during the insert operation.
+			if ( gridViewUpdatedEventArgs.Exception != null )
+			{
+				// Insert the code to handle the exception.
+				Feedback = gridViewUpdatedEventArgs.Exception.Message;
+
+				// Use the ExceptionHandled property to indicate that the 
+				// exception is already handled.
+				gridViewUpdatedEventArgs.ExceptionHandled = true;
+
+				// When an exception occurs, keep the GridView
+				// control in edit mode.
+				gridViewUpdatedEventArgs.KeepInEditMode = true;
+			}
+		}
+	}
+}
