@@ -1177,3 +1177,14 @@ git add		IIS/WordEngineering/JavaScript/Algorithm/NavigatorProperty.html
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-04-04ErikaOlson(chargedaffaires)_GodIsInThePeople...MakingAPlace_AGeneralityToConclusion.txt
 
 git add		IIS/WordEngineering/2018-05-03Correspondence/2025-04-06AlbertsonsLucky_CharterSquare_SeafoodAndMeats_WhoFindsTime...AllotsTime.txt
+
+git add		   Java/w3schools/ 
+git add        PowerShell/Microsoft/2025-04-18T2109LearningPowerShell.bat
+git add        PowerShell/Microsoft/2025-04-18T2109LearningPowerShell.ps1
+git add        cpp/Stroustrup.com/StroustrupHisWord.cpp
+git add        cpp/Stroustrup.com/StroustrupHisWord.hpp
+git add        cpp/Stroustrup.com/StroustrupHisWord.obj
+git add        cpp/Stroustrup.com/StroustrupHisWordStub.cpp
+git add        cpp/Stroustrup.com/StroustrupHisWordStub.exe
+git add        cpp/Stroustrup.com/StroustrupHisWordStub.obj
+git add        cpp/Stroustrup.com/StroustrupHisWordStubBuild.bat
