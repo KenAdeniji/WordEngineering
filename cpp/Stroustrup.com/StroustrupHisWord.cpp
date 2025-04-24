@@ -1,7 +1,6 @@
 /*
 	2022-12-10T19:52:00 Created.	http://greenteapress.com/thinkcpp/thinkCScpp.pdf
 	2016-10-04	http://stackoverflow.com/questions/1549930/c-equivalent-of-java-tostring
-	2022-12-19T09:24:00 distance method.
 	2025-04-20T17:56:00...http://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
 */
 #include <ctime>

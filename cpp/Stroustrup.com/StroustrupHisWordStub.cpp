@@ -12,13 +12,22 @@
 using namespace std;
 
 void stub();
+void print_hisWords_iterate(const vector<StroustrupHisWord>&);
 void print_hisWords_subscripting(const vector<StroustrupHisWord>&);
+
+void print_hisWords_iterate(const vector<StroustrupHisWord>& hisWords)
+{
+	for (const auto& x : hisWords)
+	{	
+		cout << x << endl;
+	}	
+}
 
 void print_hisWords_subscripting(const vector<StroustrupHisWord>& hisWords)
 {
 	for (int i = 0, hisWordsSize = hisWords.size(); i < hisWordsSize; ++i)
 	{	
-		cout << hisWords[i] << '\n';
+		cout << hisWords[i] << endl;
 	}	
 }
 
@@ -29,7 +38,8 @@ void stub()
 		{"In the beginning", "First phrase in the Bible..."},
 		{"The grace of our LORD Jesus Christ be with you all. Amen.", "Last phrase in the Bible..."}
 	};
-	print_hisWords_subscripting(stroustrupHisWords);
+	//print_hisWords_subscripting(stroustrupHisWords);
+	print_hisWords_iterate(stroustrupHisWords);
 }
 
 void main(int argc, char *argv[])
