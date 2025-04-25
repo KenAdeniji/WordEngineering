@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2104);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8386);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161222);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16004);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16055);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7149);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -957,4 +957,6 @@ SELECT COUNT(*) FROM WordEngineering..HisWord WHERE Word LIKE '%[0-9]%'
 2025-04-07T11:58:00	
 http://localhost/Wordengineering/WordUnion/2015-10-23DoctoralDissertation.html#WhatHeFoundOutWithout
 
+2025-04-23
+Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 :Exit
