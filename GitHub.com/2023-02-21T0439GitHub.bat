@@ -1188,3 +1188,5 @@ git add        cpp/Stroustrup.com/StroustrupHisWordStub.cpp
 git add        cpp/Stroustrup.com/StroustrupHisWordStub.exe
 git add        cpp/Stroustrup.com/StroustrupHisWordStub.obj
 git add        cpp/Stroustrup.com/StroustrupHisWordStubBuild.bat
+
+git add			IIS/WordEngineering/2018-05-03Correspondence/2025-04-27T0933LucyMacbryde_lucy@westside.net.au_WhatRemainethOfTheSame.txt
