@@ -2,6 +2,8 @@
 REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex170909.log
 REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-directory-6007-rc.html
 REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
+REM	2025-05-09T13:32:00	http://superuser.com/questions/466682/why-use-start-over-call-when-using-batch-files
+
 :BeginAgain
 echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=SQLServerDataDefinitionLanguageDDL, 8=SQLServerDataFiles, 9=SQLServerDataManipulationLanguageDML, 10=SQLServerExport, 11=WebAssembly, 12=WinScp, 13=WordEngineering, 14=WordOfGod, 15=WorkDone
 set /p id=Enter Choice: 
@@ -25,19 +27,19 @@ IF %id% == 15 GOTO WorkDone
 GOTO Exit
 
 :BCP
-xcopy d:\BCP c:\BCP /d /e /s /y
-xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
-xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
-REM xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
-xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
+start xcopy d:\BCP c:\BCP /d /e /s /y
+start xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
+start xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
+REM start start xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
+start start xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :IISLog
-xcopy c:\inetpub d:\inetpub /d /e /s /y
-xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
-xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
-xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
-xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
+start xcopy c:\inetpub d:\inetpub /d /e /s /y
+start xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
+start xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
+start xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
+start xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
 GOTO Exit
 
 :mssqlscripter
@@ -46,37 +48,37 @@ REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;
 GOTO Exit
 
 :Node.js
-xcopy d:\Node.js c:\Node.js /d /e /s /y
-xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
-xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
-REM xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
+start xcopy d:\Node.js c:\Node.js /d /e /s /y
+start xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
+start xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
+REM start xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
-xcopy d:\Rust c:\Rust /d /e /s /y
-xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
-xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
-xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
-xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
+start xcopy d:\Rust c:\Rust /d /e /s /y
+start xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
+start xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
+start xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
+start xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
 :ScriptDB
 scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
 
 :SQLServerBackup
-xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
-xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
-xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
-xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
-xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
 GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
-xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 GOTO Exit
 
 :SQLServerDataFiles
@@ -84,37 +86,37 @@ setlocal
 set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
-xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
-REM xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
-xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
-xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
-xcopy d:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
+start xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
+REM start xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
+start xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
+start xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
+start xcopy d:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
 rem  net continue %_service% 
 net start  %_service% /y
 endlocal
 GOTO Exit
 
 :SQLServerDataManipulationLanguageDML
-xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
 GOTO Exit
 
 :SQLServerExport
-xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
-xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
-xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
-xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
-xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
-xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
-xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
-xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
-xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
 GOTO Exit
 
 :WinScp
@@ -122,24 +124,24 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
-xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
-xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
-xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
-xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
-xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
 GOTO Exit
 
 :WordOfGod
-xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
-xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
-xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
-xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
-xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
 GOTO Exit
 
 :WorkDone
-xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
-xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
+start xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
+start xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
 GOTO Exit
 
 :Backup

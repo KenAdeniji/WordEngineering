@@ -21,3 +21,5 @@ git add	IIS/WordEngineering/Resume/2024-07-04T2055JohnMacFarlane_-_Pandoc_-_KenA
 
 git add	GitHub.com/2025-05-09T1307GitHub.bat
 
+git add	Batch/2017-01-02DoingSomething.bat
+git add Batch/2024-12-22T0414IfeRestore.bat
