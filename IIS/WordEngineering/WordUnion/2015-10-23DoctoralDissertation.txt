@@ -44,7 +44,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::
 
-:::: {.section style="margin-left:25%"}
+:::::::::::::::::::::::: {.section style="margin-left:25%"}
 The importance of this work?
 
 -   [Follow God, as a
@@ -936,61 +936,17 @@ Primary and foreign keys, unique indexes and check constraints.
 
 ### GitHub {#GitHub dated="2021-12-03T03:58:00"}
 
-The Author Uses the Git Code Repository
+  Key                                           Value                                                                                                                                                                                                           Commentary
+  --------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------
+  Universal Resource Identifier (URI)           [github.com/KenAdeniji](http://github.com/KenAdeniji)                                                                                                                                                           This is the home page for storing the repositories.
+  Date Created                                  2013-04-27                                                                                                                                                                                                      This is the date of creating the github.com account.
+  Version                                       git version 2.29.2.windows.3                                                                                                                                                                                    The git \--version command offers the release detail. The author is not sufficiently knowledgeable on tracking the version update.
+  Configuration Profile                         git config \--list                                                                                                                                                                                              The commands below will set the profile: git config \--global user.name \"your-name\" git config \--global user.email \"your-email\"
+  Change Tracking                               git status                                                                                                                                                                                                      This will decide the differences between your local copy and the version control code repository.
+  Add Updates                                   git add                                                                                                                                                                                                         The git add . command will add all the updates, or the user may add particular directories and files.
+  GitHub.com WordEngineering repository clone   MD \\WordEngineering CD \\WordEngineering git cmd git clone https://github.com/KenAdeniji/WordEngineering git remote -v git remote set-url origin git@github.com:KenAdeniji/WordEngineering.git git remote -v   
 
-Key
-::::
-
-Value
-
-Commentary
-
-Universal Resource Identifier (URI)
-
-[github.com/KenAdeniji](http://github.com/KenAdeniji)
-
-This is the home page for storing the repositories.
-
-Date Created
-
-2013-04-27
-
-This is the date of creating the github.com account.
-
-Version
-
-git version 2.29.2.windows.3
-
-The git \--version command offers the release detail. The author is not
-sufficiently knowledgeable on tracking the version update.
-
-Configuration Profile
-
-git config \--list
-
-The commands below will set the profile: git config \--global user.name
-\"your-name\" git config \--global user.email \"your-email\"
-
-Change Tracking
-
-git status
-
-This will decide the differences between your local copy and the version
-control code repository.
-
-Add Updates
-
-git add
-
-The git add . command will add all the updates, or the user may add
-particular directories and files.
-
-GitHub.com WordEngineering repository clone
-
-MD \\WordEngineering CD \\WordEngineering git cmd git clone
-https://github.com/KenAdeniji/WordEngineering git remote -v git remote
-set-url origin git@github.com:KenAdeniji/WordEngineering.git git remote
--v
+  : The Author Uses the Git Code Repository
 
 ### Accessibility {#accessibility dated="2021-12-04T14:48:00"}
 
@@ -1006,107 +962,72 @@ set-url origin git@github.com:KenAdeniji/WordEngineering.git git remote
 
 > ### Programming {#programming dated="2021-12-02T11:46:00"}
 >
-> The Author Programs in the Following Tiers and Languages
+>   Tier                      Language                                                                    Commentary
+>   ------------------------- --------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+>   Front-End Browser         HyperText Markup Language (HTML), Javascript, Cascading Style Sheet (CSS)   The front-end code may run on a desktop, laptop, or mobile telephone that offers a user interface (UI). The task is to accept the user query and to display the result. Initially, as a novice programmer, the author wrote specific code for each user request; later, the author rests on generic code which will handle multiple variety of requests. This is high-level programming, and the skill-set entry level is minimal. The author also believes that the users should not require any formal training to use his work. Customization is achievable by varying the request options, such as entry form selections, query arguments, or data attributes.
+>   Middle-Tier Application   C#, Embedded-SQL                                                            For backward compatibility, the author does not envision moving away from his legacy code investment in Microsoft. The only shift is positioning code away from database inconsistencies in back-end residency. To code, compile, debug, deploy, the experience of the author is with Microsoft Visual Studio and command-line tools.
+>   Server-Side Backend       Standard Query Language (SQL)                                               The author most recent experience is with the Sybase and Microsoft Transact-SQL assortment. Now a days, to be compatible and after experimentation; the author rarely uses Standard Query Language - Common Language Runtime (SQL-CLR). The author does database data entry, maintenance, development by using the Microsoft SQL Server Management Studio.
 >
-> Tier
-
-Language
-
-Commentary
-
-Front-End Browser
-
-HyperText Markup Language (HTML), Javascript, Cascading Style Sheet
-(CSS)
-
-The front-end code may run on a desktop, laptop, or mobile telephone
-that offers a user interface (UI). The task is to accept the user query
-and to display the result. Initially, as a novice programmer, the author
-wrote specific code for each user request; later, the author rests on
-generic code which will handle multiple variety of requests. This is
-high-level programming, and the skill-set entry level is minimal. The
-author also believes that the users should not require any formal
-training to use his work. Customization is achievable by varying the
-request options, such as entry form selections, query arguments, or data
-attributes.
-
-Middle-Tier Application
-
-C#, Embedded-SQL
-
-For backward compatibility, the author does not envision moving away
-from his legacy code investment in Microsoft. The only shift is
-positioning code away from database inconsistencies in back-end
-residency. To code, compile, debug, deploy, the experience of the author
-is with Microsoft Visual Studio and command-line tools.
-
-Server-Side Backend
-
-Standard Query Language (SQL)
-
-The author most recent experience is with the Sybase and Microsoft
-Transact-SQL assortment. Now a days, to be compatible and after
-experimentation; the author rarely uses Standard Query Language - Common
-Language Runtime (SQL-CLR). The author does database data entry,
-maintenance, development by using the Microsoft SQL Server Management
-Studio.
-
-### JavaScript Basics: Data Types {#javascript-basics-data-types dated="2021-12-05T03:44:00"}
-
--   JavaScript supports three keywords for declaring variables. These
-    are the var, let, const keywords.
--   From its pre-conception, JavaScript supported the var keyword. When
-    the author does not precede a variable initialization with a
-    keyword, then the variable will have global scope. The author averts
-    from variable hoisting. Variable definition with the var keyword is
-    re-usable. The strict mode is a later addition to JavaScript that
-    helps in enforcing variable rules.
--   For one-time definitions, such as, issuing the
-    document.getElementById command, the author relies on the const
-    keyword.
--   Unlike some typed languages, JavaScript does not support explicitly
-    specifying the type of a variable.
--   JavaScript string comparisons are by default case-sensitive.
-
-### Functions and Methods {#functions-and-methods dated="2021-12-05T17:51:00"}
-
--   Methods are functions that are referrable from a class. Methods
-    support object orientation by offering encapsulation, inheritance,
-    polymorphism. The author uses functions when placing localizable
-    code inside the script section of a HTML file; otherwise,
-    generalized methods are referenceable from a JavaScript library.
--   JavaScript treats functions as first-class citizens, and they are
-    passable as variables. This abstraction feature is rarely necessary.
--   JavaScript does not support method overloading. The earlier
-    arguments array variable and the later parameter default
-    initialization supplements.
--   The author consistently uses anonymous functions for processing the
-    success and error returns when using jQuery to access web services.
-
-### Conditions {#conditions dated="2021-12-06T15:21:00"}
-
--   The author emulates the Microsoft ASP.NET Page.IsPostBack property
-    check, and when it is not so, parse the query arguments; otherwise,
-    skip the parsing and proceed to page submittion.
-
-### Arrays and Loops {#arrays-and-loops dated="2021-12-07T03:13:00"}
-
--   For displaying the Bible book titles, the 66 books are in a
-    JavaScript iterable array. This reduces the data load from the
-    server to client, and it offers spelling flexibility. The select
-    options resemble similar customization.
-
-### HyperText Markup Language (HTML) Document {#hypertext-markup-language-html-document dated="2021-12-07T11:37:00"}
-
--   The DOCTYPE is the first declaration in an HTML document, and it is
-    the conformation standard specification.
--   The html tag is the root and the container for all the other tags.
--   The head tag contains the title and the meta tags for the search
-    engine optimization (SEO). The various documents will indicate the
-    cascading style sheet (CSS) directive.
--   The body tag contains the visible content of the document. Its
-    resultSet or resultTable div will contain the particular details
-    that the program generates.
+>   : The Author Programs in the Following Tiers and Languages
+>
+> ### JavaScript Basics: Data Types {#javascript-basics-data-types dated="2021-12-05T03:44:00"}
+>
+> -   JavaScript supports three keywords for declaring variables. These
+>     are the var, let, const keywords.
+> -   From its pre-conception, JavaScript supported the var keyword.
+>     When the author does not precede a variable initialization with a
+>     keyword, then the variable will have global scope. The author
+>     averts from variable hoisting. Variable definition with the var
+>     keyword is re-usable. The strict mode is a later addition to
+>     JavaScript that helps in enforcing variable rules.
+> -   For one-time definitions, such as, issuing the
+>     document.getElementById command, the author relies on the const
+>     keyword.
+> -   Unlike some typed languages, JavaScript does not support
+>     explicitly specifying the type of a variable.
+> -   JavaScript string comparisons are by default case-sensitive.
+>
+> ### Functions and Methods {#functions-and-methods dated="2021-12-05T17:51:00"}
+>
+> -   Methods are functions that are referrable from a class. Methods
+>     support object orientation by offering encapsulation, inheritance,
+>     polymorphism. The author uses functions when placing localizable
+>     code inside the script section of a HTML file; otherwise,
+>     generalized methods are referenceable from a JavaScript library.
+> -   JavaScript treats functions as first-class citizens, and they are
+>     passable as variables. This abstraction feature is rarely
+>     necessary.
+> -   JavaScript does not support method overloading. The earlier
+>     arguments array variable and the later parameter default
+>     initialization supplements.
+> -   The author consistently uses anonymous functions for processing
+>     the success and error returns when using jQuery to access web
+>     services.
+>
+> ### Conditions {#conditions dated="2021-12-06T15:21:00"}
+>
+> -   The author emulates the Microsoft ASP.NET Page.IsPostBack property
+>     check, and when it is not so, parse the query arguments;
+>     otherwise, skip the parsing and proceed to page submittion.
+>
+> ### Arrays and Loops {#arrays-and-loops dated="2021-12-07T03:13:00"}
+>
+> -   For displaying the Bible book titles, the 66 books are in a
+>     JavaScript iterable array. This reduces the data load from the
+>     server to client, and it offers spelling flexibility. The select
+>     options resemble similar customization.
+>
+> ### HyperText Markup Language (HTML) Document {#hypertext-markup-language-html-document dated="2021-12-07T11:37:00"}
+>
+> -   The DOCTYPE is the first declaration in an HTML document, and it
+>     is the conformation standard specification.
+> -   The html tag is the root and the container for all the other tags.
+> -   The head tag contains the title and the meta tags for the search
+>     engine optimization (SEO). The various documents will indicate the
+>     cascading style sheet (CSS) directive.
+> -   The body tag contains the visible content of the document. Its
+>     resultSet or resultTable div will contain the particular details
+>     that the program generates.
 
 (Microsoft)
 
@@ -1335,6 +1256,8 @@ Studio.
 
 ### Web Services
 
+<div>
+
 > There is standardization on the first .NET web services architecture,
 > .ASMX.
 
@@ -1350,6 +1273,8 @@ the data he passes to the web service in the body of the message. Errors
 are unforeseen, in the rare case, the author logs errors on the
 back-end, and display quantitative message. Security is lacking; this is
 permissible; since the author only queries information.
+
+</div>
 
 The web service code, .asmx, file is not necessary, does not have a
 place, when there is no server database access ( [Numbers 19:2, 2
@@ -1475,6 +1400,7 @@ Data,Log,Size and Other Useful information -SQL
 > 4.  In the year 2008, when the author tried to move away from html
 >     table layout styling, the rendering was anaemic.
 >
+> ::: {dated="2022-10-19T14:49:00"}
 > The Cascading Style Sheets (CSS) performance suggestions include:
 >
 > 1.  Since, by default, CSS is a render-blocking resource, the author
@@ -1483,16 +1409,20 @@ Data,Log,Size and Other Useful information -SQL
 > 2.  All the programming .html files refer to the common 9432.css file,
 >     except this ubiquitous 2015-10-23DoctoralDissertation.html
 >     documentation file which includes css.
+> :::
 >
+> ::: {dated="2022-10-19T15:31:00"}
 > The JavaScript performance suggestions include:
 >
 > 1.  Make use of browser cacheable content delivery networks (CDNs).
 >     For example, <http://code.jquery.com/jquery-latest.js>
+> :::
 
 (Lara Callender Hogan)
 
 > ### High Performance Browser Networking {#high-performance-browser-networking dated="2022-10-24T02:05:00"}
 >
+> ::: {dated="2022-10-24T02:06:00"}
 > For Internet connections, the contributing factors include:
 >
 > 1.  Propagation delay - The consideration is the speed of light in the
@@ -1521,7 +1451,9 @@ Data,Log,Size and Other Useful information -SQL
 > 4.  Queuing delay - The processing wait time is dependent on the
 >     browser supporting multiple page tabs, and other applicatons using
 >     the network?
+> :::
 >
+> ::: {dated="2021-11-29T07:25:00"}
 > Most of the work of the author is available at the following
 > locations, in the order of efficiency:
 >
@@ -1540,7 +1472,9 @@ Data,Log,Size and Other Useful information -SQL
 > calling web services. The .html and .asmx files are in numerous
 > directories, because GitHub.com directories have content count
 > limitations.
+> :::
 >
+> ::: {dated="2021-11-29T11:30:00"}
 > Images:
 >
 > 1.  The author does not use background-image nor list-style-image
@@ -1552,9 +1486,11 @@ Data,Log,Size and Other Useful information -SQL
 > 5.  The author does not support nor take advantage of Expires Headers
 > 6.  This research excludes compression and minification; because the
 >     file sizes are low and technology conformity
+> :::
 
 (Ilya Grigorik)
 
+> ::: {dated="2024-08-21T07:02:00"}
 > Web Performance 101 JavaScript:
 >
 > 1.  The author will not consider minification. Because he cannot
@@ -1570,17 +1506,22 @@ Data,Log,Size and Other Useful information -SQL
 >     load.
 > 4.  Code splitting with import serves well for web components and rare
 >     tasks.
+> :::
 >
+> ::: {dated="2024-08-21T08:10:00"}
 > Web Performance 101 Cascading Style Sheets (CSS):
 >
 > 1.  Critical CSS is in the style sections of HTML files.
+> :::
 >
+> ::: {dated="2024-08-21T08:25:00"}
 > Web Performance 101 content delivery network (CDN):
 >
 > 1.  The author is deprecating the use of the jquery library which was
 >     solely used for AJAX, in preference to the fetch statement.
 > 2.  The author only uses the latest version and a unique uri for each
 >     library available on CDN.
+> :::
 
 (Ivan Akulov)
 
@@ -1655,6 +1596,8 @@ reach similar conclusions.
 
 ### Database Deployment
 
+<div>
+
 The author suggests the following alternative methods for deploying the
 databases:
 
@@ -1664,7 +1607,11 @@ databases:
 4.  [SQL Server Data Definition Language
     (DDL)](http://github.com/KenAdeniji/SQLServerDataDefinitionLanguageDDL)
 
+</div>
+
 ### Surrogate Keys
+
+<div>
 
 > The author takes advantage of potential natural primary keys;
 > otherwise, the author uses surrogate keys. A surrogate key may be an
@@ -1673,8 +1620,11 @@ databases:
 
 (Joseph Sack, 2008)
 
+</div>
+
 > ### Application Programming Interface (API) {#ApplicationProgrammingInterface dated="2022-08-20T20:30:00"}
 >
+> ::: {dated="2022-08-20T20:30:00"}
 > -   The common url scheme, endpoint, that the author prefers for
 >     security reasons is
 >     <https://e-comfort.ephraimtech.com/WordEngineering>
@@ -1704,6 +1654,7 @@ databases:
 >     -   Normalization
 >     -   Naming Conventions, SQL for example, is generally case
 >         agnostic
+> :::
 
 (Consumer-Centric API Design)
 
@@ -1736,17 +1687,17 @@ databases:
 >
 > #### Problems, Algorithms, and Programs {#problems-algorithms-and-programs dated="2022-03-18T13:37:00"}
 >
-> Problem
+> ##### Problem {#problem dated="2022-03-18T13:44:00"}
 >
 > When we hear the word, how do we endeavor in Him?
 >
-> Function, Input, and Output
+> ##### Function, Input, and Output {#function-input-and-output dated="2022-03-18T13:57:00"}
 >
 > The input is the word as the only parameter. The output will find
 > meaning in the word of God. The response of the computer is within the
 > range of the result set.
 >
-> Sets and Relations
+> ##### Sets and Relations {#sets-and-relations dated="2022-03-18T14:57:00"}
 >
 > The alphabets and words make-up the author\'s work. The composition of
 > the words is indefinite.
@@ -2194,6 +2145,8 @@ Remember_View tables.
 
 #### Programmer\'s Workbench (PWB) {#ProgrammersWorkbench}
 
+<div>
+
 > This technology will make all the before and current versions of the
 > code accessible, re-viewable, and testable.
 
@@ -2205,6 +2158,8 @@ he rarely does so. The words in the past and future event dates are
 useful for remembrance entries. As the author technically matures, he
 automates manual work.
 
+</div>
+
 The dreams are re-collect-able, and recallable ( [Numbers
 12:6-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Numbers%2012:6-8)
 ).
@@ -2212,8 +2167,6 @@ The dreams are re-collect-able, and recallable ( [Numbers
 > I have made what I have spoken, ready
 >
 > ### Web Design Fundamental {#WebDesignFundamental}
->
-> (Jakob Nielsen).
 >
 > #### Business Model {#BusinessModel}
 >
@@ -2260,6 +2213,8 @@ The dreams are re-collect-able, and recallable ( [Numbers
 
 ### Web {#Web}
 
+> <div>
+>
 > We will make advancement over Tim Berners-Lee earlier idea of a
 > unified web:
 >
@@ -2272,6 +2227,8 @@ The dreams are re-collect-able, and recallable ( [Numbers
 >     Geo-Location.
 > 4.  Clients such as browsers store information on cookies, local and
 >     session storage.
+>
+> </div>
 
 (Jakob Nielsen, 2000).
 
@@ -2494,589 +2451,323 @@ a space for a non-block display.]{dated="2020-10-06T14:28:00"}
 
 The word is the author\'s file naming convention.
 
-What did He decide to join in?
+  Word                                                                                                                                                                                                                       Scripture Reference
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Levitical Priesthood                                                                                                                                                                                                       [Luke 1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%201)
+  Davidic Covenant                                                                                                                                                                                                           [Luke 1:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%201:32)
+  But thou, Bethlehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.   [Micah 5:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Micah%205:2)
+  Out of Egypt have I called my son.                                                                                                                                                                                         [Hosea 11:1, Matthew 2:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hosea%2011:1,%20Matthew%202:15)
+  Galilee of the Gentiles                                                                                                                                                                                                    [Matthew 4:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%204:15)
+  Father\'s house                                                                                                                                                                                                            [John 14:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2014:2)
 
-Word
+  : What did He decide to join in?
 
-Scripture Reference
+  Word                               Scripture Reference
+  ---------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Forgiveness versus (VS) judgment   [Matthew 8:17, Isaiah 53:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%208:17,%20Isaiah%2053:4)
+  Fruitful versus (VS) barren        [1 Samuel 2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%202:5)
+  Bless versus (VS) curse            [Genesis 12:3, Genesis 27:12, Genesis 27:29, Numbers 22:6, Numbers 22:12, Numbers 23:11, Numbers 23:25, Numbers 24:9-Numbers 24:10 , Deuteronomy 11:26, Deuteronomy 11:29, Deuteronomy 23:5, Deuteronomy 29:19, Deuteronomy 30:1, Deuteronomy 30:19, Joshua 8:34, Judges 17:2, Nehemiah 10:29, Nehemiah 13:2, Psalms 37:22, Psalms 62:4, Psalms 109:17, Psalms 109:28, Proverbs 3:33, Proverbs 11:26, Proverbs 27:14, Proverbs 30:11, Jeremiah 20:14, Zechariah 8:13, Malachi 2:2, Matthew 5:44, Luke 6:28, Romans 12:14, James 3:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:3,%20Genesis%2027:12,%20Genesis%2027:29,%20Numbers%2022:6,%20Numbers%2022:12,%20Numbers%2023:11,%20Numbers%2023:25,%20Numbers%2024:9-Numbers%2024:10%20,%20Deuteronomy%2011:26,%20Deuteronomy%2011:29,%20Deuteronomy%2023:5,%20Deuteronomy%2029:19,%20Deuteronomy%2030:1,%20Deuteronomy%2030:19,%20Joshua%208:34,%20Judges%2017:2,%20Nehemiah%2010:29,%20Nehemiah%2013:2,%20Psalms%2037:22,%20Psalms%2062:4,%20Psalms%20109:17,%20Psalms%20109:28,%20Proverbs%203:33,%20Proverbs%2011:26,%20Proverbs%2027:14,%20Proverbs%2030:11,%20Jeremiah%2020:14,%20Zechariah%208:13,%20Malachi%202:2,%20Matthew%205:44,%20Luke%206:28,%20Romans%2012:14,%20James%203:9)
+  Naked versus (VS) adorned          [Revelation 21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2021:2)
 
-Levitical Priesthood
+  : What is time in Him?
 
-[Luke
-1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%201)
+  Word                              Count                                                                                  Scripture Reference
+  --------------------------------- -------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  What did He want of Himself?      God and the Lamb                                                                       [Genesis 1:16, Revelation 21:23, 1 John 3:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:16,%20Revelation%2021:23,%201%20John%203:2)
+  Sabbatical rest                   7                                                                                      [Genesis 2:2-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:2-3)
+  A help for Adam: Eve              2 become 1                                                                             [Genesis 2:18-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:18-25)
+  Esau and Jacob                    2 nations are in your womb                                                             [Genesis 25:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2025:23)
+  10 plagues in Egypt\...Passover   10th\...14th day Passover                                                              [Exodus 12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2012)
+  Temple Resurrection               46 years was Solomon\'s Temple in building and Jesus Christ will resurrect in 3 days   [John 2:20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%202:20)
 
-Davidic Covenant
+  : How does He sum Himself?
 
-[Luke
-1:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%201:32)
+  Type     Commentary                Scripture Reference
+  -------- ------------------------- --------------------------------------------------------------------------------------------------------------------------------
+  Spirit   Image\...Truth            [John 4:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%204:24)
+  Word     Prophecy\...Fulfillment   [John 1:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:1)
 
-But thou, Bethlehem Ephratah, though thou be little among the thousands
-of Judah, yet out of thee shall he come forth unto me that is to be
-ruler in Israel; whose goings forth have been from of old, from
-everlasting.
+  : 2023-08-26T20:00:00\
+  For the 2nd day consequetively I am wearing a green Fruit of the Loom
+  t-shirt. Best trademark. 50% cotton. 50% polyester. Exclusive of
+  decoration. Made in Honduras. XL/EG/TG. Black Adidas track trouser
+  with 3 white stripes on each side.\
+  At the intersection of Mallard Common 4750 and Woodduck Common 4740,
+  South East. The garage door of Mahdu is opened. Probably Hindi male in
+  dark blue shirt drives southward. You have said, everything you need
+  to say.\
+  On Decoy Terrace between Mallard Common and Siward Drive, South
+  Center. I thought of Vivian Siu and her demand for me to wear better
+  clothing. At the intersection of Decoy Terrace and Siward Drive, South
+  East. God asked, Why? Do you like Me?\
+  [To create one for
+  who?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20create%20one%20for%20who%3F){dated="2023-08-26T20:00:00"
+  contactid="11696" hiswordid="156722"
+  location="Paseo Padre Parkway between Siward Drive and Blackstone Way. Overhead bridge, North East, 4th sets of bricks."}
 
-[Micah
-5:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Micah%205:2)
-
-Out of Egypt have I called my son.
-
-[Hosea 11:1, Matthew
-2:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hosea%2011:1,%20Matthew%202:15)
-
-Galilee of the Gentiles
-
-[Matthew
-4:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%204:15)
-
-Father\'s house
-
-[John
-14:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2014:2)
-
-What is time in Him?
-
-Word
-
-Scripture Reference
-
-Forgiveness versus (VS) judgment
-
-[Matthew 8:17, Isaiah
-53:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%208:17,%20Isaiah%2053:4)
-
-Fruitful versus (VS) barren
-
-[1 Samuel
-2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%202:5)
-
-Bless versus (VS) curse
-
-[Genesis 12:3, Genesis 27:12, Genesis 27:29, Numbers 22:6, Numbers
-22:12, Numbers 23:11, Numbers 23:25, Numbers 24:9-Numbers 24:10 ,
-Deuteronomy 11:26, Deuteronomy 11:29, Deuteronomy 23:5, Deuteronomy
-29:19, Deuteronomy 30:1, Deuteronomy 30:19, Joshua 8:34, Judges 17:2,
-Nehemiah 10:29, Nehemiah 13:2, Psalms 37:22, Psalms 62:4, Psalms 109:17,
-Psalms 109:28, Proverbs 3:33, Proverbs 11:26, Proverbs 27:14, Proverbs
-30:11, Jeremiah 20:14, Zechariah 8:13, Malachi 2:2, Matthew 5:44, Luke
-6:28, Romans 12:14, James
-3:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:3,%20Genesis%2027:12,%20Genesis%2027:29,%20Numbers%2022:6,%20Numbers%2022:12,%20Numbers%2023:11,%20Numbers%2023:25,%20Numbers%2024:9-Numbers%2024:10%20,%20Deuteronomy%2011:26,%20Deuteronomy%2011:29,%20Deuteronomy%2023:5,%20Deuteronomy%2029:19,%20Deuteronomy%2030:1,%20Deuteronomy%2030:19,%20Joshua%208:34,%20Judges%2017:2,%20Nehemiah%2010:29,%20Nehemiah%2013:2,%20Psalms%2037:22,%20Psalms%2062:4,%20Psalms%20109:17,%20Psalms%20109:28,%20Proverbs%203:33,%20Proverbs%2011:26,%20Proverbs%2027:14,%20Proverbs%2030:11,%20Jeremiah%2020:14,%20Zechariah%208:13,%20Malachi%202:2,%20Matthew%205:44,%20Luke%206:28,%20Romans%2012:14,%20James%203:9)
-
-Naked versus (VS) adorned
-
-[Revelation
-21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2021:2)
-
-How does He sum Himself?
-
-Word
-
-Count
-
-Scripture Reference
-
-What did He want of Himself?
-
-God and the Lamb
-
-[Genesis 1:16, Revelation 21:23, 1 John
-3:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:16,%20Revelation%2021:23,%201%20John%203:2)
-
-Sabbatical rest
-
-7
-
-[Genesis
-2:2-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:2-3)
-
-A help for Adam: Eve
-
-2 become 1
-
-[Genesis
-2:18-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:18-25)
-
-Esau and Jacob
-
-2 nations are in your womb
-
-[Genesis
-25:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2025:23)
-
-10 plagues in Egypt\...Passover
-
-10th\...14th day Passover
-
-[Exodus
-12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2012)
-
-Temple Resurrection
-
-46 years was Solomon\'s Temple in building and Jesus Christ will
-resurrect in 3 days
-
-[John
-2:20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%202:20)
-
-2023-08-26T20:00:00\
-For the 2nd day consequetively I am wearing a green Fruit of the Loom
-t-shirt. Best trademark. 50% cotton. 50% polyester. Exclusive of
-decoration. Made in Honduras. XL/EG/TG. Black Adidas track trouser with
-3 white stripes on each side.\
-At the intersection of Mallard Common 4750 and Woodduck Common 4740,
-South East. The garage door of Mahdu is opened. Probably Hindi male in
-dark blue shirt drives southward. You have said, everything you need to
-say.\
-On Decoy Terrace between Mallard Common and Siward Drive, South Center.
-I thought of Vivian Siu and her demand for me to wear better clothing.
-At the intersection of Decoy Terrace and Siward Drive, South East. God
-asked, Why? Do you like Me?\
-[To create one for
-who?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20create%20one%20for%20who%3F){dated="2023-08-26T20:00:00"
-contactid="11696" hiswordid="156722"
-location="Paseo Padre Parkway between Siward Drive and Blackstone Way. Overhead bridge, North East, 4th sets of bricks."}
-
-Type
-
-Commentary
-
-Scripture Reference
-
-Spirit
-
-Image\...Truth
-
-[John
-4:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%204:24)
-
-Word
-
-Prophecy\...Fulfillment
-
-[John
-1:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:1)
-
+::: {dated="2023-10-09T11:55:00"}
 2023-10-09T11:55:00 How-to do time? To work on time?
 
 1.  [Once data is input\...it must be
     read?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Once%20data%20is%20input...it%20must%20be%20read%3F){dated="2023-10-09T12:21:00"
     hiswordid="158329"} Subsequent work may include proof-reading,
     archiving and housekeeping.
+:::
 
-2022-10-06T05:19:00\
++-----------------------+-----------------------+-----------------------+
+| Word                  | Commentary            | Scripture Reference   |
++=======================+=======================+=======================+
+| Where                 | I have only lived in  | [Genesis              |
+|                       | former British        | 13:14](               |
+|                       | colonies, namely      | http://e-comfort.ephr |
+|                       | Nigeria, the United   | aimtech.com/WordEngin |
+|                       | States of America     | eering/WordUnion/Scri |
+|                       | (USA), and Australia. | ptureReference.html?s |
+|                       |                       | criptureReference=Gen |
+|                       |                       | esis%2013:14){dated=" |
+|                       |                       | 2022-10-06T05:38:00"} |
++-----------------------+-----------------------+-----------------------+
+| When                  | -   Departure: On     | [Genesis              |
+|                       |     Sunday 1999-01-17 | 17:1]                 |
+|                       |     I flew out of     | (http://e-comfort.eph |
+|                       |     Sydney.           | raimtech.com/WordEngi |
+|                       | -   Arrival: On       | neering/WordUnion/Scr |
+|                       |     Monday 1999-01-18 | iptureReference.html? |
+|                       |     I re-located to   | scriptureReference=Ge |
+|                       |     California,       | nesis%2017:1){dated=" |
+|                       |     Martin Luther     | 2022-10-06T05:43:00"} |
+|                       |     King\'s day.      |                       |
+|                       |                       |                       |
+|                       | JAL JAPAN AIRLINES    |                       |
+|                       | 1999-01-17 SYDNEY     |                       |
+|                       | TOKYO                 |                       |
+|                       | 1999-01-17T10-30      |                       |
+|                       | 1999-01-17T18:05 JL   |                       |
+|                       | 772 M SUN             |                       |
+|                       | KINGSFORDSMITH        |                       |
+|                       | TERMINAL 1 NARITA     |                       |
+|                       | TERMINAL 2 AIRCRAFT   |                       |
+|                       | 747 NON STOP 9:35     |                       |
+|                       | DURATION. JAL JAPAN   |                       |
+|                       | AIRLINES 1999-01-18   |                       |
+|                       | TOKYO SAN FRANCISCO   |                       |
+|                       | 1999-01-18            |                       |
+|                       | 1999-01-18T09:55 JL 2 |                       |
+|                       | M MON NARITA TERMINAL |                       |
+|                       | 2 INTL TERMINAL 1     |                       |
+|                       | AIRCRAFT 744 NON STOP |                       |
+|                       | 8:55 DURATION.        |                       |
++-----------------------+-----------------------+-----------------------+
+| How                   | [How beyond our       | [Genesis              |
+|                       | age?](http://e-       | 25:23](               |
+|                       | comfort.ephraimtech.c | http://e-comfort.ephr |
+|                       | om/WordEngineering/Wo | aimtech.com/WordEngin |
+|                       | rdUnion/GetAPage.html | eering/WordUnion/Scri |
+|                       | ?word=How%20beyond%20 | ptureReference.html?s |
+|                       | our%20age%3F){dated=" | criptureReference=Gen |
+|                       | 2022-10-06T10:47:00"} | esis%2025:23){dated=" |
+|                       |                       | 2022-10-06T10:47:00"} |
++-----------------------+-----------------------+-----------------------+
+
+: 2022-10-06T05:19:00\
 [Where does He bring us to a
 place?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20does%20He%20bring%20us%20to%20a%20place%3F){dated="2022-10-06T05:19:00"
 contactid="991" hiswordid="158288"}
 
-Word
-
-Commentary
-
-Scripture Reference
-
-Where
-
-I have only lived in former British colonies, namely Nigeria, the United
-States of America (USA), and Australia.
-
-[Genesis
-13:14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2013:14){dated="2022-10-06T05:38:00"}
-
-When
-
--   Departure: On Sunday 1999-01-17 I flew out of Sydney.
--   Arrival: On Monday 1999-01-18 I re-located to California, Martin
-    Luther King\'s day.
-
-JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30
-1999-01-17T18:05 JL 772 M SUN KINGSFORDSMITH TERMINAL 1 NARITA TERMINAL
-2 AIRCRAFT 747 NON STOP 9:35 DURATION. JAL JAPAN AIRLINES 1999-01-18
-TOKYO SAN FRANCISCO 1999-01-18 1999-01-18T09:55 JL 2 M MON NARITA
-TERMINAL 2 INTL TERMINAL 1 AIRCRAFT 744 NON STOP 8:55 DURATION.
-
-[Genesis
-17:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:1){dated="2022-10-06T05:43:00"}
-
-How
-
-[How beyond our
-age?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20beyond%20our%20age%3F){dated="2022-10-06T10:47:00"}
-
-[Genesis
-25:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2025:23){dated="2022-10-06T10:47:00"}
-
-2023-10-05T10:13:00\
-[A
-rest](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?word=Hebrews%204:9){dated="2023-10-05T10:13:00"
-hiswordid="157283"}
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Jesus Christ
-
-Son of God
-
-[Hebrews
-5:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%205:8){dated="2023-10-05T11:26:00"}
-
-Tithes
-
-Levi
-
-[Hebrews
-7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%207){dated="2023-10-05T11:30:00"}
-
-2023-10-04T11:52:00\
-[Particular
-use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Particular%20use%3F){dated="2023-10-04T13:53:00"
-hiswordid="157274"
-url="survey.devographics.com/en-US/survey/state-of-html/2023/ldxmgUcjMw4ht9_hvLr_Y/4"
-commentary="raymondcamden.com/2023/10/01/links-for-you"}
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Man
-
-Image of God, help, seed of the woman, possession, prince, tribe
-
-[Genesis
-2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:5)
-
-Place
-
-Jerusalem
-
-[2 Kings
-21:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Kings%2021:4)
-
-2023-08-29T12:02:00\
-[No land
-ties](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=No%20land%20ties){dated="2023-08-29T12:02:00"
-hiswordid="156763"
-location="When I was coming from Berryessa BART Station, at either Warm Springs BART Station or Fremont BART Station, a Caucasian male was blocking the door with his leg, foot, or luggage bag."}
-
-Birth name
-
-Title
-
-Physical place
-
-Spiritual place
-
-Scripture Reference
-
-Jesus
-
-King of the Jews
-
-Bethlehem, Egypt
-
-Jerusalem
-
-[Matthew
-2:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:1)
-
-Moses
-
-Prince of Egypt
-
-Egypt
-
-High mountain
-
-[Exodus
-2:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202:10)
-
-2023-08-27T08:17:00\
-[Why exclude the
-future?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Why%20exclude%20the%20future%3F){dated="2023-08-27T08:17:00"
-hiswordid="156727" location="Shower: 1st sprinkling of water"}
-
-Actor
-
-Word
-
-Scripture Reference
-
-[Cain](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Cain)
-
-[Offering](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Offering)
-
-[Genesis
-4:1-17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:1-17)
-
-[Our type can relate a
-few?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Our%20type%20can%20relate%20a%20few%3F){dated="2022-08-07T18:02:00"
-contactid="991" hiswordid="156510"
-location="5200 Dublin Boulevard. Dublin, California (CA) 94568. At the intersection of Martinelli Way and Arnold Road, South East. Dublin/Pleasanton."
-url="wholefoodsmarket.com"} [Who are you, therefore,
-about?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Who%20are%20you,%20therefore,%20about%3F){dated="2022-08-08T04:28:00"
-hiswordid="156521"} [I cannot grow as the
-same?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20cannot%20grow%20as%20the%20same%3F){dated="2022-08-08T12:29:00"
-commentary="Jew" contactid="3422" hiswordid="156526"
-location="Rhonda. 4732 Creekwood Drive. At the intersection of Decoy Terrace and Creekwood Drive, South East."}
-
-Word
-
-Jacob
-
-Jesus Christ
-
-Covenant
-
-Abrahamic
-
-Messianic
-
-Sacrifice
-
-Isaac
-
-Jesus Christ
-
-Patriach
-
-Abraham, Isaac, Jacob
-
-Jesus Christ
-
-People
-
-Israelite, Jew
-
-Christian
-
-Fear
-
-Isaac
-
-God
-
-Saul versus (VS) David [Will love
-accept?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Will%20love%20accept%3F){dated="2023-07-25T10:33:00"
-contactid="3171" hiswordid="156326"}
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Spirit of God
-
-[1 Samuel 10:6, 1 Samuel 10:10, 1 Samuel 11:6, 1 Samuel 16:13, 1 Samuel
-16:14, 1 Samuel 16:15, 1 Samuel 16:16, 1 Samuel 16:23, 1 Samuel 18:10, 1
-Samuel 19:9, 1 Samuel 19:20, 1 Samuel 19:23, 1 Samuel 28:3, 1 Samuel
-28:7, 1 Samuel 28:8, 1 Samuel 28:9, 1 Samuel 30:12, 2 Samuel 23:2, 1
-Chronicles
-10:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2010:6,%201%20Samuel%2010:10,%201%20Samuel%2011:6,%201%20Samuel%2016:13,%201%20Samuel%2016:14,%201%20Samuel%2016:15,%201%20Samuel%2016:16,%201%20Samuel%2016:23,%201%20Samuel%2018:10,%201%20Samuel%2019:9,%201%20Samuel%2019:20,%201%20Samuel%2019:23,%201%20Samuel%2028:3,%201%20Samuel%2028:7,%201%20Samuel%2028:8,%201%20Samuel%2028:9,%201%20Samuel%2030:12,%202%20Samuel%2023:2,%201%20Chronicles%2010:13)
-
-Contribution to the Gospel
-
-The Book of Psalms
-
-[2 Samuel 22:1, 2 Samuel 23:1,
-Psalms](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2022:1,%202%20Samuel%2023:1,%20Psalms)
-
-Successor
-
-Jonathan versus (VS) David
-
-[1 Samuel
-20:30](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2020:30)
-
-Genealogy
-
-14 generations
-
-[Matthew
-1:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%201:17)
-
-Kingdom established
-
-[1 Samuel 13:13-14, 1 Samuel 15:28, 1 Samuel 20:31, 1 Samuel 24:20, 1
-Samuel 28:17, 2 Samuel
-5:12-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2013:13-14,%201%20Samuel%2015:28,%201%20Samuel%2020:31,%201%20Samuel%2024:20,%201%20Samuel%2028:17,%202%20Samuel%205:12-25)
-
-Anoint
-
-[1 Samuel 2:35, 1 Samuel 9:16, 1 Samuel 10:1, 1 Samuel 12:3, 1 Samuel
-12:5, 1 Samuel 15:1, 1 Samuel 15:17, 1 Samuel 16:3, 1 Samuel 16:6, 1
-Samuel 16:12, 1 Samuel 16:13, 1 Samuel 24:6, 1 Samuel 24:10, 1 Samuel
-26:9, 1 Samuel 26:11, 1 Samuel 26:16, 1 Samuel 26:23, 2 Samuel 1:14, 2
-Samuel 1:16, 2 Samuel 1:21, 2 Samuel 2:4, 2 Samuel 2:7, 2 Samuel 3:39, 2
-Samuel 5:3, 2 Samuel 5:17, 2 Samuel 12:7, 2 Samuel 12:20, 2 Samuel 14:2,
-2 Samuel 19:10, 2 Samuel 19:21, 2 Samuel 22:51, 2 Samuel 23:1, 1 Kings
-1:34, 1 Kings 1:39, 1 Kings 1:45, 1 Kings 5:1, 1 Kings 19:15, 1 Kings
-19:16, 2 Kings 9:3, 2 Kings 9:6, 2 Kings 9:12, 2 Kings 11:12, 2 Kings
-23:30, 1 Chronicles 11:3, 1 Chronicles 14:8, 1 Chronicles 16:22, 1
-Chronicles 29:22, 2 Chronicles 6:42, 2 Chronicles 22:7, 2 Chronicles
-23:11, 2 Chronicles 28:15, Psalms 2:2, Psalms 18:50, Psalms 20:6, Psalms
-23:5, Psalms 28:8, Psalms 45:7, Psalms 84:9, Psalms 89:20, Psalms 89:38,
-Psalms 89:51, Psalms 92:10, Psalms 105:15, Psalms 132:10, Psalms
-132:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%202:35,%201%20Samuel%209:16,%201%20Samuel%2010:1,%201%20Samuel%2012:3,%201%20Samuel%2012:5,%201%20Samuel%2015:1,%201%20Samuel%2015:17,%201%20Samuel%2016:3,%201%20Samuel%2016:6,%201%20Samuel%2016:12,%201%20Samuel%2016:13,%201%20Samuel%2024:6,%201%20Samuel%2024:10,%201%20Samuel%2026:9,%201%20Samuel%2026:11,%201%20Samuel%2026:16,%201%20Samuel%2026:23,%202%20Samuel%201:14,%202%20Samuel%201:16,%202%20Samuel%201:21,%202%20Samuel%202:4,%202%20Samuel%202:7,%202%20Samuel%203:39,%202%20Samuel%205:3,%202%20Samuel%205:17,%202%20Samuel%2012:7,%202%20Samuel%2012:20,%202%20Samuel%2014:2,%202%20Samuel%2019:10,%202%20Samuel%2019:21,%202%20Samuel%2022:51,%202%20Samuel%2023:1,%201%20Kings%201:34,%201%20Kings%201:39,%201%20Kings%201:45,%201%20Kings%205:1,%201%20Kings%2019:15,%201%20Kings%2019:16,%202%20Kings%209:3,%202%20Kings%209:6,%202%20Kings%209:12,%202%20Kings%2011:12,%202%20Kings%2023:30,%201%20Chronicles%2011:3,%201%20Chronicles%2014:8,%201%20Chronicles%2016:22,%201%20Chronicles%2029:22,%202%20Chronicles%206:42,%202%20Chronicles%2022:7,%202%20Chronicles%2023:11,%202%20Chronicles%2028:15,%20Psalms%202:2,%20Psalms%2018:50,%20Psalms%2020:6,%20Psalms%2023:5,%20Psalms%2028:8,%20Psalms%2045:7,%20Psalms%2084:9,%20Psalms%2089:20,%20Psalms%2089:38,%20Psalms%2089:51,%20Psalms%2092:10,%20Psalms%20105:15,%20Psalms%20132:10,%20Psalms%20132:17)
-
-Popular
-
-Saul has slain his thousands, and David his ten thousands.
-
-[1 Samuel
-18:7-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2018:7-8)
-
-Notorius
-
-Gibeonites
-
-[2 Samuel
-21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2021)
-
-Ally
-
-Michal, Jonathan
-
-[1 Samuel 19:17, 1 Samuel
-20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2019:17,%201%20Samuel%2020)
-
-Water
-
-[1 Samuel 12:17, 2 Samuel
-5:20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2012:17,%202%20Samuel%205:20)
-
-[What will relate as I
-grow?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20will%20relate%20as%20I%20grow%3F){dated="2023-03-12T16:24:00"
-contactid="24" hiswordid="152273"} 841 occurrences of king David in the
-Old Testament.
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Genealogy
-
-Abraham, David, Jesus Christ
-
-[Matthew
-1:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%201:17)
-
-Reign for a generation
-
-Moses, Saul, David, Solomon
-
-[Deuteronomy 29:5, Judges 3:11, Judges 8:28, 1 Samuel 4:18, 2 Samuel
-5:4, 1 Kings 2:11, 1 Kings 11:42, 2 Kings 12:1, 1 Chronicles 29:27, 2
-Chronicles 9:30, 2 Chronicles
-24:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2029:5,%20Judges%203:11,%20Judges%208:28,%201%20Samuel%204:18,%202%20Samuel%205:4,%201%20Kings%202:11,%201%20Kings%2011:42,%202%20Kings%2012:1,%201%20Chronicles%2029:27,%202%20Chronicles%209:30,%202%20Chronicles%2024:1)
-
-Biography
-
-David, Jesus Christ
-
-[1 Chronicles 29:29, Ruth 4:17, Ruth 4:22, Psalms 40:7, Hebrews 10:7,
-Matthew 5:18, Psalms, 1 Samuel, 2 Samuel, 1 Chronicles, 2
-Chronicles](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%2029:29,%20Ruth%204:17,%20Ruth%204:22,%20Psalms%2040:7,%20Hebrews%2010:7,%20Matthew%205:18,%20Psalms,%201%20Samuel,%202%20Samuel,%201%20Chronicles,%202%20Chronicles)
-
-Davidic covenant
-
-[Psalms 89:3, Isaiah 55:3, Jeremiah
-33:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2089:3,%20Isaiah%2055:3,%20Jeremiah%2033:21)
-
-[What regularity of
-changes?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20regularity%20of%20changes%3F){dated="2023-09-27T07:55:00"
-hiswordid="157192"}
-
-Event
-
-Frequency
-
-Scripture Reference
-
-Creation
-
-Daily, Sabbathical rest
-
-[Genesis 1, Genesis
-2:1-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20Genesis%202:1-3)
-
-Times of the Jews versus (VS) times of the Gentiles
-
-490 years
-
-[Luke 21:24, Jeremiah 25:11-12, Jeremiah 29:10, Daniel 9:2, Zechariah
-7:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:24,%20Jeremiah%2025:11-12,%20Jeremiah%2029:10,%20Daniel%209:2,%20Zechariah%207:5)
-
-First resurrection
-
-1000 years
-
-[Revelation
-20:5-6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:5-6)
-
-[How will you wait on time as the period
+  Word           Commentary   Scripture Reference
+  -------------- ------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Jesus Christ   Son of God   [Hebrews 5:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%205:8){dated="2023-10-05T11:26:00"}
+  Tithes         Levi         [Hebrews 7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%207){dated="2023-10-05T11:30:00"}
+
+  : 2023-10-05T10:13:00\
+  [A
+  rest](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?word=Hebrews%204:9){dated="2023-10-05T10:13:00"
+  hiswordid="157283"}
+
+  Word    Commentary                                                         Scripture Reference
+  ------- ------------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------------------
+  Man     Image of God, help, seed of the woman, possession, prince, tribe   [Genesis 2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:5)
+  Place   Jerusalem                                                          [2 Kings 21:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Kings%2021:4)
+
+  : 2023-10-04T11:52:00\
+  [Particular
+  use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Particular%20use%3F){dated="2023-10-04T13:53:00"
+  hiswordid="157274"
+  url="survey.devographics.com/en-US/survey/state-of-html/2023/ldxmgUcjMw4ht9_hvLr_Y/4"
+  commentary="raymondcamden.com/2023/10/01/links-for-you"}
+
+  Birth name   Title              Physical place     Spiritual place   Scripture Reference
+  ------------ ------------------ ------------------ ----------------- ------------------------------------------------------------------------------------------------------------------------------------
+  Jesus        King of the Jews   Bethlehem, Egypt   Jerusalem         [Matthew 2:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:1)
+  Moses        Prince of Egypt    Egypt              High mountain     [Exodus 2:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202:10)
+
+  : 2023-08-29T12:02:00\
+  [No land
+  ties](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=No%20land%20ties){dated="2023-08-29T12:02:00"
+  hiswordid="156763"
+  location="When I was coming from Berryessa BART Station, at either Warm Springs BART Station or Fremont BART Station, a Caucasian male was blocking the door with his leg, foot, or luggage bag."}
+
+  Actor                                                                                              Word                                                                                                       Scripture Reference
+  -------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------
+  [Cain](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Cain)   [Offering](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Offering)   [Genesis 4:1-17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:1-17)
+
+  : 2023-08-27T08:17:00\
+  [Why exclude the
+  future?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Why%20exclude%20the%20future%3F){dated="2023-08-27T08:17:00"
+  hiswordid="156727" location="Shower: 1st sprinkling of water"}
+
+  Word        Jacob                   Jesus Christ
+  ----------- ----------------------- --------------
+  Covenant    Abrahamic               Messianic
+  Sacrifice   Isaac                   Jesus Christ
+  Patriach    Abraham, Isaac, Jacob   Jesus Christ
+  People      Israelite, Jew          Christian
+  Fear        Isaac                   God
+
+  : [Our type can relate a
+  few?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Our%20type%20can%20relate%20a%20few%3F){dated="2022-08-07T18:02:00"
+  contactid="991" hiswordid="156510"
+  location="5200 Dublin Boulevard. Dublin, California (CA) 94568. At the intersection of Martinelli Way and Arnold Road, South East. Dublin/Pleasanton."
+  url="wholefoodsmarket.com"} [Who are you, therefore,
+  about?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Who%20are%20you,%20therefore,%20about%3F){dated="2022-08-08T04:28:00"
+  hiswordid="156521"} [I cannot grow as the
+  same?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20cannot%20grow%20as%20the%20same%3F){dated="2022-08-08T12:29:00"
+  commentary="Jew" contactid="3422" hiswordid="156526"
+  location="Rhonda. 4732 Creekwood Drive. At the intersection of Decoy Terrace and Creekwood Drive, South East."}
+
+  Word                         Commentary                                                   Scripture Reference
+  ---------------------------- ------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Spirit of God                                                                             [1 Samuel 10:6, 1 Samuel 10:10, 1 Samuel 11:6, 1 Samuel 16:13, 1 Samuel 16:14, 1 Samuel 16:15, 1 Samuel 16:16, 1 Samuel 16:23, 1 Samuel 18:10, 1 Samuel 19:9, 1 Samuel 19:20, 1 Samuel 19:23, 1 Samuel 28:3, 1 Samuel 28:7, 1 Samuel 28:8, 1 Samuel 28:9, 1 Samuel 30:12, 2 Samuel 23:2, 1 Chronicles 10:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2010:6,%201%20Samuel%2010:10,%201%20Samuel%2011:6,%201%20Samuel%2016:13,%201%20Samuel%2016:14,%201%20Samuel%2016:15,%201%20Samuel%2016:16,%201%20Samuel%2016:23,%201%20Samuel%2018:10,%201%20Samuel%2019:9,%201%20Samuel%2019:20,%201%20Samuel%2019:23,%201%20Samuel%2028:3,%201%20Samuel%2028:7,%201%20Samuel%2028:8,%201%20Samuel%2028:9,%201%20Samuel%2030:12,%202%20Samuel%2023:2,%201%20Chronicles%2010:13)
+  Contribution to the Gospel   The Book of Psalms                                           [2 Samuel 22:1, 2 Samuel 23:1, Psalms](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2022:1,%202%20Samuel%2023:1,%20Psalms)
+  Successor                    Jonathan versus (VS) David                                   [1 Samuel 20:30](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2020:30)
+  Genealogy                    14 generations                                               [Matthew 1:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%201:17)
+  Kingdom established                                                                       [1 Samuel 13:13-14, 1 Samuel 15:28, 1 Samuel 20:31, 1 Samuel 24:20, 1 Samuel 28:17, 2 Samuel 5:12-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2013:13-14,%201%20Samuel%2015:28,%201%20Samuel%2020:31,%201%20Samuel%2024:20,%201%20Samuel%2028:17,%202%20Samuel%205:12-25)
+  Anoint                                                                                    [1 Samuel 2:35, 1 Samuel 9:16, 1 Samuel 10:1, 1 Samuel 12:3, 1 Samuel 12:5, 1 Samuel 15:1, 1 Samuel 15:17, 1 Samuel 16:3, 1 Samuel 16:6, 1 Samuel 16:12, 1 Samuel 16:13, 1 Samuel 24:6, 1 Samuel 24:10, 1 Samuel 26:9, 1 Samuel 26:11, 1 Samuel 26:16, 1 Samuel 26:23, 2 Samuel 1:14, 2 Samuel 1:16, 2 Samuel 1:21, 2 Samuel 2:4, 2 Samuel 2:7, 2 Samuel 3:39, 2 Samuel 5:3, 2 Samuel 5:17, 2 Samuel 12:7, 2 Samuel 12:20, 2 Samuel 14:2, 2 Samuel 19:10, 2 Samuel 19:21, 2 Samuel 22:51, 2 Samuel 23:1, 1 Kings 1:34, 1 Kings 1:39, 1 Kings 1:45, 1 Kings 5:1, 1 Kings 19:15, 1 Kings 19:16, 2 Kings 9:3, 2 Kings 9:6, 2 Kings 9:12, 2 Kings 11:12, 2 Kings 23:30, 1 Chronicles 11:3, 1 Chronicles 14:8, 1 Chronicles 16:22, 1 Chronicles 29:22, 2 Chronicles 6:42, 2 Chronicles 22:7, 2 Chronicles 23:11, 2 Chronicles 28:15, Psalms 2:2, Psalms 18:50, Psalms 20:6, Psalms 23:5, Psalms 28:8, Psalms 45:7, Psalms 84:9, Psalms 89:20, Psalms 89:38, Psalms 89:51, Psalms 92:10, Psalms 105:15, Psalms 132:10, Psalms 132:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%202:35,%201%20Samuel%209:16,%201%20Samuel%2010:1,%201%20Samuel%2012:3,%201%20Samuel%2012:5,%201%20Samuel%2015:1,%201%20Samuel%2015:17,%201%20Samuel%2016:3,%201%20Samuel%2016:6,%201%20Samuel%2016:12,%201%20Samuel%2016:13,%201%20Samuel%2024:6,%201%20Samuel%2024:10,%201%20Samuel%2026:9,%201%20Samuel%2026:11,%201%20Samuel%2026:16,%201%20Samuel%2026:23,%202%20Samuel%201:14,%202%20Samuel%201:16,%202%20Samuel%201:21,%202%20Samuel%202:4,%202%20Samuel%202:7,%202%20Samuel%203:39,%202%20Samuel%205:3,%202%20Samuel%205:17,%202%20Samuel%2012:7,%202%20Samuel%2012:20,%202%20Samuel%2014:2,%202%20Samuel%2019:10,%202%20Samuel%2019:21,%202%20Samuel%2022:51,%202%20Samuel%2023:1,%201%20Kings%201:34,%201%20Kings%201:39,%201%20Kings%201:45,%201%20Kings%205:1,%201%20Kings%2019:15,%201%20Kings%2019:16,%202%20Kings%209:3,%202%20Kings%209:6,%202%20Kings%209:12,%202%20Kings%2011:12,%202%20Kings%2023:30,%201%20Chronicles%2011:3,%201%20Chronicles%2014:8,%201%20Chronicles%2016:22,%201%20Chronicles%2029:22,%202%20Chronicles%206:42,%202%20Chronicles%2022:7,%202%20Chronicles%2023:11,%202%20Chronicles%2028:15,%20Psalms%202:2,%20Psalms%2018:50,%20Psalms%2020:6,%20Psalms%2023:5,%20Psalms%2028:8,%20Psalms%2045:7,%20Psalms%2084:9,%20Psalms%2089:20,%20Psalms%2089:38,%20Psalms%2089:51,%20Psalms%2092:10,%20Psalms%20105:15,%20Psalms%20132:10,%20Psalms%20132:17)
+  Popular                      Saul has slain his thousands, and David his ten thousands.   [1 Samuel 18:7-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2018:7-8)
+  Notorius                     Gibeonites                                                   [2 Samuel 21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2021)
+  Ally                         Michal, Jonathan                                             [1 Samuel 19:17, 1 Samuel 20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2019:17,%201%20Samuel%2020)
+  Water                                                                                     [1 Samuel 12:17, 2 Samuel 5:20](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2012:17,%202%20Samuel%205:20)
+
+  : Saul versus (VS) David [Will love
+  accept?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Will%20love%20accept%3F){dated="2023-07-25T10:33:00"
+  contactid="3171" hiswordid="156326"}
+
+  Word                     Commentary                     Scripture Reference
+  ------------------------ ------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Genealogy                Abraham, David, Jesus Christ   [Matthew 1:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%201:17)
+  Reign for a generation   Moses, Saul, David, Solomon    [Deuteronomy 29:5, Judges 3:11, Judges 8:28, 1 Samuel 4:18, 2 Samuel 5:4, 1 Kings 2:11, 1 Kings 11:42, 2 Kings 12:1, 1 Chronicles 29:27, 2 Chronicles 9:30, 2 Chronicles 24:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2029:5,%20Judges%203:11,%20Judges%208:28,%201%20Samuel%204:18,%202%20Samuel%205:4,%201%20Kings%202:11,%201%20Kings%2011:42,%202%20Kings%2012:1,%201%20Chronicles%2029:27,%202%20Chronicles%209:30,%202%20Chronicles%2024:1)
+  Biography                David, Jesus Christ            [1 Chronicles 29:29, Ruth 4:17, Ruth 4:22, Psalms 40:7, Hebrews 10:7, Matthew 5:18, Psalms, 1 Samuel, 2 Samuel, 1 Chronicles, 2 Chronicles](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%2029:29,%20Ruth%204:17,%20Ruth%204:22,%20Psalms%2040:7,%20Hebrews%2010:7,%20Matthew%205:18,%20Psalms,%201%20Samuel,%202%20Samuel,%201%20Chronicles,%202%20Chronicles)
+  Davidic covenant                                        [Psalms 89:3, Isaiah 55:3, Jeremiah 33:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2089:3,%20Isaiah%2055:3,%20Jeremiah%2033:21)
+
+  : [What will relate as I
+  grow?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20will%20relate%20as%20I%20grow%3F){dated="2023-03-12T16:24:00"
+  contactid="24" hiswordid="152273"} 841 occurrences of king David in
+  the Old Testament.
+
+  Event                                                 Frequency                 Scripture Reference
+  ----------------------------------------------------- ------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Creation                                              Daily, Sabbathical rest   [Genesis 1, Genesis 2:1-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20Genesis%202:1-3)
+  Times of the Jews versus (VS) times of the Gentiles   490 years                 [Luke 21:24, Jeremiah 25:11-12, Jeremiah 29:10, Daniel 9:2, Zechariah 7:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:24,%20Jeremiah%2025:11-12,%20Jeremiah%2029:10,%20Daniel%209:2,%20Zechariah%207:5)
+  First resurrection                                    1000 years                [Revelation 20:5-6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:5-6)
+
+  : [What regularity of
+  changes?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20regularity%20of%20changes%3F){dated="2023-09-27T07:55:00"
+  hiswordid="157192"}
+
++-----------------------------------+-----------------------------------+
+| Procedure, function or method     | Commentary                        |
+| call                              |                                   |
++===================================+===================================+
+| Pascal language                   | A procedure does not return a     |
+|                                   | value, whereas a function does.   |
++-----------------------------------+-----------------------------------+
+| C# language                       |   Metho                           |
+|                                   | d call                 Commentary |
+|                                   |   --------                        |
+|                                   | ------------------- ------------- |
+|                                   | --------------------------------- |
+|                                   | --------------------------------- |
+|                                   | --------------------------------- |
+|                                   | --------------------------------- |
+|                                   | --------------------------------- |
+|                                   |   Instance method call        Cal |
+|                                   | ling a method of a class instance |
+|                                   |   Static method call          C   |
+|                                   | alling a static method of a class |
+|                                   |   Extension meth                  |
+|                                   | od call       Calling an instance |
+|                                   |  method that was added to a class |
+|                                   |   Asynchronous method call        |
+|                                   |    Calling a method and not waiti |
+|                                   | ng for the completion of the task |
+|                                   |   Base method call                |
+|                                   |      Calling an inherited method  |
+|                                   | which may have an override clause |
+|                                   |   Method                          |
+|                                   |  overloading          Calling a m |
+|                                   | ethod that exhibits the signature |
+|                                   |                                   |
+|                                   | Operator overloading        Conca |
+|                                   | tenation is an example of the str |
+|                                   | ing addition operator, +, overloa |
+|                                   | ding. StringBuilder is preferred. |
+|                                   |   Cons                            |
+|                                   | tructor method          To create |
+|                                   |  and initialize a class instance. |
+|                                   |   Constr                          |
+|                                   | uctor static method   To implictl |
+|                                   | y rely on the execution of a one- |
+|                                   | off method the first time the cla |
+|                                   | ss is referenced. This is useful  |
+|                                   | for initializing static variables |
+|                                   |  and building a class collection. |
++-----------------------------------+-----------------------------------+
+
+: [How will you wait on time as the period
 itself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20will%20you%20wait%20on%20time%20as%20the%20period%20itself%3F){dated="2023-09-27T17:59:00"
 hiswordid="157198"} Callable unit. At Arthur Andersen/Warner Music,
 Electronic Data Systems (EDS)/Westpac Bank and Macquarie Bank, he did
 not know when to go. When we look at the Bible, when does it start a new
 use-case by explicitly mentioning the beginning period of the occasion?
 
-Procedure, function or method call
++-----------------------------------+-----------------------------------+
+| Type                              | Commentary                        |
++===================================+===================================+
+| Wake-up orientation database      | This information is currently     |
+| table                             | being interpreted textually. An   |
+|                                   | image, and even more so, a video  |
+|                                   | of the changes in position and    |
+|                                   | direction when sleeping will      |
+|                                   | offer better insight. For the     |
+|                                   | visually implied, the less        |
+|                                   | bandwidth-intensive text may      |
+|                                   | still be satisfactory.            |
++-----------------------------------+-----------------------------------+
+| Non-Alphabetic                    | AlphabetSequence may not be       |
+|                                   | appropriate for people that use   |
+|                                   | glyphs or sign languages.         |
++-----------------------------------+-----------------------------------+
+| Structured query language (SQL)   | The proposed changes which will   |
+|                                   | offer query customization?        |
+|                                   |                                   |
+|                                   | -   The author transitioned from  |
+|                                   |     a multi-column query to a     |
+|                                   |     single-line query which has a |
+|                                   |     tendency to return more       |
+|                                   |     results because it is not     |
+|                                   |     particular. Context           |
+|                                   |     fine-tuning is a suggestion.  |
+|                                   | -   With search-engine queries,   |
+|                                   |     the author proposes a         |
+|                                   |     query-language. This          |
+|                                   |     potentially affords better    |
+|                                   |     resultset granularity         |
+|                                   |     restriction, arrangement      |
+|                                   |     option, and maturity of use   |
+|                                   |     compensation.                 |
++-----------------------------------+-----------------------------------+
 
-Commentary
-
-Pascal language
-
-A procedure does not return a value, whereas a function does.
-
-C# language
-
-  Method call                 Commentary
-  --------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Instance method call        Calling a method of a class instance
-  Static method call          Calling a static method of a class
-  Extension method call       Calling an instance method that was added to a class
-  Asynchronous method call    Calling a method and not waiting for the completion of the task
-  Base method call            Calling an inherited method which may have an override clause
-  Method overloading          Calling a method that exhibits the signature
-  Operator overloading        Concatenation is an example of the string addition operator, +, overloading. StringBuilder is preferred.
-  Constructor method          To create and initialize a class instance.
-  Constructor static method   To implictly rely on the execution of a one-off method the first time the class is referenced. This is useful for initializing static variables and building a class collection.
-
-Steer
-
-Type
-
-Commentary
-
-Wake-up orientation database table
-
-This information is currently being interpreted textually. An image, and
-even more so, a video of the changes in position and direction when
-sleeping will offer better insight. For the visually implied, the less
-bandwidth-intensive text may still be satisfactory.
-
-Non-Alphabetic
-
-AlphabetSequence may not be appropriate for people that use glyphs or
-sign languages.
-
-Structured query language (SQL)
-
-The proposed changes which will offer query customization?
-
--   The author transitioned from a multi-column query to a single-line
-    query which has a tendency to return more results because it is not
-    particular. Context fine-tuning is a suggestion.
--   With search-engine queries, the author proposes a query-language.
-    This potentially affords better resultset granularity restriction,
-    arrangement option, and maturity of use compensation.
+: Steer
 
 > ### Data Science A Hands-On Introduction {#DataScienceAHandsOnIntroduction}
 >
@@ -3094,35 +2785,17 @@ The proposed changes which will offer query customization?
 
 > ### How does the work of the author accompany the Bible? {#how-does-the-work-of-the-author-accompany-the-bible dated="2022-06-14T12:44:00"}
 >
-> The Terminology of Machine Learning in Relation to AlphabetSequence
+>   Term                                             Meaning
+>   ------------------------------------------------ ---------------------------------------------------------------
+>   Training dataset or training set                 The recording of the word in the database.
+>   Example (or data point, data instance, sample)   Each database row or record.
+>   Predict Label (or target)                        The corresponding Bible text.
+>   Linearity assumption                             The features alphabet places.
+>   Weight                                           Since the word is the only feature, it is the only influence.
+>   Bias                                             A starting value.
 >
-> Term
-
-Meaning
-
-Training dataset or training set
-
-The recording of the word in the database.
-
-Example (or data point, data instance, sample)
-
-Each database row or record.
-
-Predict Label (or target)
-
-The corresponding Bible text.
-
-Linearity assumption
-
-The features alphabet places.
-
-Weight
-
-Since the word is the only feature, it is the only influence.
-
-Bias
-
-A starting value.
+>   : The Terminology of Machine Learning in Relation to
+>   AlphabetSequence
 
 (Dive into Deep Learning)
 
@@ -3182,6 +2855,7 @@ A starting value.
 >
 > #### Elements {#SearchEngineOptimizationElements dated="2023-10-23T20:30:00"}
 >
+> ::: {dated="2023-10-25T16:58:00"}
 > It is only recently that the author has become aware of [HTML
 > composition.]{dated="2023-10-25T17:06:00"}
 >
@@ -3195,6 +2869,7 @@ A starting value.
 >   Alt attribute on the img tag   Visually impaired people have difficulty comprehending images.
 >   Fully qualified links          Relative links meet the author\'s requirement, [ since is hostable on external sites. ]{dated="2023-10-26T14:25:00" contactid="402" commentary="2023-10-26T14:33:00 Dizzy sleepy."}
 >   Sitemaps (both XML and HTML)   A sitemap documents the files and their relationships.
+> :::
 
 (Bruce Clay).
 
@@ -3226,6 +2901,7 @@ commentary="Servants...friends. Client/Server...Internet."} ( [John
 15:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2015:15)
 )?
 
+::: {dated="2021-04-18T10:43:00"}
 The author is working on variations of AlphabetSequence: These are not
 suitable for general use. These are man\'s exposition of God\'s word. [
 These are positional. ]{dated="2021-08-15T17:40:00" contactid="10512"
@@ -3239,10 +2915,12 @@ hiswordid="149206"}
     good.](http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/WhoIsYourManagerCrazyMisterMartinMisterMartinAsAGood.html)
     The first word is the BookID; the second word is the ChapterID; and
     the third word is the VerseID.
+:::
 
 Biblical numbers for calculation. Biblical separation into Testaments,
 books, chapters and verses for referencing.
 
+::: {dated="2024-01-05T15:54:00"}
 Biblical generation - 40 Biblical years
 
 -   2007\...2008 Common Era - the author is 40 years old: the author
@@ -3250,7 +2928,9 @@ Biblical generation - 40 Biblical years
 -   2021\...2024 Common Era - the biological mother of the author is 80
     years old: the word recorded by the author is time relevance
     specific.
+:::
 
+::: {dated="2024-11-20T09:27:00"}
 [When I am doing
 this?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=When%20I%20am%20doing%20this%3F){dated="2024-11-20T09:27:00"
 commentary="When I am doing this? What do I become?" location="Shower"}
@@ -3264,6 +2944,7 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 -   Post-condition ( [Genesis 49:9, Revelation
     5:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2049:9,%20Revelation%205:5)
     )
+:::
 
 > ### 2024-11-13T19:12:00 Translation {#Translation}
 >
@@ -3447,13 +3128,22 @@ lifted up his eyes. 3rd block from east. 5 poles east. 3 poles west.
 
 ### 2025-03-11T08:20:00 DataType {#DataType dated="2025-03-11T08:20:00"}
 
-  DataType      Software                                                                                                                                                                                                                                                                    Commentary                                            [ 2025-03-21T21:08:00 I am standing among the north-west seats. I was told that out of the 3 promoted people, 2 were made mayors. There is a path to the north-east. ]{dated="2025-03-21T21:08:00"} 2025-03-21T22:47:00 [It is not the only thing.](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html?word=It%20is%20not%20the%20only%20thing.){dated="2025-03-21T22:47:00" commentary="Does it give it context?"} 2025-03-21T22:58:00 [Was this all that was said?](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html?word=Was%20this%20all%20that%20was%20said%3F){dated="2025-03-21T22:58:00"}
-  ------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Varchar       [GetAPage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html)                                                                                                                                                                                   This is the most prevalent, and earlier focused on.   
-  Integer       [GetAPage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html) [DateAdd.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateAdd.aspx) [Number15431.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/Number15431.html)                                                         
-  Date          [DateDifference.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateDifference.aspx) [DateYear2010Month09Day09.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateYear2010Month09Day09.html)                                                                                                           Jesus Christ refrains from declaring judgment day ([Luke 4:19-21, Isaiah 61:1-2](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%204:19-21,%20Isaiah%2061:1-2)).
-  Time          [TimeHour4Minute44.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/TimeHour4Minute44.html)                                                                                                                                                                     2025-03-11T08:20:00 12-hour clock, so far.            The time of the day is emphasized; the ninth hour is 2025-03-22T00:12:00 explicitly mentioned ([Matthew 27:46](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2027:46)).
-  Percent (%)   [BiblePercentage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/BiblePercentage.html) [IAmSeventyPercent70SheolOfAmdahlAFit.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.html)                                                                             and there died the third part of the creatures which were in the sea, \`even\' they that had life; and the third part of the ships was destroyed ([Revelation 8:9](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%208:9)).
+  DataType      Software                                                                                                                                                                                                                                                                    Commentary
+  ------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Varchar       [GetAPage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html)                                                                                                                                                                                   This is the most prevalent, and earlier focused on.
+  Integer       [GetAPage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html) [DateAdd.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateAdd.aspx) [Number15431.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/Number15431.html)   
+  Date          [DateDifference.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateDifference.aspx) [DateYear2010Month09Day09.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateYear2010Month09Day09.html)                                                     Jesus Christ refrains from declaring judgment day ([Luke 4:19-21, Isaiah 61:1-2](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%204:19-21,%20Isaiah%2061:1-2)).
+  Time          [TimeHour4Minute44.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/TimeHour4Minute44.html)                                                                                                                                                                     12-hour clock, so far. [ The time of the day is emphasized; the ninth hour is 2025-03-22T00:12:00 explicitly mentioned ([Matthew 27:46](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2027:46)). ]{dated="2025-03-22T00:08:00" hiswordid="165655"}
+  Percent (%)   [BiblePercentage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/BiblePercentage.html) [IAmSeventyPercent70SheolOfAmdahlAFit.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.html)                       and there died the third part of the creatures which were in the sea, \`even\' they that had life; and the third part of the ships was destroyed ([Revelation 8:9](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%208:9)).
+
+  : [ 2025-03-21T21:08:00 I am standing among the north-west seats. I
+  was told that out of the 3 promoted people, 2 were made mayors. There
+  is a path to the north-east. ]{dated="2025-03-21T21:08:00"}
+  2025-03-21T22:47:00 [It is not the only
+  thing.](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html?word=It%20is%20not%20the%20only%20thing.){dated="2025-03-21T22:47:00"
+  commentary="Does it give it context?"} 2025-03-21T22:58:00 [Was this
+  all that was
+  said?](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/GetAPage.html?word=Was%20this%20all%20that%20was%20said%3F){dated="2025-03-21T22:58:00"}
 
 2025-03-17T11:47:00 [Side with church\... or side with the
 children](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Side%20with%20church...%20or%20side%20with%20the%20children%3F){dated="2025-03-17T11:47:00"
@@ -3624,25 +3314,22 @@ contactid="1000"}\
 
 ### 2025-02-24T13:07:00 [With equal remembrance](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=With%20equal%20remembrance.){dated="2025-02-24T13:07:00" hiswordid="165432" location="Union City BART Station. I saw a tall, slim and slender African man evade the legal exit gate and open the west door, eastward."} {#WithEqualRemembrance dated="2025-02-24T13:07:00"}
 
-Prophecy
-
-1.  Passover Lamb: Our LORD\'s Supper
-2.  Beware of the Yeast of the Pharisees ( [Matthew
-    16:5-12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2016:5-12)
-    )
-3.  Fig tree ( [Matthew
-    21:19-21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2021:19-21)
-    )
-4.  Cock crow ( [Matthew 26:34, Mark
-    14:72](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2026:34,%20Mark%2014:72)
-    )
-
-Fulfillment
-
-1.  Temptation of Christ ( [Matthew 4:1-11, Luke 4:1-13, Deuteronomy
-    8:3, Deuteronomy 6:13, Deuteronomy 6:16, Mark
-    1:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%204:1-11,%20Luke%204:1-13,%20Deuteronomy%208:3,%20Deuteronomy%206:13,%20Deuteronomy%206:16,%20Mark%201:13)
-    )
+-   Prophecy
+    1.  Passover Lamb: Our LORD\'s Supper
+    2.  Beware of the Yeast of the Pharisees ( [Matthew
+        16:5-12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2016:5-12)
+        )
+    3.  Fig tree ( [Matthew
+        21:19-21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2021:19-21)
+        )
+    4.  Cock crow ( [Matthew 26:34, Mark
+        14:72](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2026:34,%20Mark%2014:72)
+        )
+-   Fulfillment
+    1.  Temptation of Christ ( [Matthew 4:1-11, Luke 4:1-13, Deuteronomy
+        8:3, Deuteronomy 6:13, Deuteronomy 6:16, Mark
+        1:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%204:1-11,%20Luke%204:1-13,%20Deuteronomy%208:3,%20Deuteronomy%206:13,%20Deuteronomy%206:16,%20Mark%201:13)
+        )
 
 ### 70th Week of Daniel ( [Daniel 9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:24-27) ) 2025-02-24T16:25:00 [Do I bring the future as one of ours, or one of people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Do%20I%20bring%20the%20future%20as%20one%20of%20ours,%20or%20one%20of%20people%3F){dated="2025-02-24T16:25:00" hiswordid="165433"} {#DoIBringTheFutureAsOneOfOursOrOneOfPeople dated="2025-02-24T16:25:00"}
 
@@ -3656,7 +3343,8 @@ Fulfillment
 
 ### 2025-02-23T16:30:00 [Company osi data\... osi yemi.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Company%20osi%20data...%20osi%20yemi.){dated="2025-02-23T16:30:00" hiswordid="165424" contactid="9332"} {#CompanyOsiDataOsiYemi dated="2025-02-23T16:30:00"}
 
-\
+<div>
+
 2025-02-24T00:52:00 In the center-east is a wheel.\
 2025-02-24T06:35:00 [Ending
 lane.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Ending%20lane.){dated="2025-02-24T06:35:00"
@@ -3673,6 +3361,8 @@ hiswordid="165430"} Feminine.\
 2025-02-24T08:13:00\...2025-02-24T08:19:00 microsoft windows operating
 system, mozilla firefox browser will not refresh nor go to a link from
 the address bar.
+
+</div>
 
   Datetime              Word                                 Commentary                          World Event                                                               Place   Person   Scripture Reference
   --------------------- ------------------------------------ ----------------------------------- ------------------------------------------------------------------------- ------- -------- ---------------------
@@ -4208,6 +3898,7 @@ own record.
 
 ### 2024-10-24T06:54:00 [We have to accept\... we are no.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=We%20have%20to%20accept...%20we%20are%20no.){dated="2024-10-24T06:54:00" hiswordid="164243" contactid="2896" url="preply.com/en/question/abbreviation-for-number"} {#WeHaveToAcceptWeAreNo}
 
+::: {dated="2024-10-24T06:54:00"}
 The 3 private sectors jobs I held in Charlotte, North Carolina (NC)
 were:
 
@@ -4221,6 +3912,7 @@ were:
 These 3 non-academic Central Piedmont Community College (CPCC) tutor
 jobs offered me the opportunity to complement my programming career with
 writing.
+:::
 
 ### 2024-10-19T03:08:00 [What is suitable\... for replacement?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20suitable...%20for%20replacement%3F){dated="2024-10-19T03:08:00" hiswordid="164184" contactid="2062" url="getpocket.com/explore/item/too-rich-too-comfortable-why-japan-is-so-resistant-to-change-even-as-disaster-looms?utm_source=pocket-newtab-en-us"} {#WhatIsSuitableForReplacement}
 
@@ -4319,6 +4011,7 @@ will maintain\... a\... instance of myself?
     1:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20John%201:7)
     )
 
+::: {dated="2024-08-22T15:53:00"}
 [No separation\... in
 bonding.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=No%20separation...%20in%20bonding.){dated="2024-08-22T15:53:00"
 hiswordid="163596"} [What did He ask for unity
@@ -4342,6 +4035,7 @@ scripturereference="Genesis 2:24, Genesis 4:9"}
 become His
 subject?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=You%20are%20not%20asking%20that%20you%20may%20become%20Him...%20you%20are%20asking%20that%20you%20become%20His%20subject%3F){dated="2024-08-22T20:20:00"
 hiswordid="163600" contactid="3585"}
+:::
 
 ### 2024-08-20T05:35:00 [What did he find himself supporting?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20he%20find%20himself%20supporting%3F){dated="2024-08-20T05:35:00" hiswordid="163576" contactid="15485"} 2024-11-14T18:38:00 [What\... do I have for the vocation I participate in](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What...%20do%20I%20have%20for%20the%20vocation%20I%20participate%20in%3F){dated="2024-11-14T18:38:00" hiswordid="163576" url="james@xphealth.co"} ( [Numbers 3:8, Numbers 24, Romans 1, Acts 13:38](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%203:8,%20Numbers%2024,%20Romans%201,%20Acts%2013:38) )? I heard the front door forcibly open ajar.  {#WhatDidHeFindHimselfSupporting dated="2024-08-20T05:35:00"}
 
@@ -4402,12 +4096,18 @@ hiswordid="163600" contactid="3585"}
 -   SQL script generation, .sql, is better than Microsoft SQL Server
     backup, .bak. Text is more factual than video.
 
+<div>
+
 [What true identity lies
 apart?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20true%20identity%20lies%20apart%3F){dated="2024-08-02T16:56:00"
 hiswordid="163409" contactid="13168" location="4789 Mallard Common"}
 
 -   The Messiah
 -   The king
+
+</div>
+
+<div>
 
 [How my organization is the
 best?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20my%20organization%20is%20the%20best%3F){dated="2024-07-31T10:55:00"
@@ -4421,6 +4121,10 @@ location="7-Eleven. 2230 Stevens Creek Boulevard. San Jose, California (CA) 9511
 forever?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20measures,%20forever%3F){dated="2024-08-01 15:25:52.547"
 hiswordid="163392"}
 
+</div>
+
+<div>
+
 The author is linking words spoken to related verses and dictionaries.
 
 -   [BibleReference](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleReference.html)
@@ -4430,6 +4134,8 @@ The author is linking words spoken to related verses and dictionaries.
 -   [Prophecy and Fulfillment: Keyword
     Variation](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/ToObtainTheLastYouNeedToFavorTheFirst.html){hiswordid="144539"
     contactid="2821"}
+
+</div>
 
 ### Relational Database Versus (VS) Artificial Intelligence (AI). Microsoft SQL Server Versus (VS) Machine Learning (ML) Scikit-learn. That is what they based the truth on. {#RelationalDatabaseVersusArtificialIntelligence dated="2024-07-29T21:21:00" hiswordid="163362" contactid="15240" url="w3schools.com/python/python_ml_multiple_regression.asp"}
 
@@ -4544,11 +4250,9 @@ The author is linking words spoken to related verses and dictionaries.
                     translation                         
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2024-07-21T19:07:21 President Joe Biden [Where I feel\... we have
-opportunity?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20I%20feel...%20we%20have%20opportunity%3F){contactid="2443"
-hiswordid="163295"
-location="I was walking on Paseo Padre Parkway just before Blackstone Way, south-east. At Dulhan Grocery Riya was wearing a yellow t-shirt and a pair of blue jeans trousers."
-url="apnews.com/article/biden-drops-out-2024-election-ddffde72838370032bdcff946cfc2ce6"}
+### 2024-07-21T19:07:21 President Joe Biden [Where I feel\... we have opportunity?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20I%20feel...%20we%20have%20opportunity%3F){contactid="2443" hiswordid="163295" location="I was walking on Paseo Padre Parkway just before Blackstone Way, south-east. At Dulhan Grocery Riya was wearing a yellow t-shirt and a pair of blue jeans trousers." url="apnews.com/article/biden-drops-out-2024-election-ddffde72838370032bdcff946cfc2ce6"} {#WhereIFeelWeHaveOpportunity dated="2024-07-21T19:07:21"}
+
+<div>
 
 -   [What the society produce? What the society produce\... what can
     happen?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20the%20society%20produce%3F%20What%20the%20society%20produce...%20what%20can%20happen%3F){dated="2024-07-25T03:34:00"
@@ -4588,7 +4292,6 @@ url="apnews.com/article/biden-drops-out-2024-election-ddffde72838370032bdcff946c
     ( [1 Corinthians 5:7, Acts
     23:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%205:7,%20Acts%2023:5){dated="2024-07-22T13:56:00"}
     )?
-    2024-07-22T20:51:00
 -   [I want not
     a\...](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20want%20not%20a...){dated="2024-07-22T20:51:00"
     hiswordid="163308" contactid="9437"}\
@@ -4598,7 +4301,11 @@ url="apnews.com/article/biden-drops-out-2024-election-ddffde72838370032bdcff946c
     sibling said I should select their login ID and configure a database
     record. 20:51 headache, urine.
 
+</div>
+
 Word Type
+
+<div>
 
 -   Naming ( [Genesis 2:19-20, Genesis 2:23, Genesis 3:20, Genesis 4:1,
     Genesis
@@ -4613,6 +4320,9 @@ Word Type
     ) [to each entirely its
     own.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=to%20each%20entirely%20its%20own.){hiswordid="163286"}
 
+</div>
+
+::: {#WhatDoYouDoWithSoftwareOnceYouProduce dated="2024-07-12T06:15:00"}
 2024-07-12T06:15:00 What do you do with software, once you produce? It
 specifies a beginning, and it specifies a period.
 
@@ -4623,7 +4333,9 @@ specifies a beginning, and it specifies a period.
         is an industry standard.
     -   The author made a transition from one-time manufactured hardware
         to maintainable software.
+:::
 
+::: {#SortOrder dated="2024-07-12T09:12:00" contactid="15193"}
 2024-07-12T09:12:00 Santorini, Greece t-shirt. The two elderly females
 are probably Asian and Caucasian. They were standing at the intersection
 of Fremont Boulevard and Paseo Padre Parkway, north-east, and they
@@ -4657,7 +4369,9 @@ scripture reference and opinions.\
 2024-07-12T21:22:00 [Making a protection\... making a
 projection.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Making%20a%20protection...%20making%20a%20projection.){dated="2024-07-12T21:22:00"
 hisword="163207" contactid="2808"}
+:::
 
+::: {#WhatIfWeCouldGiveDescription dated="2024-07-04T18:21:00"}
 [What if we could give
 description?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20if%20we%20could%20give%20description%3F){dated="2024-07-04T18:52:00"
 hisword="163134"
@@ -4668,7 +4382,9 @@ location="Lake Merritt BART Station from El Cerrito BART Station to Union City B
 -   Observation of result: Good
 -   Identity: Day of the week, chronologically, naming
 -   Commentary with reference to living entities
+:::
 
+> ::: {#InternationalBusinessMachinesIBM dated="2024-07-05T12:28:00"}
 > International Business Machines (IBM):
 >
 > -   [An association of being alike\... is the assurance of the
@@ -4708,9 +4424,11 @@ location="Lake Merritt BART Station from El Cerrito BART Station to Union City B
 >     -   In San Jose, California, the author attended a conference that
 >         was hosted by IBM. Among the invitees were an African American
 >         mother and daughter
+> :::
 
 (Tiffany McDowell, 2024-07-04).
 
+::: {dated="2024-03-26T06:21:00"}
 How-to verify the work of the spirit?
 
 -   Is it compatible with the Bible ( [John 10:30, John 17:22, 1 John
@@ -5372,6 +5090,8 @@ hiswordid="158988" contactid="5168"
 url="repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content"}
 
 Speak face-to-face
+:::
+::::::::::::::::::::::::
 
 Dream or vision
 
