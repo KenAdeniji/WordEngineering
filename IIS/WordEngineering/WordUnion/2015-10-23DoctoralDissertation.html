@@ -65,6 +65,23 @@
 				text-indent: 25px;
 				/* font-family: Times, "Times New Roman", serif; */ /* 2021-09-17T11:03:00 http://www.SawMac.com/css */
 			}
+			
+			/*
+				2024-08-21T14:34:00 http://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/prefix
+			*/
+			@counter-style designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions
+			{
+			  system: numeric;
+			  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+			  prefix: "Principle ";
+			  suffix: ": ";
+			}
+
+			.designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions
+			{
+			  list-style: designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions;
+			  padding-left: 10ch;
+			}
 		</style>
 	<!--
 		2015-10-23	Created.
@@ -86,8 +103,8 @@
 		2024-03-28 15:11:46.273
 			documentLastModifiedElement.innerText = "Last modified: " + document.lastModified;
 			copyrightYearElement.innerText = (new Date()).getFullYear();
-			<span id="documentLastModified"><span><br/>
-			Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br/>
+			<span id="documentLastModified"><span><br>
+			Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br>
 		2024-05-15T05:06:00	The...author's summary page.
 			2025-03-03T10:46:00 What continued have I used?
 			2025-04-17T06:16:00	Do we choose... a realization of Him (1 Samuel 3:19)?
@@ -783,7 +800,7 @@
 				a recent success is with the <a href="http://translate.google.com">http://translate.google.com</a> web page.
 			</p>
 			
-			<p>	
+			<div>	
 				The HisWord table's most important column, 
 				as the name suggests, is the word column,
 				which is either English or Yoruba; or a mixture of both languages.
@@ -820,7 +837,7 @@
 						</a>
 					</li>
 				</ol>
-			</p>
+			</div>
 
 			<p>	
 				The word column is a potential natural primary key, since duplicates are rare.
@@ -977,7 +994,7 @@
 				<li>Column: It is a physical actualized attribute.</li>
 			</ol>
 
-			<q cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-05T07:32:00">
+			<blockquote cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-05T07:32:00">
 
 			<table id="FunctionalDependencies" data-Dated="2024-11-05T07:32:00">
 				<caption data-Dated="2024-11-05T07:33:00">Functional Dependencies</caption>
@@ -1002,14 +1019,14 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="3">Determination is achieved through computed columns.</th>
+						<td colspan="3">Determination is achieved through computed columns.</td>
 					</tr>
 				</tfoot>
 			</table>			
 		
-			</q> (Allen G. Taylor, 2024).
+			</blockquote> (Allen G. Taylor, 2024).
 		
-			<q cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-15T53:00:00">
+			<blockquote cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-15T53:00:00">
 			
 			<h3 id="IndexQueryType" data-Dated="2024-11-15T15:53:00">Index Query Type</h3>
 			
@@ -1021,14 +1038,14 @@
 						<th data-Dated="2024-11-21T02:46:00">Example</th>
 						<th>Structured Query Language (SQL)</th>
 					</tr>
-				<thead>
+				</thead>
 				<tbody data-Dated="2024-11-21T02:46:00">
 					<tr id="Pointquery" data-Dated="2024-11-15T15:56:00">
 						<td>Point query</td>
 						<td>It will return only 1 record, and it is restricted by an equality condition on the primary key or unique index.</td>
 						<td>Useful for searching for a particular verse.</td>
 						<td>
-	<pre 2024-11-18T15:51:00>
+	<pre data-Dated="2024-11-18T15:51:00">
 	SELECT *
 	FROM Bible..Scripture_View
 	WHERE VerseIDSequence = 1
@@ -1040,7 +1057,7 @@
 						<td>It may return more than 1 record, as there may be multiple records. It is restricted by an equality condition on part of a potential composite key.</td>
 						<td>Useful for searching for a particular chapter or book.</td>
 						<td>
-	<pre 2024-11-18T15:51:00>
+	<pre data-Dated="2024-11-18T15:51:00">
 	SELECT *
 	FROM Bible..Scripture_View
 	WHERE ChapterIDSequence = 1
@@ -1052,14 +1069,14 @@
 						<td>It returns a set of records whose values are within an interval or half interval. If it is restricted by both lower and upper bounds, then there is an interval. It is a half interval, if it specifies only one bound.</td>
 						<td>Useful for searching for consecutive verses, chapters or books.</td>
 						<td>
-	<pre 2024-11-19T23:47:00>
+	<pre data-Dated="2024-11-19T23:47:00">
 	SELECT *
 	FROM Bible..Scripture_View
 	WHERE VerseIDSequence BETWEEN 1 AND 10
 	;
 	SELECT *
 	FROM Bible..Scripture_View
-	WHERE VerseIDSequence <= 5
+	WHERE VerseIDSequence &lt;= 5
 	</pre>	
 						</td>
 					</tr>
@@ -1068,7 +1085,7 @@
 						<td>The set is the match of an attribute.</td>
 						<td>The author is unfamiliar with any use-case where only the first part of the wildcard is searched. The first part of the scripture reference is similar. For the BibleWord searches, the author uses like for match queries.</td>
 						<td>
-	<pre 2024-11-21T03:52:00>
+	<pre data-Dated="2024-11-21T03:52:00">
 SELECT *
 FROM Bible..Scripture_View
 WHERE KingJamesVersion LIKE
@@ -1086,7 +1103,7 @@ WHERE KingJamesVersion LIKE
 						<td>It returns either the minimum or maximum extreme.</td>
 						<td>Statistics</td>
 						<td>
-	<pre 2024-11-21T17:46:00>
+	<pre data-Dated="2024-11-21T17:46:00">
 SELECT *
 FROM Bible..Scripture_View
 WHERE VerseIDSequence =
@@ -1102,7 +1119,7 @@ WHERE VerseIDSequence =
 						<td>The records returned are sorted.</td>
 						<td>The results of the author are normally in ascending order.</td>
 						<td>
-	<pre 2024-11-21T18:02:00>
+	<pre data-Dated="2024-11-21T18:02:00">
 SELECT TOP 10 *
 FROM Bible..Scripture_View
 ORDER BY VerseIDSequence DESC
@@ -1114,7 +1131,7 @@ ORDER BY VerseIDSequence DESC
 						<td>The records returned are grouped.</td>
 						<td>Rarely does the author group rows by issuing the group by clause.</td>
 						<td>
-	<pre 2024-11-21T18:09:00>
+	<pre data-Dated="2024-11-21T18:09:00">
 SELECT BookGroup, COUNT(BookGroup ) BookGroupVersesCount
 FROM Bible..Scripture_View
 GROUP BY BookGroup
@@ -1126,32 +1143,14 @@ ORDER BY BookGroup
 						<td>Equi-join query</td>
 						<td>The records are retrieved from multiple sources.</td>
 						<td>The author uses views for table joins.</td>
-						<td/>
+						<td></td>
 					</tr>
 				</tbody>
 			</table>
 			
-			</q> (Allen G. Taylor, 2024).
+			</blockquote> (Allen G. Taylor, 2024).
 
-<style>
-/*
-	2024-08-21T14:34:00 http://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/prefix
-*/
-@counter-style designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions
-{
-  system: numeric;
-  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
-  prefix: "Principle ";
-  suffix: ": ";
-}
-
-.designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions
-{
-  list-style: designingSoftwareArchitecturesAPracticalApproach_MakingDesignDecisions;
-  padding-left: 10ch;
-}
-</style>
-			<q 
+			<blockquote 
 				cite="#bibliographyHumbertoCervantes_RickKazman20240602"
 				data-Dated="2024-08-21T14:34:00"
 			>
@@ -1173,7 +1172,7 @@ ORDER BY BookGroup
 					</li>
 					<li data-Dated="2024-08-21T16:33:00">
 						Check Assumptions
-						<br/>
+						<br>
 						<ul>
 							<li>
 								This whole thing started with keeping 
@@ -1191,13 +1190,13 @@ ORDER BY BookGroup
 					</li>
 					<li data-Dated="2024-08-21T18:21:00">
 						Explore Contexts
-						<br/>
+						<br>
 						Information re-use was the driving force of this software engineering.
 						The author sought to learn programming and retain knowledge.
 					</li>
 					<li data-Dated="2024-08-21T18:32:00">
 						Anticipate Risks
-						<br/>
+						<br>
 						The undesirable outcome and their probability of re-occurrence will include:
 						<ul>
 							<li>Data loss or corruption because of issuing the database modification command and lack of timely archiving</li>
@@ -1210,9 +1209,9 @@ ORDER BY BookGroup
 								>
 									Vendor withdrawal of support
 								</a>
-								<br/>
+								<br>
 								Microsoft:
-								<br/>
+								<br>
 								<ul>
 									<li>Introduced .NET core and Model-view-controller (MVC).</li>
 									<li>Inability to restore deprecated Microsoft SQL Server backup versions.</li>
@@ -1225,13 +1224,13 @@ ORDER BY BookGroup
 					</li>
 					<li data-Dated="2024-08-21T20:49:00">
 						Assign Priorities
-						<br/>
+						<br>
 						The author prefers to first build and implement his strengths and specialties in the back-end 
 						(database and process logic), prior to designing the creative user interface.
 					</li>
 					<li data-Dated="2024-08-22T11:08:00">
 						Define Time Horizon
-						<br/>
+						<br>
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20period%20has%20God%20used%3F"
 							data-Dated="2024-08-22T11:14:00"
@@ -1250,7 +1249,7 @@ ORDER BY BookGroup
 						data-url="survey.devographics.com/en-US/survey/state-of-css/2024?source=announcement_email"
 					>
 						Generate Multiple Solution Options
-						<br/>
+						<br>
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20versatile%20am%20I...%20at%20amending%20others%3F"
 							data-Dated="2024-08-23T08:41:00"
@@ -1270,7 +1269,7 @@ ORDER BY BookGroup
 						data-Dated="2024-08-23T19:52:00"
 					>
 						Design Around Constraints
-						<br/>
+						<br>
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Relational%20databases%20offer%20the%20ability%20to%20set%20constraints."
 							data-Dated="2024-08-23T19:52:00"
@@ -1289,7 +1288,7 @@ ORDER BY BookGroup
 						data-Dated="2024-08-25T21:36:00"
 					>
 						Weigh the Pros and Cons
-						<br/>
+						<br>
 						<ul>
 							<li
 								data-Dated="2024-08-25T21:36:00"
@@ -1311,9 +1310,9 @@ ORDER BY BookGroup
 					</li>
 				</ol>
 			<p>
-			</q> (Humberto Cervantes, Rick Kazman June 2, 2024).
+			</blockquote> (Humberto Cervantes, Rick Kazman June 2, 2024).
 			
-			<q 
+			<blockquote 
 				cite="#bibliographyHitachi20230928"
 				data-Dated="2024-02-06T15:21:00"
 			>
@@ -1335,9 +1334,9 @@ ORDER BY BookGroup
 				</li>
 			</ul>
 			
-			</q> (Hitachi 2023).
+			</blockquote> (Hitachi 2023).
 
-			<q cite="#bibliographyCraigMullins20231218"	data-Dated="2024-01-29T22:31:00">
+			<blockquote cite="#bibliographyCraigMullins20231218"	data-Dated="2024-01-29T22:31:00">
 
 			<h3 id="DatabasePerformance" data-Dated="2024-01-29T22:35:00">Database Performance</h3>
 			
@@ -1379,19 +1378,17 @@ ORDER BY BookGroup
 				</li>
 			</ul>
 			
-			</q> (Craig Mullins, 2023-12-18)
+			</blockquote> (Craig Mullins, 2023-12-18)
 			
-			<q cite="#bibliographyBenForta2017" data-Dated="2023-12-01T20:08:00">
+			<blockquote cite="#bibliographyBenForta2017" data-Dated="2023-12-01T20:08:00">
 
 			<h3 id="DatabaseManagementSystemDBMS" data-Dated="2023-12-02T20:28:00">Database Management System (DBMS)</h3>
 			
-			<p data-Dated="2023-12-02T20:31:00">
-				There are 2 types of DBMS. These are:
-				<ul>
-					<li>Shared file-based: For example, Microsoft Access</li>
-					<li>Client/Server: For example, Oracle, SQL Server, MySQL</li>
-				</ul>
-			</p>
+			There are 2 types of DBMS. These are:
+			<ul>
+				<li>Shared file-based: For example, Microsoft Access</li>
+				<li>Client/Server: For example, Oracle, SQL Server, MySQL</li>
+			</ul>
 			
 			<h3 id="SQLUsage" data-Dated="2023-12-01T20:08:00">SQL Usage</h3>
 			
@@ -1472,7 +1469,7 @@ ORDER BY BookGroup
 				</thead>
 				<tbody>
 					<tr>
-						<td>=, <>, !=, <, <=, !<, >, >= !></td>
+						<td>=, &lt;&gt;, !=, &lt;, &lt;=, !&lt;, &gt;, &gt;= !&gt;</td>
 						<td>
 							The operators listed will check for a single value.
 							The operators that consist of !, will check for non-matches.
@@ -1484,10 +1481,10 @@ ORDER BY BookGroup
 								In most cases, rarely is this in use.
 							</a>
 							<span
-								url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en"
+								data-url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en"
 								data-Dated="2023-12-01T00:00:00"
 							>
-								!< or/and !>.
+								!&lt; or/and !&gt;.
 							</span>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=This%20is%20the%20first%20time...he%20is%20becoming%20aware...of%20these%20expressions."
@@ -1541,7 +1538,7 @@ ORDER BY BookGroup
 				</tbody>
 			</table>
 
-			</q> (Ben Forta, 2017)
+			</blockquote> (Ben Forta, 2017)
 			
 			<h3 id="DatabaseScaling" data-Dated="2023-02-13T18:31:00">Database Scaling</h3>
 
@@ -1551,7 +1548,7 @@ ORDER BY BookGroup
 				<li>Normalization, object-to-relational mapping, is light load.</li>
 			</ul>
 
-			<h3 id="DatabaseExclusivity" data-Dated="2023-02-10T15:17:00">Database Exclusivity</h4>
+			<h3 id="DatabaseExclusivity" data-Dated="2023-02-10T15:17:00">Database Exclusivity</h3>
 
 			<h4 id="RowLimit" data-Dated="2023-12-03T15:59:00">Row Limit</h4>
 			<table data-Dated="2023-12-03T15:59:00">
@@ -1577,7 +1574,7 @@ ORDER BY BookGroup
 								data-ContactID="9437"
 							>
 								limit to required rows.
-							</span>
+							</a>
 						</td>
 					</tr>
 				</tbody>
@@ -1606,7 +1603,7 @@ ORDER BY BookGroup
 					</tr>
 					<tr>
 						<td>Logical comparison</td>
-						<td>&lt;, &gt;, =, &lt=, &gt=, &lt;&gt;</td>
+						<td>&lt;, &gt;, =, &lt;=, &gt;=, &lt;&gt;</td>
 					</tr>
 					<tr>
 						<td>Table join superceeds the previous column key equal to</td>
@@ -1680,7 +1677,7 @@ ORDER BY BookGroup
 				<li>Is the source of bad data input internal, on-line users, or error in programming?
 					<span data-Dated="2022-08-23T17:22:00">He doesn't envision error in reference data.</span>
 				</li>
-				<li>Does the vendor have data definition language (DDL) to pre-empt data corruption?</li>
+				<li>Does the vendor have data definition language (DDL) to pre-empt data corruption?
 					<ul>
 						<li>Data type and size: String, number, date, logic boolean?</li>
 						<li>Not nullable? Can not be empty?</li>
@@ -1689,6 +1686,7 @@ ORDER BY BookGroup
 						<li>Non-surrogate primary and foreign keys with unique indexes help to ascertain data.</li>
 						<li>Default columns are probable system generated that the users may leave unfilled that are available from sequence, identity, system clock.</li>
 					</ul>
+				</li>	
 				<li>Is the data incomplete, such as abbreviation, for example CA or California, telephone numbers without country or area code?</li>
 				<li>Is it data manipulation language (DML) deadlock, arrangement of data modification?
 					<span data-Dated="2022-08-23T17:15:00">Transaction commit or rollback? Cascade?</span>
@@ -1698,75 +1696,71 @@ ORDER BY BookGroup
 
 			<h3 data-Dated="2022-06-07T14:17:00">The author prescribes the steps below to begin database set-up and usage</h3>
 			
-			<p data-Dated="2022-06-07T14:17:00">
-				<ol>
-					<li>
-						Acquire a database management system (DBMS).
-						Various varieties of DBMS are available.
-						The user may download a DBMS, get a compact disc, or select from the cloud.
-					</li>
-					<li>
-						Install a DBMS.
-					</li>
-					<li>
-						Decide on a user interface for managing the database.
-						For Microsoft SQL Server, the choices include the SQLCmd console utility or
-						the SQL Server Management Studio or Azure Data Studio.
-					</li>
-					<li>
-						Create database.
-						Microsoft SQL Server supports multiple instances and databases.
-					</li>
-					<li>
-						The data definition language (DDL) includes the commands 
-						to create, alter, or delete tables, views, primary and foreign keys, indexes, constraints and defaults.
-					</li>
-					<li>
-						The data manipulation language (DML) are commands 
-						to insert, update, and delete the database rows and columns,
-						with the option to use the where clause.
-					</li>
-					<li>
-						The SQL Server maintenance plan is for database housekeeping,
-						for example, backup, restore, and re-arrangement.
-					</li>
-					<li>
-						Stored-procedures, triggers, and functions are programmable logic.
-					</li>
-				</ol>
-			</p>
+			<ol data-Dated="2022-06-07T14:17:00">
+				<li>
+					Acquire a database management system (DBMS).
+					Various varieties of DBMS are available.
+					The user may download a DBMS, get a compact disc, or select from the cloud.
+				</li>
+				<li>
+					Install a DBMS.
+				</li>
+				<li>
+					Decide on a user interface for managing the database.
+					For Microsoft SQL Server, the choices include the SQLCmd console utility or
+					the SQL Server Management Studio or Azure Data Studio.
+				</li>
+				<li>
+					Create database.
+					Microsoft SQL Server supports multiple instances and databases.
+				</li>
+				<li>
+					The data definition language (DDL) includes the commands 
+					to create, alter, or delete tables, views, primary and foreign keys, indexes, constraints and defaults.
+				</li>
+				<li>
+					The data manipulation language (DML) are commands 
+					to insert, update, and delete the database rows and columns,
+					with the option to use the where clause.
+				</li>
+				<li>
+					The SQL Server maintenance plan is for database housekeeping,
+					for example, backup, restore, and re-arrangement.
+				</li>
+				<li>
+					Stored-procedures, triggers, and functions are programmable logic.
+				</li>
+			</ol>
 			
-			<q cite="#bibliographySearchEngineIndexing">
+			<blockquote cite="#bibliographySearchEngineIndexing">
 
 			<h3 data-Dated="2021-12-25T00:06:00">Indexing</h3>
 		
-			<p data-Dated="2021-12-25T01:11:00">
-				The author manually indexes according to the following progression:
-				<ul>
-					<li>
-						The URI database is separable into the following tables:
-						<ul>
-							<li>URIChrist</li>
-							<li>URIEntertainment</li>
-							<li>URIGoogleNews</li>
-							<li>URIWordEngineering</li>
-						</ul>	
-					</li>
-					<li>
-						The SacredText table is for scripture reference.
-					</li>
-					<li>
-						The Exact table is an index of the words in the King James Version (KJV) of the Bible.
-					</li>
-					<li>
-						The source of information is in the bibliography section.
-					</li>
-				</ul>
-			</p>
+			The author manually indexes according to the following progression:
+			<ul data-Dated="2021-12-25T01:11:00">
+				<li>
+					The URI database is separable into the following tables:
+					<ul>
+						<li>URIChrist</li>
+						<li>URIEntertainment</li>
+						<li>URIGoogleNews</li>
+						<li>URIWordEngineering</li>
+					</ul>	
+				</li>
+				<li>
+					The SacredText table is for scripture reference.
+				</li>
+				<li>
+					The Exact table is an index of the words in the King James Version (KJV) of the Bible.
+				</li>
+				<li>
+					The source of information is in the bibliography section.
+				</li>
+			</ul>
 
-			</q> (Search engine indexing)
+			</blockquote> (Search engine indexing)
 
-			<q 
+			<blockquote 
 				cite="#bibliographyItzikBen-GanT-SQLFundamentals"
 				data-Dated="2024-04-18T18:20:00"
 				data-ContactID="12811"
@@ -1803,7 +1797,7 @@ ORDER BY BookGroup
 				datatype limits.
 			</p>
 			
-			</q> (Itzik Ben-Gan, 2023-07-03).
+			</blockquote> (Itzik Ben-Gan, 2023-07-03).
 
 			<h3 id="GitHub" data-Dated="2021-12-03T03:58:00">GitHub</h3>	
 
@@ -1890,7 +1884,7 @@ git remote -v
 				</li>
 			</ul>
 
-			<q cite="#bibliographyMicrosoftWeb-Dev-For-Beginners">
+			<blockquote cite="#bibliographyMicrosoftWeb-Dev-For-Beginners">
 			
 			<h3 data-Dated="2021-12-02T11:46:00">Programming</h3>
 			
@@ -2034,9 +2028,9 @@ git remote -v
 				</li>
 			</ul>
 
-			</q> (Microsoft)
+			</blockquote> (Microsoft)
 
-			<q cite="#bibliographyMicrosoftdata-Science-For-Beginners">
+			<blockquote cite="#bibliographyMicrosoftdata-Science-For-Beginners">
 			
 			<h3 data-Dated="2021-12-08T01:10:00">Data Science</h3>
 			
@@ -2163,9 +2157,9 @@ git remote -v
 				Later the author found out that there are duplicate Bible verses.
 			</p>
 	
-			</q> (Microsoft)
+			</blockquote> (Microsoft)
 	
-			<q cite="#bibliographyVaibhavVerdhan">
+			<blockquote cite="#bibliographyVaibhavVerdhan">
 
 			<h3 data-Dated="2020-10-22T20:00:00">Data</h3>
 
@@ -2285,7 +2279,7 @@ git remote -v
 				which depend on entries in the HisWord table.
 
 				The author extracts database information by building query statements.
-				<br/>
+				<br>
 
 				The application layer is the bridge between the user interface layer and the database layer.
 
@@ -2342,9 +2336,9 @@ git remote -v
 				The answers are mostly in tabular format.
 			</p>
 
-			</q> (Vaibhav Verdhan).
+			</blockquote> (Vaibhav Verdhan).
 
-			<q cite="#bibliographyElizabethCastro2012" data-Dated="2021-08-24T08:24:00">
+			<blockquote cite="#bibliographyElizabethCastro2012" data-Dated="2021-08-24T08:24:00">
 				A HTML document contains:
 				<ul>
 					<li>Text content: The author informs the reader by describing His word.</li>
@@ -2363,10 +2357,10 @@ git remote -v
 						</ul>
 					</li>
 				</ul>
-			</q>
+			</blockquote>
 			(Elizabeth Castro).
 			
-			<q cite="#bibliographyJonathanSnook">
+			<blockquote cite="#bibliographyJonathanSnook">
 				<h4 id="CascadingStyleSheetsCSS" data-Dated="2021-05-06T21:00:00">Cascading Style Sheets (CSS)</h4>
 				<ul>
 					<li>
@@ -2389,14 +2383,14 @@ git remote -v
 						A state rule is for toggling, such as using Javascript to set the visibility.
 					</li>
 				</ul>
-			</q>
+			</blockquote>
 			(Jonathan Snook).
 
 			<h3>Web Services</h3>
 			<p>
-				<q cite="#bibliographyFrederikBulthoff2019">
+				<blockquote cite="#bibliographyFrederikBulthoff2019">
 					There is standardization on the first .NET web services architecture, .ASMX.
-				</q>
+				</blockquote>
 				(FrederikBulthoff, 2019)
 				In most cases, there is a one-to-one mapping between the .HTML, .ASMX, .CS files,
 				and the database relational table, Bible..Scripture.
@@ -2504,7 +2498,7 @@ git remote -v
 				</tbody>
 			</table>
 
-			<q cite="#bibliographyABB_AseaBrownBoveri">
+			<blockquote cite="#bibliographyABB_AseaBrownBoveri">
 
 			<h3>Database Standard</h3>
 			
@@ -2554,9 +2548,9 @@ git remote -v
 				<li>Use Camel casing for naming parameters and local variables.</li>
 			</ol>
 			
-			</q> (ABB Asea Brown Boveri)
+			</blockquote> (ABB Asea Brown Boveri)
 
-			<q cite="#bibliographyStoyanStefanov">
+			<blockquote cite="#bibliographyStoyanStefanov">
 
 			<h3 data-Dated="2021-11-28T18:00:00">Performance</h3>
 	
@@ -2569,9 +2563,9 @@ git remote -v
 				</ol>
 			</p>
 
-			</q> (Stoyan Stefanov)
+			</blockquote> (Stoyan Stefanov)
 			
-			<q cite="#bibliographyLaraCallenderHogan2014">
+			<blockquote cite="#bibliographyLaraCallenderHogan2014">
 
 			<h3 data-Dated="2022-10-19T14:49:00">Performance Suggestion</h3>
 
@@ -2618,9 +2612,9 @@ git remote -v
 				</ol>
 			</p>
 
-			</q> (Lara Callender Hogan)
+			</blockquote> (Lara Callender Hogan)
 
-			<q cite="#bibliographyIlyaGrigorik2013">
+			<blockquote cite="#bibliographyIlyaGrigorik2013">
 			
 			<h3 data-Dated="2022-10-24T02:05:00">High Performance Browser Networking</h3>
 			
@@ -2685,9 +2679,9 @@ git remote -v
 				</ol>
 			</p>
 
-			</q> (Ilya Grigorik)
+			</blockquote> (Ilya Grigorik)
 
-			<q cite="#bibliographyIvanAkulov">
+			<blockquote cite="#bibliographyIvanAkulov">
 
 			<p data-Dated="2024-08-21T07:02:00">
 				Web Performance 101
@@ -2733,7 +2727,7 @@ git remote -v
 				</ol>
 			</p>
 
-			</q> (Ivan Akulov)
+			</blockquote> (Ivan Akulov)
 
 			<h3>Code Statistics</h3>
 			
@@ -2823,16 +2817,16 @@ git remote -v
 			
 			<h3>Surrogate Keys</h3>
 			<p>
-				<q cite="#bibliographyJosephSack2008">
+				<blockquote cite="#bibliographyJosephSack2008">
 					The author takes advantage of potential natural primary keys; otherwise, 
 					the author uses surrogate keys.
 					A surrogate key may be an identity or GUID type column.
 					URIs are examples of natural primary keys.
-				</q>
+				</blockquote>
 				(Joseph Sack, 2008)
 			</p>
 			
-			<q cite="#bibliographyThomasHunterII2014">
+			<blockquote cite="#bibliographyThomasHunterII2014">
 			
 			<h3 id="ApplicationProgrammingInterface" data-Dated="2022-08-20T20:30:00">Application Programming Interface (API)</h3>
 			
@@ -2887,9 +2881,9 @@ git remote -v
 				</ul>
 			</p>
 			
-			</q> (Consumer-Centric API Design)
+			</blockquote> (Consumer-Centric API Design)
 			
-			<q cite="#bibliographyCliffordAShaffer" id="DataStructuresAndAlgorithmAnalysis">
+			<blockquote cite="#bibliographyCliffordAShaffer" id="DataStructuresAndAlgorithmAnalysis">
 			
 			<h3>Data Structures and Algorithm Analysis</h3>
 			
@@ -3023,9 +3017,9 @@ for
 				The author uses JSON as a transport medium.
 			</p>
 
-			</q> (Clifford A. Shaffer)
+			</blockquote> (Clifford A. Shaffer)
 
-			<q cite="#bibliographyJoostVisser">A generic grouping of concepts and their representation</q>
+			<blockquote cite="#bibliographyJoostVisser">A generic grouping of concepts and their representation</blockquote>
 
 			<h3>A generic grouping of concepts and their representation</h3>
 
@@ -3063,7 +3057,7 @@ for
 				</tbody>
 			</table>
 
-			</q> (Joost Visser)
+			</blockquote> (Joost Visser)
 
 			<h3><a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html">GetAPage.html</a> Program Flow</h3>
 			<p>
@@ -3192,7 +3186,7 @@ for
 				In the case of dynamic SQL, re-compiling imposes cost.
 			</p>
 
-			<q cite="#bibliographyTheTwelve-FactorApp">
+			<blockquote cite="#bibliographyTheTwelve-FactorApp">
 
 			<h3 data-Dated="2018-11-18T00:00:00">The Twelve-Factor App</h3>
 			
@@ -3292,7 +3286,7 @@ for
 				</li>
 			</ol>
 
-			</q> (The Twelve-Factor App)
+			</blockquote> (The Twelve-Factor App)
 
 			<h3 id="WhoWhatWhenWhereWhy" data-Dated="2022-02-08T12:21:00">Who, what, when, where, why?</h3>	
 
@@ -3356,7 +3350,7 @@ for
 				The information relay is the basis for more computation in the HisWord_View and Remember_View tables.
 			</p>
 				
-			<q cite="#bibliographyIanGoodfellow2016">
+			<blockquote cite="#bibliographyIanGoodfellow2016">
 
 			<h5 id="MachineLearning">Machine Learning</h5>
 
@@ -3515,9 +3509,9 @@ for
 				and parts of speech have different frequencies of occurrences.
 			</p>
 
-			</q> (Ian Goodfellow, 2016)
+			</blockquote> (Ian Goodfellow, 2016)
 
-			<q cite="#bibliographyPeterBruce2017">
+			<blockquote cite="#bibliographyPeterBruce2017">
 
 			<h3>Statistics Terms</h3>
 
@@ -3574,16 +3568,16 @@ for
 				A row in a spreadsheet is comparable to a database table record.
 			</p>
 
-			</q> (Bruce et al. 2017).
+			</blockquote> (Bruce et al. 2017).
 			
 			<h3 id="SoftwareEngineering">Software Engineering</h3>
 
 			<h4 id="ProgrammersWorkbench">Programmer's Workbench (PWB)</h4>
 			<p>
-				<q cite="#bibliographyRandallWJensen2014">
+				<blockquote cite="#bibliographyRandallWJensen2014">
 					This technology will make all the before and current versions of the code accessible, 
 					re-viewable, and testable.
-				</q>
+				</blockquote>
 				All the words that the author hears while sleeping are recordable and the
 				author has never had any tendency to alter this utterance from the LORD.
 				When the author is awake and he says something, out of his own volition
@@ -3599,7 +3593,7 @@ for
 				).
 			</p>
 			
-			<q cite="#bibliographyJakobNielsen2000" data-Dated="2020-08-29T04:54:00">
+			<blockquote cite="#bibliographyJakobNielsen2000" data-Dated="2020-08-29T04:54:00">
 
 			<p>
 				I have made what I have spoken, ready
@@ -3671,11 +3665,11 @@ for
 				</span>
 			</p>
 			
-			</q> (Jakob Nielsen, 2000)
+			</blockquote> (Jakob Nielsen, 2000)
 			
 			<h3 id="Web">Web</h3>
 
-			<q cite="#bibliographyJakobNielsen2000">
+			<blockquote cite="#bibliographyJakobNielsen2000">
 			
 			<p>
 				We will make advancement over Tim Berners-Lee earlier idea of a unified web:
@@ -3687,9 +3681,9 @@ for
 				</ol>
 			</p>	
 
-			</q> (Jakob Nielsen, 2000).
+			</blockquote> (Jakob Nielsen, 2000).
 
-			<q cite="#bibliographyDepartmentOfComputerScienceAtTheUniversityOfCapeTown" data-Dated="2020-06-01T00:00:00">
+			<blockquote cite="#bibliographyDepartmentOfComputerScienceAtTheUniversityOfCapeTown" data-Dated="2020-06-01T00:00:00">
 				
 			<h4 id="Hypertext">Hypertext</h4>
 
@@ -3702,10 +3696,10 @@ for
 				The web applications do not contain internal links.
 				Same Origin are for retrieving scripture reference, Bible word; 
 				Cross-Origin Resource Sharing (CORS) are for requesting information from external URIs.
-				</q>
+				</blockquote>
 			</p>
 			
-			</q> (Department of Computer Science at the University of Cape Town).
+			</blockquote> (Department of Computer Science at the University of Cape Town).
 			
 			<h3 id="Characteristic">Characteristic</h3>
 				
@@ -3764,10 +3758,10 @@ for
 			<p>
 				A single batch file, with a single command line, builds the only .dll, InformationInTransit.dll
 				
-				<br/>
+				<br>
 				<code>
 					csc /out:InformationInTransit.dll /target:library /recurse:*.cs /reference:System.DirectoryServices.AccountManagement.dll,"bin\Debug\HtmlAgilityPack.dll","bin\Debug\iTextSharp.dll","bin\Debug\MongoDB.Bson.dll","bin\Debug\MongoDB.Driver.dll","bin\Debug\MongoDB.Driver.Core.dll","bin\Debug\Newtonsoft.Json.dll","C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\WPF\PresentationFramework.dll","bin\Debug\System.Speech.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Dmf.Adapters.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Dmf.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.DmfSqlClrWrapper.dll","C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll",Microsoft.VisualBasic.dll /nowarn:162,168,219,618,649 /unsafe
-				</code><br/>
+				</code><br>
 				
 				After testing, InformationInTransit.dll is deployable to the 
 				WordEngineering's virtual directory, bin sub-directory. 
@@ -3899,7 +3893,7 @@ for
 				transaction log backup, periodically.
 			</p>
 
-			<q cite="#bibliographyCraigMullins2000">
+			<blockquote cite="#bibliographyCraigMullins2000">
 
 			<p data-Dated="2020-12-29T18:00:00">
 				To reduce database load, the author considers the
@@ -3908,7 +3902,7 @@ for
 				Rarely does the author join tables, minimizing the work and resultset, in a set-level language.
 			</p>
 
-			</q>
+			</blockquote>
 			(DB2 Developer's Guide).
 
 			<h3 id="HTML5">HTML5</h3>
@@ -4112,7 +4106,7 @@ for
 					<thead>
 						<caption>
 							2023-08-26T20:00:00
-							<br/>
+							<br>
 							For the 2nd day consequetively
 							I am wearing a green Fruit of the Loom t-shirt.
 							Best trademark.
@@ -4122,17 +4116,17 @@ for
 							Made in Honduras.
 							XL/EG/TG.
 							Black Adidas track trouser with 3 white stripes on each side.
-							<br/>
+							<br>
 							At the intersection of Mallard Common 4750 and Woodduck Common 4740, South East.
 							The garage door of Mahdu is opened.
 							Probably Hindi male in dark blue shirt drives southward.
 							You have said, everything you need to say.
-							<br/>
+							<br>
 							On Decoy Terrace between Mallard Common and Siward Drive, South Center.
 							I thought of Vivian Siu and her demand for me to wear better clothing.
 							At the intersection of Decoy Terrace and Siward Drive, South East.
 							God asked, Why? Do you like Me?
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20create%20one%20for%20who%3F"
 								data-Dated="2023-08-26T20:00:00"
@@ -4201,7 +4195,7 @@ for
 					<thead>
 						<caption>
 							2022-10-06T05:19:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20does%20He%20bring%20us%20to%20a%20place%3F"
 								data-Dated="2022-10-06T05:19:00"
@@ -4278,7 +4272,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					<thead>
 						<caption>
 							2023-10-05T10:13:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?word=Hebrews%204:9"
 								data-Dated="2023-10-05T10:13:00"
@@ -4327,7 +4321,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					<thead>
 						<caption>
 							2023-10-04T11:52:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Particular%20use%3F"
 								data-Dated="2023-10-04T13:53:00"
@@ -4376,7 +4370,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					<thead>
 						<caption>
 							2023-08-29T12:02:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=No%20land%20ties"
 								data-Dated="2023-08-29T12:02:00"
@@ -4418,7 +4412,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					<thead>
 						<caption>
 							2023-08-27T08:17:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Why%20exclude%20the%20future%3F"
 								data-Dated="2023-08-27T08:17:00"
@@ -4893,7 +4887,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</table>
 			</p>
 
-			<q cite="#bibliographyYuliVasiliev2022">
+			<blockquote cite="#bibliographyYuliVasiliev2022">
 			<h3 id="DataScienceAHandsOnIntroduction">Data Science A Hands-On Introduction</h3>
 
 			<p data-Dated="2022-10-09T08:36:00">
@@ -4916,9 +4910,9 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</a>
 				is the first time that the author uses pairing data.
 			</p>
-			</q>
+			</blockquote>
 
-			<q cite="#bibliographyAmazon">
+			<blockquote cite="#bibliographyAmazon">
 			
 			<h3 data-Dated="2022-06-14T12:44:00">How does the work of the author accompany the Bible?</h3>
 			
@@ -4937,9 +4931,9 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</tbody>
 			</table>
 			
-			</q> (Dive into Deep Learning)
+			</blockquote> (Dive into Deep Learning)
 			
-			<q cite="#bibliographyIrvKalb2000">
+			<blockquote cite="#bibliographyIrvKalb2000">
 			
 			<h3 data-Dated="2022-06-08T13:07:00">Object Oriented Programming - GetAPage.html</h3>
 			
@@ -4986,9 +4980,9 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				The data- attribute is user customizable.
 			</p>
 
-			</q> (LOOPE Lingo Object Oriented Programming Environment)
+			</blockquote> (LOOPE Lingo Object Oriented Programming Environment)
 
-			<q cite="#bibliographyAndrewKelleher" data-Dated="2022-06-18T21:59:00">
+			<blockquote cite="#bibliographyAndrewKelleher" data-Dated="2022-06-18T21:59:00">
 				The author acknowledges positive bias in his work.
 				Sometimes the author collaborates with what is said to him.
 				<span data-Dated="2022-06-19T07:22:00">
@@ -4998,22 +4992,22 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					The author values the population average over the sampling average.
 					For example, the Bible is complete, but the work of the author is on-going.
 				</span>	
-			</q>
+			</blockquote>
 			(Andrew Kelleher).
 
-			<q cite="#bibliographyAdamKelleher" data-Dated="2022-06-20T05:19:00">
+			<blockquote cite="#bibliographyAdamKelleher" data-Dated="2022-06-20T05:19:00">
 				Causation versus (VS) Correlation?
 				Let the involvement of a personal self; resemble the involvement of a useful self.
-			</q>
+			</blockquote>
 			(Adam Kelleher).
 
-			<q cite="#bibliographyAdamKelleher" data-Dated="2022-06-20T05:19:00">
+			<blockquote cite="#bibliographyAdamKelleher" data-Dated="2022-06-20T05:19:00">
 				Bias?
 				Being the other?
-			</q>
+			</blockquote>
 			(Adam Kelleher).
 
-			<q cite="#bibliographyBruceClay2022" data-Dated="2023-10-17T12:57:51">
+			<blockquote cite="#bibliographyBruceClay2022" data-Dated="2023-10-17T12:57:51">
 			
 			<h3 id="SearchEngineOptimization" data-Dated="2023-10-22T20:19:00">Search engine optimization (SEO)</h3>
 			
@@ -5096,7 +5090,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					</tbody>
 				</table>
 			</p>
-			</q> (Bruce Clay).
+			</blockquote> (Bruce Clay).
 
 			<h3 id="LiteratureReview" data-Dated="2022-09-12T14:04:00">Literature Review</h3>
 
@@ -5243,7 +5237,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</ul>
 			</p>
 
-			<q cite="#bibliographyTimWildsmith2024" data-Dated="2024-11-13T19:12:00">
+			<blockquote cite="#bibliographyTimWildsmith2024" data-Dated="2024-11-13T19:12:00">
 
 			<h3 id="Translation">2024-11-13T19:12:00 Translation</h3>
 
@@ -5269,7 +5263,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</li>
 			</ol>
 		
-			</q> (Tim Wildsmith, 2024).
+			</blockquote> (Tim Wildsmith, 2024).
 
 			<table id="Kehinde" data-Dated="2025-05-07T01:29:00">
 				<caption>
@@ -5546,7 +5540,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</li>
 			</ul>
 			
-			<q cite="#bibliographyJuvalLöwy2019-11-27" data-Dated="2025-04-05T09:04:00">
+			<blockquote cite="#bibliographyJuvalLöwy2019-11-27" data-Dated="2025-04-05T09:04:00">
 
 			<h3 id="ComposableDesign">2025-04-05T09:04:00 Composable Design</h3>
 
@@ -5564,7 +5558,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				</a>
 			</p>
 		
-			</q> (Juval Löwy of IDesign, 2019).
+			</blockquote> (Juval Löwy of IDesign, 2019).
 
 			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" data-Dated="2025-01-25T10:26:00">Validation? Chronologically?</h3>
 			
@@ -5614,7 +5608,7 @@ ORDER BY HisWordID DESC
 				<li data-Dated="2025-04-24T13:45:00">2025-04-24T13:45:00 While the author is aware of other sources of information and conjecture, the author is undaunted.</li>
 			</ul>
 			
-			<q cite="#bibliographyMustafaSuleyman_MichaelBhaskar20230905" data-Dated="2025-03-28T17:52:00">
+			<blockquote cite="#bibliographyMustafaSuleyman_MichaelBhaskar20230905" data-Dated="2025-03-28T17:52:00">
 			
 			<h3 id="WhatWeAreReceiving" data-Dated="2025-03-28T19:12:00">
 				2025-03-28T19:12:00
@@ -5643,7 +5637,7 @@ ORDER BY HisWordID DESC
 				<li data-Dated="2025-03-28T18:22:00" data-ContactID="2910">Benitoluwa and Ademiloluwa. Uncle Demola and Damola. You must be involve... for someone to use you. 2025-03-28T18:30:00 I consider father and son relationships. What we are... is how we are made after. I started tutoring computers to Hajara Adeola, a French lecturer, and wife of Fola Adeola, prior to Guaranty Trust Bank commencement. The only separation between the English language and the Yoruba language is the diacritic alphabets.</li>
 			</ul>
 
-			</q> (Mustafa Suleyman, Michael Bhaskar, 2023-09-05).
+			</blockquote> (Mustafa Suleyman, Michael Bhaskar, 2023-09-05).
 
 			<h3 id="DataType" data-Dated="2025-03-11T08:20:00">2025-03-11T08:20:00 DataType</h3>
 			
@@ -6123,7 +6117,7 @@ Total      119041      100
 			<table id="Head">
 				<caption>
 					2025-02-10T05:41:00 Until the land has its rest. I saw a house in the center-west.
-					<br/>
+					<br>
 					2025-02-10T06:22:00	In Isaac shall your seed be called. I am on a narrow road in the north-center. This is either Bing's Dumpling or 99 Ranch Market. I gave a piece of chocolate to a boy who was among the other boys. As I was about to leave, I gave my last chocolate to the same boy, so he could share and eat with his colleagues. They began to break and eat the given chocolate bar. Towards the door to our west, I saw some young females coming inside. I admired a slender female who was wearing tight-fitting white trousers. At the intersection of Fremont Boulevard and Paseo Padre Parkway, I saw a van that was painted across with the color of the United States of America (USA) flag, red, white, and blue, but the red color looked like orange. There were young Asian females running from the center-west, upper, and turning towards the south-west. There were cars moving and crossing the Paseo Padre Road from Fremont Boulevard, east, that almost had accidents with the young Asian female runners.
 				</caption>
 				<thead>
@@ -6170,13 +6164,13 @@ Total      119041      100
 					>
 						Work... holiness
 					</a>
-					<br/>
+					<br>
 					The Exhaustive Concordance of the Bible, generally known as Strong's Concordance, is a Bible concordance, an index of every word in the King James Version, constructed under the direction of American theologian James Strong. 
 					Bible dictionaries and commentaries. 
 					Terminology.... characterization. 
 					How do you tweet? Frequency, grammar, composition, ranking?
 					AlphabetSequence builds on Bible verse separation.
-					<br/>
+					<br>
 					<a 
 						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20representative%20am%20I%20of%20my%20people%3F"
 						data-Dated="2025-02-11 14:41:56.050"
@@ -6596,7 +6590,7 @@ Total      119041      100
 				)?
 			</p>
 			
-			<q cite="#DmitryPilugin" data-Dated="2025-01-11T18:41:00">
+			<blockquote cite="#DmitryPilugin" data-Dated="2025-01-11T18:41:00">
 
 			<h3 id="DatabaseOptimization">2025-01-11T18:41:00 Database optimization</h3>
 
@@ -6679,9 +6673,9 @@ Total      119041      100
 				</li>
 			</ol>
 
-			</q> (Dmitry Pilugin).
+			</blockquote> (Dmitry Pilugin).
 
-			<q cite="#bibliographyChristopherGBrinton_MungChiang20161121" data-Dated="2025-01-27T16:58:00">
+			<blockquote cite="#bibliographyChristopherGBrinton_MungChiang20161121" data-Dated="2025-01-27T16:58:00">
 
 			<h3 id="ThePowerOfNetworks">2025-01-27T16:58:00 The Power of Networks</h3>
 
@@ -6791,7 +6785,7 @@ Total      119041      100
 				</li>
 			</ol>
 
-			</q> (Christopher G. Brinton, Mung Chiang, 2016).
+			</blockquote> (Christopher G. Brinton, Mung Chiang, 2016).
 
 			<h3 id="MediateBetweenMeAndMyPeople">
 				2024-12-27T08:08:00
@@ -6937,7 +6931,7 @@ Total      119041      100
 				<li data-Dated="2024-12-16T09:27:00">2024-12-16T09:27:00 Place: earth, city, house, kingdom, country, tribe</li>
 			</ol>
 
-			<q cite="#bibliographyHaishiBai20190515" data-Dated="2024-12-10T15:23:25">
+			<blockquote cite="#bibliographyHaishiBai20190515" data-Dated="2024-12-10T15:23:25">
 
 				<h3 id="TheJourneyToWordEngineering">2024-12-10T15:23:25 The Journey to WordEngineering</h3>
 
@@ -7048,7 +7042,7 @@ Total      119041      100
 						? 
 					</li>
 				</ol>
-			</q> (Haishi Bai, 2019).
+			</blockquote> (Haishi Bai, 2019).
 			
 			<h3 id="WillTargetTuesdayDecemberThirtyFirst"
 				data-Dated="2021-01-04 14:22:14.250"
@@ -7221,7 +7215,7 @@ Total      119041      100
 				</a>
 			</p>	
 
-			<q cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-03T03:58:00">
+			<blockquote cite="#bibliographyAllenGTaylor2024" data-Dated="2024-11-03T03:58:00">
 
 			<h3 id="RequirementMandatorySignificantOptional">
 				2024-11-03T03:58:00 Requirement: mandatory, significant, optional
@@ -7258,7 +7252,7 @@ Total      119041      100
 				</li>
 			</ol>
 		
-			</q> (Allen G. Taylor, 2024).
+			</blockquote> (Allen G. Taylor, 2024).
 			
 			<h3 id="WhatAreCompatibleWithinMyPart">
 				2024-10-28T05:14:00
@@ -7640,7 +7634,7 @@ Total      119041      100
 				>
 					What did he find himself supporting?
 				</a>
-				<br/>
+				<br>
 				2024-11-14T18:38:00 
 				<a 
 					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What...%20do%20I%20have%20for%20the%20vocation%20I%20participate%20in%3F"
@@ -7657,9 +7651,9 @@ Total      119041      100
 						Numbers 3:8, Numbers 24, Romans 1, Acts 13:38
 					</a>
 				)?
-				<br/>
+				<br>
 				I heard the front door forcibly open ajar.
-				<br/>
+				<br>
 			</h3>
 
 			<ul data-Dated="2024-08-20T05:35:00">
@@ -7974,9 +7968,9 @@ Total      119041      100
 				data-url="w3schools.com/python/python_ml_multiple_regression.asp"
 			>
 				Relational Database Versus (VS) Artificial Intelligence (AI).
-				<br/>
+				<br>
 				Microsoft SQL Server Versus (VS) Machine Learning (ML) Scikit-learn.
-				<br/>
+				<br>
 				That is what they based the truth on.
 			</h3>
 
@@ -8142,7 +8136,7 @@ Total      119041      100
 						<td>The Bible word has a place in the author's terminology, usage, retention.</td>
 						<td>
 							Disparate scripture references which are inconsistent and non-standardized in commentaries. Not aligned with AlphabetSequence.
-							<br/>
+							<br>
 							2024-07-13T17:01:00
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20does%20he%20see%20growth%3F"
@@ -8266,9 +8260,9 @@ Total      119041      100
 						>
 							I want not a...
 						</a>
-						<br/>
+						<br>
 						I want not a... user meaning there are...
-						<br/>
+						<br>
 						A person wants to log in, but they do not want to replicate the security activities of having a unique login ID or user. My twin sibling said I should select their login ID and configure a database record. 20:51 headache, urine.
 					</li>
 				</ul>
@@ -8344,7 +8338,7 @@ Total      119041      100
 				2024-07-12T09:12:00	Santorini, Greece t-shirt. 
                     The two elderly females are probably Asian and Caucasian.
 					They were standing at the intersection of Fremont Boulevard and Paseo Padre Parkway, north-east, and they walked towards the south-east.
-				<br/>			
+				<br>			
 				2024-07-12T09:12:00 Sort order?
 				2024-07-12T10:43:00 Is a url sortable in this order?
 				<ul>
@@ -8362,11 +8356,11 @@ Total      119041      100
 					<li>Holiness</li>
 				</ul>
 				2024-07-12T18:53:00 Robert Rouse, Minister of Data, viz.bible. 
-				<br/>
+				<br>
 				2024-07-12T19:03:00	How is it supporting?
-				<br/>
+				<br>
 				2024-07-12T19:09:00 The author has queried the Bible versions and dictionaries but not the various commentaries which have non-standard scripture reference and opinions.
-				<br/>
+				<br>
 				2024-07-12T21:22:00
 				<a 
 					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Making%20a%20protection...%20making%20a%20projection."
@@ -8395,7 +8389,7 @@ Total      119041      100
 				</ul>
 			</p>
 
-			<q 
+			<blockquote 
 				cite="#bibliographyTiffanyMcDowell20230222"
 				data-Dated="2024-07-04T17:18:00"
 				data-ContactID="15176"
@@ -8435,7 +8429,7 @@ Total      119041      100
 				</ul>	
 				<ol>
 					<li>
-						IBM PC compatible:<br/>
+						IBM PC compatible:<br>
 						At Central Piedmont Community College (CPCC), Charlotte, North Carolina (NC). 
 						The author tutored in the personal computer (PC) laboratory.
 						<ul>
@@ -8445,14 +8439,14 @@ Total      119041      100
 						</ul>
 					</li>
 					<li>
-						IBM employee:<br/>
+						IBM employee:<br>
 						<ul>
 							<li>In Ilupeju, Lagos State, Nigeria, while the author was walking on the street, away from the premises of a client, Simeon Onasanya, an employee of IBM and the older brother of Tunde Onasanya, called him</li>
 							<li>In Sydney, Australia, Alex Koutsombos, an IBM employee, sent periodic Java programming language e-mails</li>
 						</ul>
 					</li>
 					<li>
-						IBM event:<br/>
+						IBM event:<br>
 						<ul>
 							<li>In Sydney, Australia, the author received an end-of-year gift of wine from IBM</li>
 							<li>In Sydney, Australia, the author interviewed for a Microsoft SQL Server database administrator (DBA) role with IBM for the Sydney 2000 Olympics</li>
@@ -8462,7 +8456,7 @@ Total      119041      100
 					</li>
 				</ol>
 			</p>
-			</q> (Tiffany McDowell, 2024-07-04).
+			</blockquote> (Tiffany McDowell, 2024-07-04).
 
 			<p data-Dated="2024-03-26T06:21:00">
 				How-to verify the work of the spirit?
@@ -8539,7 +8533,7 @@ Total      119041      100
 				This table was explicitly created on 2024-06-10T03:13:00.
 			</p>
 
-			<q cite="#bibliographyAllenGTaylor2019" data-Dated="2024-05-24T04:34:00">
+			<blockquote cite="#bibliographyAllenGTaylor2019" data-Dated="2024-05-24T04:34:00">
 
 			<h3 id="RelationalModel" data-Dated="2024-05-24T04:34:00">Relational Model</h3>
 
@@ -8565,9 +8559,9 @@ Total      119041      100
 				The general operating system and compact database are the 2 types of authentication.
 			</p>
 		
-			</q> (Allen G. Taylor, 2019).
+			</blockquote> (Allen G. Taylor, 2019).
 
-			<q 
+			<blockquote 
 				cite="#bibliographyItzikBen-GanT-SQLFundamentals"
 				data-Dated="2024-04-18T18:20:00"
 				data-ContactID="12811"
@@ -8640,7 +8634,7 @@ Total      119041      100
 				</table>
 			</p>
 			
-			</q> (Itzik Ben-Gan, 2023-07-03).
+			</blockquote> (Itzik Ben-Gan, 2023-07-03).
 
 			<p 
 				data-Dated="2024-12-10T11:00:00"
@@ -8653,7 +8647,7 @@ Total      119041      100
 				There may be a high count of rows or columns, thereby, demanding ranking and preferences for positioning.
 			</p>
 
-			<q 
+			<blockquote 
 				cite="#bibliographyEdgarFCodd1970"
 				data-ContactID="15112"
 				data-Dated="2024-06-14T18:19:00"
@@ -8704,7 +8698,7 @@ Total      119041      100
 						The information rule:
 						The physical store is the HisWord table's Word column.
 						This information is later processed logically in the HisWord_View.
-						<br/>
+						<br>
 						2024-06-15T21:28:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20pertaining%20to%20the%20data%3F"
@@ -8713,14 +8707,14 @@ Total      119041      100
 						>
 							What is pertaining to the data?
 						</a>
-						<br/>
+						<br>
 						Prior to this word coming, I uploaded the 3 file formats of the dissertation files (.html, .txt, .pdf) from the Windows operating system computer to the UNIX operating system computer Linux variety. 
 						I also read the counter-style of each file.
 					</li>
 					<li data-Dated="2024-06-16T16:19:00">
 						The guaranteed access rule:
 						Specifying the primary key restriction in the where clause makes each datum reachable.
-						<br/>
+						<br>
 						2024-06-16T16:30:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20who...%20I%20exchange...%20my%20good%3F"
@@ -8733,7 +8727,7 @@ Total      119041      100
 					</li>
 					<li data-Dated="2024-06-18T21:49:00">
 						Systematic treatment of null values:
-						<br/>
+						<br>
 						2024-06-18T21:49:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Unknown%20or%20inappropriate."
@@ -8751,12 +8745,12 @@ Total      119041      100
 					</li>
 					<li data-Dated="2024-06-19T13:33:00">
 						Dynamic online catalog based on the relational model:
-						<br/>
+						<br>
 						INFORMATION_SCHEMA offers metadata, and it is questioned via SQL.
 					</li>
 					<li data-Dated="2024-06-20T16:23:00">
 						The comprehensive data sublanguage rule:
-						<br/>
+						<br>
 						2024-06-20T18:39:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=It%20looks%20at%20the%20data%20as%20a%20whole."
@@ -8822,22 +8816,22 @@ Total      119041      100
 					</li>
 					<li data-Dated="2024-06-21T14:56:00">
 						The view updating rule:
-						<br/>
+						<br>
 						Only computed columns cannot be updated.
 					</li>
 					<li data-Dated="2024-06-22T14:54:00">
 						A single operation must support select, insert, update, and delete:
-						<br/>
+						<br>
 						A base or derived relationship should comply with an operation to select, insert, update, and delete.
 					</li>
 					<li data-Dated="2024-06-22T15:07:00">
 						Physical data independence:
-						<br/>
+						<br>
 						Batch and end-user operations are not impaired when changes are made to physical storage or access method.
-						<br/>
+						<br>
 						2024-06-22T15:13:00...2024-06-22T15:15:00
 						There is no deterioration in data... when there is a restore, import, or bulk copy.
-						<br/>
+						<br>
 						2024-06-22T15:36:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20part%20of%20yourself...%20do%20I%20desire%20as%20My%20future%3F"
@@ -8851,7 +8845,7 @@ Total      119041      100
 					</li>
 					<li data-Dated="2024-06-22T16:51:00">
 						Logical data independence:
-						<br/>
+						<br>
 						2024-06-22T17:02:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20opinion%20of%20someone%20else...%20is%20beside%20me."
@@ -8865,25 +8859,25 @@ Total      119041      100
 					</li>
 					<li data-Dated="2024-06-22T21:46:00">
 						Integrity independence:
-						<br/>
+						<br>
 						The author is not implementing constraints.
 					</li>
 					<li data-Dated="2024-06-22T21:54:00">
 						Distribution independence:
-						<br/>
+						<br>
 						The user is not aware that the data and log are in separate files.
 						Replication and mirroring are other means of ensuring redundancies.
 					</li>
 					<li data-Dated="2024-06-22T22:04:00">
 						The nonsubversion rule:
-						<br/>
+						<br>
 						Row processing such as cursor must abide by integrity rules and constraints like set processing.
 					</li>
 				</ol>
 			</p>
-			</q> (Edgar F. Codd, 1970).
+			</blockquote> (Edgar F. Codd, 1970).
 
-			<q cite="#bibliographyDanielJackson20230626" data-Dated="2024-07-02T20:55:00">
+			<blockquote cite="#bibliographyDanielJackson20230626" data-Dated="2024-07-02T20:55:00">
 			<h3 id="ConceptGetAPage" data-Dated="2024-07-02T20:55:00">
 				<a 
 					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html"
@@ -8923,9 +8917,9 @@ Total      119041      100
 				</li>
 			</ol>
 			
-			</q> (Daniel Jackson, 2023-06-26).
+			</blockquote> (Daniel Jackson, 2023-06-26).
 			
-			<q cite="#bibliographyDanielJackson20240108" data-Dated="2024-07-03T16:05:00">
+			<blockquote cite="#bibliographyDanielJackson20240108" data-Dated="2024-07-03T16:05:00">
 			
 			<p data-Dated="2024-07-03T09:02:00">
 				The user-interface (UI) supports queries, and not database maintenance.
@@ -8935,9 +8929,9 @@ Total      119041      100
 				<span data-Dated="2024-07-03T16:16:00">The complicated tasks are reserved for skilled users.<span>				
 			</p>
 			
-			</q> (Daniel Jackson, 2024-01-08).
+			</blockquote> (Daniel Jackson, 2024-01-08).
 
-			<q cite="#bibliographyMattChanoff20231107" data-Dated="2024-07-04T00:25:00">
+			<blockquote cite="#bibliographyMattChanoff20231107" data-Dated="2024-07-04T00:25:00">
 			
 			<p data-Dated="2024-07-04T00:44:00">
 				<a 
@@ -8955,7 +8949,7 @@ Total      119041      100
 				)?
 			</p>
 			
-			</q> (Matt Chanoff, Merrick Furst, Daniel Sabbah, Mark Wegman, Arvind Krishna, 2023-11-07).
+			</blockquote> (Matt Chanoff, Merrick Furst, Daniel Sabbah, Mark Wegman, Arvind Krishna, 2023-11-07).
 			
 			<h3 id="AConversionPage" data-Dated="2024-04-24T21:38:00">
 				<a 
@@ -9054,7 +9048,7 @@ Total      119041      100
 				</ul>
 			</p>
 
-			<q 
+			<blockquote 
 				cite="#bibliographyJackHymanMarch2024"
 				data-Dated="2024-04-24T04:01:00"
 			>
@@ -9118,9 +9112,9 @@ Total      119041      100
 				</table>
 			</p>
 			
-			</q> (Jack Hyman, March 2024).
+			</blockquote> (Jack Hyman, March 2024).
 
-			<q 
+			<blockquote 
 				cite="#bibliographyJackHymanMarch2024"
 				data-Dated="2024-04-25T15:59:00"
 			>
@@ -9131,11 +9125,11 @@ Total      119041      100
 				<table data-Dated="2024-04-25T16:03:00">
 					<caption>
 						HisWord table
-						<br/>
+						<br>
 						Qualitative (categorical) non-numerical/discriptive - nominal (non-ordered), ordinal (orderly)
-						<br/>
+						<br>
 						or 
-						<br/>
+						<br>
 						Quantitative (numerical) uses numbers - discrete (countable), continuous (measurable)
 					</caption>
 					<thead>
@@ -9175,7 +9169,7 @@ Total      119041      100
 				
 			</p>
 
-			</q> (Jack Hyman, March 2024).
+			</blockquote> (Jack Hyman, March 2024).
 
 			<p data-Dated="2024-03-25T14:17:00">
 				<a 
@@ -9337,7 +9331,7 @@ Total      119041      100
 				</li>
 			</ul>
 
-			<q cite="#bibliographyAndrewGlassner2021" data-Dated="2024-03-01T09:56:00">
+			<blockquote cite="#bibliographyAndrewGlassner2021" data-Dated="2024-03-01T09:56:00">
 				<h3
 					data-Dated="2024-03-01T09:49:00"
 					id="Influence"
@@ -9396,7 +9390,7 @@ Total      119041      100
 						</li>
 					</ul>
 				</p>
-			</q>
+			</blockquote>
 			(Andrew Glassner, 2021).
 
 			<h3 id="ThisDataWhereDoesItExist" data-Dated="2024-04-02T15:45:00">This data...where does it exist?</h3>
@@ -9511,7 +9505,7 @@ Total      119041      100
 				<li data-Dated="2024-03-13T15:06:00">Software: Automation of work</li>
 			</ul>
 
-			<q 
+			<blockquote 
 				cite="#bibliographyJohnCalvinMaxwell"
 				data-Dated="2024-03-16T19:22:00"
 				data-ContactID="14990"
@@ -9557,7 +9551,7 @@ Total      119041      100
 						</li>
 					</ul>
 				</p>
-			</q>
+			</blockquote>
 			(John Calvin Maxwell, 2023).
 			
 			<p data-Dated="2024-01-27T11:55:00">
@@ -10326,7 +10320,7 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 				data-Dated="2024-11-20T05:38:00"
 			>
 				2024-11-20T05:38:00 Ordering
-				<br/>
+				<br>
 				2024-11-20T07:59:00 Do I make a separation between physical and spiritual?
 				<ul data-Dated="2024-11-20T05:38:00">
 					<li>
@@ -10502,7 +10496,7 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 					<thead>
 						<caption>
 							2022-05-26T14:05:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20events%20in%20Abraham's%20life%20are%20additions%3F"
 								data-Dated="2022-05-26T14:05:00"
@@ -10511,9 +10505,9 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 							>
 								What events in Abraham's life are additions?
 							</a>
-							<br/>
+							<br>
 							2025-03-29T16:15:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20am%20reminded%20of%20the%20presence%20of%20others."
 								data-Dated="2025-03-29T16:15:00"
@@ -10948,7 +10942,7 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 					<thead>
 						<caption>
 							2023-12-15T08:40:00
-							<br/>
+							<br>
 							<a 
 								href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20substitution...we%20have%20ahead%3F"
 								data-Dated="2023-12-15T08:40:00"
@@ -12146,9 +12140,9 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 
 			<h4 data-Dated="2020-08-04T21:00:00">Information Flow</h4>
 
-			<q cite="#bibliographyCharlesMKozierok2003-2017">
+			<blockquote cite="#bibliographyCharlesMKozierok2003-2017">
 				Sharing His word; is following His deed.
-			</q>
+			</blockquote>
 			(Charles M. Kozierok).
 			
 			<p data-Dated="2020-08-06T14:45:00">
@@ -12493,7 +12487,7 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 				</table>
 			</p>
 
-			<q cite="#bibliographyKevinKline2022" data-Dated="2023-08-30T00:00:00">
+			<blockquote cite="#bibliographyKevinKline2022" data-Dated="2023-08-30T00:00:00">
 				<p
 					data-Dated="2023-09-06T13:37:00"
 					data-url="http://en.wikipedia.org/wiki/Set_theory"
@@ -12572,7 +12566,7 @@ fatal: unable to access 'https://github.com/KenAdeniji/WordEngineering/': Could 
 						</li>
 					</ol>
 				</p>
-			</q>
+			</blockquote>
 			(Kevin Kline, Regina O. Obe, Leo S. Hsu).
 
 			<h3 id="logparser" data-Dated="2023-06-08T02:22:00">logparser</h3>
@@ -12645,7 +12639,7 @@ Elements output:    20
 Execution time:     84.46 seconds (00:01:24.46)
 </pre>
 
-			<q cite="#bibliographyRandallHyde">
+			<blockquote cite="#bibliographyRandallHyde">
 				<h3 
 					id="WriteGreatCodeVolume3EngineeringSoftwareChapter2ProductivityByRandallHyde"
 					data-Dated="2023-04-05T19:55:00"
@@ -12718,10 +12712,10 @@ Execution time:     84.46 seconds (00:01:24.46)
 						</li>
 					</ol>
 				</p>
-			</q>
+			</blockquote>
 			(Randall Hyde).
 
-			<q cite="#bibliographyStephenCMeyer">
+			<blockquote cite="#bibliographyStephenCMeyer">
 				<h3 
 					id="IntellectualPresuppositionsToEnableTheRiseOfScience"
 					data-Dated="2023-03-30T17:23:00"
@@ -12753,10 +12747,10 @@ Execution time:     84.46 seconds (00:01:24.46)
 						<li data-Dated="2023-03-30T21:06:00">Measure: Apply metrics to gain closeness.</li>
 					</ol>
 				</p>
-			</q>
+			</blockquote>
 			(Stephen C. Meyer).
 
-			<q cite="#bibliographyHoltBrian">
+			<blockquote cite="#bibliographyHoltBrian">
 			<h3 id="Description" data-Dated="2022-08-29T13:19:00">Description</h3>
 			
 			<h4 id="CrossReferencesToRelatedApplications" data-Dated="2022-08-29T13:19:00">Cross references to related applications</h4>
@@ -12790,7 +12784,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 				To find if a relationship exists between the Bible and what we receive today?
 			</p>
 		
-			</q>
+			</blockquote>
 
 			<p data-Dated="2023-01-15T22:37:00">
 				What is the aptitude of this work?
@@ -12872,7 +12866,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</table>
 			</p>
 
-			<q 
+			<blockquote 
 				cite="#bibliographyDeLeanTolbertSmith2022"
 				data-Dated="2023-08-01T15:00:00"
 			>
@@ -12894,7 +12888,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 					</thead>
 					<tbody>
 						<tr>
-							<td>Function<br/>How it works</td>
+							<td>Function<br>How it works</td>
 							<td>
 								The current work meets the design of an Intranet. The test environment.
 								<ol>
@@ -12904,7 +12898,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 							</td>
 						</tr>
 						<tr>
-							<td>Aesthetics<br/>How it looks</td>
+							<td>Aesthetics<br>How it looks</td>
 							<td>
 								<ol>
 									<li>
@@ -12919,12 +12913,12 @@ Execution time:     84.46 seconds (00:01:24.46)
 							</td>
 						</tr>
 						<tr>
-							<td>Quality<br/>How well it is made</td>
+							<td>Quality<br>How well it is made</td>
 							<td>
 								<ol>
-									<li>Materials<br/>The author's work is software specific.</li>
-									<li>Cost<br/>Open-source</li>
-									<li>Manufacture<br/>
+									<li>Materials<br>The author's work is software specific.</li>
+									<li>Cost<br>Open-source</li>
+									<li>Manufacture<br>
 										While it is Microsoft-centric for the back-end (.asmx, Transact-SQL, SQL Server database),
 										the front-end is industry standard (.html, .js, .css).
 									</li>
@@ -12935,9 +12929,9 @@ Execution time:     84.46 seconds (00:01:24.46)
 							<td>Safety</td>
 							<td>
 								<ol>
-									<li>Time<br/>The time duration is minimal.</li>
-									<li>Transport<br/>The work is done on one computer.</li>
-									<li>Ergonomics<br/>The doctorate work consisted of a proof-of-concept that is easily replicable.</li>
+									<li>Time<br>The time duration is minimal.</li>
+									<li>Transport<br>The work is done on one computer.</li>
+									<li>Ergonomics<br>The doctorate work consisted of a proof-of-concept that is easily replicable.</li>
 								</ol>
 							</td>
 						</tr>
@@ -12945,9 +12939,9 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</table>
 			</p>
 			
-			</q> (DeLean Tolbert Smith).
+			</blockquote> (DeLean Tolbert Smith).
 			
-			<q 
+			<blockquote 
 				cite="#bibliographyDeLeanTolbertSmith2022"
 				data-Dated="2023-08-01T16:40:00"
 			>
@@ -13005,9 +12999,9 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</table>
 			</p>
 			
-			</q> (DeLean Tolbert Smith).
+			</blockquote> (DeLean Tolbert Smith).
 			
-			<q 
+			<blockquote 
 				cite="#bibliographyDeLeanTolbertSmith2022"
 				data-Dated="2023-08-01T17:14:00"
 			>
@@ -13022,9 +13016,9 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</ul>
 			</p>
 			
-			</q> (DeLean Tolbert Smith).
+			</blockquote> (DeLean Tolbert Smith).
 
-			<q 
+			<blockquote 
 				cite="#bibliographyDeLeanTolbertSmith2022"
 				data-Dated="2023-08-01T17:27:00"
 			>
@@ -13038,9 +13032,9 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</ul>
 			</p>
 			
-			</q> (DeLean Tolbert Smith).
+			</blockquote> (DeLean Tolbert Smith).
 		
-			<q 
+			<blockquote 
 				cite="#bibliographyDeLeanTolbertSmith2022"
 				data-Dated="2023-08-02T15:23:00"
 			>
@@ -13062,7 +13056,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</ul>				
 			</p>
 			
-			</q> (DeLean Tolbert Smith).
+			</blockquote> (DeLean Tolbert Smith).
 		
 			<p data-Dated="2023-07-17T11:00:00">
 				To know my part as His?
@@ -13074,7 +13068,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 							ContactMaintenance.aspx
 						</a>
 						is a replica copy of a Microsoft wizard master-detail example.
-						<br/>
+						<br>
 						<a 
 							href="http://github.com/KenAdeniji/WordEngineering/tree/main/IIS/Gradual"
 						>
@@ -16192,7 +16186,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 			</p>
 			
 			<p data-Dated="2021-08-12T14:34:00">
-				From...Until AlphabetSequence<br/>
+				From...Until AlphabetSequence<br>
 				<ul>
 					<li>God expressed His wish for me</li>
 					<li>God spoke intermittenly</li>
@@ -16206,13 +16200,13 @@ Execution time:     84.46 seconds (00:01:24.46)
 				</ul>
 			</p>
 
-			<q cite="#bibliographyJohnWhalen" data-Dated="2021-07-28T19:00:00">
+			<blockquote cite="#bibliographyJohnWhalen" data-Dated="2021-07-28T19:00:00">
 				The author will not break each experience into sequences.
 				At this late stage of the research,
 				the author is content,
 				with his original table design,
 				and will elaborate, when it is appropriate, to newer suggestions.
-			</q>
+			</blockquote>
 			(John Whalen).
 
 			<h3 id="WhatDoYouWantToUseItFor" data-Dated="2021-06-07T21:09:00">What do you want to use it for?</h3>
@@ -16488,7 +16482,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 			<p data-Dated="2024-07-01T18:27:00">
 				2024-07-01T18:27:00
 				34324 Siward Drive. Fremont, California (CA) 94555
-				<br/>
+				<br>
 				<a 
 					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20do%20we%20develop...%20our%20past%20time%3F"
 					data-Dated="2024-07-01T18:27:00"
@@ -16957,7 +16951,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 								There were arrests, but he was excluded.
 							</li>
 						</ul>
-						<br/>
+						<br>
 						2024-11-12T02:08:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=You%20are%20release.%20Once,%20you%20fail%20a%20test."
@@ -16968,7 +16962,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 						>
 							You are release. Once, you fail a test.
 						</a>
-						<br/>
+						<br>
 						2024-11-12T02:11:00
 						<a 
 							href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20am%20I%20transparent%3F"
@@ -16979,7 +16973,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 						>
 							How am I transparent?
 						</a>
-						<br/>
+						<br>
 						I no longer... take further input.
 					</li>
 					<li 
@@ -16996,7 +16990,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 						>
 							How do I accommodate... the future... as Myself?
 						</a>
-						<br/>
+						<br>
 						The 2 upgrades to-date of the primary keys and/or unique indexes have been:
 						<ol>
 							<li>
@@ -17014,7 +17008,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_Contact_Names] ON [dbo].[Contact]
 							</li>
 							<li>
 								WordEngineering database HisWord table: Make the HisWordID column the primary key, and add the content of the dream table to make a foreign key. 
-								<br/>
+								<br>
 								2024-11-12T08:51:00
 								<a 
 									href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=We%20are%20not%20where%20we%20want%20to%20be...%20where%20we%20are%20set%20to%20be."
@@ -17033,7 +17027,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_Contact_Names] ON [dbo].[Contact]
 						data-url="en.wikipedia.org/wiki/Tears_in_Heaven"
 					>
 					2024-09-06T23:57:00 Unedited... column.
-					<br/>
+					<br>
 The general format of the Bible is to place the book titles on the top, repeat the book titles and chapter numbers at the beginning of each chapter, and place the verse number beside its text.
 In so doing, there are alphanumeric book titles, and numeric chapters and verses. For the work of the author there are tables with rows and columns.
 					</li>
@@ -17209,7 +17203,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 							may have placeholders.
 						</a>
 						As with the SQL Update statement.
-						<br/>
+						<br>
 						Dynamic SQL may lead to SQL injection.
 						Parameterized query which is attainable by first reading the 
 						column values, and setting the values of the columns to refresh
@@ -17486,7 +17480,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 						She intended for me to come in from the back.
 						Scene 2: Benitoluwa or Buki was driving me on a road like Mission Boulevard.
 						He said he takes classes between Thursdays and Fridays with Google in Nigeria.
-						<br/>
+						<br>
 						What days of the week are between Thursday and Friday in the different calendars?
 						How actualities... balance the world?
 					</li>
@@ -18114,7 +18108,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 			<code>
 				SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%knew%' and KingJamesVersion LIKE '%wife%'
 			</code>
-			<br/>
+			<br>
 			<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=knew%20wife&amp;logic=and">wife child</a>
 			<code>
 				SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%wife%' and KingJamesVersion LIKE '%child%'
@@ -18538,7 +18532,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 				<dd>To study the Bible by using an engineering approach.</dd>
 			</dl> 
 
-			<q cite="#bibliographyAlisonCox2023">
+			<blockquote cite="#bibliographyAlisonCox2023">
 
 			<h3 data-Dated="2023-09-24T06:31:00" id="BusinessAnalysisBodyofKnowledge(BABOK)">Business Analysis Body of Knowledge (BABOK)</h3>
 			
@@ -18607,10 +18601,10 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 				</a>
 			</p>	
 
-			</q>
+			</blockquote>
 			(Alison Cox).
 
-			<q cite="#bibliographyAlisonCox2023">
+			<blockquote cite="#bibliographyAlisonCox2023">
 
 			<h3
 				id="RACIMatrixRACIIsAnAbbreviationForResponsibleAccountableConsultedAndInformed"
@@ -18734,10 +18728,10 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 				</tbody>
 			</table>
 
-			</q>
+			</blockquote>
 			(Alison Cox).
 			
-			<q cite="#bibliographyAllenGTaylor2019">
+			<blockquote cite="#bibliographyAllenGTaylor2019">
 
 			<h3 data-Dated="2023-06-29T16:43:00" id="DatabaseModeling">Database Modeling</h3>
 				
@@ -18805,7 +18799,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 				The weak contact details, primary keys include their ContactID.
 			</p>
 
-			</q>
+			</blockquote>
 			(Allen G. Taylor, 2019).
 			
 			<h3 id="DesignPattern" data-Dated="2023-07-19T08:01:00">Design Pattern</h3>
@@ -18895,7 +18889,7 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 				</tbody>
 			</table>
 
-			<q cite="#bibliographyPetrTravkin2023-02-27">
+			<blockquote cite="#bibliographyPetrTravkin2023-02-27">
 				<h3 id="DataQualityManagement" data-Dated="2023-04-01T18:07:00">Data quality management</h3>
 
 				<ul data-Dated="2023-04-01T18:07:00">	
@@ -18939,12 +18933,12 @@ In so doing, there are alphanumeric book titles, and numeric chapters and verses
 						Schema changes are done via Transact-SQL, which propagates.
 					</li>
 				</ul>
-			</q>
+			</blockquote>
 			(Petr Travkin).
 
-			<q cite="#bibliographyObjectManagementGroup®(OMG®)UnifiedModelingLanguage(UML)">
+			<blockquote cite="#bibliographyObjectManagementGroup®(OMG®)UnifiedModelingLanguage(UML)">
 				<h3 id="UnifiedModelingLanguage(UML)" data-Dated="2023-03-11T13:13:00">Unified Modeling Language (UML)</h3>
-			</q> (Unified Modeling Language)
+			</blockquote> (Unified Modeling Language)
 
 			<h4 id="UnifiedModelingLanguage(UML)CommonStructure" data-Dated="2023-03-11T13:13:00">Common Structure</h4>
 
@@ -20010,7 +20004,7 @@ a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di
 				<figcaption>Occurrence on the word</figcaption>
 			</figure>
 			
-			<q cite="#bibliographyGrantFritchey2018">SQL Server Execution Plan</q>
+			<blockquote cite="#bibliographyGrantFritchey2018">SQL Server Execution Plan</blockquote>
 			(Grant Fritchey).
 
 			<h4 id="SQLServerExecutionPlanScriptureReference">
@@ -20050,7 +20044,7 @@ a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di
 				</p>
 			</div>
 			
-			<q cite="#bibliographyDonJones2002">The Definitive Guide to SQL Server Performance</q>
+			<blockquote cite="#bibliographyDonJones2002">The Definitive Guide to SQL Server Performance</blockquote>
 			(Don Jones).
 
 			<h4 id="Performance Monitor">Performance Monitor - SQL Server Objects</h4>
@@ -20204,12 +20198,12 @@ a76268@alunos.uminho.pt, rui@computer.org, rui.a.pereira@inesctec.pt, saraiva@di
 				occurs twenty-four times in the Bible.
 			</p>
 			<p>
-				In Australia, the author first worked at:<br/>
-				Australian Army Headquarters Training Command<br/>
-				Suakin Drive<br/>
-				Georges Heights NSW 2088<br/>
-				Telephone 61 2 9960 9452<br/>
-				Fax 61 2 9960 9452<br/>
+				In Australia, the author first worked at:<br>
+				Australian Army Headquarters Training Command<br>
+				Suakin Drive<br>
+				Georges Heights NSW 2088<br>
+				Telephone 61 2 9960 9452<br>
+				Fax 61 2 9960 9452<br>
 			</p>
 
 			<p>
@@ -20874,7 +20868,7 @@ Salary: 10 million yen ~ 19 million yen"
 				</li>
 			</ol>
 
-			<q cite="#bibliographyRubinRobertEdward2023">
+			<blockquote cite="#bibliographyRubinRobertEdward2023">
 
 			<h3 data-Dated="2024-01-15T15:00:00" id="Autobiography_Diaspora">Diaspora</h3>
 
@@ -20994,9 +20988,9 @@ Salary: 10 million yen ~ 19 million yen"
 				</ol>	
 			</p>
 			
-			</q>
+			</blockquote>
 
-			<q cite="#bibliographyDennisTenen20210701">
+			<blockquote cite="#bibliographyDennisTenen20210701">
 			
 			<h2 id="StyleOfWriting" data-Dated="2024-02-14T00:00:00">Style of Writing</h2>
 			
@@ -21051,8 +21045,8 @@ Salary: 10 million yen ~ 19 million yen"
 			</a>
 			
 			<footer>
-				<span id="documentLastModified"><span><br/>
-				Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br/>
+				<span id="documentLastModified"><span><br>
+				Copyright © <noscript>2024</noscript><span id="copyrightYear"><span><br>
 				<address>
 					Ken Adeniji
 					<a href="mailto:KenAdeniji@hotmail.com">
