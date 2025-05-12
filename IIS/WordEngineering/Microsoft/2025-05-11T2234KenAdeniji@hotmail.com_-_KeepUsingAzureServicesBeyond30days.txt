@@ -1,0 +1,285 @@
+166158	2025-05-11 17:30:04.483	Entire throughout?	How can the passage... entire throughout? 17:43...18:05 ddl/dml script generation failed. Click on help for known solutions. 19:44 Doesn't give in measure... to the son. 19:44...19:52 microsoft windows operating system, microsoft sql server, wait error. 20:12 URIMaintenanceWebForm.aspx error. 20:07...20:15 2025-01-05 2025-02-22 Lighthouse Covenant Church.
+280 Mowry Avenue. Fremont, California (CA) 94536.
+Reminds me of the Pentecostal Assemblies of God church on Thornton Avenue. Where I saw an African wearing a shirt similar to my black and white sweater. I saw the advertisement at Grand Avenue, Lake Merritt, South Korean restaurant. 20:31...20:37 TriCityNightingale.com 21:48 backup... dizzy, sleepy. 2025-05-11T22:34:00...2025-05-11T22:42:00... Generate Scripts
+
+2025-05-12T04:18:00 bedroom clock versus (vs) 2025-05-12T04:46:00 microsoft windows clock
+
+TITLE: Generate Scripts wizard was unable to load database objects. The wizard will exit. 
+------------------------------
+
+One or more errors occurred.
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+
+There is insufficient memory available in the buffer pool. (Microsoft SQL Server, Error: 802)
+
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+===================================
+
+One or more errors occurred.
+
+===================================
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+------------------------------
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+Program Location:
+
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Urn urn, String[] requestedFields, OrderBy[] orderBy)
+   at Microsoft.SqlServer.Management.Smo.Server.Microsoft.SqlServer.Management.Sdk.Sfc.IAlienRoot.SfcHelper_GetDataTable(Object connection, String urn, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.SfcObjectQuery.ExecuteDataTable(SfcQueryExpression query, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.EnumChildrenForDatabaseObjectType(DatabaseObjectType objectType)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.GetDatabaseObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.LoadObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.<InitializeObjectTree>b__12_0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+
+===================================
+
+There is insufficient memory available in the buffer pool. (Framework Microsoft SqlClient Data Provider)
+
+------------------------------
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+Server Name: HOLYSPIRIT
+Error Number: 802
+Severity: 17
+State: 2
+Line Number: 1
+
+
+------------------------------
+Program Location:
+
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.Read()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.ReadInternal()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.SetConnectionAndQuery(ExecuteSql execSql, String query)
+   at Microsoft.SqlServer.Management.Smo.ExecuteSql.GetDataProvider(StringCollection query, Object con, StatementBuilder sb, RetriveMode rm)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillData(ResultType resultType, StringCollection sql, Object connectionInfo, StatementBuilder sb)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillDataWithUseFailure(SqlEnumResult sqlresult, ResultType resultType)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.BuildResult(EnumResult result)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.GetData(EnumResult erParent)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData()
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData(Request req, Object ci)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
+ Take action to keep your Azure free account and services active
+Microsoft Azure<Azure@promomail.microsoft.com>
+?
+You?
+                                                           
+
+View as a webpage
+ 
+Microsoft logo
+ 
+ 
+
+Keep using Azure services beyond 30 days
+ 
+
+Now that you’ve started building with Azure services, keep your project going. To continue using your services without interruption after you spend your free credit or 30 days—whichever comes first—move to pay-as-you-go pricing now. Enjoy continued free access to many popular Azure services and only pay for what you use in other services above your monthly free amounts.
+Move to pay as you go
+ 
+ 
+
+If you have any remaining credit, you can continue to use it until 30 days from when you created your Azure free account. Check your credit and usage to estimate what your potential costs will be after you move to pay-as-you-go pricing.
+ 
+ 
+ 
+ 
+Azure Portal
+  
+Documentation
+  
+Training
+  
+Support
+ 
+ 
+
+Account information
+ 
+
+Subscription ID: 235f0315-3bb7-4a4d-9007-be1b3cb26baf
+ 
+ 
+  X     
+ 
+ 
+ 
+ 
+
+This email was sent from an unmonitored inbox.
+ 
+Unsubscribe | Privacy Statement
+ 
+
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052 	trekhleb.dev/blog/2025/jobs-radar	9562	NULL	NULL	NULL	The word came in the lobby, east of the front door, after I walked from the garage.	NULL	2025-05-09 My twin sibling said God only walks with you... 17:36 for a limited duration. 2025-05-11T22:34:00...2025-05-11T22:42:00... Generate Scripts
+
+2025-05-12T04:18:00 bedroom clock versus (vs) 2025-05-12T04:46:00 microsoft windows clock
+
+TITLE: Generate Scripts wizard was unable to load database objects. The wizard will exit. 
+------------------------------
+
+One or more errors occurred.
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+
+There is insufficient memory available in the buffer pool. (Microsoft SQL Server, Error: 802)
+
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+===================================
+
+One or more errors occurred.
+
+===================================
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+------------------------------
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+Program Location:
+
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Urn urn, String[] requestedFields, OrderBy[] orderBy)
+   at Microsoft.SqlServer.Management.Smo.Server.Microsoft.SqlServer.Management.Sdk.Sfc.IAlienRoot.SfcHelper_GetDataTable(Object connection, String urn, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.SfcObjectQuery.ExecuteDataTable(SfcQueryExpression query, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.EnumChildrenForDatabaseObjectType(DatabaseObjectType objectType)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.GetDatabaseObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.LoadObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.<InitializeObjectTree>b__12_0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+
+===================================
+
+There is insufficient memory available in the buffer pool. (Framework Microsoft SqlClient Data Provider)
+
+------------------------------
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+Server Name: HOLYSPIRIT
+Error Number: 802
+Severity: 17
+State: 2
+Line Number: 1
+
+
+------------------------------
+Program Location:
+
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.Read()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.ReadInternal()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.SetConnectionAndQuery(ExecuteSql execSql, String query)
+   at Microsoft.SqlServer.Management.Smo.ExecuteSql.GetDataProvider(StringCollection query, Object con, StatementBuilder sb, RetriveMode rm)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillData(ResultType resultType, StringCollection sql, Object connectionInfo, StatementBuilder sb)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillDataWithUseFailure(SqlEnumResult sqlresult, ResultType resultType)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.BuildResult(EnumResult result)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.GetData(EnumResult erParent)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData()
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData(Request req, Object ci)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
+ Take action to keep your Azure free account and services active
+Microsoft Azure<Azure@promomail.microsoft.com>
+?
+You?
+                                                           
+
+View as a webpage
+ 
+Microsoft logo
+ 
+ 
+
+Keep using Azure services beyond 30 days
+ 
+
+Now that you’ve started building with Azure services, keep your project going. To continue using your services without interruption after you spend your free credit or 30 days—whichever comes first—move to pay-as-you-go pricing now. Enjoy continued free access to many popular Azure services and only pay for what you use in other services above your monthly free amounts.
+Move to pay as you go
+ 
+ 
+
+If you have any remaining credit, you can continue to use it until 30 days from when you created your Azure free account. Check your credit and usage to estimate what your potential costs will be after you move to pay-as-you-go pricing.
+ 
+ 
+ 
+ 
+Azure Portal
+  
+Documentation
+  
+Training
+  
+Support
+ 
+ 
+
+Account information
+ 
+
+Subscription ID: 235f0315-3bb7-4a4d-9007-be1b3cb26baf
+ 
+ 
+  X     
+ 
+ 
+ 
+ 
+
+This email was sent from an unmonitored inbox.
+ 
+Unsubscribe | Privacy Statement
+ 
+
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052 	NULL	NULL

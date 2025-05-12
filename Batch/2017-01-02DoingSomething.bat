@@ -191,7 +191,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161222);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16055);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7184);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7260);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
@@ -965,5 +965,96 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 2025-04-30T22:49:00 microsoft windows operating system, microsoft sql server management studio, quit, stop, end, abort, finish.
 
 2025-04-30T13:55:00 2020-04-20 ColumnsAddedLocationScene recorded 2025-04-30T08:19:00. ddl/dml script generation failed. Click on help for known solutions.
+
+
+2025-05-11T22:34:00...2025-05-11T22:42:00... Generate Scripts
+
+2025-05-12T04:18:00 bedroom clock versus (vs) 2025-05-12T04:46:00 microsoft windows clock
+
+TITLE: Generate Scripts wizard was unable to load database objects. The wizard will exit. 
+------------------------------
+
+One or more errors occurred.
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+
+There is insufficient memory available in the buffer pool. (Microsoft SQL Server, Error: 802)
+
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+BUTTONS:
+
+OK
+------------------------------
+
+===================================
+
+One or more errors occurred.
+
+===================================
+
+Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
+
+------------------------------
+For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
+
+------------------------------
+Program Location:
+
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Urn urn, String[] requestedFields, OrderBy[] orderBy)
+   at Microsoft.SqlServer.Management.Smo.Server.Microsoft.SqlServer.Management.Sdk.Sfc.IAlienRoot.SfcHelper_GetDataTable(Object connection, String urn, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.SfcObjectQuery.ExecuteDataTable(SfcQueryExpression query, String[] fields, OrderBy[] orderByFields)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.EnumChildrenForDatabaseObjectType(DatabaseObjectType objectType)
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.GetDatabaseObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.LoadObjectTypes()
+   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.<InitializeObjectTree>b__12_0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+
+===================================
+
+There is insufficient memory available in the buffer pool. (Framework Microsoft SqlClient Data Provider)
+
+------------------------------
+For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
+
+------------------------------
+Server Name: HOLYSPIRIT
+Error Number: 802
+Severity: 17
+State: 2
+Line Number: 1
+
+
+------------------------------
+Program Location:
+
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.Read()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.ReadInternal()
+   at Microsoft.SqlServer.Management.Smo.DataProvider.SetConnectionAndQuery(ExecuteSql execSql, String query)
+   at Microsoft.SqlServer.Management.Smo.ExecuteSql.GetDataProvider(StringCollection query, Object con, StatementBuilder sb, RetriveMode rm)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillData(ResultType resultType, StringCollection sql, Object connectionInfo, StatementBuilder sb)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillDataWithUseFailure(SqlEnumResult sqlresult, ResultType resultType)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.BuildResult(EnumResult result)
+   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.GetData(EnumResult erParent)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData()
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData(Request req, Object ci)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Request request)
+   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
 
 :Exit

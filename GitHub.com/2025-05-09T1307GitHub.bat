@@ -23,3 +23,5 @@ git add	GitHub.com/2025-05-09T1307GitHub.bat
 
 git add	Batch/2017-01-02DoingSomething.bat
 git add Batch/2024-12-22T0414IfeRestore.bat
+
+git add	IIS/WordEngineering/Microsoft/2025-05-11T2234KenAdeniji@hotmail.com_-_KeepUsingAzureServicesBeyond30days.txt
