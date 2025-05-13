@@ -44,7 +44,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::
 
-:::::::::::::::::::::::: {.section style="margin-left:25%"}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
 The importance of this work?
 
 -   [Follow God, as a
@@ -1736,6 +1736,7 @@ databases:
 >
 > #### Calculating the Running Time for a Program {#calculating-the-running-time-for-a-program dated="2022-03-19T20:52:00"}
 >
+> ::: {dated="2022-03-19T20:52:00"}
 > The author uses a for loop to calculate the AlphabetSequenceIndex.
 >
 >     var alphabetSequenceIndex = 0;
@@ -1756,6 +1757,7 @@ databases:
 >                     
 >
 > The cost of executing the for loop is Θ(word.lengthSize)
+> :::
 >
 > #### Lists {#lists dated="2022-03-21T15:48:00"}
 >
@@ -1773,18 +1775,16 @@ databases:
 
 (Clifford A. Shaffer)
 
-> A generic grouping of concepts and their representation
-
-### A generic grouping of concepts and their representation
-
-  Module                                                                                                                                                      Unit
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------
-  [GetAPage.html](http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/WordUnion/GetAPage.html)                                       retrieveAlphabetSequence()
-  [AlphabetSequenceWebService.asmx](http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx)   Query(word)
-  [AlphabetSequence.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs)                       ID(word)
-                                                                                                                                                              ScriptureReference(int alphabetSequenceIndex).
-  [DataCommand.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/DataAccess/DataCommand.cs)                                   DatabaseCommand()
-  [WordEngineeringSchema.sql](http://github.com/KenAdeniji/SQLServerDataDefinitionLanguageDDL/blob/master/WordEngineering/WordEngineeringSchema.sql)          WordEngineering.dbo.udf_AlphabetSequenceIndexScriptureReference(ID)
+> ### A generic grouping of concepts and their representation
+>
+>   Module                                                                                                                                                      Unit
+>   ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------
+>   [GetAPage.html](http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/WordUnion/GetAPage.html)                                       retrieveAlphabetSequence()
+>   [AlphabetSequenceWebService.asmx](http://github.com/KenAdeniji/WordEngineering/blob/master/IIS/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx)   Query(word)
+>   [AlphabetSequence.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs)                       ID(word)
+>                                                                                                                                                               ScriptureReference(int alphabetSequenceIndex).
+>   [DataCommand.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/DataAccess/DataCommand.cs)                                   DatabaseCommand()
+>   [WordEngineeringSchema.sql](http://github.com/KenAdeniji/SQLServerDataDefinitionLanguageDDL/blob/master/WordEngineering/WordEngineeringSchema.sql)          WordEngineering.dbo.udf_AlphabetSequenceIndexScriptureReference(ID)
 
 (Joost Visser)
 
@@ -4303,7 +4303,7 @@ The author is linking words spoken to related verses and dictionaries.
 
 </div>
 
-Word Type
+### Word Type {#WordType dated="2024-07-20T09:54:00"}
 
 <div>
 
@@ -4434,6 +4434,7 @@ How-to verify the work of the spirit?
 -   Is it compatible with the Bible ( [John 10:30, John 17:22, 1 John
     5:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2010:30,%20John%2017:22,%201%20John%205:8)
     )?
+:::
 
 [Is this a
 link](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Is%20this%20a%20link%3F){dated="2024-05-21T05:30:00"
@@ -4656,16 +4657,16 @@ columns, thereby, demanding ranking and preferences for positioning.
 
 (Daniel Jackson, 2023-06-26).
 
+> ::: {dated="2024-07-03T09:02:00"}
 > The user-interface (UI) supports queries, and not database
 > maintenance. The author builds an interface for each additional work
 > that is customizable by the end-user, and independent of the
-> environment of the author.
->
-> A step\... further\... for\... among us.
->
-> The mundane query initiative can be participated in by everyone.
->
-> The complicated tasks are reserved for skilled users.
+> environment of the author. [A step\... further\... for\... among
+> us.]{dated="2024-07-03T16:05:00"} [The mundane query initiative can be
+> participated in by everyone.]{dated="2024-07-03T16:14:00"} [The
+> complicated tasks are reserved for skilled
+> users.]{dated="2024-07-03T16:16:00"}
+> :::
 
 (Daniel Jackson, 2024-01-08).
 
@@ -4692,6 +4693,7 @@ Krishna, 2023-11-07).
   implement it in your preferred
   technology.]{dated="2024-04-24T22:17:00"}
 
+::: {dated="2024-04-12T14:14:29"}
 [What is
 remembrance\...associate?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20remembrance...associate%3F){dated="2024-04-12T14:14:29"}
 
@@ -4701,6 +4703,7 @@ remembrance\...associate?](http://e-comfort.ephraimtech.com/WordEngineering/Word
     locations.
 -   For the most reliable date computations, the author depends on the
     Biblical calendar.
+:::
 
 > ### Volume, Velocity, Variety {#VolumeVelocityVariety dated="2024-04-24T04:01:00"}
 >
@@ -4759,6 +4762,7 @@ remembrance\...associate?](http://e-comfort.ephraimtech.com/WordEngineering/Word
 
 (Jack Hyman, March 2024).
 
+::: {dated="2024-03-25T14:17:00"}
 [Time
 for?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Time%20for%3F){dated="2024-03-25T14:17:00"}
 
@@ -4771,6 +4775,7 @@ for?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?w
 -   People ( [Hebrews
     3:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%203:9)
     )
+:::
 
 ### Allowing a person the entirety of time {#AllowingAPersonTheEntiretyOfTime dated="2024-03-11T21:51:00"}
 
@@ -4863,6 +4868,7 @@ computable. For example, concordances are automatically determinable.
 Dictionaries that contain the meaning of words are available on-line.
 Computers provide up-to-date versions and translations.
 
+::: {dated="2024-04-03T16:32:00"}
 How-to display the data? After determining the
 AlphabetSequenceIndexScriptureReference the author currently retrieves
 and displays in particular the King James Version (KJV) Bible text, and
@@ -4891,6 +4897,7 @@ location="Milk & Honey Cafe. Pegasus Center. 34265 Fremont Boulevard."}
 age.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20be%20conformable%20of%20age.){dated="2024-04-04T22:13:00"
 hiswordid="161104" contactid="24"
 location="Albertsons Lucky, Charter Square, South West"}
+:::
 
 ### Talent and reward? {#TalentAndReward dated="2024-02-29T18:13:00"}
 
@@ -4922,6 +4929,7 @@ location="Albertsons Lucky, Charter Square, South West"}
 
 > ### Laws of Communication {#LawsOfCommunication dated="2024-03-16T19:22:00"}
 >
+> ::: {dated="2024-03-16T19:22:00"}
 > -   The Law of Credibility:
 >     1.  HisWord table Word Column: As much as God spoke it
 >     2.  Period of Time tables: With respect to time
@@ -4938,9 +4946,11 @@ location="Albertsons Lucky, Charter Square, South West"}
 >     ( [Genesis 4:7, Matthew 14:8, Mark
 >     6:25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:7,%20Matthew%2014:8,%20Mark%206:25){dated="2024-03-16T20:28:00"}
 >     )?
+> :::
 
 (John Calvin Maxwell, 2023).
 
+::: {dated="2024-01-27T11:55:00"}
 [How as a\...result of
 what?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20as%20a...result%20of%20what%3F){dated="2024-01-27T11:55:00"
 hiswordid="159393"} Take a word? Store as a record versus (VS) store as
@@ -4949,6 +4959,7 @@ HTML file?
 -   Domain knowledge and expertise? Personal testimony
 -   Technical requirement? Data entry versus (VS) HTML performance
     penalty
+:::
 
 ### [What exactly can we expect\...out of the Bible](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20exactly%20can%20we%20expect...out%20of%20the%20Bible){dated="2023-12-31T06:29:00" hiswordid="159159"} ( [Daniel 5:31](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%205:31){dated="2023-12-31T06:29:00"} )? {#WhatExactlyCanWeExpectOutOfTheBible dated="2023-12-31T06:29:00"}
 
@@ -4966,6 +4977,7 @@ hiswordid="158982"
 url="repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content"}
 depends on the word.
 
+::: {dated="2023-12-18T18:45:00"}
 [What did I fit into a
 place?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20I%20fit%20into%20a%20place%3F){hiswordid="159026"
 contactid="1483"
@@ -4976,7 +4988,9 @@ location="4000-4010 El Cerrito Plaza. El Cerrito, California (CA) 94530"}
 3.  Jerusalem
 4.  Judah
 5.  Israel
+:::
 
+::: {dated="2023-12-20T18:13:00"}
 What did He see [Himself
 as?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Himself%20as%3F){hiswordid="159050"
 contactid="9020"
@@ -4988,6 +5002,7 @@ location="Bedroom put the Charles Schwab check book in the bag. Store."}
 2.  Moses ( [Acts
     7:25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%207:25)
     )
+:::
 
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Chuck Missler of Koinonia House Inc., P.O. Box D, Coeur d'Alene, ID 83816                                                                                                                                                                                                                                                                                                         Author
@@ -5084,63 +5099,27 @@ location="Bedroom put the Charles Schwab check book in the bag. Store."}
     I walked past. And returned to this location on my route to the
     south west shopping cart station.
 
-[What offering I have for
-people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20offering%20I%20have%20for%20people%3F){dated="2023-12-14T08:24:00"
-hiswordid="158988" contactid="5168"
-url="repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content"}
+  Speak face-to-face   Dream or vision   Commentary   Scripture Reference
+  -------------------- ----------------- ------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Moses                Other prophets    Leader       [Numbers 12:6-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2012:6-8){dated="2023-12-14T08:24:00"}
+  Jesus Christ         Other teachers    Authority    [Matthew 7:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%207:29){dated="2023-12-14T08:30:00"}
 
-Speak face-to-face
-:::
-::::::::::::::::::::::::
+  : [What offering I have for
+  people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20offering%20I%20have%20for%20people%3F){dated="2023-12-14T08:24:00"
+  hiswordid="158988" contactid="5168"
+  url="repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content"}
+  {#SpeakFaceToFace}
 
-Dream or vision
+  Word                     Actor                                                                                                Scripture Reference
+  ------------------------ ---------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Holy Spirit and people   [Adam](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Adam)     [Genesis 2:7, Genesis 2:20-25, Genesis 4:25-26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:7,%20Genesis%202:20-25,%20Genesis%204:25-26)
+  After Mine own heart     [David](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=David)   [1 Samuel 13:14, Acts 13:22, 1 Samuel 25:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2013:14,%20Acts%2013:22,%201%20Samuel%2025:3)
 
-Commentary
-
-Scripture Reference
-
-Moses
-
-Other prophets
-
-Leader
-
-[Numbers
-12:6-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2012:6-8){dated="2023-12-14T08:24:00"}
-
-Jesus Christ
-
-Other teachers
-
-Authority
-
-[Matthew
-7:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%207:29){dated="2023-12-14T08:30:00"}
-
-[What does He
-involve?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20does%20He%20involve%3F){dated="2023-12-16T18:45:00"
-hiswordid="159009" contactid="5080"
-location="Charter Square. Dulhan Grocery. 34139 Fremont Boulevard. Fremont, California (CA) 94555"}
-
-Word
-
-Actor
-
-Scripture Reference
-
-Holy Spirit and people
-
-[Adam](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Adam)
-
-[Genesis 2:7, Genesis 2:20-25, Genesis
-4:25-26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:7,%20Genesis%202:20-25,%20Genesis%204:25-26)
-
-After Mine own heart
-
-[David](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=David)
-
-[1 Samuel 13:14, Acts 13:22, 1 Samuel
-25:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2013:14,%20Acts%2013:22,%201%20Samuel%2025:3)
+  : [What does He
+  involve?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20does%20He%20involve%3F){dated="2023-12-16T18:45:00"
+  hiswordid="159009" contactid="5080"
+  location="Charter Square. Dulhan Grocery. 34139 Fremont Boulevard. Fremont, California (CA) 94555"}
+  {#WhatDoesHeInvolve}
 
 ### [Effect of the Progress](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Effect%20of%20the%20Progress%3F){dated="2023-12-06T01:22:00" hiswordid="158918" contactid="1364"} ( [Luke 1:1-4, Daniel 9:22-23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%201:1-4,%20Daniel%209:22-23){dated="2023-12-06T01:22:00"} )? {#EffectOfTheProgress}
 
@@ -5164,6 +5143,7 @@ After Mine own heart
 
 ### [We now fold our task](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=We%20now%20fold%20our%20task.){dated="2023-11-23T23:30:00" hiswordid="158792"}
 
+::: {dated="2023-11-24T01:07:00"}
 [Study analysis?]{dated="2023-11-24T01:12:00"} [ What complexity does it
 reason with? ]{dated="2023-11-24T01:35:00"
 commentary="2023-11-24T01:49:00 Twin sibling. What do I personally use...as Myself. The example of people...I realize? God...The Word...Temple Lamb."}
@@ -5186,70 +5166,22 @@ contactid="2026" commentary="Old Testament...New Testament?"}
 -   The bulk of the work is query.
 -   There are input, processing, output. [How is your
     task\...duplicable?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20is%20your%20task...duplicable%3F){dated="2023-11-24T10:00:00"}
+:::
 
-Alphabets and digits. There are 51 occurrences of the word, count, in
-the King James Version (KJV) Gospel.
+  Word          Count   Scripture Reference
+  ------------- ------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Account       3       [Matthew 12:36, Matthew 18:23, Luke 16:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2012:36,%20Matthew%2018:23,%20Luke%2016:2)
+  Accounted     4       [Mark 10:42, Luke 20:35, Luke 21:36, Luke 22:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Mark%2010:42,%20Luke%2020:35,%20Luke%2021:36,%20Luke%2022:24)
+  Counted       2       [Matthew 14:5, Mark 11:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2014:5,%20Mark%2011:32)
+  Countetd      1       [Luke 14:28](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2014:28)
+  Countenance   3       [Matthew 6:16, Matthew 28:3, Luke 9:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%206:16,%20Matthew%2028:3,%20Luke%209:29)
+  Countries     1       [Luke 21:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:21)
+  Country       37      [Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57, Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark 5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21, Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke 4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke 15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John 11:54](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:12,%20Matthew%208:28,%20Matthew%209:31,%20Matthew%2013:54,%20Matthew%2013:57,%20Matthew%2014:35,%20Matthew%2021:33,%20Matthew%2025:14,%20Mark%205:1,%20Mark%205:10,%20Mark%205:14,%20Mark%206:1,%20Mark%206:4,%20Mark%206:36,%20Mark%206:56,%20Mark%2012:1,%20Mark%2015:21,%20Mark%2016:12,%20Luke%201:39,%20Luke%201:65,%20Luke%202:8,%20Luke%203:3,%20Luke%204:23-Luke%204:24%20,%20Luke%204:37,%20Luke%208:26,%20Luke%208:34,%20Luke%208:37,%20Luke%209:12,%20Luke%2015:13,%20Luke%2015:15,%20Luke%2019:12,%20Luke%2020:9,%20Luke%2023:26,%20John%204:44,%20John%2011:54)
 
-Word
+  : Alphabets and digits. There are 51 occurrences of the word, count,
+  in the King James Version (KJV) Gospel.
 
-Count
-
-Scripture Reference
-
-Account
-
-3
-
-[Matthew 12:36, Matthew 18:23, Luke
-16:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2012:36,%20Matthew%2018:23,%20Luke%2016:2)
-
-Accounted
-
-4
-
-[Mark 10:42, Luke 20:35, Luke 21:36, Luke
-22:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Mark%2010:42,%20Luke%2020:35,%20Luke%2021:36,%20Luke%2022:24)
-
-Counted
-
-2
-
-[Matthew 14:5, Mark
-11:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2014:5,%20Mark%2011:32)
-
-Countetd
-
-1
-
-[Luke
-14:28](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2014:28)
-
-Countenance
-
-3
-
-[Matthew 6:16, Matthew 28:3, Luke
-9:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%206:16,%20Matthew%2028:3,%20Luke%209:29)
-
-Countries
-
-1
-
-[Luke
-21:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:21)
-
-Country
-
-37
-
-[Matthew 2:12, Matthew 8:28, Matthew 9:31, Matthew 13:54, Matthew 13:57,
-Matthew 14:35, Matthew 21:33, Matthew 25:14, Mark 5:1, Mark 5:10, Mark
-5:14, Mark 6:1, Mark 6:4, Mark 6:36, Mark 6:56, Mark 12:1, Mark 15:21,
-Mark 16:12, Luke 1:39, Luke 1:65, Luke 2:8, Luke 3:3, Luke 4:23-Luke
-4:24 , Luke 4:37, Luke 8:26, Luke 8:34, Luke 8:37, Luke 9:12, Luke
-15:13, Luke 15:15, Luke 19:12, Luke 20:9, Luke 23:26, John 4:44, John
-11:54](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:12,%20Matthew%208:28,%20Matthew%209:31,%20Matthew%2013:54,%20Matthew%2013:57,%20Matthew%2014:35,%20Matthew%2021:33,%20Matthew%2025:14,%20Mark%205:1,%20Mark%205:10,%20Mark%205:14,%20Mark%206:1,%20Mark%206:4,%20Mark%206:36,%20Mark%206:56,%20Mark%2012:1,%20Mark%2015:21,%20Mark%2016:12,%20Luke%201:39,%20Luke%201:65,%20Luke%202:8,%20Luke%203:3,%20Luke%204:23-Luke%204:24%20,%20Luke%204:37,%20Luke%208:26,%20Luke%208:34,%20Luke%208:37,%20Luke%209:12,%20Luke%2015:13,%20Luke%2015:15,%20Luke%2019:12,%20Luke%2020:9,%20Luke%2023:26,%20John%204:44,%20John%2011:54)
-
+::: {#Ordering dated="2024-11-20T05:38:00"}
 2024-11-20T05:38:00 Ordering\
 2024-11-20T07:59:00 Do I make a separation between physical and
 spiritual?
@@ -5270,181 +5202,57 @@ spiritual?
 -   Marriage: Younger before the firstborn? ( [Genesis
     29:26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2029:26)
     )
-
-[What will count,
-forever?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20will%20count,%20forever%3F){hiswordid="158972"
-contactid="13648"}
-
-Word
-
-Scripture Reference
-
-Believer in Jesus Christ
-
-[John
-11:26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2011:26)
-
-Kingdom of God
-
-[Daniel
-2:44-45](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%202:44-45)
-
-[Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)
-
-[1 Corinthians 8:1, 1 Corinthians 13:1, 1 Corinthians 13:2, 1
-Corinthians 13:3, 1 Corinthians 13:4, 1 Corinthians 13:8, 1 Corinthians
-13:13, 1 Corinthians 14:1, 1 Corinthians 16:14, Colossians 3:14, 1
-Thessalonians 3:6, 2 Thessalonians 1:3, 1 Timothy 1:5, 1 Timothy 2:15, 1
-Timothy 4:12, 2 Timothy 2:22, 2 Timothy 3:10, Titus 2:2, 1 Peter 4:8, 1
-Peter 5:14, 2 Peter 1:7, 3 John 1:6, Jude 1:12, Revelation
-2:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%208:1,%201%20Corinthians%2013:1,%201%20Corinthians%2013:2,%201%20Corinthians%2013:3,%201%20Corinthians%2013:4,%201%20Corinthians%2013:8,%201%20Corinthians%2013:13,%201%20Corinthians%2014:1,%201%20Corinthians%2016:14,%20Colossians%203:14,%201%20Thessalonians%203:6,%202%20Thessalonians%201:3,%201%20Timothy%201:5,%201%20Timothy%202:15,%201%20Timothy%204:12,%202%20Timothy%202:22,%202%20Timothy%203:10,%20Titus%202:2,%201%20Peter%204:8,%201%20Peter%205:14,%202%20Peter%201:7,%203%20John%201:6,%20Jude%201:12,%20Revelation%202:19)
-
-[First
-resurrection](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=First%20resurrection&logic=phrase)
-
-[Revelation
-20:5-6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:5-6)
-
-Promised Land
-
-[Revelation 3:12, Revelation
-21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%203:12,%20Revelation%2021:2)
-
-Messianic Covenant
-
-[Jeremiah
-31:31-33](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2031:31-33)
-
-Divided according to the children of Israel
-
-[Deuteronomy
-32:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2032:8){contactid="1000"}
-
-2022-05-26T14:05:00\
-[What events in Abraham\'s life are
-additions?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20events%20in%20Abraham's%20life%20are%20additions%3F){dated="2022-05-26T14:05:00"
-contactid="11696" hiswordid="148021"}\
-2025-03-29T16:15:00\
-[I am reminded of the presence of
-others](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20am%20reminded%20of%20the%20presence%20of%20others.){dated="2025-03-29T16:15:00"
-contactid="257" hiswordid="165730"} ( [Ezekiel
-33:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2033:17)
-).
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Partner
-
-Sarah, Hagar, Keturah
-
-[Genesis
-11:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:29)
-
-Pilgrimage
-
-Canaan
-
-[Genesis
-12:1-5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:1-5)
-
-Guidian
-
-Lot
-
-[Genesis
-12:4-5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:4-5)
-
-Possessional Blessing
-
-[Genesis
-14:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2014:19)
-
-Faith
-
-Belief in God, counted for righteousness
-
-[Genesis
-15:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:6)
-
-Covenant
-
-Abrahamic
-
-[Genesis
-15:18](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:8)
-
-Seed
-
-Ishmael and Isaac
-
-[Genesis
-16:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2016:11)
-
-Name change
-
-From Abram to Abraham
-
-[Genesis
-17:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:5)
-
-Making mention at ages
-
-75 years old when he departed out of the land of Haran, had lived in
-Canaan for 10 years, 86 years old when Hagar bare Ishmael to Abram, 99
-years old God\'s request to walk before Him and be perfect, 100 years
-old gave birth to Isaac, 175 years lived
-
-[Genesis 12:4, Genesis 16:3, Genesis 16:16, Genesis 17:1, Genesis 21:5,
-Genesis
-25:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:4,%20Genesis%2016:3,%20Genesis%2016:16,%20Genesis%2017:1,%20Genesis%2021:5,%20Genesis%2025:7)
-
-[To do without
-someone](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20do%20without%20someone.)
-
-Separation from his wives and sons, from the physical to the spiritual
-
-[Genesis 15:13, Genesis 21:12, Genesis 22:2, Genesis 23, Genesis 25:6,
-Acts 7:5-6, Hebrews
-11:17-19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:13,%20Genesis%2021:12,%20Genesis%2023,%20Genesis%2025:6,%20Hebrews%2011:17-19,%20Acts%207:5-6)
-
-Sarah - the first matriach
-
-[What seems natural as
-bringing?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20seems%20natural%20as%20bringing%3F)
-
-[Genesis 18:12, 1 Peter
-3:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2018:12,%201%20Peter%203:6)
-
-2024-01-17T13:36:00 Alphanumeric
-
-Date
-
-Type
-
-Word
-
-Commentary
-
-2004-07-11
-
-Money currency
-
-English pound 45 percent
-
-The financial stock market has made a concerted effort to keep the
-British pound from rising beyond forty five percent 45%
-
-2008-03-11
-
-Calendar
-
-September 22
+:::
+
+  Word                                                                                                                                          Scripture Reference
+  --------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Believer in Jesus Christ                                                                                                                      [John 11:26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2011:26)
+  Kingdom of God                                                                                                                                [Daniel 2:44-45](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%202:44-45)
+  [Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)                                        [1 Corinthians 8:1, 1 Corinthians 13:1, 1 Corinthians 13:2, 1 Corinthians 13:3, 1 Corinthians 13:4, 1 Corinthians 13:8, 1 Corinthians 13:13, 1 Corinthians 14:1, 1 Corinthians 16:14, Colossians 3:14, 1 Thessalonians 3:6, 2 Thessalonians 1:3, 1 Timothy 1:5, 1 Timothy 2:15, 1 Timothy 4:12, 2 Timothy 2:22, 2 Timothy 3:10, Titus 2:2, 1 Peter 4:8, 1 Peter 5:14, 2 Peter 1:7, 3 John 1:6, Jude 1:12, Revelation 2:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%208:1,%201%20Corinthians%2013:1,%201%20Corinthians%2013:2,%201%20Corinthians%2013:3,%201%20Corinthians%2013:4,%201%20Corinthians%2013:8,%201%20Corinthians%2013:13,%201%20Corinthians%2014:1,%201%20Corinthians%2016:14,%20Colossians%203:14,%201%20Thessalonians%203:6,%202%20Thessalonians%201:3,%201%20Timothy%201:5,%201%20Timothy%202:15,%201%20Timothy%204:12,%202%20Timothy%202:22,%202%20Timothy%203:10,%20Titus%202:2,%201%20Peter%204:8,%201%20Peter%205:14,%202%20Peter%201:7,%203%20John%201:6,%20Jude%201:12,%20Revelation%202:19)
+  [First resurrection](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=First%20resurrection&logic=phrase)   [Revelation 20:5-6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:5-6)
+  Promised Land                                                                                                                                 [Revelation 3:12, Revelation 21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%203:12,%20Revelation%2021:2)
+  Messianic Covenant                                                                                                                            [Jeremiah 31:31-33](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2031:31-33)
+  Divided according to the children of Israel                                                                                                   [Deuteronomy 32:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2032:8){contactid="1000"}
+
+  : [What will count,
+  forever?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20will%20count,%20forever%3F){hiswordid="158972"
+  contactid="13648"}
+
+  Word                                                                                                                                  Commentary                                                                                                                                                                                                                                                   Scripture Reference
+  ------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Partner                                                                                                                               Sarah, Hagar, Keturah                                                                                                                                                                                                                                        [Genesis 11:29](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:29)
+  Pilgrimage                                                                                                                            Canaan                                                                                                                                                                                                                                                       [Genesis 12:1-5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:1-5)
+  Guidian                                                                                                                               Lot                                                                                                                                                                                                                                                          [Genesis 12:4-5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:4-5)
+  Possessional Blessing                                                                                                                                                                                                                                                                                                                                                                              [Genesis 14:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2014:19)
+  Faith                                                                                                                                 Belief in God, counted for righteousness                                                                                                                                                                                                                     [Genesis 15:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:6)
+  Covenant                                                                                                                              Abrahamic                                                                                                                                                                                                                                                    [Genesis 15:18](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:8)
+  Seed                                                                                                                                  Ishmael and Isaac                                                                                                                                                                                                                                            [Genesis 16:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2016:11)
+  Name change                                                                                                                           From Abram to Abraham                                                                                                                                                                                                                                        [Genesis 17:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:5)
+  Making mention at ages                                                                                                                75 years old when he departed out of the land of Haran, had lived in Canaan for 10 years, 86 years old when Hagar bare Ishmael to Abram, 99 years old God\'s request to walk before Him and be perfect, 100 years old gave birth to Isaac, 175 years lived   [Genesis 12:4, Genesis 16:3, Genesis 16:16, Genesis 17:1, Genesis 21:5, Genesis 25:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:4,%20Genesis%2016:3,%20Genesis%2016:16,%20Genesis%2017:1,%20Genesis%2021:5,%20Genesis%2025:7)
+  [To do without someone](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20do%20without%20someone.)   Separation from his wives and sons, from the physical to the spiritual                                                                                                                                                                                       [Genesis 15:13, Genesis 21:12, Genesis 22:2, Genesis 23, Genesis 25:6, Acts 7:5-6, Hebrews 11:17-19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:13,%20Genesis%2021:12,%20Genesis%2023,%20Genesis%2025:6,%20Hebrews%2011:17-19,%20Acts%207:5-6)
+  Sarah - the first matriach                                                                                                            [What seems natural as bringing?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20seems%20natural%20as%20bringing%3F)                                                                                                   [Genesis 18:12, 1 Peter 3:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2018:12,%201%20Peter%203:6)
+
+  : 2022-05-26T14:05:00\
+  [What events in Abraham\'s life are
+  additions?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20events%20in%20Abraham's%20life%20are%20additions%3F){dated="2022-05-26T14:05:00"
+  contactid="11696" hiswordid="148021"}\
+  2025-03-29T16:15:00\
+  [I am reminded of the presence of
+  others](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20am%20reminded%20of%20the%20presence%20of%20others.){dated="2025-03-29T16:15:00"
+  contactid="257" hiswordid="165730"} ( [Ezekiel
+  33:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2033:17)
+  ). {#WhatEventsInAbrahamsLifeAreAdditions}
+
+  Date         Type             Word                       Commentary
+  ------------ ---------------- -------------------------- ----------------------------------------------------------------------------------------------------------------------------
+  2004-07-11   Money currency   English pound 45 percent   The financial stock market has made a concerted effort to keep the British pound from rising beyond forty five percent 45%
+  2008-03-11   Calendar         September 22               
+
+  : 2024-01-17T13:36:00 Alphanumeric {#Alphanumeric}
 
 ### Considering processing and storing {#JulioMoreno_ProcessingAndStoring dated="2024-01-18T06:28:00" contactid="3039" commentary="2024-01-17 Julio Moreno and the store manager, Yulin, were standing to the East of the bakery, and Julio Moreno was talking about program memory."}
+
+<div>
 
 [How can I pass knowledge\...as
 sharing](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20can%20I%20pass%20knowledge...as%20sharing%3F){dated="2024-01-18T07:12:00"
@@ -5457,43 +5265,36 @@ contactid="3039"
 commentary="Mike. Russian project manager of Fujistu. Based at Metal Manufactures. Female descendant of Dorren came outside from the garage."
 location="Decoy Terrace, South Center"} )?
 
--   1.  Computers consist of microprocessors and memory. A memory is
-        either:
-        1.  Read only memory (ROM)
-        2.  Random access memory (RAM)
-        3.  Hard disk
+-   Computers consist of microprocessors and memory. A memory is either:
+    1.  Read only memory (ROM)
+    2.  Random access memory (RAM)
+    3.  Hard disk
+-   Object-orientation combines code with data.
+    1.  Code - method
+    2.  Data - field or property
+-   A relational database offers the opportunity\... [to program and
+    store
+    data.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=to%20program%20and%20store%20data.){dated="2024-01-18T07:12:00"}
+-   The ID attribute in HTML files for url hashtag is case-sensitive,
+    and it serves for spot reference, and while it is a fragment
+    address, [it is the entire
+    unit.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=it%20is%20the%20entire%20unit.){dated="2024-01-18T15:40:00"
+    hiswordid="159311" contactid="3039"} A relational database may
+    support the like and between keywords for the partial and range
+    restrictions respectively. [Ko le se range
+    checking.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Ko%20le%20se%20range%20checking.){dated="2024-01-18T15:40:00"
+    hiswordid="159312" contactid="9519"
+    commentary="Put off cloth shirt. Champion Authentic Athletic Apparel. Made in Mexico XXL TTG Gray Grey. RN 26094. CA-21356. Customer Service. PO Box 3012. Winston Salem, North Carolina (NC) 27102-3012. United States of America (USA). Cloth shirt length measures between head and knee. Cloth shirt hand reaches foot and ankle. 2021-12-30...2024-01-18 749 days (2 biblical years, 29 days) (2 years, 2 weeks, 5 days)."
+    location="5805-5815 Owens Drive, between Dublin/Pleasanton BART Station and Hacienda Drive. 5815 Owens Drive. 5803 Owens Drive. 5805 Owens Drive. Clockwise address. Pleasanton, California (CA) 94588. United States of America (USA)."}
+    It cannot do range checking. [There are no abnormality\...in
+    certainty.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=There%20are%20no%20abnormality...in%20certainty.){dated="2024-01-18T20:58:00"
+    hiswordid="159313" contactid="13743"
+    commentary="Heard water running."
+    location="Consler Corporation. 7-2535. Pacific Gas & Electric Company (PG&E).  Wal-Mart. Pleasanton, California (CA) 94588."}
 
-    <!-- -->
+</div>
 
-    1.  Object-orientation combines code with data.
-        1.  Code - method
-        2.  Data - field or property
-
-    <!-- -->
-
-    1.  A relational database offers the opportunity\... [to program and
-        store
-        data.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=to%20program%20and%20store%20data.){dated="2024-01-18T07:12:00"}
-
-    <!-- -->
-
-    1.  The ID attribute in HTML files for url hashtag is
-        case-sensitive, and it serves for spot reference, and while it
-        is a fragment address, [it is the entire
-        unit.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=it%20is%20the%20entire%20unit.){dated="2024-01-18T15:40:00"
-        hiswordid="159311" contactid="3039"} A relational database may
-        support the like and between keywords for the partial and range
-        restrictions respectively. [Ko le se range
-        checking.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Ko%20le%20se%20range%20checking.){dated="2024-01-18T15:40:00"
-        hiswordid="159312" contactid="9519"
-        commentary="Put off cloth shirt. Champion Authentic Athletic Apparel. Made in Mexico XXL TTG Gray Grey. RN 26094. CA-21356. Customer Service. PO Box 3012. Winston Salem, North Carolina (NC) 27102-3012. United States of America (USA). Cloth shirt length measures between head and knee. Cloth shirt hand reaches foot and ankle. 2021-12-30...2024-01-18 749 days (2 biblical years, 29 days) (2 years, 2 weeks, 5 days)."
-        location="5805-5815 Owens Drive, between Dublin/Pleasanton BART Station and Hacienda Drive. 5815 Owens Drive. 5803 Owens Drive. 5805 Owens Drive. Clockwise address. Pleasanton, California (CA) 94588. United States of America (USA)."}
-        It cannot do range checking. [There are no abnormality\...in
-        certainty.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=There%20are%20no%20abnormality...in%20certainty.){dated="2024-01-18T20:58:00"
-        hiswordid="159313" contactid="13743"
-        commentary="Heard water running."
-        location="Consler Corporation. 7-2535. Pacific Gas & Electric Company (PG&E).  Wal-Mart. Pleasanton, California (CA) 94588."}
-
+::: {dated="2023-11-20T09:00:00"}
 [What mentions the
 name?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20mentions%20the%20name){dated="2023-11-20T09:00:00"
 contactid="8531" hiswordid="158758"
@@ -5506,7 +5307,9 @@ commentary="Variable...constant. Time was independent of occurrence. There was f
 -   Constant? Name ( [Genesis 2:19-23, Exodus
     3:14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:19-23,%20Exodus%203:14){dated="2023-11-20T09:00:00"}
     ).
+:::
 
+::: {dated="2023-11-22T19:09:00"}
 [What I use people
 for](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20I%20use%20people%20for%3F){dated="2023-11-22T19:09:00"
 contactid="24" hiswordid="158778"
@@ -5525,8 +5328,11 @@ contactid="13070" hiswordid="158782"
 location="South West restroom urine"
 url="sean.co.uk/downloads/2023files/web_design_in_easy_steps_sampler.pdf"
 commentary="The role of your design. Communicate order."}
+:::
 
 ### A programmable approach {#AProgrammableApproach}
+
+<div>
 
 [This I have devoted to\...that you may find me
 useful](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=This%20I%20have%20devoted%20to...that%20you%20may%20find%20me%20useful){dated="2023-11-04T21:15:00"
@@ -5571,45 +5377,19 @@ location="El Cerrito Plaza BART Station, East of Starbucks. Security male with h
 hiswordid="158633" url="Stephanie.Rydland@USPTO.GOV" contactid="2100"}
 )?
 
-2023-12-15T08:40:00\
-[What substitution\...we have
-ahead?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20substitution...we%20have%20ahead%3F){dated="2023-12-15T08:40:00"
-contactid="3392" hiswordid="158998"}
+</div>
 
-Post Resurrection
+  Post Resurrection   Pre Resurrection   Scripture Reference
+  ------------------- ------------------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Tree of life        Bread of life      [Revelation 2:7, Revelation 22:2, Revelation 22:14, John 6:35, John 6:48](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%202:7,%20Revelation%2022:2,%20Revelation%2022:14,%20John%206:35,%20John%206:48)
+  Book of life        The word of God    [Philippians 4:3, Revelation 3:5, Revelation 13:8, Revelation 17:8, Revelation 20:12, Revelation 20:15, Revelation 21:27, Revelation 22:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%202:7,%20Revelation%2022:2,%20Revelation%2022:14,%20John%206:35,%20John%206:48Philippians%204:3,%20Revelation%203:5,%20Revelation%2013:8,%20Revelation%2017:8,%20Revelation%2020:12,%20Revelation%2020:15,%20Revelation%2021:27,%20Revelation%2022:19)
+  Antichrist          Father\'s name     [1 John 2:18, 1 John 2:22, 1 John 4:3, 2 John 1:7, John 5:43](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%202:18,%201%20John%202:22,%201%20John%204:3,%202%20John%201:7,%20John%205:43)
+  Man of sin          Comforter          [2 Thessalonians 2, John 16:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Thessalonians%202,%20John%2016:7)
 
-Pre Resurrection
-
-Scripture Reference
-
-Tree of life
-
-Bread of life
-
-[Revelation 2:7, Revelation 22:2, Revelation 22:14, John 6:35, John
-6:48](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%202:7,%20Revelation%2022:2,%20Revelation%2022:14,%20John%206:35,%20John%206:48)
-
-Book of life
-
-The word of God
-
-[Philippians 4:3, Revelation 3:5, Revelation 13:8, Revelation 17:8,
-Revelation 20:12, Revelation 20:15, Revelation 21:27, Revelation
-22:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%202:7,%20Revelation%2022:2,%20Revelation%2022:14,%20John%206:35,%20John%206:48Philippians%204:3,%20Revelation%203:5,%20Revelation%2013:8,%20Revelation%2017:8,%20Revelation%2020:12,%20Revelation%2020:15,%20Revelation%2021:27,%20Revelation%2022:19)
-
-Antichrist
-
-Father\'s name
-
-[1 John 2:18, 1 John 2:22, 1 John 4:3, 2 John 1:7, John
-5:43](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%202:18,%201%20John%202:22,%201%20John%204:3,%202%20John%201:7,%20John%205:43)
-
-Man of sin
-
-Comforter
-
-[2 Thessalonians 2, John
-16:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Thessalonians%202,%20John%2016:7)
+  : 2023-12-15T08:40:00\
+  [What substitution\...we have
+  ahead?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20substitution...we%20have%20ahead%3F){dated="2023-12-15T08:40:00"
+  contactid="3392" hiswordid="158998"}
 
 ### Expendable Data {#ExpendableData dated="2023-11-12T18:02:00" url="dbta.com/Editorial/Trends-and-Applications/RESEARCH-at-DBTA-Survey-Reveals-the-Pervasiveness-of-‘Dark-Data-160191.aspx"}
 
@@ -5782,6 +5562,7 @@ JSON and XML have made in-roads.
         word column, and associate the accompanying columns.
     3.  Produce an artifact based on the word.
 
+::: {dated="2023-11-21T15:52:00"}
 [What do I desire\...as part of
 significance?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20do%20I%20desire...as%20part%20of%20significance%3F){dated="2023-11-21T15:52:00"
 hiswordid="158770" location="Union City BART Station"
@@ -5794,7 +5575,9 @@ commentary="Personal testimony"}
     22:12-18, Hebrews
     11:17-19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:5,%20Genesis%2015:2,%20Genesis%2022:2,%20Genesis%2022:12-18,%20Hebrews%2011:17-19)
     ).
+:::
 
+::: {dated="2021-09-25T10:11:00"}
 [The drawback of the relational
 approach?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20drawback%20of%20the%20relational%20approach%3F){dated="2023-09-25T10:11:00"
 hiswordid="157162"}
@@ -5813,7 +5596,9 @@ hiswordid="157162"}
     2.  Although databases may store different file types. This wasn\'t
         the original intention.
     3.  Databases are abstractions.
+:::
 
+::: {dated="2021-09-26T19:58:00"}
 Lacking expertise?
 
 1.  Usability: The author has limited experience with building a
@@ -5823,6 +5608,7 @@ Lacking expertise?
     embedded SQL are not portable across all databases. For example,
     SQLCLR, is in use.
 4.  Adoption by emerging technology? Mobile, cloud\...
+:::
 
 ### [What is the supplement?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20the%20supplement%3F){dated="2023-11-10T18:48:00" contactid="257" hiswordid="158668"} {#WhatIsTheSupplement dated="2023-11-10T18:48:00"}
 
@@ -5841,49 +5627,47 @@ Lacking expertise?
 
 ### What did He find\... as useful {#WhatDidHeFindAsUseful dated="2023-08-04T13:20:00"}
 
-[What did He find\...as
++-----------------------------------+-----------------------------------+
+| Technology                        | Usefulness history                |
++===================================+===================================+
+| Microsoft Windows Operating       | Utility                           |
+| System                            |                                   |
++-----------------------------------+-----------------------------------+
+| Microsoft Notepad                 | Text editor, aged                 |
++-----------------------------------+-----------------------------------+
+| Microsoft Internet Explorer (IE)  | Browser, deprecated               |
++-----------------------------------+-----------------------------------+
+| Microsoft SQL Server              | Relational database. Single       |
+|                                   | repository which supports:        |
+|                                   |                                   |
+|                                   | -   Client/Server autonomy.       |
+|                                   |     Client embedded-SQL.          |
+|                                   | -   1.  The datetime column       |
+|                                   |         defaults.                 |
+|                                   |     2.  The identity column is    |
+|                                   |         auto-generable.           |
+|                                   |     3.  [ Computed column:        |
+|                                   |                                   |
+|                                   |    ]{dated="2023-09-03T04:46:00"} |
+|                                   |         [ What can the computer   |
+|                                   |         do for us?                |
+|                                   |                                   |
+|                                   |    ]{dated="2023-09-03T04:39:00"} |
++-----------------------------------+-----------------------------------+
+| Microsoft sqlcmd                  | Command-line interface (CLI).     |
+|                                   | Between the years 2000\...2005.   |
++-----------------------------------+-----------------------------------+
+| Microsoft SQL Server Management   | Graphical user interface (GUI).   |
+| Studio (SSMS)                     | Spreadsheet like editor.          |
++-----------------------------------+-----------------------------------+
+| Mozilla Firefox                   | Multi-tab browser                 |
++-----------------------------------+-----------------------------------+
+
+: [What did He find\...as
 useful](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20He%20find%20...%20as%20useful%3F){dated="2023-08-04T13:20:00"
 contactid="258" hiswordid="156465"} ( [Matthew 21:42, Mark 12:10, Luke
 20:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2021:42,%20Mark%2012:10,%20Luke%2020:17)
 )?
-
-Technology
-
-Usefulness history
-
-Microsoft Windows Operating System
-
-Utility
-
-Microsoft Notepad
-
-Text editor, aged
-
-Microsoft Internet Explorer (IE)
-
-Browser, deprecated
-
-Microsoft SQL Server
-
-Relational database. Single repository which supports:
-
--   Client/Server autonomy. Client embedded-SQL.
--   1.  The datetime column defaults.
-    2.  The identity column is auto-generable.
-    3.  [ Computed column: ]{dated="2023-09-03T04:46:00"} [ What can the
-        computer do for us? ]{dated="2023-09-03T04:39:00"}
-
-Microsoft sqlcmd
-
-Command-line interface (CLI). Between the years 2000\...2005.
-
-Microsoft SQL Server Management Studio (SSMS)
-
-Graphical user interface (GUI). Spreadsheet like editor.
-
-Mozilla Firefox
-
-Multi-tab browser
 
 ### Memory Storage {#MemoryStorage dated="2024-01-10T11:57:00"}
 
@@ -5908,6 +5692,8 @@ Multi-tab browser
     expectations.]{dated="2023-11-09T21:22:00"}
 
 ### What part of me? {#WhatPartOfMe dated="2023-11-09T17:12:00" contactid="1306"}
+
+<div>
 
 1.  When making man, God made some choices?
     1.  Form: In His image
@@ -5934,56 +5720,79 @@ What growing up have I chosen alike ( [Exodus
 2:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Exodus%202:19)
 )? ]{dated="2023-11-09T18:13:00"}
 
-There are duplicates in the Bible.
+</div>
 
-Type
+<div>
 
-Commentary
++-----------------------------------+-----------------------------------+
+| Type                              | Commentary                        |
++===================================+===================================+
+| Name                              | [ Why the differing name? Man\'s  |
+|                                   | name change? God name variance.   |
+|                                   | Son of David versus (VS) Son of   |
+|                                   | Man ( [2 Samuel 12:24, 2 Samuel   |
+|                                   | 12:25, 1 Samuel 25:5, 1 Samuel    |
+|                                   | 25:25](http://e-comfort.ephr      |
+|                                   | aimtech.com/WordEngineering/WordU |
+|                                   | nion/scriptureReference.html?scri |
+|                                   | ptureReference=2%20Samuel%2012:24 |
+|                                   | ,%202%20Samuel%2012:25,%201%20Sam |
+|                                   | uel%2025:5,%201%20Samuel%2025:25) |
+|                                   | ). ]{dated="2022-07-01T18:32:00"  |
+|                                   | hiswordid="148474"}               |
+|                                   |                                   |
+|                                   | -   Giving a person\'s name to a  |
+|                                   |     place, such as, Enoch,        |
+|                                   |     Israel, Judah, tribes names   |
+|                                   | -   Name changes, such as Abram   |
+|                                   |     to Abraham, Sarai to Sarah,   |
+|                                   |     Jacob to Israel, Saul of      |
+|                                   |     Tarsus to apostle Paul        |
+|                                   | -   Name misspelling, Rahel for   |
+|                                   |     Rachel. [ A rewording of your |
+|                                   |     view.                         |
+|                                   |     ]{dated="2022-06-07T20:36:00" |
+|                                   |     hiswordid="148166"            |
+|                                   |     contactid="257"}              |
+|                                   | -   Referring to people with      |
+|                                   |     their alias, sons of Zebedee, |
+|                                   |     sons of Thunder, Boanerges    |
+|                                   | -   Multiple people bearing the   |
+|                                   |     same name, such as John the   |
+|                                   |     Baptist, apostle John, the    |
+|                                   |     beloved disciple              |
++-----------------------------------+-----------------------------------+
+| Historical Account                | -   Deuteronomy - Rememberance    |
+|                                   | -   Monarchy - Kings versus       |
+|                                   |     Chronicles                    |
+|                                   | -   Gospels - Our LORD\'s, life   |
+|                                   |     story                         |
+|                                   | -   Apocalyptic - Daniel versus   |
+|                                   |     Revelation                    |
++-----------------------------------+-----------------------------------+
+| Quotation                         | -   Retelling previous events     |
+|                                   | -   Prophecy fulfillment          |
+|                                   | -   Answers based on scripture    |
++-----------------------------------+-----------------------------------+
+| Discrepancy between question and  | [Joshua                           |
+| answer                            | 5:13-15](http://e-comfort.eph     |
+|                                   | raimtech.com/WordEngineering/Word |
+|                                   | Union/scriptureReference.html?scr |
+|                                   | iptureReference=Joshua%205:13-15) |
++-----------------------------------+-----------------------------------+
+| Canaan words repeatition?         | [Genesis                          |
+|                                   | 12:5](http://e-comfort.e          |
+|                                   | phraimtech.com/WordEngineering/Wo |
+|                                   | rdUnion/scriptureReference.html?s |
+|                                   | criptureReference=Genesis%2012:5) |
++-----------------------------------+-----------------------------------+
 
-Name
-
-[ Why the differing name? Man\'s name change? God name variance. Son of
-David versus (VS) Son of Man ( [2 Samuel 12:24, 2 Samuel 12:25, 1 Samuel
-25:5, 1 Samuel
-25:25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=2%20Samuel%2012:24,%202%20Samuel%2012:25,%201%20Samuel%2025:5,%201%20Samuel%2025:25)
-). ]{dated="2022-07-01T18:32:00" hiswordid="148474"}
-
--   Giving a person\'s name to a place, such as, Enoch, Israel, Judah,
-    tribes names
--   Name changes, such as Abram to Abraham, Sarai to Sarah, Jacob to
-    Israel, Saul of Tarsus to apostle Paul
--   Name misspelling, Rahel for Rachel. [ A rewording of your view.
-    ]{dated="2022-06-07T20:36:00" hiswordid="148166" contactid="257"}
--   Referring to people with their alias, sons of Zebedee, sons of
-    Thunder, Boanerges
--   Multiple people bearing the same name, such as John the Baptist,
-    apostle John, the beloved disciple
-
-Historical Account
-
--   Deuteronomy - Rememberance
--   Monarchy - Kings versus Chronicles
--   Gospels - Our LORD\'s, life story
--   Apocalyptic - Daniel versus Revelation
-
-Quotation
-
--   Retelling previous events
--   Prophecy fulfillment
--   Answers based on scripture
-
-Discrepancy between question and answer
-
-[Joshua
-5:13-15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Joshua%205:13-15)
-
-Canaan words repeatition?
-
-[Genesis
-12:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Genesis%2012:5)
+: There are duplicates in the Bible.
 
 These duplicates may introduce statistical error and require
 clarification.
+
+</div>
 
 ### Contribution {#Contribution}
 
@@ -6170,62 +5979,37 @@ provider issues the IP address.
 
 ### HisWord table nullable columns {#HisWordTableNullableColumns dated="2023-09-09T17:10:00" contactid="13460" hiswordid="156893" location="Paseo Padre Parkway between Blackstone Way and Hall Way. The inspiration for the, for against column headings, came at 99 Ranch Market. As I wrote, for against, on a single piece of cutoff paper, God asked me about the notepad?"}
 
-All of the columns in the HisWord table are either system generable
-(HisWordID, Dated) or nullable ( [1 Samuel
-3:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%203:19)
-)
+  For                           Against
+  ----------------------------- ----------------
+  Prudent                       Disposable
+  Hyperlink                     Diversion
+  Quality Assurance (QA)        Prone to error
+  God                           Man
+  Word                          Commentary
+  Location                      Scenery
+  Transaction commit rollback   Data cleansing
 
-For
-
-Against
-
-Prudent
-
-Disposable
-
-Hyperlink
-
-Diversion
-
-Quality Assurance (QA)
-
-Prone to error
-
-God
-
-Man
-
-Word
-
-Commentary
-
-Location
-
-Scenery
-
-Transaction commit rollback
-
-Data cleansing
+  : All of the columns in the HisWord table are either system generable
+  (HisWordID, Dated) or nullable ( [1 Samuel
+  3:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%203:19)
+  )
 
 ### Typing Assistant {#TypingAssistant dated="2023-09-10T11:33:00" contactid="13070" hiswordid="156905" location="Paseo Padre Parkway between Blackstone Way and Hall Way. The inspiration for the, for against column headings, came at 99 Ranch Market. As I wrote, for against, on a single piece of cutoff paper, God asked me about the notepad?" url="grammarcheck.net"}
 
-[What are we replacing person
-with](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20are%20we%20replacing%20person%20with%3F)
-( [Jeremiah
-31:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2031:15)
-)? This is a long trend of disruption\... word resonances with
-AlphabetSequence (Index, Scripture Reference). [These are
-edits.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=These%20are%20edits.)
-A record is insertable only once. There may be multiple updates.
+  For   Against
+  ----- ---------
+  Man   Machine
 
-For
+  : [What are we replacing person
+  with](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20are%20we%20replacing%20person%20with%3F)
+  ( [Jeremiah
+  31:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2031:15)
+  )? This is a long trend of disruption\... word resonances with
+  AlphabetSequence (Index, Scripture Reference). [These are
+  edits.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=These%20are%20edits.)
+  A record is insertable only once. There may be multiple updates.
 
-Against
-
-Man
-
-Machine
-
+::: {dated="2023-09-06T23:01:00"}
 [Numbers in
 themes](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Numbers%20in%20themes){dated="2023-09-06T23:32:00"
 hiswordid="156866"}
@@ -6251,7 +6035,9 @@ hiswordid="156866"}
     John 18:33, John 18:39, John 19:3, John 19:19, John
     19:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:2,%20Matthew%2027:11,%20Matthew%2027:29,%20Matthew%2027:37,%20Mark%2015:2,%20Mark%2015:9,%20Mark%2015:12,%20Mark%2015:18,%20Mark%2015:26,%20Luke%2023:3,%20Luke%2023:37,%20Luke%2023:38,%20John%2018:33,%20John%2018:39,%20John%2019:3,%20John%2019:19,%20John%2019:21)
     ).
+:::
 
+::: {dated="2023-09-21T18:15:00"}
 [To be actual
 things](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20be%20actual%20things){dated="2023-09-21T18:15:00"
 contactid="4969" hiswordid="157097"
@@ -6269,6 +6055,7 @@ location="34304 Siward Drive. Fremont, California (CA) 94555."}
 -   Reference ( [Matthew
     11:14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2011:14)
     )
+:::
 
 In telling the future, there are two parts: prophecy and fulfillment (
 [Revelation
@@ -6278,29 +6065,15 @@ have made sufficient inroads in interpretations.
 
 ### What prize at the target? {#WhatPrizeAtTheTarget dated="2023-09-19T22:53:00" hiswordid="157058"}
 
-[What prize at the
-target?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20prize%20at%20the%20target%3F)
+  Prize                                                                     Target                                                  Scripture Reference
+  ------------------------------------------------------------------------- ------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [Kowe.exe](http://github.com/KenAdeniji/WordEngineering/tree/main/Kowe)   Diversified language                                    [Genesis 11:9, Revelation 7:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9,%20Revelation%207:9)
+  <http://github.com/KenAdeniji/WordEngineering/tree/main/IIS/Gradual>      I have decided to work on a gradual improving system.   [Psalms 133](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%20133)
 
-Prize
+  : [What prize at the
+  target?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20prize%20at%20the%20target%3F)
 
-Target
-
-Scripture Reference
-
-[Kowe.exe](http://github.com/KenAdeniji/WordEngineering/tree/main/Kowe)
-
-Diversified language
-
-[Genesis 11:9, Revelation
-7:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9,%20Revelation%207:9)
-
-<http://github.com/KenAdeniji/WordEngineering/tree/main/IIS/Gradual>
-
-I have decided to work on a gradual improving system.
-
-[Psalms
-133](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%20133)
-
+> ::: {dated="2023-09-06T13:37:00" url="http://en.wikipedia.org/wiki/Set_theory"}
 > SQL uses set theory, whereas most programming language clients,
 > including LINQ, use row processing or procedural programming.
 > Relational operations:
@@ -6327,6 +6100,7 @@ I have decided to work on a gradual improving system.
 >     [ Theta join the old convention of placing columns relationships
 >     conditions in the where clause has been superseded by the ANSI/ISO
 >     join clause. ]{dated="2023-09-10T17:27:00"}
+> :::
 
 (Kevin Kline, Regina O. Obe, Leo S. Hsu).
 
@@ -6460,7 +6234,7 @@ Execution time:     84.46 seconds (00:01:24.46)
 > that the length of the source code is large, but it is easily
 > readable.
 >
-> #### Technical Field {#Technical Field dated="2022-08-31T11:45:00"}
+> #### Technical Field {#TechnicalField dated="2022-08-31T11:45:00"}
 >
 > Seeing the Bible as enlightening to man.
 >
@@ -6469,12 +6243,14 @@ Execution time:     84.46 seconds (00:01:24.46)
 > To find if a relationship exists between the Bible and what we receive
 > today?
 
+::: {dated="2023-01-15T22:37:00"}
 What is the aptitude of this work?
 
 -   AlphabetSequence spreads out.
 -   Dates are lined up.
 
 Words out of numbers.
+:::
 
 [Where is the knowledge
 added?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20is%20the%20knowledge%20added%3f)
@@ -6485,131 +6261,165 @@ work.
 intelligence?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Telling%20intelligence%3f){contactid="1206"}
 What did Hagar say? Her only speaking was with the one that sees?
 
-[Word
-speaking.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Word%20speaking.){hiswordid="154207"}
-[What did He
-use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20He%20use%3F){hiswordid="158434"
-contactid="257" location="99 Ranch Market. Hot stove."}
+  Word                      Scripture Reference
+  ------------------------- ------------------------------------------------------------------------------------------------------------------------------
+  God                       [John 1:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:1)
+  Most occurrent activity   
+  Highest measurable        
+  Humane                    
+  Understandable            
+  Teachable                 
+  Repeatable                
+  Translateable             
+  Transcribable             
+  Generable                 
+  Referenceable             
+  Securable                 
+  Suppressable              
 
-Word
-
-Scripture Reference
-
-God
-
-[John
-1:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:1)
-
-Most occurrent activity
-
-Highest measurable
-
-Humane
-
-Understandable
-
-Teachable
-
-Repeatable
-
-Translateable
-
-Transcribable
-
-Generable
-
-Referenceable
-
-Securable
-
-Suppressable
+  : [Word
+  speaking.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Word%20speaking.){hiswordid="154207"}
+  [What did He
+  use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20He%20use%3F){hiswordid="158434"
+  contactid="257" location="99 Ranch Market. Hot stove."}
 
 > ### Design Specifications {#DesignSpecifications}
 >
-> Design Specifications
-
-Sample Specification and Categories
-
-Constraints
-
-User Specification (Demand)
-
-User Specification (Want)
-
-Function\
-How it works
-
-The current work meets the design of an Intranet. The test environment.
-
-1.  Performance
-2.  Energy
-
-Aesthetics\
-How it looks
-
-1.  Geometry ( e.g. Earlier work focused on generating Internet
-    documents. The transition was from .html, xml/xslt, .aspx, and now
-    AJAX. )
-
-Quality\
-How well it is made
-
-1.  Materials\
-    The author\'s work is software specific.
-2.  Cost\
-    Open-source
-3.  Manufacture\
-    While it is Microsoft-centric for the back-end (.asmx, Transact-SQL,
-    SQL Server database), the front-end is industry standard (.html,
-    .js, .css).
-
-Safety
-
-1.  Time\
-    The time duration is minimal.
-2.  Transport\
-    The work is done on one computer.
-3.  Ergonomics\
-    The doctorate work consisted of a proof-of-concept that is easily
-    replicable.
+> +-------------+-------------+-------------+-------------+-------------+
+> |             | Sample      | Constraints | User        | User        |
+> |             | Sp          |             | Sp          | Sp          |
+> |             | ecification |             | ecification | ecification |
+> |             | and         |             | (Demand)    | (Want)      |
+> |             | Categories  |             |             |             |
+> +=============+=============+=============+=============+=============+
+> | Function\   | The current |             |             |             |
+> | How it      | work meets  |             |             |             |
+> | works       | the design  |             |             |             |
+> |             | of an       |             |             |             |
+> |             | Intranet.   |             |             |             |
+> |             | The test    |             |             |             |
+> |             | e           |             |             |             |
+> |             | nvironment. |             |             |             |
+> |             |             |             |             |             |
+> |             | 1.          |             |             |             |
+> |             | Performance |             |             |             |
+> |             | 2.  Energy  |             |             |             |
+> +-------------+-------------+-------------+-------------+-------------+
+> | Aesthetics\ | 1           |             |             |             |
+> | How it      | .  Geometry |             |             |             |
+> | looks       |     ( e.g.  |             |             |             |
+> |             |     Earlier |             |             |             |
+> |             |     work    |             |             |             |
+> |             |     focused |             |             |             |
+> |             |     on      |             |             |             |
+> |             |             |             |             |             |
+> |             |  generating |             |             |             |
+> |             |             |             |             |             |
+> |             |    Internet |             |             |             |
+> |             |             |             |             |             |
+> |             |  documents. |             |             |             |
+> |             |     The     |             |             |             |
+> |             |             |             |             |             |
+> |             |  transition |             |             |             |
+> |             |     was     |             |             |             |
+> |             |     from    |             |             |             |
+> |             |     .html,  |             |             |             |
+> |             |             |             |             |             |
+> |             |   xml/xslt, |             |             |             |
+> |             |     .aspx,  |             |             |             |
+> |             |     and now |             |             |             |
+> |             |     AJAX. ) |             |             |             |
+> +-------------+-------------+-------------+-------------+-------------+
+> | Quality\    | 1.          |             |             |             |
+> | How well it |  Materials\ |             |             |             |
+> | is made     |     The     |             |             |             |
+> |             |             |             |             |             |
+> |             |   author\'s |             |             |             |
+> |             |     work is |             |             |             |
+> |             |             |             |             |             |
+> |             |    software |             |             |             |
+> |             |             |             |             |             |
+> |             |   specific. |             |             |             |
+> |             | 2.  Cost\   |             |             |             |
+> |             |             |             |             |             |
+> |             | Open-source |             |             |             |
+> |             | 3.  M       |             |             |             |
+> |             | anufacture\ |             |             |             |
+> |             |     While   |             |             |             |
+> |             |     it is   |             |             |             |
+> |             |     Micros  |             |             |             |
+> |             | oft-centric |             |             |             |
+> |             |     for the |             |             |             |
+> |             |             |             |             |             |
+> |             |    back-end |             |             |             |
+> |             |     (.asmx, |             |             |             |
+> |             |     Tr      |             |             |             |
+> |             | ansact-SQL, |             |             |             |
+> |             |     SQL     |             |             |             |
+> |             |     Server  |             |             |             |
+> |             |             |             |             |             |
+> |             |  database), |             |             |             |
+> |             |     the     |             |             |             |
+> |             |             |             |             |             |
+> |             |   front-end |             |             |             |
+> |             |     is      |             |             |             |
+> |             |             |             |             |             |
+> |             |    industry |             |             |             |
+> |             |             |             |             |             |
+> |             |    standard |             |             |             |
+> |             |     (.html, |             |             |             |
+> |             |     .js,    |             |             |             |
+> |             |     .css).  |             |             |             |
+> +-------------+-------------+-------------+-------------+-------------+
+> | Safety      | 1.  Time\   |             |             |             |
+> |             |     The     |             |             |             |
+> |             |     time    |             |             |             |
+> |             |             |             |             |             |
+> |             |    duration |             |             |             |
+> |             |     is      |             |             |             |
+> |             |             |             |             |             |
+> |             |    minimal. |             |             |             |
+> |             | 2.          |             |             |             |
+> |             |  Transport\ |             |             |             |
+> |             |     The     |             |             |             |
+> |             |     work is |             |             |             |
+> |             |     done on |             |             |             |
+> |             |     one     |             |             |             |
+> |             |             |             |             |             |
+> |             |   computer. |             |             |             |
+> |             | 3.          |             |             |             |
+> |             | Ergonomics\ |             |             |             |
+> |             |     The     |             |             |             |
+> |             |             |             |             |             |
+> |             |   doctorate |             |             |             |
+> |             |     work    |             |             |             |
+> |             |             |             |             |             |
+> |             |   consisted |             |             |             |
+> |             |     of a    |             |             |             |
+> |             |     proof   |             |             |             |
+> |             | -of-concept |             |             |             |
+> |             |     that is |             |             |             |
+> |             |     easily  |             |             |             |
+> |             |             |             |             |             |
+> |             | replicable. |             |             |             |
+> +-------------+-------------+-------------+-------------+-------------+
+>
+> : Design Specifications
 
 (DeLean Tolbert Smith).
 
 > ### Brainstorming {#Brainstorming}
 >
-> Brainstorming
+>   Strategy                    Description
+>   --------------------------- --------------------------------------------------------------------------------------------------------------
+>   Focus on quantity           AlphabetSequence includes the whole Bible. The author has not expanded the 2-words nor 3-words computation.
+>   Wait to judge               AlphabetSequence is relevant to the English language and the King James Version (KJV) Bible?
+>   Think outside the box       While the initial focus was on the Bible, written word; research now includes spoken word.
+>   Combine and improve ideas   The author solicits input from others.
+>   Keep focus on the problem   Database recording resulted from the effort to determine when? The author has concentrated on this timeline.
+>   Set a time limit            Elaborious work is avoided.
 >
-> Strategy
-
-Description
-
-Focus on quantity
-
-AlphabetSequence includes the whole Bible. The author has not expanded
-the 2-words nor 3-words computation.
-
-Wait to judge
-
-AlphabetSequence is relevant to the English language and the King James
-Version (KJV) Bible?
-
-Think outside the box
-
-While the initial focus was on the Bible, written word; research now
-includes spoken word.
-
-Combine and improve ideas
-
-The author solicits input from others.
-
-Keep focus on the problem
-
-Database recording resulted from the effort to determine when? The
-author has concentrated on this timeline.
-
-Set a time limit
-
-Elaborious work is avoided.
+>   : Brainstorming
 
 (DeLean Tolbert Smith).
 
@@ -6630,6 +6440,8 @@ Elaborious work is avoided.
 
 > ### Decision-screening Matrix {#DecisionScreeningMatrix dated="2023-08-02T15:28:00"}
 >
+> <div>
+>
 > The AJAX approach offers the following benefits in performance
 > criterion and weight:
 >
@@ -6642,9 +6454,12 @@ Elaborious work is avoided.
 >
 > -   Server-side JavaScript, for example, Node
 > -   Front-end library and framework, for example, React
+>
+> </div>
 
 (DeLean Tolbert Smith).
 
+::: {dated="2023-07-17T11:00:00"}
 To know my part as His?
 
 -   [ContactMaintenance.aspx](http://github.com/KenAdeniji/WordOfGod/blob/master/ContactMaintenance.aspx)
@@ -6685,36 +6500,22 @@ To know my part as His?
 -   [What did He find re-occurring as
     him?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20He%20find%20re-occurring%20as%20him%3F)
     Seed of Jesse, king like David, son of David
+:::
 
 ### What specially like Him? {#WhatSpeciallyLikeHim dated="2023-08-05T21:34:00" contactid="13381" hiswordid="156485"}
 
-[What specially like
-Him?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20specially%20like%20Him%3F){dated="2023-08-05T21:34:00"
-contactid="13381" hiswordid="156485"} ( [1 Corinthians
-15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%2015)
-) [I spoke to
-task.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20spoke%20to%20task.){dated="2023-08-06T07:47:00"
-contactid="13381" hiswordid="156491"}
+  Event        Feature                  Scripture Reference
+  ------------ ------------------------ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Creation     Image of our ancestors   [Genesis 1:26-27, Genesis 2:7, Genesis 6:3, Luke 3:38](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:26-27,%20Genesis%202:7,%20Genesis%206:3)
+  Redemption   Image of the Son         [1 John 3:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%203:2)
 
-Event
-
-Feature
-
-Scripture Reference
-
-Creation
-
-Image of our ancestors
-
-[Genesis 1:26-27, Genesis 2:7, Genesis 6:3, Luke
-3:38](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:26-27,%20Genesis%202:7,%20Genesis%206:3)
-
-Redemption
-
-Image of the Son
-
-[1 John
-3:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%203:2)
+  : [What specially like
+  Him?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20specially%20like%20Him%3F){dated="2023-08-05T21:34:00"
+  contactid="13381" hiswordid="156485"} ( [1 Corinthians
+  15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Corinthians%2015)
+  ) [I spoke to
+  task.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20spoke%20to%20task.){dated="2023-08-06T07:47:00"
+  contactid="13381" hiswordid="156491"}
 
 ### Web Site Performance Metrics
 
@@ -6794,7 +6595,7 @@ relationship, deductive reasoning.
 
 ### Can we look back at history, as we precede our future
 
-#### An angel said to prophet Daniel, many shall run to and fro ( [Daniel 12:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Daniel%2012:4) )
+#### An angel said to prophet Daniel, many shall run to and fro ( [Daniel%2012:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Daniel%2012:4) )
 
 Is this phenomenal traceable, Biblically, and can we name a person that
 bears similar resemblance? When we study, king David, we can see that
@@ -6831,104 +6632,42 @@ across the water.
 When time is maximal used; time is ideal allowed. When our association
 to follow; is association to the end.
 
-[What relates a place\...as one
-another?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20relates%20a%20place%20...%20as%20one%20another%3F)
-[Observance of a particular
-use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Observance%20of%20a%20particular%20use%3F)
+  Place                              Actor            Scripture Reference
+  ---------------------------------- ---------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Garden of Eden                     Adam             [Genesis 2:8, Genesis 2:10, Genesis 2:15, Genesis 3:23-3:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:8,%20Genesis%202:10,%20Genesis%202:15,%20Genesis%203:23-3:24)
+  Field                              Cain and Abel    [Genesis 4:8-4:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:8-4:15)
+  Land of Nod, on the East of Eden   Cain             [Genesis 4:16](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:16)
+  Enoch                              Cain and Enoch   [Genesis 4:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:17)
 
-Place
+  : [What relates a place\...as one
+  another?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20relates%20a%20place%20...%20as%20one%20another%3F)
+  [Observance of a particular
+  use?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Observance%20of%20a%20particular%20use%3F)
 
-Actor
+  Word                                                                                                     Scripture Reference
+  -------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  Work word                                                                                                [John 14:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2014:10)
+  [Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)   
+  Timeliness                                                                                               [Deuteronomy 18:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2018:22)
 
-Scripture Reference
+  : What right of things?
 
-Garden of Eden
+  Word         Scripture Reference                                                                                                                                        Commentary
+  ------------ ---------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Naming       [Genesis 2, Genesis 4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202,%20Genesis%204)   The author registered a trademark name and much later created and maintained a contact database. The author received the title of a book that he wrote and afterwards a domain name.
+  Profession   [Genesis 4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204)                             The author developed an interest in Biblical studies while undergoing tertiary education.
 
-Adam
+  : [The business of telling us
+  apart?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20business%20of%20telling%20us%20apart%3F){dated="2022-12-26T18:18:00"
+  hiswordid="150315"}
 
-[Genesis 2:8, Genesis 2:10, Genesis 2:15, Genesis
-3:23-3:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:8,%20Genesis%202:10,%20Genesis%202:15,%20Genesis%203:23-3:24)
+  Keyword   Commentary
+  --------- -------------------------------------
+  Light     Sun, Moon: Evening and day, Sabbath
+  Man       Image of God, helper, seed
 
-Field
-
-Cain and Abel
-
-[Genesis
-4:8-4:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:8-4:15)
-
-Land of Nod, on the East of Eden
-
-Cain
-
-[Genesis
-4:16](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:16)
-
-Enoch
-
-Cain and Enoch
-
-[Genesis
-4:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:17)
-
-What right of things?
-
-Word
-
-Scripture Reference
-
-Work word
-
-[John
-14:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2014:10)
-
-[Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)
-
-Timeliness
-
-[Deuteronomy
-18:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2018:22)
-
-[The business of telling us
-apart?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20business%20of%20telling%20us%20apart%3F){dated="2022-12-26T18:18:00"
-hiswordid="150315"}
-
-Word
-
-Scripture Reference
-
-Commentary
-
-Naming
-
-[Genesis 2, Genesis
-4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202,%20Genesis%204)
-
-The author registered a trademark name and much later created and
-maintained a contact database. The author received the title of a book
-that he wrote and afterwards a domain name.
-
-Profession
-
-[Genesis
-4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204)
-
-The author developed an interest in Biblical studies while undergoing
-tertiary education.
-
-[To help someone generate
-size?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20help%20someone%20generate%20size%3F)
-
-Keyword
-
-Commentary
-
-Light
-
-Sun, Moon: Evening and day, Sabbath
-
-Man
-
-Image of God, helper, seed
+  : [To help someone generate
+  size?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20help%20someone%20generate%20size%3F)
 
 [What did He see as His? A remodelling of the
 last](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20did%20He%20see%20as%20His?%20A%20remodelling%20of%20the%20last)
@@ -6951,42 +6690,21 @@ a result of who are we? When does the scenario introduce God ( [Genesis
 3:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%203:8)
 )?
 
-[Do you know
-mine?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Do%20you%20know%20Mine%3F){hiswordid="150315"}
-( [Deuteronomy
-18:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2018:15)
-)
+  God               Actor                                                                                                                                          
+  ----------------- ---------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    Moses                                                                                                                                          Jesus
+  Name              Jehovah ( [Exodus 6:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%206:3) )   Father ( [Matthew 23:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2023:9) )
+  Place of Origin   Egypt ( [Exodus 2:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202:19) )   Bethlehem ( [Matthew 2:1-18, Luke 2:1-20, John 7:42](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:1-18,%20Luke%202:1-20,%20John%207:42) )
 
-God
-
-Actor
-
-Moses
-
-Jesus
-
-Name
-
-Jehovah ( [Exodus
-6:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%206:3)
-)
-
-Father ( [Matthew
-23:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2023:9)
-)
-
-Place of Origin
-
-Egypt ( [Exodus
-2:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202:19)
-)
-
-Bethlehem ( [Matthew 2:1-18, Luke 2:1-20, John
-7:42](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%202:1-18,%20Luke%202:1-20,%20John%207:42)
-)
+  : [Do you know
+  mine?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Do%20you%20know%20Mine%3F){hiswordid="150315"}
+  ( [Deuteronomy
+  18:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%2018:15)
+  )
 
 ### 2022-08-08T19:00:00 Country {#Country dated="2022-08-08T19:00:00" contactid="2579" commentary="Titi Akosile"}
 
+::: {dated="2022-08-08T19:00:00"}
 2025-04-17T04:38:00 We have considered place grouping, as in countries.
 Should we also consider 2025-04-1705:22:00 man grouping?\
 2025-04-1700:00:00 Epoch timestamp: 1744848000\
@@ -7036,6 +6754,7 @@ hiswordid="165930" contactid="15858" scripturereference="1 Samuel 3:19"}
     contactid="9041"} I saw Barney John and his wife, Bernadette John,
     of 4770 Canvasback Common. Country citizenship for Jews and
     Palestines?
+:::
 
 ### Associated culture {#AssociatedCulture dated="2023-08-06T16:01:00"}
 
@@ -7055,6 +6774,7 @@ How do I expand on the word? Scripture reference or personal testimony (
 
 ### [What is the reward of the past?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20the%20reward%20of%20the%20past%3F){dated="2023-08-03T12:47:00" contactid="2765" hiswordid="156456"} {#WhatIsTheRewardOfThePast}
 
+::: {dated="2023-08-03T12:47:00"}
 From that day ( [1 Samuel 16:13, 1 Samuel 18:9, 1 Samuel 30:25, Ezekiel
 39:22, Ezekiel 48:35, Matthew 22:46, John
 11:53](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2016:13,%201%20Samuel%2018:9,%201%20Samuel%2030:25,%20Ezekiel%2039:22,%20Ezekiel%2048:35,%20Matthew%2022:46,%20John%2011:53){dated="2023-08-03T13:22:00"}
@@ -7066,7 +6786,9 @@ From that day ( [1 Samuel 16:13, 1 Samuel 18:9, 1 Samuel 30:25, Ezekiel
 2.  Commit ( [Luke 23:46, Psalms
     31:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Luke%2023:46,%20Psalms%2031:5)
     )
+:::
 
+::: {dated="2023-04-10T14:20:00" contactid="991" hiswordid="11355"}
 What personifies the time?
 
 1.  First and Last Adam ( [1 Corinthians
@@ -7075,6 +6797,7 @@ What personifies the time?
 2.  Firstborn ( [Romans 8:29, Colossians 1:15, Colossians 1:18, Hebrews
     12:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=Romans%208:29,%20Colossians%201:15,%20Colossians%201:18,%20Hebrews%2012:23)
     )
+:::
 
 What does authoring the word do? To shed as much light as our opening (
 [Genesis 1:1-1:5, Luke 4:16-4:32, John
@@ -7106,62 +6829,28 @@ it is not varying in part.
     6:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Timothy%206:17)
     ).
 
-How do you reference the Bible?
+  Word                   Scripture Reference                                                                                                                                                                                                                Commentary
+  ---------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------
+  Prophecy fulfillment   [Isaiah 61:2, Luke 4:19, Daniel 9:24-27, Matthew 5:18](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2061:2,%20Luke%204:19,%20Daniel%209:24-27,%20Matthew%205:18)   Iota
 
-Word
+  : How do you reference the Bible?
 
-Scripture Reference
+  Keyword                    Scripture Reference
+  -------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------
+  Place of Residence         [Acts 1:4, Acts 1:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201:4,%20Acts%201:8)
+  Sign                       [Acts 1:3, Acts 1:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201:3,%20Acts%201:5)
+  Place of Worship           [Acts 2:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:1)
+  Speak with other tongues   [Acts 2:2-2:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:2-2:11)
+  Worshippers                [Acts 2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:5)
+  Leader                     [Acts 2:14-2:47](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:14-2:47)
 
-Commentary
-
-Prophecy fulfillment
-
-[Isaiah 61:2, Luke 4:19, Daniel 9:24-27, Matthew
-5:18](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2061:2,%20Luke%204:19,%20Daniel%209:24-27,%20Matthew%205:18)
-
-Iota
-
-2023-01-22T11:37:00 [However, time substantiated
-itself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=However,%20time%20substantiated%20itself%3F){contactid="583"
-hiswordid="151589"} The author suggests that Baptism of the Holy Spirit
-( [Acts
-1-2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201-2)
-), is achievable in individual locations as a pressage to the 3rd temple
-in Jerusalem.
-
-Keyword
-
-Scripture Reference
-
-Place of Residence
-
-[Acts 1:4, Acts
-1:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201:4,%20Acts%201:8)
-
-Sign
-
-[Acts 1:3, Acts
-1:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201:3,%20Acts%201:5)
-
-Place of Worship
-
-[Acts
-2:1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:1)
-
-Speak with other tongues
-
-[Acts
-2:2-2:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:2-2:11)
-
-Worshippers
-
-[Acts
-2:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:5)
-
-Leader
-
-[Acts
-2:14-2:47](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%202:14-2:47)
+  : 2023-01-22T11:37:00 [However, time substantiated
+  itself?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=However,%20time%20substantiated%20itself%3F){contactid="583"
+  hiswordid="151589"} The author suggests that Baptism of the Holy
+  Spirit ( [Acts
+  1-2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%201-2)
+  ), is achievable in individual locations as a pressage to the 3rd
+  temple in Jerusalem. {#3rdTempleInJerusalem}
 
 The author does not have the advantage of a crawler; the author is
 querying a database in real time, without the benefit of search engine
@@ -7179,34 +6868,79 @@ optimization (SEO).
 
 ### Interconnection {#Interconnection dated="2023-10-23T20:35:00"}
 
-Technology
-
-Commentary
-
-Web pages
-
-The bulk of the author\'s web pages are in 3 separate virtual
-directories.
-
-Virtual Directory
-
-Commentary
-
-[http://e-comfort.ephraimtech.com/InformationInTransit](http://e-comfort.ephraimtech.com/InformationInTransit){target="_blank"}
-
--   [http://e-comfort.ephraimtech.com/InformationInTransit/ContactMaintenance.aspx](http://e-comfort.ephraimtech.com/InformationInTransit/ContactMaintenance.aspx){target="_blank"}
-    Master-detail gridview
--   [http://e-comfort.ephraimtech.com/InformationInTransit/URIMaintenanceWebForm.aspx](http://e-comfort.ephraimtech.com/InformationInTransit/URIMaintenanceWebForm.aspx){target="_blank"}
-    URI tables with a vertical view.
-
-[http://e-comfort.ephraimtech.com/Gradual](http://e-comfort.ephraimtech.com/Gradual){target="_blank"}
-
-Recruiters contact details. Master page with user components.
-
-[http://e-comfort.ephraimtech.com/WordEngineering](http://e-comfort.ephraimtech.com/WordEngineering){target="_blank"}
-
-AJAX website. Shared .dll. Stand-alone pages with hyperlinks to related
-information.
++-----------------------------------+-----------------------------------+
+| Technology                        | Commentary                        |
++===================================+===================================+
+| Web pages                         | The bulk of the author\'s web     |
+|                                   | pages are in 3 separate virtual   |
+|                                   | directories.                      |
+|                                   |                                   |
+|                                   | +--------------+--------------+   |
+|                                   | | Virtual      | Commentary   |   |
+|                                   | | Directory    |              |   |
+|                                   | +==============+==============+   |
+|                                   | | [http:/      | -   [http:/  |   |
+|                                   | | /e-comfort.e | /e-comfort.e |   |
+|                                   | | phraimtech.c | phraimtech.c |   |
+|                                   | | om/Informati | om/Informati |   |
+|                                   | | onInTransit] | onInTransit/ |   |
+|                                   | | (http://e-co | ContactMaint |   |
+|                                   | | mfort.ephrai | enance.aspx] |   |
+|                                   | | mtech.com/In | (http://e-co |   |
+|                                   | | formationInT | mfort.ephrai |   |
+|                                   | | ransit){targ | mtech.com/In |   |
+|                                   | | et="_blank"} | formationInT |   |
+|                                   | |              | ransit/Conta |   |
+|                                   | |              | ctMaintenanc |   |
+|                                   | |              | e.aspx){targ |   |
+|                                   | |              | et="_blank"} |   |
+|                                   | |              |     M        |   |
+|                                   | |              | aster-detail |   |
+|                                   | |              |     gridview |   |
+|                                   | |              | -   [        |   |
+|                                   | |              | http://e-com |   |
+|                                   | |              | fort.ephraim |   |
+|                                   | |              | tech.com/Inf |   |
+|                                   | |              | ormationInTr |   |
+|                                   | |              | ansit/URIMai |   |
+|                                   | |              | ntenanceWebF |   |
+|                                   | |              | orm.aspx](ht |   |
+|                                   | |              | tp://e-comfo |   |
+|                                   | |              | rt.ephraimte |   |
+|                                   | |              | ch.com/Infor |   |
+|                                   | |              | mationInTran |   |
+|                                   | |              | sit/URIMaint |   |
+|                                   | |              | enanceWebFor |   |
+|                                   | |              | m.aspx){targ |   |
+|                                   | |              | et="_blank"} |   |
+|                                   | |              |     URI      |   |
+|                                   | |              |     tables   |   |
+|                                   | |              |     with a   |   |
+|                                   | |              |     vertical |   |
+|                                   | |              |     view.    |   |
+|                                   | +--------------+--------------+   |
+|                                   | | [http        | Recruiters   |   |
+|                                   | | ://e-comfort | contact      |   |
+|                                   | | .ephraimtech | details.     |   |
+|                                   | | .com/Gradual | Master page  |   |
+|                                   | | ](http://e-c | with user    |   |
+|                                   | | omfort.ephra | components.  |   |
+|                                   | | imtech.com/G |              |   |
+|                                   | | radual){targ |              |   |
+|                                   | | et="_blank"} |              |   |
+|                                   | +--------------+--------------+   |
+|                                   | | [http://e    | AJAX         |   |
+|                                   | | -comfort.eph | website.     |   |
+|                                   | | raimtech.com | Shared .dll. |   |
+|                                   | | /WordEnginee | Stand-alone  |   |
+|                                   | | ring](http:/ | pages with   |   |
+|                                   | | /e-comfort.e | hyperlinks   |   |
+|                                   | | phraimtech.c | to related   |   |
+|                                   | | om/WordEngin | information. |   |
+|                                   | | eering){targ |              |   |
+|                                   | | et="_blank"} |              |   |
+|                                   | +--------------+--------------+   |
++-----------------------------------+-----------------------------------+
 
 ### Development History {#DevelopmentHistory dated="2021-07-14T09:09:00"}
 
@@ -7216,30 +6950,15 @@ inform](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html
 16:30](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2081:5,%20John%2016:30)
 ). He mandates.
 
-Technology
-
-Commentary
-
-Relational Database
-
-After the introduction of the author to Microsoft SQL Server; the author
-does not feel the need to adopt newer technology like object-oriented
-database, nor nosql.
-
-Server-side Programming, Back-end
-
-The author learnt C#, and there has been no reason to adopt upgrades.
-When Microsoft MVC learning is not necessary. The scripture reference
-class offers partition for instantiation. The Microsoft platform is the
-author\'s choice, although the migration to .NET core may be inevitable.
-
-Programming Style
-
-This lineage are passage. C# is object-oriented. JavaScript is
-functional programming. SQL is declarative and imperative.
+  Technology                          Commentary
+  ----------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Relational Database                 After the introduction of the author to Microsoft SQL Server; the author does not feel the need to adopt newer technology like object-oriented database, nor nosql.
+  Server-side Programming, Back-end   The author learnt C#, and there has been no reason to adopt upgrades. When Microsoft MVC learning is not necessary. The scripture reference class offers partition for instantiation. The Microsoft platform is the author\'s choice, although the migration to .NET core may be inevitable.
+  Programming Style                   This lineage are passage. C# is object-oriented. JavaScript is functional programming. SQL is declarative and imperative.
 
 ### A Causal to Hearing Words {#ACausalToHearingWords}
 
+::: {dated="2020-07-07T00:25:00"}
 He said and He did. [Word
 work](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Word%20work){dated="2020-07-07T00:25:00"
 hiswordid="136195" contactid="10997" url="steven@experthiring.com"} (
@@ -7280,15 +6999,14 @@ my practice will include:
     [abecedary](http://en.wikipedia.org/wiki/Abecedarium).
 -   Set-based: Effort to record everything [Bible
     code](http://en.wikipedia.org/wiki/Bible_code).
--   [This is a man; he wanted to know about his favorite
-    (](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=This%20is%20a%20man;%20he%20wanted%20to%20know%20about%20his%20favorite?){hiswordid="144164"
+-   [This is a man; he wanted to know about his
+    favorite](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=This%20is%20a%20man;%20he%20wanted%20to%20know%20about%20his%20favorite%3F){hiswordid="144164"
     url="docs.microsoft.com/en-us/powershell/scripting/learn/ps101/09-functions?view=powershell-7.1#parameters"
-    contactid="69"} [Daniel 1:3-21, Daniel 9:23, Daniel 10:11, Daniel
+    contactid="69"} ( [Daniel 1:3-21, Daniel 9:23, Daniel 10:11, Daniel
     10:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%201:3-21,%20Daniel%209:23,%20Daniel%2010:11,%20Daniel%2010:19)
     )?
--   [Observance
-    (](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Observance){hiswordid="147955"}
-    [John
+-   [Observance](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Observance){hiswordid="147955"}
+    ( [John
     5:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%205:19)
     )
 -   [Personalization of
@@ -7305,6 +7023,7 @@ my practice will include:
     be?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20we%20all%20ought%20to%20be%3F){hiswordid="150010"}
 -   1997-12-31 I will not entertain Nada. Prophets make New Year
     predictions.
+:::
 
 ### Lessons Learnt {#LessonsLearnt dated="2020-12-31T10:00:00"}
 
@@ -7535,499 +7254,170 @@ your own? My words may not be what you will say, but how can your
 experience let you say? Imagine your life will be lived, as you say.
 When the times, programming lines, lines of code, play out a scenario.
 So words make meaning as sufficiency. Whose life have I lived to
-complexity? To the full of His deed ( [John
-15:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2015:24)
+complexity? To the full of His deed (
+[John%2015:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%2015:24)
 )? What can His prove relate to me?
 
-What did He know as one? First, pre-eminence, join.
-
-Word
-
-Member
-
-Scripture Reference
-
-God
-
-Trinity
-
-[Genesis 1:1-2, John
-1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:1-2,%20John%201)
-
-Day
-
-Time
-
-[Genesis 1, Genesis
-2:1-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20Genesis%202:1-3)
-
-Babel
-
-Language
-
-[Genesis
-11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
-
-Written about us how many?
-
-Word
-
-Jew
-
-Prince of the people that shall come
-
-Scripture Reference
-
-Weeks of Years
-
-69
-
-1
-
-[Genesis
-9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
-
-Lineage
-
-Most holy
-
-Antichrist
-
-[Genesis
-9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
-
-Image
-
-Seal
-
-Beast
-
-[Revelation
-7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%207)
-
-Trigger
-
-Re-build Jerusalem
-
-Sign a covenant with the many
-
-[Genesis
-9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
-
-Words are way.
-
-Word
-
-Scripture Reference
-
-Punctual
-
-[Genesis
-1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201)
-
-Anti
-
-[Genesis 2:17, Genesis 3:3-4, John
-12:34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:17,%20Genesis%203:3-4,%20John%2012:34)
-
-Babel
-
-[Genesis
-11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
-
-Stricter versus (VS) flexible
-
-[Matthew
-18:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2018:22)
-
-Mentions the most?
-
-Word
-
-Reference
-
-Calendar
-
-[Day, Month,
-Year](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=Day,%20Month,%20Year&logic=or&biblePartition=BookID)
-
-Direction
-
-[East, North, South,
-West](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&logic=or&biblePartition=BookID)
-
-Count
-
-Word
-
-Scripture Reference
-
-Seed of Abraham
-
-[Genesis
-26:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2026:4)
-
-Forgive
-
-[Matthew
-18:21-22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2018:21-22)
-
-Phases of Life
-
-Word
-
-Scripture Reference
-
-Moses - Egypt, Midian, Wilderness
-
-[Exodus 2, Hebrews
-11:25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202,%20Hebrews%2011:25)
-
-What is the Bible divisible to?
-
-Word
-
-Reference
-
-Heaven versus (VS) Earth? Salvation
-
-[Genesis 1:1, John
-4:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:1,%20John%204:22)
-
-Dead versus (VS) Alive? Spirit
-
-[Genesis
-1:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:2)
-
-Water versus (VS) Land? Israel
-
-[Revelation 17:1, Revelation
-17:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2017:1,%20Revelation%2017:15)
-
-Prophecy versus (VS) Fulfillment? Word
-
-[Lamentations
-3:37](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Lamentations%203:37)
-
-Who am I after?
-
-Word
-
-Scripture Reference
-
-Birth right
-
-[Genesis
-25:31-34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2025:31-34)
-
-Genealogy
-
-Blessing
-
-[1 Chronicles
-5:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%205:2)
-
-Avenger of Blood
-
-[Numbers
-35](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2035)
-
-But we see Jesus, who was made a little lower than the angels for the
-suffering of death, crowned with glory and honour; that he by the grace
-of God should taste death for every man.
-
-[Hebrews
-2:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%202:9)
-
-Disciple
-
-[Acts
-22:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%2022:3)
-
-Forerunner
-
-What spirit to say?
-
-Word
-
-Scripture Reference
-
-Holy Spirit
-
-[Genesis 1:2, John 4:24, Genesis 6:3, Genesis
-41:38](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:2,%20John%204:24,%20Genesis%206:3,%20Genesis%2041:38)
-
-Evil spirit
-
-[Judges 9:23, 1 Samuel 16:14, 1 Samuel 16:15, 1 Samuel 16:16, 1 Samuel
-16:23, 1 Samuel 18:10, 1 Samuel 19:9, Luke 7:21, Luke 8:2, Acts 19:12,
-Acts 19:13, Acts 19:15, Acts
-19:16](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Judges%209:23,%201%20Samuel%2016:14,%201%20Samuel%2016:15,%201%20Samuel%2016:16,%201%20Samuel%2016:23,%201%20Samuel%2018:10,%201%20Samuel%2019:9,%20Luke%207:21,%20Luke%208:2,%20Acts%2019:12,%20Acts%2019:13,%20Acts%2019:15,%20Acts%2019:16)
-
-Lying spirit
-
-[1 Kings 22:22-23, 2 Chronicles
-18:21-22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Kings%2022:22-23,%202%20Chronicles%2018:21-22)
-
-State of spirit
-
-[Genesis 45:27, Exodus 6:9, 1 Kings 10:5, 2 Chronicles
-9:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2045:27,%20Exodus%206:9,%201%20Kings%2010:5,%202%20Chronicles%209:4)
-
-Word opposites
-
-Word
-
-Reference
-
-Anti
-
-[1 John 2:18, 1 John 2:22, 1 John 4:3, 2 John 1:7, Revelation
-2:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%202:18,%201%20John%202:22,%201%20John%204:3,%202%20John%201:7,%20Revelation%202:13)
-
-Un
-
-[Ungod, unholy,
-unrighteous](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Ungod,%20unholy,%20unrighteous&logic=or)
-
-[Beyond association of time, where am
-I?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Beyond%20association%20of%20time,%20where%20am%20I?)
-
-Word
-
-Scripture Reference
-
-Role
-
-[Genesis
-32:28](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2032:28)
-
-Place
-
-[Matthew
-23:37](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2023:37)
-
-Times
-
-[Luke
-21:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:24)
-
-Language
-
-[Genesis
-11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
-
-[Rajas Kane](http://linkedin.com/in/rajaskane) telephone interview.
-[What uterate a
-place?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20uterate%20a%20place?)
-
-Word
-
-Scripture Reference
-
-Alter
-
-[Acts
-6:13-14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%206:13-14)
-
-Iterate
-
-[Jeremiah 25:11-12, Jeremiah
-29:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2025:11-12,%20Jeremiah%2029:10)
-
-Utilize
-
-[Numbers 35:25, Numbers 35:26-28 , Numbers 35:32, Joshua 21:13, Joshua
-21:21, Joshua 21:27, Joshua 21:32, Joshua 21:38, 1 Chronicles
-6:57](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2035:25,%20Numbers%2035:26-28%20,%20Numbers%2035:32,%20Joshua%2021:13,%20Joshua%2021:21,%20Joshua%2021:27,%20Joshua%2021:32,%20Joshua%2021:38,%201%20Chronicles%206:57)
-
-Utter
-
-[Judges
-12:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Judges%2012:6)
-
-Why numbers are preferred?
-
-Word
-
-Scripture Reference
-
-Divine
-
-[Genesis
-41:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2041:32)
-
-Alphanumeric
-
-Multi-Lingual
-
-[Psalms
-81:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2081:5)
-
-[A remembrance of Himself in
-us?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=A%20remembrance%20of%20Himself%20in%20us?){dated="2022-07-30T15:24:00"
-contactid="991" hiswordid="1178"}
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Shema
-
-The term remember occurs 210 times in the KJV Bible.
-
-[Deuteronomy
-6:4--9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%206:4–9)
-
-Passover Lamb
-
-[John 1:29, John
-1:36](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:29,%20John%201:36)
-
-10 Commandments
-
-The 10 Commandments are separated into love for God and your fellow man
-like yourself.
-
-[Exodus 20:2--17, Deuteronomy
-5:6--21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:2–17,%20Deuteronomy%205:6–21)
-
-Prophecy and Fulfillment
-
-[Daniel
-9:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:2)
-
-Book of the Law
-
-[Joshua
-1:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Joshua%201:8)
-
-Deuteronomy
-
-The title of the last book of Moses means remembrance.
-
-[Exodus 20:2--17, Deuteronomy
-5:6--21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:2–17,%20Deuteronomy%205:6–21)
-
-Sabbath-Day and Festivals
-
-Periodic anniversaries of His work.
-
-[Exodus
-20:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:11)
-
-Remember Lot\'s wife.
-
-[Luke
-17:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2017:32)
-
-[How-to have association\...with
-guidance?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How-to%20have%20association%20...%20with%20guidance?){hiswordid="148972"}
-
-Word
-
-Scripture Reference
-
-Greatly beloved
-
-[Daniel 9:23, Daniel 10:11, Daniel
-10:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23,%20Daniel%2010:11,%20Daniel%2010:19)
-
-Birthright
-
-[Daniel
-1:3-4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%201:3-4)
-
-Marital bestowment
-
-[Ruth
-2:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ruth%202:10)
-
-[What describes
-people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20describes%20people?){dated="2022-05-28T10:00:00"
-contactid="11699" hiswordid="148044"}
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Role
-
-Trying as a simple example of resemblance.
-
-[Genesis
-4:26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:26)
-
-Physical Apperance
-
-Such as I choose of Myself?
-
-[Genesis 1:26-27, Genesis 5:3, Genesis 9:6, 1 Samuel 9:2, Isaiah 53:2,
-Zechariah
-11:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:10-27,%20Genesis%2021:4)
-
-It is not how much you give; it is who you give, Oh LORD.
-
-Word
-
-Scripture Reference
-
-Measurable
-
-Holy Spirit
-
-[John
-3:34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%203:34)
-
-No
-
-Babel
-
-[Genesis
-11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
-
-No
-
-Promised Land
-
-[Genesis 12:7, Genesis 13, Ezekiel
-33:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:7,%20Genesis%2013,%20Ezekiel%2033:24)
-
-No
-
-Census
-
-[1 Chronicles
-21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%2021:2)
-
-Yes
-
-Where do I call on change?
-
-Word
-
-Commentary
-
-Scripture Reference
-
-Actor
-
-The law and the prophets: Can I prepare man for an event of time?
-
-[Amos
-3:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Amos%203:7)
-
-Event
-
-When does man decide His future is as reminded? Connecting the past as I
-use.
-
-[Genesis 1, John
-1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20John%201)
+  Word    Member     Scripture Reference
+  ------- ---------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  God     Trinity    [Genesis 1:1-2, John 1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:1-2,%20John%201)
+  Day     Time       [Genesis 1, Genesis 2:1-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20Genesis%202:1-3)
+  Babel   Language   [Genesis 11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
+
+  : What did He know as one? First, pre-eminence, join.
+
+  Word             Jew                  Prince of the people that shall come   Scripture Reference
+  ---------------- -------------------- -------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+  Weeks of Years   69                   1                                      [Genesis 9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
+  Lineage          Most holy            Antichrist                             [Genesis 9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
+  Image            Seal                 Beast                                  [Revelation 7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%207)
+  Trigger          Re-build Jerusalem   Sign a covenant with the many          [Genesis 9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%209:24-27)
+
+  : Written about us how many?
+
+  Word                            Scripture Reference
+  ------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Punctual                        [Genesis 1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201)
+  Anti                            [Genesis 2:17, Genesis 3:3-4, John 12:34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%202:17,%20Genesis%203:3-4,%20John%2012:34)
+  Babel                           [Genesis 11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
+  Stricter versus (VS) flexible   [Matthew 18:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2018:22)
+
+  : Words are way. {#WordsAreWay}
+
+  Word        Reference
+  ----------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Calendar    [Day, Month, Year](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=Day,%20Month,%20Year&logic=or&biblePartition=BookID)
+  Direction   [East, North, South, West](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&logic=or&biblePartition=BookID)
+
+  : Mentions the most?
+
+  Word              Scripture Reference
+  ----------------- ----------------------------------------------------------------------------------------------------------------------------------------------
+  Seed of Abraham   [Genesis 26:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2026:4)
+  Forgive           [Matthew 18:21-22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2018:21-22)
+
+  : Count
+
+  Word                                Scripture Reference
+  ----------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Moses - Egypt, Midian, Wilderness   [Exodus 2, Hebrews 11:25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%202,%20Hebrews%2011:25)
+
+  : Phases of Life
+
+  Word                                     Reference
+  ---------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Heaven versus (VS) Earth? Salvation      [Genesis 1:1, John 4:22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:1,%20John%204:22)
+  Dead versus (VS) Alive? Spirit           [Genesis 1:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:2)
+  Water versus (VS) Land? Israel           [Revelation 17:1, Revelation 17:15](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2017:1,%20Revelation%2017:15)
+  Prophecy versus (VS) Fulfillment? Word   [Lamentations 3:37](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Lamentations%203:37)
+
+  : What is the Bible divisible to?
+
+  Word                                                                                                                                                                                     Scripture Reference
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  Birth right                                                                                                                                                                              [Genesis 25:31-34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2025:31-34)
+  Genealogy                                                                                                                                                                                
+  Blessing                                                                                                                                                                                 [1 Chronicles 5:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%205:2)
+  Avenger of Blood                                                                                                                                                                         [Numbers 35](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2035)
+  But we see Jesus, who was made a little lower than the angels for the suffering of death, crowned with glory and honour; that he by the grace of God should taste death for every man.   [Hebrews 2:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%202:9)
+  Disciple                                                                                                                                                                                 [Acts 22:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%2022:3)
+  Forerunner                                                                                                                                                                               
+
+  : Who am I after?
+
+  Word              Scripture Reference
+  ----------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Holy Spirit       [Genesis 1:2, John 4:24, Genesis 6:3, Genesis 41:38](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:2,%20John%204:24,%20Genesis%206:3,%20Genesis%2041:38)
+  Evil spirit       [Judges 9:23, 1 Samuel 16:14, 1 Samuel 16:15, 1 Samuel 16:16, 1 Samuel 16:23, 1 Samuel 18:10, 1 Samuel 19:9, Luke 7:21, Luke 8:2, Acts 19:12, Acts 19:13, Acts 19:15, Acts 19:16](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Judges%209:23,%201%20Samuel%2016:14,%201%20Samuel%2016:15,%201%20Samuel%2016:16,%201%20Samuel%2016:23,%201%20Samuel%2018:10,%201%20Samuel%2019:9,%20Luke%207:21,%20Luke%208:2,%20Acts%2019:12,%20Acts%2019:13,%20Acts%2019:15,%20Acts%2019:16)
+  Lying spirit      [1 Kings 22:22-23, 2 Chronicles 18:21-22](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Kings%2022:22-23,%202%20Chronicles%2018:21-22)
+  State of spirit   [Genesis 45:27, Exodus 6:9, 1 Kings 10:5, 2 Chronicles 9:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2045:27,%20Exodus%206:9,%201%20Kings%2010:5,%202%20Chronicles%209:4)
+
+  : What spirit to say?
+
+  Word   Reference
+  ------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Anti   [1 John 2:18, 1 John 2:22, 1 John 4:3, 2 John 1:7, Revelation 2:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20John%202:18,%201%20John%202:22,%201%20John%204:3,%202%20John%201:7,%20Revelation%202:13)
+  Un     [Ungod, unholy, unrighteous](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Ungod,%20unholy,%20unrighteous&logic=or)
+
+  : Word opposites
+
+  Word       Scripture Reference
+  ---------- ----------------------------------------------------------------------------------------------------------------------------------------
+  Role       [Genesis 32:28](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2032:28)
+  Place      [Matthew 23:37](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2023:37)
+  Times      [Luke 21:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2021:24)
+  Language   [Genesis 11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)
+
+  : [Beyond association of time, where am
+  I?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Beyond%20association%20of%20time,%20where%20am%20I?)
+
+  Word      Scripture Reference
+  --------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Alter     [Acts 6:13-14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Acts%206:13-14)
+  Iterate   [Jeremiah 25:11-12, Jeremiah 29:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2025:11-12,%20Jeremiah%2029:10)
+  Utilize   [Numbers 35:25, Numbers 35:26-28 , Numbers 35:32, Joshua 21:13, Joshua 21:21, Joshua 21:27, Joshua 21:32, Joshua 21:38, 1 Chronicles 6:57](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2035:25,%20Numbers%2035:26-28%20,%20Numbers%2035:32,%20Joshua%2021:13,%20Joshua%2021:21,%20Joshua%2021:27,%20Joshua%2021:32,%20Joshua%2021:38,%201%20Chronicles%206:57)
+  Utter     [Judges 12:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Judges%2012:6)
+
+  : [Rajas Kane](http://linkedin.com/in/rajaskane) telephone interview.
+  [What uterate a
+  place?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20uterate%20a%20place?)
+
+  Word            Scripture Reference
+  --------------- ----------------------------------------------------------------------------------------------------------------------------------------
+  Divine          [Genesis 41:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2041:32)
+  Alphanumeric    
+  Multi-Lingual   [Psalms 81:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2081:5)
+
+  : Why numbers are preferred?
+
+  Word                        Commentary                                                                               Scripture Reference
+  --------------------------- ---------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Shema                       The term remember occurs 210 times in the KJV Bible.                                     [Deuteronomy 6:4--9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Deuteronomy%206:4–9)
+  Passover Lamb                                                                                                        [John 1:29, John 1:36](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:29,%20John%201:36)
+  10 Commandments             The 10 Commandments are separated into love for God and your fellow man like yourself.   [Exodus 20:2--17, Deuteronomy 5:6--21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:2–17,%20Deuteronomy%205:6–21)
+  Prophecy and Fulfillment                                                                                             [Daniel 9:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:2)
+  Book of the Law                                                                                                      [Joshua 1:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Joshua%201:8)
+  Deuteronomy                 The title of the last book of Moses means remembrance.                                   [Exodus 20:2--17, Deuteronomy 5:6--21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:2–17,%20Deuteronomy%205:6–21)
+  Sabbath-Day and Festivals   Periodic anniversaries of His work.                                                      [Exodus 20:11](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2020:11)
+  Remember Lot\'s wife.                                                                                                [Luke 17:32](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2017:32)
+
+  : [A remembrance of Himself in
+  us?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=A%20remembrance%20of%20Himself%20in%20us?){dated="2022-07-30T15:24:00"
+  contactid="991" hiswordid="1178"}
+
+  Word                 Scripture Reference
+  -------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Greatly beloved      [Daniel 9:23, Daniel 10:11, Daniel 10:19](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23,%20Daniel%2010:11,%20Daniel%2010:19)
+  Birthright           [Daniel 1:3-4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%201:3-4)
+  Marital bestowment   [Ruth 2:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ruth%202:10)
+
+  : [How-to have association\...with
+  guidance?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How-to%20have%20association%20...%20with%20guidance?){hiswordid="148972"}
+
+  Word                 Commentary                                   Scripture Reference
+  -------------------- -------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Role                 Trying as a simple example of resemblance.   [Genesis 4:26](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:26)
+  Physical Apperance   Such as I choose of Myself?                  [Genesis 1:26-27, Genesis 5:3, Genesis 9:6, 1 Samuel 9:2, Isaiah 53:2, Zechariah 11:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2017:10-27,%20Genesis%2021:4)
+
+  : [What describes
+  people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20describes%20people?){dated="2022-05-28T10:00:00"
+  contactid="11699" hiswordid="148044"}
+
+  Word            Scripture Reference                                                                                                                                                                                  Measurable
+  --------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------
+  Holy Spirit     [John 3:34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%203:34)                                                                       No
+  Babel           [Genesis 11:9](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2011:9)                                                                 No
+  Promised Land   [Genesis 12:7, Genesis 13, Ezekiel 33:24](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2012:7,%20Genesis%2013,%20Ezekiel%2033:24)   No
+  Census          [1 Chronicles 21:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Chronicles%2021:2)                                                     Yes
+
+  : It is not how much you give; it is who you give, Oh LORD.
+
+  Word    Commentary                                                                      Scripture Reference
+  ------- ------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------
+  Actor   The law and the prophets: Can I prepare man for an event of time?               [Amos 3:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Amos%203:7)
+  Event   When does man decide His future is as reminded? Connecting the past as I use.   [Genesis 1, John 1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201,%20John%201)
+
+  : Where do I call on change?
 
 ### To Reckon as Size {#ToReckonAsSize dated="2022-05-06T13:20:00"}
 
@@ -8084,108 +7474,35 @@ How suitable is the data for general use?
     language?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Letters%20in%20the%20English%20language?){dated="2021-11-11T08:37:00"}
 -   [The work? Is to associate the
     reference.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20work?%20Is%20to%20associate%20the%20reference.){dated="2021-11-14T00:30:00"
-    contactid="10223" hiswordid="144330" date-uri="SB384@doj.ca.gov"}
+    contactid="10223" hiswordid="144330" url="SB384@doj.ca.gov"}
 -   [How could I collaborate fact with what I
     know?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20could%20I%20collaborate%20fact%20with%20what%20I%20know?){dated="2021-12-23T11:58:00"
     hiswordid="144769"}
 
-On behalf, of someone, I seem
+  Actor              Type            Scripture Reference
+  ------------------ --------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Jesus Christ       Passover Lamb   [John 1:29, John 1:36](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:29,%20John%201:36)
+  John the Baptist   Forerunner      [John 1:33](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:33)
+  Moses              Prophet         [Exodus 7:1, Numbers 12:6, Deuteronomy 18:15, Deuteronomy 18:18, Deuteronomy 34:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%207:1,%20Numbers%2012:6,%20Deuteronomy%2018:15,%20Deuteronomy%2018:18,%20Deuteronomy%2034:10)
 
-Actor
+  : On behalf, of someone, I seem
 
-Type
+  Actor     Type      Scripture Reference
+  --------- --------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Seth      Man       [Genesis 4:25, Genesis 5:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:25,%20Genesis%205:3)
+  Abraham   Believe   [Romans 4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Romans%204)
+  Isaac     Land      [Genesis 26:2, Genesis 26:12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2026:2,%20Genesis%2026:12)
 
-Scripture Reference
+  : What substitution lies ahead?
 
-Jesus Christ
+  Title                                    Time                  Scripture Reference
+  ---------------------------------------- --------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Creation                                 6 Days                [Genesis 1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201)
+  Exodus from Egypt to the Promised Land   40 Biblical Years     [Exodus 16:35, Numbers 14:33-34, Numbers 32:13, Deuteronomy 2:7, Deuteronomy 8:2, Deuteronomy 8:4, Deuteronomy 29:5, Joshua 5:6, Nehemiah 9:21, Psalms 95:10, Amos 2:10, Amos 5:25, Acts 7:36, Acts 7:42, Acts 13:18, Hebrews 3:9, Hebrews 3:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2016:35,%20Numbers%2014:33-34,%20Numbers%2032:13,%20Deuteronomy%202:7,%20Deuteronomy%208:2,%20Deuteronomy%208:4,%20Deuteronomy%2029:5,%20Joshua%205:6,%20Nehemiah%209:21,%20Psalms%2095:10,%20Amos%202:10,%20Amos%205:25,%20Acts%207:36,%20Acts%207:42,%20Acts%2013:18,%20Hebrews%203:9,%20Hebrews%203:17)
+  Weeks of Years                           490 Biblical Years    [Daniel 9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:24-27)
+  First Resurrection                       1000 Biblical Years   [Revelation 20:2-7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:2-7)
 
-Passover Lamb
-
-[John 1:29, John
-1:36](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:29,%20John%201:36)
-
-John the Baptist
-
-Forerunner
-
-[John
-1:33](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%201:33)
-
-Moses
-
-Prophet
-
-[Exodus 7:1, Numbers 12:6, Deuteronomy 18:15, Deuteronomy 18:18,
-Deuteronomy
-34:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%207:1,%20Numbers%2012:6,%20Deuteronomy%2018:15,%20Deuteronomy%2018:18,%20Deuteronomy%2034:10)
-
-What substitution lies ahead?
-
-Actor
-
-Type
-
-Scripture Reference
-
-Seth
-
-Man
-
-[Genesis 4:25, Genesis
-5:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%204:25,%20Genesis%205:3)
-
-Abraham
-
-Believe
-
-[Romans
-4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Romans%204)
-
-Isaac
-
-Land
-
-[Genesis 26:2, Genesis
-26:12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2026:2,%20Genesis%2026:12)
-
-The Accumulation of Age.
-
-Title
-
-Time
-
-Scripture Reference
-
-Creation
-
-6 Days
-
-[Genesis
-1](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201)
-
-Exodus from Egypt to the Promised Land
-
-40 Biblical Years
-
-[Exodus 16:35, Numbers 14:33-34, Numbers 32:13, Deuteronomy 2:7,
-Deuteronomy 8:2, Deuteronomy 8:4, Deuteronomy 29:5, Joshua 5:6, Nehemiah
-9:21, Psalms 95:10, Amos 2:10, Amos 5:25, Acts 7:36, Acts 7:42, Acts
-13:18, Hebrews 3:9, Hebrews
-3:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Exodus%2016:35,%20Numbers%2014:33-34,%20Numbers%2032:13,%20Deuteronomy%202:7,%20Deuteronomy%208:2,%20Deuteronomy%208:4,%20Deuteronomy%2029:5,%20Joshua%205:6,%20Nehemiah%209:21,%20Psalms%2095:10,%20Amos%202:10,%20Amos%205:25,%20Acts%207:36,%20Acts%207:42,%20Acts%2013:18,%20Hebrews%203:9,%20Hebrews%203:17)
-
-Weeks of Years
-
-490 Biblical Years
-
-[Daniel
-9:24-27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:24-27)
-
-First Resurrection
-
-1000 Biblical Years
-
-[Revelation
-20:2-7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2020:2-7)
+  : The Accumulation of Age.
 
 ### What did He see Himself as? {#WhatDidHeSeeHimselfAs}
 
@@ -8206,6 +7523,7 @@ contactid="1000" hiswordid="144352"} ).
 
 We want personal data, when is public data sufficient?
 
+::: {dated="2021-08-12T14:34:00"}
 From\...Until AlphabetSequence\
 
 -   God expressed His wish for me
@@ -8216,6 +7534,7 @@ From\...Until AlphabetSequence\
     DTEC. God asked me to leave my friends at Campsie and relate with
     Lakemba.
 -   God did not initially identify Himself, with a particular name
+:::
 
 > The author will not break each experience into sequences. At this late
 > stage of the research, the author is content, with his original table
@@ -8261,6 +7580,7 @@ grammar, and have limited formatting.
 
 I have a product; where is the method?
 
+::: {dated="2021-06-07T06:42:00"}
 Adoptability:
 
 1.  What is the minimum requirement? The author believes it is the Holy
@@ -8289,42 +7609,21 @@ Adoptability:
     from the Bible, Moses assigned intervention to leaders, and Moses
     went to God as a higher authority. Who is the work for? Who can
     benefit from reading this work?
+:::
 
-How amenable am I the same?
+  Type    Commentary
+  ------- ---------------------------------------
+  Man     Election - Did He share His hope?
+  Place   Promised Land - Where I will inhabit?
 
-Type
+  : How amenable am I the same?
 
-Commentary
+  Actor          Commentary                            Scripture Reference
+  -------------- ------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Adam           The first man will need a companion   [Genesis 1:26-31, Genesis 2:6-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:26-31,%20Genesis%202:6-25)
+  Jesus Christ   Transformation of the spirit          [John 3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%203)
 
-Man
-
-Election - Did He share His hope?
-
-Place
-
-Promised Land - Where I will inhabit?
-
-As the Open?
-
-Actor
-
-Commentary
-
-Scripture Reference
-
-Adam
-
-The first man will need a companion
-
-[Genesis 1:26-31, Genesis
-2:6-25](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%201:26-31,%20Genesis%202:6-25)
-
-Jesus Christ
-
-Transformation of the spirit
-
-[John
-3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%203)
+  : As the Open?
 
 ### Quality Assurance {#QualityAssurance dated="2021-04-01T16:19:00"}
 
@@ -8354,6 +7653,7 @@ the role with Google\'s co-founder Larry Page
 [jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403](http://jobs.lever.co/kittyhawk.aero/701c6d9a-2d8a-4727-a345-d4a93d6dcc27?agencyId=3b8e0b44-7127-4709-ad21-6eb8ea5f7403)
 Andre Nguyen asked how I spend my day?
 
+::: {dated="2021-02-24T17:00:00" contactid="10196"}
 When I started AlphabetSequence, I ate my only daily meal at 6PM, read
 the Bible and went to bed. I could break my day into punctual scheduled
 activities, such-as:
@@ -8365,6 +7665,7 @@ activities, such-as:
 -   Lunch
 -   Dinner
 -   Bedtime
+:::
 
 This is how most people, live their lives; this is what I have accepted
 as mine. When I receive a word, I make it my work, to record the word
@@ -8383,6 +7684,7 @@ contactid="11605"
 url="npr.org/2022/04/10/1091925789/mexicans-vote-on-whether-president-stays-or-goes"}
 ]{dated="2021-04-10T11:23:00"}
 
+::: {dated="2021-06-03T17:48:00"}
 [However, he is present, that is how I
 use.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=However,%20he%20is%20present,%20that%20is%20how%20I%20use.){contactid="11136"
 hiswordid="141093"}
@@ -8394,6 +7696,7 @@ hiswordid="141093"}
 -   Computer access means the resultset is retrievable via
     GetAPage.html.
 -   Text editor is useful for writing SQL.
+:::
 
 2024-07-01T18:27:00 34324 Siward Drive. Fremont, California (CA) 94555\
 [How do we develop\... our past
@@ -8407,6 +7710,7 @@ location="34324 Siward Drive. Fremont, California (CA) 94555"} (
 
 ### God\'s Word; Human Interpretation {#GodsWordHumanInterpretation dated="2021-01-12T14:30:00"}
 
+::: {dated="2021-01-12T14:30:00"}
 The author separates the word of God from the supporting information:
 
 -   Cast which fits into the Contact ID column
@@ -8414,6 +7718,7 @@ The author separates the word of God from the supporting information:
 -   Scenery which is the dream setting
 -   Location which is an awake surrounding
 -   Language translation
+:::
 
 Specificity guides our entries into the HisWord table; for example if
 the information is not explicit, do not record it. This means that the
@@ -8426,6 +7731,7 @@ enormously.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage
 God may put a thought or question in my mind, rather than sharing a
 word? To know the need of revealing one another?
 
+::: {dated="2021-01-15T15:14:00"}
 How do you, reference the Bible?
 
 -   Search Engine? Requires Internet access.
@@ -8433,7 +7739,9 @@ How do you, reference the Bible?
     Requires Bible knowledge and place in the Bible.
 -   [BibleWord.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html)
     Requires word knowledge
+:::
 
+::: {dated="2021-06-04T15:13:00"}
 What is the certaincy of the word:
 
 -   When the author hears a word and there is a reference to a place in
@@ -8446,23 +7754,30 @@ What is the certaincy of the word:
 -   Where am I, resemblance of how I am made ( [1 Corinthians
     14](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/scriptureReference.html?scriptureReference=1%20Corinthians%2014)
     )?
+:::
 
+::: {dated="2021-01-13T17:30:00"}
 What does He choose as example?
 
--   God rested on the Sabbath day ([Luke
-    23:56](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2023:56))
--   Jesus Christ ([Daniel 9:24-27, 1 Corinthians 15:45, 1 Corinthians
-    15:47](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:24-27,1%20Corinthians%2015:45,%201%20Corinthians%2015:47))
--   Man such as King David ([2 Kings 14:3, 2 Kings 16:2, 2 Chronicles
+-   God rested on the Sabbath day ( [Luke
+    23:56](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2023:56)
+    )
+-   Jesus Christ ( [Daniel 9:24-27, 1 Corinthians 15:45, 1 Corinthians
+    15:47](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:24-27,1%20Corinthians%2015:45,%201%20Corinthians%2015:47)
+    )
+-   Man such as King David ( [2 Kings 14:3, 2 Kings 16:2, 2 Chronicles
     28:1, Amos
-    6:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Kings%2014:3,%202%20Kings%2016:2,%202%20Chronicles%2028:1,%20Amos%206:5))
--   Place such as Sodom ([Matthew 10:15, Matthew 11:23-24 , Mark 6:11,
+    6:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Kings%2014:3,%202%20Kings%2016:2,%202%20Chronicles%2028:1,%20Amos%206:5)
+    )
+-   Place such as Sodom ( [Matthew 10:15, Matthew 11:23-24 , Mark 6:11,
     Luke 10:12, Luke 17:29, Romans 9:29, 2 Peter 2:6, Jude 1:7,
     Revelation
-    11:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2010:15,%20Matthew%2011:23-24%20,%20Mark%206:11,%20Luke%2010:12,%20Luke%2017:29,%20Romans%209:29,%202%20Peter%202:6,%20Jude%201:7,%20Revelation%2011:8)).
--   Other living things ([Numbers
+    11:8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%2010:15,%20Matthew%2011:23-24%20,%20Mark%206:11,%20Luke%2010:12,%20Luke%2017:29,%20Romans%209:29,%202%20Peter%202:6,%20Jude%201:7,%20Revelation%2011:8)
+    ).
+-   Other living things ( [Numbers
     22:21-33](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2022:21-33)
     ).
+:::
 
 ### To whose advantage am I?
 
@@ -8681,11 +7996,11 @@ Deuteronomy
 
             CREATE UNIQUE NONCLUSTERED INDEX [IX_Contact_Names] ON [dbo].[Contact]
             (
-                [FirstName] ASC,
-                [MiddleName] ASC,
-                [LastName] ASC,
-                [NickName] ASC,
-                [OrganizationName] ASC
+            [FirstName] ASC,
+            [MiddleName] ASC,
+            [LastName] ASC,
+            [NickName] ASC,
+            [OrganizationName] ASC
             )
 
     2.  WordEngineering database HisWord table: Make the HisWordID
@@ -8907,6 +8222,7 @@ Deuteronomy
     2:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Revelation%2017:10,%20Hebrews%205:8){dated="2024-09-07T06:18:00"
     hiswordid="163768"} ).
 
+::: {dated="2024-08-30T00:14:00"}
 Microsoft SQL Server limitations include:
 
 -   [Microsoft SQL Server database connection string
@@ -8923,6 +8239,7 @@ Microsoft SQL Server limitations include:
     [5841](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=5841){dated="2024-09-03T03:55:00"
     hiswordid="163730"
     url="diveintopython3.problemsolving.io/unit-testing.html"}
+:::
 
 2024-09-04T29:35:00 [The appropriateness of scripture
 reference?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20appropriateness%20of%20scripture%20reference%3F){dated="2024-09-04T29:35:00"
@@ -9001,6 +8318,7 @@ assertion-name CHECK (constraint)
 <http://stackoverflow.com/questions/4130039/does-sql-server-2008-support-the-create-assertion-syntax>
 2024-05-22T15:28:00 Potential fallback? CHECK CONSTRAINT or trigger.
 
+::: {dated="2023-08-02T15:01:00"}
 The technical limitations of the current implementation include:
 
 1.  Unknown, prior to building?
@@ -9009,11 +8327,13 @@ The technical limitations of the current implementation include:
 4.  Content management system (CMS)
 5.  Single entry-point
 6.  Update rollback
+:::
 
 What is the repository? If the user only needs to store the Word from
 God, a text file is sufficient? A comma-separated value (CSV) may
 suffice for multiple columns.
 
+::: {dated="2023-08-29T08:15:00"}
 AlphabetSequence considers the whole word. Separate words into?
 
 1.  Buzz word
@@ -9025,7 +8345,9 @@ AlphabetSequence considers the whole word. Separate words into?
 recover.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=This%20part%20is%20my%20existence,%20which%20I%20will%20never%20recover.){dated="2023-08-29T08:15:00"
 hiswordid="156765" contactid="13070"
 commentary="Yesterday night, Faith Yao, was captured, focused, on her mobile phone. To be all the same as admitting much. Looking forward as yourself. Who is brought in to replace me? Prefer being the same...as My final move."}
+:::
 
+::: {dated="2023-08-03T07:50:00"}
 [Can I reason as a god will
 listen?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Can%20I%20reason%20as%20a%20god%20will%20listen%3F){dated="2023-08-03T07:50:00"
 contactid="578" hiswordid="156453" scripturereference="Genesis 2:19-20"}
@@ -9039,6 +8361,7 @@ contactid="578" hiswordid="156453" scripturereference="Genesis 2:19-20"}
 3.  Pray continually ( [Luke
     18:1-8](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%2018:1-8)
     )
+:::
 
 How to\...use the word? My earlier work has been to refer to the word.
 [To look for one I deem as
@@ -9066,6 +8389,7 @@ given preference to the word, not the commentary, which is subjective.
 
 #### Word to Today
 
+::: {dated="2020-06-04T00:00:00"}
 The remember table correlates the events and the calendar. [ Currently,
 the author is manually deriving the entries for the Remember table. When
 there is an association, then the author considers the first, last,
@@ -9092,27 +8416,15 @@ The gain from automating this process will include:
 3.  Reducing storage need
 
 [DontFeelLeftAlone.html](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/DontFeelLeftAlone.html){dated="2023-02-14T20:17:00"}
+:::
 
-He Handicaped Time; as His Usage
+  Title         Scripture Reference
+  ------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Servitude     [Jeremiah 25:11-12, Jeremiah 29:10, Daniel 9:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2025:11-12,%20Jeremiah%2029:10,%20Daniel%209:2)
+  Fulfillment   [Luke 9:31](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%209:31)
+  Incentive     [Daniel 12:13, Isaiah 53:12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%2012:13,%20Isaiah%2053:12)
 
-Title
-
-Scripture Reference
-
-Servitude
-
-[Jeremiah 25:11-12, Jeremiah 29:10, Daniel
-9:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Jeremiah%2025:11-12,%20Jeremiah%2029:10,%20Daniel%209:2)
-
-Fulfillment
-
-[Luke
-9:31](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Luke%209:31)
-
-Incentive
-
-[Daniel 12:13, Isaiah
-53:12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%2012:13,%20Isaiah%2053:12)
+  : He Handicaped Time; as His Usage
 
 We may need, human help, to determine, the theme-of-the-day?
 
@@ -9163,6 +8475,8 @@ successful, largely because of the arrangement of the numerals.
 
 #### Translate the Original AlphabetSequence C# Code to the Other Programming Languages
 
+<div>
+
 AlphabetSequence was first implemented in the C# programming language
 [AlphabetSequence.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs)
 Later work, saw translation to:
@@ -9183,6 +8497,8 @@ The author is only conversant in English and Yoruba, additional work
 will be to see the use in other lingua franca. [And, the priest said,
 Are one only for
 me?](http://e-comfort.ephraimtech.com/WordEngineering/WordGroup/AndThePriestSaidAreOneOnlyForMe.html){dated="2020-08-25T00:00:00"}
+
+</div>
 
 #### Data Residence
 
@@ -9684,7 +9000,7 @@ In C# version 9, a method may offer a covariant return type.
 ## References {#References}
 
 1.  [ABB (Asea Brown Boveri) W3C web page; Available from
-    [http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL
+    [http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL%20Server%20Coding%20Standards%20(9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs\"\>http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL
     Server Coding Standards
     (9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs](http://library.e.abb.com/public/179a76f3712c48679204512445b2c292/ABB-Dev-SQL%20Server%20Coding%20Standards%20(9AAD134842-A).pdf?x-sign=rM2cBkGQoBq+zuZD7VwLi7yyxByXUZQLSjhrinyewWFk1JCmx72di36xtJPdMXbs)]{#bibliographyABB_AseaBrownBoveri}
 2.  [Web Performance 101 Ivan Akulov; W3C web page; Available from
@@ -9766,8 +9082,8 @@ In C# version 9, a method may offer a covariant return type.
     Research Paper W3C web page; Available from
     <http://www.edit911.com/the-art-of-storytelling-in-academic-writing-5-steps-to-a-better-research-paper>]{#bibliographyEdit911.com}
 26. [Sams Teach Yourself Microsoft SQL Server T-SQL in 10 Minutes Ben
-    Forta (2017); W3C web page; Available
-    from]{#bibliographyBenForta2017}
+    Forta (2017); W3C web page; Available from
+    <http://www.google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en>]{#bibliographyBenForta2017}
 27. [SQL Server Execution Plans Third Edition For SQL Server 2008
     through to 2017 and Azure SQL Database Grant Fritchey (2018); W3C
     web page; Available from
@@ -9924,7 +9240,7 @@ In C# version 9, a method may offer a covariant return type.
     Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille,
     France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand,
     mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from
-    <http://hal.archives-ouvertes.fr/hal-01465113/document>]{#bibliographyNa ̈ımHafida2016}
+    <http://hal.archives-ouvertes.fr/hal-01465113/document>]{#bibliographyNaımHafida2016}
 74. [Nation-brands.gfk.com gfk (2017); W3C web page; Available from
     <http://Nation-brands.gfk.com>]{#bibliographyGfk2017}
 75. [Designing Web Usability: The Practice of Simplicity (2000) Jakob
@@ -10135,7 +9451,7 @@ Predicates, and the Nested Loops will join the results.
 
 (Don Jones).
 
-#### Performance Monitor - SQL Server Objects {#Performance Monitor}
+#### Performance Monitor - SQL Server Objects {#PerformanceMonitorSQLServerObjects}
 
   SQL Server Objects                Commentary
   --------------------------------- ---------------------------------------------------------------------------------------------------------------------------------
@@ -10714,6 +10030,7 @@ location="M Hair. Located in: Paseo Padre Shopping Center. Address: 34380 Fremon
 2.  Post-1988 deportation: You called him Daddy, that is what everybody
     else called him
 
+::: {dated="2024-09-29T03:36:00"}
 -   [Where did he serve\... a
     people?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Where%20did%20he%20serve...%20a%20people%3F){dated="2024-09-29T03:36:00"
     hiswordid="163976" contactid="8717"}
@@ -10754,6 +10071,7 @@ location="M Hair. Located in: Paseo Padre Shopping Center. Address: 34380 Fremon
 
      Job: Business Development Manager
     Salary: 10 million yen ~ 19 million yen"}
+:::
 
 ### Faith An Yao {#Autobiography_FaithAnYao dated="2023-08-29T19:45:00"}
 
@@ -10792,95 +10110,103 @@ location="M Hair. Located in: Paseo Padre Shopping Center. Address: 34380 Fremon
 >     url="http://robertrubin.com/the-yellow-pad"
 >     commentary="At Creekwood Terrace, I stood, stopped, at the Center of the road. Divider, 2 entrances to the North, and 2 entrances to the South. How I surround myself...in fact. At the Charter Square entrance to Enea Court, between     Taqueria El Mex-Cal and Liquor store. I have lived this love...to pass it. Mo ti pray...then I listen. I have pray...then I listen. On Paseo Padre Parkway overhead bridge between Blackstone Way and Siward Drive, North East, walking towards the South East. To accept Me...as nobody will try Me. The 3 words phrases written down on the paper and data entry, entered, into the database are separateable into 3 words and 5 words. The 1st entry, record, is for 4 lanes, roads paths into the Creekwood Terrace and there are 4 beasts, 4 kingdoms, in Daniel 7. Isaiah 53? Yesterday, 2024-01-15 you saw a vehicle with Panther written on it, pass Highway 880 North, towards."
 >     location="On Paseo Padre Parkway overhead bridge between Blackstone Way and Siward Drive, North East, walking towards the South East. I knelt on my right knee on a black plastic bag."}
->
-> #### Education in Charlotte, North Carolina (NC) {#Autobiography_Education_in_Charlotte_North_Carolina dated="2024-03-23T01:06:00"}
->
-> [In-spite of racism\...we can observe.]{dated="2024-03-23T01:25:00"}
->
-> 1.  Between 1994-1996, I completed 2 years of education at Central
->     Piedmont Community College (CPCC), Charlotte, North Carolina (NC)
-> 2.  I graduated with 3 Associate degrees in Electronics, Computers,
->     and Electrical Engineering Technology from CPCC
-> 3.  During the Summer of 1995, after completing the 1st Associate
->     degree my twin sibling and I re-located to Atlanta, Georgia to
->     live with my paternal uncle Niyi. Although I gained work
->     employment at a fast food restaurant, I chose to return to CPCC to
->     complete all 3 Associate degrees
-> 4.  Between 1996-1998, I attended the University of North Carolina,
->     Charlotte (UNCC) and graduated with a degree in Electrical
->     Engineering Technology - Computer Emphasis. I do not learn\...out
->     of others. My twin sibling and contemporaries are educational and
->     career influences. [I am a better tutor than a
->     learner]{dated="2024-03-23T01:54:00"}
-> 5.  -   I contracted at Sunhealth Corporation. I added report columns.
->         Legal (8.5 × 14 inches)
->     -   I was hired at McKey Real Estate to develop a relational
->         database application using R:Base 5000. My stumbling block was
->         either to use the integrated development environment (IDE)
->         wizard or learn from the manual
->     -   In Charlotte, an African American male prospective employer
->         asked me to learn the C programming language. At Central
->         Corporation, I looked up to an African American male software
->         engineer that came among others to install software. At
->         Central Corporation, I also upgraded software developed using
->         the C programming language by increasing the number of labels
->         it prints for tape reels. [What do I need of a capable human
->         being?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20do%20I%20need%20of%20a%20capable%20human%20being%3F){dated="2024-03-23T03:06:00"
->         contactid="467" hiswordid="160988"
->         commentary="NeedCapable HumanBeing? You would talk to Pauline Beshay about blow job."}
->         [What resemblance has He
->         made](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20resemblance%20has%20He%20made%3F){dated="2024-03-23T04:25:00"
->         hiswordid="160989" commentary="Right thigh."} ( [Genesis
->         32:28, Genesis 5:3, Genesis
->         4:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2032:28,%20Genesis%205:3,%20Genesis%204:17){dated="2024-03-23T04:31:00"
->         hiswordid="160989" commentary="Right thigh."} )? [What word
->         reminds](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20word%20reminds%3F){dated="2024-03-23T05:29:00"
->         hiswordid="160990"
->         commentary="As I said this word I recalled seeing 2024-03-22 Yesterday, Tony of Albertsons Lucky, Charter Square at the South East self checkout. Mary Kolmeyer also in the vicinity."}
->         ( [Mark
->         11:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Mark%2011:23){dated="2024-03-23T05:29:00"
->         hiswordid="160990"
->         commentary="As I said this word I recalled seeing 2024-03-22 Yesterday, Tony of Albertsons Lucky, Charter Square at the South East self checkout. Mary Kolmeyer also in the vicinity."}
->         )?
+
+#### Education in Charlotte, North Carolina (NC) {#Autobiography_Education_in_Charlotte_North_Carolina dated="2024-03-23T01:06:00"}
+
+::: {dated="2024-03-23T01:14:00"}
+[In-spite of racism\...we can observe.]{dated="2024-03-23T01:25:00"}
+
+1.  Between 1994-1996, I completed 2 years of education at Central
+    Piedmont Community College (CPCC), Charlotte, North Carolina (NC)
+2.  I graduated with 3 Associate degrees in Electronics, Computers, and
+    Electrical Engineering Technology from CPCC
+3.  During the Summer of 1995, after completing the 1st Associate degree
+    my twin sibling and I re-located to Atlanta, Georgia to live with my
+    paternal uncle Niyi. Although I gained work employment at a fast
+    food restaurant, I chose to return to CPCC to complete all 3
+    Associate degrees
+4.  Between 1996-1998, I attended the University of North Carolina,
+    Charlotte (UNCC) and graduated with a degree in Electrical
+    Engineering Technology - Computer Emphasis. I do not learn\...out of
+    others. My twin sibling and contemporaries are educational and
+    career influences. [I am a better tutor than a
+    learner]{dated="2024-03-23T01:54:00"}
+5.  -   I contracted at Sunhealth Corporation. I added report columns.
+        Legal (8.5 × 14 inches)
+    -   I was hired at McKey Real Estate to develop a relational
+        database application using R:Base 5000. My stumbling block was
+        either to use the integrated development environment (IDE)
+        wizard or learn from the manual
+    -   In Charlotte, an African American male prospective employer
+        asked me to learn the C programming language. At Central
+        Corporation, I looked up to an African American male software
+        engineer that came among others to install software. At Central
+        Corporation, I also upgraded software developed using the C
+        programming language by increasing the number of labels it
+        prints for tape reels. [What do I need of a capable human
+        being?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20do%20I%20need%20of%20a%20capable%20human%20being%3F){dated="2024-03-23T03:06:00"
+        contactid="467" hiswordid="160988"
+        commentary="NeedCapable HumanBeing? You would talk to Pauline Beshay about blow job."}
+        [What resemblance has He
+        made](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20resemblance%20has%20He%20made%3F){dated="2024-03-23T04:25:00"
+        hiswordid="160989" commentary="Right thigh."} ( [Genesis 32:28,
+        Genesis 5:3, Genesis
+        4:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2032:28,%20Genesis%205:3,%20Genesis%204:17){dated="2024-03-23T04:31:00"
+        hiswordid="160989" commentary="Right thigh."} )? [What word
+        reminds](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20word%20reminds%3F){dated="2024-03-23T05:29:00"
+        hiswordid="160990"
+        commentary="As I said this word I recalled seeing 2024-03-22 Yesterday, Tony of Albertsons Lucky, Charter Square at the South East self checkout. Mary Kolmeyer also in the vicinity."}
+        ( [Mark
+        11:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Mark%2011:23){dated="2024-03-23T05:29:00"
+        hiswordid="160990"
+        commentary="As I said this word I recalled seeing 2024-03-22 Yesterday, Tony of Albertsons Lucky, Charter Square at the South East self checkout. Mary Kolmeyer also in the vicinity."}
+        )?
+:::
 
 > ## Style of Writing {#StyleOfWriting dated="2024-02-14T00:00:00"}
 >
 > ### What has prompted your interest in the topic? {#WhatHasPromptedYourInterestInTheTopic dated="2024-02-15T03:58:00"}
 >
+> ::: {dated="2024-02-15T04:02:00"}
 > The driving forces of arriving at the author\'s work are:
 >
 > -   During his education in Australia, the author was exposed to
 >     Case-Based Reasoning and Unified Modeling Language. Both themes
->     will suggest
->     the future is made of the possibility.
->     We do not arrive at the future, at once, we gradually move into
->     it.
+>     will suggest [ the future is made of the possibility.
+>     ]{dated="2024-02-15T04:06:00"
+>     commentary="2024-02-15T04:05:00 We plan for our future."} [ We do
+>     not arrive at the future, at once, we gradually move into it.
+>     ]{dated="2024-02-15T04:08:00"}
 > -   The author was receptive and felt most at home during worship.
+> :::
 >
-> ### What kinds of questions will you be asking? {#WhatKindsOfQuestionsWillYouBeAsking dated="2024-02-15T04:27:00"}
->
-> How can no word be lost? How does the author preserve the word of God,
-> audience, scenario, timing, reference?
->
-> What retention has He made of His past?
->
-> ### How do your questions fit into the broader intellectual tradition? {#HowDoYourQuestionsFitIntoTheBroaderIntellectualTradition dated="2024-02-15T04:52:00"}
->
-> The book, The Bible Code by Michael Drosnin, is the sole source for
-> this religious work.
->
-> ### How will you answer your questions? {#HowWillYouAnswerYourQuestions dated="2024-02-15T04:58:00"}
->
-> [If love is not spent, where is it
-> needed?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=If%20love%20is%20not%20spent,%20where%20is%20it%20needed%3F){dated="2024-02-15T05:09:00"
-> contactid="1810" hiswordid="160622"}
->
-> \
-> Copyright ©
->
-> 2024
->
-> [\
-> ]{#copyrightYear}
->
-> Ken Adeniji <KenAdeniji@hotmail.com>
+> (Dennis Tenen)
+
+### What kinds of questions will you be asking? {#WhatKindsOfQuestionsWillYouBeAsking dated="2024-02-15T04:27:00"}
+
+::: {dated="2024-02-15T04:41:00"}
+How can no word be lost? How does the author preserve the word of God,
+audience, scenario, timing, reference? [What retention has He made of
+His past?]{dated="2024-02-15T04:45:00"}
+:::
+
+### How do your questions fit into the broader intellectual tradition? {#HowDoYourQuestionsFitIntoTheBroaderIntellectualTradition dated="2024-02-15T04:52:00"}
+
+The book, The Bible Code by Michael Drosnin, is the sole source for this
+religious work.
+
+### How will you answer your questions? {#HowWillYouAnswerYourQuestions dated="2024-02-15T04:58:00"}
+
+[If love is not spent, where is it
+needed?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=If%20love%20is%20not%20spent,%20where%20is%20it%20needed%3F){dated="2024-02-15T05:09:00"
+contactid="1810" hiswordid="160622"}
+
+[]{#documentLastModified}\
+Copyright ©
+
+2024
+
+[]{#copyrightYear}\
+
+Ken Adeniji <KenAdeniji@hotmail.com>
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
