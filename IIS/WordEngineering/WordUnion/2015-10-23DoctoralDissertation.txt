@@ -2969,15 +2969,15 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 > ::: {dated="2025-05-15T20:24:00"}
 > -   A data modeler uses data definition language (DDL) to design the
 >     information container.
-> -   1.  In 2002, when I started this research, I modeled the
->         WordEngineering database
+> -   1.  In 2002, when I started recording the word of God, I modeled
+>         the
 >         [WordEngineering](https://github.com/KenAdeniji/SQLServerDataDefinitionLanguageDDL/tree/master/WordEngineering)
 >         database, HisWord table.
 >     2.  In 2007, when I was looking for work, I modeled the
 >         [IHaveDecidedToWorkOnAGradualImprovingSystem](https://github.com/KenAdeniji/SQLServerDataDefinitionLanguageDDL/tree/master/IHaveDecidedToWorkOnAGradualImprovingSystem)
 >         database, and I developed its Internet application.
 > -   The primary and most basic information container is a table and
->     its columns\' content. For this study, the HisWord table is
+>     its rows and columns. For the author, the HisWord table is
 >     essential, and its word column is appropriately God\'s given.
 > :::
 
