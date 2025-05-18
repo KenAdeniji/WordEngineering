@@ -3,9 +3,9 @@ REM 2023-09-09T01:05:00 IISLog c:\inetpub u_ex170102.log u_ex230608.log u_ex1709
 REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-directory-6007-rc.html
 REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
 REM	2025-05-09T13:32:00	http://superuser.com/questions/466682/why-use-start-over-call-when-using-batch-files
-
+REM	2025-05-17 Remove SQLServerDataFiles, SQLDataDefinitionLanguage, SQLDataManipulationLanguage, SQLExport
 :BeginAgain
-echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=SQLServerDataDefinitionLanguageDDL, 8=SQLServerDataFiles, 9=SQLServerDataManipulationLanguageDML, 10=SQLServerExport, 11=WebAssembly, 12=WinScp, 13=WordEngineering, 14=WordOfGod, 15=WorkDone
+echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=WebAssembly, 8=WinScp, 9=WordEngineering, 10=WordOfGod, 11=WorkDone
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
@@ -15,15 +15,11 @@ IF %id% == 3 GOTO mssqlscripter
 IF %id% == 4 GOTO Node.js
 IF %id% == 5 GOTO Rust
 IF %id% == 6 GOTO SQLServerBackup
-IF %id% == 7 GOTO SQLServerDataDefinitionLanguageDDL
-IF %id% == 8 GOTO SQLServerDataFiles
-IF %id% == 9 GOTO SQLServerDataManipulationLanguageDML
-IF %id% == 10 GOTO SQLServerExport
-IF %id% == 11 GOTO WebAssembly
-IF %id% == 12 GOTO WinScp
-IF %id% == 13 GOTO WordEngineering
-IF %id% == 14 GOTO WordOfGod
-IF %id% == 15 GOTO WorkDone
+IF %id% == 7 GOTO WebAssembly
+IF %id% == 8 GOTO WinScp
+IF %id% == 9 GOTO WordEngineering
+IF %id% == 10 GOTO WordOfGod
+IF %id% == 11 GOTO WorkDone
 GOTO Exit
 
 :BCP
@@ -189,7 +185,7 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2220);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8865);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161376);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16055);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16143);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7260);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
