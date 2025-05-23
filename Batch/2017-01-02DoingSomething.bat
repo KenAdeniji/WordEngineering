@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161376);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16143);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7260);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7300);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);

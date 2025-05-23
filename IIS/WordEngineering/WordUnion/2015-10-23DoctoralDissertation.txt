@@ -28,12 +28,12 @@ of Science.
 ( [2 Corinthians
 10:9-18](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Corinthians%2010:9-18){dated="2022-01-07T09:08:00"
 word="That create." hiswordid="144962" contactid="11433"} ). The
-AlphabetSequenceIndex is the [result of a pure function to sum alphabet
-places]{dated="2020-09-09T00:00:00"}
+[AlphabetSequenceIndex]{.dfn dated="2025-05-20T20:34:00"} is the [result
+of a pure function to sum alphabet places]{dated="2020-09-09T00:00:00"}
 [AlphabetSequence.cs](http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs)
-. [ The AlphabetSequenceIndexScriptureReference are the offsets from the
-beginning and the ending of the Scripture.
-]{dated="2020-09-14T00:00:00"} [ The
+. [ The [AlphabetSequenceIndexScriptureReference]{.dfn
+dated="2025-05-20T20:24:00"} are the offsets from the beginning and the
+ending of the Scripture. ]{dated="2020-09-14T00:00:00"} [ The
 AlphabetSequenceIndexScriptureReference consists of four parts; there
 are two references each to particular chapters and verses. The first
 mention is the forward verse, which the author calculates by determining
@@ -2997,6 +2997,14 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 >     hiswordid="166256" contactid="13526"
 >     url="dbta.com/Editorial/Trends-and-Applications/RESEARCH-at-DBTA-Survey-Reveals-the-Pervasiveness-of-%e2%80%98Dark-Data-160191.aspx"
 >     commentary="I saw Lauren Kong, Carl Kong, and Doudou Kong waiting to get into their car... on their way to school."}
+>
+> lang attribute
+> :   As advised, the author specifies the English language on the HTML
+>     tag. As of this time, the language attribute is not specified
+>     elsewhere. 2025-05-20T09:32:00 [Who speaks\... on\...
+>     authority?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Who%20speaks...%20on...%20authority%3F){dated="2025-05-20T09:32:00"
+>     hiswordid="166262" contactid="3577"
+>     url="npr.org/sections/thetwo-way/2014/10/28/359564982/pope-says-god-not-a-magician-with-a-magic-wand"}
 >
 > #### 2025-05-15T20:20:00 Data Modeler {#DataModeler dated="2025-05-15T20:20:00"}
 >

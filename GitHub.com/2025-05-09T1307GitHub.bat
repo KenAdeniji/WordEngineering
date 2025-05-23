@@ -31,3 +31,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-14T1120TwinSibling_
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-19T1151EdwardYeung_TechnicalSupport_Powersoft_Sybase_ARecognitionOfWhereHeIsAlludingTo_Unigroup_Fenton_Missouri_ZipCode63026_TelephoneAreaCode636.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-20T1256NoApparent...Reason_AnvilSecurityServices_JonathanSilva_99RanchMarket.txt
+
+git add	IIS/WordEngineering/Microsoft/2025-05-22T1743KenAdeniji@hotmail.com_-_MicrosoftAzure_azure@infoemails.microsoft.com_Sent_ThursdayMay_22_2025_1625Subject_UpgradeWithinSevenDaysToKeepGoingWithAzure.txt
