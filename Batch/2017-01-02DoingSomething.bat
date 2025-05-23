@@ -5,7 +5,7 @@ REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Gle
 REM	2025-05-09T13:32:00	http://superuser.com/questions/466682/why-use-start-over-call-when-using-batch-files
 REM	2025-05-17 Remove SQLServerDataFiles, SQLDataDefinitionLanguage, SQLDataManipulationLanguage, SQLExport
 :BeginAgain
-echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=WebAssembly, 8=WinScp, 9=WordEngineering, 10=WordOfGod, 11=WorkDone
+echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=SQLServerDataDefinitionLanguageDDL, 8=SQLServerDataFiles, 9=SQLServerDataManipulationLanguageDML, 10=SQLServerExport, 11=WebAssembly, 12=WinScp, 13=WordEngineering, 14=WordOfGod, 15=WorkDone
 set /p id=Enter Choice: 
 
 IF %id% == 1 GOTO BCP
@@ -15,27 +15,31 @@ IF %id% == 3 GOTO mssqlscripter
 IF %id% == 4 GOTO Node.js
 IF %id% == 5 GOTO Rust
 IF %id% == 6 GOTO SQLServerBackup
-IF %id% == 7 GOTO WebAssembly
-IF %id% == 8 GOTO WinScp
-IF %id% == 9 GOTO WordEngineering
-IF %id% == 10 GOTO WordOfGod
-IF %id% == 11 GOTO WorkDone
+IF %id% == 7 GOTO SQLServerDataDefinitionLanguageDDL
+IF %id% == 8 GOTO SQLServerDataFiles
+IF %id% == 9 GOTO SQLServerDataManipulationLanguageDML
+IF %id% == 10 GOTO SQLServerExport
+IF %id% == 11 GOTO WebAssembly
+IF %id% == 12 GOTO WinScp
+IF %id% == 13 GOTO WordEngineering
+IF %id% == 14 GOTO WordOfGod
+IF %id% == 15 GOTO WorkDone
 GOTO Exit
 
 :BCP
-start xcopy d:\BCP c:\BCP /d /e /s /y
-start xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
-start xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
-REM start start xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
-start start xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
+xcopy d:\BCP c:\BCP /d /e /s /y
+xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
+xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
+REM xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
+xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :IISLog
-start xcopy c:\inetpub d:\inetpub /d /e /s /y
-start xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
-start xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
-start xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
-start xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
+xcopy c:\inetpub d:\inetpub /d /e /s /y
+xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
+xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
+xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
+xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
 GOTO Exit
 
 :mssqlscripter
@@ -44,37 +48,37 @@ REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;
 GOTO Exit
 
 :Node.js
-start xcopy d:\Node.js c:\Node.js /d /e /s /y
-start xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
-start xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
-REM start xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
+xcopy d:\Node.js c:\Node.js /d /e /s /y
+xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
+xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
+REM xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
-start xcopy d:\Rust c:\Rust /d /e /s /y
-start xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
-start xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
-start xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
-start xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
+xcopy d:\Rust c:\Rust /d /e /s /y
+xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
+xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
+xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
+xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
 GOTO Exit
 
 :ScriptDB
 scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
 
 :SQLServerBackup
-start xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
-start xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
-start xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
-start xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
-start xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
+xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e /s /y
 GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
-start xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-start xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 GOTO Exit
 
 :SQLServerDataFiles
@@ -82,37 +86,37 @@ setlocal
 set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
-start xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
-REM start xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
-start xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
-start xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
-start xcopy d:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
+REM xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
+xcopy d:\SQLServerDataFiles C:\Users\KAdeniji\OneDrive\sqlserverdatafiles /d /e /s /y
 rem  net continue %_service% 
 net start  %_service% /y
 endlocal
 GOTO Exit
 
 :SQLServerDataManipulationLanguageDML
-start xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
-start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-start xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-start xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
-start xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
 GOTO Exit
 
 :SQLServerExport
-start xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
-start xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
-start xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
-start xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
+xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
-start xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
-start xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
-start xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
-start xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
-start xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
+xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
 GOTO Exit
 
 :WinScp
@@ -120,24 +124,24 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
-start xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
-start xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
-start xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
-start xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
-start xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
+xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
 GOTO Exit
 
 :WordOfGod
-start xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
-start xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
-start xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
-start xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
-start xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
+xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
 GOTO Exit
 
 :WorkDone
-start xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
-start xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
+xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
+xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
 GOTO Exit
 
 :Backup
@@ -176,18 +180,18 @@ DBCC CHECKIDENT ('URI..UriChrist', RESEED, 21351);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
-DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71534);
+DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71500);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2220);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2208);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8865);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161376);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161222);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16143);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16055);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  2957);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7300);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7184);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
@@ -961,96 +965,5 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 2025-04-30T22:49:00 microsoft windows operating system, microsoft sql server management studio, quit, stop, end, abort, finish.
 
 2025-04-30T13:55:00 2020-04-20 ColumnsAddedLocationScene recorded 2025-04-30T08:19:00. ddl/dml script generation failed. Click on help for known solutions.
-
-
-2025-05-11T22:34:00...2025-05-11T22:42:00... Generate Scripts
-
-2025-05-12T04:18:00 bedroom clock versus (vs) 2025-05-12T04:46:00 microsoft windows clock
-
-TITLE: Generate Scripts wizard was unable to load database objects. The wizard will exit. 
-------------------------------
-
-One or more errors occurred.
-
-------------------------------
-ADDITIONAL INFORMATION:
-
-Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
-
-For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
-
-------------------------------
-
-There is insufficient memory available in the buffer pool. (Microsoft SQL Server, Error: 802)
-
-For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
-
-------------------------------
-BUTTONS:
-
-OK
-------------------------------
-
-===================================
-
-One or more errors occurred.
-
-===================================
-
-Failed to retrieve data for this request. (Microsoft.SqlServer.Management.Sdk.Sfc)
-
-------------------------------
-For help, click: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&LinkId=20476
-
-------------------------------
-Program Location:
-
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Urn urn, String[] requestedFields, OrderBy[] orderBy)
-   at Microsoft.SqlServer.Management.Smo.Server.Microsoft.SqlServer.Management.Sdk.Sfc.IAlienRoot.SfcHelper_GetDataTable(Object connection, String urn, String[] fields, OrderBy[] orderByFields)
-   at Microsoft.SqlServer.Management.Sdk.Sfc.SfcObjectQuery.ExecuteDataTable(SfcQueryExpression query, String[] fields, OrderBy[] orderByFields)
-   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.EnumChildrenForDatabaseObjectType(DatabaseObjectType objectType)
-   at Microsoft.SqlServer.Management.SqlScriptPublish.SqlQueryHandler.GetDatabaseObjectTypes()
-   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.LoadObjectTypes()
-   at Microsoft.SqlServer.Management.SqlScriptPublish.SelectObjectsPage.<InitializeObjectTree>b__12_0()
-   at System.Threading.Tasks.Task`1.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
-
-===================================
-
-There is insufficient memory available in the buffer pool. (Framework Microsoft SqlClient Data Provider)
-
-------------------------------
-For help, click: https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-802-database-engine-error
-
-------------------------------
-Server Name: HOLYSPIRIT
-Error Number: 802
-Severity: 17
-State: 2
-Line Number: 1
-
-
-------------------------------
-Program Location:
-
-   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
-   at Microsoft.Data.SqlClient.SqlDataReader.Read()
-   at Microsoft.SqlServer.Management.Smo.DataProvider.ReadInternal()
-   at Microsoft.SqlServer.Management.Smo.DataProvider.SetConnectionAndQuery(ExecuteSql execSql, String query)
-   at Microsoft.SqlServer.Management.Smo.ExecuteSql.GetDataProvider(StringCollection query, Object con, StatementBuilder sb, RetriveMode rm)
-   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillData(ResultType resultType, StringCollection sql, Object connectionInfo, StatementBuilder sb)
-   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.FillDataWithUseFailure(SqlEnumResult sqlresult, ResultType resultType)
-   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.BuildResult(EnumResult result)
-   at Microsoft.SqlServer.Management.Smo.SqlObjectBase.GetData(EnumResult erParent)
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData()
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Environment.GetData(Request req, Object ci)
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.GetData(Object connectionInfo, Request request)
-   at Microsoft.SqlServer.Management.Sdk.Sfc.Enumerator.Process(Object connectionInfo, Request request)
 
 :Exit
