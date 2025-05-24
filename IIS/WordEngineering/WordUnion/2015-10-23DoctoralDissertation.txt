@@ -91,7 +91,7 @@ Australia.
   It defaults to port 80.                                                                  
   It defaults to the homepage.                                                             
 
-  : www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
+  : 2004-11-10 www.JesusInTheLamb.com {#www.JesusInTheLamb.com}
 
 The issuing of this domain name may be related to commencing writing the
 book titled Ocean Senior. There has not been a follow-up on future
@@ -150,7 +150,10 @@ indexes are not applicable to like expressions with leading wildcards.
 
 ##### The Scripture View\'s Testament Column {#Scripture_ViewTestamentColumn}
 
-The SQL statement `(case when BookID <=(39) then 'Old' else 'New' end)`
+The SQL statement
+
+    (case when BookID <=(39) then 'Old' else 'New' end)
+
 will set this computed column. The Testament column serves as a filter,
 such as, in the
 [BibleWord](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html).
@@ -182,7 +185,7 @@ the corresponding BookID. ]{dated="2020-10-06T15:05:00"}
 The SQL statement
 `dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)` will calculate
 the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a
-computed column; therefore, you can not set its [Entity
+computed column; therefore, the author is not able to set its [Entity
 Integrity](http://en.wikipedia.org/wiki/Entity_integrity); if it were
 not; the SQL statement
 `ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)`
@@ -2975,6 +2978,16 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 >         Version (KJV). [Singularity of the
 >         Composition.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Singularity%20of%20the%20Composition.){dated="2025-05-17T21:17:00"
 >         hiswordid="166243"}
+>     -   2025-05-22T18:10:00Immutability:
+>         1.  2025-05-22T18:16:00Object-oriented technology serves
+>             change states.
+>         2.  2025-05-22T18:25:00Inheritance, interface, method
+>             overloading, encapsulation, polymorphism, are all
+>             object-oriented principles.
+>         3.  2025-05-22T18:17:00As is of the need for database storage.
+>         4.  2025-05-22T18:20:00Variable initialization and refreshing
+>             with default value, constant, static, readonly.
+>     -   2025-05-22T18:31:00Practical need for recursion?
 
 (Ben Weidig, 2023-05-09).
 
