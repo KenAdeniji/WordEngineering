@@ -434,11 +434,11 @@
 			<p>
 				The VerseID ranges between 1 and 176; 
 				the SQL statement
-				<code>SELECT MAX(VerseID) FROM Bible..Scripture</code> 
+				<pre><code>SELECT MAX(VerseID) FROM Bible..Scripture</code></pre> 
 				is for determining the upper limit.
 
 				The SQL statement 
-				<code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_VerseID_Range] CHECK  (([VerseID]&gt;=(1) AND [VerseID]&lt;=(176)))</code>
+				<pre><code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_VerseID_Range] CHECK  (([VerseID]&gt;=(1) AND [VerseID]&lt;=(176)))</code></pre>
 				will set the range restriction.
 			</p>	
 
@@ -447,8 +447,7 @@
 			<p>
 				The author would have considered placing an index on the KingJamesVersion column,
 				but the author found out during his research that the verses in the KingJamesVersion 
-				are not unique nor distinct, and indexes are not applicable to like expressions 
-				with leading wildcards.
+				are not unique nor distinct, and indexes are not applicable to where like query conditions with leading wildcards.
 			</p>	
 
 			<h5 id="Scripture_ViewTestamentColumn">The Scripture View's Testament Column</h5>

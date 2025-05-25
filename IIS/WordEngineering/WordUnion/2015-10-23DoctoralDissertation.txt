@@ -108,7 +108,15 @@ Scripture table. The Scripture table has a [composite primary
 key](http://weblogs.sqlteam.com/jeffs/archive/2007/08/23/composite_primary_keys.aspx)
 , which consists of three columns; the BookID, ChapterID, and VerseID
 columns. The SQL statement
-` ALTER TABLE Bible..Scripture ADD CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED ( BookID ASC, ChapterID ASC, VerseID ASC ) `
+
+                    ALTER TABLE Bible..Scripture ADD  CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED 
+                    (
+                        BookID ASC,
+                        ChapterID ASC,
+                        VerseID ASC
+                    )
+                    
+
 is for setting the primary key.
 
 The author proposes creating a non-unique index,
@@ -122,23 +130,33 @@ version.
 Because there are sixty-six books in the Bible, the BookID ranges
 between 1 and 66; starting from Genesis and ending at Revelation. The
 SQL statement
-`ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)`
+
+    ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)
+
 will set the range restriction.
 
 ##### The Scripture Table\'s ChapterID Column {#ScriptureTableChapterIDColumn}
 
 The ChapterID ranges between 1 and 150; the SQL statement
-`SELECT MAX(ChapterID) FROM Bible..Scripture` is for determining the
-upper limit. The SQL statement
-`ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK (([ChapterID]>=(1) AND [ChapterID]<=(150)))`
+
+    SELECT MAX(ChapterID) FROM Bible..Scripture
+
+is for determining the upper limit. The SQL statement
+
+    ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK  (([ChapterID]>=(1) AND [ChapterID]<=(150)))
+
 will set the range restriction.
 
 ##### The Scripture Table\'s VerseID Column {#ScriptureTableVerseIDColumn}
 
 The VerseID ranges between 1 and 176; the SQL statement
-`SELECT MAX(VerseID) FROM Bible..Scripture` is for determining the upper
-limit. The SQL statement
-`ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT [CK_Scripture_VerseID_Range] CHECK (([VerseID]>=(1) AND [VerseID]<=(176)))`
+
+    SELECT MAX(VerseID) FROM Bible..Scripture
+
+is for determining the upper limit. The SQL statement
+
+    ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_VerseID_Range] CHECK  (([VerseID]>=(1) AND [VerseID]<=(176)))
+
 will set the range restriction.
 
 ##### The Scripture Table\'s KingJamesVersion Column {#ScriptureTableKingJamesVersionColumn}
@@ -146,7 +164,8 @@ will set the range restriction.
 The author would have considered placing an index on the
 KingJamesVersion column, but the author found out during his research
 that the verses in the KingJamesVersion are not unique nor distinct, and
-indexes are not applicable to like expressions with leading wildcards.
+indexes are not applicable to where like query conditions with leading
+wildcards.
 
 ##### The Scripture View\'s Testament Column {#Scripture_ViewTestamentColumn}
 
@@ -183,29 +202,61 @@ the corresponding BookID. ]{dated="2020-10-06T15:05:00"}
 ##### The Scripture Table\'s ScriptureReference Column {#ScriptureTableScriptureReferenceColumn}
 
 The SQL statement
-`dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)` will calculate
-the conjecture of the BookTitle, ChapterID, and VerseID. Since this is a
-computed column; therefore, the author is not able to set its [Entity
+
+    dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
+
+will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
+Since this is a computed column, therefore, the author is not able to
+set its [Entity
 Integrity](http://en.wikipedia.org/wiki/Entity_integrity); if it were
 not; the SQL statement
-`ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)`
+
+    ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)
+
 will set its entity integrity. The distinction between raw data versus
-computed columns is performance, space.
+computed columns is performance and space.
 
 ##### The Scripture Table\'s ChapterIDSequence Column {#ScriptureTableChapterIDSequenceColumn}
 
-When loading data, the author decides the ChapterIDSequence column; and
-increment it, every time, the BookID and ChapterID, changes during load.
-The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1
-and ending at Revelation 22. The SQL statement
-` SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID `
+When loading data, the author decides the ChapterIDSequence column, and
+increments it when the BookID and ChapterID, change during loading. The
+ChapterIDSequence ranges between 1 and 1189, starting in Genesis 1 and
+ending at Revelation 22. The SQL statement
+
+    SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID
+
 will decide the greatest value for ChapterIDSequence. An alternative SQL
 statement
-` select count( distinct cast(BookID as varchar(6)) + ' ' + cast(ChapterID as varchar(6)) ) FROM Bible..Scripture `
+
+                        select count(
+                        distinct
+                            cast(BookID as varchar(6))
+                            + ' '
+                            + cast(ChapterID as varchar(6))
+                        )
+                        FROM    Bible..Scripture
+                    
+
 Another SQL statement
-` ; with cte ( BookID , ChapterID ) as ( select distinct BookID, ChapterID FROM Bible..Scripture ) select cnt = count(*) from cte `
+
+                        ; with cte
+                        (
+                              BookID
+                            , ChapterID
+                        )
+                        as
+                        (
+                            select distinct BookID, ChapterID
+                            FROM    Bible..Scripture
+                        )
+                        select cnt = count(*)
+                        from   cte
+                    
+
 The SQL statement
-` ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189) `
+
+    ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189)
+
 will check the range correctness. Although it is good to know the
 ChapterIDSequence, but it is primarily used to decide the boundaries for
 scripture reference queries.
