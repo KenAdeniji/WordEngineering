@@ -385,14 +385,14 @@
 				which consists of three columns; the BookID, ChapterID, and VerseID columns.
 
 				The SQL statement 
-				<code>
+				<pre><code>
 				ALTER TABLE Bible..Scripture ADD  CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED 
 				(
 					BookID ASC,
 					ChapterID ASC,
 					VerseID ASC
 				)
-				</code>
+				</code></pre>
 				is for setting the primary key.
 			</p>	
 			
@@ -413,7 +413,7 @@
 				starting from Genesis and ending at Revelation.
 
 				The SQL statement 
-				<code>ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)</code>
+				<pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)</code></pre>
 				will set the range restriction.
 			</p>
 
@@ -421,11 +421,11 @@
 			<p>
 				The ChapterID ranges between 1 and 150; 
 				the SQL statement
-				<code>SELECT MAX(ChapterID) FROM Bible..Scripture</code> 
+				<pre><code>SELECT MAX(ChapterID) FROM Bible..Scripture</code></pre>
 				is for determining the upper limit.
 				
 				The SQL statement 
-				<code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK  (([ChapterID]&gt;=(1) AND [ChapterID]&lt;=(150)))</code>
+				<pre><code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK  (([ChapterID]&gt;=(1) AND [ChapterID]&lt;=(150)))</code></pre>
 				will set the range restriction.
 			</p>
 
@@ -498,34 +498,25 @@
 
 			<p>
 				The SQL statement 
-				<code>dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)</code>
+				<pre><code>dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)</code></pre>
 				will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
-				
-				Since this is a computed column; therefore, the author is not able to set its
+				Since this is a computed column, therefore, the author is not able to set its
 				<a href="http://en.wikipedia.org/wiki/Entity_integrity">Entity Integrity</a>;
 				if it were not; the SQL statement 
-				<code>ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)</code> 
+				<pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)</code></pre> 
 				will set its entity integrity.
-				The distinction between raw data versus computed columns is performance, space.
+				The distinction between raw data versus computed columns is performance and space.
 			</p>	
 
 			<h5 id="ScriptureTableChapterIDSequenceColumn">The Scripture Table's ChapterIDSequence Column</h5>
 
 			<p>
-				When loading data, the author decides the ChapterIDSequence column;
-				and increment it, every time, the BookID and ChapterID,
-				changes during load.
-
-				The ChapterIDSequence ranges between 1 and 1189; starting from Genesis 1 and ending at Revelation 22.
-
+				When loading data, the author decides the ChapterIDSequence column, and increments it when the BookID and ChapterID, change during loading.
+				The ChapterIDSequence ranges between 1 and 1189, starting in Genesis 1 and ending at Revelation 22.
 				The SQL statement 
-				<code>
-					SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID
-				</code>
-				will decide the greatest value for ChapterIDSequence.
-				
+				<pre><code>SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID</code></pre> will decide the greatest value for ChapterIDSequence.
 				An alternative SQL statement 
-				<code>
+				<pre><code>
 					select count(
 					distinct
 						cast(BookID as varchar(6))
@@ -533,10 +524,9 @@
 						+ cast(ChapterID as varchar(6))
 					)
 					FROM	Bible..Scripture
-				</code>
-
+				</code></pre>
 				Another SQL statement 
-				<code>
+				<pre><code>
 					; with cte
 					(
 						  BookID
@@ -549,17 +539,9 @@
 					)
 					select cnt = count(*)
 					from   cte
-				</code>
-				
-				The SQL statement 
-				<code>
-					ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189)
-				</code>
-				will check the range correctness.
-			
-				Although it is good to know the ChapterIDSequence, 
-				but it is primarily used to decide
-				the boundaries for scripture reference queries.
+				</code></pre>
+				The SQL statement <pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189)</code></pre> will check the range correctness.
+				Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
 			</p>	
 
 			<h5 id="ScriptureTableVerseIDSequenceColumn">The Scripture Table's VerseIDSequence Column</h5>

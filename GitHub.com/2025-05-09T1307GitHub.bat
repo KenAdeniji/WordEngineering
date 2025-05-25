@@ -35,3 +35,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-20T1256NoApparent..
 git add	IIS/WordEngineering/Microsoft/2025-05-22T1743KenAdeniji@hotmail.com_-_MicrosoftAzure_azure@infoemails.microsoft.com_Sent_ThursdayMay_22_2025_1625Subject_UpgradeWithinSevenDaysToKeepGoingWithAzure.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-22_-_2022-02-03MartinCardenas_BrownTrunk_-_2025-05-22GurukulAcademyAfterschoolEnrichment_womanPeelsOrangeSouthward_-_2025-05-22Ile-Ife_AuntBoseAdenijiNeeShonuga.txt
+
+git add	IIS/WordEngineering/Microsoft/2025-05-24T2025WhereHasHeNecessaryParticipateAsTheSame_-_UpgradeWithinThreeDaysToKeepGoingWithAzure_MicrosoftAzure_azure@infoemails.microsoft.txt
