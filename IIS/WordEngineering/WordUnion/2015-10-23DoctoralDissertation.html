@@ -385,23 +385,17 @@
 				which consists of three columns; the BookID, ChapterID, and VerseID columns.
 
 				The SQL statement 
-				<pre><code>
-				ALTER TABLE Bible..Scripture ADD  CONSTRAINT [PK_Scripture] PRIMARY KEY CLUSTERED 
-				(
-					BookID ASC,
-					ChapterID ASC,
-					VerseID ASC
-				)
-				</code></pre>
+<pre><code>
+ALTER TABLE Bible..Scripture ADD CONSTRAINT PK_Scripture PRIMARY KEY CLUSTERED 
+(
+	BookID ASC,
+	ChapterID ASC,
+	VerseID ASC
+)
+</code></pre>
 				is for setting the primary key.
 			</p>	
 			
-			<p>	
-				The author proposes creating a non-unique index,
-				IDX_Scripture_ChapterIDSequence,
-				on the ChapterIDSequence column.
-			</p>
-
 			<p>	
 				There are varchar(MAX) columns which has the text for each Bible version.
 			</p>
@@ -413,7 +407,9 @@
 				starting from Genesis and ending at Revelation.
 
 				The SQL statement 
-				<pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)</code></pre>
+<pre><code>
+ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)
+</code></pre>
 				will set the range restriction.
 			</p>
 
@@ -421,11 +417,15 @@
 			<p>
 				The ChapterID ranges between 1 and 150; 
 				the SQL statement
-				<pre><code>SELECT MAX(ChapterID) FROM Bible..Scripture</code></pre>
+<pre><code>
+SELECT MAX(ChapterID) FROM Bible..Scripture
+</code></pre>
 				is for determining the upper limit.
 				
 				The SQL statement 
-				<pre><code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_ChapterID_Range] CHECK  (([ChapterID]&gt;=(1) AND [ChapterID]&lt;=(150)))</code></pre>
+<pre><code>
+ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_ChapterID_Range CHECK  (([ChapterID]&gt;=(1) AND [ChapterID]&lt;=(150)))
+</code></pre>
 				will set the range restriction.
 			</p>
 
@@ -434,11 +434,15 @@
 			<p>
 				The VerseID ranges between 1 and 176; 
 				the SQL statement
-				<pre><code>SELECT MAX(VerseID) FROM Bible..Scripture</code></pre> 
+<pre><code>
+SELECT MAX(VerseID) FROM Bible..Scripture
+</code></pre> 
 				is for determining the upper limit.
 
 				The SQL statement 
-				<pre><code>ALTER TABLE Bible..Scripture WITH CHECK ADD  CONSTRAINT [CK_Scripture_VerseID_Range] CHECK  (([VerseID]&gt;=(1) AND [VerseID]&lt;=(176)))</code></pre>
+<pre><code>
+ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_VerseID_Range CHECK  (([VerseID]&gt;=(1) AND [VerseID]&lt;=(176)))
+</code></pre>
 				will set the range restriction.
 			</p>	
 
@@ -454,7 +458,9 @@
 
 			<p>
 				The SQL statement 
-				<pre><code>(case when BookID &lt;=(39) then 'Old' else 'New' end)</code></pre>
+<pre><code>
+(case when BookID &lt;=(39) then 'Old' else 'New' end)
+</code></pre>
 				will set this computed column.
 				The Testament column serves as a filter, such as, in the
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html">BibleWord</a>.
@@ -464,7 +470,9 @@
 
 			<p>
 				The SQL statement 
-				<code>dbo.udf_BookTitle(BookID)</code>
+<pre><code>
+dbo.udf_BookTitle(BookID)
+</code></pre>
 				is for determining this computed column.
 				
 				As expected, there is a correlation between the BookID column, and 
@@ -497,7 +505,9 @@
 
 			<p>
 				The SQL statement 
-				<pre><code>dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)</code></pre>
+<pre><code>
+dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
+</code></pre>
 				will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
 				Since this is a computed column, therefore, the author is not able to set its
 				<a href="http://en.wikipedia.org/wiki/Entity_integrity">Entity Integrity</a>;
@@ -513,33 +523,40 @@
 				When loading data, the author decides the ChapterIDSequence column, and increments it when the BookID and ChapterID, change during loading.
 				The ChapterIDSequence ranges between 1 and 1189, starting in Genesis 1 and ending at Revelation 22.
 				The SQL statement 
-				<pre><code>SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID</code></pre> will decide the greatest value for ChapterIDSequence.
+<pre><code>
+SELECT BookID, ChapterID FROM Bible..Scripture GROUP BY BookID, ChapterID ORDER BY BookID, ChapterID
+</code></pre> 
+				will decide the greatest value for ChapterIDSequence.
 				An alternative SQL statement 
-				<pre><code>
-					select count(
-					distinct
-						cast(BookID as varchar(6))
-						+ ' '
-						+ cast(ChapterID as varchar(6))
-					)
-					FROM	Bible..Scripture
-				</code></pre>
+<pre><code>
+select count(
+distinct
+	cast(BookID as varchar(6))
+	+ ' '
+	+ cast(ChapterID as varchar(6))
+)
+FROM	Bible..Scripture
+</code></pre>
 				Another SQL statement 
-				<pre><code>
-					; with cte
-					(
-						  BookID
-						, ChapterID
-					)
-					as
-					(
-						select distinct BookID, ChapterID
-						FROM	Bible..Scripture
-					)
-					select cnt = count(*)
-					from   cte
-				</code></pre>
-				The SQL statement <pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189)</code></pre> will check the range correctness.
+<pre><code>
+; with cte
+(
+	  BookID
+	, ChapterID
+)
+as
+(
+	select distinct BookID, ChapterID
+	FROM	Bible..Scripture
+)
+select cnt = count(*)
+from   cte
+</code></pre>
+				The SQL statement 
+<pre><code>
+ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range CHECK (ChapterIDSequence BETWEEN 1 AND 1189)
+</code></pre> 
+				will check the range correctness.
 				Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
 			</p>	
 
@@ -558,25 +575,25 @@
 				increment and update the VerseIDSequence column.
 
 				The SQL statement 
-				<code>
-					SELECT BookTitle FROM Bible..Scripture GROUP BY BookID, BookTitle HAVING MAX(ChapterID) = 1 ORDER BY BookID
-				</code>
+<pre><code>
+SELECT BookTitle FROM Bible..Scripture GROUP BY BookID, BookTitle HAVING MAX(ChapterID) = 1 ORDER BY BookID
+</code></pre>
 				is for listing these one chapter, Bible books.
 
 				The VerseIDSequence ranges between 1 and 31102; starting from Genesis 1:1,
 				and ending at Revelation 22:21.
 
 				The SQL statement 
-				<code>
-					SELECT COUNT(*) FROM Bible..Scripture
-				</code>
+<pre><code>
+SELECT COUNT(*) FROM Bible..Scripture
+</code></pre>
 				will decide the greatest value for VerseIDSequence,
 				the total number of rows, records, in the Bible..Scripture table.
 				
 				The SQL statement 
-				<code>
-					ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_VerseIDSequence_Range CHECK (VerseIDSequence BETWEEN 1 AND 31102)
-				</code>
+<pre><code>
+ALTER TABLE Bible..Scripture ADD CONSTRAINT  CK_Scripture_VerseIDSequence_Range CHECK (VerseIDSequence BETWEEN 1 AND 31102)
+</code></pre>
 				will do the data integrity.
 			
 				As said earlier, although it is good to know the VerseIDSequence, 
@@ -589,10 +606,10 @@
 				abides by the entity integrity constraint; however,
 				
 				The SQL statement 
-				<code>
-					ALTER TABLE Bible..Scripture
-					ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence)   
-				</code>
+<pre><code>
+ALTER TABLE Bible..Scripture
+ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence)   
+</code></pre>
 				is supplementary.
 			</p>	
 
@@ -600,7 +617,9 @@
 
 			<p>
 				The SQL statement 
-				<code>((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3)))</code>
+<pre><code>
+((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3)))
+</code></pre>
 				will combine the BookID, ChapterID, and VerseID.
 			
 				This is a convention for referring to Bible rows, by a unique identifier,
@@ -612,11 +631,11 @@
 				It is easier, faster, and more compact to restrict and order by numbers rather than text.
 							
 				Listed below, is the result set, for this SQL statement.
-				<code>
-					SELECT ScriptureReference, BibleReference
-					FROM Bible..Scripture_View
-					WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
-				</code>
+<pre><code>
+SELECT ScriptureReference, BibleReference
+FROM Bible..Scripture_View
+WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
+</code></pre>
 			</p>	
 
 			<table>
@@ -697,24 +716,34 @@
 				There are 12891 unique words, in the Bible..Exact table.
 								
 				The SQL statement 
-				<code>SELECT MAX(ExactID) FROM Bible..Exact</code>
+<pre><code>
+SELECT MAX(ExactID) FROM Bible..Exact
+</code></pre>
 				is for determining the highest value.
 				
 				The SQL statement 
-				<code>SELECT COUNT(BibleWord) FROM Bible..Exact</code>
+<pre><code>
+SELECT COUNT(BibleWord) FROM Bible..Exact
+</code></pre>
 				is for determining the word count.
 				
 				The SQL statement 
-				<code>ALTER TABLE Bible..Exact ADD CONSTRAINT  CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891)</code>
+<pre><code>
+ALTER TABLE Bible..Exact ADD CONSTRAINT  CK_Exact_ExactID_Range CHECK (ExactID BETWEEN 1 AND 12891)
+</code></pre>
 				is for the range restriction.
 
 				For storage reason, the author has chosen, not to have a unique index,
 				on this candidate primary key; in-spite, of it being a query item.
 								
 				Future implementation, may issue the SQL statement 
-				<code>CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)</code>
+<pre><code>
+CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)
+</code></pre>
 				
-				<code data-Dated="2020-12-14T16:51:00">SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact</code>
+<pre><code data-Dated="2020-12-14T16:51:00">
+SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact
+</code></pre>
 				is 789631; this is the count of the words in the KJV Bible.
 			</p>
 			
@@ -726,7 +755,9 @@
 				The author sets the
 				<a href="http://en.wikipedia.org/wiki/Unique_key">primary key</a>,
 				the constraint, by issuing the SQL statement 
-				<code>ALTER TABLE [dbo].[Exact] ADD  CONSTRAINT [PK_Exact] PRIMARY KEY CLUSTERED ([BibleWord] ASC)</code>.
+<pre><code>
+ALTER TABLE dbo.Exact ADD CONSTRAINT PK_Exact PRIMARY KEY CLUSTERED (BibleWord ASC)
+</code></pre>
 			</p>
 					
 			<h5 id="ExactTableFirstOccurrenceScriptureReferenceColumn">The Exact Table's FirstOccurrenceScriptureReference Column</h5>	
@@ -735,7 +766,11 @@
 				This is the scripture reference where the word first occurs in the Bible.
 
 				The author may set-up the relationship by issuing the SQL statement
-				<code>ALTER TABLE [dbo].[Exact]  WITH CHECK ADD  CONSTRAINT [FK_Exact_Scripture] FOREIGN KEY(FirstOccurrenceScriptureReference) REFERENCES dbo.Scripture (ScriptureReference)</code>.
+<pre><code>
+ALTER TABLE dbo.Exact WITH CHECK ADD CONSTRAINT FK_Exact_Scripture
+FOREIGN KEY(FirstOccurrenceScriptureReference)
+REFERENCES dbo.Scripture (ScriptureReference)
+</code></pre>
 				Please note, that as discussed earlier,
 				the author cannot have, a unique constraint, on the Bible..Scripture.ScriptureReference column,
 				since this is a computed column;
