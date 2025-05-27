@@ -39,3 +39,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-22_-_2022-02-03Mart
 git add	IIS/WordEngineering/Microsoft/2025-05-24T2025WhereHasHeNecessaryParticipateAsTheSame_-_UpgradeWithinThreeDaysToKeepGoingWithAzure_MicrosoftAzure_azure@infoemails.microsoft.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-27T1302PaulineBeshay_IUnderstandNow_1998-05-08OutOfEgyptHaveICalledMySon_Hosea11v1_2025-05-27T1323BecauseIRealizedOurLovemakingWasOver.txt
+
+git add	IIS/WordEngineering/2025-05-27SeparateCommentaryPseudocode
