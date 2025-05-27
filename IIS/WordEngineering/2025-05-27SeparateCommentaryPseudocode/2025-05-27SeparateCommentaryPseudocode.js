@@ -26,7 +26,7 @@ class BegottenSon {
 		return new Date("0032-04-06");
 	}
 }
-//April 6, 32
+
 // Create the only instance of the BegottenSon class
 const JesusChrist = new BegottenSon();
 
