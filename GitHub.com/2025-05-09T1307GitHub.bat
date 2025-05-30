@@ -43,3 +43,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-27T1302PaulineBesha
 git add	IIS/WordEngineering/2025-05-27SeparateCommentaryPseudocode
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/AtAmazonSomeCodersSayTheirJobsHaveBegunTo_TheNewYorkTimesPushedToUseArtificialIntelligenceSoftwareDevelopersAtTheE-commerceGiantSayTheyMustWorkFasterAndHaveLessTimeToThink.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-05-29FaithAnYao_-_AreYouPregnantNotToYou_-_Microsoft_StainlessSteelFryingPain_MonikerTripleM_200dollars.txt
