@@ -3063,16 +3063,41 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 >         Version (KJV). [Singularity of the
 >         Composition.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Singularity%20of%20the%20Composition.){dated="2025-05-17T21:17:00"
 >         hiswordid="166243"}
->     -   2025-05-22T18:10:00Immutability:
->         1.  2025-05-22T18:16:00Object-oriented technology serves
->             change states.
->         2.  2025-05-22T18:25:00Inheritance, interface, method
->             overloading, encapsulation, polymorphism, are all
->             object-oriented principles.
->         3.  2025-05-22T18:17:00As is of the need for database storage.
->         4.  2025-05-22T18:20:00Variable initialization and refreshing
->             with default value, constant, static, readonly.
->     -   2025-05-22T18:31:00Practical need for recursion?
+>
+> 2.  2025-05-22T18:10:00 Immutability:
+>     1.  2025-05-22T18:16:00 Object-oriented technology serves change
+>         states.
+>     2.  2025-05-22T18:25:00 Inheritance, interface, method
+>         overloading, encapsulation, polymorphism, are all
+>         object-oriented principles.
+>     3.  2025-05-22T18:17:00 As is of the need for database storage.
+>     4.  2025-05-22T18:20:00 Variable declarations and initializations.
+>         Variables refreshing with default values, constants, statics,
+>         read-only.
+>
+> 3.  2025-05-22T18:31:00 Practical need for recursion?
+>
+> 4.  2025-05-31T04:44:00 First-class and higher-order functions. The
+>     author\'s investment in SQL-CLR and C#. 2025-05-31T05:07:00 [What
+>     am I learning\... as I
+>     progress?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20am%20I%20learning...%20as%20I%20progress%3F){dated="2025-05-31T05:07:00"
+>     hiswordid="166367" contactid="69"
+>     commentary="First-class and higher-order functions. The author's investment in SQL-CLR and C#. Azure SQL Database. What am I learning... as I make progress?"
+>     url="http://learn.microsoft.com/en-us/shows/data-exposed/its-just-sql-clr-in-azure-sql-database-managed-instance"}
+>     Azure SQL Database. What am I learning\... as I make progress?
+>
+>         EXEC sp_configure 'allow updates', 0
+>         RECONFIGURE
+>
+>         sp_configure 'show advanced options', 1;
+>         GO
+>         RECONFIGURE WITH OVERRIDE;
+>         GO
+>
+>         sp_configure 'clr enabled', 1;
+>         GO
+>         RECONFIGURE WITH OVERRIDE;
+>         GO
 
 (Ben Weidig, 2023-05-09).
 
