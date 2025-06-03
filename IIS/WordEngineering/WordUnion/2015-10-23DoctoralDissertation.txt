@@ -179,22 +179,22 @@ The SQL statement
 
     dbo.udf_BookTitle(BookID)
 
-is for determining this computed column. As expected, there is a
-correlation between the BookID column, and and its corresponding
-BookTitle column, it progresses from Genesis to Revelation. Because SQL
-does not support arrays, the author, chose to write a [SQL
+It is for determining this computed column. As expected, there is a
+correlation between the BookID column, and its corresponding BookTitle
+column; it progresses from Genesis to Revelation. Because SQL does not
+support arrays, the author chose to write an [SQL
 CLR](http://en.wikipedia.org/wiki/SQL_CLR) C# function for determining
-the BookTitle, when passed the BookID. Although, C# supports [Design by
-contract](http://en.wikipedia.org/wiki/Design_by_contract), assertions,
-but the author only checks BookID range validity, and return NULL, if
-the argument does not fall within this range. The author could throw
-exceptions, but the author does not know the side effect nor full
-ramification. Instead of writing and determining the BookTitle using C#,
-an alternative is to use a database table. A table with two columns,
+the BookTitle when passed the BookID. Although C# supports [Design by
+contract](http://en.wikipedia.org/wiki/Design_by_contract) assertions,
+the author only checks BookID range validity, and returns NULL, if the
+argument does not fall within this range. The author could throw
+exceptions, but the author does not know the side effects nor the full
+ramifications. Instead of writing and determining the book title using
+C#, an alternative is to use a database table. A table with two columns,
 BookID and BookTitle, will store and make
 [extractable]{dated="2021-03-17T19:11:00"} the sixty-six books. [ For
-example the beginning book of the New Testament, the 40th book, spelling
-is Matthew or Mathew, double tt versus single t. An improvement on the
+example, the first book of the New Testament, the 40th book, spelling is
+Matthew or Mathew, double tt versus single t. An improvement on the
 current implementation is to use soundex to decipher the book title and
 the corresponding BookID. ]{dated="2020-10-06T15:05:00"}
 

@@ -473,30 +473,17 @@ ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_VerseID_Rang
 <pre><code>
 dbo.udf_BookTitle(BookID)
 </code></pre>
-				is for determining this computed column.
-				
-				As expected, there is a correlation between the BookID column, and 
-				and its corresponding BookTitle column,
-				it progresses from Genesis to Revelation.
-				
-				Because SQL does not support arrays, the author, chose to write a 
-				<a href="http://en.wikipedia.org/wiki/SQL_CLR">SQL CLR</a> 
-				C# function for determining the BookTitle, when passed the BookID.
-				
-				Although, C# supports
-				<a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by contract</a>,
-				assertions, but the author only checks BookID range validity, and return NULL, if the
-				argument does not fall within this range. The author could throw exceptions,
-				but the author does not know the side effect nor full ramification.
-				
-				Instead of writing and determining the BookTitle using C#,
-				an alternative is to use a database table.
-				A table with two columns, BookID and BookTitle, 
-				will store and make
+				It is for determining this computed column.
+				As expected, there is a correlation between the BookID column, and its corresponding BookTitle column; it progresses from Genesis to Revelation.
+				Because SQL does not support arrays, the author chose to write an <a href="http://en.wikipedia.org/wiki/SQL_CLR">SQL CLR</a> C# function for determining the BookTitle when passed the BookID.
+				Although C# supports <a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by contract</a> assertions, the author only checks BookID range validity, and returns NULL, if the argument does not fall within this range. 
+				The author could throw exceptions, but the author does not know the side effects nor the full ramifications.
+				Instead of writing and determining the book title using C#, an alternative is to use a database table.
+				A table with two columns, BookID and BookTitle, will store and make 
 				<span data-Dated="2021-03-17T19:11:00">extractable</span>
-				the sixty-six books.
+				the sixty-six books. 
 				<span data-Dated="2020-10-06T15:05:00">
-					For example the beginning book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t.
+					For example, the first book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus single t.
 					An improvement on the current implementation is to use soundex to decipher the book title and the corresponding BookID.
 				</span>
 			</p>	
