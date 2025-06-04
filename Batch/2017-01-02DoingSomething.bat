@@ -180,7 +180,7 @@ DBCC CHECKIDENT ('URI..UriChrist', RESEED, 21351);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
-DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71500);
+DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71578);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
@@ -965,5 +965,7 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 2025-04-30T22:49:00 microsoft windows operating system, microsoft sql server management studio, quit, stop, end, abort, finish.
 
 2025-04-30T13:55:00 2020-04-20 ColumnsAddedLocationScene recorded 2025-04-30T08:19:00. ddl/dml script generation failed. Click on help for known solutions.
+
+2025-06-03T20:23:00	http://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md#javascript
 
 :Exit

@@ -495,12 +495,12 @@ dbo.udf_BookTitle(BookID)
 <pre><code>
 dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
 </code></pre>
-				will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
+				Will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
 				Since this is a computed column, therefore, the author is not able to set its
 				<a href="http://en.wikipedia.org/wiki/Entity_integrity">Entity Integrity</a>;
-				if it were not; the SQL statement 
+				if it were not the SQL statement 
 				<pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)</code></pre> 
-				will set its entity integrity.
+				Will set its entity integrity.
 				The distinction between raw data versus computed columns is performance and space.
 			</p>	
 
