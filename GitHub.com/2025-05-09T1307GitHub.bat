@@ -67,7 +67,9 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T2044_-_FireRe-In
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt
 
 rem git mv IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt IIS/WordEngineering/2018-05-03Correspondence/2025-04-06T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt
-git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-06T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt		
+rem git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-06T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt
+
+git mv IIS/WordEngineering/2018-05-03Correspondence/2025-04-06T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_lucy@westside.net.au_-_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.net.au.txt
 		
 		git add IIS/WordEngineering/Comma-SeparatedValues(CSV)/
         git add IIS/WordEngineering/Html/JohnDean/
