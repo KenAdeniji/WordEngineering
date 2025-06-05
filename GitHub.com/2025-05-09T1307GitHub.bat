@@ -53,3 +53,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T0620KehindeAdeni
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T0620KehindeAdeniji@GMail.com_-_SnapInc_300031stStreet_SantaMonica_California_90405_-_SergeyBrin_-_IfHeWantsToGoToConcentrationCampNow...HeKnowsWhatToDo.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T1844_-_2025-04-09SteveJonesPart-TimeDBAs.txt
+
+git add	SQLScript/2025-06-04T2345sommarskog.se_-_generate_series_-_2020-06-11JohnGeorgePsychiatricPavilion_-_Michael_Emergency.sql

@@ -173,7 +173,7 @@ DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RES
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..StreetAddress', RESEED, 21982);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..UriAddress', RESEED, 14777);
 
-DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 1188);
+DBCC CHECKIDENT ('URI..UriBenediction', RESEED, 3244);
 DBCC CHECKIDENT ('URI..UriBingNews', RESEED, 151);
 DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 21351);
@@ -191,7 +191,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161568);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16055);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7184);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7385);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
