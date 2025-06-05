@@ -1,0 +1,15 @@
+http://www.youtube.com/watch?v=8rXe3N6oWV0
+Juval Lowy on System Design
+IDesignIncTV
+3K subscribers
+7,128 views  Mar 5, 2020
+In this interview Juval Löwy shares what motivated him to write his new bestseller, Righting Software.
+Juval explains the classic design mistake with most systems, that is, designing against the requirement, which always ends up in disaster when requirements change.
+Juval explains that it is quite possible to architect software systems that are good essentially forever, using what he calls volatility-based decomposition.
+Juval then discusses his approach for providing the required behavior of the system, what he calls composable design. 
+While this is a new idea in software system design, it is a universal design principle of all good systems, and it is the essence of the agility all businesses crave.
+
+Never design against requirement
+Identify core use-cases
+Identify building blocks
+Composable design

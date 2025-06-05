@@ -55,3 +55,18 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T0620KehindeAdeni
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T1844_-_2025-04-09SteveJonesPart-TimeDBAs.txt
 
 git add	SQLScript/2025-06-04T2345sommarskog.se_-_generate_series_-_2020-06-11JohnGeorgePsychiatricPavilion_-_Michael_Emergency.sql
+
+        git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_050625WestsideStrataManagementSP53850_7SeventhAvenueCampsiePropertyFireSafetyInspectionsQuotation.pdf
+        git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_2025AnnualDefectReportSP53850_7SeventhAvenueCampsie.pdf
+        git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_FireRe-Inspection2025Updated(004)(003).docx
+        git add IIS/WordEngineering/2018-05-03Correspondence/2025-04-04T2044_-_SP538507SEVENTHAVENUECAMPSIE_-_FireRepairs_2025_-_LucyMacbryde_lucy@westside.net.au_-_CameronBirchall_cameron@westside.net.au_-_fire@westside.net.au_-_communication@westside.ne
+        git add IIS/WordEngineering/Comma-SeparatedValues(CSV)/
+        git add IIS/WordEngineering/Html/JohnDean/
+        git add IIS/WordEngineering/JuvalLowy/
+        git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage1.TIF
+        git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage2.TIF
+        git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage3.TIF
+        git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage4.TIF
+        git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage5.TIF
+        git add Java/JavaAll-In-OneForDummiesDougLowe/
+		

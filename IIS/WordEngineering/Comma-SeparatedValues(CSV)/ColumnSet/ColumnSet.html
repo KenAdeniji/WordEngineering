@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2018-02-14	Created.
+			2018-02-15	https://stackoverflow.com/questions/11456850/split-a-string-by-commas-but-ignore-commas-within-double-quotes-using-javascript
+			2018-02-15	https://stackoverflow.com/questions/18369595/regex-for-parenthesis-javascript
+			2018-02-15	https://stackoverflow.com/questions/43310832/split-string-by-top-most-level-parentheses
+			2018-02-18	https://api.jqueryui.com/tabs/
+			2018-02-18	https://www.nczonline.net/blog/2012/05/08/working-with-files-in-javascript-part-1/
+			2018-02-18	https://www.nczonline.net/blog/2012/05/15/working-with-files-in-javascript-part-2/
+		-->
+		<title>ColumnSet</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="An insert statement, restrict the input to just these columns; in manipulation statements, only these columns, are affected; for example insert and update, will only alter, affect these columns. When SQL Server generates schema scripts, it also generates computed columns values; these entries are not insert-able"/>
+		<meta name="keywords" content="Bible, schema, data manipulation language, DML, insert, update"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="tabs">
+			<ul>
+				<li><a href="#fragment-1">URI</a></li>
+				<li><a href="#fragment-2">File Upload</a></li>
+				<li><a href="#fragment-3">Input</a></li>
+			</ul>
+			<div id="fragment-1">
+				<fieldset>
+					<legend>Query:</legend>
+					<table>
+						<tr>
+							<td><label id="tabUriUriLabel" for="tabUriUri">url:</label></td>
+							<td><input id="tabUriUri" type="url" autofocus/></td>
+						</tr>	
+						<tr>
+							<td><label for="tabUriColumns">Columns:</label></td>
+							<td>
+								<textarea id="tabUriColumns"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="tabUriSubmitQuery">
+							</td>
+						</tr>	
+					</table>
+				</fieldset>
+				<pre id="tabUriResultSet" align="left" style="overflow: auto"></pre>
+			</div>
+			<div id="fragment-2">
+				<fieldset>
+					<legend>Query:</legend>
+					<table>
+						<tr>
+							<td><label id="tabFileUploadLabel" for="tabFileUploadFile">File:</label></td>
+							<td><input id="tabFileUploadFile" type="file" multiple/></td>
+						</tr>	
+						<tr>
+							<td><label for="tabFileUploadColumns">Columns:</label></td>
+							<td>
+								<textarea id="tabFileUploadColumns"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="tabFileUploadSubmitQuery">
+							</td>
+						</tr>	
+					</table>
+				</fieldset>
+				<pre id="tabFileUploadResultSet" align="left" style="overflow: auto"></pre>
+			</div>
+			<div id="fragment-3">
+				<fieldset>
+					<legend>Query:</legend>
+					<table>
+						<tr>
+							<td><label id="tabTextLabel" for="tabTextText">Text:</label></td>
+							<td><textarea id="tabTextText"></textarea></td>
+						</tr>	
+						<tr>
+							<td><label for="tabTextColumns">Columns:</label></td>
+							<td>
+								<textarea id="tabTextColumns"></textarea>
+							</td>
+						</tr>	
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="tabTextSubmitQuery">
+							</td>
+						</tr>	
+					</table>
+				</fieldset>
+				<pre id="tabTextResultSet" align="left" style="overflow: auto"></pre>
+			</div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+		<script>
+			var isPostBack = false;
+
+			var uriDefault = "http://e-comfort.ephraimtech.com/WordEngineering/ColumnSet/2018-02-15Benediction.sql.txt";
+			var columnsDefault = "Dated, URI, Title";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					$.getScript("/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) 
+					{
+						var uri = scriptLiteral9432.getParameterByName("uri");
+						if (!uri)
+						{
+							uri = uriDefault;
+						}	
+						document.getElementById("tabUriUri").value = uri;
+
+						var columns = scriptLiteral9432.getParameterByName("columns");
+						if (!columns)
+						{
+							columns = columnsDefault;
+						}	
+						document.getElementById("tabUriColumns").value = columns;
+						
+						tabUriQuerySubmit();
+					
+						isPostBack = true;	
+					});
+				}
+			}
+
+			function tabFileUploadQuerySubmit() 
+			{
+				document.getElementById("tabFileUploadResultSet").innerHTML = "";
+				var i = 0,
+					files = document.getElementById("tabFileUploadFile").files,
+					len = files.length;
+
+				for (; i < len; i++) {
+					console.log("Filename: " + files[i].name);
+					console.log("Type: " + files[i].type);
+					console.log("Size: " + files[i].size + " bytes");
+					
+					var file = files[i];
+					reader.readAsText(file);	
+				}
+			}
+
+			function tabTextQuerySubmit() 
+			{
+				console.log("How?");
+				document.getElementById("tabTextResultSet").innerHTML = "";
+				var data = document.getElementById("tabTextText").value;
+				console.log("How? How?");
+				var columns = document.getElementById("tabTextColumns").value;
+				console.log("How? How How?");
+				var setInsert = processManager(data, columns);
+				console.log("How? How How? How");
+				document.getElementById("tabTextResultSet").innerHTML = setInsert;
+			}
+
+			function tabUriQuerySubmit() 
+			{
+				document.getElementById("tabUriResultSet").innerHTML = "";
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onerror = function () {
+					document.getElementById("tabUriResultSet").innerHTML = "xmlhttp error";
+				};
+				xmlhttp.onreadystatechange = function() 
+				{
+					if (this.readyState == 4 && this.status == 200) 
+					{
+						var data = this.responseText;
+						//document.getElementById("tabUriResultSet").innerHTML = data;
+						var columns = document.getElementById("tabUriColumns").value;
+						var setInsert = processManager(data, columns);
+						document.getElementById("tabUriResultSet").innerHTML = setInsert;
+					}
+				};
+				var uri = document.getElementById("tabUriUri").value; 
+				xmlhttp.open
+				(
+					"GET",
+					uri,
+					true
+				);
+				xmlhttp.send();
+			}
+			
+			function processManager(data, columns)
+			{
+				var line;
+				var lines = data.split(/\r?\n/);
+				var currentLineSubset;	
+				var fieldNames;
+				var fieldValues;
+				var fieldNamesCurrent;
+				var columnNamesSubset;
+				var columnValuesSubset;
+				
+				//var columns = document.getElementById("columns").value;
+				var columnsArray = splitCSVButIgnoreCommasInQuotes(columns, ",", "'");
+				
+				var insertPrefix;
+				var recordInsert;
+				var setInsert = "";
+				var totalInsert;
+				
+				for (var lineIndex = 0, lineLength = lines.length; lineIndex < lineLength; ++lineIndex)
+				{
+					line = lines[lineIndex];
+					var fieldNamesParenthesisOpen = line.indexOf('(');
+					var fieldNamesParenthesisClose = line.indexOf(')');
+					
+					insertPrefix = line.substring(0, fieldNamesParenthesisOpen - 1);
+					
+					fieldNames = line.substring(fieldNamesParenthesisOpen + 1, fieldNamesParenthesisClose);
+					
+					fieldNames = scriptLiteral9432.ascii1to127(fieldNames);
+					
+					var fieldNamesArray = splitCSVButIgnoreCommasInQuotes(fieldNames, ",", "'");
+
+					for 
+					(
+						var fieldNamesArrayIndex = 0, fieldNamesArrayLength = fieldNamesArray.length;
+						fieldNamesArrayIndex < fieldNamesArrayLength;
+						++fieldNamesArrayIndex
+					)
+					{
+						if (!(scriptLiteral9432.isLetter(fieldNamesArray[fieldNamesArrayIndex][0])))
+						{
+							fieldNamesArray[fieldNamesArrayIndex] = 
+								fieldNamesArray[fieldNamesArrayIndex].substring
+								(
+									2,
+									fieldNamesArray[fieldNamesArrayIndex].length-1
+								);
+						}
+					}
+					
+					var fieldValuesParenthesisOpen = line.indexOf('(', fieldNamesParenthesisClose);
+					var fieldValuesParenthesisClose = line.lastIndexOf(')');
+					
+					fieldValues = line.substring(fieldValuesParenthesisOpen + 1, fieldValuesParenthesisClose);
+
+					var fieldValuesArray = splitCSVButIgnoreCommasInQuotes(fieldValues, ",", "'");
+					
+					var fieldValuesArray = splitCsv(fieldValues);
+					
+					columnNamesSubset = "";
+					columnValuesSubset = "";
+					
+					for 
+					(
+						var columnsArrayIndex = 0, columnsArrayLength = columnsArray.length;
+						columnsArrayIndex < columnsArrayLength;
+						++columnsArrayIndex
+					)
+					{
+						var columnsArrayCurrent = columnsArray[columnsArrayIndex];
+						columnsArrayCurrent = columnsArrayCurrent.trim();
+						var fieldNamePosition = fieldNamesArray.indexOf(columnsArrayCurrent);
+						
+						if (fieldNamePosition >= 1)
+						{
+							if (columnNamesSubset.length > 0)
+							{
+								columnNamesSubset += ", ";
+								columnValuesSubset += ", ";
+							}
+							columnNamesSubset += columnsArrayCurrent;
+							columnValuesSubset += fieldValuesArray[fieldNamePosition];
+						}
+					}
+
+					recordInsert = `${insertPrefix} (${columnNamesSubset}) VALUES (${columnValuesSubset})\n`;
+					
+					setInsert += recordInsert;
+				}
+				return setInsert;
+			}
+
+			//2018-02-15	https://stackoverflow.com/questions/11456850/split-a-string-by-commas-but-ignore-commas-within-double-quotes-using-javascript
+			function splitCSVButIgnoreCommasInQuotes(str, delimiter, quotes) {  
+				//split the str first  
+				//then merge the elments between two double quotes  
+				//var delimiter = ',';  
+				//var quotes = "'";  
+				var elements = str.split(delimiter);  
+				var newElements = [];  
+				for (var i = 0; i < elements.length; ++i) {  
+					if (elements[i].indexOf(quotes) >= 0) {//the left double quotes is found  
+						var indexOfRightQuotes = -1;  
+						var tmp = elements[i];  
+						//find the right double quotes  
+						for (var j = i + 1; j < elements.length; ++j) {  
+							if (elements[j].indexOf(quotes) >= 0) {  
+								indexOfRightQuotes = j;  
+							}  
+						}  
+						//found the right double quotes  
+						//merge all the elements between double quotes  
+						if (-1 != indexOfRightQuotes) {   
+							for (var j = i + 1; j <= indexOfRightQuotes; ++j) {  
+								tmp = tmp + delimiter + elements[j];  
+							}  
+							newElements.push(tmp);  
+							i = indexOfRightQuotes;  
+						}  
+						else { //right double quotes is not found  
+							newElements.push(elements[i]);  
+						}  
+					}  
+					else {//no left double quotes is found  
+						newElements.push(elements[i]);  
+					}  
+				}  
+
+				return newElements;  
+			}  
+			
+			
+			//2018-02-15	https://stackoverflow.com/questions/11456850/split-a-string-by-commas-but-ignore-commas-within-double-quotes-using-javascript
+			function splitCsv(str) {
+			  return str.split(',').reduce((accum,curr)=>{
+				if(accum.isConcatting) {
+				  accum.soFar[accum.soFar.length-1] += ','+curr
+				} else {
+				  accum.soFar.push(curr)
+				}
+				if(curr.split("'").length % 2 == 0) {
+				  accum.isConcatting= !accum.isConcatting
+				}
+				return accum;
+			  },{soFar:[],isConcatting:false}).soFar
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("tabUriSubmitQuery").addEventListener("click", tabUriQuerySubmit, false);
+			document.getElementById("tabFileUploadSubmitQuery").addEventListener("click", tabFileUploadQuerySubmit, false);
+			document.getElementById("tabTextSubmitQuery").addEventListener("click", tabTextQuerySubmit, false);
+
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var contents = event.target.result;
+				console.log("File contents: " + contents);
+				var columns = document.getElementById("tabFileUploadColumns").value;
+				var setInsert = processManager(contents, columns);
+				document.getElementById("tabFileUploadResultSet").innerHTML += setInsert;
+			};
+
+			reader.onerror = function(event) {
+				console.error("File could not be read! Code " + event.target.error.code);
+			};
+		</script>
+	</body>
+</html>
