@@ -171,3 +171,9 @@ Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version
 
 Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.9282.0 
 */
+
+--Ezekiel 4:5 2024-05-10
+SELECT DATEADD(DAY, '2025-06-04', -390)
+
+--Ezekiel 4:6 2025-04-26
+SELECT DATEADD(DAY, '2025-06-04', -40)
