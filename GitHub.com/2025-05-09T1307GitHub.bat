@@ -83,4 +83,7 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-04T2044_-_SP538507S
         git add IIS/WordEngineering/Resume/DavidSalas_--_ResumePage5.TIF
         git add Java/JavaAll-In-OneForDummiesDougLowe/
 		
-git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-05T1905TeresaKengOfMilkHoneyCafe_99RanchMarket_HotStove_-_IThought...ToDoYouBlessing.txt		
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-05T1905TeresaKengOfMilkHoneyCafe_99RanchMarket_HotStove_-_IThought...ToDoYouBlessing.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-06T0014FrancoisVasiliades_L.J.HookerCampsie_Francois@ljhcampsie.com.au_-_LucyMacbryde_lucy@westside.net.au_-_IHaveAsked...ForTheAgentToDoHisJob.txt
+
