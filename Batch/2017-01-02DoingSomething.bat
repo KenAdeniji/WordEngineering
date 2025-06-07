@@ -970,5 +970,6 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 
 2025-06-04T14:24:00	Putin tells Trump Ukraine will have to respond to Ukraine Drome attack
 2025-06-04T15:06:00	delete from URI..UriMozillaPocket where sequenceOrderID = 71582; DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71581);
+2025-06-04	http://www.red-gate.com/simple-talk/databases/theory-and-design/scales-measurements/
 
 :Exit
