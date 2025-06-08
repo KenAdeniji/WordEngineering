@@ -689,6 +689,17 @@ and resemblances in the Bible.
 > |                       |                       |     integer value     |
 > |                       |                       |     each time a row   |
 > |                       |                       |     is inserted.      |
+> |                       |                       | -   The SQL           |
+> |                       |                       |     ROW_NUMBER()      |
+> |                       |                       |     function is a     |
+> |                       |                       |     temporary value   |
+> |                       |                       |     calculated when   |
+> |                       |                       |     the query is run. |
+> |                       |                       |     To persist        |
+> |                       |                       |     numbers in a      |
+> |                       |                       |     table, see        |
+> |                       |                       |     IDENTITY Property |
+> |                       |                       |     and SEQUENCE.     |
 > |                       |                       | -   The               |
 > |                       |                       |     \@counter-style   |
 > |                       |                       |     CSS at-rule lets  |
@@ -708,6 +719,62 @@ and resemblances in the Bible.
 > |                       |                       |     converted into a  |
 > |                       |                       |     string            |
 > |                       |                       |     representation.   |
+> +-----------------------+-----------------------+-----------------------+
+> | Rank Scales           | They have a linear    | -   Military ranks    |
+> |                       | ordering, and an      | -   Mohs scale for    |
+> |                       | origin. Having an     |     hardness          |
+> |                       | origin prevent some   |     (geology) of      |
+> |                       | of the transitivity   |     minerals          |
+> |                       | problems.             | -   Scofield scale    |
+> |                       |                       |     for the strength  |
+> |                       |                       |     of peppers        |
+> |                       |                       | -   Completely        |
+> |                       |                       |     Automated Public  |
+> |                       |                       |     Turing Test to    |
+> |                       |                       |     tell Computers    |
+> |                       |                       |     and Humans Apart  |
+> |                       |                       |     (CAPTCHA) is a    |
+> |                       |                       |     type of           |
+> |                       |                       |                       |
+> |                       |                       |   challenge--response |
+> |                       |                       |     turing test used  |
+> |                       |                       |     in computing to   |
+> |                       |                       |     determine whether |
+> |                       |                       |     the user is human |
+> |                       |                       |     in order to deter |
+> |                       |                       |     bot attacks and   |
+> |                       |                       |     spam.             |
+> |                       |                       |                       |
+> |                       |                       | The Contact table     |
+> |                       |                       | contains a title      |
+> |                       |                       | column. SQL offers a  |
+> |                       |                       | group by, and having  |
+> |                       |                       | clause. Strength of   |
+> |                       |                       | password? Soundex?    |
+> +-----------------------+-----------------------+-----------------------+
+> | Interval Scales       | An interval scale is  | Date difference, UNIX |
+> |                       | based on a            | epoch?                |
+> |                       | standardized unit or  |                       |
+> |                       | interval. Another     |                       |
+> |                       | property of these     |                       |
+> |                       | scales is that they   |                       |
+> |                       | have no natural       |                       |
+> |                       | origin.               |                       |
+> +-----------------------+-----------------------+-----------------------+
+> | Ratio Scales          | These scales have a   |                       |
+> |                       | base unit, natural    |                       |
+> |                       | origin and meaningful |                       |
+> |                       | operations. We also   |                       |
+> |                       | allow the creation of |                       |
+> |                       | compound units with   |                       |
+> |                       | ratio and interval    |                       |
+> |                       | scales. They are      |                       |
+> |                       | called ratio scales   |                       |
+> |                       | because the units of  |                       |
+> |                       | measure are expressed |                       |
+> |                       | as multiples or       |                       |
+> |                       | fractions of some     |                       |
+> |                       | base unit.            |                       |
 > +-----------------------+-----------------------+-----------------------+
 >
 > : Scales & Measurements {#ScalesMeasurements}
