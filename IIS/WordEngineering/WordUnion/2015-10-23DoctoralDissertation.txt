@@ -761,8 +761,8 @@ and resemblances in the Bible.
 > |                       | have no natural       |                       |
 > |                       | origin.               |                       |
 > +-----------------------+-----------------------+-----------------------+
-> | Ratio Scales          | These scales have a   |                       |
-> |                       | base unit, natural    |                       |
+> | Ratio Scales          | These scales have a   | -   HTML input range  |
+> |                       | base unit, natural    | -   CSS percentage    |
 > |                       | origin and meaningful |                       |
 > |                       | operations. We also   |                       |
 > |                       | allow the creation of |                       |
