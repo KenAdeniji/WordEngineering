@@ -191,7 +191,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161568);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16241);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7385);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7394);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
@@ -971,5 +971,7 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 2025-06-04T14:24:00	Putin tells Trump Ukraine will have to respond to Ukraine Drome attack
 2025-06-04T15:06:00	delete from URI..UriMozillaPocket where sequenceOrderID = 71582; DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71581);
 2025-06-04	http://www.red-gate.com/simple-talk/databases/theory-and-design/scales-measurements/
+
+2025-06-08T20:34:00	http://www.red-gate.com/simple-talk/development/other-development/data-documents-and-common-sense/
 
 :Exit
