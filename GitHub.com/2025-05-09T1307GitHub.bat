@@ -15,6 +15,11 @@ git add IIS/WordEngineering/Resume/KenAdenijiResume.html
 git add IIS/WordEngineering/Resume/KenAdenijiResume.pdf
 git add IIS/WordEngineering/Resume/KenAdenijiResume.txt
 
+        git add   IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.docx
+        git add   IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.html
+        git add   IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.pdf
+        git add   IIS/WordEngineering/Resume/2024-07-14www.JesusInTheLamb_-_KenAdenijiResume.txt
+		
 git add IIS/WordEngineering/Resume/Contact.html
 
 git add	IIS/WordEngineering/Resume/2024-07-04T2055JohnMacFarlane_-_Pandoc_-_KenAdenijiResume.bat
