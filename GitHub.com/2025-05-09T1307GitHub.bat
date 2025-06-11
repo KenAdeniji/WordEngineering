@@ -87,3 +87,4 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-05T1905TeresaKengOf
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-06T0014FrancoisVasiliades_L.J.HookerCampsie_Francois@ljhcampsie.com.au_-_LucyMacbryde_lucy@westside.net.au_-_IHaveAsked...ForTheAgentToDoHisJob.txt
 
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-11T0414NationsChurch_Orlando_Florida_-_WhenILookIntoYourHoliness_Alleluia_DominiqueHughes_-_0414ThisPeriodIAmBringing_0418WhereWeWillNeverBeTheSameAsOnceAgain.txt
