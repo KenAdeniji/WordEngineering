@@ -97,3 +97,7 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-11T0414NationsChurc
 git add	"IIS/WordEngineering/2018-05-03Correspondence/2025-06-11T0930RobertRouse_MinisterOfData_viz.bible_-_God'sBloodline_-_4756CreekwoodDrive_Fremont_California_94555_-_WhatPositionIsMan.txt"
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-12T1357OpenStorageNetworkOSN_-_TerrenceFleury_CamilleGoudeseune_-_NowYourHouseIsLeftToYouDesolateUntilYouSayBlessedIsHeWhoComeInTheNameOfTheLORD.txt
+
+git add	IIS/WordEngineering/Dated/2025-06-12T1800modern-sql.com_-_greatest-least_-_FutureDate.asmx
+git add IIS/WordEngineering/Dated/2025-06-12T1800modern-sql.com_-_greatest-least_-_FutureDate.html
+git add	IIS/WordEngineering/Python/pandas/RajendraGupta_-_2025-06-09T0802pandas-python-analyzing-tabular-data.py

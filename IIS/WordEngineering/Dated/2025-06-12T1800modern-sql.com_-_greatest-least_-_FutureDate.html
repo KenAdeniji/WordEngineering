@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-06-12T1800modern-sql.com_-_greatest-least_-_FutureDate
+	-->	
+	<head>
+		<title>Future Date</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Future Date"/>
+		<meta name="keyword" content="SQL, greatest, least, future date"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<div id="resultTable" align="center">
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			const	resultTableElement = document.getElementById("resultTable");
+
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/Dated/2025-06-12T1800modern-sql.com_-_greatest-least_-_FutureDate.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
