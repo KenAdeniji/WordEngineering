@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-06-14T21:02:00	http://robertnyman.com/2006/01/23/monday-code-giveaway-getelementsbyattribute
+		2025-06-14T21:46:00	That is what they felt was missing.
+			Noriko Yoshida, Jasmine. Sex was a race to completion.
+	-->	
+	<head>
+		<title>Monday code giveaway: getElementsByAttribute Published on Monday, January 23, 2006</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Monday code giveaway: getElementsByAttribute Published on Monday, January 23, 2006"/>
+		<meta name="keyword" content="getElementsByAttribute"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<input type="submit" id="submitQuery"/>
+			<div id="resultTable" align="center">
+		</div>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var 	isPostBack = false;
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const 	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}	
+ 			}
+
+			async function querySubmit()
+			{
+				var elementsByAttribute = getElementsByAttribute(document.body, "*", "id");
+
+				var cells = "";
+				var tableID = "tableElementsByAttribute";
+				var	elementInfo = "";
+				var info = "<table id='" + tableID + "' ><tbody>";
+				var rowCount = elementsByAttribute.length;
+				var caption = "<caption>Occurrences: " + rowCount + "</caption>";
+				
+				info += caption;
+				
+				info += "<thead><tr><th>id</th><th>type</th></tr></thead><tbody>";
+				
+				for (var rowIndex = 0; rowIndex < rowCount; ++rowIndex)
+				{
+					elementInfo = elementsByAttribute[rowIndex];
+					info += "<tr><td>" + elementInfo["id"] + "</td><td>" + elementInfo["type"] + "</td></tr>";
+				}
+					
+				info += "</tbody></table>";
+
+				resultTableElement.innerHTML = info;
+				
+				tsorter.create(tableID);
+				
+			}
+
+			/*
+				Copyright Robert Nyman, http://www.robertnyman.com
+				Free to use if this text is included
+
+				The parameters are:
+
+				oElm
+					Mandatory. This is element in whose children you will look for the attribute.
+				strTagName
+					Mandatory. This is the name of the HTML elements you want to look in. Use wildcard (*) if you want to look in all elements.
+				strAttributeName
+					Mandatory. The name of the attribute you’re looking for.
+				strAttributeValue
+					Optional. If you want the attribute you’re looking for to have a certain value as well.
+
+				And these are a couple of examples how it can be called:
+
+
+				getElementsByAttribute(document.body, "*", "id");
+				getElementsByAttribute(document.getElementById("the-form"), "input", "type", "text");
+			*/
+			function getElementsByAttribute(oElm, strTagName, strAttributeName, strAttributeValue){
+				var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+				var arrReturnElements = new Array();
+				var oAttributeValue = (typeof strAttributeValue != "undefined")? new RegExp("(^|\\s)" + strAttributeValue + "(\\s|$)") : null;
+				var oCurrent;
+				var oAttribute;
+				for(var i=0; i<arrElements.length; i++){
+					oCurrent = arrElements[i];
+					oAttribute = oCurrent.getAttribute && oCurrent.getAttribute(strAttributeName);
+					if(typeof oAttribute == "string" && oAttribute.length > 0){
+						if(typeof strAttributeValue == "undefined" || (oAttributeValue && oAttributeValue.test(oAttribute))){
+							arrReturnElements.push(oCurrent);
+						}
+					}
+				}
+				return arrReturnElements;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
