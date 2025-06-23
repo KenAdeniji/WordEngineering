@@ -194,7 +194,7 @@ C#, an alternative is to use a database table. A table with two columns,
 BookID and BookTitle, will store and make
 [extractable]{dated="2021-03-17T19:11:00"} the sixty-six books. [ For
 example, the first book of the New Testament, the 40th book, spelling is
-Matthew or Mathew, double tt versus single t. An improvement on the
+Matthew or Mathew, double tt versus (VS) single t. An improvement on the
 current implementation is to use soundex to decipher the book title and
 the corresponding BookID. ]{dated="2020-10-06T15:05:00"}
 
@@ -10400,15 +10400,26 @@ months, 2 weeks, 3 days).
 |   ------------- ----------------------                                |
 | --------------------------------------------------------------------- |
 +-----------------------------------------------------------------------+
-|   ------------- -------------------------                             |
+|   ------------- --------------------                                  |
 | --------------------------------------------------------------------- |
-|   From          2003-11-29                                            |
-|   To            2010-08-30                                            |
-|   Time Span     2466 days (6 biblical y                               |
-| ears, 10 biblical months, 6 days) (6 years, 8 months, 4 weeks, 1 day) |
-|   Prophecy      [Wienerschnitzel](http://www.Wienerschnitzel.com)     |
-|   Fulfillment   The voice of Germany, the end of Germany.             |
-|   ------------- -------------------------                             |
+|   From          1977-08-23                                            |
+|   To            2025-06-23                                            |
+|   Time Span     17471 days (48 bib                                    |
+| lical years, 6 biblical months, 11 days) (47 years, 10 months, 1 day) |
+|   Prophecy                                                            |
+|   Fulfillment   10 c\... US government.                               |
+|   ------------- --------------------                                  |
+| --------------------------------------------------------------------- |
++-----------------------------------------------------------------------+
+|   ------------- ----------------------                                |
+| --------------------------------------------------------------------- |
+|   From          1969-10-04                                            |
+|   To            2010-01-25                                            |
+|   Time Span     14723 days (40 bibli                                  |
+| cal years, 10 biblical months, 23 days) (40 years, 3 months, 3 weeks) |
+|   Prophecy                                                            |
+|   Fulfillment   Dear America, your loom angle of contract is dead.    |
+|   ------------- ----------------------                                |
 | --------------------------------------------------------------------- |
 +-----------------------------------------------------------------------+
 |   ------------- -----------------------------                         |
