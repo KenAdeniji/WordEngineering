@@ -27,15 +27,15 @@ IF %id% == 15 GOTO WorkDone
 GOTO Exit
 
 :BCP
-start xcopy d:\BCP c:\BCP /d /e /s /y
+start xcopy d:\BCP e:\BCP /d /e /s /y
 start xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
 start xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
 REM start xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
-start xcopy d:\BCP C:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
+start xcopy d:\BCP e:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
 GOTO Exit
 
 :IISLog
-start xcopy c:\inetpub d:\inetpub /d /e /s /y
+start xcopy c:\inetpub e:\inetpub /d /e /s /y
 start xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
 start xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
 start xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
@@ -48,14 +48,14 @@ REM mssql-scripter --connection-string "Server=(local);Database=WordEngineering;
 GOTO Exit
 
 :Node.js
-start xcopy d:\Node.js c:\Node.js /d /e /s /y
+start xcopy d:\Node.js e:\Node.js /d /e /s /y
 start xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
 start xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
 REM start xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
-start xcopy d:\Rust c:\Rust /d /e /s /y
+start xcopy d:\Rust e:\Rust /d /e /s /y
 start xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
 start xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
 start xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
@@ -66,7 +66,7 @@ GOTO Exit
 scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
 
 :SQLServerBackup
-start xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
+start xcopy d:\SQLServerBackup e:\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup \\Harvest\e$\SQLServerBackup /d /e /s /y
@@ -74,7 +74,7 @@ start xcopy d:\SQLServerBackup C:\Users\KAdeniji\OneDrive\SQLServerBackup /d /e 
 GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
-start xcopy d:\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL e:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
@@ -86,7 +86,7 @@ setlocal
 set "_service=MSSQLSERVER"
 rem net pause  %_service% /y
 net stop  %_service% /y
-start xcopy d:\SQLServerDataFiles C:\sqlserverdatafiles /d /e /s /y
+start xcopy d:\SQLServerDataFiles e:\sqlserverdatafiles /d /e /s /y
 REM start xcopy d:\SQLServerDataFiles D:\sqlserverdatafiles /d /e /s /y
 start xcopy d:\SQLServerDataFiles F:\sqlserverdatafiles /d /e /s /y
 start xcopy d:\SQLServerDataFiles \\noor\e$\sqlserverdatafiles /d /e /s /y
@@ -97,7 +97,7 @@ endlocal
 GOTO Exit
 
 :SQLServerDataManipulationLanguageDML
-start xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML e:\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
@@ -105,14 +105,14 @@ start xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\S
 GOTO Exit
 
 :SQLServerExport
-start xcopy d:\SQLServerExport c:\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport e:\SQLServerExport /d /e /s /y
 start xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
 start xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
 start xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
-start xcopy d:\WebAssembly c:\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly e:\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
@@ -124,7 +124,7 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
-start xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering e:\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
@@ -132,7 +132,7 @@ start xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e 
 GOTO Exit
 
 :WordOfGod
-start xcopy d:\WordOfGod c:\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod e:\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
@@ -140,7 +140,7 @@ start xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
 GOTO Exit
 
 :WorkDone
-start xcopy d:\2024-02-02T2020WorkDone c:\2024-02-02T2020WorkDone /d /e /s /y
+start xcopy d:\2024-02-02T2020WorkDone e:\2024-02-02T2020WorkDone /d /e /s /y
 start xcopy d:\2024-02-02T2020WorkDone C:\Users\KAdeniji\OneDrive\2024-02-02T2020WorkDone /d /e /s /y
 GOTO Exit
 
@@ -185,16 +185,16 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2278);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2313);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8865);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161568);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16241);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7394);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7440);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 164368);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 166519);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 171275);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 662);
@@ -202,6 +202,7 @@ DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5094);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7564); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
+DBCC CHECKIDENT ('WordEngineering..ThemeOfTheDay', RESEED, 12); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2050);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 2688);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
@@ -973,5 +974,10 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 2025-06-04	http://www.red-gate.com/simple-talk/databases/theory-and-design/scales-measurements/
 
 2025-06-08T20:34:00	http://www.red-gate.com/simple-talk/development/other-development/data-documents-and-common-sense/
+
+2025-06-19T07:30:00...2025-06-19T08:45:00 Microsoft windows operating system. message box. Title: Low disk space. Body: You're running out of space on this pc. Manage storage to view storage and free up some space. Command Button: Don't remind me again. Command Button: Manage storage. Command Button: Close.
+			Used space		Free space		Capacity
+	C:		114 GB			4 GB			118 GB
+	D:		 81 GB			17 GB			 97 GB
 
 :Exit
