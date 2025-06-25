@@ -21,7 +21,9 @@ using Newtonsoft.Json;
 using InformationInTransit.DataAccess;
 
 ///<summary>
-///	2025-06-24T18:46:00...2025-06-24T20:19:00 Created. http://learn.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=sql-server-ver17
+///	2025-06-24T18:46:00...2025-06-25T00:25:00 Created. http://learn.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=sql-server-ver17
+///	2012-06-25T12:03:00	Mortensen.Jorn@microsoft.com
+///	2023-03-13T23:43:11	http://en.wikipedia.org/wiki/C_Sharp_4.0
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -37,7 +39,7 @@ public class SQL_JSON_Function : System.Web.Services.WebService
 		String	path
 	)
     {
- 		String resultSet = (String) DataCommand.DatabaseCommand
+ 		dynamic resultSet = DataCommand.DatabaseCommand
 		(
 			String.Format
 			(

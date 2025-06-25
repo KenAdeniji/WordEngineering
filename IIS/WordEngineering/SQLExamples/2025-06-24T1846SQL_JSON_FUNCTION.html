@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2025-06-24T20:22:00... Created.
+		2025-06-24T20:22:00...2025-06-25T00:41:00 Created.	http://learn.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=sql-server-ver17
+		2012-06-25T12:03:00	Mortensen.Jorn@microsoft.com
+		2023-03-13T23:43:11	http://en.wikipedia.org/wiki/C_Sharp_4.0
 	-->	
 	<head>
 		<title>SQL_JSON_Function</title>
@@ -39,7 +41,7 @@
 			<input id="uri" type="text" style="width: 55vw;" value="http://api.github.com/users/KenAdeniji/repos"><br>
 			<textarea id="expression"></textarea><br>
 			<input type="text" id="path" value="$"><br>
-			<input type="submit" id="submitQuery"><button id="jsonQuery">JSON_QUERY</button><br>
+			<input type="submit" id="submitQuery"><button id="databaseJsonFunction">Database JSON Function</button><br>
 			<textarea id="resultSet"></textarea>
 		</div>
 		<script>
@@ -55,7 +57,7 @@
 			const 	expressionElement = document.getElementById("expression");
 			const 	pathElement = document.getElementById("path");
 			const 	submitQueryElement = document.getElementById("submitQuery");
-			const	jsonQueryElement = document.getElementById("jsonQuery");
+			const	databaseJsonFunctionElement = document.getElementById("databaseJsonFunction");
 			const	resultSetElement = document.getElementById("resultSet");
 
 			function pageLoad()
@@ -101,7 +103,7 @@
 				
 				PostData.body = JSON.stringify(request);
 				
-				url = "/WordEngineering/SQLExamples/2025-06-24T1846JSON_QUERY.asmx/Query";
+				url = "/WordEngineering/SQLExamples/2025-06-24T1846SQL_JSON_FUNCTION.asmx/Query";
 				
 				try 
 				{
@@ -128,7 +130,7 @@
 
 			submitQueryElement.addEventListener("click", queryURIJSON, false);
 			
-			jsonQueryElement.addEventListener("click", queryDatabaseJSON, false);
+			databaseJsonFunctionElement.addEventListener("click", queryDatabaseJSON, false);
 			
 			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
