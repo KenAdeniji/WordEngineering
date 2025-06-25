@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-06-24T20:22:00... Created.
+	-->	
+	<head>
+		<title>SQL_JSON_Function</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="SQL_JSON_Function"/>
+		<meta name="keyword" content="JSON_QUERY, JSON_VALUE"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea
+			{ 	//viewport
+				height: 25vh;
+				width: 90vw;
+			}
+		</style>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div>
+			<select id="SQL_JSON_Function">
+				<option selected="selected">JSON_QUERY</option>
+				<option>JSON_VALUE</option>
+			</select><br>			
+			<input id="uri" type="text" style="width: 55vw;" value="http://api.github.com/users/KenAdeniji/repos"><br>
+			<textarea id="expression"></textarea><br>
+			<input type="text" id="path" value="$"><br>
+			<input type="submit" id="submitQuery"><button id="jsonQuery">JSON_QUERY</button><br>
+			<textarea id="resultSet"></textarea>
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script>
+			var 	isPostBack = false;
+			
+			const 	SQL_JSON_FunctionElement = document.getElementById("SQL_JSON_Function");
+			const 	uriElement = document.getElementById("uri");
+			const 	expressionElement = document.getElementById("expression");
+			const 	pathElement = document.getElementById("path");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	jsonQueryElement = document.getElementById("jsonQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					queryURIJSON();
+					isPostBack = true;
+				}
+				else
+				{
+					queryURIJSON();
+				}	
+ 			}
+
+			async function queryURIJSON()
+			{
+				const response = await fetch(uriElement.value);
+				const data = await response.json();
+				expression.value = JSON.stringify(data);
+				queryDatabaseJSON();
+			}
+
+			async function queryDatabaseJSON()
+			{
+				var request = {};
+
+				request["SQL_JSON_Function"] = SQL_JSON_FunctionElement.value;
+				request["expression"] = expressionElement.value;
+				request["path"] = pathElement.value;
+				
+				const PostData = 
+				{
+					method: 'POST',
+					headers: 
+					{
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				
+				PostData.body = JSON.stringify(request);
+				
+				url = "/WordEngineering/SQLExamples/2025-06-24T1846JSON_QUERY.asmx/Query";
+				
+				try 
+				{
+					const response = await fetch(url, PostData)
+					.then
+					(
+						response => 
+						{
+							return response.json();
+						}
+					)
+					.then
+					(
+						responseJSON => 
+						{
+							resultSetElement.value = responseJSON.d;
+						}
+					)	
+				} catch (e) 
+				{
+						resultSetElement.value = e;
+				}	
+			}
+
+			submitQueryElement.addEventListener("click", queryURIJSON, false);
+			
+			jsonQueryElement.addEventListener("click", queryDatabaseJSON, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					queryURIJSON();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

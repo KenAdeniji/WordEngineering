@@ -180,7 +180,7 @@ DBCC CHECKIDENT ('URI..UriChrist', RESEED, 23547);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
-DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71581);
+DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71635);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
@@ -980,4 +980,7 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 	C:		114 GB			4 GB			118 GB
 	D:		 81 GB			17 GB			 97 GB
 
+2025-06-23T17:05:00 babylonjs.com 	It was initially released in 2013 having been developed by two Microsoft employees, David Catuhe and David Rousset in their free time, helped by artist Michel Rousseau as a 3D games engine.[1][2] In 2015, it was presented at the WebGL Conference in Paris. 							2020-09-02 	53822
+
+http://learn.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=sql-server-ver17
 :Exit
