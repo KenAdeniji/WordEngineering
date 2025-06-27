@@ -120,3 +120,6 @@ rem git mv IIS/WordEngineering/2018-05-03Correspondence/2025-06-25T1325ACTransit
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-25T1325ACTransitRoute232BusDriver_FromNewparkMallToFremontBARTStation_PaseoPadreParkwayAndSiwardDrive_StopID52275_DidNotStopForPassengerToBoardIncident526807.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-06-26T1744IHaventComeForPeace...ThatNotesMe_-_2025-06-24T1135FerrariSiliconValley_-_2025-06-25T2138QuiltSystemsInc_sfbay.craigslist.org_postid7861071177.txt
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-06-26T0428Microsoft_KenAdeniji@hotmail.com_-_SpamMail_-_OmahaDef.com.txt
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-06-26T2240Microsoft_KenAdeniji@hotmail.com_-_SpamMail_-_OmahaDef.com.txt
