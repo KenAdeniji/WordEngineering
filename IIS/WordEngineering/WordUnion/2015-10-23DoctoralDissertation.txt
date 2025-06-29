@@ -3373,14 +3373,38 @@ The impetus for database recording was to re-use.
 
 (John Dean, 2018-01-09).
 
-> ### 2025-06-27T20:10:00A/B Testing (or split testing) {#ABTesting dated="2025-06-27T20:10:00"}
+> ### 2025-06-27T20:10:00Minimum Viable Product (MVP) and A/B Testing (or split testing) {#MinimumViableProduct_ABTesting dated="2025-06-27T20:10:00"}
 >
->   ASP.Net Web Forms - control version   HTML5 Asynchronous JavaScript XMLHTTPRequest (AJAX) - treatment version
->   ------------------------------------- --------------------------------------------------------------------------------------------------------
->   Deprecated                            build-measure-learn
->   Proprietary                           Open source, 2025-06-27T20:55:00[ and availability of learning materials]{dated="2025-06-27T20:55:00"}
+> +-----------------------------------+-----------------------------------+
+> | ASP.Net Web Forms - control       | HTML5 Asynchronous JavaScript     |
+> | version                           | XMLHTTPRequest (AJAX) - treatment |
+> |                                   | version                           |
+> +===================================+===================================+
+> | Prototype                         |   Step   Task                     |
+> |                                   |   ------ -                        |
+> |                                   | --------------------------------- |
+> |                                   | --------------------------------- |
+> |                                   | --------------------------------- |
+> |                                   |   1                               |
+> |                                   |  Build: The author conceived of a |
+> |                                   |  product idea to interpret his dr |
+> |                                   | eam by building AlphabetSequence. |
+> |                                   |   2      Measure: Public test     |
+> |                                   | ing to collect data on its usage. |
+> |                                   |                                   |
+> |                                   |  3      Learn: Validated learning |
+> |                                   |  by analyzing the collected data. |
+> |                                   |                                   |
+> |                                   |   : Minimum Viable Product (MVP)  |
+> |                                   |   build-measure-learn             |
+> +-----------------------------------+-----------------------------------+
+> | Proprietary                       | Open source, 2025-06-27T20:55:00[ |
+> |                                   | and availability of learning      |
+> |                                   | materi                            |
+> |                                   | als]{dated="2025-06-27T20:55:00"} |
+> +-----------------------------------+-----------------------------------+
 >
->   : Interest of the users
+> : Interest of the users
 
 (Marco Tulio Valente).
 
