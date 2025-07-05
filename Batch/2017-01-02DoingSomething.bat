@@ -985,4 +985,8 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 http://learn.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=sql-server-ver17
 
 2025-06-26T0428Microsoft_KenAdeniji@hotmail.com_-_SpamMail_-_OmahaDef.com.txt
+
+2025-07-04
+file:///D:/WordEngineering/IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
+http://sfbay.craigslist.org
 :Exit
