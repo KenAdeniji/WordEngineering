@@ -7223,6 +7223,15 @@ To know my part as His?
 >             sub-ordinates.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=table%20inner%20elements%20sub-ordinates.){dated="2025-07-11T18:37:00"
 >             contactid="1349" hiswordid="166720"
 >             url="developer.mozilla.org/en-US/blog/fix-javascript-performance/#long_tasks"}
+> -   Large bundle sizes: A bundle size is the total amount of
+>     JavaScript code that needs to be downloaded, parsed, and executed
+>     when a user visits a website.
+>     1.  The author does not use inline JavaScript.
+>     2.  The author minimally uses internal JavaScript for
+>         page-specific event handlers.
+>     3.  The author always uses an external JavaScript file,
+>         [9432.js](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js)
+>         , for rendering dynamic HTML tables and selects.
 
 (Mozilla DebugBear, 2024-10-08).
 
