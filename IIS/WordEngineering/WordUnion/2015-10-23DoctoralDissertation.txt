@@ -7194,18 +7194,23 @@ To know my part as His?
 > ### Fixing your website\'s JavaScript performance
 >
 > -   Long tasks:
->     1.  Yield to the main thread: The PageLoad event handler
->         determines the various element IDs, parses the querystring,
->         performs an IsPostBack check, and submits the query.
+>     1.  Yield to the main thread: the PageLoad event handler performs
+>         an IsPostBack check, and if it is not a PostBack, parses the
+>         querystring. 2025-07-12T03:19:00 [Sets the input
+>         value](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=sets%20the%20input%20value){dated="2025-07-12T03:19:00"
+>         contactid="1349" hiswordid="166722"
+>         url="developer.mozilla.org/en-US/blog/fix-javascript-performance/#long_tasks"}
+>         of the various element IDs, and submits the query.
 >     2.  Optimize your rendering patterns:
->         -   Eliminating layout thrashing: [AJAX\... only refresh
+>         -   Eliminating layout thrashing: 2025-07-11T18:17:00
+>             [AJAX\... only refresh
 >             updates.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=AJAX...%20only%20refresh%20updates.){dated="2025-07-11T18:17:00"
->             hiswordid="166719"
+>             contactid="1349" hiswordid="166719"
 >             url="developer.mozilla.org/en-US/blog/fix-javascript-performance/#long_tasks"}
->         -   Using efficient CSS selectors: The simple [table inner
->             elements
+>         -   Using efficient CSS selectors: The simple
+>             2025-07-11T18:37:00 [table inner elements
 >             sub-ordinates.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=table%20inner%20elements%20sub-ordinates.){dated="2025-07-11T18:37:00"
->             hiswordid="166720"
+>             contactid="1349" hiswordid="166720"
 >             url="developer.mozilla.org/en-US/blog/fix-javascript-performance/#long_tasks"}
 
 (Mozilla DebugBear, 2024-10-08).
