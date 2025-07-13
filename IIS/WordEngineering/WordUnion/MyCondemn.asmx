@@ -20,19 +20,13 @@ using InformationInTransit.UserInterface;
 
 ///<summary>
 ///	2017-06-19 	Created.
+///	2025-07-12T20:11:00	Condemn (John 3:17-19).
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 [ScriptService]
 public class MyCondemn : System.Web.Services.WebService
 {
-    [WebMethod]
-	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public string Hello()
-    {
-        return "Hello World!";
-    }
-
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query
