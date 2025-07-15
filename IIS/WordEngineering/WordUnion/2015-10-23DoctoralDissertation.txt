@@ -3245,6 +3245,30 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 
 (Tim Wildsmith, 2024).
 
+> ### 2025-07-14T15:13:00 10 Best Influences on Software Engineering {#10BestInfluencesOnSoftwareEngineering contactid="16228"}
+>
+> 1.  Reviews and Inspections: 2025-07-14T15:34:00 [Can I be impartial
+>     as
+>     others?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Can%20I%20be%20impartial%20as%20others%3F){dated="2025-07-14T15:34:00"
+>     contactid="16228" hiswordid="166754"
+>     commentary="The author accepts... as authority. What is creditable source?"
+>     url="stevemcconnell.com/articles/10-best-influences-on-software-engineering"}
+>     -   2007-08-04 [FxCop is a free static code analysis tool from
+>         Microsoft that checks .NET managed code assemblies for
+>         conformance to Microsoft\'s .NET Framework Design
+>         Guidelines.](http://en.wikipedia.org/wiki/FxCop){dated="2025-07-14T15:53:00"}
+>         2025-07-14T16:50:00 [To what extent do I know the culture of
+>         others?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20what%20extent%20do%20I%20know%20the%20culture%20of%20others%3F){dated="2025-07-14T16:50:00"
+>         contactid="13304" hiswordid="166755"
+>         url="learn.microsoft.com/en-us/dotnet/csharp/how-to/compare-strings"
+>         commentary="String comparison? Culture. It pointed out the Turkish. Ignore case. What is outside the preview? 2025-07-14T17:25:00 MyLifeBits. How does this apply to me? To my experience?"}
+>     -   [JSLint: The JavaScript Code Quality and Coverage
+>         Tool](http://jslint.com){dated="2025-07-14T16:00:00"}
+>     -   2018-01-05 [W3C Markup Validation
+>         Service](http://validator.w3.org){dated="2025-07-14T16:33:00"}
+
+(Steve McConnell, January/February 2000).
+
 > ### 2025-07-13T18:23:00 Software documentation {#SoftwareDocumentation}
 >
 > #### 2025-07-13T18:31:00 Why behind the code {#WhyBehindTheCode}
@@ -9967,88 +9991,91 @@ In C# version 9, a method may offer a covariant return type.
     <http://www.google.com/books/edition/The_16_Undeniable_Laws_of_Communication/XSqdEAAAQBAJ?hl=en>]{#bibliographyJohnCalvinMaxwell}
 64. [Steve McConnell W3C web page; Available from
     <http://www.stevemcconnell.com>]{#bibliographySteveMcConnell}
-65. [Strategies For Organization Design: Using The Peopletecture Model
+65. [10 Best Influences on Software Engineering Steve McConnell
+    (January/February 2000) W3C web page; Available from
+    [stevemcconnell.com/articles/10-best-influences-on-software-engineering](stevemcconnell.com/articles/10-best-influences-on-software-engineering)]{#bibliographySteveMcConnell2000JanuaryFebruary}
+66. [Strategies For Organization Design: Using The Peopletecture Model
     to Improve Collaboration and Performance Dr. Tiffany McDowell W3C
     web page; Available from
     <http://www.organizationalstrategist.com>]{#bibliographyTiffanyMcDowell}
-66. [Strategies For Organization Design: Using The Peopletecture Model
+67. [Strategies For Organization Design: Using The Peopletecture Model
     to Improve Collaboration and Performance Dr. Tiffany McDowell
     (February 22, 2023) W3C web page; Available from
     <http://www.google.com/books/edition/Strategies_for_Organization_Design/6ryvEAAAQBAJ?hl=en>]{#bibliographyTiffanyMcDowell20230222}
-67. [Stephen C. Meyer W3C web page; Available from
+68. [Stephen C. Meyer W3C web page; Available from
     <http://www.stephencmeyer.org>]{#bibliographyStephenCMeyer}
-68. [Are Religion and Science in Conflict? --- Science and God
+69. [Are Religion and Science in Conflict? --- Science and God
     Stephen C. Meyer (December 20, 2021); W3C web page; Available from
     <http://www.youtube.com/watch?v=wb_qj7KzV1o>]{#bibliographyStephenCMeyer2021-12-20}
-69. [data-Science-For-Beginners Microsoft; W3C web page; Available from
+70. [data-Science-For-Beginners Microsoft; W3C web page; Available from
     <http://www.github.com/microsoft/data-Science-For-Beginners>]{#bibliographyMicrosoftdata-Science-For-Beginners}
-70. [Web-Dev-For-Beginners Microsoft; W3C web page; Available from
+71. [Web-Dev-For-Beginners Microsoft; W3C web page; Available from
     <http://www.github.com/microsoft/Web-Dev-For-Beginners>]{#bibliographyMicrosoftWeb-Dev-For-Beginners}
-71. [Writing Style Guide Microsoft; W3C web page; Available from
+72. [Writing Style Guide Microsoft; W3C web page; Available from
     <http://docs.microsoft.com/en-us/style-guide/welcome>]{#bibliographyMicrosoftWritingStyleGuide}
-72. [Fixing your website\'s JavaScript performance Mozilla DebugBear
+73. [Fixing your website\'s JavaScript performance Mozilla DebugBear
     (2024-10-08); W3C web page; Available from
     <http://developer.mozilla.org/en-US/blog/fix-javascript-performance>]{#bibliographyMozillaDebugBear20241008}
-73. [DB2 Developer\'s Guide Craig S. Mullins (May 2000); W3C web page;
+74. [DB2 Developer\'s Guide Craig S. Mullins (May 2000); W3C web page;
     Available from
     <http://www.craigsmullins.com>]{#bibliographyCraigMullins2000}
-74. [Scalability and Performance: Different but Crucial Database
+75. [Scalability and Performance: Different but Crucial Database
     Management Capabilities Craig S. Mullins (2023-12-18); W3C web page;
     Available from
     [http://www.dbta.com/Columns/DBA-Corner/Scalability-and-Performance-Different-but-Crucial-Database-Management-Capabilities-161866.aspx](http://dbta.com/Columns/DBA-Corner/Scalability-and-Performance-Different-but-Crucial-Database-Management-Capabilities-161866.aspx)]{#bibliographyCraigMullins20231218}
-75. [Semantic Pattern Mining Based Web Service Recommendation Hafida Na
+76. [Semantic Pattern Mining Based Web Service Recommendation Hafida Na
     ̈ım, Mustapha Aznag, Nicolas Durand, and Mohamed Quafafou
     Aix-Marseille University, CNRS, LSIS UMR 7296, 13397, Marseille,
     France.hafida.naim@etu.univ-amu.fr{mustapha.aznag, nicolas.durand,
     mohamed.quafafou}@univ-amu.fr (2016); W3C web page; Available from
     <http://hal.archives-ouvertes.fr/hal-01465113/document>]{#bibliographyNaımHafida2016}
-76. [Nation-brands.gfk.com gfk (2017); W3C web page; Available from
+77. [Nation-brands.gfk.com gfk (2017); W3C web page; Available from
     <http://Nation-brands.gfk.com>]{#bibliographyGfk2017}
-77. [Designing Web Usability: The Practice of Simplicity (2000) Jakob
+78. [Designing Web Usability: The Practice of Simplicity (2000) Jakob
     Nielsen; W3C web page; Available from
     <http://www.useit.com>]{#bibliographyJakobNielsen2000}
-78. [Object Management Group® (OMG®) Unified Modeling Language (UML)
+79. [Object Management Group® (OMG®) Unified Modeling Language (UML)
     Object Management Group® (OMG®) W3C web page; Available from
     [http://www.omg.org/spec/UML](https://www.omg.org/spec/UML)]{#bibliographyObjectManagementGroup®(OMG®)UnifiedModelingLanguage(UML)}
-79. [What is a data product? Brian T. O\'Neill (2024-01-01); W3C web
+80. [What is a data product? Brian T. O\'Neill (2024-01-01); W3C web
     page; Available from
     <http://designingforanalytics.com/resources/the-definition-of-data-product>]{#bibliographyBrianTO'Neill20240101}
-80. [Refactoring Object-Oriented Frameworks William F. Opdyke (1992);
+81. [Refactoring Object-Oriented Frameworks William F. Opdyke (1992);
     W3C web page; Available from
     <http://laputan.org/pub/papers/opdyke-thesis.pdf>]{#bibliographyWilliamFOpdyke1992}
-81. [Dmitry Pilugin\'s Notes Dmitry Pilugin; W3C web page; Available
+82. [Dmitry Pilugin\'s Notes Dmitry Pilugin; W3C web page; Available
     from <http://www.queryprocessor.com>]{#bibliographyDmitryPilugin}
-82. [How To Write A Dissertation or Bedtime Reading For People Who Do
+83. [How To Write A Dissertation or Bedtime Reading For People Who Do
     Not Have Time To Sleep W3C web page; Available from
     [https://www.cs.purdue.edu/homes/dec/essay.dissertation.html](http://www.cs.purdue.edu/homes/dec/essay.dissertation.html)]{#bibliographyPurdue}
-83. [Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P.,
+84. [Microsoft SQL Server 2014 Unleashed Rankins, R., Bertucci, P.,
     Gallelli, C., Silverstein, A. T.; (2015) ISBN-13: 978-0672337291
     ISBN-10: 0672337290]{#bibliographyRankins2015}
-84. [The Staff Engineer\'s Path Tanya Reilly (September 20, 2022); W3C
+85. [The Staff Engineer\'s Path Tanya Reilly (September 20, 2022); W3C
     web page; Available from
     <http://noidea.dog>]{#bibliographyReillyTanya2022}
-85. [An Analysis of the Dynamic Behavior of JavaScript Programs Gregor
+86. [An Analysis of the Dynamic Behavior of JavaScript Programs Gregor
     Richards, Sylvain Lebresne, Brian Burg, Jan Vitek (2010); W3C web
     page; Available from
     <http://brrian.org/papers/pldi2010-dynamics-of-JavaScript.pdf>]{#bibliographyRichardsGregor2010}
-86. [The Yellow Pad Making Better Decisions in an Uncertain World Rubin,
+87. [The Yellow Pad Making Better Decisions in an Uncertain World Rubin,
     Robert Edward (May 16, 2023); W3C web page; Available from
     [robertrubin.com/the-yellow-pad](http://robertrubin.com/the-yellow-pad)]{#bibliographyRubinRobertEdward2023}
-87. [The Joy of Search: A Google Insider\'s Guide to Going Beyond the
+88. [The Joy of Search: A Google Insider\'s Guide to Going Beyond the
     Basics Russell, Daniel M. (September 6, 2019); W3C web page;
     Available from
     <http://google.com/books/edition/The_Joy_of_Search/aGquDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyRussellDanielM2019}
-88. [Home Page & Site Dan Russell W3C web page; Available from
+89. [Home Page & Site Dan Russell W3C web page; Available from
     <http://sites.google.com/site/dmrussell>]{#bibliographyRussellDanielM}
-89. [SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN:
+90. [SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN:
     978-1-59059-980-8 W3C web page; Available from
     <http://www.apress.com/us/book/9781590599808?token=cyberweek18&utm_campaign=3_fjp8312_Apress_US_PLA_cyberweek18#otherversion=9781430206255>]{#bibliographyJosephSack2008}
-90. [Search engine indexing W3C web page; Available from
+91. [Search engine indexing W3C web page; Available from
     <http://en.wikipedia.org/wiki/Search_engine_indexing>]{#bibliographySearchEngineIndexing}
-91. [Option B: Facing Adversity, Building Resilience, and Finding Joy
+92. [Option B: Facing Adversity, Building Resilience, and Finding Joy
     Sheryl Sandberg and Adam Grant (2017); W3C web page; Available from
     <http://www.optionb.org/book>]{#bibliographySherylSandberg2017}
-92. [Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave
+93. [Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford, Dave
     Taylor Linda S. Sanford with Dave Taylor (2006); ISBN: 0-13-148208-4
     W3C web page; Available from [Let Go To Grow: Escaping the Commodity
     Trap. Linda S. Sanford, Dave Taylor Pearson Education, Dec 12,
@@ -10056,88 +10083,88 @@ In C# version 9, a method may offer a covariant return type.
     senior executive Linda Sanford and long-time entrepreneur Dave
     Taylor show exactly how to do
     that.](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj7us_gpbXtAhXOvJ4KHffmCNcQmhMwEHoECCEQAg&url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fabout%2FLet_Go_To_Grow.html%3Fid%3Dqjef9A0m0EgC%26source%3Dkp_book_description&usg=AOvVaw2EYWKFyPP5aIgOrbNDiB1E)]{#bibliographyLindaSSanford2006}
-93. [Performance Issues and Optimizations in JavaScript: An Empirical
+94. [Performance Issues and Optimizations in JavaScript: An Empirical
     Study Marija Selakovic and Michael Pradel (October 2015); W3C web
     page; Available from
     <http://mp.binaervarianz.de/JS_perf_study_TR_Oct2015.pdf>]{#bibliographyMarijaSelakovic2015}
-94. [A Practical Introduction to Data Structures and Algorithm Analysis
+95. [A Practical Introduction to Data Structures and Algorithm Analysis
     Clifford A. Shaffer; W3C web page; Available from
     <http://people.cs.vt.edu/shaffer/Book/C++3elatest.pdf>]{#bibliographyCliffordAShaffer}
-95. [The Handy Engineering Answer Book DeLean Tolbert Smith,
+96. [The Handy Engineering Answer Book DeLean Tolbert Smith,
     Debra-Ann C. Butler, Aishwary Pawar, Nicole P. Pitterson
     (2022-09-20) W3C web page; Available from
     <http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1>]{#bibliographyDeLeanTolbertSmith2022}
-96. [Jonathan Snook W3C web page; Available from
+97. [Jonathan Snook W3C web page; Available from
     <http://www.smacss.com>]{#bibliographyJonathanSnook}
-97. [Stoyan Stefanov W3C web page; Available from
+98. [Stoyan Stefanov W3C web page; Available from
     <http://www.BookOfSpeed.com>]{#bibliographyStoyanStefanov}
-98. [Bjarne Stroustrup W3C web page; Available from
+99. [Bjarne Stroustrup W3C web page; Available from
     <http://www.stroustrup.com>]{#bibliographyBjarneStroustrup}
-99. [The Coming Wave Technology, Power, and the Twenty-first Century\'s
-    Greatest Dilemma Mustafa Suleyman, Michael Bhaskar (2023-09-05) W3C
-    web page; Available from
-    <http://www.the-coming-wave.com>]{#bibliographyMustafaSuleyman_MichaelBhaskar20230905}
-100. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019);
+100. [The Coming Wave Technology, Power, and the Twenty-first Century\'s
+     Greatest Dilemma Mustafa Suleyman, Michael Bhaskar (2023-09-05) W3C
+     web page; Available from
+     <http://www.the-coming-wave.com>]{#bibliographyMustafaSuleyman_MichaelBhaskar20230905}
+101. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019);
      W3C web page; Available from
      <http://google.com/books/edition/SQL_All_in_One_For_Dummies/0wGQDwAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2019}
-101. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
+102. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
      Richard Blum (2024-03-26); W3C web page; Available from
      <http://google.com/books/edition/SQL_All_in_One_For_Dummies/y3_9EAAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2024}
-102. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
+103. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
      page; Available from
      <http://www.DennisTenen.com/think.stack/research-proposal-guide>]{#bibliographyDennisTenen20210701}
-103. [The Twelve-Factor App W3C web page; Available from
+104. [The Twelve-Factor App W3C web page; Available from
      <http://www.12factor.net>]{#bibliographyTheTwelve-FactorApp}
-104. [Data Observability: Is It Data Quality Monitoring or More? Petr
+105. [Data Observability: Is It Data Quality Monitoring or More? Petr
      Travkin, Senior Manager, Data Analytics Consulting, at EPAM
      Systems, Inc. (2023-02-27) W3C web page; Available from
      <http://www.dbta.com/Editorial/Think-About-It/data-Observability-Is-It-data-Quality-Monitoring-or-More-157257.aspx>]{#bibliographyPetrTravkin2023-02-27}
-105. [Software Engineering: A Modern Approach Marco Tulio Valente; W3C
+106. [Software Engineering: A Modern Approach Marco Tulio Valente; W3C
      web page; Available from
      <http://SoftEngBook.org>]{#bibliographyMarcoTulioValente}
-106. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
+107. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
      (2022-08-02); W3C web page; Available from
      <http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyYuliVasiliev2022}
-107. [Supervised Learning with Python Concepts and Practical
+108. [Supervised Learning with Python Concepts and Practical
      Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page;
      Available from
      <http://www.allitebooks.com/supervised-learning-with-python>]{#bibliographyVaibhavVerdhan}
-108. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
+109. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
      W3C web page; Available from
      [https://benv.ca/blog/posts/the-story-of-third-party-javascript](http://benv.ca/blog/posts/the-story-of-third-party-javascript)]{#bibliographyBenVinegarMarch2013}
-109. [Building Maintainable Software Ten Guidelines for Future-Proof
+110. [Building Maintainable Software Ten Guidelines for Future-Proof
      Code Joost Visser, Pascal van Eck of Software Improvement Group,
      B.V. Amsterdam, Netherlands; W3C web page; Available from
      <http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf>]{#bibliographyJoostVisser}
-110. [A Functional Approach to Java: Augmenting Object-Oriented Java
+111. [A Functional Approach to Java: Augmenting Object-Oriented Java
      Code with Functional Principles Ben Weidig (May 9, 2023); W3C web
      page; Available from
      <http://www.google.com/books/edition/A_Functional_Approach_to_Java/5hi-EAAAQBAJ?hl=en>]{#bibliographyBenWeidig20230509}
-111. [Design for How People Think: Using Brain Science to Build Better
+112. [Design for How People Think: Using Brain Science to Build Better
      Products Book John Whalen, PhD; W3C web page; Available from
      <http://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyJohnWhalen}
-112. [Wikipedia W3C web page; Available from
+113. [Wikipedia W3C web page; Available from
      <http://www.wikipedia.org>]{#bibliographyWikipedia}
-113. [Urim and Thummim Wikipedia W3C web page; Available from
+114. [Urim and Thummim Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/Urim_and_Thummim>]{#bibliographyWikipediaUrimAndThummim}
-114. [ZIP Code Wikipedia W3C web page; Available from
+115. [ZIP Code Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/ZIP_Code>]{#bibliographyWikipediaZipCode}
-115. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
+116. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
      Right for you. Foreword by Amanda Bible Williams, co-founder of She
      Reads Truth Tim Wildsmith (2024-11-19) W3C web page; Available from
      <http://www.google.com/books/edition/Bible_Translations_for_Everyone/8en8EAAAQBAJ?hl=en>]{#bibliographyTimWildsmith2014}
-116. [Microservice Eberhard Wolff; W3C web page; Available from
+117. [Microservice Eberhard Wolff; W3C web page; Available from
      <http://www.microservices-book.com>]{#bibliographyEberhardWolff}
-117. [How to write software documentation Write the Docs; W3C web page;
+118. [How to write software documentation Write the Docs; W3C web page;
      Available from
      <http://www.writethedocs.org/guide/writing/beginners-guide-to-docs>]{#bibliographyWriteTheDocs}
-118. [Mobile First Luke Wroblewski W3C web page; Available from
+119. [Mobile First Luke Wroblewski W3C web page; Available from
      [http://mobile-first.abookapart.com](http://mobile-first.abookapart.com){dated="2023-12-30T21:26:00"
      word="ToDuplicate Where IAnalyze?" contactid="3171"
      hiswordid="159150"
      commentary="At the intersection of Paseo Padre Parkway and Hall Way, North East. Orange fruits to the East, across the fence. Spot of water to the West, dark."
      scripturereference="Matthew 10:29, Luke 12:6"}]{#bibliographyLukeWroblewski}
-119. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
+120. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
      from <http://WykeSmith.com>]{#bibliographyWyke-SmithCharles}
 
 ## Appendices {#Appendices}
