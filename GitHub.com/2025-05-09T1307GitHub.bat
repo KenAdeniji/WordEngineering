@@ -140,4 +140,6 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-08T1044AsIExitedOut
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-08T173099Luke22v31-Luke22v32RanchMarket_Yin_Fion_-_AnvilSecurityServices_HenryHernandez_-_HeWasBlockingTheDoor_HePhysicallyAssaultMe.MyFaceAndNeck.txt
 
-git add   	IIS/WordEngineering/WordUnion/MyCondemn.asmx
+git add IIS/WordEngineering/WordUnion/MyCondemn.asmx
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt
