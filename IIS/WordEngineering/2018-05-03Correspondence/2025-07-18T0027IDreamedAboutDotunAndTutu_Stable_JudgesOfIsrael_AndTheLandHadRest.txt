@@ -77,3 +77,6 @@ SELECT	DATEADD(day, -360 * (40 + 4*20 + 40), '2025-07-18')
 
 2025-07-18T06:20:00
 And the land had rest
+
+Stopwatch	
+And the land had rest	Judges 3:11, Judges 3:30, Judges 5:31		360 * (40 + 4*20 + 40)
