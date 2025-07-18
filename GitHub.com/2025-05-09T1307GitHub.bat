@@ -147,3 +147,5 @@ rem git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamed
 rem git mv IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael_AndTheLandHadRest.txt
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael_AndTheLandHadRest.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0800Influences-on-software-engineering_-_LinkReferenceOnWebpage_LinkInfluenceInternet_LinkContributorAuthorSource.txt
