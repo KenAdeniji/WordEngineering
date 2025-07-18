@@ -1,8 +1,79 @@
 2025-07-18T05:32:00
-http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael_AndTheLandHadRest.txt
 
 I dreamed about Dotun and Tutu. 
 Either Dotun or Tutu, most likely the younger sister, 
 feels relieved and is enjoying satisfaction with her life 
 because of her relationship with Uncle Demola, 
 and most likely the elder sister expects a stable period.
+
+2025-07-18T05:32:00
+SELECT        TOP (200) BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence, 
+                         AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor
+FROM            Scripture_View
+WHERE        (BookTitle = 'Judges') AND (KingJamesVersion LIKE '%peace%')
+ORDER BY VerseIDSequence
+
+2025-07-18T05:43:00
+SELECT        TOP (200) BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence, 
+                         AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor
+FROM            Scripture_View
+WHERE        (KingJamesVersion LIKE '%peace in the land%')
+ORDER BY VerseIDSequence
+
+2025-07-18T05:46:00
+SELECT        TOP (200) BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence, 
+                         AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor
+FROM            Scripture_View
+WHERE        (KingJamesVersion LIKE '%peace%') AND (KingJamesVersion LIKE '%land%')
+ORDER BY VerseIDSequence
+
+2025-07-18T05:49:00
+http://www.google.com/search?q=peace+in+the+land+kjv+judges&client=firefox-b-1-d&sca_esv=cc71cd32491ac98c&sxsrf=AE3TifN82KXORa8tgs-paNzQd9hbY8dm-w%3A1752842911993&ei=n0J6aNOxPLLNkPIPwO2OsAY&ved=0ahUKEwiT_fbYuMaOAxWyJkQIHcC2A2YQ4dUDCBA&uact=5&oq=peace+in+the+land+kjv+judges&gs_lp=Egxnd3Mtd2l6LXNlcnAiHHBlYWNlIGluIHRoZSBsYW5kIGtqdiBqdWRnZXMyBRAhGKABMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigATIFECEYqwIyBRAhGKsCMgUQIRifBTIFECEYnwUyBRAhGJ8FSNIgUKsMWMQbcAF4AZABAJgBiwGgAZ8GqgEDMC43uAEDyAEA-AEBmAIIoALqBsICChAAGLADGNYEGEfCAgYQABgWGB7CAgsQABiABBiGAxiKBcICCBAAGKIEGIkFwgIFEAAY7wWYAwCIBgGQBgiSBwMxLjegB-UwsgcDMC43uAfeBsIHBTItNi4yyAcu&sclient=gws-wiz-serp
+
+2025-07-18T05:50:00
+SELECT        TOP (200) BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence, 
+                         AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor
+FROM            Scripture_View
+WHERE        (KingJamesVersion LIKE '%land%') AND (KingJamesVersion LIKE '%rest%') AND (BookTitle = 'Judges')
+ORDER BY VerseIDSequence
+
+2025-07-18T05:54:00
+Judges 3:11, Judges 3:30, Judges 5:31, Judges 11:13
+
+Judges 3:11		And the land had rest forty years. And Othniel the son of Kenaz died.
+Judges 3:30		So Moab was subdued that day under the hand of Israel. And the land had rest fourscore years.
+Judges 5:31		So let all thine enemies perish, O LORD: but let them that love him be as the sun when he goeth forth in his might. And the land had rest forty years.
+Judges 11:13	And the king of the children of Ammon answered unto the messengers of Jephthah, Because Israel took away my land, when they came up out of Egypt, from Arnon even unto Jabbok, and unto Jordan: now therefore restore those lands again peaceably.
+
+2025-07-18T05:58:00
+SELECT        TOP (200) KingJamesVersion, ScriptureReference
+FROM            Scripture_View
+WHERE        (KingJamesVersion LIKE '%land%') AND (KingJamesVersion LIKE '%rest%') AND (BookTitle = 'Judges')
+ORDER BY VerseIDSequence
+
+2025-07-18T05:59:00
+http://stackoverflow.com/questions/5444300/search-for-whole-word-match-with-sql-server-like-pattern
+
+2025-07-18T05:58:00
+SELECT        TOP (200) KingJamesVersion, ScriptureReference
+FROM            Scripture_View
+WHERE        (KingJamesVersion LIKE '%land%') AND (KingJamesVersion LIKE '%[^a-z]rest[^a-z]%') AND (BookTitle = 'Judges')
+ORDER BY VerseIDSequence
+
+2025-07-18T06:08:00
+The trouble he has with Google... you cannot specialize your query.
+
+Judges 3:11, Judges 3:30, Judges 5:31
+
+Judges 3:11		And the land had rest forty years. And Othniel the son of Kenaz died.
+Judges 3:30		So Moab was subdued that day under the hand of Israel. And the land had rest fourscore years.
+Judges 5:31		So let all thine enemies perish, O LORD: but let them that love him be as the sun when he goeth forth in his might. And the land had rest forty years.
+
+DATEADD(interval, number, date)
+SELECT	DATEADD(day, -360 * (40 + 4*20 + 40), '2025-07-18')
+
+1867-11-04
+
+2025-07-18T06:20:00
+And the land had rest

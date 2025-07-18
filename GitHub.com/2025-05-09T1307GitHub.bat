@@ -142,4 +142,8 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-08T173099Luke22v31-
 
 git add IIS/WordEngineering/WordUnion/MyCondemn.asmx
 
-git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt
+rem git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt
+
+rem git mv IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael.txt IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael_AndTheLandHadRest.txt
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAboutDotunAndTutu_Stable_JudgesOfIsrael_AndTheLandHadRest.txt
