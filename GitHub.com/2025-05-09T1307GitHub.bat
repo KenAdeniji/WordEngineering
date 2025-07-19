@@ -151,3 +151,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0027IDreamedAbou
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-18T0800Influences-on-software-engineering_-_LinkReferenceOnWebpage_LinkInfluenceInternet_LinkContributorAuthorSource.txt
 
 git add	"SQLScript/2025-07-18T1124alter database Bible set read_only with rollback immediate.sql"
+
+git add	IIS/WordEngineering/infoworld.com/
