@@ -965,7 +965,7 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 
 2025-04-30T22:49:00 microsoft windows operating system, microsoft sql server management studio, quit, stop, end, abort, finish.
 
-2025-04-30T13:55:00 2020-04-20 ColumnsAddedLocationScene recorded 2025-04-30T08:19:00. ddl/dml script generation failed. Click on help for known solutions.
+2025-04-30T13:55:00 2020-04-20 ColumnsAddedLocationScene recorded 2025-04-30T08:19:00. ddl/dml failed. Click on help for known solutions.
 
 2025-06-03T20:23:00	http://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md#javascript
 
@@ -982,5 +982,7 @@ Microsoft.com/Learn 								2022-02-05 	57232 page 125
 
 2025-07-21T06:07:00
 techcrunch.com/2020/11/12/python-creator-guido-van-rossum-joins-microsoft 	Python creator Guido van Rossum joins Microsoft Frederic Lardinois@fredericl / 9:32 AM PST•November 12, 2020 							2020-11-13 	53877 	
-	
+
+2025-07-22T15:45:00
+samocvet.ugledar.info/kontent/458_css_secrets.pdf 	CSS Secrets by Lea Verou 	2023-06-05T16:16:00 Place of Birth: Greece, Greek. 						2019-12-15 	52583
 :Exit
