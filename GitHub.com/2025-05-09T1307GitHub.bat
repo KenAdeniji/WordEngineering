@@ -159,3 +159,6 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-21T1030IExpectYouTo
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-22T1224Daniel9v2_IDanielUnderstoodByBooks_PaseoPadreParkwayBetweenBlackstoneWayAndSiwardDriveStreetLight10415_weekly-updates@talentfair.jobs.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-24T1746MyClaimOfInnocency_-_FranceToRecognisePalestinianStateAtUnitedNationsUNGeneralAssembly_-_MacronSaysLastingPeace.txt
+
+git add	IIS/WordEngineering/JavaScript/FelixGerschau.com/
+git add	IIS/WordEngineering/SacredText/
