@@ -162,3 +162,6 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-07-24T1746MyClaimOfInn
 
 git add	IIS/WordEngineering/JavaScript/FelixGerschau.com/
 git add	IIS/WordEngineering/SacredText/
+
+git add SQLScript/2025-07-26T1201udf_SearchKey.sql
+git add SQLScript/dbo.usp_ContactMaintenanceQuery.sql
