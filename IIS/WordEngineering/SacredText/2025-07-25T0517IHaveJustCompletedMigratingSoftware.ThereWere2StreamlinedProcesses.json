@@ -1,28 +1,29 @@
 {
-  "SacredText": [
-    {
-      "BookID": 23,
-      "BookTitle": "Isaiah",
-      "BookGroup": "Major prophet",
-      "Author": "Isaiah",
-      "AuthorGenealogy": "Son of Amoz",
-      "AuthorRole": "Evangelical prophet",
-      "Place": "Judah and Jerusalem",
-      "Days": "Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah",
-	  "Chapters": 66,
-	  "Verses": 1292
-    },
-    {
-      "BookID": 24,
-      "BookTitle": "Jeremiah",
-      "BookGroup": "Major prophet",
-      "Author": "Jeremiah",
-      "AuthorGenealogy": "Son of Hilkiah",
-      "AuthorRole": "Weeping prophet",
-      "Place": "Anathoth in the land of Benjamin",
-      "Days": "Josiah the son of Amon king of Judah, in the thirteenth year of his reign. Jehoiakim the son of Josiah king of Judah, unto the end of the eleventh year of Zedekiah the son of Josiah king of Judah, unto the carrying away of Jerusalem captive in the fifth month.",
-	  "Chapters": 52,
-	  "Verses": 1364
-    }
-]
+	"BibleBook": 
+	[
+		{
+			"BookID": 23,
+			"BookTitle": "Isaiah",
+			"BookGroup": "Major prophet",
+			"Author": "Isaiah",
+			"AuthorGenealogy": "Son of Amoz",
+			"AuthorRole": "Evangelical prophet",
+			"Place": "Judah and Jerusalem",
+			"Days": "Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah",
+			"Chapters": 66,
+			"Verses": 1292
+		},
+		{
+			"BookID": 24,
+			"BookTitle": "Jeremiah",
+			"BookGroup": "Major prophet",
+			"Author": "Jeremiah",
+			"AuthorGenealogy": "Son of Hilkiah",
+			"AuthorRole": "Weeping prophet",
+			"Place": "Anathoth in the land of Benjamin",
+			"Days": "Josiah the son of Amon king of Judah, in the thirteenth year of his reign. Jehoiakim the son of Josiah king of Judah, unto the end of the eleventh year of Zedekiah the son of Josiah king of Judah, unto the carrying away of Jerusalem captive in the fifth month.",
+			"Chapters": 52,
+			"Verses": 1364
+		}
+	]
 }
