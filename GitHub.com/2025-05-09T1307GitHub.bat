@@ -165,3 +165,5 @@ git add	IIS/WordEngineering/SacredText/
 
 git add SQLScript/2025-07-26T1201udf_SearchKey.sql
 git add SQLScript/dbo.usp_ContactMaintenanceQuery.sql
+
+git add IIS/WordEngineering/SacredText/2025-07-27T0601HowDoYouDemonstrateHisUse.txt
