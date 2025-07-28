@@ -186,7 +186,7 @@ DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2313);
-DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 8865);
+DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9179);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161819);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16396);
@@ -194,7 +194,7 @@ DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7542);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 166577);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 166892);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 171275);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 734);
@@ -969,7 +969,7 @@ Oualline.com 	Steve Oualline 		C, C++ 					2013-03-03 	5361
 
 2025-06-03T20:23:00	http://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md#javascript
 
-2025-06-04T14:24:00	Putin tells Trump Ukraine will have to respond to Ukraine Drome attack
+2025-06-04T14:24:00	Putin tells Trump Russia will have to respond to Ukraine Drome attack
 
 2025-07-20T08:05:00	microsoft windows operating system, microsoft sql server management studio, hourglass.
 
