@@ -180,7 +180,7 @@ DBCC CHECKIDENT ('URI..UriChrist', RESEED, 23547);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 18148);
 DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
-DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71635);
+DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 71726);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71500);
@@ -985,5 +985,34 @@ techcrunch.com/2020/11/12/python-creator-guido-van-rossum-joins-microsoft 	Pytho
 
 2025-07-22T15:45:00
 samocvet.ugledar.info/kontent/458_css_secrets.pdf 	CSS Secrets by Lea Verou 	2023-06-05T16:16:00 Place of Birth: Greece, Greek. 						2019-12-15 	52583
+
+2025-07-29T21:35:00
+			<blockquote cite="#bibliographyTimWildsmith2024" data-Dated="2024-11-13T19:12:00">
+
+			<h3 id="Translation">2024-11-13T19:12:00 Translation</h3>
+
+			<ol>
+				<li data-Dated="2024-11-13T19:16:00" id="TextualBasis">
+					2024-11-13T19:16:00 Textual Basis:
+					The author chose to find meaning to the word of God... with lesser emphasis on his personal subjective commentary.
+				</li>
+				<li data-Dated="2024-11-13T21:17:00" id="FormalEquivalence_FunctionalDynamicEquivalence">
+					2024-11-13T21:17:00 Formal equivalence (word-for-word) versus (VS) Functional dynamic equivalence (thought-for-thought):
+					<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html">BibleWord.html</a> is the former.
+				</li>
+				<li data-Dated="2024-11-15T14:06:00" id="Translator">
+					2024-11-15T14:06:00 Translator:
+					<a 
+						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=The%20author's%20first%20program%20is%20translation%20of%20English%20to%20Yoruba."
+						data-Dated="2024-11-15T14:06:00"
+						data-HisWordID="164470"
+						data-Filename="Kowe.c"
+					>
+						The author's first program is translation of English to Yoruba. 
+					</a>
+				</li>
+			</ol>
+		
+			</blockquote> (Tim Wildsmith, 2024).
 
 :Exit
