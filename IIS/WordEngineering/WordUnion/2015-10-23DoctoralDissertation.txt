@@ -44,7 +44,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
 The importance of this work?
 
 -   [Follow God, as a
@@ -3200,8 +3200,11 @@ hiswordid="149206"}
     the third word is the VerseID.
 :::
 
-Biblical numbers for calculation. Biblical separation into Testaments,
-books, chapters and verses for referencing.
+::: {dated="2023-08-06T23:16:00" contactid="10999" hiswordid="156497"}
+-   Biblical numbers for calculation.
+-   Biblical separation into Testaments, books, chapters and verses for
+    referencing.
+:::
 
 ::: {dated="2024-01-05T15:54:00"}
 Biblical generation - 40 Biblical years
@@ -3258,6 +3261,41 @@ commentary="When I am doing this? What do I become?" location="Shower"}
     [URIMaintenancePage.aspx.cs](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordOfGod/URIMaintenancePage.aspx.cs){dated="2024-11-06T02:04:00"}
     For example, 2024-11-06T02:04:00 URI database table schema columns
     re-arrangement, and column additions.
+
+### 2025-07-31T13:25:00 [What does the link provide?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20does%20the%20link%20provide%3F){dated="2025-07-31T13:25:00" hiswordid="166925" contactid="3585" commentary="2025-07-31T16:54:00 With Kim Chan and Phoo Chan, and Adrian, non-technical role viability for sales at PowersSoft, project managers."} {#WhatDoesTheLinkProvide}
+
+1.  2025-07-31T15:12:00 The anchor tag provides a hyperlink to a
+    resource that is identified by its source, src, attribute. Consider
+    providing statistics on the resource type and location.
+2.  2025-07-31T15:33:00 The img tag displays an image that is identified
+    by its source, src, attribute. Consider providing statistics on the
+    image count types, alternate, alt, attributes, and locations.
+3.  2025-07-31T15:42:00 The video and audio are media types that are
+    identified by their source, src, attributes. Consider displaying the
+    source rank, priority order versus (VS) Availability? Static versus
+    (VS) dynamic?
+4.  2025-07-31T16:05:00 The iframe tag embeds one HTML document within
+    another.
+5.  2025-07-31T16:12:00 The script tag is for referencing JavaScript.
+    Count the various variable definition types: var, const and let.
+    Count the source code lines, and the estimated source size. Count
+    the methods and their arguments. Compare inline, internal, and
+    external JavaScript?
+6.  2025-07-31T16:22:00 The style tag is for referencing styles. Count
+    the various variable definition types: class attribute, style
+    attribute, style element. Count the source code lines, and the
+    estimated source size. Compare inline, internal, and external
+    Cascading Style Sheets (CSS)?
+7.  2025-07-31T16:35:00 Count the various HTML types occurrences, and
+    parents and children. For example, tables: head, body, foot, rows
+    and columns, and lists.
+
+### 2025-07-31T11:52:00 [What appearance as the same?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20appearance%20as%20the%20same%3F){dated="2025-07-31T11:52:00" hiswordid="166924"} {#WhatAppearanceAsTheSame}
+
+-   Pharaoh\'s dream of 7 years of plenty followed by 7 years of famine
+    in Egypt and worldwide interpretation by Joseph ( [Genesis
+    41](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2041)
+    )
 
 ### 2025-07-17T12:54:00 How as clear as possible {#HowAsClearAsPossible}
 
@@ -11086,4 +11124,4 @@ Copyright ©
 []{#copyrightYear}\
 
 Ken Adeniji <KenAdeniji@hotmail.com>
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
