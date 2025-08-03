@@ -175,12 +175,15 @@ rem 2025-08-01T08:50:00...2025-08-01T09:32:00 git mv "IIS/WordEngineering/Tuesda
 rem 2025-08-01T08:50:00...2025-08-01T09:32:00 git rm -r "IIS/WordEngineering/WordUnion/Tuesday ni kin yen ma bere on the first"
 
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/WhatDoesTheLinkProvide.html
-git add	IIS/WordEngineering/WordUnion/2018-08-06T1700Entity-Relationship Model - Contact.png
-git add	IIS/WordEngineering/WordUnion/2018-08-07Object Model Diagram.png
-git add	IIS/WordEngineering/WordUnion/2018-08-07Sequence Diagram.png
-git add	IIS/WordEngineering/WordUnion/2018-08-07Use Case Diagram.png
-git add	IIS/WordEngineering/WordUnion/2018-08-08Deployment Diagram.png
-git add	IIS/WordEngineering/WordUnion/2018-10-31ClassDiagram.png
-git add	IIS/WordEngineering/WordUnion/2020-08-24OccurrenceOnTheWord.png
+
+git add	"IIS/WordEngineering/WordUnion/2018-08-06T1700Entity-Relationship Model - Contact.png"
+git add	"IIS/WordEngineering/WordUnion/2018-08-07Object Model Diagram.png"
+git add	"IIS/WordEngineering/WordUnion/2018-08-07Sequence Diagram.png"
+git add	"IIS/WordEngineering/WordUnion/2018-08-07Use Case Diagram.png"
+git add	"IIS/WordEngineering/WordUnion/2018-08-08Deployment Diagram.png"
+git add	"IIS/WordEngineering/WordUnion/2018-10-31ClassDiagram.png"
+git add	"IIS/WordEngineering/WordUnion/2020-08-24OccurrenceOnTheWord.png"
+
 git add	IIS/WordEngineering/html5forwebdesigners.com/html5forwebdesigners.com_-_forms.html
-git mv  IIS/WordEngineering/html5forwebdesigners.com/semantics.html	IIS/WordEngineering/html5forwebdesigners.com/html5forwebdesigners.com_-_semantics.html
+
+rem git mv  IIS/WordEngineering/html5forwebdesigners.com/semantics.html	IIS/WordEngineering/html5forwebdesigners.com/html5forwebdesigners.com_-_semantics.html
