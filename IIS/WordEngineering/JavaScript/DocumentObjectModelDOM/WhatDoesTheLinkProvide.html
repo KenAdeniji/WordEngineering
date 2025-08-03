@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-08-01T05:30:00	Created.
+		2025-07-31 What does the link provide?
+		2025-02-02T19:22:00
+http://stackoverflow.com/questions/71501786/how-to-parse-html-response-from-fetch-api-to-iframe
+export function isInternalLink(urlString: string): boolean | {
+  pathname: string;
+} {
+  const url = new URL(urlString);
+  if (url.origin !== window.location.origin) {
+    return false;
+  }
+  return {
+    pathname: url.pathname,
+  };
+}
+		http://stackoverflow.com/questions/2910946/test-if-links-are-external-with-jquery-javascript
+		http://stackoverflow.com/questions/2910946/test-if-links-are-external-with-jquery-javascript/18660968#18660968
+		http://stackoverflow.com/questions/36631762/returning-html-with-fetch
+		http://stackoverflow.com/questions/3999101/get-iframes-document-from-javascript-in-main-document
+	-->	
+	<head>
+		<title>What does the link provide?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What does the link provide?"/>
+		<meta name="keyword" content="anchor href"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea
+			{ 
+				height: 35vh;
+				width: 95vw;
+			}
+			iframe
+			{ 
+				height: 35vh;
+				width: 95vw;
+			}
+			#resultSet
+			{ 
+				height: 10vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input 
+							id="sourceAddress"
+							type="url"
+							style="width: 55vw;"
+							value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="sourceContent">Source Content:</label></td>
+					<td>
+						<textarea id="sourceContent"></textarea>
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>
+			<iframe id="frameInfo"></iframe>
+			<br/>	
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			const	sourceContentElement = document.getElementById("sourceContent");
+
+			const 	querySubmitElement = document.getElementById("querySubmit");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const	frameInfoElement = document.getElementById("frameInfo");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				fetch
+				(
+					sourceAddressElement.value
+				).then 
+				( response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) 
+					{
+						return response.json().then
+						(
+							data => 
+							{
+								// process your JSON data further
+								sourceContentElement.value = JSON.stringify(data);
+							}
+						);
+					}
+					else if 
+					(
+						contentType && contentType.indexOf("text/xml") !== -1
+					) 
+					{
+						return response.text().then
+						(
+							data => 
+							{
+								// process your XML data further
+								let parser = new DOMParser();
+								let xml = parser.parseFromString(data, "application/xml");
+								sourceContentElement.value = data;
+							}
+						);
+					}
+					else 
+					{
+						return response.text().then
+						(
+							text => 
+							{
+								// this is text, do something with it
+								sourceContentElement.value = text;
+								frameInfoElement.srcdoc = text;
+								var	frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+								var elementTypeCount;
+								var elementsTypesStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
+								for (const elementType of SelectorElementTypes)
+								{
+									elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
+									elementsTypesStatistics += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
+								}
+								elementsTypesStatistics += "</tbody></table>"
+								resultSetElement.innerHTML = elementsTypesStatistics;
+							}
+						);
+					};
+				});
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const SelectorElementTypes = ["*", "script", "style", "img"];
+		</script>		
+	</body>
+</html>

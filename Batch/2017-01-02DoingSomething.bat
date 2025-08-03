@@ -1015,4 +1015,8 @@ samocvet.ugledar.info/kontent/458_css_secrets.pdf 	CSS Secrets by Lea Verou 	202
 		
 			</blockquote> (Tim Wildsmith, 2024).
 
+2025-08-01T05:14:00
+stackoverflow.com/questions/26107405/count-script-tags
+var scriptCount = document.getElementsByTagName('script').length
+
 :Exit

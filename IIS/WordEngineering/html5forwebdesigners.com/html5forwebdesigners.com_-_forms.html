@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-08-02T23:14:00	http://html5forwebdesigners.com/forms
+		2025-08-03T09:25:00	File created.
+	-->	
+	<head>
+		<title>html5forwebdesigners.com/forms</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="html5forwebdesigners.com/forms"/>
+		<meta name="keyword" content="form"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<label for="hobbies">Your hobbies</label>
+		<input id="hobbies" name="hobbies" type="text" placeholder="Owl stretching">
+		
+		<script>
+			var isPostBack = false;
+			
+			const 	hobbiesElement = document.getElementById("hobbies");
+	
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					if (!elementSupportsAttribute("input", "placeholder")) 
+					{
+						// JavaScript fallback goes here.
+						hobbiesElement.value = "Placeholder attribute not supported.";	
+					}
+					isPostBack = true;
+				}
+ 			}
+
+			function elementSupportsAttribute(element,attribute) 
+			{
+				var testElement = document.createElement(element);
+				var testElementSupports = attribute in testElement;
+				return testElementSupports;
+			}
+			
+			window.addEventListener("load", pageLoad, false);			
+		</script>
+	</body>
+</html>
