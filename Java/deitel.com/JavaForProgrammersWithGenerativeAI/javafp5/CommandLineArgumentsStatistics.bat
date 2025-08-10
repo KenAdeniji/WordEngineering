@@ -1,0 +1,2 @@
+Javac CommandLineArgumentsStatistics.java
+Java CommandLineArgumentsStatistics 11 12 3 5 7

@@ -187,3 +187,5 @@ git add	"IIS/WordEngineering/WordUnion/2020-08-24OccurrenceOnTheWord.png"
 git add	IIS/WordEngineering/html5forwebdesigners.com/html5forwebdesigners.com_-_forms.html
 
 rem git mv  IIS/WordEngineering/html5forwebdesigners.com/semantics.html	IIS/WordEngineering/html5forwebdesigners.com/html5forwebdesigners.com_-_semantics.html
+
+git add	Java/deitel.com/

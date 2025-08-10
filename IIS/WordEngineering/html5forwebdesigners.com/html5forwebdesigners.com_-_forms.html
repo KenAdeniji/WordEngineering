@@ -15,11 +15,34 @@
 	<body>
 		<label for="hobbies">Your hobbies</label>
 		<input id="hobbies" name="hobbies" type="text" placeholder="Owl stretching">
+		<br>
 		
+		<label for="status">What's happening?</label>
+		<input id="status" name="status" type="text" autofocus>
+		<br/>
+		
+		<input type="text" name="onetimetoken" autocomplete="off">
+		<br>
+		
+		<label for="homeworld">Your home planet</label>
+		<input type="text" name="homeworld" id="homeworld" list="planets">
+		<datalist id="planets">
+			<option value="Mercury">
+			<option value="Venus">
+			<option value="Earth">
+			<option value="Mars">
+			<option value="Jupiter">
+			<option value="Saturn">
+			<option value="Uranus">
+			<option value="Neptune">
+		</datalist>
+		<br>
+
 		<script>
 			var isPostBack = false;
 			
 			const 	hobbiesElement = document.getElementById("hobbies");
+			const 	statusElement = document.getElementById("status");
 	
 			function pageLoad()
 			{
@@ -29,6 +52,10 @@
 					{
 						// JavaScript fallback goes here.
 						hobbiesElement.value = "Placeholder attribute not supported.";	
+					}
+					if (!elementSupportsAttribute("input", "autofocus")) 
+					{
+						statusElement.focus();
 					}
 					isPostBack = true;
 				}
