@@ -191,3 +191,7 @@ rem git mv  IIS/WordEngineering/html5forwebdesigners.com/semantics.html	IIS/Word
 git add	Java/deitel.com/
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-08-11T1128Microsoft_drive.live.com_ninetysixpercentfull_-_SpamMail_-_PostmanInc_-_1MarketStreet_SteuartTower_Suite0800_SanFrancisco_CaliforniaCA_94105.txt
+
+git add Java/AlphabetSequence.class
+git add Java/AlphabetSequence.java
+git add Java/2025-08-11T2049AlphabetSequence.bat
