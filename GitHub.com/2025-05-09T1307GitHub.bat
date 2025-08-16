@@ -195,3 +195,7 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-08-11T1128Microsoft_dr
 git add Java/AlphabetSequence.class
 git add Java/AlphabetSequence.java
 git add Java/2025-08-11T2049AlphabetSequence.bat
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-04-28T1807WhenApparentReasonIsGovernByDecision_AnvilSecurityServices_JonathanSilva_FremontPolice_Thompson_Dumont_P25045613.txt
+
+git add	Java/2025-08-11T2049cscircles.cemc.uwaterloo.ca_-_java_visualize_-_iframe-embed_-_AlphabetSequence.html
