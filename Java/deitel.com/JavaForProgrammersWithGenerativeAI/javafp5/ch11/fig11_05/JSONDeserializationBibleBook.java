@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -12,23 +13,14 @@ record BibleBook
 {}
 
 /**
-	http://github.com/pdeitel/JavaForProgrammers5e/blob/main/examples/ch11/fig11_04/CreateJSONFile.java
+	http://github.com/pdeitel/JavaForProgrammers5e/blob/main/examples/ch11/fig11_05/ReadJSONFile.java
 	http://github.com/FasterXML/Jackson
 	http://javadoc.io/doc/com.fasterxml.jackson.core/jackson-core/latest
 */
-public class JSONSerializationBibleBook
+public class JSONDeserializationBibleBook
 {
 	public static void main(String[] args) 
 	{
-		List<BibleBook> pentateuch = List.of
-		(
-			new BibleBook(1, "Genesis", 50),
-			new BibleBook(2, "Exodus", 40),
-			new BibleBook(3, "Leviticus", 27),
-			new BibleBook(4, "Numbers", 36),
-			new BibleBook(5, "Deuteronomy", 34)
-		);
-
 		Path filePath = Path.of
 		(
 			System.getProperty("user.home"), 
@@ -40,22 +32,34 @@ public class JSONSerializationBibleBook
 
 		try
 		{
-			mapper.writeValue
+			List<BibleBook> pentateuch = mapper.readValue
 			(
 				filePath.toFile(),
-				pentateuch
+				new TypeReference<List<BibleBook>>(){}
 			);
 			System.out.printf
 			(
-				"JSON file created at: %s%n", 
-				filePath.toAbsolutePath()
+				"%-5s %-15s %10s%n",
+				"ID",
+				"Title",
+				"Chapters"
 			);
+			for(var bibleBook : pentateuch)
+			{
+				System.out.printf
+				(
+					"%-5d %-15s %10d%n",
+					bibleBook.ID(),
+					bibleBook.Title(),
+					bibleBook.Chapters()
+				);
+			}		
       } 
       catch (IOException e) 
 	  {
 			System.err.printf
 			(
-				"Error writing JSON file: %s%n",
+				"Error reading JSON file: %s%n",
 				e.getMessage()
 			);
       }
