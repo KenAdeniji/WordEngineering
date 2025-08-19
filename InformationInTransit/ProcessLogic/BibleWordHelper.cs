@@ -52,6 +52,66 @@ namespace InformationInTransit.ProcessLogic
 		2021-01-21	Apocalyptic Books
 		2021-03-05T18:30:00	bibleBookGroups: ["Poetry", "poetry"]
 		2023-11-14T16:03:00...2023-11-14T17:18:00	bibleBookGroup = bibleBookGroup.ToLower();
+		2025-08-18T15:19:00...2025-08-18T17:40:00 PersistentTransient()
+		
+d:\WordEngineering\InformationInTransit\ProcessLogic>csc /main:InformationInTransit.ProcessLogic.BibleWordHelper.cs BibleWordHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs ..\ProcessCode\LogicHelper.cs ..\ProcessCode\SacredTextHelper.cs ScriptureReferenceHelper.cs StringHelper.cs
+Microsoft (R) Visual C# Compiler version 4.13.0-3.25167.3 (73eff2b5)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+error CS1555: Could not find 'InformationInTransit.ProcessLogic.BibleWordHelper.cs' specified for Main method
+BibleWordHelper.cs(61,12): warning CS0219: The variable 'resultSet' is assigned but its value is never used
+BibleWordHelper.cs(152,14): warning CS0219: The variable 'dataTable' is assigned but its value is never used
+BibleWordHelper.cs(348,8): warning CS0219: The variable 'subsetIndex' is assigned but its value is never used
+ScriptureReferenceHelper.cs(379,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(381,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(484,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(486,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(956,11): warning CS0168: The variable 'bookTitle' is declared but never used
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>2015-11-16BibleWordHelperBuild
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>REM csc /main:InformationInTransit.ProcessLogic.BibleWordHelper.cs InformationInTransit\DataAccess\DataCommand.cs InformationInTransit\ProcessLogic\BibleWordHelper.cs InformationInTransit\ProcessLogic\DataSetHelper.cs InformationInTransit\ProcessLogic\DataTableHelper.cs InformationInTransit\ProcessCode\LogicHelper.cs InformationInTransit\ProcessCode\SacredTextHelper.cs InformationInTransit\ProcessLogic\ScriptureReferenceHelper.cs InformationInTransit\ProcessLogic\StringHelper.cs
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>csc /main:InformationInTransit.ProcessLogic BibleWordHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs ..\ProcessCode\LogicHelper.cs ..\ProcessCode\SacredTextHelper.cs ScriptureReferenceHelper.cs StringHelper.cs
+Microsoft (R) Visual C# Compiler version 4.13.0-3.25167.3 (73eff2b5)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+BibleWordHelper.cs(22,32): error CS1556: 'InformationInTransit.ProcessLogic' specified for Main method must be a non-generic class, record, struct, or interface
+BibleWordHelper.cs(61,12): warning CS0219: The variable 'resultSet' is assigned but its value is never used
+BibleWordHelper.cs(152,14): warning CS0219: The variable 'dataTable' is assigned but its value is never used
+BibleWordHelper.cs(348,8): warning CS0219: The variable 'subsetIndex' is assigned but its value is never used
+ScriptureReferenceHelper.cs(379,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(381,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(484,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(486,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(956,11): warning CS0168: The variable 'bookTitle' is declared but never used
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>2015-11-16BibleWordHelperBuild
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>REM csc /main:InformationInTransit.ProcessLogic.BibleWordHelper.cs InformationInTransit\DataAccess\DataCommand.cs InformationInTransit\ProcessLogic\BibleWordHelper.cs InformationInTransit\ProcessLogic\DataSetHelper.cs InformationInTransit\ProcessLogic\DataTableHelper.cs InformationInTransit\ProcessCode\LogicHelper.cs InformationInTransit\ProcessCode\SacredTextHelper.cs InformationInTransit\ProcessLogic\ScriptureReferenceHelper.cs InformationInTransit\ProcessLogic\StringHelper.cs
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>csc /main:InformationInTransit.ProcessLogic.BibleWordHelper BibleWordHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs ..\ProcessCode\LogicHelper.cs ..\ProcessCode\SacredTextHelper.cs ScriptureReferenceHelper.cs StringHelper.cs
+Microsoft (R) Visual C# Compiler version 4.13.0-3.25167.3 (73eff2b5)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+BibleWordHelper.cs(61,12): warning CS0219: The variable 'resultSet' is assigned but its value is never used
+BibleWordHelper.cs(152,14): warning CS0219: The variable 'dataTable' is assigned but its value is never used
+BibleWordHelper.cs(348,8): warning CS0219: The variable 'subsetIndex' is assigned but its value is never used
+ScriptureReferenceHelper.cs(379,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(381,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(484,10): warning CS0219: The variable 'verseIDSequence' is assigned but its value is never used
+ScriptureReferenceHelper.cs(486,12): warning CS0219: The variable 'subQueryWhereClause' is assigned but its value is never used
+ScriptureReferenceHelper.cs(956,11): warning CS0168: The variable 'bookTitle' is declared but never used
+
+d:\WordEngineering\InformationInTransit\ProcessLogic>
+	2025-08-18T17:40:00 BibleWordHelper "It came to pass" "And it came to pass"
+d:\WordEngineering\InformationInTransit\ProcessLogic>BibleWordHelper "It came to pass" "And it came to pass"
+OdbcCommand.commandTimeout: 0
+OdbcCommand.commandTimeout: 0
+Word=It came to pass
+Occurrences=450
+Word=And it came to pass
+Occurrences=23	
 	*/
 	public static partial class BibleWordHelper
 	{
@@ -60,7 +120,14 @@ namespace InformationInTransit.ProcessLogic
 			DataSet resultSet = null;
 			if (argv.Length > 0)
 			{
-                resultSet = GetAPage(argv[0], "KingJamesVersion");
+                //resultSet = GetAPage(argv[0], "KingJamesVersion");
+				PersistentTransient
+				(
+					"All",
+					argv,
+					true,
+					"KingJamesVersion"
+				);
 			}		
 		}
 
@@ -238,6 +305,46 @@ namespace InformationInTransit.ProcessLogic
 				DataCommand.ResultType.DataSet
 			);
 			return dataSetHisWord_viewFormat;
+		}
+		
+		public static DataTable PersistentTransient
+		(
+			String		bibleBookGroup,
+			String[]	questions,
+			bool		wholeWords,
+			String		bibleVersion
+		)
+		{
+			DataTable workTable = new DataTable("PersistentTransient");
+			DataColumn wordColumn = workTable.Columns.Add("Word", typeof(String));
+			DataColumn occurrencesColumn = workTable.Columns.Add("Occurrences", typeof(String));
+			
+			DataRow workRow;  
+			
+			DataSet dataSet = null;
+			
+			foreach(String question in questions)
+			{
+				dataSet = Query
+				(
+					"phrase",
+					bibleBookGroup,
+					question,
+					wholeWords,
+					bibleVersion
+				);	
+				foreach(DataTable dataTable in dataSet.Tables)
+				{
+					workRow = workTable.NewRow();  
+					workRow["Word"] = question;  
+					workRow["Occurrences"] = dataTable.Rows.Count;  
+					workTable.Rows.Add(workRow);  				
+				}
+			}
+			
+			workTable.DumpDataTable();
+			
+			return workTable;
 		}
 		
 		public static DataSet Query

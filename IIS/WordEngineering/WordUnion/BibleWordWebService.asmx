@@ -163,6 +163,31 @@ public class BibleWordWebService : System.Web.Services.WebService
 	
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String PersistentTransient
+	(
+		String	bibleBookGroup,
+		String	question,
+		bool	wholeWords,
+		string	bibleVersion
+	)
+    {
+		DataTable result = BibleWordHelper.PersistentTransient
+		(
+			bibleBookGroup,
+			question.Split
+			(
+				new string[] {"\\r\\n", "\n"}, //new string[] {System.Environment.NewLine}, 
+				StringSplitOptions.None				
+			),
+			wholeWords,
+			bibleVersion
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
+    }
+	
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String StoryOutOfLine
 	(
 		String	logic,

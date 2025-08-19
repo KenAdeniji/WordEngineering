@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+	BibleWord.html
+		2015-11-09	http://stackoverflow.com/questions/78932/how-do-i-programatically-set-the-value-of-a-select-box-element-using-javascript
+		2016-04-25	Bible versions. King James Version (KJV), American Standard Bible, Young's Literal Translation
+		2016-09-28	buildHyperlinkScriptureReference(scriptureReference)
+		2017-06-06	Life trains on. User interface (UI). Separated the input.
+		2020-10-19	$.ajax
+					url: "/WordEngineering/WordUnion/BibleWordWebService.asmx/StoryOutOfLine",
+		2020-10-20	<table>
+						<label for="versesCount">Verse(s) count:</label>
+						<label id="versesCount"></label>
+						<div id="resultTable"> </div>
+						<div id="scriptureReferenceCollate" align="center"> </div>
+						<div id="scriptureReferenceJoin" align="center"> </div>
+					</table>
+		2020-10-20T17:04:00
+					Replaced and corrected (Prove difficult)
+						the space taking visibility, visible or hidden;
+						with display block or none.
+		2025-08-18T1203PersistentTransient.html	Created.				
+	-->
+	<head>
+		<title>Persistent Transient</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Search by Bible word"/>
+		<meta name="keywords" content="Bible, word"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 85vw;
+	}
+		</style>		
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="bibleWord">Bible Word:</label></td>
+					<td>
+						<textarea type="text" ID="bibleWord" autofocus required>
+It came to pass
+And it came to pass
+						</textarea>
+					</td>
+				</tr>	
+<!--
+				<tr>
+					<td><label for="logic">Logic:</label></td>
+					<td>
+						<select id="logic">
+							<option value="and">And</option>		
+							<option value="or">Or</option>
+							<option value="phrase">Phrase</option>
+						</select>
+					</td>
+				</tr>	
+-->
+				<tr>
+					<td><label for="wholeWords">Whole Words:</label></td>
+					<td><input type="checkbox" id="wholeWords" checked/></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleBookGroup">Bible Book Group:</label></td>
+					<td><select id="bibleBookGroup" multiple size="2"></select></td>
+				</tr>	
+				<tr>
+					<td><label for="bibleVersion">Version:</label></td>
+					<td><select id="bibleVersion"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div id="resultTable" align="center"></div>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var 	isPostBack = false;
+			
+			const 	bibleVersionElement = document.getElementById("bibleVersion");
+			const 	bibleWordElement = document.getElementById("bibleWord");
+			const 	bibleBookGroupElement = document.getElementById("bibleBookGroup");
+			//	const 	logicElement = document.getElementById("logic");
+			const	wholeWordsElement = document.getElementById("wholeWords");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultTableElement = document.getElementById("resultTable");
+
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+				
+					scriptLiteral9432.renderBibleBookGroupSelect();
+					scriptLiteral9432.renderBibleVersionSelect();
+					
+					var bibleWordValue = urlParams.get("bibleWord");
+					if (bibleWordValue)
+					{
+						bibleWordElement.value = bibleWordValue;
+					}	
+					
+/*
+					var logicValue = urlParams.get("logic");
+					if (logicValue)
+					{
+						logicElement.value = logicValue;
+					}	
+*/
+					var wholeWordsValue = urlParams.get("wholeWords");
+					if (wholeWordsValue === null)
+					{
+						wholeWordsValue = "";
+					}
+					var wholeWordsLowerCaseValue = wholeWordsValue.toLowerCase();
+					var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
+					wholeWordsElement.checked = wholeWordsChecked;
+
+					var bibleVersionValue = urlParams.get("bibleVersion");
+					if (bibleVersionValue)
+					{
+						bibleVersionElement.value = bibleVersionValue;
+					}	
+					
+					var bibleBookGroupParam = urlParams.get("bibleBookGroup");
+					if (bibleBookGroupParam)
+					{
+						scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupParam]);
+					}	
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+				request["bibleBookGroup"] = scriptLiteral9432.selectionGet("bibleBookGroup");
+				request["question"] = bibleWordElement.value;
+				request["wholeWords"] = wholeWordsElement.checked;
+				request["bibleVersion"] = bibleVersionElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordUnion/BibleWordWebService.asmx/PersistentTransient";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

@@ -17,7 +17,8 @@ class Point
 		double	y;
  
 	public:
-		Point() {
+		Point() 
+		{
 			cout << "Point constructor." << endl;
 		}
 	

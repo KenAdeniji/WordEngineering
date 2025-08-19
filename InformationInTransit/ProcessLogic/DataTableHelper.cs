@@ -9,7 +9,7 @@ using System.Collections.Specialized;
 
 using System.Linq;
 
-using InformationInTransit.ProcessCode;
+//using InformationInTransit.ProcessCode;
 
 /*
 	2017-02-26	http://stackoverflow.com/questions/1568593/how-to-use-indexof-method-of-listobject
@@ -229,6 +229,7 @@ namespace InformationInTransit.ProcessLogic
 			return table;
 		}
 */
+/*
 		public static DataTable ToDataTableObsolete(Dictionary<String, InformationInTransit.ProcessCode.YourPartOfTheHistory.Participation> data)
 		{
 			DataTable table = new DataTable();
@@ -247,7 +248,7 @@ namespace InformationInTransit.ProcessLogic
 			}
 			return table;
 		}
-
+*/
 		public static void ToDataTableStub()
 		{
 			DataTable courses = Courses.ToDataTable();
