@@ -52,7 +52,7 @@ namespace InformationInTransit.ProcessLogic
 		2021-01-21	Apocalyptic Books
 		2021-03-05T18:30:00	bibleBookGroups: ["Poetry", "poetry"]
 		2023-11-14T16:03:00...2023-11-14T17:18:00	bibleBookGroup = bibleBookGroup.ToLower();
-		2025-08-18T15:19:00...2025-08-18T17:40:00 PersistentTransient()
+		2025-08-18T15:19:00...2025-08-18T17:40:00 BibleWordHelper.PersistentTransient()
 		
 d:\WordEngineering\InformationInTransit\ProcessLogic>csc /main:InformationInTransit.ProcessLogic.BibleWordHelper.cs BibleWordHelper.cs ..\DataAccess\DataCommand.cs DataSetHelper.cs DataTableHelper.cs ..\ProcessCode\LogicHelper.cs ..\ProcessCode\SacredTextHelper.cs ScriptureReferenceHelper.cs StringHelper.cs
 Microsoft (R) Visual C# Compiler version 4.13.0-3.25167.3 (73eff2b5)
