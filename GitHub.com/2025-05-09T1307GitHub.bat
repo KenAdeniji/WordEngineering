@@ -206,17 +206,19 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2025-08-16T2241FlexJobs_Spa
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-08-18T00945PassportLostOrStolenIssueNew_-_AmbassadorBiancaOdinakaOdumegu-Ojukwu_-_EmbassyOfTheFederalRepublicOfNigeria_WashingtonDC.txt
 
-        git add   IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
-        git add   IIS/WordEngineering/bin/InformationInTransit.dll
-        git add   InformationInTransit/InformationInTransit.dll
-        git add   InformationInTransit/ProcessLogic/2015-11-16BibleWordHelperBuild.bat
-        git add   InformationInTransit/ProcessLogic/BibleWordHelper.cs
-        git add   InformationInTransit/ProcessLogic/BibleWordHelper.exe
-        git add   InformationInTransit/ProcessLogic/DataTableHelper.cs
-        git add   Java/SQLDatabaseConnection.class
-        git add   Java/SQLDatabaseConnection.java
-        git add   Java/run.cmd
-        git add   cpp/AllenDowney/Point.hpp
+git add   IIS/WordEngineering/WordUnion/BibleWordWebService.asmx
+git add   IIS/WordEngineering/bin/InformationInTransit.dll
+git add   InformationInTransit/InformationInTransit.dll
+git add   InformationInTransit/ProcessLogic/2015-11-16BibleWordHelperBuild.bat
+git add   InformationInTransit/ProcessLogic/BibleWordHelper.cs
+git add   InformationInTransit/ProcessLogic/BibleWordHelper.exe
+git add   InformationInTransit/ProcessLogic/DataTableHelper.cs
+git add   Java/SQLDatabaseConnection.class
+git add   Java/SQLDatabaseConnection.java
+git add   Java/run.cmd
+git add   cpp/AllenDowney/Point.hpp
 
-git add        IIS/WordEngineering/WordCross/2025-08-18T1203PersistentTransient.html
-git add        InformationInTransit/ProcessLogic/BibleWordHelper.2025-08-18T1519cs
+git add IIS/WordEngineering/WordCross/2025-08-18T1203PersistentTransient.html
+git add InformationInTransit/ProcessLogic/BibleWordHelper.2025-08-18T1519cs
+
+git add InformationInTransit/ProcessCode/CrossPlatform.cs

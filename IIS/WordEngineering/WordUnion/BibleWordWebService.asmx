@@ -26,6 +26,7 @@ using InformationInTransit.UserInterface;
 ///	2015-11-15	GetAPage();
 ///	2018-08-02	MakeMeKnow();
 ///	2022-12-28	WhatRemembranceOfMan()
+/// 2025-08-18  PersistentTransient()
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -176,7 +177,7 @@ public class BibleWordWebService : System.Web.Services.WebService
 			bibleBookGroup,
 			question.Split
 			(
-				new string[] {"\\r\\n", "\n"}, //new string[] {System.Environment.NewLine}, 
+				CrossPlatform.NewLine,
 				StringSplitOptions.None				
 			),
 			wholeWords,
