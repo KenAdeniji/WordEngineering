@@ -112,6 +112,8 @@ Word=It came to pass
 Occurrences=450
 Word=And it came to pass
 Occurrences=23	
+
+	2025-08-19T20:15:00...2025-08-19T20:52:00 BibleWordHelper.PersistentTransient() FirstScriptureReference... LastScriptureReference
 	*/
 	public static partial class BibleWordHelper
 	{
@@ -317,11 +319,16 @@ Occurrences=23
 		{
 			DataTable workTable = new DataTable("PersistentTransient");
 			DataColumn wordColumn = workTable.Columns.Add("Word", typeof(String));
-			DataColumn occurrencesColumn = workTable.Columns.Add("Occurrences", typeof(String));
+			DataColumn occurrencesColumn = workTable.Columns.Add("Occurrences", typeof(int));
+			DataColumn firstScriptureReferenceColumn = workTable.Columns.Add("FirstScriptureReference", typeof(String));
+			DataColumn lastScriptureReferenceColumn = workTable.Columns.Add("LastScriptureReference", typeof(String));
 			
+			DataRow dataRow;
 			DataRow workRow;  
 			
 			DataSet dataSet = null;
+			
+			int rowsCount = 0;
 			
 			foreach(String question in questions)
 			{
@@ -336,8 +343,37 @@ Occurrences=23
 				foreach(DataTable dataTable in dataSet.Tables)
 				{
 					workRow = workTable.NewRow();  
+					
 					workRow["Word"] = question;  
-					workRow["Occurrences"] = dataTable.Rows.Count;  
+					
+					rowsCount = dataTable.Rows.Count; 
+					
+					workRow["Occurrences"] = rowsCount; 
+
+					if (rowsCount > 0 )
+					{
+						dataRow = dataTable.Rows[0];
+						workRow["FirstScriptureReference"] =
+							ScriptureReferenceHelper.ScriptureReference.Syntax
+							(
+								(int) dataRow["BookID"],
+								(int) dataRow["ChapterID"],
+								(int) dataRow["VerseID"]
+							);	
+					}	
+					
+					if (rowsCount > 1 )
+					{
+						dataRow = dataTable.Rows[rowsCount - 1];
+						workRow["LastScriptureReference"] =
+							ScriptureReferenceHelper.ScriptureReference.Syntax
+							(
+								(int) dataRow["BookID"],
+								(int) dataRow["ChapterID"],
+								(int) dataRow["VerseID"]
+							);	
+					}	
+					
 					workTable.Rows.Add(workRow);  				
 				}
 			}
