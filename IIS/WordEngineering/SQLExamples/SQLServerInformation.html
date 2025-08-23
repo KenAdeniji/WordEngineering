@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+	<!--
+		2025-08-22T12:52:00 xp_msver http://weblogs.sqlteam.com/phils/2015/02/25/sql-server-version-information-xp_msver
+		2025-08-23T09:00:00	Created.
+	-->
+	<head>
+		<title>SQL Server Information</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="SQL Server"/>
+		<meta name="keywords" content="SQL Server"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="serverName">Server Name</label></td>
+					<td><input type="text" ID="serverName" autofocus required></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<div id="resultSet" align="center"></div>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		
+		<script>
+			var 	isPostBack = false;
+			
+			const 	serverNameElement = document.getElementById("serverName");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+
+		
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+				
+					var serverNameValue = urlParams.get("serverName");
+					if (serverNameValue)
+					{
+						serverNameElement.value = serverNameValue;
+					}	
+					
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+				request["serverName"] = serverNameElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/SQLExamples/SQLServerInformation.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
