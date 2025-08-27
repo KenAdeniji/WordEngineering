@@ -235,3 +235,5 @@ git add	IIS/WordEngineering/SQLExamples/SQLServerInformation.asmx
 git add IIS/WordEngineering/SQLExamples/SQLServerInformation.html
 
 git add SQLScript/2025-08-22T1252weblogs.sqlteam.com_-_PhilStreiffBlog.sql
+
+git add	 IIS/WordEngineering/2018-05-03Correspondence/2025-08-26T1831_FremontPolice_kloughnane@fremont.gov_Follow-upRequiredForYourOnlinePoliceReportT25003015_IdentifyMandatoryInformation.txt

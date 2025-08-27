@@ -3,6 +3,8 @@
 	<!--
 		2025-08-22T12:52:00 xp_msver http://weblogs.sqlteam.com/phils/2015/02/25/sql-server-version-information-xp_msver
 		2025-08-23T09:00:00	Created.
+		2025-08-23T13:19:00 	When we have become... infant. When we have become... where we are.
+								Infant ... WhereWeAre
 	-->
 	<head>
 		<title>SQL Server Information</title>
@@ -26,6 +28,7 @@
 			</table>
 		</div>
 		<div id="resultSet" align="center"></div>
+		<div id="resultSet_sp_helpdb" align="center"></div>
 		<script>
 			document.head.insertAdjacentHTML
 			(
@@ -49,7 +52,8 @@
 			
 			const	resultSetElement = document.getElementById("resultSet");
 
-		
+			const	resultSetElement_sp_helpdb = document.getElementById("resultSet_sp_helpdb");
+			
 			function pageLoad()
 			{
 				if (isPostBack === false)
@@ -63,11 +67,13 @@
 					}	
 					
 					querySubmit();
+					querySubmit_sp_helpdb();
 					isPostBack = true;
 				}
 				else
 				{
 					querySubmit();
+					querySubmit_sp_helpdb();
 				}
  			}
 
@@ -76,9 +82,11 @@
 				var request = {};
 				request["serverName"] = serverNameElement.value;
 				
-				const PostData = {
+				const PostData = 
+				{
 					method: 'POST',
-					headers: {
+					headers: 
+					{
 						"Accept": "application/json",
 						'Content-Type': 'application/json; charset=utf-8'
 					},
@@ -87,17 +95,69 @@
 				}
 				PostData.body = JSON.stringify(request);
 				url = "/WordEngineering/SQLExamples/SQLServerInformation.asmx/Query";
-				try {
+				try
+				{
 					const response = await fetch(url, PostData)
-					.then(response => {
-						return response.json();
-					})
-					.then(responseJSON => {
-						var dataSet = JSON.parse(responseJSON.d);
-						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
-					})	
-					} catch (e) {
+					.then
+					(
+						response => 
+						{
+							return response.json();
+						}
+					)
+					.then
+					(
+						responseJSON => 
+						{
+							var dataSet = JSON.parse(responseJSON.d);
+							scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+						}
+					)	
+				}	catch (e) 
+				{
 					resultSetElement.innerHTML = e;
+				};
+			}
+
+			async function querySubmit_sp_helpdb()
+			{
+				var request = {};
+				request["serverName"] = serverNameElement.value;
+				
+				const PostData = 
+				{
+					method: 'POST',
+					headers:
+					{
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/SQLExamples/SQLServerInformation.asmx/sp_helpdb";
+				try 
+				{
+					const response = await fetch(url, PostData)
+					.then
+					(	
+						response => 
+						{
+							return response.json();
+						}
+					)
+					.then
+					(
+						responseJSON => 
+						{
+							var dataTable = JSON.parse(responseJSON.d);
+							scriptLiteral9432.renderDataTable(dataTable, "resultSet_sp_helpdb");
+						}
+					)	
+				} catch (e) 
+				{
+					resultSetElement_sp_helpdb.innerHTML = e;
 				};
 			}
 

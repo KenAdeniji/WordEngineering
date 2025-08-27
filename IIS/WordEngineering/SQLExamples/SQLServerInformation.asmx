@@ -21,8 +21,10 @@ using InformationInTransit.DataAccess;
 ///<summary>
 ///	2025-08-22T12:52:00 xp_msver http://weblogs.sqlteam.com/phils/2015/02/25/sql-server-version-information-xp_msver
 ///	2025-08-23T09:00:00	Created.
-///	2025-08-23T11:00:00	
-///	dynamic dataSet = DataCommand.DatabaseCommand
+///	2025-08-23T11:00:00	dynamic dataSet = DataCommand.DatabaseCommand
+///	2025-08-23T12:48:00 urine. 12:10:14...13:07  Lessons learned: Microsoft. Microsoft web services DataSet versus (VS) DataTable... Microsoft SQL Server query sp_helpdb?
+///	2025-08-23T13:19:00 	When we have become... infant. When we have become... where we are.
+///							Infant ... WhereWeAre
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -47,13 +49,33 @@ public class SQLServerInformation : System.Web.Services.WebService
 		string json = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
 		return json;
 	}
+
+	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String sp_helpdb
+	(
+		String	serverName
+	)
+    {
+		String serverNamePrefix = String.IsNullOrEmpty(serverName) ? "" : serverName + ".";
+		dynamic dataTable = DataCommand.DatabaseCommand
+		(
+			"sp_helpdb",
+			CommandType.Text,
+			DataCommand.ResultType.DataTable
+		);
+		
+		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
+		return json;
+	}
 	
 	public const string SQLStatementFormat =
 		@"
-			--sp_databases
 			--{0}sp_spaceused
 			--{0}master.sys.xp_fixeddrives
+			
 			{0}xp_msver
+
 			SELECT 
 				cpu_count,
 				hyperthread_ratio,
@@ -64,6 +86,9 @@ public class SQLServerInformation : System.Web.Services.WebService
 				os_priority_class
 			FROM
 				{0}master.sys.dm_os_sys_info
+				
+			--sp_databases
+			
 			SELECT * FROM sys.databases ORDER BY database_id				
 		";
 }
