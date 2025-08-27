@@ -1,0 +1,182 @@
+<html>
+	<!--
+		2025-08-26 Created.
+SELECT
+	'new TitleOfGod("' + 
+	ISNULL(WordEngineering..GodTitle.Title, '') + 
+	'", "' + 
+	ISNULL(WordEngineering..GodTitle.Commentary, '') + 
+	'", "' + 
+	ISNULL(WordEngineering..GodTitle.ScriptureReference, '') + 
+	'", "' + 
+	ISNULL(WordEngineering..GodTitle.Hebrew, '') + 
+	'"),'
+FROM WordEngineering..GodTitle
+ORDER BY GodTitleID
+	-->
+	<head>
+		<title>Titles of God</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Titles of God"/>
+		<meta name="keyword" content="Titles of God"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+		<table id="titles" align="center"></table>
+		<script>
+			var isPostBack = false;
+			
+			const titlesElement = document.getElementById("titles");
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					querySubmit();
+				}
+				isPostBack = true;
+			}
+			
+			function querySubmit()
+			{
+				var titlesOfGod = 
+					[
+new TitleOfGod("El", "The Strong One.", "", "אל"),
+new TitleOfGod("El Chaiyai", "The God of my Life.", "Psalms 42:8", "חיאי"),
+new TitleOfGod("El Chanun", "The Gracious God.", "Jonah 4:2", "חאנון"),
+new TitleOfGod("El De'ot", "The God of Knowledge.", "1 Samuel 2:3", "דעות"),
+new TitleOfGod("El Echad", "The One God.", "Malachi 2:10", "להדהד"),
+new TitleOfGod("El Elyon", "The Most High God.", "Genesis 14:18", "עליון"),
+new TitleOfGod("El Emet", "The God of Truth.", "Psalms 31:5", "אמת"),
+new TitleOfGod("El Emunah", "The Faithful God.", "Deuteronomy 32:4", "אמונה"),
+new TitleOfGod("El Gibor", "The Mighty God.", "Isaiah 9:6", "גיבור"),
+new TitleOfGod("El HaGadol", "The Great God.", "Deuteronomy 10:17", "הגדול"),
+new TitleOfGod("El HaKadosh", "The Holy God.", "Isaiah 5:16", "הקדוש"),
+new TitleOfGod("El HaKavod", "The God of Glory.", "Psalms 29:3", "הכבוד"),
+new TitleOfGod("El HaNe'eman", "The Faithful God.", "Deuteronomy 7:9", "הנעמן"),
+new TitleOfGod("El HaShamayim", "The God of the Heavens.", "Psalm 136:26", "השמיים"),
+new TitleOfGod("El Kana", "The Jealous God.", "Deuteronomy 4:24", "קאנה"),
+new TitleOfGod("El Olam", "The God of Eternity.", "Genesis 21:33", "עולם"),
+new TitleOfGod("El Rachum", "The God of Compassion.", "Deuteronomy 4:31", "רחום"),
+new TitleOfGod("El Rahee", "The God Who Sees.", "Genesis 16:13", "ראאהי"),
+new TitleOfGod("El Roi", "The Lord That Seeth.", "", "רועי"),
+new TitleOfGod("El Sali", "God of my Rock.", "Psalmx 42:10", "סאלי"),
+new TitleOfGod("El Simchat Gili", "God The Joy of my Exaltation.", "Psalmx 43:4", "שמחת גילי"),
+new TitleOfGod("El Tzadik", "The Righteous God.", "Isaiah 45:21", "צדיק"),
+new TitleOfGod("El Yeshuati", "The God of my Salvation.", "Isaiah 12:2", "ישועתי"),
+new TitleOfGod("El Yisrael", "The God of Israel.", "Psalms 68:36", "ישראל"),
+new TitleOfGod("El-Elohe-Israel", "God of Israel.", "Genesis 33:20", "אלוהי-ישראל"),
+new TitleOfGod("Elah", "An Oak.", "", "אלה"),
+new TitleOfGod("Elah Sh'maya", "God of Heaven.", "Ezra 7:23", "ש'מאיה"),
+new TitleOfGod("Elah Sh'maya V'Arah", "God of Heaven and Earth.", "Ezra 5:11", "שמעיה וערה"),
+new TitleOfGod("Elah Yerush'lem", "God of Jerusalem.", "Ezra 7:19", "ירושלם"),
+new TitleOfGod("Elah Yisrael", "God of Israel.", "Ezra 5:1", "ישראל"),
+new TitleOfGod("Eloah", "The Adorable One.", "", "אלוהים"),
+new TitleOfGod("Elohay Chasdi", "God of my Kindness.", "Psalms 59:11, Psalms 59:18", "חסדי"),
+new TitleOfGod("Elohay Elohim", "God of Gods", "Deuteronomy 10:17", "אלוהים"),
+new TitleOfGod("Elohay HaRuchot LeKol Basar", "God of the Spirits of all Flesh.", "Numbers 16:22", "הרכות לקול בזאר"),
+new TitleOfGod("Elohay Kedem", "God of the Beginning.", "Deuteronomy 33:27", "קדם"),
+new TitleOfGod("Elohay Kol Basar", "God of all Flesh.", "Jeremiah 32:27", "קול בסאר"),
+new TitleOfGod("Elohay Marom", "God of Heights.", "Micah 6:6", "מרום"),
+new TitleOfGod("Elohay Mauzi", "God of my Strength.", "Psalms 43:2", "מאוזי"),
+new TitleOfGod("Elohay Mikarov", "God Who Is Near.", "Jeremiah 23:23", "מיקארוב"),
+new TitleOfGod("Elohay Mishpat", "God of Justice", "Isaiah 30:18", "משפט"),
+new TitleOfGod("Elohay Selichot", "God of Forgiveness.", "Nehemiah 9:17", "סליחות"),
+new TitleOfGod("Elohay Tehilati", "God of my Praise.", "Psalms 109:1", "תהילתי"),
+new TitleOfGod("Elohay Tzur", "God of Rock.", "2 Samuel 22:47", "צור"),
+new TitleOfGod("Elohay Yishi", "God of My Salvation.", "Psalm 18:47, 25:5", "יישי"),
+new TitleOfGod("Elohim Chaiyim", "Living God.", "Jeremiah 10:10", "חיים"),
+new TitleOfGod("Elohim Kedoshim", "Holy God.", "Leviticus 19:2, Joshua 24:19", "קדושים"),
+new TitleOfGod("Immanu El", "God Is With Us.", "Isaiah 7:14", "אימאנו אל"),
+new TitleOfGod("Jah", "The Independent One.", "", "ג'אה"),
+new TitleOfGod("Jehovah", "I AM.", "Exodus 3:12", "יהוה"),
+new TitleOfGod("Jehovah Adonai", "The Lord our Sovereign.", "Joshua 5:14", "אדונאי"),
+new TitleOfGod("Jehovah El-Shaddai", "The God on the Mountain.", "Genesis 17:3; Psalms 91:1-2", "אל-שדאי"),
+new TitleOfGod("Jehovah Elohay", "The Lord my God.", "", "אלוהיי"),
+new TitleOfGod("Jehovah Eloheenu", "The Lord our God.", "", "אלוהינו"),
+new TitleOfGod("Jehovah Elohim", "The Eternal Creator.", "Genesis 1:1; Genesis 2:4; Isaiah 54:5", "אלוהים"),
+new TitleOfGod("Jehovah Elokehu", "The Lord thy God.", "", "אלוקהו"),
+new TitleOfGod("Jehovah Elyon", "The Lord most High.", "", "עליון"),
+new TitleOfGod("Jehovah Gmolah", "The God of Recompenses.", "", "גמולה"),
+new TitleOfGod("Jehovah Hoseenu", "The Lord our Maker.", "", "הוסנו"),
+new TitleOfGod("Jehovah Jireh", "The Lord will Provide.", "Genesis 22:14", "ג'ירה"),
+new TitleOfGod("Jehovah Mekaddishken", "The Lord our Sanctifier.", "Ezekiel 37:28", "מקדישנקן"),
+new TitleOfGod("Jehovah Nissi", "The Lord our Banner.", "Exodus 17:15", "ניסי"),
+new TitleOfGod("Jehovah Rohi", "The Lord my Shepherd.", "Psalms 23:1", "רוהי"),
+new TitleOfGod("Jehovah Rophe", "The Lord our Healer.", "Exodus 15:26", "רופי"),
+new TitleOfGod("Jehovah Saboath", "The Lord of Hosts.", "1 Samuel 17:45", "סבאות"),
+new TitleOfGod("Jehovah Shalom", "The Lord our Peace.", "Judges 6:24", "שלום"),
+new TitleOfGod("Jehovah Shammah", "The Lord is Present.", "Ezekiel 48:35", "שמא"),
+new TitleOfGod("Jehovah Tsidkeenu", "The Lord our Righteousness", "Jeremiah 23:6; Jeremiah 33:16", "צידקנו"),
+new TitleOfGod("YHVH O'saynu", "The Lord our Maker.", "Psalms 95:6", "אושנו"),
+new TitleOfGod("YHVH Tz'vaot", "The Lord of Armies.", "1 Samuel 1:11", "צבאות"),
+new TitleOfGod("YHVH Yireh", "In the mount of the LORD, it shall be seen.", "Genesis 22:14", "יירה"),
+new TitleOfGod("Yeshua HaMashiach", "", "", "ישוע המשיח"),
+new TitleOfGod("Mashiach Nagid", "Messiah the King", "Daniel 9:25", "משיח נגיד"),
+new TitleOfGod("Godesh Godashin", "Holy of Holies", "Isaiah 52:13-15, Isaiah 53:1-12", "גודש גודאשין"),
+					];
+				var tableStub = "<table><caption>Titles of God</caption><thead><tr><th>Title</th><th>Commentary</th><th>Scripture Reference</th><th>Hebrew</th></tr></thead><tbody>";
+				titlesOfGod.forEach
+				(
+					function (titleOfGod) 
+					{ 
+						tableStub += 
+							`
+								<tr><td>${titleOfGod.title}</td><td>${titleOfGod.commentary}</td><td>${titleOfGod.scriptureReference}</td><td>${titleOfGod.hebrew}</td></tr>
+							`;		
+					}
+				);
+				tableStub += "</tbody></table>";
+				titlesElement.innerHTML = tableStub;
+			}
+			
+			window.addEventListener("load", pageLoad, "false");
+			
+			class TitleOfGod
+			{
+				constructor
+				(
+					title,
+					commentary,
+					scriptureReference,
+					hebrew
+				)
+				{
+					this.title = title;
+					this.commentary = commentary;
+					this.scriptureReference = scriptureReference;
+					this.hebrew = hebrew;
+				}
+			}	
+	
+		</script>
+	</body>
+</html>

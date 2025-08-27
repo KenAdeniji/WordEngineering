@@ -1028,4 +1028,43 @@ Work phone	1 510.933.0540
 Work address	42744 Boscell Road, Fremont, CA 94538, USA
 Other phone	1 877.853.4810
 Notes	2013-11-05 The Hispanic at AvantCom.net, was to remind me, of the three amigos at UTS. 8:27 Take 332, get off at Civic Center Drive and Mowry Avenue. 9:14 Take 350, Automall Parkway. 9:36 Get off. ----------- Take 264 Fremont Blvd and Decoto Road. Take 99 to Fremont Blvd and Mowry Avenue. Take 212 to 880 Auto Mall Parkway Exit. ---------- 2011-05-21T09:45:00 Face-to-face interview. Mathew Roncoli. MRoncoli@aerelectronics.com Salim Hijazi salim@aerworldwide.com nirmalselvaraj@gmail.com (nirmalselvaraj@gmail.com) When: Saturday, May 21, 2011, 9:45AM to 10:30AM Where: AER Worldwide - 42744 Boscell Road, Fremont, California 94538 Ken, Please bring 3 copies of your resume when you arrive. Thanks, Mathew 510.933.0540 Ph 2011-05-19T23:00:00 Are you available this Saturday at 10:00AM PT for a face to face interview at our offices in Fremont, CA? Please advise ASAP. Thanks, Mathew Roncoli AER Electronics, Inc. 510.933.0540 DID 2011-05-05T11:15:00 FileMaker. 2011-05-05T00:00:00 Phone call. 2011-05-04T00:00:00 Are you still looking for work as a Senior Developer? A new opening has been created and I would like to discuss it with you if you are still interested. Thanks, Mathew Roncoli AER Worldwide 510-933-0540
+
+2025-08-26T19:52:00
+https://www.informit.com/articles/article.aspx?p=2832403&seqNum=2
+
+Understanding Dynamic Websites and HTML5 Applications
+
+    By Julie C. Meloni
+    Nov 19, 2017
+
+📄 Contents
+␡
+
+    Refresher on the Different Types of Scripting
+    Displaying Random Content on the Client Side
+    Understanding the Document Object Model
+    Using window Objects
+    Working with the document Object
+    Accessing Browser History
+    Working with the location Object
+    More About the DOM Structure
+    Working with DOM Nodes
+    Creating Positionable Elements (Layers)
+    Hiding and Showing Objects
+    Modifying Text Within a Page
+    Adding Text to a Page
+    Changing Images Based on User Interaction
+    Thinking Ahead to Developing HTML5 Applications
+    Summary
+    Q & A
+    Workshop
+
+    ⎙ Print 
+
+< Back Page 2 of 18 Next >
+This chapter is from the book
+PHP, MySQL & JavaScript All in One, Sams Teach Yourself, 6th EditionPHP, MySQL & JavaScript All in One, Sams Teach Yourself, 6th Edition
+
+Learn More Buy
+Displaying Random Content on the Client Side
 :Exit
