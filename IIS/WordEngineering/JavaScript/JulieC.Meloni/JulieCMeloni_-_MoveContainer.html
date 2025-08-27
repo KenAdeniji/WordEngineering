@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--
+			2025-08-27	http://www.informit.com/articles/article.aspx?p=2832403&seqNum=10
+		-->
+		<title>Positioning Elements with JavaScript</title>
+		<style type="text/css">
+			#buttons 
+			{
+			   text-align: center;
+			}
+			#square {
+			   position: absolute;
+			   top: 150px;
+			   left: 100px;
+			   width: 200px;
+			   height: 200px;
+			   border: 2px solid black;
+			   padding: 10px;
+			   background-color: #e0e0e0;
+			}
+			div {
+			   padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Positioning Elements</h1>
+		<div id="buttons">
+			<button type="button" onclick="pos(-1,0);">Left</button>
+			<button type="button" onclick="pos(1,0);">Right</button>
+			<button type="button" onclick="pos(0,-1);">Up</button>
+			<button type="button" onclick="pos(0,1);">Down</button>
+			<button type="button" onclick="hideSquare();">Hide</button>
+			<button type="button" onclick="showSquare();">Show</button>
+			<button type="button" 
+				onclick="toggleDisplaySquare();">Toggle display</button>
+		</div>
+		<hr>
+		<div id="square">
+			This square is an absolutely positioned container
+			that you can move using the buttons above
+			(
+				Luke 4:43, John 12:27, John 18:37
+			)	
+			.
+		</div>
+		<script>
+			var x = 100;
+			var y = 150;
+
+			const windowInnerWidth = window.innerWidth;
+			const windowInnerHeight = window.innerHeight; 
+
+			const squareElement = document.getElementById("square");
+
+			function pos(dx,dy) 
+			{
+				if 
+				(
+					( x < 0 && dx == -1 )
+					||
+					( x > windowInnerWidth && dx == 1 )
+					|| 
+					( y < 0 && dy == -1 )
+					||
+					( y > windowInnerHeight && dy == 1 )
+				)
+				{
+					return;
+				}	
+				x += 30 * dx;
+				y += 30 * dy;
+				squareElement.style.top = y + "px";
+				squareElement.style.left = x + "px";
+			}
+			function hideSquare() 
+			{
+				squareElement.style.display="none";
+			}
+			function showSquare() 
+			{
+				squareElement.style.display="block";
+			}
+			function toggleDisplaySquare() 
+			{
+				squareElement.style.display = 
+					(squareElement.style.display != "none") 
+					? "none"
+					: "block";
+			}
+		</script>
+	</body>
+</html>

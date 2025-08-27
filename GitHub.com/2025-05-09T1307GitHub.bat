@@ -239,3 +239,5 @@ git add SQLScript/2025-08-22T1252weblogs.sqlteam.com_-_PhilStreiffBlog.sql
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-08-26T1831_FremontPolice_kloughnane@fremont.gov_Follow-upRequiredForYourOnlinePoliceReportT25003015_IdentifyMandatoryInformation.txt
 
 git add	IIS/WordEngineering/JavaScript/ObjectOrientation/2025-08-26TitlesOfGod.html
+
+git add	IIS/WordEngineering/JavaScript/JulieC.Meloni/JulieCMeloni_-_MoveContainer.html
