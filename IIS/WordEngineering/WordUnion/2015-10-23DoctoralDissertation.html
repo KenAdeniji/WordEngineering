@@ -6150,6 +6150,26 @@ Romain Thibaux said always taking your note.
 				<span data-HisWordID="166598" data-Dated="2025-06-28T22:10:00" data-commentary="handle errors, exceptions">3c- <time datetime="2025-06-28T22:10:00">2025-06-28T22:10:00</time> If non-English alphabets flag?</span><br>
 				<span>4a- If the word(s) count is either 2 or 3 words, determine the associated sacred text</span><br>
 			</div>
+
+			<h3 id="UseCaseWordEngineering" data-Dated="2025-08-28T06:58:00"><time datetime="2025-08-28T06:58:00">2025-08-28T06:58:00</time> Use Case WordEngineering</h3>
+			
+			<h4 id="UseCaseWordEngineeringActorUser" data-Dated="2025-08-28T06:59:00"><time datetime="2025-08-28T06:59:00">2025-08-28T06:59:00</time> Actor: User</h3>
+			
+			<h4 id="UseCaseWordEngineeringMainFlow" data-Dated="2025-08-28T07:00:00"><time datetime="2025-08-28T07:00:00">2025-08-28T07:00:00</time> Main Flow:</h3>
+			
+			<ol>
+				<li>- The user records the word into the HisWord table by using the Microsoft SQL Server Management Studio</li>
+				<li>- The system generates the HisWordID column, sequentially, by adding, and incrementing by 1, the previous, last, HisWordID column</li>
+				<li>- The system sets the Dated column to the current system time. The Dated column the user may adjust, backdate, if it is late</li>
+				<li>- The user records the unbiased supporting columns, such as the Commentary, Contact, url, and Location. The commentary is the activity in the user's own words. Both the contact and url are single entities. The contact is the system allocated identifier. When there are multiple contacts, their names are determinable from the record as a whole</li>
+				<li data-Dated="2025-08-28T07:35:00">- The user <time datetime="2025-08-28T07:35:00">2025-08-28T07:35:00</time> traces historical data</li>
+			</ol>
+
+			<h4 id="UseCaseWordEngineeringExtensions" data-Dated="2025-08-28T07:33:00"><time datetime="2025-08-28T07:33:00">2025-08-28T07:33:00</time> Extensions:</h3>
+			
+			<div>
+				<span>5a- The user determines the date differences between the corresponding words and events</span><br>
+			</div>
 			
 			<h3 id="MinimumViableProduct_ABTesting" data-Dated="2025-06-27T20:10:00"><time datetime="2025-06-27T20:10:00">2025-06-27T20:10:00</time>Minimum Viable Product (MVP) and A/B Testing (or split testing)</h3>
 

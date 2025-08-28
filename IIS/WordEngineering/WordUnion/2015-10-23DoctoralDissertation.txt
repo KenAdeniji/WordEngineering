@@ -1052,10 +1052,12 @@ and resemblances in the Bible.
 >
 >   Statement               Commentary
 >   ----------------------- ----------------------------------------------------------------------------------------------
->   sp_server_info          The database version is Microsoft SQL Server 2019 - 15.0.2104.1
 >   sp_databases            The sole work of the author, the WordEngineering database size, is currently 33317504 bytes.
+>   sp_server_info          The database version is Microsoft SQL Server 2022 - 16.0.1000.6
 >   sp_spaceused            The WordEngineering database currently uses 32536.63 MB.
 >   sp_statistics HisWord   The cardinality of the HisWord table is 114243.
+>   xp_fixeddrives          Returns a list of physical hard drives and the amount of free space on each one.
+>   xp_msver                Returns version information about SQL Server.
 >
 > #### SQL Statement {#SQLStatement dated="2023-12-01T20:10:00"}
 >
@@ -3617,6 +3619,36 @@ The impetus for database recording was to re-use.
 > commentary="handle errors, exceptions"}\
 > 4a- If the word(s) count is either 2 or 3 words, determine the
 > associated sacred text\
+>
+> </div>
+>
+> ### 2025-08-28T06:58:00 Use Case WordEngineering {#UseCaseWordEngineering dated="2025-08-28T06:58:00"}
+>
+> 2025-08-28T06:59:00 Actor: User
+>
+> 2025-08-28T07:00:00 Main Flow:
+>
+> 1.  \- The user records the word into the HisWord table by using the
+>     Microsoft SQL Server Management Studio
+> 2.  \- The system generates the HisWordID column, sequentially, by
+>     adding, and incrementing by 1, the previous, last, HisWordID
+>     column
+> 3.  \- The system sets the Dated column to the current system time.
+>     The Dated column the user may adjust, backdate, if it is late
+> 4.  \- The user records the unbiased supporting columns, such as the
+>     Commentary, Contact, url, and Location. The commentary is the
+>     activity in the user\'s own words. Both the contact and url are
+>     single entities. The contact is the system allocated identifier.
+>     When there are multiple contacts, their names are determinable
+>     from the record as a whole
+> 5.  \- The user 2025-08-28T07:35:00 traces historical data
+>
+> 2025-08-28T07:33:00 Extensions:
+>
+> <div>
+>
+> 5a- The user determines the date differences between the corresponding
+> words and events\
 >
 > </div>
 >
