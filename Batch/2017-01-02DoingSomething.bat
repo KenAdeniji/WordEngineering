@@ -1068,6 +1068,9 @@ PHP, MySQL & JavaScript All in One, Sams Teach Yourself, 6th EditionPHP, MySQL &
 Learn More Buy
 Displaying Random Content on the Client Side
 
-2025-08-27T05:03:00
-http://www.informit.com/articles/article.aspx?p=2832403&seqNum=10
+2025-08-27T05:03:00 http://www.informit.com/articles/article.aspx?p=2832403&seqNum=10
+
+2025-08-28T17:03:00 http://stackoverflow.com/questions/21358774/database-design-using-uml-class-diagram
+
+2025-08-28T17:25:00 http://w3c.github.io/IndexedDB
 :Exit
