@@ -250,3 +250,10 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-08-27_92_2025-08-28Ade
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-08-28T1543PassportLostOrStolenIssueNew_-_AmbassadorBiancaOdinakaOdumegu-Ojukwu_-_EmbassyOfTheFederalRepublicOfNigeria_WashingtonDC.txt
 
 git add IIS/WordEngineering/WebAPI/CSSCustomHighlightAPI
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-08-31T1535TheCityOfSanFranciscoWantsYourFeedback_2025-08-31T1540WhoWorkForYouAbstainFromYou_2025-08-31T1604ThatISWhenIExcel.txt
+
+git add SQLScript/2025-08-29T2051SQLPerformanceTuningTipsForNewbies_On2024-04-15_ByEsatErkec.sql
+
+git add IIS/WordEngineering/WebAPI/BadgingAPI/
+git add IIS/WordEngineering/WebAPI/ContactPickerAPI/
