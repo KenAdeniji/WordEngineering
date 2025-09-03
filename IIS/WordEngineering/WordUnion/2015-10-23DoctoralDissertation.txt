@@ -3638,9 +3638,11 @@ The impetus for database recording was to re-use.
 > 4.  \- The user records the unbiased supporting columns, such as the
 >     Commentary, Contact, url, and Location. The commentary is the
 >     activity in the user\'s own words. Both the contact and url are
->     single entities. The contact is the system allocated identifier.
->     When there are multiple contacts, their names are determinable
->     from the record as a whole
+>     [2025-08-28T16:51:16 single-valued
+>     attributes.]{url="http://stackoverflow.com/questions/21358774/database-design-using-uml-class-diagram"
+>     dated="2025-08-28T16:51:16"} The contact is the system allocated
+>     identifier. When there are multiple contacts, their names are
+>     determinable from the record as a whole
 > 5.  \- The user 2025-08-28T07:35:00 traces historical data
 >
 > 2025-08-28T07:33:00 Extensions:

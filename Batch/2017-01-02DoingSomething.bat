@@ -848,4 +848,11 @@ ORDER BY VerseIDSequence
 HisWord_view
 
 The HisWord_view composes of the computed columns deducted from analyzing the Word. The two most significant computations are the AlphabetSequenceIndex, and the reliant AlphabetSequenceIndexScriptureReference, respectively. The author derives the AlphabetSequenceIndex from the word by adding the place of the alphabets in the alphabet set. In the ASCII table, the lower case alphabets are between 97 and 122, and the upper case alphabets are between 65 and 90. The lower and upper case alphabets have the same places. The AlphabetSequenceIndexScriptureReference is the books, chapters, verses separation in the scripture. The author will consider the chapter and verse place, forward and backward. Use the AlphabetSequence.html to calculate the computed values identified above. The AlphabetSequence is like Gematria, Mispar Hechrachi method. Titles of God. 
+
+2025-09-02T18:24:00
+SELECT        TOP (515) HisWordID, Dated, Word, Commentary, Uri, ContactID, ScriptureReference, Filename, EnglishTranslation, Location, Scene, PseudoCode, Actor, RegularExpression
+FROM            HisWord
+WHERE        (CONVERT(date, Dated) IN ('2021-04-16', '2021-09-01', '2018-11-28', '2025-09-02'))
+ORDER BY HisWordID DESC
+
 :Exit

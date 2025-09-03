@@ -6161,7 +6161,9 @@ Romain Thibaux said always taking your note.
 				<li>- The user records the word into the HisWord table by using the Microsoft SQL Server Management Studio</li>
 				<li>- The system generates the HisWordID column, sequentially, by adding, and incrementing by 1, the previous, last, HisWordID column</li>
 				<li>- The system sets the Dated column to the current system time. The Dated column the user may adjust, backdate, if it is late</li>
-				<li>- The user records the unbiased supporting columns, such as the Commentary, Contact, url, and Location. The commentary is the activity in the user's own words. Both the contact and url are single entities. The contact is the system allocated identifier. When there are multiple contacts, their names are determinable from the record as a whole</li>
+				<li>- The user records the unbiased supporting columns, such as the Commentary, Contact, url, and Location. The commentary is the activity in the user's own words. 
+				Both the contact and url are <span data-url="http://stackoverflow.com/questions/21358774/database-design-using-uml-class-diagram" data-Dated="2025-08-28T16:51:16"><time datetime="2025-08-28T16:51:16">2025-08-28T16:51:16</time> single-valued attributes.</span>
+				The contact is the system allocated identifier. When there are multiple contacts, their names are determinable from the record as a whole</li>
 				<li data-Dated="2025-08-28T07:35:00">- The user <time datetime="2025-08-28T07:35:00">2025-08-28T07:35:00</time> traces historical data</li>
 			</ol>
 
