@@ -4,6 +4,7 @@ REM 2023-11-05T19:30:00 http://www.ubackup.com/articles/xcopy-unable-to-create-d
 REM		How to Open the Command Prompt as Administrator in Windows 10 By Walter Glenn and Nick Lewis Updated Apr 11, 2023 
 REM	2025-05-09T13:32:00	http://superuser.com/questions/466682/why-use-start-over-call-when-using-batch-files
 REM	2025-05-17 Remove SQLServerDataFiles, SQLDataDefinitionLanguage, SQLDataManipulationLanguage, SQLExport
+REM	2025-09-07 g: drive.google.com 2025-06-21...
 :BeginAgain
 echo 1=BCP, 2=IISLog, 3=mssql-scripter, 4=Node.js, 5=Rust, 6=SQLServerBackup, 7=SQLServerDataDefinitionLanguageDDL, 8=SQLServerDataFiles, 9=SQLServerDataManipulationLanguageDML, 10=SQLServerExport, 11=WebAssembly, 12=WinScp, 13=WordEngineering, 14=WordOfGod, 15=WorkDone
 set /p id=Enter Choice: 
@@ -191,7 +192,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161819);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16572);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7704);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7795);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 166892);
