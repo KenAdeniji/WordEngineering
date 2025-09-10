@@ -1,5 +1,6 @@
 /*
 	http://www.wiley.com/en-us/C%2B%2B+All-in-One+For+Dummies%2C+4th+Edition-p-9781119601739
+	John@JohnMuellerBooks.com
 	C++ All-in-One For Dummies, 4th Edition
 	John Paul Mueller 
 	ISBN: 978-1-119-60173-9
@@ -12,6 +13,8 @@
 			std::strong_ordering::equal		=	0
 			std::strong_ordering::greater	=	1
 			Wandbox.org is 1 of the online compilers that fully implements this operator.
+	2025-09-10T13:23:00 I differed... from your numeric handling of the value of the result.
+        Spaceship operator, <=>, is the result type an enum?			
 */
 #include <iostream>
 #include <cstdlib>
