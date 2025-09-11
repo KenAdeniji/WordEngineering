@@ -299,5 +299,9 @@ git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEditio
 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_HelloWorld.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_Book01Chapter03HelloWorld.exe
 
 git rm InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_HelloWorld.obj
-
 git rm InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_HelloWorld.exe
+
+git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorld.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorldBook01Chapter03.obj
+git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorld.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorldBook01Chapter03.exe
+
+
