@@ -1,0 +1,1 @@
+cl /EHsc JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book02Chapter02Constants.cpp
