@@ -856,4 +856,11 @@ FROM            HisWord
 WHERE        (CONVERT(date, Dated) IN ('2021-04-16', '2021-09-01', '2018-11-28', '2025-09-02'))
 ORDER BY HisWordID DESC
 
+2025-09-11T20:18:00
+
+http://stackoverflow.com/questions/31798037/unable-to-download-mustache-js-file-from-cdn
+
+<script
+src="https://raw.githack.com/janl/mustache.js/master/mustache.min.js"></script>
+
 :Exit

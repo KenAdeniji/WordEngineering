@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-09-11T19:49:00	http://codemag.com/Article/2509031/Introduction-to-JavaScript-Templating
+		http://github.com/janl/mustache.js
+		http://stackoverflow.com/questions/31798037/unable-to-download-mustache-js-file-from-cdn
+			<script src="http://raw.githack.com/janl/mustache.js/master/mustache.min.js"></script>
+		2025-09-11T21:15:00	http://stackoverflow.com/questions/71244700/how-can-i-include-mustache-js
+		<script type="module">
+			import mustache from "http://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js";		
+		http://app.studyraid.com/en/read/12632/409929/installing-mustachejs
+	-->
+	<head>
+		<title>Template movie</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Template, movie"/>
+		<meta name="keywords" content="Template, movie"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+		</style>
+		<main>
+		  <table id="movieTable">
+			<thead>
+			  <tr>
+				<th>Movie Name</th>
+				<th>Actors</th>
+				<th>Genres</th>
+				<th class="pull-end">Rental Price</th>
+				<th>Run Time</th>
+				<th>Release Date</th>
+			  </tr>
+			</thead>
+			<tbody></tbody>
+		  </table>
+		</main>
+
+		<!-- Template to Build a Table -->
+		<template id="template" type="text/html">
+		  {{#movieList}}
+		  <tr>
+			<td>{{name}}</td>
+			<td>{{actors}}</td>
+			<td>{{genres}}</td>
+			<td class="pull-end">{{priceFormatted}}</td>
+			<td>{{runTime}}</td>
+			<td>{{releaseDate}}</td>
+		  </tr>
+		  {{/movieList}}
+
+		  {{^movieList}}
+		  <tr>
+			<td colspan="6">** No Movies Available **</td>
+		  </tr>
+		  {{/movieList}}
+		</template>
+
+<!--
+		<script src="https://raw.githack.com/janl/mustache.js/master/mustache.min.js"></script>
+		<script src="https://raw.githack.com/janl/mustache.js/master/mustache.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"></script>
+-->
+		<script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+
+		<script>
+			'use strict';
+
+function getValue(id) {
+    return document.getElementById(id).value;
+}
+
+function getElement(id) {
+    return document.getElementById(id);
+}
+
+function formatCurrency(value) {
+    return new Number(value).toLocaleString("en-US", 
+      { "style": "currency", "currency": "USD" });
+}
+
+		  window.onload = function() {
+
+			  // Create instance of class
+			  let entity = new Movies();
+
+			  // Load all movies into the movieList property
+			  entity.getAll();
+
+			  // Create a view model
+			  let vm = {
+				  //"movieList": null,
+				  "movieList": entity.movieList,
+
+				  "priceFormatted": function() {
+					  return formatCurrency(this.price);
+				  },
+
+				  "runTime": function() {
+					  let value = new Number(this.runTimeInMinutes);
+					  let hours = Math.floor(value / 60);
+					  let minutes = value % 60;
+					  return `${hours} hours and ${minutes} minutes`;
+				  }
+			  };
+
+			  // Read template with Mustache tokens
+			  let tmpl = getElement("template").innerHTML;
+
+			  // Use Mustache to render the HTML
+			  let html = Mustache.render(tmpl, vm);
+
+			  // Add the rendered HTML into the table
+			  getElement("movieTable").getElementsByTagName(
+				"tbody")[0].innerHTML = html;
+		  };
+		  
+		//2025-09-11T20:40:00 Create a closure that provides a list of movie data.
+
+		class Movies {
+			// Private fields
+			#list = [];
+
+			// Public properties
+			get movieList() {
+				return this.#list;
+			}
+
+			// Public Methods
+			getAll() {
+				this.#list = [
+					{
+						"filmId": 1,
+						"name": "2012",
+						"genres": "Action,Adventure,Sci-Fi",
+						"actors": "John Cusack,Amanda Peet",
+						"runTimeInMinutes": 158,
+						"rating": "PG-13",
+						"price": 3.95,
+						"releaseDate": "2009-11-13"
+					},
+					{
+						"filmId": 2,
+						"name": "9 to 5",
+						"genres": "Comedy",
+						"actors": "Jane Fonda,Lily Tomlin,Dolly Parton",
+						"runTimeInMinutes": 109,
+						"rating": "PG",
+						"price": 2.95,
+						"releaseDate": "1980-12-19"
+					},
+					{
+						"filmId": 5,
+						"name": "African Queen, The",
+						"genres": "Adventure,Drama,Romance",
+						"actors": "Humphrey Bogart,Katharine Hepburn",
+						"runTimeInMinutes": 105,
+						"rating": "G",
+						"price": 3.95,
+						"releaseDate": "1952-02-20"
+					},
+					{
+						"filmId": 6,
+						"name": "Alien",
+						"genres": "Horror,Sci-Fi",
+						"actors": "Sigourney Weaver",
+						"runTimeInMinutes": 117,
+						"rating": "R",
+						"price": 3.95,
+						"releaseDate": "1979-05-25"
+					}
+				];
+			}
+		}
+	</script>
+</body>
+</html>
