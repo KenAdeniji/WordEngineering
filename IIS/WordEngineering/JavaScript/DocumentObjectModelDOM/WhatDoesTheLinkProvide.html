@@ -75,7 +75,9 @@ export function isInternalLink(urlString: string): boolean | {
 			</table>
 			<iframe id="frameInfo"></iframe>
 			<br/>	
-			<div id="resultSet"></div>
+			<div id="resultSet">
+				<div id="resultSetElementTypeStatistics"></div>
+			</div>
 		</div>
 		<script>
 			var isPostBack = false;
@@ -89,6 +91,8 @@ export function isInternalLink(urlString: string): boolean | {
 
 			const	frameInfoElement = document.getElementById("frameInfo");
 			const 	resultSetElement = document.getElementById("resultSet");
+			
+			const 	resultSetElementTypeStatisticsElement = document.getElementById("resultSetElementTypeStatistics");
 			
 			function pageLoad()
 			{
@@ -157,19 +161,24 @@ export function isInternalLink(urlString: string): boolean | {
 								sourceContentElement.value = text;
 								frameInfoElement.srcdoc = text;
 								var	frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
-								var elementTypeCount;
-								var elementsTypesStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
-								for (const elementType of SelectorElementTypes)
-								{
-									elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
-									elementsTypesStatistics += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
-								}
-								elementsTypesStatistics += "</tbody></table>"
-								resultSetElement.innerHTML = elementsTypesStatistics;
+								queryElementTypeStatistics(frameHTMLDocument);
 							}
 						);
 					};
 				});
+			}
+			
+			function queryElementTypeStatistics(frameHTMLDocument)
+			{
+				var elementTypeCount;
+				var elementTypeStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
+				for (const elementType of SelectorElementTypes)
+				{
+					elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
+					elementTypeStatistic += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
+				}
+				elementTypeStatistics += "</tbody></table>"
+				resultSetElementTypeStatisticsElement.innerHTML = elementsTypesStatistics;
 			}
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
