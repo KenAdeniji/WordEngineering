@@ -300,3 +300,4 @@ rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForD
 
 git add	IIS/WordEngineering/WordCross/2025-09-11T2027JanLehnardt_-_Template_mustache.js_Movie.html
 
+git add	IIS/WordEngineering/WordCross/2025-09-12T1121IvanBozhanov_-_vakata_PlovdivBulgaria_jstree_AbrahamGenealogy.html
