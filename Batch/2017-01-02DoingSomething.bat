@@ -863,4 +863,11 @@ http://stackoverflow.com/questions/31798037/unable-to-download-mustache-js-file-
 <script
 src="https://raw.githack.com/janl/mustache.js/master/mustache.min.js"></script>
 
+http://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src
+Sadly the proposed solution does not work since the returned value does not match the image actual size.
+Assuming you are using a URL you can do the following:
+const fileImg = await fetch(URL_TO_IMG).then(r => r.blob());
+This will get the resource through HTTP and then returns the full binary as a blob object, then you can access its properties including its size in bytes as:
+fileImg.size
+
 :Exit
