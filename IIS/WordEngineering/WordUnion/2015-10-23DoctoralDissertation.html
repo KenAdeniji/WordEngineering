@@ -5949,60 +5949,79 @@ GO
 				</li>
 			</ul>
 
-			<h3 id="WhatIsTheImmediacyOfGodsFuture" data-Dated="2025-09-03T21:12:00" data-ContactID="16592">
-				<time datetime="2025-09-03T21:12:00">2025-09-03T21:12:00</time>
-				<a 
-					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20the%20immediacy%20of%20God%27s%20future%3F"
-					data-Dated="2025-09-03T21:12:00"
-				>
-					What is the immediacy of God's future?
-				</a>
-			</h3>
-		
-			<p data-Dated="2025-09-03T21:27:00" data-ContactID="16592">
-				<time datetime="2025-09-03T21:27:00">2025-09-03T21:27:00</time>
-				What does God bring to pass as Him alone?
-				Begotten Son, creation, covenant, passover, commandment.
-			</p>
+			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" data-Dated="2025-01-25T10:26:00">Validation? Chronologically?</h3>
+			
+			<ul data-Dated="2025-01-25T10:26:00">
+				<li data-Dated="2025-01-23 11:23:11.163">
+					2025-01-23 11:23:11.163 Compare the identity column and date column order, and highlight when the date column is out of sequence?
+<pre data-Dated="2025-01-25T10:26:00">
+SELECT HisWordID, Dated, Word
+FROM WordEngineering..HisWord HisWordLead
+WHERE Dated &gt;
+(
+	SELECT TOP 1 Dated
+	FROM WordEngineering..HisWord HisWordLag
+	WHERE HisWordLead.HisWordID &lt; HisWordLag.HisWordID
+	ORDER BY HisWordLead.HisWordID 
+)
+ORDER BY HisWordID DESC
+</pre>
+<pre data-Dated="2025-09-13T19:06:00">
+HisWordID   Dated                   Word
+----------- ----------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+167264      2025-09-08 09:31:00.000 What did He provide, and what did He require?
+166553      2025-06-23 11:24:00.000 This is a man... that is working on a database... that got lost.
+166268      2025-05-21 23:34:00.000 NULL
+166229      2025-05-16 17:08:00.000 Creating a life... is specializing as one.
+166228      2025-05-16 23:56:06.510 When did you... current the book?
+166210      2025-05-16 22:36:03.157 You must choose where you are among... to choose who you are among?
 
-			<ol data-Dated="2025-09-03T21:38:00" data-ContactID="16592">
-				<time datetime="2025-09-03T21:38:00">2025-09-03T21:38:00</time>
-				<li>Declare the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2040:4">Ezekiel 40:4</a>)</li>
-				<li>Understand the matter, and consider the vision (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23">Daniel 9:23</a>)</li>
-				<li><time datetime="2025-09-03T21:41:00">2025-09-03T21:41:00</time> Preach the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Timothy%204:2">2 Timothy 4:2</a>)</li>
-			</ol>
+(6 rows affected)
 
-			<p data-Dated="2025-09-04T05:58:00" data-ContactID="16592">
-				<time datetime="2025-09-04T05:58:00">2025-09-04T05:58:00</time>
-				Teaching from? The Bible, education, experience, volition, Holy Spirit.
-			</p>
 
-			<p data-Dated="2025-09-04T07:05:00" data-ContactID="16595" data-url="en.wikipedia.org/wiki/M._R._DeHaan">
-				<a href="http://en.wikipedia.org/wiki/M._R._DeHaan">Martin Ralph DeHaan</a>, the co-editor of Our Daily Bread. 
-				<time datetime="2025-09-04T07:05:00">2025-09-04T07:05:00</time>
-				When walking to 99 Ranch Market, I used to pray for a word.
-				But now... <time datetime="2025-09-04T07:10:00">2025-09-04T07:10:00</time>
-				<a 
-					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20act%20on%20the%20word."
-					data-Dated="2025-09-04T07:10:00"
-					data-ContactID="16595"
-					data-HisWordID="167230"
-					data-url="en.wikipedia.org/wiki/M._R._DeHaan"
-				>
-					I act on the word.
-				</a>
-				<time datetime="2025-09-04T07:39:00">2025-09-04T07:39:00</time>
-				<a 
-					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Finding%20the%20latest%20version...%20of%20a%20document%3F"
-					data-Dated="2025-09-04T07:39:00"
-					data-ContactID="9627"
-					data-HisWordID="167231"
-					data-url="http://www.vogue.com/article/giorgio-armani-the-italian-designer-who-changed-the-shape-of-fashion-has-died?utm_source=firefox-newtab-en-us"
-				>
-					Finding the latest version... of a document?
-				</a>
-				Nearest for bandwidth, most especially video? Most visited, popularity ranking?
-			</p>
+Completion time: 2025-09-13T19:29:39.0388615-07:00
+</pre>
+<pre data-Dated="2025-09-13T19:06:00">
+SELECT      HisWordID, Dated, Word
+FROM        WordEngineering..HisWord
+WHERE       (1 <> 1)
+OR          (HisWordID BETWEEN 167263 AND 167265)
+OR          (HisWordID BETWEEN 166552 AND 166554)
+OR          (HisWordID BETWEEN 166267 AND 166270)
+OR          (HisWordID BETWEEN 166209 AND 166211)
+OR          (HisWordID BETWEEN 166552 AND 166554)
+ORDER BY HisWordID DESC
+</pre>
+<pre data-Dated="2025-09-13T19:06:00">
+HisWordID   Dated                   Word
+----------- ----------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+167265      2025-09-08 04:25:00.000 NULL
+167264      2025-09-08 09:31:00.000 What did He provide, and what did He require?
+167263      2025-09-08 01:53:00.000 Check Nelly's decision.
+166554      2025-06-23 00:35:00.000 A family was sitting curved in an east arc. Somebody was at the south-center door. A daughter moved, taking position to a seat in the south-center.
+166553      2025-06-23 11:24:00.000 This is a man... that is working on a database... that got lost.
+166552      2025-06-22 23:59:00.000 NULL
+166270      2025-05-21 01:37:00.000 For short durations... the final size is small.
+166269      2025-05-21 00:32:00.000 NULL
+166268      2025-05-21 23:34:00.000 NULL
+166267      2025-05-20 23:05:00.000 NULL
+166211      2025-05-16 11:58:00.000 How obvious... is the time apart?
+166210      2025-05-16 22:36:03.157 You must choose where you are among... to choose who you are among?
+166209      2025-05-16 22:35:24.740 To choose a certain representative of man?
+
+(13 rows affected)
+
+
+Completion time: 2025-09-13T19:40:18.5255439-07:00
+</pre>
+				</li>
+				<li data-Dated="2025-01-25T10:26:00">
+					2025-01-25T10:26:00 Mighty men of David? Arranged according to accomplishment? Men killed
+					(
+						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023">2 Samuel 23</a>
+					)?
+				</li>
+			</ul>
 
 			<h3 id="WhatDoYouSearchBy">
 				<time datetime="2025-09-08T13:03:00">2025-09-08T13:03:00</time>
@@ -6076,7 +6095,62 @@ GO
 					</tr>
 				</tbody>
 			</table>
-			
+
+			<h3 id="WhatIsTheImmediacyOfGodsFuture" data-Dated="2025-09-03T21:12:00" data-ContactID="16592">
+				<time datetime="2025-09-03T21:12:00">2025-09-03T21:12:00</time>
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20is%20the%20immediacy%20of%20God%27s%20future%3F"
+					data-Dated="2025-09-03T21:12:00"
+				>
+					What is the immediacy of God's future?
+				</a>
+			</h3>
+		
+			<p data-Dated="2025-09-03T21:27:00" data-ContactID="16592">
+				<time datetime="2025-09-03T21:27:00">2025-09-03T21:27:00</time>
+				What does God bring to pass as Him alone?
+				Begotten Son, creation, covenant, passover, commandment.
+			</p>
+
+			<ol data-Dated="2025-09-03T21:38:00" data-ContactID="16592">
+				<time datetime="2025-09-03T21:38:00">2025-09-03T21:38:00</time>
+				<li>Declare the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2040:4">Ezekiel 40:4</a>)</li>
+				<li>Understand the matter, and consider the vision (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23">Daniel 9:23</a>)</li>
+				<li><time datetime="2025-09-03T21:41:00">2025-09-03T21:41:00</time> Preach the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Timothy%204:2">2 Timothy 4:2</a>)</li>
+			</ol>
+
+			<p data-Dated="2025-09-04T05:58:00" data-ContactID="16592">
+				<time datetime="2025-09-04T05:58:00">2025-09-04T05:58:00</time>
+				Teaching from? The Bible, education, experience, volition, Holy Spirit.
+			</p>
+
+			<p data-Dated="2025-09-04T07:05:00" data-ContactID="16595" data-url="en.wikipedia.org/wiki/M._R._DeHaan">
+				<a href="http://en.wikipedia.org/wiki/M._R._DeHaan">Martin Ralph DeHaan</a>, the co-editor of Our Daily Bread. 
+				<time datetime="2025-09-04T07:05:00">2025-09-04T07:05:00</time>
+				When walking to 99 Ranch Market, I used to pray for a word.
+				But now... <time datetime="2025-09-04T07:10:00">2025-09-04T07:10:00</time>
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=I%20act%20on%20the%20word."
+					data-Dated="2025-09-04T07:10:00"
+					data-ContactID="16595"
+					data-HisWordID="167230"
+					data-url="en.wikipedia.org/wiki/M._R._DeHaan"
+				>
+					I act on the word.
+				</a>
+				<time datetime="2025-09-04T07:39:00">2025-09-04T07:39:00</time>
+				<a 
+					href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Finding%20the%20latest%20version...%20of%20a%20document%3F"
+					data-Dated="2025-09-04T07:39:00"
+					data-ContactID="9627"
+					data-HisWordID="167231"
+					data-url="http://www.vogue.com/article/giorgio-armani-the-italian-designer-who-changed-the-shape-of-fashion-has-died?utm_source=firefox-newtab-en-us"
+				>
+					Finding the latest version... of a document?
+				</a>
+				Nearest for bandwidth, most especially video? Most visited, popularity ranking?
+			</p>
+
 			<h3 id="WhatPartnershipDidHeShare">
 				<time datetime="2025-08-21T21:01:00">2025-08-21T21:01:00</time>
 				<a 
@@ -7034,31 +7108,6 @@ Romain Thibaux said always taking your note.
 			</p>
 		
 			</blockquote> (Juval Löwy of IDesign, 2019).
-
-			<h3 id="ValidationChronologically" data-url="BrendaO@sfzoo.org" data-Dated="2025-01-25T10:26:00">Validation? Chronologically?</h3>
-			
-			<ul data-Dated="2025-01-25T10:26:00">
-				<li data-Dated="2025-01-23 11:23:11.163">
-					2025-01-23 11:23:11.163 Compare the identity column and date column order, and highlight when the date column is out of sequence?
-<pre data-Dated="2025-01-25T10:26:00">
-SELECT * FROM WordEngineering..HisWord HisWordLead
-WHERE Dated &gt;
-(
-	SELECT TOP 1 Dated
-	FROM WordEngineering..HisWord HisWordLag
-	WHERE HisWordLead.HisWordID &lt; HisWordLag.HisWordID
-	ORDER BY HisWordLead.HisWordID 
-)
-ORDER BY HisWordID DESC
-</pre>					
-				</li>
-				<li data-Dated="2025-01-25T10:26:00">
-					2025-01-25T10:26:00 Mighty men of David? Arranged according to accomplishment? Men killed
-					(
-						<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Samuel%2023">2 Samuel 23</a>
-					)?
-				</li>
-			</ul>
 
 			<h3 id="WhatDidHeSeeAsOnTheirSide" data-Dated="2025-04-24T11:20:00">
 				2025-04-24T11:20:00
