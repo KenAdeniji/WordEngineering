@@ -870,4 +870,18 @@ const fileImg = await fetch(URL_TO_IMG).then(r => r.blob());
 This will get the resource through HTTP and then returns the full binary as a blob object, then you can access its properties including its size in bytes as:
 fileImg.size
 
+2025-09-13T22:20:00 33
+	There were 2 digits 3, spread out.
+	http://en.wikipedia.org/wiki/West_Memphis_Three
+	The West Memphis Three are three freed men convicted as teenagers of the 1993 murders of three boys in West Memphis, Arkansas, United States.
+	Damien Echols was sentenced to death, Jessie Misskelley Jr. to life imprisonment plus two 20-year sentences, and Jason Baldwin to life imprisonment.
+	During the trial, the prosecution asserted that the juveniles killed the children as part of a Satanic ritual.
+
+2025-09-13T23:46:00	Give... you... your car.
+
+2025-09-13T23:46:00 Image of the beast.
+2025-09-13T23:46:00 Spirit of the antichrist.
+2025-09-13T23:46:00 A more excellent sacrifice.
+2025-09-14T00:14:00 Jesus answered them, Have not I chosen you twelve, and one of you is a devil (John 6:70)?
+
 :Exit
