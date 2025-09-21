@@ -168,7 +168,7 @@ BACKUP DATABASE Msdb TO DISK = 'd:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WIT
 BACKUP DATABASE AManDevelopedInAll TO DISK = 'd:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
 
 :DbccCheckIdent
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 24539);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 34323);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..EmailAddress', RESEED, 22139);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 24539);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..StreetAddress', RESEED, 21982);
@@ -186,13 +186,13 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71726);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2313);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2512);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9179);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161819);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 16572);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7838);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7852);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 166892);
@@ -883,5 +883,8 @@ fileImg.size
 2025-09-13T23:46:00 Spirit of the antichrist.
 2025-09-13T23:46:00 A more excellent sacrifice.
 2025-09-14T00:14:00 Jesus answered them, Have not I chosen you twelve, and one of you is a devil (John 6:70)?
+
+16 October 1978
+https://www.usatoday.com/story/sports/nfl/2025/09/16/dan-marino-liver-disease-diagnosis-people-magazine/86177256007/?utm_source=firefox-newtab-en-us
 
 :Exit
