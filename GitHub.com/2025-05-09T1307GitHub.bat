@@ -309,3 +309,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-13T0931...2025-09-1
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-13T1730Revelation17v17SpamMail_-_ImageOfTheBeast_-_SpiritOfTheAntichrist_-_Microsoft_-_KenAdeniji@hotmail.com_-_AARP@flotations.site_-_memberperks@unssick.com.txt
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T0850KennethD.Green_-_kgreen@actransit.org_-_Route281BusDriverDidNotPassengerBoard2025-09-22T1401.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T1250HowOurParticipatory...AreKnown_-_2025-09-22T1328WithOscar...WhoIsHeWritingFor_WhatIsHisPurpose_Psalms90v10.txt
