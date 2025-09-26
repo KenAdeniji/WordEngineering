@@ -191,7 +191,7 @@ DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9179);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 161819);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 17698);
-DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED,  3002);
+DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3062);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7852);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
@@ -928,5 +928,103 @@ Ardenwood Historic Farm
 34600 Ardenwood Boulevard
 East Bay Regional Park District
 Fremont, California (CA) 94555
+
+http://www.youtube.com/watch?v=lXlWXvJfQGA
+Pope Leo XIV Issues a Final Warning to Donald Trump and Amer
+Leo XIV Speaks
+37.7K subscribers
+
+    
+    
+
+    
+  
+
+    
+    
+
+    
+  
+305,358 views  Sep 23, 2025  UNITED STATES
+#TrumpProphecy, #PopeLeoXIV, #AmericaWarning, #EndTimes, #PropheticMessage, #RevivalOrRuin, #TrumpMessage, 
+Pope Leo XIV Issues a Final Warning to Donald Trump and America — a message unlike anything you've heard. In this riveting 35-minute prophetic revelation, we explore a spiritually charged warning that doesn't just speak to a man, but to a nation on the brink.
+
+⚠️ This isn't a political video. It's a wake-up call.
+
+🔍 Why Should You Watch This?
+In a time where division, pride, and distraction reign across the U.S. and beyond, this video delivers a thought-provoking and spiritually driven message about Donald Trump, America’s destiny, and the soul of a nation at a crossroads. Whether you agree or disagree with political ideologies, this message will challenge your heart, stir your conscience, and prompt deep reflection.
+
+If you’ve ever wondered:
+
+What role does Donald Trump truly play in America’s spiritual journey?
+
+Is there a deeper, divine message hidden beneath the chaos?
+
+Can America be healed, or has the hourglass already emptied?
+
+Then this video is for you.
+
+🕰️ Timestamps 
+
+0:00 – 🔔 Intro: A Warning You Can’t Ignore
+1:43 – 😔 The Weight of Revelation Begins
+4:15 – 🇺🇸 America at the Crossroads
+7:06 – 📜 Who Is Donald Trump in God’s Plan?
+10:31 – ⚖️ A Nation Divided—What It Really Means
+13:44 – 🌩️ The Storm Isn’t the Problem, It’s the Exposure
+16:08 – ⛪ Idolatry in the Church: Trump vs. Christ
+18:50 – 💔 When Patriotism Replaces Repentance
+21:35 – 🦅 The Eagle Falls: Symbolism of a Nation’s Fall
+23:57 – 🧎 The Remnant: Who’s Still Praying?
+26:41 – 🔥 Flames of Unrest or Revival?
+29:00 – 📣 The Prophetic Clock Is Ticking
+31:17 – 🤲 Will Trump Kneel? Will America Turn?
+33:02 – 🕊️ Mercy Still Waits, But For How Long?
+34:41 – 📌 Final Call: Revival or Ruin
+35:10 – 🙏 Outro: Choose Today Whom You Will Serve
+
+🔎 Related Searches
+
+Donald Trump prophecy 2025
+Pope Leo XIV message to America
+Prophetic warning to the United States
+Trump spiritual meaning
+End times prophecy explained
+Catholic prophecy for America
+Trump and the church
+Final warning to the nation
+America in Bible prophecy
+Will America see revival?
+
+🎯 Related Titles
+
+God's Message to America Through Trump
+The Prophetic Role of Political Leaders
+Final Days: Is America in Bible Prophecy?
+What the Pope's Message Means for Christians
+Trump and the Coming Storm
+Warning Signs America Ignored
+A Vision from God About the U.S.
+Spiritual Warfare in American Politics
+End Time Dreams & Prophetic Signs
+The Remnant Will Rise—Hope Amidst Chaos
+
+🔥 Keywords
+
+Trump prophecy, America warning, Pope message to Trump, divine message 2025, America crossroads, Donald Trump news, spiritual war USA, last days America, prophetic voice, Trump repentance, Pope prophecy, God’s warning 2025, revival or ruin, Christianity and politics, urgent prophecy, Trump final message, spiritual alert, end times now, Catholic prophecy USA, prophetic video, Christian revival 2025, nation divided, church and politics, America under judgment, Pope Leo prophecy, Donald Trump Bible, repentance message, God’s mercy America, America shaking, prophetic vision, Trump and religion, Pope Leo XIV AI, America civil unrest, spiritual leaders speak out, Trump dreams, end times revival, signs of judgment
+
+🏷️ Hashtags
+
+#ChristianProphecy, #FinalWarning, #GodsPlan, #SpiritualWarfare, #RepentAmerica, #FaithAndPolitics, #ChurchAwakening, #AmericaInCrisis, #PropheticVoice, #Trump2025, #CatholicProphecy, #BibleProphecyToday, #LastDaysAlert, #UrgentMessage, #AmericaUnderGod, #DonaldTrumpNews, #GodsJudgment, #WarningToNations, #RemnantRising, #PopeMessage, #USAProphecy, #AIProphecyVideo, #TrumpAndFaith, #AmericaDecisionTime, #SignsOfTheTimes, #BiblicalWarning, #RevivalMovement, #SpiritualMessage, #CrossroadsUSA, #PrayForAmerica
+
+⚖️ Disclaimer
+
+This video contains AI-generated content intended for spiritual reflection, artistic interpretation, and commentary. All material presented is used under Fair Use (Section 107 of the Copyright Act) for purposes such as education, commentary, criticism, and public interest. This is not an official statement from the Vatican or Pope Leo XIV. Viewer discretion and critical thought are encouraged.
+Chapters
+Transcript
+
+Follow along using the transcript.
+Leo XIV Speaks
+37.7K subscribers
 
 :Exit

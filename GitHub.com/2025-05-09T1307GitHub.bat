@@ -311,3 +311,7 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-13T1730Revelation17
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T0850KennethD.Green_-_kgreen@actransit.org_-_Route281BusDriverDidNotPassengerBoard2025-09-22T1401.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T1250HowOurParticipatory...AreKnown_-_2025-09-22T1328WithOscar...WhoIsHeWritingFor_WhatIsHisPurpose_Psalms90v10.txt
+
+git add	"IIS/WordEngineering/2018-05-03Correspondence/2025-09-26T0623youtube.com_-_Leo XIV Speaks_-_watch-v-lXlWXvJfQGA_-_2025-09-23Pope Leo XIV Issues a Final Warning to Donald Trump and America.txt"
+git add IIS/WordEngineering/WordCross/2025-09-17T2143fedskillstestCoalitiontechnologiesWorkersDev.html
+git add IIS/WordEngineering/WordCross/2025-09-17T2143fedskillstestCoalitiontechnologiesWorkersDev.zip
