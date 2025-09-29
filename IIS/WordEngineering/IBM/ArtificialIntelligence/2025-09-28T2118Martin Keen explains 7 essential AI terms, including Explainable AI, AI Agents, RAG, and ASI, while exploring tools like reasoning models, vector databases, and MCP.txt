@@ -1,0 +1,48 @@
+http://www.youtube.com/watch?v=VSFuqMh4hus
+7 AI Terms You Need to Know: Agents, RAG, ASI & More
+IBM Technology
+
+1.37M subscribers
+
+AI is everywhere—and evolving fast! Martin Keen explains 7 essential AI terms, including Explainable AI, AI Agents, RAG, and ASI, while exploring tools like reasoning models, vector databases, and MCP. Discover how these innovations are shaping smarter, scalable AI systems for the future. 
+
+1.	Agentic Artificial Intelligence
+	They run autonomously.
+	Stage 1: Perceive. They perceive their environment.
+	Stage 2: Reason. The look to see what the next steps forward are?
+	Stage 3: Act. 
+	Stage 4: Observe.
+	For example:
+		Travel agent to book a trip.
+		Data analyst to spot trends in corporate report.
+		DevOps engineer to detect anomalies in logs. To test fixes and rolling back faulty deployments.
+			
+2.	Reasoning Model
+	Large reasoning models.
+		Specialized large language models (LLMs) that have undergone reasoning focused fine-tuning.
+		They are trained to work through models, step-by-step.
+		Generating an internal chain of thought to break down a problem step by step before generating a response.
+
+3.	Vector database
+	We don't store raw data like text files, nor images just as blobs of data.
+	We use an embedding model to convert images into a vector which is a long list of numbers that captures the semantic meaning of the context.
+	In a vector database we can perform searches as mathematical operations that look for vector embeddings that are close to each other.
+		And that translates to finding semantically similar content.
+		Let's say a picture of a mountain vista. Something like this.
+			And then that picture is broken down by the embedding model into vectors a multidimensional numeric vector.
+			And we can perform a similarity search.
+
+4.	Rag (Retrieval Augmented Generation)
+		Now, RAG makes use of these vector databases.
+		And, it uses it to enrich prompts to large language models (LLMs).
+		We start with a RAG retriever component which takes in an input prompt from a user, and it turns it into a vector.
+		Perform a similarity search.
+
+5.	Model Context Protocol or MCP
+		For large language models (LLMs) to be useful they need to interact with external data sources and services and tools.
+		MCP standardizes how applications provide context to large language models (LLMs).
+
+6.	Mixture of Expert (MOE) since 1991
+
+7.	Artificial Super Intelligence (ASI)
+		Artificial General Intelligence (AGI)
