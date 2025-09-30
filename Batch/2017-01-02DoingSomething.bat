@@ -1027,4 +1027,35 @@ Follow along using the transcript.
 Leo XIV Speaks
 37.7K subscribers
 
+2025-09-29T16:24:00 http://learn.microsoft.com/en-us/sql/t-sql/data-types/vector-data-type?view=sql-server-ver17&tabs=csharp
+2025-09-29T16:37:00	http://www.dbvis.com/thetable/sql-server-vector-data-type-search-and-indexing
+2025-09-29T16:56:00	http://www.mssqltips.com/sqlservertip/8299/vector-search-in-sql-server/
+
+DECLARE      @Products
+    TABLE   (ProductId int
+            ,ProductName nvarchar(120)
+            ,Embedding vector(3));
+ 
+-- Embeddings values for: shirt-ness, color aspect, and casual wear
+INSERT INTO  @Products
+    VALUES   (101,'Blue T-Shirt',        '[0.10, 0.50, 0.90]')
+            ,(102,'Red T-Shirt',         '[0.20, 0.40, 0.80]')
+            ,(103,'Green Polo Shirt',    '[0.30, 0.60, 0.70]')
+            ,(104,'Blue Jeans',          '[0.80, 0.10, 0.20]')
+            ,(105,'Denim Jacket',        '[0.70, 0.20, 0.30]')
+            ,(106,'Striped Blue T-Shirt','[0.15, 0.55, 0.92]');
+ 
+DECLARE @queryProductEmbedding VECTOR(3);
+ 
+--- Comparing which ones are similar to the Blue T-Shirt (101) =========
+SELECT       @queryProductEmbedding = Embedding
+    FROM     @Products
+    WHERE    ProductId = 101;
+ 
+SELECT TOP 3 p.ProductId
+            ,p.ProductName
+            ,VECTOR_DISTANCE('cosine', @queryProductEmbedding, p.Embedding) AS CosineSimilarityDistance
+    FROM     @Products AS p
+    WHERE    p.ProductId <> 101 
+    ORDER BY CosineSimilarityDistance ASC;
 :Exit

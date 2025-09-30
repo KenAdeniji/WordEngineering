@@ -319,3 +319,5 @@ git add IIS/WordEngineering/WordCross/2025-09-17T2143fedskillstestCoalitiontechn
 git add	IIS/WordEngineering/IBM/ArtificialIntelligence/
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-29T0107DavidZvi.com_-_work-with-me_-_DZKalman@gmail.com_-_AnybodyThatKnowMyWork...KnowThatIAmNotFullyInUse.txt
+
+git add	IIS/WordEngineering/ConversionTable/usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer.sql
