@@ -62,8 +62,8 @@ BEGIN
  
     SELECT TOP 10 
         CelsuisTemperature,
-        Embedding,
-        VECTOR_DISTANCE('COSINE', @TemperatureEmbedding, Embedding) AS CosineSimilarityDistance
+        --Embedding,
+        VECTOR_DISTANCE('COSINE', @TemperatureEmbedding, Embedding) CosineSimilarityDistance
     FROM    
         @TemperatureConversion
     --WHERE CelsuisTemperature <> @celsuisTemperature
