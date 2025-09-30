@@ -26,6 +26,7 @@ BEGIN
 /*
     http://www.mssqltips.com/sqlservertip/8299/vector-search-in-sql-server/
     2025-09-29T17:50:00 Se o le lo... vector as a computed column?
+                        Can it use... vector as a computed column?
     EXEC usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer 50
 */
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -62,7 +63,7 @@ BEGIN
  
     SELECT TOP 10 
         CelsuisTemperature,
-        --Embedding,
+        Embedding,
         VECTOR_DISTANCE('COSINE', @TemperatureEmbedding, Embedding) CosineSimilarityDistance
     FROM    
         @TemperatureConversion
