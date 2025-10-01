@@ -3250,6 +3250,17 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 
 (Tim Wildsmith, 2024).
 
+> ### urlPerformance {#urlPerformance dated="2025-09-30T21:05:00"}
+>
+> 1.  [[webpagetest.org](http://webpagetest.org) In the head element,
+>     the Cascading Style Sheets (CSS) were the only initial blocker to
+>     page requests, and there were no synchronous scripts. In the
+>     footer element, the document was last modified and copyright
+>     elements were the only client-side
+>     generations.]{#urlPerformanceWebpagetest}
+
+(Steve Souders, 2016-02-10).
+
 ### 2025-09-04 [MomentOfLift.com/the-worlds-i-see](http://MomentOfLift.com/the-worlds-i-see){dated="2025-09-05T07:23:00" hiswordid="167244" contactid="69" url="MomentOfLift.com/the-worlds-i-see"} Microsoft ASP.NET User Controls 2025-09-05T07:23:00 [He is not asking you\... if you want to do it\... by yourself.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=He%20is%20not%20asking%20you...%20if%20you%20want%20to%20do%20it...%20by%20yourself.){dated="2025-09-05T07:23:00" hiswordid="167244" contactid="69" url="MomentOfLift.com/the-worlds-i-see"} {#HeIsNotAskingYouIfYouWantToDoItByYourself}
 
 1.  During the 1st year of secondary school, my twin sibling and I were
@@ -10384,75 +10395,78 @@ WordEngineering
     <http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1>]{#bibliographyDeLeanTolbertSmith2022}
 99. [Jonathan Snook W3C web page; Available from
     <http://www.smacss.com>]{#bibliographyJonathanSnook}
-100. [Stoyan Stefanov W3C web page; Available from
+100. [Critical Metric: Critical Resources Steve Souders
+     (2016-02-10T19:37:00) W3C web page; Available from
+     <http://www.stevesouders.com/blog/2016/02/10/critical-metric-critical-resources>]{#bibliographySteveSouders20160210T193700}
+101. [Stoyan Stefanov W3C web page; Available from
      <http://www.BookOfSpeed.com>]{#bibliographyStoyanStefanov}
-101. [Bjarne Stroustrup W3C web page; Available from
+102. [Bjarne Stroustrup W3C web page; Available from
      <http://www.stroustrup.com>]{#bibliographyBjarneStroustrup}
-102. [The Coming Wave Technology, Power, and the Twenty-first Century\'s
+103. [The Coming Wave Technology, Power, and the Twenty-first Century\'s
      Greatest Dilemma Mustafa Suleyman, Michael Bhaskar (2023-09-05) W3C
      web page; Available from
      <http://www.the-coming-wave.com>]{#bibliographyMustafaSuleyman_MichaelBhaskar20230905}
-103. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019);
+104. [SQL All-In-One for dummies, 3rd Edition Allen G. Taylor (2019);
      W3C web page; Available from
      <http://google.com/books/edition/SQL_All_in_One_For_Dummies/0wGQDwAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2019}
-104. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
+105. [SQL All-In-One for dummies, 4th Edition Allen G. Taylor with
      Richard Blum (2024-03-26); W3C web page; Available from
      <http://google.com/books/edition/SQL_All_in_One_For_Dummies/y3_9EAAAQBAJ?hl=en>]{#bibliographyAllenGTaylor2024}
-105. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
+106. [Research Proposal Guidelines (2021-07-01) Dennis Yi Tenen; W3C web
      page; Available from
      <http://www.DennisTenen.com/think.stack/research-proposal-guide>]{#bibliographyDennisTenen20210701}
-106. [The Twelve-Factor App W3C web page; Available from
+107. [The Twelve-Factor App W3C web page; Available from
      <http://www.12factor.net>]{#bibliographyTheTwelve-FactorApp}
-107. [Data Observability: Is It Data Quality Monitoring or More? Petr
+108. [Data Observability: Is It Data Quality Monitoring or More? Petr
      Travkin, Senior Manager, Data Analytics Consulting, at EPAM
      Systems, Inc. (2023-02-27) W3C web page; Available from
      <http://www.dbta.com/Editorial/Think-About-It/data-Observability-Is-It-data-Quality-Monitoring-or-More-157257.aspx>]{#bibliographyPetrTravkin2023-02-27}
-108. [Software Engineering: A Modern Approach Marco Tulio Valente; W3C
+109. [Software Engineering: A Modern Approach Marco Tulio Valente; W3C
      web page; Available from
      <http://SoftEngBook.org>]{#bibliographyMarcoTulioValente}
-109. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
+110. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
      (2022-08-02); W3C web page; Available from
      <http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyYuliVasiliev2022}
-110. [Supervised Learning with Python Concepts and Practical
+111. [Supervised Learning with Python Concepts and Practical
      Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page;
      Available from
      <http://www.allitebooks.com/supervised-learning-with-python>]{#bibliographyVaibhavVerdhan}
-111. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
+112. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
      W3C web page; Available from
      [https://benv.ca/blog/posts/the-story-of-third-party-javascript](http://benv.ca/blog/posts/the-story-of-third-party-javascript)]{#bibliographyBenVinegarMarch2013}
-112. [Building Maintainable Software Ten Guidelines for Future-Proof
+113. [Building Maintainable Software Ten Guidelines for Future-Proof
      Code Joost Visser, Pascal van Eck of Software Improvement Group,
      B.V. Amsterdam, Netherlands; W3C web page; Available from
      <http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf>]{#bibliographyJoostVisser}
-113. [A Functional Approach to Java: Augmenting Object-Oriented Java
+114. [A Functional Approach to Java: Augmenting Object-Oriented Java
      Code with Functional Principles Ben Weidig (May 9, 2023); W3C web
      page; Available from
      <http://www.google.com/books/edition/A_Functional_Approach_to_Java/5hi-EAAAQBAJ?hl=en>]{#bibliographyBenWeidig20230509}
-114. [Design for How People Think: Using Brain Science to Build Better
+115. [Design for How People Think: Using Brain Science to Build Better
      Products Book John Whalen, PhD; W3C web page; Available from
      <http://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyJohnWhalen}
-115. [Wikipedia W3C web page; Available from
+116. [Wikipedia W3C web page; Available from
      <http://www.wikipedia.org>]{#bibliographyWikipedia}
-116. [Urim and Thummim Wikipedia W3C web page; Available from
+117. [Urim and Thummim Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/Urim_and_Thummim>]{#bibliographyWikipediaUrimAndThummim}
-117. [ZIP Code Wikipedia W3C web page; Available from
+118. [ZIP Code Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/ZIP_Code>]{#bibliographyWikipediaZipCode}
-118. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
+119. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
      Right for you. Foreword by Amanda Bible Williams, co-founder of She
      Reads Truth Tim Wildsmith (2024-11-19) W3C web page; Available from
      <http://www.google.com/books/edition/Bible_Translations_for_Everyone/8en8EAAAQBAJ?hl=en>]{#bibliographyTimWildsmith2014}
-119. [Microservice Eberhard Wolff; W3C web page; Available from
+120. [Microservice Eberhard Wolff; W3C web page; Available from
      <http://www.microservices-book.com>]{#bibliographyEberhardWolff}
-120. [How to write software documentation Write the Docs; W3C web page;
+121. [How to write software documentation Write the Docs; W3C web page;
      Available from
      <http://www.writethedocs.org/guide/writing/beginners-guide-to-docs>]{#bibliographyWriteTheDocs}
-121. [Mobile First Luke Wroblewski W3C web page; Available from
+122. [Mobile First Luke Wroblewski W3C web page; Available from
      [http://mobile-first.abookapart.com](http://mobile-first.abookapart.com){dated="2023-12-30T21:26:00"
      word="ToDuplicate Where IAnalyze?" contactid="3171"
      hiswordid="159150"
      commentary="At the intersection of Paseo Padre Parkway and Hall Way, North East. Orange fruits to the East, across the fence. Spot of water to the West, dark."
      scripturereference="Matthew 10:29, Luke 12:6"}]{#bibliographyLukeWroblewski}
-122. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
+123. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
      from <http://WykeSmith.com>]{#bibliographyWyke-SmithCharles}
 
 ## Appendices {#Appendices}
