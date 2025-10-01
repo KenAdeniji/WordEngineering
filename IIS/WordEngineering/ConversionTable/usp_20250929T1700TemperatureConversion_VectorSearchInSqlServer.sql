@@ -50,7 +50,7 @@ BEGIN
     WHILE @CelsuisIndex <= 100
     BEGIN
         INSERT INTO @TemperatureConversion (CelsuisTemperature, Embedding)
-        SELECT @celsuisIndex, + '[' + CONVERT(VARCHAR, 1.8 * @CelsuisIndex) + ', ' + CONVERT(VARCHAR, 273.15 + @CelsuisIndex) + ']'
+        SELECT @celsuisIndex, + '[' + CONVERT(VARCHAR, (1.8 * @CelsuisIndex) + 32) + ', ' + CONVERT(VARCHAR, 273.15 + @CelsuisIndex) + ']'
         SET @celsuisIndex += 1
     END
 
