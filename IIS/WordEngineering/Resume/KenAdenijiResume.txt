@@ -17,11 +17,6 @@ dated="2004-11-10T00:00:00"}\
 dated="2024-09-16T00:00:00"}
 ::::
 
-::: {style="text-align:center"}
-[GeoLocation Postal
-Address](http://e-comfort.ephraimtech.com/WordEngineering/Resume/GeoLocationPostalAddress.html)
-:::
-
 -   [Objective](#objective)
 -   [Career Summary](#careerSummary)
 -   [USPTO - United States Patent and Trademark
@@ -302,6 +297,12 @@ customers, shareholders, and community.
 -   Examples of technology. For each particular technology, highlight an
     example.
     -   [Language](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/AishaqAndTraining.html){dated="2022-05-29T14:35:00"}
+    -   Artificial Intelligence: vector-search-in-sql-server [stored
+        procedure
+        (.sql)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer.sql)
+        [html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.html)
+        [web service
+        (.asmx)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.asmx)
     -   Regular Expression (RegEx)
         [DateComputation.html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Dated/DateComputation.html){dated="2022-01-28T00:00:00"}
         [Sample](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/RegularExpression){dated="2023-07-28T00:00:00"}
