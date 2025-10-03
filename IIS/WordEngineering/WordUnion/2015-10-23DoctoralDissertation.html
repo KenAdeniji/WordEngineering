@@ -376,7 +376,7 @@
 			<h3 id="BibleDatabase">The Bible Database</h3>
 
 			<h4 id="ScriptureTable">The Scripture Table</h4>
-			<p>
+			<div>
 				The content of the Bible SQL Server database is principally the Scripture table.
 				
 				The Scripture table has a 
@@ -397,7 +397,7 @@ ALTER TABLE Bible..Scripture ADD CONSTRAINT PK_Scripture PRIMARY KEY CLUSTERED
 )
 </code></pre>
 				is for setting the primary key.
-			</p>	
+			</div>	
 			
 			<p>	
 				There are varchar(MAX) columns which has the text for each Bible version.
@@ -405,7 +405,7 @@ ALTER TABLE Bible..Scripture ADD CONSTRAINT PK_Scripture PRIMARY KEY CLUSTERED
 			
 			<h5 id="ScriptureTableBookIDColumn">The Scripture Table's BookID Column</h5>
 
-			<p>
+			<div>
 				Because there are sixty-six books in the Bible, the BookID ranges between 1 and 66;
 				starting from Genesis and ending at Revelation.
 
@@ -414,10 +414,10 @@ ALTER TABLE Bible..Scripture ADD CONSTRAINT PK_Scripture PRIMARY KEY CLUSTERED
 ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_BookID_Range CHECK (BookID BETWEEN 1 AND 66)
 </code></pre>
 				will set the range restriction.
-			</p>
+			</div>
 
 			<h5 id="ScriptureTableChapterIDColumn">The Scripture Table's ChapterID Column</h5>
-			<p>
+			<div>
 				The ChapterID ranges between 1 and 150; 
 				the SQL statement
 <pre><code>
@@ -430,11 +430,11 @@ SELECT MAX(ChapterID) FROM Bible..Scripture
 ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_ChapterID_Range CHECK  (([ChapterID]&gt;=(1) AND [ChapterID]&lt;=(150)))
 </code></pre>
 				will set the range restriction.
-			</p>
+			</div>
 
 			<h5 id="ScriptureTableVerseIDColumn">The Scripture Table's VerseID Column</h5>
 
-			<p>
+			<div>
 				The VerseID ranges between 1 and 176; 
 				the SQL statement
 <pre><code>
@@ -447,7 +447,7 @@ SELECT MAX(VerseID) FROM Bible..Scripture
 ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_VerseID_Range CHECK  (([VerseID]&gt;=(1) AND [VerseID]&lt;=(176)))
 </code></pre>
 				will set the range restriction.
-			</p>	
+			</div>	
 
 			<h5 id="ScriptureTableKingJamesVersionColumn">The Scripture Table's KingJamesVersion Column</h5>
 
@@ -459,7 +459,7 @@ ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_VerseID_Rang
 
 			<h5 id="Scripture_ViewTestamentColumn">The Scripture View's Testament Column</h5>
 
-			<p>
+			<div>
 				The SQL statement 
 <pre><code>
 (case when BookID &lt;=(39) then 'Old' else 'New' end)
@@ -467,11 +467,11 @@ ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_VerseID_Rang
 				will set this computed column.
 				The Testament column serves as a filter, such as, in the
 				<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html">BibleWord</a>.
-			</p>	
+			</div>	
 
 			<h5 id="Scripture_ViewBookTitleColumn">The Scripture View's BookTitle Column</h5>
 
-			<p>
+			<div>
 				The SQL statement 
 <pre><code>
 dbo.udf_BookTitle(BookID)
@@ -489,11 +489,11 @@ dbo.udf_BookTitle(BookID)
 					For example, the first book of the New Testament, the 40th book, spelling is Matthew or Mathew, double tt versus (VS) single t.
 					An improvement on the current implementation is to use soundex to decipher the book title and the corresponding BookID.
 				</span>
-			</p>	
+			</div>	
 			
 			<h5 id="ScriptureTableScriptureReferenceColumn">The Scripture Table's ScriptureReference Column</h5>
 
-			<p>
+			<div>
 				The SQL statement 
 <pre><code>
 dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
@@ -505,11 +505,11 @@ dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
 				<pre><code>ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)</code></pre> 
 				Will set its entity integrity.
 				The distinction between raw data versus computed columns is performance and space.
-			</p>	
+			</div>	
 
 			<h5 id="ScriptureTableChapterIDSequenceColumn">The Scripture Table's ChapterIDSequence Column</h5>
 
-			<p>
+			<div>
 				When loading data, the author decides the ChapterIDSequence column, and increments it when the BookID and ChapterID, change during loading.
 				The ChapterIDSequence ranges between 1 and 1189, starting in Genesis 1 and ending at Revelation 22.
 				The SQL statement 
@@ -548,11 +548,11 @@ ALTER TABLE Bible..Scripture ADD CONSTRAINT CK_Scripture_ChapterIDSequence_Range
 </code></pre> 
 				will check the range correctness.
 				Although it is good to know the ChapterIDSequence, but it is primarily used to decide the boundaries for scripture reference queries.
-			</p>	
+			</div>	
 
 			<h5 id="ScriptureTableVerseIDSequenceColumn">The Scripture Table's VerseIDSequence Column</h5>
 
-			<p>
+			<div>
 				When loading data, the author calculates the VerseIDSequence column,
 				and increments it, every time, 
 				the BookID, ChapterID, and VerseID
@@ -601,11 +601,11 @@ ALTER TABLE Bible..Scripture
 ADD CONSTRAINT AK_Scripture_VerseIDSequence UNIQUE (VerseIDSequence)   
 </code></pre>
 				is supplementary.
-			</p>	
+			</div>	
 
 			<h5 id="ScriptureTableBibleReferenceColumn">The Scripture_View BibleReference Column</h5>
 
-			<p>
+			<div>
 				The SQL statement 
 <pre><code>
 ((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3)))
@@ -626,7 +626,7 @@ SELECT ScriptureReference, BibleReference
 FROM Bible..Scripture_View
 WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
 </code></pre>
-			</p>	
+			</div>
 
 			<table>
 				<thead>
@@ -699,7 +699,7 @@ WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
 
 			<h5 id="ExactTableExactIDColumn">The Exact Table's ExactID Column</h5>
 			
-			<p>
+			<div>
 				The ExactID is an 
 				<a href="http://en.wikipedia.org/wiki/Identity_column">identity column</a>,
 				meaning the database, SQL Server, auto-increments its value, before insertion.
@@ -735,11 +735,11 @@ CREATE UNIQUE INDEX AK_Exact_ExactID ON Bible..Exact(ExactID)
 SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact
 </code></pre>
 				is 789631; this is the count of the words in the KJV Bible.
-			</p>
+			</div>
 			
 			<h5 id="ExactTableBibleWordColumn">The Exact Table's BibleWord Column</h5>
 			
-			<p>
+			<div>
 				These are the words that occur in the Bible, in the order of their occurrences.
 
 				The author sets the
@@ -748,11 +748,11 @@ SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact
 <pre><code>
 ALTER TABLE dbo.Exact ADD CONSTRAINT PK_Exact PRIMARY KEY CLUSTERED (BibleWord ASC)
 </code></pre>
-			</p>
+			</div>
 					
 			<h5 id="ExactTableFirstOccurrenceScriptureReferenceColumn">The Exact Table's FirstOccurrenceScriptureReference Column</h5>	
 				
-			<p>
+			<div>
 				This is the scripture reference where the word first occurs in the Bible.
 
 				The author may set-up the relationship by issuing the SQL statement
@@ -765,7 +765,7 @@ REFERENCES dbo.Scripture (ScriptureReference)
 				the author cannot have, a unique constraint, on the Bible..Scripture.ScriptureReference column,
 				since this is a computed column;
 				the author can not keep up the relationship, at this time.
-			</p>
+			</div>
 
 			<h5 id="ExactTableLastOccurrenceScriptureReferenceColumn">The Exact Table's LastOccurrenceScriptureReference Column</h5>
 			
@@ -5682,9 +5682,9 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 			
 			<a href="http://softengbook.org/chapter3#use-cases">Software Engineering: A Modern Approach by Marco Tulio Valente. Use-cases</a><br>
 
-			<h4 id="UseCaseInterpretWordActorUser" data-Dated="2025-06-29T04:26:00"><time datetime="2025-06-29T04:26:00">2025-06-29T04:26:00</time> Actor: User</h3>
+			<h4 id="UseCaseInterpretWordActorUser" data-Dated="2025-06-29T04:26:00"><time datetime="2025-06-29T04:26:00">2025-06-29T04:26:00</time> Actor: User</h4>
 			
-			<h4 id="UseCaseInterpretWordMainFlow" data-Dated="2025-06-29T04:27:00"><time datetime="2025-06-29T04:27:00">2025-06-29T04:27:00</time> Main Flow:</h3>
+			<h4 id="UseCaseInterpretWordMainFlow" data-Dated="2025-06-29T04:27:00"><time datetime="2025-06-29T04:27:00">2025-06-29T04:27:00</time> Main Flow:</h4>
 			
 			<ol>
 				<li>- The user enters the word to interpret</li>
@@ -5693,7 +5693,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				<li data-Dated="2025-06-29T04:44:00">- The system informs the user the corresponding sacred text</li>
 			</ol>
 
-			<h4 id="UseCaseInterpretWordExtensions" data-Dated="2025-06-29T04:51:00"><time datetime="2025-06-29T04:51:00">2025-06-29T04:51:00</time> Extensions:</h3>
+			<h4 id="UseCaseInterpretWordExtensions" data-Dated="2025-06-29T04:51:00"><time datetime="2025-06-29T04:51:00">2025-06-29T04:51:00</time> Extensions:</h4>
 			
 			<div>
 				<span>3a- If the word is a positive integer, the system should set the value of the AlphabetSequenceIndex to the word, and determine the AlphabetSequenceIndexScriptureReference, and complete processing</span><br>
@@ -5704,9 +5704,9 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 
 			<h3 id="UseCaseWordEngineering" data-Dated="2025-08-28T06:58:00"><time datetime="2025-08-28T06:58:00">2025-08-28T06:58:00</time> Use Case WordEngineering</h3>
 			
-			<h4 id="UseCaseWordEngineeringActorUser" data-Dated="2025-08-28T06:59:00"><time datetime="2025-08-28T06:59:00">2025-08-28T06:59:00</time> Actor: User</h3>
+			<h4 id="UseCaseWordEngineeringActorUser" data-Dated="2025-08-28T06:59:00"><time datetime="2025-08-28T06:59:00">2025-08-28T06:59:00</time> Actor: User</h4>
 			
-			<h4 id="UseCaseWordEngineeringMainFlow" data-Dated="2025-08-28T07:00:00"><time datetime="2025-08-28T07:00:00">2025-08-28T07:00:00</time> Main Flow:</h3>
+			<h4 id="UseCaseWordEngineeringMainFlow" data-Dated="2025-08-28T07:00:00"><time datetime="2025-08-28T07:00:00">2025-08-28T07:00:00</time> Main Flow:</h4>
 			
 			<ol>
 				<li>- The user records the word into the HisWord table by using the Microsoft SQL Server Management Studio</li>
@@ -5718,7 +5718,7 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 				<li data-Dated="2025-08-28T07:35:00">- The user <time datetime="2025-08-28T07:35:00">2025-08-28T07:35:00</time> traces historical data</li>
 			</ol>
 
-			<h4 id="UseCaseWordEngineeringExtensions" data-Dated="2025-08-28T07:33:00"><time datetime="2025-08-28T07:33:00">2025-08-28T07:33:00</time> Extensions:</h3>
+			<h4 id="UseCaseWordEngineeringExtensions" data-Dated="2025-08-28T07:33:00"><time datetime="2025-08-28T07:33:00">2025-08-28T07:33:00</time> Extensions:</h4>
 			
 			<div>
 				<span>5a- The user determines the date differences between the corresponding words and events</span><br>
@@ -5806,18 +5806,18 @@ JAL JAPAN AIRLINES 1999-01-17 SYDNEY TOKYO 1999-01-17T10-30 1999-01-17T18:05 JL 
 					</ul>	
 				</li>		
 				<li>
-					<time datetime="2025-05-22T18:10:00">2025-05-22T18:10:00<time> Immutability: 
+					<time datetime="2025-05-22T18:10:00">2025-05-22T18:10:00</time> Immutability: 
 					<ol>
-						<li><time datetime="2025-05-22T18:16:00">2025-05-22T18:16:00<time> Object-oriented technology serves change states.</li>
-						<li><time datetime="2025-05-22T18:25:00">2025-05-22T18:25:00<time> Inheritance, interface, method overloading, encapsulation, polymorphism, are all object-oriented principles.</li>
-						<li><time datetime="2025-05-22T18:17:00">2025-05-22T18:17:00<time> As is of the need for database storage.</li>
-						<li><time datetime="2025-05-22T18:20:00">2025-05-22T18:20:00<time> Variable declarations and initializations. Variables refreshing with default values, constants, statics, read-only.</li>
+						<li><time datetime="2025-05-22T18:16:00">2025-05-22T18:16:00</time> Object-oriented technology serves change states.</li>
+						<li><time datetime="2025-05-22T18:25:00">2025-05-22T18:25:00</time> Inheritance, interface, method overloading, encapsulation, polymorphism, are all object-oriented principles.</li>
+						<li><time datetime="2025-05-22T18:17:00">2025-05-22T18:17:00</time> As is of the need for database storage.</li>
+						<li><time datetime="2025-05-22T18:20:00">2025-05-22T18:20:00</time> Variable declarations and initializations. Variables refreshing with default values, constants, statics, read-only.</li>
 					</ol>	
 				</li>
-				<li><time datetime="2025-05-22T18:31:00">2025-05-22T18:31:00<time> Practical need for recursion?</li>
+				<li><time datetime="2025-05-22T18:31:00">2025-05-22T18:31:00</time> Practical need for recursion?</li>
 				<li>
-					<time datetime="2025-05-31T04:44:00">2025-05-31T04:44:00<time> First-class and higher-order functions. The author's investment in SQL-CLR and C#.
-					<time datetime="2025-05-31T05:07:00">2025-05-31T05:07:00<time>
+					<time datetime="2025-05-31T04:44:00">2025-05-31T04:44:00</time> First-class and higher-order functions. The author's investment in SQL-CLR and C#.
+					<time datetime="2025-05-31T05:07:00">2025-05-31T05:07:00</time>
 					<a 
 						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20am%20I%20learning...%20as%20I%20progress%3F"
 						data-Dated="2025-05-31T05:07:00"
@@ -5845,7 +5845,7 @@ GO
 </code></pre>			
 				</li>
 				<li>
-					<time datetime="2025-05-31T06:22:00">2025-05-31T06:22:00<time> 
+					<time datetime="2025-05-31T06:22:00">2025-05-31T06:22:00</time> 
 					<a 
 						href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Lazy%20evaluation...%20is%20a%20scenario%20for%20LINQ."
 						data-Dated="2025-05-31T06:22:00"
@@ -6041,7 +6041,7 @@ Completion time: 2025-09-13T19:29:39.0388615-07:00
 <pre data-Dated="2025-09-13T19:06:00">
 SELECT      HisWordID, Dated, Word
 FROM        WordEngineering..HisWord
-WHERE       (1 <> 1)
+WHERE       (1 &lt;&gt; 1)
 OR          (HisWordID BETWEEN 167263 AND 167265)
 OR          (HisWordID BETWEEN 166552 AND 166554)
 OR          (HisWordID BETWEEN 166267 AND 166270)
@@ -12662,8 +12662,8 @@ Execution time:     84.46 seconds (00:01:24.46)
 				Begotten Son, creation, covenant, passover, commandment.
 			</p>
 
+			<time datetime="2025-09-03T21:38:00">2025-09-03T21:38:00</time>
 			<ol data-Dated="2025-09-03T21:38:00" data-ContactID="16592">
-				<time datetime="2025-09-03T21:38:00">2025-09-03T21:38:00</time>
 				<li>Declare the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2040:4">Ezekiel 40:4</a>)</li>
 				<li>Understand the matter, and consider the vision (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23">Daniel 9:23</a>)</li>
 				<li><time datetime="2025-09-03T21:41:00">2025-09-03T21:41:00</time> Preach the word (<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Timothy%204:2">2 Timothy 4:2</a>)</li>

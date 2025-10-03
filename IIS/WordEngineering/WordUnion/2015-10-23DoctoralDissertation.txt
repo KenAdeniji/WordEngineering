@@ -44,7 +44,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
 The importance of this work?
 
 -   [Follow God, as a
@@ -103,6 +103,8 @@ instigate future alteration.
 
 #### The Scripture Table {#ScriptureTable}
 
+<div>
+
 The content of the Bible SQL Server database is principally the
 Scripture table. The Scripture table has a [composite primary
 key](http://weblogs.sqlteam.com/jeffs/archive/2007/08/23/composite_primary_keys.aspx)
@@ -118,10 +120,14 @@ columns. The SQL statement
 
 is for setting the primary key.
 
+</div>
+
 There are varchar(MAX) columns which has the text for each Bible
 version.
 
 ##### The Scripture Table\'s BookID Column {#ScriptureTableBookIDColumn}
+
+<div>
 
 Because there are sixty-six books in the Bible, the BookID ranges
 between 1 and 66; starting from Genesis and ending at Revelation. The
@@ -131,7 +137,11 @@ SQL statement
 
 will set the range restriction.
 
+</div>
+
 ##### The Scripture Table\'s ChapterID Column {#ScriptureTableChapterIDColumn}
+
+<div>
 
 The ChapterID ranges between 1 and 150; the SQL statement
 
@@ -143,7 +153,11 @@ is for determining the upper limit. The SQL statement
 
 will set the range restriction.
 
+</div>
+
 ##### The Scripture Table\'s VerseID Column {#ScriptureTableVerseIDColumn}
+
+<div>
 
 The VerseID ranges between 1 and 176; the SQL statement
 
@@ -155,6 +169,8 @@ is for determining the upper limit. The SQL statement
 
 will set the range restriction.
 
+</div>
+
 ##### The Scripture Table\'s KingJamesVersion Column {#ScriptureTableKingJamesVersionColumn}
 
 The author would have considered placing an index on the
@@ -165,6 +181,8 @@ wildcards.
 
 ##### The Scripture View\'s Testament Column {#Scripture_ViewTestamentColumn}
 
+<div>
+
 The SQL statement
 
     (case when BookID <=(39) then 'Old' else 'New' end)
@@ -173,7 +191,11 @@ will set this computed column. The Testament column serves as a filter,
 such as, in the
 [BibleWord](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html).
 
+</div>
+
 ##### The Scripture View\'s BookTitle Column {#Scripture_ViewBookTitleColumn}
+
+<div>
 
 The SQL statement
 
@@ -198,7 +220,11 @@ Matthew or Mathew, double tt versus (VS) single t. An improvement on the
 current implementation is to use soundex to decipher the book title and
 the corresponding BookID. ]{dated="2020-10-06T15:05:00"}
 
+</div>
+
 ##### The Scripture Table\'s ScriptureReference Column {#ScriptureTableScriptureReferenceColumn}
+
+<div>
 
 The SQL statement
 
@@ -215,7 +241,11 @@ not the SQL statement
 Will set its entity integrity. The distinction between raw data versus
 computed columns is performance and space.
 
+</div>
+
 ##### The Scripture Table\'s ChapterIDSequence Column {#ScriptureTableChapterIDSequenceColumn}
+
+<div>
 
 When loading data, the author decides the ChapterIDSequence column, and
 increments it when the BookID and ChapterID, change during loading. The
@@ -258,7 +288,11 @@ will check the range correctness. Although it is good to know the
 ChapterIDSequence, but it is primarily used to decide the boundaries for
 scripture reference queries.
 
+</div>
+
 ##### The Scripture Table\'s VerseIDSequence Column {#ScriptureTableVerseIDSequenceColumn}
+
+<div>
 
 When loading data, the author calculates the VerseIDSequence column, and
 increments it, every time, the BookID, ChapterID, and VerseID changes
@@ -292,7 +326,11 @@ however, The SQL statement
 
 is supplementary.
 
+</div>
+
 ##### The Scripture_View BibleReference Column {#ScriptureTableBibleReferenceColumn}
+
+<div>
 
 The SQL statement
 
@@ -310,6 +348,8 @@ statement.
     SELECT ScriptureReference, BibleReference
     FROM Bible..Scripture_View
     WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
+
+</div>
 
   ScriptureReference   BibleReference
   -------------------- ----------------
@@ -367,6 +407,8 @@ is dynamic, and it supports the other versions of the Bible.
 
 ##### The Exact Table\'s ExactID Column {#ExactTableExactIDColumn}
 
+<div>
+
 The ExactID is an [identity
 column](http://en.wikipedia.org/wiki/Identity_column), meaning the
 database, SQL Server, auto-increments its value, before insertion. There
@@ -395,7 +437,11 @@ SELECT SUM(FrequencyOfOccurrence) FROM Bible..Exact
 
 is 789631; this is the count of the words in the KJV Bible.
 
+</div>
+
 ##### The Exact Table\'s BibleWord Column {#ExactTableBibleWordColumn}
+
+<div>
 
 These are the words that occur in the Bible, in the order of their
 occurrences. The author sets the [primary
@@ -404,7 +450,11 @@ issuing the SQL statement
 
     ALTER TABLE dbo.Exact ADD CONSTRAINT PK_Exact PRIMARY KEY CLUSTERED (BibleWord ASC)
 
+</div>
+
 ##### The Exact Table\'s FirstOccurrenceScriptureReference Column {#ExactTableFirstOccurrenceScriptureReferenceColumn}
+
+<div>
 
 This is the scripture reference where the word first occurs in the
 Bible. The author may set-up the relationship by issuing the SQL
@@ -418,6 +468,8 @@ Please note, that as discussed earlier, the author cannot have, a unique
 constraint, on the Bible..Scripture.ScriptureReference column, since
 this is a computed column; the author can not keep up the relationship,
 at this time.
+
+</div>
 
 ##### The Exact Table\'s LastOccurrenceScriptureReference Column {#ExactTableLastOccurrenceScriptureReferenceColumn}
 
@@ -3414,9 +3466,9 @@ The impetus for database recording was to re-use.
 > [Software Engineering: A Modern Approach by Marco Tulio Valente.
 > Use-cases](http://softengbook.org/chapter3#use-cases)\
 >
-> 2025-06-29T04:26:00 Actor: User
+> #### 2025-06-29T04:26:00 Actor: User {#UseCaseInterpretWordActorUser dated="2025-06-29T04:26:00"}
 >
-> 2025-06-29T04:27:00 Main Flow:
+> #### 2025-06-29T04:27:00 Main Flow: {#UseCaseInterpretWordMainFlow dated="2025-06-29T04:27:00"}
 >
 > 1.  \- The user enters the word to interpret
 > 2.  \- The system determines by using regular expressions the data
@@ -3426,7 +3478,7 @@ The impetus for database recording was to re-use.
 >     AlphabetSequenceIndexScriptureReference
 > 4.  \- The system informs the user the corresponding sacred text
 >
-> 2025-06-29T04:51:00 Extensions:
+> #### 2025-06-29T04:51:00 Extensions: {#UseCaseInterpretWordExtensions dated="2025-06-29T04:51:00"}
 >
 > <div>
 >
@@ -3445,9 +3497,9 @@ The impetus for database recording was to re-use.
 >
 > ### 2025-08-28T06:58:00 Use Case WordEngineering {#UseCaseWordEngineering dated="2025-08-28T06:58:00"}
 >
-> 2025-08-28T06:59:00 Actor: User
+> #### 2025-08-28T06:59:00 Actor: User {#UseCaseWordEngineeringActorUser dated="2025-08-28T06:59:00"}
 >
-> 2025-08-28T07:00:00 Main Flow:
+> #### 2025-08-28T07:00:00 Main Flow: {#UseCaseWordEngineeringMainFlow dated="2025-08-28T07:00:00"}
 >
 > 1.  \- The user records the word into the HisWord table by using the
 >     Microsoft SQL Server Management Studio
@@ -3466,7 +3518,7 @@ The impetus for database recording was to re-use.
 >     determinable from the record as a whole
 > 5.  \- The user 2025-08-28T07:35:00 traces historical data
 >
-> 2025-08-28T07:33:00 Extensions:
+> #### 2025-08-28T07:33:00 Extensions: {#UseCaseWordEngineeringExtensions dated="2025-08-28T07:33:00"}
 >
 > <div>
 >
@@ -6743,12 +6795,13 @@ In C# version 9, a method may offer a covariant return type.
 2025-09-03T21:27:00 What does God bring to pass as Him alone? Begotten
 Son, creation, covenant, passover, commandment.
 
-1.  2025-09-03T21:38:00
-2.  Declare the word ([Ezekiel
+2025-09-03T21:38:00
+
+1.  Declare the word ([Ezekiel
     40:4](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Ezekiel%2040:4))
-3.  Understand the matter, and consider the vision ([Daniel
+2.  Understand the matter, and consider the vision ([Daniel
     9:23](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%209:23))
-4.  2025-09-03T21:41:00 Preach the word ([2 Timothy
+3.  2025-09-03T21:41:00 Preach the word ([2 Timothy
     4:2](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Timothy%204:2))
 
 2025-09-04T05:58:00 Teaching from? The Bible, education, experience,
@@ -11322,4 +11375,4 @@ Copyright ©
 []{#copyrightYear}\
 
 Ken Adeniji <KenAdeniji@hotmail.com>
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
