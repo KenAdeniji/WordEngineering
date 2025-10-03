@@ -198,19 +198,38 @@ export function isInternalLink(urlString: string): boolean | {
 								sourceContentElement.value = text;
 								frameInfoElement.srcdoc = text;
 								frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
-								queryElementTypeStatistics(frameHTMLDocument);
-								queryImageTypeStatistics(frameHTMLDocument);
-							}
+								checkIframeLoaded(frameHTMLDocument);
+							}	
 						);
 					};
 				});
 			}
 
-			async function queryElementTypeStatistics(frameHTMLDocument)
+			function checkIframeLoaded(frameHTMLDocument) 
+			{
+				// Check if loading is complete
+				if (  frameHTMLDocument.readyState  == "complete" ) 
+				{
+					// The loading is complete, call the function we want executed once the iframe is loaded
+					//console.log("I am loaded");
+					queryGenerateStatistics(frameHTMLDocument);
+					return;
+				} 
+
+				// If we are here, it is not loaded. Set things up so we check the status again in 100 milliseconds
+				window.setTimeout(checkIframeLoaded, 100);
+			}
+
+			function queryGenerateStatistics(frameHTMLDocument)
+			{
+				queryElementTypeStatistics(frameHTMLDocument);
+				queryImageTypeStatistics(frameHTMLDocument);
+			}
+
+			function queryElementTypeStatistics(frameHTMLDocument)
 			{
 				var elementTypeCount;
 				var elementStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
-
 				for (const elementType of SelectorElementTypes)
 				{
 					elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
@@ -219,7 +238,7 @@ export function isInternalLink(urlString: string): boolean | {
 				elementStatistics += "</tbody></table>";
 				resultSetElementTypeStatisticsElement.innerHTML = elementStatistics;
 			}
-			
+
 			async function queryImageTypeStatistics(frameHTMLDocument)
 			{
 				var imageElements = frameHTMLDocument.querySelectorAll("img");
@@ -252,7 +271,7 @@ export function isInternalLink(urlString: string): boolean | {
 			}
 
 			window.addEventListener("load", pageLoad, false);
-		
+			
 			const SelectorElementTypes = ["*", "script", "style", "img"];
 		</script>		
 	</body>

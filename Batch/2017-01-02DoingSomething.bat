@@ -168,7 +168,7 @@ BACKUP DATABASE Msdb TO DISK = 'd:\SQLServerBackup\Msdb\Msdb_2017-01-02.bak' WIT
 BACKUP DATABASE AManDevelopedInAll TO DISK = 'd:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak' WItd INIT
 
 :DbccCheckIdent
-DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 34323);
+DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..Contact', RESEED, 34335);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..EmailAddress', RESEED, 22139);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..PhoneNumber', RESEED, 24539);
 DBCC CHECKIDENT ('IHaveDecidedToWorkOnAGradualImprovingSystem..StreetAddress', RESEED, 21982);
