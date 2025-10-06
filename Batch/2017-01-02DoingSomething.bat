@@ -1058,4 +1058,8 @@ SELECT TOP 3 p.ProductId
     FROM     @Products AS p
     WHERE    p.ProductId <> 101 
     ORDER BY CosineSimilarityDistance ASC;
+	
+2025-10-04T19:38:00 jstat.org 								2012-12-02 	4312	
+2025-10-04T20:07:00	informit.com/Stroustrup 	Bjarne Stroustrup 		C++ 					2016-02-04 	34083
+2025-10-05T00:10:00	ben@forta.com 								2018-02-11 	47660
 :Exit
