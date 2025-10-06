@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-09-17T21:43:00	Created.
+		2025-09-17T21:43:00...2025-09-17T22:00:00	Cross origin concern.
+Error: Can't find the actor ID for objects-manager from root or target actor's form. types.js:559:11
+WindowsJumpLists: Failed to fetch favicon for  http://localhost/Wordengineering/WordOfGod/ContactMaintenance.aspx NS_ERROR_FAILURE: WindowsJumpLists.sys.mjs:257:29
+Referrer Policy: Ignoring the less restricted referrer policy “no-referrer-when-downgrade” for the cross-site request: https://bam.nr-data.net/jserrors/1/NRJS-8482e4e3e1750395f5d?a=1588761156&sa=1&v=1216.487a282&t=Unnamed%20Transaction&rst=1025837&ck=1&ref=https://documenter.getpostman.com/view/11861104/2sA35G42ve NRJS-8482e4e3e1750395f5d
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://bam.nr-data.net/jserrors/1/NRJS-8482e4e3e1750395f5d?a=1588761156&sa=1&v=1216.487a282&t=Unnamed%20Transaction&rst=1025837&ck=1&ref=https://documenter.getpostman.com/view/11861104/2sA35G42ve. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 429.
+Referrer Policy: Ignoring the less restricted referrer policy “no-referrer-when-downgrade” for the cross-site request: https://bam.nr-data.net/jserrors/1/NRJS-8482e4e3e1750395f5d?a=1588761156&sa=1&v=1216.487a282&t=Unnamed%20Transaction&rst=1086124&ck=1&ref=https://documenter.getpostman.com/view/11861104/2sA35G42ve NRJS-8482e4e3e1750395f5d
+WindowsJumpLists: Failed to fetch favicon for  http://localhost/Wordengineering/WordOfGod/ContactMaintenance.aspx NS_ERROR_FAILURE: WindowsJumpLists.sys.mjs:257:29
+Referrer Policy: Ignoring the less restricted referrer policy “no-referrer-when-downgrade” for the cross-site request: https://bam.nr-data.net/jserrors/1/NRJS-8482e4e3e1750395f5d?a=1588761156&sa=1&v=1216.487a282&t=Unnamed%20Transaction&rst=1146127&ck=1&ref=https://documenter.getpostman.com/view/11861104/2sA35G42ve NRJS-8482e4e3e1750395f5d
+
+http://documenter.getpostman.com/view/11861104/2sA35G42ve
+	-->	
+	<head>
+		<title>https://fedskillstest.coalitiontechnologies.workers.dev</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="https://fedskillstest.coalitiontechnologies.workers.dev"/>
+		<meta name="keyword" content="ajax, web services"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea
+			{ 
+				height: 35vh;
+				width: 95vw;
+			}
+			iframe
+			{ 
+				height: 35vh;
+				width: 95vw;
+			}
+			#resultSet
+			{ 
+				height: 10vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="resultSet"></div>
+
+		<script>
+			var 	isPostBack = false;
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+
+			const	fedskillstestCoalitiontechnologiesWorkersDev = "https://fedskillstest.coalitiontechnologies.workers.dev";
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				fetch
+				(
+					fedskillstestCoalitiontechnologiesWorkersDev
+				).then 
+				( response => {
+					const contentType = response.headers.get("content-type");
+					if (contentType && contentType.indexOf("application/json") !== -1) 
+					{
+						return response.json().then
+						(
+							data => 
+							{
+								// process your JSON data further
+								resultSetElement.innerHTML = JSON.stringify(data);
+							}
+						);
+					}
+				});
+			}
+
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

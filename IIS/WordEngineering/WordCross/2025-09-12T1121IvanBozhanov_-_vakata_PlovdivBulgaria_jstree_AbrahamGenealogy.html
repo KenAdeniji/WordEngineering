@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-09-12T11:12:00	http://www.jstree.com/docs/json
+		(2025-09-12T13:33:00...2025-09-12T12:53:00 http versus (vs) https github.io)
+		2025-09-12T12:33:00...2025-09-12T12:53:00 http versus (vs) https github.io
+		2025-09-12T12:57:00	http://stackoverflow.com/questions/17605722/jstree-how-to-expand-all-nodes-on-first-visualization-and-then-save-and-restore
+	-->
+	<head>
+		<title>Abraham genealogy</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Ivan Bozhanov, vakata, Plovdiv, Bulgaria, jstree, Abraham genealogy"/>
+		<meta name="keywords" content="Ivan Bozhanov, vakata, Plovdiv, Bulgaria, jstree, Abraham genealogy"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+		<div id="jstree_demo_div"></div>
+		<input id="selectPatriach" type="text" value="Abraham"/>
+		<button>demo button</button>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+		<script>
+			const selectPatriachElement = document.getElementById("selectPatriach");
+			$
+			(
+				function () 
+				{ 
+					$("#jstree_demo_div").jstree
+					(
+						{ 
+							"core" : 
+							{
+								"data" : 
+								[
+									{ "id" : "Abraham", "parent" : "#", "text" : "Abraham" },
+									{ "id" : "Ishmael", "parent" : "Abraham", "text" : "Ishmael" },
+									{ "id" : "Isaac", "parent" : "Abraham", "text" : "Isaac" },
+									{ "id" : "Esau", "parent" : "Isaac", "text" : "Esau" },
+									{ "id" : "Jacob", "parent" : "Isaac", "text" : "Jacob" },									
+								]
+							} 
+						}
+					)
+				    .bind("loaded.jstree", function(event, data) {
+						$(this).jstree("open_all");
+					})	
+				}
+			);	
+			$("#jstree_demo_div").jstree("open_all");			
+			$("#jstree_demo_div").on("changed.jstree", function (e, data) {
+				console.log(data.selected);
+			});
+			$("button").on("click", function () {
+				  $("#jstree_demo_div").jstree(true).select_node(selectPatriachElement.value);
+/*
+				  $("#jstree_demo_div").jstree("select_node", selectPatriachElement.value);
+				  $.jstree.reference("#jstree_demo_div").select_node(selectPatriachElement.value);
+*/				  
+				});	
+		</script>
+	</body>
+</html>

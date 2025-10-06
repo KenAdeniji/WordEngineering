@@ -20,6 +20,35 @@ export function isInternalLink(urlString: string): boolean | {
 		http://stackoverflow.com/questions/2910946/test-if-links-are-external-with-jquery-javascript/18660968#18660968
 		http://stackoverflow.com/questions/36631762/returning-html-with-fetch
 		http://stackoverflow.com/questions/3999101/get-iframes-document-from-javascript-in-main-document
+		
+		2025-09-13T14:40:00 http://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src
+		
+		2025-10-01
+			PaulMcFedries.com
+			FaceBook.com/PaulMcFedries
+			Logophilia Limited
+			Web Coding & Development
+			All-in-one for dummies
+			2nd edition
+			Submit the form.
+				form.addEventListener
+				(
+					"submit",
+					(e) =>
+					{
+						//submit
+					}
+				);
+				form.submit();
+				myForm.submit
+				(
+					function(e)
+					{
+						e.preventDefault();
+					}	
+				);	
+		2025-10-03T00:21:00 These are our children... these are us.
+			Page load versus (VS) IFrame load.
 	-->	
 	<head>
 		<title>What does the link provide?</title>
@@ -52,34 +81,42 @@ export function isInternalLink(urlString: string): boolean | {
 		</style>	
 	</head>
 	<body>
-		<div align="center">
-			<table>
-				<tr>
-					<td><label for="sourceAddress">Source Address:</label></td>
-					<td>
-						<input 
-							id="sourceAddress"
-							type="url"
-							style="width: 55vw;"
-							value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
-						/>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="sourceContent">Source Content:</label></td>
-					<td>
-						<textarea id="sourceContent"></textarea>
-					</td>
-				</tr>
-				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
-			</table>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+							<tr>
+							<td><label for="sourceAddress">Source Address:</label></td>
+							<td>
+								<input 
+									id="sourceAddress"
+									type="url"
+									style="width: 55vw;"
+									value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="sourceContent">Source Content:</label></td>
+							<td>
+								<textarea id="sourceContent"></textarea>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+					</table>
+				<div>	
+			<form>	
 			<iframe id="frameInfo"></iframe>
 			<br/>	
-			<div id="resultSet"></div>
-		</div>
+			<div id="resultSet">
+				<div id="resultSetElementTypeStatistics"></div>
+				<div id="resultSetImageTypeStatistics"></div>
+			</div>
+		</div>	
 		<script>
 			var isPostBack = false;
 			
+			const 	formedElement = document.getElementById("formed");
 			const 	sourceAddressElement = document.getElementById("sourceAddress");
 	
 			const	sourceContentElement = document.getElementById("sourceContent");
@@ -89,6 +126,9 @@ export function isInternalLink(urlString: string): boolean | {
 
 			const	frameInfoElement = document.getElementById("frameInfo");
 			const 	resultSetElement = document.getElementById("resultSet");
+			
+			const 	resultSetElementTypeStatisticsElement = document.getElementById("resultSetElementTypeStatistics");
+			const	resultSetImageTypeStatisticsElement = document.getElementById("resultSetImageTypeStatistics");
 			
 			function pageLoad()
 			{
@@ -114,6 +154,7 @@ export function isInternalLink(urlString: string): boolean | {
 
 			function querySubmit()
 			{
+				var	frameHTMLDocument;
 				fetch
 				(
 					sourceAddressElement.value
@@ -156,20 +197,66 @@ export function isInternalLink(urlString: string): boolean | {
 								// this is text, do something with it
 								sourceContentElement.value = text;
 								frameInfoElement.srcdoc = text;
-								var	frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
-								var elementTypeCount;
-								var elementsTypesStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
-								for (const elementType of SelectorElementTypes)
-								{
-									elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
-									elementsTypesStatistics += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
-								}
-								elementsTypesStatistics += "</tbody></table>"
-								resultSetElement.innerHTML = elementsTypesStatistics;
-							}
+								frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+								checkIframeLoaded(frameHTMLDocument);
+							}	
 						);
 					};
 				});
+			}
+
+			function checkIframeLoaded(frameHTMLDocument) 
+			{
+				// Check if loading is complete
+				if (  frameHTMLDocument.readyState  == "complete" ) 
+				{
+					// The loading is complete, call the function we want executed once the iframe is loaded
+					//console.log("I am loaded");
+					queryGenerateStatistics(frameHTMLDocument);
+					return;
+				} 
+
+				// If we are here, it is not loaded. Set things up so we check the status again in 100 milliseconds
+				window.setTimeout(checkIframeLoaded, 100);
+			}
+
+			function queryGenerateStatistics(frameHTMLDocument)
+			{
+				queryElementTypeStatistics(frameHTMLDocument);
+				queryImageTypeStatistics(frameHTMLDocument);
+			}
+
+			function queryElementTypeStatistics(frameHTMLDocument)
+			{
+				var elementTypeCount;
+				var elementStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
+				for (const elementType of SelectorElementTypes)
+				{
+					elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
+					elementStatistics += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
+				}
+				elementStatistics += "</tbody></table>";
+				resultSetElementTypeStatisticsElement.innerHTML = elementStatistics;
+			}
+
+			async function queryImageTypeStatistics(frameHTMLDocument)
+			{
+				var imageElements = frameHTMLDocument.querySelectorAll("img");
+				var elementStatistics = "<table><thead><tr><th>Index</th><th>Universal Resource Link (url)</th><th>Size</th></tr></thead><tbody>";
+				var imageSrc, fileImg;
+				for 
+				(
+					var elementIndex = 0, elementCount = imageElements.length;
+					elementIndex < elementCount;
+					resultSetImageTypeStatisticsElement.innerHTML = elementIndex, elementIndex++
+				)
+				{
+					imageSrc = imageElements[elementIndex].src;
+					fileImg = await fetch(imageSrc).then(r => r.blob()); //This will get the resource through HTTP and then returns the full binary as a blob object, then you can access its properties including its size in bytes as:
+					elementStatistics += `<tr><td>${elementIndex + 1}</td><td><a href="${imageSrc}">${imageSrc}</a></td><td>${fileImg.size}</td></tr>`;
+				}
+				elementStatistics += "</tbody></table>";
+				resultSetImageTypeStatisticsElement.innerHTML = elementStatistics;
 			}
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-09-29T20:41:00	mssqltips.com/sqlservertip/8299/vector-search-in-sql-server/
+	-->
+	<head>
+		<title>Temperature Conversion: VectorSearchInSqlServer</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="20250929T1700TemperatureConversion_VectorSearchInSqlServer"/>
+		<meta name="keywords" content="Temperature conversion, vector search in Sql Server"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="celsuisTemperature">Celsuis temperature:</label></td>
+					<td><input type="number" ID="celsuisTemperature" value="50" autofocus min="0" max="100" step="1"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable" align="center"></div>
+		</div>
+
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	celsuisTemperatureElement = document.getElementById("celsuisTemperature");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultTableElement = document.getElementById("resultTable");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var celsuisTemperatureValue = urlParams.get("celsuisTemperature");
+					if (Number.isInteger(celsuisTemperatureValue))
+					{
+						celsuisTemperatureElement.value = parseInt(celsuisTemperatureValue);
+					}	
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["celsuisTemperature"] = parseInt(celsuisTemperatureElement.value);
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

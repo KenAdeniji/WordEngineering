@@ -269,4 +269,60 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-01T1202PassportLost
         git rm    IIS/WordEngineering/WordUnion/KenAdenijiResume.docx
         git rm    IIS/WordEngineering/WordUnion/KenAdenijiResume.txt
 		
-git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-01T1437HeWeptOverIt_Luke19v41_PassportLostOrStolenIssueNew_-_AmbassadorBiancaOdinakaOdumegu-Ojukwu_-_EmbassyOfTheFederalRepublicOfNigeria_WashingtonDC.txt		
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-01T1437HeWeptOverIt_Luke19v41_PassportLostOrStolenIssueNew_-_AmbassadorBiancaOdinakaOdumegu-Ojukwu_-_EmbassyOfTheFederalRepublicOfNigeria_WashingtonDC.txt
+
+git add	InformationInTransit/JohnPaulMueller/
+
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Mathematics_Integer_Operator.cpp InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Mathematics_Integer_Operator.cpp
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Mathematics_Integer_OperatorBuild.bat InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Mathematics_Integer_OperatorBuild.bat
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Mathematics_Integer_Operator.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Mathematics_Integer_Operator.obj
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Mathematics_Integer_Operator.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Mathematics_Integer_Operator.exe
+
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Spaceship_Operator.cpp InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Spaceship_Operator.cpp
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Spaceship_OperatorBuild.bat InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Spaceship_OperatorBuild.bat
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Spaceship_Operator.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Spaceship_Operator.obj
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04Spaceship_Operator.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04Spaceship_Operator.exe
+
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04String_Operator.cpp InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04String_Operator.cpp
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04String_OperatorBuild.bat InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04String_OperatorBuild.bat
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04String_Operator.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04String_Operator.obj
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter04String_Operator.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter04String_Operator.exe
+
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter05IterateThroughCommandLineArguments.cpp InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter05IterateThroughCommandLineArguments.cpp
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter05IterateThroughCommandLineArgumentsBuild.bat InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter05IterateThroughCommandLineArgumentsBuild.bat
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter05IterateThroughCommandLineArguments.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter05IterateThroughCommandLineArguments.obj
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Chapter05IterateThroughCommandLineArguments.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_Book01Chapter05IterateThroughCommandLineArguments.exe
+
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_HelloWorld.cpp InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_Book01Chapter03HelloWorld.cpp
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_HelloWorldBuild.bat InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_cppAll-in-OneForDummies4thEdition_-_Book01Chapter03HelloWorldBuild.bat
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorld.obj InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorldBook01Chapter03.obj
+rem 2025-09-10 git mv InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorld.exe InformationInTransit/JohnPaulMueller/cpp/cppAll-in-OneForDummies4thEdition/JohnPaulMueller_-_CppAll-in-OneForDummies4thEdition_-_HelloWorldBook01Chapter03.exe
+
+git add	IIS/WordEngineering/WordCross/2025-09-11T2027JanLehnardt_-_Template_mustache.js_Movie.html
+
+git add	IIS/WordEngineering/WordCross/2025-09-12T1121IvanBozhanov_-_vakata_PlovdivBulgaria_jstree_AbrahamGenealogy.html
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-12T1342Microsoft_-_KenAdeniji@hotmail.com_-_jobs@FreshCareerFinder.com_-_earnhaus.com_-_JustinJones_-_info@apexfocusgroup.com.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-13T0931...2025-09-13T1024sfbay.craigslist.org_nby_web_d_fort-myers-beach-linkuwantcom-seeks-ai_7881165602.html.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-13T1730Revelation17v17SpamMail_-_ImageOfTheBeast_-_SpiritOfTheAntichrist_-_Microsoft_-_KenAdeniji@hotmail.com_-_AARP@flotations.site_-_memberperks@unssick.com.txt
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T0850KennethD.Green_-_kgreen@actransit.org_-_Route281BusDriverDidNotPassengerBoard2025-09-22T1401.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-22T1250HowOurParticipatory...AreKnown_-_2025-09-22T1328WithOscar...WhoIsHeWritingFor_WhatIsHisPurpose_Psalms90v10.txt
+
+git add	"IIS/WordEngineering/2018-05-03Correspondence/2025-09-26T0623youtube.com_-_Leo XIV Speaks_-_watch-v-lXlWXvJfQGA_-_2025-09-23Pope Leo XIV Issues a Final Warning to Donald Trump and America.txt"
+git add IIS/WordEngineering/WordCross/2025-09-17T2143fedskillstestCoalitiontechnologiesWorkersDev.html
+git add IIS/WordEngineering/WordCross/2025-09-17T2143fedskillstestCoalitiontechnologiesWorkersDev.zip
+
+git add	IIS/WordEngineering/IBM/ArtificialIntelligence/
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-09-29T0107DavidZvi.com_-_work-with-me_-_DZKalman@gmail.com_-_AnybodyThatKnowMyWork...KnowThatIAmNotFullyInUse.txt
+
+git add	IIS/WordEngineering/ConversionTable/usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer.sql
+
+git add IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.asmx
+git add IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.html
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-02T1453jonathan.victor@legalfilingfirm.com_-_(855) 669-9909_-_Trademark conflict serial no. 90050770_-_It is up... to desire her taste.txt"
