@@ -1062,4 +1062,15 @@ SELECT TOP 3 p.ProductId
 2025-10-04T19:38:00 jstat.org 								2012-12-02 	4312	
 2025-10-04T20:07:00	informit.com/Stroustrup 	Bjarne Stroustrup 		C++ 					2016-02-04 	34083
 2025-10-05T00:10:00	ben@forta.com 								2018-02-11 	47660
+
+2025-10-07T12:00:00
+Mike McGrath 
+mmcgrath@redhat.com
+http://mmcgrath.net
+http://mmcgrath.livejournal.com
+
+http://support.google.com/translate/answer/11938428?hl=en&ref_topic=7011659&sjid=12930139183419241537-NC
+
+http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html
+
 :Exit

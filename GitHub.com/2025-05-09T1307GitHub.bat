@@ -332,3 +332,6 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-05T1700Alexandra C
 git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-06T0200Alexandra Colnan_-_Commonwealth Bank of Australia_-_Account 215 11000 5724_-_Alexandra.Colnan@cba.com.au_-_US Dollar Account.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-06T2030Vesna.Naumoska@cba.com.au Macedonia Commonwealth Bank of Australia Your CommBank complaint outcome CF-14915900C.txt"
+
+git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx
+git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html
