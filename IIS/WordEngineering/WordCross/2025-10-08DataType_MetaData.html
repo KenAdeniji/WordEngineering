@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-10-08T14:33:00...2025-10-08T15:49:00 Created.
+		2025-10-08T15:34:00	http://stackoverflow.com/questions/14528385/how-to-convert-json-object-to-javascript-array
+	-->
+	<head>
+		<title>2025-10-08 DataType MetaData</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2025-10-08 DataType MetaData"/>
+		<meta name="keywords" content="Data type, meta data"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dataType">Data Type</label></td>
+					<td><select id="dataType" autofocus></select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"> </div>
+		</div>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			var isPostBack = false;
+			
+			const 	dataTypeElement = document.getElementById("dataType");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultTableElement = document.getElementById("resultTable");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySelect();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySelect()
+			{
+				var request = {};
+				//request[""] = "";
+				
+				const PostData = 
+				{
+					method: 'POST',
+					headers:
+					{
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx/QueryDataType";
+				try 
+				{
+					const response = fetch(url, PostData)
+					.then
+					(	
+						response => 
+						{
+							return response.json();
+						}
+					)
+					.then
+					(
+						responseJSON => 
+						{
+							var dataType = JSON.parse(responseJSON.d);
+
+							var dataTypeArray = [];
+
+							for(var i in dataType)
+							{
+								dataTypeArray.push(dataType[i].Major);
+							}
+							
+							scriptLiteral9432.buildSelect
+							(
+								"dataType",
+								dataTypeArray
+							);
+							
+							const urlParams = new URLSearchParams(window.location.search);
+							
+							var dataTypeValue = urlParams.get("dataType");
+							if (dataTypeValue)
+							{
+								dataTypeElement.value = dataTypeValue;
+							}	
+						}
+					)	
+				} catch (e) 
+				{
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			function querySubmit()
+			{
+				var request = {};
+				request["dataType"] = dataTypeElement.value;
+				
+				const PostData = 
+				{
+					method: 'POST',
+					headers:
+					{
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx/QueryDataTypeList";
+				try 
+				{
+					const response = fetch(url, PostData)
+					.then
+					(	
+						response => 
+						{
+							return response.json();
+						}
+					)
+					.then
+					(
+						responseJSON => 
+						{
+							var dataTable = JSON.parse(responseJSON.d);
+							scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						}
+					)	
+				} catch (e) 
+				{
+					resultTableElement.innerHTML = e;
+				};			
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
