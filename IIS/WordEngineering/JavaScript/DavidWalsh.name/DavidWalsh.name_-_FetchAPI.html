@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-10-14T17:00:00	Created. http://davidwalsh.name/fetch
+		http://www2025.thewebconf.org
+		The ACM Web Conference 2025 
+		Sydney, Australia
+		ICC Sydney: International Convention & Exhibition Centre
+		28 April - 2 May 2025
+	-->	
+	<head>
+		<title>DavidWalsh.name_-_FetchAPI.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="DavidWalsh.name_-_FetchAPI.html"/>
+		<meta name="keyword" content="anchor href"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="sourceAddress">Source Address:</label></td>
+					<td>
+						<input 
+							id="sourceAddress"
+							type="url"
+							style="width: 55vw;"
+							value="https://kenadeniji.github.io/Github/2018-08-06T1700Entity-Relationship%20Model%20-%20Contact.png"
+						/>
+					</td>
+				</tr>
+				<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			</table>	
+			<img id="resultSet">
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				fetch(sourceAddressElement.value)
+					.then(function(response) {
+					  return response.blob();
+					})
+					.then(function(imageBlob) {
+					  document.querySelector('img').src = URL.createObjectURL(imageBlob);
+					});
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
