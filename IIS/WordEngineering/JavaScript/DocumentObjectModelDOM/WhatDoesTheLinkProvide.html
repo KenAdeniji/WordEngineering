@@ -22,7 +22,8 @@ export function isInternalLink(urlString: string): boolean | {
 		http://stackoverflow.com/questions/3999101/get-iframes-document-from-javascript-in-main-document
 		
 		2025-09-13T14:40:00 http://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src
-		
+			https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html	
+			
 		2025-10-01
 			PaulMcFedries.com
 			FaceBook.com/PaulMcFedries
@@ -49,6 +50,15 @@ export function isInternalLink(urlString: string): boolean | {
 				);	
 		2025-10-03T00:21:00 These are our children... these are us.
 			Page load versus (VS) IFrame load.
+		2025-10-03	What event is after IFrame load?
+			document.addEventListener("DOMContentLoaded", function() {
+			   // your code here
+			}, false);
+		
+			http://stackoverflow.com/questions/11936816/execute-function-after-complete-page-load
+			setTimeout(function(){
+			 //your code here
+			}, 3000);			
 	-->	
 	<head>
 		<title>What does the link provide?</title>
@@ -115,6 +125,7 @@ export function isInternalLink(urlString: string): boolean | {
 		</div>	
 		<script>
 			var isPostBack = false;
+			var frameHTMLDocumentCurrent;
 			
 			const 	formedElement = document.getElementById("formed");
 			const 	sourceAddressElement = document.getElementById("sourceAddress");
@@ -213,6 +224,7 @@ export function isInternalLink(urlString: string): boolean | {
 					// The loading is complete, call the function we want executed once the iframe is loaded
 					//console.log("I am loaded");
 					queryGenerateStatistics(frameHTMLDocument);
+					frameHTMLDocumentCurrent = frameHTMLDocument;
 					return;
 				} 
 
@@ -272,6 +284,22 @@ export function isInternalLink(urlString: string): boolean | {
 
 			window.addEventListener("load", pageLoad, false);
 			
+			frameInfoElement.addEventListener
+			(
+				"load", //"DOMContentLoaded"
+				function() 
+				{
+					setTimeout
+					(
+						function()
+						{
+							queryGenerateStatistics(frameHTMLDocumentCurrent);
+						}, 3000
+					);			
+				}, 
+				false
+			);
+		
 			const SelectorElementTypes = ["*", "script", "style", "img"];
 		</script>		
 	</body>

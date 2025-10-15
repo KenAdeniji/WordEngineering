@@ -297,12 +297,13 @@ customers, shareholders, and community.
 -   Examples of technology. For each particular technology, highlight an
     example.
     -   [Language](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/AishaqAndTraining.html){dated="2022-05-29T14:35:00"}
-    -   Artificial Intelligence: vector-search-in-sql-server [stored
-        procedure
-        (.sql)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer.sql)
-        [html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.html)
-        [web service
-        (.asmx)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.asmx)
+    -   Artificial Intelligence:
+        1.  [Scikit-learn](http://github.com/KenAdeniji/WordEngineering/tree/master/IIS/WordEngineering/ConversionTable){dated="2024-07-29T06:53:00"}
+        2.  vector-search-in-sql-server [stored procedure
+            (.sql)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/usp_20250929T1700TemperatureConversion_VectorSearchInSqlServer.sql)
+            [html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.html)
+            [web service
+            (.asmx)](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/ConversionTable/20250929T1700TemperatureConversion_VectorSearchInSqlServer.asmx)
     -   Regular Expression (RegEx)
         [DateComputation.html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Dated/DateComputation.html){dated="2022-01-28T00:00:00"}
         [Sample](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/RegularExpression){dated="2023-07-28T00:00:00"}
@@ -344,15 +345,12 @@ customers, shareholders, and community.
 -   [builderprogram-kadeniji.quickbase.com](http://builderprogram-kadeniji.quickbase.com)
 -   [speakpipe.com/msg/s/327708/1/41h441jc4fbopl4b](http://www.speakpipe.com/msg/s/327708/1/41h441jc4fbopl4b){dated="2023-10-23T19:54:00"
     commentary="2024-01-21 referred to as voice mail recording, podcast"}
--   [Unified Modeling Language (UML)
-    diagram](http://e-comfort.ephraimtech.com/WordEngineering/Tuesday%20ni%20kin%20yen%20ma%20bere%20on%20the%20first)
 -   [ResumeAid](http://e-comfort.ephraimtech.com/WordEngineering/Resume/ResumeAid.html)
 -   [What are the steps, you go through, in a job
     interview?](http://e-comfort.ephraimtech.com/WordEngineering/Resume/WhatAreTheStepsYouGoThroughInAJobInterview.html)
 -   [Deposit a
     Code](http://e-comfort.ephraimtech.com/WordEngineering/DepositACode)
 -   Artificial Intelligence
-    [Scikit-learn](http://github.com/KenAdeniji/WordEngineering/tree/master/IIS/WordEngineering/ConversionTable){dated="2024-07-29T06:53:00"}
     [js.TensorFlow.org](http://e-comfort.ephraimtech.com/WordEngineering/ArtificialIntelligence/js.TensorFlow.org)
     [Compromise](http://e-comfort.ephraimtech.com/WordEngineering/ArtificialIntelligence/Natural-Language%2520Processing/Spencer%20Mountain/Compromise/Github.com_-_SpencerMountain_-_Compromise_-_Natural-Language%20Processing.html)
     [Brain - Our Relating to
