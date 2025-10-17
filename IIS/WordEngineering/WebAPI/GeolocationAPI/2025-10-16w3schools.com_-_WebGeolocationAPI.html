@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-10-16	Created. http://www.w3schools.com/js/js_api_geolocation.asp
+	-->	
+	<head>
+		<title>Web Geolocation API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="w3schools.com: Web Geolocation API"/>
+		<meta name="keyword" content="w3schools.com, Web Geolocation API"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div id="resultSet" align="center"></div>
+		<script>
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (navigator.geolocation) 
+				{
+					navigator.geolocation.watchPosition
+					(
+						showGeolocation,
+						showError
+					);
+				}
+				else
+				{
+					resultSetElement.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+			
+			function showError(error)
+			{
+				switch(error.code) 
+				{
+					case error.PERMISSION_DENIED:
+						resultSetElement.innerHTML = "User denied the request for Geolocation."
+						break;
+					case error.POSITION_UNAVAILABLE:
+						resultSetElement.innerHTML = "Location information is unavailable."
+						break;
+					case error.TIMEOUT:
+						resultSetElement.innerHTML = "The request to get user location timed out."
+						break;
+					case error.UNKNOWN_ERROR:
+						resultSetElement.innerHTML = "An unknown error occurred."
+						break;
+				}
+			}
+
+			function showGeolocation(position) 
+			{
+				resultSetElement.innerHTML = "Latitude: " + position.coords.latitude +
+					"<br>Longitude: " + position.coords.longitude;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
