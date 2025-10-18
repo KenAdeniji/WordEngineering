@@ -67,11 +67,13 @@
 			function querySubmit()
 			{
 				fetch(sourceAddressElement.value)
-					.then(function(response) {
+					.then(function(response) 
+					{
 					  return response.blob();
 					})
-					.then(function(imageBlob) {
-					  document.querySelector('img').src = URL.createObjectURL(imageBlob);
+					.then(function(imageBlob) 
+					{
+					  document.querySelector("img").src = URL.createObjectURL(imageBlob);
 					});
 			}
 			

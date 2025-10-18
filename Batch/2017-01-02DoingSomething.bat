@@ -1073,4 +1073,7 @@ http://support.google.com/translate/answer/11938428?hl=en&ref_topic=7011659&sjid
 
 http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html
 
+2025-10-16 http://www.siteground.com/kb/fix-err-connection-reset/#fixes
+
+2025-10-16T21:21:00 http://www.w3schools.com/js/js_api_geolocation.asp
 :Exit

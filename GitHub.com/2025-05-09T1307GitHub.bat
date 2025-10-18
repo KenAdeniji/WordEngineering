@@ -336,4 +336,8 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-06T2030Vesna.Naumo
 git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx
 git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html
 
-git IIS/WordEngineering/JavaScript/DavidWalsh.name/DavidWalsh.name_-_FetchAPI.html
+git add IIS/WordEngineering/JavaScript/DavidWalsh.name/DavidWalsh.name_-_FetchAPI.html
+
+git add	IIS/WordEngineering/WebAPI/GeolocationAPI/
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2025-10-17FourSeasons_-_2025-06-09LawOfElection(Romans9v11)_-_CommonwealthBankOfAustralia_-_Account215110005724_-_MattComyn_-_Alexandra.Colnan@cba.com.au_-_Vesna.Naumoska@cba.com.au.txt
