@@ -1076,4 +1076,18 @@ http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.g
 2025-10-16 http://www.siteground.com/kb/fix-err-connection-reset/#fixes
 
 2025-10-16T21:21:00 http://www.w3schools.com/js/js_api_geolocation.asp
+
+2025-10-18T21:48:00	http://documentservices.adobe.com/view-sdk-demo/index.html#/view/FULL_WINDOW/Bodea%20Brochure.pdf
+<div id="adobe-dc-view"></div>
+<script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:{location: {url: "https://documentservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+			metaData:{fileName: "Bodea Brochure.pdf"}
+		}, {});
+	});
+</script>
+
 :Exit

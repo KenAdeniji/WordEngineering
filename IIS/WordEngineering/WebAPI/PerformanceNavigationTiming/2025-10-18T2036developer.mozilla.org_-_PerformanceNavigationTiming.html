@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-10-18T20:36:00	Created.
+			http://github.com/addyosmani/timing.js
+			http://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Navigation_timing
+	-->	
+	<head>
+		<title>PerformanceNavigationTiming</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="PerformanceNavigationTiming"/>
+		<meta name="keyword" content="PerformanceNavigationTiming"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
+	</head>
+	<body>
+		<div id="resultSet"></div>
+		<script>
+			const observer = new PerformanceObserver((list) => {
+			  list.getEntries().forEach((entry) => {
+				const domContentLoadedTime =
+				  entry.domContentLoadedEventEnd - entry.domContentLoadedEventStart;
+				console.log(
+				  `${entry.name}: DOMContentLoaded processing time: ${domContentLoadedTime}ms`,
+				);
+				document.write(
+					`${entry.name}: DOMContentLoaded processing time: ${domContentLoadedTime}ms`
+				);
+			  });
+			});
+			observer.observe({ type: "navigation", buffered: true });		
+		</script>		
+	</body>
+</html>
