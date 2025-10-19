@@ -342,7 +342,8 @@ git add	IIS/WordEngineering/WebAPI/GeolocationAPI/
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-10-17FourSeasons_-_2025-06-09LawOfElection(Romans9v11)_-_CommonwealthBankOfAustralia_-_Account215110005724_-_MattComyn_-_Alexandra.Colnan@cba.com.au_-_Vesna.Naumoska@cba.com.au.txt
 
-git add	IIS/WordEngineering/Adobe/2025-10-18T2159Adobe PDF Embed API Demo_-_In-Line.html
+git add	"IIS/WordEngineering/Adobe/2025-10-18T2159Adobe PDF Embed API Demo_-_In-Line.html"
 git add	IIS/WordEngineering/TextBelt/2025-10-18T1910TextBelt.com.html
 git add	IIS/WordEngineering/WebAPI/PerformanceNavigationTiming/
 git add	InformationInTransit/SteveLove/
+
