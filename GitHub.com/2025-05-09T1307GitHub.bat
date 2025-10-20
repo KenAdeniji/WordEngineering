@@ -347,3 +347,4 @@ git add	IIS/WordEngineering/TextBelt/2025-10-18T1910TextBelt.com.html
 git add	IIS/WordEngineering/WebAPI/PerformanceNavigationTiming/
 git add	InformationInTransit/SteveLove/
 
+git add	"IIS/WordEngineering/Representational State Transfer (REST)/"

@@ -1090,4 +1090,6 @@ http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.g
 	});
 </script>
 
+2025-10-19T13:11:00 http://stackoverflow.com/questions/9726486/convert-asmx-c-sharp-web-service-to-rest
+
 :Exit
