@@ -28,6 +28,9 @@ using InformationInTransit.UserInterface;
 ///		Serhat Oz
 ///		79888 silver badges13
 ///	2025-10-19T19:31:00	When one loves God... that is made in Him.
+///	2025-10-19T19:59:00	What is necessary the same.
+///		1st tablet, intake. During my Master's degree, the 3 Amigos did the work.
+///	2025-10-19T20:00:00	How to do it I know... how you will do it... is what I want to know?
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
