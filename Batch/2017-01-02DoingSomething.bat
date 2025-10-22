@@ -186,11 +186,11 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71726);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2512);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2575);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9179);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162176);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 17712);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 17791);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3062);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 7852);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -1091,5 +1091,7 @@ http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.g
 </script>
 
 2025-10-19T13:11:00 http://stackoverflow.com/questions/9726486/convert-asmx-c-sharp-web-service-to-rest
+
+2025-10-17 reportphishing@apwg.org
 
 :Exit

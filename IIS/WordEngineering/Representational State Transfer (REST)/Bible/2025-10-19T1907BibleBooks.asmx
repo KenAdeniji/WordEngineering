@@ -27,10 +27,18 @@ using InformationInTransit.UserInterface;
 ///		Serhat Oz's user avatar
 ///		Serhat Oz
 ///		79888 silver badges13
+///	2025-10-18	http://www.abibliadigital.com.br
+///		Brazilian Márcio Vinícius Sena omarciovsena · he/him ?? CTO e Dir. de Comunidades @impulso_team. Escrevo p/ profissionais tech e Falo com CTOs e Tech Leaders no Hi Tech Podcast 428 followers · 28 following  Impulso Anápolis, Goiás contato@marciosena.com.br https://beacons.ai/omarciovsena @omarciovsena
+///	2025-10-19	github.com/Kikobeats/awesome-api
+/// 	Kiko Beats Kikobeats Software writer. 1.6k followers · 196 following @microlinkhq Murcia, Spain josefrancisco.verdu@gmail.com https://kikobeats.com @Kikobeats
+///	2025-10-19	vinaysahni.com/best-practices-for-a-pragmatic-restful-api
+///		Vinay Sahni Full stack developer  ·  Co-Founder of Enchant vinay@sahni.org  ·  @veesahni Best Practices for Designing a Pragmatic RESTful API
 ///	2025-10-19T19:31:00	When one loves God... that is made in Him.
 ///	2025-10-19T19:59:00	What is necessary the same.
 ///		1st tablet, intake. During my Master's degree, the 3 Amigos did the work.
 ///	2025-10-19T20:00:00	How to do it I know... how you will do it... is what I want to know?
+///		http://localhost/wordengineering/Representational%20State%20Transfer%20(REST)/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBooks
+///	2025-10-20T10:07:00 For either a sacred text title or scripture reference, determine the other information?
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
