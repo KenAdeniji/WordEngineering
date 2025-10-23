@@ -13,7 +13,9 @@ using System.Web.Script.Services;
 
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Script.Serialization;
+//using System.Web.Script.Serialization;
+
+//using System.Text.Json;
 
 using Newtonsoft.Json;
 
@@ -39,6 +41,7 @@ using InformationInTransit.UserInterface;
 ///	2025-10-19T20:00:00	How to do it I know... how you will do it... is what I want to know?
 ///		http://localhost/wordengineering/Representational%20State%20Transfer%20(REST)/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBooks
 ///	2025-10-20T10:07:00 For either a sacred text title or scripture reference, determine the other information?
+///	2025-10-22T10:44:00	http://github.com/omarciovsena/abibliadigital/blob/master/DOCUMENTATION.md
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -46,12 +49,9 @@ using InformationInTransit.UserInterface;
 public class BibleBooksWebService : System.Web.Services.WebService
 {
    	[WebMethod]
-	[ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-	public void getBibleBooks()
+	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
+	public String getBibleBooks()
     {
-        Context.Response.Clear();
-        Context.Response.ContentType = "application/json";
-
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
 			@"
@@ -64,6 +64,18 @@ public class BibleBooksWebService : System.Web.Services.WebService
 		);
 		
 		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
-		Context.Response.Write(json);
+		return json;
+
+/*		
+		JavaScriptSerializer serializer = new JavaScriptSerializer();
+		Context.Response.Clear();
+        Context.Response.ContentType = "application/json";
+		string jsonString = serializer.Serialize(dataTable);
+        Context.Response.Write(jsonString);
+*/
+		/*	
+		string jsonString = JsonSerializer.Serialize(dataTable);
+		Context.Response.Write(jsonString);	
+		*/
     }
 }

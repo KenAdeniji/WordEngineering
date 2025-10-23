@@ -1094,4 +1094,20 @@ http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.g
 
 2025-10-17 reportphishing@apwg.org
 
+2025-10-22T11:32:00 http://dnschecker.org/social-media-name-checker.php
+
+<!--
+		<add assembly="System.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+		<add assembly="System.Text.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />	
+dotnet add package System.Text.Json --version 10.0.0		
+-->
+dotnet add package System.Text.Json --version 10.0.0-rc.2.25502.107
+D:\WordEngineering\IIS\WordEngineering>dotnet add package System.Text.Json --version 10.0.0-rc.2.25502.107
+  WordEngineering failed with 1 error(s) (0.0s)
+    D:\WordEngineering\IIS\WordEngineering\WordEngineering.csproj(630,3): error MSB4019: The imported project "C:\Program Files\dotnet\sdk\9.0.203\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets" was not found. Confirm that the expression in the Import declaration "$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets", which evaluated to "C:\Program Files\dotnet\sdk\9.0.203\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets", is correct, and that the file exists on disk.
+
+Build failed with 1 error(s) in 0.1s
+Unable to create dependency graph file for project 'D:\WordEngineering\IIS\WordEngineering\WordEngineering.csproj'. Cannot add package reference.
+
+https://staticmania.com/blog/how-to-build-rest-api
 :Exit
