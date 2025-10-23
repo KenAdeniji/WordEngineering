@@ -728,7 +728,7 @@ var scriptLiteral9432 =
 		ctx.fillText(captchaSecret, 10, 50);
 		return captchaSecret;
 	},
-	
+
 	//2020-11-03	Created.	http://flaviocopes.com/javascript-check-empty-object
 	checkEmptyObject: function(obj)
 	{

@@ -348,8 +348,10 @@ git add	IIS/WordEngineering/WebAPI/PerformanceNavigationTiming/
 git add	InformationInTransit/SteveLove/
 
 REM 2025-10-22
-REM git rm  -f -r "IIS/WordEngineering/Representational State Transfer (REST)/"
+git rm  -f -r "IIS/WordEngineering/Representational State Transfer (REST)/"
 
 git add	"IIS/WordEngineering/2025-10-20InternetWebAddresses/"
 
 git add	"IIS/WordEngineering/RepresentationalStateTransfer/"
+
+git add IIS/WordEngineering/WordUnion/9432.js
