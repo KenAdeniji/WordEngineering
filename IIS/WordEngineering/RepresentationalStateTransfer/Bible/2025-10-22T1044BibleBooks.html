@@ -21,6 +21,8 @@
 	2025-10-22T10:44:00	http://github.com/omarciovsena/abibliadigital/blob/master/DOCUMENTATION.md
 	2025-10-22T19:20:00...2025-10-22T20:56:00
 		http://stackoverflow.com/questions/11599666/get-the-value-of-checked-checkbox
+			var checkboxCheckedValuesFilterBy = Array.prototype.slice.call(document.querySelectorAll("[name='" + "filterBy" + "']:checked"),0).map(function(v,i,a) { return v.value; });
+			//var checkboxCheckedValuesFilterBy = Array.from(document.querySelectorAll("[name='" + "filterBy" + "']:checked").map((p) => p.value);
 	-->
 	<head>
 		<title>2025-10-22 Bible Books</title>
@@ -34,24 +36,7 @@
 		<div align="center">
 			<table>
 				<tr>
-					<td colspan="2">
-						<fieldset>
-						  <legend>Filter by</legend>
-
-						  <div>
-							<input type="checkbox" id="filterByBookTitle" name="filterBy" value="BookTitle" />
-							<label for="filterByBookTitle">Book title</label>
-						  </div>
-
-						  <div>
-							<input type="checkbox" id="filterByBookID" name="filterBy" value="BookID" />
-							<label for="filterByBookID">Book ID</label>
-						  </div>
-						</fieldset>
-					</td>		
-				</tr>
-				<tr>
-					<td><label for="bookTitle">Book title</label></td>
+					<td><label for="bookTitle">Book Title</label></td>
 					<td><select id="bookTitle" multiple autofocus></select></td>
 				</tr>
 				<tr>
@@ -110,35 +95,25 @@
 
 			function querySubmit()
 			{
-				var checkboxCheckedValuesFilterBy = Array.prototype.slice.call(document.querySelectorAll("[name='" + "filterBy" + "']:checked"),0).map(function(v,i,a) { return v.value; });
-				//var checkboxCheckedValuesFilterBy = Array.from(document.querySelectorAll("[name='" + "filterBy" + "']:checked").map((p) => p.value);
-				resultTableElement.innerHTML = "";
-				var bookIDValue = "";
 				var gridOrForm = false;
 
-				if (checkboxCheckedValuesFilterBy.length === 0)
+				if (Number.isNaN(bookIDElement.value))
 				{
-				}
-				else if 
-				(
-						checkboxCheckedValuesFilterBy.length === 1 
-					&&	checkboxCheckedValuesFilterBy[0] === "BookID"
-				)
-				{
-					bookIDValue = bookIDElement.value;
-					if (Number.isNaN(bookIDValue))
-					{
-						gridOrForm = true;
-						console.log("gridOrForm:", gridOrForm);
-					}
+					gridOrForm = true;
 				}	
-				fetchBibleBooks(bookIDValue, gridOrForm);
+				fetchBibleBooks
+				(
+					scriptLiteral9432.selectionGet("bookTitle"),
+					bookIDElement.value,
+					gridOrForm
+				);
 			}
 			
-			async function fetchBibleBooks(bookID, gridOrForm)
+			async function fetchBibleBooks(bookTitleValue, bookIDValue, gridOrForm)
 			{
 				var request = {};
-				request["bookID"] = bookID;
+				request["bookTitle"] = bookTitleValue;
+				request["bookID"] = bookIDValue;
 
 				const PostData = {
 					method: "POST",

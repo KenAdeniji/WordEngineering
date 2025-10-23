@@ -13,6 +13,8 @@ using System.Web.Script.Services;
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
+
 //using System.Web.Script.Serialization;
 
 //using System.Text.Json;
@@ -52,40 +54,56 @@ public class BibleBooksWebService : System.Web.Services.WebService
 	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
 	public String getBibleBooks
 	(
+		string bookTitle,
 		string bookID
 	)
     {
 		string sqlStatement = "";
-		int bookNumber = -1;
-		bool bookIDs = int.TryParse(bookID, out bookNumber);
-		if (bookID == "")
+
+		int bookIDParsed = -1;
+		bool bookIDValid = int.TryParse(bookID, out bookIDParsed);
+
+		StringBuilder sb = new StringBuilder();
+		
+		if (bookTitle != "")
 		{
-			sqlStatement = "SELECT DISTINCT BookID, BookTitle FROM Bible..Scripture_View ORDER BY BookID";
-		}
-		else if (bookNumber == -1)
-		{
-			sqlStatement = String.Format
+			sb.AppendFormat
 			(
-				@"
-					SELECT TOP 1 BookID, BookTitle
-					FROM Bible..Scripture_View
-					WHERE BookID = {0}
-				",
-				bookID
-			);
+				" OR BookTitle IN ({0}) ",
+				bookTitle
+			);	
 		}
-		else
+
+		if (bookID != "")
 		{
-			sqlStatement = String.Format
-			(
-				@"
-					SELECT DISTINCT BookID, BookTitle
-					FROM Bible..Scripture_View
-					WHERE BookID IN ({0})
-				",
-				bookID
-			);
+			if (bookIDParsed == -1)
+			{
+				sb.AppendFormat
+				(
+					" OR BookID = {0} ",
+					bookID
+				);	
+			}
+			else
+			{
+				sb.AppendFormat
+				(
+					" OR BookID IN ({0}) ",
+					bookID
+				);	
+			}
 		}
+
+		if (sb.Length == 0)
+		{
+			sb.Append(" OR 1 = 1 ");
+		}
+
+		sqlStatement = String.Format
+		(
+			SqlStatement,
+			sb.ToString()
+		);
 
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
@@ -109,4 +127,11 @@ public class BibleBooksWebService : System.Web.Services.WebService
 		Context.Response.Write(jsonString);	
 		*/
     }
+	
+	const String SqlStatement = @"
+		SELECT DISTINCT BookID, BookTitle
+		FROM Bible..Scripture_View
+		WHERE 1 <> 1 {0}
+		ORDER BY BookID
+	";
 }
