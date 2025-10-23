@@ -101,9 +101,15 @@
 				{
 					gridOrForm = true;
 				}	
+
+				var bookTitleValues = scriptLiteral9432.selectionGet("bookTitle");
+				var bookTitleArray = bookTitleValues.split(",");
+				var quotedArray = bookTitleArray.map(el => "'" + el + "'");
+				var bookTitleValuesQuoted = quotedArray.join(",");
+
 				fetchBibleBooks
 				(
-					scriptLiteral9432.selectionGet("bookTitle"),
+					bookTitleValuesQuoted,
 					bookIDElement.value,
 					gridOrForm
 				);
