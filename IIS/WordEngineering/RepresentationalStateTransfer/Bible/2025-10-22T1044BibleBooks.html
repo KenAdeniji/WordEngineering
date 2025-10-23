@@ -113,24 +113,32 @@
 				var checkboxCheckedValuesFilterBy = Array.prototype.slice.call(document.querySelectorAll("[name='" + "filterBy" + "']:checked"),0).map(function(v,i,a) { return v.value; });
 				//var checkboxCheckedValuesFilterBy = Array.from(document.querySelectorAll("[name='" + "filterBy" + "']:checked").map((p) => p.value);
 				resultTableElement.innerHTML = "";
+				var bookIDValue = "";
+				var gridOrForm = false;
+
 				if (checkboxCheckedValuesFilterBy.length === 0)
 				{
-					allBibleBooks();
 				}
 				else if 
 				(
 						checkboxCheckedValuesFilterBy.length === 1 
 					&&	checkboxCheckedValuesFilterBy[0] === "BookID"
-					&&	Number.isInteger(parseInt(bookIDElement.value)) 
 				)
 				{
-					bibleBookID();
+					bookIDValue = bookIDElement.value;
+					if (Number.isNaN(bookIDValue))
+					{
+						gridOrForm = true;
+						console.log("gridOrForm:", gridOrForm);
+					}
 				}	
+				fetchBibleBooks(bookIDValue, gridOrForm);
 			}
 			
-			async function allBibleBooks()
+			async function fetchBibleBooks(bookID, gridOrForm)
 			{
 				var request = {};
+				request["bookID"] = bookID;
 
 				const PostData = {
 					method: "POST",
@@ -150,43 +158,13 @@
 					})
 					.then(responseJSON => {
 						var dataTable = JSON.parse(responseJSON.d);
-						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable", gridOrForm);
 					})	
 					} catch (e) {
 					resultTableElement.innerHTML = e;
 				};
 			}
 
-			async function bibleBookID()
-			{
-				var request = {};
-				request["bookID"] = parseInt(bookIDElement.value);
-
-				const PostData = {
-					method: "POST",
-					headers: {
-						"Accept": "application/json",
-						"Content-Type": "application/json; charset=utf-8"
-					},
-					dataType: "json",
-					credentials: "include"
-				}
-				PostData.body = JSON.stringify(request);
-				url = "/Wordengineering/RepresentationalStateTransfer/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBookID";
-				try {
-					const response = await fetch(url, PostData)
-					.then(response => {
-						return response.json();
-					})
-					.then(responseJSON => {
-						var dataTable = JSON.parse(responseJSON.d);
-						scriptLiteral9432.renderDataTable(dataTable, "resultTable", true);
-					})	
-					} catch (e) {
-					resultTableElement.innerHTML = e;
-				};
-			}
-	
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			
 			var body = document.getElementsByTagName("body")[0];

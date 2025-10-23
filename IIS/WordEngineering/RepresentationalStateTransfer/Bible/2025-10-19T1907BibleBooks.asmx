@@ -50,15 +50,46 @@ public class BibleBooksWebService : System.Web.Services.WebService
 {
    	[WebMethod]
 	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
-	public String getBibleBooks()
+	public String getBibleBooks
+	(
+		string bookID
+	)
     {
+		string sqlStatement = "";
+		int bookNumber = -1;
+		bool bookIDs = int.TryParse(bookID, out bookNumber);
+		if (bookID == "")
+		{
+			sqlStatement = "SELECT DISTINCT BookID, BookTitle FROM Bible..Scripture_View ORDER BY BookID";
+		}
+		else if (bookNumber == -1)
+		{
+			sqlStatement = String.Format
+			(
+				@"
+					SELECT TOP 1 BookID, BookTitle
+					FROM Bible..Scripture_View
+					WHERE BookID = {0}
+				",
+				bookID
+			);
+		}
+		else
+		{
+			sqlStatement = String.Format
+			(
+				@"
+					SELECT DISTINCT BookID, BookTitle
+					FROM Bible..Scripture_View
+					WHERE BookID IN ({0})
+				",
+				bookID
+			);
+		}
+
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			@"
-				SELECT DISTINCT BookID, BookTitle
-				FROM Bible..Scripture_View
-				ORDER BY BookID
-			",
+			sqlStatement,
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
@@ -78,28 +109,4 @@ public class BibleBooksWebService : System.Web.Services.WebService
 		Context.Response.Write(jsonString);	
 		*/
     }
-	
-   	[WebMethod]
-	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
-	public String getBibleBookID(int bookID)
-    {
-		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
-		(
-			String.Format
-			(
-				@"
-					SELECT TOP 1 BookID, BookTitle
-					FROM Bible..Scripture_View
-					WHERE BookID = {0}
-				",
-				bookID
-			),
-			CommandType.Text,
-			DataCommand.ResultType.DataTable
-		);
-		
-		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
-		return json;
-    }
-	
 }
