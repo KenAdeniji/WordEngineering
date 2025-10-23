@@ -78,4 +78,28 @@ public class BibleBooksWebService : System.Web.Services.WebService
 		Context.Response.Write(jsonString);	
 		*/
     }
+	
+   	[WebMethod]
+	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
+	public String getBibleBookID(int bookID)
+    {
+		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
+		(
+			String.Format
+			(
+				@"
+					SELECT TOP 1 BookID, BookTitle
+					FROM Bible..Scripture_View
+					WHERE BookID = {0}
+				",
+				bookID
+			),
+			CommandType.Text,
+			DataCommand.ResultType.DataTable
+		);
+		
+		string json = JsonConvert.SerializeObject(dataTable, Formatting.Indented);
+		return json;
+    }
+	
 }

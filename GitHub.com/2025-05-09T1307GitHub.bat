@@ -347,7 +347,8 @@ git add	IIS/WordEngineering/TextBelt/2025-10-18T1910TextBelt.com.html
 git add	IIS/WordEngineering/WebAPI/PerformanceNavigationTiming/
 git add	InformationInTransit/SteveLove/
 
-git rm  -f -r "IIS/WordEngineering/Representational State Transfer (REST)/"
+REM 2025-10-22
+REM git rm  -f -r "IIS/WordEngineering/Representational State Transfer (REST)/"
 
 git add	"IIS/WordEngineering/2025-10-20InternetWebAddresses/"
 

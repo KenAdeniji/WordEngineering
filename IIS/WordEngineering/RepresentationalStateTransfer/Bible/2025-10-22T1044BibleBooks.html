@@ -19,6 +19,8 @@
 		http://localhost/wordengineering/Representational%20State%20Transfer%20(REST)/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBooks
 	2025-10-20T10:07:00 For either a sacred text title or scripture reference, determine the other information?
 	2025-10-22T10:44:00	http://github.com/omarciovsena/abibliadigital/blob/master/DOCUMENTATION.md
+	2025-10-22T19:20:00...2025-10-22T20:56:00
+		http://stackoverflow.com/questions/11599666/get-the-value-of-checked-checkbox
 	-->
 	<head>
 		<title>2025-10-22 Bible Books</title>
@@ -37,12 +39,12 @@
 						  <legend>Filter by</legend>
 
 						  <div>
-							<input type="checkbox" id="filterByBookTitle" name="filterBy" checked />
+							<input type="checkbox" id="filterByBookTitle" name="filterBy" value="BookTitle" />
 							<label for="filterByBookTitle">Book title</label>
 						  </div>
 
 						  <div>
-							<input type="checkbox" id="filterByBookID" name="filterBy" />
+							<input type="checkbox" id="filterByBookID" name="filterBy" value="BookID" />
 							<label for="filterByBookID">Book ID</label>
 						  </div>
 						</fieldset>
@@ -54,7 +56,7 @@
 				</tr>
 				<tr>
 					<td><label for="bookID">Book ID</label></td>
-					<td><textarea id="bookIDs"></textarea></td>
+					<td><textarea id="bookID"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -82,7 +84,8 @@
 			var isPostBack = false;
 			
 			const 	bookTitleElement = document.getElementById("bookTitle");
-			
+			const 	bookIDElement = document.getElementById("bookID");
+
 			const 	submitQueryElement = document.getElementById("submitQuery");
 			
 			const	resultTableElement = document.getElementById("resultTable");
@@ -105,7 +108,27 @@
 				}
  			}
 
-			async function querySubmit()
+			function querySubmit()
+			{
+				var checkboxCheckedValuesFilterBy = Array.prototype.slice.call(document.querySelectorAll("[name='" + "filterBy" + "']:checked"),0).map(function(v,i,a) { return v.value; });
+				//var checkboxCheckedValuesFilterBy = Array.from(document.querySelectorAll("[name='" + "filterBy" + "']:checked").map((p) => p.value);
+				resultTableElement.innerHTML = "";
+				if (checkboxCheckedValuesFilterBy.length === 0)
+				{
+					allBibleBooks();
+				}
+				else if 
+				(
+						checkboxCheckedValuesFilterBy.length === 1 
+					&&	checkboxCheckedValuesFilterBy[0] === "BookID"
+					&&	Number.isInteger(parseInt(bookIDElement.value)) 
+				)
+				{
+					bibleBookID();
+				}	
+			}
+			
+			async function allBibleBooks()
 			{
 				var request = {};
 
@@ -128,6 +151,36 @@
 					.then(responseJSON => {
 						var dataTable = JSON.parse(responseJSON.d);
 						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			async function bibleBookID()
+			{
+				var request = {};
+				request["bookID"] = parseInt(bookIDElement.value);
+
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/Wordengineering/RepresentationalStateTransfer/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBookID";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable", true);
 					})	
 					} catch (e) {
 					resultTableElement.innerHTML = e;
