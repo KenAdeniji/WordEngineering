@@ -58,7 +58,14 @@ export function isInternalLink(urlString: string): boolean | {
 			http://stackoverflow.com/questions/11936816/execute-function-after-complete-page-load
 			setTimeout(function(){
 			 //your code here
-			}, 3000);			
+			}, 3000);
+		2025-10-24T07:00:00	List of attributes in an element?
+		2025-10-24T02:07:00	What preference has his presence revealed?
+			2025-10-24T08:53:00 SQL language for DOM?
+			2025-10-24T09:07:00	Cascading Style Sheets (CSS) selector.
+		2025-10-24T18:37:00	I was walking westward towards the intersection of Charter Square and Enea Court from Pegasus Center.
+		2025-10-24T18:37:00	If an element inside an IFrame has an ID, provide an anchor hyperlink to the element.
+		2025-10-24T18:42:00	Does the IFrame retrieve a default document from a domain name or a directory?
 	-->	
 	<head>
 		<title>I understood about period, and how it is manifested.</title>
@@ -254,8 +261,10 @@ export function isInternalLink(urlString: string): boolean | {
 			async function queryTimeTypeStatistics(frameHTMLDocument)
 			{
 				var timeElements = frameHTMLDocument.querySelectorAll("time");
-				var elementStatistics = "<table><caption>time element: datetime attribute</caption><thead><tr><th>Index</th><th>DateTime</th></tr></thead><tbody>";
+				var elementStatistics = "<table><caption>time element: datetime attribute</caption><thead><tr><th>Index</th><th>id</th><th>DateTime</th></tr></thead><tbody>";
 				var dateTime;
+				var id;
+				var anchor;
 				for 
 				(
 					var elementIndex = 0, elementCount = timeElements.length;
@@ -263,8 +272,11 @@ export function isInternalLink(urlString: string): boolean | {
 					elementIndex++
 				)
 				{
+					id = timeElements[elementIndex].getAttribute("id");
+					url = (id === null) ? "" : sourceAddressElement.value + "#" + id;
+					anchor = (id === null) ? "" : `<a href=${url}>${id}</a>`;
 					dateTime = timeElements[elementIndex].dateTime;
-					elementStatistics += `<tr><td>${elementIndex + 1}</td><td>${dateTime}</td></tr>`;
+					elementStatistics += `<tr><td>${elementIndex + 1}</td><td>${anchor}</td><td>${dateTime}</td></tr>`;
 				}
 				elementStatistics += "</tbody></table>";
 				resultSetTimeTypeStatisticsElement.innerHTML = elementStatistics;
