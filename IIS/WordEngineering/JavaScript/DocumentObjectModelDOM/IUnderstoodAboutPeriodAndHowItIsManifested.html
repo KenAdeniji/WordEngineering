@@ -80,19 +80,44 @@ export function isInternalLink(urlString: string): boolean | {
 			  height: 100%;
 			  width: 100%;
 			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
 			textarea
 			{ 
-				height: 35vh;
+				height: 20vh;
 				width: 95vw;
 			}
+
 			iframe
 			{ 
-				height: 35vh;
+				height: 20vh;
 				width: 95vw;
 			}
+
 			#resultSet
 			{ 
-				height: 10vh;
+				height: 40vh;
 				width: 95vw;
 			}
 		</style>	

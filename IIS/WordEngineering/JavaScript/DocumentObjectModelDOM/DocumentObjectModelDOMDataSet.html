@@ -81,16 +81,41 @@ export function isInternalLink(urlString: string): boolean | {
 			  height: 100%;
 			  width: 100%;
 			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
 			textarea
 			{ 
 				height: 20vh;
 				width: 95vw;
 			}
+
 			iframe
 			{ 
 				height: 20vh;
 				width: 95vw;
 			}
+
 			#resultSet
 			{ 
 				height: 40vh;
@@ -293,7 +318,7 @@ Object.keys(el.dataset).map(function(key){ return el.dataset[key];});
 // or the ES6 way: Object.keys(el.dataset).map(key=>{ return el.dataset[key];});
 */
 
-					elementsStatisticsHTML += "<table><thead><tr><th>Index</th><th>Key</th><th>Value</th></tr></thead><tbody>";
+					elementsStatisticsHTML += "<tr><td colspan='3'><table><thead><tr><th>Index</th><th>Key</th><th>Value</th></tr></thead><tbody>";
 					dataSetKeyValueIndex = 0;
 					for (const [key, value] of Object.entries(dictionary))
 					{
@@ -301,7 +326,7 @@ Object.keys(el.dataset).map(function(key){ return el.dataset[key];});
 						++dataSetKeyValueIndex;	
 					}
 					
-					elementsStatisticsHTML += "</tbody></table>";
+					elementsStatisticsHTML += "</td></tr></tbody></table>";
 				}
 				
 				elementsStatisticsHTML += "</tbody></table>";
