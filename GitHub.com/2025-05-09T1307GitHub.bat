@@ -357,3 +357,5 @@ git add	"IIS/WordEngineering/RepresentationalStateTransfer/"
 git add IIS/WordEngineering/WordUnion/9432.js
 
 git add IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/IUnderstoodAboutPeriodAndHowItIsManifested.html
+
+git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/DocumentObjectModelDOMDataSet.html
