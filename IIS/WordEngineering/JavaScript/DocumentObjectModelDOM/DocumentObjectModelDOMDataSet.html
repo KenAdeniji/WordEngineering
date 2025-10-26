@@ -280,7 +280,7 @@ export function isInternalLink(urlString: string): boolean | {
 			async function querySelectorElementDataSetStatistics(frameHTMLDocument)
 			{
 				var elementsSelectorDataSet = frameHTMLDocument.querySelectorAll(elementsSelectorElement.value);
-				var elementsStatisticsHTML = "<table border><caption>Element: dataset attributes</caption><thead><tr><th>Index</th><th>id</th><th>Tag Name</th></tr></thead><tbody>";
+				var elementsStatisticsHTML = "<table><caption>Element: dataset attributes</caption><thead><tr><th>Index</th><th>id</th><th>Tag Name</th></tr></thead><tbody>";
 				var dateTime;
 				var id;
 				var anchor;
@@ -299,13 +299,11 @@ export function isInternalLink(urlString: string): boolean | {
 					dateSet = elementsSelectorDataSet[elementIndex].dataset;
 
 					dictionary = Object.keys(dateSet).map(key=>{ return elementsSelectorDataSet[elementIndex].dataset[key];});
-
+					
 					if (dictionary.length === 0)
 					{
 						continue;
 					}	
-
-					//dataKeys = Object.keys(dataSet);
 
 					id = elementsSelectorDataSet[elementIndex].getAttribute("id");
 					url = (id === null) ? "" : sourceAddressElement.value + "#" + id;
@@ -313,19 +311,16 @@ export function isInternalLink(urlString: string): boolean | {
 					tagName = elementsSelectorDataSet[elementIndex].tagName;
 
 					elementsStatisticsHTML += `<tr><td>${elementIndex + 1}</td><td>${anchor}</td><td>${tagName}</td></tr>`;
-/*
-Object.keys(el.dataset).map(function(key){ return el.dataset[key];});
-// or the ES6 way: Object.keys(el.dataset).map(key=>{ return el.dataset[key];});
-*/
 
 					elementsStatisticsHTML += "<tr><td colspan='3'><table><thead><tr><th>Index</th><th>Key</th><th>Value</th></tr></thead><tbody>";
 					dataSetKeyValueIndex = 0;
+
 					for (const [key, value] of Object.entries(dictionary))
 					{
 						elementsStatisticsHTML += `<tr><td>${dataSetKeyValueIndex + 1}</td><td>${key}</td><td>${value}</td></tr>`;
 						++dataSetKeyValueIndex;	
 					}
-					
+		
 					elementsStatisticsHTML += "</td></tr></tbody></table>";
 				}
 				
