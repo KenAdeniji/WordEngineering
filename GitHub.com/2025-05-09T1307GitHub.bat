@@ -359,3 +359,5 @@ git add IIS/WordEngineering/WordUnion/9432.js
 git add IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/IUnderstoodAboutPeriodAndHowItIsManifested.html
 
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/DocumentObjectModelDOMDataSet.html
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-10-25T2125DanielShiffman_-_Daniel@natureofcode.com_-_PortTheCodeToCanvas.txt
