@@ -1111,5 +1111,27 @@ Unable to create dependency graph file for project 'D:\WordEngineering\IIS\WordE
 
 https://staticmania.com/blog/how-to-build-rest-api
 
+2025-10-28T03:35:00...2025-10-28T03:53:00
+
+When I re-located to the United States of America (USA) on 1999-01-18.
+
+I observed my twin sibling built web pages and databases tracking contacts, websites (url), and software.
+
+When I re-located to Newark, California (CA) 94560, I started building personal pages for tracking contacts and websites (url) using Microsoft ASP.NET, C#, SQL Server. Unlike my twin sibling, I did not find software a growing technology trend.
+
+I understood I wanted to have a database for contacts and websites (url), but I did not continue in the tradition of my twin sibling of using his adopted technology, schema, nor process.
+
+Also my Villawood Detention Center prison ministry experience in Australia diverted me from Internet Commerce to given prisoners an opportunity to share their real-life 2025-10-28T03:50:00 testimony.
+
+When you see an example... 2025-10-28T03:51:00 make it your own way. In Australia, I was not using technology in my personal life. In the United States of America (USA) I am an adopter of technology for Christian evangelism. I look at the way the world is doing things, and I try to do these things as a Christian.				
+
 http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
+
+\\Harvest\e$\SQLServerBackup
+\\Harvest\e$\SQLServerDataManipulationLanguageDML
+
+\\Noor\e$\SQLServerBackup
+\\Noor\e$\SQLServerDataManipulationLanguageDML
+
+
 :Exit
