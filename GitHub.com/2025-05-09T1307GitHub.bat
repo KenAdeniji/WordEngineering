@@ -361,3 +361,8 @@ git add IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/IUnderstoodAboutPe
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/DocumentObjectModelDOMDataSet.html
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-10-25T2125DanielShiffman_-_Daniel@natureofcode.com_-_PortTheCodeToCanvas.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-10-21T0913Rohit.saini@blackrockgrps.com_-_DirectInterview.NETDeveloperRemote.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-10-27T1022Rohit.saini@blackrockgrps.com_-_SoftwareAnalystDeveloperDataMigrationApplicationModernization_-_HartfordConnecticut.txt
+
