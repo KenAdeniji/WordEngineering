@@ -44,7 +44,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
+::::::::::::::::: {.section style="margin-left:25%"}
 The importance of this work?
 
 -   [Follow God, as a
@@ -1288,17 +1288,62 @@ Primary and foreign keys, unique indexes and check constraints.
 
 ### GitHub {#GitHub dated="2021-12-03T03:58:00"}
 
-  Key                                           Value                                                                                                                                                                                                           Commentary
-  --------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------
-  Universal Resource Identifier (URI)           [github.com/KenAdeniji](http://github.com/KenAdeniji)                                                                                                                                                           This is the home page for storing the repositories.
-  Date Created                                  2013-04-27                                                                                                                                                                                                      This is the date of creating the github.com account.
-  Version                                       git version 2.29.2.windows.3                                                                                                                                                                                    The git \--version command offers the release detail. The author is not sufficiently knowledgeable on tracking the version update.
-  Configuration Profile                         git config \--list                                                                                                                                                                                              The commands below will set the profile: git config \--global user.name \"your-name\" git config \--global user.email \"your-email\"
-  Change Tracking                               git status                                                                                                                                                                                                      This will decide the differences between your local copy and the version control code repository.
-  Add Updates                                   git add                                                                                                                                                                                                         The git add . command will add all the updates, or the user may add particular directories and files.
-  GitHub.com WordEngineering repository clone   MD \\WordEngineering CD \\WordEngineering git cmd git clone https://github.com/KenAdeniji/WordEngineering git remote -v git remote set-url origin git@github.com:KenAdeniji/WordEngineering.git git remote -v   
+The Author Uses the Git Code Repository
 
-  : The Author Uses the Git Code Repository
+Key
+:::::::::::::::::
+
+Value
+
+Commentary
+
+Universal Resource Identifier (URI)
+
+[github.com/KenAdeniji](http://github.com/KenAdeniji)
+
+This is the home page for storing the repositories.
+
+Date Created
+
+2013-04-27
+
+This is the date of creating the github.com account.
+
+Version
+
+git version 2.29.2.windows.3
+
+The git \--version command offers the release detail. The author is not
+sufficiently knowledgeable on tracking the version update.
+
+Configuration Profile
+
+git config \--list
+
+The commands below will set the profile: git config \--global user.name
+\"your-name\" git config \--global user.email \"your-email\"
+
+GitHub.com WordEngineering repository clone
+
+1.  git clone https://github.com/KenAdeniji/WordEngineering
+2.  git remote -v
+3.  git remote set-url origin
+    git@github.com:KenAdeniji/WordEngineering.git
+4.  git remote -v
+
+Change Tracking
+
+git status
+
+This will decide the differences between your local copy and the version
+control code repository.
+
+Add Updates
+
+git add
+
+The git add . command will add all the updates, or the user may add
+particular directories and files.
 
 ### Accessibility {#accessibility dated="2021-12-04T14:48:00"}
 
@@ -3345,6 +3390,18 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 >     hiswordid="167710"
 >     url="computerhistory.org/revolution/artificial-intelligence-robotics/13/292/1303"}
 >     and not aware of the environment.
+> 2.  [2025-11-04T17:02:00 Creative:]{#Creative}
+>     -   2004-03-23 [Do you want a book, Ocean
+>         Senior?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Do%20you%20want%20a%20book,%20Ocean%20Senior%3F){dated="2004-03-23T00:00:00"
+>         contactid="2361" hiswordid="5331"}
+>     -   [http://github.com/KenAdeniji/WordEngineering/tree/main/OceanSenior](http://github.com/KenAdeniji/WordEngineering/tree/main/OceanSenior){dated="2004-03-23T00:00:00"
+>         contactid="2361" hiswordid="5331"}
+>     -   2004-11-10 [www.JesusInTheLamb.com Walking in the Lamb, you
+>         shall follow
+>         Me.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=www.JesusInTheLamb.com%20Walking%20in%20the%20Lamb,%20you%20shall%20follow%20Me.){dated="2004-11-10T00:00:00"
+>         contactid="1075" hiswordid="11734"}
+>     -   [www.JesusInTheLamb.com](http://www.JesusInTheLamb.com){dated="2004-11-10T00:00:00"
+>         contactid="1075" hiswordid="11734"}
 
 (Howard Gardner, 1983).
 
@@ -11594,4 +11651,3 @@ Copyright ©
 []{#copyrightYear}\
 
 Ken Adeniji <KenAdeniji@hotmail.com>
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
