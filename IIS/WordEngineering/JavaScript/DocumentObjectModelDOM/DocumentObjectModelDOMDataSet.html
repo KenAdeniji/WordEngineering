@@ -24,41 +24,14 @@ export function isInternalLink(urlString: string): boolean | {
 		2025-09-13T14:40:00 http://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src
 			https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html	
 			
-		2025-10-01
-			PaulMcFedries.com
-			FaceBook.com/PaulMcFedries
-			Logophilia Limited
-			Web Coding & Development
-			All-in-one for dummies
-			2nd edition
-			Submit the form.
-				form.addEventListener
-				(
-					"submit",
-					(e) =>
-					{
-						//submit
-					}
-				);
-				form.submit();
-				myForm.submit
-				(
-					function(e)
-					{
-						e.preventDefault();
-					}	
-				);	
 		2025-10-03T00:21:00 These are our children... these are us.
 			Page load versus (VS) IFrame load.
+
 		2025-10-03	What event is after IFrame load?
 			document.addEventListener("DOMContentLoaded", function() {
 			   // your code here
 			}, false);
 		
-			http://stackoverflow.com/questions/11936816/execute-function-after-complete-page-load
-			setTimeout(function(){
-			 //your code here
-			}, 3000);
 		2025-10-24T07:00:00	List of attributes in an element?
 		2025-10-24T02:07:00	What preference has his presence revealed?
 			2025-10-24T08:53:00 SQL language for DOM?
@@ -205,57 +178,17 @@ export function isInternalLink(urlString: string): boolean | {
 				}
  			}
 
-			function querySubmit()
+			async function querySubmit()
 			{
 				var	frameHTMLDocument;
-				fetch
-				(
-					sourceAddressElement.value
-				).then 
-				( response => {
-					const contentType = response.headers.get("content-type");
-					if (contentType && contentType.indexOf("application/json") !== -1) 
-					{
-						return response.json().then
-						(
-							data => 
-							{
-								// process your JSON data further
-								sourceContentElement.value = JSON.stringify(data);
-							}
-						);
-					}
-					else if 
-					(
-						contentType && contentType.indexOf("text/xml") !== -1
-					) 
-					{
-						return response.text().then
-						(
-							data => 
-							{
-								// process your XML data further
-								let parser = new DOMParser();
-								let xml = parser.parseFromString(data, "application/xml");
-								sourceContentElement.value = data;
-							}
-						);
-					}
-					else 
-					{
-						return response.text().then
-						(
-							text => 
-							{
-								// this is text, do something with it
-								sourceContentElement.value = text;
-								frameInfoElement.srcdoc = text;
-								frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
-								queryGenerateStatistics(frameHTMLDocument);
-							}	
-						);
-					};
-				});
+				const response = await fetch( sourceAddressElement.value );
+				const data = await response.text();
+
+				sourceContentElement.value = data;
+				frameInfoElement.srcdoc = data;
+				frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+
+				queryGenerateStatistics(frameHTMLDocument);
 			}
 
 			function queryGenerateStatistics(frameHTMLDocument)
