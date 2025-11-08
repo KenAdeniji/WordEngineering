@@ -371,3 +371,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-10-31T1239SpamMail_Pol
 rem 2025-11-01T14:18:00 git mv IIS/WordEngineering/WordGroup/WillTargetTuesdayDecemberThirtyFirst.html IIS/WordEngineering/Dated/WillTargetTuesdayDecemberThirtyFirst.html
 
 REM 2025-11-04T18:53:00 git rm  -f -r "WordEngineering"
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAndNobleBN.com_-_Google_ProfessionAndroid_RetoMeier_IanLake.txt
