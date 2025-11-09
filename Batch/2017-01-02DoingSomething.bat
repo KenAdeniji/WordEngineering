@@ -1127,6 +1127,8 @@ When you see an example... 2025-10-28T03:51:00 make it your own way. In Australi
 
 http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 
+2025-11-09T10:12:00 http://developer.android.com/studio
+
 \\Harvest\e$\SQLServerBackup
 \\Harvest\e$\SQLServerDataManipulationLanguageDML
 \\Harvest\e$\WordEngineering
