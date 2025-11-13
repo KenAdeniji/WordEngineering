@@ -23,6 +23,8 @@ using InformationInTransit.UserInterface;
 ///<summary>
 ///	2015-11-01 	Created.
 ///	2017-03-08	QueryMajor
+///	2025-11-12T10:24:00 "EXEC WordEngineering..usp_getActToGods '" + major + "'"
+///	2025-11-12T20:01:00 major = major.Replace("'", "''");
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -65,13 +67,10 @@ public class ActToGodWebService : System.Web.Services.WebService
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String Query(String major)
     {
+		major = major.Replace("'", "''");
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			String.Format
-			(
-				String.IsNullOrEmpty(major) ? QueryFormatWithoutMajor : QueryFormatWithMajor,
-				major
-			),
+			"EXEC WordEngineering..usp_getActToGods '" + major + "'",
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);

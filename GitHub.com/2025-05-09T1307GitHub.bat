@@ -379,3 +379,7 @@ rem git mv	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAnd
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAndNobleBN.com_-_Google_ProfessionalAndroid_RetoMeier_IanLake.txt
 
 git add	IIS/WordEngineering/MikeMcGarth/
+
+git add IIS/WordEngineering/WordUnion/ActToGod.asmx
+
+git add IIS/WordEngineering/WordGroup/ABriefOfOurselfIsNeverEnoughOfOurEntireSelf.html
