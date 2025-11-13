@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-11-11T06:17:00...2025-11-11T06:42:00 Created.
+	-->
+	<head>
+		<title>Metadata refresh</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Metadata refresh"/>
+		<meta name="keywords" content="Metadata, refresh"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<meta http-equiv="refresh" content="1"/>
+		<style>
+			html 
+			{
+				background-color: #00539F;
+				color: #fff;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			a { color: #cc0000; }
+			a:link { color: #000000; }
+			a:visited { color: #009900; }
+			a:hover { color: #000000; background-color: #ccc }
+			a:active { color: #990000; }
+		</style>
+	</head>
+	<body>
+		<footer>
+			<span id="dated"></span><br>
+			<span id="documentLastModified"></span><br>
+			Copyright © <noscript>2025</noscript><span id="copyrightYear"></span><br>
+			<address>
+				Ken Adeniji
+				<a href="mailto:KenAdeniji@hotmail.com">
+					KenAdeniji@hotmail.com
+				</a>	
+			</address>
+		</footer>
+		
+		<script>
+			var isPostBack = false;
+			
+			const datedElement = document.getElementById("dated"); 
+			const documentLastModifiedElement = document.getElementById("documentLastModified"); 
+			const copyrightYearElement = document.getElementById("copyrightYear"); 
+			
+			function pageLoad()
+			{
+				datedElement.innerText = new Date();
+				documentLastModifiedElement.innerText = "Last modified: " + document.lastModified;
+				copyrightYearElement.innerText = (new Date()).getFullYear();
+				isPostBack = true;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -44,6 +44,9 @@ using InformationInTransit.UserInterface;
 ///		http://localhost/wordengineering/Representational%20State%20Transfer%20(REST)/Bible/2025-10-19T1907BibleBooks.asmx/getBibleBooks
 ///	2025-10-20T10:07:00 For either a sacred text title or scripture reference, determine the other information?
 ///	2025-10-22T10:44:00	http://github.com/omarciovsena/abibliadigital/blob/master/DOCUMENTATION.md
+///	2025-11-11T20:16:00
+///	Philippians, BookID=50
+///	http://localhost/Wordengineering/RepresentationalStateTransfer/Bible/2025-10-19T1907BibleBooks.asmx?op=getBibleBookTitle
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -101,7 +104,7 @@ public class BibleBooksWebService : System.Web.Services.WebService
 
 		sqlStatement = String.Format
 		(
-			SqlStatement,
+			SqlStatement_BookID_BookTitle,
 			sb.ToString()
 		);
 
@@ -127,11 +130,58 @@ public class BibleBooksWebService : System.Web.Services.WebService
 		Context.Response.Write(jsonString);	
 		*/
     }
-	
-	const String SqlStatement = @"
+
+   	[WebMethod]
+	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
+	public String getBibleBookTitle
+	(
+		int bookID
+	)
+    {
+		dynamic bookTitle = DataCommand.DatabaseCommand
+		(
+			String.Format(SqlStatement_BookTitle, bookID),
+			CommandType.Text,
+			DataCommand.ResultType.Scalar
+		);
+		
+		return bookTitle;
+    }
+
+   	[WebMethod]
+	[ScriptMethod(UseHttpGet = false, ResponseFormat = ResponseFormat.Json)]
+	public int getBibleBookID
+	(
+		string bookTitle
+	)
+    {
+		dynamic bookID = DataCommand.DatabaseCommand
+		(
+			String.Format(SqlStatement_BookID, bookTitle),
+			CommandType.Text,
+			DataCommand.ResultType.Scalar
+		);
+		
+		return bookID;
+    }
+
+	const String SqlStatement_BookID_BookTitle = @"
 		SELECT DISTINCT BookID, BookTitle
 		FROM Bible..Scripture_View
 		WHERE 1 <> 1 {0}
 		ORDER BY BookID
 	";
+
+	const String SqlStatement_BookID = @"
+		SELECT TOP 1 BookID
+		FROM Bible..Scripture_View
+		WHERE BookTitle = '{0}'
+	";
+	
+	const String SqlStatement_BookTitle = @"
+		SELECT TOP 1 BookTitle
+		FROM Bible..Scripture_View
+		WHERE BookID = {0}
+	";
+
 }

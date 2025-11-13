@@ -377,3 +377,5 @@ rem git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAn
 rem git mv	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAndNobleBN.com_-_Google_ProfessionAndroid_RetoMeier_IanLake.txt IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAndNobleBN.com_-_Google_ProfessionalAndroid_RetoMeier_IanLake.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-08T1126BarnesAndNobleBN.com_-_Google_ProfessionalAndroid_RetoMeier_IanLake.txt
+
+git add	IIS/WordEngineering/MikeMcGarth/
