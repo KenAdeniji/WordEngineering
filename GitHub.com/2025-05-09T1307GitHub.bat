@@ -383,3 +383,5 @@ git add	IIS/WordEngineering/MikeMcGarth/
 git add IIS/WordEngineering/WordUnion/ActToGod.asmx
 
 git add IIS/WordEngineering/WordGroup/ABriefOfOurselfIsNeverEnoughOfOurEntireSelf.html
+
+git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2025-11-14T0802HowWeHaveTimeAsTheSame.html

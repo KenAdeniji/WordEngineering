@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-11-14T08:02:00	Created.
+		2025-11-14T07:40:00 How we have time as the same?
+		2025-02-02T19:22:00
+http://stackoverflow.com/questions/71501786/how-to-parse-html-response-from-fetch-api-to-iframe
+export function isInternalLink(urlString: string): boolean | {
+  pathname: string;
+} {
+  const url = new URL(urlString);
+  if (url.origin !== window.location.origin) {
+    return false;
+  }
+  return {
+    pathname: url.pathname,
+  };
+}
+		http://stackoverflow.com/questions/2910946/test-if-links-are-external-with-jquery-javascript
+		http://stackoverflow.com/questions/2910946/test-if-links-are-external-with-jquery-javascript/18660968#18660968
+		http://stackoverflow.com/questions/36631762/returning-html-with-fetch
+		http://stackoverflow.com/questions/3999101/get-iframes-document-from-javascript-in-main-document
+		
+		2025-09-13T14:40:00 http://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src
+			https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html	
+			
+		2025-10-03T00:21:00 These are our children... these are us.
+			Page load versus (VS) IFrame load.
+		2025-10-03	What event is after IFrame load?
+			document.addEventListener("DOMContentLoaded", function() {
+			   // your code here
+			}, false);
+		2025-11-14T08:40:00 http://developer.mozilla.org/en-US/docs/Glossary/HTTP_header	
+		2025-11-14T08:40:00	http://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api
+		2025-11-14T08:40:00	http://dmitripavlutin.com/javascript-fetch-async-await
+		2025-11-14T09:16:00
+				const response = await fetch( sourceAddressElement.value );
+				resultSetElement.innerHTML = `<table><tbody><tr><td>ok</td><td>${response.ok}</td></tr><tr><td>status</td><td>${response.status}</td></tr><tr><td>Last-modified</td><td>${response.headers.get("Last-modified")}</td></tr></tbody></table>`;
+	-->	
+	<head>
+		<title>How we have time as the same?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="How we have time as the same?"/>
+		<meta name="keyword" content="anchor href"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			iframe
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 40vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+							<tr>
+							<td><label for="sourceAddress">Source Address:</label></td>
+							<td>
+								<input 
+									id="sourceAddress"
+									type="url"
+									style="width: 55vw;"
+									value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="sourceContent">Source Content:</label></td>
+							<td>
+								<textarea id="sourceContent"></textarea>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+					</table>
+				<div>	
+			<form>	
+			<iframe id="frameInfo"></iframe>
+			<div id="resultSet">
+				<div id="resultSetInfo"></div>
+				<div id="resultSetMetaKeyValue"></div>
+			</div>
+		</div>	
+		<script>
+			var isPostBack = false;
+			var frameHTMLDocumentCurrent;
+			
+			const 	formedElement = document.getElementById("formed");
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			const	sourceContentElement = document.getElementById("sourceContent");
+
+			const 	querySubmitElement = document.getElementById("querySubmit");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const	frameInfoElement = document.getElementById("frameInfo");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			const 	resultSetInfoElement = document.getElementById("resultSetInfo");
+			const	resultSetMetaKeyValueElement = document.getElementById("resultSetMetaKeyValue");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var	frameHTMLDocument;
+				const response = await fetch( sourceAddressElement.value );
+				resultSetInfoElement.innerHTML = `<table><tbody><tr><td>ok</td><td>${response.ok}</td></tr><tr><td>status</td><td>${response.status}</td></tr><tr><td>Last-modified</td><td>${response.headers.get("Last-modified")}</td></tr></tbody></table>`;
+				const data = await response.text();
+				sourceContentElement.value = data;
+				frameInfoElement.srcdoc = data;
+				frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+				queryMeta(frameHTMLDocument);
+			}
+
+			async function queryMeta(frameHTMLDocument)
+			{
+				var metaElements = frameHTMLDocument.querySelectorAll("meta");
+				var elementKeyValue = "<table><thead><tr><th>Index</th><th>Name</th><th>Content</th></thead><tbody>";
+				for 
+				(
+					var elementIndex = 0, elementCount = metaElements.length;
+					elementIndex < elementCount;
+					elementIndex++
+				)
+				{
+					elementKeyValue += `<tr><td>${elementIndex + 1}</td><td>${metaElements[elementIndex]["name"]}</a></td><td>${metaElements[elementIndex]["content"]}</td></tr>`;
+				}
+				elementKeyValue += "</tbody></table>";
+				resultSetMetaKeyValueElement.innerHTML = elementKeyValue;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
