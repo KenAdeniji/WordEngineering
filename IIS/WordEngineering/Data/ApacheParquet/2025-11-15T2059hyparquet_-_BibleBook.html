@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-11-15T20:59:00	Created.
+		2025-11-14 10:43:19.320 en.wikipedia.org/wiki/Apache_Parquet
+		2025-11-15 20:16:23 	github.com/hyparam/hyparquet
+		2025-11-15 20:19:23 	github.com/hyparam/hyparquet-writer	
+		2025-11-15T20:59:00		http://www.jsdelivr.com/package/npm/hyparquet-writer
+		2025-11-15T21:42:00		thewrap.com/pope-leo-xiv-cate-blanchett-spike-lee-vatican-visit/?utm_source=firefox-newtab-en-us
+			Pope Leo XIV Welcomes Cate Blanchett, Spike Lee and More to the Vatican, Speaks on ‘Troubling Decline’ of Cinema
+			Greta Gerwig, Chris Pine and Viggo Mortensen also attended Saturday’s event
+			Stephanie kaloi
+			Stephanie Kaloi
+			November 15, 2025 @ 4:22 PM
+	-->	
+	<head>
+		<title>hyparquet_-_BibleBook</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="hyparquet_-_BibleBook"/>
+		<meta name="keyword" content="hyparquet, BibleBook"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 40vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="columnData">Source Content:</label></td>
+							<td>
+								<textarea id="columnData">
+{ name: "title", data: ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"], type: "STRING" },
+{ name: "chapters", data: [50, 40, 27, 36, 34], type: "INT32" },
+								</textarea>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+					</table>
+				<div>	
+			<form>	
+			<div id="resultSet">
+			</div>
+		</div>	
+		
+		<script type="module"> import hyparquet from 'https://cdn.jsdelivr.net/npm/hyparquet@1.20.2/+esm' </script>
+		<script type="module"> import hyparquetWriter from 'https://cdn.jsdelivr.net/npm/hyparquet-writer@0.9.1/+esm'; </script>
+		<script type="module"> import { parquetWriteBuffer } from 'https://cdn.jsdelivr.net/npm/hyparquet-writer@0.9.1/+esm'; </script>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+	
+			const	columnDataElement = document.getElementById("columnData");
+
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				const arrayBuffer = parquetWriteBuffer({
+				  columnData: [
+					{ name: 'name', data: ['Alice', 'Bob', 'Charlie'], type: 'STRING' },
+					{ name: 'age', data: [25, 30, 35], type: 'INT32' },
+				  ],
+				})
+
+/*
+				const arrayBuffer = parquetWriteBuffer
+				(
+					{
+						columnData: columnDataElement.value
+					}
+				);
+*/		
+				const metadata = parquetMetadataAsync(arrayBuffer);
+				
+// Get total number of rows (convert bigint to number)
+const numRows = Number(metadata.num_rows)
+// Get nested table schema
+const schema = parquetSchema(metadata)
+// Get top-level column header names
+const columnNames = schema.children.map(e => e.element.name)
+				console.log(numRows, schema, columnNames);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
