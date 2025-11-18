@@ -20,6 +20,7 @@ using InformationInTransit.DataAccess;
 
 ///<summary>
 ///	2016-09-01	Created.	AHomeIClaim.asmx
+///	2025-11-12	@"EXEC WordEngineering..usp_AHomeIClaim '{0}', '{1}'";
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -34,11 +35,11 @@ public class AHomeIClaimWebService : System.Web.Services.WebService
 		string	secondScriptureReferenceVerse
 	)	
     {
-		string selectStatement = String.Format(SelectStatement, firstScriptureReferenceVerse, secondScriptureReferenceVerse);
+		//string selectStatement = String.Format(SelectStatement, firstScriptureReferenceVerse, secondScriptureReferenceVerse);
 		
 		DataTable dataTable = (DataTable) DataCommand.DatabaseCommand
 		(
-			selectStatement,
+			String.Format(StoredProcedure, firstScriptureReferenceVerse, secondScriptureReferenceVerse),
 			CommandType.Text,
 			DataCommand.ResultType.DataTable
 		);
@@ -58,4 +59,6 @@ public class AHomeIClaimWebService : System.Web.Services.WebService
 		WHERE ScriptureReference IN ('{0}', '{1}') 
 		ORDER BY verseIDSequence
 	";
+	
+	public const string StoredProcedure = @"EXEC WordEngineering..usp_AHomeIClaim '{0}', '{1}'";
 }

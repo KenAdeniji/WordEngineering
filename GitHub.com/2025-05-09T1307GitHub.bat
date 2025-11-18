@@ -384,8 +384,10 @@ git add IIS/WordEngineering/WordUnion/ActToGod.asmx
 
 git add IIS/WordEngineering/WordGroup/ABriefOfOurselfIsNeverEnoughOfOurEntireSelf.html
 
+git add IIS/WordEngineering/WordUnion/AHomeIClaim.asmx
+
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2025-11-14T0802HowWeHaveTimeAsTheSame.html
 
-git rm IIS/WordEngineering/2018-05-03Correspondence/2025-11-16T1114TimMahaney@TalentProConsulting.com_-_NewJobOpeningForUI_UXEngineer_LinthicumMaryLand15247_15246_641-323-2360.txt
+REM git rm IIS/WordEngineering/2018-05-03Correspondence/2025-11-16T1114TimMahaney@TalentProConsulting.com_-_NewJobOpeningForUI_UXEngineer_LinthicumMaryLand15247_15246_641-323-2360.txt
 
 git add	IIS/WordEngineering/Data/
