@@ -22,7 +22,7 @@ using InformationInTransit.ProcessLogic;
 using InformationInTransit.UserInterface;
 
 ///<summary>
-///	2025-11-17T19:30:00 Created.
+///	2025-11-17T19:30:00 Created. http://stackoverflow.com/questions/887370/sql-server-extract-table-meta-data-description-fields-and-their-data-types
 ///</summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
