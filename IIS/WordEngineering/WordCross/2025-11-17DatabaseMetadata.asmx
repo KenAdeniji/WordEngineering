@@ -38,8 +38,9 @@ public class DatabaseMetadataWebService : System.Web.Services.WebService
 			@"
 				SELECT 
 					sys.tables.name TableName,
-					sys.columns.name Columnname,
-					sys.extended_properties.value Metadata
+					sys.columns.name ColumnName,
+					sys.extended_properties.name ExtendedPropertyName,	
+					sys.extended_properties.value ExtendedPropertyValue
 				FROM
 					WordEngineering.sys.extended_properties INNER JOIN WordEngineering.sys.columns
 						ON 	WordEngineering.sys.extended_properties.major_id = WordEngineering.sys.columns.object_id
@@ -51,6 +52,7 @@ public class DatabaseMetadataWebService : System.Web.Services.WebService
 				ORDER BY
 					WordEngineering.sys.tables.name,
 					WordEngineering.sys.columns.name,
+					WordEngineering.sys.extended_properties.name,
 					WordEngineering.sys.extended_properties.value
 			",
 			CommandType.Text,
