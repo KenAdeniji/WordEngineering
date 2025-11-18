@@ -386,5 +386,6 @@ git add IIS/WordEngineering/WordGroup/ABriefOfOurselfIsNeverEnoughOfOurEntireSel
 
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2025-11-14T0802HowWeHaveTimeAsTheSame.html
 
-git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-16T1114TimMahaney@TalentProConsulting.com_-_NewJobOpeningForUI_UXEngineer_LinthicumMaryLand15247_15246_641-323-2360.txt
+git rm IIS/WordEngineering/2018-05-03Correspondence/2025-11-16T1114TimMahaney@TalentProConsulting.com_-_NewJobOpeningForUI_UXEngineer_LinthicumMaryLand15247_15246_641-323-2360.txt
+
 git add	IIS/WordEngineering/Data/
