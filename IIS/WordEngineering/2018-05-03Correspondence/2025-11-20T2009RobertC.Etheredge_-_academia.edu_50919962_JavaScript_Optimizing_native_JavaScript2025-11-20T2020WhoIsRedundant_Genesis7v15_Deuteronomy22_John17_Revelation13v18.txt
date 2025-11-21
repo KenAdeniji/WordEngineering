@@ -1,0 +1,46 @@
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2025-11-20T2009RobertC.Etheredge_-_academia.edu_50919962_JavaScript_Optimizing_native_JavaScript2025-11-20T2020WhoIsRedundant_Genesis7v15_Deuteronomy22_John17_Revelation13v18.txt
+
+http://www.academia.edu/50919962/JavaScript_Optimizing_native_JavaScript
+
+Papers uploaded to Academia get 69% more citations.
+close
+Home
+Mentions
+Analytics
+Upload
+padlockTry Premium for $1
+
+JavaScript: Optimizing native JavaScript
+By Lord Laws
+visibility
+
+915 Views
+description
+
+187 Pages
+link1 File ▾
+
+Target audience of this book Javascript: Optimizing Native JavaScript assumes that you have a good working knowledge of writing JavaScript applications or webpages using JavaScript, HTML, and CSS. You need to understand how those three systems interact and how to structure common applications. This book is not a language reference but more a collection of information to help you write more efficient JavaScript programs. Even if your application requires the use of frameworks and libraries, knowing how to code more efficient JavaScript will still be important. In these cases, you can still use frameworks and libraries for the majority of the code but native JavaScript where performance is important. Based on real-life experience I have been designing and programming JavaScript applications for more than 17 years. Most of this work was on applications designed for low memory and slow CPU platforms, such as set-top boxes and mobile devices. I found that many recommended solutions didn't necessarily make sense in real life situations. When you work on producing applications on deadlines, you tend to have different restrictions, methods, and goals. Through years of examining JavaScript code, I discovered repeating conditions that led to the JavaScript/HTML code running poorly on the targeted platforms. These conditions included excessive number of objects, unnecessary date manipulation, excessive error checking, creation of excess garbage, using inefficient libraries, and poorly designed data structures. In many cases, I was able to reduce code size by up to 60% while easily doubling the speed of the code.
+
+
+Robert Etheredge, Ph.D.
+Contact Info
+Robert’s Profile
+linkedin.com/in/etheredge3
+Website
+
+    mlrassoc.com (Personal)
+
+Email
+mailto:rether333@gmail.com
+
+if (a == b) {
+//Do this
+} else if (c == d) (
+//Do that
+}
+
+	} else if (c == d) {
+		Replace c with {
+		
+		
