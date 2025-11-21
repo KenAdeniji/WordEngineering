@@ -45,9 +45,17 @@ if (a == b) {
 		
 2025-11-20T20:20 Who is redundant?
 
-Alphabet Sequence
-175
-Genesis 7:15, Deuteronomy 22, John 17, Revelation 13:18
-Who is your manager? Crazy mister Martin. Mister Martin as a good (1 Corinthians 12:8, Proverbs 3:4)
-	Cast error
+	Alphabet Sequence
+	175
+	Genesis 7:15, Deuteronomy 22, John 17, Revelation 13:18
+	Who is your manager? Crazy mister Martin. Mister Martin as a good (1 Corinthians 12:8, Proverbs 3:4)
+		Cast error
+	
+	2025-11-20T21:11 Code compilers and minifiers
+		Pre-process logic where possible, such as changing:
+		var d = 5;
+		callFunction(5 + 3 + d);
+		to
+		callFunction(13);
+	
 	
