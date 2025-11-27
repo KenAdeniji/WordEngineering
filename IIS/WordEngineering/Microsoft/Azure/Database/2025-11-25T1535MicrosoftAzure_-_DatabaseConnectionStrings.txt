@@ -1,0 +1,38 @@
+http://portal.azure.com/#@kenadenijihotmail.onmicrosoft.com/resource/subscriptions/235f0315-3bb7-4a4d-9007-be1b3cb26baf/resourceGroups/www.JesusInTheLamb.com/providers/Microsoft.Sql/servers/jesusinthelamb/databases/WordEngineering_2025-11-25T21-11Z/connectionStrings
+
+ADO.NET (Microsoft Entra passwordless authentication)
+Server=tcp:jesusinthelamb.database.windows.net,1433;Initial Catalog=WordEngineering_2025-11-25T21-11Z;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication="Active Directory Default";
+
+ADO.NET (SQL authentication)
+Server=tcp:jesusinthelamb.database.windows.net,1433;Initial Catalog=WordEngineering_2025-11-25T21-11Z;Persist Security Info=False;User ID=KenAdeniji;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+ADO.NET (Microsoft Entra password authentication)
+Server=tcp:jesusinthelamb.database.windows.net,1433;Initial Catalog=WordEngineering_2025-11-25T21-11Z;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Authentication="Active Directory Password";
+
+ADO.NET (Microsoft Entra integrated authentication)
+Server=tcp:jesusinthelamb.database.windows.net,1433;Initial Catalog=WordEngineering_2025-11-25T21-11Z;Persist Security Info=False;User ID={your_username};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Authentication="Active Directory Integrated";
+
+http://learn.microsoft.com/en-us/sql/connect/ado-net/microsoft-ado-net-sql-server?view=sql-server-ver17
+
+JDBC (SQL authentication)
+jdbc:sqlserver://jesusinthelamb.database.windows.net:1433;database=WordEngineering_2025-11-25T21-11Z;user=KenAdeniji@jesusinthelamb;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+
+JDBC (Microsoft Entra password authentication)
+jdbc:sqlserver://jesusinthelamb.database.windows.net:1433;database=WordEngineering_2025-11-25T21-11Z;user={your_username_here};password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;authentication=ActiveDirectoryPassword
+
+JDBC (Microsoft Entra integrated authentication)
+jdbc:sqlserver://jesusinthelamb.database.windows.net:1433;database=WordEngineering_2025-11-25T21-11Z;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;Authentication=ActiveDirectoryIntegrated
+
+http://learn.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-ver17&redirectedfrom=MSDN
+
+ODBC (Includes Node.js) (SQL authentication)
+Driver={ODBC Driver 18 for SQL Server};Server=tcp:jesusinthelamb.database.windows.net,1433;Database=WordEngineering_2025-11-25T21-11Z;Uid=KenAdeniji;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+
+ODBC (Includes Node.js) (Microsoft Entra password authentication)
+Driver={ODBC Driver 18 for SQL Server};Server=tcp:jesusinthelamb.database.windows.net,1433;Database=WordEngineering_2025-11-25T21-11Z;Uid={your_user_name};Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryPassword
+
+ODBC (Includes Node.js) (Microsoft Entra integrated authentication)
+Driver={ODBC Driver 18 for SQL Server};Server=tcp:jesusinthelamb.database.windows.net,1433;Database=WordEngineering_2025-11-25T21-11Z;Uid={your_user_name};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated
+
+http://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver17&redirectedfrom=MSDN
+

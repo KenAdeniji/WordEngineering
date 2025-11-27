@@ -398,3 +398,11 @@ git add IIS/WordEngineering/WordCross/2025-11-17DatabaseMetadata.html
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-20T2009RobertC.Etheredge_-_academia.edu_50919962_JavaScript_Optimizing_native_JavaScript2025-11-20T2020WhoIsRedundant_Genesis7v15_Deuteronomy22_John17_Revelation13v18.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-23MamaIbadan_2025-11-25T1015IHaveBeset2025-11-25T1035Temporal.txt
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-23T1411gitlab.comwebsite.html
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-23T1411gitlab.comwebsite.txt
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-23T1411gitlab.comwebsiteArchive.txt
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-26T1859ToAnOutwardEnd_2025-10-17SchemaStore.org_2020-10-27schema.org.txt
+git add	IIS/WordEngineering/Data/SupaBase/
+git add	IIS/WordEngineering/Microsoft/Azure/Database/2025-11-25T1535MicrosoftAzure_-_DatabaseConnectionStrings.txt
+git add	"SQLScript/2025-11-23ALTER DATABASE master SET READ_ONLY WITH NO_WAIT.sql"
