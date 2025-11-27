@@ -28,3 +28,33 @@ Step 3: User query? Let the user optionally specify the restriction:
     Only DDL, only DML, or both?
 	
 When crawling the Internet, determine DDL and associated DML in-use?
+
+http://learningintheopen.org/2025/11/26/jack-ma-alibaba-speeches-2017-university-of-nairobi-kenya
+http://youtube.com/watch?v=IEkT-YatPnM
+	
+2025-11-27T10:15:00 Let the user specify a URL, and query for schema.org?
+	2025-11-27T11:32:00	Parent and children.
+
+			<div style="text-align:center" itemscope itemtype="http://schema.org/Person">
+				<h1 itemprop="name" title="Kehinde Adewumi Adeniji">Ken Adeniji</h1>
+				<address>
+					<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						<span itemprop="streetAddress">4762 Canvasback Common</span><br>
+						<span itemprop="addressLocality">Fremont</span>,
+						<span itemprop="addressRegion">California</span>
+						<span itemprop="postalCode">94555</span><br>
+					</div>
+					<a href="tel:+15107968121" itemprop="telephone">(510) 796-8121</a><br>
+					<a href="mailto:KenAdeniji@hotmail.com" itemprop="email">KenAdeniji@hotmail.com</a><br>
+					<a href="http://www.JesusInTheLamb.com" itemprop="url" data-dated="2004-11-10T00:00:00">www.JesusInTheLamb.com</a><br>
+					<audio 
+						src="http://kenadeniji.github.io/Github/2025-10-20KenAdenijiResume.mp3" 
+						controls
+						preload="none"
+						data-dated="2025-10-20T00:00:00"
+					>
+						<p>The browser cannot play this audio content.</p>
+						<a href="http://kenadeniji.github.io/Github/2025-10-20KenAdenijiResume.mp3" itemprop="url" data-dated="2024-09-16T00:00:00">Download the .mp3 audio file.</a>
+					</audio>
+				</address>
+			</div>
