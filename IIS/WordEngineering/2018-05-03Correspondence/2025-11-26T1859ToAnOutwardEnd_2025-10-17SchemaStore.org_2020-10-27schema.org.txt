@@ -19,6 +19,8 @@ Step 2. Data manipulation language (DML) populate table with sample data using i
 Steps 1 and 2:
     If this is the only client-side JavaScript implementation, this needs to be done for each page load event.
 		2025-11-26T22:14:00 Classes and objects... which may be randomly generated, or real life.
+			2025-11-26T22:48:00 Find the classes, and then find its children?
+				Document Object Model (DOM) query selector.
     But for client and server side implementation, this is a one-off task.
 
 Step 3: User query? Let the user optionally specify the restriction:
