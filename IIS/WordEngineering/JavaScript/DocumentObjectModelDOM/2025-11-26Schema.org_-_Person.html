@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-11-27T22:53:00	Created.
+		2025-11-27T22:31:00...2025-11-27T23:32:00 http://stackoverflow.com/questions/60806604/how-do-i-generate-the-values-using-plain-js-from-the-span-itemprop-lines-on-this
+	-->	
+	<head>
+		<title>Schema.org person</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Schema.org person"/>
+		<meta name="keyword" content="Schema.org, person"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			iframe
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 40vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+							<tr>
+							<td><label for="sourceAddress">Source Address:</label></td>
+							<td>
+								<input 
+									id="sourceAddress"
+									type="url"
+									style="width: 55vw;"
+									value="https://kenadeniji.github.io/Github/KenAdenijiResume.html"
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="sourceContent">Source Content:</label></td>
+							<td>
+								<textarea id="sourceContent"></textarea>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+					</table>
+				<div>	
+			<form>	
+			<iframe id="frameInfo"></iframe>
+			<br/>	
+			<div id="resultSet">
+				<div id="resultSetSchemaPerson"></div>
+			</div>
+		</div>	
+		<script>
+			var isPostBack = false;
+			var frameHTMLDocumentCurrent;
+			
+			const 	formedElement = document.getElementById("formed");
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			const	sourceContentElement = document.getElementById("sourceContent");
+
+			const 	querySubmitElement = document.getElementById("querySubmit");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const	frameInfoElement = document.getElementById("frameInfo");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			const	resultSetSchemaPersonElement = document.getElementById("resultSetSchemaPerson");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var	frameHTMLDocument;
+				const response = await fetch( sourceAddressElement.value );
+				const data = await response.text();
+
+				sourceContentElement.value = data;
+				frameInfoElement.srcdoc = data;
+				frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+
+				queryGenerate(frameHTMLDocument);
+			}
+
+			function queryGenerate(frameHTMLDocument)
+			{
+				querySchemaPerson(frameHTMLDocument);
+			}
+
+			async function querySchemaPerson(frameHTMLDocument)
+			{
+				const 
+				[
+					name,
+					streetAddress,
+					addressLocality,
+					addressRegion,
+					postalCode,
+					telephone,
+					email,
+					url
+				]
+				=
+				[
+					"name",
+					"streetAddress",
+					"addressLocality",
+					"addressRegion",
+					"postalCode",
+					"telephone",
+					"email",
+					"url"
+				].map
+				(
+					val => frameHTMLDocument.querySelector(`*[itemprop="${val}"]`).innerText
+				);
+					
+				var elementStatistics = "<table><caption>Person</caption><thead><tr><th>itemprop</th><th>value</th></tr></thead><tbody>";				
+
+				elementStatistics += 	`
+											<tr><td>name</td><td>${name}</td></tr>
+											<tr><td>streetAddress</td><td>${streetAddress}</td></tr>
+											<tr><td>addressLocality</td><td>${addressLocality}</td></tr>
+											<tr><td>addressRegion</td><td>${addressRegion}</td></tr>
+											<tr><td>postalCode</td><td>${postalCode}</td></tr>
+											<tr><td>telephone</td><td>${telephone}</td></tr>
+											<tr><td>email</td><td><a href="mailto:${email}">${email}</a></td></tr>
+											<tr><td>url</td><td><a href="http://${url}">${url}</a></td></tr>
+										`;
+
+				elementStatistics += "</tbody></table>";
+
+				resultSetSchemaPersonElement.innerHTML = elementStatistics;
+
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

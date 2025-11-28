@@ -63,3 +63,6 @@ http://youtube.com/watch?v=IEkT-YatPnM
 	Genesis 22:3, Genesis 24:10
 	Data entry? SQL query.
 	Writing? Parser.
+
+2025-11-27T22:31:00 http://gist.github.com/joeyguerra/7740007
+var properties = node.querySelectorAll('[itemprop]');. for(var i = 0; i < properties.length; i++){. var value = null;. var item = properties[i];. var key = item ...

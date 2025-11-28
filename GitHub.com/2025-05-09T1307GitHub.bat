@@ -406,3 +406,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-11-26T1859ToAnOutwardE
 git add	IIS/WordEngineering/Data/SupaBase/
 git add	IIS/WordEngineering/Microsoft/Azure/Database/2025-11-25T1535MicrosoftAzure_-_DatabaseConnectionStrings.txt
 git add	"SQLScript/2025-11-23ALTER DATABASE master SET READ_ONLY WITH NO_WAIT.sql"
+
+git add IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2025-11-26Schema.org_-_Person.html
