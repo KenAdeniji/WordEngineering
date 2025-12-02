@@ -986,13 +986,13 @@ var scriptLiteral9432 =
 	)
 	{
 		const PostData = {
-			method: 'POST',
+			method: "POST",
 			headers: {
 				"Accept": "application/json",
-				'Content-Type': 'application/json; charset=utf-8'
+				"Content-Type": "application/json; charset=utf-8"
 			},
-			dataType: 'json',
-			credentials: 'include'
+			dataType: "json",
+			credentials: "include"
 		}
 		PostData.body = JSON.stringify(fetchRequest);
 		try {
@@ -1011,7 +1011,6 @@ var scriptLiteral9432 =
 			} catch (e) {
 			uiDisplay.innerHTML = e;
 		};
-		
 	},
 	
 	fetchUri: function(uri, callback)
