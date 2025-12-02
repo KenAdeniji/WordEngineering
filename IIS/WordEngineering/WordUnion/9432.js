@@ -89,7 +89,7 @@
 	2022-08-06T12:36:00	scriptureReferenceConcatenate()
 		http://stackoverflow.com/questions/43612014/how-to-get-values-of-tbody-element-from-the-table-using-the-table-id-and-without
 	2022-08-24	scriptLiteral9432.renderDataTable(dataTable, "resultSet"); Added rowColumn() parameter argument.
-	2023-02-17	BiblicalCalendar added to table, as a computation of FromUntil. DontFeelLeftAlone.html.
+	2023-02-17	BiblicalCalendar added to the table, as a computation of FromUntil. DontFeelLeftAlone.html.
 	2023-06-27T19:57:00 addTableRowClickHandlers()
 		http://stackoverflow.com/questions/1207939/adding-an-onclick-event-to-a-table-row/1207963#1207963
 	2023-09-07T23:25:00 Created. https://stackoverflow.com/questions/15839169/how-to-get-the-value-of-a-selected-radio-button

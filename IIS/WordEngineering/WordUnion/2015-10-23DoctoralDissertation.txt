@@ -1373,6 +1373,18 @@ particular directories and files.
 >     which contains 1 object for data render methods, and two dimension
 >     arrays for select options. 2025-11-29T10:11:00 A JSON is the
 >     result set\... returned from the database.
+> 2.  2025-12-01T20:01:00 Unnecessary date manipulation:
+>     <http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js>
+>     does 2 types of date calculations. These are the:
+>     -   Call the explicit nowTimezoneOffset(), daysAdd(),
+>         daysDifference() variations
+>     -   2025-12-01T20:16:00 Implicitly insert the date difference into
+>         an HTML table, DateUntil - DatedFrom. 2023-02-17
+>         BiblicalCalendar added to table, as a computation of
+>         FromUntil.
+>         <http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/DontFeelLeftAlone.html>
+>         2023-02-17\...2025-12-01 = 1018 days (2 biblical years, 9
+>         biblical months, 28 days) (2 years, 9 months, 2 weeks)
 
 (Robert C. Etheredge, 2017)
 

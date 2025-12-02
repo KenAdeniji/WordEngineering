@@ -2167,6 +2167,23 @@ ORDER BY BookGroup
 					<time datetime="2025-11-29T10:11:00">2025-11-29T10:11:00</time>
 					A JSON is the result set... returned from the database.
 				</li>
+				<li>
+					<time datetime="2025-12-01T20:01:00">2025-12-01T20:01:00</time>
+					Unnecessary date manipulation:
+					<a href="http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js">http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js</a> 
+					does 2 types of date calculations.
+					These are the:
+						<ul>
+							<li>Call the explicit nowTimezoneOffset(), daysAdd(), daysDifference() variations</li>
+							<li>
+								<time datetime="2025-12-01T20:16:00">2025-12-01T20:16:00</time> Implicitly insert the date difference into an HTML table, DateUntil - DatedFrom.
+								<time datetime="2023-02-17T00:00:00">2023-02-17</time>
+								BiblicalCalendar added to table, as a computation of FromUntil. 
+								<a href="http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/DontFeelLeftAlone.html">http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/DontFeelLeftAlone.html</a> 
+								2023-02-17...2025-12-01 = 1018 days (2 biblical years, 9 biblical months, 28 days) (2 years, 9 months, 2 weeks)
+							</li>
+						</ul>
+				</li>
 			</ol>
 			
 			</blockquote> (Robert C. Etheredge, 2017)
