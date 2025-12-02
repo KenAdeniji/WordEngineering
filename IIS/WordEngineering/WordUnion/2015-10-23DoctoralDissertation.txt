@@ -1373,6 +1373,7 @@ particular directories and files.
 >     which contains 1 object for data render methods, and two dimension
 >     arrays for select options. 2025-11-29T10:11:00 A JSON is the
 >     result set\... returned from the database.
+>
 > 2.  2025-12-01T20:01:00 Unnecessary date manipulation:
 >     <http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js>
 >     does 2 types of date calculations. These are the:
@@ -1385,6 +1386,48 @@ particular directories and files.
 >         <http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordCross/DontFeelLeftAlone.html>
 >         2023-02-17\...2025-12-01 = 1018 days (2 biblical years, 9
 >         biblical months, 28 days) (2 years, 9 months, 2 weeks)
+>
+> 3.  2025-12-01T21:17:00 Excessive error checking: The author does not
+>     do error checking, preferring to catch exceptions, for example in
+>     AJAX requests.
+>     <http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js>
+>
+>         fetchRender: async function
+>         (
+>             fetchUri,
+>             fetchRequest,
+>             callback,
+>             uiDisplay,
+>             rowColumn
+>         )
+>         {
+>             const PostData = {
+>                 method: "POST",
+>                 headers: {
+>                     "Accept": "application/json",
+>                     "Content-Type": "application/json; charset=utf-8"
+>                 },
+>                 dataType: "json",
+>                 credentials: "include"
+>             }
+>             PostData.body = JSON.stringify(fetchRequest);
+>             try {
+>                 const response = await fetch
+>                 (
+>                     fetchUri,
+>                     PostData
+>                 )
+>                 .then(response => {
+>                     return response.json();
+>                 })
+>                 .then(responseJSON => {
+>                     var dataSet = JSON.parse(responseJSON.d);
+>                     callback(dataSet, uiDisplay, rowColumn);
+>                 })  
+>                 } catch (e) {
+>                 uiDisplay.innerHTML = e;
+>             };
+>         }
 
 (Robert C. Etheredge, 2017)
 

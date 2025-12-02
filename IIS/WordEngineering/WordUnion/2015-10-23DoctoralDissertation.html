@@ -2190,42 +2190,42 @@ ORDER BY BookGroup
 					The author does not do error checking, preferring to catch exceptions, for example in AJAX requests.
 					<a href="http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js">http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js</a> 
 <pre><code>
-	fetchRender: async function
-	(
-		fetchUri,
-		fetchRequest,
-		callback,
-		uiDisplay,
-		rowColumn
-	)
-	{
-		const PostData = {
-			method: "POST",
-			headers: {
-				"Accept": "application/json",
-				"Content-Type": "application/json; charset=utf-8"
-			},
-			dataType: "json",
-			credentials: "include"
-		}
-		PostData.body = JSON.stringify(fetchRequest);
-		try {
-			const response = await fetch
-			(
-				fetchUri,
-				PostData
-			)
-			.then(response => {
-				return response.json();
-			})
-			.then(responseJSON => {
-				var dataSet = JSON.parse(responseJSON.d);
-				callback(dataSet, uiDisplay, rowColumn);
-			})	
-			} catch (e) {
-			uiDisplay.innerHTML = e;
-		};
+fetchRender: async function
+(
+	fetchUri,
+	fetchRequest,
+	callback,
+	uiDisplay,
+	rowColumn
+)
+{
+	const PostData = {
+		method: "POST",
+		headers: {
+			"Accept": "application/json",
+			"Content-Type": "application/json; charset=utf-8"
+		},
+		dataType: "json",
+		credentials: "include"
 	}
+	PostData.body = JSON.stringify(fetchRequest);
+	try {
+		const response = await fetch
+		(
+			fetchUri,
+			PostData
+		)
+		.then(response => {
+			return response.json();
+		})
+		.then(responseJSON => {
+			var dataSet = JSON.parse(responseJSON.d);
+			callback(dataSet, uiDisplay, rowColumn);
+		})	
+		} catch (e) {
+		uiDisplay.innerHTML = e;
+	};
+}
 </code></pre>
 				</li>
 			</ol>
