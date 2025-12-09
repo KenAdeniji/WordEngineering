@@ -410,3 +410,8 @@ git add	"SQLScript/2025-11-23ALTER DATABASE master SET READ_ONLY WITH NO_WAIT.sq
 git add IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2025-11-26Schema.org_-_Person.html
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2025-12-08T1819PassportLostOrStolen_TaxResidency_-_AmbassadorBiancaOdinakaOdumegu-Ojukwu_-_EmbassyOfTheFederalRepublicOfNigeria_WashingtonDC.txt
+
+git rm 2015-10-23DoctoralDissertation.docx
+git rm 2015-10-23DoctoralDissertation.html
+git rm 2015-10-23DoctoralDissertation.pdf
+git rm 2015-10-23DoctoralDissertation.txt
