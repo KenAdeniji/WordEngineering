@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2025-12-14T00:47:00...2025-12-14T02:04:00 Created. 
+		http://kenadeniji.github.io/Github/2025-12-14T0047JobDescriptionForFull-StackDeveloperForNetToolKit_RegularExpressionMatchStartingWord.html
+		http://sfbay.craigslist.org/sby/sof/d/san-jose-back-end-developer-at-tiny/7899663411.html
+		http://docs.google.com/document/d/1RwxCghey6xDnjvBhi87GsGWgyXF_aA_xZF-y6FbWs4U/edit?tab=t.0
+		http://nettoolkit.com 
+		2025-12-14T12:47:00	http://stackoverflow.com/questions/17885855/use-dynamic-variable-string-as-regex-pattern-in-javascript
+
+		2025-12-14T00:47:00...2025-12-14T01:32:00 Regular Expression.
+var stringToGoIntoTheRegex = "abc";
+var regex = new RegExp("#" + stringToGoIntoTheRegex + "#", "g");
+// at this point, the line above is the same as: var regex = /#abc#/g;
+
+var input = "Hello this is #abc# some #abc# stuff.";
+var output = input.replace(regex, "!!");
+alert(output); // Hello this is !! some !! stuff.
+
+const paragraph = "The quick brown fox jumps over the lazy dog. It barked.";
+const regex = /[A-Z]/g;
+const found = paragraph.match(regex);
+
+console.log(found);
+// Expected output: Array ["T", "I"]	
+
+		2025-12-14T01:34:00...2025-12-14T02:04:00
+		http://stackoverflow.com/questions/3559883/javascript-split-regex-question
+		http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+		http://stackoverflow.com/questions/14978625/regex-to-check-whether-string-starts-with-ignoring-case-differences
+	-->	
+	<head>
+		<title>2025-12-14T00:47:Job Description for Full-Stack Developer for NetToolKit_Regular Expression match starting word</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2025-12-14T00:47:Job Description for Full-Stack Developer for NetToolKit_Regular Expression match starting word"/>
+		<meta name="keyword" content="Regular Expression"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			body {
+				/*background-color: #FF9500; */
+				border: 5px solid black; /* The line that is drawn around each edge of the box. */
+				margin: 0 auto; /* Is what separates one tag from another. */
+				padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+				/* width: 600px; */
+			}
+
+			.focus {
+			  background-color: #ff00ff;
+			  color: #fff;
+			  cursor: pointer;
+			  font-weight: bold;
+			}
+
+			/* div inside a div, border. */
+			/*
+			div > div {
+				border: 1px solid #ccc;
+			} 
+			*/
+			/*
+				2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+			*/
+			:is(div) :is(div) {
+				border: 1px solid #ccc;
+			}
+
+			html {
+				background-color: #00539F;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			   /* width:100%; */ 
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			/*  Define the background color for all the ODD background rows  */
+			tr:nth-child(odd) { 
+				background: #b8d1f3;
+			}
+
+			/*  Define the background color for all the EVEN background rows  */
+			tr:nth-child(even) {
+				background: #dae5f4;
+			}
+
+			/* 2023-06-13 http://www.buildingwebsitesfordummies.net */
+			a { color: #cc0000; }
+			a:link { color: #000000; }
+			a:visited { color: #009900; }
+			a:hover { color: #000000; background-color: #ccc }
+			a:active { color: #990000; }
+			
+			textarea
+			{ 
+				height: 35vh;
+				width: 70vw;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td><label for="stringValues">String values</label></td>
+				<td><textarea id="stringValues">zone, zoo, and zoom. Autozone.</textarea></td>
+			</tr>
+			<tr>
+				<td><label for="matchingStartingWord">Matching starting word</label></td>
+				<td><input id="matchingStartingWord" value="zo"/></td>
+			</tr>
+			<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+			<tr><td colspan="2" align="center"><textarea id="resultSet"></textarea></td></tr>
+		</table>
+		<script>
+			const stringValuesElement = document.getElementById("stringValues");
+			const matchingStartingWordElement = document.getElementById("matchingStartingWord");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			function querySubmit()
+			{
+/*
+				var regex = new RegExp(matchingStartingWordElement.value, "ig");
+				const found = stringValuesElement.value.match(regex);
+				resultSetElement.value = found;
+*/				
+				const words = stringValuesElement.value.split(/[.,; ]/);
+				const pattern = "^" + matchingStartingWordElement.value + "";
+				const regex = new RegExp(pattern, "i");
+				var wordCombined = "";
+				var wordStarts;
+				for (const element of words) {
+					wordStarts = regex.test(element);
+					if (wordStarts)
+					{
+						if (wordCombined)
+						{
+							wordCombined += " ";
+						}	
+						wordCombined += element;
+					}
+				}
+				resultSetElement.value = wordCombined;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>		
+	</body>
+</html>

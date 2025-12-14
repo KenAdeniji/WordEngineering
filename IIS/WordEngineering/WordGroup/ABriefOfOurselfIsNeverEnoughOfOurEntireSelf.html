@@ -77,10 +77,10 @@
 				var wordList = wordElement.value.split(re);
 				wordUpperCase = wordList.map( a => a.charAt(0).toUpperCase() + a.substr(1) );
 				
-				var capitalize = wordUpperCase.join(' ');
+				var capitalize = wordUpperCase.join(" ");
 				capitalizeElement.textContent = capitalize;
 				
-				var removeSpaces = capitalize.replace(/\s+/g,'');
+				var removeSpaces = capitalize.replace(/\s+/g,"");
 				camelElement.textContent = removeSpaces;
 				
 				var firstLetterLowerCase = removeSpaces.charAt(0).toLowerCase() + removeSpaces.substr(1)
@@ -89,7 +89,7 @@
 
 			submitQueryElement.addEventListener("click", querySubmit, false);		
 			
-			var body = document.getElementsByTagName('body')[0];
+			var body = document.getElementsByTagName("body")[0];
 			body.onkeydown = function (e) {
 				if (e.keyCode === 13) {  //enter key code
 					querySubmit();

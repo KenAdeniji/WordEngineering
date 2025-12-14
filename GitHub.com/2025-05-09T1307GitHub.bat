@@ -417,3 +417,6 @@ rem 2025-12-09T02:18:00 git rm 2015-10-23DoctoralDissertation.pdf
 rem 2025-12-09T02:18:00 git rm 2015-10-23DoctoralDissertation.txt
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2025-12-09T192700MicrosoftHotmail.com_-_KenAdeniji@hotmail.com_-_Cutoff_Rejection_Nothingness_-_Daniel9v26.txt
+
+git add IIS/WordEngineering/Skillset/
+git add IIS/WordEngineering/WordPersonalized/

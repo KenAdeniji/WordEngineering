@@ -1990,6 +1990,9 @@ Data,Log,Size and Other Useful information -SQL
 >
 > 1.  The author is deprecating the use of the jquery library which was
 >     solely used for AJAX, in preference to the fetch statement.
+>     2025-12-10T21:02:00 [ This removes single point of failure (SPOF).
+>     ]{dated="2025-12-10T21:02:00"
+>     url="http://www.google.com/books/edition/Web_Performance_Daybook_Volume_2/W07UF_D0mwoC?hl=en&gbpv=1"}
 > 2.  The author only uses the latest version and a unique uri for each
 >     library available on CDN.
 > :::
