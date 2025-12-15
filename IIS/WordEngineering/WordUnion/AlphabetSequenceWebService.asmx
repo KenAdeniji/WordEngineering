@@ -167,7 +167,7 @@ public class AlphabetSequenceWebService : System.Web.Services.WebService
 
 		return json;
 	}
-	
+
 	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String StartFromZ(string word)

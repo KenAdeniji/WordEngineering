@@ -70,6 +70,7 @@ namespace InformationInTransit.ProcessLogic
 	///	2024-11-23T17:38:00	SELECT ANY_VALUE(ScriptureReference) FROM Bible..Scripture_View
 	///	2024-11-23T18:12:00	SELECT LISTAGG(BookTitle, ', ') WITHIN GROUP(ORDER BY Category) BookCategory FROM Bible..BibleBook
 	///	2024-11-23T18:19:00	SELECT STRING_AGG(BookTitle, ', ') WITHIN GROUP(ORDER BY Category) BookCategory FROM Bible..BibleBook
+	/// 2025-12-13T08:19:00 public const string WordPersonalizedQueryFormat = @"
 	///</summary>
 	public class ScriptureReferenceHelper
 	{
@@ -1261,6 +1262,20 @@ namespace InformationInTransit.ProcessLogic
 		public const string FullPositionQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, VerseIDSequence, ChapterIDSequence FROM Bible..Scripture_View WHERE {0} ORDER BY BookID, ChapterID, VerseID;";
 		public const string FullPositionQueryFormatScriptureReferenceScalarSelect = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE {0} = {1}";
 		public const string IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongScalarSelect = "SELECT TOP 1 {2} AS VerseText FROM Bible..Scripture_View WHERE {0} = {1}";
+
+		//2025-12-13T08:19:00
+		public const string WordPersonalizedQueryFormat = @"
+			SELECT 
+				bookID,
+				chapterID, 
+				verseID, 
+				ISNULL(WordEngineering..SacredText.WordPersonalized, {0}) verseText 
+			FROM Bible..Scripture_View 
+			JOIN WordEngineering..SacredText
+				ON Bible..Scripture_View.ScriptureReference =  WordEngineering..SacredText.ScriptureReference
+			WHERE {1} 
+			ORDER BY bookID, chapterID, verseID;
+		";
 
 		public const string BibleVersionDefault = "KingJamesVersion";
 		

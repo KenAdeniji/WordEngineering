@@ -190,6 +190,28 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
 		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
 		return json;
     }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String QueryWordPersonalized(String scriptureReference, string bibleVersion)
+    {
+		String[] scriptureReferenceSubset = null;
+		DataSet result = null;
+		ScriptureReferenceHelper.Process
+		(
+				scriptureReference,
+			ref	scriptureReferenceSubset,
+			ref result,
+				String.Format
+				(
+					ScriptureReferenceHelper.WordPersonalizedQueryFormat,
+					bibleVersion
+				),	
+				bibleVersion
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
+    }
 	
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]

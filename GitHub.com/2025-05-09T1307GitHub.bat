@@ -420,3 +420,15 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2025-12-09T192700MicrosoftH
 
 git add IIS/WordEngineering/Skillset/
 git add IIS/WordEngineering/WordPersonalized/
+
+        git add    IIS/WordEngineering/CascadingStyleSheet/Alexis Goldstein/AlexisGo.github.com/LearningCSSAnimations/2022-06-12TNebuchadnezzarDreamImageDaniel2v32-33.html
+        git add    IIS/WordEngineering/WordCross/2025-03-24T1242WhereIsGod...Absent.asmx
+        git add    IIS/WordEngineering/WordCross/2025-03-24T1242WhereIsGod...Absent.html
+        git add    IIS/WordEngineering/WordGroup/AccordingToManyIHaveSpoken.html
+        git add    IIS/WordEngineering/WordUnion/AlphabetSequenceWebService.asmx
+        git add    IIS/WordEngineering/WordUnion/GetAPage.html
+        git add    IIS/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx
+        git add    InformationInTransit/ProcessLogic/ScriptureReferenceHelper.cs
+
+git add        IIS/WordEngineering/RegularExpression/2025-12-14T1438OnJustThatOneColumn.asmx
+git add        IIS/WordEngineering/RegularExpression/2025-12-14T1438OnJustThatOneColumn.html

@@ -13,11 +13,8 @@
 		<meta name="keywords" content="Bible, word, Scripture Reference"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<link rel="stylesheet" type="text/css" href="/WordEngineering/WordUnion/9432.css">
 	</head>
 	<body>
-		<fieldset>
-		<legend>Query</legend>
 		<div align="center">
 			<table>
 				<tr>
@@ -54,12 +51,25 @@
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
+			<div align="center" id="resultSet"></div>
 		</div>
-		</fieldset>	
-		<div align="center" id="resultSet"></div>	
+		
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>	
-		<script src="/WordEngineering/WordUnion/tsorter.min.js" type="text/javascript"></script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+
 		<script>
 			var isPostBack = false;
 			
@@ -78,48 +88,46 @@
 			{
 				if (isPostBack === false)
 				{
-					$.getScript( "/WordEngineering/WordUnion/9432.js", function( data, textStatus, jqxhr ) {
-						scriptLiteral9432.renderBibleBookGroupSelect();
-						scriptLiteral9432.renderBibleVersionSelect();
+					scriptLiteral9432.renderBibleBookGroupSelect();
+					scriptLiteral9432.renderBibleVersionSelect();
 
-						var scriptureReferenceValue = scriptLiteral9432.getParameterByName("scriptureReference");
-						if (scriptureReferenceValue)
-						{
-							scriptureReferenceElement.value = scriptureReferenceValue;
-						}	
+					var scriptureReferenceValue = scriptLiteral9432.getParameterByName("scriptureReference");
+					if (scriptureReferenceValue)
+					{
+						scriptureReferenceElement.value = scriptureReferenceValue;
+					}	
 
-						var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
-						if (bibleWordValue)
-						{
-							bibleWordElement.value = bibleWordValue;
-						}	
-						
-						var logicValue = scriptLiteral9432.getParameterByName("logic");
-						if (logicValue)
-						{
-							logicElement.value = logicValue;
-						}	
+					var bibleWordValue = scriptLiteral9432.getParameterByName("bibleWord");
+					if (bibleWordValue)
+					{
+						bibleWordElement.value = bibleWordValue;
+					}	
+					
+					var logicValue = scriptLiteral9432.getParameterByName("logic");
+					if (logicValue)
+					{
+						logicElement.value = logicValue;
+					}	
 
-						var wholeWordsValue = scriptLiteral9432.getParameterByName("wholeWords");
-						var wholeWordsLowerCaseValue =  wholeWordsValue.toLowerCase();
-						var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
-						wholeWordsElement.checked = wholeWordsChecked;
+					var wholeWordsValue = scriptLiteral9432.getParameterByName("wholeWords");
+					var wholeWordsLowerCaseValue =  wholeWordsValue.toLowerCase();
+					var wholeWordsChecked = (wholeWordsLowerCaseValue === "true") ? true : false;
+					wholeWordsElement.checked = wholeWordsChecked;
 
-						var bibleVersionValue = scriptLiteral9432.getParameterByName("bibleVersion");
-						if (bibleVersionValue)
-						{
-							bibleVersionElement.value = bibleVersionValue;
-						}	
-						
-						var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
-						if (bibleBookGroupValue)
-						{
-							scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
-						}	
-						
-						querySubmit();
-						isPostBack = true;
-					});
+					var bibleVersionValue = scriptLiteral9432.getParameterByName("bibleVersion");
+					if (bibleVersionValue)
+					{
+						bibleVersionElement.value = bibleVersionValue;
+					}	
+					
+					var bibleBookGroupValue = scriptLiteral9432.getParameterByName("bibleBookGroup");
+					if (bibleBookGroupValue)
+					{
+						scriptLiteral9432.selectionSet("bibleBookGroup", [bibleBookGroupValue]);
+					}	
+					
+					querySubmit();
+					isPostBack = true;
 				}
 				else
 				{
@@ -127,7 +135,7 @@
 				}
  			}
 
-			function querySubmit()
+			async function querySubmit()
 			{
 				var request = {};
 
@@ -140,26 +148,29 @@
 
 				var requestJson = JSON.stringify(request);
 				
-				$.ajax
-				({
-					type: "POST",
-					contentType: "application/json; charset=utf-8",
-					url: "/WordEngineering/WordGroup/AccordingToManyIHaveSpoken.asmx/Query",
-					data: requestJson,
-					dataType: "json",
-					success: function(data) 
-					{
-						var dataSet = JSON.parse(data.d);
-						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
 					},
-					error: function(xhr)
-					{ 
-						resultSetElement.innerHTML =
-							"Status: " + xhr.status + " | " + 
-							"StatusText: " + xhr.statusText + " | " +
-							"ResponseText: " + xhr.responseText;
-					} 
-				});
+					dataType: "json",
+					credentials: "include"
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordGroup/AccordingToManyIHaveSpoken.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataSet = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataSet(dataSet, "resultSet");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
 			}
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
