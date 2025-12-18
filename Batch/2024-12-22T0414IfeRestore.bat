@@ -1,5 +1,6 @@
 @echo off
 REM	2025-05-09T13:32:00	http://superuser.com/questions/466682/why-use-start-over-call-when-using-batch-files
+goto D_Drive
 :C_Drive
 start xcopy \\HolySpirit\d$\SQLServerBackup c:\SQLServerBackup /d /e /s /y
 start xcopy \\HolySpirit\d$\SQLServerDataDefinitionLanguageDDL c:\SQLServerDataDefinitionLanguageDDL /d /e /s /y

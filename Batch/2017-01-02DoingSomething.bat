@@ -188,11 +188,11 @@ DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71726);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 2631);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9541);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162539);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162567);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18005);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3088);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 8279);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 8305);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 168055);
@@ -1136,5 +1136,7 @@ http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 \\Noor\e$\WordEngineering
 
 PoliceChief@Fremont.gov,PDwebmaster@fremont.gov,Maureen.Orphanos@acgov.org,Makan.Talayeh@acgov.org,KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com,info@nigeriaembassyusa.org,publiccomplaints@nigeriaembassyusa.org,cgnny@nigeriahouse.com,info@nigeria-consulate-atl.org,cfpt@cba.com.au,Alexandra.Colnan@cba.com.au,Vesna.Naumoska@cba.com.au
+
+2025-11-19 http://academia.edu/50919962/JavaScript_Optimizing_native_JavaScript
 
 :Exit
