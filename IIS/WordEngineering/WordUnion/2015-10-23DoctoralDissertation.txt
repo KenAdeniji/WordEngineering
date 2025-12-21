@@ -3457,6 +3457,18 @@ commentary="When I am doing this? What do I become?" location="Shower"}
   ------------------------------------------------------------------------------------------------------ ------------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------
   [75%](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BiblePercentage.html?percentage=75)   Wo 75%       [Matthew 7:10, Jonah 3, 1 Kings 7, 1 Samuel 21:3](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Matthew%207:10,%20Jonah%203,%201%20Kings%207,%201%20Samuel%2021:3)   Greek Kingdom [Daniel 2:39](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Daniel%202:39)
 
+> ### 2025-12-20T21:42:00 Building a UI Framework {#BuildingAUIFramework}
+>
+> #### 2025-12-20T21:42:00 Application architectures {#ApplicationArchitectures}
+>
+> The author follows a multi-tier client/server architecture. Each
+> unique browser client HTML web page, features a JavaScript, .js,
+> fetches an AJAX request to an ASMX web service, which calls the
+> application layer .dll written in C#, .cs, and this finally sends a
+> SQL to the database server.
+
+Ian Hickson (2025-10-23T19:51:00).
+
 ### 2025-12-03T22:38:00 [To be reciprocal\... of the value?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20be%20reciprocal...%20of%20the%20value%3F){dated="2025-12-03T22:38:00" contactid="13728" hiswordid="167970"} {#ToBeReciprocalOfTheValue dated="2025-12-03T22:38:00"}
 
 1.  <http://cnbc.com/2025/12/03/stock-market-crash-risk-black-monday-october-1987.html?utm_source=firefox-newtab-en-us>
