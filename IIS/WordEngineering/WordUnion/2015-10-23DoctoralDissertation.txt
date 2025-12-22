@@ -3473,8 +3473,8 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 >     static user-interface (UI) input form based on an HTML document.
 >     This facilitates a fast page load time.
 > 2.  Client-side rendering (CSR): By using JavaScript, the client
->     requests an input data-driven dynamic JSON from the server, which
->     it later builds its specialized HTML result set fragment.
+>     requests an input data-driven dynamic JSON from the server, with
+>     which it later builds its specialized HTML result set fragment.
 
 Ian Hickson (2025-10-23T19:51:00).
 
