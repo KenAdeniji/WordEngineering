@@ -435,3 +435,4 @@ git add        IIS/WordEngineering/RegularExpression/2025-12-14T1438OnJustThatOn
 
 git add	IIS/WordEngineering/SQLServer/2025-12-14SetCompatibilityLevel.sql
 	
+git add IIS/WordEngineering/WordCross/AishaqAndTraining.html
