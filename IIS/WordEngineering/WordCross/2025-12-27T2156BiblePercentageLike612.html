@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-12-27T22:47:00 Created.	http://csharpdeveloper.wordpress.com/2019/08/18/sql-servers-sp_executesql-does-not-protect-you-from-sql-injection
+		-->
+		<title>Bible percentage like %612</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bible percentage like %612"/>
+		<meta name="keywords" content="Bible percentage, like, %612"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input type="text" ID="word" value="%612" autofocus required/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+		</div>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			function pageLoad()
+			{
+				querySubmit();
+ 			}
+
+			var isPostBack = false;
+			
+			const wordElement = document.getElementById("word");
+			const resultTableElement = document.getElementById("resultTable");
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["word"] = wordElement.value;
+				
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+		</script>		
+	</body>
+</html>

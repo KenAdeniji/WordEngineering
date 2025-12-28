@@ -436,3 +436,7 @@ git add        IIS/WordEngineering/RegularExpression/2025-12-14T1438OnJustThatOn
 git add	IIS/WordEngineering/SQLServer/2025-12-14SetCompatibilityLevel.sql
 	
 git add IIS/WordEngineering/WordCross/AishaqAndTraining.html
+
+git add IIS/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.asmx
+git add IIS/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.html
+git add IIS/WordEngineering/WordCross/usp_20251227T2156BiblePercentageLike612.sql
