@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-12-28T13:53:00 Created.
+			2025-12-28T14:38:00	http://dev.to/who_tf_cares/how-to-work-with-multidimensional-arrays-in-javascript-9jl
+Iterating Through a Multidimensional Array
+
+for (let i = 0; i < salary.length; i++) {
+    for (let j = 0; j < salary[i].length; j++) {
+        document.write(salary[i][j]);
+    }
+}
+
+Example 1: Printing a Multidimensional Array
+
+let salary = [
+    ["ABC", 24, 18000],
+    ["EFG", 30, 30000],
+    ["IJK", 28, 41000],
+    ["EFG", 31, 28000]
+];
+for (let i = 0; i < salary.length; i++) {
+    console.log(salary[i]);
+}
+
+		-->
+		<title>Biblical line</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Biblical line"/>
+		<meta name="keywords" content="Biblical line, generation"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="//cdn.datatables.net/2.3.6/css/dataTables.dataTables.min.css">`
+			);
+		</script>
+	</head>
+	<body>
+		<table id="biblicalLine">
+			<thead>
+				<tr><th>Scripture Reference</th><th>Title</th><th>Word</th><th>Commentary</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Genesis 1:26-29, Genesis 2:4-8, Genesis 2:15-25</td><td>Adam and Eve</td><td>Adam, Eve</td><td></td></tr>
+				<tr><td>Genesis 4:1-16</td><td>Cain and Abel</td><td>Cain, Abel</td><td></td></tr>
+				<tr><td>Genesis 5</td><td>Generations of Adam</td><td>Adam, Seth, Enos, Cainan, Mahalaleel, Jared, Enoch, Methuselah, Lamech, Noah</td><td>2025-12-28T15:38:00 Noah — All 3 sons were named.</td></tr>
+			</tbody>
+		</table>
+		<script src="//code.jquery.com/jquery-latest.js"></script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "//cdn.datatables.net/2.3.6/js/dataTables.min.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script>
+			function pageLoad()
+			{
+				new DataTable('#biblicalLine')
+ 			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

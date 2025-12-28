@@ -440,3 +440,5 @@ git add IIS/WordEngineering/WordCross/AishaqAndTraining.html
 git add IIS/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.asmx
 git add IIS/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.html
 git add IIS/WordEngineering/WordCross/usp_20251227T2156BiblePercentageLike612.sql
+
+git add	IIS/WordEngineering/WordCross/2025-12-28T1353BiblicalLine.html
