@@ -442,3 +442,5 @@ git add IIS/WordEngineering/WordCross/2025-12-27T2156BiblePercentageLike612.html
 git add IIS/WordEngineering/WordCross/usp_20251227T2156BiblePercentageLike612.sql
 
 git add	IIS/WordEngineering/WordCross/2025-12-28T1353BiblicalLine.html
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2025-12-30T0019DoesHeKnowThatIsNero_ThatIsHisApartment_-_2025-12-30T0152ByeByeBiden2025-12-30T0204IgbaToLole...FromExodus_WhenYouDidn'tGoHome...FromExodus.txt
