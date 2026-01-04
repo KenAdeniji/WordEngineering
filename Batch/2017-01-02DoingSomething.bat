@@ -201,7 +201,7 @@ DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 179210);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 745);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5253);
-DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7735); 
+DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7758); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..ThemeOfTheDay', RESEED, 12); 
 DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2379);
@@ -1143,6 +1143,8 @@ PoliceChief@Fremont.gov,PDwebmaster@fremont.gov,Maureen.Orphanos@acgov.org,Makan
 2025-12-30T19:58:00
 Please call at your convenience... if I am not available, please leave a message and send me an e-mail, and I will call you back.
 
+
+file:///D:/Software/IanHickson/2025-12-19IanHickson_-_ui-frameworks.pdf
 
 2025-12-22T09:35:00	PoliceChief@Fremont.gov,CaFremontPd@coplogic.com
 :Exit
