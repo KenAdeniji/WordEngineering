@@ -188,9 +188,9 @@ DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71726);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3703);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9689);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162567);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162698);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18005);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18085);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3088);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 8305);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
@@ -198,7 +198,7 @@ DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 168055);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 179210);
-DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 745);
+DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 791);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5253);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7758); 
@@ -1147,4 +1147,9 @@ Please call at your convenience... if I am not available, please leave a message
 file:///D:/Software/IanHickson/2025-12-19IanHickson_-_ui-frameworks.pdf
 
 2025-12-22T09:35:00	PoliceChief@Fremont.gov,CaFremontPd@coplogic.com
+
+2026-01-05T12:43:00	The HoweverOurProgressArePersonal.html is for querying activities in the Bible.
+
+research@tacit.ai;investorrelations@paypal.com;antoinette@reflex.tech;guy@reflex.tech;research@reflex.tech
+ 
 :Exit
