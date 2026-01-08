@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-01-08T03:56:00	Filesystem naming convention including special characters and variable names. ^'
+			2026-01-08T04:06:00	http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+			2026-01-08T04:12:00 http://stackoverflow.com/questions/1966476/how-can-i-process-each-letter-of-text-using-javascript
+
+		-->
+		<title>Filesystem naming convention including special characters and variable names. ^'</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Filesystem naming convention including special characters and variable names. ^'"/>
+		<meta name="keywords" content="^'09azAZ"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 5vh;
+				width: 95vw;
+			}
+		</style>	
+		<div align="center">
+			<table>
+				<tr>
+					<td><textarea id="word" autofocus>^'09azAZ</textarea></td>
+				</tr>
+				<tr>
+					<td align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<table id="resultTable"></table>
+		</div>
+
+		<script>
+			const	wordElement = document.getElementById("word");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultTableElement = document.getElementById("resultTable");
+	
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+				var resultTableInfo = "<caption>ASCII code filesystem naming convention including special characters and variable names</caption><thead><tr><th>Character</th><th>Code</th><th>Sequence</th></thead><tbody>";
+
+				var currentCode;
+				var currentSequence;
+
+				var totalSumCode = 0;
+				var totalSumSequence = 0;
+
+				for (var index = 0, currentCharacter=''; currentCharacter = wordElement.value.charAt(index); index++)
+				{ 
+					currentCode = wordElement.value.charCodeAt(index);
+					currentSequence = 0;
+
+					if (currentCharacter >= '0' && currentCharacter <= '9') { currentSequence = currentCode - 48; }
+					else if (currentCharacter >= 'A' && currentCharacter <= 'Z') { currentSequence = currentCode - 64; }
+					else if (currentCharacter >= 'a' && currentCharacter <= 'z') { currentSequence = currentCode - 96; }
+
+					totalSumCode += currentCode;
+					totalSumSequence += currentSequence;
+
+					resultTableInfo += `<tr><td>${currentCharacter}</td><td>${currentCode}</td><td>${currentSequence}</td></tr>`
+				}
+				resultTableInfo += `</tbody><tfoot><tr><td>Total Sum</td><td>${totalSumCode}</td><td>${totalSumSequence}</td></tr></tfoot>`;
+				resultTableElement.innerHTML = resultTableInfo;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>

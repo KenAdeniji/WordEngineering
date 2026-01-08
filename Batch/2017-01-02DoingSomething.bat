@@ -67,6 +67,7 @@ GOTO Exit
 scriptdb.exe --database=WordEngineering --outputfilename=C:\Users\KAdeniji\OneDrive\ScriptDB\WordEngineering.sql
 
 :SQLServerBackup
+start xcopy d:\SQLServerBackup c:\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup e:\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup \\Ife\d$\SQLServerBackup /d /e /s /y
 start xcopy d:\SQLServerBackup \\Noor\e$\SQLServerBackup /d /e /s /y
@@ -1151,5 +1152,7 @@ file:///D:/Software/IanHickson/2025-12-19IanHickson_-_ui-frameworks.pdf
 2026-01-05T12:43:00	The HoweverOurProgressArePersonal.html is for querying activities in the Bible.
 
 research@tacit.ai;investorrelations@paypal.com;antoinette@reflex.tech;guy@reflex.tech;research@reflex.tech
+
+http://drive.proton.me/u/0/trash
  
 :Exit
