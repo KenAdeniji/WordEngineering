@@ -187,7 +187,7 @@ DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
 DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71953);
 
-DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3703);
+DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3717);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9689);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162698);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
