@@ -191,9 +191,9 @@ DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3717);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9689);
 DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162698);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
-DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18085);
+DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18106);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3088);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 8305);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 8440);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 168055);
@@ -1146,6 +1146,8 @@ Please call at your convenience... if I am not available, please leave a message
 
 
 file:///D:/Software/IanHickson/2025-12-19IanHickson_-_ui-frameworks.pdf
+
+microsoft sql server management studio wait error.
 
 2025-12-22T09:35:00	PoliceChief@Fremont.gov,CaFremontPd@coplogic.com
 
