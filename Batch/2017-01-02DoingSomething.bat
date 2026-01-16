@@ -99,6 +99,7 @@ endlocal
 GOTO Exit
 
 :SQLServerDataManipulationLanguageDML
+start xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML e:\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
