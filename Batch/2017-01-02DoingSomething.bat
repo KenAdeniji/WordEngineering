@@ -1137,6 +1137,10 @@ http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 \\Noor\e$\SQLServerDataManipulationLanguageDML
 \\Noor\e$\WordEngineering
 
+\\Ife\e$\SQLServerBackup
+\\Ife\e$\SQLServerDataManipulationLanguageDML
+\\Ife\e$\WordEngineering
+
 PoliceChief@Fremont.gov,PDwebmaster@fremont.gov,Maureen.Orphanos@acgov.org,Makan.Talayeh@acgov.org,KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com,info@nigeriaembassyusa.org,publiccomplaints@nigeriaembassyusa.org,cgnny@nigeriahouse.com,info@nigeria-consulate-atl.org,cfpt@cba.com.au,Alexandra.Colnan@cba.com.au,Vesna.Naumoska@cba.com.au
 
 2025-11-19 http://academia.edu/50919962/JavaScript_Optimizing_native_JavaScript
