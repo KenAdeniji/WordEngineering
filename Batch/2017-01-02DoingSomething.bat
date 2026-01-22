@@ -29,7 +29,7 @@ GOTO Exit
 
 :BCP
 start xcopy d:\BCP e:\BCP /d /e /s /y
-start xcopy d:\BCP \\Ife\e$\BCP /d /e /s /y
+start xcopy d:\BCP \\Ife\d$\BCP /d /e /s /y
 start xcopy d:\BCP \\Noor\e$\BCP /d /e /s /y
 REM start xcopy d:\BCP \\Harvest\e$\BCP /d /e /s /y
 start xcopy d:\BCP e:\Users\KAdeniji\OneDrive\BCP /d /e /s /y
@@ -37,7 +37,7 @@ GOTO Exit
 
 :IISLog
 start xcopy c:\inetpub e:\inetpub /d /e /s /y
-start xcopy c:\inetpub \\Ife\e$\inetpub /d /e /s /y
+start xcopy c:\inetpub \\Ife\d$\inetpub /d /e /s /y
 start xcopy c:\inetpub \\Noor\e$\inetpub /d /e /s /y
 start xcopy c:\inetpub \\Harvest\e$\inetpub /d /e /s /y
 start xcopy c:\inetpub C:\Users\KAdeniji\OneDrive\inetpub /d /e /s /y
@@ -50,14 +50,14 @@ GOTO Exit
 
 :Node.js
 start xcopy d:\Node.js e:\Node.js /d /e /s /y
-start xcopy d:\Node.js \\Ife\e$\Node.js /d /e /s /y
+start xcopy d:\Node.js \\Ife\d$\Node.js /d /e /s /y
 start xcopy d:\Node.js \\Noor\e$\Node.js /d /e /s /y
 REM start xcopy d:\Node.js C:\Users\KAdeniji\OneDrive\Node.js /d /e /s /y
 GOTO Exit
 
 :Rust
 start xcopy d:\Rust e:\Rust /d /e /s /y
-start xcopy d:\Rust \\Ife\e$\Rust /d /e /s /y
+start xcopy d:\Rust \\Ife\d$\Rust /d /e /s /y
 start xcopy d:\Rust \\Noor\e$\Rust /d /e /s /y
 start xcopy d:\Rust \\Harvest\e$\Rust /d /e /s /y
 start xcopy d:\Rust C:\Users\KAdeniji\OneDrive\Rust /d /e /s /y
@@ -77,7 +77,7 @@ GOTO Exit
 
 :SQLServerDataDefinitionLanguageDDL
 start xcopy d:\SQLServerDataDefinitionLanguageDDL e:\SQLServerDataDefinitionLanguageDDL /d /e /s /y
-start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
+start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Ife\d$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Noor\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL \\Harvest\e$\SQLServerDataDefinitionLanguageDDL /d /e /s /y
 start xcopy d:\SQLServerDataDefinitionLanguageDDL C:\Users\KAdeniji\OneDrive\SQLServerDataDefinitionLanguageDDL /d /e /s /y
@@ -101,7 +101,7 @@ GOTO Exit
 :SQLServerDataManipulationLanguageDML
 start xcopy d:\SQLServerDataManipulationLanguageDML c:\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML e:\SQLServerDataManipulationLanguageDML /d /e /s /y
-start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
+start xcopy d:\SQLServerDataManipulationLanguageDML \\Ife\d$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Noor\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML \\Harvest\e$\SQLServerDataManipulationLanguageDML /d /e /s /y
 start xcopy d:\SQLServerDataManipulationLanguageDML C:\Users\KAdeniji\OneDrive\SQLServerDataManipulationLanguageDML /d /e /s /y
@@ -109,14 +109,14 @@ GOTO Exit
 
 :SQLServerExport
 start xcopy d:\SQLServerExport e:\SQLServerExport /d /e /s /y
-start xcopy d:\SQLServerExport \\Ife\e$\SQLServerExport /d /e /s /y
+start xcopy d:\SQLServerExport \\Ife\d$\SQLServerExport /d /e /s /y
 start xcopy d:\SQLServerExport \\Noor\e$\SQLServerExport /d /e /s /y
 start xcopy d:\SQLServerExport C:\Users\KAdeniji\OneDrive\SQLServerExport /d /e /s /y
 GOTO Exit
 
 :WebAssembly
 start xcopy d:\WebAssembly e:\WebAssembly /d /e /s /y
-start xcopy d:\WebAssembly \\Ife\e$\WebAssembly /d /e /s /y
+start xcopy d:\WebAssembly \\Ife\d$\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly \\Noor\e$\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly \\Harvest\e$\WebAssembly /d /e /s /y
 start xcopy d:\WebAssembly C:\Users\KAdeniji\OneDrive\WebAssembly /d /e /s /y
@@ -128,7 +128,7 @@ GOTO Exit
 
 :WordEngineering
 start xcopy d:\WordEngineering e:\WordEngineering /d /e /s /y
-start xcopy d:\WordEngineering \\Ife\e$\WordEngineering /d /e /s /y
+start xcopy d:\WordEngineering \\Ife\d$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Harvest\e$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering C:\Users\KAdeniji\OneDrive\WordEngineering /d /e /s /y
@@ -136,7 +136,7 @@ GOTO Exit
 
 :WordOfGod
 start xcopy d:\WordOfGod e:\WordOfGod /d /e /s /y
-start xcopy d:\WordOfGod \\Ife\e$\WordOfGod /d /e /s /y
+start xcopy d:\WordOfGod \\Ife\d$\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod \\Noor\e$\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod \\Harvest\e$\WordOfGod /d /e /s /y
 start xcopy d:\WordOfGod C:\Users\KAdeniji\OneDrive\WordOfGod /d /e /s /y
@@ -1137,9 +1137,9 @@ http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 \\Noor\e$\SQLServerDataManipulationLanguageDML
 \\Noor\e$\WordEngineering
 
-\\Ife\e$\SQLServerBackup
-\\Ife\e$\SQLServerDataManipulationLanguageDML
-\\Ife\e$\WordEngineering
+\\Ife\d$\SQLServerBackup
+\\Ife\d$\SQLServerDataManipulationLanguageDML
+\\Ife\d$\WordEngineering
 
 PoliceChief@Fremont.gov,PDwebmaster@fremont.gov,Maureen.Orphanos@acgov.org,Makan.Talayeh@acgov.org,KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com,info@nigeriaembassyusa.org,publiccomplaints@nigeriaembassyusa.org,cgnny@nigeriahouse.com,info@nigeria-consulate-atl.org,cfpt@cba.com.au,Alexandra.Colnan@cba.com.au,Vesna.Naumoska@cba.com.au
 
