@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-01-20T12:13:00	http://2025.stateofhtml.com/en-US/features/forms
+		2026-01-20T12:17:00	http://open-ui.org/components/customizableselect
+		2026-01-21T16:10:00	Created.
+	-->
+	<head>
+		<title>StateOfHTML.com, Open UI, Bible Books</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="StateOfHTML.com, Open UI, Bible Books"/>
+		<meta name="keywords" content="StateOfHTML.com, Open UI, Bible Books"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			.container {
+			  display: grid;
+			  grid-template-rows: auto auto;
+			  grid-template-columns: 150px 150px;
+			  grid-column-gap: 10px;
+			  grid-row-gap: 10px;
+			}
+			.container > div {
+			  background-color: lightgray;
+			}
+			select, ::picker(select) {
+			  appearance: base-select;
+			}
+		</style>
+	</head>	
+	<body>
+		<select>
+			<div class=container>
+				<div>
+				  <optgroup label="Pentateuch">
+						<option>Genesis</option>
+						<option>Exodus</option>
+						<option>Leviticus</option>
+						<option>Numbers</option>
+						<option>Deuteronomy</option>
+				  </optgroup>
+				</div>  
+				<div>
+				  <optgroup label="Major Prophets">
+						<option>Isaiah</option>
+						<option>Jeremiah</option>
+						<option>Ezekiel</option>
+						<option>Daniel</option>
+				  </optgroup>
+				</div>
+				<div>
+				  <optgroup label="Gospel">
+						<option>Matthew</option>
+						<option>Mark</option>
+						<option>Luke</option>
+						<option>John</option>
+				  </optgroup>
+				</div>
+			</div>		
+		</select>
+	</body>
+</html>
