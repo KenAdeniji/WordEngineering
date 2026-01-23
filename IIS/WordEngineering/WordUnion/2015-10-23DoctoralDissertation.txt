@@ -11297,8 +11297,8 @@ WordEngineering
         new Woman("Eve", null, null, "Mother of all the living", "Helper"),
         new Man("Cain", "Adam", "Eve", "Possession", "Tiller of the ground"),
         new Man("Abel", "Adam", "Eve", null, "Animal breeder"),
-        new Man("Seth", "Adam", "Eve", "Substitute", "Call on the of God"),
-        new Man("Enosh", "Seth", null, null, "Call on the of God"),
+        new Man("Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
+        new Man("Enosh", "Seth", null, null, "Call on the name of God"),
     ];
 
 ![2026-01-22T2234UnifiedModelingLanguage\_-\_ClassDiagram\_-\_Creation.png](https://kenadeniji.github.io/Github/2026-01-22T2234UnifiedModelingLanguage_-_ClassDiagram_-_Creation.png)

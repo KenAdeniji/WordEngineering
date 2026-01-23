@@ -10,7 +10,7 @@ class Man {
 		this.mother = mother;
 		this.titled = titled;
 		this.vocation = vocation;
-	}	
+	}
 	breathe() {}
 	name() {}
 	knew() {}
@@ -28,6 +28,6 @@ this.men = [
 	new Woman("Eve", null, null, "Mother of all the living", "Helper"),
 	new Man("Cain", "Adam", "Eve", "Possession", "Tiller of the ground"),
 	new Man("Abel", "Adam", "Eve", null, "Animal breeder"),
-	new Man("Seth", "Adam", "Eve", "Substitute", "Call on the of God"),
-	new Man("Enosh", "Seth", null, null, "Call on the of God"),
+	new Man("Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
+	new Man("Enosh", "Seth", null, null, "Call on the name of God"),
 ];
