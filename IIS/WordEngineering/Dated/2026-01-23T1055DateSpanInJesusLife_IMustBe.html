@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-01-23T10:55:00	Date span in Jesus life.
+			Shower. I must be.
+		2026-01-23T15:19:00	Intranet versus (VS) Internet? Cross browser platform.
+		2026-01-22T21:25:00	http://stackoverflow.com/questions/52377344/javascript-array-of-instances-of-a-class
+		2026-01-23T16:01:00	http://stackoverflow.com/questions/69234549/how-to-show-array-elements-in-html-using-javascript
+	-->
+	<head>
+		<title>Date span in Jesus life. I must be.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Date span in Jesus life. I must be."/>
+		<meta name="keywords" content="Timespan, I must be, bibliography"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>	
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="dateOfReference">Date of reference</td>
+					<td><input id="dateOfReference" type="date" value="2026-01-23" required></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultSet"></div>
+		</div>
+		<script>
+			const DateOfReference = "2026-01-23";
+			const dateOfReferenceElement = document.getElementById("dateOfReference");
+			const resultSetElement = document.getElementById("resultSet");
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			var isPostBack = false;
+			
+			function pageLoad()
+			{
+				if (!isPostBack)
+				{
+					dateOfReferenceElement.value = DateOfReference;	
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var tableStub = "<table border='1'><thead><tr><th>Title</th><th>Scripture Reference</th><th>Biblical Year</th><th>Biblical Month</th><th>Biblical Day</th><th>Days</th><th>Dated From</th><th>Dated Until</th></tr></thead><tbody>";
+				this.dateSpanInJesusLife_IMustBe.forEach(entry => {
+					tableStub += `<tr><td>${entry.titled}</td><td>${entry.scriptureReference}</td><td>${entry.biblicalYear}</td><td>${entry.biblicalMonth}</td><td>${entry.biblicalDay}</td><td>${entry.days()}</td><td>${entry.datedFrom(dateOfReferenceElement.value)}</td><td>${entry.datedUntil(dateOfReferenceElement.value)}</td><tr>`
+				});
+				tableStub += "</tbody></table>";
+				resultSetElement.innerHTML = tableStub;		
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			function addDays(date, days) {
+				var result = new Date(date);
+				result.setDate(result.getDate() + days);
+				return result;
+			}			
+			
+			class DateSpanInJesusLife_IMustBe {
+				constructor(titled, scriptureReference, biblicalYear, biblicalMonth, biblicalDay) {
+					this.titled = titled;
+					this.scriptureReference = scriptureReference;
+					this.biblicalYear = biblicalYear;
+					this.biblicalMonth = biblicalMonth;
+					this.biblicalDay = biblicalDay;
+				}
+				days() { 
+					return ( this.biblicalYear * 360 ) + ( this.biblicalMonth * 30 ) + this.biblicalDay;
+				}	
+				datedFrom(dateOfReferenceValued) {
+					var currentDate = new Date( dateOfReferenceElement.value );
+					var fromDate = addDays(currentDate, - ( ( this.biblicalYear * 360 ) + ( this.biblicalMonth * 30 ) + this.biblicalDay) );
+					return fromDate;
+				}
+				datedUntil(dateOfReferenceValued) {
+					var currentDate = new Date( dateOfReferenceElement.value );
+					var untilDate = addDays(currentDate, ( ( this.biblicalYear * 360 ) + ( this.biblicalMonth * 30 ) + this.biblicalDay) );
+					return untilDate;
+				}
+			}
+
+			this.dateSpanInJesusLife_IMustBe = [
+				new DateSpanInJesusLife_IMustBe("Temple worship at age 12, in Jerusalem", "Luke 2:49", 12, 0, 0),
+			];
+		</script>
+	</body>
+</html>
