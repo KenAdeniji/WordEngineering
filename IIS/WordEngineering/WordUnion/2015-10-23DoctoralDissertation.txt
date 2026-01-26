@@ -11228,39 +11228,46 @@ WordEngineering
 114. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
      W3C web page; Available from
      [https://benv.ca/blog/posts/the-story-of-third-party-javascript](http://benv.ca/blog/posts/the-story-of-third-party-javascript)]{#bibliographyBenVinegarMarch2013}
-115. [Building Maintainable Software Ten Guidelines for Future-Proof
+115. [CS2 Software Design & Data Structures Chapter 2 Object Oriented
+     Programming 2.2. The Unified Modeling Language Virginia Polytechnic
+     Institute and State University. Virginia Tech. Data Structures and
+     Algorithms (DSA). OpenDSA Project (2011-2023); W3C web page;
+     Available from
+     <http://opendsa-server.cs.vt.edu/ODSA/Books/CS2/html/IntroUML.html>
+     <opendsa@cs.vt.edu>]{#bibliographyVirginiaPolytechnicInstituteAndStateUniversity_VirginiaTech_DataStructuresAndAlgorithmsDSA_OpenDSAProject2011-2023;}
+116. [Building Maintainable Software Ten Guidelines for Future-Proof
      Code Joost Visser, Pascal van Eck of Software Improvement Group,
      B.V. Amsterdam, Netherlands; W3C web page; Available from
      <http://www.sig.eu/wp-content/uploads/2017/02/Building_Maintainable_Software_C_Sharp_SIG.pdf>]{#bibliographyJoostVisser}
-116. [A Functional Approach to Java: Augmenting Object-Oriented Java
+117. [A Functional Approach to Java: Augmenting Object-Oriented Java
      Code with Functional Principles Ben Weidig (May 9, 2023); W3C web
      page; Available from
      <http://www.google.com/books/edition/A_Functional_Approach_to_Java/5hi-EAAAQBAJ?hl=en>]{#bibliographyBenWeidig20230509}
-117. [Design for How People Think: Using Brain Science to Build Better
+118. [Design for How People Think: Using Brain Science to Build Better
      Products Book John Whalen, PhD; W3C web page; Available from
      <http://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyJohnWhalen}
-118. [Wikipedia W3C web page; Available from
+119. [Wikipedia W3C web page; Available from
      <http://www.wikipedia.org>]{#bibliographyWikipedia}
-119. [Urim and Thummim Wikipedia W3C web page; Available from
+120. [Urim and Thummim Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/Urim_and_Thummim>]{#bibliographyWikipediaUrimAndThummim}
-120. [ZIP Code Wikipedia W3C web page; Available from
+121. [ZIP Code Wikipedia W3C web page; Available from
      <http://en.wikipedia.org/wiki/ZIP_Code>]{#bibliographyWikipediaZipCode}
-121. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
+122. [Bible Translation for Everyone. A Guide to Finding A Bible That\'s
      Right for you. Foreword by Amanda Bible Williams, co-founder of She
      Reads Truth Tim Wildsmith (2024-11-19) W3C web page; Available from
      <http://www.google.com/books/edition/Bible_Translations_for_Everyone/8en8EAAAQBAJ?hl=en>]{#bibliographyTimWildsmith2014}
-122. [Microservice Eberhard Wolff; W3C web page; Available from
+123. [Microservice Eberhard Wolff; W3C web page; Available from
      <http://www.microservices-book.com>]{#bibliographyEberhardWolff}
-123. [How to write software documentation Write the Docs; W3C web page;
+124. [How to write software documentation Write the Docs; W3C web page;
      Available from
      <http://www.writethedocs.org/guide/writing/beginners-guide-to-docs>]{#bibliographyWriteTheDocs}
-124. [Mobile First Luke Wroblewski W3C web page; Available from
+125. [Mobile First Luke Wroblewski W3C web page; Available from
      [http://mobile-first.abookapart.com](http://mobile-first.abookapart.com){dated="2023-12-30T21:26:00"
      word="ToDuplicate Where IAnalyze?" contactid="3171"
      hiswordid="159150"
      commentary="At the intersection of Paseo Padre Parkway and Hall Way, North East. Orange fruits to the East, across the fence. Spot of water to the West, dark."
      scripturereference="Matthew 10:29, Luke 12:6"}]{#bibliographyLukeWroblewski}
-125. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
+126. [My UX Process Charles Wyke-Smith (2022); W3C web page; Available
      from <http://WykeSmith.com>]{#bibliographyWyke-SmithCharles}
 
 ## Appendices {#Appendices}
@@ -11302,6 +11309,32 @@ WordEngineering
     ];
 
 ![2026-01-22T2234UnifiedModelingLanguage\_-\_ClassDiagram\_-\_Creation.png](https://kenadeniji.github.io/Github/2026-01-22T2234UnifiedModelingLanguage_-_ClassDiagram_-_Creation.png)
+
+------------------------------------------------------------------------
+
+``` {dated="2026-01-25T2155" url="planttext.com"}
+@startuml
+Adam -> Eve: Knew
+Eve -> Cain: Bare
+Eve -> Abel: Bare
+Abel -> Sheep: Kept
+Cain -> Ground: Tillage
+Cain -> God: Sacrifice
+Abel -> God: Sacrifice
+God -> Abel: Respect
+God -> Cain: Reject
+God -> Cain: Admonish
+@enduml
+```
+
+<figure>
+<img
+src="https://kenadeniji.github.io/Github/2026-01-25T2155UnifiedModelingLanguage_-_SequenceDiagram_-_CainAndAbel_-_Genesis4.png"
+alt="2026-01-22T2234UnifiedModelingLanguage_-_ClassDiagram_-_Creation.png" />
+<figcaption>2026-01-25T2155UnifiedModelingLanguage_-_SequenceDiagram_-_CainAndAbel_-_Genesis4.png</figcaption>
+</figure>
+
+------------------------------------------------------------------------
 
 <figure>
 <img
