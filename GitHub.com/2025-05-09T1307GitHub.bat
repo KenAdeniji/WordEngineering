@@ -481,3 +481,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-01-26T1043PassportLost
 
 
 git add IIS/WordEngineering/Google/2026-01-25T2001Christian_Software_Engineer.txt
+
+git add	GitHub.com/2026-01-26T2118PersonalSit.es_-_AddingYourOwnSite.txt

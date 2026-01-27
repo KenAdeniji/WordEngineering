@@ -1,0 +1,62 @@
+2026-01-26T22:19:00 
+
+Henry Desroches xdesro · he/him
+creative technologist [ he / him / él ]
+459 followers · 40 following
+
+    Denver, CO
+    yo@henry.codes
+    https://henry.codes
+    https://showbiz.baby
+
+PersonalSit.es
+
+Personal sites are rad, so this project was built so we can all discover each other's, gain inspiration, and rally around the cause of the mighty personal site!
+📇 Adding your own site
+
+Want to add your site? We'd love your contribution. Go ahead and follow these steps, and reach out if you have any trouble with this!
+
+    🍴 Fork this repository.
+
+    📝 Add a new .md file in sites that is {yourDomain}.md.
+
+        For example: sites/bell.bz.md.
+
+    🖋 Fill out the details. Here's the template:
+
+    ---
+    title: 'Andy Bell'
+    url: 'https://bell.bz'
+    tags: ['web designer', 'writer']
+    rss: 'https://bell.bz/feed.xml'
+    ---
+
+(The only required fields are title and url. tags are pretty free-form, and rss is usually for RSS style content!)
+
+    🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on personalsit.es!
+
+1.	Fork this repository
+	git clone https://github.com/xdesro/personalsit.es
+	git checkout -b www.JesusInTheLamb.com
+2.	Add a new .md file in sites that is {yourDomain}.md.
+	For example: sites/www.JesusInTheLamb.com.md.
+3.	Fill out the details. Here's the template:
+---
+title: 'Ken Adeniji'
+url: 'http://www.JesusInTheLamb.com'
+tags: ['software engineer']
+rss: ''
+---
+4.	Create a pull request, and after your site has been approved by an admin, it'll appear on personalsit.es!
+
+type the git add->git commit->git push sequence above to push your changes to the remote repo, i.e., your fork on Github (tim-peterson/dwolla-php)
+
+	cd personalsit.es
+	git add sites\www.JesusInTheLamb.com.md
+	git commit
+	REM git push --set-upstream origin www.JesusInTheLamb.com
+	git push origin www.JesusInTheLamb.com
+
+D:\personalsit.es>git push
+remote: Permission to xdesro/personalsit.es.git denied to KenAdeniji.
+fatal: unable to access 'https://github.com/xdesro/personalsit.es/': The requested URL returned error: 403
