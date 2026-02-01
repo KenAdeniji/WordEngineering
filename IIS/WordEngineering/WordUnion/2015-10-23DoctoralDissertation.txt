@@ -650,22 +650,299 @@ First, inside and last dates.
 This is subjective work; the author applys intelligence to find patterns
 and resemblances in the Bible.
 
-  Name                                              Universal Resource Link (URL)                                                                           Commentary
-  ------------------------------------------------- ------------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  github.com/KenAdeniji                             [github.com/KenAdeniji](http://www.github.com/KenAdeniji)                                               Source control. <http://kenadeniji.github.io/Github>
-  Microsoft SQL Server                              <http://en.wikipedia.org/wiki/Microsoft_SQL_Server>                                                     The author has been using relational databases since 1988.
-  Microsoft Visual Studio                           <http://en.wikipedia.org/wiki/Visual_Studio>                                                            2025-10-03T00:01:00 The author transitioned from using the Microsoft Visual Studio integrated development environment (IDE), because the command-line Microsoft Visual C# Compiler, csc.exe, suffices, and incompatibility software source files between versions during migrations. 2025-10-03T00:16:00 This same\... could be noticed between HTML versions\... prior to HTML5. 2025-10-03T00:21:00 [These are our children\... these are us.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=These%20are%20our%20children...%20these%20are%20us.){commentary="Page load versus (VS) IFrame load." dated="2025-10-03T00:21:00" filename="WhatDoesTheLinkProvide.html" hiswordid="167439"}
-  Microsoft Windows Operating Systems               <http://en.wikipedia.org/wiki/Microsoft_Windows>                                                        The author has been using [Microsoft Disk Operating System (DOS)](http://en.wikipedia.org/wiki/MS-DOS) since 1984.
-  Notepad++ text and source code editor by Don Ho   <http://en.wikipedia.org/wiki/Notepad%2B%2B>                                                            The author transitioned from using Notepad, because of tabbed editing, and formatting code.
-  W3 Nu Html Checker                                [validator.w3.org/nu](http://validator.w3.org/nu)                                                       
-  www.JesusInTheLamb.com                            [www.JesusInTheLamb.com](http://www.JesusInTheLamb.com)                                                 Domain name for the website of the author. 2025-10-03T22:46:00 [Alternative kenadeniji.wordpress.com](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Alternative%20kenadeniji.wordpress.com){dated="2025-10-03T22:46:00" hiswordid="167446"}
-  translate.google.com                              [translate.google.com/?sl=en&tl=yo&op=websites](http://translate.google.com/?sl=en&tl=yo&op=websites)   
++-----------------------+-----------------------+-----------------------+
+| Name                  | Universal Resource    | Commentary            |
+|                       | Link (URL)            |                       |
++=======================+=======================+=======================+
+| github.com/KenAdeniji | [github.com/Ken       | Source control.       |
+|                       | Adeniji](http://www.g | <http://kenaden       |
+|                       | ithub.com/KenAdeniji) | iji.github.io/Github> |
++-----------------------+-----------------------+-----------------------+
+| Microsoft SQL Server  | <http://e             | The author has been   |
+|                       | n.wikipedia.org/wiki/ | using relational      |
+|                       | Microsoft_SQL_Server> | databases since 1988. |
++-----------------------+-----------------------+-----------------------+
+| Microsoft Visual      | <h                    | 2025-10-03T00:01:00   |
+| Studio                | ttp://en.wikipedia.or | The author            |
+|                       | g/wiki/Visual_Studio> | transitioned from     |
+|                       |                       | using the Microsoft   |
+|                       |                       | Visual Studio         |
+|                       |                       | integrated            |
+|                       |                       | development           |
+|                       |                       | environment (IDE),    |
+|                       |                       | because the           |
+|                       |                       | command-line          |
+|                       |                       | Microsoft Visual C#   |
+|                       |                       | Compiler, csc.exe,    |
+|                       |                       | suffices, and         |
+|                       |                       | incompatibility       |
+|                       |                       | software source files |
+|                       |                       | between versions      |
+|                       |                       | during migrations.    |
+|                       |                       | 2025-10-03T00:16:00   |
+|                       |                       | This same\... could   |
+|                       |                       | be noticed between    |
+|                       |                       | HTML versions\...     |
+|                       |                       | prior to HTML5.       |
+|                       |                       | 2025-10-03T00:21:00   |
+|                       |                       | [These are our        |
+|                       |                       | children\... these    |
+|                       |                       | are                   |
+|                       |                       | us.](http://e-c       |
+|                       |                       | omfort.ephraimtech.co |
+|                       |                       | m/WordEngineering/Wor |
+|                       |                       | dUnion/GetAPage.html? |
+|                       |                       | word=These%20are%20ou |
+|                       |                       | r%20children...%20the |
+|                       |                       | se%20are%20us.){comme |
+|                       |                       | ntary="Page load vers |
+|                       |                       | us (VS) IFrame load." |
+|                       |                       | dated=                |
+|                       |                       | "2025-10-03T00:21:00" |
+|                       |                       | filename="WhatDoe     |
+|                       |                       | sTheLinkProvide.html" |
+|                       |                       | hiswordid="167439"}   |
++-----------------------+-----------------------+-----------------------+
+| Microsoft Windows     | <http:                | The author has been   |
+| Operating Systems     | //en.wikipedia.org/wi | using [Microsoft Disk |
+|                       | ki/Microsoft_Windows> | Operating System      |
+|                       |                       | (                     |
+|                       |                       | DOS)](http://en.wikip |
+|                       |                       | edia.org/wiki/MS-DOS) |
+|                       |                       | since 1984.           |
++-----------------------+-----------------------+-----------------------+
+| Notepad++ text and    | <h                    | The author            |
+| source code editor by | ttp://en.wikipedia.or | transitioned from     |
+| Don Ho                | g/wiki/Notepad%2B%2B> | using Notepad,        |
+|                       |                       | because of tabbed     |
+|                       |                       | editing, and          |
+|                       |                       | formatting code.      |
++-----------------------+-----------------------+-----------------------+
+| W3 Nu Html Checker    | [valida               |                       |
+|                       | tor.w3.org/nu](http:/ |                       |
+|                       | /validator.w3.org/nu) |                       |
++-----------------------+-----------------------+-----------------------+
+| w                     | [www.JesusInT         | Domain name for the   |
+| ww.JesusInTheLamb.com | heLamb.com](http://ww | website of the        |
+|                       | w.JesusInTheLamb.com) | author.               |
+|                       |                       | 2025-10-03T22:46:00   |
+|                       |                       | [Alternative          |
+|                       |                       | ken                   |
+|                       |                       | adeniji.wordpress.com |
+|                       |                       | ](http://e-comfort.ep |
+|                       |                       | hraimtech.com/WordEng |
+|                       |                       | ineering/WordUnion/Ge |
+|                       |                       | tAPage.html?word=Alte |
+|                       |                       | rnative%20kenadeniji. |
+|                       |                       | wordpress.com){dated= |
+|                       |                       | "2025-10-03T22:46:00" |
+|                       |                       | hiswordid="167446"}   |
++-----------------------+-----------------------+-----------------------+
+| [google.co            | -   [translate.google | -   Jobs near me. I   |
+| m](http://google.com) | .com/?sl=en&tl=yo&op= |     found out about   |
+|                       | websites](http://tran |     this keyword      |
+|                       | slate.google.com/?sl= |     through Google    |
+|                       | en&tl=yo&op=websites) |     Suggest.          |
+|                       | -                     | -   King James        |
+|                       |  [maps.google.com](ht |     Version (KJV). I  |
+|                       | tp://maps.google.com) |     found out about   |
+|                       |                       |     this keyword      |
+|                       |                       |     through Google    |
+|                       |                       |     Suggest.          |
+|                       |                       | -   2008-06-15        |
+|                       |                       |     Drawing code as   |
+|                       |                       |     house. Sergey     |
+|                       |                       |     Brin and I were   |
+|                       |                       |     inside a          |
+|                       |                       |     classroom. Sergey |
+|                       |                       |     Brin sat to the   |
+|                       |                       |     right, east, at   |
+|                       |                       |     the back, and I   |
+|                       |                       |     sat to the left,  |
+|                       |                       |     west. Sergey Brin |
+|                       |                       |     was writing code, |
+|                       |                       |     drawing a house.  |
+|                       |                       |     I asked Sergey    |
+|                       |                       |     Brin what a       |
+|                       |                       |     billionaire was   |
+|                       |                       |     doing writing     |
+|                       |                       |     code to draw a    |
+|                       |                       |     house? Went to    |
+|                       |                       |     the north-east,   |
+|                       |                       |     prostrated, and   |
+|                       |                       |     talked to an      |
+|                       |                       |     African descent   |
+|                       |                       |     male. There were  |
+|                       |                       |     children in the   |
+|                       |                       |     middle center of  |
+|                       |                       |     the room          |
+|                       |                       |     extending         |
+|                       |                       |     eastward.         |
+|                       |                       |     [Rockridge        |
+|                       |                       |     station](http:    |
+|                       |                       | //en.wikipedia.org/wi |
+|                       |                       | ki/Rockridge_station) |
+|                       |                       |     5660 College      |
+|                       |                       |     Avenue, Oakland,  |
+|                       |                       |     California (CA)   |
+|                       |                       |     94618.            |
+|                       |                       | -                     |
+|                       |                       |   2026-02-01T09:48:00 |
+|                       |                       |     At the            |
+|                       |                       |     intersection of   |
+|                       |                       |     Siward Drive and  |
+|                       |                       |     Creekwood Drive,  |
+|                       |                       |     south-east house. |
+|                       |                       |     4820 Siward       |
+|                       |                       |     Drive, Fremont,   |
+|                       |                       |     California (CA)   |
+|                       |                       |     94555.\           |
+|                       |                       |     [It is not God    |
+|                       |                       |     works\... it is   |
+|                       |                       |     does He work with |
+|                       |                       |     your              |
+|                       |                       |                       |
+|                       |                       |    circumstances?](ht |
+|                       |                       | tp://e-comfort.ephrai |
+|                       |                       | mtech.com/WordEnginee |
+|                       |                       | ring/WordUnion/GetAPa |
+|                       |                       | ge.html?word=It%20is% |
+|                       |                       | 20not%20God%20works.. |
+|                       |                       | .%20%20it%20is%20does |
+|                       |                       | %20He%20work%20with%2 |
+|                       |                       | 0your%20circumstances |
+|                       |                       | %3F){contactid="2173" |
+|                       |                       |                       |
+|                       |                       |    hiswordid="168483" |
+|                       |                       |     scenery=          |
+|                       |                       | "At the intersection  |
+|                       |                       | of Siward Drive and C |
+|                       |                       | reekwood Drive, south |
+|                       |                       | -east house. 4820 Siw |
+|                       |                       | ard Drive, Fremont, C |
+|                       |                       | alifornia (CA) 94555" |
+|                       |                       |     dated="2          |
+|                       |                       | 026-02-01T09:48:00"}\ |
+|                       |                       |     Scene 1: On       |
+|                       |                       |     Siward Drive I    |
+|                       |                       |     was walking       |
+|                       |                       |     eastward, and at  |
+|                       |                       |     the intersection  |
+|                       |                       |     of Siward Drive   |
+|                       |                       |     and Creekwood     |
+|                       |                       |     Drive, south-east |
+|                       |                       |     house. 4820       |
+|                       |                       |     Siward Drive,     |
+|                       |                       |     Fremont,          |
+|                       |                       |     California        |
+|                       |                       |     (CA) 94555. I saw |
+|                       |                       |     2 males who were  |
+|                       |                       |     standing beside   |
+|                       |                       |     cars. I           |
+|                       |                       |     approached them   |
+|                       |                       |     believing they    |
+|                       |                       |     were Germans, but |
+|                       |                       |     they turned out   |
+|                       |                       |     to be Hindi.      |
+|                       |                       |     Scene 2: My twin  |
+|                       |                       |     sibling and I     |
+|                       |                       |     went out to eat   |
+|                       |                       |     fish at an Asian  |
+|                       |                       |     restaurant. When  |
+|                       |                       |     we were about to  |
+|                       |                       |     depart, the       |
+|                       |                       |     restaurant\'s     |
+|                       |                       |     male workers to   |
+|                       |                       |     the north mixed   |
+|                       |                       |     up our take-away  |
+|                       |                       |     food order, 10:30 |
+|                       |                       |     label identifiers |
+|                       |                       |     (Genesis          |
+|                       |                       |     37:9-11). Scene   |
+|                       |                       |     3: I thought of   |
+|                       |                       |     Sergei Brin when  |
+|                       |                       |     I was with some   |
+|                       |                       |     Asian males, to   |
+|                       |                       |     the east, inside  |
+|                       |                       |     a Sport Utility   |
+|                       |                       |     Vehicle (SUV)     |
+|                       |                       |     with a vehicle    |
+|                       |                       |     license plate     |
+|                       |                       |     with a label like |
+|                       |                       |     Tirut or Tarut.   |
+|                       |                       |     The Jews could    |
+|                       |                       |     kill me as their  |
+|                       |                       |     preservation or   |
+|                       |                       |     solution.         |
+|                       |                       |     Interpret: Hindi  |
+|                       |                       |     make-up 1/5th of  |
+|                       |                       |     the world         |
+|                       |                       |     population\...    |
+|                       |                       |     attrition due to  |
+|                       |                       |     unbelief.\        |
+|                       |                       |                       |
+|                       |                       |   2026-02-01T12:00:00 |
+|                       |                       |     At the            |
+|                       |                       |     intersection of   |
+|                       |                       |     Siward Drive and  |
+|                       |                       |     Creekwood Drive,  |
+|                       |                       |     south-east house. |
+|                       |                       |     4820 Siward       |
+|                       |                       |     Drive, Fremont,   |
+|                       |                       |     California (CA)   |
+|                       |                       |     94555.\           |
+|                       |                       |     [Who is           |
+|                       |                       |     relevant\... as a |
+|                       |                       |     oc                |
+|                       |                       | casion?](http://e-com |
+|                       |                       | fort.ephraimtech.com/ |
+|                       |                       | WordEngineering/WordU |
+|                       |                       | nion/GetAPage.html?wo |
+|                       |                       | rd=Who%20is%20relevan |
+|                       |                       | t...%20as%20a%20occas |
+|                       |                       | ion){contactid="2173" |
+|                       |                       |                       |
+|                       |                       |    hiswordid="168483" |
+|                       |                       |     dated=            |
+|                       |                       | "2026-02-01T09:48:00" |
+|                       |                       |     location="A       |
+|                       |                       | t the intersection of |
+|                       |                       |  Siward Drive and Cre |
+|                       |                       | ekwood Drive, south-e |
+|                       |                       | ast house. 4820 Siwar |
+|                       |                       | d Drive, Fremont, Cal |
+|                       |                       | ifornia (CA) 94555"}\ |
+|                       |                       |                       |
+|                       |                       |   2026-02-01T13:34:00 |
+|                       |                       |     At Charter        |
+|                       |                       |     Square,           |
+|                       |                       |     Albertsons Lucky, |
+|                       |                       |     and Dulhan        |
+|                       |                       |     Grocery.          |
+|                       |                       |                       |
+|                       |                       |   2026-02-01T13:37:00 |
+|                       |                       |     [The focus has    |
+|                       |                       |     been\... HR       |
+|                       |                       |     chil              |
+|                       |                       | dren.](http://e-comfo |
+|                       |                       | rt.ephraimtech.com/Wo |
+|                       |                       | rdEngineering/WordUni |
+|                       |                       | on/GetAPage.html?word |
+|                       |                       | =The%20focus%20has%20 |
+|                       |                       | been...%20HR%20childr |
+|                       |                       | en.){contactid="2173" |
+|                       |                       |                       |
+|                       |                       |    hiswordid="168483" |
+|                       |                       |     dated="           |
+|                       |                       | 2026-02-01T09:48:00"} |
++-----------------------+-----------------------+-----------------------+
 
-  : 2025-10-02T22:17:00 [List of
-  resources](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=List%20of%20resources)\
-  2026-01-31T17:44:00 Remi Adeniji said she submitted her research
-  thesis titled, Open-Source persistency. In the center-east, a male was
-  taunting the Russians. {#ListOfResources}
+: 2025-10-02T22:17:00 [List of
+resources](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=List%20of%20resources)\
+2026-01-31T17:44:00 Remi Adeniji said she submitted her research thesis
+titled, [Open-Source
+persistency](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Open-Source%20persistency).
+In the center-east, a male was taunting the Russians. {#ListOfResources}
 
 > +-----------------------+-----------------------+-----------------------+
 > | Type of Scale         | Commentary            | Example of Scale      |
