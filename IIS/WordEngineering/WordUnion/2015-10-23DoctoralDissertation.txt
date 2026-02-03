@@ -938,11 +938,8 @@ and resemblances in the Bible.
 +-----------------------+-----------------------+-----------------------+
 
 : 2025-10-02T22:17:00 [List of
-resources](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=List%20of%20resources)\
-2026-01-31T17:44:00 Remi Adeniji said she submitted her research thesis
-titled, [Open-Source
-persistency](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Open-Source%20persistency).
-In the center-east, a male was taunting the Russians. {#ListOfResources}
+resources](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=List%20of%20resources)
+{#ListOfResources}
 
 > +-----------------------+-----------------------+-----------------------+
 > | Type of Scale         | Commentary            | Example of Scale      |
@@ -3709,6 +3706,35 @@ Biblical generation - 40 Biblical years
         center-west. A man planned to talk to a woman. Some people were
         eating, and someone took a piece of bread.
 :::
+
+  Terminology   Word                                                                                Relational database
+  ------------- ----------------------------------------------------------------------------------- -----------------------------------------------------------
+  Naming        God\'s first commandment to the first man, Adam, was for him to name the animals.   For a relational database, the various objects are named.
+  Counting      God counted the days during creation.                                               Count() keyword.
+  Timing        The greater light, the sun, and the lesser light, the moon, are signs.              GetDate() returns the date and time.
+  Ordering      Greatest commandment, greatest among us, honor thy father and thy mother            ORDER BY ASC, ORDER BY DESC. Lag or lead.
+  Sampling      Wandering years                                                                     ORDER BY newid()
+
+  : 2026-02-02T15:00:00 [Naming, counting, timing, ordering,
+  sampling](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Naming,%20counting,%20timing,%20ordering,%20sampling){dated="2026-02-02T15:00:00"}
+  {#NamingCountingTimingOrderingSampling}
+
+<div>
+
+2026-01-31T17:44:00 Remi Adeniji said she submitted her research thesis
+titled, [Open-Source
+persistency](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Open-Source%20persistency).
+In the center-east, a male was taunting the Russians.\
+2026-02-02T20:10:00
+
+1.  Genealogy ( [John 3:16, Matthew
+    1:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=John%203:16,%20Matthew%201:17)
+    )
+2.  Role ( [Genesis 3:15, Matthew 2:2, Matthew
+    27:37](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%203:15,%20Matthew%202:2,%20Matthew%2027:37)
+    )
+
+</div>
 
 ::: {dated="2024-11-20T09:27:00"}
 [When I am doing
