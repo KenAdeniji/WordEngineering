@@ -364,7 +364,7 @@ Most of the applications, extract information, and query the Scripture
 table. If the user chooses to, he may choose to load another Bible
 version, into the Scripture table and the application will still work as
 usual, and there will be no need to make changes to the application;
-thereby, achieving 0 [Separation of concerns
+thereby, achieving [Separation of concerns
 (SoC)](http://en.wikipedia.org/wiki/Separation_of_concerns).
 
 #### The Exact Table {#ExactTable}
