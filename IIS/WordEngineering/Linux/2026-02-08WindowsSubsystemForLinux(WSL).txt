@@ -1,0 +1,52 @@
+Install Windows Subsystem for Linux (WSL)
+	wsl --install
+
+Install Windows Subsystem for Linux (WSL) particular distribution
+	wsl --install ubuntu
+
+man - manual documentation
+
+who - show who is logged on
+	who -all
+
+ls - list directory
+	ls /home -all
+
+date - print or set the system date and time
+
+ls - list executable commands
+	ls /bin
+
+pwd - print working directory
+
+vi ForLoopJohnDoe
+for name in john doe
+do
+	echo $name
+done
+
+cat ForLoopJohnDoe
+sh ForLoopJohnDoe
+
+vi ForLoopArgument
+for argument
+do
+	echo $argument
+done
+
+cat ForLoopArgument
+sh ForLoopArgument how are you?
+
+vi PositionalParameters0to9
+echo $0
+echo $1
+echo $2
+echo $3
+echo $#
+echo $$
+
+cat PositionalParameters0to9
+sh PositionalParameters0to9 one two three
+
+	
+	
