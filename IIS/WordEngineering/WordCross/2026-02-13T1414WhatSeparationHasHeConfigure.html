@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-02-13T14:14:00 Created. What separation has He configure?
+				Who, What, Where, When and Why? How.
+			2026-02-13T15:30:00 Coding
+			2026-02-13T16:30:00 I got too old for Pauline Beshay. Carolyn Clancy lost respect for John when she saw stain on his shirt.
+		-->
+		<title>What separation has He configure?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Metric conversion"/>
+		<meta name="keywords" content="Metric conversion"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<div>
+				<select id="word">
+					<option selected>What separation has He configure?</option>
+					<option>selection 2</option>					
+					<option>selection 3</option>					
+				</select>
+			</div>
+			<div>
+				<table id="resultTable" align="left">
+					<tbody>
+						<tr><th align="left">Who</th><td id="who" align="left"></td></tr>
+						<tr><th align="left">What</th><td id="what" align="left"></td></tr>
+						<tr><th align="left">Where</th><td id="where" align="left"></td></tr>
+						<tr><th align="left">When</th><td id="when" align="left"></td></tr>
+						<tr><th align="left">Why</th><td id="why" align="left"></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<input type="submit" id="submitQuery">
+			</div>	
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const wordElement = document.getElementById("word");
+			const resultTableElement = document.getElementById("resultTable");
+			const submitQueryElement = document.getElementById("submitQuery");
+			const whoElement = document.getElementById("who");
+			const whatElement = document.getElementById("what");
+			const whereElement = document.getElementById("where");
+			const whenElement = document.getElementById("when");
+			const whyElement = document.getElementById("why");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				 var selectedIndex = wordElement.selectedIndex;
+				 whoElement.innerHTML = questionsAndAnswers[selectedIndex][0];
+				 whatElement.innerHTML = questionsAndAnswers[selectedIndex][1];
+				 whereElement.innerHTML = questionsAndAnswers[selectedIndex][2];
+				 whenElement.innerHTML = questionsAndAnswers[selectedIndex][3];
+				 whyElement.innerHTML = questionsAndAnswers[selectedIndex][4];
+			}
+
+			const questionsAndAnswers = [
+				["Word", "Creation", "Heaven and Earth, and the Garden of Eden", "In the beginning", "Greater light and lesser light, angels and man, dominion of man over the animals, tree of life, tree of knowledge of good and evil, man and woman, Adam, rib, Eve, spiritual and physical death, seed of the woman and seed of the serpent."],
+				["2a", "2b", "2c", "2d", "2e"],
+				["IIIa", "IIIb", "IIIc", "IIId", "IIIe"],				
+			];
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

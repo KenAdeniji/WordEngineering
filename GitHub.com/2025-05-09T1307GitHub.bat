@@ -525,3 +525,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-02-11DutchCourtInvesti
 
 git add InformationInTransit/ProcessCode/CustomizationOfClass.cs
 git add InformationInTransit/ProcessCode/CustomizationOfClass.exe
+
+git add IIS/WordEngineering/WordCross/2026-02-13T1414WhatSeparationHasHeConfigure.html
