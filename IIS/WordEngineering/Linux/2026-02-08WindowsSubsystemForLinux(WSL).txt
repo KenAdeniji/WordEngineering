@@ -48,5 +48,7 @@ echo $$
 cat PositionalParameters0to9
 sh PositionalParameters0to9 one two three
 
-	
-	
+du - disk usage
+	du -h
+	du --human-readable
+	du -sh /home/kadeniji	

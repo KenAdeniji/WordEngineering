@@ -1133,7 +1133,7 @@ http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 \\Harvest\e$\SQLServerDataManipulationLanguageDML
 \\Harvest\e$\WordEngineering
 
-\\Noor\e$\SQLServerBackup
+\\Noor
 \\Noor\e$\SQLServerDataManipulationLanguageDML
 \\Noor\e$\WordEngineering
 
