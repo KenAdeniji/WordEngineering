@@ -186,7 +186,7 @@ DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
 DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 74167);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71953);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71992);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3717);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9689);
@@ -1164,6 +1164,8 @@ microsoft sql server management studio wait error.
 
 research@tacit.ai;investorrelations@paypal.com;antoinette@reflex.tech;guy@reflex.tech;research@reflex.tech
 
+http://stackoverflow.com/questions/63451777/a-class-written-in-js-is-exported-module-export-how-can-i-use-it-into-an-html
+
 http://drive.proton.me/u/0/trash
- 
+
 :Exit
