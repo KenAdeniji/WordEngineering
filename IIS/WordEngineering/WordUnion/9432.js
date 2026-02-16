@@ -2056,6 +2056,12 @@ var scriptLiteral9432 =
 				{
 					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
 				}		
+				else if (cellName.includes("Email")) //2026-02-15T06:48:00 http://sfbay.craigslist.org/eby/cpg/d/walnut-creek-walnut-creek-petition/7915226685.html The State Property Organization. Text “VALIDATOR – WALNUT CREEK” with your name, availability and if you have a vehicle to get to and from work to Zay the hiring manager (323) 497-1085 
+				{
+					console.log(cellContent);
+					cellContent = 	"<a mailto='" + cellContent + "'>" + cellContent + "</>";
+					console.log(cellContent);
+				}		
 				else if (cellName.includes("URI")) //2018-06-21 ResumeAid.asmx
 				{
 					
@@ -2252,6 +2258,12 @@ var scriptLiteral9432 =
 				else if (cellName.includes("BibleWord")) //2018-05-06 BodyPart.asmx
 				{
 					cellContent = scriptLiteral9432.buildHyperlink("bibleWord", cellContent);
+				}
+				else if (cellName.includes("Email")) //2026-02-15T06:48:00 http://sfbay.craigslist.org/eby/cpg/d/walnut-creek-walnut-creek-petition/7915226685.html The State Property Organization. Text “VALIDATOR – WALNUT CREEK” with your name, availability and if you have a vehicle to get to and from work to Zay the hiring manager (323) 497-1085 
+				{
+					console.log(cellName, cellContent);
+					cellContent = 	"<a mailto='" + cellContent + "'>" + cellContent + "</>";
+					console.log(cellName, cellContent);
 				}		
 				else if (cellName.includes("URI")) //2018-06-21 ResumeAid.asmx
 				{

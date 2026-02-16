@@ -527,3 +527,12 @@ git add InformationInTransit/ProcessCode/CustomizationOfClass.cs
 git add InformationInTransit/ProcessCode/CustomizationOfClass.exe
 
 git add IIS/WordEngineering/WordCross/2026-02-13T1414WhatSeparationHasHeConfigure.html
+
+git add IIS/WordEngineering/Mozilla/2026-02-15T1805Mozilla_-_Invoker_Commands_API_addEventListener.html
+git add IIS/WordEngineering/WordCross/2026-02-15T055Texting.asmx
+git add IIS/WordEngineering/WordCross/2026-02-15T055Texting.html
+git add IIS/WordEngineering/WordCross/2026-02-15T0719Texting.csv
+git add IIS/WordEngineering/WordCross/2026-02-15T0719Texting.json
+git add IIS/WordEngineering/WordCross/2026-02-15T0719Texting.sql
+git add IIS/WordEngineering/WordCross/2026-02-15T0719Texting.xml
+git add IIS/WordEngineering/WordCross/usp_20260212T055Texting.sql

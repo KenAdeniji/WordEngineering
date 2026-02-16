@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-02-15T18:05:00...2026-02-15T18:40:00 Created.	http://www.raymondcamden.com/2026/02/08/links-for-you-2826
+		2026-02-15T18:05:00	http://pawelgrzybek.com/more-invoker-commands-and-more-reasons-not-to-use-javascript-please
+		2026-02-15T18:05:00	http://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API
+	-->
+	<head>
+		<title>Mozilla Invoker Commands API</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Mozilla Invoker Commands API"/>
+		<meta name="keywords" content="Mozilla Invoker Commands API, addEventListener"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<h1>Examples</h1>
+
+		<h2>Creating declarative popovers</h2>
+
+		<button commandfor="mypopover" command="toggle-popover">
+			Toggle the popover
+		</button>
+		<div id="mypopover" popover>
+			<button commandfor="mypopover" command="hide-popover">Close</button>
+			Popover content
+		</div>
+
+		<h2>Creating declarative dialogs</h2>
+		<button commandfor="mydialog" command="show-modal">Show modal dialog</button>
+		<dialog id="mydialog">
+			<button commandfor="mydialog" command="close">Close</button>
+			Dialog Content
+		</dialog>
+
+		<h2>Creating custom commands</h2>
+		<button commandfor="my-img" command="--rotate-left">Rotate left</button>
+		<button commandfor="my-img" command="--rotate-right">Rotate right</button>
+		<img id="my-img" src="http://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Cloud_Gate_%28The_Bean%29_from_east%27.jpg/377px-Cloud_Gate_%28The_Bean%29_from_east%27.jpg" alt="Cloud Gate (The Bean) from east" />		
+
+		<script>
+			const myImg = document.getElementById("my-img");
+
+			myImg.addEventListener("command", (event) => {
+				if (event.command === "--rotate-left") {
+					myImg.style.rotate = "-90deg";
+				} else if (event.command === "--rotate-right") {
+					myImg.style.rotate = "90deg";
+				}
+			});		
+		</script>
+	</body>
+</html>
