@@ -538,3 +538,5 @@ git add IIS/WordEngineering/WordCross/2026-02-15T0719Texting.xml
 git add IIS/WordEngineering/WordCross/usp_20260212T055Texting.sql
 
 git add	IIS/WordEngineering/stateofjs.com/
+
+git add "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_Walking in the Lamb, you shall follow Me/"

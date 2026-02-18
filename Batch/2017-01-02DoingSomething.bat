@@ -186,7 +186,7 @@ DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
 DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 74167);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71992);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 71994);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3717);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 9689);
@@ -1133,7 +1133,7 @@ http://localhost/Wordengineering/JavaScript/DocumentObjectModelDOM/
 \\Harvest\e$\SQLServerDataManipulationLanguageDML
 \\Harvest\e$\WordEngineering
 
-\\Noor
+\\Noor\e$\SQLServerBackup
 \\Noor\e$\SQLServerDataManipulationLanguageDML
 \\Noor\e$\WordEngineering
 
