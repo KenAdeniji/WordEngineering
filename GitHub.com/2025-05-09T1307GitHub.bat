@@ -539,4 +539,10 @@ git add IIS/WordEngineering/WordCross/usp_20260212T055Texting.sql
 
 git add	IIS/WordEngineering/stateofjs.com/
 
-git add "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_Walking in the Lamb, you shall follow Me/"
+rem git add "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_Walking in the Lamb, you shall follow Me/"
+
+rem git mv "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_Walking in the Lamb, you shall follow Me" "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe"
+
+rem git mv "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe/2004-11-10www.JesusInTheLamb.com_-_Walking in the Lamb, you shall follow Me_-_2026-02-17Domain name registration.txt" "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe_-_2026-02-17DomainNameRegistration.txt"
+
+git add IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe_-_2026-02-17DomainNameRegistration.txt
