@@ -7,6 +7,8 @@ export class StateOfJS2025 {
 			2026-02-18T21:19:00 You can change the value... of a constant.
 				Matthew 17:24
 				2026-02-18T21:34:00	Attribute, property, field.
+				2026-02-18T21:57:00	JavaScript object.
+				2026-02-18T21:19:00...2026-02-18T22:11:00 microsoft windows operating system, mozilla firefox hourglass http://localhost/Wordengineering/WordUnion/GetAPage.html
 	*/
 	static 	logicalAssignment(operandFirstField, secondOperand) {
 		operandFirstField ||= secondOperand;
