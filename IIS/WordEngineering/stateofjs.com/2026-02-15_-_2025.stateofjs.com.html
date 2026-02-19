@@ -10,4 +10,9 @@
 	console.log( StateOfJS2025.nullishCoalescing(null, "default string") );
 	console.log( StateOfJS2025.nullishCoalescing(0, 42) );
 	console.log( StateOfJS2025.privateField );
+	const durationTitle = { duration: 50, title: '' };
+	durationTitle.duration = StateOfJS2025.logicalAssignment(durationTitle.duration, 10);
+	console.log( durationTitle.duration );
+	durationTitle.title = StateOfJS2025.logicalAssignment(durationTitle.title, "title is empty.");
+	console.log( durationTitle.title );	
 </script>
