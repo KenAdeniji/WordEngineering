@@ -30,10 +30,6 @@ export class StateOfJS2025 {
 					faeces, running stomach, on trousers.
 					dizzy, sleepy.
 	*/
-	static add() {
-		//return "_" + "-";
-	}
-	/*
 	static 	logicalAssignment(operandFirstField, secondOperand) {
 		operandFirstField ||= secondOperand;
 		return operandFirstField;
@@ -41,14 +37,10 @@ export class StateOfJS2025 {
 	static 	nullishCoalescing(firstValue, secondValue) {
 		return firstValue ?? secondValue;
 	}
-	static stringAdd() {
-		return "_" + "-";
-	}
 	static stringReplaceAll(search, pattern, replacement) {
 		return search.replaceAll(pattern, replacement);
 	}
 	static {
 		console.log("Class static initialization block called");
 	}
-	*/
 }
