@@ -29,10 +29,6 @@ export class StateOfJS2025 {
 				2026-02-19T09:32:00...2026-02-19T10:09:00
 					faeces, running stomach, on trousers.
 					dizzy, sleepy.
-		2026-02-28T17:28:00	console.log( StateOfJS2025.stringMatchAll("test1test2", "t(e)(st(\d?))") );
-			2026-02-28T17:56:00 debug. penis tear, pierce.
-			2026-02-28T17:28:00...2026-02-28T18:42:00 mozilla firefox error.
-			2026-02-28T18:42:00 http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
 	*/
 	static 	logicalAssignment(operandFirstField, secondOperand) {
 		operandFirstField ||= secondOperand;
