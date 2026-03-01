@@ -26,5 +26,15 @@
 	//const filteredFactorials = StateOfJS2025.factorials(128);
 	//console.log( filteredFactorials );	
 	//StateOfJS2025.errorCause();
+
 	console.log( StateOfJS2025.stringReplaceAll("foo_bar_baz", "_", "-") );
+
+	var matchesStringMatchAll = StateOfJS2025.stringMatchAll("test1test2", "t(e)(st(\d?))");
+	for (const match of matchesStringMatchAll) {
+	  console.log(
+		`Found ${match[0]} start=${match.index} end=${
+		  match.index + match[0].length
+		}.`,
+	  );
+	}	
 </script>
