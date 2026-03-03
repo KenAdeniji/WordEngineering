@@ -565,3 +565,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2026-03-01T0031MyTwinSiblin
 git add	IIS/WordEngineering/Python/AlanGauld_-_alan-g.me.uk/
 git add	IIS/WordEngineering/RegularExpression/2026-03-03T0520TheSoftwareCosts$2000AndItIsBundledWithTravel.asmx
 git add	IIS/WordEngineering/RegularExpression/2026-03-03T0520TheSoftwareCosts$2000AndItIsBundledWithTravel.html
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-03-03T0520TheSoftwareCosts$2000AndItIsBundledWithTravel.OscarIsHavingDifficultyWithHisTravelToTheUnitedStatesOfAmerica(USA).txt
