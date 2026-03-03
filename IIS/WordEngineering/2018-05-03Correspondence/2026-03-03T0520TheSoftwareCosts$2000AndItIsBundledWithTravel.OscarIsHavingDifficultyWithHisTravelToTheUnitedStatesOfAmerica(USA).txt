@@ -3,3 +3,22 @@
 http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2026-03-03T0520TheSoftwareCosts$2000AndItIsBundledWithTravel.OscarIsHavingDifficultyWithHisTravelToTheUnitedStatesOfAmerica(USA).txt
 
 2026-03-03T05:20:00 The software costs $2000, and it is bundled with travel. Oscar is having difficulty with his travel to the United States of America (USA).
+
+2006-12-15...2026-03-03=7018 days (19 biblical years, 5 biblical months, 28 days) (19 years, 2 months, 2 weeks, 2 days)
+
+Below are the links my biological father shared with me on 2006-12-15.
+
+SELECT InternetAddress FROM Wordengineering..ContactURI WHERE ContactID = 1376 AND CONVERT(Date, Dated) = '2006-12-15' ORDER BY Dated
+
+InternetAddress
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CashMasters.com
+ClickForCash.com
+Cheap-Sport-Buys.com
+AWSMTechnology.com
+Moniker.com
+CJ.com
+LinkShare.com
+MyAffiliateProgram.com
+
+(8 rows affected)
