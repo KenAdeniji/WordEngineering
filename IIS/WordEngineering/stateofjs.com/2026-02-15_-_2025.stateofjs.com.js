@@ -18,6 +18,12 @@ export class StateOfJS2025 {
 	  }	
 	}
 	*/
+	static 	arrayToReversed(values) {
+		return values.toReversed();
+	}
+	static 	arrayToSorted(values) {
+		return values.toSorted((a, b) => a - b);
+	}
 	/**
 		Operators to assign a value to a variable based on its own truthy/falsy status.
 		2026-02-18 21:04:28.3633333	http://apnews.com/article/california-billionaires-bernie-sanders-gavin-newsom-democrats-87a1e54f463aad49a2093382969e5cca?utm_source=firefox-newtab-en-us	
@@ -34,8 +40,21 @@ export class StateOfJS2025 {
 		operandFirstField ||= secondOperand;
 		return operandFirstField;
 	}
+	static	matchesIterator(matches) {
+		for (const match of matches) {
+		  console.log(
+			`Found ${match[0]} start=${match.index} end=${
+			  match.index + match[0].length
+			}.`,
+		  );
+		}
+	}	
 	static 	nullishCoalescing(firstValue, secondValue) {
 		return firstValue ?? secondValue;
+	}
+	static regexpMatchIndices(search, pattern, index=0, flags="dg") {
+		var regex = new RegExp(pattern, flags);
+		return regex.exec(search).indices[index];
 	}
 	static stringMatchAll(search, pattern, flags="gi") {
 		var regex = new RegExp(pattern, flags);

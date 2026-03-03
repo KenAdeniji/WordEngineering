@@ -35,11 +35,11 @@
 	console.log( StateOfJS2025.stringReplaceAll("foo_bar_baz", "_", "-") );
 
 	var matchesStringMatchAll = StateOfJS2025.stringMatchAll("test1test2", "t(e)(st(\d?))");
-	for (const match of matchesStringMatchAll) {
-	  console.log(
-		`Found ${match[0]} start=${match.index} end=${
-		  match.index + match[0].length
-		}.`,
-	  );
-	}	
+	StateOfJS2025.matchesIterator( matchesStringMatchAll );
+	
+	console.log( StateOfJS2025.regexpMatchIndices("foo bar foo", "foo", 0) );
+	console.log( StateOfJS2025.regexpMatchIndices("12 foobar3 how are you doing", "\[a-z]?", 0) );
+	
+	console.log( StateOfJS2025.arrayToSorted( [1, 10, 21, 2] ) );
+	console.log( StateOfJS2025.arrayToReversed( [1, 2, 3]  ) );
 </script>
