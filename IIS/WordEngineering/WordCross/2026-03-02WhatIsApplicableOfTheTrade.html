@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-03-04T20:25:00...2026-03-04T22:30:00 Created.
+				Albertsons Lucky, Charter Square.
+			2026-03-04T20:55:00...2026-03-04T21:14:00
+				var tableInfo = "";
+				for (var rowIndex = 0; rowIndex < ActorRole.length; rowIndex++)
+				{
+					tableInfo+= `<tr><td>${ActorRole[rowIndex][0]}</td></tr>`;	
+				}
+			2026-03-04T21:23:00
+				http://stackoverflow.com/questions/48145432/javascript-includes-case-insensitive	
+		-->
+		<title>What is applicable of the trade?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="What is applicable of the trade?"/>
+		<meta name="keywords" content="Actor, role"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 15vh;
+		width: 90vw;
+	}
+
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			Actor or Role: <textarea id="actorRole"></textarea><br>
+			<input type="submit" id="submitQuery"><br>
+			<table id="resultTable" align="center">
+				<thead>
+					<tr><th align="left">Actor</th><th align="left">Role</th><th align="left">Scripture Reference</th></tr>
+				</thead>
+				<tbody id="resultTableBody"></tbody>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const actorRoleElement = document.getElementById("actorRole");
+			
+			const resultTableElement = document.getElementById("resultTable");
+			const resultTableBodyElement = document.getElementById("resultTableBody");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var tableInfo = "";
+				var regex;
+				var isFound;
+				const actorRoleElementValue = actorRoleElement.value.toLowerCase();
+				var	ActorRoleJoin = "";
+				for (var rowIndex = 0; rowIndex < ActorRole.length; rowIndex++)
+				{
+					/*
+					regex = new RegExp( ActorRole[rowIndex].join( "|" ), "i");
+					isFound = ( actorRoleElement.value === "" ) || regex.test( actorRoleElement.value )
+					if ( isFound === false )
+					{
+						continue;
+					}
+					*/
+					ActorRoleJoin = ActorRole[rowIndex].join( "|" ).toLowerCase();
+					if ( ( actorRoleElement.value === "") || ActorRoleJoin.indexOf( actorRoleElementValue ) >= 0 ) 
+					{
+						tableInfo+= `<tr><td>${ActorRole[rowIndex][0]}</td><td>${ActorRole[rowIndex][1]}</td><td>${ActorRole[rowIndex][2]}</td></tr>`;	
+					}	
+				}
+				resultTableBodyElement.innerHTML = tableInfo;
+			}
+
+			const ActorRole = [
+				["Jesus Christ", "Creator", "John 1"],
+				["Melchizedek", "King of Salem, Priest of the most high God", "Genesis 14:18-20"]
+			];
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
