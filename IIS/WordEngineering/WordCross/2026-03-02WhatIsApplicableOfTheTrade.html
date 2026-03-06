@@ -37,6 +37,9 @@
 				19		116			19			In the courts of the LORD's house, in the midst of thee, O Jerusalem. Praise ye the LORD.	594					15868				Old			Psalms		Psalms 116:19		49.957947					51.0192270				19116019		Wisdom Books	David
 				2021-07-18...2026-03-05=1691 days (4 biblical years, 8 biblical months, 11 days) (4 years, 7 months, 2 weeks, 1 day)
 				2021-07-09T06:31:50 Aunt Bose called to say, she is planning a surprise birthday celebration for uncle Jimi, next Saturday, 2021-07-17. 2025-12-19 A son... after your likeness.
+			2026-03-04	2026-03-04 Teresa Keng, the Councilor of Fremont, and the owner of Milk & Honey Cafe employs teenagers, when are 2 sons come of age, will she continue? 15:47 microsoft sql server management studio error, microsoft windows operating system clipboard copy and paste error, teenagers. Chuck Missler, "It was their failure to observe the Sabbatical rest that sent them to captivity in the first place."
+			2026-03-05T14:40:00	Once you use one of people... you use many of yourself.
+				Jeremiah 22:30
 		-->
 		<title>What is applicable of the trade?</title>
 		<meta charset="UTF-8"/>
@@ -115,7 +118,7 @@ tr:nth-child(even) {
 			<input type="submit" id="submitQuery"><br>
 			<table id="resultTable" align="center">
 				<thead>
-					<tr><th align="left">Actor</th><th align="left">Role</th><th align="left">Scripture Reference</th></tr>
+					<tr><th align="left">Dated</th><th align="left">Actor</th><th align="left">Role</th><th align="left">Scripture Reference</th></tr>
 				</thead>
 				<tbody id="resultTableBody"></tbody>
 			</table>
@@ -163,15 +166,22 @@ tr:nth-child(even) {
 					ActorRoleJoin = ActorRole[rowIndex].join( "|" ).toLowerCase();
 					if ( ( actorRoleElement.value === "") || ActorRoleJoin.indexOf( actorRoleElementValue ) >= 0 ) 
 					{
-						tableInfo+= `<tr><td>${ActorRole[rowIndex][0]}</td><td>${ActorRole[rowIndex][1]}</td><td>${ActorRole[rowIndex][2]}</td></tr>`;	
+						//tableInfo+= `<tr><td>${ActorRole[rowIndex][0]}<td>${ActorRole[rowIndex][1]}</td><td>${ActorRole[rowIndex][2]}</td><td>${ActorRole[rowIndex][3]}</td></tr>`;
+						tableInfo+= "<tr>";
+						for (var columnIndex = 0; columnIndex < ActorRole[rowIndex].length; columnIndex++)
+						{
+							tableInfo+= `<td>${ActorRole[rowIndex][columnIndex]}</td>`;
+						}
+						tableInfo+= "</tr>";
 					}	
 				}
 				resultTableBodyElement.innerHTML = tableInfo;
 			}
 
 			const ActorRole = [
-				["Jesus Christ", "Creator", "John 1"],
-				["Melchizedek", "King of Salem, Priest of the most high God", "Genesis 14:18-20"]
+				[new Date(2026, 2, 4, 20, 25, 0), "Jesus Christ", "Creator", "John 1"],
+				[new Date(2026, 2, 4, 20, 25, 0), "Melchizedek", "King of Salem, Priest of the most high God", "Genesis 14:18-20"],
+				[new Date(2026, 2, 5, 8, 16, 0), "Moses", "Prince, Judge, Prophet, Deliverer", "Deuteronomy 34:10-12"]
 			];
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
