@@ -569,3 +569,5 @@ git add	IIS/WordEngineering/RegularExpression/2026-03-03T0520TheSoftwareCosts$20
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-03-03T0520TheSoftwareCosts$2000AndItIsBundledWithTravel.OscarIsHavingDifficultyWithHisTravelToTheUnitedStatesOfAmerica(USA).txt
 
 git add IIS/WordEngineering/WordCross/2026-03-02WhatIsApplicableOfTheTrade.html
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-03-07T0420PeterKentConsulting.comseo-for-dummies-by-peter-kent.html.txt
