@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-03-08T11:34:00...2026-03-08T11:54:00 Created.
+			2026-03-08T12:06:00 http://stackoverflow.com/questions/49339980/why-new-datenull-is-returning-this-date-1970-01-01t000000-000z
+		-->
+		<title>w3schools.com_-_JavaScriptDateType</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="w3schools.com_-_JavaScriptDateType"/>
+		<meta name="keywords" content="JavaScript, Date type"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div align="center">
+			<table id="resultTable" align="center" border="1">
+				<thead>
+					<tr><th align="left">Syntax</th><th align="left">Value</th><th align="left">Commentary</th><th align="left">Scripture Reference</th></tr>
+				</thead>
+				<tbody id="resultTableBody"></tbody>
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+			
+			const resultTableElement = document.getElementById("resultTable");
+			const resultTableBodyElement = document.getElementById("resultTableBody");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var tableInfo = "";
+				for (var rowIndex = 0; rowIndex < Instruction.length; rowIndex++)
+				{
+					tableInfo+= "<tr>";
+					for (var columnIndex = 0; columnIndex < Instruction[rowIndex].length; columnIndex++)
+					{
+						tableInfo+= `<td>${Instruction[rowIndex][columnIndex]}</td>`;
+					}
+					tableInfo+= "</tr>";
+				}
+				resultTableBodyElement.innerHTML = tableInfo;
+			}
+
+			const Instruction = [
+				["new Date(null)", new Date(null), "In the beginning", "Genesis 1:1"],
+				["new Date()", new Date(), "Today, if you hear His voice", "Hebrews 3:15"],
+			];
+			
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
