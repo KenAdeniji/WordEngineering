@@ -31,11 +31,11 @@ When I have sometime, I will publish this sample on a GitHub.com page.
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="description" content="Javascript Document Object Model (DOM) implementation of a database engine. Future work, pursue similar implementation using dynamic SQL, or temporary table, or table variable."/>
+		<meta name="description" content="Difference between two sequential rows?"/>
 		<meta name="keywords" content="Data Manipulation Language (DML), SQL, Query, Wal-Mart, Atlanta, Georgia, Austell"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<title>Data Manipulation Language (DML) Query.</title>
+		<title>Difference between two sequential rows?</title>
 		<style>
 			textarea{ //viewport
 			height: 65vh;
@@ -113,7 +113,7 @@ tr:nth-child(even) {
 								"Jesus Christ",
 								NULL,
 								"Bethlehem",
-								"0032-04-06",
+								0032-04-06,
 								"Jerusalem"
 							)
 							INSERT INTO URI
@@ -126,7 +126,7 @@ tr:nth-child(even) {
 							(
 								"Live.com",
 								"Microsoft",
-								"2019-09-11"
+								1997-09-11
 							)
 							INSERT INTO URI
 							(
@@ -136,7 +136,7 @@ tr:nth-child(even) {
 							VALUES
 							(
 								"Google",
-								"2019-09-11"
+								2016-09-13
 							)
 							INSERT INTO Empty
 							(
@@ -146,7 +146,7 @@ tr:nth-child(even) {
 							VALUES
 							(
 								"Empty row 1",
-								"2019-09-11"
+								2019-09-11
 							)		
 							INSERT INTO URI
 							(
@@ -176,7 +176,7 @@ tr:nth-child(even) {
 							VALUES
 							(
 								"Empty row 3",
-								"2019-09-12"
+								2019-09-12
 							)		
 							DELETE Empty
 							INSERT INTO ForthComing
@@ -187,7 +187,7 @@ tr:nth-child(even) {
 							VALUES
 							(
 								"ForthComing row 1",
-								"2019-09-12T14:22:00"
+								2019-09-12T14:22:00
 							)		
 						</textarea>
 					</td>
@@ -334,9 +334,13 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						continue;
 					}	
 
-					domStatisticsHTML += "<table><caption>DOM Statistics</caption>";
+					domStatisticsHTML += "<table><caption>DOM Statistics</caption><thead>";
 
 					domStatisticsHTML += domRows[0].innerHTML; //2026-03-09T12:30:00 How do you add row from one table?
+					
+					domColumnLength = domRows[1].querySelectorAll("td").length; //2026-03-09T13:55:00 How do you add row from one table?
+					
+					console.log("domColumnLength" + domColumnLength);
 					
 					for 
 					(
@@ -345,10 +349,19 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						domColumnIndex++
 					)
 					{
-						domValuesFirst[domColumnIndex] = domRows[1][domColumnIndex].innerHTML;
+						//domValuesFirst[domColumnIndex] = domRows[1][domColumnIndex].innerHTML;
+						
+						//domValuesFirst[domColumnIndex] = domRows[1].cells[domColumnIndex].innerHTML; //2026-03-09T14:02:00 http://stackoverflow.com/questions/3072233/getting-value-from-table-cell-in-javascript-not-jquery						
+						
+						domValuesFirst[domColumnIndex] = domRows[1].cells[domColumnIndex].innerHTML.trim(); //2026-03-09T14:30:00 http://stackoverflow.com/questions/3072233/getting-value-from-table-cell-in-javascript-not-jquery						
+						
 						domTypes[domColumnIndex] = "Character";
 						
-						domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
+						//domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
+
+						domIsDate = isDate(domValuesFirst[domColumnIndex]);
+						
+						console.log(domValuesFirst[domColumnIndex] + domIsDate);
 
 						if (domIsDate)
 						{
@@ -357,7 +370,12 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						}	
 					}	
 
-					domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
+					console.log(domValuesFirst.join("|"));
+					console.log(domTypes.join("|"));
+
+					//domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
+					
+					domStatisticsHTML += "</thead><tbody>"; //2026-03-09T13:38:00 Where does thead end? bull market... compact disc (CD). 
 
 					domValuesCurrent = domValuesFirst; //2026-03-09T12:55:00
 
@@ -376,16 +394,22 @@ matches; /* gives exactly what i want, but abuses `replace`,
 							domColumnIndex++
 						)
 						{
-							domValuesNext[domColumnIndex] = domColumns.innerHTML;
+							domValuesNext[domColumnIndex] = domRows[domRowIndex].cells[domColumnIndex].innerHTML;;
 							dataDifference = "";
 							if (domTypes[domColumnIndex] === "Date")
 							{
 								dataDifference = dateDifference
 								(
-									domValuesCurrent[domColumnIndex],
-									domValuesNext[domColumnIndex]
+									new Date( domValuesCurrent[domColumnIndex] ),
+									new Date( domValuesNext[domColumnIndex] )
 								) 
 							}
+							console.log
+							(
+								domTypes[domColumnIndex] +
+								domValuesCurrent[domColumnIndex] +
+								domValuesNext[domColumnIndex]
+							) 
 							domStatisticsHTML += `<td>${dataDifference}</td>`;
 							domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
 						}
@@ -574,6 +598,12 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					}
 				}
 			}
+
+			//2026-03-09T14:34:00 http://stackoverflow.com/questions/76663204/how-to-use-javascript-to-tell-if-a-value-is-a-date
+			function isDate(value) {
+			  const timestamp = Date.parse(value);
+			  return !isNaN(timestamp);
+			}
 			
 			window.addEventListener("load", pageLoad, false);
 
@@ -586,7 +616,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 				}
 			}		
 			
-			const RegularExpressionPatternDate = "^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$";
+			const RegularExpressionPatternDate = new RegExp("^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$;");
 		</script
 	</body>
 </html>
