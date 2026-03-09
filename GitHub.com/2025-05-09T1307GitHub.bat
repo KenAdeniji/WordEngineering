@@ -573,3 +573,8 @@ git add IIS/WordEngineering/WordCross/2026-03-02WhatIsApplicableOfTheTrade.html
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-03-07T0420PeterKentConsulting.comseo-for-dummies-by-peter-kent.html.txt
 
 git add IIS/WordEngineering/JavaScript/w3schools.com/2026-03-08T1134w3schools.com_-_JavaScriptDateType.html
+
+git add IIS/WordEngineering/WordGroup/DataManipulationLanguageDML-DocumentObjectModelDOM.html
+
+git add IIS/WordEngineering/WordGroup/2026-03-08T2016DifferenceBetweenTwoSequentialRows.html
+

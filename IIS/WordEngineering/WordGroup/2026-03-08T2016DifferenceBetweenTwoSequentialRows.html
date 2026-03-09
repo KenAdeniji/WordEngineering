@@ -25,6 +25,8 @@ When I have sometime, I will publish this sample on a GitHub.com page.
 		2019-09-12T14:57:00	https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createCaption
 		2019-09-12T17:02:00	https://flaviocopes.com/javascript-regular-expressions/
 		2019-09-12T05:35:00	https://stackoverflow.com/questions/5158338/how-to-convert-a-collection-to-an-array-in-javascript
+		2026-03-09T10:25:00	differenceBetweenTwoSequentialRows();
+			2026-03-09T12:06:00	Begin debug.
 	-->
 
 	<head>
@@ -108,11 +110,11 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Jesus Christ',
+								"Jesus Christ",
 								NULL,
-								'Bethlehem',
-								'0032-04-06',
-								'Jerusalem'
+								"Bethlehem",
+								"0032-04-06",
+								"Jerusalem"
 							)
 							INSERT INTO URI
 							(
@@ -122,9 +124,9 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Live.com',
-								'Microsoft',
-								'2019-09-11'
+								"Live.com",
+								"Microsoft",
+								"2019-09-11"
 							)
 							INSERT INTO URI
 							(
@@ -133,8 +135,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Google',
-								'2019-09-11'
+								"Google",
+								"2019-09-11"
 							)
 							INSERT INTO Empty
 							(
@@ -143,8 +145,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Empty row 1',
-								'2019-09-11'
+								"Empty row 1",
+								"2019-09-11"
 							)		
 							INSERT INTO URI
 							(
@@ -153,8 +155,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Apple.com',
-								'IPhone'
+								"Apple.com",
+								"IPhone"
 							)
 							INSERT INTO Empty
 							(
@@ -163,8 +165,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Empty row 2',
-								'2019-09-12'
+								"Empty row 2",
+								"2019-09-12"
 							)	
 							INSERT INTO Empty
 							(
@@ -173,8 +175,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'Empty row 3',
-								'2019-09-12'
+								"Empty row 3",
+								"2019-09-12"
 							)		
 							DELETE Empty
 							INSERT INTO ForthComing
@@ -184,8 +186,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								'ForthComing row 1',
-								'2019-09-12T14:22:00'
+								"ForthComing row 1",
+								"2019-09-12T14:22:00"
 							)		
 						</textarea>
 					</td>
@@ -196,14 +198,16 @@ tr:nth-child(even) {
 			</tbody>
 		</table>
 		<div id="resultSet"></div>
+		<div id="domStatistics"></div>
 		<script>
 			var dmlID = document.getElementById("dml");
 			var isPostBack = false;
-			var resultSetID = document.getElementById("resultSet");
+			var resultSetElement = document.getElementById("resultSet");
+			var domStatisticsElement = document.getElementById("domStatistics");
 			
 			function querySubmit()
 			{
-				resultSetID.innerHTML = "";
+				resultSetElement.innerHTML = "";
 				
 				var regexp = /Delete|Insert|Select|Update/gi;
 				
@@ -265,6 +269,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 							break;
 					}	
 				}
+				differenceBetweenTwoSequentialRows();
 			}
 			
 			function pageLoad()
@@ -278,6 +283,118 @@ matches; /* gives exactly what i want, but abuses `replace`,
 				{
 					querySubmit();
 				}
+			}
+
+			function dateDifference(date1, date2) 
+			{
+				// The number of milliseconds in one day
+				var ONE_DAY = 1000 * 60 * 60 * 24
+
+				// Convert both dates to milliseconds
+				var date1_ms = date1.getTime()
+				var date2_ms = date2.getTime()
+
+				// Calculate the difference in milliseconds
+				var difference_ms = Math.abs(date1_ms - date2_ms)
+
+				// Convert back to days and return
+				return Math.round(difference_ms/ONE_DAY)
+			}
+			
+			function differenceBetweenTwoSequentialRows()
+			{
+				var domTables = resultSetElement.querySelectorAll("table"); //2026-03-09T10:29:00 http://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+				var domTable;
+				var domRows;
+				var domRowLength;
+				var domColumnsCurrent;
+				var domColumnsNext;
+				var domColumnLength;
+				var domValuesFirst = [];
+				var domValuesCurrent = [];
+				var domValuesNext = [];
+				var domTypes = [];
+				var	dataDifference;
+				var domStatisticsHTML = "";
+
+				for 
+				(
+					var domTableIndex = 0, domTableLength = domTables.length; 
+					domTableIndex < domTableLength;
+					domTableIndex++
+				)
+				{
+					domTable = domTables[domTableIndex];
+					domRows = domTables[domTableIndex].querySelectorAll("tr");
+
+					domRowLength = domRows.length;
+
+					if ( domRowLength < 3 ) //2026-03-09T11:29:00 If there is no need for comparing data rows?
+					{
+						continue;
+					}	
+
+					domStatisticsHTML += "<table><caption>DOM Statistics</caption>";
+
+					domStatisticsHTML += domRows[0].innerHTML; //2026-03-09T12:30:00 How do you add row from one table?
+					
+					for 
+					(
+						var domColumnIndex = 0; 
+						domColumnIndex < domColumnLength;
+						domColumnIndex++
+					)
+					{
+						domValuesFirst[domColumnIndex] = domRows[1][domColumnIndex].innerHTML;
+						domTypes[domColumnIndex] = "Character";
+						
+						domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
+
+						if (domIsDate)
+						{
+							domTypes[domColumnIndex] = "Date";
+							continue;
+						}	
+					}	
+
+					domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
+
+					domValuesCurrent = domValuesFirst; //2026-03-09T12:55:00
+
+					for 
+					(
+						var domRowIndex = 2, domRowLength = domRows.length; 
+						domRowIndex < domRowLength - 1;
+						domRowIndex++
+					)
+					{
+						domStatisticsHTML += "<tr>";
+						for 
+						(
+							var domColumnIndex = 0; 
+							domColumnIndex < domColumnLength;
+							domColumnIndex++
+						)
+						{
+							domValuesNext[domColumnIndex] = domColumns.innerHTML;
+							dataDifference = "";
+							if (domTypes[domColumnIndex] === "Date")
+							{
+								dataDifference = dateDifference
+								(
+									domValuesCurrent[domColumnIndex],
+									domValuesNext[domColumnIndex]
+								) 
+							}
+							domStatisticsHTML += `<td>${dataDifference}</td>`;
+							domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
+						}
+						domStatisticsHTML += "</tr>";
+					}
+					domStatisticsHTML += "</tbody></table>";
+					domStatisticsElement.innerHTML = domStatisticsHTML;
+					console.log(domStatisticsHTML);
+				}	
 			}
 			
 			function statementDelete(sqlStatement)
@@ -371,7 +488,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					});
 					thead.appendChild(tr);
 					tableElement.appendChild(thead);
-					resultSetID.appendChild(tableElement);
+					resultSetElement.appendChild(tableElement);
 
 					//Add table row. First row.
 					var tblBody = document.createElement("tbody");
@@ -398,6 +515,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						//Does this column name, currently exists in the table.
 						//var headCellsIndex = myHeadCells.indexOf(element);
 						var headCellsIndex = myHeadCells.join("|").toLowerCase().includes(element.toLowerCase()); //2026-03-09T13:07:00 .toLowerCase(); 2026-03-09T13:11:00 How do you search an array http://stackoverflow.com/questions/48145432/javascript-includes-case-insensitive
+
 						if (headCellsIndex < 0)
 						{
 							var th = document.createElement('th');
@@ -467,6 +585,8 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					querySubmit();
 				}
 			}		
+			
+			const RegularExpressionPatternDate = "^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$";
 		</script
 	</body>
 </html>
