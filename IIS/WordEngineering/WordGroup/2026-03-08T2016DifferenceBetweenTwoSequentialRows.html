@@ -191,6 +191,18 @@ tr:nth-child(even) {
 								"ForthComing row 1",
 								2019-09-12T14:22:00
 							)		
+							INSERT INTO URI
+							(
+								URI,
+								Commentary,
+								Dated
+							)
+							VALUES
+							(
+								"IBM.com",
+								"IBM Personal Computer (PC)",
+								1988-07-10
+							)
 						</textarea>
 					</td>
 				</tr>
@@ -383,10 +395,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 
 					domValuesCurrent = domValuesFirst; //2026-03-09T12:55:00
 					
-					console.log(domValuesFirst);
-					console.log(domValuesCurrent);
-					console.log(domValuesNext);
-
 					for 
 					(
 						var domRowIndex = 2, domRowLength = domRows.length; 
@@ -428,8 +436,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						
 						domValuesCurrent = structuredClone(domValuesNext); //2026-03-09T17:14:00 Intel inside. Cameroon. http://stackoverflow.com/questions/597588/how-do-you-clone-an-array-of-objects-in-javascript/23481096#23481096
 
-						console.log("domRowIndex" + domRowIndex);
-						
 						if ( domRowIndex + 1 >= domRowLength )
 						{
 							break;
@@ -448,7 +454,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 							console.log("domValuesNext[domColumnIndex]: " + domValuesNext[domColumnIndex]);
 						}	
 
-						console.log(domRowIndex);
 						domStatisticsHTML += "</tr>";
 					}
 					domStatisticsHTML += "</tbody></table>";
