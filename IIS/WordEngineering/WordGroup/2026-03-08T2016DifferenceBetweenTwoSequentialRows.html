@@ -151,12 +151,14 @@ tr:nth-child(even) {
 							INSERT INTO URI
 							(
 								URI,
-								Commentary
+								Commentary,
+								Dated
 							)
 							VALUES
 							(
 								"Apple.com",
-								"IPhone"
+								"IPhone",
+								1989-01-03
 							)
 							INSERT INTO Empty
 							(
@@ -355,6 +357,8 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						
 						domValuesFirst[domColumnIndex] = domRows[1].cells[domColumnIndex].innerHTML.trim(); //2026-03-09T14:30:00 http://stackoverflow.com/questions/3072233/getting-value-from-table-cell-in-javascript-not-jquery						
 						
+						domValuesNext[domColumnIndex] = domRows[2].cells[domColumnIndex].innerHTML; //2026-03-09T15:37:00
+						
 						domTypes[domColumnIndex] = "Character";
 						
 						//domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
@@ -378,11 +382,15 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					domStatisticsHTML += "</thead><tbody>"; //2026-03-09T13:38:00 Where does thead end? bull market... compact disc (CD). 
 
 					domValuesCurrent = domValuesFirst; //2026-03-09T12:55:00
+					
+					console.log(domValuesFirst);
+					console.log(domValuesCurrent);
+					console.log(domValuesNext);
 
 					for 
 					(
 						var domRowIndex = 2, domRowLength = domRows.length; 
-						domRowIndex < domRowLength - 1;
+						domRowIndex < domRowLength;
 						domRowIndex++
 					)
 					{
@@ -394,7 +402,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 							domColumnIndex++
 						)
 						{
-							domValuesNext[domColumnIndex] = domRows[domRowIndex].cells[domColumnIndex].innerHTML;;
+							//domValuesNext[domColumnIndex] = domRows[domRowIndex].cells[domColumnIndex].innerHTML; //15:53
 							dataDifference = "";
 							if (domTypes[domColumnIndex] === "Date")
 							{
@@ -402,17 +410,45 @@ matches; /* gives exactly what i want, but abuses `replace`,
 								(
 									new Date( domValuesCurrent[domColumnIndex] ),
 									new Date( domValuesNext[domColumnIndex] )
-								) 
+								);
 							}
-							console.log
-							(
-								domTypes[domColumnIndex] +
-								domValuesCurrent[domColumnIndex] +
-								domValuesNext[domColumnIndex]
-							) 
-							domStatisticsHTML += `<td>${dataDifference}</td>`;
-							domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
+							if (dataDifference === "")
+							{
+								domStatisticsHTML += `<td></td>`; //2026-03-09T15:30:00
+							}
+							else
+							{
+								domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]}...[${domRowIndex+1}]${domValuesNext[domColumnIndex]}=${dataDifference}</td>`; //2026-03-09T14:56:00 Index is all he is working on.
+							}
+
+							//domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
 						}
+						
+						// domValuesCurrent = domValuesNext; //2026-03-09T16:21:00
+						
+						domValuesCurrent = structuredClone(domValuesNext); //2026-03-09T17:14:00 Intel inside. Cameroon. http://stackoverflow.com/questions/597588/how-do-you-clone-an-array-of-objects-in-javascript/23481096#23481096
+
+						console.log("domRowIndex" + domRowIndex);
+						
+						if ( domRowIndex + 1 >= domRowLength )
+						{
+							break;
+						}
+						
+						domRow = domRows[domRowIndex + 1];
+						
+						for 
+						(
+							var domColumnIndex = 0; 
+							domColumnIndex < domColumnLength;
+							domColumnIndex++
+						)
+						{
+							domValuesNext[domColumnIndex] = domRow.cells[domColumnIndex].innerHTML; //2026-03-09T16:49:00 He had to always understand... where he was going. No one takes this honor upon himself.
+							console.log("domValuesNext[domColumnIndex]: " + domValuesNext[domColumnIndex]);
+						}	
+
+						console.log(domRowIndex);
 						domStatisticsHTML += "</tr>";
 					}
 					domStatisticsHTML += "</tbody></table>";
