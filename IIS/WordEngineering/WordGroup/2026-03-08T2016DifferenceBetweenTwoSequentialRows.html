@@ -518,6 +518,15 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					columnsListIndexEnd
 				);
 				var columnsHeaders = columnsList.split(",")
+				for 
+				(
+					var columnHeaderIndex = 0, columnHeaderLength = columnsHeaders.length; 
+					columnHeaderIndex < columnHeaderLength;
+					columnHeaderIndex++
+				)
+				{
+					columnsHeaders[columnHeaderIndex] = columnsHeaders[columnHeaderIndex].trim();
+				}	
 				
 				//Retrieve the column value phrase
 				var valuesPhrase = sqlStatement.substring(columnsListIndexEnd);
@@ -527,7 +536,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 				var columnsValuesPhraseStart = valuesPhrase.search(regularExpressionValues);
 				
 				var valuesContent = valuesPhrase.substring(columnsValuesPhraseStart + 6);
-				
 				
 				var columnsValuesIndexStart = valuesContent.indexOf("(");
 				var columnsValuesIndexEnd = valuesContent.lastIndexOf(")");
@@ -595,21 +603,34 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					columnsHeaders.forEach(function(element) { //2026-03-09T21:55:00
 						var headerCellsIndex = headerCells.indexOf(element.trim());
 						var tableHeaderIndex = tableHeaderColumns.indexOf(element.trim());
-						console.log(`myHeadCells: ${myHeadCells.join("|")} columnsHeaders: ${columnsHeaders.join("|")} element ${element} headerCellsIndex: ${headerCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
+						//console.log(`myHeadCells: ${myHeadCells.join("|")} columnsHeaders: ${columnsHeaders.join("|")} element ${element} headerCellsIndex: ${headerCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
 						if (headerCellsIndex === -1 && tableHeaderIndex === -1) //2026-03-09T23:04:00
 						{
 							var th = document.createElement('th');
 							th.appendChild(document.createTextNode(element.trim()))
 							myRow.appendChild(th);
 							tableHeaderColumns.push(element.trim());
-						}
 
-						var headCellsIndex = myHeadCells.indexOf(element.trim());
-						var tableHeaderIndex = tableHeaderColumns.indexOf(element.trim());
-						console.log(`columnsHeaders: ${columnsHeaders.join("|")} element ${element} headCellsIndex: ${headCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
+							for
+							(
+								var previousRowsIndex = 1, 
+									rowsCount = tableElement.rows.length;
+									previousRowsIndex < rowsCount;
+									++previousRowsIndex
+							)
+							{
+								var td = document.createElement('td');
+								td.appendChild
+								(
+									document.createTextNode("")
+								);
+								tr = tableElement.rows[previousRowsIndex];
+								tr.appendChild(td);
+							}
+						}
 						
+						var	myHeadCells = myRow.getElementsByTagName("th");
 						tr = document.createElement('tr');
-						
 						for
 						(
 							var headerCellIndex = 0, 
@@ -629,7 +650,11 @@ matches; /* gives exactly what i want, but abuses `replace`,
 
 					var tblBody = tableElement.getElementsByTagName("tbody")[0];
 					tblBody.appendChild(tr);
-			
+
+					var	myRow = myTableHead.getElementsByTagName("tr")[0];
+					var	myHeadCells = myRow.getElementsByTagName("th");
+					headerCells = [];
+
 					for 
 					(
 						var columnIndex = 0, columnLength = columnsHeaders.length;
@@ -637,6 +662,15 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						++columnIndex
 					)
 					{
+						var columnHeader = columnsHeaders[columnIndex];
+						console.log("columnIndex" + columnIndex);
+/*
+						if (columnHeader != "Commentary")
+						{
+							//continue;
+						}	
+						console.log( "Commentary " +valuesRow[headerCellIndex] );
+*/						
 						for
 						(
 							var headerCellIndex = 0, 
@@ -645,15 +679,15 @@ matches; /* gives exactly what i want, but abuses `replace`,
 								++headerCellIndex
 						)
 						{
-							var myHeadCell = myHeadCells[headerCellIndex];
+							var headerCells = myHeadCells[headerCellIndex];
 							if 
 							(
-								myHeadCell.textContent === 
-								columnsHeaders[columnIndex]
+								headerCells.textContent == columnHeader
 							)
 							{
-								tr.cells[headerCellIndex].innerHTML = valuesRow[columnIndex];
-								break;
+								console.log(headerCellIndex);
+								tr.cells[headerCellIndex].innerHTML = 
+									valuesRow[headerCellIndex];
 							}
 						}
 					}
