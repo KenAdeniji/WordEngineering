@@ -125,9 +125,9 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								"Live.com",
+								"http://live.com",
 								"Microsoft",
-								1997-09-11
+								1994-12-28
 							)
 							INSERT INTO URI
 							(
@@ -136,8 +136,8 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								"Google",
-								2016-09-13
+								"http://google.com",
+								1997-09-15
 							)
 							INSERT INTO Empty
 							(
@@ -157,9 +157,9 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								"Apple.com",
+								"http:apple.com",
 								"IPhone",
-								1989-01-03
+								1987-02-19
 							)
 							INSERT INTO Empty
 							(
@@ -200,9 +200,9 @@ tr:nth-child(even) {
 							)
 							VALUES
 							(
-								"IBM.com",
+								"http://ibm.com",
 								"IBM Personal Computer (PC)",
-								1988-07-10
+								1986-03-19
 							)
 						</textarea>
 					</td>
@@ -332,6 +332,9 @@ matches; /* gives exactly what i want, but abuses `replace`,
 				var	dataDifference;
 				var domStatisticsHTML = "";
 
+				var domIsDate;
+				var domIsURL;
+
 				for 
 				(
 					var domTableIndex = 0, domTableLength = domTables.length; 
@@ -355,7 +358,7 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					
 					domColumnLength = domRows[1].querySelectorAll("td").length; //2026-03-09T13:55:00 How do you add row from one table?
 					
-					console.log("domColumnLength" + domColumnLength);
+					
 					
 					for 
 					(
@@ -372,23 +375,26 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						
 						domValuesNext[domColumnIndex] = domRows[2].cells[domColumnIndex].innerHTML; //2026-03-09T15:37:00
 						
-						domTypes[domColumnIndex] = "Character";
+						domTypes[domColumnIndex] = "character";
 						
 						//domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
 
 						domIsDate = isDate(domValuesFirst[domColumnIndex]);
-						
-						console.log(domValuesFirst[domColumnIndex] + domIsDate);
-
 						if (domIsDate)
 						{
-							domTypes[domColumnIndex] = "Date";
+							domTypes[domColumnIndex] = "date";
 							continue;
 						}	
+						
+						domIsURL = isValidHttpUrl(domValuesFirst[domColumnIndex]);
+						if (domIsURL)
+						{
+							domTypes[domColumnIndex] = "url";
+							continue;
+						}	
+						
+						
 					}	
-
-					console.log(domValuesFirst.join("|"));
-					console.log(domTypes.join("|"));
 
 					//domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
 					
@@ -413,23 +419,22 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						{
 							//domValuesNext[domColumnIndex] = domRows[domRowIndex].cells[domColumnIndex].innerHTML; //15:53
 							dataDifference = "";
-							if (domTypes[domColumnIndex] === "Date")
+							switch (domTypes[domColumnIndex])
 							{
-								dataDifference = dateDifference
-								(
-									new Date( domValuesCurrent[domColumnIndex] ),
-									new Date( domValuesNext[domColumnIndex] )
-								);
+								case "character":
+								case "url":
+									dataDifference = similarity(domValuesCurrent[domColumnIndex], domValuesNext[domColumnIndex]);
+									domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]} similarity [${domRowIndex+1}]${domValuesNext[domColumnIndex]} = ${dataDifference}</td>`;
+									break;
+								case "date":
+									dataDifference = dateDifference
+									(
+										new Date( domValuesCurrent[domColumnIndex] ),
+										new Date( domValuesNext[domColumnIndex] )
+									);
+									domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]} ... [${domRowIndex+1}]${domValuesNext[domColumnIndex]} = ${dataDifference}</td>`; //2026-03-09T14:56:00 Index is all he is working on.
+									break;
 							}
-							if (dataDifference === "")
-							{
-								domStatisticsHTML += `<td></td>`; //2026-03-09T15:30:00
-							}
-							else
-							{
-								domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]}...[${domRowIndex+1}]${domValuesNext[domColumnIndex]}=${dataDifference}</td>`; //2026-03-09T14:56:00 Index is all he is working on.
-							}
-
 							//domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
 						}
 						
@@ -452,7 +457,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						)
 						{
 							domValuesNext[domColumnIndex] = domRow.cells[domColumnIndex].innerHTML; //2026-03-09T16:49:00 He had to always understand... where he was going. No one takes this honor upon himself.
-							console.log("domValuesNext[domColumnIndex]: " + domValuesNext[domColumnIndex]);
 						}	
 
 						domStatisticsHTML += "</tr>";
@@ -645,6 +649,61 @@ matches; /* gives exactly what i want, but abuses `replace`,
 			function isDate(value) {
 			  const timestamp = Date.parse(value);
 			  return !isNaN(timestamp);
+			}
+
+			//2026-03-09T20:38:00 http://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url/43467144#43467144
+			function isValidHttpUrl(string) {
+			  let url;
+			  
+			  try {
+				url = new URL(string);
+			  } catch (_) {
+				return false;  
+			  }
+
+			  return url.protocol === "http:" || url.protocol === "https:";
+			}
+			
+			//2026-03-09T20:56:00 http://stackoverflow.com/questions/10473745/compare-strings-javascript-return-of-likely
+			function similarity(s1, s2) {
+			  var longer = s1;
+			  var shorter = s2;
+			  if (s1.length < s2.length) {
+				longer = s2;
+				shorter = s1;
+			  }
+			  var longerLength = longer.length;
+			  if (longerLength == 0) {
+				return 1.0;
+			  }
+			  return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+			}
+
+			function editDistance(s1, s2) {
+			  s1 = s1.toLowerCase();
+			  s2 = s2.toLowerCase();
+
+			  var costs = new Array();
+			  for (var i = 0; i <= s1.length; i++) {
+				var lastValue = i;
+				for (var j = 0; j <= s2.length; j++) {
+				  if (i == 0)
+					costs[j] = j;
+				  else {
+					if (j > 0) {
+					  var newValue = costs[j - 1];
+					  if (s1.charAt(i - 1) != s2.charAt(j - 1))
+						newValue = Math.min(Math.min(newValue, lastValue),
+						  costs[j]) + 1;
+					  costs[j - 1] = lastValue;
+					  lastValue = newValue;
+					}
+				  }
+				}
+				if (i > 0)
+				  costs[s2.length] = lastValue;
+			  }
+			  return costs[s2.length];
 			}
 			
 			window.addEventListener("load", pageLoad, false);
