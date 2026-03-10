@@ -356,13 +356,9 @@ matches; /* gives exactly what i want, but abuses `replace`,
 
 					domStatisticsHTML += `<table id="${domTableCaption}"><caption>${domTableCaption}</caption><thead>`;
 					
-					console.log(domTableCaption);
-
 					domStatisticsHTML += domRows[0].innerHTML; //2026-03-09T12:30:00 How do you add row from one table?
 					
 					domColumnLength = domRows[1].querySelectorAll("td").length; //2026-03-09T13:55:00 How do you add row from one table?
-					
-					
 					
 					for 
 					(
@@ -396,8 +392,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 							domTypes[domColumnIndex] = "url";
 							continue;
 						}	
-						
-						
 					}	
 
 					//domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
@@ -580,21 +574,39 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					var	myRow = myTableHead.getElementsByTagName("tr")[0];
 					var	myHeadCells = myRow.getElementsByTagName("th");
 					var myHeadCells = Array.prototype.slice.call( myHeadCells, 0 );
-
+		
 					var tr;
+
+					headerCells = [];
+
+					for 
+					(
+						var domColumnIndex = 0; 
+						domColumnIndex < myHeadCells.length;
+						domColumnIndex++
+					)
+					{
+						headerCells.push(myRow.cells[domColumnIndex].innerHTML.trim());
+					}	
 
 					var tableHeaderColumns = []; 
 					
 					//For each column, repeat.
 					columnsHeaders.forEach(function(element) { //2026-03-09T21:55:00
-						var headCellsIndex = myHeadCells.indexOf(element.trim());
-						if (headCellsIndex === -1 && tableHeaderColumns.indexOf(element.trim() === -1)) //2026-03-09T23:04:00
+						var headerCellsIndex = headerCells.indexOf(element.trim());
+						var tableHeaderIndex = tableHeaderColumns.indexOf(element.trim());
+						console.log(`myHeadCells: ${myHeadCells.join("|")} columnsHeaders: ${columnsHeaders.join("|")} element ${element} headerCellsIndex: ${headerCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
+						if (headerCellsIndex === -1 && tableHeaderIndex === -1) //2026-03-09T23:04:00
 						{
 							var th = document.createElement('th');
 							th.appendChild(document.createTextNode(element.trim()))
 							myRow.appendChild(th);
 							tableHeaderColumns.push(element.trim());
 						}
+
+						var headCellsIndex = myHeadCells.indexOf(element.trim());
+						var tableHeaderIndex = tableHeaderColumns.indexOf(element.trim());
+						console.log(`columnsHeaders: ${columnsHeaders.join("|")} element ${element} headCellsIndex: ${headCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
 						
 						tr = document.createElement('tr');
 						
