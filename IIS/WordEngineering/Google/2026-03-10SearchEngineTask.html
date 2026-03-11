@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2019-09-10T17:59:00...2019-09-10T19:04:00	PeterKentConsulting.com/seo-for-dummies-by-peter-kent.html
+	-->
+
+	<head>
+		<title>Seach engine task</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Seach engine task"/>
+		<meta name="keywords" content="Seach engine task"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>	
+	<body>
+		<div align="center">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="word">Word</label></td>
+						<td><input id="word" value="John" size="50"/></td>
+					</tr>
+					<tr>
+						<td><label for="workTask">Task</label></td>
+						<td>
+							<select id="workTask">
+								<option>phrase</option>
+								<option>proximity</option>
+								<option>occurrence</option>
+								<option>soundex</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><input type="submit" id="submitQuery"></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2"><a id="resultSet">BibleWord.html</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			var wordElement = document.getElementById("word");
+			var	workTaskElement = document.getElementById("workTask");
+			var isPostBack = false;
+			var resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+			
+			function querySubmit()
+			{
+				var wordValue = wordElement.value.trim();
+				var	defaultURL = "";
+				switch (workTaskElement.value)
+				{
+					case "occurrence":
+						defaultURL = "/WordEngineering/WordUnion/Exact.html?bibleWord=" + wordElement.value;
+						break;
+					case "phrase":
+						defaultURL = "/WordEngineering/WordUnion/BibleWord.html?bibleWord=" + wordElement.value + "&logic=" + workTaskElement.value;
+						break;
+					case "proximity": //2026-03-10T18:59:00
+						defaultURL = "/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + wordElement.value;
+						break;
+					case "soundex":
+						defaultURL = "/WordEngineering/WordUnion/Carlos.html?bibleWord=" + wordElement.value + "&accordingTo=" + workTaskElement.value;
+						break;
+					WordEngineering/WordUnion/Carlos.htmlWordEngineering/WordUnion/Carlos.html	
+				}
+				resultSetElement.href = resultSetElement.innerHTML = defaultURL;
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+
+			document.getElementById("submitQuery").addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}		
+		</script
+	</body>
+</html>
