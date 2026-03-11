@@ -25,18 +25,18 @@ When I have sometime, I will publish this sample on a GitHub.com page.
 		2019-09-12T14:57:00	https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createCaption
 		2019-09-12T17:02:00	https://flaviocopes.com/javascript-regular-expressions/
 		2019-09-12T05:35:00	https://stackoverflow.com/questions/5158338/how-to-convert-a-collection-to-an-array-in-javascript
-		2026-03-09T10:25:00	differenceBetweenTwoSequentialRows();
+		2026-03-09T10:25:00...2026-03-10T04:42:00	differenceBetweenTwoSequentialRows();
 			2026-03-09T12:06:00	Begin debug.
 			2026-03-09T15:32:00	I could have don't this last night, but I slept... and see what I am led to do, today.
 	-->
 
 	<head>
+		<title>Difference between two sequential rows?</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Difference between two sequential rows?"/>
 		<meta name="keywords" content="Data Manipulation Language (DML), SQL, Query, Wal-Mart, Atlanta, Georgia, Austell"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
-		<title>Difference between two sequential rows?</title>
 		<style>
 			textarea{ //viewport
 			height: 65vh;
@@ -119,25 +119,31 @@ tr:nth-child(even) {
 							)
 							INSERT INTO URI
 							(
-								URI,
+								url,
 								Title,
-								Dated
+								Dated,
+								NumberOfEmployees
 							)
 							VALUES
 							(
-								"http://live.com",
+								"http://en.wikipedia.org/wiki/Microsoft",
 								"Microsoft",
-								1994-12-28
+								1994-12-28,
+								228000
 							)
 							INSERT INTO URI
 							(
 								Title,
-								Dated
+								Dated,
+								NumberOfEmployees,
+								url
 							)
 							VALUES
 							(
 								Google,
-								1997-09-15
+								1997-09-15,
+								187000,
+								"http://en.wikipedia.org/wiki/Google"
 							)
 							INSERT INTO Empty
 							(
@@ -151,15 +157,17 @@ tr:nth-child(even) {
 							)		
 							INSERT INTO URI
 							(
-								URI,
+								url,
 								Commentary,
-								Dated
+								Dated,
+								NumberOfEmployees
 							)
 							VALUES
 							(
-								"http:apple.com",
+								"http://en.wikipedia.org/wiki/Apple_Inc.",
 								"IPhone",
-								1987-02-19
+								1987-02-19,
+								166000
 							)
 							INSERT INTO Empty
 							(
@@ -194,15 +202,17 @@ tr:nth-child(even) {
 							)		
 							INSERT INTO URI
 							(
-								URI,
+								url,
 								Commentary,
-								Dated
+								Dated,
+								NumberOfEmployees
 							)
 							VALUES
 							(
 								"http://ibm.com",
 								"IBM Personal Computer (PC)",
-								1986-03-19
+								1986-03-19,
+								270300
 							)
 						</textarea>
 					</td>
@@ -379,19 +389,18 @@ matches; /* gives exactly what i want, but abuses `replace`,
 						
 						//domIsDate = RegularExpressionPatternDate.test(domValuesFirst[domColumnIndex]);
 
-						domIsDate = isDate(domValuesFirst[domColumnIndex]);
-						if (domIsDate)
+						if ( isDate(domValuesFirst[domColumnIndex]) )
 						{
 							domTypes[domColumnIndex] = "date";
-							continue;
 						}	
-						
-						domIsURL = isValidHttpUrl(domValuesFirst[domColumnIndex]);
-						if (domIsURL)
+						else if ( isValidHttpUrl(domValuesFirst[domColumnIndex]) )
 						{
 							domTypes[domColumnIndex] = "url";
-							continue;
 						}	
+						else if (isNaN(domValuesFirst[domColumnIndex]) === false && domValuesFirst[domColumnIndex] !== "")
+						{
+							domTypes[domColumnIndex] = "number";
+						}
 					}	
 
 					//domStatisticsHTML += domTable.thead + "<tbody>"; //2026-03-09T12:02:00 How much DOM... does he know, now?
@@ -431,6 +440,14 @@ matches; /* gives exactly what i want, but abuses `replace`,
 										new Date( domValuesNext[domColumnIndex] )
 									);
 									domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]} ... [${domRowIndex+1}]${domValuesNext[domColumnIndex]} = ${dataDifference}</td>`; //2026-03-09T14:56:00 Index is all he is working on.
+									break;
+								case "number":
+									dataDifference = domValuesCurrent[domColumnIndex] - domValuesNext[domColumnIndex];
+									domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]} ... [${domRowIndex+1}]${domValuesNext[domColumnIndex]} = ${dataDifference}</td>`; //2026-03-10T04:02:00 
+									break;
+								default: //If it is not the first one... it doesn't get it.	
+									dataDifference = similarity(domValuesCurrent[domColumnIndex], domValuesNext[domColumnIndex]);
+									domStatisticsHTML += `<td>[${domRowIndex}]${domValuesCurrent[domColumnIndex]} similarity [${domRowIndex+1}]${domValuesNext[domColumnIndex]} = ${dataDifference}</td>`;
 									break;
 							}
 							//domValuesCurrent = domValuesNext; //2026-03-09T12:47:00
@@ -603,7 +620,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					columnsHeaders.forEach(function(element) { //2026-03-09T21:55:00
 						var headerCellsIndex = headerCells.indexOf(element.trim());
 						var tableHeaderIndex = tableHeaderColumns.indexOf(element.trim());
-						//console.log(`myHeadCells: ${myHeadCells.join("|")} columnsHeaders: ${columnsHeaders.join("|")} element ${element} headerCellsIndex: ${headerCellsIndex} tableHeaderIndex: ${tableHeaderIndex}` );
 						if (headerCellsIndex === -1 && tableHeaderIndex === -1) //2026-03-09T23:04:00
 						{
 							var th = document.createElement('th');
@@ -663,14 +679,6 @@ matches; /* gives exactly what i want, but abuses `replace`,
 					)
 					{
 						var columnHeader = columnsHeaders[columnIndex];
-						console.log("columnIndex" + columnIndex);
-/*
-						if (columnHeader != "Commentary")
-						{
-							//continue;
-						}	
-						console.log( "Commentary " +valuesRow[headerCellIndex] );
-*/						
 						for
 						(
 							var headerCellIndex = 0, 
@@ -685,9 +693,8 @@ matches; /* gives exactly what i want, but abuses `replace`,
 								headerCells.textContent == columnHeader
 							)
 							{
-								console.log(headerCellIndex);
 								tr.cells[headerCellIndex].innerHTML = 
-									valuesRow[headerCellIndex];
+									valuesRow[columnIndex];
 							}
 						}
 					}
