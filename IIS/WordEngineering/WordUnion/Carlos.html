@@ -114,8 +114,8 @@
 				for (var rowIndex = 0, rowCount = accordingTos.length; rowIndex < rowCount; ++rowIndex)
 				{
 					var option = document.createElement("option");
-					option.text = accordingTos[rowIndex][0];
-					option.value = accordingTos[rowIndex][1];;
+					option.text = accordingTos[rowIndex];
+					option.value = accordingTos[rowIndex];;
 					select.appendChild(option);
 				}
 			}
@@ -130,8 +130,8 @@
 			}
 			
 			var accordingTos = [
-				["Length", "Length"],
-				["Soundex", "Soundex"] 
+				"length",
+				"soundex" 
 			]
 			
 			window.addEventListener("load", pageLoad, false);
