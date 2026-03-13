@@ -47,8 +47,8 @@ public class CarlosWebService : System.Web.Services.WebService
 			String.Format
 			(
 				"Bible..usp_Carlos '{0}', '{1}'",
-				question,
-				accordingTo
+				accordingTo,
+				question				
 			),
 			CommandType.StoredProcedure,
 			DataCommand.ResultType.DataSet //,
