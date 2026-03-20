@@ -844,6 +844,17 @@ is for determining the upper limit. The SQL statement
 
 will set the range restriction.
 
+``` {dated="2026-03-20T11:57:00"}
+SELECT          TOP (1) BookID, ChapterID, VerseID, AmericanStandardBible, BibleInBasicEnglish, DarbyEnglishBible, KingJamesVersion, WebsterBible, WorldEnglishBible, YoungLiteralTranslation, ChapterIDSequence, VerseIDSequence, 
+                AccordingToManyIHaveSpokenID, Testament, BookTitle, ScriptureReference, ChapterIDSequencePercent, VerseIDSequencePercent, BibleReference, BookGroup, BookAuthor
+FROM            Scripture_View
+ORDER BY VerseID DESC
+```
+
+Will say the longest verse occurs in the 19th book of the Bible, Psalms,
+and its 119th chapter; 597th chapter of the Bible, 16075th verse of the
+Bible.
+
 </div>
 
 ##### The Scripture Table\'s KingJamesVersion Column {#ScriptureTableKingJamesVersionColumn}
@@ -4400,7 +4411,24 @@ Biblical generation - 40 Biblical years
 3.  2026-03-14T02:28:00 In a form, 1 of the query options was the
     writing direction, and another data entry term was robotics.
 
-### 2026-03-11T10:00:00 [When did he associate who he has to what he has?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=When%20did%20he%20associate%20who%20he%20has%20to%20what%20he%20has%3F){dated="2026-03-11T10:00:00" contactid="15335" hiswordid="168808"} {#t100000-when-did-he-associate-who-he-has-to-what-he-has dated="2026-03-11T10:00:00" contactid="15335" hiswordid="168808"}
+### 2026-03-20T13:32:00 [What alternate team\... did He built\... and why?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20alternate%20team...%20did%20He%20built...%20and%20why%3F){dated="2026-03-20T13:32:00" contactid="774" hiswordid="168873" commentary="At the intersection of Enea Court and Charter Square, center-west. I was walking westward. Replacement Theology."} {#WhatAlternateTeamDidHeBuiltAndWhy dated="2026-03-20T13:32:00" contactid="774" hiswordid="168873"}
+
+1.  Unity ( [1 Samuel
+    25:7](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Samuel%2025:7){contactid="4772"
+    hiswordid="168873"
+    commentary="At the intersection of Enea Court and Charter Square, center-west. I was walking westward. I spoke to Denise Deni Mattingly née Wright, formerly Flynn from the center-east, southward. Replacement Theology."}
+    )
+2.  Sequential ( [Psalm 110:1, Matthew 22:41-46, Mark 12:35-37, Luke
+    20:41-44, Acts
+    2:34](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalm%20110:1,%20Matthew%2022:41-46,%20Mark%2012:35-37,%20Luke%2020:41-44,%20Acts%202:34){contactid="4772"
+    hiswordid="168873"
+    commentary="At the intersection of Enea Court and Charter Square, center-west. I was walking westward. I spoke to Denise Deni Mattingly née Wright, formerly Flynn from the center-east, southward. Replacement Theology."}
+    )
+3.  Exemption ( [Psalms
+    16:10](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Psalms%2016:10){contactid="4772"
+    hiswordid="168873"} )
+
+### 2026-03-11T10:00:00 {#t100000 dated="2026-03-11T10:00:00" contactid="15335" hiswordid="168808"}
 
   Who            What           Scripture Reference
   -------------- -------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

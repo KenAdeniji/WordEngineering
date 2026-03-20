@@ -1088,7 +1088,7 @@ http://translate.google.com/?sl=en&tl=yo&op=websites&website=http://kenadeniji.g
 		adobeDCView.previewFile({
 			content:{location: {url: "https://documentservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
 			metaData:{fileName: "Bodea Brochure.pdf"}
-		}, {});
+	0	}, {});
 	});
 </script>
 
