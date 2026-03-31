@@ -72,7 +72,6 @@
 
 			async function querySubmit()
 			{
-				console.log("responseJSON.d");
 				var request = {};
 
 				request["contactIDMinimum"] = Number.parseInt(contactIDMinimumElement.value);
@@ -96,7 +95,6 @@
 						return response.json();
 					})
 					.then(responseJSON => {
-						console.log("responseJSON.d");
 						var dataTable = JSON.parse(responseJSON.d);
 						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
 					})	

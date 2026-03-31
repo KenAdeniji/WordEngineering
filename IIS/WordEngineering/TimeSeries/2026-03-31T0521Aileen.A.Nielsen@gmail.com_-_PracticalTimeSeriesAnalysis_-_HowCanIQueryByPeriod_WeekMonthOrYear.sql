@@ -18,4 +18,3 @@ GROUP BY
 ORDER BY
 	DATEPART ( Year, Dated ),
 	ContactID
-
