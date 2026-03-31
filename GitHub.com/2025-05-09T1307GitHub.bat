@@ -611,3 +611,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2026-03-27T080500microsofts
 REM 2026-03-27T08:05:00 git rm IIS/WordEngineering/2018-05-03Correspondence/2026-03-25christian.aiuchi@dataforcebytransperfect.na.teamtailor-mail.com_-_AllFourProjectsInvolveTakingSimplePhotosWithYourPhoneAndTheCollectedMaterialsWillBeUsedToSupportTheDevelopmentAndEn
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-03-30T0411WeWereWorkingOnUniting3SeparateGeographicallyPhysicallySeparatedLocations.txt
+
+git add	IIS/WordEngineering/TimeSeries/

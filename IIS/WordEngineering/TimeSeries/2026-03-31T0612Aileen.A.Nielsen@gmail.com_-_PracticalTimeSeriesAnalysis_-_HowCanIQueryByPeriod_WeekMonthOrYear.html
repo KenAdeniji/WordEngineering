@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-03-31T06:12:00...2026-03-31T06:38:00
+			Aileen.A.Nielsen@gmail.com
+			http://www.oreilly.com/library/view/practical-time-series/9781492041641
+		-->
+		<title>How can I query by period... week, month, or year?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="How can I query by period... week, month, or year?"/>
+		<meta name="keywords" content="Time series"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="contactIDMinimum">Contact ID</label></td>
+					<td>
+						<input type="number" id="contactIDMinimum" value="467" autofocus required/>
+						...
+						<input type="number" id="contactIDMaximum" value="483" required/>
+					</td>
+				</tr>	
+				<tr>
+					<td><label for="datePart">Date Part</label></td>
+					<td><select id="datePart"></select></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+			<div id="resultTable"></div>
+		</div>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			var isPostBack = false;
+			
+			const contactIDMinimumElement = document.getElementById("contactIDMinimum");
+			const contactIDMaximumElement = document.getElementById("contactIDMaximum");
+			const datePartElement = document.getElementById("datePart");
+			const resultTableElement = document.getElementById("resultTable");
+			const submitQueryElement = document.getElementById("submitQuery");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					scriptLiteral9432.renderDatePartedSelect();
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				console.log("responseJSON.d");
+				var request = {};
+
+				request["contactIDMinimum"] = Number.parseInt(contactIDMinimumElement.value);
+				request["contactIDMaximum"] = Number.parseInt(contactIDMaximumElement.value);
+				request["datePart"] = datePartElement.value;
+				
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/TimeSeries/2026-03-31T0555Aileen.A.Nielsen@gmail.com_-_PracticalTimeSeriesAnalysis_-_HowCanIQueryByPeriod_WeekMonthOrYear.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						console.log("responseJSON.d");
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultTableElement.innerHTML = e;
+				};
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

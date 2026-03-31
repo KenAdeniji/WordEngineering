@@ -149,6 +149,7 @@
 			//to dateOne
 			var dateThree = new Date(dateOne.getTime()); //unique date set to value
 			//of dateOne but not linked. 19:13 ContactID 10638 Aileen Cai faeces.
+	2026-03-31T06:32:00	datePart		
 */			
 var scriptLiteral9432 =
 {
@@ -239,6 +240,22 @@ var scriptLiteral9432 =
 		["File Upload"],
 		["Text", ".txt"],
 		["JavaScript Object Notation (JSON)", ".json"]
+	],
+	dateParted: [
+		"year",
+		"quarter",
+		"dayofyear",		
+		"day",
+		"week",
+		"weekday",
+		"hour",
+		"minute",
+		"second",
+		"millisecond",
+		"microsecond",
+		"nanosecond",
+		"tzoffset",
+		"iso_week"
 	],
 	dateParts: [
 		"year",
@@ -1510,7 +1527,6 @@ var scriptLiteral9432 =
 		);
 	},
 
-
 	renderBibleBookSelect: function() 
 	{
 		scriptLiteral9432.buildSelect
@@ -1556,7 +1572,16 @@ var scriptLiteral9432 =
 		);
 		
 	},
-	
+
+	renderDatePartedSelect: function() 
+	{
+		scriptLiteral9432.buildSelect
+		(
+			"datePart",
+			scriptLiteral9432.dateParted
+		);
+	},
+
 	renderGroupBySelect: function() 
 	{
 		scriptLiteral9432.buildSelect
