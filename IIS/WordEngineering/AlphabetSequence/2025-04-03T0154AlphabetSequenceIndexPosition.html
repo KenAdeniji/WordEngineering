@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2025-04-03T01:54:00 2025-04-03T0154AlphabetSequenceIndexPosition.html created.
+			2025-04-03T02:57:00 Index or scripture reference.
+			2025-04-03T03:00:00 faeces
+			2025-04-03T03:02:00 google drive local storage is almost full
+				To continue using drive for desktop free up space on c:\
+					restart
+					learn more
+			2025-04-03T03:12:00 urine.
+			2025-04-03T03:12:00 microsoft hourglass: windows wait cursor
+			2025-04-03T03:46:00	http://www.nbcnews.com/politics/national-security/pete-hegseth-forces-army-chief-staff-randy-george-rcna266491?utm_source=firefox-newtab-en-us
+				2026-04-02T14:48:00
+				April 2, 2026, 2:48 PM PDT / Updated April 2, 2026, 5:18 PM PDT
+				By Courtney Kube, Mosheh Gains, Gordon Lubold and Raquel Coronell Uribe
+				Chief Defense Department spokesperson Sean Parnell confirmed George’s departure in a statement Thursday on X, saying George, the Army's top officer, would be “retiring from his position as the 41st Chief of Staff of the Army effective immediately.”
+			2025-04-03T04:41:00 urine.
+		-->
+		<title>2025-04-03T01:54:00 AlphabetSequenceIndexPosition</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2025-04-03T01:54:00 AlphabetSequenceIndexPosition"/>
+		<meta name="keywords" content="2025-04-03T01:54:00 AlphabetSequenceIndexPosition"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" value="58" autofocus></td>
+				</tr>
+				<tr>
+					<td><label for="alphabetSequenceIndexPosition">Alphabet Sequence Index Position</label></td>
+					<td>
+						<select id="alphabetSequenceIndexPosition">
+							<option>Index</option>
+							<option>Verse forward</option>
+							<option>Chapter forward</option>
+							<option>Chapter backward</option>
+							<option>Verse backward</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+			<div id="alphabetSequence"></div>
+			<div id="scriptureReference"></div>
+		</div>
+
+		<script>
+			const	wordElement = document.getElementById("word");
+			const	alphabetSequenceIndexPositionElement = document.getElementById("alphabetSequenceIndexPosition");
+			
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			const	alphabetSequenceElement = document.getElementById("alphabetSequence");
+			const	scriptureReferenceElement = document.getElementById("scriptureReference");
+	
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					querySubmit();
+					isPostBack = true;		
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				resultSetElement.innerHTML = "";
+				
+				var request = {};
+
+				request["word"] = wordElement.value;
+				request["alphabetSequenceIndexPosition"] = alphabetSequenceIndexPositionElement.value;
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/AlphabetSequence/2025-04-03T0154AlphabetSequenceIndexPosition.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						switch(alphabetSequenceIndexPositionElement.value)
+						{
+							case "Index":
+								renderAlphabetSequence(responseJSON.d);
+								break;
+						}	
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+					alphabetSequenceElement.innerHTML = "";
+					scriptureReferenceElement.innerHTML = "";
+				};
+			}
+			
+			function renderAlphabetSequence(data)
+			{
+				var dataSet = JSON.parse(data);
+				var alphabetSequenceURI = "/WordEngineering/WordUnion/AlphabetSequence.html?word=" + wordElement.value;
+				var alphabetSequenceAnchor = '<a href="' + alphabetSequenceURI + '">Alphabet Sequence</a>';
+				alphabetSequenceElement.innerHTML = 
+					alphabetSequenceAnchor + '<br>' + dataSet.id;
+				alphabetSequenceIndexScriptureReference = dataSet.scriptureReference;
+				scriptureReferenceElement.innerHTML = 
+					scriptureReferenceHyperlink(alphabetSequenceIndexScriptureReference);
+			}
+			
+			function scriptureReferenceHyperlink(scriptureReference)
+			{
+				return "<a href='/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=" + 
+					scriptureReference + "'>" + scriptureReference + "</a>";
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
