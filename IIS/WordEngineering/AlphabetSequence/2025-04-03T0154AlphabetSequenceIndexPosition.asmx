@@ -15,6 +15,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
+using InformationInTransit.DataAccess;
 using InformationInTransit.ProcessCode;
 using InformationInTransit.ProcessLogic;
 
@@ -36,15 +37,62 @@ public class AlphabetSequenceIndexPositionWebService : System.Web.Services.WebSe
 	)
     {
 		string json = "";
+		string scriptureReference = "";
 		switch (alphabetSequenceIndexPosition)
 		{
 			case "Index":
 				int id = Int32.Parse(word);
-				string scriptureReference = AlphabetSequence.ScriptureReference(id);
+				scriptureReference = AlphabetSequence.ScriptureReference(id);
 				json = String.Format
 				(
 					JsonFormat,
 					id,
+					scriptureReference
+				);
+				break;
+			case "Verse forward":
+				dynamic verseIdSequenceForward = DataCommand.DatabaseCommand
+				(
+					String.Format
+					(
+						@"
+							SELECT VerseIDSequence
+							FROM Bible..Scripture_View
+							WHERE ScriptureReference = '{0}'
+						",
+						word
+					),
+					CommandType.Text,
+					DataCommand.ResultType.Scalar
+				);
+				scriptureReference = AlphabetSequence.ScriptureReference(verseIdSequenceForward);
+				json = String.Format
+				(
+					JsonFormat,
+					verseIdSequenceForward,
+					scriptureReference
+				);
+				break;
+			case "Verse backward":
+				dynamic verseIdSequenceBackward = DataCommand.DatabaseCommand
+				(
+					String.Format
+					(
+						@"
+							SELECT VerseIDSequence
+							FROM Bible..Scripture_View
+							WHERE ScriptureReference = '{0}'
+						",
+						word
+					),
+					CommandType.Text,
+					DataCommand.ResultType.Scalar
+				);
+				scriptureReference = AlphabetSequence.ScriptureReference(31103 - verseIdSequenceBackward);
+				json = String.Format
+				(
+					JsonFormat,
+					verseIdSequenceBackward,
 					scriptureReference
 				);
 				break;

@@ -21,6 +21,12 @@
 				Genesis 3
 			2025-04-03T05:40:00 (o fe ke?)
 			2025-04-03T05:43:00 faeces.
+			2025-04-03T06:16:00...2025-04-03T06:30:00 alphabetSequenceIndexPosition? VerseForward.
+				Genesis 22:2
+				VerseIDSequence 550	
+			2025-04-03T06:16:00...2025-04-03T07:03:00 alphabetSequenceIndexPosition? VerseBackward.
+				Revelation 1:1
+				VerseIDSequence	30700
 		-->
 		<title>2025-04-03T01:54:00 AlphabetSequenceIndexPosition</title>
 		<meta charset="UTF-8"/>
@@ -91,6 +97,8 @@
 
 			async function querySubmit()
 			{
+				alphabetSequenceElement.innerHTML = "";
+				scriptureReferenceElement.innerHTML = "";
 				resultSetElement.innerHTML = "";
 				
 				var request = {};
@@ -118,9 +126,11 @@
 						switch(alphabetSequenceIndexPositionElement.value)
 						{
 							case "Index":
+							case "Verse forward":
+							case "Verse backward":
 								renderAlphabetSequence(responseJSON.d);
 								break;
-						}	
+						}
 					})	
 					} catch (e) {
 					resultSetElement.innerHTML = e;
