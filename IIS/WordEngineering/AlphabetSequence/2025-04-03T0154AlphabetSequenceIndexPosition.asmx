@@ -96,6 +96,52 @@ public class AlphabetSequenceIndexPositionWebService : System.Web.Services.WebSe
 					scriptureReference
 				);
 				break;
+			case "Chapter forward":
+				dynamic chapterIdSequenceForward = DataCommand.DatabaseCommand
+				(
+					String.Format
+					(
+						@"
+							SELECT TOP 1 ChapterIDSequence
+							FROM Bible..Scripture_View
+							WHERE ScriptureReference LIKE '{0}:%'
+						",
+						word
+					),
+					CommandType.Text,
+					DataCommand.ResultType.Scalar
+				);
+				scriptureReference = AlphabetSequence.ScriptureReference(chapterIdSequenceForward);
+				json = String.Format
+				(
+					JsonFormat,
+					chapterIdSequenceForward,
+					scriptureReference
+				);
+				break;
+			case "Chapter backward":
+				dynamic chapterIdSequenceBackward = DataCommand.DatabaseCommand
+				(
+					String.Format
+					(
+						@"
+							SELECT TOP 1 ChapterIDSequence
+							FROM Bible..Scripture_View
+							WHERE ScriptureReference LIKE '{0}:%'
+						",
+						word
+					),
+					CommandType.Text,
+					DataCommand.ResultType.Scalar
+				);
+				scriptureReference = AlphabetSequence.ScriptureReference(1189 - chapterIdSequenceBackward);
+				json = String.Format
+				(
+					JsonFormat,
+					chapterIdSequenceBackward,
+					scriptureReference
+				);
+				break;
 		}
 		return json;
 	}

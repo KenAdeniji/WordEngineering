@@ -28,7 +28,15 @@
 				Revelation 1:1
 				VerseIDSequence	30700
 			2025-04-03T08:01:00	Eni to se yin.
+				The person that did you did wrong.
 				Restroom downstairs, south-west.
+			2025-04-03T08:30:00 alphabetSequenceIndexPosition? ChapterForward.
+				Daniel 5
+				ChapterIDSequence 855
+			2010-09-12T11:50:00	
+				816th verse
+				Genesis 29:20
+			2025-04-03T09:33:00 faeces.
 		-->
 		<title>2025-04-03T01:54:00 AlphabetSequenceIndexPosition</title>
 		<meta charset="UTF-8"/>
@@ -125,14 +133,7 @@
 						return response.json();
 					})
 					.then(responseJSON => {
-						switch(alphabetSequenceIndexPositionElement.value)
-						{
-							case "Index":
-							case "Verse forward":
-							case "Verse backward":
-								renderAlphabetSequence(responseJSON.d);
-								break;
-						}
+						renderAlphabetSequence(responseJSON.d);
 					})	
 					} catch (e) {
 					resultSetElement.innerHTML = e;
