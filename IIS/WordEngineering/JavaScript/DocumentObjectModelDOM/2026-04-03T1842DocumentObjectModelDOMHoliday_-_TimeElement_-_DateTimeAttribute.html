@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-04-03T18:45:00...2026-04-03T21:34:00 Created.
+		2026-04-03T18:45:00	http://stackoverflow.com/questions/8631915/calling-a-function-on-christmas-day
+		2026-04-03T20:54:00	Table column header DateType
+		2026-04-03T21:02:00	http://stackoverflow.com/questions/8631915/calling-a-function-on-christmas-day
+		2026-04-03T21:07:00	http://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html
+	-->	
+	<head>
+		<title>Document Object Model (DOM) Time Element : DateTime Attribute</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Document Object Model (DOM) Time Element : DateTime Attribute"/>
+		<meta name="keyword" content="Document Object Model (DOM), time element, datetime attribute"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			iframe
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 40vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+							<tr>
+							<td><label for="sourceAddress">Source Address:</label></td>
+							<td>
+								<input 
+									id="sourceAddress"
+									type="url"
+									style="width: 55vw;"
+									value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
+								/>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="sourceContent">Source Content:</label></td>
+							<td>
+								<textarea id="sourceContent"></textarea>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+					</table>
+				<div>	
+			<form>	
+			<iframe id="frameInfo"></iframe>
+			<br/>	
+			<div id="resultSet">
+				<div id="resultSetElementTypeStatistics"></div>
+				<div id="resultSetTimeTypeStatistics"></div>
+			</div>
+		</div>	
+		<script>
+			var isPostBack = false;
+			var frameHTMLDocumentCurrent;
+			
+			const 	formedElement = document.getElementById("formed");
+			const 	sourceAddressElement = document.getElementById("sourceAddress");
+	
+			const	sourceContentElement = document.getElementById("sourceContent");
+
+			const 	querySubmitElement = document.getElementById("querySubmit");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const	frameInfoElement = document.getElementById("frameInfo");
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			const 	resultSetElementTypeStatisticsElement = document.getElementById("resultSetElementTypeStatistics");
+			const	resultSetTimeTypeStatisticsElement = document.getElementById("resultSetTimeTypeStatistics");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var sourceAddressParam = urlParams.get("sourceAddress");
+					if (sourceAddressParam)
+					{
+						sourceAddressElement.value = sourceAddressParam;
+					}	
+					if (sourceAddressElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var	frameHTMLDocument;
+				const response = await fetch( sourceAddressElement.value );
+				const data = await response.text();
+
+				sourceContentElement.value = data;
+				frameInfoElement.srcdoc = data;
+				frameHTMLDocument = frameInfoElement.contentDocument || frameInfoElement.contentWindow.document;
+
+				queryGenerateStatistics(frameHTMLDocument);
+			}
+
+			function queryGenerateStatistics(frameHTMLDocument)
+			{
+				queryElementTypeStatistics(frameHTMLDocument);
+				queryTimeTypeStatistics(frameHTMLDocument);
+			}
+
+			function queryElementTypeStatistics(frameHTMLDocument)
+			{
+				var elementTypeCount;
+				var elementStatistics = "<table><thead><tr><th>Element Type</th><th>Count</th></tr></thead><tbody>";
+				for (const elementType of SelectorElementTypes)
+				{
+					elementTypeCount = frameHTMLDocument.querySelectorAll(elementType).length;
+					elementStatistics += `<tr><td>${elementType}</td><td>${elementTypeCount}</td></tr>`;
+				}
+				elementStatistics += "</tbody></table>";
+				resultSetElementTypeStatisticsElement.innerHTML = elementStatistics;
+			}
+
+			async function queryTimeTypeStatistics(frameHTMLDocument)
+			{
+				var timeElements = frameHTMLDocument.querySelectorAll("time");
+				var elementStatistics = "<table><caption>time element: datetime attribute</caption><thead><tr><th>Index</th><th>id</th><th>DateTime</th><th>DateType</th></tr></thead><tbody>";
+				var dateTime;
+				var id;
+				var anchor;
+				var dateType = "";
+				for 
+				(
+					var elementIndex = 0, elementCount = timeElements.length;
+					elementIndex < elementCount;
+					elementIndex++
+				)
+				{
+					id = timeElements[elementIndex].getAttribute("id");
+					url = (id === null) ? "" : sourceAddressElement.value + "#" + id;
+					anchor = (id === null) ? "" : `<a href=${url}>${id}</a>`;
+					dateTime = new Date( timeElements[elementIndex].dateTime );
+					for	(let i = 0; i < Holidays.length; i++) 
+					{
+						let holiday = Holidays[i];
+						dateType = "";	
+						if 
+						(
+							( dateTime.getMonth() == holiday.month - 1 ) &&
+							( dateTime.getDate() == holiday.day )
+						)
+						{
+							dateType = holiday.title;
+						}	
+					}
+					elementStatistics += `<tr><td>${elementIndex + 1}</td><td>${anchor}</td><td>${dateTime}</td><td>${dateType}</td></tr>`;
+				}
+				elementStatistics += "</tbody></table>";
+				resultSetTimeTypeStatisticsElement.innerHTML = elementStatistics;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const SelectorElementTypes = ["time"];
+
+			const Holidays =		
+			[
+				{ title: "New Year's Day", month: 1, day: 1 },
+				{ title: "Christmas Day", month: 12, day: 25 },
+				{ title: "Boxing Day", month: 12, day: 26 },
+			];			
+		</script>		
+	</body>
+</html>
