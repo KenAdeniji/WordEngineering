@@ -221,10 +221,10 @@ L.A. is one game ahead of No. 4 Denver, 2½ games ahead of the No. 5 Houston Roc
 					url = (id === null) ? "" : sourceAddressElement.value + "#" + id;
 					anchor = (id === null) ? "" : `<a href=${url}>${id}</a>`;
 					dateTime = new Date( timeElements[elementIndex].dateTime );
+					dateType = "";	
 					for	(let i = 0; i < Holidays.length; i++) 
 					{
 						let holiday = Holidays[i];
-						dateType = "";	
 						if 
 						(
 							( dateTime.getMonth() == holiday.month - 1 ) &&
@@ -232,6 +232,7 @@ L.A. is one game ahead of No. 4 Denver, 2½ games ahead of the No. 5 Houston Roc
 						)
 						{
 							dateType = holiday.title;
+							break;
 						}	
 					}
 					elementStatistics += `<tr><td>${elementIndex + 1}</td><td>${anchor}</td><td>${dateTime}</td><td>${dateType}</td></tr>`;
