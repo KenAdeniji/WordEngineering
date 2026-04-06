@@ -629,3 +629,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-04-03T1735ChristineCal
 git add	IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-04-03T1842DocumentObjectModelDOMHoliday_-_TimeElement_-_DateTimeAttribute.html
 
 git add	"IIS/WordEngineering/2018-05-03Correspondence/2026-04-05T131600JoshuaLimGraduationFromUniversityOfCalifornia, Davis (UC Davis)_2026June.txt"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-04-06T1042Sandy Mishra sandyusstaffingrecruiter@gmail.com_-_(803) 805-3884_-_115 Stone Village Drive Suite C. Fort Mill, SC 29708_-_linkedin.com_sandy-m-74b06b212.txt"

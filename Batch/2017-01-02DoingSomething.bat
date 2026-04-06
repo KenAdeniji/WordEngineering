@@ -1181,4 +1181,6 @@ http://kenadeniji.github.io/Github
 1967-10-15...2026-10-29=21564 days (59 biblical years, 10 biblical months, 24 days) (59 years, 2 weeks)
 
 Sadie Crawford née Mobley
+
+2026-04-06T00:02:09 WHERE        (CONVERT(date, Dated) IN ('2023-04-02', '2025-09-18', '2026-03-27', '2022-10-24'))
 :Exit
