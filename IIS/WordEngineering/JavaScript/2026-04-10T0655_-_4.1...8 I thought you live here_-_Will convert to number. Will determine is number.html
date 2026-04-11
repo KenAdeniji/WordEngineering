@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-04-10T20:03:00...2026-04-10T20:29:00	Created.
+		2026-04-10T20:16:00...2026-04-10T20:23:00	wordConvertElement.value = parseFloat(wordElement.value);
+		2026-04-10T20:23:00...2026-04-10T20:29:00	wordisNaNElement.value = isNaN(wordElement.value);
+	-->	
+	<head>
+		<title>4.1...8 I thought you live here.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="4.1...8 I thought you live here. Will convert to number. Will determine is number."/>
+		<meta name="keyword" content="4.1...8, convert, determine, number"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			iframe
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 40vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="word">Word</label></td>
+							<td>
+								<input 
+									id="word"
+									type="text"
+									style="width: 55vw;"
+									value="4.1...8 I thought you live here."
+								/>
+							</td>
+						</tr>
+						<tr><td colspan="2" align="center"><input type="submit" id="submitQuery"></td></tr>
+						<tr>
+							<td><label for="wordConvert">Value</label></td>
+							<td><output id="wordConvert" for="word"></output></td>
+						</tr>
+						<tr>
+							<td><label for="wordConvert">Not-A-Number (isNaN)</label></td>
+							<td><output id="wordisNaN" for="word"></output></td>
+						</tr>
+					</table>
+				<div>	
+			<form>	
+		</div>	
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+			const 	wordElement = document.getElementById("word");
+
+			const 	submitQueryElement = document.getElementById("submitQuery");
+
+			const 	wordConvertElement = document.getElementById("wordConvert");
+			const 	wordisNaNElement = document.getElementById("wordisNaN");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}	
+					if (wordElement.value)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				wordConvertElement.value = parseFloat(wordElement.value);
+				wordisNaNElement.value = isNaN(wordElement.value);
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
