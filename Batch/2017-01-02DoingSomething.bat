@@ -1168,7 +1168,7 @@ http://drive.proton.me/u/0/trash
 4762 Canvasback Common
 Fremont, California 94555
 (510) 796-8121
-KenAdeniji@hotmail.com
+mailto:KenAdeniji@hotmail.com
 www.JesusInTheLamb.com
 http://kenadeniji.github.io/Github
 
