@@ -202,7 +202,7 @@ DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 179210);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 791);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
-DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5253);
+DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5431);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7758); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..ThemeOfTheDay', RESEED, 12); 
