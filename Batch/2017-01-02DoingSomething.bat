@@ -182,7 +182,7 @@ DBCC CHECKIDENT ('URI..UriBook', RESEED, 1);
 DBCC CHECKIDENT ('URI..UriChrist', RESEED, 23611);
 DBCC CHECKIDENT ('URI..UriEconomy', RESEED, 2);
 DBCC CHECKIDENT ('URI..URIGoogleNews', RESEED, 19190);
-DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26802);
+DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26844);
 DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 74167);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
@@ -1188,6 +1188,6 @@ KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 2026-04-18T09:21:00...2026-04-18 09:26:00.8100000 Google Drive. Almost out of storage. If you run out, you can't save to Drive, send and receive email on Gmail, or back up to Google Photos. Don't show this again. OK. Manage storage.
 
-2026-04-18 22:35:00.000	I heard the word phrase (se we ti com) while I was sleeping.
+2026-04-18 22:35:00.000	I heard the word phrase while I was sleeping. (se we ti com).
 
 :Exit
