@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-04-25T15:43:00...2026-04-25T17:11:00 Created.
+	-->
+	<head>
+		<title>Regular Expression split by special characters, alphabets, digits</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Regular Expression split by special characters, alphabets, digits"/>
+		<meta name="keywords" content="Regular Expression, RegEx, string, pattern, flag, special characters, alphabets, digits"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea{ //viewport
+				height: 30vh;
+				width: 70vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="textString">Text string</label></td>
+					<td><textarea id="textString" autofocus required>51, 52, 53, 54[{}]=+()ksls 238932239 $#@! /*-</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="specialCharactersPattern">Special characters pattern</label></td>
+					<td><input id="specialCharactersPattern" value=".,;"/></td>
+				</tr>
+				<tr>
+					<td><label for="alphabetsPattern">Alphabets pattern</label></td>
+					<td><input id="alphabetsPattern" value="a-z"/></td>
+				</tr>
+				<tr>
+					<td><label for="digitsPattern">Digits pattern</label></td>
+					<td><input id="digitsPattern" value="0-9"/></td>
+				</tr>
+				<tr>
+					<td><label for="flag">Flag</label></td>
+					<td><input id="flag" value="gi" placeholder="gi"/></td>
+				</tr>	
+				<tr>
+					<td><label for="joinSeparator">Join separator</label></td>
+					<td><input id="joinSeparator" value=" "/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="splitJoinOutput">Split & Join</label></td>
+					<td><div id="splitJoinOutput"></div></td>
+				</tr>	
+			</table>
+		</div>
+		<div id="resultSet" align="center"> </div>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	textStringElement = document.getElementById("textString");
+			
+			const 	specialCharactersPatternElement = document.getElementById("specialCharactersPattern");
+			const 	alphabetsPatternElement = document.getElementById("alphabetsPattern");
+			const 	digitsPatternElement = document.getElementById("digitsPattern");
+			
+			const 	flagElement = document.getElementById("flag");
+						
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	joinSeparatorElement = document.getElementById("joinSeparator");
+			
+			const	splitJoinOutputElement = document.getElementById("splitJoinOutput");
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var textStringParam = urlParams.get("textString");
+					if (textStringParam)
+					{
+						textStringElement.value = textStringParam;
+					}
+				
+					var specialCharactersPatternParam = urlParams.get("specialCharactersPattern");
+					if (specialCharactersPatternParam)
+					{
+						specialCharactersPatternElement.value = specialCharactersPatternParam;
+					}
+
+					var alphabetsPatternParam = urlParams.get("alphabetsPattern");
+					if (alphabetsPatternParam)
+					{
+						alphabetsPatternElement.value = alphabetsPatternParam;
+					}
+
+					var digitsPatternParam = urlParams.get("digitsPattern");
+					if (digitsPatternParam)
+					{
+						digitsPatternElement.value = digitsPatternParam;
+					}
+				
+					var flagParam = urlParams.get("flag");
+					if (flagParam)
+					{
+						flagElement.value = flagParam;
+					}
+
+					var joinSeparatorParam = urlParams.get("joinSeparator");
+					if (joinSeparatorParam)
+					{
+						joinSeparatorElement.value = joinSeparatorParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				var regexp;
+				var tempString = textStringElement.value;
+				
+				regexp = new RegExp
+				(
+					`[${specialCharactersPatternElement.value}]`,
+					flagElement.value
+				);
+				tempString = tempString.split(regexp).join(joinSeparatorElement.value);
+
+				regexp = new RegExp
+				(
+					`[${alphabetsPatternElement.value}]`,
+					flagElement.value
+				);
+				tempString = tempString.split(regexp).join(joinSeparatorElement.value);
+
+				regexp = new RegExp
+				(
+					`[${digitsPatternElement.value}]`,
+					flagElement.value
+				);
+				tempString = tempString.split(regexp).join(joinSeparatorElement.value);
+				
+				splitJoinOutputElement.innerHTML = tempString;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>
