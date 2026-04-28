@@ -3760,6 +3760,42 @@ Biblical generation - 40 Biblical years
     hiswordid="168404"
     url="sfbay.craigslist.org/eby/cpg/d/emeryville-short-term-position-for/7909755964.html"}
 
+### 2026-04-27T16:01:00 WordEngineering query {#WordEngineeringQuery dated="2026-04-27T16:01:00"}
+
+1.  WordEngineering query - database\
+    Structured Query Language (SQL) specification parts include the
+    select column list, where filter restrictions, and order by sort.
+    1.  Select column list: There is no universal standard for arranging
+        the user-interface (UI) column names. The author displays the
+        name of each person, title, organization name, and contact
+        details.
+    2.  Filter restriction: A user may choose to return a large data
+        set, or minimal data set. For example, contacts are query-able
+        by their full names or their partial names --- first name, other
+        name, or last name. When a user knows the full name, this is the
+        advised query filter. The last name is preferred over the first
+        name since it is more cultural and regional specific, and it
+        should return a lesser dataset. The first name is traditionally
+        Anglo-Saxon, and it is probably a shortened version of their
+        birth name. The author does not pre-select options.
+    3.  Order by sort: Sorting may be in either ascending or descending
+        order. It is achievable either on the server-side, database via
+        SQL, or the client-side, user-interface (UI) via JavaScript. The
+        limitation of the current implementation is to sort numbers by
+        ASCII digits, and not quantity, since the author does not
+        specialize in each display by customizing datatype distinctions.
+2.  WordEngineering query - client\
+    Technology include Document Object Model (DOM), XSL/XSLT, XPath,
+    XQuery.
+    1.  Query arguments are passable to each client user-interface (UI)
+        via hyperlinks or browser-specific address lines. Each form may
+        also provide query options. The author makes all effort to
+        provide reasonable defaults.
+    2.  Navigation: The ID attribute provides a document-wide unique
+        identifier for an element. 2026-04-27T17:43:00 The author
+        conforms by the Pascal notation.
+    3.  2026-04-27T18:19:00 Find is useful.
+
 ### 2026-04-15T05:43:00 [Feature highlight its strength and weakness?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Feature%20highlight%20its%20strength%20and%20weakness%3F){dated="2026-04-15T05:43:00" hiswordid="170142"} {#FeatureHighlightItsStrengthAndWeakness dated="2026-04-15T05:43:00" hiswordid="170142"}
 
 Passover: 2026-04-02. 2027-04-22.\
@@ -6365,7 +6401,8 @@ The author is linking words spoken to related verses and dictionaries.
 
 (Allen G. Taylor, 2019).
 
-> ### Software Engineer versus (VS) Database Administrator {#SoftwareEngineerVersusDatabaseAdministrator dated="2024-04-21T02:59:00" commentary="Mummy Taruben Patel"}
+> ### Software Engineer versus (VS) Database Administrator {#SoftwareEngineerVersusDatabaseAdministrator dated="2024-04-21T02:59:00" commentary="Mummy Taruben Patel. 2026-04-27T10:26:00 For the 2 years after the end of my consulting contract with Westpac in December 1997, from 1998 until 2000, I was not growing technically. I was working as a SQL Server Database Administrator (DBA), and not as a Software Engineer.
+>  How long does it take to learn operations work, and can we automate this type of work?" contactid="10750"}
 >
 >   Keyword                                                                                               Software Engineer                                                                                                                                                             Database Administrator
 >   ----------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
