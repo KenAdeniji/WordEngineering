@@ -10,8 +10,12 @@
 	Marriage pre-condition
 		Prior to resurrection.
 		Matthew 22:30 ... “For in the resurrection they neither marry, nor are given in marriage, but are as the angels of God in heaven.” King James Version (KJV).
-	2026-04-29T16:06:00 http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+	2026-04-29T16:06:00
+		Man.correct()
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter	
 	2026-04-29T16:34:00 new Man("Joseph", "Jacob", "Rachel", "Dreamer", null), Hakeem Olajuwon, the Dream of all basketball coaches
+	2026-04-29T16:52:00	http://mozilladatacollective.com/datasets?utm_source=mdn&utm_medium=paid&utm_campaign=open-data
 */
 class Man {
 	constructor(named, father, mother, titled, vocation) {
