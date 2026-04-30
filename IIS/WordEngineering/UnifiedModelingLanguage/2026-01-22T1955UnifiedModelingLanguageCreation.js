@@ -23,6 +23,8 @@
 		2026-04-30 12:26:11.033
 			Whoever practice sin is a slave of sin... the slave doesn't reside in the house, forever.	
 				John 8:34-35, Matthew 24:15-16, Mark 13:14, Luke 21:20-21
+	2026-04-30T15:21:00...2026-04-30T15:39:00	onlySon boolean type?
+		http://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
 */
 class Man {
 	constructor(named, father, mother, titled, vocation) {
@@ -51,8 +53,14 @@ class Man {
 				break;
 		}	
 		return scriptureReference;
+	}
+	*/	
+	OnlySon() {
+		return !(this.onlySon == null);
 	}	
-	*/
+	YoungestSon() {
+		return !(this.youngestSon == null);
+	}	
 }
 
 class Woman extends Man {
@@ -69,6 +77,7 @@ this.men = [
 	new Man("Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
 	new Man("Enosh", "Seth", null, null, "Call on the name of God"),
 	new Man("Abraham", "Terah", null, "Father of many nations", null),
+	new Man("Isaac", "Abraham", "Sarah", "God has made me laugh", null),
 	new Man("Jacob", "Isaac", "Rebecca", "Israel - Prince with God", null),
 	new Man("Joseph", "Jacob", "Rachel", "Dreamer", null),
 	new Man("David", "Jesse", null, "A man after God's own heart", "A man of war"),
@@ -98,9 +107,35 @@ this.men.find((element) => element.named === "Joseph")["correct"] = "Genesis 50:
 this.men.find((element) => element.named === "Adam")["outOfHim"] = "Genesis 2:23";
 
 this.men.find((element) => element.named === "Abraham")["heir"] = "Genesis 15:4";
-this.men.find((element) => element.named === "Abraham")["seed"] = "Genesis 21:12";
-this.men.find((element) => element.named === "Abraham")["onlySon"] = "Genesis 22:2";
+
+this.men.find((element) => element.named === "Isaac")["seed"] = "Genesis 21:12";
+this.men.find((element) => element.named === "Isaac")["onlySon"] = "Genesis 22:2";
 
 this.men.find((element) => element.named === "David")["seed"] = "2 Samuel 7:12";
+this.men.find((element) => element.named === "David")["youngestSon"] = "1 Samuel 16:11";
 
 console.log(this.men);
+
+console.log
+(
+	"Isaac.(OnlySon)",
+	this.men.find
+	(
+		(element) => element.named === "Isaac"
+	).OnlySon(),
+	"Jacob.(OnlySon)",
+	this.men.find
+	(
+		(element) => element.named === "Jacob"
+	).OnlySon(),
+	"Isaac.(YoungestSon)",
+	this.men.find
+	(
+		(element) => element.named === "Isaac"
+	).YoungestSon(),
+	"David.(YoungestSon)",
+	this.men.find
+	(
+		(element) => element.named === "David"
+	).YoungestSon(),
+);
