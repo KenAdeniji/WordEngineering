@@ -99,6 +99,7 @@ this.men.find((element) => element.named === "Adam")["outOfHim"] = "Genesis 2:23
 
 this.men.find((element) => element.named === "Abraham")["heir"] = "Genesis 15:4";
 this.men.find((element) => element.named === "Abraham")["seed"] = "Genesis 21:12";
+this.men.find((element) => element.named === "Abraham")["onlySon"] = "Genesis 22:2";
 
 this.men.find((element) => element.named === "David")["seed"] = "2 Samuel 7:12";
 
