@@ -17,6 +17,9 @@
 	2026-04-29T16:34:00 new Man("Joseph", "Jacob", "Rachel", "Dreamer", null), Hakeem Olajuwon, the Dream of all basketball coaches
 	2026-04-29T16:52:00	http://mozilladatacollective.com/datasets?utm_source=mdn&utm_medium=paid&utm_campaign=open-data
 	2026-04-29T17:11:00	http://docs.github.com/en/actions/tutorials/create-actions/create-a-javascript-action
+	2026-04-30T10:46:00
+		this.men.find((element) => element.named === "Jacob")["correct"] = "Genesis 48:19";
+		this.men.find((element) => element.named === "Joseph")["correct"] = "Genesis 50:20, Genesis 39:8-9";
 */
 class Man {
 	constructor(named, father, mother, titled, vocation) {
@@ -31,6 +34,7 @@ class Man {
 	marriage() {}
 	knew() {}
 	sacrifice() {}
+	/*
 	correct() {
 		var scriptureReference = "";
 		switch(this.named)
@@ -44,6 +48,7 @@ class Man {
 		}	
 		return scriptureReference;
 	}	
+	*/
 }
 
 class Woman extends Man {
@@ -63,22 +68,7 @@ this.men = [
 	new Man("Joseph", "Jacob", "Rachel", "Dreamer", null),
 ];
 
-console.log
-(
-	this.men.find
-	(
-		(element) => element.named === "Joseph"
-	).correct()
-);
-
-console.log
-(
-	this.men.find
-	(
-		(element) => element.named === "Jacob"
-	).correct()
-);
-
+/*
 console.log
 (
 	"Joseph.(correct)",
@@ -92,4 +82,9 @@ console.log
 		(element) => element.named === "Jacob"
 	).correct()
 );
+*/
 
+this.men.find((element) => element.named === "Jacob")["correct"] = "Genesis 48:19";
+this.men.find((element) => element.named === "Joseph")["correct"] = "Genesis 50:20, Genesis 39:8-9";
+
+console.log(this.men);
