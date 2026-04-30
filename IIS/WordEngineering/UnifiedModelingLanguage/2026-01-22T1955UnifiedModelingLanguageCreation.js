@@ -68,7 +68,7 @@ this.men = [
 	new Man("Abel", "Adam", "Eve", null, "Animal breeder"),
 	new Man("Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
 	new Man("Enosh", "Seth", null, null, "Call on the name of God"),
-	new Man("Abraham", "Terah", null, null, "Father of many nations"),
+	new Man("Abraham", "Terah", null, "Father of many nations", null),
 	new Man("Jacob", "Isaac", "Rebecca", "Israel - Prince with God", null),
 	new Man("Joseph", "Jacob", "Rachel", "Dreamer", null),
 	new Man("David", "Jesse", null, "A man after God's own heart", "A man of war"),
