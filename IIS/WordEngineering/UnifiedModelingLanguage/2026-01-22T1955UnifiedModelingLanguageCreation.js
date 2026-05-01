@@ -25,9 +25,33 @@
 				John 8:34-35, Matthew 24:15-16, Mark 13:14, Luke 21:20-21
 	2026-04-30T15:21:00...2026-04-30T15:39:00	onlySon boolean type?
 		http://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
+	2026-04-30T16:39:28
+		Have I not chosen you twelve... one will betray me.	
+		John 6:70
+	2026-04-30T18:16:00
+		OnlySon() {
+			return !(this.onlySon == null);
+		}	
+		YoungestSon() {
+			return !(this.youngestSon == null);
+		}	
+		versus (VS)
+		isOnlySon() {
+			return !(this.onlySon == null);
+		}	
+		isYoungestSon() {
+			return !(this.youngestSon == null);
+		}
+	2026-04-30T17:57:00...2026-04-30T19:03:00
+		this.men.find
+		(
+			(element) => element.named === "Judas Iscariot"
+		).betray != null,
+	2026-04-30T16:39:28	dated constructor parameter	
 */
 class Man {
-	constructor(named, father, mother, titled, vocation) {
+	constructor(dated, named, father, mother, titled, vocation) {
+		this.dated = dated;
 		this.named = named;
 		this.father = father;
 		this.mother = mother;
@@ -55,10 +79,10 @@ class Man {
 		return scriptureReference;
 	}
 	*/	
-	OnlySon() {
+	isOnlySon() {
 		return !(this.onlySon == null);
 	}	
-	YoungestSon() {
+	isYoungestSon() {
 		return !(this.youngestSon == null);
 	}	
 }
@@ -70,17 +94,18 @@ class Woman extends Man {
 }
 
 this.men = [
-	new Man("Adam", "God", null, "First man", "Gardener"),
-	new Woman("Eve", null, null, "Mother of all the living", "Helper"),
-	new Man("Cain", "Adam", "Eve", "Possession", "Tiller of the ground"),
-	new Man("Abel", "Adam", "Eve", null, "Animal breeder"),
-	new Man("Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
-	new Man("Enosh", "Seth", null, null, "Call on the name of God"),
-	new Man("Abraham", "Terah", null, "Father of many nations", null),
-	new Man("Isaac", "Abraham", "Sarah", "God has made me laugh", null),
-	new Man("Jacob", "Isaac", "Rebecca", "Israel - Prince with God", null),
-	new Man("Joseph", "Jacob", "Rachel", "Dreamer", null),
-	new Man("David", "Jesse", null, "A man after God's own heart", "A man of war"),
+	new Man(new Date("2026-01-22T00:00:00"), "Adam", "God", null, "First man", "Gardener"),
+	new Woman(new Date("2026-01-22T00:00:00"), "Eve", null, null, "Mother of all the living", "Helper"),
+	new Man(new Date("2026-01-22T00:00:00"), "Cain", "Adam", "Eve", "Possession", "Tiller of the ground"),
+	new Man(new Date("2026-01-22T00:00:00"), "Abel", "Adam", "Eve", null, "Animal breeder"),
+	new Man(new Date("2026-01-22T00:00:00"), "Seth", "Adam", "Eve", "Substitute", "Call on the name of God"),
+	new Man(new Date("2026-01-22T00:00:00"), "Enosh", "Seth", null, null, "Call on the name of God"),
+	new Man(new Date("2026-04-30T00:00:00"), "Abraham", "Terah", null, "Father of many nations", null),
+	new Man(new Date("2026-04-30T00:00:00"), "Isaac", "Abraham", "Sarah", "God has made me laugh", null),
+	new Man(new Date("2026-04-30T00:00:00"), "Jacob", "Isaac", "Rebecca", "Israel - Prince with God", null),
+	new Man(new Date("2026-04-30T00:00:00"), "Joseph", "Jacob", "Rachel", "Dreamer", null),
+	new Man(new Date("2026-04-30T00:00:00"), "David", "Jesse", null, "A man after God's own heart", "A man of war"),
+	new Man(new Date("2026-04-30T16:39:28"), "Judas Iscariot", null, null, "The betrayal", "Tax collector"),	
 ];
 
 /*
@@ -114,28 +139,35 @@ this.men.find((element) => element.named === "Isaac")["onlySon"] = "Genesis 22:2
 this.men.find((element) => element.named === "David")["seed"] = "2 Samuel 7:12";
 this.men.find((element) => element.named === "David")["youngestSon"] = "1 Samuel 16:11";
 
+this.men.find((element) => element.named === "Judas Iscariot")["betray"] = "John 6:70";
+
 console.log(this.men);
 
 console.log
 (
-	"Isaac.(OnlySon)",
+	"Isaac.isOnlySon()",
 	this.men.find
 	(
 		(element) => element.named === "Isaac"
-	).OnlySon(),
-	"Jacob.(OnlySon)",
+	).isOnlySon(),
+	"Jacob.isOnlySon()",
 	this.men.find
 	(
 		(element) => element.named === "Jacob"
-	).OnlySon(),
-	"Isaac.(YoungestSon)",
+	).isOnlySon(),
+	"Isaac.isYoungestSon()",
 	this.men.find
 	(
 		(element) => element.named === "Isaac"
-	).YoungestSon(),
-	"David.(YoungestSon)",
+	).isYoungestSon(),
+	"David.isYoungestSon()",
 	this.men.find
 	(
 		(element) => element.named === "David"
-	).YoungestSon(),
+	).isYoungestSon(),
+	"Judas Iscariot.betray != null",
+	this.men.find
+	(
+		(element) => element.named === "Judas Iscariot"
+	).betray != null,
 );
