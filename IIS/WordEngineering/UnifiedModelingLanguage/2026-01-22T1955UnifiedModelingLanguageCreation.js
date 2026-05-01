@@ -54,6 +54,7 @@
 			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 		2026-05-01T02:36:00 filter allows you to do count... 
 			statistics length.
+			2026-05-01T09:25:00 http://stackoverflow.com/questions/332422/get-the-name-of-an-objects-type	
 */
 class Man {
 	constructor(dated, named, father, mother, titled, vocation) {
@@ -176,4 +177,20 @@ console.log
 	(
 		(element) => element.named === "Judas Iscariot"
 	).betray != null,
+);
+
+console.log
+(
+	"this.men.length",
+	this.men.length,
+	"Woman.length",
+	this.men.filter
+	(
+		(element) => element.constructor.name === "Woman"
+	).length,
+	"Man.length",
+	this.men.filter
+	(
+		(element) => element.constructor.name === "Man"
+	).length,
 );
