@@ -13,7 +13,7 @@
 	2026-04-29T16:06:00
 		Man.correct()
 			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter	
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 	2026-04-29T16:34:00 new Man("Joseph", "Jacob", "Rachel", "Dreamer", null), Hakeem Olajuwon, the Dream of all basketball coaches
 	2026-04-29T16:52:00	http://mozilladatacollective.com/datasets?utm_source=mdn&utm_medium=paid&utm_campaign=open-data
 	2026-04-29T17:11:00	http://docs.github.com/en/actions/tutorials/create-actions/create-a-javascript-action
@@ -48,6 +48,12 @@
 			(element) => element.named === "Judas Iscariot"
 		).betray != null,
 	2026-04-30T16:39:28	dated constructor parameter	
+	2026-04-29T16:06:00
+		Man.correct()
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+			http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+		2026-05-01T02:36:00 filter allows you to do count... 
+			statistics length.
 */
 class Man {
 	constructor(dated, named, father, mother, titled, vocation) {
