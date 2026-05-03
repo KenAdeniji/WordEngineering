@@ -150,7 +150,10 @@ is for determining the upper limit. The SQL statement
 
     ALTER TABLE Bible..Scripture WITH CHECK ADD CONSTRAINT CK_Scripture_ChapterID_Range CHECK  (([ChapterID]>=(1) AND [ChapterID]<=(150)))
 
-will set the range restriction.
+will set the range restriction.\
+[There are individual chapters for each
+book.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=There%20are%20individual%20chapters%20for%20each%20book.){dated="2026-04-28T14:49:00"
+hiswordid="170302"}
 
 </div>
 
@@ -233,7 +236,7 @@ the book title and determine the corresponding BookID.
 
 </div>
 
-##### The Scripture Table\'s ScriptureReference Column {#ScriptureTableScriptureReferenceColumn}
+##### The Scripture View\'s ScriptureReference Column {#Scripture_ViewScriptureReferenceColumn}
 
 <div>
 
@@ -3760,6 +3763,12 @@ Biblical generation - 40 Biblical years
     hiswordid="168404"
     url="sfbay.craigslist.org/eby/cpg/d/emeryville-short-term-position-for/7909755964.html"}
 
+### 2026-05-02T21:30:00 [Could I re-write this\... biblical?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=To%20know%20at%20the%20start...%20what%20I%20Am%3F){dated="2026-05-02T21:30:00" hiswordid="170324"} {#CouldIRewriteThisBiblical dated="2026-05-02T21:30:00"}
+
+1.  Power of the Holy Spirit ( [2 Peter
+    1:21](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Peter%201:21)
+    )
+
 ### 2026-04-27T16:01:00 WordEngineering query {#WordEngineeringQuery dated="2026-04-27T16:01:00"}
 
 1.  WordEngineering query - database\
@@ -3808,6 +3817,16 @@ Biblical generation - 40 Biblical years
     hiswordid="170296" contactid="2457"} ( [Genesis 15:5, Revelation
     16:12](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2015:5,%20Revelation%2016:12){dated="2026-04-27T20:22:00"
     hiswordid="170296" contactid="2457"} ).
+
+### 2026-04-28T08:53:00 [How you are known\... by them?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=How%20you%20are%20known...%20by%20them%3F){dated="2026-04-28T08:53:00" hiswordid="170301"} {#HowYouAreKnownByThem dated="2026-04-28T08:53:00"}
+
+1.  The titles of God, and their translations ( [Genesis
+    16:13](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Genesis%2016:13){dated="2026-04-27T08:53:00"
+    contactid="1000"} ).
+2.  The identification of His creation. For signs, after death,
+    substitute, beginning and end ( [Hebrews
+    9:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Hebrews%209:17){dated="2026-04-27T09:58:00"}
+    ).
 
 ### 2026-04-15T05:43:00 [Feature highlight its strength and weakness?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Feature%20highlight%20its%20strength%20and%20weakness%3F){dated="2026-04-15T05:43:00" hiswordid="170142"} {#FeatureHighlightItsStrengthAndWeakness dated="2026-04-15T05:43:00" hiswordid="170142"}
 
@@ -4169,6 +4188,14 @@ url="politico.com/news/2021/04/03/biden-migration-border-479000"} ).
 >         2:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Numbers%2014:25,%20Deuteronomy%205,%20Acts%2012,%20Acts%202:17){dated="2026-04-03T14:26:00"
 >         contactid="18370" hiswordid="169014"
 >         url="Aileen.A.Nielsen@gmail.com"}
+>
+> #### 2026-05-03T15:49:00 Handling Missing Data {#HandlingMissingData}
+>
+> The author started receiving word from God shortly prior to his 21st
+> birthday on 1988-10-15. But, the author did not start writing a blog
+> until at about 2000-10-05. The author started using a database for
+> data entry, and the author commenced AlphabetSequence at about
+> 2002-12-03.
 
 (Aileen A. Nielsen, 2020).
 
@@ -13020,14 +13047,16 @@ God -> Cain: Admonish
 @enduml
 ```
 
-<figure>
-<img
-src="https://kenadeniji.github.io/Github/2026-01-25T2155UnifiedModelingLanguage_-_SequenceDiagram_-_CainAndAbel_-_Genesis4.png"
-alt="2026-01-22T2234UnifiedModelingLanguage_-_ClassDiagram_-_Creation.png" />
-<figcaption>2026-01-25T2155UnifiedModelingLanguage_-_SequenceDiagram_-_CainAndAbel_-_Genesis4.png</figcaption>
-</figure>
+![2026-01-25T2155UnifiedModelingLanguage\_-\_SequenceDiagram\_-\_CainAndAbel\_-\_Genesis4.png](https://kenadeniji.github.io/Github/2026-01-25T2155UnifiedModelingLanguage_-_SequenceDiagram_-_CainAndAbel_-_Genesis4.png)
 
 ------------------------------------------------------------------------
+
+``` {dated="2026-05-01T2155" url="planttext.com"}
+@startuml
+Title Sequence Diagram - Creation_Genesis1
+God -> Heaven_Earth: SaidLetThereBeLight_DivideLightFromDarkness_CallLightDay_CallDarknessNight_EveningMorningFirstDay
+@enduml
+```
 
 <figure>
 <img
