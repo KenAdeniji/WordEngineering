@@ -47,19 +47,14 @@
 
 			iframe
 			{ 
-				height: 20vh;
+				height: 50vh;
 				width: 95vw;
 			}
 
 			#resultSet
 			{ 
-				height: 40vh;
+				height: 5vh;
 				width: 95vw;
-			}
-			
-			.off 
-			{
-				display: none;
 			}
 		</style>	
 	</head>
@@ -74,15 +69,20 @@
 								<input 
 									id="sourceAddress"
 									type="url"
-									style="width: 55vw;"
 									value="https://kenadeniji.github.io/Github/2015-10-23DoctoralDissertation.html"
+									style="width: 55vw;"
 								/>
 							</td>
 						</tr>
 						<tr>
 							<td><label for="sourceSelector">Source Selector:</label></td>
 							<td>
-								<textarea id="sourceSelector">h1, h2, h3, h4, h5, h6, table, ol, ul, li</textarea>
+								<input 
+									id="sourceSelector"
+									type="text"
+									value="h1, h2, h3, h4, h5, h6, table, ol, ul, li"
+									style="width: 55vw;"
+								/>
 							</td>
 						</tr>
 						<tr>
@@ -94,7 +94,7 @@
 						<tr>
 							<td colspan="2" align="center">
 								<input type="submit" id="submitQuery">
-								<button type="button" id="toggleDisplay">Toggle display</button>
+								<button type="button" id="toggleDisplay">Toggle Display</button>
 							</td>
 						</tr>
 					</table>
