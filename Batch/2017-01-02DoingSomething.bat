@@ -1204,4 +1204,19 @@ I don't comment on CraigsList.org... everybody sees the fraud.
 I don't comment on microsoft hotmail.com... everybody sees spam e-mail... microsoft hourglass... windows wait cursor.
 
 20:46...20:50 ddl/dml errror. 20:52...20:54 ddl/dml errror. 2026-05-01T21:11:00 Brazil won the world cup, thrice, and they kept the Jules Rimet cup... left, north, nostril, block.
+
+http://stackoverflow.com/questions/8454079/toggle-displaynone-style-with-javascript
+
+
+2026-05-03T17:42:00
+
+document.querySelector('.my-btn').addEventListener('click', myFunction);
+
+function myFunction() {
+  document.querySelector('.subforums').classList.toggle("off");
+}
+
+.off {
+  display: none;
+}
 :Exit
