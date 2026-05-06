@@ -4,6 +4,7 @@
 		2026-05-06T10:28:00 Created.
 		2026-05-06T11:20:00	UnorderedList flag.
 		2026-05-06T11:38:00	Debug...
+		2026-05-06T11:54:00	http://www.w3schools.com/jsref/prop_style_liststyletype.asp
 	-->	
 	<head>
 		<title>Document Object Model (DOM) Convert OrderedList Type</title>
@@ -197,20 +198,28 @@
 
 				var currentElement;
 
-				var styleDisplayElements = frameHTMLDocument.querySelectorAll
+				resultSetElement.innerHTML = "listNumberingElements.length";
+				
+				var listNumberingElements = frameHTMLDocument.querySelectorAll
 				(
-					"ol" + 
-					orderedListNumberingTypeElement.checked ? ", ul" : ""
+					"ol"
+					//+ orderedListNumberingTypeElement.checked ? ", ul" : ""
 				);
+				
+				resultSetElement.innerHTML = listNumberingElements.length;
+
+				console.log(listNumberingElements.length);
 				
 				for 
 				(
-					var elementIndex = 0, elementCount = styleDisplayElements.length;
+					var elementIndex = 0, elementCount = listNumberingElements.length;
 					elementIndex < elementCount;
 					elementIndex++
 				)
 				{
-					var currentElement = styleDisplayElements[elementIndex];
+					console.log(elementIndex);		
+					var currentElement = listNumberingElements[elementIndex];
+					//currentElement.style.listStyleType = "decimal";
 					currentElement.type = orderedListNumberingType.value;
 				}
 			}
