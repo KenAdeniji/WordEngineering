@@ -683,3 +683,5 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-03T2234Teresa Keng
 git add "IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-05-06T1028DocumentObjectModelDOMConvertOrderedlistNumberingType.html"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-08T1811Makan.Talayeh@acgov.org_-_I will like a system, that work for me... not necessarily people.txt"
+
+git add IIS/WordEngineering/Resume/2026-05-09T0039AlphabetSequence.txt
