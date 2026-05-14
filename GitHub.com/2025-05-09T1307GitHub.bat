@@ -695,3 +695,6 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-11SenatorElizabeth
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-04-16T1151Walgreens President Tracey D Brown President John C Standley 02366 3860 Decoto Road. Fremont California 94555 510 793 9798 273 8814 0072.pdf"
 
 git add IIS/WordEngineering/Resume/2026-05-12Walgreens_-_digital-passport_-_KenAdeniji.jpg
+
+git add	IIS/WordEngineering/2018-05-03Correspondence/2026-04-13T1122ThereMustBeACounterpart_-_Tables_HisWord_Remember_APass_ActToGod.txt
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-13T0607UncleAdemolaAdeniji_-_What does the word mean... in this usage.txt"
