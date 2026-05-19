@@ -288,6 +288,24 @@ public class ScriptureReferenceWebService : System.Web.Services.WebService
 
    	[WebMethod]
 	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+	public String VerseCountQuery(String scriptureReference)
+    {
+		String[] scriptureReferenceSubset = null;
+		DataSet result = null;
+		ScriptureReferenceHelper.Process
+		(
+				scriptureReference,
+			ref	scriptureReferenceSubset,
+			ref result,
+				ScriptureReferenceHelper.VerseCountQueryFormat,
+				"KingJamesVersion"
+		);
+		string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+		return json;
+    }
+
+   	[WebMethod]
+	[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 	public String WhatChildrenOurGroom
 	(
 		String 	scriptureReference,

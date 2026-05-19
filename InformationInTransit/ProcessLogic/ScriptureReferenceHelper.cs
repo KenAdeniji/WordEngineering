@@ -110,7 +110,8 @@ namespace InformationInTransit.ProcessLogic
 
 			String dynamicSql = String.Format
 			(
-				QueryFormat,
+				//QueryFormat,
+				ScriptureReferenceHelper.BibleSequenceQueryFormat,
 				"{0}", 
 				bibleVersion, 
 				bibleGroup
@@ -1260,8 +1261,9 @@ namespace InformationInTransit.ProcessLogic
 		public const string BillInDateQueryFormat = "SELECT * FROM WordEngineering..BillInDate WHERE {0} ORDER BY BookID, ChapterID, VerseID, BillInDateID;";
 		public const string ExactQueryFormat = "SELECT ScriptureReference, VerseText FROM Bible..Scripture_View WHERE {0} ORDER BY bookID, chapterID, verseID;";
 		public const string FullPositionQueryFormat = "SELECT BookID, ChapterID, VerseID, VerseText, VerseIDSequence, ChapterIDSequence FROM Bible..Scripture_View WHERE {0} ORDER BY BookID, ChapterID, VerseID;";
-		public const string FullPositionQueryFormatScriptureReferenceScalarSelect = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE {0} = {1}";
-		public const string IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongScalarSelect = "SELECT TOP 1 {2} AS VerseText FROM Bible..Scripture_View WHERE {0} = {1}";
+		public const string FullPositionQueryFormatScriptureReferenceScalarSelect = "SELECT TOP 1 ScriptureReference FROM Bible..Scripture_View WHERE {0} = {1};";
+		public const string IKeepOnFindingWhereIAmThatIMayChooseWhereIBelongScalarSelect = "SELECT TOP 1 {2} AS VerseText FROM Bible..Scripture_View WHERE {0} = {1};";
+		public const string VerseCountQueryFormat = "SELECT COUNT(*) VerseCount FROM Bible..Scripture_View WHERE {0}";
 
 		//2025-12-13T08:19:00
 		public const string WordPersonalizedQueryFormat = @"

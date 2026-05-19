@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-05-19T10:11:00...2026-05-19T10:23:00 Created.
+			2026-05-19T11:33:00 I first thought, I will count DataTable rows in the C# source file (.cs), or web services (.asmx), or .html, or JavaScript (.js) but .sql suffice.
+				2026-05-19T11:33:00 And, is most... appropriate.
+		-->
+		<title>2026-05-16 They knew... tribute in war. Scripture reference verse statistics. Select union row count.html</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2026-05-16They knew... tribute in war. Scripture reference verse statistics. Select union row count.html"/>
+		<meta name="keywords" content="Scripture reference verse statistics"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			  background-color: #00539F;
+			}
+			
+			textarea
+			{ 
+				height: 20vh;
+				width: 95vw;
+			}
+
+			#resultSet
+			{ 
+				height: 70vh;
+				width: 95vw;
+			}
+		</style>	
+
+	</head>
+	<body>
+		<div align="center">
+			<textarea id="scriptureReference" autofocus>Genesis 29:20, Daniel 5</textarea>
+			<br>
+			<input type="submit" id="submitQuery">
+			<br>
+			<div id="resultSet">
+		</div>
+		
+		<script>
+			var isPostBack = false;
+			
+			var	scriptureReferenceElement = document.getElementById("scriptureReference");
+			var submitQueryElement = document.getElementById("submitQuery");
+			var	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var scriptureReferenceValue = urlParams.get("sourceAddress");
+					
+					if (scriptureReferenceValue)
+					{
+						scriptureReferenceElement.value = scriptureReferenceValue;
+					}	
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var request = {};
+
+				request["scriptureReference"] = scriptureReferenceElement.value;
+
+				var requestJson = JSON.stringify(request);
+				
+				const PostData = {
+					method: "POST",
+					headers: {
+						"Accept": "application/json",
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					dataType: "json",
+					credentials: "include"
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/VerseCountQuery";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						resultSetElement.innerHTML = responseJSON.d;		
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>
+	</body>
+</html>

@@ -700,3 +700,5 @@ git add	IIS/WordEngineering/2018-05-03Correspondence/2026-04-13T1122ThereMustBeA
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-13T0607UncleAdemolaAdeniji_-_What does the word mean... in this usage.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-15T0739AmmaronPatane_-_Ammaron@planet.com_-_Utah_Polynesian.txt"
+
+git add "IIS/WordEngineering/ScriptureReference/2026-05-16They knew... tribute in war. Scripture reference verse statistics. Select union row count.html"
