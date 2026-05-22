@@ -73,3 +73,117 @@ This is the color of the Israeli and Argentine flag and jersey.
 The Internet on my personal computer (PC) is not working, so I am using a personal computer (PC) in the north-east.
 
 2026-05-22T09:40:00 I telephoned (510) 790-0491, and I spoke with Javier.
+
+Undeliverable: Fw: 2026-05-21T18:00:00 I saw Tony, Head Clerk of Albertsons Lucky, walking northward outside at 18:00 by the side of Albertsons Lucky, Charter Square. At 18:01, I greeted Tony, but he did not answer back.  Tony, Head Clerk of Albertsons...
+postmaster@outlook.com
+​You​
+
+Delivery has failed to these recipients or groups:
+
+0712mgr@savemart.com
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+customersupport@savemart.com
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+PoliceChief@Fremont.gov
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+pdwebmaster@fremont.gov
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+TeresaKengSJSU@gmail.com
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+Maureen.Orphanos@acgov.org
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+Makan.Talayeh@acgov.org
+The email system had a problem processing this message. It won't try to deliver this message again.
+
+
+
+
+
+
+
+Diagnostic information for administrators:
+
+Generating server: LVWPR19MB997445.namprd19.prod.outlook.com
+
+IMCEAMAILTO-0712mgr+40savemart+2Ecom@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+IMCEAMAILTO-customersupport+40savemart+2Ecom@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+IMCEAMAILTO-PoliceChief+40Fremont+2Egov@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+pdwebmaster@fremont.gov
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+IMCEAMAILTO-TeresaKengSJSU+40gmail+2Ecom@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+IMCEAMAILTO-Maureen+2EOrphanos+40acgov+2Eorg@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+IMCEAMAILTO-Makan+2ETalayeh+40acgov+2Eorg@namprd19.prod.outlook.com
+Remote server returned '554 5.6.0 < #5.6.0 smtp;550 5.6.0 CAT.InvalidContent.Exception: DataSourceOperationException, proxyAddress: prefix not supported - MAILTO; cannot handle content of message with InternalId 4672924430123, InternetMessageId <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>.>'
+
+Original message headers:
+
+Received: from BN8PR19MB2547.namprd19.prod.outlook.com (2603:10b6:408:9d::26)
+ by LVWPR19MB997445.namprd19.prod.outlook.com (2603:10b6:408:3bf::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.48.17; Fri, 22 May
+ 2026 16:32:04 +0000
+Received: from BN8PR19MB2547.namprd19.prod.outlook.com
+ ([fe80::b073:7a:d60f:58ff]) by BN8PR19MB2547.namprd19.prod.outlook.com
+ ([fe80::b073:7a:d60f:58ff%6]) with mapi id 15.21.0025.020; Fri, 22 May 2026
+ 16:32:03 +0000
+Content-Type: application/ms-tnef; name="winmail.dat"
+Content-Transfer-Encoding: base64
+From: Ken Adeniji <kenadeniji@hotmail.com>
+To: "0712mgr@savemart.com"
+	<IMCEAMAILTO-0712mgr+40savemart+2Ecom@namprd19.prod.outlook.com>,
+	"customersupport@savemart.com"
+	<IMCEAMAILTO-customersupport+40savemart+2Ecom@namprd19.prod.outlook.com>,
+	"PoliceChief@Fremont.gov"
+	<IMCEAMAILTO-PoliceChief+40Fremont+2Egov@namprd19.prod.outlook.com>,
+	"pdwebmaster@fremont.gov" <pdwebmaster@fremont.gov>,
+	"TeresaKengSJSU@gmail.com"
+	<IMCEAMAILTO-TeresaKengSJSU+40gmail+2Ecom@namprd19.prod.outlook.com>,
+	"Maureen.Orphanos@acgov.org"
+	<IMCEAMAILTO-Maureen+2EOrphanos+40acgov+2Eorg@namprd19.prod.outlook.com>,
+	"Makan.Talayeh@acgov.org"
+	<IMCEAMAILTO-Makan+2ETalayeh+40acgov+2Eorg@namprd19.prod.outlook.com>
+Subject: =?iso-8859-1?Q?Fw:_2026-05-21T18:00:00_I_saw_Tony,_Head_Clerk_of_Albertso?=
+ =?iso-8859-1?Q?ns_Lucky,_walking_northward_outside_at_18:00_by_the_side_o?=
+ =?iso-8859-1?Q?f_Albertsons_Lucky,_Charter_Square._At_18:01,_I_greeted_To?=
+ =?iso-8859-1?Q?ny,_but_he_did_not_answer_back.=A0_Tony,_Head_Clerk_of_Alb?=
+ =?iso-8859-1?Q?ertsons_Luc...?=
+Thread-Topic: =?iso-8859-1?Q?2026-05-21T18:00:00_I_saw_Tony,_Head_Clerk_of_Albertsons_L?=
+ =?iso-8859-1?Q?ucky,_walking_northward_outside_at_18:00_by_the_side_of_Al?=
+ =?iso-8859-1?Q?bertsons_Lucky,_Charter_Square._At_18:01,_I_greeted_Tony,_?=
+ =?iso-8859-1?Q?but_he_did_not_answer_back.=A0_Tony,_Head_Clerk_of_Alberts?=
+ =?iso-8859-1?Q?ons_Luc...?=
+Thread-Index: AQHc6gf5zniJQCuH9Eqn9Vly8e7Q+bYaPL9X
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Fri, 22 May 2026 16:32:03 +0000
+Message-ID: <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>
+References: <BN8PR19MB2547F9F116EDC7D3AEA36406CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>
+ <98855158-db24-493e-90ec-3dc6a199d3db@LVWPR19MB997445.namprd19.prod.outlook.com>
+In-Reply-To: <98855158-db24-493e-90ec-3dc6a199d3db@LVWPR19MB997445.namprd19.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator: <BN8PR19MB25476897B39E7B235A437E96CB0F2@BN8PR19MB2547.namprd19.prod.outlook.com>
+msip_labels:
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN8PR19MB2547:EE_|LVWPR19MB997445:EE_
+Return-Path: kenadeniji@hotmail.com
+X-MS-Office365-Filtering-Correlation-Id: 53dc06af-56e3-43ca-2daf-08deb81fa805
+
