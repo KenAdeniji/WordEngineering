@@ -706,3 +706,4 @@ git add "IIS/WordEngineering/ScriptureReference/2026-05-16They knew... tribute i
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-21T1800Tony, Head Clerk of Albertsons Lucky said to Katie, I shut the door.txt"
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-21T1800Tony, Head Clerk of Albertsons Lucky said to Katie, I shut the door Archive.txt"
 
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-05-22T1427IanDevlin.com_-_blog_-_2013_-_02_-_html5_-_link.txt

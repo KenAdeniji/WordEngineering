@@ -1,0 +1,46 @@
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/2018-05-03Correspondence/2026-05-22T1427IanDevlin.com_-_blog_-_2013_-_02_-_html5_-_link.txt
+
+http://iandevlin.com/blog/2013/02/html5/link
+
+                        <li id="bibliographyIanDevlin" data-Dated="2026-05-22T14:02:00" data-Row_Number="25" data-Count="130">
+                              <cite>Link</cite>
+                              Ian Devlin (2013-02-23)
+                              W3C web page;
+                              Available from
+                              <a href="http://iandevlin.com/blog/2013/02/html5/link">http://www.iandevlin.com/blog/2013/02/html5/link</a>
+                        </li>
+
+                        <q cite="#bibliographyKoinoniaHouse">
+                        The
+                        <a href="http://en.wiktionary.org/wiki/terminus_a_quo">terminus a quo</a> 
+                        DatedFrom is when the prophecy begins,
+                        and it marks the the date of issue or establishing of the prophecy.
+                        
+                        The
+                        <a href="http://en.wikipedia.org/wiki/Terminus_post_quem">terminus ad quem</a>
+                        DatedUntil is when a prophecy partially or entirely comes to pass.
+                        </q>
+                        (Koinonia House).
+
+CREATE TABLE [dbo].[URIWordEngineering](
+      [URI] [nvarchar](450) NOT NULL,
+      [Title] [nvarchar](max) NULL,
+      [Keyword] [nvarchar](max) NULL,
+      [Commentary] [nvarchar](max) NULL,
+      [URIReferrer] [nvarchar](max) NULL,
+      [Referrer] [nvarchar](max) NULL,
+      [ContactID] [int] NULL,
+      [ScriptureReference] [nvarchar](max) NULL,
+      [Dated] [datetime2](7) NOT NULL,
+      [SequenceOrderID] [int] IDENTITY(1,1) NOT NULL,
+      [EventDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_URIWordEngineering] PRIMARY KEY CLUSTERED 
+(
+      [URI] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[URIWordEngineering] ADD  CONSTRAINT [DF_URIWordEngineering_Dated]  DEFAULT (getdate()) FOR [Dated]
+GO
+
