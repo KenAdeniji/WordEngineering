@@ -186,7 +186,7 @@ DBCC CHECKIDENT ('URI..UriEntertainment', RESEED, 26844);
 DBCC CHECKIDENT ('URI..UriMozillaPocket', RESEED, 74167);
 DBCC CHECKIDENT ('URI..UriPolitics', RESEED, 35);
 DBCC CHECKIDENT ('URI..UriTechnology', RESEED, 2);
-DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 72017);
+DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 73071);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3891);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 10031);
