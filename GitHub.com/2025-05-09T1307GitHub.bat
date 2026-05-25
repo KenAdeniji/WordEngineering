@@ -711,3 +711,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-05-22T1427IanDevlin.co
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-22T2220 Titi Adeyi, I tried telephoning (480) 851-5967, but I heard, your call did not go through... please try your call again (Mark 14v41).txt"
 git add InformationInTransit/ProcessCode/ActiveDirectoryHelper.cs
 git add InformationInTransit/ProcessCode/ActiveDirectoryHelper.exe
+
+git add InformationInTransit/ProcessLogic/2026-05-24T2321DateDifference.sql
