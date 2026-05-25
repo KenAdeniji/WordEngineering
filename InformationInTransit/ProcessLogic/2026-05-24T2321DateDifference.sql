@@ -1,3 +1,81 @@
+/*
+    Deprecated SQL-CLR functions
+        D:\WordEngineering\InformationInTransit\ProcessLogic\DateDifference.cs
+	2017-01-25	Remove namespace for assembly
+	2017-08-30	FromUntil() added. DateDiff?
+EXEC sp_configure 'allow updates', 0
+RECONFIGURE
+
+sp_configure 'show advanced options', 1;
+GO
+RECONFIGURE WITH OVERRIDE;
+GO
+
+sp_configure 'clr enabled', 1;
+GO
+RECONFIGURE WITH OVERRIDE;
+GO
+
+DROP FUNCTION [dbo].[YearMonthWeekDay]
+GO
+
+DROP ASSEMBLY DateDifference
+GO
+
+CREATE ASSEMBLY DateDifference
+FROM 'E:\WordEngineering\InformationInTransit\ProcessLogic\DateDifference.dll'
+WITH PERMISSION_SET = SAFE
+GO
+
+CREATE FUNCTION [dbo].[FromUntil] (@datedFrom DateTime2, @datedUntil DateTime2)
+RETURNS int
+AS EXTERNAL NAME [DateDifference].[DateDifference].[FromUntil];
+GO
+
+SELECT dbo.Fromuntil('20 March 2003', '15 December 2011')
+GO
+
+CREATE FUNCTION [dbo].[YearMonthWeekDay] (@dateFrom DateTime2, @dateTo DateTime2)
+RETURNS NVARCHAR(50)
+AS EXTERNAL NAME [DateDifference].[DateDifference].[YearMonthWeekDay];
+GO
+
+SELECT dbo.YearMonthWeekDay('20 March 2003', '15 December 2011')
+GO
+
+CREATE FUNCTION [dbo].[YearMonthWeekDay] (@dateFrom DateTime2, @dateTo DateTime2)
+RETURNS NVARCHAR(50)
+AS EXTERNAL NAME [DateDifference].[DateDifference].[YearMonthWeekDay];
+GO
+
+SELECT dbo.YearMonthWeekDay('20 March 2003', '15 December 2011')
+GO
+*/
+/*
+csc.exe DateDifference.cs
+csc.exe /target:library DateDifference.cs 
+
+REM Loading and Running the "E:\WordEngineering\InformationInTransit\ProcessLogic\DateDifferenceSQLCLR.dll" Function in SQL Server
+CREATE ASSEMBLY DateDifference from 'E:\WordEngineering\InformationInTransit\ProcessLogic\DateDifference.dll' WITH PERMISSION_SET = SAFE
+GO
+
+CREATE FUNCTION YearMonthWeekDay(@dateFrom DateTime, @dateTo DateTime)
+RETURNS NVARCHAR(MAX)
+AS EXTERNAL NAME DateDifference.[DateDifference].YearMonthWeekDay
+GO
+
+REM Test
+SELECT dbo.DateDifference('2014-12-09', '2015-12-09')
+GO
+
+REM Removing the "YearMonthWeekDay" Function Sample
+DROP Function  YearMonthWeekDay
+GO
+
+DROP assembly DateDifference
+GO
+*/
+
 CREATE OR ALTER FUNCTION dbo.udf_BiblicalCalendar(@datedFrom DateTime2, @datedUntil DateTime2)
 RETURNS NVARCHAR(MAX)
 AS
