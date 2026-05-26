@@ -713,3 +713,5 @@ git add InformationInTransit/ProcessCode/ActiveDirectoryHelper.cs
 git add InformationInTransit/ProcessCode/ActiveDirectoryHelper.exe
 
 git add InformationInTransit/ProcessLogic/2026-05-24T2321DateDifference.sql
+
+git add InformationInTransit/ProcessLogic/DateDifference.dll
