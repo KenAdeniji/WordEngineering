@@ -1793,7 +1793,12 @@ particular directories and files.
 >     generalized methods are referenceable from a JavaScript library.
 > -   JavaScript treats functions as first-class citizens, and they are
 >     passable as variables. This abstraction feature is rarely
->     necessary.
+>     necessary. 2026-05-25T16:17:00 On several occasions,
+>     [http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/GetAPage.html](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/GetAPage.html){target="_blank"}
+>     calls the
+>     [http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js](http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/WordUnion/9432.js){target="_blank"}
+>     ajax() method, and it passes the successCallback method variable
+>     name.
 > -   JavaScript does not support method overloading. The earlier
 >     arguments array variable and the later parameter default
 >     initialization supplements.
@@ -3494,8 +3499,9 @@ contactid="991" hiswordid="158288"}
 |                                   | ling a method of a class instance |
 |                                   |   Static method call          C   |
 |                                   | alling a static method of a class |
-|                                   |   Extension meth                  |
-|                                   | od call       Calling an instance |
+|                                   |   Extension method call           |
+|                                   | Calling 2026-05-25T20:31:00 ~~an  |
+|                                   | instance~~ [a static]{.underline} |
 |                                   |  method that was added to a class |
 |                                   |   Asynchronous method call        |
 |                                   |    Calling a method and not waiti |
