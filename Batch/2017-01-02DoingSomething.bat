@@ -1232,6 +1232,11 @@ mssqltips.com/sqlservertip/4727/how-to-stop-start-enable-and-disable-sql-server-
 
 timwright.org/posts/2026-04-29-most-career-growth-systems-are-quietly-failing-us
 
+SELECT        URI, Title, Keyword, Commentary, URIReferrer, Referrer, ContactID, ScriptureReference, Dated, SequenceOrderID, EventDate
+FROM            URIWordEngineering
+WHERE        (Dated > '2021-02-07')
+ORDER BY SequenceOrderID
+
 2026-06-03T03:34:00 Please do not send me any more e-mail.
 
 :Exit
