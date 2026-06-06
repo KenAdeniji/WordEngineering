@@ -720,6 +720,8 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-05-28T1800TransPerfec
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-02T1415Ammaron Patane. Global Recruiting Manager Planet. ammaron@planet.com 1-801-319-3140. The team decided to move forward with other candidates.txt"
 
-git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-05T1546DanielAdeniji_-_DatabaseForMarinCounty.txt"
+rem git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-05T1546DanielAdeniji_-_DatabaseForMarinCounty.txt"
+
+git rm "IIS/WordEngineering/2018-05-03Correspondence/2026-06-05T1546DanielAdeniji_-_DatabaseForMarinCounty.txt"
 
 git add "IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-06-05T1201When they come... to their... senses... you will come to yours.html"
