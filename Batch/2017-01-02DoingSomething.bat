@@ -1237,6 +1237,38 @@ FROM            URIWordEngineering
 WHERE        (Dated > '2021-02-07')
 ORDER BY SequenceOrderID
 
+2026-06-05T16:25:00
+http://stackoverflow.com/questions/4199458/specifying-content-of-an-iframe-instead-of-the-src-attribute-to-a-page
+
+<iframe id="FileFrame" src="about:blank"></iframe>
+
+<script type="text/javascript">
+   var doc = document.getElementById('FileFrame').contentWindow.document;
+   doc.open();
+   doc.write('<html><head><title></title></head><body>Hello world.</body></html>');
+   doc.close();
+</script>
+
+
+
+iframe now supports srcdoc which can be used to specify the HTML content of the page to show in the inline frame.
+	answered Aug 28, 2015 at 20:31
+	Ayush Gupta's user avatar
+	Ayush Gupta
+	5,75822 gold badges2525 silver badges17
+	
+
+
+You can use data: URL in the src:
+
+var html = 'Hello from <img src="http://stackoverflow.com/favicon.ico" alt="SO">';
+var iframe = document.querySelector('iframe');
+iframe.src = 'data:text/html,' + encodeURIComponent(html);
+
+<iframe></iframe>
+	
 2026-06-03T03:34:00 Please do not send me any more e-mail.
+
+2026-06-05T12:01:00 When they come... to their... senses... you will come to yours.
 
 :Exit

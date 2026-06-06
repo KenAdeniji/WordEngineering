@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-05T17:05:00 Created.
+			http://stackoverflow.com/questions/4199458/specifying-content-of-an-iframe-instead-of-the-src-attribute-to-a-page
+		2026-06-05T17:37:00	http://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable			
+	-->	
+	<head>
+		<title>When they come... to their... senses... you will come to yours.</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="When they come... to their... senses... you will come to yours."/>
+		<meta name="keyword" content="Document Object Model (DOM), IFrame, HTML editor"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			p, iframe
+			{ 
+				height: 30vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="documentSource">Document Source:</label></td>
+							<td>
+								<p id="documentSource" contenteditable="true">
+									<b data-Dated="2020-08-27T00:00:00">Thesis Statement:</b>
+									This dissertation introduces 
+									<a href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html">AlphabetSequence</a>
+									(
+										<a
+											href="http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=2%20Corinthians%2010:9-18"
+											data-Dated="2022-01-07T09:08:00"
+											data-Word="That create."
+											data-HisWordID="144962"
+											data-ContactID="11433"
+										>
+											2 Corinthians 10:9-18
+										</a>
+									).
+									The <dfn data-Dated="2025-05-20T20:34:00">AlphabetSequenceIndex</dfn> is the
+									<span data-Dated="2020-09-09T00:00:00">result of a pure function to sum alphabet places</span>
+									<a 
+										href="http://github.com/KenAdeniji/WordEngineering/blob/master/InformationInTransit/ProcessLogic/AlphabetSequence.cs"
+									>
+										AlphabetSequence.cs
+									</a>.
+									<span data-Dated="2020-09-14T00:00:00">
+										The <dfn data-Dated="2025-05-20T20:24:00">AlphabetSequenceIndexScriptureReference</dfn> are the offsets from the beginning and the ending of the Scripture.
+									</span>
+									<span data-Dated="2020-09-15T00:00:00">
+										The AlphabetSequenceIndexScriptureReference consists of four parts;
+										there are two references each to particular chapters and verses.
+										The first mention is the forward verse, 
+										which the author calculates by determining the AlphabetSequenceIndex verse in the Bible.
+										The second mention is the forward chapter, 
+										and this the author calculates as before, but by substituting the verse with the chapter.
+										Both the backward chapter and backward verse are the corresponding, anticlockwise places.
+									</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="documentAuthor">Document Author:</label></td>
+							<td><cite id="documentAuthor" contenteditable="true">-- Write your own name here</cite></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>
+					</table>
+				<div>	
+			<form>	
+			<iframe id="iFrameHTMLDocument"></iframe>
+			<br/>	
+			<div id="resultSet"></div>
+		</div>	
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+
+			const	iFrameHTMLDocumentElement = document.getElementById("iFrameHTMLDocument");
+
+			const	documentSourceElement = document.getElementById("documentSource");
+			
+			const	documentAuthorElement = document.getElementById("documentAuthor");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var documentSourceParam = urlParams.get("documentSource");
+					if (documentSourceParam)
+					{
+						documentSourceElement.innerHTML = documentSourceParam;
+					}	
+					var documentAuthorParam = urlParams.get("documentAuthor");
+					if (documentAuthorParam)
+					{
+						documentAuthorElement.innerHTML = documentAuthorParam;
+					}	
+					if (documentSourceElement.innerHTML || documentAuthorElement.innerHTML)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				var iFrameData = `<html><body><p>${documentSourceElement.innerHTML}</p><cite>${documentAuthorElement.innerHTML}</cite></body></html>`
+				iFrameHTMLDocumentElement.srcdoc = iFrameData;
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
