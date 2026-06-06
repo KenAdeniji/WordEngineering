@@ -725,3 +725,5 @@ rem git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-05T1546DanielA
 git rm "IIS/WordEngineering/2018-05-03Correspondence/2026-06-05T1546DanielAdeniji_-_DatabaseForMarinCounty.txt"
 
 git add "IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-06-05T1201When they come... to their... senses... you will come to yours.html"
+
+git add IIS/WordEngineering/JavaScript/2026-06-06T1110SQL(VS)JavaScript/

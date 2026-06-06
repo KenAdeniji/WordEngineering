@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-06T11:16:00 Created. http://www.sqlservercentral.com/articles/five-sql-server-2022-t-sql-functions-you-should-be-using-right-now
+		Revelation 18:13
+		Human experiment
+		Stopwatch Class (System.Diagnostics)
+		Microsoft Learn
+		·
+		https://learn.microsoft.com › Learn › .NET › API browser
+		The Stopwatch class assists the manipulation of timing-related performance counters within managed code. Specifically, the Frequency field and GetTimestamp ...		
+		http://apnews.com/article/uk-royal-wedding-peter-phillips-harriet-sperling-87d8b8fc84a32c6e4a65310fc137827d?utm_source=firefox-newtab-en-us
+		2026-06-06T12:13:00	Microsoft SQL Server is a container.
+	-->	
+	<head>
+		<title>Generate_Series()</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Generate_Series()"/>
+		<meta name="keyword" content="Generate_Series()"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea, output
+			{ 
+				height: 30vh;
+				width: 80vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="documentExpression">Document Expression:</label></td>
+							<td>
+								<textarea id="documentExpression">
+var occurrences = 6;
+var fromStartBegin = 2026;
+var step = 6;
+[...Array(occurrences).keys()].map(i => fromStartBegin + (i * step));
+								</textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>
+					</table>
+				<div>	
+			<form>	
+			<output id="resultSet"></output>
+		</div>	
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+
+			const	documentExpressionElement = document.getElementById("documentExpression");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var documentExpressionParam = urlParams.get("documentExpression");
+					if (documentExpressionParam)
+					{
+						documentExpressionElement.innerHTML = documentExpressionParam;
+					}	
+					if (documentExpressionElement.innerHTML || documentAuthorElement.innerHTML)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				resultSetElement.innerHTML = eval(documentExpressionElement.value);
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
