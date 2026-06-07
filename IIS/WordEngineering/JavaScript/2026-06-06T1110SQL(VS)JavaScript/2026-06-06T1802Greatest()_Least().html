@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-06T18:02:00 Created. http://www.sqlservercentral.com/articles/five-sql-server-2022-t-sql-functions-you-should-be-using-right-now
+		2026-06-06T18:39:00	http://stackoverflow.com/questions/1669190/find-the-min-max-element-of-an-array-in-javascript
+		2026-06-06T19:07:00	President Donald Trump.
+			Destroying evidence.
+				Spam mail.
+170610	2026-06-06 14:16:44.553	Do you not know... twelve... legions.	NULL	NULL	NULL	NULL	NULL	NULL	NULL	24	Matthew 26:53	NULL	NULL	Albertsons Lucky, Charter Square. Self-checkout. Jovy fruit rolls 2/$1 .75 oz select variations save up to 49c regular price. First Friday accountant.	NULL	17:28...18:53 dizzy, sleepy data entry. 17:17...18:53 ddl/dml 17:58 urine.	NULL	NULL
+170609	2026-06-06 14:11:51.820	Do not... go to Egypt... He bless him hundredfold.	NULL	NULL	NULL	NULL	NULL	NULL	NULL	15049	Genesis 26:12	NULL	NULL	Taqueria El Mex-Cal	NULL	NULL	NULL	NULL
+170608	2026-06-06 14:09:09.430	With these men... they have come under my roof.	NULL	NULL	NULL	NULL	NULL	NULL	NULL	15049	Genesis 19:8	NULL	NULL	Taqueria El Mex-Cal	NULL	14:32 post-dated Pauline Beshay. This is the man, I love.	NULL	NULL
+170607	2026-06-06 13:31:28.813	Looking adamant.	NULL	NULL	Looking adamant... at yourself.	NULL	NULL	NULL	apnews.com/article/uk-royal-wedding-peter-phillips-harriet-sperling-87d8b8fc84a32c6e4a65310fc137827d?utm_source=firefox-newtab-en-us	NULL	Revelation 18:13, Genesis 4:7	D:\WordEngineering\IIS\WordEngineering\JavaScript\2026-06-06T1110SQL(VS)JavaScript\2026-06-06T1116Generate_Series().html	NULL	NULL	NULL	NULL	NULL	NULL
+2026-06-06T19:45:00
+	Where in Europe... do you gather?
+	El Mex-Cal Taqueria. Charter Square. 34169 Fremont Boulevard, Fremont, California (CA) 94555.
+	Justin Holder. Oh... I teach. I teach martial art. The Mats. Chico. They never lie. Ctrl Industries. Jiu-Jitsu. I asked Justin Holder, where are your ancestors from? Justin Holder answered America... Europe... Sweden.
+	Genesis 12:2
+		2008-03-07...2026-06-06=6665 days (18 biblical years, 6 biblical months, 5 days) (18 years, 2 months, 4 weeks, 1 day)
+Maria Moreno née Puledo of 99 Ranch Market, the mother of Julio Moreno.
+A German husband and a Portuguese wife that live at Creekwood Terrace have a trampoline with a light green rod and black net.
+	-->	
+	<head>
+		<title>Greatest(), Least()</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Greatest(), Least()"/>
+		<meta name="keyword" content="Greatest(), Least()"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			textarea, output
+			{ 
+				height: 30vh;
+				width: 80vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="documentExpression">Document Expression:</label></td>
+							<td>
+								<textarea id="documentExpression">
+Math.max(2026, 6, 6) + " " + Math.min(2026, 12, 31)
+								</textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>
+					</table>
+				<div>	
+			<form>	
+			<output id="resultSet"></output>
+		</div>	
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+
+			const	documentExpressionElement = document.getElementById("documentExpression");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					var documentExpressionParam = urlParams.get("documentExpression");
+					if (documentExpressionParam)
+					{
+						documentExpressionElement.innerHTML = documentExpressionParam;
+					}	
+					if (documentExpressionElement.innerHTML)
+					{
+						querySubmit();
+					}	
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				resultSetElement.innerHTML = eval(documentExpressionElement.value);
+			}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
