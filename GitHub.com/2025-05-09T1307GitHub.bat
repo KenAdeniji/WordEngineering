@@ -729,3 +729,6 @@ git add "IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-06-05T1201Wh
 git add IIS/WordEngineering/JavaScript/2026-06-06T1110SQL(VS)JavaScript/
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-07T1431Doctor Kimberly D. Moore. Please assist... with my completing doctorate degree.txt"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-10T2050What is the regular visitor.txt"
+git add "IIS/WordEngineering/CascadingStyleSheet/Mozilla.org/Getting started with CSS/2026-06-08T2044developer.mozilla.org_-_CSS Styling the content.html"
