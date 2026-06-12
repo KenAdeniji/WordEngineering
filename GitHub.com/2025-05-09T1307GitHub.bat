@@ -333,8 +333,9 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-06T0200Alexandra C
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2025-10-06T2030Vesna.Naumoska@cba.com.au Macedonia Commonwealth Bank of Australia Your CommBank complaint outcome CF-14915900C.txt"
 
-git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx
-git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html
+rem 2026-06-11T23:14:00
+rem git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx
+rem git add IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html
 
 git add IIS/WordEngineering/JavaScript/DavidWalsh.name/DavidWalsh.name_-_FetchAPI.html
 
@@ -732,3 +733,10 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-07T1431Doctor Kimb
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-10T2050What is the regular visitor.txt"
 git add "IIS/WordEngineering/CascadingStyleSheet/Mozilla.org/Getting started with CSS/2026-06-08T2044developer.mozilla.org_-_CSS Styling the content.html"
+
+rem 2026-06-11T22:26:00
+rem git mv "IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.asmx" "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.asmx"
+rem git mv "IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html" "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.html"
+
+git add "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.asmx"
+git add "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.html"
