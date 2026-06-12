@@ -740,3 +740,7 @@ rem git mv "IIS/WordEngineering/WordCross/2025-10-08DataType_MetaData.html" "IIS
 
 git add "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.asmx"
 git add "IIS/WordEngineering/ActToGod/2025-10-08DataType_MetaData.html"
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-06-12T0653DavidCheOfYifangTaiwanFruitTea_WritingOnStones.txt
+git add IIS/WordEngineering/ActToGod/2026-06-10T153517.620ActToGod_BarnesAndNoble(BN)DublinPleasantonDateOfOpening.asmx
+git add IIS/WordEngineering/ActToGod/2026-06-10T153517.620ActToGod_BarnesAndNoble(BN)DublinPleasantonDateOfOpening.html

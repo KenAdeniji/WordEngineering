@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-11T22:57:00	Created.
+	-->	
+	<head>
+		<title>ActToGod Barnes & Noble (BN) Dublin/Pleasanton Date of Opening</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2026-06-10T153517.620 ActToGod Barnes & Noble (BN) Dublin/Pleasanton Date of Opening"/>
+		<meta name="keyword" content="ActToGod group"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div id="resultTable" align="center">
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			async function pageLoad()
+			{
+				var request = {};
+
+				//request[""] = partialMatchElement.checked
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/ActToGod/2026-06-10T153517.620ActToGod_BarnesAndNoble(BN)DublinPleasantonDateOfOpening.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>
