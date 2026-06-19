@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-11T22:57:00	Created.
+	-->	
+	<head>
+		<title>ActToGod Major Minor First Last</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="ActToGod Major Minor First Last"/>
+		<meta name="keyword" content="ActToGod group major, first, last"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div id="resultTable" align="center">
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "/WordEngineering/WordUnion/9432.js");
+			document.body.appendChild(scriptElement);
+		</script>
+		<script src="/WordEngineering/WordUnion/tsorter.min.js"></script>
+		<script>
+			async function pageLoad()
+			{
+				var request = {};
+
+				//request[""] = partialMatchElement.checked
+				
+				const PostData = {
+					method: 'POST',
+					headers: {
+						"Accept": "application/json",
+						'Content-Type': 'application/json; charset=utf-8'
+					},
+					dataType: 'json',
+					credentials: 'include'
+				}
+				PostData.body = JSON.stringify(request);
+				url = "/WordEngineering/ActToGod/2026-06-17T1042ActToGod_Major_MinorFirstLast.asmx/Query";
+				try {
+					const response = await fetch(url, PostData)
+					.then(response => {
+						return response.json();
+					})
+					.then(responseJSON => {
+						var dataTable = JSON.parse(responseJSON.d);
+						scriptLiteral9432.renderDataTable(dataTable, "resultTable");
+					})	
+					} catch (e) {
+					resultSetElement.innerHTML = e;
+				};
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

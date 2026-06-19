@@ -748,3 +748,6 @@ git add IIS/WordEngineering/ActToGod/2026-06-10T153517.620ActToGod_BarnesAndNobl
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-15T0631TheFirst2Middle-EastKingdomsAncientBabylonPresentDayIraq_AncientPersiaPresentDayIranDecimatedByWar.AuntTutuOlokoScheduledStudies.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-06-16T0944Benitoluwa is a pediatrician, and there is a fellow Nigerian male who takes care of babies and growing children. I inquired about childcare.txt"
+
+git add IIS/WordEngineering/ActToGod/2026-06-17T1042ActToGod_Major_MinorFirstLast.asmx
+git add IIS/WordEngineering/ActToGod/2026-06-17T1042ActToGod_Major_MinorFirstLast.html
