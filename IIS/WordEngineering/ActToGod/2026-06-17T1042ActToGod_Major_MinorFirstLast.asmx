@@ -21,6 +21,10 @@ using InformationInTransit.DataAccess;
 
 using Newtonsoft.Json;
 
+/*
+	First and last... date.
+	At the intersection of Decoy Terrace and Creekwood Drive, north-east, I had walked westward, and I was now preparing to turn and walk towards the south-east. There was a Hindi man walking northward between the center-west and north-west.
+*/
 ///<summary>
 ///	2026-06-18T14:51:00...2026-06-18T16:41:00 Created.
 ///</summary>
