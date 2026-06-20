@@ -22,6 +22,8 @@ using InformationInTransit.DataAccess;
 using Newtonsoft.Json;
 
 /*
+	FIRST_VALUE (Transact-SQL)
+	LAST_VALUE (Transact-SQL)
 	First and last... date.
 	At the intersection of Decoy Terrace and Creekwood Drive, north-east, I had walked westward, and I was now preparing to turn and walk towards the south-east. There was a Hindi man walking northward between the center-west and north-west.
 */

@@ -190,7 +190,7 @@ DBCC CHECKIDENT ('URI..UriWordEngineering', RESEED, 73099);
 
 DBCC CHECKIDENT ('WordEngineering..ActToGod', RESEED, 3891);
 DBCC CHECKIDENT ('WordEngineering..APass', RESEED, 10031);
-DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 162698);
+DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 164478);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18689);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3088);
