@@ -1,0 +1,53 @@
+http://www.postgresql.org/download/windows
+Port 5432
+Username postgres
+PGAdmin
+Create WordEngineering database
+
+Open and use ODBC Data Source Administrator
+
+Open the ODBC Data Source Administrator in Windows 10
+
+    On the Start page, type ODBC Data Sources. The ODBC Data Sources Desktop App should appear as a choice.
+
+Open the ODBC Data Source Administrator in Windows Server
+
+    On the Start menu, point to Administrative Tools, and then select ODBC Data Sources.
+
+Check the ODBC SQL Server driver version (Windows)
+
+Your computer might contain a variety of ODBC drivers, from Microsoft and from other companies. The following describes how to use the Windows ODBC Data Source Administrator to check the version of the installed ODBC drivers.
+Check the ODBC SQL Server driver version
+
+    In the ODBC Data Source Administrator, select the Drivers tab.
+
+    Information for the Microsoft SQL Server entry is displayed in the Version column.
+
+Understand ODBC driver version numbers
+
+The Version column in the ODBC Data Source Administrator displays the internal file version number, which differs from the marketing version name used in product downloads and documentation.
+
+The following table maps common marketing version names to their corresponding internal file version patterns:
+
+SQL Server Import and Export Wizard
+Choose a data source
+	Microsoft OLE DB for SQL Server
+		Windows Authentication
+Choose a destination
+	.NET Framework Data Provider for Odbc
+		Named connection string
+			DSN
+				PostgreSQL30
+
+[Source Information]
+Source Location : .
+Source Provider : SQLOLEDB
+Mapping file (to SSIS type): D:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\CommonExtensions\Microsoft\SSIS\170\MappingFiles\MSSQLToSSIS10.XML
+
+[Destination Information]
+Cannot locate the mapping file to map the provider types to SSIS types
+
+[Conversion Table]
+SSIS conversion file: D:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\CommonExtensions\Microsoft\SSIS\170\binn\DtwTypeConversion.xml
+
+

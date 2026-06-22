@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-20T19:02:00 Created. http://oualline.com/talks/re.pdf
+	-->
+	<head>
+		<title>Regular Expressions Made Easy by Steve Oualline</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Regular Expressions Made Easy by Steve Oualline"/>
+		<meta name="keywords" content="Regular Expression, RegEx, string, pattern, flag"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 30vh;
+		width: 70vw;
+	}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="textString">Text string</label></td>
+					<td><textarea id="textString" autofocus required>51, 52, 53, 54</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="pattern">Pattern</label></td>
+					<td><input id="pattern" value="53" style="width: 70vw;"/></td>
+				</tr>
+				<tr>
+					<td><label for="flag">Flag</label></td>
+					<td><input id="flag" value="gi" placeholder="gi"/></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td><label for="matchOutput">Match</label></td>
+					<td><div id="matchOutput"></div></td>
+				</tr>	
+			</table>
+			
+			<table>
+				<thead>
+					<caption>Anchors</caption>
+					<tr><th>Regex</th><th>Commentary</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>^</td><td>Match the beginning of the line</td></tr>
+					<tr><td>$</td><td>Match the end of the line</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="resultSet" align="center"> </div>
+
+		<script>
+			var isPostBack = false;
+			
+			const 	textStringElement = document.getElementById("textString");
+			const 	patternElement = document.getElementById("pattern");
+			const 	flagElement = document.getElementById("flag");
+						
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	matchOutputElement = document.getElementById("matchOutput");
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var textStringParam = urlParams.get("textString");
+					if (textStringParam)
+					{
+						textStringElement.value = textStringParam;
+					}
+				
+					var patternParam = urlParams.get("pattern");
+					if (patternParam)
+					{
+						patternElement.value = patternParam;
+					}
+				
+					var flagParam = urlParams.get("flag");
+					if (flagParam)
+					{
+						flagElement.value = flagParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				const regexp = new RegExp
+				(
+					patternElement.value,
+					flagElement.value
+				)
+				var matchInfo = textStringElement.value.match(regexp);
+				var matchResult = "No match(es)";
+				if (matchInfo)
+				{
+					var matchResult = `Occurrences ${matchInfo.length}<br/>`;
+					for
+					(
+						var matchIndex = 0, matchCount = matchInfo.length;
+						matchIndex < matchCount;
+						++matchIndex
+					)
+					{
+						if (matchResult)
+						{
+							matchResult += " ";
+						}
+						matchResult += matchInfo[matchIndex];
+					}
+				}	
+				matchOutputElement.innerHTML = matchResult;
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+	</script>
+</body>
+</html>

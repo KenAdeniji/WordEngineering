@@ -753,3 +753,8 @@ git add IIS/WordEngineering/ActToGod/2026-06-17T1042ActToGod_Major_MinorFirstLas
 git add IIS/WordEngineering/ActToGod/2026-06-17T1042ActToGod_Major_MinorFirstLast.html
 
 git add	IIS/WordEngineering/2018-05-03Correspondence/2026-06-20T0900AncestralNamesAsReligiousOrHavingReligiousMeaning.IslamicSocietyOfEastBay(ISEB)_2026-06-20T105009AcceptMyName_bill@rephers.com_SpamE-mails.com.txt
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-06-22T1359ACTransitLine281_DecotoRoad_Alvarado-NilesRoad_South-East_RoyalDutchShellEast_BusDriverSaidRepeatedly_IDontUnderstandWhatYouAreSaying.txt
+
+git add 2026-06-16Postgres/
+git add "IIS/WordEngineering/RegularExpression/2026-06-20T1902oualline.com_-_Regular Expressions Made Easy by Steve Oualline.html"
