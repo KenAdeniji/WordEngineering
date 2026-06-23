@@ -110,12 +110,13 @@ Area number Group number Serial number"/>
 					++ssnIndex
 				)
 				{
+					console.log(SSN[ssnIndex]);
 					ssnAreaBlock = (SSN[ssnIndex][SSN_Rank_AreaNumber]).split(SSN_Separator);
 					ssnAreaFrom = ssnAreaBlock[0];
 					ssnAreaUntil = ssnAreaBlock[ssnAreaBlock.length - 1];
-					if (ssnArea >= ssnAreaFrom && ssnArea <= ssnAreaUntil	)
+					if (ssnArea >= ssnAreaFrom && ssnArea <= ssnAreaUntil)
 					{
-						if (SSN[ssnIndex].length > SSN_Rank_AreaNumber)
+						if (SSN[ssnIndex].length > SSN_Rank_GroupNumber)
 						{
 							ssnGroupBlock = (SSN[ssnIndex][SSN_Rank_GroupNumber]).split(SSN_Separator);
 							ssnGroupFrom = ssnGroupBlock[0];
