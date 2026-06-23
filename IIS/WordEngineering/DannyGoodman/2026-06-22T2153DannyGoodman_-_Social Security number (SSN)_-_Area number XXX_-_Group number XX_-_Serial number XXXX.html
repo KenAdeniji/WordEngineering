@@ -88,26 +88,43 @@ Area number Group number Serial number"/>
 			function querySubmit()
 			{
 				resultSetElement.textContent = "";
+				
 				var ssnSeparated = ssnElement.value.split(SSN_Separator);
+				
 				var ssnArea = ssnSeparated[SSN_Rank_AreaNumber - 1];
 				var ssnGroup = ssnSeparated[SSN_Rank_GroupNumber - 1];
 				var ssnSerial = ssnSeparated[SSN_Rank_SerialNumber - 1];
+				
+				var ssnAreaFrom = "";
+				var ssnAreaUntil = "";
+				var ssnAreaBlock = [];
+
+				var ssnGroupFrom = "";
+				var ssnGroupUntil = "";
+				var ssnGroupBlock = [];
+				
 				for
 				(
-					var ssnIndex = 0, ssnLength = SSN.length, ssnFrom = "", ssnUntil = "", ssnBlock = [];
+					var ssnIndex = 0, ssnLength = SSN.length;
 					ssnIndex <= ssnLength;
 					++ssnIndex
 				)
 				{
-					ssnBlock = (SSN[ssnIndex][SSN_Rank_AreaNumber]).split(SSN_Separator);
-					ssnFrom = ssnBlock[0];
-					ssnUntil = ssnBlock[ssnBlock.length - 1];
-					if 
-					(
-							ssnArea >= ssnFrom
-						&&	ssnArea <= ssnUntil
-					)
+					ssnAreaBlock = (SSN[ssnIndex][SSN_Rank_AreaNumber]).split(SSN_Separator);
+					ssnAreaFrom = ssnAreaBlock[0];
+					ssnAreaUntil = ssnAreaBlock[ssnAreaBlock.length - 1];
+					if (ssnArea >= ssnAreaFrom && ssnArea <= ssnAreaUntil	)
 					{
+						if (SSN[ssnIndex].length > SSN_Rank_AreaNumber)
+						{
+							ssnGroupBlock = (SSN[ssnIndex][SSN_Rank_GroupNumber]).split(SSN_Separator);
+							ssnGroupFrom = ssnGroupBlock[0];
+							ssnGroupUntil = ssnGroupBlock[ssnGroupBlock.length - 1];
+							if (ssnGroup < ssnGroupFrom || ssnGroup > ssnGroupUntil)
+							{
+								continue;
+							}
+						}
 						resultSetElement.textContent = SSN[ssnIndex][SSN_Rank_State];
 						break;
 					}
@@ -129,6 +146,12 @@ Area number Group number Serial number"/>
 				["Alabama", "416-424"],
 				["Alaska", "574"],
 				["American Samoa", "586", "20-28"],
+				["Arizona", "526-527"],
+				["Arizona", "600-601"],
+				["Arkansas", "429-432"],
+				["California", "545-573"],
+				["California", "602-626"],
+				["Colorado", "521-524"],
 			];
 			
 			const SSN_Separator = "-";
