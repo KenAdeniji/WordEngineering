@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-06-22T21:53:00 Created. http://www.ssa.gov/policy/docs/ssb/v45n11/v45n11p29.pdf
+	-->
+	<head>
+		<title>The Social Security number (SSN) consists of nine
+digits divided into three parts, with each part usually
+separated by a hyphen:
+xxx - xx - xxxx
+Area number Group number Serial number</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="The Social Security number (SSN) consists of nine
+digits divided into three parts, with each part usually
+separated by a hyphen:
+xxx - xx - xxxx
+Area number Group number Serial number"/>
+		<meta name="keywords" content="The Social Security number (SSN) consists of nine
+digits divided into three parts, with each part usually
+separated by a hyphen:
+xxx - xx - xxxx
+Area number Group number Serial number"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 30vh;
+		width: 70vw;
+	}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.head.insertAdjacentHTML
+			(
+				"beforeend",
+				`<link type="text/css" rel="stylesheet" media="screen" href="/WordEngineering/WordUnion/9432.css">`
+			);
+		</script>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="ssn">Social Security Number (SSN)</label></td>
+					<td><input id="ssn" value="238-45-6766" pattern="^\d{3}-\d{2}-\d{4}" autofocus required/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="center"><span id="resultSet"></span></td>
+				</tr>	
+			</table>
+		</div>
+
+
+		<script>
+			var isPostBack = false;
+			
+			const 	ssnElement = document.getElementById("ssn");
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var ssnParam = urlParams.get("ssn");
+					if (ssnParam)
+					{
+						ssnElement.value = ssnParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			function querySubmit()
+			{
+				resultSetElement.textContent = "";
+				var ssnSeparated = ssnElement.value.split(SSN_Separator);
+				var ssnArea = ssnSeparated[SSN_Rank_AreaNumber - 1];
+				var ssnGroup = ssnSeparated[SSN_Rank_GroupNumber - 1];
+				var ssnSerial = ssnSeparated[SSN_Rank_SerialNumber - 1];
+				for
+				(
+					var ssnIndex = 0, ssnLength = SSN.length, ssnFrom = "", ssnUntil = "", ssnBlock = [];
+					ssnIndex <= ssnLength;
+					++ssnIndex
+				)
+				{
+					ssnBlock = (SSN[ssnIndex][SSN_Rank_AreaNumber]).split(SSN_Separator);
+					ssnFrom = ssnBlock[0];
+					ssnUntil = ssnBlock[ssnBlock.length - 1];
+					if 
+					(
+							ssnArea >= ssnFrom
+						&&	ssnArea <= ssnUntil
+					)
+					{
+						resultSetElement.textContent = SSN[ssnIndex][SSN_Rank_State];
+						break;
+					}
+				}
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const SSN = [
+				["Alabama", "416-424"],
+				["Alaska", "574"],
+				["American Samoa", "586", "20-28"],
+			];
+			
+			const SSN_Separator = "-";
+			const SSN_Rank_State = 0;
+			const SSN_Rank_AreaNumber = 1;
+			const SSN_Rank_GroupNumber = 2;
+			const SSN_Rank_SerialNumber = 3;
+	</script>
+</body>
+</html>

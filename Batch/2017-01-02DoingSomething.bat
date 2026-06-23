@@ -1275,4 +1275,9 @@ iframe.src = 'data:text/html,' + encodeURIComponent(html);
 
 2026-06-20T21:12:00...2026-06-20T21:54:00 microsoft sql server management studio object explorer tree uri database error re-start microsoft sql server management studio. 2026-06-20T21:55:00 dizzy, sleepy.
 
+SELECT        URI, Title, Keyword, Commentary, URIReferrer, Referrer, ContactID, ScriptureReference, Dated, SequenceOrderID, EventDate
+FROM            URIWordEngineering
+WHERE        (Dated > '2020-04-04')
+ORDER BY SequenceOrderID
+
 :Exit
