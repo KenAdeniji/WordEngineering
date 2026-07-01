@@ -762,3 +762,5 @@ git add "IIS/WordEngineering/RegularExpression/2026-06-20T1902oualline.com_-_Reg
 git add IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe/2026-06-22T1518john.dalton@trademarkregistrars.org.txt
 
 git add IIS/WordEngineering/DannyGoodman/
+
+git add IIS/WordEngineering/JavaScript/RaymondCamden.com/2026-06-30T1652raymondcamden.com_-_FrankTisellano.github.io_-_datatype.html
