@@ -58,6 +58,7 @@
 						<caption>Bible Books</caption>
 						<thead>
 							<tr>
+								<th>Key</th>
 								<th>ID</th>
 								<th>Title</th>
 							</tr>
@@ -135,7 +136,7 @@
 						wordValue = map.get(wordKey);
 						if (wordValue)
 						{
-							stub += `<tr><td>${wordKey}</td><td>${wordValue}</td></tr>`;
+							stub += `<tr><td>${wordKey}</td><td>${wordValue.bookID}</td><td>${wordValue.bookTitle}</td></tr>`;
 						}
 					}	
 				);
