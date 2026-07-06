@@ -1,0 +1,1 @@
+go run go.dev_-_HelloWorld.go Good

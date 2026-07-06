@@ -769,3 +769,6 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-01T0107But my expe
 
 git add IIS/WordEngineering/JavaScript/ObjectOrientation/2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.html
 git add IIS/WordEngineering/JavaScript/ObjectOrientation/2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js
+
+git add Google/Go/go.dev/
+git add "IIS/WordEngineering/Python/Wei-MengLee/2026-07-04T1800Introduction to Data Science using Python by Wei-Meng Lee of learn2develop.net.py"
