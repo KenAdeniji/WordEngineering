@@ -772,3 +772,5 @@ git add IIS/WordEngineering/JavaScript/ObjectOrientation/2026-07-01T1144IlyaKant
 
 git add Google/Go/go.dev/
 git add "IIS/WordEngineering/Python/Wei-MengLee/2026-07-04T1800Introduction to Data Science using Python by Wei-Meng Lee of learn2develop.net.py"
+
+git add IIS/WordEngineering/Python/WordEngineering/
