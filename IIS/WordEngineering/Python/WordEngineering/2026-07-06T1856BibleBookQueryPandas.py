@@ -1,5 +1,6 @@
 '''
 2026-07-06T18:51:00 http://www.w3schools.com/python/pandas/ref_df_query.asp
+http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/WordEngineering/2026-07-06T1856BibleBookQueryPandas.py
 '''
 
 import pandas as pd
