@@ -14,7 +14,20 @@ In Australia, I did not get into politics.
     I worshiped at Parramatta Christian Center, a multicultural church, which is of the Assemblies of God denomination.
     I was invited to Villawood Detention Center, 2026-07-04T18:31:00 because I am an African descent migrant.
 '''
-listIsACollectionOfValues = [1, "Genesis", 22 / 7, True];
+import numpy as np
+
+listIsACollectionOfValues = [1, "Genesis", 22 / 7, True]
 print(listIsACollectionOfValues)
 
 print(listIsACollectionOfValues[2])   # 3.14  To access the items in a list, you use an index (starting at 0):
+
+list5BooksOfMosesPentateuch = [50, 40, 27, 36, 34]
+
+array5BooksOfMosesPentateuch = np.array(list5BooksOfMosesPentateuch) # rank 1 array
+print(array5BooksOfMosesPentateuch)
+
+array5BooksOfMosesPentateuch_even_nums_boolean_flag = array5BooksOfMosesPentateuch % 2 == 0
+print(array5BooksOfMosesPentateuch_even_nums_boolean_flag)
+
+array5BooksOfMosesPentateuch_even_nums = array5BooksOfMosesPentateuch[array5BooksOfMosesPentateuch_even_nums_boolean_flag]
+print(array5BooksOfMosesPentateuch_even_nums)
