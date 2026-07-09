@@ -776,3 +776,5 @@ git add "IIS/WordEngineering/Python/Wei-MengLee/2026-07-04T1800Introduction to D
 git add IIS/WordEngineering/Python/WordEngineering/
 
 git add "IIS/WordEngineering/Python/WordEngineering/2026-07-08T2032Python ODBC Bridge by Michael Kleehammer.py"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-08T14391 36 1 18. It was their failure to observe the sabbatical law that sent them to captivity in the first place (Daniel 9v2).txt"
