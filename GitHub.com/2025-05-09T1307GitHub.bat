@@ -774,3 +774,5 @@ git add Google/Go/go.dev/
 git add "IIS/WordEngineering/Python/Wei-MengLee/2026-07-04T1800Introduction to Data Science using Python by Wei-Meng Lee of learn2develop.net.py"
 
 git add IIS/WordEngineering/Python/WordEngineering/
+
+git add "IIS/WordEngineering/Python/WordEngineering/2026-07-08T2032Python ODBC Bridge by Michael Kleehammer.py"
