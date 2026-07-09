@@ -1280,4 +1280,7 @@ FROM            URIWordEngineering
 WHERE        (Dated > '2020-04-04')
 ORDER BY SequenceOrderID
 
+2026-07-01T17:30:00
+timesofindia.indiatimes.com/world/us/microsoft-layoffs-up-to-5500-jobs-at-risk-as-ai-push-sparks-fresh-h1-b-debate/articleshow/132118010.cms
+
 :Exit
