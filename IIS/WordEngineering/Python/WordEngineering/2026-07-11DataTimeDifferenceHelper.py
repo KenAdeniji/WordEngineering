@@ -18,7 +18,8 @@ class DataTimeDifferenceHelper():
         self.datedUntil = datetime.strptime(datedUntil, "%Y-%m-%dT%H:%M:%S%z")
 
     def __str__(self): #2019-06-11  https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf
-        return "DataTimeDifferenceHelper datedFrom: {} datedUntil: {} days: {}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
+        #return "DataTimeDifferenceHelper datedFrom: {0} datedUntil: {1} days: {2}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
+        return f'DataTimeDifferenceHelper datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}'
 
     # instance method
     @property    
