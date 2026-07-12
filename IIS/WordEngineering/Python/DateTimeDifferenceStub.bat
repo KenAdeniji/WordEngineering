@@ -1,0 +1,2 @@
+@ECHO OFF
+python DateTimeDifferenceStub.py "2015-01-01T12:00:00-0500" "2016-04-15T08:27:18-0500"

@@ -11,7 +11,10 @@ def get_n_days_before_date(self, date_format="%d %B %Y", days_before=120):
     date_n_days_ago = datetime.datetime.now() - timedelta(days=days_before)
     return date_n_days_ago.strftime(date_format)
 """
+import sys
+from datetime import datetime, timedelta, timezone
 class DataTimeDifference():
+    from datetime import datetime, timedelta, timezone
     # Initializer / Instance Attributes
     def __init__(self, datedFrom, datedUntil):
         self.datedFrom = datetime.strptime(datedFrom, "%Y-%m-%dT%H:%M:%S%z")
@@ -30,7 +33,5 @@ class DataTimeDifference():
         return self.datedUntil - self.datedFrom
 		
 if __name__ == '__main__':
-    import sys
-    from datetime import datetime, timedelta, timezone
     dataTimeDifference = DataTimeDifference(sys.argv[1], sys.argv[2])
     print(dataTimeDifference)

@@ -792,5 +792,10 @@ rem git mv IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferen
 rem git mv IIS/WordEngineering/Python/WordEngineering/2026-07-11SingletonHelper.py IIS/WordEngineering/Python/WordEngineering/Singleton.py
 
 git add IIS/WordEngineering/Python/WordEngineering/DataTimeDifference.py
+git add IIS/WordEngineering/Python/WordEngineering/__init__.py
 git add IIS/WordEngineering/Python/WordEngineering/DataTimeDifferenceStub.bat
+git add IIS/WordEngineering/Python/DateTimeDifferenceStub.bat
+git add IIS/WordEngineering/Python/DateTimeDifferenceStub.py
+
 git add IIS/WordEngineering/Python/WordEngineering/Singleton.py
+
