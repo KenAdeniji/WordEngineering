@@ -787,3 +787,5 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-10Luke4v18_-_Isaia
 
 git add IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferenceHelper.bat
 git add IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferenceHelper.py
+
+git add IIS/WordEngineering/Python/WordEngineering/2026-07-11SingletonHelper.py
