@@ -11,15 +11,15 @@ def get_n_days_before_date(self, date_format="%d %B %Y", days_before=120):
     date_n_days_ago = datetime.datetime.now() - timedelta(days=days_before)
     return date_n_days_ago.strftime(date_format)
 """
-class DataTimeDifferenceHelper():
+class DataTimeDifference():
     # Initializer / Instance Attributes
     def __init__(self, datedFrom, datedUntil):
         self.datedFrom = datetime.strptime(datedFrom, "%Y-%m-%dT%H:%M:%S%z")
         self.datedUntil = datetime.strptime(datedUntil, "%Y-%m-%dT%H:%M:%S%z")
 
     def __str__(self): #2019-06-11  https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf
-        #return "DataTimeDifferenceHelper datedFrom: {0} datedUntil: {1} days: {2}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
-        return f'DataTimeDifferenceHelper datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}'
+        #return "DataTimeDifference datedFrom: {0} datedUntil: {1} days: {2}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
+        return f'DataTimeDifference datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}'
 
     # instance method
     @property    
@@ -32,6 +32,5 @@ class DataTimeDifferenceHelper():
 if __name__ == '__main__':
     import sys
     from datetime import datetime, timedelta, timezone
-    # Instantiate the DataTimeHelper object
-    dataTimeDifference = DataTimeDifferenceHelper(sys.argv[1], sys.argv[2])
+    dataTimeDifference = DataTimeDifference(sys.argv[1], sys.argv[2])
     print(dataTimeDifference)

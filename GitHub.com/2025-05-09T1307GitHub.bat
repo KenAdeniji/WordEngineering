@@ -786,6 +786,9 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-10T0636saumya.dubey
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-10Luke4v18_-_Isaiah61_-_ChuckMisslerOfKoinoniaHouseKHouse.orgHeOpenedHisMinistry_-_ThisCommaHasLastedFor2000YearsThereAreNowIndicationsItMightBeComingToAnEnd.txt"
 
 git add IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferenceHelper.bat
-git add IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferenceHelper.py
 
-git add IIS/WordEngineering/Python/WordEngineering/2026-07-11SingletonHelper.py
+git mv IIS/WordEngineering/Python/WordEngineering/2026-07-11DataTimeDifferenceHelper.py IIS/WordEngineering/Python/WordEngineering/DataTimeDifference.py
+git mv IIS/WordEngineering/Python/WordEngineering/2026-07-11SingletonHelper.py IIS/WordEngineering/Python/WordEngineering/Singleton.py
+
+git add IIS/WordEngineering/Python/WordEngineering/DataTimeDifference.py
+git add IIS/WordEngineering/Python/WordEngineering/Singleton.py
