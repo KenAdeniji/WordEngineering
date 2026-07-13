@@ -10,13 +10,16 @@ n day's before date:
 def get_n_days_before_date(self, date_format="%d %B %Y", days_before=120):
     date_n_days_ago = datetime.datetime.now() - timedelta(days=days_before)
     return date_n_days_ago.strftime(date_format)
+2026-07-12T20:05:00 http://stackoverflow.com/questions/796008/error-cant-subtract-offset-naive-and-offset-aware-datetimes
+2026-07-12T20:05:00 http://stackoverflow.com/questions/796008/error-cant-subtract-offset-naive-and-offset-aware-datetimes/25662061#25662061    
 """
 import sys
 from datetime import datetime, timedelta, timezone
 class DateTimeDifference():
-    from datetime import datetime, timedelta, timezone
+    datedFrom: datetime
+    datedUntil: datetime
     # Initializer / Instance Attributes
-    def __init__(self, datedFrom, datedUntil):
+    def __init__(self, datedFrom: str, datedUntil: str):
         self.datedFrom = datetime.strptime(datedFrom, "%Y-%m-%dT%H:%M:%S%z")
         self.datedUntil = datetime.strptime(datedUntil, "%Y-%m-%dT%H:%M:%S%z")
 
@@ -24,7 +27,6 @@ class DateTimeDifference():
         #return "DateTimeDifference datedFrom: {0} datedUntil: {1} days: {2}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
         return f'DateTimeDifference datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}'
 
-    # instance method
     @property    
     def fromUntil(self):
         """
@@ -35,3 +37,7 @@ class DateTimeDifference():
 if __name__ == '__main__':
     dateTimeDifference = DateTimeDifference(sys.argv[1], sys.argv[2])
     print(dateTimeDifference)
+    dateTimeDifference.datedFrom = datetime.now(timezone.utc)
+    dateTimeDifference.datedUntil = datetime.now(timezone.utc)
+    print(dateTimeDifference)
+
