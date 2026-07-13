@@ -37,7 +37,5 @@ class DateTimeDifference():
 if __name__ == '__main__':
     dateTimeDifference = DateTimeDifference(sys.argv[1], sys.argv[2])
     print(dateTimeDifference)
-    dateTimeDifference.datedFrom = datetime.now(timezone.utc)
     dateTimeDifference.datedUntil = datetime.now(timezone.utc)
     print(dateTimeDifference)
-
