@@ -802,3 +802,6 @@ git add IIS/WordEngineering/Python/DateTimeDifferenceStub.bat
 git add IIS/WordEngineering/Python/DateTimeDifferenceStub.py
 
 git add IIS/WordEngineering/Python/WordEngineering/Singleton.py
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-13T2223What according to the same... did He have.txt"
+git add IIS/WordEngineering/Python/goalkicker.comPythonBookPythonNotesForProfessionals.pdf/

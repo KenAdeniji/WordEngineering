@@ -16,15 +16,15 @@ def get_n_days_before_date(self, date_format="%d %B %Y", days_before=120):
 import sys
 from datetime import datetime, timedelta, timezone
 class DateTimeDifference():
-    datetimeFormat: str = "%Y-%m-%dT%H:%M:%S%z"
+    DatetimeFormat: str = "%Y-%m-%dT%H:%M:%S%z"
     # Initializer / Instance Attributes
     def __init__(self, datedFrom: str, datedUntil: str):
-        self.datedFrom = datetime.strptime(datedFrom, DateTimeDifference.datetimeFormat)
-        self.datedUntil = datetime.strptime(datedUntil, DateTimeDifference.datetimeFormat)
+        self.datedFrom = datetime.strptime(datedFrom, DateTimeDifference.DatetimeFormat)
+        self.datedUntil = datetime.strptime(datedUntil, DateTimeDifference.DatetimeFormat)
 
     def __str__(self): #2019-06-11  https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf
         #return "DateTimeDifference datedFrom: {0} datedUntil: {1} days: {2}".format(self.datedFrom, self.datedUntil, self.fromUntil.days)
-        return f'DateTimeDifference datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}'
+        return f"DateTimeDifference datedFrom: {self.datedFrom} datedUntil: {self.datedUntil} days: {self.fromUntil.days}"
 
     @property    
     def fromUntil(self):
