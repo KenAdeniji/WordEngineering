@@ -1289,4 +1289,7 @@ ORDER BY SequenceOrderID
 2026-07-14T18:24:00
 	Ann Noreen Widdecombe was a British politician and television personality. As a member of the Conservative Party, she was the member of Parliament for Maidstone and The Weald and its predecessor Maidstone constituency from 1987 to 2010. She joined Reform UK in 2019.	
 
+2026-07-15T22:44:00
+http://apnews.com/article/us-brazil-trade-tariffs-99e8c52a44c75f31c343d7ebad41f614
+US imposing a 25% tariff on some Brazilian imports starting July 22, citing unfair trade practices
 :Exit
