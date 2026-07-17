@@ -808,4 +808,6 @@ git add IIS/WordEngineering/Python/goalkicker.comPythonBookPythonNotesForProfess
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-14AbundantProsperity.org_-_References.Aaron James DeHoog.txt"
 
+git rm "IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T1427shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob_-_lavkush@inasolution.com.txt"
+
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T1427shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob.txt
