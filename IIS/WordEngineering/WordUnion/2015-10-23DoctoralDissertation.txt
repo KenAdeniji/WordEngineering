@@ -6884,20 +6884,20 @@ The impetus for database recording was to re-use.
 
 ### 2024-10-04T09:03:00 Data entry with Microsoft SQL Server Management Studio {#DataEntryWithMicrosoftSQLServerManagementStudio dated="2024-10-04T09:03:00"}
 
--   2024-10-04T09:07:00 Familiarize with the database schema, data
+1.  2024-10-04T09:07:00 Familiarize with the database schema, data
     dictionary, and entity-relationship model.
--   2024-10-04T09:25:00 Understand that today\'s web pages offer greater
+2.  2024-10-04T09:25:00 Understand that today\'s web pages offer greater
     flexibility and customization, and they are more universal and
     generic than previous generation\'s desktop applications. Data entry
     column attributes include autofocus, for, placeholder, required,
     style, taborder.
--   2024-10-04T09:12:00 As much as possible, initially accept the
+3.  2024-10-04T09:12:00 As much as possible, initially accept the
     default values, with, for example, the date columns. You may adjust
     and be precise, later.
--   2024-10-04T09:44:00 Only in rare cases should you resort to a table
+4.  2024-10-04T09:44:00 Only in rare cases should you resort to a table
     identity column value setting, like, for example, by stipulating in
     advance the SET IDENTITY_INSERT, DBCC CHECKIDENT statements.
--   2024-10-05T02:44:00 This is what I am unable to do with the
+5.  2024-10-05T02:44:00 This is what I am unable to do with the
     graphical user interface (GUI)\... this is what I am inspired to do.
     2024-10-05T02:49:00 Its interface\... remains our reliance.
     2024-10-05T02:52:00 I am equipped to doing the same\... as I
@@ -6908,7 +6908,7 @@ The impetus for database recording was to re-use.
     [What do I need the other person\... to
     do?](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=What%20do%20I%20need%20the%20other%20person...%20to%20do%3F){dated="2024-10-05T03:05:00"
     hiswordid="164036"}
--   2024-10-05T05:03:00 [Need
+6.  2024-10-05T05:03:00 [Need
     after](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Need%20after%3F){dated="2024-10-05T05:03:00"
     hiswordid="164037"
     commentary="I could consider the timespan, technology advancement, business usage, government regulation, or Holy Spirit inspiration."}
@@ -6916,6 +6916,11 @@ The impetus for database recording was to re-use.
     5:5](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=1%20Kings%205:5){dated="2024-10-05T05:10:00"
     hiswordid="164037"} )? E. F. Codd in 1970, proposed the relational
     database.
+7.  Primary key
+    -   The natural primary key for the url tables is the url column.
+        When a user attempts to insert a duplicate url, the
+        2026-07-16T10:54:00 database updates an existing url. URL
+        (Uniform Resource Locator). Uniform Resource Identifier (URI).
 
 ### 2025-02-23T16:30:00 [Company osi data\... osi yemi.](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/GetAPage.html?word=Company%20osi%20data...%20osi%20yemi.){dated="2025-02-23T16:30:00" hiswordid="165424" contactid="9332"} {#CompanyOsiDataOsiYemi dated="2025-02-23T16:30:00"}
 
