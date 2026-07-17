@@ -806,5 +806,6 @@ git add IIS/WordEngineering/Python/WordEngineering/Singleton.py
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-13T2223What according to the same... did He have.txt"
 git add IIS/WordEngineering/Python/goalkicker.comPythonBookPythonNotesForProfessionals.pdf/
 
-git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-14AbundantProsperity.org_-_References.Aaron James DeHoog.txt
-git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T1427shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob_-_lavkush@inasolution.com.txt
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-14AbundantProsperity.org_-_References.Aaron James DeHoog.txt"
+
+git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T1427shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob.txt
