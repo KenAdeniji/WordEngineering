@@ -127,6 +127,7 @@ WinScp.com -script=2021-06-15T2015WinScp.txt -log=2021-06-15T2015WinScp.log
 GOTO Exit
 
 :WordEngineering
+start xcopy d:\WordEngineering c:\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering e:\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Ife\d$\WordEngineering /d /e /s /y
 start xcopy d:\WordEngineering \\Noor\e$\WordEngineering /d /e /s /y
