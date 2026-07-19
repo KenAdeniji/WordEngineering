@@ -815,3 +815,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T1427shivam.kumar
 git add Google/Google.com_-_JobsNearMe/2026-07-17T0130Google.com_-_JobsNearMe_-_SQL.txt
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-16T0931RoadwayMovingAt4797CanvasbackCommon.Kim-ChinChanRanNorthwardOnTheEastSidePast.2026-07-18Wake-upOrientationSouth-centerBedRightFootTopOfLeftFoot.txt
+
+git add "IIS/WordEngineering/Python/JakeVanderPlas/Python Data Science Handbook by Jake VanderPlas/"
