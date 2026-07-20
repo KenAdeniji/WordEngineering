@@ -4,6 +4,7 @@
 """
 import array
 import numpy as np
+import timeit
 
 result = 0
 dataFromUntil = 20, 30
@@ -22,3 +23,8 @@ print(numpyArrayOfIntegersBetweenTwentyAndThirty)
  
 numpyArrayOfIntegersBetweenTwentyAndThirtyReciprocals = 1 / numpyArrayOfIntegersBetweenTwentyAndThirty 
 print(numpyArrayOfIntegersBetweenTwentyAndThirtyReciprocals)
+
+#http://jakevdp.github.io/PythonDataScienceHandbook/01.07-timing-and-profiling.html
+start_time = timeit.default_timer()
+(1.0 / numpyArrayOfIntegersBetweenTwentyAndThirty)
+print(timeit.default_timer() - start_time)
