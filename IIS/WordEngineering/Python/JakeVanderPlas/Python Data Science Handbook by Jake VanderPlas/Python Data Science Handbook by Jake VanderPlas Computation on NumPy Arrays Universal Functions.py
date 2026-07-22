@@ -9,6 +9,7 @@
     http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Computation%20on%20NumPy%20Arrays%20Universal%20Functions.py
 """
 import numpy as np
+from scipy import special
 
 Array_Size = 2
 
@@ -27,3 +28,9 @@ print(f"numpyArrayOfIntegersBetweenTwentyAndThirty military census age? {numpyAr
 print(f"2026-07-21T17:18:00 numpyArrayOfIntegersBetweenTwentyAndThirty: How long do priests serve for? {Priesthood_Retirement_Age - numpyArrayOfIntegersBetweenTwentyAndThirty[Priesthood_Commencement_Age_Index]} years (Numbers 8:25)")
 
 print(f"2026-07-21T17:18:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Priesthood training commence? {Priesthood_Training_Age} years. Priesthood training period? {Priesthood_Commencement_Age - Priesthood_Training_Age} years (Numbers 8:24)")
+
+print(f"2026-07-21T21:31:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Minimum age? {np.min(numpyArrayOfIntegersBetweenTwentyAndThirty)}")
+assert numpyArrayOfIntegersBetweenTwentyAndThirty[0] == np.min(numpyArrayOfIntegersBetweenTwentyAndThirty)
+
+print(f"2026-07-21T21:31:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Maximum age? {np.max(numpyArrayOfIntegersBetweenTwentyAndThirty)}")
+assert numpyArrayOfIntegersBetweenTwentyAndThirty[np.size(numpyArrayOfIntegersBetweenTwentyAndThirty) - 1] == np.max(numpyArrayOfIntegersBetweenTwentyAndThirty)
