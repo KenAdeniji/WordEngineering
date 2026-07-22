@@ -5,6 +5,7 @@
     2026-07-21T16:56:00         Initialize a numpy array?
         http://stackoverflow.com/questions/5891410/numpy-array-initialization-fill-with-identical-values
             numpyArrayOfIntegersBetweenTwentyAndThirty = np.full(2, [20, 30])
+    http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Computation%20on%20NumPy%20Arrays%20Universal%20Functions.py
 """
 import numpy as np
 
