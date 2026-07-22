@@ -822,3 +822,4 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-20T0455TarunPratap
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-07-20T1809academy@centreforproductivity.org_-_info@centreforproductivity.org_-_ShippingArrangementForYourDoctoratePackage.DHLExpress_USD8WorkingDays.FedEx_USD8WorkingDays.txt
 
+git add "IIS/WordEngineering/Python/JakeVanderPlas/Python Data Science Handbook by Jake VanderPlas/Python Data Science Handbook by Jake VanderPlas Computation on NumPy Arrays Universal Functions.py"
