@@ -13,7 +13,21 @@
     print(f"2026-07-22T16:48:00...2026-07-22T17:28:00 error numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {np.all(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index])}")
     2026-07-22T16:48:00 http://stackoverflow.com/questions/50801454/understanding-the-use-of-any-and-all-in-numpy-arrays
         Extension method in C# versus (VS) numpy
-    2026-07-22T18:25:00 http://stackoverflow.com/questions/10580676/comparing-two-numpy-arrays-for-equality-element-wise    
+    2026-07-22T18:07:00`http://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
+        To return a sorted version of the array without modifying the input, you can use np.sort:
+
+        x = np.array([2, 1, 4, 3, 5])
+        np.sort(x)
+
+        array([1, 2, 3, 4, 5])
+
+        If you prefer to sort the array in-place, you can instead use the sort method of arrays:
+
+        x.sort()
+        print(x)
+
+        [1 2 3 4 5]
+    2026-07-22T18:25:00 http://stackoverflow.com/questions/10580676/comparing-two-numpy-arrays-for-equality-element-wise            
 """
 import numpy as np
 from scipy import special
