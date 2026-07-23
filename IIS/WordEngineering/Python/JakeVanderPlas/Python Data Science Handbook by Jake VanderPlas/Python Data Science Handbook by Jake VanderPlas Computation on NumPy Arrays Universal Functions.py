@@ -7,6 +7,12 @@
         http://stackoverflow.com/questions/5891410/numpy-array-initialization-fill-with-identical-values
             numpyArrayOfIntegersBetweenTwentyAndThirty = np.full(2, [20, 30])
     http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Computation%20on%20NumPy%20Arrays%20Universal%20Functions.py
+    
+    http://jakevdp.github.io/PythonDataScienceHandbook/02.06-boolean-arrays-and-masks.html
+
+    print(f"2026-07-22T16:48:00...2026-07-22T17:28:00 error numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {np.all(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index])}")
+    2026-07-22T16:48:00 http://stackoverflow.com/questions/50801454/understanding-the-use-of-any-and-all-in-numpy-arrays
+        Extension method in C# versus (VS) numpy
 """
 import numpy as np
 from scipy import special
@@ -21,7 +27,9 @@ Priesthood_Training_Age = 25
 Priesthood_Commencement_Age = 30
 Priesthood_Retirement_Age = 55
 
-numpyArrayOfIntegersBetweenTwentyAndThirty = np.full(Array_Size, [Military_Census_Age, Priesthood_Commencement_Age])
+#numpyArrayOfIntegersBetweenTwentyAndThirty = np.full(Array_Size, [Military_Census_Age, Priesthood_Commencement_Age])
+
+numpyArrayOfIntegersBetweenTwentyAndThirty = np.asarray([Military_Census_Age, Priesthood_Commencement_Age])
 
 print(f"numpyArrayOfIntegersBetweenTwentyAndThirty military census age? {numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index]} years. Priesthood commencement age? {numpyArrayOfIntegersBetweenTwentyAndThirty[Priesthood_Commencement_Age_Index]} years.")
 
@@ -34,3 +42,6 @@ assert numpyArrayOfIntegersBetweenTwentyAndThirty[0] == np.min(numpyArrayOfInteg
 
 print(f"2026-07-21T21:31:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Maximum age? {np.max(numpyArrayOfIntegersBetweenTwentyAndThirty)}")
 assert numpyArrayOfIntegersBetweenTwentyAndThirty[np.size(numpyArrayOfIntegersBetweenTwentyAndThirty) - 1] == np.max(numpyArrayOfIntegersBetweenTwentyAndThirty)
+
+print(f"2026-07-22T16:48:00...2026-07-22T17:28:00 error numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {np.all(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index])}")
+print(f"2026-07-22T16:48:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index]).all()}")
