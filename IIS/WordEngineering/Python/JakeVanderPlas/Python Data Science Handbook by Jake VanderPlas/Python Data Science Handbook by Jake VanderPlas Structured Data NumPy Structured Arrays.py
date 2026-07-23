@@ -1,4 +1,5 @@
 """
+    http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Structured%20Data%20NumPy%20Structured%20Arrays.py
     2026-07-22T20:25:00
     http://jakevdp.github.io/PythonDataScienceHandbook/02.09-structured-data-numpy.html
     Numbers 26:4                Take the sum of the people, from twenty years old and upward; as the Lord commanded Moses and the children of Israel, which went forth out of the land of Egypt.

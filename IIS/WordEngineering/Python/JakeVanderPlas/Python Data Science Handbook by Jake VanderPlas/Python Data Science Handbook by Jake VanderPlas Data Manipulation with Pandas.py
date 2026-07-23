@@ -1,4 +1,5 @@
 """
+    http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Data%20Manipulation%20with%20Pandas.py
     2026-07-22T22:19:00 http://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html
     2026-07-22T22:19:00 http://www.w3schools.com/python/pandas/pandas_dataframes.asp
     2026-07-22T23:13:00 http://stackoverflow.com/questions/11350770/filter-pandas-dataframe-by-substring-criteria
