@@ -13,6 +13,7 @@
     print(f"2026-07-22T16:48:00...2026-07-22T17:28:00 error numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {np.all(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index])}")
     2026-07-22T16:48:00 http://stackoverflow.com/questions/50801454/understanding-the-use-of-any-and-all-in-numpy-arrays
         Extension method in C# versus (VS) numpy
+    2026-07-22T18:25:00 http://stackoverflow.com/questions/10580676/comparing-two-numpy-arrays-for-equality-element-wise    
 """
 import numpy as np
 from scipy import special
@@ -45,3 +46,4 @@ assert numpyArrayOfIntegersBetweenTwentyAndThirty[np.size(numpyArrayOfIntegersBe
 
 print(f"2026-07-22T16:48:00...2026-07-22T17:28:00 error numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {np.all(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index])}")
 print(f"2026-07-22T16:48:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Service age? {(numpyArrayOfIntegersBetweenTwentyAndThirty >= numpyArrayOfIntegersBetweenTwentyAndThirty[Military_Census_Age_Index]).all()}")
+print(f"2026-07-22T18:07:00 numpyArrayOfIntegersBetweenTwentyAndThirty: Sorted... arrangement... pre-sorted? {(numpyArrayOfIntegersBetweenTwentyAndThirty == np.sort(numpyArrayOfIntegersBetweenTwentyAndThirty)).all()}")
