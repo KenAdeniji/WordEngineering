@@ -828,3 +828,4 @@ git add "IIS/WordEngineering/Python/JakeVanderPlas/Python Data Science Handbook 
 
 git add "IIS/WordEngineering/Python/JakeVanderPlas/Python Data Science Handbook by Jake VanderPlas/Python Data Science Handbook by Jake VanderPlas Data Manipulation with Pandas.py"
 
+git add IIS/WordEngineering/WordUnion/Deprecated/
