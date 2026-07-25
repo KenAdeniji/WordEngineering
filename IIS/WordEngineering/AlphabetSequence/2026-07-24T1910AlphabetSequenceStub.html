@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-07-24T19:10:00...2026-07-24T19:50:00 Code.
+	-->
+	<head>
+		<title>AlphabetSequence</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="AlphabetSequence"/>
+		<meta name="keywords" content="AlphabetSequence"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 50vw;
+	}
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" value="Hello world." autofocus></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="alphabetSequenceIndex"></div>
+		</div>
+
+		<script>
+			const	wordElement = document.getElementById("word");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	alphabetSequenceIndexElement = document.getElementById("alphabetSequenceIndex");
+	
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			async function querySubmit()
+			{
+				alphabetSequenceIndexElement.innerHTML = "";
+				if (!isNaN(parseFloat(wordElement.value)) && isFinite(wordElement.value))
+				{
+					alphabetSequenceIndexElement.innerHTML = wordElement.value;
+				}
+				else
+				{
+					let alphabetSequencePlace = 0;
+					let wordUpperCase = wordElement.value.toUpperCase();
+					let letterASCII;
+					for (let letterIndex = 0; letterIndex < wordUpperCase.length; letterIndex++) 
+					{
+						letterASCII = wordUpperCase.charCodeAt(letterIndex);
+						if (letterASCII >= 65 && letterASCII <= 90)
+						{
+							alphabetSequencePlace += letterASCII - 64;
+						}
+					}					
+					alphabetSequenceIndexElement.innerHTML = alphabetSequencePlace;	
+				}
+			}
+			
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+		</script>
+	</body>
+</html>
