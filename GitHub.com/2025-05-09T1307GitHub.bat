@@ -831,3 +831,5 @@ git add "IIS/WordEngineering/Python/JakeVanderPlas/Python Data Science Handbook 
 git add IIS/WordEngineering/WordUnion/Deprecated/
 
 git add IIS/WordEngineering/AlphabetSequence/2026-07-24T1910AlphabetSequenceStub.html
+
+git add "IIS/WordEngineering/Python/Ossama Embarak/"
