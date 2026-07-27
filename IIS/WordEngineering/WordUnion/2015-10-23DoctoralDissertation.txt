@@ -216,7 +216,7 @@ The SQL statement
 
 will set this computed column. The Testament column serves as a filter,
 such as, in the
-[BibleWord.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html).
+[BibleWordHelper.cs](http://github.com/KenAdeniji/WordEngineering/blob/main/InformationInTransit/ProcessLogic/BibleWordHelper.cs).
 
 </div>
 
