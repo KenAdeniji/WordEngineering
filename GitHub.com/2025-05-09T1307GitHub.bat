@@ -833,3 +833,5 @@ git add IIS/WordEngineering/WordUnion/Deprecated/
 git add IIS/WordEngineering/AlphabetSequence/2026-07-24T1910AlphabetSequenceStub.html
 
 git add "IIS/WordEngineering/Python/Ossama Embarak/"
+
+git add IIS/WordEngineering/Mozilla/2026-07-26T1723Mozilla_-_Leaflet_-_GeolocationMap.html
