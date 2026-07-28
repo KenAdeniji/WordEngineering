@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics.Contracts;
 
 /*
+	http://github.com/KenAdeniji/WordEngineering/blob/main/InformationInTransit/BertrandMeyer_-_DesignByContract(DbC)/2026-07-27T0720BertrandMeyer_-_DesignByContract(DbC)Helper.cs
 	http://learn.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts
 	http://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-pad-a-number-with-leading-zeros
 	SELECT
