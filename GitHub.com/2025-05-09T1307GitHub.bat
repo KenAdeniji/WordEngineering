@@ -836,6 +836,8 @@ git add "IIS/WordEngineering/Python/Ossama Embarak/"
 
 git add IIS/WordEngineering/Mozilla/2026-07-26T1723Mozilla_-_Leaflet_-_GeolocationMap.html
 
-git mv "IIS/WordEngineering/2018-05-03Correspondence/2026-07-27T1211 Ann Bergstrom, Swedish, paternal. When meeting... somebody... is aiming... to use you. 2026-07-27T1341To be as certainty... as I Am use.txt" "IIS/WordEngineering/2018-05-03Correspondence/2026-07-27T1211Ann Bergstrom, Swedish, paternal. When meeting... somebody... is aiming... to use you. 2026-07-27T1341To be as certainty... as I Am use.txt"
+rem git mv "IIS/WordEngineering/2018-05-03Correspondence/2026-07-27T1211 Ann Bergstrom, Swedish, paternal. When meeting... somebody... is aiming... to use you. 2026-07-27T1341To be as certainty... as I Am use.txt" "IIS/WordEngineering/2018-05-03Correspondence/2026-07-27T1211Ann Bergstrom, Swedish, paternal. When meeting... somebody... is aiming... to use you. 2026-07-27T1341To be as certainty... as I Am use.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-27T1211Ann Bergstrom, Swedish, paternal. When meeting... somebody... is aiming... to use you. 2026-07-27T1341To be as certainty... as I Am use.txt"
+
+git add "InformationInTransit/BertrandMeyer_-_DesignByContract(DbC)/"
