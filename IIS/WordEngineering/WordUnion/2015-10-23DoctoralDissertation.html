@@ -609,7 +609,7 @@ dbo.udf_BookTitle(BookID)
 				It is for determining this computed column.
 				As expected, there is a correlation between the BookID column, and its corresponding BookTitle column; it progresses from Genesis to Revelation.
 				Because SQL does not support arrays, the author chose to write an <a href="http://en.wikipedia.org/wiki/SQL_CLR">SQL CLR</a> C# function for determining the BookTitle when passed the BookID.
-				Although C# supports <a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by contract</a> assertions, the author only checks BookID range validity, and returns NULL, if the argument does not fall within this range. 
+				Although C# supports <a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by contract</a> assertions, and particularly pre-conditions, the author only checks BookID range validity, and returns NULL, if the argument does not fall within this range. 
 				The author could throw exceptions, but the author does not know the side effects nor the full ramifications.
 				Instead of writing and determining the book title using C#, an alternative is to use a database table.
 				A table with two columns, BookID and BookTitle, will store and make 
@@ -776,6 +776,69 @@ WHERE BookID = 43 AND ChapterID = 1 AND VerseID = 1
 				it is just an introduction and speculation, 
 				which others may wish to adopt.
 			</p>
+			
+<div>
+<pre><code>
+#define CONTRACTS_FULL
+
+using System;
+using System.Diagnostics.Contracts;
+
+/*
+	http://github.com/KenAdeniji/WordEngineering/blob/main/InformationInTransit/BertrandMeyer_-_DesignByContract(DbC)/2026-07-27T0720BertrandMeyer_-_DesignByContract(DbC)Helper.cs
+	http://learn.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts
+	http://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-pad-a-number-with-leading-zeros
+	SELECT
+		MAX(BookID)		BookIDMaximum,
+		MAX(ChapterID)	ChapterIDMaximum,
+		MAX(VerseID)	VerseIDMaximum
+	FROM
+		Bible..Scripture
+*/	
+namespace InformationInTransit.BertrandMeyer_DesignByContract_DbC
+{
+	public static partial class BertrandMeyer_DesignByContract_DbCHelper
+    {
+		public static void Main(string[] argv)
+		{
+			System.Console.WriteLine(BibleReference(43, 1, 1));
+			//System.Console.WriteLine(BibleReference(67, 1, 1));
+			//System.Console.WriteLine(BibleReference(43, 151, 1));
+			//System.Console.WriteLine(BibleReference(43, 1, 177));
+		}
+		
+        public static String BibleReference
+		(
+			int	bookID,
+			int	chapterID,
+			int	verseID
+		)
+        {
+			//Contract.Requires<ArgumentException>(bookID < 1 || bookID > BookIDMaximum, "bookID");
+			if (bookID < 1 || bookID > BookIDMaximum) throw new ArgumentException(String.Format("bookID={0} bookID < 1 || bookID > {1}", bookID, BookIDMaximum));
+			if (chapterID < 1 || chapterID > ChapterIDMaximum) throw new ArgumentException(String.Format("chapterID={0} chapterID < 1 || chapterID > {1}", chapterID, ChapterIDMaximum));
+			if (verseID < 1 || verseID > VerseIDMaximum) throw new ArgumentException(String.Format("verseID={0} verseID < 1 || verseID > {1}", verseID, VerseIDMaximum));
+			Contract.EndContractBlock(); // All previous "if" checks are preconditions
+			return 
+			(
+				String.Format
+				(
+					"{0,2:D2}{1,3:D3}{2,3:D3}",
+					bookID,
+					chapterID,
+					verseID
+				)
+			);
+		}
+		
+		public const int BookIDMaximum = 66;
+		public const int ChapterIDMaximum = 150;
+		public const int VerseIDMaximum = 176;
+	}
+}	
+
+</code></pre>
+</div>
 			
 			<p>	
 				Most of the applications, extract information, and query the Scripture table.

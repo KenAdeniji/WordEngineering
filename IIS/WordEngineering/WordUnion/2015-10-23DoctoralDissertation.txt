@@ -50,7 +50,7 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::::
 
-::::::::::::::::: {.section style="margin-left:25%"}
+:::::::::::::::::: {.section style="margin-left:25%"}
 [The importance of this work?]{#TheImportanceOfThisWork}
 
 -   2021-05-20T17:26:00 [Follow God, as a
@@ -244,18 +244,18 @@ support arrays, the author chose to write an [SQL
 CLR](http://en.wikipedia.org/wiki/SQL_CLR) C# function for determining
 the BookTitle when passed the BookID. Although C# supports [Design by
 contract](http://en.wikipedia.org/wiki/Design_by_contract) assertions,
-the author only checks BookID range validity, and returns NULL, if the
-argument does not fall within this range. The author could throw
-exceptions, but the author does not know the side effects nor the full
-ramifications. Instead of writing and determining the book title using
-C#, an alternative is to use a database table. A table with two columns,
-BookID and BookTitle, will store and make
-[extractable]{dated="2021-03-17T19:11:00"} the sixty-six books. [ For
-example, the first book of the New Testament, the 40th book, spelling is
-Matthew or Mathew, double tt versus (VS) single t. An improvement on the
-current implementation is to use soundex to 2026-01-22T10:12:00 index
-the book title and determine the corresponding BookID.
-]{dated="2020-10-06T15:05:00"}
+and particularly pre-conditions, the author only checks BookID range
+validity, and returns NULL, if the argument does not fall within this
+range. The author could throw exceptions, but the author does not know
+the side effects nor the full ramifications. Instead of writing and
+determining the book title using C#, an alternative is to use a database
+table. A table with two columns, BookID and BookTitle, will store and
+make [extractable]{dated="2021-03-17T19:11:00"} the sixty-six books. [
+For example, the first book of the New Testament, the 40th book,
+spelling is Matthew or Mathew, double tt versus (VS) single t. An
+improvement on the current implementation is to use soundex to
+2026-01-22T10:12:00 index the book title and determine the corresponding
+BookID. ]{dated="2020-10-06T15:05:00"}
 
 </div>
 
@@ -396,6 +396,68 @@ There is a conversion page
 [BibleReference.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleReference.html?bibleReference=02002001-02002010,%2058011023-58011029).
 Please note, that the author has not developed this further, it is just
 an introduction and speculation, which others may wish to adopt.
+
+<div>
+
+    #define CONTRACTS_FULL
+
+    using System;
+    using System.Diagnostics.Contracts;
+
+    /*
+        http://github.com/KenAdeniji/WordEngineering/blob/main/InformationInTransit/BertrandMeyer_-_DesignByContract(DbC)/2026-07-27T0720BertrandMeyer_-_DesignByContract(DbC)Helper.cs
+        http://learn.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts
+        http://learn.microsoft.com/en-us/dotnet/standard/base-types/how-to-pad-a-number-with-leading-zeros
+        SELECT
+            MAX(BookID)     BookIDMaximum,
+            MAX(ChapterID)  ChapterIDMaximum,
+            MAX(VerseID)    VerseIDMaximum
+        FROM
+            Bible..Scripture
+    */  
+    namespace InformationInTransit.BertrandMeyer_DesignByContract_DbC
+    {
+        public static partial class BertrandMeyer_DesignByContract_DbCHelper
+        {
+            public static void Main(string[] argv)
+            {
+                System.Console.WriteLine(BibleReference(43, 1, 1));
+                //System.Console.WriteLine(BibleReference(67, 1, 1));
+                //System.Console.WriteLine(BibleReference(43, 151, 1));
+                //System.Console.WriteLine(BibleReference(43, 1, 177));
+            }
+            
+            public static String BibleReference
+            (
+                int bookID,
+                int chapterID,
+                int verseID
+            )
+            {
+                //Contract.Requires(bookID < 1 || bookID > BookIDMaximum, "bookID");
+                if (bookID < 1 || bookID > BookIDMaximum) throw new ArgumentException(String.Format("bookID={0} bookID < 1 || bookID > {1}", bookID, BookIDMaximum));
+                if (chapterID < 1 || chapterID > ChapterIDMaximum) throw new ArgumentException(String.Format("chapterID={0} chapterID < 1 || chapterID > {1}", chapterID, ChapterIDMaximum));
+                if (verseID < 1 || verseID > VerseIDMaximum) throw new ArgumentException(String.Format("verseID={0} verseID < 1 || verseID > {1}", verseID, VerseIDMaximum));
+                Contract.EndContractBlock(); // All previous "if" checks are preconditions
+                return 
+                (
+                    String.Format
+                    (
+                        "{0,2:D2}{1,3:D3}{2,3:D3}",
+                        bookID,
+                        chapterID,
+                        verseID
+                    )
+                );
+            }
+            
+            public const int BookIDMaximum = 66;
+            public const int ChapterIDMaximum = 150;
+            public const int VerseIDMaximum = 176;
+        }
+    }   
+
+</div>
 
 Most of the applications, extract information, and query the Scripture
 table. If the user chooses to, he may choose to load another Bible
@@ -1617,7 +1679,7 @@ Primary and foreign keys, unique indexes and check constraints.
 The Author Uses the Git Code Repository
 
 Key
-:::::::::::::::::
+::::::::::::::::::
 
 Value
 
