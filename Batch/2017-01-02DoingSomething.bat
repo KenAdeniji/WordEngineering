@@ -1305,7 +1305,11 @@ US imposing a 25% tariff on some Brazilian imports starting July 22, citing unfa
 	
 2026-07-24T11:42:00	http://av1611.com/verseclick
 	<script type="text/javascript" src="https://av1611.com/verseclick/verseclick.js"></script>
-	
-http://time.com/article/2026/07/28/us-walks-out-protest-france-united-nations-address-europe-rift/?utm_source=firefox-newtab-en-us
+
+2026-07-29T13:56:00 http://software-engineering-books.com
+
+2026-07-29T17:55:00 http://www.cbsnews.com/news/salman-rushdie-convicted-federal-terrorism-2022-stabbing/?utm_source=firefox-newtab-en-us
+
+2026-07-31T12:06:00 http://www.espn.com/nfl/story/_/id/49496985/tony-romo-placed-leave-cbs-sports-following-arrest?utm_source=firefox-newtab-en-us
 
 :Exit

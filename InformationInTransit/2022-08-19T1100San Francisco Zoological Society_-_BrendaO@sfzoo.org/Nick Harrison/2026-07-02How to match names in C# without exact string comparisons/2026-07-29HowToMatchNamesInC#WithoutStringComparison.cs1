@@ -1,0 +1,562 @@
+/*
+	http://www.red-gate.com/simple-talk/development/how-to-match-names-in-c-without-exact-string-comparisons
+	2026-07-29T19:42:00 In God we trust versus (VS) In... dollar... we trust.
+		In dollar... wetrust.
+			Who is your manager? Crazy mister Martin. Mister Martin as a good (Isaiah 62:6, John 1:27)
+		Indollar... wetrust.
+			MyCondemn (Psalms 11:6, Galatians 1:23)
+		2026-07-29T19:58:00 http://localhost/Wordengineering/WordOfGod/ContactMaintenance.aspx	Creflo Dollar
+		
+CREATE TABLE [dbo].[NameGroup]
+(
+	[NameGroupID]		[int] IDENTITY(1,1)	NOT NULL,
+	[Description]		[nvarchar](max)		NOT NULL,
+	[CreatedDated] 		[datetime2](7) 		NOT NULL,
+	[ModifiedDated]		[datetime2](7) 		NOT NULL,	
+	CONSTRAINT [PK_NameGroup] PRIMARY KEY NONCLUSTERED 
+	(
+		[NameGroupID] ASC
+	)
+)
+GO
+
+ALTER TABLE [dbo].[NameGroup] ADD CONSTRAINT [DF_NameGroup_CreatedDated]  DEFAULT (getdate()) FOR [CreatedDated]
+GO
+
+ALTER TABLE [dbo].[NameGroup] ADD CONSTRAINT [DF_NameGroup_ModifiedDated]  DEFAULT (getdate()) FOR [ModifiedDated]
+GO
+
+CREATE TABLE [dbo].[NameGroupMapping]
+(
+	[NameGroupMappingID]	[int] IDENTITY(1,1)	NOT NULL,
+	[NameGroupID]			[int]				NOT NULL,
+	[NameText]				[nvarchar](max)		NOT NULL,
+	[IsCanonical]			BIT 				NOT NULL DEFAULT (0),
+	[CreatedDated] 			[datetime2](7) 		NOT NULL,
+	CONSTRAINT [PK_NameGroupMapping] PRIMARY KEY NONCLUSTERED 
+	(
+		[NameGroupMappingID] ASC
+	)
+)
+GO
+
+ALTER TABLE [dbo].[NameGroupMapping] ADD CONSTRAINT [DF_NameGroupMapping_CreatedDated]  DEFAULT (getdate()) FOR [CreatedDated]
+GO
+
+-- Seed data: NameGroup / NameGroupMapping for CHARLES
+-- Assumptions:
+-- 1) NameText is stored in UPPERCASE to match normalization
+-- 2) NameGroupId is an IDENTITY in NameGroup
+ 
+DECLARE @NameGroupID INT;
+ 
+INSERT INTO dbo.NameGroup (Description)
+VALUES ('CHARLES');
+ 
+SET @NameGroupID = SCOPE_IDENTITY();
+ 
+INSERT INTO dbo.NameGroupMapping (NameGroupID, NameText, IsCanonical)
+VALUES
+    (@NameGroupID, 'CHARLES', 1),
+    (@NameGroupID, 'CHUCK', 0),
+    (@NameGroupID, 'CHARLIE', 0),
+    (@NameGroupID, 'CHAS', 0),
+    (@NameGroupID, 'CHAZ', 0),
+    (@NameGroupID, 'CHIP', 0),
+    (@NameGroupID, 'CHUCKY', 0),
+    (@NameGroupID, 'CARL', 0);
+
+CREATE TABLE [dbo].[Person]
+(
+    -- 1. Identity & Core Data
+    [Id] INT IDENTITY(1,1) NOT NULL,
+    [UserGuid] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+    
+    -- Raw Data (What the user actually typed)
+    [RawFirstName] NVARCHAR(100) NOT NULL,
+    [RawLastName] NVARCHAR(100) NOT NULL,
+    [RawMiddleName] NVARCHAR(100) NULL,
+    [DateOfBirth] DATE NULL,
+    [ZipCode] VARCHAR(10) NULL, -- Useful for blocking
+    [Gender]  VARCHAR(1) NULL,
+    -- 2. Normalization & Canonicalization Columns
+    -- Populated by your C# 'NameNormalizer' before insert
+    -- Uppercase, trimmed, stripped of accents/punctuation
+    [NormalizedFirstName] VARCHAR(100) NOT NULL, 
+    [NormalizedLastName] VARCHAR(100) NOT NULL,
+    
+    -- Stores 'CHARLES' even if Raw is 'Chuck'
+    [CanonicalFirstName] VARCHAR(100) NOT NULL, 
+ 
+    -- 3. Phonetic Keys (Double Metaphone)
+    -- Populated by your C# 'PhoneticIdentityGenerator'
+    [PhoneticPrimary] VARCHAR(4) NOT NULL,   -- e.g. 'SM0' (Smith)
+    [PhoneticSecondary] VARCHAR(4) NULL, -- e.g. 'XMT' (Schmidt alternative)
+ 
+    -- 4. Blocking Key (The "Net")
+    -- Application Logic: ZipCode + first 3 chars of NormalizedLastName 
+    -- (with sensible fallbacks for null/short values)
+    -- Example: '29601SMY'
+    [BlockingKey] VARCHAR(20) NOT NULL,
+ 
+    -- Metadata
+    [CreatedDate] DATETIME2 DEFAULT GETUTCDATE() NOT NULL,
+    [LastUpdated] DATETIME2 DEFAULT GETUTCDATE() NOT NULL,
+ 
+    CONSTRAINT [PK_Person] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+-- 1. The Blocking Index (The "Fast Lane")
+-- This allows your app to grab a small pool of \"candidate\" records quickly.
+-- We INCLUDE the columns needed for the scoring algorithm, so we don't hit the -- heap again.
+CREATE NONCLUSTERED INDEX [IX_Person_BlockingKey] 
+ON [dbo].[Person] ([BlockingKey])
+INCLUDE ([NormalizedFirstName], [NormalizedLastName], [CanonicalFirstName], [DateOfBirth], [ZipCode]);
+GO
+ 
+-- 2. The Phonetic Index (The "Sound-Alike" Lane)
+-- Used when a user searches by name without a Zip Code or when we need to 
+-- broaden the search
+-- Allows queries like: WHERE PhoneticPrimary = 'SM0'
+CREATE NONCLUSTERED INDEX [IX_Person_Phonetic] 
+ON [dbo].[Person] ([PhoneticPrimary], [PhoneticSecondary])
+INCLUDE ([NormalizedFirstName], [NormalizedLastName], [CanonicalFirstName]);
+GO
+ 
+-- 3. The Canonical Index (The "Nickname" Lane)
+-- Used for finding "Elizabeth" when someone searches "Beth"
+CREATE NONCLUSTERED INDEX [IX_Person_Canonical] 
+ON [dbo].[Person] ([CanonicalFirstName], [NormalizedLastName])
+INCLUDE ([RawFirstName]);
+GO
+*/
+namespace InformationInTransit.SanFranciscoZoologicalSociety_SFZoo
+{
+	public static partial class HowToMatchNamesInCSharpWithoutStringComparison
+	{
+		private static readonly HashSet<string> PersonNoiseWords = 
+			 new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+		{
+			// 1. Prefixes (Titles)
+			"MR", "MRS", "MS", "MISS", "DR", "PROF", "REV", "FR", "SR", "SRA",
+			"SIR", "MADAM", "HON", "CAPT", "MAJ", "COL", "GEN", "LT", 
+			
+			// 2. Suffixes (Generational & Professional)
+			"JR", "SR", "II", "III", "IV", "ESQ", "PHD", "MD", "DDS", "CPA"
+		};
+	 
+		public static string NormalizePersonName(string rawName)
+		{
+			if (string.IsNullOrWhiteSpace(rawName))
+				return string.Empty;
+	 
+			// Step 1: Remove Diacritics
+			var text = RemoveDiacritics(rawName);
+	 
+			// Step 2: Uppercase for comparison safety
+			text = text.ToUpperInvariant();
+	 
+			// Step 3: Punctuation Cleanup
+			// We want to transform "O'Connor" -> "OCONNOR" 
+			// but "Mary-Jane" -> "MARY JANE"
+			var sb = new StringBuilder(text.Length);
+			char lastChar = ' ';
+	 
+			foreach (char c in text)
+			{
+				if (char.IsLetterOrDigit(c))
+				{
+					sb.Append(c);
+					lastChar = c;
+				}
+				else if (c == '\'')
+				{
+					// Eat the apostrophe (O'Neil -> ONEIL)
+					continue;
+				}
+				else
+				{
+					// Turn all other punctuation (hyphens, periods, commas)  
+					// into a single space
+					if (lastChar != ' ')
+					{
+						sb.Append(' ');
+						lastChar = ' ';
+					}
+				}
+			}
+	 
+			// Step 4: Tokenize & Filter Noise
+			string cleanedString = sb.ToString();
+			if (string.IsNullOrWhiteSpace(cleanedString)) return string.Empty;
+	 
+			var tokens = cleanedString.Split(' ', 
+				StringSplitOptions.RemoveEmptyEntries);
+			var finalTokens = new List<string>(tokens.Length);
+	 
+			foreach (var token in tokens)
+			{
+				// If token is a known noise word -> Skip it
+				if (PersonNoiseWords.Contains(token))
+					continue;
+	 
+				// OTHERWISE -> Keep it
+				finalTokens.Add(token);
+			}
+	 
+			return string.Join(" ", finalTokens);
+		}		
+	
+		/// <summary>
+		/// Resolves a nickname to its canonical form.
+		/// </summary>
+		/// <param name="normalizedName">Expects UPPERCASE, 
+		/// TRIMMED input (e.g. "CHUCK").</param>
+		/// <returns>The canonical name in UPPERCASE for matching 
+		/// (e.g. \"CHARLES\"). Format for display (Title Case) 
+		/// at the UI boundary.</returns>
+		public async Task<string> GetCanonicalNameAsync(string normalizedName)
+		{
+			if (string.IsNullOrWhiteSpace(normalizedName)) return normalizedName;
+	 
+			var canonicalName = await _context.NameGroupMappings
+				// 1. Filter: Match the already normalized input
+				.Where(input => input.NameText == normalizedName)
+	 
+				// 2. Join: Connect to siblings in the same group
+				.Join(_context.NameGroupMappings,
+					  input => input.NameGroupId,
+					  nickName => nickName.NameGroupId,
+					  (input, nickName) => nickName)
+	 
+				// 3. Filter: Find the Canonical version
+				.Where(nickName => nickName.IsCanonical)
+	 
+				// 4. Select: Grab the name string
+				.Select(nickName => nickName.NameText)
+	 
+				// 5. Execute
+				.FirstOrDefaultAsync();
+	 
+			if (string.IsNullOrEmpty(canonicalName))
+			{
+				// Fallback: If no match found, treat the input as the name.
+				return normalizedName;
+			}
+	 
+			// Success: Return the resolved canonical name.
+			return canonicalName;
+		}	
+		
+		// Candidate retrieval strategy:
+		// 1) Start with BlockingKey (fast + precise)
+		// 2) If too few candidates, widen using PhoneticPrimary
+		// 3) If still too few, widen again using PhoneticSecondary
+		// 4) Cap results so scoring stays cheap
+		public async Task<List<PersonDto>> FindCandidatesAsync(
+			string blockingKey,
+			string phoneticPrimary,
+			string phoneticSecondary,
+			int minCandidates = 10,
+			int maxCandidates = 100,
+			CancellationToken ct = default)
+		{
+			// Pull only the columns needed for downstream scoring 
+			// (plus the keys used for filtering)
+			IQueryable<PersonDto> baseQuery = _context.Persons.AsNoTracking()
+				.Select(p => new PersonDto
+				{
+					Id = p.Id,
+					UserGuid = p.UserGuid,
+					RawFirstName = p.RawFirstName,
+					RawLastName = p.RawLastName,
+					RawMiddleName = p.RawMiddleName,
+					DateOfBirth = p.DateOfBirth,
+					ZipCode = p.ZipCode,
+					Gender = p.Gender,
+					NormalizedFirstName = p.NormalizedFirstName,
+					NormalizedLastName = p.NormalizedLastName,
+					CanonicalFirstName = p.CanonicalFirstName,
+					BlockingKey = p.BlockingKey,
+					PhoneticPrimary = p.PhoneticPrimary,
+					PhoneticSecondary = p.PhoneticSecondary
+				});
+		 
+			// Stage 1: BlockingKey
+			var q = baseQuery;
+			if (!string.IsNullOrWhiteSpace(blockingKey))
+			{
+				q = q.Where(p => p.BlockingKey == blockingKey);
+			}
+		 
+			// Materialize early. We may not need to go any further
+			var candidates = await q.Take(maxCandidates).ToListAsync(ct);
+		 
+			// Stage 2: widen via Primary phonetic key
+			if (candidates.Count < minCandidates && 
+				 !string.IsNullOrWhiteSpace(phoneticPrimary))
+			{
+				candidates = await baseQuery
+					.Where(p => p.PhoneticPrimary == phoneticPrimary)
+					.Take(maxCandidates)
+					.ToListAsync(ct);
+			}
+		 
+			// Stage 3: widen again using Secondary (alternate) phonetic key
+			if (candidates.Count < minCandidates && 
+				  !string.IsNullOrWhiteSpace(phoneticSecondary))
+			{
+				candidates = await baseQuery
+					.Where(p => p.PhoneticSecondary == phoneticSecondary
+						|| p.PhoneticPrimary == phoneticSecondary) 
+				// occasional cross-population some encoders only output Primary
+					.Take(maxCandidates)
+					.ToListAsync(ct);
+			}
+		 
+			return candidates;
+		}		
+	}	
+
+	public class PersonDto
+	{
+		public int Id { get; set; }
+		public Guid UserGuid { get; set; }
+		public string RawFirstName { get; set; }
+		public string RawLastName { get; set; }
+		public string RawMiddleName { get; set; }
+		public DateTime? DateOfBirth { get; set; }
+		public string ZipCode { get; set; }
+		public string Gender {get;set;}
+		
+		// Computed Columns
+		public string NormalizedFirstName { get; set; }
+		public string NormalizedLastName { get; set; }
+		public string CanonicalFirstName { get; set; }
+		public string PhoneticPrimary { get; set; }
+		public string PhoneticSecondary { get; set; }
+		public string BlockingKey { get; set; }
+		
+		public DateTime CreatedDate { get; set; }
+		public DateTime LastUpdated { get; set; }
+	}
+	
+	//dotnet add package Lucene.Net.Analysis.Common
+/// <summary>
+    /// Provides phonetic encoding utilities for fuzzy string 
+    /// matching and search.
+    /// </summary>
+    public static class PhoneticHelper
+    {
+        /// <summary>
+        /// Generates the primary and alternate Double Metaphone phonetic 
+        /// encodings for the given input string.
+        /// </summary>
+        /// <param name="input">The string to encode. Returns a result 
+        /// with <see langword="null"/> values if null or whitespace.</param>
+        /// <param name="maxLen">The maximum length of each phonetic code. 
+        /// Defaults to <c>4</c>.</param>
+        /// <returns>
+        /// A <see cref="PhoneticResult"/> containing the <c>Primary</c> 
+        /// and <c>Alternate</c> Double Metaphone codes,
+        /// or <see langword="null"/> for both if <paramref name="input"/> 
+        /// is null or whitespace.
+        /// </returns>
+        public static PhoneticResult GetEncodings(string input, int maxLen = 4)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return new PhoneticResult(null, null);
+ 
+            // Create a local instance to avoid locking bottlenecks
+            var encoder = new DoubleMetaphone
+            {
+                MaxCodeLen = maxLen
+            };
+ 
+            return new PhoneticResult(
+                Primary: encoder.GetDoubleMetaphone(input, false),
+                Alternate: encoder.GetDoubleMetaphone(input, true)
+            );
+        }
+ 
+		/// <summary>
+		/// Represents the result of a Double Metaphone phonetic 
+		/// encoding operation.
+		/// </summary>
+		/// <param name="Primary">The primary phonetic encoding 
+		/// of the input string.</param>
+		/// <param name="Alternate">The alternate phonetic encoding 
+		/// of the input string, which may differ for 
+		/// ambiguous pronunciations.</param>
+	 
+		public record PhoneticResult(string Primary, string Alternate);
+	
+	}
+	
+    public class MatchEvaluator
+    {
+ 
+        // Thresholds for the gatekeeper routing
+        private const double AutoAcceptThreshold = 0.85;
+        private const double ManualReviewThreshold = 0.65;
+        private const double EarlyRejectNameThreshold = 0.40; 
+        // Component Weights
+        private const double LastNameWeight = 0.55;
+        private const double FirstNameWeight = 0.35;
+        private const double MiddleNameWeight = 0.10;
+        /// <summary>
+        /// The coordinating function that orchestrates the scoring 
+        /// and routing.
+        /// </summary>
+        public MatchResult EvaluateMatch(Person incoming, Person existing)
+        {
+            var result = new MatchResult();
+ 
+            // 1. Calculate Base Name Score
+            result.BaseNameScore = CalculateBaseNameScore(incoming, existing);
+ 
+            // Optimization: If the name score is completely unviable, 
+            // reject early to save CPU cycles on penalty calculations.
+            if (result.BaseNameScore < EarlyRejectNameThreshold)
+            {
+                result.FinalScore = result.BaseNameScore;
+                result.Resolution = MatchResolution.Reject;
+                result.SystemNotes = 
+                        "Rejected early due to severe name mismatch.";
+                return result;
+            }
+ 
+            // 2. Calculate Tiered Penalties
+            result.TotalPenalty = CalculateDemographicPenalties
+                  (incoming, existing);
+ 
+            // 3. Apply Penalties to get Final Score
+            // Ensure score doesn't drop below 0
+            result.FinalScore = Math.Max(0.0, 
+                  result.BaseNameScore - result.TotalPenalty);
+ 
+            // 4. Determine Resolution Category
+            if (result.FinalScore >= AutoAcceptThreshold)
+            {
+                result.Resolution = MatchResolution.AutoAccept;
+                result.SystemNotes = 
+                   "High confidence match. Safe for automated merge/update.";
+            }
+            else if (result.FinalScore >= ManualReviewThreshold)
+            {
+                result.Resolution = MatchResolution.ManualReview;
+                result.SystemNotes = 
+                  "Weak match. Routed to exception queue for manual review.";
+            }
+            else
+            {
+                result.Resolution = MatchResolution.Reject;
+                result.SystemNotes = 
+                    "Confidence is too low after demographic penalties.";
+            }
+ 
+            return result;
+        }
+        /// <summary>
+        /// Calculates the weighted score of the name components.
+        /// </summary>
+        private double CalculateBaseNameScore(Person incoming, Person existing)
+        {
+            // Note: GetSimilarity calls the Jaro-Winkler discussed previously
+            double firstScore = 
+                StringMetrics.CalculateJaroWinkler(
+                    incoming. NormalizedFirstName, 
+                    existing. NormalizedFirstName);
+            double lastScore = 
+                 StringMetrics.CalculateJaroWinkler(
+                    incoming.NormalizedLastName, 
+                    existing.NormalizedLastName);
+            // Handle missing middle initials gracefully
+            double middleScore = 1.0;
+            if (!string.IsNullOrWhiteSpace(incoming.RawMiddleName) 
+                && !string.IsNullOrWhiteSpace(existing.RawMiddleName))
+            {
+                middleScore = 
+                   incoming.RawMiddleName.Equals(existing.RawMiddleName,   
+                   StringComparison.OrdinalIgnoreCase) ? 1.0 : 0.0;
+            }
+ 
+            return (firstScore * FirstNameWeight) +
+                   (lastScore * LastNameWeight) +
+                   (middleScore * MiddleNameWeight);
+        }
+ 
+ 
+        /// <summary>
+        /// Evaluates demographic discrepancies and returns a cumulative 
+        /// penalty percentage.
+        /// </summary>
+        private double CalculateDemographicPenalties(Person incoming, 
+              Person existing)
+        {
+            double penalty = 0.0;
+ 
+            // --- A. Date of Birth Penalties ---
+            if (incoming.DateOfBirth.HasValue && existing.DateOfBirth.HasValue)
+            {
+                var inDob = incoming.DateOfBirth.Value;
+                var exDob = existing.DateOfBirth.Value;
+ 
+                if (inDob != exDob)
+                {
+                    if (inDob.Year == exDob.Year 
+                     && inDob.Month == exDob.Day 
+                     && inDob.Day == exDob.Month)
+                    {
+                        // Transposed Day/Month (Common in international files)
+                        penalty += 0.05;
+                    }
+                     && inDob.Day == exDob.Day
+                     && Math.Abs(inDob.Year - exDob.Year) == 1)
+                    {
+                        // Off by exactly one year (common data entry typo)
+                        penalty += 0.10;
+                    }
+                    else
+                    {
+                        // Major DOB mismatch (> 1 year)
+                        penalty += 0.35;
+                    }
+                }
+            }
+ 
+            // --- B. Gender Penalties ---
+            if (!string.IsNullOrWhiteSpace(incoming.Gender) 
+                 && !string.IsNullOrWhiteSpace(existing.Gender))
+            {
+                if (!incoming.Gender.Equals(existing.Gender, 
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    // Conflicting gender provided
+                    penalty += 0.15;
+                }
+            }
+ 
+            // --- C. Location/Zip Penalties ---
+            if (!string.IsNullOrWhiteSpace(incoming.ZipCode) 
+                && !string.IsNullOrWhiteSpace(existing.ZipCode))
+            {
+                var inZip = incoming.ZipCode.Length >= 5 
+                    ? incoming.ZipCode.Substring(0, 5) 
+                    : incoming.ZipCode;
+                var exZip = existing.ZipCode.Length >= 5 
+                    ? existing.ZipCode.Substring(0, 5) 
+                    : existing.ZipCode;
+ 
+                if (inZip != exZip)
+                {
+                    // Different Zip Code
+                    penalty += 0.05;
+                }
+            }
+ 
+            return penalty;
+        }
+   }	
+}
+

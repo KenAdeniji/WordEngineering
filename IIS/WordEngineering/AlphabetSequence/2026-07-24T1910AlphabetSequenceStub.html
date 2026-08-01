@@ -86,13 +86,18 @@ tr:nth-child(even) {
 				</tr>
 			</table>
 			<div id="alphabetSequenceIndex"></div>
+			<div id="alphabetSequenceIndexScriptureReference"></div>
 		</div>
 
 		<script>
+			//import { BibleJSON } from "./Bible.json"
+			//let {BibleJSON} = await import("./Bible.json")	
+
 			const	wordElement = document.getElementById("word");
 			const	submitQueryElement = document.getElementById("submitQuery");
 			const	alphabetSequenceIndexElement = document.getElementById("alphabetSequenceIndex");
-	
+			const	alphabetSequenceIndexScriptureReferenceElement = document.getElementById("alphabetSequenceIndexScriptureReference");
+			
 			var 	isPostBack = false;
 
 			function pageLoad()
@@ -116,9 +121,15 @@ tr:nth-child(even) {
 				}
 			}
 
-			async function querySubmit()
+			function querySubmit()
+			{
+				alphabetSequenceQuery();
+			}
+			
+			function alphabetSequenceQuery()
 			{
 				alphabetSequenceIndexElement.innerHTML = "";
+				alphabetSequenceIndexScriptureReferenceElement.innerHTML = "";
 				if (!isNaN(parseFloat(wordElement.value)) && isFinite(wordElement.value))
 				{
 					alphabetSequenceIndexElement.innerHTML = wordElement.value;
@@ -138,6 +149,29 @@ tr:nth-child(even) {
 					}					
 					alphabetSequenceIndexElement.innerHTML = alphabetSequencePlace;	
 				}
+				getData();
+			}
+			
+			async function getData() 
+			{
+			  const url = "https://kenadeniji.github.io/Github/Bible.json";
+			  try {
+				const response = await fetch(url);
+				if (!response.ok) {
+				  throw new Error(`Response status: ${response.status}`);
+				}
+				const result = response.json();
+				//console.log(result);
+				//var found = arr.filter(function(item) { return item.name === 'k1'; });
+				//const verseIDResult = result.find((element) => element.Table.verseIdSequence == alphabetSequenceIndexElement.innerHTML);
+				//const verseIDResult = result.find(function(item) { return item.verseIdSequence = alphabetSequenceIndexElement.innerHTML });
+				//let verseIDResult = result.find((s) => s.verseIdSequence == alphabetSequenceIndexElement.innerHTML);
+				//let verseIDResult = result;
+				//console.log(verseIDResult);
+				alphabetSequenceIndexScriptureReferenceElement.innerHTML = result; //["Table"][0].verseText;
+			  } catch (error) {
+				console.error(error.message);
+			  }
 			}
 			
 			window.addEventListener("load", pageLoad, false);
