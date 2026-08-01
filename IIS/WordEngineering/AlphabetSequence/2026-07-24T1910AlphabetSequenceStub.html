@@ -86,8 +86,17 @@ tr:nth-child(even) {
 				</tr>
 			</table>
 			<div id="alphabetSequenceIndex"></div>
-			<div id="alphabetSequenceIndexScriptureReference"></div>
+			<div id="verseForward"></div>
+			<div id="chapterForward"></div>
+			<div id="chapterBackward"></div>
+			<div id="verseBackward"></div>
 		</div>
+
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "./Bible.js");
+			document.body.appendChild(scriptElement);
+		</script>
 
 		<script>
 			//import { BibleJSON } from "./Bible.json"
@@ -95,8 +104,14 @@ tr:nth-child(even) {
 
 			const	wordElement = document.getElementById("word");
 			const	submitQueryElement = document.getElementById("submitQuery");
+			
 			const	alphabetSequenceIndexElement = document.getElementById("alphabetSequenceIndex");
-			const	alphabetSequenceIndexScriptureReferenceElement = document.getElementById("alphabetSequenceIndexScriptureReference");
+			
+			const	chapterForwardElement = document.getElementById("chapterForward");
+			const	chapterBackwardElement = document.getElementById("chapterBackward");
+			
+			const	verseForwardElement = document.getElementById("verseForward");
+			const	verseBackwardElement = document.getElementById("verseBackward");
 			
 			var 	isPostBack = false;
 
@@ -129,7 +144,7 @@ tr:nth-child(even) {
 			function alphabetSequenceQuery()
 			{
 				alphabetSequenceIndexElement.innerHTML = "";
-				alphabetSequenceIndexScriptureReferenceElement.innerHTML = "";
+
 				if (!isNaN(parseFloat(wordElement.value)) && isFinite(wordElement.value))
 				{
 					alphabetSequenceIndexElement.innerHTML = wordElement.value;
@@ -154,24 +169,52 @@ tr:nth-child(even) {
 			
 			async function getData() 
 			{
-			  const url = "https://kenadeniji.github.io/Github/Bible.json";
-			  try {
-				const response = await fetch(url);
-				if (!response.ok) {
-				  throw new Error(`Response status: ${response.status}`);
+				const verseIDSequenceForward = (alphabetSequenceIndexElement.innerHTML % VerseIDMaximum) - 1;
+				const verseIDSequenceForwardScriptureReference = scriptureReferenceConcatenate(Bible.Table[verseIDSequenceForward].BookTitle, Bible.Table[verseIDSequenceForward].ChapterID, Bible.Table[verseIDSequenceForward].VerseID);
+				const verseIDSequenceForwardVerseText = Bible.Table[verseIDSequenceForward].KingJamesVersion;
+
+				const verseIDSequenceBackward = VerseIDMaximum - verseIDSequenceForward - 2;
+				const verseIDSequenceBackwardScriptureReference = scriptureReferenceConcatenate(Bible.Table[verseIDSequenceBackward].BookTitle, Bible.Table[verseIDSequenceBackward].ChapterID, Bible.Table[verseIDSequenceBackward].VerseID);
+				const verseIDSequenceBackwardVerseText = Bible.Table[verseIDSequenceBackward].KingJamesVersion;
+				
+				const chapterIDSequenceForward = (alphabetSequenceIndexElement.innerHTML % ChapterIDMaximum);
+				const chapterIDSequenceForwardChapterText = Bible.Table.filter(function(element) { return element.ChapterIDSequence === chapterIDSequenceForward; });
+				const chapterIDSequenceForwardScriptureReference = chapterIDSequenceForwardChapterText[0].BookTitle + " " + chapterIDSequenceForwardChapterText[0].ChapterID;
+
+				const chapterIDSequenceBackward = ChapterIDMaximum - chapterIDSequenceForward;
+				const chapterIDSequenceBackwardChapterText = Bible.Table.filter(function(element) { return element.ChapterIDSequence === chapterIDSequenceBackward; });
+				const chapterIDSequenceBackwardScriptureReference = chapterIDSequenceBackwardChapterText[0].BookTitle + " " + chapterIDSequenceBackwardChapterText[0].ChapterID;			
+			
+				var scriptureReference = "";
+			
+				var forwardChapterText = "<table><caption>" + chapterIDSequenceForwardScriptureReference + "</caption><tbody>";
+				for (var chapterIndex = 0; chapterIndex < chapterIDSequenceForwardChapterText.length; chapterIndex++)
+				{
+					forwardChapterText += "<tr><td>" + 
+						scriptureReferenceConcatenate(chapterIDSequenceForwardChapterText[chapterIndex].BookTitle, chapterIDSequenceForwardChapterText[chapterIndex].ChapterID, chapterIDSequenceForwardChapterText[chapterIndex].VerseID) +
+						"</td><td>" + chapterIDSequenceForwardChapterText[chapterIndex].KingJamesVersion + "</td></tr>";
 				}
-				const result = response.json();
-				//console.log(result);
-				//var found = arr.filter(function(item) { return item.name === 'k1'; });
-				//const verseIDResult = result.find((element) => element.Table.verseIdSequence == alphabetSequenceIndexElement.innerHTML);
-				//const verseIDResult = result.find(function(item) { return item.verseIdSequence = alphabetSequenceIndexElement.innerHTML });
-				//let verseIDResult = result.find((s) => s.verseIdSequence == alphabetSequenceIndexElement.innerHTML);
-				//let verseIDResult = result;
-				//console.log(verseIDResult);
-				alphabetSequenceIndexScriptureReferenceElement.innerHTML = result; //["Table"][0].verseText;
-			  } catch (error) {
-				console.error(error.message);
-			  }
+				forwardChapterText += "</tbody></table>";
+				
+				var backwardChapterText = "<table><caption>" + chapterIDSequenceBackwardScriptureReference + "</caption><tbody>";
+				for (var chapterIndex = 0; chapterIndex < chapterIDSequenceBackwardChapterText.length; chapterIndex++)
+				{
+					backwardChapterText += "<tr><td>" + 
+						scriptureReferenceConcatenate(chapterIDSequenceBackwardChapterText[chapterIndex].BookTitle, chapterIDSequenceBackwardChapterText[chapterIndex].ChapterID, chapterIDSequenceBackwardChapterText[chapterIndex].VerseID) +
+						"</td><td>" + chapterIDSequenceBackwardChapterText[chapterIndex].KingJamesVersion + "</td></tr>";
+				}
+				backwardChapterText += "</tbody></table>";
+				
+				verseForwardElement.innerHTML = verseIDSequenceForwardVerseText + " (" + verseIDSequenceForwardScriptureReference + ")";
+				verseBackwardElement.innerHTML = verseIDSequenceBackwardVerseText + " (" + verseIDSequenceBackwardScriptureReference + ")";
+
+				chapterForwardElement.innerHTML = forwardChapterText;
+				chapterBackwardElement.innerHTML = backwardChapterText;
+			}
+			
+			function scriptureReferenceConcatenate(bookTitle, chapterID, verseID) 
+			{
+				return bookTitle + " " + chapterID + ":" + verseID;
 			}
 			
 			window.addEventListener("load", pageLoad, false);
@@ -184,6 +227,9 @@ tr:nth-child(even) {
 					querySubmit();
 				}
 			}
+			
+			const ChapterIDMaximum = 1189;
+			const VerseIDMaximum = 31103;
 		</script>
 	</body>
 </html>
