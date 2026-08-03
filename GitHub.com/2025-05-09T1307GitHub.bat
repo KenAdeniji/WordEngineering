@@ -857,3 +857,5 @@ git add         InformationInTransit/ProcessLogic/BibleHelper.exe
 
 git add			InformationInTransit/ProcessLogic/Bible.json
 git add        	InformationInTransit/ProcessLogic/BibleHelper.cs
+
+git add IIS/WordEngineering/AlphabetSequence/BibleWord.js
