@@ -149,6 +149,11 @@ tr:nth-child(even) {
 			function querySubmit()
 			{
 				alphabetSequenceQuery();
+				bibleWordElement.innerHTML = BibleVerse.buildBibleVerseHTMLTable
+				(
+					BibleWord.wordSearch(Bible, wordElement.value),
+					"BibleWord"
+				);	
 			}
 			
 			function alphabetSequenceQuery()
@@ -175,11 +180,6 @@ tr:nth-child(even) {
 					alphabetSequenceIndexElement.innerHTML = alphabetSequencePlace;	
 				}
 				alphabetSequenceOutput();
-				bibleWordElement.innerHTML = BibleVerse.buildBibleVerseHTMLTable
-				(
-					BibleWord.wordSearch(Bible, wordElement.value),
-					"BibleWord"
-				);	
 			}
 			
 			async function alphabetSequenceOutput() 
