@@ -847,3 +847,10 @@ git mv "IIS/WordEngineering/2018-05-03Correspondence/2026-07-28T2050Makan.Talaye
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-07-28T2050Makan.Talayeh@acgov.org_-_I was given an injection in the arm by a German.2026-02-20...2026-07-28,158 days(Genesis 6v20, Deuteronomy 5, Acts 13, Revelation 14v17).txt"
 
 git add "InformationInTransit/2022-08-19T1100San Francisco Zoological Society_-_BrendaO@sfzoo.org/"
+
+git add         IIS/WordEngineering/AlphabetSequence/2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js
+git add         IIS/WordEngineering/AlphabetSequence/Bible.js
+git add         IIS/WordEngineering/AlphabetSequence/Bible.json
+git add         IIS/WordEngineering/AlphabetSequence/BibleVerse.js
+git add         IIS/WordEngineering/AlphabetSequence/ScriptureReference.js
+git add         InformationInTransit/ProcessLogic/BibleHelper.exe
