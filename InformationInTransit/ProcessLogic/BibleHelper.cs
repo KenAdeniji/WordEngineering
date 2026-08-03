@@ -89,7 +89,7 @@ namespace InformationInTransit.ProcessLogic
         {
             DataSet dataSet = (DataSet) DataCommand.DatabaseCommand
             (
-                "SELECT * FROM Bible..Scripture WHERE chapterID BETWEEN 1 AND 2 ORDER BY VerseIDSequence",
+                "SELECT BookID, ChapterID, VerseID, KingJamesVersion, ChapterIDSequence, VerseIDSequence, BookTitle, ChapterIDSequencePercent, VerseIDSequencePercent FROM Bible..Scripture_View ORDER BY VerseIDSequence",
                 CommandType.Text,
                 DataCommand.ResultType.DataSet
             );
