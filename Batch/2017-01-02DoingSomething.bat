@@ -198,7 +198,7 @@ DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 3088);
 DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 9967);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 170590);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 171055);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
 DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 187435);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 830);
@@ -218,7 +218,7 @@ SET IDENTITY_INSERT URI..URIWordEngineering ON
 INSERT URI.[dbo].[URIWordEngineering] ([SequenceOrderId], [Dated], [Title], [URI], [Keyword], [Commentary]) VALUES (57064, CAST(N'2021-08-15T20:22:53.920' AS DateTime), N'Missing Manuals by Dave McFarland', N'sawmac.com', NULL, NULL)
 SET IDENTITY_INSERT URI..URIWordEngineering OFF
 
-:Restore
+:Restore-
 RESTORE DATABASE [AManDevelopedInAll] FROM  DISK = N'd:\SQLServerBackup\AManDevelopedInAll\AManDevelopedInAll_2018-02-25.bak'
 
 :WindowsToCentOS

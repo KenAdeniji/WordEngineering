@@ -98,7 +98,13 @@ tr:nth-child(even) {
 			document.body.appendChild(scriptElement);
 		</script>
 
-		<script>
+		<script type="module">
+			//import { BibleBook } from "./2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js"
+			let {BibleBook} = await import("./2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js")
+			let {BibleVerse} = await import("./BibleVerse.js")
+
+			import {scriptureReferenceConcatenate} from "./ScriptureReference.js"
+		
 			//import { BibleJSON } from "./Bible.json"
 			//let {BibleJSON} = await import("./Bible.json")	
 
@@ -170,11 +176,25 @@ tr:nth-child(even) {
 			async function getData() 
 			{
 				const verseIDSequenceForward = (alphabetSequenceIndexElement.innerHTML % VerseIDMaximum) - 1;
-				const verseIDSequenceForwardScriptureReference = scriptureReferenceConcatenate(Bible.Table[verseIDSequenceForward].BookTitle, Bible.Table[verseIDSequenceForward].ChapterID, Bible.Table[verseIDSequenceForward].VerseID);
+				const verseIDSequenceForwardBookID = Bible.Table[verseIDSequenceForward].BookID;
+				const verseIDSequenceForwardBookTitle = BibleBook.BibleBooks[verseIDSequenceForwardBookID - 1].bookTitle;
+				const verseIDSequenceForwardScriptureReference = scriptureReferenceConcatenate
+				(
+					verseIDSequenceForwardBookTitle,
+					Bible.Table[verseIDSequenceForward].ChapterID,
+					Bible.Table[verseIDSequenceForward].VerseID
+				);
 				const verseIDSequenceForwardVerseText = Bible.Table[verseIDSequenceForward].KingJamesVersion;
 
 				const verseIDSequenceBackward = VerseIDMaximum - verseIDSequenceForward - 2;
-				const verseIDSequenceBackwardScriptureReference = scriptureReferenceConcatenate(Bible.Table[verseIDSequenceBackward].BookTitle, Bible.Table[verseIDSequenceBackward].ChapterID, Bible.Table[verseIDSequenceBackward].VerseID);
+				const verseIDSequenceBackwardBookID = Bible.Table[verseIDSequenceBackward].BookID;
+				const verseIDSequenceBackwardBookTitle = BibleBook.BibleBooks[verseIDSequenceBackwardBookID - 1].bookTitle;
+				const verseIDSequenceBackwardScriptureReference = scriptureReferenceConcatenate
+				(
+					verseIDSequenceBackwardBookTitle,
+					Bible.Table[verseIDSequenceBackward].ChapterID,
+					Bible.Table[verseIDSequenceBackward].VerseID
+				);
 				const verseIDSequenceBackwardVerseText = Bible.Table[verseIDSequenceBackward].KingJamesVersion;
 				
 				const chapterIDSequenceForward = (alphabetSequenceIndexElement.innerHTML % ChapterIDMaximum);
@@ -185,36 +205,23 @@ tr:nth-child(even) {
 				const chapterIDSequenceBackwardChapterText = Bible.Table.filter(function(element) { return element.ChapterIDSequence === chapterIDSequenceBackward; });
 				const chapterIDSequenceBackwardScriptureReference = chapterIDSequenceBackwardChapterText[0].BookTitle + " " + chapterIDSequenceBackwardChapterText[0].ChapterID;			
 			
-				var scriptureReference = "";
-			
-				var forwardChapterText = "<table><caption>" + chapterIDSequenceForwardScriptureReference + "</caption><tbody>";
-				for (var chapterIndex = 0; chapterIndex < chapterIDSequenceForwardChapterText.length; chapterIndex++)
-				{
-					forwardChapterText += "<tr><td>" + 
-						scriptureReferenceConcatenate(chapterIDSequenceForwardChapterText[chapterIndex].BookTitle, chapterIDSequenceForwardChapterText[chapterIndex].ChapterID, chapterIDSequenceForwardChapterText[chapterIndex].VerseID) +
-						"</td><td>" + chapterIDSequenceForwardChapterText[chapterIndex].KingJamesVersion + "</td></tr>";
-				}
-				forwardChapterText += "</tbody></table>";
-				
-				var backwardChapterText = "<table><caption>" + chapterIDSequenceBackwardScriptureReference + "</caption><tbody>";
-				for (var chapterIndex = 0; chapterIndex < chapterIDSequenceBackwardChapterText.length; chapterIndex++)
-				{
-					backwardChapterText += "<tr><td>" + 
-						scriptureReferenceConcatenate(chapterIDSequenceBackwardChapterText[chapterIndex].BookTitle, chapterIDSequenceBackwardChapterText[chapterIndex].ChapterID, chapterIDSequenceBackwardChapterText[chapterIndex].VerseID) +
-						"</td><td>" + chapterIDSequenceBackwardChapterText[chapterIndex].KingJamesVersion + "</td></tr>";
-				}
-				backwardChapterText += "</tbody></table>";
+				var forwardChapterText = BibleVerse.buildBibleVerseHTMLTable
+				(
+					chapterIDSequenceForwardChapterText,
+					chapterIDSequenceForwardScriptureReference
+				);
+
+				var backwardChapterText = BibleVerse.buildBibleVerseHTMLTable
+				(
+					chapterIDSequenceForwardChapterText,
+					chapterIDSequenceForwardScriptureReference
+				);
 				
 				verseForwardElement.innerHTML = verseIDSequenceForwardVerseText + " (" + verseIDSequenceForwardScriptureReference + ")";
 				verseBackwardElement.innerHTML = verseIDSequenceBackwardVerseText + " (" + verseIDSequenceBackwardScriptureReference + ")";
 
 				chapterForwardElement.innerHTML = forwardChapterText;
 				chapterBackwardElement.innerHTML = backwardChapterText;
-			}
-			
-			function scriptureReferenceConcatenate(bookTitle, chapterID, verseID) 
-			{
-				return bookTitle + " " + chapterID + ":" + verseID;
 			}
 			
 			window.addEventListener("load", pageLoad, false);
