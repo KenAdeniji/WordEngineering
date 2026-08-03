@@ -90,6 +90,7 @@ tr:nth-child(even) {
 			<div id="chapterForward"></div>
 			<div id="chapterBackward"></div>
 			<div id="verseBackward"></div>
+			<div id="bibleWord"></div>
 		</div>
 
 		<script>
@@ -102,6 +103,7 @@ tr:nth-child(even) {
 			//import { BibleBook } from "./2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js"
 			let {BibleBook} = await import("./2026-07-01T1144IlyaKantor_-_JavaScript.info_-_Map_-_BibleBook.js")
 			let {BibleVerse} = await import("./BibleVerse.js")
+			let {BibleWord} = await import("./BibleWord.js")
 
 			import {scriptureReferenceConcatenate} from "./ScriptureReference.js"
 		
@@ -118,6 +120,8 @@ tr:nth-child(even) {
 			
 			const	verseForwardElement = document.getElementById("verseForward");
 			const	verseBackwardElement = document.getElementById("verseBackward");
+			
+			const	bibleWordElement = document.getElementById("bibleWord");
 			
 			var 	isPostBack = false;
 
@@ -170,10 +174,15 @@ tr:nth-child(even) {
 					}					
 					alphabetSequenceIndexElement.innerHTML = alphabetSequencePlace;	
 				}
-				getData();
+				alphabetSequenceOutput();
+				bibleWordElement.innerHTML = BibleVerse.buildBibleVerseHTMLTable
+				(
+					BibleWord.wordSearch(Bible, wordElement.value),
+					"BibleWord"
+				);	
 			}
 			
-			async function getData() 
+			async function alphabetSequenceOutput() 
 			{
 				const verseIDSequenceForward = (alphabetSequenceIndexElement.innerHTML % VerseIDMaximum) - 1;
 				const verseIDSequenceForwardBookID = Bible.Table[verseIDSequenceForward].BookID;

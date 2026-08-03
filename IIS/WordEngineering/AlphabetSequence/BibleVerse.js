@@ -23,10 +23,10 @@ export class BibleVerse
 	static buildBibleVerseHTMLTable
 	(
 		bibleBookChapterVerseSet,
-		chapterScriptureReference
+		tableCaption
 	)
 	{	
-		var htmlTableStub =	"<table><caption>" + chapterScriptureReference + "</caption><tbody>";
+		var htmlTableStub =	"<table><caption>" + tableCaption + "</caption><tbody>";
 		for (var chapterIndex = 0; chapterIndex < bibleBookChapterVerseSet.length; chapterIndex++)
 		{
 			htmlTableStub += "<tr><td>" + 
