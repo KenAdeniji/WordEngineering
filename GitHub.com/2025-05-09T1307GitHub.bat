@@ -868,3 +868,5 @@ git add IIS/WordEngineering/2018-05-03Correspondence/2026-08-08SpamEmail_PurpleC
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-10T1611Tim Howell tim@towerpointwealthmanagement.com Personal Assistant.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-12T1011Tim Howell tim@towerpointwealthmanagement.com Request for fullname address phone number.txt"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-14T0704shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob.txt"
