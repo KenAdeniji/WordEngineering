@@ -870,3 +870,7 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-10T1611Tim Howell 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-12T1011Tim Howell tim@towerpointwealthmanagement.com Request for fullname address phone number.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-14T0704shivam.kumar@ptytechllc.com(773)644-4557WhatIsYourWorkAuthorization.AreYouACitizen.IDoNotHaveYourResume.LavkushKumarIsMyColleague.AreYouLookingForAJob.txt"
+
+git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string \342\200\224 Text Constants and Templates.py"
+git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap \342\200\224 Formatting Text Paragraphs.py"
+git add IIS/WordEngineering/Resume/2026-08-14KenAdenijiResume.vtt
