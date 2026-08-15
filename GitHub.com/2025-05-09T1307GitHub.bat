@@ -876,7 +876,10 @@ rem git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfT
 git add IIS/WordEngineering/Resume/2026-08-14KenAdenijiResume.vtt
 
 git mv "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string \342\200\224 Text Constants and Templates.py" "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string Text Constants and Templates.py"
-git mv "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap \342\200\224 Formatting Text Paragraphs.py" "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap Formatting Text Paragraphs.py"
+git rm "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap \342\200\224 Formatting Text Paragraphs.py" "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap Formatting Text Paragraphs.py"
 
 git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string Text Constants and Templates.py"
 git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap Formatting Text Paragraphs.py"
+
+git mv "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string \342\200\224 Text Constants and Templates.py"
+git mv "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap \342\200\224 Formatting Text Paragraphs.py"
