@@ -883,3 +883,5 @@ git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWe
 
 rem git rm "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14string \342\200\224 Text Constants and Templates.py"
 rem git rm "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-14textwrap \342\200\224 Formatting Text Paragraphs.py"
+
+git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-16pymotw.com_-_Enum_BibleBook.py"
