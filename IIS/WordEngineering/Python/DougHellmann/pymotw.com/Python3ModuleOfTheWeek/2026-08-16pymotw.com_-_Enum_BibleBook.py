@@ -25,10 +25,11 @@ Msg 802, Level 17, State 2, Line 2
 There is insufficient memory available in the buffer pool.
 
 Completion time: 2026-08-16T13:56:16.0899391-07:00
-    
+    2026-08-16T18:06:00 ddl/dml WordEngineering script generation error.
 """
 import enum
 
+@enum.unique
 class BibleBook(enum.IntEnum): #BibleBook(enum.Enum):
     genesis = 1
     matthew = 40
