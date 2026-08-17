@@ -26,6 +26,7 @@ There is insufficient memory available in the buffer pool.
 
 Completion time: 2026-08-16T13:56:16.0899391-07:00
     2026-08-16T18:06:00 ddl/dml WordEngineering script generation error.
+    2026-08-16T18:30:00 proton out of storage space.
 """
 import enum
 

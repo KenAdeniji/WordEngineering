@@ -1487,6 +1487,11 @@ Interpret: Hindi make-up 1/5th of the world population... attrition due to unbel
 						<td>Bible.Scripture_View.ScriptureReference</td>
 						<td>Bible.udf_ScriptureReference()</td>
 					</tr>
+					<tr data-Dated="2026-08-16T21:42:00">
+						<td>Bible.Scripture.BookID, Bible.Scripture.ChapterID, Bible.Scripture.VerseID</td>
+						<td>Bible.Scripture_View.BibleReference</td>
+						<td data-Dated="2026-08-16T21:42:00">((right('00'+CONVERT([varchar](2),[BookID],(0)),(2))+right('000'+CONVERT([varchar](3),[ChapterID],(0)),(3)))+right('000'+CONVERT([varchar](3),[VerseID],(0)),(3)))</td>
+					</tr>
 				</tbody>
 				<tfoot>
 					<tr>

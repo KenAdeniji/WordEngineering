@@ -1228,9 +1228,10 @@ resources](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceSt
 
 > 
 >   Determinant                                                                  Functionally Dependent                    Implementation
->   ---------------------------------------------------------------------------- ----------------------------------------- --------------------------------
+>   ---------------------------------------------------------------------------- ----------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 >   Bible.Scripture.BookID                                                       Bible.Scripture_View.BookTitle            Bible.udf_BibleBookIDTitle()
 >   Bible.Scripture.BookID, Bible.Scripture.ChapterID, Bible.Scripture.VerseID   Bible.Scripture_View.ScriptureReference   Bible.udf_ScriptureReference()
+>   Bible.Scripture.BookID, Bible.Scripture.ChapterID, Bible.Scripture.VerseID   Bible.Scripture_View.BibleReference       ((right(\'00\'+CONVERT(\[varchar\](2),\[BookID\],(0)),(2))+right(\'000\'+CONVERT(\[varchar\](3),\[ChapterID\],(0)),(3)))+right(\'000\'+CONVERT(\[varchar\](3),\[VerseID\],(0)),(3)))
 >   Determination is achieved through computed columns.                                                                    
 >
 >   : Functional Dependencies {#FunctionalDependencies}
