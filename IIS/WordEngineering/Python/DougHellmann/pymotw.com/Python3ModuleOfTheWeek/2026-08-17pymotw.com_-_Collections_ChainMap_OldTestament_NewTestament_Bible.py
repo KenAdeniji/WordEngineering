@@ -19,3 +19,14 @@ print()
 
 print("Keys: {}".format(list(bible.keys()))) #Keys: ['Gospel', 'Apocalyptic', 'Pentateuch']
 print("Values: {}".format(list(bible.values()))) #Values: ['Matthew, Mark, Luke, John', 'Daniel', 'Genesis, Exodus, Leviticus, Numbers, Deuteronomy']
+print()
+
+print("Items:")
+for k, v in bible.items():
+    print("{} = {}".format(k, v))
+print()
+
+#2026-08-18T05:56:03.4646693-07:00 Faeces. Check for key... not value.
+print("'Revelation' in bible: {}".format(("Revelation" in bible))) #False
+print("'Daniel' in bible: {}".format(("Daniel" in bible))) #False
+print("'Apocalyptic' in bible: {}".format(("Apocalyptic" in bible))) #True

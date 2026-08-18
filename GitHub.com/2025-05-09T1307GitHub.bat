@@ -887,3 +887,5 @@ rem git rm "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTh
 git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-16pymotw.com_-_Enum_BibleBook.py"
 
 git add "IIS/WordEngineering/Python/DougHellmann/pymotw.com/Python3ModuleOfTheWeek/2026-08-17pymotw.com_-_Collections_ChainMap_OldTestament_NewTestament_Bible.py"
+
+git add "IIS/WordEngineering/2004-11-10www.JesusInTheLamb.com_-_WalkingInTheLambYouShallFollowMe/2026-08-18T1010customersupport.com@mail.usptoregistry.com_Legal@customersupport.com_Jonathan Hastings_(201) 577-8956.txt"
