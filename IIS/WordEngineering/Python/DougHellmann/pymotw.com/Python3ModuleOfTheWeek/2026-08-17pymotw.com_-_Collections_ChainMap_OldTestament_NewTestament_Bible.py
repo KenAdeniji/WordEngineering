@@ -30,3 +30,6 @@ print()
 print("'Revelation' in bible: {}".format(("Revelation" in bible))) #False
 print("'Daniel' in bible: {}".format(("Daniel" in bible))) #False
 print("'Apocalyptic' in bible: {}".format(("Apocalyptic" in bible))) #True
+
+print("bible.maps")
+print(bible.maps)
