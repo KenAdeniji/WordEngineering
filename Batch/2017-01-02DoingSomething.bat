@@ -1312,6 +1312,8 @@ US imposing a 25% tariff on some Brazilian imports starting July 22, citing unfa
 
 2026-07-31T12:06:00 http://www.espn.com/nfl/story/_/id/49496985/tony-romo-placed-leave-cbs-sports-following-arrest?utm_source=firefox-newtab-en-us
 
+2026-08-27T12:40:00 HRSolutions@arrow.com,arrow@myworkday.com
+
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 :Exit
