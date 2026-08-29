@@ -4,6 +4,8 @@
 		<!--
 			2026-08-28	Created.
 			I saw the number 88, and to its east probably 2's. Since there is a white separator, I guess the 88 is a 2-digit year.
+			2026-08-28T22:23:00	http://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
+			2026-08-28T22:24:00	Check for its a year?
 		-->
 		<title>2026-08-28T03:46:00 88</title>
 		<meta charset="UTF-8"/>
@@ -90,14 +92,15 @@ tr:nth-child(even) {
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>	
 			</table>
+			<div id="resultSet"></div>
 		</div>
 		<script>
-			var isPostBack = false;
+			var 	isPostBack = false;
 	
-			const wordElement = document.getElementById("word");	
-			const datedElement = document.getElementById("dated");
-			
-			const submitQueryElement = document.getElementById("submitQuery");
+			const 	wordElement = document.getElementById("word");	
+			const 	datedElement = document.getElementById("dated");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			const	resultSetElement = document.getElementById("resultSet");
 			
 			function pageLoad()
 			{
@@ -125,7 +128,6 @@ tr:nth-child(even) {
 						var now = new Date();
 						now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
 						datedElement.value = now.toISOString().slice(0,16);
-						console.log(now)
 					}
 				
 					querySubmit();
@@ -139,7 +141,94 @@ tr:nth-child(even) {
 
 			function querySubmit()
 			{
+				resultSetElement.innerHTML = Table_Template_Top +
+					processYears() +
+					processMonths() +
+					processDays()
 			}
+
+			function processDays()
+			{
+				let	validDay = false;
+				let	preDay = "";
+				let	postDay = "";
+				
+				if 
+				( 
+						isNaN(wordElement.value) === false 
+					&&	wordElement.value >= 1
+					&&	wordElement.value <= 31
+				)
+				{
+					validDay = true;
+					preDay = addDays(datedElement.value, -1 * Math.abs(wordElement.value)); 
+					postDay = addDays(datedElement.value, Math.abs(wordElement.value)); 
+				}
+
+				return `<tr><td>Day(s)</td><td>${validDay}</td><td>${preDay}</td><td>${postDay}</td></tr>`;
+			}
+			
+			function addDays(myDate, days) 
+			{
+				var result = new Date(myDate);
+				result.setDate(result.getDate() + days);
+				return result;
+			};
+			
+			function processMonths()
+			{
+				let	validMonth = false;
+				let	preMonth = "";
+				let	postMonth = "";
+				
+				if 
+				( 
+						isNaN(wordElement.value) === false 
+					&&	wordElement.value >= 1
+					&&	wordElement.value <= 12
+				)
+				{
+					validMonth = true;
+					preMonth = addMonths(datedElement.value, -1 * Math.abs(wordElement.value)); 
+					postMonth = addMonths(datedElement.value, Math.abs(wordElement.value)); 
+				}
+
+				return `<tr><td>Month(s)</td><td>${validMonth}</td><td>${preMonth}</td><td>${postMonth}</td></tr>`;
+			}
+			
+			function addMonths(myDate, months) 
+			{
+				var result = new Date(myDate);
+				result.setMonth(result.getMonth() + months);
+				return result;
+			};
+
+			function processYears()
+			{
+				let	validYear = false;
+				let	preYear = "";
+				let	postYear = "";
+				
+				if 
+				( 
+						isNaN(wordElement.value) === false 
+					&&	wordElement.value >= Year_From
+				)
+				{
+					validYear = true;
+					preYear = addYears(datedElement.value, -1 * Math.abs(wordElement.value)); 
+					postYear = addYears(datedElement.value, Math.abs(wordElement.value)); 
+				}
+
+				return `<tr><td>Year(s)</td><td>${validYear}</td><td>${preYear}</td><td>${postYear}</td></tr>`;
+			}
+			
+			function addYears(myDate, years) 
+			{
+				var result = new Date(myDate);
+				result.setFullYear(result.getFullYear() + years);
+				return result;
+			};
 
 			submitQueryElement.addEventListener("click", querySubmit, false);
 			
@@ -153,6 +242,10 @@ tr:nth-child(even) {
 			window.addEventListener("load", pageLoad, false);
 			
 			const Word_Default = "88 ";
+			
+			const Table_Template_Top = "<table><thead><tr><th>Metric</th><th>Valid</th><th>Pre dated</th><th>Post dated</th></thead><tbody>";
+			
+			const Year_From = -4000
 		</script>
 	</body>
 </html>
