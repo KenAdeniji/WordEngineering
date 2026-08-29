@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			2026-08-28	Created.
+			I saw the number 88, and to its east probably 2's. Since there is a white separator, I guess the 88 is a 2-digit year.
+		-->
+		<title>2026-08-28T03:46:00 88</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2026-08-28T03:46:00 88"/>
+		<meta name="keywords" content="2026-08-28T03:46:00, 88"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 50vw;
+	}
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><input id="word" type="text" autofocus/></td>
+				</tr>
+				<tr>
+					<td><label for="dated">Dated</label></td>
+					<td><input id="dated" type="datetime-local"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>	
+			</table>
+		</div>
+		<script>
+			var isPostBack = false;
+	
+			const wordElement = document.getElementById("word");	
+			const datedElement = document.getElementById("dated");
+			
+			const submitQueryElement = document.getElementById("submitQuery");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}
+					else
+					{
+						wordElement.value = Word_Default;
+					}
+					
+					var datedParam = urlParams.get("dated");
+					if (datedParam)
+					{
+						datedElement.value = datedParam;
+					}
+					else
+					{
+						var now = new Date();
+						now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+						datedElement.value = now.toISOString().slice(0,16);
+						console.log(now)
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function querySubmit()
+			{
+			}
+
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			const Word_Default = "88 ";
+		</script>
+	</body>
+</html>
