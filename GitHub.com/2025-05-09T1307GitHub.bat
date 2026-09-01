@@ -901,3 +901,5 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-08-25T1553 100 100.tx
 git add "IIS/WordEngineering/DataType/"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-09-01T0243You have to... keep up-to-date. Adegboyega Olufemi Jimmy Adeniji.txt"
+
+git add IIS/WordEngineering/Python/PythonSQLServer/2026-09-31mssql-python.py
