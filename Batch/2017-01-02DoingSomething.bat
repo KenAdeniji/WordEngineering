@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 164587);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18939);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 4196);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 9967);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 10158);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 171240);
@@ -1314,7 +1314,9 @@ US imposing a 25% tariff on some Brazilian imports starting July 22, citing unfa
 
 2026-08-27T12:40:00 HRSolutions@arrow.com,arrow@myworkday.com
 
-NY0112DHCcare.com
+2026-09-01
+Python Programming: An Introduction to Computer Science by John Zelle
+citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.111.6062&rep=rep1&type=pdf
 
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
