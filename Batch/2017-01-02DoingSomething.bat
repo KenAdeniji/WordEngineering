@@ -1287,13 +1287,6 @@ ORDER BY SequenceOrderID
 2026-07-13T00:41:00
 	http://www.orkin.com/pest-control?utm_campaign=HTTDDISP&utm_source=hx_ttd&utm_content=disp_prosbluai_generalpest&utm_medium=display&gcm_uid=0&dclid=CN6L_PuSz5UDFUrv_QUdl0sBXQ&gad_source=7&gad_campaignid=23513320460
 
-2026-07-14T18:24:00
-	Ann Noreen Widdecombe was a British politician and television personality. As a member of the Conservative Party, she was the member of Parliament for Maidstone and The Weald and its predecessor Maidstone constituency from 1987 to 2010. She joined Reform UK in 2019.	
-
-2026-07-15T22:44:00
-http://apnews.com/article/us-brazil-trade-tariffs-99e8c52a44c75f31c343d7ebad41f614
-US imposing a 25% tariff on some Brazilian imports starting July 22, citing unfair trade practices
-
 2026-07-20T18:28:00...2026-07-20T18:53:00
 	git status
 		IIS/WordEngineering/2018-05-03Correspondence/2026-07-20T1809academy@centreforproductivity.org_-_info@centreforproductivity.org_-_ShippingArrangementForYourDoctoratePackage.DHLExpress_USD8WorkingDays.FedEx_USD8WorkingDays.txt
