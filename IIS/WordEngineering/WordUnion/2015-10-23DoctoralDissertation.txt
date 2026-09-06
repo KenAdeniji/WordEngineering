@@ -695,7 +695,7 @@ the prophecy. The [terminus ad
 quem](http://en.wikipedia.org/wiki/Terminus_post_quem) DatedUntil is
 when a prophecy partially or entirely comes to
 pass.]{cite="#bibliographyKoinoniaHouse"}" (Koinonia House).
-[DateDifference.aspx](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/DateDifference.aspx)
+[DateDifference.html](https://kenadeniji.github.io/Github/DateDifference.html)
 is for calculating the difference between terminus a quo, versus
 terminus ad quem; the results are in days; biblical years, months, days;
 the Common Era. The inspiration for adding the Common Era comes from
@@ -2830,7 +2830,7 @@ Remember_View tables.
 > overall function calls particular functions for determining the days
 > difference in the Biblical and Gregorian Calendar.
 >
-> DateDifference.aspx is a server-side C# ASP.NET web form.
+> DateDifference.html is a server-side C# ASP.NET web form.
 >
 > The Remember\'s table computed columns are Transact-SQL and SQL-CLR
 > functions.
@@ -3093,7 +3093,7 @@ The Bible is separable into parts; these are books, chapters, verses. [
 Dividing a life, according to purpose (Matthew 1:17). 14 Biblical
 Generations = 14 \* 40 \* 360 = 201600. ]{dated="2020-08-27T19:00:00"}
 
-[DateDifference.aspx](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/DateDifference.aspx)
+[DateDifference.html](https://kenadeniji.github.io/Github/DateDifference.html)
 The .NET Framework, C# and SQL Server support the Common Era; the date
 ranges between 0001-01-01 and 9999-12-31. The date difference will
 display correctly for the time interval - days, Biblical Calendar, and
@@ -5212,7 +5212,12 @@ location="4806 Mallard Common, Fremont, California (CA) 94555. Parlour light on.
 Sitting room. I saw Tintin Chris Siu walking ahead of Tinny Siu on
 Creekwood Drive, between Siward Drive and Decoy Terrace.\
 Michelle Henry of Albertsons Lucky, Charter Square, spoke about the
-inventory of the store, and she was drinking.
+inventory of the store, and she was drinking.\
+Nestle Tollhouse established 1939 Distributed by: Dreyer\'s Grand Ice
+Cream, Incorporated. Walnut Creek, California (CA) 94596 1-866-311-6350
+www.icecream.com Nestle trademarks used under license by Froneri
+International Limited. Societe des Produits Nestle S.A. Vevey,
+Switzerland trademark owner.
 
 ### 2026-05-30T00:00:00 [How accepted is the word?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20accepted%20is%20the%20word%3F){dated="2026-05-30T00:00:00" hiswordid="170549" contactid="15049"} {#HowAcceptedIsTheWord dated="2026-05-30T00:00:00"}
 
@@ -6173,7 +6178,7 @@ clarification.
   ------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Varchar       [GetAPage.html](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html)                                                                                                                                                                                   This is the most prevalent, and earlier focused on.
   Integer       [GetAPage.html](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html) [DateAdd.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateAdd.aspx) [Number15431.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/Number15431.html)   
-  Date          [DateDifference.aspx](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateDifference.aspx) [DateYear2010Month09Day09.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateYear2010Month09Day09.html)                                                         Jesus Christ refrains from declaring judgment day (Luke 4:19-21, Isaiah 61:1-2).
+  Date          [DateDifference.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateDifference.html) [DateYear2010Month09Day09.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/DateYear2010Month09Day09.html)                                                         Jesus Christ refrains from declaring judgment day (Luke 4:19-21, Isaiah 61:1-2).
   Time          [TimeHour4Minute44.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/TimeHour4Minute44.html)                                                                                                                                                                         12-hour clock, so far. [ The time of the day is emphasized; the ninth hour is 2025-03-22T00:12:00 explicitly mentioned (Matthew 27:46). ]{dated="2025-03-22T00:08:00" hiswordid="165655"}
   Percent (%)   [BiblePercentage.html](http://e-comfort.ephraimtech.com/Wordengineering/WordUnion/BiblePercentage.html) [IAmSeventyPercent70SheolOfAmdahlAFit.html](http://e-comfort.ephraimtech.com/Wordengineering/Dated/IAmSeventyPercent70SheolOfAmdahlAFit.html)                           and there died the third part of the creatures which were in the sea, \`even\' they that had life; and the third part of the ships was destroyed (Revelation 8:9).
 
@@ -9706,7 +9711,7 @@ cs-uri-stem                                                                     
 --------------------------------------------------------------------------------- ----- -------- -------
 /                                                                                 43980 18711085 769
 /WordOfGod/ContactMaintenance.aspx                                                25272 303113   957
-/WordEngineering/WordUnion/DateDifference.aspx                                    12821 529647   201
+/WordEngineering/WordUnion/DateDifference.html                                    12821 529647   201
 /WordEngineering/WordUnion/ScriptureReferenceWebService.asmx/Query                9138  520928   713
 /WordEngineering/WordUnion/BibleDictionaryWebService.asmx/GetAPage                7211  347890   1323
 /WordEngineering/WordUnion/WordToNumberWebService.asmx/RetrieveScriptureReference 7052  258768   1285
@@ -14161,7 +14166,7 @@ Web Application
     1.  [GetAPage.html](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html)
     2.  [BibleWord.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html)
     3.  [ScriptureReference.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html)
-    4.  [DateDifference.aspx](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/DateDifference.aspx)
+    4.  [DateDifference.html](https://kenadeniji.github.io/Github/DateDifference.html)
 
 <!-- -->
 

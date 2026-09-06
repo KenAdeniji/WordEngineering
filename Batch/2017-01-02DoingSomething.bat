@@ -1311,10 +1311,13 @@ ORDER BY SequenceOrderID
 Python Programming: An Introduction to Computer Science by John Zelle
 citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.111.6062&rep=rep1&type=pdf
 
-2026-009-03T10:57:00
+2026-09-03T10:57:00
 http://www.nbcnews.com/news/us-news/carla-jeffery-star-disney-channel-zombies-dies-33-rcna595857?utm_source=firefox-newtab-en-us
 Carla Jeffery, star of Disney Channel's "Zombies," dies at 33
 Jeffery’s death was announced in a post on her Instagram account. The cause of death was not disclosed. 
+
+2026-09-06T11:01:00
+https://www.npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us
 
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
