@@ -1319,6 +1319,9 @@ Jeffery’s death was announced in a post on her Instagram account. The cause of
 2026-09-06T11:01:00
 https://www.npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us
 
+2026-09-08
+http://www.nbcnews.com/pop-culture/pop-culture-news/pamela-anderson-says-hepatitis-c-was-death-sentence-took-everything-ba-rcna596631?utm_source=firefox-newtab-en-us
+
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 :Exit
