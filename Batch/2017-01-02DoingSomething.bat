@@ -1322,6 +1322,24 @@ https://www.npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right
 2026-09-08
 http://www.nbcnews.com/pop-culture/pop-culture-news/pamela-anderson-says-hepatitis-c-was-death-sentence-took-everything-ba-rcna596631?utm_source=firefox-newtab-en-us
 
+2026-09-13T07:34:00
+determine closest column value in json using javascipt
+const data = [
+  { id: 1, score: 45 },
+  { id: 2, score: 58 },
+  { id: 3, score: 72 },
+  { id: 4, score: 90 }
+];
+
+const target = 65;
+const column = 'score';
+
+const closest = data.reduce((prev, curr) => {
+  return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
+});
+
+console.log(closest); // { id: 3, score: 72 }
+
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 :Exit
