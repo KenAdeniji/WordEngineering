@@ -81,7 +81,7 @@ tr:nth-child(even) {
 			<table>
 				<tr>
 					<td><label for="word">Word</label></td>
-					<td><input id="word" type="text" value="19.35" autofocus></td>
+					<td><input id="word" type="text" value="19.35" autofocus min="0" max="100"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
@@ -130,41 +130,54 @@ tr:nth-child(even) {
 				let target = 0;
 				let column = "";
 	
-				target = Math.parseFloat(wordElement.value);
-				column = columnVerseIDSequencePercent;
+				target = parseFloat(wordElement.value);
+				column = ColumnVerseIDSequencePercent;
 				const closestVerseForward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
+				console.debug(target, column, closestVerseForward);
 
-				target = Math.parseFloat(wordElement.value);
-				column = columnChapterIDSequencePercent;
+				target = parseFloat(wordElement.value);
+				column = ColumnChapterIDSequencePercent;
 				const closestChapterForward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
+				console.debug(target, column, closestVerseForward);
 
-				target = 100 - Math.parseFloat(wordElement.value);
-				column = columnChapterIDSequencePercent;
+				target = 100 - parseFloat(wordElement.value);
+				column = ColumnChapterIDSequencePercent;
 				const closestChapterBackward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
+				console.debug(target, column, closestChapterBackward);
 
-				target = 100 - Math.parseFloat(wordElement.value);
-				column = columnVerseIDSequencePercent;
+				target = 100 - parseFloat(wordElement.value);
+				column = ColumnVerseIDSequencePercent;
 				const closestVerseBackward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
-
-				scriptureReferenceVerseForward = closestVerseForward.ScriptureReference;
-				scriptureReferenceChapterForward = closestChapterForward.BookTitle + closestChapterForward.ChapterID;
-
-				scriptureReferenceChapterBackward = closestChapterBackward.BookTitle + closestChapterBackward.ChapterID;
-				scriptureReferenceVerseBackward = closestVerseBackward.ScriptureReference;
+				console.debug(target, column, closestChapterBackward);
 				
-				scriptureReferenceElement.innerHTML = scriptureReferenceVerseForward + ", " +
+				scriptureReferenceVerseForward = closestVerseForward.BookTitle + " " + closestVerseForward.ChapterID + ":" + closestVerseForward.VerseID;
+				scriptureReferenceChapterForward = closestChapterForward.BookTitle + " " + closestChapterForward.ChapterID;
+
+				scriptureReferenceChapterBackward = closestChapterBackward.BookTitle + " " + closestChapterBackward.ChapterID;
+				scriptureReferenceVerseBackward = closestVerseBackward.BookTitle + " " + closestVerseBackward.ChapterID + ":" + closestVerseBackward.VerseID;
+				
+				console.debug(scriptureReferenceVerseForward, scriptureReferenceChapterForward, scriptureReferenceChapterBackward, scriptureReferenceVerseBackward);
+				
+				const scriptureReferenceConcatenated = scriptureReferenceVerseForward + ", " +
 					scriptureReferenceChapterForward + ", " +
 					scriptureReferenceChapterBackward + ", " +
 					scriptureReferenceVerseBackward
 				;
+				
+				console.debug(scriptureReferenceConcatenated);
+				
+				scriptureReferenceElement.innerHTML = scriptureReferenceConcatenated;
+				
+				
+				console.debug(scriptureReferenceVerseForward, scriptureReferenceChapterForward, scriptureReferenceChapterBackward, scriptureReferenceVerseBackward);
 			}
 
 			window.addEventListener("load", pageLoad, false);
@@ -178,8 +191,8 @@ tr:nth-child(even) {
 				}
 			}
 			
-			const columnVerseIDSequencePercent = "VerseIDSequencePercent";
-			const columnChapterIDSequencePercent = "ChapterIDSequencePercent";
+			const ColumnVerseIDSequencePercent = "VerseIDSequencePercent";
+			const ColumnChapterIDSequencePercent = "ChapterIDSequencePercent";
 		</script>
 	</body>
 </html>
