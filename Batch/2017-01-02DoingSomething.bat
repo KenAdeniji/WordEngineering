@@ -1340,6 +1340,8 @@ const closest = data.reduce((prev, curr) => {
 
 console.log(closest); // { id: 3, score: 72 }
 
+2026-09-13T13:48:00 timesofisrael.com/liveblog_entry/ukraine-says-boris-johnson-david-petraeus-were-at-station-before-russian-train-strike
+
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 :Exit
