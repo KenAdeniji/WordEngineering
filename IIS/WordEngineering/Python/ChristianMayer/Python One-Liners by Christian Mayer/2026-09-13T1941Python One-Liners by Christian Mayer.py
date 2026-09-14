@@ -19,3 +19,6 @@ print("One-Liner", "print(22.0/7.0)")
 print("π=pi", 22.0/7.0)
 print("One-Liner", "print(type(22.0/7.0))")
 print(type(22.0/7.0))
+
+print("One-Liner", "print('// operator performs integer division. The result is an integer value that is rounded down (for example, 3 // 2 == 1).)'")
+print(3 // 2 == 1)
