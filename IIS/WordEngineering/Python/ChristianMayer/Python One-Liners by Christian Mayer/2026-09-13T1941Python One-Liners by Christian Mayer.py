@@ -14,3 +14,8 @@ print("One-Liner", "print(datetime.date(1967, 10, 15))")
 print(datetime.date(1967, 10, 15))
 print("One-Liner", "print(type(datetime.date(1967, 10, 15)))")
 print(type(datetime.date(1967, 10, 15)))
+
+print("One-Liner", "print(22.0/7.0)")
+print("π=pi", 22.0/7.0)
+print("One-Liner", "print(type(22.0/7.0))")
+print(type(22.0/7.0))
