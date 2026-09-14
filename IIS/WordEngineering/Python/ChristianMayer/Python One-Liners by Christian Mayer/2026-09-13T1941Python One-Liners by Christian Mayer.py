@@ -27,7 +27,7 @@ print("One-Liner", "print('A variable of type Boolean can take only two valuesâ€
 print(1 > 2) #False
 print(2 > 1) #True
 
-print("One-Liner", "Python string")
+print("One-Liner", "Python string", "http://docs.python.org/3/library/string.html#module-string")
 print("'Single quotes'")
 print('"Double quotes"')
 print("""
@@ -41,3 +41,10 @@ print("One-Liner", "print(str(22.0/7.0))")
 print(str(22 / 7))
 print("One-Liner", "print(whitespace characters in strings)")
 print("tab character\t Hello \s world newline\n")
+print("tab character\t Hello \s world newline\n".strip())
+print("lower", "tab character\t Hello \s world newline\n".lower())
+print("upper", "tab character\t Hello \s world newline\n".upper())
+import string
+print("string.ascii_letters", string.ascii_letters)
+print("string.ascii_lowercase", string.ascii_lowercase)
+print("string.ascii_uppercase", string.ascii_uppercase)
