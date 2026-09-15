@@ -62,3 +62,4 @@ print("One-Liner", "print('The keyword None is a Python constant and it means th
 
 #2026-09-14T18:29:00 http://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
 print("Passover days?", [10, 14, 15], "Length of list?", len([10, 14, 15]), "First element in the list?", [10, 14, 15][0], "Last element in the list?", [10, 14, 15][-1])
+
