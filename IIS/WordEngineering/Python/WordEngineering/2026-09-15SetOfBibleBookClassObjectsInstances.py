@@ -1,4 +1,5 @@
 """
+    2026-09-15  http://github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/WordEngineering/2026-09-15SetOfBibleBookClassObjectsInstances.py
     2026-09-15  http://someplace-else.neocities.org/books/Python%20One-Liners%20-%20Write%20Concise,%20Eloquent%20Python%20Like%20a%20Professional.pdf
     2026-09-15  http://stackoverflow.com/questions/17493307/creating-set-of-objects-of-user-defined-class-in-python
         bibleBooks = set([BibleBook(1, "Genesis")])
