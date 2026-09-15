@@ -58,3 +58,7 @@ print("string.whitespace", string.whitespace)
 print("One-Liner", "print(string.capwords('cap words'))")
 print(string.capwords('cap words'))
 
+print("One-Liner", "print('The keyword None is a Python constant and it means the absence of a value. Other programming languages such as Java use the value null instead. However, the term null often confuses beginners, who assume it’s equal to the integer value 0. Instead, Python uses the keyword None, as shown as Listing 1-6, to indicate that it’s different from any numerical value for zero, an empty list, or an empty string. An interesting fact is that the value None is the only value in the NoneType data type.'")
+
+#2026-09-14T18:29:00 http://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
+print("Passover days?", [10, 14, 15], "Length of list?", len([10, 14, 15]), "First element in the list?", [10, 14, 15][0], "Last element in the list?", [10, 14, 15][-1])

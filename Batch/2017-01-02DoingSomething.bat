@@ -1342,6 +1342,10 @@ console.log(closest); // { id: 3, score: 72 }
 
 2026-09-13T13:48:00 timesofisrael.com/liveblog_entry/ukraine-says-boris-johnson-david-petraeus-were-at-station-before-russian-train-strike
 
+2026-09-14 	http://www.cbsnews.com/news/vance-todd-blanche-felony-fraud-cases-covid-era-loan-programs/?utm_source=firefox-newtab-en-us
+
+2026-09-14	http://apnews.com/article/donald-trump-jr-umar-kremlev-bettina-trump-wedding-russia-54b191b7d19ae09ab599ef5966523ab4?utm_source=firefox-newtab-en-us#
+
 KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
 
 :Exit
