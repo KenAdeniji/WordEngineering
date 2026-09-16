@@ -135,28 +135,24 @@ tr:nth-child(even) {
 				const closestVerseForward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
-				console.debug(target, column, closestVerseForward);
 
 				target = parseFloat(wordElement.value);
 				column = ColumnChapterIDSequencePercent;
 				const closestChapterForward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
-				console.debug(target, column, closestVerseForward);
 
 				target = 100 - parseFloat(wordElement.value);
 				column = ColumnChapterIDSequencePercent;
 				const closestChapterBackward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
-				console.debug(target, column, closestChapterBackward);
 
 				target = 100 - parseFloat(wordElement.value);
 				column = ColumnVerseIDSequencePercent;
 				const closestVerseBackward = Bible.Table.reduce((prev, curr) => {
 					return (Math.abs(curr[column] - target) < Math.abs(prev[column] - target)) ? curr : prev;
 				});
-				console.debug(target, column, closestChapterBackward);
 				
 				scriptureReferenceVerseForward = closestVerseForward.BookTitle + " " + closestVerseForward.ChapterID + ":" + closestVerseForward.VerseID;
 				scriptureReferenceChapterForward = closestChapterForward.BookTitle + " " + closestChapterForward.ChapterID;
@@ -164,20 +160,13 @@ tr:nth-child(even) {
 				scriptureReferenceChapterBackward = closestChapterBackward.BookTitle + " " + closestChapterBackward.ChapterID;
 				scriptureReferenceVerseBackward = closestVerseBackward.BookTitle + " " + closestVerseBackward.ChapterID + ":" + closestVerseBackward.VerseID;
 				
-				console.debug(scriptureReferenceVerseForward, scriptureReferenceChapterForward, scriptureReferenceChapterBackward, scriptureReferenceVerseBackward);
-				
 				const scriptureReferenceConcatenated = scriptureReferenceVerseForward + ", " +
 					scriptureReferenceChapterForward + ", " +
 					scriptureReferenceChapterBackward + ", " +
 					scriptureReferenceVerseBackward
 				;
 				
-				console.debug(scriptureReferenceConcatenated);
-				
 				scriptureReferenceElement.innerHTML = scriptureReferenceConcatenated;
-				
-				
-				console.debug(scriptureReferenceVerseForward, scriptureReferenceChapterForward, scriptureReferenceChapterBackward, scriptureReferenceVerseBackward);
 			}
 
 			window.addEventListener("load", pageLoad, false);
