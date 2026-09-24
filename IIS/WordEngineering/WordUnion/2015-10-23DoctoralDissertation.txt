@@ -254,7 +254,7 @@ The SQL statement
 
     dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
 
-Will calculate the conjecture of the BookTitle, ChapterID, and VerseID.
+Will calculate the conjunction of the BookTitle, ChapterID, and VerseID.
 Since this is a computed column, therefore, the author is not able to
 set its [Entity
 Integrity](http://en.wikipedia.org/wiki/Entity_integrity); if it were
