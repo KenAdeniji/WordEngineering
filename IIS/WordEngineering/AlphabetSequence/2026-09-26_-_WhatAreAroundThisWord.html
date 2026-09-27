@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-09-26	What are around this word?
+		2026-09-26T18:28:00	Filter surrounding words?
+	-->
+	<head>
+		<title>2026-09-26 What are around this word?</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="2026-09-26 What are around this word?"/>
+		<meta name="keywords" content="2026-09-26, word, filter"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 65vh;
+		width: 50vw;
+	}
+body {
+	/*background-color: #FF9500; */
+	border: 5px solid black; /* The line that is drawn around each edge of the box. */
+	margin: 0 auto; /* Is what separates one tag from another. */
+	padding: 0 20px 20px 20px; /* Is the space between the content and the content's border. */ 
+	/* width: 600px; */
+}
+
+.focus {
+  background-color: #ff00ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* div inside a div, border. */
+/*
+div > div {
+	border: 1px solid #ccc;
+} 
+*/
+/*
+	2020-03-23	https://webdesign.tutsplus.com/articles/new-css-is-for-easy-element-targeting--cms-34223
+*/
+:is(div) :is(div) {
+    border: 1px solid #ccc;
+}
+
+html {
+	background-color: #00539F;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+   border: 1px solid black;
+   border-spacing: 5px;
+   border-collapse: separate;
+   /* width:100%; */ 
+}
+
+th, td { 
+	padding:5px 10px; border:#4e95f4 1px solid;
+}
+
+/*  Define the background color for all the ODD background rows  */
+tr:nth-child(odd) { 
+	background: #b8d1f3;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+tr:nth-child(even) {
+	background: #dae5f4;
+}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<table>
+				<tr>
+					<td><label for="word">Word</label></td>
+					<td><textarea id="word" autofocus>Word</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="sorrounding">Sorrounding</label></td>
+					<td>
+						<select id="sorrounding"></select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="limit">Limit</label></td>
+					<td>
+						<input id="limitValueOrPercentage" type="number" value="10" step="1" min="0"/>
+						<div>
+							<input type="radio" id="limitValue" name="limitValuePercentage" value="value" checked/>
+							<label for="limitValue">Value</label>
+						</div>
+						<div>
+							<input type="radio" id="limitPercentage" name="limitValuePercentage" value="percentage"/>
+							<label for="limitPercentage">Percentage</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="orderBy">Order by</label></td>
+					<td>
+						<select id="orderBy"></select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="countRowsOccurrence">Count rows or occurrence</label></td>
+					<td>
+						<select id="countRowsOccurrence"></select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+				</tr>
+			</table>
+			<div id="resultSet"></div>
+		</div>
+
+		<script>
+			let scriptElement = document.createElement("script");
+			scriptElement.setAttribute("src", "./Bible.js");
+			document.body.appendChild(scriptElement);
+		</script>
+
+		<script>
+			const	wordElement = document.getElementById("word");
+			const	submitQueryElement = document.getElementById("submitQuery");
+			
+			const	resultSetElement = document.getElementById("resultSet");
+			
+			var 	isPostBack = false;
+
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					buildSelect("sorrounding", Sorrounding);
+					buildSelect("orderBy", OrderBy);
+					buildSelect("countRowsOccurrence", CountRowsOccurrence);
+
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var wordParam = urlParams.get("word");
+					if (wordParam)
+					{
+						wordElement.value = wordParam;
+					}
+				
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+			}
+
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
+			}
+	
+			function querySubmit()
+			{
+				let bibleFiltered = Bible.Table.filter(v=> Object.keys(v).filter(key=> v[key].toString().toLowerCase().includes(wordElement.value.toLowerCase())).length > 0);
+				
+				let htmlTable = `<table><caption>Rows occurrences: ${bibleFiltered.length}</caption><thead><tr><th>Scripture Reference</th><th>Sacred Text</th></tr><tbody>`;
+				for (const element of bibleFiltered) 
+				{
+					htmlTable += `<tr><td>${element.BookTitle} ${element.ChapterID}:${element.VerseID}</td><td>${element.KingJamesVersion}</td></tr>`
+				}
+				resultSetElement.innerHTML = htmlTable;
+			}
+
+			window.addEventListener("load", pageLoad, false);
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+			
+			var body = document.getElementsByTagName('body')[0];
+			body.onkeydown = function (e) {
+				if (e.keyCode === 13) {  //enter key code
+					querySubmit();
+				}
+			}
+			
+			const Sorrounding = ["Verse", "Chapter", "Book", "Book Group", "Testament", "Bible"];
+			const OrderBy = ["Occurrence", "Proximity"];
+			const CountRowsOccurrence = ["Rows", "Occurrence"];
+		</script>
+	</body>
+</html>
