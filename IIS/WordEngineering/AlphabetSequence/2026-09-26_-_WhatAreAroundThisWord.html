@@ -75,6 +75,14 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
 	background: #dae5f4;
 }
+	html, body{
+	  height: 100%;
+	  width: 100%;
+	}
+	textarea{ //viewport
+		height: 40vh;
+		width: 90vw;
+	}
 		</style>
 	</head>
 	<body>
@@ -208,7 +216,7 @@ tr:nth-child(even) {
 				for (const element of bibleFiltered) 
 				{
 					//htmlTable += `<tr><td>${element.BookTitle} ${element.ChapterID}:${element.VerseID}</td><td>${element.KingJamesVersion}</td></tr>`
-					combinedText += " " + element.KingJamesVersion;
+					combinedText += element.KingJamesVersion + " ";
 				}
 				//resultSetElement.innerHTML = htmlTable;
 				
