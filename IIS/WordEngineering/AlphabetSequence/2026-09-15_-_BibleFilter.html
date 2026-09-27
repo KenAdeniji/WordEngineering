@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<!--
-		2026-09-15	http://stackoverflow.com/questions/71462292/how-can-i-filter-a-value-between-several-columns-of-my-json-javascript
+		2026-09-26	What are around this word?
+		2026-09-26T18:28:00	Filter surrounding words?
 	-->
 	<head>
-		<title>2026-09-15 BibleFilter</title>
+		<title>2026-09-26 What are around this word?</title>
 		<meta charset="UTF-8"/>
-		<meta name="description" content="2026-09-15 BibleFilter"/>
-		<meta name="keywords" content="2026-09-15, BibleFilter"/>
+		<meta name="description" content="2026-09-26 What are around this word?"/>
+		<meta name="keywords" content="2026-09-26, word, filter"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="author" content="Ken Adeniji"/>
 		<style>
@@ -78,10 +79,43 @@ tr:nth-child(even) {
 		<div align="center">
 			<table>
 				<tr>
+					<td><label for="word">Word</label></td>
 					<td><textarea id="word" autofocus>Word</textarea></td>
 				</tr>
 				<tr>
-					<td align="center"><input type="submit" id="submitQuery"></td>
+					<td><label for="sorrounding">Sorrounding</label></td>
+					<td>
+						<select id="sorrounding"></select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="limit">Limit</label></td>
+					<td>
+						<input id="limitValueOrPercentage" type="number" value="10" step="1" min="0"/>
+						<div>
+							<input type="radio" id="limitValue" name="limitValuePercentage" value="value" checked/>
+							<label for="limitValue">Value</label>
+						</div>
+						<div>
+							<input type="radio" id="limitPercentage" name="limitValuePercentage" value="percentage"/>
+							<label for="limitPercentage">Percentage</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="orderBy">Order by</label></td>
+					<td>
+						<select id="orderBy"></select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="countRowsOccurrence">Count rows or occurrence</label></td>
+					<td>
+						<select id="countRowsOccurrence"></select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>
 			</table>
 			<div id="resultSet"></div>
@@ -105,6 +139,10 @@ tr:nth-child(even) {
 			{
 				if (isPostBack === false)
 				{
+					buildSelect("sorrounding", Sorrounding);
+					buildSelect("orderBy", OrderBy);
+					buildSelect("countRowsOccurrence", CountRowsOccurrence);
+
 					const urlParams = new URLSearchParams(window.location.search);
 					
 					var wordParam = urlParams.get("word");
@@ -122,10 +160,46 @@ tr:nth-child(even) {
 				}
 			}
 
+			function buildSelect(selectControl, selectChoices)
+			{
+				var select = document.getElementById(selectControl);
+				select.options.length = 0;
+				for (var index = 0, length = selectChoices.length; index < length; ++index)
+				{
+					var option = document.createElement("option");
+					var multiDimensionArray = (selectChoices[index].constructor === Array);
+					if (selectChoices[index]["text"])
+					{
+						option.text = selectChoices[index]["text"];
+						if (selectChoices[index]["value"])
+						{
+							option.value = selectChoices[index]["value"];
+						}	
+						else
+						{
+							option.value = selectChoices[index]["text"];
+						}	
+					}	
+					else if(multiDimensionArray)				
+					{	
+						option.text = selectChoices[index][0];
+						option.value = selectChoices[index][1];
+					}
+					else
+					{
+						option.text = selectChoices[index];
+						option.value = selectChoices[index];
+					}				
+					select.appendChild(option);
+				}
+			}
+	
 			function querySubmit()
 			{
-				let bibleFiltered = Bible.Table.filter(v=> Object.keys(v).filter(key=> v[key].toString().toLowerCase().includes(wordElement.value.toLowerCase())).length > 0);
+				const searchWord = wordElement.value.toLowerCase();
 				
+				const bibleFiltered = Object.values(Bible.Table).filter(item => item.KingJamesVersion.toLowerCase().includes(searchWord));
+					
 				let htmlTable = `<table><caption>Rows occurrences: ${bibleFiltered.length}</caption><thead><tr><th>Scripture Reference</th><th>Sacred Text</th></tr><tbody>`;
 				for (const element of bibleFiltered) 
 				{
@@ -144,6 +218,10 @@ tr:nth-child(even) {
 					querySubmit();
 				}
 			}
+			
+			const Sorrounding = ["Verse", "Chapter", "Book", "Book Group", "Testament", "Bible"];
+			const OrderBy = ["Occurrence", "Proximity"];
+			const CountRowsOccurrence = ["Rows", "Occurrence"];
 		</script>
 	</body>
 </html>

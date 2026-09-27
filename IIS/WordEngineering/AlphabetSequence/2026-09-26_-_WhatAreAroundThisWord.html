@@ -3,6 +3,7 @@
 	<!--
 		2026-09-26	What are around this word?
 		2026-09-26T18:28:00	Filter surrounding words?
+		2026-09-26T20:37:00	http://stackoverflow.com/questions/61229242/how-to-filter-json-object-javascript
 	-->
 	<head>
 		<title>2026-09-26 What are around this word?</title>
@@ -118,7 +119,7 @@ tr:nth-child(even) {
 					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
 				</tr>
 			</table>
-			<div id="resultSet"></div>
+			<textarea id="resultSet"></textarea>
 		</div>
 
 		<script>
@@ -196,16 +197,44 @@ tr:nth-child(even) {
 	
 			function querySubmit()
 			{
-				let bibleFiltered = Bible.Table.filter(v=> Object.keys(v).filter(key=> v[key].toString().toLowerCase().includes(wordElement.value.toLowerCase())).length > 0);
+				const searchWord = wordElement.value.toLowerCase();
 				
-				let htmlTable = `<table><caption>Rows occurrences: ${bibleFiltered.length}</caption><thead><tr><th>Scripture Reference</th><th>Sacred Text</th></tr><tbody>`;
+				const bibleFiltered = Object.values(Bible.Table).filter(item => item.KingJamesVersion.toLowerCase().includes(searchWord));
+					
+				//let htmlTable = `<table><caption>Rows occurrences: ${bibleFiltered.length}</caption><thead><tr><th>Scripture Reference</th><th>Sacred Text</th></tr><tbody>`;
+				let combinedText = "";
+				
 				for (const element of bibleFiltered) 
 				{
-					htmlTable += `<tr><td>${element.BookTitle} ${element.ChapterID}:${element.VerseID}</td><td>${element.KingJamesVersion}</td></tr>`
+					//htmlTable += `<tr><td>${element.BookTitle} ${element.ChapterID}:${element.VerseID}</td><td>${element.KingJamesVersion}</td></tr>`
+					combinedText = " " + element.KingJamesVersion;
 				}
-				resultSetElement.innerHTML = htmlTable;
+				//resultSetElement.innerHTML = htmlTable;
+				
+				const combinedWord = combinedText
+					.toLowerCase()
+					.replace(/[^\w\s]/g, '') // removes punctuation
+					.split(/\s+/);          // splits by spaces
+					
+				const wordsSplit = countWords(combinedWord.join(" "));
+
+				resultSetElement.value = JSON.stringify(wordsSplit);
 			}
 
+			function countWords(sentence) {
+				var list = sentence.split(' ');
+				var words = {};
+				for(var i = 0; i < list.length; i++) {
+					var word = list[i];
+					if (words.hasOwnProperty(word)) {
+						words[word]++;
+					} else {
+						words[word] = 1;
+					}
+				}
+				return words;
+			}
+			
 			window.addEventListener("load", pageLoad, false);
 			
 			submitQueryElement.addEventListener("click", querySubmit, false);
