@@ -87,50 +87,54 @@ tr:nth-child(even) {
 	</head>
 	<body>
 		<div align="center">
-			<table>
-				<tr>
-					<td><label for="word">Word</label></td>
-					<td><input id="word" value="Faith An" autofocus/></td>
-				</tr>
-				<tr>
-					<td><label for="sorrounding">Sorrounding</label></td>
-					<td>
-						<select id="sorrounding"></select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="limit">Limit</label></td>
-					<td>
-						<input id="limitValueOrPercentage" type="number" value="10" step="1" min="0"/>
-						<div>
-							<input type="radio" id="limitValue" name="limitValuePercentage" value="value" checked/>
-							<label for="limitValue">Value</label>
-						</div>
-						<div>
-							<input type="radio" id="limitPercentage" name="limitValuePercentage" value="percentage"/>
-							<label for="limitPercentage">Percentage</label>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="orderBy">Order by</label></td>
-					<td>
-						<select id="orderBy"></select>
-					</td>
-				</tr>
-				<tr>
-					<td><label for="countRowsOccurrence">Count rows or occurrence</label></td>
-					<td>
-						<select id="countRowsOccurrence"></select>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><textarea id="resultSet"></textarea></td>
-				</tr>
-			</table>
+			<div>
+				<table>
+					<tr>
+						<td><label for="word">Word</label></td>
+						<td><input id="word" value="Faith An" autofocus/></td>
+					</tr>
+					<tr>
+						<td><label for="sorrounding">Sorrounding</label></td>
+						<td>
+							<select id="sorrounding"></select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="limit">Limit</label></td>
+						<td>
+							<input id="limitValueOrPercentage" type="number" value="10" step="1" min="0"/>
+							<div>
+								<input type="radio" id="limitValue" name="limitValuePercentage" value="value" checked/>
+								<label for="limitValue">Value</label>
+							</div>
+							<div>
+								<input type="radio" id="limitPercentage" name="limitValuePercentage" value="percentage"/>
+								<label for="limitPercentage">Percentage</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="orderBy">Order by</label></td>
+						<td>
+							<select id="orderBy"></select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="countRowsOccurrence">Count rows or occurrence</label></td>
+						<td>
+							<select id="countRowsOccurrence"></select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="ignorePartsOfSpeech">Ignore parts of speech</label></td>
+						<td><input id="ignorePartsOfSpeech" type="checkbox"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" id="submitQuery"></td>
+					</tr>
+				</table>
+			</div>	
+			<textarea id="resultSet" rows="10"></textarea>
 		</div>
 
 		<script>
@@ -222,6 +226,8 @@ tr:nth-child(even) {
 				}
 				//resultSetElement.innerHTML = htmlTable;
 				
+				combinedText = combinedText.trim();
+
 				var combinedWord = combinedText
 					.toLowerCase()
 					.replace(/[^\w\s]/g, '') // removes punctuation
