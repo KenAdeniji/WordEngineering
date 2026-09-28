@@ -6,6 +6,8 @@
 		2026-09-26T20:37:00	http://stackoverflow.com/questions/61229242/how-to-filter-json-object-javascript
 		2026-09-26T21:25:00	http://stackoverflow.com/questions/42989831/function-that-creates-an-object-to-count-unique-words-from-a-string-in-javascrip
 		2026-09-27T19:47:00	http://stackoverflow.com/questions/9792927/javascript-array-search-and-remove-string
+		2026-09-28T09:04:00	http://stackoverflow.com/questions/50045690/how-can-i-find-the-top-n-occurrences-of-an-object-value-in-an-array-using-typesc
+		2026-09-28T09:04:00	http://stackoverflow.com/questions/5223/length-of-a-javascript-object
 	-->
 	<head>
 		<title>2026-09-26 What are around this word?</title>
@@ -135,7 +137,9 @@ tr:nth-child(even) {
 					</tr>
 				</table>
 			</div>	
-			<textarea id="resultSet" rows="10"></textarea>
+			<textarea id="resultSetTextArea" rows="10"></textarea>
+			<br>
+			<table id="resultSetTable"></table>
 		</div>
 
 		<script>
@@ -152,7 +156,9 @@ tr:nth-child(even) {
 			const	limitPercentageElement = document.getElementById("limitPercentage");
 			const	submitQueryElement = document.getElementById("submitQuery");
 			
-			const	resultSetElement = document.getElementById("resultSet");
+			const	resultSetTextAreaElement = document.getElementById("resultSetTextArea");
+			
+			const	resultSetTableElement = document.getElementById("resultSetTable");
 			
 			var 	isPostBack = false;
 
@@ -240,7 +246,7 @@ tr:nth-child(even) {
 					combinedWord = combinedWord.filter(word => !PartsOfSpeechArray.includes(word));
 				}	
 
-				let wordsSplit = countWords(combinedWord.join(" "));
+				var wordsSplit = countWords(combinedWord.join(" "));
 				
 				const selectedRadioLimitValuePercentage = document.querySelector("input[name='limitValuePercentage']:checked");
 				const selectedRadioLimitValuePercentageValue = selectedRadioLimitValuePercentage.value;
@@ -248,12 +254,23 @@ tr:nth-child(even) {
 				
 				const limitValueOrPercentageNumberSelection = (selectedRadioLimitValuePercentageValue === "value") 
 					? limitValueOrPercentageNumber
-					: (wordsSplit.length * limitValueOrPercentageNumber * 0.01);
+					: Math.round((Object.keys(wordsSplit).length * limitValueOrPercentageNumber ) * 1 / 100 );
 
-				//wordsSplit = wordsSplit.slice(0, limitValueOrPercentageNumberSelection);
+				wordsSplit = Object.fromEntries(
+					Object.entries(wordsSplit).slice(0, limitValueOrPercentageNumberSelection)
+				);				
 				
-				resultSetElement.value = JSON.stringify(wordsSplit);
+				resultSetTextAreaElement.value = JSON.stringify(wordsSplit);
+				
+				var resultSetTableStub = `<thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
+				for (const [key, value] of Object.entries(wordsSplit)) {
+					resultSetTableStub += `<tr><td>${key}</td><td>${value}</td></tr>`;
+				}				
+				resultSetTableStub += "</tbody>";
+				resultSetTableElement.innerHTML = resultSetTableStub;
 			}
+			
+			
 
 			function countWords(sentence) {
 				var list = sentence.split(' ');
