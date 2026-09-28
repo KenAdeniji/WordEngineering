@@ -147,6 +147,9 @@ tr:nth-child(even) {
 		<script>
 			const	wordElement = document.getElementById("word");
 			const	ignorePartsOfSpeechElement = document.getElementById("ignorePartsOfSpeech");
+			const	limitValueOrPercentageElement = document.getElementById("limitValueOrPercentage");
+			const	limitValueElement = document.getElementById("limitValue");
+			const	limitPercentageElement = document.getElementById("limitPercentage");
 			const	submitQueryElement = document.getElementById("submitQuery");
 			
 			const	resultSetElement = document.getElementById("resultSet");
@@ -237,8 +240,18 @@ tr:nth-child(even) {
 					combinedWord = combinedWord.filter(word => !PartsOfSpeechArray.includes(word));
 				}	
 
-				const wordsSplit = countWords(combinedWord.join(" "));
+				let wordsSplit = countWords(combinedWord.join(" "));
+				
+				const selectedRadioLimitValuePercentage = document.querySelector("input[name='limitValuePercentage']:checked");
+				const selectedRadioLimitValuePercentageValue = selectedRadioLimitValuePercentage.value;
+				const limitValueOrPercentageNumber = parseFloat(limitValueOrPercentageElement.value);
+				
+				const limitValueOrPercentageNumberSelection = (selectedRadioLimitValuePercentageValue === "value") 
+					? limitValueOrPercentageNumber
+					: (wordsSplit.length * limitValueOrPercentageNumber * 0.01);
 
+				//wordsSplit = wordsSplit.slice(0, limitValueOrPercentageNumberSelection);
+				
 				resultSetElement.value = JSON.stringify(wordsSplit);
 			}
 
