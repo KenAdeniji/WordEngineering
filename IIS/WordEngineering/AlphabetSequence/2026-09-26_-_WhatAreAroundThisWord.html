@@ -16,6 +16,8 @@
 								A re-comprehend, of how, our future life is lived.
 								pymotw.com/3/enum	
 							2019-08-30 22:46:37.6433333 ... 2026-09-27T19:47:00 = 2585 days (7 biblical years, 2 biblical months, 5 days) (7 years, 4 weeks)
+		2026-09-28T12:30:00	http://javascript.plainenglish.io/how-to-sort-or-order-keys-in-javascript-objects-35c7cb86f778
+		2026-09-28T12:30:00	http://stackoverflow.com/questions/1069666/sorting-object-property-by-values
 	-->
 	<head>
 		<title>2026-09-26 What are around this word?</title>
@@ -125,9 +127,26 @@ tr:nth-child(even) {
 						</td>
 					</tr>
 					<tr>
-						<td><label for="orderBy">Order by</label></td>
+						<td><label>Order by</label></td>
 						<td>
-							<select id="orderBy"></select>
+							<div>
+								<input type="radio" id="orderByMention" name="orderBy" value="mention" checked/>
+								<label for="orderByMention">Mention</label>
+							</div>
+							<div>
+								<input type="radio" id="orderByKey" name="orderBy" value="key"/>
+								<label for="orderByKey">Key</label>
+							</div>
+							<div>
+								<input type="radio" id="orderByValue" name="orderBy" value="value"/>
+								<label for="orderByValue">Value</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="sortBy">Sort by</label></td>
+						<td>
+							<select id="sortBy"></select>
 						</td>
 					</tr>
 					<tr>
@@ -175,7 +194,7 @@ tr:nth-child(even) {
 				if (isPostBack === false)
 				{
 					buildSelect("sorrounding", Sorrounding);
-					buildSelect("orderBy", OrderBy);
+					buildSelect("sortBy", SortBy);
 					buildSelect("countRowsOccurrence", CountRowsOccurrence);
 
 					const urlParams = new URLSearchParams(window.location.search);
@@ -259,6 +278,9 @@ tr:nth-child(even) {
 				const selectedRadioLimitValuePercentage = document.querySelector("input[name='limitValuePercentage']:checked");
 				const selectedRadioLimitValuePercentageValue = selectedRadioLimitValuePercentage.value;
 				const limitValueOrPercentageNumber = parseFloat(limitValueOrPercentageElement.value);
+
+				const selectedRadioOrderBy = document.querySelector("input[name='orderBy']:checked");
+				const selectedRadioOrderByValue = selectedRadioOrderBy.value;
 				
 				const limitValueOrPercentageNumberSelection = (selectedRadioLimitValuePercentageValue === "value") 
 					? limitValueOrPercentageNumber
@@ -268,9 +290,26 @@ tr:nth-child(even) {
 					Object.entries(wordsSplit).slice(0, limitValueOrPercentageNumberSelection)
 				);				
 				
+				if ( selectedRadioOrderByValue === "key" )
+				{
+					wordsSplit = Object.keys(wordsSplit).sort().reduce(
+					  (obj, key) => { 
+						obj[key] = wordsSplit[key]; 
+						return obj;
+					  }, 
+					  {}
+					);				
+				}
+				else if ( selectedRadioOrderByValue === "value" )
+				{
+					wordsSplit = Object.fromEntries(
+						Object.entries(wordsSplit).sort((a, b) => a[1] - b[1]) // Use b[1] - a[1] for descending
+					);	
+				}
+				
 				resultSetTextAreaElement.value = JSON.stringify(wordsSplit);
 				
-				var resultSetTableStub = `<thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
+				var resultSetTableStub = `<caption>Occurrences: ${Object.keys(wordsSplit).length}</caption><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>`;
 				for (const [key, value] of Object.entries(wordsSplit)) {
 					resultSetTableStub += `<tr><td>${key}</td><td>${value}</td></tr>`;
 				}				
@@ -278,8 +317,6 @@ tr:nth-child(even) {
 				resultSetTableElement.innerHTML = resultSetTableStub;
 			}
 			
-			
-
 			function countWords(sentence) {
 				var list = sentence.split(' ');
 				var words = {};
@@ -306,7 +343,7 @@ tr:nth-child(even) {
 			}
 			
 			const Sorrounding = ["Verse", "Chapter", "Book", "Book Group", "Testament", "Bible"];
-			const OrderBy = ["Occurrence", "Proximity"];
+			const SortBy = ["Occurrence", "Proximity"];
 			const CountRowsOccurrence = ["Rows", "Occurrence"];
 			const PartsOfSpeech = 
 			"can, could, will, would, shall, should, may, might, must, " + //Verbs
