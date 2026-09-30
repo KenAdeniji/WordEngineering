@@ -195,12 +195,12 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 164587);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18939);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 4196);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 10158);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 10195);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
-DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 171240);
+DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 189315);
 DBCC CHECKIDENT ('WordEngineering..QuestionAndAnswer', RESEED, 2963);
-DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 189087);
+DBCC CHECKIDENT ('WordEngineering..Remember', RESEED, 189355);
 DBCC CHECKIDENT ('WordEngineering..SacredText', RESEED, 833);
 DBCC CHECKIDENT ('WordEngineering..Software', RESEED, 4250);
 DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5476);
@@ -1346,6 +1346,38 @@ console.log(closest); // { id: 3, score: 72 }
 
 2026-09-14	http://apnews.com/article/donald-trump-jr-umar-kremlev-bettina-trump-wedding-russia-54b191b7d19ae09ab599ef5966523ab4?utm_source=firefox-newtab-en-us#
 
-KenAdeniji@hotmail.com,KehindeAdeniji@gmail.com
+2026-09-15	msn.com/en-us/money/economy/jpmorgan-ceo-sends-strong-warning-to-all-americans/ar-AA2cifnK?ctsrc=dgst&ocid=winp2fptaskbarhover&cvid=40bd69326ae841b9a0e407dde8febbac&ei=27
+
+2026-09-20T16:08:00	http://www.cbsnews.com/news/haiti-president-assassination-suspects-extradited-florida/?utm_source=firefox-newtab-en-us
+
+2026-09-25 http://apnews.com/article/indonesia-java-sea-ferry-capsizes-salvage-36c7b3415dcf28b2a855fe923595c719?utm_source=firefox-newtab-en-us
+
+2026-09-25	http://apnews.com/article/al-gore-climate-change-optimism-renewables-doom-d34078b0bed9bd1243de54688cc3b7dd?utm_source=firefox-newtab-en-us
+
+2026-09-26
+SELECT        TOP (55) TheWordID, ContactID, Dated, Title, FirstName, LastName, OtherName, Company, ScriptureReference, Commentary, URI
+FROM            Contact
+WHERE        (CONVERT(date, Dated) IN ('2023-10-12', '2026-06-28', '2026-09-23', '2025-02-03', 'Mar 30 2023')) OR
+                         (FirstName = 'Alvin')
+ORDER BY ContactID DESC
+
+2026-09-26
+SELECT        TOP (515) HisWordID, Dated, Word, Dream, Vision, Commentary, Interpret, Fulfill, ToDo, Uri, ContactID, ScriptureReference, Filename, EnglishTranslation, Location, Scene, PseudoCode, Actor, RegularExpression
+FROM            HisWord
+WHERE        (CONVERT(date, Dated) IN ('2023-10-12', '2026-06-28', '2026-09-23', '2025-02-03', 'Mar 30 2023'))
+ORDER BY HisWordID DESC
+
+2026-09-22T09:42:00
+    info@fidelitybank.ng,
+	trueserve@fidelitybank.ng,
+    contactcbn@cbn.gov.ng,
+    cpd@cbn.gov.ng,
+    ethicsoffice@cbn.gov.ng,
+    anticorruptionunit@cbn.gov.ng,
+    whistleblowing@cbn.gov.ng,
+    Makan.Talayeh@acgov.org,
+    Maureen.Orphanos@acgov.org,
+    police-records@lists.stanford.edu,
+    police@stanford.edu
 
 :Exit

@@ -10,6 +10,8 @@ git add IIS/WordEngineering/Resume/KenAdenijiResume.txt
 
 git add IIS/WordEngineering/AlphabetSequence/2026-09-10_-_BiblePercentage_-_19.35.html
 
+git add Batch/2017-01-02DoingSomething.bat
+
 git add IIS/WordEngineering/Python/ChristianMayer/
 
 git add IIS/WordEngineering/2018-05-03Correspondence/2026-09-14URL_Benediction.txt
