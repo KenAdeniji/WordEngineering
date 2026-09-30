@@ -245,6 +245,13 @@
 			What are your top CSS pain points related to layout?
 		2026-07-24T00:53:00	<script type="text/javascript" src="http://av1611.com/verseclick/verseclick.js"></script>
 		2026-07-24T19:10:00...2026-07-24T19:50:00	2026-07-24T1910AlphabetSequenceStub.html
+		2026-09-29T13:39:00
+The Scripture View's ScriptureReference Column
+The SQL statement
+dbo.udf_ScriptureReference(BookID, ChapterID, VerseID)
+Will calculate the 2026-09-29T13:39:00 conjunction composition of the BookTitle, ChapterID, and VerseID. Since this is a computed column, therefore, the author is not able to set its Entity Integrity; if it were not the SQL statement
+ALTER TABLE Bible..Scripture ADD CONSTRAINT uc_Scripture_ScriptureReference UNIQUE (ScriptureReference)
+Will set its entity integrity. The distinction between raw data versus computed columns is performance and space. 
 	-->
 	</head>
 	<body>	
