@@ -75,3 +75,6 @@ git add "Google/Google.com_-_JobsNearMe/2026-09-18T0711Google.com_-_JobsNearMe_C
 git add "Google/Google.com_-_JobsNearMe/2026-09-30T0523Google.com_-_jobs near me C#.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-09-30T1010Patti Tobenkin Robert Half Technology patti.tobenkin@rht.com (510) 839-5975 2884 Sand Hill Road, Suite 200, Menlo Park, CA 94025 C# Software Engineer.txt"
+
+git add "Google/Google.com_-_JobsNearMe/2026-08-14T1728...2026-08-14T1819 google.com jobs near me.txt"
+git add "Google/Google.com_-_JobsNearMe/2026-09-30T1712Google.com_-_jobs near me SQL Abhishek Singh Jconnect Infotech Inc. 168 Barclay Center Suite 347 Cherry Hill, New Jersey (NJ) 08034 Telephone (856) 770-2379 abhi.k@jconnectinc.com.txt"
