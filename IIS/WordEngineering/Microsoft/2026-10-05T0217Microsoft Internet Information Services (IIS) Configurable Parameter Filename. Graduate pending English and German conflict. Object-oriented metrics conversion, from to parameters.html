@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-10-05T20:20:00 Code start.
+		2026-10-05T21:36:00 Code finish.
+		2026-10-05T22:10:00 Code debug.
+		2026-10-05T02:17:00
+		Scene 1: I am working with software engineers who showed me how to configure Microsoft Internet Information Services (IIS). 1 of the configurable parameters was a filename.
+		Scene 2: A person should graduate, but he is unable to because of the English and German conflict. 
+		Scene 3: I was shown a software code listing which uses object-oriented programming (OO) for metrics conversion. The from and to metrics units to convert are in method parameters.
+		2026-10-05T18:41:00
+			http://stackoverflow.com/questions/1337419/how-do-you-convert-numbers-between-different-bases-in-javascript
+	-->	
+	<head>
+		<title>Base conversion</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Base conversion"/>
+		<meta name="keyword" content="Base conversion"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			
+			table 
+			{
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td 
+			{ 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th 
+			{
+				background: blue;
+			}
+
+			tr:nth-child(even) 
+			{
+				background: #E1EEF4;
+			}
+			
+			p, iframe
+			{ 
+				height: 30vh;
+				width: 95vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<div>
+			<form method="post" id="formed" action="javascript:void(0);">
+				<div align="center">
+					<table>
+						<tr>
+							<td><label for="valueToConvertFrom">Value to convert from</label></td>
+							<td><input type="number" id="valueToConvertFrom" value="32" autofocus/></td>
+						</tr>
+						<tr>
+							<td><label for="valueToConvertUntil">Value to convert until</label></td>
+							<td><input type="number" id="valueToConvertUntil" value="212"/></td>
+						</tr>
+						<tr>
+							<td><label for="convertStep">Convert step</label></td>
+							<td><input type="number" id="convertStep" value="5"/></td>
+						</tr>
+						<tr>
+							<td><label for="baseConvertFrom">Base convert from</label></td>
+							<td><input type="number" id="baseConvertFrom" value="10"/></td>
+						</tr>
+						<tr>
+							<td><label for="baseConvertTo">Base convert to</label></td>
+							<td><textarea type="number" id="baseConvertTo">2, 8, 16</textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="submit" id="submitQuery">
+							</td>
+						</tr>
+					</table>
+				<div>	
+			<form>	
+			<div id="resultSet"></div>
+		</div>	
+		<script>
+			var isPostBack = false;
+			
+			const 	formedElement = document.getElementById("formed");
+
+			const	valueToConvertFromElement = document.getElementById("valueToConvertFrom");
+			const	valueToConvertUntilElement = document.getElementById("valueToConvertUntil");
+			const	convertStepElement = document.getElementById("convertStep");
+			
+			const	baseConvertFromElement = document.getElementById("baseConvertFrom");
+			const	baseConvertToElement = document.getElementById("baseConvertTo");
+			
+			const 	submitQueryElement = document.getElementById("submitQuery");
+			
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				if (isPostBack === false)
+				{
+					const urlParams = new URLSearchParams(window.location.search);
+					
+					var valueToConvertFromParam = urlParams.get("valueToConvertFrom");
+					if (valueToConvertFromParam)
+					{
+						valueToConvertFromElement.value = valueToConvertFrom;
+					}	
+
+					var valueToConvertUntilParam = urlParams.get("valueToConvertUntil");
+					if (valueToConvertUntilParam)
+					{
+						valueToConvertUntilElement.value = valueToConvertUntil;
+					}	
+
+					var convertStepParam = urlParams.get("convertStep");
+					if (convertStepParam)
+					{
+						convertStepElement.value = convertStep;
+					}	
+
+					var baseConvertFromParam = urlParams.get("baseConvertFrom");
+					if (baseConvertFromParam)
+					{
+						baseConvertFromElement.value = baseConvertFrom;
+					}	
+
+					var baseConvertToParam = urlParams.get("baseConvertTo");
+					if (baseConvertToParam)
+					{
+						baseConvertToElement.value = baseConvertTo;
+					}	
+
+					querySubmit();
+					isPostBack = true;
+				}
+				else
+				{
+					querySubmit();
+				}
+ 			}
+
+			async function querySubmit()
+			{
+				let 	baseTableHTML = "<table><thead><tr><th>Number</th>";
+				const 	baseTo = baseConvertToElement.value.split(/[,;]/);
+
+				baseTo.forEach
+				(
+					(baseToCurrent) => 
+					{
+						baseTableHTML += `<th>${baseToCurrent}</th>`;
+					}	
+				);
+
+				baseTableHTML += "</tr></thead><tbody>";
+
+				for 
+				(
+					let 
+						valueFrom = parseFloat(valueToConvertFromElement.value),
+						valueUntil = parseFloat(valueToConvertUntilElement.value),
+						valueStep = parseFloat(convertStepElement.value),
+						valueMeasure = valueFrom,
+						baseFrom = parseFloat(baseConvertFromElement.value)
+					;	
+					valueMeasure <= valueUntil; 
+					valueMeasure += valueStep
+				) 
+				{
+					baseTableHTML += `<tr><td>${valueMeasure}</td>`;
+					baseTo.forEach
+					(
+						(baseToCurrent) => 
+						{
+							baseTableHTML += `<td>${convertBase(String(valueMeasure), baseFrom, baseToCurrent)}</td>`;
+						}
+					);
+					baseTableHTML += "</tr>";
+				}
+				baseTableHTML += "</tbody></table>";
+				resultSetElement.innerHTML = baseTableHTML;
+			}
+			
+			function convertBaseOther(value, from_base, to_base) {
+			  var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
+			  var from_range = range.slice(0, from_base);
+			  var to_range = range.slice(0, to_base);
+			  
+			  var dec_value = value.split('').reverse().reduce(function (carry, digit, index) {
+				if (from_range.indexOf(digit) === -1) throw new Error('Invalid digit `'+digit+'` for base '+from_base+'.');
+				return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
+			  }, 0);
+			  
+			  var new_value = '';
+			  while (dec_value > 0) {
+				new_value = to_range[dec_value % to_base] + new_value;
+				dec_value = (dec_value - (dec_value % to_base)) / to_base;
+			  }
+			  return new_value || '0';
+			}
+			
+// Source - https://stackoverflow.com/a/55011290
+// Posted by Slavik Meltser, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-10-05, License - CC BY-SA 4.0
+
+function convertBase(str, fromBase, toBase) {
+
+    const DIGITS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/";
+
+    const add = (x, y, base) => {
+        let z = [];
+        const n = Math.max(x.length, y.length);
+        let carry = 0;
+        let i = 0;
+        while (i < n || carry) {
+            const xi = i < x.length ? x[i] : 0;
+            const yi = i < y.length ? y[i] : 0;
+            const zi = carry + xi + yi;
+            z.push(zi % base);
+            carry = Math.floor(zi / base);
+            i++;
+        }
+        return z;
+    }
+
+    const multiplyByNumber = (num, x, base) => {
+        if (num < 0) return null;
+        if (num == 0) return [];
+
+        let result = [];
+        let power = x;
+        while (true) {
+            num & 1 && (result = add(result, power, base));
+            num = num >> 1;
+            if (num === 0) break;
+            power = add(power, power, base);
+        }
+
+        return result;
+    }
+
+    const parseToDigitsArray = (str, base) => {
+        const digits = str.split('');
+        let arr = [];
+        for (let i = digits.length - 1; i >= 0; i--) {
+            const n = DIGITS.indexOf(digits[i])
+            if (n == -1) return null;
+            arr.push(n);
+        }
+        return arr;
+    }
+
+    const digits = parseToDigitsArray(str, fromBase);
+    if (digits === null) return null;
+
+    let outArray = [];
+    let power = [1];
+    for (let i = 0; i < digits.length; i++) {
+        digits[i] && (outArray = add(outArray, multiplyByNumber(digits[i], power, toBase), toBase));
+        power = multiplyByNumber(fromBase, power, toBase);
+    }
+
+    let out = '';
+    for (let i = outArray.length - 1; i >= 0; i--)
+        out += DIGITS[outArray[i]];
+
+    return out;
+}
+			
+			submitQueryElement.addEventListener("click", querySubmit, false);
+		
+			var body = document.getElementsByTagName("body")[0];
+			body.onkeydown = function (e) 
+			{
+				if (e.keyCode === 13) 
+				{  //enter key code
+					querySubmit();
+				}
+			}
+
+			window.addEventListener("load", pageLoad, false);
+		</script>		
+	</body>
+</html>

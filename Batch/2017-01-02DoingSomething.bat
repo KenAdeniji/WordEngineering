@@ -195,7 +195,7 @@ DBCC CHECKIDENT ('WordEngineering..CaseBasedReasoning', RESEED, 164587);
 DBCC CHECKIDENT ('WordEngineering..ClassAssociates', RESEED, 22952);
 DBCC CHECKIDENT ('WordEngineering..Contact', RESEED, 18939);
 DBCC CHECKIDENT ('WordEngineering..ContactEmail', RESEED, 4196);
-DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 10195);
+DBCC CHECKIDENT ('WordEngineering..ContactURI', RESEED, 10235);
 DBCC CHECKIDENT ('WordEngineering..Dream', RESEED, 5138);
 DBCC CHECKIDENT ('WordEngineering..Event', RESEED, 1454);
 DBCC CHECKIDENT ('WordEngineering..HisWord', RESEED, 189315);
@@ -1366,6 +1366,27 @@ SELECT        TOP (515) HisWordID, Dated, Word, Dream, Vision, Commentary, Inter
 FROM            HisWord
 WHERE        (CONVERT(date, Dated) IN ('2023-10-12', '2026-06-28', '2026-09-23', '2025-02-03', 'Mar 30 2023'))
 ORDER BY HisWordID DESC
+
+2026-10-05T18:41:00
+http://stackoverflow.com/questions/1337419/how-do-you-convert-numbers-between-different-bases-in-javascript
+
+function convertBase(value, from_base, to_base) {
+  var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
+  var from_range = range.slice(0, from_base);
+  var to_range = range.slice(0, to_base);
+  
+  var dec_value = value.split('').reverse().reduce(function (carry, digit, index) {
+    if (from_range.indexOf(digit) === -1) throw new Error('Invalid digit `'+digit+'` for base '+from_base+'.');
+    return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
+  }, 0);
+  
+  var new_value = '';
+  while (dec_value > 0) {
+    new_value = to_range[dec_value % to_base] + new_value;
+    dec_value = (dec_value - (dec_value % to_base)) / to_base;
+  }
+  return new_value || '0';
+}
 
 2026-09-22T09:42:00
     info@fidelitybank.ng,
