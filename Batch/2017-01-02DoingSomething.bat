@@ -207,7 +207,7 @@ DBCC CHECKIDENT ('WordEngineering..StreetAddress', RESEED, 5476);
 DBCC CHECKIDENT ('WordEngineering..Telephone', RESEED, 7758); 
 DBCC CHECKIDENT ('WordEngineering..TerminologyOfTheDay', RESEED, 50); 
 DBCC CHECKIDENT ('WordEngineering..ThemeOfTheDay', RESEED, 12); 
-DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2379);
+DBCC CHECKIDENT ('WordEngineering..TheComingAdventOfTime', RESEED, 2584);
 DBCC CHECKIDENT ('WordEngineering..ToDo', RESEED, 2804);
 DBCC CHECKIDENT ('WordEngineering..WhatAreTheStepsYouGoThroughInAJobInterview', RESEED, 2);
 DBCC CHECKIDENT ('WordEngineering..WordOfTheDay', RESEED, 24);
