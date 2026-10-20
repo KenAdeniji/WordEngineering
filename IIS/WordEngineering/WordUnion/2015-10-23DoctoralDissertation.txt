@@ -49,13 +49,13 @@ backward verse are the corresponding, anticlockwise places.
 ]{dated="2020-09-15T00:00:00"}
 :::::
 
-:::::::::::::::::: {.section style="margin-left:25%"}
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.section style="margin-left:25%"}
 [The importance of this work?]{#TheImportanceOfThisWork}
 
 -   2021-05-20T17:26:00 [Follow God, as a
     character.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Follow%20God,%20as%20a%20character.){dated="2021-05-20T17:26:00"
     contactid="11332" hiswordid="140808" url="JulieZhuo.com"
-    commentary="2025-01-02T11:50:00 This was... design to follow. UnfoldingOfLanguage.com  Guy Deutscher is the author of Through the Language Glass and The Unfolding of Language. Formerly a Fellow of St. John's College, Cambridge, the Department of Ancient Near Eastern Languages in the University of Leiden in the Netherlands, and honorary Research Fellow at the School of Languages, Linguistics and Cultures in the University of Manchester. Israeli, Jew. Ivy Collins, Father African, mother Caucasian. Vallejo. Barnes & Noble (BN), El Cerrito Plaza."}
+    commentary="2025-01-02T11:50:00 This was... design to follow. UnfoldingOfLanguage.com  Guy Deutscher is the author of Through the Language Glass and The Unfolding of Language. Formerly a Fellow of St. John's College, Cambridge, the Department of Ancient Near Eastern Languages in the University of Leiden in the Netherlands, and honorary Research Fellow at the School of Languages, Linguistics and Cultures in the University of Manchester. Israeli, Jew. Ivy Collins, Father African, mother Caucasian. Vallejo. Barnes &amp; Noble (BN), El Cerrito Plaza."}
 -   2022-11-29T12:53:00 [To track dates and words? And, find meaning,
     correlation.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20track%20dates%20and%20words%3F%20And,%20find%20meaning,%20correlation.){dated="2022-11-29T12:53:00"
     contactid="13320" hiswordid="155044" url="wykesmith.com"
@@ -208,7 +208,7 @@ with leading wildcards.
 
 The SQL statement
 
-    (case when BookID <=(39) then 'Old' else 'New' end)
+    (case when BookID &lt;=(39) then 'Old' else 'New' end)
 
 will set this computed column. The Testament column serves as a filter,
 such as, in the
@@ -466,7 +466,7 @@ Hunt](http://en.wikipedia.org/wiki/Dave_Hunt_%28Christian_apologist%29),
 who will talk of each word\'s specifics, and [Chuck
 Missler](http://en.wikipedia.org/wiki/Chuck_Missler) who noted that the
 first occurrence of the word,
-[love](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Love&wholeWords=false)
+[love](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Love&amp;wholeWords=false)
 is in (Genesis 22:2). The exact table, is a holding area, for staging
 information; it could be argued that there is no need, to have this
 table, because it sources its information from the Scripture table, and
@@ -658,9 +658,9 @@ Constraint](http://en.wikipedia.org/wiki/Referential_integrity).
 
 The Dated column is of the DateTime type. If an insert statement does
 not explicitly specify a value for the dated column, then it defaults to
-the current date and time of the [(UTC-08:00) Pacific Time (US & Canada)
-time zone](http://en.wikipedia.org/wiki/Pacific_Time_Zone). There is a
-preference for the [Coordinated Universal Time
+the current date and time of the [(UTC-08:00) Pacific Time (US &amp;
+Canada) time zone](http://en.wikipedia.org/wiki/Pacific_Time_Zone).
+There is a preference for the [Coordinated Universal Time
 (UTC)](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) format.
 
 A relational constraint limit to a single foreign key? The author will
@@ -1213,7 +1213,7 @@ resources](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceSt
 > |                       | base unit.            |                       |
 > +-----------------------+-----------------------+-----------------------+
 >
-> : Scales & Measurements {#ScalesMeasurements}
+> : Scales and Measurements {#ScalesMeasurements}
 
 (Joe Celko, 2025-03-07).
 
@@ -1282,9 +1282,10 @@ resources](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceSt
 > |                 | then there is   |                 |     SELECT *    |
 > |                 | an interval. It |                 |     FROM Bible. |
 > |                 | is a half       |                 | .Scripture_View |
-> |                 | interval, if it |                 |     WHERE Verse |
-> |                 | specifies only  |                 | IDSequence <= 5 |
-> |                 | one bound.      |                 |                 |
+> |                 | interval, if it |                 |                 |
+> |                 | specifies only  |                 |  WHERE VerseIDS |
+> |                 | one bound.      |                 | equence &lt;= 5 |
+> |                 |                 |                 |                 |
 > |                 |                 |                 | ```             |
 > +-----------------+-----------------+-----------------+-----------------+
 > | Prefix match    | The set is the  | The author is   | ```             |
@@ -1511,13 +1512,13 @@ resources](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceSt
 >
 > #### Where Clause Operators {#WhereClauseOperators dated="2023-12-03T20:34:00"}
 >
->   Operator                                 Commentary
->   ---------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
->   =, \<\>, !=, \<, \<=, !\<, \>, \>= !\>   The operators listed will check for a single value. The operators that consist of !, will check for non-matches. [In most cases, rarely is this in use.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=In%20most%20cases,%20rarely%20is%20this%20in%20use.){hiswordid="158893" dated="2023-12-03T20:41:00"} [ !\< or/and !\>. ]{url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" dated="2023-12-01T00:00:00"} [This is the first time\...he is becoming aware\...of these expressions.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=This%20is%20the%20first%20time...he%20is%20becoming%20aware...of%20these%20expressions.){dated="2023-12-11T09:11:00" hiswordid="158966" url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" contactid="991" commmentary="Shower: 2nd sprinkling of water."} [This is the first time\...he is becoming aware\...of these operators.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=This%20is%20the%20first%20time...he%20is%20becoming%20aware...of%20these%20operators.){dated="2023-12-11T09:11:00" hiswordid="158966" url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" contactid="991" commmentary="Shower: 2nd sprinkling of water."} [Querying for a date or number will search for particular types.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Querying%20for%20a%20date%20or%20number%20will%20search%20for%20particular%20types.){hiswordid="158899" dated="2023-12-04T08:20:00"}
->   BETWEEN                                  This is a range check that accepts a beginning and ending value. It is not highly used.
->   NULL                                     No value
->   IN                                       A comma-delimited list of valid options within parenthesis.
->   LIKE                                     Wildcard filtering
+>   Operator                                           Commentary
+>   -------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+>   =, &lt;\>, !=, &lt;, &lt;=, !\<, &gt;, &gt;= !\>   The operators listed will check for a single value. The operators that consist of !, will check for non-matches. [In most cases, rarely is this in use.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=In%20most%20cases,%20rarely%20is%20this%20in%20use.){hiswordid="158893" dated="2023-12-03T20:41:00"} [ !\< or/and !\>. ]{url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" dated="2023-12-01T00:00:00"} [This is the first time\...he is becoming aware\...of these expressions.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=This%20is%20the%20first%20time...he%20is%20becoming%20aware...of%20these%20expressions.){dated="2023-12-11T09:11:00" hiswordid="158966" url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" contactid="991" commmentary="Shower: 2nd sprinkling of water."} [This is the first time\...he is becoming aware\...of these operators.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=This%20is%20the%20first%20time...he%20is%20becoming%20aware...of%20these%20operators.){dated="2023-12-11T09:11:00" hiswordid="158966" url="http://google.com/books/edition/Sams_Teach_Yourself_Microsoft_SQL_Server/1gJAEDNA1fYC?hl=en" contactid="991" commmentary="Shower: 2nd sprinkling of water."} [Querying for a date or number will search for particular types.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Querying%20for%20a%20date%20or%20number%20will%20search%20for%20particular%20types.){hiswordid="158899" dated="2023-12-04T08:20:00"}
+>   BETWEEN                                            This is a range check that accepts a beginning and ending value. It is not highly used.
+>   NULL                                               No value
+>   IN                                                 A comma-delimited list of valid options within parenthesis.
+>   LIKE                                               Wildcard filtering
 
 (Ben Forta, 2017)
 
@@ -1545,7 +1546,7 @@ resources](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceSt
   Like wildcard                                            Preceding or following restriction \'%%\'
   Check for NULL                                           IS NULL versus (VS) IS NOT NULL
   Between range check                                      Lower and upper limits
-  Logical comparison                                       \<, \>, =, \<=, \>=, \<\>
+  Logical comparison                                       \<, &gt;, =, &lt;=, &gt;=, &lt;\>
   Table join superceeds the previous column key equal to   FROM table join primary and foreign key
 
 #### Select Clause {#SelectClause dated="2023-02-10T15:53:00"}
@@ -1664,62 +1665,62 @@ Primary and foreign keys, unique indexes and check constraints.
 
 ### GitHub {#GitHub dated="2021-12-03T03:58:00"}
 
-The Author Uses the Git Code Repository
++-----------------------+-----------------------+-----------------------+
+| Key                   | Value                 | Commentary            |
++=======================+=======================+=======================+
+| Universal Resource    | [github.com           | This is the home page |
+| Identifier (URI)      | /KenAdeniji](http://g | for storing the       |
+|                       | ithub.com/KenAdeniji) | repositories.         |
++-----------------------+-----------------------+-----------------------+
+| Date Created          | 2013-04-27            | This is the date of   |
+|                       |                       | creating the          |
+|                       |                       | github.com account.   |
++-----------------------+-----------------------+-----------------------+
+| Version               | git version           | The git \--version    |
+|                       | 2.29.2.windows.3      | command offers the    |
+|                       |                       | release detail. The   |
+|                       |                       | author is not         |
+|                       |                       | sufficiently          |
+|                       |                       | knowledgeable on      |
+|                       |                       | tracking the version  |
+|                       |                       | update.               |
++-----------------------+-----------------------+-----------------------+
+| Configuration Profile | git config \--list    | The commands below    |
+|                       |                       | will set the profile: |
+|                       |                       | git config \--global  |
+|                       |                       | user.name             |
+|                       |                       | \"your-name\" git     |
+|                       |                       | config \--global      |
+|                       |                       | user.email            |
+|                       |                       | \"your-email\"        |
++-----------------------+-----------------------+-----------------------+
+| GitHub.com            | 1.  git clone         |                       |
+| WordEngineering       |     htt               |                       |
+| repository clone      | ps://github.com/KenAd |                       |
+|                       | eniji/WordEngineering |                       |
+|                       | 2.  git remote -v     |                       |
+|                       | 3.  git remote        |                       |
+|                       |     set-url origin    |                       |
+|                       |     git               |                       |
+|                       | @github.com:KenAdenij |                       |
+|                       | i/WordEngineering.git |                       |
+|                       | 4.  git remote -v     |                       |
++-----------------------+-----------------------+-----------------------+
+| Change Tracking       | git status            | This will decide the  |
+|                       |                       | differences between   |
+|                       |                       | your local copy and   |
+|                       |                       | the version control   |
+|                       |                       | code repository.      |
++-----------------------+-----------------------+-----------------------+
+| Add Updates           | git add               | The git add . command |
+|                       |                       | will add all the      |
+|                       |                       | updates, or the user  |
+|                       |                       | may add particular    |
+|                       |                       | directories and       |
+|                       |                       | files.                |
++-----------------------+-----------------------+-----------------------+
 
-Key
-::::::::::::::::::
-
-Value
-
-Commentary
-
-Universal Resource Identifier (URI)
-
-[github.com/KenAdeniji](http://github.com/KenAdeniji)
-
-This is the home page for storing the repositories.
-
-Date Created
-
-2013-04-27
-
-This is the date of creating the github.com account.
-
-Version
-
-git version 2.29.2.windows.3
-
-The git \--version command offers the release detail. The author is not
-sufficiently knowledgeable on tracking the version update.
-
-Configuration Profile
-
-git config \--list
-
-The commands below will set the profile: git config \--global user.name
-\"your-name\" git config \--global user.email \"your-email\"
-
-GitHub.com WordEngineering repository clone
-
-1.  git clone https://github.com/KenAdeniji/WordEngineering
-2.  git remote -v
-3.  git remote set-url origin
-    git@github.com:KenAdeniji/WordEngineering.git
-4.  git remote -v
-
-Change Tracking
-
-git status
-
-This will decide the differences between your local copy and the version
-control code repository.
-
-Add Updates
-
-git add
-
-The git add . command will add all the updates, or the user may add
-particular directories and files.
+: The Author Uses the Git Code Repository
 
 ### Accessibility {#accessibility dated="2021-12-04T14:48:00"}
 
@@ -2364,8 +2365,7 @@ Data,Log,Size and Other Useful information -SQL
 > 1.  The author is deprecating the use of the jquery library which was
 >     solely used for AJAX, in preference to the fetch statement.
 >     2025-12-10T21:02:00 [ This removes single point of failure (SPOF).
->     ]{dated="2025-12-10T21:02:00"
->     url="http://www.google.com/books/edition/Web_Performance_Daybook_Volume_2/W07UF_D0mwoC?hl=en&gbpv=1"}
+>     ]{dated="2025-12-10T21:02:00"}
 > 2.  The author only uses the latest version and a unique uri for each
 >     library available on CDN.
 > :::
@@ -2592,7 +2592,7 @@ databases:
 >     for 
 >     (
 >         var index = 0, lengthSize = word.length;
->         index <= lengthSize;
+>         index &lt;= lengthSize;
 >         ++index
 >     )
 >     {
@@ -3876,416 +3876,432 @@ Biblical generation - 40 Biblical years
 
 ### 2026-06-01T03:14:00 Vocation {#Vocation dated="2026-06-01T03:14:00" contactid="1363"}
 
-2026-06-01T03:14:00 In the south, at a station, I watched my twin
-sibling walk towards the north, after transport had departed, and I
-realized my vocation was to follow in the footsteps of my twin sibling
-to officiate game time.\
-2026-06-01T08:44:00 [Separated into halves\... separated into
-quarters](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Separated%20into%20halves...%20separated%20into%20quarters.){dated="2026-06-01T08:44:00"
-hiswordid="170571" contactid="744"
-location="Shower: 1st sprinkling of water"} (Hebrews 11:23-29, Matthew
-1:17, Revelation 21:23).\
-On 1993-09-24, I watched the [Sydney 2000 Summer Olympics host
-selection](http://en.wikipedia.org/wiki/2000_Summer_Olympics#Host_city_selection){dated="2026-06-01T05:02:00"
-hiswordid="170569"} at [Circular Quay railway
-station.](http://en.wikipedia.org/wiki/Circular_Quay_railway_station){dated="2026-06-01T05:02:00"
-hiswordid="170569"}\
-Know the end-time. 2026-06-01T04:22:00 In a game\... there may be
-interruptions. 2026-06-01T04:23:00 There are separation of intervals.\
-2026-01-20T01:07:00 A male was given an award for officiating what I
-perceived to be members of the opposite gender games. I went inside a
-room, and as I viewed from the south-west, I saw a male standing in the
-center-east and on top of him, his property was labeled with his first
-name initial and his last name (Revelation 14:1, Revelation 14:4).
-2026-09-22T18:02:00 [Is, this\... how I am
-use?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Is,%20this...%20how%20I%20am%20use%3F){dated="2026-09-22T18:02:00"
-hiswordid="171506" contactid="9923"}\
-There were 4 Moslem females at Dulhan Grocery. I saw Bernadette Renee
-Galleguillos walking westward at the north of El Mex-Cal Taqueria
-Located in: Charter Square Shopping Center Address: 34169 Fremont
-Boulevard, Fremont, CA 94555\
-2003-12-10 Reverend Lucy Kolin of Resurrection Lutheran Church. Church
-calendar.\
-2003-12-10 \... 2026-06-01 = 8209 days (22 biblical years, 9 biblical
-months, 19 days) (22 years, 5 months, 3 weeks, 1 day)\
-2003-12-10 \... 2026-09-22 = 8322 days (23 biblical years, 1 biblical
-month, 12 days) (22 years, 9 months, 1 week, 5 days)\
-2003-12-10 \... 2026-06-01 03:14:00.0000000 \... 2026-09-22
-21:11:13.4333333 = 98.642153328526% (Jude 1:6, Revelation 6, Genesis 17,
-Genesis 17:25)
+1.  [2026-06-01T03:14:00 In the south, at a station, I watched my twin
+    sibling walk towards the north, after transport had departed, and I
+    realized my vocation was to follow in the footsteps of my twin
+    sibling to officiate game time.\
+    2026-06-01T08:44:00 [Separated into halves\... separated into
+    quarters](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Separated%20into%20halves...%20separated%20into%20quarters.){dated="2026-06-01T08:44:00"
+    hiswordid="170571" contactid="744"
+    location="Shower: 1st sprinkling of water"} (Hebrews 11:23-29,
+    Matthew 1:17, Revelation 21:23).\
+    On 1993-09-24, I watched the [Sydney 2000 Summer Olympics host
+    selection](http://en.wikipedia.org/wiki/2000_Summer_Olympics#Host_city_selection){dated="2026-06-01T05:02:00"
+    hiswordid="170569"} at [Circular Quay railway
+    station.](http://en.wikipedia.org/wiki/Circular_Quay_railway_station){dated="2026-06-01T05:02:00"
+    hiswordid="170569"}\
+    Know the end-time. 2026-06-01T04:22:00 In a game\... there may be
+    interruptions. 2026-06-01T04:23:00 There are separation of
+    intervals.\
+    2026-01-20T01:07:00 A male was given an award for officiating what I
+    perceived to be members of the opposite gender games. I went inside
+    a room, and as I viewed from the south-west, I saw a male standing
+    in the center-east and on top of him, his property was labeled with
+    his first name initial and his last name (Revelation 14:1,
+    Revelation 14:4). 2026-09-22T18:02:00 [Is, this\... how I am
+    use?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Is,%20this...%20how%20I%20am%20use%3F){dated="2026-09-22T18:02:00"
+    hiswordid="171506" contactid="9923"}\
+    There were 4 Moslem females at Dulhan Grocery. I saw Bernadette
+    Renee Galleguillos walking westward at the north of El Mex-Cal
+    Taqueria Located in: Charter Square Shopping Center Address: 34169
+    Fremont Boulevard, Fremont, CA 94555\
+    2003-12-10 Reverend Lucy Kolin of Resurrection Lutheran Church.
+    Church calendar.\
+    2003-12-10 \... 2026-06-01 = 8209 days (22 biblical years, 9
+    biblical months, 19 days) (22 years, 5 months, 3 weeks, 1 day)\
+    2003-12-10 \... 2026-09-22 = 8322 days (23 biblical years, 1
+    biblical month, 12 days) (22 years, 9 months, 1 week, 5 days)\
+    2003-12-10 \... 2026-06-01 03:14:00.0000000 \... 2026-09-22
+    21:11:13.4333333 = 98.642153328526% (Jude 1:6, Revelation 6, Genesis
+    17, Genesis 17:25)]{#SouthStationMyTwinSiblingOfficiateGameTime}
 
-2026-06-16T01:36:00 My twin sibling and I were attending a conference.
-My twin sibling warned me, and he briefed me that I have industry
-experience that it is user-experience that the interviewers will focus
-on. A form contains a question for the responder to specify a particular
-directory folder path. The British Prime Minister, Margaret Thatcher,
-will give a speech at a podium, and introduce her Olympic medal-winning
-husband, who walked from the north-center westward.\
-2026-06-16T19:31:00 My twin sibling is learning Postgres database on the
-job, like I futilely tried to learn JavaScript at Baynet World Inc.
-(BayNet.com) and Daigaku Honyaku Center (DHC).\
-2007-10-25\...2026-06-16=6809 days (18 biblical years, 10 biblical
-months, 29 days) (18 years, 7 months, 3 weeks, 1 day)
+2.  [2026-06-16T01:36:00 My twin sibling and I were attending a
+    conference. My twin sibling warned me, and he briefed me that I have
+    industry experience that it is user-experience that the interviewers
+    will focus on. A form contains a question for the responder to
+    specify a particular directory folder path. The British Prime
+    Minister, Margaret Thatcher, will give a speech at a podium, and
+    introduce her Olympic medal-winning husband, who walked from the
+    north-center westward.\
+    2026-06-16T19:31:00 My twin sibling is learning Postgres database on
+    the job, like I futilely tried to learn JavaScript at Baynet World
+    Inc. (BayNet.com) and Daigaku Honyaku Center (DHC).\
+    2007-10-25\...2026-06-16=6809 days (18 biblical years, 10 biblical
+    months, 29 days) (18 years, 7 months, 3 weeks, 1
+    day)]{#IndustryExperience_UserExperience}
 
-2026-06-16T01:36:00 [What He intend to use\... how do I use
-it?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20He%20intend%20to%20use...%20how%20do%20I%20use%20it%3F){dated="2026-06-16T01:36:00"
-hiswordid="170701" contactid="2809"}
+3.  [2026-06-16T01:36:00 [What He intend to use\... how do I use
+    it?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20He%20intend%20to%20use...%20how%20do%20I%20use%20it%3F){dated="2026-06-16T01:36:00"
+    hiswordid="170701" contactid="2809"}]{#WhatHeIntendToUseHowDoIUseIt}
 
-2026-07-15T10:34:00 [What? Center use? How are you after
-Him](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%3F%20Center%20use%3F%20How%20are%20you%20after%20Him%3F){dated="2026-07-15T10:34:00"
-hiswordid="170930" contactid="2036"
-scripturereference="Isaiah 52:12-53:12, Daniel 9:27"
-url="whatsaiththescripture.com/Text.Only/pdfs/The_Coming_Prince_Text.pdf"}
-( [Isaiah 52:12-53:12, Daniel
-9:27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2052:12-53:12,%20Daniel%209:27){dated="2026-07-15T10:34:00"
-hiswordid="170930" contactid="2036"
-scripturereference="Isaiah 52:12-53:12, Daniel 9:27"
-url="whatsaiththescripture.com/Text.Only/pdfs/The_Coming_Prince_Text.pdf"}
-)?\
-I saw a hand pick to the west of the house of Winnie, and later to the
-east of the house of the Hough family.\
-Winnie lives at 4761 Canvasback Common. Fremont, California (CA) 94555.
-United States of America (USA).\
-The Hough family live at 4685 Mallard Common. Fremont, California (CA)
-94555. United States of America (USA).\
-0032-04-06\....2026-07-15T10:34:00 (4761 /
-4685)=0032-04-06\....2026-07-15T10:34:00
-1.0162219850586979722518676627535=Date Difference: 728393 days.
-Interval: 105744.14005183718 Thursday October 13 0321 0321-10-13.
+4.  [2026-07-15T10:34:00 [What? Center use? How are you after
+    Him](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%3F%20Center%20use%3F%20How%20are%20you%20after%20Him%3F){dated="2026-07-15T10:34:00"
+    hiswordid="170930" contactid="2036"
+    scripturereference="Isaiah 52:12-53:12, Daniel 9:27"
+    url="whatsaiththescripture.com/Text.Only/pdfs/The_Coming_Prince_Text.pdf"}
+    ( [Isaiah 52:12-53:12, Daniel
+    9:27](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2052:12-53:12,%20Daniel%209:27){dated="2026-07-15T10:34:00"
+    hiswordid="170930" contactid="2036"
+    scripturereference="Isaiah 52:12-53:12, Daniel 9:27"
+    url="whatsaiththescripture.com/Text.Only/pdfs/The_Coming_Prince_Text.pdf"}
+    )?\
+    I saw a hand pick to the west of the house of Winnie, and later to
+    the east of the house of the Hough family.\
+    Winnie lives at 4761 Canvasback Common. Fremont, California
+    (CA) 94555. United States of America (USA).\
+    The Hough family live at 4685 Mallard Common. Fremont, California
+    (CA) 94555. United States of America (USA).\
+    0032-04-06\....2026-07-15T10:34:00 (4761 /
+    4685)=0032-04-06\....2026-07-15T10:34:00
+    1.0162219850586979722518676627535=Date Difference: 728393 days.
+    Interval: 105744.14005183718 Thursday October 13 0321
+    0321-10-13.]{#WhatCenterUseHowAreYouAfterHim?}
 
--   2026-07-15T14:13:00 [I Am\... making\... a person\... as
-    you.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20Am...%20making...%20a%20person...%20as%20you.){dated="2026-07-15T14:13:00"
-    hiswordid="170931" contactid="1364"
-    location="The word came between the house of Mahdu, 4705 Mallard Common, and the house of the Chan family, 4701 Mallard Common."}\
-    In the south-east vehicle parking lot of the Chan family, 4701
-    Mallard Common, 2026-07-15T14:51:00, I contemplated the career
-    starting point of Ademiloluwa. I projected Ademiloluwa should begin
-    his industry experience in Quality Assurance (QA), which was
-    mind-numbing for Kevin the Irish of Macquarie Bank, Wynyard Station,
-    Sydney, Australia. Since the year 2000, my work experience has
-    focused on WordEngineering and especially AlphabetSequence. On
-    Friday, the day, 1995-05-07, my twin sibling and I traveled to Los
-    Angeles for the christening of Ademiloluwa on Saturday, 1995-05-08.
-    In the master bedroom closet, the Holy Spirit said in the Yoruba
-    language, Ile eyan mi, lon lo yi; which translated to English, which
-    means, It is my person\'s house, you are going to. The word came in
-    the center, between, the house of Mahdu, 4705 Mallard Common, and
-    the house of the Chan family, 4701 Mallard Common, as I turned back,
-    returned from the intersection of Mallard Common and Woodduck
-    Common, east.\
-    2026-07-21T12:59:00 I off-boarded the AC Transit line 281 bus at the
-    intersection of Fremont Boulevard and Paseo Padre Parkway,
-    north-east, and I walked southward. Kimberly Lee was walking in
-    front of me towards the south. Audrey Russell of Milk & Honey Cafe,
-    Pegasus Center, is traveling to Amsterdam, Netherlands, next week.\
-    Redemption. While walking on Paseo Padre Parkway between Blackstone
-    Way and Siward Drive, on the overhead bridge, the word, salvation,
-    was spoken. I saw on the bridge an orange pencil, Office Depot
-    #2/HB.\
-    [What did He determine\... to use him
-    for?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20determine...%20to%20use%20him%20for%3F){dated="2026-07-21T12:59:00"
-    hiswordid="170971" contactid="1364"
-    location="I off-boarded the AC Transit line 281 bus at the intersection of Fremont Boulevard and Paseo Padre Parkway, north-east, and I walked southward. Kimberly Lee was walking in front of me towards the south. Audrey Russell of Milk & Honey Cafe, Pegasus Center, is traveling to Amsterdam, Netherlands, next week. Redemption. While walking on Paseo Padre Parkway between Blackstone Way and Siward Drive, on the overhead bridge, the word, salvation, was spoken. I saw on the bridge an orange pencil, Office Depot #2/HB."}
-    ( [1 Kings
-    7:1](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=1%20Kings%207:1){dated="2026-07-21T12:59:00"
-    hiswordid="170971" contactid="1364"
-    location="I off-boarded the AC Transit line 281 bus at the intersection of Fremont Boulevard and Paseo Padre Parkway, north-east, and I walked southward."}
-    )\
-    1999-05-07T00:00:00 - 13 biblical years or 4680 days =
-    1986-07-14T00:00:00
--   2026-07-15T14:55:00 [What did he choose\... as
-    reference?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20he%20choose...%20as%20reference%3F){dated="2026-07-15T14:55:00"
-    hiswordid="170932" contactid="18818"
-    location="Taqueria El Mex-Cal Mexican Food & Seafood. Located in: Charter Square Shopping Center. Address: 34169 Fremont Boulevard, Fremont, CA 94555 Phone: (510) 818-0252"}
--   2026-07-15T15:25:00 [To observe\... the performance\... as
-    reliable.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20observe...%20the%20performance...%20as%20reliable.){dated="2026-07-15T15:25:00"
-    hiswordid="170933" contactid="18382"
-    location="Mutanke BBQ. Located in: Charter Square Shopping Center. Address: 34129 Fremont Boulevard, Fremont, CA 94555 Phone: (510) 453-0558 mutanke.com"
-    url="mutanke.com"}
--   2026-07-15T16:04:00 [When did he\... retain a person\... as a
-    life?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20did%20he...%20retain%20a%20person...%20as%20a%20life%3F){dated="2026-07-15T16:04:00"
-    hiswordid="170934" contactid="4772"
-    location="I was walking on Siward Drive, between 4809 Mallard Common and 4806 Mallard Common."}\
-    I was walking on Siward Drive, between 4809 Mallard Common and 4806
-    Mallard Common.\
-    2013-11-28 Remove me from uncleanness.\
-    2013-11-28\...2026-07-15T16:04:00=4612 days (12 biblical years, 9
-    biblical months, 22 days) (12 years, 7 months, 2 weeks, 3 days)\
-    1941-07-17\...2026-07-15T16:04:00=31044 days (86 biblical years, 2
-    biblical months, 24 days) (84 years, 11 months, 4 weeks)\
-    1941-07-17\...2013-11-28\...2026-07-15T16:04:00=85.143667053214%
-    (John 9:40, John 15, Deuteronomy 24, Numbers 29:12)
--   2026-07-15T19:44:00 [What do I have\... personifying my
-    being](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20do%20I%20have...%20personifying%20my%20being%3F){dated="2026-07-15T19:44:00"
-    hiswordid="170935" contactid="2036"
-    location="Albertsons Lucky, Charter Square. Tony, Head Clerk."
-    scripturereference="Daniel 2:38, Genesis 1:19"} (Daniel 2:38,
-    Genesis 1:19)?
--   2026-07-22T11:36:00 [Do you comprehend who we are\... and how we
-    will
-    be](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Do%20you%20comprehend%20who%20we%20are...%20and%20how%20we%20will%20be%3F){dated="2026-07-22T11:36:00"
-    hiswordid="170985" contactid="5114"
-    commentary="Internally... exposure. America had land for agriculture, mineral resources for industry, and a population of migrants for work. I was to the west of Winnie's house, 2nd or 3rd fence from the north, and I was walking southward."
-    location="At Albertsons Lucky, Charter Square, I saw Jennifer Melow, Bianca Ramos, Alexis the Portuguese, Mark Valentine the English retired American Airlines mechanic, Dennis Kolmeyer, and Mary Kolmeyer in a wheelchair. In the car parking lot. Maria Sandoval née Hernadez the Hispanic clerk who does not work on Sundays, and who asked me to arbitrate between her Naada, and who gets to walk around, was eating, and she gave me a fist bone."
-    scripturereference="Romans 9:11, Revelation 20:6"} ( [Romans 9:11,
-    Revelation
-    20:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Romans%209:11,%20Revelation%2020:6){dated="2026-07-22T11:36:00"
-    hiswordid="170985" contactid="5114"
-    commentary="Internally... exposure. America had land for agriculture, mineral resources for industry, and a population of migrants for work. I was to the west of Winnie's house, 2nd or 3rd fence from the north, and I was walking southward."
-    location="At Albertsons Lucky, Charter Square, I saw Jennifer Melow, Bianca Ramos, Alexis the Portuguese, Mark Valentine the English retired American Airlines mechanic, Dennis Kolmeyer, and Mary Kolmeyer in a wheelchair. In the car parking lot. Maria Sandoval née Hernadez the Hispanic clerk who does not work on Sundays, and who asked me to arbitrate between her Naada, and who gets to walk around, was eating, and she gave me a fist bone."
-    scripturereference="Romans 9:11, Revelation 20:6"} )?\
-    Internally\... exposure. America had land for agriculture, mineral
-    resources for industry, and a population of migrants for work. I was
-    to the west of Winnie\'s house, 2nd or 3rd fence from the north, and
-    I was walking southward. At Albertsons Lucky, Charter Square, I saw
-    Jennifer Melow, Bianca Ramos, Alexis the Portuguese, Mark Valentine
-    the English retired American Airlines mechanic, Dennis Kolmeyer, and
-    Mary Kolmeyer in a wheelchair. In the car parking lot. Maria
-    Sandoval née Hernadez the Hispanic clerk who does not work on
-    Sundays, and who asked me to arbitrate between her Naada, and who
-    gets to walk around, was eating, and she gave me a fist bone.\
-    2025-06-09T21:07:00 Doctrine of Election 2025-06-09T21:07:00 \...
-    2026-07-22T11:36:00 = 408 days (1 biblical year, 1 biblical month,
-    18 days) (1 year, 1 month, 1 week, 6 days)\
-    2025-06-09T21:07:00 Doctrine of Election 2025-06-09T21:07:00 \...
-    2026-07-22T11:36:00 Romans 9:11, Revelation 20:6 90.5633078%,
-    99.8199472% = Date Difference: 408 Ratio: 0.9072666369833544
-    Interval: 370.1647878892086 DateTime Computed: Sun Jun 14 2026
-    00:00:00 GMT-0700 (Pacific Daylight Time) 2026-06-14T00:00:00
--   2026-07-22T18:50:00 [What did He make
-    him](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20make%20him%3F){dated="2026-07-22T18:50:00"
-    hiswordid="170987" contactid="467"
-    filename="D:\\WordEngineering\\IIS\\WordEngineering\\Python\\JakeVanderPlas\\Python Data Science Handbook by Jake VanderPlas\\Python Data Science Handbook by Jake VanderPlas Computation on NumPy Arrays Universal Functions.py"
-    url="github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Computation%20on%20NumPy%20Arrays%20Universal%20Functions.py"
-    scripturereference="Hebrews 5:8, Genesis 45:5-9, Genesis 41:19, Genesis 50:20, Daniel 2:36-45"}
-    (Hebrews 5:8, Genesis 45:5-9, Genesis 41:19, Genesis 50:20, Daniel
-    2:36-45)?
--   2026-07-23T21:01:00 [Join
-    relate](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Join%20relate.){dated="2026-07-23T21:01:00"
-    hiswordid="170994" contactid="121"
-    scripturereference="John 19:26, John 19:27"} (John 19:26, John
-    19:27).
+5.  ::: {#IAmMakingAPersonAsYou}
+    -   2026-07-15T14:13:00 [I Am\... making\... a person\... as
+        you.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20Am...%20making...%20a%20person...%20as%20you.){dated="2026-07-15T14:13:00"
+        hiswordid="170931" contactid="1364"
+        location="The word came between the house of Mahdu, 4705 Mallard Common, and the house of the Chan family, 4701 Mallard Common."}\
+        In the south-east vehicle parking lot of the Chan family, 4701
+        Mallard Common, 2026-07-15T14:51:00, I contemplated the career
+        starting point of Ademiloluwa. I projected Ademiloluwa should
+        begin his industry experience in Quality Assurance (QA), which
+        was mind-numbing for Kevin the Irish of Macquarie Bank, Wynyard
+        Station, Sydney, Australia. Since the year 2000, my work
+        experience has focused on WordEngineering and especially
+        AlphabetSequence. On Friday, the day, 1995-05-07, my twin
+        sibling and I traveled to Los Angeles for the christening of
+        Ademiloluwa on Saturday, 1995-05-08. In the master bedroom
+        closet, the Holy Spirit said in the Yoruba language, Ile eyan
+        mi, lon lo yi; which translated to English, which means, It is
+        my person\'s house, you are going to. The word came in the
+        center, between, the house of Mahdu, 4705 Mallard Common, and
+        the house of the Chan family, 4701 Mallard Common, as I turned
+        back, returned from the intersection of Mallard Common and
+        Woodduck Common, east.\
+        2026-07-21T12:59:00 I off-boarded the AC Transit line 281 bus at
+        the intersection of Fremont Boulevard and Paseo Padre Parkway,
+        north-east, and I walked southward. Kimberly Lee was walking in
+        front of me towards the south. Audrey Russell of Milk &amp;
+        Honey Cafe, Pegasus Center, is traveling to Amsterdam,
+        Netherlands, next week.\
+        Redemption. While walking on Paseo Padre Parkway between
+        Blackstone Way and Siward Drive, on the overhead bridge, the
+        word, salvation, was spoken. I saw on the bridge an orange
+        pencil, Office Depot #2/HB.\
+        [What did He determine\... to use him
+        for?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20determine...%20to%20use%20him%20for%3F){dated="2026-07-21T12:59:00"
+        hiswordid="170971" contactid="1364"
+        location="I off-boarded the AC Transit line 281 bus at the intersection of Fremont Boulevard and Paseo Padre Parkway, north-east, and I walked southward. Kimberly Lee was walking in front of me towards the south. Audrey Russell of Milk &amp; Honey Cafe, Pegasus Center, is traveling to Amsterdam, Netherlands, next week. Redemption. While walking on Paseo Padre Parkway between Blackstone Way and Siward Drive, on the overhead bridge, the word, salvation, was spoken. I saw on the bridge an orange pencil, Office Depot #2/HB."}
+        ( [1 Kings
+        7:1](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=1%20Kings%207:1){dated="2026-07-21T12:59:00"
+        hiswordid="170971" contactid="1364"
+        location="I off-boarded the AC Transit line 281 bus at the intersection of Fremont Boulevard and Paseo Padre Parkway, north-east, and I walked southward."}
+        )\
+        1999-05-07T00:00:00 - 13 biblical years or 4680 days =
+        1986-07-14T00:00:00
+    -   2026-07-15T14:55:00 [What did he choose\... as
+        reference?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20he%20choose...%20as%20reference%3F){dated="2026-07-15T14:55:00"
+        hiswordid="170932" contactid="18818"
+        location="Taqueria El Mex-Cal Mexican Food &amp; Seafood. Located in: Charter Square Shopping Center. Address: 34169 Fremont Boulevard, Fremont, CA 94555 Phone: (510) 818-0252"}
+    -   2026-07-15T15:25:00 [To observe\... the performance\... as
+        reliable.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20observe...%20the%20performance...%20as%20reliable.){dated="2026-07-15T15:25:00"
+        hiswordid="170933" contactid="18382"
+        location="Mutanke BBQ. Located in: Charter Square Shopping Center. Address: 34129 Fremont Boulevard, Fremont, CA 94555 Phone: (510) 453-0558 mutanke.com"
+        url="mutanke.com"}
+    -   2026-07-15T16:04:00 [When did he\... retain a person\... as a
+        life?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20did%20he...%20retain%20a%20person...%20as%20a%20life%3F){dated="2026-07-15T16:04:00"
+        hiswordid="170934" contactid="4772"
+        location="I was walking on Siward Drive, between 4809 Mallard Common and 4806 Mallard Common."}\
+        I was walking on Siward Drive, between 4809 Mallard Common and
+        4806 Mallard Common.\
+        2013-11-28 Remove me from uncleanness.\
+        2013-11-28\...2026-07-15T16:04:00=4612 days (12 biblical years,
+        9 biblical months, 22 days) (12 years, 7 months, 2 weeks, 3
+        days)\
+        1941-07-17\...2026-07-15T16:04:00=31044 days (86 biblical years,
+        2 biblical months, 24 days) (84 years, 11 months, 4 weeks)\
+        1941-07-17\...2013-11-28\...2026-07-15T16:04:00=85.143667053214%
+        (John 9:40, John 15, Deuteronomy 24, Numbers 29:12)
+    -   2026-07-15T19:44:00 [What do I have\... personifying my
+        being](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20do%20I%20have...%20personifying%20my%20being%3F){dated="2026-07-15T19:44:00"
+        hiswordid="170935" contactid="2036"
+        location="Albertsons Lucky, Charter Square. Tony, Head Clerk."
+        scripturereference="Daniel 2:38, Genesis 1:19"} (Daniel 2:38,
+        Genesis 1:19)?
+    -   2026-07-22T11:36:00 [Do you comprehend who we are\... and how we
+        will
+        be](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Do%20you%20comprehend%20who%20we%20are...%20and%20how%20we%20will%20be%3F){dated="2026-07-22T11:36:00"
+        hiswordid="170985" contactid="5114"
+        commentary="Internally... exposure. America had land for agriculture, mineral resources for industry, and a population of migrants for work. I was to the west of Winnie's house, 2nd or 3rd fence from the north, and I was walking southward."
+        location="At Albertsons Lucky, Charter Square, I saw Jennifer Melow, Bianca Ramos, Alexis the Portuguese, Mark Valentine the English retired American Airlines mechanic, Dennis Kolmeyer, and Mary Kolmeyer in a wheelchair. In the car parking lot. Maria Sandoval née Hernadez the Hispanic clerk who does not work on Sundays, and who asked me to arbitrate between her Naada, and who gets to walk around, was eating, and she gave me a fist bone."
+        scripturereference="Romans 9:11, Revelation 20:6"} ( [Romans
+        9:11, Revelation
+        20:6](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Romans%209:11,%20Revelation%2020:6){dated="2026-07-22T11:36:00"
+        hiswordid="170985" contactid="5114"
+        commentary="Internally... exposure. America had land for agriculture, mineral resources for industry, and a population of migrants for work. I was to the west of Winnie's house, 2nd or 3rd fence from the north, and I was walking southward."
+        location="At Albertsons Lucky, Charter Square, I saw Jennifer Melow, Bianca Ramos, Alexis the Portuguese, Mark Valentine the English retired American Airlines mechanic, Dennis Kolmeyer, and Mary Kolmeyer in a wheelchair. In the car parking lot. Maria Sandoval née Hernadez the Hispanic clerk who does not work on Sundays, and who asked me to arbitrate between her Naada, and who gets to walk around, was eating, and she gave me a fist bone."
+        scripturereference="Romans 9:11, Revelation 20:6"} )?\
+        Internally\... exposure. America had land for agriculture,
+        mineral resources for industry, and a population of migrants for
+        work. I was to the west of Winnie\'s house, 2nd or 3rd fence
+        from the north, and I was walking southward. At Albertsons
+        Lucky, Charter Square, I saw Jennifer Melow, Bianca Ramos,
+        Alexis the Portuguese, Mark Valentine the English retired
+        American Airlines mechanic, Dennis Kolmeyer, and Mary Kolmeyer
+        in a wheelchair. In the car parking lot. Maria Sandoval née
+        Hernadez the Hispanic clerk who does not work on Sundays, and
+        who asked me to arbitrate between her Naada, and who gets to
+        walk around, was eating, and she gave me a fist bone.\
+        2025-06-09T21:07:00 Doctrine of Election 2025-06-09T21:07:00
+        \... 2026-07-22T11:36:00 = 408 days (1 biblical year, 1 biblical
+        month, 18 days) (1 year, 1 month, 1 week, 6 days)\
+        2025-06-09T21:07:00 Doctrine of Election 2025-06-09T21:07:00
+        \... 2026-07-22T11:36:00 Romans 9:11, Revelation 20:6
+        90.5633078%, 99.8199472% = Date Difference: 408 Ratio:
+        0.9072666369833544 Interval: 370.1647878892086 DateTime
+        Computed: Sun Jun 14 2026 00:00:00 GMT-0700 (Pacific Daylight
+        Time) 2026-06-14T00:00:00
+    -   2026-07-22T18:50:00 [What did He make
+        him](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20make%20him%3F){dated="2026-07-22T18:50:00"
+        hiswordid="170987" contactid="467"
+        filename="D:\\WordEngineering\\IIS\\WordEngineering\\Python\\JakeVanderPlas\\Python Data Science Handbook by Jake VanderPlas\\Python Data Science Handbook by Jake VanderPlas Computation on NumPy Arrays Universal Functions.py"
+        url="github.com/KenAdeniji/WordEngineering/blob/main/IIS/WordEngineering/Python/JakeVanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas%20Computation%20on%20NumPy%20Arrays%20Universal%20Functions.py"
+        scripturereference="Hebrews 5:8, Genesis 45:5-9, Genesis 41:19, Genesis 50:20, Daniel 2:36-45"}
+        (Hebrews 5:8, Genesis 45:5-9, Genesis 41:19, Genesis 50:20,
+        Daniel 2:36-45)?
+    -   2026-07-23T21:01:00 [Join
+        relate](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Join%20relate.){dated="2026-07-23T21:01:00"
+        hiswordid="170994" contactid="121"
+        scripturereference="John 19:26, John 19:27"} (John 19:26, John
+        19:27).
+    :::
 
-2026-07-18T22:27:00 [Friendly
-counterpart](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Friendly%20counterpart.){dated="2026-07-18T22:27:00"
-hiswordid="170953" contactid="565" scripturereference="Isaiah 41:8"
-interpret="Succeed versus (VS) successive? Rita Busittil was with other unidentified African men. Genevieve Tarzer was with David a Benin, Nigeria, who brought Genevieve Tarzer to my house in Edgecliff, once. 2026-07-18T23:01:00 Pauline Beshay was with Friday Stance Arunwunde of Arnott's Biscuits, once."}
-(Isaiah 41:8).\
-Omo Yoruba. Succeed versus (VS) successive?\
-2024-11-05T16:23:00
-<http://en.wikipedia.org/wiki/2020_United_States_presidential_election>\
-The residing child prefers the other children to learn his language\...
-Scene 1: In the center-west, I am lost and afraid. This is probably in
-the vicinity of the house of Alhaji Lateef Kayode Jakande (LKJ), action
-governor. I heard some children speaking, learning, and specializing in
-a regional language. 16:12 The residing child prefers the other children
-to learn his language\... which is indigenous to their territory. Scene
-2: Mathew Omoruyi is the host of an acquaintance, family and friends
-party. Mathew Omoruyi is standing in the center, to the north-east of a
-rectangular table, which stretches eastward. I asked Mathew Omoruyi
-about the absence of our mutual friend, Gordon Orji. Mathew Omoruyi said
-Gordon Orji depends on his Jamaican wife for travel, and Mathew Omoruyi
-is tired of the expectations of Gordon Orji. There are questions about
-the itinerary travel plans of Gordon Orji. The indication is
-generational territorial grabbing will decide the 2024 presidential
-election. The temporal non-attendance of a dependent, Gordon Orji, is
-wait-and-see. The Republican is more pro-American and astute, while the
-Catholic party is more alms-giving.\
-2024-11-05T16:23:00\...2026-07-18T22:27:00=620 days (1 biblical year, 8
-biblical months, 20 days) (1 year, 8 months, 1 week, 5 days)\
-2024-11-05T16:23:00\...2026-07-18T22:27:00 Isaiah 41:8
-ChapterIDSequence=720 VerseIDSequence=18460
-ChapterIDSequencePercent=60.555088
-VerseIDSequencePercent=59.3530962=2025-11-08 ( [Isaiah 41:9, Isaiah 27,
-Psalms 6, Nehemiah
-12:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2041:9,%20Isaiah%2027,%20Psalms%206,%20Nehemiah%2012:17){dated="2026-07-18T22:27:00"
-hiswordid="170953" contactid="565" scripturereference="Isaiah 41:8"} )
+6.  [2026-07-18T22:27:00 [Friendly
+    counterpart](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Friendly%20counterpart.){dated="2026-07-18T22:27:00"
+    hiswordid="170953" contactid="565" scripturereference="Isaiah 41:8"
+    interpret="Succeed versus (VS) successive? Rita Busittil was with other unidentified African men. Genevieve Tarzer was with David a Benin, Nigeria, who brought Genevieve Tarzer to my house in Edgecliff, once. 2026-07-18T23:01:00 Pauline Beshay was with Friday Stance Arunwunde of Arnott's Biscuits, once."}
+    (Isaiah 41:8).\
+    Omo Yoruba. Succeed versus (VS) successive?\
+    2024-11-05T16:23:00
+    <http://en.wikipedia.org/wiki/2020_United_States_presidential_election>\
+    The residing child prefers the other children to learn his
+    language\... Scene 1: In the center-west, I am lost and afraid. This
+    is probably in the vicinity of the house of Alhaji Lateef Kayode
+    Jakande (LKJ), action governor. I heard some children speaking,
+    learning, and specializing in a regional language. 16:12 The
+    residing child prefers the other children to learn his language\...
+    which is indigenous to their territory. Scene 2: Mathew Omoruyi is
+    the host of an acquaintance, family and friends party. Mathew
+    Omoruyi is standing in the center, to the north-east of a
+    rectangular table, which stretches eastward. I asked Mathew Omoruyi
+    about the absence of our mutual friend, Gordon Orji. Mathew Omoruyi
+    said Gordon Orji depends on his Jamaican wife for travel, and Mathew
+    Omoruyi is tired of the expectations of Gordon Orji. There are
+    questions about the itinerary travel plans of Gordon Orji. The
+    indication is generational territorial grabbing will decide the 2024
+    presidential election. The temporal non-attendance of a dependent,
+    Gordon Orji, is wait-and-see. The Republican is more pro-American
+    and astute, while the Catholic party is more alms-giving.\
+    2024-11-05T16:23:00\...2026-07-18T22:27:00=620 days (1 biblical
+    year, 8 biblical months, 20 days) (1 year, 8 months, 1 week, 5
+    days)\
+    2024-11-05T16:23:00\...2026-07-18T22:27:00 Isaiah 41:8
+    ChapterIDSequence=720 VerseIDSequence=18460
+    ChapterIDSequencePercent=60.555088
+    VerseIDSequencePercent=59.3530962=2025-11-08 ( [Isaiah 41:9, Isaiah
+    27, Psalms 6, Nehemiah
+    12:17](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html?scriptureReference=Isaiah%2041:9,%20Isaiah%2027,%20Psalms%206,%20Nehemiah%2012:17){dated="2026-07-18T22:27:00"
+    hiswordid="170953" contactid="565" scripturereference="Isaiah 41:8"}
+    )]{#FriendlyCounterpart}
 
-2026-08-11T07:49:00 Abdul-Azeez Alli is temporarily putting tape in the
-center of the house, south-west frame base of a window.
+7.  2026-08-11T07:49:00 Abdul-Azeez Alli is temporarily putting tape in
+    the center of the house, south-west frame base of a window.
 
-2026-08-15T05:20:00 My twin sibling shared a website for American banks
-ratings. I wanted to check the rating for a particular company. There
-were customers standing who welcomed me in center-east. 4-letter
-initials, 2 on each side.
+8.  2026-08-15T05:20:00 My twin sibling shared a website for American
+    banks ratings. I wanted to check the rating for a particular
+    company. There were customers standing who welcomed me in
+    center-east. 4-letter initials, 2 on each side.
 
-2026-08-23T00:31:00 [Ose
-Wale](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Ose%20Wale){dated="2026-08-23T00:31:00"
-hiswordid="171217" contactid="1374" scripturereference="Genesis 25:23"}
-(Genesis 25:23).\
-Thank you, Wale.\
-I followed the documentation of my twin sibling for Microsoft SQL
-Server. Pastor Adedotun Arifalo asked about the work duration.
+9.  2026-08-23T00:31:00 [Ose
+    Wale](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Ose%20Wale){dated="2026-08-23T00:31:00"
+    hiswordid="171217" contactid="1374"
+    scripturereference="Genesis 25:23"} (Genesis 25:23).\
+    Thank you, Wale.\
+    I followed the documentation of my twin sibling for Microsoft SQL
+    Server. Pastor Adedotun Arifalo asked about the work duration.
 
-2026-08-23T07:13:00 Anthony Novak complained that an entire video was
-cut off. I was working on a personal computer (PC) application.
+10. 2026-08-23T07:13:00 Anthony Novak complained that an entire video
+    was cut off. I was working on a personal computer (PC) application.
 
-2026-08-23T14:23:00 [He has led\... now, he wants to be
-led](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Join%20relate.){dated="2026-08-23T14:23:00"
-hiswordid="171220" contactid="17816"
-scripturereference="Exodus 18:13-27"} (Exodus 18:13-27).
+11. 2026-08-23T14:23:00 [He has led\... now, he wants to be
+    led](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Join%20relate.){dated="2026-08-23T14:23:00"
+    hiswordid="171220" contactid="17816"
+    scripturereference="Exodus 18:13-27"} (Exodus 18:13-27).
 
-2026-09-03 21:20:23.660 [Ask Him\... what He wants\... to become of
-you](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Ask%20Him...%20what%20He%20wants...%20to%20become%20of%20you%3F){dated="2026-09-03 21:20:23.660"
-hiswordid="171313" contactid="9562" scripturereference="2 Samuel 3:12"}
-(2 Samuel 3:12)?\
-Scene 1: As I walked away from home, I saw the owner of Milk & Honey
-Cafe, moving the north-east chair to the west of the customer service
-desk, around. As she exited outside to the west, I asked Councilor
-Teresa Keng if her ex-marine husband was Asian, and she said, yeah.
-Scene 2: I asked Kiran Oded of Dulhan Grocery I had not seen mummy
-Taruben Patel, lately. I saw mummy Taruben Patel at Dulhan Grocery. She
-was sitting in the north-east chair, to the north of a black luggage
-bag. Scene 3: As I walked towards home, and I crossed the Paseo Padre
-Parkway overhead bridge between Blackstone Way and Siward Drive, north
-of the overhead bridge, I heard, bring about. 2026-09-03T21:46:00 The
-reason, need, for contact recording is to petition on people\'s behalf,
-and sales conversion. Call people by name, and relate people to
-spiritual events. Councilor Teresa Keng was wearing a pink blouse and a
-white pair of trousers. 2 Samuel 3:12 270th chapter, and 8094th verse.\
-I programmed Kowe, because I could not fluently speak Yoruba, my native
-language. I wrote an e-mail to Roger Durn, the Chief Executive Officer
-(CEO) of PowerSoft, Australia, I beseech you, exit clause, I could not
-work as a consultant since I did understand how-to software engineer the
-PowerSoft Client/Server application. I designed and implemented
-AlphabetSequence, because I wrote Bible stories from software
-engineering learning, but I had limited scripture knowledge.
+12. 2026-09-03 21:20:23.660 [Ask Him\... what He wants\... to become of
+    you](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Ask%20Him...%20what%20He%20wants...%20to%20become%20of%20you%3F){dated="2026-09-03 21:20:23.660"
+    hiswordid="171313" contactid="9562"
+    scripturereference="2 Samuel 3:12"} (2 Samuel 3:12)?\
+    Scene 1: As I walked away from home, I saw the owner of Milk &amp;
+    Honey Cafe, moving the north-east chair to the west of the customer
+    service desk, around. As she exited outside to the west, I asked
+    Councilor Teresa Keng if her ex-marine husband was Asian, and she
+    said, yeah. Scene 2: I asked Kiran Oded of Dulhan Grocery I had not
+    seen mummy Taruben Patel, lately. I saw mummy Taruben Patel at
+    Dulhan Grocery. She was sitting in the north-east chair, to the
+    north of a black luggage bag. Scene 3: As I walked towards home, and
+    I crossed the Paseo Padre Parkway overhead bridge between Blackstone
+    Way and Siward Drive, north of the overhead bridge, I heard, bring
+    about. 2026-09-03T21:46:00 The reason, need, for contact recording
+    is to petition on people\'s behalf, and sales conversion. Call
+    people by name, and relate people to spiritual events. Councilor
+    Teresa Keng was wearing a pink blouse and a white pair of trousers.
+    2 Samuel 3:12 270th chapter, and 8094th verse.\
+    I programmed Kowe, because I could not fluently speak Yoruba, my
+    native language. I wrote an e-mail to Roger Durn, the Chief
+    Executive Officer (CEO) of PowerSoft, Australia, I beseech you, exit
+    clause, I could not work as a consultant since I did understand
+    how-to software engineer the PowerSoft Client/Server application. I
+    designed and implemented AlphabetSequence, because I wrote Bible
+    stories from software engineering learning, but I had limited
+    scripture knowledge.
 
-2026-09-05T16:37:00 [What separate task\... do you
-do](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20separate%20task...%20do%20you%20do%3F){dated="2026-09-05T16:37:00"
-hiswordid="171326" contactid="161"
-scripturereference="Hebrews 7:14, Genesis 49:26, Exodus 2:11-14, Exodus 3:14, Exodus 12:4, Exodus 18:13-27"
-commentary="It is clear... our LORD..."} (Hebrews 7:14, Genesis 49:26,
-Exodus 2:11-14, Exodus 3:14, Exodus 12:4, Exodus 18:13-27)?\
-It is clear\... our LORD\...
+13. 2026-09-05T16:37:00 [What separate task\... do you
+    do](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20separate%20task...%20do%20you%20do%3F){dated="2026-09-05T16:37:00"
+    hiswordid="171326" contactid="161"
+    scripturereference="Hebrews 7:14, Genesis 49:26, Exodus 2:11-14, Exodus 3:14, Exodus 12:4, Exodus 18:13-27"
+    commentary="It is clear... our LORD..."} (Hebrews 7:14, Genesis
+    49:26, Exodus 2:11-14, Exodus 3:14, Exodus 12:4, Exodus 18:13-27)?\
+    It is clear\... our LORD\...
 
-2026-09-05T20:15:00 [What does He want\... to be His
-turn](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20does%20He%20want...%20to%20be%20His%20turn%3F){dated="2026-09-05T20:15:00"
-hiswordid="171327" contactid="9144" scripturereference="2 Samuel 12:12"
-location="4806 Mallard Common, Fremont, California (CA) 94555. Parlour light on. Sitting room. I saw Tintin Chris Siu walking ahead of Tinny Siu on Creekwood Drive, between Siward Drive and Decoy Terrace. Michelle Henry of Albertsons Lucky, Charter Square, spoke about the inventory of the store, and she was drinking."}
-(2 Samuel 12:12)?\
-4806 Mallard Common, Fremont, California (CA) 94555. Parlour light on.
-Sitting room. I saw Tintin Chris Siu walking ahead of Tinny Siu on
-Creekwood Drive, between Siward Drive and Decoy Terrace.\
-Michelle Henry of Albertsons Lucky, Charter Square, spoke about the
-inventory of the store, and she was drinking.\
-Nestle Tollhouse established 1939 Distributed by: Dreyer\'s Grand Ice
-Cream, Incorporated. Walnut Creek, California (CA) 94596 1-866-311-6350
-www.icecream.com Nestle trademarks used under license by Froneri
-International Limited. Societe des Produits Nestle S.A. Vevey,
-Switzerland trademark owner.
+14. 2026-09-05T20:15:00 [What does He want\... to be His
+    turn](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20does%20He%20want...%20to%20be%20His%20turn%3F){dated="2026-09-05T20:15:00"
+    hiswordid="171327" contactid="9144"
+    scripturereference="2 Samuel 12:12"
+    location="4806 Mallard Common, Fremont, California (CA) 94555. Parlour light on. Sitting room. I saw Tintin Chris Siu walking ahead of Tinny Siu on Creekwood Drive, between Siward Drive and Decoy Terrace. Michelle Henry of Albertsons Lucky, Charter Square, spoke about the inventory of the store, and she was drinking."}
+    (2 Samuel 12:12)?\
+    4806 Mallard Common, Fremont, California (CA) 94555. Parlour light
+    on. Sitting room. I saw Tintin Chris Siu walking ahead of Tinny Siu
+    on Creekwood Drive, between Siward Drive and Decoy Terrace.\
+    Michelle Henry of Albertsons Lucky, Charter Square, spoke about the
+    inventory of the store, and she was drinking.\
+    Nestle Tollhouse established 1939 Distributed by: Dreyer\'s Grand
+    Ice Cream, Incorporated. Walnut Creek, California (CA) 94596
+    1-866-311-6350 www.icecream.com Nestle trademarks used under license
+    by Froneri International Limited. Societe des Produits Nestle S.A.
+    Vevey, Switzerland trademark owner.
 
-2026-09-06T12:40:00 [You don\'t want to trade with them\... you want to
-battle with
-them.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=You%20don't%20want%20to%20trade%20with%20them...%20you%20want%20to%20battle%20with%20them.){dated="2026-09-06T12:40:00"
-hiswordid="171334" contactid="2936"
-location="Restroom... siting on the toilet bowl left east armpit. Bathroom upstairs, north-center."
-url="npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us"}\
-[http://npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us](http://npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us){dated="2026-09-06T12:40:00"
-hiswordid="171334" contactid="2936"
-location="Restroom... siting on the toilet bowl left east armpit. Bathroom upstairs, north-center."
-url="npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us"}
+15. 2026-09-06T12:40:00 [You don\'t want to trade with them\... you want
+    to battle with
+    them.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=You%20don't%20want%20to%20trade%20with%20them...%20you%20want%20to%20battle%20with%20them.){dated="2026-09-06T12:40:00"
+    hiswordid="171334" contactid="2936"
+    location="Restroom... siting on the toilet bowl left east armpit. Bathroom upstairs, north-center."
+    url="npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us"}\
+    [http://npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us](http://npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us){dated="2026-09-06T12:40:00"
+    hiswordid="171334" contactid="2936"
+    location="Restroom... siting on the toilet bowl left east armpit. Bathroom upstairs, north-center."
+    url="npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election?utm_source=firefox-newtab-en-us"}
 
-2026-09-17T00:52:00 My twin sibling showed me 2 successively complex
-formulas for an event occurring, which are the probability of an event
-occurring after 2 previous occurrences.
+16. 2026-09-17T00:52:00 My twin sibling showed me 2 successively complex
+    formulas for an event occurring, which are the probability of an
+    event occurring after 2 previous occurrences.
 
-2026-09-23T14:32:00 [I will like to be a type \... beyond
-myself.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20will%20like%20to%20be%20a%20type%20...%20beyond%20myself.){dated="2026-09-23T14:32:00"
-hiswordid="171512" contactid="14802"
-location="El Mex-Cal Taqueria Located in: Charter Square Shopping Center
-Address: 34169 Fremont Boulevard, Fremont, CA 94555 center-west table, south-west seat, James Gluth sat in south-east"}\
-2010-09-11 Visited Charlotte, North Carolina between 2010-09-11 and
-2010-09-18. On 2010-09-11, stop-over at Atlanta, Georgia. On 2010-09-18,
-stop-over at Fort Worth, Texas. 2010-09-12 Worship at church. 2010-09-13
-visited the shop. 2010-09-14 or 2010-09-15 On Tuesday or Wednesday had a
-dream about Buki, been persuaded by a woman to sign a video recording
-contract. So Buki is running around the place, recording scenery, and
-his life is at risk.\
-2010-09-11 \... 2026-09-23T14:32:00 = 5856 days (16 biblical years, 3
-biblical months, 6 days) (16 years, 1 week, 5 days)
+17. 2026-09-23T14:32:00 [I will like to be a type \... beyond
+    myself.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20will%20like%20to%20be%20a%20type%20...%20beyond%20myself.){dated="2026-09-23T14:32:00"
+    hiswordid="171512" contactid="14802"
+    location="El Mex-Cal Taqueria Located in: Charter Square Shopping Center
+    Address: 34169 Fremont Boulevard, Fremont, CA 94555 center-west table, south-west seat, James Gluth sat in south-east"}\
+    2010-09-11 Visited Charlotte, North Carolina between 2010-09-11 and
+    2010-09-18. On 2010-09-11, stop-over at Atlanta, Georgia. On
+    2010-09-18, stop-over at Fort Worth, Texas. 2010-09-12 Worship at
+    church. 2010-09-13 visited the shop. 2010-09-14 or 2010-09-15 On
+    Tuesday or Wednesday had a dream about Buki, been persuaded by a
+    woman to sign a video recording contract. So Buki is running around
+    the place, recording scenery, and his life is at risk.\
+    2010-09-11 \... 2026-09-23T14:32:00 = 5856 days (16 biblical years,
+    3 biblical months, 6 days) (16 years, 1 week, 5 days)
 
-2026-09-25T10:50:00 [What did He accept as me, and what did He authorize
-as
-me.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20accept%20as%20me,%20and%20what%20did%20He%20authorize%20as%20me.){dated="2026-09-25T10:50:00"
-hiswordid="171530" location="Pegasus Center, south-west."
-commentary="Hispanic gardeners. First husband in the north-east, later wife in the north-west. Getting into a car."}
-Pegasus Center, south-west. Hispanic gardeners. First husband in the
-north-east, later wife in the north-west. Getting into a car. Esther
-\... Purim. 2026-03-03 \... 2026-09-25 = 206 days (6 biblical months, 26
-days) (6 months, 3 weeks, 1 day)\
-[I have declare My use, where is
-yours?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20have%20declare%20My%20use,%20where%20is%20yours%3F){dated="2026-09-25T10:50:00"
-hiswordid="171531" contactid="19052"
-location="Shiseido Visage Cosmetics. 34400 A Fremont Boulevard, Fremont, California (CA) 94555."
-commentary="Sasam Hair Salon. 34420 B Fremont Boulevard, Fremont, California (CA) 94555. Department of Motor Vehicle (DMV) license plate 6YMC711 Honda CR-V. Elder Asian female."}
-Shiseido Visage Cosmetics. 34400 A Fremont Boulevard, Fremont,
-California (CA) 94555. Sasam Hair Salon. 34420 B Fremont Boulevard,
-Fremont, California (CA) 94555. Department of Motor Vehicle (DMV)
-license plate 6YMC711 Honda CR-V. Elder Asian female.\
-Assignment at place.
+18. 2026-09-25T10:50:00 [What did He accept as me, and what did He
+    authorize as
+    me.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20accept%20as%20me,%20and%20what%20did%20He%20authorize%20as%20me.){dated="2026-09-25T10:50:00"
+    hiswordid="171530" location="Pegasus Center, south-west."
+    commentary="Hispanic gardeners. First husband in the north-east, later wife in the north-west. Getting into a car."}
+    Pegasus Center, south-west. Hispanic gardeners. First husband in the
+    north-east, later wife in the north-west. Getting into a car. Esther
+    \... Purim. 2026-03-03 \... 2026-09-25 = 206 days (6 biblical
+    months, 26 days) (6 months, 3 weeks, 1 day)\
+    [I have declare My use, where is
+    yours?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=I%20have%20declare%20My%20use,%20where%20is%20yours%3F){dated="2026-09-25T10:50:00"
+    hiswordid="171531" contactid="19052"
+    location="Shiseido Visage Cosmetics. 34400 A Fremont Boulevard, Fremont, California (CA) 94555."
+    commentary="Sasam Hair Salon. 34420 B Fremont Boulevard, Fremont, California (CA) 94555. Department of Motor Vehicle (DMV) license plate 6YMC711 Honda CR-V. Elder Asian female."}
+    Shiseido Visage Cosmetics. 34400 A Fremont Boulevard, Fremont,
+    California (CA) 94555. Sasam Hair Salon. 34420 B Fremont Boulevard,
+    Fremont, California (CA) 94555. Department of Motor Vehicle (DMV)
+    license plate 6YMC711 Honda CR-V. Elder Asian female.\
+    Assignment at place.
+    1.  Man (Genesis 6:3)
+    2.  Joseph (Genesis 39:9)
+    3.  Zacharias (Luke 1:19-20)
+    4.  Solomon (1 Kings 11:9)
 
-1.  Man (Genesis 6:3)
-2.  Joseph (Genesis 39:9)
-3.  Zacharias (Luke 1:19-20)
-4.  Solomon (1 Kings 11:9)
+19. 2026-09-27T22:06:00 [Guaranty
+    success](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Guaranty%20success.){dated="2026-09-27T22:06:00"
+    contactid="9562" hiswordid="171558"
+    location="On Paseo Padre Parkway between Highway 880 South overhead bridge, south and Siward Drive."
+    commentary="The councilor of Fremont District 1, and owner of Milk &amp; Honey Cafe, Teresa Keng, said, We are close. Both Amy, I work here, and Ivy Tan were to the east, and Teresa Keng walked to the north-west from the south-east. Teresa Keng was wearing a pink dress. I saw a paper cardboard outside, and it was twice between my nipples and a scar on the left side, west, of my scalp. Chuck Missler of Koinonia House (KHouse.org) said, you don't play with angels, 2 of them destroyed Sodom and Gomorrah (Genesis 19)."
+    scripturereference="Genesis 19, Daniel 2"} (Genesis 19, Daniel 2).\
+    1.  Doctor Richard Hagemeyer of Central Piedmont Community College
+        (CPCC), after completing my 3 associates in engineering degrees,
+        asked me if I would like to go to Africa.
+    2.  Jeff Stevens of Central Corporation said, I should increment the
+        tape reel labels count from 2 to 3 printed. Prior to joining
+        Central Corporation in Charlotte, North Carolina (NC) I worked
+        part-time at Knife &amp; Fork restaurant, CPCC, Sunhealth, and
+        McKee Realty. Jeff Stevens offered me the opportunity to
+        re-locate to Fort Lauderdale, Florida (FL).
+    3.  Tajudeen Afolabi Adeola of Guaranty Trust Bank (GTB) said, I
+        need to grow up. Prior to joining GTB in Nigeria, I worked
+        full-time for SAAP Tech, Dalam, and part-time without getting
+        paid for Union Bank of Nigeria (UBN) at glasshouse on Santa Cruz
+        Operation (SCO) Xenix.
+    4.  Roger Durn of PowerSoft Australia, said, soak it in. Prior to
+        joining PowerSoft Australia, I was contracted at Metal
+        Manufactures, Arthur Andersen/Warner Music, and I worked
+        part-time on a Client/Server application development and data
+        entry project for Information Dialling Services (IDS).
 
-2026-09-27T22:06:00 [Guaranty
-success](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Guaranty%20success.){dated="2026-09-27T22:06:00"
-contactid="9562" hiswordid="171558"
-location="On Paseo Padre Parkway between Highway 880 South overhead bridge, south and Siward Drive."
-commentary="The councilor of Fremont District 1, and owner of Milk & Honey Cafe, Teresa Keng, said, We are close. Both Amy, I work here, and Ivy Tan were to the east, and Teresa Keng walked to the north-west from the south-east. Teresa Keng was wearing a pink dress. I saw a paper cardboard outside, and it was twice between my nipples and a scar on the left side, west, of my scalp. Chuck Missler of Koinonia House (KHouse.org) said, you don't play with angels, 2 of them destroyed Sodom and Gomorrah (Genesis 19)."
-scripturereference="Genesis 19, Daniel 2"} (Genesis 19, Daniel 2).\
+    Between employment roles 2 and 3 above, I voluntarily worked \...
+    2026-09-27T22:52:00 [for a shift of
+    role.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=for%20a%20shift%20of%20role.){dated="2026-09-27T22:52:00"
+    commentary="Between employment roles 2 and 3 above, I voluntarily worked ..."}\
+    2026-09-28T05:00:00 [A re-location
+    process.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=A%20re-location%20process.){dated="2026-09-28T05:00:00"}
 
-1.  Doctor Richard Hagemeyer of Central Piedmont Community College
-    (CPCC), after completing my 3 associates in engineering degrees,
-    asked me if I would like to go to Africa.
-2.  Jeff Stevens of Central Corporation said, I should increment the
-    tape reel labels count from 2 to 3 printed. Prior to joining Central
-    Corporation in Charlotte, North Carolina (NC) I worked part-time at
-    Knife & Fork restaurant, CPCC, Sunhealth, and McKee Realty. Jeff
-    Stevens offered me the opportunity to re-locate to Fort Lauderdale,
-    Florida (FL).
-3.  Tajudeen Afolabi Adeola of Guaranty Trust Bank (GTB) said, I need to
-    grow up. Prior to joining GTB in Nigeria, I worked full-time for
-    SAAP Tech, Dalam, and part-time without getting paid for Union Bank
-    of Nigeria (UBN) at glasshouse on Santa Cruz Operation (SCO) Xenix.
-4.  Roger Durn of PowerSoft Australia, said, soak it in. Prior to
-    joining PowerSoft Australia, I was contracted at Metal Manufactures,
-    Arthur Andersen/Warner Music, and I worked part-time on a
-    Client/Server application development and data entry project for
-    Information Dialling Services (IDS).
+20. 2026-09-29T17:19:00 [What did He desire \... as decision of the
+    moment](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20desire%20...%20as%20decision%20of%20the%20moment){dated="2026-09-29T17:19:00"
+    contactid="2443" hiswordid="171570" scripturereference="Daniel 1:18"
+    url="monsterasp.net/#plans"} (Daniel 1:18)?\
+    2026-09-30T03:22:00 [ For software, I have an incomplete set of
+    compact discs. I requested a set of software on compact discs from
+    my twin sibling. When I attempted installing my software, I saw a
+    scanty directory listing of files. ]{dated="2026-09-30T03:22:00"
+    contactid="10745" hiswordid="171571"
+    interpret="2025-11-13 http://youtube.com/watch?v=8X7VYhHKbss
+    IBM CEO Arvind Krishna: Creating Smarter Business with AI and Quantum | Smart Talks with IBM IBM 365K subscribers 11,232 views Oct 28, 2025 Smart Talks with IBM Explore the podcast ? https://ibm.biz/BdbPTF Malcolm Gladwell sits down with IBM Chairman and CEO Arvind Krishna in this special live episode of Smart Talks with IBM. Explore the groundbreaking potential of quantum computing, the transformative impact of AI on business, and how Krishna’s visionary predictions from the '90s continue to shape IBM’s innovations today. 2025-11-13 Artificial Intelligence is based on data. Quantum is based on algorithms."}\
+    2026-09-30T14:39:00
+    [Turn](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Turn){dated="2026-09-30T14:39:00"
+    contactid="1363" hiswordid="171572"
+    scripturereference="Jeremiah 31:18"} (Jeremiah 31:18).\
+    1999-01-18 \... 2026-09-30T14:39:00 = 10117 days (28 biblical years,
+    1 biblical month, 7 days) (27 years, 8 months, 1 week, 5 days)\
+    1999-01-18 \... 2026-09-30T14:39:00 (Jeremiah 31:18) 63.3721304% =
 
-Between employment roles 2 and 3 above, I voluntarily worked \...
-2026-09-27T22:52:00 [for a shift of
-role.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=for%20a%20shift%20of%20role.){dated="2026-09-27T22:52:00"
-commentary="Between employment roles 2 and 3 above, I voluntarily worked ..."}\
-2026-09-28T05:00:00 [A re-location
-process.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=A%20re-location%20process.){dated="2026-09-28T05:00:00"}
-
-2026-09-29T17:19:00 [What did He desire \... as decision of the
-moment](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20He%20desire%20...%20as%20decision%20of%20the%20moment){dated="2026-09-29T17:19:00"
-contactid="2443" hiswordid="171570" scripturereference="Daniel 1:18"
-url="monsterasp.net/#plans"} (Daniel 1:18)?\
-2026-09-30T03:22:00 [ For software, I have an incomplete set of compact
-discs. I requested a set of software on compact discs from my twin
-sibling. When I attempted installing my software, I saw a scanty
-directory listing of files. ]{dated="2026-09-30T03:22:00"
-contactid="10745" hiswordid="171571"
-interpret="2025-11-13 http://youtube.com/watch?v=8X7VYhHKbss
-IBM CEO Arvind Krishna: Creating Smarter Business with AI and Quantum | Smart Talks with IBM IBM 365K subscribers 11,232 views Oct 28, 2025 Smart Talks with IBM Explore the podcast ? https://ibm.biz/BdbPTF Malcolm Gladwell sits down with IBM Chairman and CEO Arvind Krishna in this special live episode of Smart Talks with IBM. Explore the groundbreaking potential of quantum computing, the transformative impact of AI on business, and how Krishna’s visionary predictions from the '90s continue to shape IBM’s innovations today. 2025-11-13 Artificial Intelligence is based on data. Quantum is based on algorithms."}\
-2026-09-30T14:39:00
-[Turn](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Turn){dated="2026-09-30T14:39:00"
-contactid="1363" hiswordid="171572" scripturereference="Jeremiah 31:18"}
-(Jeremiah 31:18).\
-1999-01-18 \... 2026-09-30T14:39:00 = 10117 days (28 biblical years, 1
-biblical month, 7 days) (27 years, 8 months, 1 week, 5 days)\
-1999-01-18 \... 2026-09-30T14:39:00 (Jeremiah 31:18) 63.3721304% =
-
-    Date Difference:    10117
-    Ratio:              0.633721304
-    Interval:           6411.358432568
-    DateTime Computed:  Sun Aug 07 2016 00:00:00 GMT-0700 (Pacific Daylight Time)
+        Date Difference:    10117
+        Ratio:              0.633721304
+        Interval:           6411.358432568
+        DateTime Computed:  Sun Aug 07 2016 00:00:00 GMT-0700 (Pacific Daylight Time)
 
   What                                                                                                                             Frequency                                         Importance
   -------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------- ---------------------------------------------------------
@@ -5394,9 +5410,9 @@ contactid="3223"} {#NameRelevance}
 
 ### 2026-09-04T07:40:00 [Believe an instruction book](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Believe%20an%20instruction%20book){dated="2026-09-04T07:40:00" contactid="365" hiswordid="171315"} {#BelieveAnInstructionBook dated="2026-09-04T07:40:00" contactid="365" hiswordid="171315"}
 
-1.  Scene 1: I am at a location like Barnes & Noble, Jack London Square.
-    A male worker firstly or secondly claimed his country of origin is
-    Morocco.
+1.  Scene 1: I am at a location like Barnes &amp; Noble, Jack London
+    Square. A male worker firstly or secondly claimed his country of
+    origin is Morocco.
 2.  Scene 2: As I crossed Decoto Road eastward between the intersection
     of Decoto Road and Fremont Boulevard and the American Buddhist
     Cultural Society - Fremont, California ... 3850 Decoto Road,
@@ -5450,53 +5466,47 @@ contactid="3223"} {#NameRelevance}
 
 ### Client/Server\... World Wide Web (WWW) {#ClientServerWorldWideWeb dated="2026-04-02T16:13:00" contactid="1598" url="lannigan.org/powersoft_powerbuilder_history.htm"}
 
-2026-04-02T16:13:00 [To sufficiently use according to
-many.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20sufficiently%20use%20according%20to%20many.){dated="2026-04-02T16:13:00"}
-
-2026-04-02T17:36:00 [When we need one\... we need the
-other.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20we%20need%20one...%20we%20need%20the%20other.){dated="2026-04-02T17:36:00"
-location="Upstairs north-west bathroom, faeces, and rinse asshole with water and my left fingers and palm."
-commentary="Masturbate"}
-
-2026-04-02T19:13:00 [When you are the extent of
-use.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20you%20are%20the%20extent%20of%20use.){dated="2026-04-02T19:13:00"
-contactid="16181" hiswordid="169011"}
-
-2026-04-04T15:42:00 [When you welcome\...
-exchange](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20you%20welcome...%20exchange.){dated="2026-04-04T15:42:00"
-contactid="411" hiswordid="169020" location="Shower"} (Matthew 4:19,
-John 4:10, Acts 10:11-16, Acts 10:28, Acts 10:34-48, Acts 2).\
-2026-04-04T17:09:00 [Practicing
-vocation.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Practicing%20vocation.){dated="2026-04-04T17:09:00"
-contactid="161"
-commentary="John Parsons, of English and German descent, a lookalike of President Bill Clinton, rode a bicycle on the south-west road."
-location="At the intersection of Paseo Padre Parkway and Siward Drive, south-east."}
-At the intersection of Paseo Padre Parkway and Siward Drive, south-east.
-John Parsons, of English and German descent, a lookalike of President
-Bill Clinton, rode a bicycle on the south-west road.\
-2026-04-04T17:09:00 [When nothing without exception\... is all you
-know.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20nothing%20without%20exception...%20is%20all%20you%20know.){dated="2026-04-04T17:09:00"
-contactid="161"
-location="34328 Siward Drive, Fremont, California (CA), 94555. United States of America (USA). Sahani residence."}
-
-2026-04-06T15:07:00 You don\'t have\... continuity.\
-2026-04-06T15:13:00 [You must begin\... to start as you
-are.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=You%20must%20begin...%20to%20start%20as%20you%20are.){dated="2026-04-06T15:13:00"
-contactid="1363" hiswordid="169036"}
-
-2026-04-06T16:27:00 [How Am I\...
-suspended](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20Am%20I...%20suspended%3F){dated="2026-04-06T16:27:00"
-contactid="17937" hiswordid="169037"
-location="Downstairs garage. Computer room. The former computer room is now my bedroom."
-scripturereference="Revelation 6:1"} (Revelation 6:1)?
-
-2026-04-06T18:00:00 [Come under my
-roof](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Come%20under%20my%20roof.){dated="2026-04-06T18:00:00"
-contactid="2443" hiswordid="169040"
-location="34636 Creekwood Terrace. Fremont, California (CA) 94555, United States of America (USA). I was to the south-east, and I was walking eastward."
-scripturereference="Genesis 19:8"
-url="politico.com/news/2021/04/03/biden-migration-border-479000"}
-(Genesis 19:8).
+-   2026-04-02T16:13:00 [To sufficiently use according to
+    many.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20sufficiently%20use%20according%20to%20many.){dated="2026-04-02T16:13:00"}
+-   2026-04-02T17:36:00 [When we need one\... we need the
+    other.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20we%20need%20one...%20we%20need%20the%20other.){dated="2026-04-02T17:36:00"
+    location="Upstairs north-west bathroom, faeces, and rinse asshole with water and my left fingers and palm."
+    commentary="Masturbate"}
+-   2026-04-02T19:13:00 [When you are the extent of
+    use.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20you%20are%20the%20extent%20of%20use.){dated="2026-04-02T19:13:00"
+    contactid="16181" hiswordid="169011"}
+-   2026-04-04T15:42:00 [When you welcome\...
+    exchange](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20you%20welcome...%20exchange.){dated="2026-04-04T15:42:00"
+    contactid="411" hiswordid="169020" location="Shower"} (Matthew 4:19,
+    John 4:10, Acts 10:11-16, Acts 10:28, Acts 10:34-48, Acts 2).\
+    2026-04-04T17:09:00 [Practicing
+    vocation.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Practicing%20vocation.){dated="2026-04-04T17:09:00"
+    contactid="161"
+    commentary="John Parsons, of English and German descent, a lookalike of President Bill Clinton, rode a bicycle on the south-west road."
+    location="At the intersection of Paseo Padre Parkway and Siward Drive, south-east."}
+    At the intersection of Paseo Padre Parkway and Siward Drive,
+    south-east. John Parsons, of English and German descent, a lookalike
+    of President Bill Clinton, rode a bicycle on the south-west road.\
+    2026-04-04T17:09:00 [When nothing without exception\... is all you
+    know.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20nothing%20without%20exception...%20is%20all%20you%20know.){dated="2026-04-04T17:09:00"
+    contactid="161"
+    location="34328 Siward Drive, Fremont, California (CA), 94555. United States of America (USA). Sahani residence."}
+-   2026-04-06T15:07:00 You don\'t have\... continuity.\
+    2026-04-06T15:13:00 [You must begin\... to start as you
+    are.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=You%20must%20begin...%20to%20start%20as%20you%20are.){dated="2026-04-06T15:13:00"
+    contactid="1363" hiswordid="169036"}
+-   2026-04-06T16:27:00 [How Am I\...
+    suspended](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20Am%20I...%20suspended%3F){dated="2026-04-06T16:27:00"
+    contactid="17937" hiswordid="169037"
+    location="Downstairs garage. Computer room. The former computer room is now my bedroom."
+    scripturereference="Revelation 6:1"} (Revelation 6:1)?
+-   2026-04-06T18:00:00 [Come under my
+    roof](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Come%20under%20my%20roof.){dated="2026-04-06T18:00:00"
+    contactid="2443" hiswordid="169040"
+    location="34636 Creekwood Terrace. Fremont, California (CA) 94555, United States of America (USA). I was to the south-east, and I was walking eastward."
+    scripturereference="Genesis 19:8"
+    url="politico.com/news/2021/04/03/biden-migration-border-479000"}
+    (Genesis 19:8).
 
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Word                    Client/Server           World Wide Web (WWW)
@@ -5603,7 +5613,7 @@ url="politico.com/news/2021/04/03/biden-migration-border-479000"}
   2026-08-04T13:42:00 [Profession,
   characteristic](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Profession,%20characteristic){dated="2026-08-04T13:42:00"
   contactid="9562" hiswordid="171076"
-  location="The word came at the intersection of Paseo Padre Parkway and Siward Drive, south-east. The scripture reference came at Pegasus Center, south-west, as I walked westward, after I had asked Lillian Chan of American High School at Milk & Honey Cafe to suggest my order, and she asked me if I wanted rice or noodles."
+  location="The word came at the intersection of Paseo Padre Parkway and Siward Drive, south-east. The scripture reference came at Pegasus Center, south-west, as I walked westward, after I had asked Lillian Chan of American High School at Milk &amp; Honey Cafe to suggest my order, and she asked me if I wanted rice or noodles."
   interpret="2026-08-04T16:51:00 It is the number... of man."} (
   Revelation 13:18 )\
   2026-08-04T13:42:00 - 666 days = 2024-10-07 {#WorkHoliness}
@@ -5661,7 +5671,7 @@ columns, thereby, demanding ranking and preferences for positioning.
 
 2026-08-10 [Creating Your Own Library Posted on July 25,
 2026](http://c-for-dummies.com/blog/?p=7691#more-7691){contactid="991"
-location="Barnes & Noble (BN). Located in: Bay Street Emeryville Address: 5604 Bay St, Emeryville, CA 94608 Phone: (510) 547-0905"}
+location="Barnes &amp; Noble (BN). Located in: Bay Street Emeryville Address: 5604 Bay St, Emeryville, CA 94608 Phone: (510) 547-0905"}
 
 </div>
 
@@ -6015,7 +6025,7 @@ my practice will include:
 -   Praise and worship.
 -   Take computer courses at [Ohlone College](http://www.ohlone.edu), in
     the Fremont and Newark campuses.
--   Read books and magazines at [Barnes & Noble](http://www.bn.com),
+-   Read books and magazines at [Barnes &amp; Noble](http://www.bn.com),
     [Borders](http://www.Borders.com), [Walden Pond
     Books](http://www.WaldenPondBooks.com)
     [Wal-Mart](http://www.WalMart.com){dated="2024-01-09T11:49:00"} and
@@ -6299,12 +6309,9 @@ clarification.
 |                                   | b.html?word=Interaction%20with%20 |
 |                                   | Him.){dated="2024-05-29T12:18:00" |
 |                                   | hiswordid="162738"                |
-|                                   | contactid="1000"                  |
-|                                   | url="youtube.                     |
-|                                   | com/watch?v=qTAjLy6yS_g&t=2626s"} |
-|                                   | I start writing words received    |
-|                                   | when I sleep. I introduced words  |
-|                                   | when I shower.                    |
+|                                   | contactid="1000"} I start writing |
+|                                   | words received when I sleep. I    |
+|                                   | introduced words when I shower.   |
 +-----------------------------------+-----------------------------------+
 |                                   | [What I                           |
 |                                   | us                                |
@@ -6436,10 +6443,11 @@ clarification.
 
 ### 2026-09-12 22:56:37.833 [What metric did observe\... man in?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20metric%20did%20observe...%20man%20in%3F){dated="2026-09-12 22:56:37.833" contactid="18188" hiswordid="171424" interpret="At Milk & Honey Cafe, Pegasus Center. What metric did observe... man in? Lillian Chen is sitting at the south-east table, in the north-east chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is sitting in the south-west chair; the north-west chair is empty."} {#WhatMetricDidObserveManIn dated="2026-09-12 22:56:37.833" contactid="18188" hiswordid="171424" interpret="At Milk & Honey Cafe, Pegasus Center. What metric did observe... man in? Lillian Chen is sitting at the south-east table, in the north-east chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is sitting in the south-west chair; the north-west chair is empty."}
 
-At Milk & Honey Cafe, Pegasus Center. What metric did observe\... man
-in? Lillian Chen is sitting at the south-east table, in the north-east
-chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is
-sitting in the south-west chair; the north-west chair is empty.
+At Milk &amp; Honey Cafe, Pegasus Center. What metric did observe\...
+man in? Lillian Chen is sitting at the south-east table, in the
+north-east chair; Amy, I work here, is sitting in the south-east chair;
+Ivy Tan is sitting in the south-west chair; the north-west chair is
+empty.
 
 1.  In the beginning
 2.  Spirit (Genesis 1:2, John 3:34, John 4:24, Revelation 1:10)
@@ -6557,7 +6565,7 @@ sitting in the south-west chair; the north-west chair is empty.
   2024-12-25T03:37:00\...2026-07-19T19:52:00=571 days (1 biblical year,
   7 biblical months, 1 day) (1 year, 6 months, 3 weeks, 2 days)
 
-### 2026-07-04T08:11:00 [Who knew how to use the computer with plug-in](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Who%20knew%20how%20to%20use%20the%20computer%20with%20plug-in.){dated="2026-07-04T08:11:00" contactid="420" hiswordid="170843" scripturereference="Acts 1:4-5"} (Acts 1:4-5) 2026-07-05T17:35:00 [What did he\... occur\... as the same\... as](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20he...%20occur...%20as%20the%20same...%20as%3F){dated="2026-07-05T17:35:00" contactid="16555" hiswordid="170865" commentary="Ivy Tan of Milk & Honey Cafe, asked me, you need a fork? Amy and Louis were sitting to the south-east. I saw Wyatt Keng, and he was riding a bicycle westward on Fremont Boulevard between Paseo Padre Parkway, and Milk & Honey Cafe. Arrogance iya won, na na ni. Arrogance, of their mother, they have. I was waiting for the AC Transit bus, at the intersection of Paseo Padre Parkway and Hall Way, north-west. Wyatt Keng rode a bicycle southward on the west side, and I asked him which of the 2 sons of Teresa Keng he is? Wyatt Keng said he is the younger son. I asked Wyatt Keng the time, and Wyatt keng said, 1 minute to 5 o'clock, 2026-07-05T16:59:00. When I dream, I will implement my dream. I knelt down at the TV Cable at the intersection of Siward Drive 34400 and Creekwood Drive 4800, north-east. Creekwood Terrace, south-west. I could learn Python? Its application. 34636 Creekwood Terrace. Fremont, California (CA) 94555. Srossci. Husband, German, married to Portuguese wife. washing blue and white plastic container. Reliance. Aqua-tainer."} 2026-07-05T20:18:00 [How we are\... our type](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20we%20are...%20our%20type%3F){dated="2026-07-05T20:18:00" contactid="9562" hiswordid="170866" scripturereference="Galatians 3:28, Hebrews 11:1-3" url="www.TeresaLovesFremont.com" location="Pegasus Center, south-west, 14 bricks south, 8 bricks north." commentary="I saw the husband of Kim Chan, Phoo Chan, and their son, Aiden Chan, at the intersection of Paseo Padre Parkway and Fremont Boulevard, south-center-east. I later saw both father and son at Taiwan Porridge. I asked Phoo Chan if they could both give me a ride home? But Phoo Chan answered, It's going to take a while. Aiden Chan was wearing a shirt containing the word, spy, written on it. 2026-07-05T20:20:00 Tony, the Head Clerk of Albertsons Lucky said he saw my brother 5 minutes ago. Tony was referring to my twin sibling. Mexico scored a penalty kick against England. England leads Mexico by a 2026-07-05T21:22:00 score tally of 3-2. I briefly watched their game at Milk & Honey Cafe, and they are playing at Azteca Stadium, Mexico City."} (Galatians 3:28, Hebrews 11:1-3) 2026-07-06T00:12:00 [The continuation\... of all\... things](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=The%20continuation...%20of%20all...%20things.){dated="2026-07-06T00:12:00" contactid="12795" hiswordid="170867" scripturereference="Genesis 1:1, Genesis 4:26, Daniel 2:34-35, Daniel 2:44-45, Revelation 20" url="reuters.com/world/asia-pacific/australia-pm-albanese-apologises-crude-kylie-minogue-remark-2026-07-06" filename="D:\\WordEngineering\\IIS\\WordEngineering\\Python\\Wei-MengLee\\2026-07-04T1800Introduction to Data Science using Python by Wei-Meng Lee of learn2develop.net.py"} (Genesis 1:1, Genesis 4:26, Daniel 2:34-35, Daniel 2:44-45, Revelation 20) 2026-07-06T13:16:22 [What part\... of design\... are you?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20part...%20of%20design...%20are%20you%3F){dated="2026-07-06T13:16:22" contactid="9906" hiswordid="170870" scripturereference="Judges 18:13-27" interpret="2026-07-06T13:34:00 In the New Testament, they were under Roman rule... no longer fighting against the Philistines for the Promised Land." location="I was to the west of Lito Morales of Creekwood Drive, and I was walking southward."} (Judges 18:13-27) 2026-07-06T15:08:00 [Displacement\... disorderly](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Displacement...%20disorderly%3F){dated="2026-07-06T15:08:00" contactid="15167" hiswordid="170871" scripturereference="1 Chronicles 10:14, Revelation 6:6" url="en.wikipedia.org/wiki/The_Passion_of_the_Christ" location="At the intersection of Fremont Boulevard and Paseo Padre Parkway, south-west, I turned and I walked towards the south-west, I was previously walking eastward."} (1 Chronicles 10:14) 2026-07-06T19:40:00 [Technology\... where are you?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Technology...%20where%20are%20you%3F){dated="2026-07-06T19:40:00" hiswordid="170872" scripturereference="Daniel 11:32" location="Urine, downstairs restroom, south-west." interpret="Technology will have to use artificial intelligence in-house, and build and invest in data centers."} (Daniel 11:32) 2026-07-06T19:58:00 [It\'s all\... he\... places.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=It's%20all...%20he...%20places.){dated="2026-07-06T19:58:00" contactid="179" hiswordid="170872" location="The AC Transit line 281 bus was approaching the intersection of Paseo Padre Parkway and Fremont Boulevard, south-east, from the south-east." interpret="2026-07-06T21:05:00 Robert Law Joss, Bob Joss, we have to be careful... we acknowledge God."} {#WhoKnewHowToUseTheComputerWithPlugIn dated="2026-07-04T08:11:00" contactid="420" hiswordid="170843" scripturereference="Acts 1:4-5"}
+### 2026-07-04T08:11:00 [Who knew how to use the computer with plug-in](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Who%20knew%20how%20to%20use%20the%20computer%20with%20plug-in.){dated="2026-07-04T08:11:00" contactid="420" hiswordid="170843" scripturereference="Acts 1:4-5"} (Acts 1:4-5) 2026-07-05T17:35:00 [What did he\... occur\... as the same\... as](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20he...%20occur...%20as%20the%20same...%20as%3F){dated="2026-07-05T17:35:00" contactid="16555" hiswordid="170865" commentary="Ivy Tan of Milk &amp; Honey Cafe, asked me, you need a fork? Amy and Louis were sitting to the south-east. I saw Wyatt Keng, and he was riding a bicycle westward on Fremont Boulevard between Paseo Padre Parkway, and Milk &amp; Honey Cafe. Arrogance iya won, na na ni. Arrogance, of their mother, they have. I was waiting for the AC Transit bus, at the intersection of Paseo Padre Parkway and Hall Way, north-west. Wyatt Keng rode a bicycle southward on the west side, and I asked him which of the 2 sons of Teresa Keng he is? Wyatt Keng said he is the younger son. I asked Wyatt Keng the time, and Wyatt keng said, 1 minute to 5 o'clock, 2026-07-05T16:59:00. When I dream, I will implement my dream. I knelt down at the TV Cable at the intersection of Siward Drive 34400 and Creekwood Drive 4800, north-east. Creekwood Terrace, south-west. I could learn Python? Its application. 34636 Creekwood Terrace. Fremont, California (CA) 94555. Srossci. Husband, German, married to Portuguese wife. washing blue and white plastic container. Reliance. Aqua-tainer."} 2026-07-05T20:18:00 [How we are\... our type](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20we%20are...%20our%20type%3F){dated="2026-07-05T20:18:00" contactid="9562" hiswordid="170866" scripturereference="Galatians 3:28, Hebrews 11:1-3" url="www.TeresaLovesFremont.com" location="Pegasus Center, south-west, 14 bricks south, 8 bricks north." commentary="I saw the husband of Kim Chan, Phoo Chan, and their son, Aiden Chan, at the intersection of Paseo Padre Parkway and Fremont Boulevard, south-center-east. I later saw both father and son at Taiwan Porridge. I asked Phoo Chan if they could both give me a ride home? But Phoo Chan answered, It's going to take a while. Aiden Chan was wearing a shirt containing the word, spy, written on it. 2026-07-05T20:20:00 Tony, the Head Clerk of Albertsons Lucky said he saw my brother 5 minutes ago. Tony was referring to my twin sibling. Mexico scored a penalty kick against England. England leads Mexico by a 2026-07-05T21:22:00 score tally of 3-2. I briefly watched their game at Milk &amp; Honey Cafe, and they are playing at Azteca Stadium, Mexico City."} (Galatians 3:28, Hebrews 11:1-3) 2026-07-06T00:12:00 [The continuation\... of all\... things](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=The%20continuation...%20of%20all...%20things.){dated="2026-07-06T00:12:00" contactid="12795" hiswordid="170867" scripturereference="Genesis 1:1, Genesis 4:26, Daniel 2:34-35, Daniel 2:44-45, Revelation 20" url="reuters.com/world/asia-pacific/australia-pm-albanese-apologises-crude-kylie-minogue-remark-2026-07-06" filename="D:\\WordEngineering\\IIS\\WordEngineering\\Python\\Wei-MengLee\\2026-07-04T1800Introduction to Data Science using Python by Wei-Meng Lee of learn2develop.net.py"} (Genesis 1:1, Genesis 4:26, Daniel 2:34-35, Daniel 2:44-45, Revelation 20) 2026-07-06T13:16:22 [What part\... of design\... are you?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20part...%20of%20design...%20are%20you%3F){dated="2026-07-06T13:16:22" contactid="9906" hiswordid="170870" scripturereference="Judges 18:13-27" interpret="2026-07-06T13:34:00 In the New Testament, they were under Roman rule... no longer fighting against the Philistines for the Promised Land." location="I was to the west of Lito Morales of Creekwood Drive, and I was walking southward."} (Judges 18:13-27) 2026-07-06T15:08:00 [Displacement\... disorderly](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Displacement...%20disorderly%3F){dated="2026-07-06T15:08:00" contactid="15167" hiswordid="170871" scripturereference="1 Chronicles 10:14, Revelation 6:6" url="en.wikipedia.org/wiki/The_Passion_of_the_Christ" location="At the intersection of Fremont Boulevard and Paseo Padre Parkway, south-west, I turned and I walked towards the south-west, I was previously walking eastward."} (1 Chronicles 10:14) 2026-07-06T19:40:00 [Technology\... where are you?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Technology...%20where%20are%20you%3F){dated="2026-07-06T19:40:00" hiswordid="170872" scripturereference="Daniel 11:32" location="Urine, downstairs restroom, south-west." interpret="Technology will have to use artificial intelligence in-house, and build and invest in data centers."} (Daniel 11:32) 2026-07-06T19:58:00 [It\'s all\... he\... places.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=It's%20all...%20he...%20places.){dated="2026-07-06T19:58:00" contactid="179" hiswordid="170872" location="The AC Transit line 281 bus was approaching the intersection of Paseo Padre Parkway and Fremont Boulevard, south-east, from the south-east." interpret="2026-07-06T21:05:00 Robert Law Joss, Bob Joss, we have to be careful... we acknowledge God."} {#WhoKnewHowToUseTheComputerWithPlugIn dated="2026-07-04T08:11:00" contactid="420" hiswordid="170843" scripturereference="Acts 1:4-5"}
 
 1.  Kowe included the additional Yoruba alphabet with diacritical marks,
     a dot below, and high and low tones; and a dictionary and a
@@ -7069,23 +7077,20 @@ took from him, 1 piece of fish, and 1 piece of meat.\
 Implementation options include parsing a data definition language script
 file (.SQL), or interrogating the database schema.
 
-Cross-check that all the tables and their columns have documented
-entries in the data dictionary, meta-data.
-
-For the tables which have parent-child relationships, master-detail,
-make sure there are corresponding views. To determine the affected
-tables, check for the existence of primary keys which contain composite
-columns, and primary keys and foreign keys with referential integrity
-which protect against orphans. Suspect tables include the PurchaseOrder
-and PurchaseOrderItem related tables, and the Contact and its
-subordinate address tables.
-
-2026-04-15T07:42:00 Make sure that the projected and potential primary
-columns are not nullable, and have defaults.\
-2026-04-15T07:44:00 Natural primary key columns.
-
-2026-04-15T07:46:00 These are, for example, ID identity or sequential,
-and dated timestamp columns.
+-   Cross-check that all the tables and their columns have documented
+    entries in the data dictionary, meta-data.
+-   For the tables which have parent-child relationships, master-detail,
+    make sure there are corresponding views. To determine the affected
+    tables, check for the existence of primary keys which contain
+    composite columns, and primary keys and foreign keys with
+    referential integrity which protect against orphans. Suspect tables
+    include the PurchaseOrder and PurchaseOrderItem related tables, and
+    the Contact and its subordinate address tables.
+-   1.  2026-04-15T07:42:00 Make sure that the projected and potential
+        primary columns are not nullable, and have defaults.\
+        2026-04-15T07:44:00 Natural primary key columns.
+    2.  2026-04-15T07:46:00 These are, for example, ID identity or
+        sequential, and dated timestamp columns.
 
 ### 2026-04-09T18:48:00 [How we repeat life?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20we%20repeat%20life%3F){dated="2026-04-09T18:48:00" hiswordid="169083"} (Matthew 24:34) {#HowWeRepeatLife dated="2026-04-09T18:48:00" hiswordid="169083"}
 
@@ -7164,15 +7169,7 @@ and dated timestamp columns.
     months, 18 days) (11 years, 7 months, 2 weeks, 4 days) 2025-10-25
     (James 3:4).
 
-###  {#section dated="2026-03-27T19:30:00"}
-
--   2026-03-27T19:30:00 [What did I relate to as the
-    usage?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20I%20relate%20to%20as%20the%20usage%3F){dated="2026-03-27T19:30:00"
-    contactid="18364" hiswordid="168934"}
--   2026-03-27T19:49:00 [As long, as you are with us\... we have\...
-    each of
-    us.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=As%20long,%20as%20you%20are%20with%20us...%20we%20have...%20each%20of%20us.){dated="2026-03-27T19:49:00"
-    contactid="18364" hiswordid="168935"}
+### 2026-03-27T19:30:00 [What did I relate to as the usage?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20did%20I%20relate%20to%20as%20the%20usage%3F){dated="2026-03-27T19:30:00" contactid="18364" hiswordid="168934"} 2026-03-27T19:49:00 [As long, as you are with us\... we have\... each of us.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=As%20long,%20as%20you%20are%20with%20us...%20we%20have...%20each%20of%20us.){dated="2026-03-27T19:49:00" contactid="18364" hiswordid="168935"} {#t193000-what-did-i-relate-to-as-the-usage-2026-03-27t194900-as-long-as-you-are-with-us...-we-have...-each-of-us. dated="2026-03-27T19:30:00"}
 
 1.  My love poem, inspired by Lisa Munoz, my speech communications
     classmate, was probably written within a few minutes at Central
@@ -7255,8 +7252,7 @@ and dated timestamp columns.
 >     days)
 >     1.  2020-10-27 [Stephanie Rydland](Stephanie.Rydland@USPTO.GOV),
 >         Examining Attorney, USPTO - United States Patent and Trademark
->         Office,
->         <http://tsdr.uspto.gov/#caseNumber=90050770&caseSearchType=US_APPLICATION&caseType=DEFAULT&searchType=statusSearch>
+>         Office
 >     2.  Sunday, 2021-07-18 Uncle Jimi Adeniji re-located to Atlanta,
 >         Georgia.
 >     3.  2026-04-03 Good Friday\
@@ -8361,7 +8357,7 @@ location="Albertsons Lucky, Charter Square, meat department. Favio Heredia."}
     Hi Ken,
 
     🔍 SherlockTalent is hiring on behalf of an esteemed client:
-    🗄️ SQL Server DBA & User Support Specialist — 100% Remote — Hourly contract, flexible
+    🗄️ SQL Server DBA &amp; User Support Specialist — 100% Remote — Hourly contract, flexible
 
     - Job #: 7369
     - Location: Remote (English speaker)
@@ -8510,10 +8506,10 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 
 ### 2025-12-26T15:49:00 [To\... the event of the day? Remain](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To...%20the%20event%20of%20the%20day%3F%20Remain.){dated="2025-12-26T15:49:00" contactid="7446" hiswordid="168177"} (Genesis 22:14) {#ToTheEventOfTheDayRemain dated="2025-12-26T15:49:00"}
 
-At Milk & Honey Cafe, I was attended to by Amy Hsueh Tm, who previously
-said, I work here, and Audrey Russell. I saw a young Hindi couple
-sitting in the north-center. I saw some males, and a single woman at
-Yifang Taiwanese Fruit Tea, and at Albertsons Lucky, Charter Square.
+At Milk &amp; Honey Cafe, I was attended to by Amy Hsueh Tm, who
+previously said, I work here, and Audrey Russell. I saw a young Hindi
+couple sitting in the north-center. I saw some males, and a single woman
+at Yifang Taiwanese Fruit Tea, and at Albertsons Lucky, Charter Square.
 Their nationalities are Chile and Peru.
 
 ### 2025-12-25T12:26:00 Trend Analysis {#TrendAnalysis dated="2025-12-25T12:26:00"}
@@ -9131,11 +9127,11 @@ The impetus for database recording was to re-use.
     ``` {dated="2025-01-25T10:26:00"}
     SELECT HisWordID, Dated, Word
     FROM WordEngineering..HisWord HisWordLead
-    WHERE Dated >
+    WHERE Dated &gt;
     (
         SELECT TOP 1 Dated
         FROM WordEngineering..HisWord HisWordLag
-        WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
+        WHERE HisWordLead.HisWordID &lt; HisWordLag.HisWordID
         ORDER BY HisWordLead.HisWordID 
     )
     ORDER BY HisWordID DESC
@@ -9160,7 +9156,7 @@ The impetus for database recording was to re-use.
     ``` {dated="2025-09-13T19:06:00"}
     SELECT      HisWordID, Dated, Word
     FROM        WordEngineering..HisWord
-    WHERE       (1 <> 1)
+    WHERE       (1 &lt;> 1)
     OR          (HisWordID BETWEEN 167263 AND 167265)
     OR          (HisWordID BETWEEN 166552 AND 166554)
     OR          (HisWordID BETWEEN 166267 AND 166270)
@@ -9275,10 +9271,10 @@ hiswordid="165430"} Feminine.\
 -   Moses\' leadership commenced in his third season.
 -   Jesus\' beginning miracle was turning water into wine.
 
-\
-2025-02-24T08:13:00\...2025-02-24T08:19:00 microsoft windows operating
+[ 2025-02-24T08:13:00\...2025-02-24T08:19:00 microsoft windows operating
 system, mozilla firefox browser will not refresh nor go to a link from
-the address bar.
+the address bar. ]{dated="2025-02-24T08:13:00"
+url="raymondcamden.com/2025/01/11/links-for-you-11125#linking-with-text-fragments"}
 
 </div>
 
@@ -9742,7 +9738,7 @@ What programming skills are in demand?
 trade](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Our%20comparing%20our%20trade.){dated="2024-04-04T14:26:00"
 hiswordid="161099" contactid="13350"
 commentary="I pushed a green 99 Ranch Market shopping cart from Paseo Padre Parkway between Siward Drive and Blackstone Way  towards Pegasus Center. There were another shopping cart belonging to 99 Ranch Market and another store that I later saw."
-location="Milk & Honey Cafe. Pegasus Center. 34265 Fremont Boulevard."}
+location="Milk &amp; Honey Cafe. Pegasus Center. 34265 Fremont Boulevard."}
 ( 1 Samuel 25 ). [To be conformable of
 age.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To%20be%20conformable%20of%20age.){dated="2024-04-04T22:13:00"
 hiswordid="161104" contactid="24"
@@ -9935,12 +9931,10 @@ hiswordid="156866"}
     time](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=He%20expressed%20start%20and%20end%20of%20time.){dated="2023-09-06T23:51:00"
     hiswordid="156868"} ( Genesis 1:1, Genesis 1:5, Genesis 1:8, Genesis
     1:13, Genesis 1:19, Genesis 1:23, Genesis 1:31, Genesis 2:1-4 ).
--   [King of the
-    Jews](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=King%20of%20the%20Jews&logic=phrase){dated="2023-09-20T13:36:00"
-    commentary="Lifetime of Jesus Christ"} ( Matthew 2:2, Matthew 27:11,
-    Matthew 27:29, Matthew 27:37, Mark 15:2, Mark 15:9, Mark 15:12, Mark
-    15:18, Mark 15:26, Luke 23:3, Luke 23:37, Luke 23:38, John 18:33,
-    John 18:39, John 19:3, John 19:19, John 19:21 ).
+-   King of the Jews ( Matthew 2:2, Matthew 27:11, Matthew 27:29,
+    Matthew 27:37, Mark 15:2, Mark 15:9, Mark 15:12, Mark 15:18, Mark
+    15:26, Luke 23:3, Luke 23:37, Luke 23:38, John 18:33, John 18:39,
+    John 19:3, John 19:19, John 19:21 ).
 :::
 
 ::: {dated="2023-09-21T18:15:00"}
@@ -10373,12 +10367,12 @@ by performing multiple tasks with Web Services and measuring with
 
   : [pingdom](http://www.pingdom.com)
 
-  Unit                                     Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Commentary
-  ---------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------
-  Internet speed test Testing download..   8.54 Megabits per second                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-  Internet speed test Testing upload..     4.74 Megabits per second                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-  ping e-comfort.ephraimtech.com           Pinging e-comfort.ephraimtech.com \[98.248.137.149\] with 32 bytes of data: Reply from 98.248.137.149: bytes=32 time\<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time\<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time\<1ms TTL=128 Reply from 98.248.137.149: bytes=32 time\<1ms TTL=128 Ping statistics for 98.248.137.149: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms   
-  tracert e-comfort.ephraimtech.com        Tracing route to e-comfort.ephraimtech.com \[98.248.137.149\] over a maximum of 30 hops: 1 \<1 ms \<1 ms \<1 ms Comfort.ephraimtech.com \[98.248.137.149\] Trace complete.                                                                                                                                                                                                                                                                                                                The Unix platforms offers the traceroute command
+  Unit                                     Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Commentary
+  ---------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------
+  Internet speed test Testing download..   8.54 Megabits per second                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+  Internet speed test Testing upload..     4.74 Megabits per second                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+  ping e-comfort.ephraimtech.com           Pinging e-comfort.ephraimtech.com \[98.248.137.149\] with 32 bytes of data: Reply from 98.248.137.149: bytes=32 time&lt;1ms TTL=128 Reply from 98.248.137.149: bytes=32 time&lt;1ms TTL=128 Reply from 98.248.137.149: bytes=32 time&lt;1ms TTL=128 Reply from 98.248.137.149: bytes=32 time&lt;1ms TTL=128 Ping statistics for 98.248.137.149: Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), Approximate round trip times in milli-seconds: Minimum = 0ms, Maximum = 0ms, Average = 0ms   
+  tracert e-comfort.ephraimtech.com        Tracing route to e-comfort.ephraimtech.com \[98.248.137.149\] over a maximum of 30 hops: 1 &lt;1 ms &lt;1 ms &lt;1 ms Comfort.ephraimtech.com \[98.248.137.149\] Trace complete.                                                                                                                                                                                                                                                                                                                  The Unix platforms offers the traceroute command
 
   : Network
 
@@ -10817,8 +10811,8 @@ of Dulhan Grocery said her parents and her maternal grandmother traveled
 to India for a wedding, and either in July 2025 or August 2025 her
 parents had previously traveled to Africa. 2025-11-26, I saw a set of
 Hindi females, especially women, ordering food, and they were waiting to
-eat at Milk & Honey Cafe, Pegasus Center. Hsueh Amy Tm took their order,
-and she was the waitress.
+eat at Milk &amp; Honey Cafe, Pegasus Center. Hsueh Amy Tm took their
+order, and she was the waitress.
 
 1.  I chose to remain and I continued living in Charlotte, North
     Carolina (NC), and I did not re-locate to Fort Lauderdale, Florida.
@@ -10908,7 +10902,7 @@ and she was the waitress.
 >         distinguishable
 >         world?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20can%20I%20be%20the%20same%20in%20a%20distinguishable%20world%3F){dated="2025-11-08T11:35:00"
 >         contactid="2936" hiswordid="167762"
->         location="Barnes & Noble. Located in: Bay Street Emeryville. Address: 5604 Bay Street, Emeryville, California (CA) 94608."}
+>         location="Barnes &amp; Noble. Located in: Bay Street Emeryville. Address: 5604 Bay Street, Emeryville, California (CA) 94608."}
 >     -   2025-11-08T17:09:00 [What do we resume our use
 >         as?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20do%20we%20resume%20our%20use%20as%3F){dated="2025-11-08T17:09:00"
 >         contactid="10324" hiswordid="167763"
@@ -11019,57 +11013,46 @@ during my doctorate degree studies.
 
 ### 2025-10-09T20:02:00 [Our opinion\... among others.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Our%20opinion...%20among%20others.){dated="2025-10-09T20:02:00" hiswordid="167496" contactid="69"} 2025-10-09T21:12:00 [What I am doing\... where will you find it](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20I%20am%20doing...%20where%20will%20you%20find%20it){dated="2025-10-09T21:12:00" hiswordid="167497" contactid="8778" scripturereference="Genesis 4"} ( Genesis 4:26 )? {#OurOpinionAmongOthers}
 
-Where?
+1.  Where?
+    -   Vocation ( Matthew 4:19, Mark 1:17 )
+    -   Place of origin ( Matthew 2:1-11, John 7:52, John 18:5, John
+        18:7, Micah 5:2, Isaiah 9:1-2 )
+    -   Resting place ( Genesis 23, Genesis 48:21-22, Genesis 49:29-33,
+        Genesis 50, John 14:3 )
+    -   Inheritance ( Ezekiel 44:28, Isaiah 53:10 )
+    -   City of Refuge ( Joshua 20:7-8, Numbers 35:15 )
 
-Vocation ( Matthew 4:19, Mark 1:17 )
+-   The author started his tertiary education at Central Piedmont
+    Community College (CPCC), and he worked in its computer laboratory
+    for 3 years. Though he was an exemplary student, he did not attain
+    the same height as a programmer. What could he take to the industry?
+    What did prepare him for a professional life?
+-   Re-use?
+    1.  Using either of 2 JavaScript methods, the author displays in
+        tabular format the various database results.
+    2.  Using an overloaded method in C# and various SQL statements, the
+        author retrieves information from the database.
+    3.  Using the JavaScript fetch keyword, the author places webservice
+        requests.
 
-Place of origin ( Matthew 2:1-11, John 7:52, John 18:5, John 18:7, Micah
-5:2, Isaiah 9:1-2 )
-
-Resting place ( Genesis 23, Genesis 48:21-22, Genesis 49:29-33, Genesis
-50, John 14:3 )
-
-Inheritance ( Ezekiel 44:28, Isaiah 53:10 )
-
-City of Refuge ( Joshua 20:7-8, Numbers 35:15 )
-
-The author started his tertiary education at Central Piedmont Community
-College (CPCC), and he worked in its computer laboratory for 3 years.
-Though he was an exemplary student, he did not attain the same height as
-a programmer. What could he take to the industry? What did prepare him
-for a professional life?
-
-Re-use?
-
-1.  Using either of 2 JavaScript methods, the author displays in tabular
-    format the various database results.
-2.  Using an overloaded method in C# and various SQL statements, the
-    author retrieves information from the database.
-3.  Using the JavaScript fetch keyword, the author places webservice
-    requests.
-
-All the above examples are 1-line statements that deprecate previous
-redundant code. It is the hope of the author that using the database to
-supersede word processing\... 2025-10-09T20:33:00 is enhanced. Knowing
-his children in the LORD are following his footsteps\...
-
-2025-10-09T20:35:00 places enormous responsibility on the author.
-
-2025-10-09T20:42:00 While it is not imperative they use data entry, or
-word processing\... as long as they use their God-giving talent\... it
-is okay.
-
-2025-10-09T20:46:00 How do they\... pursue the level\... you have
-attained?
-
-2025-10-09T20:52:00
-
-When the author attended University of North Carolina, Charlotte (UNCC)
-to further his Bachelor\'s degree studies, the author perceived it as a
-diversion from his career interest in software engineering.
-
-2025-10-09T20:57:00 This is how the task is done\... this is how I will
-do mine.
+    All the above examples are 1-line statements that deprecate previous
+    redundant code. It is the hope of the author that using the database
+    to supersede word processing\... 2025-10-09T20:33:00 is enhanced.
+    Knowing his children in the LORD are following his footsteps\...
+    1.  2025-10-09T20:35:00 places enormous responsibility on the
+        author.
+    2.  2025-10-09T20:42:00 While it is not imperative they use data
+        entry, or word processing\... as long as they use their
+        God-giving talent\... it is okay.
+    3.  2025-10-09T20:46:00 How do they\... pursue the level\... you
+        have attained?
+    4.  2025-10-09T20:52:00
+        -   When the author attended University of North Carolina,
+            Charlotte (UNCC) to further his Bachelor\'s degree studies,
+            the author perceived it as a diversion from his career
+            interest in software engineering.
+        -   2025-10-09T20:57:00 This is how the task is done\... this is
+            how I will do mine.
 
 ### 2025-10-09T01:35:00 [How can the Bible\... revere itself](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=How%20can%20the%20Bible...%20revere%20itself%3F){dated="2025-10-09T01:35:00" hiswordid="167487" contactid="17753" url="en.wikipedia.org/wiki/American_Express#%22Don't_Leave_Home_Without_Them%22"} ( Numbers 11:16, Acts 6 )? {#HowCanTheBibleRevereItself}
 
@@ -11129,7 +11112,7 @@ location="Decoy Terrace, between Mallard Common and Creekwood Drive, South Cente
     certainty.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=There%20are%20no%20abnormality...in%20certainty.){dated="2024-01-18T20:58:00"
     hiswordid="159313" contactid="13743"
     commentary="Heard water running."
-    location="Consler Corporation. 7-2535. Pacific Gas & Electric Company (PG&E).  Wal-Mart. Pleasanton, California (CA) 94588."}
+    location="Consler Corporation. 7-2535. Pacific Gas &amp; Electric Company (PG&amp;E).  Wal-Mart. Pleasanton, California (CA) 94588."}
 
 </div>
 
@@ -11350,8 +11333,6 @@ optimization (SEO).
   Elicit business processes and requirements             Business Analyst                        Project Manager     Business Subject Matter Expert (SME)                                                                                         Executive Sponsor
   Design Solution                                        Business Analyst, Technical Personnel   Project Manager     Business Subject Matter Expert (SME), Quality Assurance (QA), Usability Engineer, Regulator (Legal), Database Adminstrator   
   Create implementation material                         Technical Writer                        Project Manager     Business Subject Matter Expert (SME), Technical Personnel                                                                    
-
-(Alison Cox).
 
 > ### Database Modeling {#DatabaseModeling dated="2023-06-29T16:43:00"}
 >
@@ -11637,7 +11618,7 @@ structures. My twin sibling answered data bindings shared by other
 people. 2025-07-10T05:04:00 Data storage versus (VS) data arrangement.
 2025-07-10T07:2:00 What did he assure\... he will lead of?
 2025-07-10T10:07:00 Beware the yeast of the Pharisees ( Matthew 16:6 ).
-2025-07-10T11:50:00 Teresa Keng, Milk & Honey Cafe. Red in the
+2025-07-10T11:50:00 Teresa Keng, Milk &amp; Honey Cafe. Red in the
 hallway\... to the lobby. [This day is this scripture fulfill in your
 eyes](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=This%20day%20is%20this%20scripture%20fulfill%20in%20your%20eyes.){dated="2025-07-10T12:27:00"
 hiswordid="166707" contactid="9562"} ( Luke 4:21 ).
@@ -11819,9 +11800,9 @@ What growing up have I chosen alike ( Exodus 2:19 )?
 -   Man prophesises and fulfills the word of God. Man interprets dreams
     and translates words spoken in tongues.
 
-### 2025-05-06T23:25:00 [What apart I have set as necessary?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20apart%20I%20have%20set%20as%20necessary%3F){dated="2025-05-06T23:25:00" hiswordid="166117" contactid="9562"} {#WhatApartIHaveSetAsNecessary dated="2025-05-06T23:25:00" url="soloist.ai/onboarding?utm_source=new-tab&utm_medium=firefox-desktop&utm_campaign=native-article-cards"}
+### 2025-05-06T23:25:00 [What apart I have set as necessary?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20apart%20I%20have%20set%20as%20necessary%3F){dated="2025-05-06T23:25:00" hiswordid="166117" contactid="9562"} {#WhatApartIHaveSetAsNecessary dated="2025-05-06T23:25:00" url="soloist.ai/onboarding?utm_source=new-tab&amp;utm_medium=firefox-desktop&amp;utm_campaign=native-article-cards"}
 
-[soloist.ai/onboarding?utm_source=new-tab&utm_medium=firefox-desktop&utm_campaign=native-article-cards](http://soloist.ai/onboarding?utm_source=new-tab&utm_medium=firefox-desktop&utm_campaign=native-article-cards)\
+[soloist.ai/onboarding?utm_source=new-tab&amp;utm_medium=firefox-desktop&amp;utm_campaign=native-article-cards](http://soloist.ai/onboarding?utm_source=new-tab&amp;utm_medium=firefox-desktop&amp;utm_campaign=native-article-cards)\
 Hong Kong was driving to Albertsons Lucky, Brookvale. Hong Kong drove me
 from their house to 99 Ranch Market.\
 I cut my finger nails. I shaved my beard. I cut my hair.\
@@ -11999,11 +11980,11 @@ contactid="1000"}\
     contactid="11138"
     location="At the intersection of 4737 Mallard Common and Decoy Terrace."}
     ( Daniel 9:24, Genesis 4:7, Genesis 4:24-26 )? 2025-01-15T19:14:00
-    Milk & Honey Cafe. Pegasus Center. 34265 Fremont Boulevard. Fremont,
-    California (CA) 94555. [What is transparent? What have you
+    Milk &amp; Honey Cafe. Pegasus Center. 34265 Fremont Boulevard.
+    Fremont, California (CA) 94555. [What is transparent? What have you
     included?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20is%20transparent%3F%20What%20have%20you%20included%3F){dated="2025-01-15T19:14:00"
     hiswordid="165050" contactid="15669"
-    location="Milk & Honey Cafe. Pegasus Center. 34265 Fremont Boulevard. Fremont, California (CA) 94555."}
+    location="Milk &amp; Honey Cafe. Pegasus Center. 34265 Fremont Boulevard. Fremont, California (CA) 94555."}
 
 ### 2025-02-21T13:28:00 [When did he search\... a reference as a usage?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20did%20he%20search...%20a%20reference%20as%20a%20usage%3F){dated="2025-02-21T13:28:00" hiswordid="165403"} {#WhenDidHeSearchAReferenceAsAUsage dated="2025-02-21T13:28:00" hiswordid="165403"}
 
@@ -12194,9 +12175,9 @@ Hebrews 1:2 )?
         self.
 4.  Tribes in Nigeria
     -   2024-04-13 Santa Clara, Ibo female. Tammy. Ezinne translated
-        sweet mother. Barnes & Noble (BN.com).El Cerrito Plaza. You are
-        acknowledging that you are different\...but you want to die for
-        the people of God.
+        sweet mother. Barnes &amp; Noble (BN.com).El Cerrito Plaza. You
+        are acknowledging that you are different\...but you want to die
+        for the people of God.
     -   2024-05-04 Nur Ahlhausawi. Light. 6\' 1\" basketball high school
         forward. Both sides of my family are Hausa not Fulani.
         Nordstrom, Emeryville.
@@ -12424,7 +12405,7 @@ grammar. 2024-10-19T04:02:00 Begin as a representation.
 -   2007-03-14 Chester Gordon Bell
     [http://research.microsoft.com/barc/mediapresence/MyLifeBits.aspx](http://research.microsoft.com/barc/mediapresence/MyLifeBits.aspx){dated="2007-03-14T00:00:00"}
 -   2019-12-07
-    [http://google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover](http://google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover){dated="2019-12-07T00:00:00"}
+    [http://google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&amp;gbpv=1&amp;printsec=frontcover](http://google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&amp;gbpv=1&amp;printsec=frontcover){dated="2019-12-07T00:00:00"}
 
 ### [Separating realizable](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Separating%20realizable){dated="2024-09-08T07:03:49" hiswordid="163787" contactid="13731" location="Sparkle Nails, Charter Square, 34143 Fremont Boulevard"} {#SeparatingRealizable}
 
@@ -12463,7 +12444,7 @@ hiswordid="163600" contactid="3585"}
 -   Children and grandchildren: Benjamin, Joseph, Judah ( Genesis 42:36,
     Genesis 43:14 )
 
-### [This word must make remainder necessary.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=The%20word%20must%20make%20remainder%20necessary.){dated="2024-08-18T11:40:00" hiswordid="163560" contactid="5168" location="Barnes & Noble. Hacienda Crossings Shopping Center. 4972 Dublin Boulevard. Dublin, California (CA) 94568."} [Does He use people as Him?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Does%20He%20use%20people%20as%20Him%3F){dated="2024-08-18T13:26:00" hiswordid="163561" location="Union City Bart Station" commentary="As I got off the BART train I saw a small stature probably Asian female on the BART train to my south-east."} {#ThisWordMustMakeRemainderNecessary}
+### [This word must make remainder necessary.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=The%20word%20must%20make%20remainder%20necessary.){dated="2024-08-18T11:40:00" hiswordid="163560" contactid="5168" location="Barnes &amp; Noble. Hacienda Crossings Shopping Center. 4972 Dublin Boulevard. Dublin, California (CA) 94568."} [Does He use people as Him?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=Does%20He%20use%20people%20as%20Him%3F){dated="2024-08-18T13:26:00" hiswordid="163561" location="Union City Bart Station" commentary="As I got off the BART train I saw a small stature probably Asian female on the BART train to my south-east."} {#ThisWordMustMakeRemainderNecessary}
 
   Word                Actor          Scripture Reference                                             Probability
   ------------------- -------------- --------------------------------------------------------------- -------------
@@ -12810,15 +12791,15 @@ spiritual?
 -   Marriage: Younger before the firstborn? ( Genesis 29:26 )
 :::
 
-  Word                                                                                                                                          Scripture Reference
-  --------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Believer in Jesus Christ                                                                                                                      John 11:26
-  Kingdom of God                                                                                                                                Daniel 2:44-45
-  [Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)                                        1 Corinthians 8:1, 1 Corinthians 13:1, 1 Corinthians 13:2, 1 Corinthians 13:3, 1 Corinthians 13:4, 1 Corinthians 13:8, 1 Corinthians 13:13, 1 Corinthians 14:1, 1 Corinthians 16:14, Colossians 3:14, 1 Thessalonians 3:6, 2 Thessalonians 1:3, 1 Timothy 1:5, 1 Timothy 2:15, 1 Timothy 4:12, 2 Timothy 2:22, 2 Timothy 3:10, Titus 2:2, 1 Peter 4:8, 1 Peter 5:14, 2 Peter 1:7, 3 John 1:6, Jude 1:12, Revelation 2:19
-  [First resurrection](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=First%20resurrection&logic=phrase)   Revelation 20:5-6
-  Promised Land                                                                                                                                 Revelation 3:12, Revelation 21:2
-  Messianic Covenant                                                                                                                            Jeremiah 31:31-33
-  Divided according to the children of Israel                                                                                                   Deuteronomy 32:8
+  Word                                                                                                                                              Scripture Reference
+  ------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Believer in Jesus Christ                                                                                                                          John 11:26
+  Kingdom of God                                                                                                                                    Daniel 2:44-45
+  [Charity](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Charity)                                            1 Corinthians 8:1, 1 Corinthians 13:1, 1 Corinthians 13:2, 1 Corinthians 13:3, 1 Corinthians 13:4, 1 Corinthians 13:8, 1 Corinthians 13:13, 1 Corinthians 14:1, 1 Corinthians 16:14, Colossians 3:14, 1 Thessalonians 3:6, 2 Thessalonians 1:3, 1 Timothy 1:5, 1 Timothy 2:15, 1 Timothy 4:12, 2 Timothy 2:22, 2 Timothy 3:10, Titus 2:2, 1 Peter 4:8, 1 Peter 5:14, 2 Peter 1:7, 3 John 1:6, Jude 1:12, Revelation 2:19
+  [First resurrection](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=First%20resurrection&amp;logic=phrase)   Revelation 20:5-6
+  Promised Land                                                                                                                                     Revelation 3:12, Revelation 21:2
+  Messianic Covenant                                                                                                                                Jeremiah 31:31-33
+  Divided according to the children of Israel                                                                                                       Deuteronomy 32:8
 
   : [What will count,
   forever?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20will%20count,%20forever%3F){hiswordid="158972"
@@ -13145,9 +13126,9 @@ it is not varying in part.
   : Words are way. {#WordsAreWay}
 
   Word        Reference
-  ----------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Calendar    [Day, Month, Year](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=Day,%20Month,%20Year&logic=or&biblePartition=BookID)
-  Direction   [East, North, South, West](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&logic=or&biblePartition=BookID)
+  ----------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Calendar    [Day, Month, Year](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=Day,%20Month,%20Year&amp;logic=or&amp;biblePartition=BookID)
+  Direction   [East, North, South, West](http://e-comfort.ephraimtech.com/WordEngineering/WordCross/IHaveTriedAsGodThatIMaySeemAsMen.html?bibleWord=East%20North%20South%20West&amp;logic=or&amp;biblePartition=BookID)
 
   : Mentions the most?
 
@@ -13195,9 +13176,9 @@ it is not varying in part.
   : What spirit to say?
 
   Word   Reference
-  ------ -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------ ---------------------------------------------------------------------------------------------------------------------------------------------------------------
   Anti   1 John 2:18, 1 John 2:22, 1 John 4:3, 2 John 1:7, Revelation 2:13
-  Un     [Ungod, unholy, unrighteous](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Ungod,%20unholy,%20unrighteous&logic=or)
+  Un     [Ungod, unholy, unrighteous](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Ungod,%20unholy,%20unrighteous&amp;logic=or)
 
   : Word opposites
 
@@ -13272,24 +13253,12 @@ it is not varying in part.
 
   : It is not how much you give; it is who you give, Oh LORD.
 
-Where do I call on change?
+  Word    Commentary                                                                      Scripture Reference
+  ------- ------------------------------------------------------------------------------- ---------------------
+  Actor   The law and the prophets: Can I prepare man for an event of time?               Amos 3:7
+  Event   When does man decide His future is as reminded? Connecting the past as I use.   Genesis 1, John 1
 
-Word
-
-Commentary
-
-Scripture Reference
-
-Actor
-
-The law and the prophets: Can I prepare man for an event of time?
-
-Event
-
-When does man decide His future is as reminded? Connecting the past as I
-use.
-
-Genesis 1, John 1
+  : Where do I call on change?
 
 ### To Reckon as Size {#ToReckonAsSize dated="2022-05-06T13:20:00"}
 
@@ -13857,10 +13826,10 @@ belong ( Genesis 13:14-18, Deuteronomy 34 ).
     location="99 Ranch Market women's restroom, west. Faeces, cleaning asshole with toilet roll."}
     ( Revelation 22:2 )? 2024-09-23T20:30:00 At Albertsons Lucky,
     Charter Square, I saw Connie Johnson, Mary Kolmeyer, Marlene,
-    Monica, Katie, Kyler. urine, faeces. As I walked out of the Milk &
-    Honey Cafe, Pegasus Center, I understood a word was coming. Bing\'s
-    Dumpling. Disputable\... to use. David Cai said I have friends.
-    Miriam Shoham LTD. shoham premium mango. www.mshoham.com
+    Monica, Katie, Kyler. urine, faeces. As I walked out of the Milk
+    &amp; Honey Cafe, Pegasus Center, I understood a word was coming.
+    Bing\'s Dumpling. Disputable\... to use. David Cai said I have
+    friends. Miriam Shoham LTD. shoham premium mango. www.mshoham.com
     www.ima.co.il Empty boxes were placed at the door of Mary\'s Bakery.
     21:18 dizzy, sleepy. 21:30 left neck. 21:46 faeces smell odour.
     21:53 dizzy, sleepy. 22:15 urine.
@@ -13897,7 +13866,7 @@ belong ( Genesis 13:14-18, Deuteronomy 34 ).
     2024-09-13T17:55:00 [As
     particular.](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=As%20particular.){dated="2024-09-13T17:55:00"
     hiswordid="163837" contactid="257"
-    commentary="We thought... as particular... use. www.nongfuspring.com Distributed by: Wen & Winnie Trading LLC. Ponoma, California (CA) 91768. United States of America (USA). When I worked at Guaranty Trust Bank (GTB) on the last working day of the month, we ran the end-of-the-month jobs which included computing interest accrued and printing statements."
+    commentary="We thought... as particular... use. www.nongfuspring.com Distributed by: Wen &amp; Winnie Trading LLC. Ponoma, California (CA) 91768. United States of America (USA). When I worked at Guaranty Trust Bank (GTB) on the last working day of the month, we ran the end-of-the-month jobs which included computing interest accrued and printing statements."
     location="99 Ranch Market. 2022-07-21 Tawa Supermarket Inc. Kronos time clock."}
 -   2024-09-09T06:27:00 The scenery resembles ARCO - Brookvale. There
     are Bridgette Hendricks, my twin sibling, and I. My twin sibling
@@ -13914,7 +13883,7 @@ belong ( Genesis 13:14-18, Deuteronomy 34 ).
     change\... and how did He
     change](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20did%20He%20change...%20and%20how%20did%20He%20change%3F){dated="2024-09-10T08:47:00"
     hiswordid="163805" contactid="774"
-    commentary="Shower. Church & Dwight Co., Inc. Arm & Hammer baking soda toothpaste."
+    commentary="Shower. Church &amp; Dwight Co., Inc. Arm &amp; Hammer baking soda toothpaste."
     scripturereference="Genesis 15:14"} ( Genesis 15:14 )?
 -   2024-09-22T05:21:00 1st scene: Aunt Taiwo was sleeping on a bed with
     her head in the east. There were at least 2 acquaintances that were
@@ -14100,7 +14069,7 @@ relevant mentions. ]{dated="2021-04-18T11:18:00"}
 2.  [What replaces
     time](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20replaces%20time?){dated="2022-03-03T13:03:00"
     hiswordid="145767"
-    url="careers-anothersource.icims.com/jobs/100510/it-software-development-architect-lead/job?mode=job&iis=SOURCE&iisn=Craigslist"}
+    url="careers-anothersource.icims.com/jobs/100510/it-software-development-architect-lead/job?mode=job&amp;iis=SOURCE&amp;iisn=Craigslist"}
     ( Ruth 1:13 )?
 
 The gain from automating this process will include:
@@ -14155,10 +14124,10 @@ Such as, will a query language find the mother, father, and child
 relationship?
 
 [knew
-wife](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=knew%20wife&logic=and)
+wife](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=knew%20wife&amp;amp;logic=and)
 ` SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%knew%' and KingJamesVersion LIKE '%wife%' `\
 [wife
-child](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=knew%20wife&logic=and)
+child](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=knew%20wife&amp;amp;logic=and)
 ` SELECT ScriptureReference, KingJamesVersion From Bible..Scripture WHERE KingJamesVersion LIKE '%wife%' and KingJamesVersion LIKE '%child%' `
 
 #### WordToNumberHelper.cs
@@ -14213,7 +14182,7 @@ share a new theme.
 
 2019-05-30 My ancestral home is Ile-Ife, the site of the Oranmiyan
 staff. My search for the word,
-[Staff](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=staff&logic=and),
+[Staff](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=staff&amp;amp;logic=and),
 inspired relating the Bible to my life. Staff, first occurs in, (
 Genesis 32:10 ). In my ninth year, my twin sibling and I, relocated from
 Ile-Ife Staff School to Lagos. In our tenth year, we visited London. In
@@ -14303,60 +14272,6 @@ the sufficiency of men.
   : [When did He immediately get what He
   wanted?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=When%20did%20He%20immediately,%20get%20what%20He%20wanted%3F){dated="2023-03-29T12:12:00"
   hiswordid="152684"}
-
-"[]{cite="#bibliographyPeterKent2004"}"
-
-### Search engine optimization (SEO) {#SearchEngineOptimization_SEO}
-
-#### Search indexes or search engines {#SearchIndexesOrSearchEngines}
-
-2026-03-07T14:15:00 Since the inception of Google.com\... the author has
-relied on it.
-
-#### Search directories {#SearchDirectories}
-
-2026-03-07T14:15:00 A directory contains categorized website information
-which may be input by humans, and it does not crawl nor necessarily
-contain particular web page information.\
-2026-03-07T15:04:00 The emergence of AJAX blurs the distinction between
-a website and its various web pages.
-
-##### Most significant search directories {#MostSignificantSearchDirectories}
-
--   [dir.yahoo.com](http://dir.yahoo.com)
--   [Open Directory Project](http://odp.org)
-
-#### Determining Your Plan of Attack {#DeterminingYourPlanOfAttack}
-
--   Keyword analysis: 2026-03-07T20:56:00 I will like My word to begin
-    at My representation.
--   Create searchbot crawlable web pages
--   2026-03-07T20:41:00 Make the search systems aware of your site
-
-#### [Search engine task](http://e-comfort.ephraimtech.com/WordEngineering/Google/2026-03-10SearchEngineTask.html) {#SearchEngineTask}
-
-1.  2026-03-10T17:59:00 Word
-    -   Phrase:
-        [BibleWord](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?logic=phrase)
-    -   Occurrence:
-        [Exact.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/Exact.html)
-    -   Proximity:
-        [ScriptureReference.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/ScriptureReference.html)
-    -   Soundex:
-        [Carlos.html](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/Carlos.html?accordingTo=soundex)
-    -   [Dictionary](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleDictionary.html)
-2.  2026-03-13T14:04:00 Name
-    -   [Contact](http://e-comfort.ephraimtech.com/WordEngineering/WordOfGod/ContactMaintenance.aspx)
-    -   [URI](http://e-comfort.ephraimtech.com/WordEngineering/WordOfGod/URIMaintenanceWebForm.aspx)
-    -   [Career](http://e-comfort.ephraimtech.com/Gradual/Contacts/ContactsList.aspx)
-
-#### Site indexed? {#SiteIndexed}
-
-2026-03-14T21:00:00 Search on Google by data entering
-site:JesusInTheLamb.com, and Google will return a list of pages it has
-found on the site.
-
-(Peter Kent, 2004).
 
 ## Terminology - Words and Meaning {#Terminology}
 
@@ -14505,7 +14420,7 @@ WordEngineering
     <http://www.WhatSaithTheScripture.com/Voice/The.Coming.Prince.html>]{#bibliographySirRobertAndersonTheComingPrince}
 5.  [Zen of Cloud Learning Cloud Computing by Examples, Second Edition
     Haishi Bai (May 15, 2019); W3C web page; Available from
-    [http://google.com/books/edition/Zen_of_Cloud/uuiYDwAAQBAJ?hl=en&gbpv=0google.com/books/edition/Zen_of_Cloud/uuiYDwAAQBAJ?hl=en&gbpv=0](http://google.com/books/edition/Zen_of_Cloud/uuiYDwAAQBAJ?hl=en&gbpv=0)]{#bibliographyHaishiBai20190515}
+    <http://google.com/books/edition/Zen_of_Cloud/uuiYDwAAQBAJ?hl=en>]{#bibliographyHaishiBai20190515}
 6.  [Musings on the C charter Aaron Ballman, 2023-12-29; W3C web page;
     Available from
     <http://blog.aaronballman.com/2023/12/musings-on-the-c-charter>]{#bibliographyAaronBallman20231229}
@@ -14525,7 +14440,7 @@ WordEngineering
     Princeton University Press, November 21, 2016; W3C web page;
     Available from
     <http://powerofnetworks.org>]{#bibliographyChristopherGBrinton_MungChiang20161121}
-12. [Practical Statistics for Data Scientists Peter Bruce & Andrew
+12. [Practical Statistics for Data Scientists Peter Bruce &amp; Andrew
     Bruce; W3C web page; Available from
     <http://cdn.oreillystatic.com/oreilly/booksamplers/9781491952962_sampler.pdf>]{#bibliographyPeterBruce2017}
 13. [RESTful or RESTless --Current State of Today's Top Web APIs
@@ -14543,7 +14458,7 @@ WordEngineering
     Valley Product Group) Marty Cagan (November 17, 2017) W3C web page;
     Available from
     <http://www.google.com/books/edition/INSPIRED/QkY_DwAAQBAJ?hl=en>]{#bibliographyMartyCagan20171117}
-17. [Scales & Measurements Joe Celko (March 7, 2025) W3C web page;
+17. [Scales &amp; Measurements Joe Celko (March 7, 2025) W3C web page;
     Available from
     <http://www.red-gate.com/simple-talk/databases/theory-and-design/scales-measurements>]{#bibliographyJoeCelko20250307}
 18. [Designing Software Architectures: A Practical Approach, 2nd Edition
@@ -14555,7 +14470,7 @@ WordEngineering
     Contributor: Arvind Krishna, Chairman and Chief Executive Officer
     (CEO) of International Business Machines (IBM); Berrett-Koehler
     Publishers (November 7, 2023) W3C web page; Available from
-    <http://google.com/books/edition/The_Heart_of_Innovation/r7O7EAAAQBAJ?hl=en&gbpv=0>]{#bibliographyMattChanoff20231107}
+    <http://google.com/books/edition/The_Heart_of_Innovation/r7O7EAAAQBAJ?hl=en>]{#bibliographyMattChanoff20231107}
 20. [Search Engine Optimization All-in-One for Dummies 9 books in 1
     Bruce Clay and Kristopher B. Jones; W3C web page; Available from
     <http://BruceClay.com>]{#bibliographyBruceClay2022}
@@ -14563,8 +14478,8 @@ WordEngineering
     Available from
     <http://en.wikipedia.org/wiki/Codd%27s_12_rules>]{#bibliographyEdgarFCodd1970}
 22. [Learning Made Easy. 2nd Edition. Business Analysis for Dummies. A
-    Wiley Brand. Ali (Alison) Cox. Lead Expert in Business Analysis &
-    Agile for Netmind; ISBN: 978-1-119-91249-1.
+    Wiley Brand. Ali (Alison) Cox. Lead Expert in Business Analysis
+    &amp; Agile for Netmind; ISBN: 978-1-119-91249-1.
     <http://linkedin.com/in/aliorrcox>]{#bibliographyAlisonCox2023}
 23. [WEB PROGRAMMING with HTML5, CSS, and JavaScript John Dean, PhD
     Associate Professor of Computer Science Park University Parkville,
@@ -14610,10 +14525,10 @@ WordEngineering
     <http://hpbn.co>]{#bibliographyIlyaGrigorik2013}
 37. [Deciding which bugs to fix Ian Hickson (2023-01-27T23:58:00); W3C
     web page; Available from
-    <http://ln.hixie.ch/?start=1674863881&count=1>]{#bibliographyIanHickson2023}
+    <http://ln.hixie.ch/?start=1674863881>]{#bibliographyIanHickson2023}
 38. [Building a UI Framework Ian Hickson (2025-10-23T19:51:00); W3C web
     page; Available from
-    <http://ln.hixie.ch/?start=1761249101&count=1>]{#bibliographyIanHickson20251023T195100}
+    <http://ln.hixie.ch/?start=1761249101>]{#bibliographyIanHickson20251023T195100}
 39. [Modern Data Infrastructure Dynamics Drowning in Data: A Guide to
     Surviving the Data-Driven Decade Ahead Hitachi (2023); W3C web page;
     Available from
@@ -14629,10 +14544,10 @@ WordEngineering
 43. [Write Great Code: Volume 3 Engineering Software Chapter 2
     Productivity Randall Hyde; W3C web page; Available from
     <http://RandallHyde.com>]{#bibliographyRandallHyde}
-44. [Learning Made Easy. Data Analytics & Visualization. A Wiley Brand.
-    Jack A. Hyman, Luca Massaron, Paul McFedries, John Paul Mueller,
-    Lillian Pierson, Jonathan Reichental, Joseph Schmuller, Alan R.
-    Simon, Allen G. Taylor ISBN: 978-1-394-24409-6.
+44. [Learning Made Easy. Data Analytics &amp; Visualization. A Wiley
+    Brand. Jack A. Hyman, Luca Massaron, Paul McFedries, John Paul
+    Mueller, Lillian Pierson, Jonathan Reichental, Joseph Schmuller,
+    Alan R. Simon, Allen G. Taylor ISBN: 978-1-394-24409-6.
     <http://www.wiley.com/en-us/Data+Analytics+%26+Visualization+All+in+One+For+Dummies-p-9781394244102>]{#bibliographyJackHymanMarch2024}
 45. [The Essence of Software Why Concepts Matter for Great Design Daniel
     Jackson (November 16, 2021); W3C web page; Available from
@@ -14668,28 +14583,28 @@ WordEngineering
 54. [Adam Kelleher W3C web page; Available from
     [AdamKelleher.com](http://www.AdamKelleher.com)]{#bibliographyAdamKelleher}
 55. [Machine Learning in Production: Developing and Optimizing Data
-    Science Workflows and Applications (Addison-Wesley Data & Analytics
-    Series) 1st Edition Andrew Kelleher, Adam Kelleher (2019); W3C web
-    page; Available from
-    <http://www.google.com/books/edition/Machine_Learning_in_Production/7zuIDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyAndrewKelleher}
+    Science Workflows and Applications (Addison-Wesley Data &amp;
+    Analytics Series) 1st Edition Andrew Kelleher, Adam Kelleher (2019);
+    W3C web page; Available from
+    <http://www.google.com/books/edition/Machine_Learning_in_Production/7zuIDwAAQBAJ?hl=en>]{#bibliographyAndrewKelleher}
 56. [Search Engine Optimization For Dummies Peter Kent (2004); W3C web
     page; Available from
-    <http://theswissbay.ch/pdf/Gentoomen%20Library/Misc/Search%20Engine%20Optimization%20for%20Dummies%20%282004%29.pdf>]{#bibliographyPeterKent}
+    <http://theswissbay.ch/pdf/Gentoomen%20Library/Misc/Search%20Engine%20Optimization%20for%20Dummies%20%282004%29.pdf>]{#bibliographyPeterKent2004}
 57. [Boundless A New Mindset for Unlimited Business Success Henry King,
     Vala Afshar, both of Salesforce (September 6, 2023); ISBN:
     9781394171798, 139417179X Page count: 272 Publisher: Wiley W3C web
     page; Available from
-    <http://google.com/books/edition/Boundless/ITeuzwEACAAJ?hl=en&gbpv=0>]{#bibliographyHenryKing_ValaAfshar_20230906}
+    <http://google.com/books/edition/Boundless/ITeuzwEACAAJ?hl=en>]{#bibliographyHenryKing_ValaAfshar_20230906}
 58. [Designing data-Intensive Applications Literature References Martin
     Kleppmann; W3C web page; Available from
     <http://www.github.com/ept/ddia-references>]{#bibliographyMartinKleppmann}
 59. [SQL in a Nutshell Kevin Kline, Regina O. Obe, Leo S. Hsu (June 14,
     2022); ISBN: 9781492088813, 1492088811 Page count: 840 Publisher:
     O\'Reilly Media W3C web page; Available from
-    <http://google.com/books/edition/SQL_in_a_Nutshell/MEZ1EAAAQBAJ?hl=en&gbpv=0>]{#bibliographyKevinKline2022}
+    <http://google.com/books/edition/SQL_in_a_Nutshell/MEZ1EAAAQBAJ?hl=en>]{#bibliographyKevinKline2022}
 60. [Shoe Dog A Memoir by the Creator of Nike Philip Knight (April 26,
     2016); W3C web page; Available from
-    <http://www.google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en&gbpv=0>]{#bibliographyKnightPhilip}
+    <http://www.google.com/books/edition/Shoe_Dog/wO3PCgAAQBAJ?hl=en>]{#bibliographyKnightPhilip}
 61. [Koinonia House W3C web page; Available from
     <http://www.khouse.org>]{#bibliographyKoinoniaHouse}
 62. [Normalization in Relational Databases: First Normal Form (1NF),
@@ -14710,14 +14625,14 @@ WordEngineering
     <http://www.dummies.com/go/javaaiofd7e>]{#bibliographyDougLowe2023}
 67. [Righting Software Juval Löwy of IDesign (2019-11-27); W3C web page;
     Available from
-    <http://books.google.com/books?id=Q3jADwAAQBAJ&printsec=frontcover>]{#bibliographyJuvalLöwy2019-11-27}
+    <http://books.google.com/books?id=Q3jADwAAQBAJ>]{#bibliographyJuvalLöwy2019-11-27}
 68. [Web Style Guide Patrick J. Lynch and Sarah Horton; W3C web page;
     Available from
     <http://www.webstyleguide.com>]{#bibliographyPatrickJLynch}
 69. [WebAssembly versus JavaScript: Energy and Runtime Performance Jo˜ao
     De Macedo∗†, Rui Abreu‡, Rui Pereira†, Jo˜ao Saraiva∗† University of
     Minho †HASLab/INESC Tec ‡Faculty of Engineering of University of
-    Porto & INESC-ID a76268@alunos.uminho.pt, rui@computer.org,
+    Porto &amp; INESC-ID a76268@alunos.uminho.pt, rui@computer.org,
     rui.a.pereira@inesctec.pt, saraiva@di.uminho.pt W3C web page;
     Available from
     <http://repositorio.inesctec.pt/server/api/core/bitstreams/0870fb76-d463-456b-9e34-5b33bb7c0dd1/content>]{#bibliographyJo˜aoDeMacedo}
@@ -14805,12 +14720,11 @@ WordEngineering
 97. [The Joy of Search: A Google Insider\'s Guide to Going Beyond the
     Basics Russell, Daniel M. (September 6, 2019); W3C web page;
     Available from
-    <http://google.com/books/edition/The_Joy_of_Search/aGquDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyRussellDanielM2019}
-98. [Home Page & Site Dan Russell W3C web page; Available from
+    <http://google.com/books/edition/The_Joy_of_Search/aGquDwAAQBAJ?hl=en>]{#bibliographyRussellDanielM2019}
+98. [Home Page &amp; Site Dan Russell W3C web page; Available from
     <http://sites.google.com/site/dmrussell>]{#bibliographyRussellDanielM}
 99. [SQL Server 2008 Transact-SQL Recipes Joseph Sack (2008); ISBN:
-    978-1-59059-980-8 W3C web page; Available from
-    <http://www.apress.com/us/book/9781590599808?token=cyberweek18&utm_campaign=3_fjp8312_Apress_US_PLA_cyberweek18#otherversion=9781430206255>]{#bibliographyJosephSack2008}
+    978-1-59059-980-8]{#bibliographyJosephSack2008}
 100. [Search engine indexing W3C web page; Available from
      <http://en.wikipedia.org/wiki/Search_engine_indexing>]{#bibliographySearchEngineIndexing}
 101. [Option B: Facing Adversity, Building Resilience, and Finding Joy
@@ -14818,12 +14732,7 @@ WordEngineering
      <http://www.optionb.org/book>]{#bibliographySherylSandberg2017}
 102. [Let Go To Grow: Escaping the Commodity Trap. Linda S. Sanford,
      Dave Taylor Linda S. Sanford with Dave Taylor (2006); ISBN:
-     0-13-148208-4 W3C web page; Available from [Let Go To Grow:
-     Escaping the Commodity Trap. Linda S. Sanford, Dave Taylor Pearson
-     Education, Dec 12, 2005 - Business & Economics - 224 pages. In Let
-     Go To Grow , IBM senior executive Linda Sanford and long-time
-     entrepreneur Dave Taylor show exactly how to do
-     that.](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj7us_gpbXtAhXOvJ4KHffmCNcQmhMwEHoECCEQAg&url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fabout%2FLet_Go_To_Grow.html%3Fid%3Dqjef9A0m0EgC%26source%3Dkp_book_description&usg=AOvVaw2EYWKFyPP5aIgOrbNDiB1E)]{#bibliographyLindaSSanford2006}
+     0-13-148208-4]{#bibliographyLindaSSanford2006}
 103. [Performance Issues and Optimizations in JavaScript: An Empirical
      Study Marija Selakovic and Michael Pradel (October 2015); W3C web
      page; Available from
@@ -14834,7 +14743,7 @@ WordEngineering
 105. [The Handy Engineering Answer Book DeLean Tolbert Smith,
      Debra-Ann C. Butler, Aishwary Pawar, Nicole P. Pitterson
      (2022-09-20) W3C web page; Available from
-     <http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en&gbpv=1>]{#bibliographyDeLeanTolbertSmith2022}
+     <http://www.google.com/books/edition/The_Handy_Engineering_Answer_Book/qx9-EAAAQBAJ?hl=en>]{#bibliographyDeLeanTolbertSmith2022}
 106. [Jonathan Snook W3C web page; Available from
      <http://www.smacss.com>]{#bibliographyJonathanSnook}
 107. [Critical Metric: Critical Resources Steve Souders
@@ -14868,7 +14777,7 @@ WordEngineering
      <http://SoftEngBook.org>]{#bibliographyMarcoTulioValente}
 117. [Python for Data Science A Hands-On Introduction Yuli Vasiliev
      (2022-08-02); W3C web page; Available from
-     <http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyYuliVasiliev2022}
+     <http://google.com/books/edition/Python_for_Data_Science/VqNgEAAAQBAJ?hl=en>]{#bibliographyYuliVasiliev2022}
 118. [Supervised Learning with Python Concepts and Practical
      Implementation Using Python Vaibhav Verdhan, Ireland; W3C web page;
      Available from
@@ -14876,11 +14785,11 @@ WordEngineering
 119. [Third-party JavaScript Ben Vinegar and Anton Kovalyov (March 2013)
      W3C web page; Available from
      [https://benv.ca/blog/posts/the-story-of-third-party-javascript](http://benv.ca/blog/posts/the-story-of-third-party-javascript)]{#bibliographyBenVinegarMarch2013}
-120. [CS2 Software Design & Data Structures Chapter 2 Object Oriented
-     Programming 2.2. The Unified Modeling Language Virginia Polytechnic
-     Institute and State University. Virginia Tech. Data Structures and
-     Algorithms (DSA). OpenDSA Project (2011-2023); W3C web page;
-     Available from
+120. [CS2 Software Design &amp; Data Structures Chapter 2 Object
+     Oriented Programming 2.2. The Unified Modeling Language Virginia
+     Polytechnic Institute and State University. Virginia Tech. Data
+     Structures and Algorithms (DSA). OpenDSA Project (2011-2023); W3C
+     web page; Available from
      <http://opendsa-server.cs.vt.edu/ODSA/Books/CS2/html/IntroUML.html>
      <opendsa@cs.vt.edu>]{#bibliographyVirginiaPolytechnicInstituteAndStateUniversity_VirginiaTech_DataStructuresAndAlgorithmsDSA_OpenDSAProject2011-2023;}
 121. [Building Maintainable Software Ten Guidelines for Future-Proof
@@ -14895,7 +14804,7 @@ WordEngineering
      <http://www.google.com/books/edition/A_Functional_Approach_to_Java/5hi-EAAAQBAJ?hl=en>]{#bibliographyBenWeidig20230509}
 124. [Design for How People Think: Using Brain Science to Build Better
      Products Book John Whalen, PhD; W3C web page; Available from
-     <http://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover>]{#bibliographyJohnWhalen}
+     <http://www.google.com/books/edition/Design_for_How_People_Think/UFSQDwAAQBAJ?hl=en>]{#bibliographyJohnWhalen}
 125. [Wikipedia W3C web page; Available from
      <http://www.wikipedia.org>]{#bibliographyWikipedia}
 126. [Urim and Thummim Wikipedia W3C web page; Available from
@@ -15105,7 +15014,7 @@ Predicates, and the Nested Loops will join the results.
 
 The author\'s country of birth, Nigeria, gained independence on,
 1960-10-01, a [Biblical
-generation](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Forty%20years&logic=phrase)
+generation](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=Forty%20years&amp;amp;logic=phrase)
 before the end of the second [millennium (plural
 millennia)](http://en.wikipedia.org/wiki/Millennium). There are 2570
 days between 1960-10-01 and the author\'s date of birth, 1967-10-15.
@@ -15141,7 +15050,7 @@ years, 6 months, 1 week, 1 day) 49.09270833 Biblical generations,
 280.529761 weeks of years.
 
 At the [age of
-twelve](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=twelve%20years%20old&wholeWords=false),
+twelve](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=twelve%20years%20old&amp;amp;wholeWords=false),
 Jesus Christ, His father and mother, worshipped at the temple, in
 Jerusalem. The author worshipped at Saint Edward\'s Catholic Church on
 2002-07-01, 3.5 Biblical years, after coming to the U.S. (Luke 2:42,
@@ -15181,9 +15090,9 @@ February 1992, the author started work at [Information Dialling Services
 International](http://www.whiteint.com.au) LonSyd.
 
 The singular word,
-[centurion](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=centurion&wholeWords=true),
+[centurion](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=centurion&amp;amp;wholeWords=true),
 occurs twenty-one times in the Bible; its plural word,
-[centurions](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=centurions&wholeWords=true),
+[centurions](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=centurions&amp;amp;wholeWords=true),
 occurs three times in the Bible; therefore,
 [centurion(s)](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=centurion),
 occurs twenty-four times in the Bible.
@@ -15196,9 +15105,9 @@ Telephone 61 2 9960 9452\
 Fax 61 2 9960 9452\
 
 The word,
-[covenant](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=covenant&limit=new),
+[covenant](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=covenant&amp;amp;limit=new),
 occurs twenty-four times in the New Testament. The word,
-[marriage](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=marriage&limit=new),
+[marriage](http://e-comfort.ephraimtech.com/WordEngineering/WordUnion/BibleWord.html?bibleWord=marriage&amp;amp;limit=new),
 occurs sixteen times in the New Testament.
 
 The United Nations began on
@@ -15343,7 +15252,7 @@ months, 21 days) (9 months, 2 weeks, 3 days). 2003-12-28\...2004-07-11,
 2004-07-11\...2004-12-28, 170 days (5 biblical months, 20 days) (5
 months, 2 weeks, 3 days).
 
-## Prophecy & Fulfillment {#ProphecyAndFulfillment}
+## Prophecy &amp;amp; Fulfillment {#ProphecyAndFulfillment}
 
 +-----------------------------------------------------------------------+
 |   ------------- --------------------------------------------          |
@@ -15438,7 +15347,7 @@ months, 2 weeks, 3 days).
 |   ------------                                                        |
 | - ------------------------------------------------------------------- |
 +-----------------------------------------------------------------------+
-|   ------------- ----------------------------                          |
+|   ------------- ------------------------------------                  |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
@@ -15451,13 +15360,13 @@ months, 2 weeks, 3 days).
 |   Prophecy      The financial st                                      |
 | ock market has made a concerted effort to keep the British pound from |
 |  rising beyond forty five percent (45%). Epoch timestamp: 1089504000. |
-|   Fulfillment   2004-01-01\...2004-07-11 1                            |
-| 92 days (6 biblical months, 12 days) (6 months, 1 week, 3 days). 2008 |
-| -06-12T10:00:00 Interview. Forty five percent, 45%, day Gregorian cal |
-| endar. 16th & Mission Bart Station. Walk up Mission, from the 2000 bl |
+|   Fulfillment   2004-01-01\...2004-07-11 192 days                     |
+| (6 biblical months, 12 days) (6 months, 1 week, 3 days). 2008-06-12T1 |
+| 0:00:00 Interview. Forty five percent, 45%, day Gregorian calendar. 1 |
+| 6th &amp;amp; Mission Bart Station. Walk up Mission, from the 2000 bl |
 | ock. Van Ness Muni Stop. Interviewers: Mike, Matthew, Raj Giri. Allai |
 | re Cold Fusion. Adobe. We don\'t know disame alike, as the two of us. |
-|   ------------- ----------------------------                          |
+|   ------------- ------------------------------------                  |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
@@ -15486,7 +15395,7 @@ months, 2 weeks, 3 days).
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
 +-----------------------------------------------------------------------+
-|   ------------- -------------------------------                       |
+|   ------------- -----------------------------------------------       |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
@@ -15496,16 +15405,16 @@ months, 2 weeks, 3 days).
 |   From          2008-03-11                                            |
 |   To            2011-03-11                                            |
 |   Time Span     1095 days (3 biblical years, 15 days) (3 years)       |
-|   Prophecy      2008-03-11 [September 22](htt                         |
-| p://en.wikipedia.org/wiki/September_22) 2007-09-25 [Guy Kawasaki](htt |
-| p://www.GuyKawasaki.com) Asian angel of death. At the time of this pr |
-| ophecy, the author was working at [Daigaku Honyaku Center (DHC)](http |
-| ://en.wikipedia.org/wiki/Daigaku_Honyaku_Center). [Ku](http://www.goo |
-| gle.com/search?q=ku+meaning+in+yoruba&ie=utf-8&oe=utf-8) means die in |
+|   Prophecy      2008-03-11 [September 22](http://en.wikipedia         |
+| .org/wiki/September_22) 2007-09-25 [Guy Kawasaki](http://www.GuyKawas |
+| aki.com) Asian angel of death. At the time of this prophecy, the auth |
+| or was working at [Daigaku Honyaku Center (DHC)](http://en.wikipedia. |
+| org/wiki/Daigaku_Honyaku_Center). [Ku](http://www.google.com/search?q |
+| =ku+meaning+in+yoruba&amp;amp;ie=utf-8&amp;amp;oe=utf-8) means die in |
 |  the [Yoruba language](http://en.wikipedia.org/wiki/Yoruba_language). |
 |   Fulfillment   [2011 Tōhoku earthquake and tsunami](                 |
 | http://en.wikipedia.org/wiki/2011_T%C5%8Dhoku_earthquake_and_tsunami) |
-|   ------------- -------------------------------                       |
+|   ------------- -----------------------------------------------       |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
 | --------------------------------------------------------------------- |
@@ -15790,3 +15699,4 @@ Copyright ©
 []{#copyrightYear}\
 
 Ken Adeniji <KenAdeniji@hotmail.com>
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
