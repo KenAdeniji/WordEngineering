@@ -1,30 +1,28 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<!-- 
-	2026-10-19 Created.
--->
-
-<xsl:output method="html" indent="no" />
+<xsl:output method="html" indent="no"/>
 <xsl:template match="/">
 	<html>
 		<body>
-		
-			<xsl:apply-templates select="//html"/>
-		
 			<table align="center" border="1">
-				<tr align="center"><th>a</th></tr> 
+				<caption>Anchors</caption> 
+				<thead>
+					<tr>
+						<th>href</th>
+						<th>data-dated</th>
+					</tr>
+				</thead>
 				<xsl:apply-templates select="//a">
 				</xsl:apply-templates>
 			</table>
-
-			<xsl:template match="a">
-				<tr>
-					<td><xsl:value-of select="href"/></td>
-					<td><xsl:value-of select="dated"/></td>
-				</tr>
-			</xsl:template>
-			
 		</body>
 	</html>
+</xsl:template>	
+<xsl:template match="a">
+	<tr>
+		<td><xsl:value-of select="@href"/></td>
+		<td><xsl:value-of select="@data-dated"/></td>
+	</tr>	
+</xsl:template>
 </xsl:stylesheet>
 
 <!--
