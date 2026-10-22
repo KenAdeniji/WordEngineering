@@ -1,65 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-Fluent LINQ
-
-However, I’m a big C# fan, especially the fluent API style of LINQ methods like Where, Select, OrderBy, etc. As an example, assume the following C# class:
-
-class Person {
-  public Person() { Children = new List<Person>(); }
-  public string Name { get; set; }
-  public DateTime Birthday { get; set; }
-  public int Age { get { return (int)((DateTime.Now - Birthday).Days / 365.25); } }
-  public ICollection<Person> Children { get; private set; }
-  public override string ToString() { return string.Format("{0} ({1})", Name, Age); }
-}
-
-Creating a set of them is a matter of using the C# member initialization syntax:
-
-var chris = new Person() {
-  Name = "Chris",
-  Birthday = new DateTime(1969, 6, 2),
-  Children = {
-    new Person() {
-      Name = "John",
-      Birthday = new DateTime(1994, 5, 5),
-    },
-    new Person() {
-      Name = "Tom",
-      Birthday = new DateTime(1995, 8, 30),
-    },
-  },
-};
-
-Without even realizing it, I used the word “set” to describe how I think of this collection of people. That’s how the LINQ methods encourage me to think and I like it — I’m working on sets of things, whether I’m filtering them, projecting them, ordering them, aggregating them in some way, etc. For example, here’s how I would print all of the items in my set:
-
-var people = new Person[] { chris }.Union(chris.Children);
-Console.WriteLine("People: " +
-  people.Aggregate("", (s, p) => s + (s.Length == 0 ? "" : ", ") + p.ToString()));
-Console.WriteLine("Teens: " +
-  people.Where(p => p.Age > 12 && p.Age < 20).
-    Aggregate("", (s, p) => s + (s.Length == 0 ? "" : ", ") + p.ToString()));
-
-Here I’m using the Union method to combine all three elements into a new set, the Where method to filter one set to produce another and the Aggregate method to produce a single string. The output should be unsurprising:
-
-People: Chris (41), John (16), Tom (15)
-Teens: John (16), Tom (15)
--->
-<!--
-Notice that several things are similar between JS and C# LINQ-style:
-
-    The array and object initialization syntax looks very similar so long as I follow the JS convention of passing in an anonymous object as a set of constructor parameters.
-    The JS Date type is like the .NET DateTime type except that months are zero-based instead of one-based (weird).
-    When a Person object is “added” to a string, JS is smart enough to automatically call the toString method.
-    The JS map function lets you project from one set to another like LINQ Select.
-    The JS filter function lets you filter a set like LINQ Where.
-    The JS some function lets you check if anything in a set matches a predicate like LINQ Any.
-    The JS reduce function lets you accumulate results from a set like the LINQ Aggregate.
-    The JS slice function is a multi-purpose array manipulation function that we’ve used here like LINQ Take and Skip.
-    The JS slice function also produces a copy of the array, which is handy when handing off to the JS sort, which acts on the array in-place.
-
-The output looks as you’d expect:
--->
 	<head>
 		<title>http://sellsbrothers.com/12692 2010-12-11 Fluent-Style Programming in JavaScript</title>
 		<meta charset="UTF-8"/>
@@ -104,6 +44,32 @@ The output looks as you’d expect:
 				  toString: { value: function () { return this.name + " (" + this.age + ")"; } }
 				});
 
+				Object.defineProperty(Array.prototype, "union", { value: function (rhs) {
+				  var rg = this.slice(0);
+				  rhs.forEach(function (v) { rg.unshift(v); })
+				  return rg;
+				}});
+
+				Object.defineProperty(Array.prototype, "first", { value: function (callback) {
+				  for (var i = 0, length = this.length; i < length; ++i) {
+					var value = this[i];
+					if (callback(value)) { return value; }
+				  }
+				  return null;
+				}});
+
+				Object.defineProperty(Array.prototype, "single", { value: function (callback) {
+				  var result = null;
+				  this.forEach(function (v) {
+					if (callback(v)) {
+					  if (result != null) { throw "more than one result"; }
+					  result = v;
+					}
+				  });
+				  return result;
+				}});
+				
+				
 				var s = "";
 				var tom = new Person({ name: "tom", birthday: new Date(1995, 7, 30) });
 				var john = new Person({ name: "john", birthday: new Date(1994, 4, 5) });
@@ -132,6 +98,10 @@ The output looks as you’d expect:
 				s += "<h1>sorted by name</h1>" + people.slice(0).sort(
 				  function (lhs, rhs) { return lhs.name.localeCompare(rhs.name); }).join(", ");
 
+				// union
+				s += "<h1>chris's family</h1>" +
+				  [chris].union(chris.children).map(function (p) { return p; }).join(", ");
+  
 				// dump
 				resultSetElement.innerHTML = s;
 			}
