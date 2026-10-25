@@ -100,3 +100,5 @@ git add IIS/WordEngineering/2026-10-19HtmlIncludesXML/
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-20T1935I am a senior person ... for getting work.txt"
 
 git add IIS/WordEngineering/JavaScript/sellsbrothers.com/
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-24T1652An Introduction to Statistical Learning by Gareth James, Daniela Witten, Trevor Hastie, Rob Tibshirani, Jonathan Taylor.txt"
