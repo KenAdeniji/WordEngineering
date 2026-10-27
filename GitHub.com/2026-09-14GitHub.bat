@@ -104,3 +104,5 @@ git add IIS/WordEngineering/JavaScript/sellsbrothers.com/
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-24T1652An Introduction to Statistical Learning by Gareth James, Daniela Witten, Trevor Hastie, Rob Tibshirani, Jonathan Taylor.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-25T1715CraigsList.org_-_Raven_John_-_What I have kept for myself ... is what I have not distance from others.txt"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-26google.com bible model software engineer. pioneerbible.org Leviticus. LinkedIn Gavaskar Reid Philippians4v13 2026-10-27PaulineBeshay7Minutes.txt"
