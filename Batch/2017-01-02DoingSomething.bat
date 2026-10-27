@@ -1407,6 +1407,10 @@ http://www.statlearning.com
 SequenceOrderID 72000
 Dated 2026-02-26 16:18:24.0000000
 
+2026-10-27T08:37:00
+http://apnews.com/article/south-africa-violence-army-deployment-durban-11f0f2ca27ddac047427bc9ba899acb9?utm_source=firefox-newtab-en-us
+South Africa’s Ramaphosa orders 510 soldiers to KwaZulu-Natal after asylum ruling violence
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
