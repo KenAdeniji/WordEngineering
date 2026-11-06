@@ -109,6 +109,8 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-26google.com bible
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-10-30T9714They do know (Luke 19v44). When the turn is associated as I (John 21v22). How the period end as suitable.txt"
 
-git add "2026-11-03Chapter14Verse9_Chapter14Verse7/"
+REM 2026-11-06 git add "2026-11-03Chapter14Verse9_Chapter14Verse7/"
 
-git mv "2026-11-03Chapter14Verse9_Chapter14Verse7/" "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
+REM 2026-11-06 git mv "2026-11-03Chapter14Verse9_Chapter14Verse7/" "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
+
+git add "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
