@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-11-06T03:53:00	Created.
+	-->	
+	<head>
+		<title>CSV PapaParse</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="CSV PapaParse"/>
+		<meta name="keyword" content="CSV, Parser"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body{
+			  height: 100%;
+			  width: 100%;
+			}
+			textarea{ //viewport
+				height: 100vh;
+				width: 100vw;
+			}
+		</style>	
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.6.1/papaparse.min.js"></script>	
+		<div align="center">
+			<textarea id="resultSet" align="left"></textarea>
+		</div>
+		<script>
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				Papa.parse(CSVFilename, {
+					complete: function(results) {
+						console.log("Finished:", results.data);
+						resultSetElement.value = results.data;
+					}
+				});
+Papa.parse(CSVFilename, {
+	worker: true,
+	step: function(results) {
+		console.log("Row:", results.data);
+	}
+});
+ 			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			const CSVFilename = "https://KenAdeniji.GitHub.io/GitHub/2026-11-03Chapter14Verse9_Chapter14Verse7.csv"
+		</script>		
+	</body>
+</html>
