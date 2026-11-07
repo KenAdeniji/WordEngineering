@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-11-06T03:53:00	Created.
+		https://kenadeniji.github.io/Github/2026-11-06T1200Chapter14Verse9_Chapter14Verse7_CSV_Fetch.html
+		https://KenAdeniji.GitHub.io/GitHub/2026-11-03Chapter14Verse9_Chapter14Verse7.csv
+	-->	
+	<head>
+		<title>CSV Fetch</title>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="CSV fetch"/>
+		<meta name="keyword" content="CSV, fetch"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="author" content="Ken Adeniji"/>
+		<style>
+			html, body
+			{
+			  height: 100%;
+			  width: 100%;
+			}
+			/*
+			textarea{
+				height: 100vh;
+				width: 100vw;
+			}
+			*/
+		</style>	
+	</head>
+	<body>
+		<div align="center">
+			<div id="resultSet" align="left" rows="40" columns="75"></div>
+		</div>
+		<script>
+			const 	resultSetElement = document.getElementById("resultSet");
+			
+			function pageLoad()
+			{
+				fetchCSV()
+ 			}
+
+			async function fetchCSV() 
+			{
+				const response = await fetch(CSVFilename);
+				if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+				const text = await response.text();
+
+				// Parse lines manually
+				const rows = text.trim().split('\n');
+				const headers = rows[0].split(',');
+				const data = rows.slice(1).map(row => {
+				const values = row.split(',');
+				return headers.reduce((acc, header, index) => {
+				  acc[header.trim()] = values[index]?.trim();
+				  return acc;
+				}, {});
+				});
+
+				//resultSetElement.innerHTML = headers.toString() + JSON.stringify(data);
+			 
+				var tableStub = "<table><thead><tr>";
+
+				for(var j = 0, keysLength = headers.length; j < keysLength; j++)
+				{
+					tableStub += "<th>" + headers[j] + "</th>";
+				}
+
+				tableStub += "</tr></thead><tbody>";
+
+				var rowData;
+				for(var i = 0; i < data.length; i++)
+				{
+					tableStub += "<tr>";
+					rowData = data[i];
+					for(var j = 0, keysLength = Object.keys(rowData).length; j < keysLength; j++)
+					{
+						tableStub += "<td>" + Object.values(rowData)[j] + "</td>";
+					}	
+					tableStub += "</tr>";
+				}
+			
+				tableStub += "</tbody></table>"
+				
+				resultSetElement.innerHTML = tableStub;	
+			}
+
+			window.addEventListener("load", pageLoad, false);
+
+			const CSVFilename = "https://kenadeniji.github.io/Github/2026-11-03Chapter14Verse9_Chapter14Verse7.csv";
+		</script>
+	</body>
+</html>
