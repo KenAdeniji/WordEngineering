@@ -114,3 +114,5 @@ REM 2026-11-06 git add "2026-11-03Chapter14Verse9_Chapter14Verse7/"
 REM 2026-11-06 git mv "2026-11-03Chapter14Verse9_Chapter14Verse7/" "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
 
 git add "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
+
+git rm "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/2026-11-06Chapter14Verse9_Chapter14Verse7.csv"
