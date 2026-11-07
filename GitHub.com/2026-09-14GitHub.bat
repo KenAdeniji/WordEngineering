@@ -116,3 +116,5 @@ REM 2026-11-06 git mv "2026-11-03Chapter14Verse9_Chapter14Verse7/" "IIS/WordEngi
 git add "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/"
 
 git rm "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Verse7/2026-11-06Chapter14Verse9_Chapter14Verse7.csv"
+
+git add "IIS/WordEngineering/2018-05-03Correspondence/2026-11-07T0930RabbiNoaKushnerOfTheKitchenSF.org_CoincidenceIsNotAKosherWord_DabruEmet_SpeakTheTruth_IWasMisled_Microsoft_Hotmail.com_EmailSpam_NotJunk_ReportPhishing.txt"
