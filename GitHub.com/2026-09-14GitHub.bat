@@ -120,3 +120,6 @@ REM 2026-11-06 git rm "IIS/WordEngineering/2026-11-03Chapter14Verse9_Chapter14Ve
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-11-07T0930RabbiNoaKushnerOfTheKitchenSF.org_CoincidenceIsNotAKosherWord_DabruEmet_SpeakTheTruth_IWasMisled_Microsoft_Hotmail.com_EmailSpam_NotJunk_ReportPhishing.txt"
 
 git add SQLScript/usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase.sql
+
+git add SQLScript/2026-11-08T2128MuhammadImran_-_raresql.com_-_2023-04-03_-_SQLServer_-_HowToTruncateDatabaseLogFile.sql
+git add SQLScript/usp_20261108T2214MuhammadImran_raresql.com_20221208DateTrunc_HowToGetPreviousCurrentLastWeekDates.sql
