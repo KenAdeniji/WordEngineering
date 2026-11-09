@@ -30,10 +30,9 @@ BEGIN
 		Create date:	2026-11-08T18:06:00
 		Description:	Is in uppercase?
 		url:			http://raresql.com/2013/11/01/sql-server-how-to-find-a-row-that-contains-a-lower-case-letter
+						http://github.com/KenAdeniji/WordEngineering/blob/main/SQLScript/usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase.sql
+						http://stackoverflow.com/questions/5757101/change-input-to-upper-case
 	*/
-
-	print GETDATE()
-
 	CREATE SEQUENCE MyTableVarCounter
     AS INT
     START WITH 1
@@ -50,7 +49,6 @@ BEGIN
 	INSERT INTO @MyTableVar VALUES ('Raresql')
 	INSERT INTO @MyTableVar VALUES ('raresql.com')
 
-	/*
 	PRINT	'Table dump'
 	SELECT	*	
 	FROM	@MyTableVar
@@ -64,16 +62,14 @@ BEGIN
 	SELECT	* 
 	FROM	@MyTableVar
 	WHERE	PATINDEX('%[a-z]%', Named COLLATE Latin1_General_CS_AS) > 0
-	*/
 
 	PRINT	'SOLUTION 3 : Using ASCII(String) Function'
 	SELECT	*,
 			dbo.udf_20261108T1806DaigakuHonyakuCenter_DHC_Extract_small_letters_From_String(Named) AS LowerCaseLetters
 	FROM 
 			@MyTableVar
-
 END
 GO
 
---EXEC usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase
+EXEC usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase
 GO
