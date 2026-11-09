@@ -7,6 +7,7 @@ BEGIN
 		Description:	SQL Server 2022 – TSQL – How to get previous, current and last week dates using DATETRUNC() function
 						2022-12-08 by Muhammad Imran
 		url:			http://raresql.com/2022/12/08/sql-server-2022-tsql-how-to-get-previous-current-and-last-week-dates-using-datetrunc-function
+						http://github.com/KenAdeniji/WordEngineering/blob/main/SQLScript/usp_20261108T2214MuhammadImran_raresql.com_20221208DateTrunc_HowToGetPreviousCurrentLastWeekDates.sql
 	*/
 
 	--In order to set the first day of the week as Monday, we need to run the below script.
