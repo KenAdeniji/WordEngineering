@@ -26,12 +26,12 @@ CREATE OR ALTER PROCEDURE usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNa
 AS
 BEGIN
 	/*
-		Author:			Kehinde Adewumi Adeniji
-		Create date:	2026-11-08T18:06:00
-		Description:	Is in uppercase?
-		url:			http://raresql.com/2013/11/01/sql-server-how-to-find-a-row-that-contains-a-lower-case-letter
-						http://github.com/KenAdeniji/WordEngineering/blob/main/SQLScript/usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase.sql
-						http://stackoverflow.com/questions/5757101/change-input-to-upper-case
+		Author:				Kehinde Adewumi Adeniji
+		Create date:		2026-11-08T18:06:00
+		Description:		Is in uppercase?
+		url:				http://raresql.com/2013/11/01/sql-server-how-to-find-a-row-that-contains-a-lower-case-letter
+							http://github.com/KenAdeniji/WordEngineering/blob/main/SQLScript/usp_20261108T1806DaigakuHonyakuCenter_DHC_IsJapaneseNameInUpperCase.sql
+		2026-11-08T21:03:00	http://stackoverflow.com/questions/5757101/change-input-to-upper-case
 	*/
 	CREATE SEQUENCE MyTableVarCounter
     AS INT
