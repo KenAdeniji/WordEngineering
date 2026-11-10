@@ -46,5 +46,5 @@ END
 GO
 
 EXEC	usp_20261109T1205MuhammadImran_raresql_20150821_HowToImplementConditionalOrderByClause_CaseStatement_ChooseFunction
-		@sortColumnName = 'author'
+		@sortColumnName = 'aCTOR'
 GO

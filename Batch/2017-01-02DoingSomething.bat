@@ -1419,6 +1419,8 @@ http://apnews.com/article/palm-beach-plane-crash-ffdee609e7916ff7fcd178d2b8e69b3
 
 2026-11-07T17:42:00	If he keeps on getting spam mail ... he will unsubscribe from job.
 
+2026-11-10 apnews.com/article/israel-election-netanyahu-eisenkot-knesset-68e96ea53ad8614f1e2aa6a546c64ad9?utm_source=firefox-newtab-en-us
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
