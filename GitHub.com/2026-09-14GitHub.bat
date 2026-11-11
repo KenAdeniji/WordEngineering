@@ -127,3 +127,4 @@ git add	SQLScript/usp_20261109T0930MuhammadImran_raresql.com_20150910_sp_refresh
 git add SQLScript/usp_20261109T1205MuhammadImran_raresql_20150821_HowToImplementConditionalOrderByClause_CaseStatement_ChooseFunction.sql
 
 git add IIS/WordEngineering/2026-11-10DatabaseChecklist/
+git add IIS/WordEngineering/Dated/2026-11-10WhatIHaveAsAPeriod.html
