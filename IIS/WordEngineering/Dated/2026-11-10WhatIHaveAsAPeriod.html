@@ -92,6 +92,8 @@
 					<th>From</th>
 					<th>Until</th>
 					<th>Days</th>
+					<th>Biblical Calendar</th>
+					<th>Common Era (CE)</th>					
 				</tr>
 			</thead>
 			<tbody>
@@ -100,16 +102,22 @@
 					<td>1967-10-15</td>
 					<td></td>
 					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Australia's residence</td>
 					<td>1991-10-15</td>
 					<td></td>
 					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Australia's citizen</td>
 					<td>1993-10-15</td>
+					<td></td>
+					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
@@ -210,9 +218,10 @@
 				return leapYear;
 			}	
 			
-			function yearMonthWeekDay(dateFrom, dateTo)
-			{
-				var	dateCurrent = dateFrom;
+			function yearMonthWeekDay(datedFrom = new Date(), datedUntil = new Date()) {
+				datedFrom = !isNaN(datedFrom) ? datedFrom : new Date();
+				datedUntil = !isNaN(datedUntil) ? datedUntil : new Date();
+				var	dateCurrent = datedFrom;
 				var	days = 0;
 				var	weeks = 0;
 				var	months = 0;
@@ -222,7 +231,7 @@
 				
 				var daysInYears = new Array();
 				
-				while ( dateCurrent < dateTo )
+				while ( dateCurrent < datedUntil )
 				{
 					var daysOffset = 365;
 					var isLeap = isLeapYear(dateCurrent.getFullYear());
@@ -230,7 +239,7 @@
 					{
 						daysOffset = 366;
 					}
-					if ( addDays(dateCurrent, daysOffset ) > dateTo )
+					if ( addDays(dateCurrent, daysOffset ) > datedUntil )
 					{
 						break;
 					}
@@ -238,7 +247,7 @@
 					++years;
 				}
 				
-				while ( dateCurrent < dateTo )
+				while ( dateCurrent < datedUntil )
 				{
 					var currentMonth = dateCurrent.getMonth();
 					var daysOffset = daysInMonth[currentMonth];
@@ -247,7 +256,7 @@
 					{
 						daysOffset = 29;
 					}
-					if ( addDays(dateCurrent, daysOffset ) > dateTo )
+					if ( addDays(dateCurrent, daysOffset ) > datedUntil )
 					{
 						break;
 					}
@@ -255,7 +264,7 @@
 					++months;
 				}
 
-				weekDays = daysBetween(dateCurrent, dateTo);
+				weekDays = daysBetween(dateCurrent, datedUntil);
 			
 				weeks = Math.floor(weekDays / 7);
 
@@ -284,30 +293,28 @@
 				return yearOutput;
 			}
 
-function iterateTable()
-{		
-var table = document.getElementById('whatIHaveAsAPeriod');  
-var count = table.rows.length;
- 
-for(var i=1; i<count; i++) {    
-    // Find the current row container
-    const row = table.rows[i];
-    
-    // Pull the values from the specific row inputs
-    const datedFrom = new Date(row.cells[1].innerHTML) || new Date();
-    const datedUntil = new Date(row.cells[2].innerHTML) || new Date();
+			function iterateTable()
+			{		
+				var table = document.getElementById("whatIHaveAsAPeriod");
+				var count = table.rows.length;
+				 
+				for(var i=1; i<count; i++) {    
+					// Find the current row container
+					const row = table.rows[i];
+					
+					// Pull the values from the specific row inputs
+					const datedFrom = new Date(row.cells[1].innerHTML) || new Date();
+					const datedUntil = new Date(row.cells[2].innerHTML) || new Date();
 
-    // Compute the calculation
-    const days = daysDifference(datedFrom, datedUntil);
-    
-	console.log(datedFrom, datedUntil, days);
-	
-    // Write the output back to the computed column cell
-    row.cells[3].innerHTML = days;
-
-}
-
-}
+					// Compute the calculation
+					const days = daysDifference(datedFrom, datedUntil);
+					
+					// Write the output back to the computed column cell
+					row.cells[3].innerHTML = days;
+					row.cells[4].innerHTML = biblicalCalendarDifference(days)
+					row.cells[5].innerHTML = yearMonthWeekDay(datedFrom, datedUntil);
+				}
+			}
 
 			window.addEventListener('load', function(){
 				iterateTable();
