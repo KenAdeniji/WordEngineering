@@ -3,6 +3,8 @@
 	<!--
 		2026-11-10	Created.
 		2026-11-12T03:14:00	http://stackoverflow.com/questions/17732897/difference-between-two-dates-in-years-months-days-in-javascript
+		2026-11-12T04:21:00	http://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th
+			Why does ... look elsewhere?
 	-->
 		<meta charset="UTF-8"/>
 		<meta name="description" content="What I have ... as a period."/>
@@ -92,9 +94,6 @@
 					<th>Word</th>
 					<th>From</th>
 					<th>Until</th>
-					<th>Days</th>
-					<th>Biblical Calendar</th>
-					<th>Common Era (CE)</th>					
 				</tr>
 			</thead>
 			<tbody>
@@ -102,24 +101,15 @@
 					<td>Lived</td>
 					<td>1967-10-15</td>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
 				</tr>
 				<tr>
 					<td>Australia's resident</td>
 					<td>1991-10-15</td>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
 				</tr>
 				<tr>
 					<td>Australia's citizen</td>
 					<td>1993-10-15</td>
-					<td></td>
-					<td></td>
-					<td></td>
 					<td></td>
 				</tr>
 			</tbody>
@@ -132,6 +122,18 @@
 			{		
 				var table = document.getElementById("whatIHaveAsAPeriod");
 				var count = table.rows.length;
+
+				const headerRow = table.rows[0];
+				for (const headerColumn of ComputedHeaderRowColumns) {
+						let th = document.createElement("th");
+						th.textContent = headerColumn;
+						headerRow.appendChild(th);
+				}
+							
+				let diff;
+				let tdDays;
+				let tdBiblicalCalendar;
+				let tdGregorianCalendar;
 
 				for(var i=1; i<count; i++) {   
 				
@@ -146,16 +148,30 @@
 					const days = WhatIHaveAsAPeriod.daysDifference(datedFrom, datedUntil);
 				
 					// Write the output back to the computed column cell
-					row.cells[3].innerHTML = days;
-					row.cells[4].innerHTML = WhatIHaveAsAPeriod.biblicalCalendarDifference(days)
-					var diff = WhatIHaveAsAPeriod.getDateDifference(datedFrom, datedUntil);
-					row.cells[5].innerHTML = `${diff.years} years, ${diff.months} months, ${diff.days} days`;
+					tdDays = document.createElement("td");
+					tdDays.textContent = days;
+					row.appendChild(tdDays);
+
+					tdBiblicalCalendar = document.createElement("td");
+					tdBiblicalCalendar.textContent = WhatIHaveAsAPeriod.biblicalCalendarDifference(days);
+					row.appendChild(tdBiblicalCalendar);
+
+					tdGregorianCalendar = document.createElement("td");
+					diff = WhatIHaveAsAPeriod.getDateDifference(datedFrom, datedUntil);
+					tdGregorianCalendar.textContent = `${diff.years} years, ${diff.months} months, ${diff.days} days`;
+					row.appendChild(tdGregorianCalendar);
 				}
 			}
 
 			window.addEventListener('load', function(){
 				iterateTable();
 			});
+			
+			const ComputedHeaderRowColumns = [
+				"Days",
+				"Biblical Calendar",
+				"Gregorian Calendar"
+			];	
 		</script>		
 	</body>
 </html>
