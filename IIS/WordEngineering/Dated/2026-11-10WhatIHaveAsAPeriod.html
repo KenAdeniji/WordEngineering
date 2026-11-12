@@ -123,175 +123,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<script>
-			function addDays(myDate,days) {
-				return new Date(myDate.getTime() + days*24*60*60*1000);
-			}
+		<script type="module">
+			//import { WhatIHaveAsAPeriod } from "./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js"
+			let {WhatIHaveAsAPeriod} = await import("./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js")
 
-			function DaysInYears(metric, value){//constructor
-				this.metric = metric;
-				this.value = value;
-			}
-			
-			function daysDifference(datedFrom = new Date(), datedUntil = new Date()) {
-				datedFrom = !isNaN(datedFrom) ? datedFrom : new Date();
-				datedUntil = !isNaN(datedUntil) ? datedUntil : new Date();
-				return Math.round((datedUntil - datedFrom)/(1000*60*60*24));
-			}
-
-			function daysBetween(date1, date2) {
-				// The number of milliseconds in one day
-				var ONE_DAY = 1000 * 60 * 60 * 24
-
-				// Convert both dates to milliseconds
-				var date1_ms = date1.getTime()
-				var date2_ms = date2.getTime()
-
-				// Calculate the difference in milliseconds
-				var difference_ms = Math.abs(date1_ms - date2_ms)
-
-				// Convert back to days and return
-				return Math.round(difference_ms/ONE_DAY)
-			}
-			
-			function biblicalCalendarDifference(days)
-			{
-				var year = Math.trunc(days / 360);
-				var remainder = days % 360;
-				var month = Math.trunc(remainder / 30);
-				var day = Math.trunc(remainder % 30);
-				
-				var calendar = "";
-				
-				if (year > 0)
-				{
-					calendar += year + " year" + (year === 1 ? "" : "s");
-				}
-
-				if (month > 0)
-				{
-					if (calendar != "")
-					{
-						calendar += ", ";
-					}
-					
-					calendar += month + " month" + (month === 1 ? "" : "s");
-				}
-
-				if (day > 0)
-				{
-					if (calendar != "")
-					{
-						calendar += ", ";
-					}
-					calendar += day + " day" + (day === 1 ? "" : "s");
-				}
-	
-				return calendar;
-			}
-
-			function getBusinessDatesCount(startDate, endDate) {
-				var count = 0;
-				var curDate = startDate;
-				while (curDate <= endDate) {
-					var dayOfWeek = curDate.getDay();
-					if(!((dayOfWeek == 6) || (dayOfWeek == 0)))
-					   count++;
-					curDate.setDate(curDate.getDate() + 1);
-				}
-				return count;
-			}
-
-			function isLeap(year)
-			{ 
-				return year % 4 == 0 && year % 100 != 0 || year % 400 == 0; 
-			}
-			
-			function isLeapYear(year)
-			{
-				var date = new Date(year+"/02/29");
-				var leapYear = false;
-				if (1 === date.getMonth())
-				{
-					leapYear = true;
-				}	
-				return leapYear;
-			}	
-			
-			function yearMonthWeekDay(datedFrom = new Date(), datedUntil = new Date()) {
-				datedFrom = !isNaN(datedFrom) ? datedFrom : new Date();
-				datedUntil = !isNaN(datedUntil) ? datedUntil : new Date();
-				var	dateCurrent = datedFrom;
-				var	days = 0;
-				var	weeks = 0;
-				var	months = 0;
-				var	years = 0;
-				
-				var	weekDays = 0;
-				
-				var daysInYears = new Array();
-				
-				while ( dateCurrent < datedUntil )
-				{
-					var daysOffset = 365;
-					var isLeap = isLeapYear(dateCurrent.getFullYear());
-					if (isLeap)
-					{
-						daysOffset = 366;
-					}
-					if ( addDays(dateCurrent, daysOffset ) > datedUntil )
-					{
-						break;
-					}
-					dateCurrent = addDays( dateCurrent, daysOffset );
-					++years;
-				}
-				
-				while ( dateCurrent < datedUntil )
-				{
-					var currentMonth = dateCurrent.getMonth();
-					var daysOffset = daysInMonth[currentMonth];
-					var isLeap = isLeapYear(dateCurrent.getFullYear());
-					if (isLeap && currentMonth == 2)
-					{
-						daysOffset = 29;
-					}
-					if ( addDays(dateCurrent, daysOffset ) > datedUntil )
-					{
-						break;
-					}
-					dateCurrent = addDays( dateCurrent, daysOffset );
-					++months;
-				}
-
-				weekDays = daysBetween(dateCurrent, datedUntil);
-			
-				weeks = Math.floor(weekDays / 7);
-
-				days = weekDays % 7;
-				
-				var yearOutput = "";
-				
-				daysInYears.push(new DaysInYears("year", years));
-				daysInYears.push(new DaysInYears("month", months));
-				daysInYears.push(new DaysInYears("week", weeks));
-				daysInYears.push(new DaysInYears("day", days));
-				
-				for (var index = 0, length = daysInYears.length; index < length; ++index)
-				{
-					if (daysInYears[index].value == 0) { continue; }
-					var aShineInTheCloud	=	"";
-
-					aShineInTheCloud = 	((yearOutput.length === 0) ? "" : ", " ) +
-										(daysInYears[index].value + " ") +
-										daysInYears[index].metric +
-										((daysInYears[index].value === 1) ? "" : "s");
-					
-					yearOutput 			+=	aShineInTheCloud;			
-				}
-			
-				return yearOutput;
-			}
+			console.log("WhatIHaveAsAPeriod.daysInMonth");
 
 			function iterateTable()
 			{		
@@ -307,22 +143,18 @@
 					const datedUntil = new Date(row.cells[2].innerHTML) || new Date();
 
 					// Compute the calculation
-					const days = daysDifference(datedFrom, datedUntil);
-					
+					const days = WhatIHaveAsAPeriod.daysDifference(datedFrom, datedUntil);
+				
 					// Write the output back to the computed column cell
 					row.cells[3].innerHTML = days;
-					row.cells[4].innerHTML = biblicalCalendarDifference(days)
-					row.cells[5].innerHTML = yearMonthWeekDay(datedFrom, datedUntil);
+					row.cells[4].innerHTML = WhatIHaveAsAPeriod.biblicalCalendarDifference(days)
+					row.cells[5].innerHTML = WhatIHaveAsAPeriod.yearMonthWeekDay(datedFrom, datedUntil);
 				}
 			}
 
 			window.addEventListener('load', function(){
 				iterateTable();
 			});
-
-
-			//	                 1   2   3   4   5   6   7,  8,  9  10, 11, 12	
-			var daysInMonth = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 		</script>		
 	</body>
 </html>

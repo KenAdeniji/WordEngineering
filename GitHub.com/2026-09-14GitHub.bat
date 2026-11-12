@@ -128,3 +128,4 @@ git add SQLScript/usp_20261109T1205MuhammadImran_raresql_20150821_HowToImplement
 
 git add IIS/WordEngineering/2026-11-10DatabaseChecklist/
 git add IIS/WordEngineering/Dated/2026-11-10WhatIHaveAsAPeriod.html
+git add IIS/WordEngineering/Dated/2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js
