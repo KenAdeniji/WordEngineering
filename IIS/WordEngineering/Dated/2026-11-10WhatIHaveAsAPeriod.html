@@ -118,6 +118,13 @@
 			//import { WhatIHaveAsAPeriod } from "./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js"
 			let {WhatIHaveAsAPeriod} = await import("./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js")
 
+			function addTableData(row, content)
+			{		
+				let td = document.createElement("td");
+				td.textContent = content;
+				row.appendChild(td);
+			}
+			
 			function iterateTable()
 			{		
 				var table = document.getElementById("whatIHaveAsAPeriod");
@@ -146,20 +153,11 @@
 
 					// Compute the calculation
 					const days = WhatIHaveAsAPeriod.daysDifference(datedFrom, datedUntil);
-				
-					// Write the output back to the computed column cell
-					tdDays = document.createElement("td");
-					tdDays.textContent = days;
-					row.appendChild(tdDays);
-
-					tdBiblicalCalendar = document.createElement("td");
-					tdBiblicalCalendar.textContent = WhatIHaveAsAPeriod.biblicalCalendarDifference(days);
-					row.appendChild(tdBiblicalCalendar);
-
-					tdGregorianCalendar = document.createElement("td");
 					diff = WhatIHaveAsAPeriod.getDateDifference(datedFrom, datedUntil);
-					tdGregorianCalendar.textContent = `${diff.years} years, ${diff.months} months, ${diff.days} days`;
-					row.appendChild(tdGregorianCalendar);
+					
+					addTableData(row, days);
+					addTableData(row, WhatIHaveAsAPeriod.biblicalCalendarDifference(days));
+					addTableData(row, `${diff.years} years, ${diff.months} months, ${diff.days} days`);
 				}
 			}
 
