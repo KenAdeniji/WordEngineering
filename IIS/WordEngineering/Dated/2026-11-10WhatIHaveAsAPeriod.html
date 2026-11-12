@@ -2,6 +2,7 @@
 <html>
 	<!--
 		2026-11-10	Created.
+		2026-11-12T03:14:00	http://stackoverflow.com/questions/17732897/difference-between-two-dates-in-years-months-days-in-javascript
 	-->
 		<meta charset="UTF-8"/>
 		<meta name="description" content="What I have ... as a period."/>
@@ -127,14 +128,13 @@
 			//import { WhatIHaveAsAPeriod } from "./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js"
 			let {WhatIHaveAsAPeriod} = await import("./2026-11-10IlyaKantor_-_JavaScript.info_-_WhatIHaveAsAPeriod.js")
 
-			console.log("WhatIHaveAsAPeriod.daysInMonth");
-
 			function iterateTable()
 			{		
 				var table = document.getElementById("whatIHaveAsAPeriod");
 				var count = table.rows.length;
-				 
-				for(var i=1; i<count; i++) {    
+
+				for(var i=1; i<count; i++) {   
+				
 					// Find the current row container
 					const row = table.rows[i];
 					
@@ -148,7 +148,8 @@
 					// Write the output back to the computed column cell
 					row.cells[3].innerHTML = days;
 					row.cells[4].innerHTML = WhatIHaveAsAPeriod.biblicalCalendarDifference(days)
-					row.cells[5].innerHTML = WhatIHaveAsAPeriod.yearMonthWeekDay(datedFrom, datedUntil);
+					var diff = WhatIHaveAsAPeriod.getDateDifference(datedFrom, datedUntil);
+					row.cells[5].innerHTML = `${diff.years} years, ${diff.months} months, ${diff.days} days`;
 				}
 			}
 

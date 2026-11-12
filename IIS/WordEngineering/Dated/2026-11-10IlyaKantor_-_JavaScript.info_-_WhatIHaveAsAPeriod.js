@@ -94,6 +94,32 @@ export class WhatIHaveAsAPeriod
 		return leapYear;
 	}	
 	
+	static getDateDifference(date1 = new Date(), date2 = new Date()) {
+		// Ensure start is before end
+		let start = new Date(Math.min(date1, date2));
+		let end = new Date(Math.max(date1, date2));
+
+		let years = end.getFullYear() - start.getFullYear();
+		let months = end.getMonth() - start.getMonth();
+		let days = end.getDate() - start.getDate();
+
+		// If days are negative, borrow days from the previous month
+		if (days < 0) {
+			months--;
+			// Day 0 of the end month gives the last day of the previous month
+			const prevMonthLastDay = new Date(end.getFullYear(), end.getMonth(), 0).getDate();
+			days += prevMonthLastDay;
+		}
+
+		// If months are negative, borrow 12 months from the years
+		if (months < 0) {
+			years--;
+			months += 12;
+		}
+
+		return { years, months, days };
+	}
+	
 	static yearMonthWeekDay(datedFrom = new Date(), datedUntil = new Date()) {
 		datedFrom = !isNaN(datedFrom) ? datedFrom : new Date();
 		datedUntil = !isNaN(datedUntil) ? datedUntil : new Date();
@@ -110,16 +136,16 @@ export class WhatIHaveAsAPeriod
 		while ( dateCurrent < datedUntil )
 		{
 			var daysOffset = 365;
-			var isLeap = isLeapYear(dateCurrent.getFullYear());
+			var isLeap = WhatIHaveAsAPeriod.isLeapYear(dateCurrent.getFullYear());
 			if (isLeap)
 			{
 				daysOffset = 366;
 			}
-			if ( addDays(dateCurrent, daysOffset ) > datedUntil )
+			if ( WhatIHaveAsAPeriod.addDays(dateCurrent, daysOffset ) > datedUntil )
 			{
 				break;
 			}
-			dateCurrent = addDays( dateCurrent, daysOffset );
+			dateCurrent = WhatIHaveAsAPeriod.addDays( dateCurrent, daysOffset );
 			++years;
 		}
 		
@@ -127,20 +153,20 @@ export class WhatIHaveAsAPeriod
 		{
 			var currentMonth = dateCurrent.getMonth();
 			var daysOffset = daysInMonth[currentMonth];
-			var isLeap = isLeapYear(dateCurrent.getFullYear());
+			var isLeap = WhatIHaveAsAPeriod.isLeapYear(dateCurrent.getFullYear());
 			if (isLeap && currentMonth == 2)
 			{
 				daysOffset = 29;
 			}
-			if ( addDays(dateCurrent, daysOffset ) > datedUntil )
+			if ( WhatIHaveAsAPeriod.addDays(dateCurrent, daysOffset ) > datedUntil )
 			{
 				break;
 			}
-			dateCurrent = addDays( dateCurrent, daysOffset );
+			dateCurrent = WhatIHaveAsAPeriod.addDays( dateCurrent, daysOffset );
 			++months;
 		}
 
-		weekDays = daysBetween(dateCurrent, datedUntil);
+		weekDays = WhatIHaveAsAPeriod.daysBetween(dateCurrent, datedUntil);
 	
 		weeks = Math.floor(weekDays / 7);
 
@@ -148,10 +174,10 @@ export class WhatIHaveAsAPeriod
 		
 		var yearOutput = "";
 		
-		daysInYears.push(new DaysInYears("year", years));
-		daysInYears.push(new DaysInYears("month", months));
-		daysInYears.push(new DaysInYears("week", weeks));
-		daysInYears.push(new DaysInYears("day", days));
+		daysInYears.push(new WhatIHaveAsAPeriod.DaysInYears("year", years));
+		daysInYears.push(new WhatIHaveAsAPeriod.DaysInYears("month", months));
+		daysInYears.push(new WhatIHaveAsAPeriod.DaysInYears("week", weeks));
+		daysInYears.push(new WhatIHaveAsAPeriod.DaysInYears("day", days));
 		
 		for (var index = 0, length = daysInYears.length; index < length; ++index)
 		{
