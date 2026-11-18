@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		2026-11-17	Date created.
+			http://www.whitehouse.gov/contact
+	-->
+    <head>
+		<title>Kehinde "Ken" Adewumi Adeniji contact us</title>
+		<meta name="description" content='Kehinde "Ken" Adewumi Adeniji contact us'/>
+		<meta name="keywords" content="Contact us"/>
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content='Kehinde "Ken" Adewumi Adeniji'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="shortcut icon" href="http://kenadeniji.github.io/Github/ephraim.jpg"/>
+		<link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+			/*
+			html {
+				background-color: white;
+				color: black;
+				font-family: helvetica;
+				font-size: 24px;
+				font-weight: 400;
+			}
+			*/
+			
+			table {
+			   border: 1px solid black;
+			   border-spacing: 5px;
+			   border-collapse: separate;
+			}
+
+			th, td { 
+				padding:5px 10px; border:#4e95f4 1px solid;
+			}
+
+			th {
+				background: blue;
+			}
+
+			/* #b8d1f3 */
+			/*
+			tr:nth-child(odd) { 
+				background: white;
+			}
+			*/
+
+			tr:nth-child(even) {
+				background: #E1EEF4; /* #dae5f4; */
+			}
+
+			h1, h2, h3, h4, h5, h6 
+			{
+				/*
+					2022-04-14T20:58:00
+					http://docs.microsoft.com/en-us/style-guide/top-10-tips-style-voice
+					When in doubt, don’t capitalize
+					Default to sentence-style capitalization—capitalize only the first word of a heading or phrase and any proper nouns or names. Never Use Title Capitalization (Like This). Never Ever. To learn more, see Capitalization.
+					https://docs.microsoft.com/en-us/style-guide/capitalization
+				text-transform: capitalize;
+				*/
+				/* font-family: Arial, Helvetica, Sans-Serif; */ /* 2021-09-17T11:03:00 http://www.SawMac.com/css */
+				/*
+					2026-06-08T21:52:00
+					http://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content
+				*/
+				margin: 0;
+				padding: 20px 0;
+			}
+			
+			p
+			{
+				margin-bottom: 0;
+				margin-top: 0;
+				text-indent: 25px;
+				/* font-family: Times, "Times New Roman", serif; */ /* 2021-09-17T11:03:00 http://www.SawMac.com/css */
+			}
+
+			/*
+				2026-01-22T22:58:00
+			*/
+			textarea, iframe, pre, code, input{ //viewport
+				//height: 65vh;
+				width: 90vw;
+			}
+		</style>	
+    </head>    
+    <body>
+		<form
+			action="mailto:KenAdeniji@hotmail.com"
+			method="post"
+			enctype="text/plain"
+		>
+			<div>
+				<label for="firstName">First Name</label><br/>
+				<input autocomplete="given-name" name="firstName" id="firstName" required maxlength="40" type="text" autofocus/>
+			</div>
+			<div>
+				<label for="middleName">Middle Name</label><br/>
+				<input autocomplete="additional-name" name="middleName" id="middleName" maxlength="40" type="text"/>
+			</div>
+			<div>
+				<label for="lastName">Last Name</label><br/>
+				<input autocomplete="family-name" name="lastName" id="lastName" required maxlength="40" type="text"/>
+			</div>
+			<div>
+				<label for="organization">Organization</label><br/>
+				<input name="organization" id="organization" maxlength="80" type="text"/>
+			</div>
+			<div>
+				<label for="address1">Address 1</label><br/>
+				<input autocomplete="address-line1" name="address1" id="address1" required maxlength="200" type="text"/>
+			</div>
+			<div>
+				<label for="address2">Address 2</label><br/>
+				<input autocomplete="address-line2" name="address2" id="address2" maxlength="200" type="text"/>
+			</div>
+			<div>
+				<label for="city">City</label><br/>
+				<input autocomplete="address-level2" name="city" id="city" required maxlength="40" type="text"/>
+			</div>
+			<div>
+				<label for="state">State / Province / Region</label><br/>
+				<input autocomplete="address-level1" name="state" id="state" required maxlength="40" type="text"/>
+			</div>
+			<div>
+				<label for="zipcode">ZIP Code</label><br/>
+				<input autocomplete="postal-code" name="zipcode" id="zipcode" required maxlength="10" type="text"/>
+			</div>
+			<div>
+				<label for="country">Country</label><br/>
+				<input autocomplete="country-name" name="country" id="country" required maxlength="80" type="text"/>
+			</div>
+			<div>
+				<label for="phone">Phone</label><br/>
+				<input autocomplete="tel-national" name="phone" id="phone" maxlength="38" type="tel" pattern="[+0-9\(\)\/. \-]+" placeholder="(123) 456-7890" title="Telephone number with area code, and country code if outside the US"/>
+			</div>
+			<div>
+				<label for="phone">Email</label><br/>
+				<input autocomplete="email" name="email_address" id="email_address" required maxlength="80" type="email" placeholder="email@example.com" title="Enter an email address."/>
+			</div>
+			<div>
+				<label for="message">Comments</label><br/>
+				<textarea rows="8" name="message" id="message" required maxlength="4000" data-showcounter title="Maximum 4000 characters."></textarea>
+			</div>
+			<div>
+				<input id="submitQuery" value="Submit" type="submit"/>
+			</div>	
+		</form>
+    </body> 
+</html>
