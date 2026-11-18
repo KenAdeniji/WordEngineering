@@ -1423,6 +1423,8 @@ http://apnews.com/article/palm-beach-plane-crash-ffdee609e7916ff7fcd178d2b8e69b3
 
 2026-11-15	cbsnews.com/news/vulcan-rocket-40-amazon-leo-internet-satellites-launch-mishap/?utm_source=firefox-newtab-en-us
 
+2926-11-17	cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down?utm_source=firefox-newtab-en-us
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
