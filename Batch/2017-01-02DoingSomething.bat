@@ -1423,7 +1423,11 @@ http://apnews.com/article/palm-beach-plane-crash-ffdee609e7916ff7fcd178d2b8e69b3
 
 2026-11-15	cbsnews.com/news/vulcan-rocket-40-amazon-leo-internet-satellites-launch-mishap/?utm_source=firefox-newtab-en-us
 
-2926-11-17	cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down?utm_source=firefox-newtab-en-us
+2026-11-17	cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down?utm_source=firefox-newtab-en-us
+
+2026-11-18	http://www.nbcnews.com/news/us-news/gas-geyser-spews-trash-noxious-odor-air-l-area-landfill-prompting-publ-rcna609892
+2026-11-16	Gas geyser spews trash and noxious odor into air above L.A. area landfill, prompting public health emergency
+Crews were working at Chiquita Canyon Landfill on Monday when a gas geyser erupted, spraying terrible odors and “particulate material” into the sky. 
 
 2026-09-22T09:42:00
     info@fidelitybank.ng,
