@@ -1429,6 +1429,8 @@ http://apnews.com/article/palm-beach-plane-crash-ffdee609e7916ff7fcd178d2b8e69b3
 2026-11-16	Gas geyser spews trash and noxious odor into air above L.A. area landfill, prompting public health emergency
 Crews were working at Chiquita Canyon Landfill on Monday when a gas geyser erupted, spraying terrible odors and “particulate material” into the sky. 
 
+2026-11-19	http://www.nbcnews.com/pop-culture/pop-culture-news/larry-poindexter-days-lives-swt-actor-dies-hit-car-crossing-street-rcna610214?utm_source=firefox-newtab-en-us
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
