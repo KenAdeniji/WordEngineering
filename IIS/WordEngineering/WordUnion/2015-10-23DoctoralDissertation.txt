@@ -9206,7 +9206,7 @@ The impetus for database recording was to re-use.
     ``` {dated="2025-09-13T19:06:00"}
     SELECT      HisWordID, Dated, Word
     FROM        WordEngineering..HisWord
-    WHERE       (1 &lt;> 1)
+    WHERE       (1 <> 1)
     OR          (HisWordID BETWEEN 167263 AND 167265)
     OR          (HisWordID BETWEEN 166552 AND 166554)
     OR          (HisWordID BETWEEN 166267 AND 166270)
