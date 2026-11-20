@@ -12754,11 +12754,11 @@ GO
 <pre data-dated="2025-01-25T10:26:00">
 SELECT HisWordID, Dated, Word
 FROM WordEngineering..HisWord HisWordLead
-WHERE Dated &amp;gt;
+WHERE Dated &gt;
 (
 	SELECT TOP 1 Dated
 	FROM WordEngineering..HisWord HisWordLag
-	WHERE HisWordLead.HisWordID &amp;lt; HisWordLag.HisWordID
+	WHERE HisWordLead.HisWordID &lt; HisWordLag.HisWordID
 	ORDER BY HisWordLead.HisWordID 
 )
 ORDER BY HisWordID DESC
