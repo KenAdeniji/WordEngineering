@@ -6476,11 +6476,10 @@ clarification.
 
 ### 2026-09-12 22:56:37.833 [What metric did observe\... man in?](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=What%20metric%20did%20observe...%20man%20in%3F){dated="2026-09-12 22:56:37.833" contactid="18188" hiswordid="171424" interpret="At Milk & Honey Cafe, Pegasus Center. What metric did observe... man in? Lillian Chen is sitting at the south-east table, in the north-east chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is sitting in the south-west chair; the north-west chair is empty."} {#WhatMetricDidObserveManIn dated="2026-09-12 22:56:37.833" contactid="18188" hiswordid="171424" interpret="At Milk & Honey Cafe, Pegasus Center. What metric did observe... man in? Lillian Chen is sitting at the south-east table, in the north-east chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is sitting in the south-west chair; the north-west chair is empty."}
 
-At Milk &amp; Honey Cafe, Pegasus Center. What metric did observe\...
-man in? Lillian Chen is sitting at the south-east table, in the
-north-east chair; Amy, I work here, is sitting in the south-east chair;
-Ivy Tan is sitting in the south-west chair; the north-west chair is
-empty.
+At Milk & Honey Cafe, Pegasus Center. What metric did observe\... man
+in? Lillian Chen is sitting at the south-east table, in the north-east
+chair; Amy, I work here, is sitting in the south-east chair; Ivy Tan is
+sitting in the south-west chair; the north-west chair is empty.
 
 1.  In the beginning
 2.  Spirit (Genesis 1:2, John 3:34, John 4:24, Revelation 1:10)
@@ -8557,10 +8556,10 @@ commentary="When I am doing this? What do I become?" location="Shower"}
 
 ### 2025-12-26T15:49:00 [To\... the event of the day? Remain](https://kenadeniji.github.io/Github/2026-07-24T1910AlphabetSequenceStub.html?word=To...%20the%20event%20of%20the%20day%3F%20Remain.){dated="2025-12-26T15:49:00" contactid="7446" hiswordid="168177"} (Genesis 22:14) {#ToTheEventOfTheDayRemain dated="2025-12-26T15:49:00"}
 
-At Milk &amp; Honey Cafe, I was attended to by Amy Hsueh Tm, who
-previously said, I work here, and Audrey Russell. I saw a young Hindi
-couple sitting in the north-center. I saw some males, and a single woman
-at Yifang Taiwanese Fruit Tea, and at Albertsons Lucky, Charter Square.
+At Milk & Honey Cafe, I was attended to by Amy Hsueh Tm, who previously
+said, I work here, and Audrey Russell. I saw a young Hindi couple
+sitting in the north-center. I saw some males, and a single woman at
+Yifang Taiwanese Fruit Tea, and at Albertsons Lucky, Charter Square.
 Their nationalities are Chile and Peru.
 
 ### 2025-12-25T12:26:00 Trend Analysis {#TrendAnalysis dated="2025-12-25T12:26:00"}
@@ -9178,11 +9177,11 @@ The impetus for database recording was to re-use.
     ``` {dated="2025-01-25T10:26:00"}
     SELECT HisWordID, Dated, Word
     FROM WordEngineering..HisWord HisWordLead
-    WHERE Dated &gt;
+    WHERE Dated >
     (
         SELECT TOP 1 Dated
         FROM WordEngineering..HisWord HisWordLag
-        WHERE HisWordLead.HisWordID &lt; HisWordLag.HisWordID
+        WHERE HisWordLead.HisWordID < HisWordLag.HisWordID
         ORDER BY HisWordLead.HisWordID 
     )
     ORDER BY HisWordID DESC
