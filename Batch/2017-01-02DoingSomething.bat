@@ -1431,6 +1431,10 @@ Crews were working at Chiquita Canyon Landfill on Monday when a gas geyser erupt
 
 2026-11-19	http://www.nbcnews.com/pop-culture/pop-culture-news/larry-poindexter-days-lives-swt-actor-dies-hit-car-crossing-street-rcna610214?utm_source=firefox-newtab-en-us
 
+2026-11-19	http://www.nbcnews.com/sports/nfl/rams-star-puka-nacua-suspended-3-games-nfl-conduct-violations-rcna610301?utm_source=firefox-newtab-en-us
+
+2026-11-19	http://www.cbsnews.com/news/pete-rose-pardoned-by-trump/?utm_source=firefox-newtab-en-us
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
