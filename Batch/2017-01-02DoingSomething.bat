@@ -1445,7 +1445,7 @@ Crews were working at Chiquita Canyon Landfill on Monday when a gas geyser erupt
 2026-11-22	file:///D:/WordEngineering/IIS/WordEngineering/WordUnion/2015-10-23DoctoralDissertation.html
 	HisWord table nullable columns
 
-2026-11-23
+2026-11-23 
 http://www.nbcnews.com/politics/congress/rep-jimmy-gomez-resign-ethics-report-sexual-misconduct-rcna610895?utm_source=firefox-newtab-en-us
 
 2026-09-22T09:42:00
