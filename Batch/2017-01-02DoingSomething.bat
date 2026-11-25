@@ -1448,6 +1448,9 @@ Crews were working at Chiquita Canyon Landfill on Monday when a gas geyser erupt
 2026-11-23 
 http://www.nbcnews.com/politics/congress/rep-jimmy-gomez-resign-ethics-report-sexual-misconduct-rcna610895?utm_source=firefox-newtab-en-us
 
+2026-11-24 http://apnews.com/article/canada-trump-mcguinty-hegseth-pentagon-188a8ce7b731241befc9376fe7d13595?utm_source=firefox-newtab-en-us
+2026-11-24 http://apnews.com/article/pope-francis-diary-vatican-devil-clergy-abuse-422c4880292d6128e56c99245e9b5a16
+
 2026-09-22T09:42:00
     info@fidelitybank.ng,
 	trueserve@fidelitybank.ng,
