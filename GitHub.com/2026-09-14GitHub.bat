@@ -143,3 +143,7 @@ git add "IIS/WordEngineering/2018-05-03Correspondence/2026-11-21Anoint the most 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-11-22noakushner@thekitchensf.org Bay Street, Emeryville. 2021-04-20West of a 7-Eleven scenery Dulhan Grocery, Charter Square. 2023-04-20Linda South Glide Memorial Church.txt"
 
 git add "IIS/WordEngineering/2018-05-03Correspondence/2026-11-23Makan.Talayeh@acgov.org_-_I will like a system, that work for me ... not necessarily people.txt"
+
+git add   "IIS/WordEngineering/Dated/DateAdd.aspx"
+git add   "IIS/WordEngineering/Dated/DateAdd.aspx.cs"
+git add   "IIS/WordEngineering/JavaScript/DocumentObjectModelDOM/2026-06-05T1201When they come... to their... senses... you will come to yours.html"

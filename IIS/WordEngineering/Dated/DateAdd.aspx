@@ -17,7 +17,7 @@
                         ID="labelDatedFrom"
                         runat="server"
                         AssociatedControlID="datedFrom"
-                        Text="From"
+                        Text="Dated"
                     />
                 </td>
                 <td>                    
